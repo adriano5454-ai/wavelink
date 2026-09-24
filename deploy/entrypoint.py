@@ -3,7 +3,6 @@
 from __future__ import annotations
 
 import http.client
-import json
 import os
 from pathlib import Path
 import signal
@@ -170,12 +169,8 @@ def run() -> int:
         )
     )
 
-    # Validate the generated Nginx configuration before
-    # starting any public-facing listener.
-    #
-    # If validation fails, include only Nginx's own
-    # diagnostic output. Do not print environment variables,
-    # passwords, project data or database contents.
+    # Validate generated Nginx configuration before starting
+    # the application or public-facing listener.
     check = subprocess.run(
         [
             'nginx',
@@ -313,7 +308,7 @@ def run() -> int:
 
     finally:
         # Stop admitting requests before shutting down
-        # the gate/application.
+        # the gateway, gate and application.
         for process in reversed(processes):
             if process.poll() is None:
                 process.terminate()
@@ -346,20 +341,24 @@ if __name__ == '__main__':
     try:
         raise SystemExit(run())
 
-    except (DemoError, ValueError, OSError) as exc:
-        # No environment dump, request URI, credentials
-        # or database content.
-        if isinstance(exc, DemoError):
-            print(
-                'Demo startup stopped: ' + str(exc),
-                file=sys.stderr,
-            )
+    except DemoError as exc:
+        print(
+            'Demo startup stopped: ' + str(exc),
+            file=sys.stderr,
+        )
 
-        else:
-            print(
-                'Demo startup stopped. '
-                'Review configuration, source compatibility '
-                'and persistent storage; '
-                'no replacement project was opened.',
-                file=sys.stderr,
-            )
+    except (ValueError, OSError) as exc:
+        detail = str(exc).strip()
+
+        if len(detail) > 1200:
+            detail = detail[-1200:]
+
+        print(
+            f'Demo startup stopped ({type(exc).__name__}): '
+            + (
+                detail
+                if detail
+                else 'No diagnostic message was returned.'
+            ),
+            file=sys.stderr,
+        )
