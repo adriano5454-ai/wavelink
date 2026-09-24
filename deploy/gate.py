@@ -1,17 +1,17 @@
 """Restricted fictional-demo gate.
 
-NOT production SSO, MFA or tenant isolation.
+This is for a fictional client demonstration only.
 
-A short-lived, HMAC-authenticated Secure/HttpOnly cookie admits the visitor
-past the invitation gate; Wavelink STILL requires its separate named account.
-Authorization headers are never consumed or replaced by this gate.
+The normal gate still supports the private demo-password page.
 
-For the fictional client demo only, /__demo/quick?key=... provides a
-convenience entrance using the demo password in the URL. The request is
-immediately redirected after successful validation so the key does not remain
-in the browser address bar.
+The /__demo/quick route can additionally:
+1. validate the demo access key;
+2. create the private demo session;
+3. authenticate a fixed restricted Wavelink guest account server-side;
+4. install that Wavelink session into the browser workspace;
+5. redirect immediately into Wavelink.
 
-Do not use quick links with real operational credentials.
+Do not use this convenience mechanism for real operational data.
 """
 
 from __future__ import annotations
@@ -21,6 +21,7 @@ from collections import deque
 import hashlib
 import hmac
 import html
+import http.client
 import json
 import os
 from pathlib import Path
@@ -58,6 +59,21 @@ HEADERS = {
     ),
 }
 
+BOOT_HEADERS = {
+    'Cache-Control': 'no-store',
+    'Pragma': 'no-cache',
+    'X-Content-Type-Options': 'nosniff',
+    'Referrer-Policy': 'no-referrer',
+    'X-Frame-Options': 'DENY',
+    'Content-Security-Policy': (
+        "default-src 'none'; "
+        "script-src 'unsafe-inline'; "
+        "style-src 'unsafe-inline'; "
+        "frame-ancestors 'none'; "
+        "base-uri 'none'"
+    ),
+}
+
 
 class Gate:
     def __init__(
@@ -65,17 +81,37 @@ class Gate:
         origin: str,
         password: str,
         key: bytes,
+        guest_login: str,
+        guest_password: str,
         *,
         clock=time.time,
     ):
-        if len(key) != 32 or not 20 <= len(password) <= 128:
+        if len(key) != 32:
             raise ValueError(
-                'Invalid demonstration gate configuration.'
+                'Invalid demonstration gate key.'
+            )
+
+        if not 20 <= len(password) <= 128:
+            raise ValueError(
+                'Invalid demonstration access password.'
+            )
+
+        if not guest_login.strip():
+            raise ValueError(
+                'Missing demonstration guest User ID.'
+            )
+
+        if not 6 <= len(guest_password) <= 128:
+            raise ValueError(
+                'Invalid demonstration guest password.'
             )
 
         self.origin = origin.rstrip('/')
         self.key = key
         self.clock = clock
+
+        self.guest_login = guest_login.strip()
+        self.guest_password = guest_password
 
         self.password_digest = hashlib.sha256(
             password.encode()
@@ -218,7 +254,8 @@ class Gate:
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="viewport"
+      content="width=device-width,initial-scale=1">
 <title>Wavelink · Private demo</title>
 
 <style>
@@ -298,10 +335,6 @@ button {{
 .error {{
     color: #9d2534;
 }}
-
-a {{
-    color: #087b83;
-}}
 </style>
 </head>
 
@@ -341,8 +374,8 @@ a {{
 
     <p class="notice">
         Client demonstration only.
-        Do not upload real operational, personal or confidential data.
-        This invitation gate is not multifactor authentication.
+        Do not upload real operational,
+        personal or confidential data.
     </p>
 </main>
 </body>
@@ -357,17 +390,9 @@ a {{
         self,
         request: Request,
     ) -> bool:
-        """
-        For this fictional Render demo, rely on the signed CSRF cookie
-        plus the exact matching hidden CSRF form token.
-
-        Render terminates HTTPS before the container and may alter or
-        omit browser Origin/Referer information before the internal
-        gate sees the request.
-
-        This is acceptable for the restricted fictional demo, but is
-        not intended to be the final production authentication design.
-        """
+        # Fictional Render demonstration:
+        # the signed CSRF cookie + matching hidden token
+        # provide the form verification.
         return True
 
     async def form(
@@ -482,9 +507,6 @@ a {{
         return response
 
     def register_attempt(self) -> bool:
-        """
-        Returns True if another demo entrance attempt is permitted.
-        """
         now = self.clock()
 
         while (
@@ -508,6 +530,7 @@ a {{
             candidate = hashlib.sha256(
                 supplied.encode()
             ).digest()
+
         except UnicodeError:
             return False
 
@@ -548,26 +571,396 @@ a {{
 
         return response
 
+    def guest_login(self) -> dict:
+        """
+        Authenticate the fixed demonstration guest directly
+        against the loopback-only Wavelink application.
+
+        The guest password never needs to be returned to the browser.
+        """
+
+        device_id = (
+            'demo-guest-'
+            + secrets.token_hex(12)
+        )
+
+        payload = json.dumps(
+            {
+                'login_id': self.guest_login,
+                'password': self.guest_password,
+                'device_id': device_id,
+            }
+        ).encode()
+
+        con = http.client.HTTPConnection(
+            '127.0.0.1',
+            8765,
+            timeout=10,
+        )
+
+        try:
+            con.request(
+                'POST',
+                '/api/login',
+                body=payload,
+                headers={
+                    'Host': self.origin.removeprefix(
+                        'https://'
+                    ),
+                    'Content-Type': 'application/json',
+                    'Accept': 'application/json',
+                    'X-Forwarded-Proto': 'https',
+                    'X-Forwarded-For': '127.0.0.1',
+                },
+            )
+
+            response = con.getresponse()
+            raw = response.read()
+
+        finally:
+            con.close()
+
+        if response.status != 200:
+            raise RuntimeError(
+                'The configured demo guest could not sign in. '
+                'Check that the account exists, is enabled, '
+                'and its Render password matches Wavelink.'
+            )
+
+        try:
+            data = json.loads(
+                raw.decode()
+            )
+
+        except (
+            ValueError,
+            UnicodeError,
+        ) as exc:
+            raise RuntimeError(
+                'The Wavelink guest login returned '
+                'an invalid response.'
+            ) from exc
+
+        if not (
+            isinstance(data, dict)
+            and isinstance(
+                data.get('token'),
+                str,
+            )
+            and isinstance(
+                data.get('person'),
+                dict,
+            )
+            and isinstance(
+                data.get('hub_id'),
+                str,
+            )
+        ):
+            raise RuntimeError(
+                'The Wavelink guest login response '
+                'was incomplete.'
+            )
+
+        return data
+
+    @staticmethod
+    def bootstrap_page(
+        auth: dict,
+    ) -> str:
+        """
+        Install the already-authenticated Wavelink session into
+        Wavelink's existing IndexedDB browser workspace.
+
+        Do not overwrite unsent work belonging to another account.
+        """
+
+        encoded = json.dumps(
+            auth,
+            separators=(',', ':'),
+        ).replace(
+            '<',
+            '\\u003c',
+        ).replace(
+            '>',
+            '\\u003e',
+        ).replace(
+            '&',
+            '\\u0026',
+        )
+
+        return f'''<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport"
+      content="width=device-width,initial-scale=1">
+<title>Opening Wavelink…</title>
+
+<style>
+body {{
+    margin: 0;
+    min-height: 100vh;
+    display: grid;
+    place-items: center;
+    background: #eef2f6;
+    color: #182b40;
+    font: 16px system-ui, sans-serif;
+}}
+
+main {{
+    width: min(440px, calc(100vw - 48px));
+    background: white;
+    box-sizing: border-box;
+    padding: 32px;
+    border: 1px solid #d7e0e8;
+    border-radius: 16px;
+}}
+
+h1 {{
+    margin-top: 0;
+}}
+
+#error {{
+    color: #9d2534;
+    white-space: pre-wrap;
+}}
+</style>
+</head>
+
+<body>
+<main>
+<h1>Opening Wavelink…</h1>
+<p>
+    Preparing the fictional client workspace.
+</p>
+<p id="error"></p>
+</main>
+
+<script>
+(() => {{
+    const auth = {encoded};
+
+    const fail = message => {{
+        document.getElementById('error').textContent =
+            message + '\\n\\n'
+            + 'Open /__demo/login if you need normal sign-in.';
+    }};
+
+    const request = indexedDB.open(
+        'pxgeo-dive-check-1',
+        1
+    );
+
+    request.onupgradeneeded = () => {{
+        const db = request.result;
+
+        if (
+            !db.objectStoreNames.contains(
+                'state'
+            )
+        ) {{
+            db.createObjectStore(
+                'state'
+            );
+        }}
+    }};
+
+    request.onerror = () => {{
+        fail(
+            'The browser workspace could not be opened.'
+        );
+    }};
+
+    request.onsuccess = () => {{
+        const db = request.result;
+
+        const tx = db.transaction(
+            'state',
+            'readwrite'
+        );
+
+        const store = tx.objectStore(
+            'state'
+        );
+
+        const mainReq = store.get(
+            'main'
+        );
+
+        const leaseReq = store.get(
+            'lease'
+        );
+
+        let saved = null;
+        let lease = null;
+
+        mainReq.onsuccess = () => {{
+            saved = mainReq.result || null;
+        }};
+
+        leaseReq.onsuccess = () => {{
+            lease = leaseReq.result || null;
+        }};
+
+        tx.oncomplete = () => {{
+            db.close();
+
+            if (
+                lease
+                && Number(lease.expires) > Date.now()
+            ) {{
+                fail(
+                    'Another Wavelink tab is already using '
+                    + 'this browser workspace. Close it and '
+                    + 'open the guest link again.'
+                );
+                return;
+            }}
+
+            const hasObjectValues = value =>
+                value
+                && typeof value === 'object'
+                && Object.keys(value).length > 0;
+
+            const unsent = !!(
+                saved
+                && (
+                    (Array.isArray(saved.queue)
+                        && saved.queue.length)
+                    || hasObjectValues(
+                        saved.drafts
+                    )
+                    || hasObjectValues(
+                        saved.logDrafts
+                    )
+                    || hasObjectValues(
+                        saved.fieldworkDrafts
+                    )
+                    || saved.formDraft
+                )
+            );
+
+            const existingUser =
+                saved?.auth?.person?.user_id || '';
+
+            const incomingUser =
+                auth?.person?.user_id || '';
+
+            if (
+                unsent
+                && existingUser
+                && existingUser !== incomingUser
+            ) {{
+                fail(
+                    'This browser contains unsent work '
+                    + 'for another Wavelink account. '
+                    + 'Use a private/incognito window '
+                    + 'for the guest demonstration.'
+                );
+                return;
+            }}
+
+            if (
+                unsent
+                && saved?.hub_id
+                && saved.hub_id !== auth.hub_id
+            ) {{
+                fail(
+                    'This browser contains unsent work '
+                    + 'for another project. '
+                    + 'Use a private/incognito window '
+                    + 'for the guest demonstration.'
+                );
+                return;
+            }}
+
+            const defaults = {{
+                hub_id: null,
+                info: null,
+                auth: null,
+                device_id: null,
+                template: null,
+                records: [],
+                snapshots: {{}},
+                queue: [],
+                drafts: {{}},
+                formDraft: null
+            }};
+
+            const next = Object.assign(
+                {{}},
+                defaults,
+                saved || {{}},
+                {{
+                    hub_id: auth.hub_id,
+                    auth: auth,
+                    device_id:
+                        auth.person.device_id
+                        || saved?.device_id
+                        || crypto.randomUUID(),
+                    lastLogin:
+                        auth.person.login_id || '',
+                    lastName:
+                        auth.person.name || ''
+                }}
+            );
+
+            const write = indexedDB.open(
+                'pxgeo-dive-check-1',
+                1
+            );
+
+            write.onsuccess = () => {{
+                const writeDb = write.result;
+
+                const writeTx =
+                    writeDb.transaction(
+                        'state',
+                        'readwrite'
+                    );
+
+                writeTx.objectStore(
+                    'state'
+                ).put(
+                    next,
+                    'main'
+                );
+
+                writeTx.oncomplete = () => {{
+                    writeDb.close();
+
+                    location.replace(
+                        '/#home'
+                    );
+                }};
+
+                writeTx.onerror = () => {{
+                    writeDb.close();
+
+                    fail(
+                        'The guest session could not be '
+                        + 'saved in this browser.'
+                    );
+                }};
+            }};
+
+            write.onerror = () => {{
+                fail(
+                    'The browser workspace could not '
+                    + 'be reopened.'
+                );
+            }};
+        }};
+    }};
+}})();
+</script>
+</body>
+</html>'''
+
     async def quick(
         self,
         request: Request,
     ):
-        """
-        Demo-only convenience entrance.
-
-        Example:
-        /__demo/quick?key=URL_ENCODED_DEMO_PASSWORD
-
-        The supplied key is checked against DEMO_ACCESS_PASSWORD.
-        On success, the normal demo session cookie is created and the
-        browser immediately redirects to / so the key disappears from
-        the address bar.
-
-        This route is intentionally for fictional client demonstrations
-        only. URLs can appear in browser history, copied messages and
-        hosting/access logs.
-        """
-
         supplied = request.query_params.get(
             'key',
             '',
@@ -608,7 +1001,48 @@ a {{
             response.status_code = 403
             return response
 
-        return self.admitted_response()
+        try:
+            auth = self.guest_login()
+
+        except RuntimeError as exc:
+            return HTMLResponse(
+                '<h1>Guest demonstration unavailable</h1>'
+                '<p>'
+                + html.escape(str(exc))
+                + '</p>',
+                status_code=503,
+                headers=BOOT_HEADERS,
+            )
+
+        response = HTMLResponse(
+            self.bootstrap_page(
+                auth
+            ),
+            headers=BOOT_HEADERS,
+        )
+
+        response.set_cookie(
+            COOKIE,
+            self.token(
+                'session',
+                TTL,
+            ),
+            max_age=TTL,
+            path='/',
+            secure=True,
+            httponly=True,
+            samesite='strict',
+        )
+
+        response.delete_cookie(
+            CSRF_COOKIE,
+            path='/',
+            secure=True,
+            httponly=True,
+            samesite='strict',
+        )
+
+        return response
 
     async def login(
         self,
@@ -723,8 +1157,7 @@ a {{
             {
                 'error': (
                     'Demo access has expired. '
-                    'Preserve unsent work and open '
-                    '/__demo/login in this browser.'
+                    'Open /__demo/login.'
                 ),
                 'demo_access_required': True,
             },
@@ -836,6 +1269,12 @@ if __name__ == '__main__':
                 'DEMO_GATE_KEY_FILE'
             ]
         ).read_bytes(),
+        os.environ[
+            'DEMO_GUEST_LOGIN'
+        ],
+        os.environ[
+            'DEMO_GUEST_PASSWORD'
+        ],
     )
 
     uvicorn.run(
