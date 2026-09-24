@@ -145,6 +145,24 @@ def run() -> int:
             'from the private application ports.'
         )
 
+    required_env = (
+        'DEMO_ACCESS_PASSWORD',
+        'DEMO_GUEST_LOGIN',
+        'DEMO_GUEST_PASSWORD',
+    )
+
+    missing = [
+        name
+        for name in required_env
+        if not os.environ.get(name)
+    ]
+
+    if missing:
+        raise DemoError(
+            'Missing required hosted-demo setting(s): '
+            + ', '.join(missing)
+        )
+
     cfg = prepare(
         DATA,
         BASE / 'app',
@@ -247,6 +265,12 @@ def run() -> int:
             DEMO_ACCESS_PASSWORD=os.environ[
                 'DEMO_ACCESS_PASSWORD'
             ],
+            DEMO_GUEST_LOGIN=os.environ[
+                'DEMO_GUEST_LOGIN'
+            ],
+            DEMO_GUEST_PASSWORD=os.environ[
+                'DEMO_GUEST_PASSWORD'
+            ],
             DEMO_GATE_PORT=str(GATE_PORT),
         )
 
@@ -285,7 +309,7 @@ def run() -> int:
         print(
             'Wavelink fictional client demo started. '
             'One application worker; browser administration; '
-            'no native Admin.',
+            'guest quick-link enabled; no native Admin.',
             flush=True,
         )
 
