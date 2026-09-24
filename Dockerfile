@@ -38,16 +38,11 @@ RUN python extract_source.py \
         vendor/source_parts.json \
         extract_source.py
 
-COPY vendor/FICTIONAL_DEMO.ajproject \
-    ./vendor/FICTIONAL_DEMO.ajproject
+COPY vendor/FICTIONAL_DEMO.ajproject ./vendor/FICTIONAL_DEMO.ajproject
 
 COPY deploy ./deploy
 COPY ops ./ops
 
 EXPOSE 10000
 
-CMD [
-    "python",
-    "-m",
-    "deploy.entrypoint"
-]
+CMD ["python", "-m", "deploy.entrypoint"]
