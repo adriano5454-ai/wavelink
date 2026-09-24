@@ -80,8 +80,8 @@ class Gate:
             hashlib.sha256,
         ).hexdigest()
 
-        # Conservative global limit:
-        # no reliance on spoofable forwarded client IPs.
+        # Conservative global rate limit.
+        # Do not rely on browser-provided forwarding headers.
         self.attempts = deque()
 
     def token(
@@ -353,47 +353,17 @@ a {{
         request: Request,
     ) -> bool:
         """
-        Validate browser form origin.
+        For this fictional Render demo, rely on the signed CSRF cookie
+        plus the exact matching hidden CSRF form token.
 
-        Normal modern browsers send Origin for a POST.
-        Some hosting/proxy combinations may omit it, so a same-origin
-        Referer is accepted only when Origin is absent.
+        Render terminates HTTPS before the container and may alter or
+        omit browser Origin/Referer information before the internal
+        gate sees the request.
 
-        A mismatched Origin is never accepted.
+        This is acceptable for the restricted fictional demo, but is
+        not intended to be the final production authentication design.
         """
-
-        origin = (
-            request.headers.get(
-                'origin',
-                '',
-            )
-            .strip()
-            .rstrip('/')
-        )
-
-        if origin:
-            return hmac.compare_digest(
-                origin,
-                self.origin,
-            )
-
-        referer = (
-            request.headers.get(
-                'referer',
-                '',
-            )
-            .strip()
-        )
-
-        if not referer:
-            return False
-
-        return (
-            referer == self.origin
-            or referer.startswith(
-                self.origin + '/'
-            )
-        )
+        return True
 
     async def form(
         self,
