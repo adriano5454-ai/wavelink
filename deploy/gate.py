@@ -5,6 +5,13 @@ NOT production SSO, MFA or tenant isolation.
 A short-lived, HMAC-authenticated Secure/HttpOnly cookie admits the visitor
 past the invitation gate; Wavelink STILL requires its separate named account.
 Authorization headers are never consumed or replaced by this gate.
+
+For the fictional client demo only, /__demo/quick?key=... provides a
+convenience entrance using the demo password in the URL. The request is
+immediately redirected after successful validation so the key does not remain
+in the browser address bar.
+
+Do not use quick links with real operational credentials.
 """
 
 from __future__ import annotations
@@ -80,8 +87,6 @@ class Gate:
             hashlib.sha256,
         ).hexdigest()
 
-        # Conservative global rate limit.
-        # Do not rely on browser-provided forwarding headers.
         self.attempts = deque()
 
     def token(
@@ -476,30 +481,10 @@ a {{
 
         return response
 
-    async def login(
-        self,
-        request: Request,
-    ):
-        if request.method == 'GET':
-            return self.form_response()
-
-        form = await self.form(
-            request
-        )
-
-        if (
-            not form
-            or set(form)
-            != {'csrf', 'password'}
-        ):
-            response = self.form_response(
-                'The access page could not be verified. '
-                'Please enter the demo password again.'
-            )
-
-            response.status_code = 403
-            return response
-
+    def register_attempt(self) -> bool:
+        """
+        Returns True if another demo entrance attempt is permitted.
+        """
         now = self.clock()
 
         while (
@@ -510,37 +495,30 @@ a {{
             self.attempts.popleft()
 
         if len(self.attempts) >= 20:
-            return JSONResponse(
-                {
-                    'error': (
-                        'Too many demo access attempts. '
-                        'Wait five minutes.'
-                    )
-                },
-                429,
-                headers={
-                    **HEADERS,
-                    'Retry-After': '300',
-                },
-            )
+            return False
 
         self.attempts.append(now)
+        return True
 
-        good = hmac.compare_digest(
-            hashlib.sha256(
-                form['password'].encode()
-            ).digest(),
+    def password_matches(
+        self,
+        supplied: str,
+    ) -> bool:
+        try:
+            candidate = hashlib.sha256(
+                supplied.encode()
+            ).digest()
+        except UnicodeError:
+            return False
+
+        return hmac.compare_digest(
+            candidate,
             self.password_digest,
         )
 
-        if not good:
-            response = self.form_response(
-                'The demo access password was not accepted.'
-            )
-
-            response.status_code = 403
-            return response
-
+    def admitted_response(
+        self,
+    ) -> RedirectResponse:
         response = RedirectResponse(
             '/',
             status_code=303,
@@ -569,6 +547,119 @@ a {{
         )
 
         return response
+
+    async def quick(
+        self,
+        request: Request,
+    ):
+        """
+        Demo-only convenience entrance.
+
+        Example:
+        /__demo/quick?key=URL_ENCODED_DEMO_PASSWORD
+
+        The supplied key is checked against DEMO_ACCESS_PASSWORD.
+        On success, the normal demo session cookie is created and the
+        browser immediately redirects to / so the key disappears from
+        the address bar.
+
+        This route is intentionally for fictional client demonstrations
+        only. URLs can appear in browser history, copied messages and
+        hosting/access logs.
+        """
+
+        supplied = request.query_params.get(
+            'key',
+            '',
+        )
+
+        if (
+            not supplied
+            or len(supplied) > 128
+        ):
+            return RedirectResponse(
+                '/__demo/login',
+                status_code=303,
+                headers=HEADERS,
+            )
+
+        if not self.register_attempt():
+            return JSONResponse(
+                {
+                    'error': (
+                        'Too many demo access attempts. '
+                        'Wait five minutes.'
+                    )
+                },
+                429,
+                headers={
+                    **HEADERS,
+                    'Retry-After': '300',
+                },
+            )
+
+        if not self.password_matches(
+            supplied
+        ):
+            response = self.form_response(
+                'The demo access password was not accepted.'
+            )
+
+            response.status_code = 403
+            return response
+
+        return self.admitted_response()
+
+    async def login(
+        self,
+        request: Request,
+    ):
+        if request.method == 'GET':
+            return self.form_response()
+
+        form = await self.form(
+            request
+        )
+
+        if (
+            not form
+            or set(form)
+            != {'csrf', 'password'}
+        ):
+            response = self.form_response(
+                'The access page could not be verified. '
+                'Please enter the demo password again.'
+            )
+
+            response.status_code = 403
+            return response
+
+        if not self.register_attempt():
+            return JSONResponse(
+                {
+                    'error': (
+                        'Too many demo access attempts. '
+                        'Wait five minutes.'
+                    )
+                },
+                429,
+                headers={
+                    **HEADERS,
+                    'Retry-After': '300',
+                },
+            )
+
+        if not self.password_matches(
+            form['password']
+        ):
+            response = self.form_response(
+                'The demo access password was not accepted.'
+            )
+
+            response.status_code = 403
+            return response
+
+        return self.admitted_response()
 
     async def check(
         self,
@@ -689,6 +780,11 @@ a {{
     def app(self):
         return Starlette(
             routes=[
+                Route(
+                    '/__demo/quick',
+                    self.quick,
+                    methods=['GET'],
+                ),
                 Route(
                     '/__demo/login',
                     self.login,
