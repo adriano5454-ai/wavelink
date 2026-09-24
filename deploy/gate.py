@@ -110,7 +110,7 @@ class Gate:
         self.key = key
         self.clock = clock
 
-        self.guest_login = guest_login.strip()
+        self.guest_login_id = guest_login.strip()
         self.guest_password = guest_password
 
         self.password_digest = hashlib.sha256(
@@ -256,6 +256,7 @@ class Gate:
 <meta charset="utf-8">
 <meta name="viewport"
       content="width=device-width,initial-scale=1">
+
 <title>Wavelink · Private demo</title>
 
 <style>
@@ -571,7 +572,7 @@ button {{
 
         return response
 
-    def guest_login(self) -> dict:
+    def authenticate_guest(self) -> dict:
         """
         Authenticate the fixed demonstration guest directly
         against the loopback-only Wavelink application.
@@ -586,7 +587,7 @@ button {{
 
         payload = json.dumps(
             {
-                'login_id': self.guest_login,
+                'login_id': self.guest_login_id,
                 'password': self.guest_password,
                 'device_id': device_id,
             }
@@ -694,6 +695,7 @@ button {{
 <meta charset="utf-8">
 <meta name="viewport"
       content="width=device-width,initial-scale=1">
+
 <title>Opening Wavelink…</title>
 
 <style>
@@ -730,9 +732,11 @@ h1 {{
 <body>
 <main>
 <h1>Opening Wavelink…</h1>
+
 <p>
     Preparing the fictional client workspace.
 </p>
+
 <p id="error"></p>
 </main>
 
@@ -825,8 +829,10 @@ h1 {{
             const unsent = !!(
                 saved
                 && (
-                    (Array.isArray(saved.queue)
-                        && saved.queue.length)
+                    (
+                        Array.isArray(saved.queue)
+                        && saved.queue.length
+                    )
                     || hasObjectValues(
                         saved.drafts
                     )
@@ -1002,7 +1008,7 @@ h1 {{
             return response
 
         try:
-            auth = self.guest_login()
+            auth = self.authenticate_guest()
 
         except RuntimeError as exc:
             return HTMLResponse(
