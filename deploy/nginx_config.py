@@ -33,10 +33,9 @@ def render(
         exist_ok=True,
     )
 
-    # Nginx is intentionally started after the container
-    # drops root privileges. Therefore every temporary
-    # directory Nginx may use must live under our writable
-    # runtime directory rather than /var/lib/nginx.
+    # Nginx is intentionally started after the container drops root
+    # privileges, so all temporary/state paths must be writable by
+    # the service user.
     for name in (
         'body',
         'proxy',
@@ -52,8 +51,7 @@ def render(
         )
 
     # Never append/trust a browser-supplied XFF chain.
-    # The logged client address supplied to Wavelink is the
-    # ingress TCP peer, not a claimed end-user IP.
+    # The client address passed to Wavelink is the ingress TCP peer.
     clear = '''proxy_set_header Forwarded "";
             proxy_set_header X-Forwarded-Host "";
             proxy_set_header X-Forwarded-Port "";
@@ -74,7 +72,7 @@ def render(
     config = f'''worker_processes 1;
 
 pid {runtime}/nginx.pid;
-error_log /dev/stderr crit;
+error_log {runtime}/error.log notice;
 
 events {{
     worker_connections 512;
@@ -190,8 +188,8 @@ http {{
             proxy_pass http://127.0.0.1:{app_port};
             proxy_http_version 1.1;
 
-            # Whitelist only the browser/HTTP/WebSocket
-            # headers needed by Wavelink.
+            # Whitelist only the browser/HTTP/WebSocket headers
+            # needed by Wavelink.
             proxy_pass_request_headers off;
 
             proxy_set_header Content-Type $content_type;
@@ -232,11 +230,8 @@ http {{
 }}
 '''
 
-    # Restrict presentation changes to the application's
+    # Restrict presentation substitutions to the application's
     # own JavaScript file.
-    #
-    # Original documents, JSON, generated reports and
-    # attachments never pass through these substitutions.
     start = config.index(
         '        location / {\n'
         '            if ($demo_tls_ok'
@@ -259,11 +254,8 @@ http {{
     )
 
     substitutions = '''
-            # Demo-only PRESENTATION substitutions;
-            # vendored source is untouched.
-            #
-            # Do not substitute JSON, downloads,
-            # evidence or identifiers.
+            # Demo-only presentation substitutions.
+            # Vendored source and saved evidence remain untouched.
             proxy_set_header Accept-Encoding "";
 
             sub_filter_types application/javascript text/javascript;
