@@ -1,0 +1,23 @@
+# Exact Python package versions present in the LOCAL tested environment.
+# Not an external vulnerability audit or a hash-pinned container lock.
+annotated-doc==0.0.4
+annotated-types==0.7.0
+anyio==4.13.0
+cffi==2.0.0
+charset-normalizer==3.4.7
+click==8.1.8
+cryptography==46.0.4
+fastapi==0.128.2
+h11==0.16.0
+idna==3.17
+pillow==12.3.0
+pycparser==3.0
+pydantic==2.13.4
+pydantic-core==2.46.4
+qrcode==8.2
+reportlab==4.4.9
+starlette==0.50.0
+typing-extensions==4.16.0
+typing-inspection==0.4.2
+uvicorn==0.48.0
+websockets==16.0

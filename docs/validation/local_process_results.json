@@ -1,0 +1,23 @@
+{
+  "checks": [
+    "Minimal health probe, wrong-host rejection and TLS-forwarding requirement",
+    "Unauthenticated app, static assets and API blocked; document navigation opens gate",
+    "Secure gate cookie admits genuine app shell; public bootstrap stays minimal",
+    "Named Wavelink login survives gate; bearer auth, gate and same-origin checks remain separate",
+    "Browser administration API creates one user idempotently and a department through actual gateway",
+    "Limited account and incorrect hub identity denied administration",
+    "Real WebSocket upgrade, named session and ping/pong pass through gateway",
+    "Fictional record/template reads and original-file route retain access gate",
+    "Application restart retains hub identity, users, inventory, manifests, original files and saved session",
+    "Wavelink logout revokes the app session behind the independent gate"
+  ],
+  "passed": true,
+  "real_local_http": true,
+  "real_local_websocket": true,
+  "render_tested": false,
+  "tls_tested": false,
+  "docker_image_built": false,
+  "public_dns_tested": false,
+  "browser_ui_tested": false,
+  "off_host_restore_tested": false
+}

@@ -1,4 +1,4 @@
-# Wavelink — private, fictional client demo on a cloud server
+<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Wavelink — Online Client Demo Setup</title><style>body{font:16px system-ui,sans-serif;color:#182b40;background:#f1f4f7;margin:0;padding:28px}main{max-width:1050px;margin:auto;background:white;padding:32px;border-radius:12px}pre{white-space:pre-wrap;overflow-wrap:anywhere;line-height:1.55;font-family:inherit}h1{font-size:30px}a{color:#087b83}</style><main><h1>Wavelink: online client demo</h1><p>Upload this repository, not an installer or the earlier preparation-only ZIP. The application runs on the server; no Windows Admin needs to remain open.</p><p><a href="README.md">Markdown instructions</a> · <a href="DELIVERY_CHECKS.json">Validation and limitations</a> · <a href="docs/ARCHITECTURE_AND_LIMITS.md">Architecture</a></p><pre># Wavelink — private, fictional client demo on a cloud server
 
 **Deployment package:** `client-demo-2026-09-24-r1`  
 **Application baseline:** verified Wavelink 1.34.19.  
@@ -12,14 +12,14 @@ This is an executable deployment candidate, unlike the earlier preparation-only 
 
 1. Extract `Wavelink_Client_Demo_Render_GitHub.zip` on your computer. Open its `Wavelink_Client_Demo_Deploy` folder.
 2. Sign in at `https://github.com/`. Create a new repository named **`wavelink-client-demo`**. Select **Private**. Do not reuse, rename or replace a CCVD repository.
-3. On the empty repository page, use **uploading an existing file**. On a repository with a README, use **Add file → Upload files**. These are familiar UI labels, not a live-verified screenshot of today's interface.
+3. On the empty repository page, use **uploading an existing file**. On a repository with a README, use **Add file → Upload files**. These are familiar UI labels, not a live-verified screenshot of today&#x27;s interface.
 4. Drag the **contents** of the extracted folder into the upload area. Include the folders, five `vendor/source.part...` files, `vendor/source_parts.json`, the fictional seed, and `.gitignore` / `.dockerignore`. Do not upload only the outer ZIP.
 5. Commit the files with a message such as **Initial fictional Wavelink client demo**.
-6. Check that **Dockerfile** and **requirements.lock** appear at the repository's top level, beside `deploy`, `ops`, `vendor`, `tests` and `docs`. Do not put everything one extra directory below the root.
+6. Check that **Dockerfile** and **requirements.lock** appear at the repository&#x27;s top level, beside `deploy`, `ops`, `vendor`, `tests` and `docs`. Do not put everything one extra directory below the root.
 
 The five source parts are each at most 8 MiB. The container reassembles them and verifies the original complete source checksum and all 1,605 tracked source files. Do not rename or edit them. GitHub Desktop can also publish the same folder, but it is not required to run the hosted application.
 
-Never commit actual project databases, `hub.json`, passwords, `.env`, signing/recovery keys or backup files. This package's `.ajproject` is a reviewed fictional seed with its published login hashes retired. Your new passwords belong in the hosting service's protected environment settings, not the repository.
+Never commit actual project databases, `hub.json`, passwords, `.env`, signing/recovery keys or backup files. This package&#x27;s `.ajproject` is a reviewed fictional seed with its published login hashes retired. Your new passwords belong in the hosting service&#x27;s protected environment settings, not the repository.
 
 ## 2. Create a separate Render service
 
@@ -85,7 +85,7 @@ Create a named client demonstration account through Administration and review it
 
 The four former sample users stay disabled. Their fictional author/assignment history is retained. To use a sample role deliberately, reset its password through browser administration **before** enabling it. Do not publish the old training credentials.
 
-Useful demonstration order: Home → Inventory (open a box, then a nested case) → Asset details → Manifests → Receiving & placement → a Task/checklist → a handover → Fault Reports/HSE → company-branded report. Do not present unfinished or unsupported functions as finished.
+Useful demonstration order: Home → Inventory (open a box, then a nested case) → Asset details → Manifests → Receiving &amp; placement → a Task/checklist → a handover → Fault Reports/HSE → company-branded report. Do not present unfinished or unsupported functions as finished.
 
 **No laptop or Windows Admin needs to stay on after deployment.** Not every desktop utility has a browser equivalent: bulk project/import setup and disaster recovery remain server-operator procedures. Preloading the fictional project avoids needing desktop import tools for this demonstration. Existing help for some local-vessel functions remains in the application. A few sign-in/connection/help labels are changed at the gateway for this demo only; original documents, reports and JSON evidence are never rewritten by that presentation rule.
 
@@ -105,7 +105,7 @@ The existing application password rules are unchanged and can accept shorter pas
 
 Do not wait for `mywavelink.com` to finish registration before testing the application. Domain purchase, ownership and DNS have not been verified here.
 
-For the final presentation address, add **`demo.mywavelink.com`** as a custom domain in the new service. At your DNS provider, create exactly the record Render specifies. Do not guess the destination or change CCVD's DNS. After the certificate/domain is actually ready, set `PUBLIC_URL=https://demo.mywavelink.com` and redeploy deliberately. The old hostname should stop serving the app; the health probe can remain minimal/public.
+For the final presentation address, add **`demo.mywavelink.com`** as a custom domain in the new service. At your DNS provider, create exactly the record Render specifies. Do not guess the destination or change CCVD&#x27;s DNS. After the certificate/domain is actually ready, set `PUBLIC_URL=https://demo.mywavelink.com` and redeploy deliberately. The old hostname should stop serving the app; the health probe can remain minimal/public.
 
 Preserve or synchronise any unsent browser work **before changing hostname**. Existing browser drafts do not move between origins. Complete the hostname change before sending the final client link.
 
@@ -115,7 +115,7 @@ Persist the entire `/var/data/wavelink` directory. The database holds original d
 
 The normal browser menu can export a sensitive unencrypted database snapshot with explicit review. That download is **not a complete encrypted recovery of this container**, because the private hub identity, hosted configuration and deployment/gateway metadata also matter.
 
-The inherited encrypted operator helper is included at `/opt/wavelink/ops/staging_recovery.py`. Read `docs/RECOVERY_HELPER.md` for its exact commands and 500 MB pilot cap. It backs up/restores the prepared database, private hub.json and hosted.json, not this wrapper's DEPLOYMENT.json or gate.key. Preserve those additional metadata files through an authorized encrypted operator backup, or deliberately rebuild the demo wrapper after validating the recovered identity. Never place those secrets in Git or an unencrypted public archive.
+The inherited encrypted operator helper is included at `/opt/wavelink/ops/staging_recovery.py`. Read `docs/RECOVERY_HELPER.md` for its exact commands and 500 MB pilot cap. It backs up/restores the prepared database, private hub.json and hosted.json, not this wrapper&#x27;s DEPLOYMENT.json or gate.key. Preserve those additional metadata files through an authorized encrypted operator backup, or deliberately rebuild the demo wrapper after validating the recovered identity. Never place those secrets in Git or an unencrypted public archive.
 
 Actual off-host transfer, scheduling, a one-click browser restore, provider-disk recovery, and a complete wrapper restore rehearsal are NOT delivered or tested here. No real data until they are implemented/rehearsed along with authentication, company/project isolation, browser administration and restart/update persistence. The previous recovery runbook remains a foundation, not approval for production.
 
@@ -134,3 +134,4 @@ Actual off-host transfer, scheduling, a one-click browser restore, provider-disk
 | An expired gate returns a JSON message | Preserve unsent work; open `/__demo/login` in the same browser/account context. Do not clear browser storage. |
 
 Keep the running vessel installation and CCVD relay entirely separate. This is NOT vessel/cloud synchronization or a copy of your active operational database.
+</pre></main></html>
