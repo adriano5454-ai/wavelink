@@ -1,0 +1,49 @@
+{
+  "format": "wavelink-consolidated-provenance-1",
+  "basis": "Supplied archives plus final working code shown in this conversation. Not a live GitHub repository export.",
+  "upstream_application": {
+    "version": "1.34.19",
+    "source_archive_sha256": "8c1b6a8d731d01b05a1290d3a1dd1a544054147aac9048ca345af7983613cd9e",
+    "original_manifest_entries": 1605
+  },
+  "parent_archives": {
+    "Wavelink_Client_Demo_Render_GitHub.zip": "ff4bddd2bf5dda75d3080444503cbb4f9255e4379db1e8605231f28f06034a2c",
+    "Wavelink_Inventory_UI03_Update.zip": "897c109df13d5995a1dc624937c71293fe50c911a7097fe7c76bd69ac1a67ce4"
+  },
+  "ui_overlay": {
+    "id": "inventory-ui03-2026-09-24",
+    "includes": [
+      "UI01",
+      "UI02"
+    ],
+    "extractor_sha256": "98c1c525606de77022919c1ee684d0492eb797420e72c83ae37262c2a4daf1f9",
+    "exact_supplied_extractor": true,
+    "derived_manifest_entries": 1608
+  },
+  "known_hosting_fixes": {
+    "Dockerfile": "Original inputs/command; tk8.6 dependency and valid one-line CMD from final successful chat correction.",
+    "deploy/nginx_config.py": "Original authority/route contract; all five temp directories and error log in writable runtime directory.",
+    "deploy/entrypoint.py": "Guest credentials passed to gate; missing-setting and Nginx diagnostics; retained privilege drop and persistent-disk checks. Original nonzero error exit restored.",
+    "deploy/gate.py": "Final user-confirmed normal/quick-login functions reconstructed and reformatted; guest_login_id and authenticate_guest separate; existing signed tokens and browser handoff retained."
+  },
+  "unchanged_inputs": {
+    "requirements.lock": "7821be08700c0b2aba3b95df07cb98dd1152f012f70bbbd7a0ab0cea9b6deebf",
+    "deploy/provision.py": "e188dece33b10be26f7a0a68aedfa201757004956876689d808c0602ea2af70d",
+    "deploy/__init__.py": "e5c5bfe0762232356b056658440bce9137484dabbbd9cbd28524d58ae5e37211",
+    "ops/staging_recovery.py": "d8625151ff3be8c4c38eb6bcc8227e06d1db7388d4cb89591defde8b49124a7f",
+    ".gitignore": "745260e8865f088e363c6f9bab7b4ed191f4193897c1aec7990e122b549bd76d",
+    ".dockerignore": "cd9dd7edf745c6795ef131556a9a6b4e544ac4766fa3f9e03a37edcb24e760ff",
+    "vendor/FICTIONAL_DEMO.ajproject": "6a406262adb2fc593cdc6dbc620f591bb79eca28d93f3735f58b66a0a03aa702",
+    "vendor/source.part001": "b568934581bc6ae06da601368352788083b95d1c77cad15f00b15df5e0ddc018",
+    "vendor/source.part002": "3594229b220ce2f7b39ed87ccab17d6b0c2c5583a18e6960cddd8725fb1db76b",
+    "vendor/source.part003": "b51ac5da6100f5cf372683130318ad38a438cd958b1821cf6c2d6fdb486d84ad",
+    "vendor/source.part004": "458d0b06b36d08c940289f4229040fac81d0dbe55b75707636541502aa702a4f",
+    "vendor/source.part005": "99a008607d60003ce74dba0a8101d1638938af4c99433ff5f72f8735a5350018",
+    "vendor/source_parts.json": "cc8dc3918773ef4cc6416a458ff79f25f82cb6a4237aa85cec6ab4f7695e2bc5"
+  },
+  "live_settings_copied": false,
+  "live_database_copied": false,
+  "github_fetched": false,
+  "render_contacted": false,
+  "scope": "Repository consolidation, not new feature increment or production approval."
+}

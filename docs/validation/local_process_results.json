@@ -6,6 +6,7 @@
     "Named Wavelink login survives gate; bearer auth, gate and same-origin checks remain separate",
     "Browser administration API creates one user idempotently and a department through actual gateway",
     "Limited account and incorrect hub identity denied administration",
+    "Guest quick link authenticates configured non-admin and returns browser bootstrap; guest admin access denied",
     "Real WebSocket upgrade, named session and ping/pong pass through gateway",
     "Fictional record/template reads and original-file route retain access gate",
     "Application restart retains hub identity, users, inventory, manifests, original files and saved session",

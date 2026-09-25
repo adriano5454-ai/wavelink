@@ -1,137 +1,84 @@
-<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Wavelink — Online Client Demo Setup</title><style>body{font:16px system-ui,sans-serif;color:#182b40;background:#f1f4f7;margin:0;padding:28px}main{max-width:1050px;margin:auto;background:white;padding:32px;border-radius:12px}pre{white-space:pre-wrap;overflow-wrap:anywhere;line-height:1.55;font-family:inherit}h1{font-size:30px}a{color:#087b83}</style><main><h1>Wavelink: online client demo</h1><p>Upload this repository, not an installer or the earlier preparation-only ZIP. The application runs on the server; no Windows Admin needs to remain open.</p><p><a href="README.md">Markdown instructions</a> · <a href="DELIVERY_CHECKS.json">Validation and limitations</a> · <a href="docs/ARCHITECTURE_AND_LIMITS.md">Architecture</a></p><pre># Wavelink — private, fictional client demo on a cloud server
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Wavelink — full online demo UI03</title><style>body{font:16px/1.6 system-ui,sans-serif;color:#172e43;background:#f0f4f7;margin:0}main{max-width:920px;margin:36px auto;background:white;padding:32px;border-radius:12px}h1,h2{line-height:1.2}pre{white-space:pre-wrap;overflow-wrap:anywhere;font:14px/1.6 ui-monospace,monospace}a{color:#006e76}.notice{border-left:4px solid #007f88;padding:12px 18px;background:#eef9f8}</style></head><body><main><p>AJ OFFSHORE SOLUTIONS · WAVELINK</p><h1>Complete online demo — Inventory UI 03</h1><p class="notice">This folder contains the repository files. Upload its contents to the existing repository root. Keep the existing Render service, secrets and persistent disk. INITIALISE_FICTIONAL_DEMO stays NO.</p><pre># Wavelink — complete online demo repository, Inventory UI 03
 
-**Deployment package:** `client-demo-2026-09-24-r1`  
-**Application baseline:** verified Wavelink 1.34.19.  
-**Purpose:** demonstrate existing browser workspaces without running Windows Admin or leaving a laptop switched on. **Not approved for real operational, personal or confidential data.**
+**Existing-service replacement bundle. Core 1.34.19 + cumulative Inventory UI01/UI02/UI03.**
 
-This is an executable deployment candidate, unlike the earlier preparation-only ZIP. It includes the Dockerfile, a same-container gateway, an independent invitation gate, one-time headless fictional-data provisioning, the exact upstream source (split into five upload-friendly parts), and the recovery helper. It does NOT create a GitHub repository, purchase hosting, deploy a Render service, register a domain, or change the vessel installation or CCVD.
+This ZIP assembles the original supplied deployment files, the final working hosting/login fixes shown in this conversation, and the exact UI03 extractor. It is **not a live export of your current GitHub repository or Render disk**. Later independent repository changes, if any, are not known to this package. No remote service was changed while preparing it.
 
-**Current limitation:** the Docker image has not been built here and the service has not been deployed to Render. Local Python/Nginx/HTTP/WebSocket tests passed; real browser navigation was blocked by this execution environment. The Render build, real TLS ingress, browser acceptance, volume persistence and recovery rehearsal are launch checks, not claimed accomplishments. Current provider prices, plan names and dashboard labels could not be verified because web search was unavailable.
+## Use only UPLOAD_TO_GITHUB for the repository upload
 
-## 1. Upload to a NEW private GitHub repository
+1. Preserve unfinished work in every Wavelink browser/log window and save a project backup through your established process. The ZIP is code, **not a backup of the running project&#x27;s database**. Save/download your current GitHub source or retain the current commit for rollback. Do this outside a client demonstration.
+2. Extract the ZIP. Open **UPLOAD_TO_GITHUB**. Select its contents (including the folders); do not upload the outer ZIP, the UPLOAD_TO_GITHUB folder itself, REFERENCE_ONLY, or VALIDATION.
+3. In your existing **adriano5454-ai/wavelink** repository, go to the repository root and use your existing file-upload workflow. Upload these files and directories together, preserving names. Review the changes and commit them together. Do not delete the repository, its Git history or unknown custom files first. Review on a branch before merging if your live repository has other edits not made in this chat.
+4. Confirm **Dockerfile** is at the repository root and the scripts are at **deploy/gate.py**, **deploy/entrypoint.py**, **deploy/nginx_config.py**, **deploy/extract_source.py** and **deploy/provision.py**. Keep all five **vendor/source.part001–005** files. Show hidden files in your file manager so **.gitignore** and **.dockerignore** are included; do not copy a local .git directory.
+5. Deploy the approved commit using the **existing** Wavelink Render service. No new service, database or disk is needed. Keep the existing settings and secrets below. The service may restart briefly.
+6. After it is healthy, reload/open Inventory and check the **UI 03** badge. Core Wavelink remains **1.34.19**. Test normal administrator sign-in and the existing guest link in a separate fresh/private browser window. Do not clear site data or overwrite unsent work.
 
-1. Extract `Wavelink_Client_Demo_Render_GitHub.zip` on your computer. Open its `Wavelink_Client_Demo_Deploy` folder.
-2. Sign in at `https://github.com/`. Create a new repository named **`wavelink-client-demo`**. Select **Private**. Do not reuse, rename or replace a CCVD repository.
-3. On the empty repository page, use **uploading an existing file**. On a repository with a README, use **Add file → Upload files**. These are familiar UI labels, not a live-verified screenshot of today&#x27;s interface.
-4. Drag the **contents** of the extracted folder into the upload area. Include the folders, five `vendor/source.part...` files, `vendor/source_parts.json`, the fictional seed, and `.gitignore` / `.dockerignore`. Do not upload only the outer ZIP.
-5. Commit the files with a message such as **Initial fictional Wavelink client demo**.
-6. Check that **Dockerfile** and **requirements.lock** appear at the repository&#x27;s top level, beside `deploy`, `ops`, `vendor`, `tests` and `docs`. Do not put everything one extra directory below the root.
+This is the complete repository content needed for this known deployment—not another single-file patch. The compiled Windows installer is not part of this Linux hosting workflow.
 
-The five source parts are each at most 8 MiB. The container reassembles them and verifies the original complete source checksum and all 1,605 tracked source files. Do not rename or edit them. GitHub Desktop can also publish the same folder, but it is not required to run the hosted application.
+## Settings to KEEP in Render
 
-Never commit actual project databases, `hub.json`, passwords, `.env`, signing/recovery keys or backup files. This package&#x27;s `.ajproject` is a reviewed fictional seed with its published login hashes retired. Your new passwords belong in the hosting service&#x27;s protected environment settings, not the repository.
-
-## 2. Create a separate Render service
-
-Open `https://dashboard.render.com/`. Choose the equivalent of **New → Web Service**, connect GitHub, and select **only the new Wavelink repository** for this service. When updating repository permissions, add this repository without revoking or altering existing CCVD access.
-
-| Setting | Value for this candidate |
+| Setting | Preserve |
 |---|---|
-| Service | New paid **Docker Web Service** with a persistent disk |
-| Name | `wavelink-client-demo` or another available separate name |
-| Branch | The branch containing the files, usually `main` |
-| Root directory | Blank when Dockerfile is at repository root |
-| Runtime | Docker |
-| Dockerfile path | `./Dockerfile` |
-| Docker build context | Repository root (`.`), where that field exists |
-| Start command | Use the Dockerfile CMD. Do not substitute a generic Uvicorn command |
-| Compute | Start with at least 1 vCPU and 2 GiB RAM for a small fictional demonstration; not a production benchmark |
-| Instance count | One; disable horizontal autoscaling |
-| Persistent disk | 10 GiB, mount path **`/var/data`** |
-| Health check | **`/healthz`** |
-| Automatic deploys | Disable for the client presentation; deploy deliberately |
-| Database add-on | None. This build uses SQLite WAL on the disk, not PostgreSQL |
-| Public port | Platform `PORT` is used; fallback is 10000. Private ports 8765/8766 stay internal |
+| PUBLIC_URL | Your existing correct HTTPS origin |
+| DEMO_ACCESS_PASSWORD | Your current private-demo entrance/quick-link secret |
+| DEMO_GUEST_LOGIN | The existing restricted guest account&#x27;s User ID |
+| DEMO_GUEST_PASSWORD | The existing password matching that Wavelink guest account |
+| INITIALISE_FICTIONAL_DEMO | **NO** |
+| INITIAL_ADMIN_PASSWORD | **Leave absent** after the completed initial setup |
+| Persistent disk | Existing mount at **/var/data**, with the same project files |
+| Runtime/workers | Existing Docker service; one application worker/instance |
+| Health check | Existing **/healthz** path |
 
-Confirm the actual available instance size, disk support, region and displayed charge in Render before purchasing. Do not choose an ephemeral-only/free configuration as a substitute. If the disk can only be attached after service creation, attach it and redeploy: the launcher refuses to run without the mount and does not seed into temporary storage.
+No real passwords, live project, gate key or environment export are included. The intentionally supplied **vendor/FICTIONAL_DEMO.ajproject** is the original fictional seed, unchanged. Its presence in the image does **not** authorise re-import. The unchanged provisioner checks the existing deployment marker and opens its current project; it refuses a missing/unknown project when initialization is NO. Never re-enable seeding to obtain categories or reset a password.
 
-A different provider can satisfy the same container/volume contract, but this package contains no verified provider-specific Blueprint and no promise of current platform compatibility.
+## Included hosting fixes
 
-## 3. Add these protected environment variables
+The bundle includes the valid one-line Docker CMD and Tk runtime dependency; host-style authority handling; every Nginx temporary directory and error log under the writable runtime directory; the current guest environment pass-through; normal signed-CSRF demo forms; the /__demo/quick guest handoff; and the corrected **guest_login_id / authenticate_guest** names. These are restored from the last supplied working code, not from the obsolete initial gate in the first ZIP.
 
-Use two different newly generated passwords from your password manager. Do not use the examples from tests, a demonstration password printed in old guides, or the same password twice.
+Runtime files are reformatted/consolidated rather than presented as byte-identical copies of the current remote repository. The supervisor explicitly returns a nonzero status after handled startup errors (restoring the original failure-exit behavior). No account, table, shipment or seed identity is changed by this packaging adjustment.
 
-| Name | Value |
-|---|---|
-| `DEMO_ACCESS_PASSWORD` | A new random 20–128-character invitation password. Keep it for restricted demo visitors. |
-| `INITIAL_ADMIN_PASSWORD` | A different new random 20–128-character password for **`adriano.admin`**. First initialization only. |
-| `INITIALISE_FICTIONAL_DEMO` | **`YES_FIRST_DEPLOY_ONLY`** for the first initialization; change to **`NO`** immediately afterwards. |
-| `PUBLIC_URL` | The exact HTTPS address assigned to this new service, with no path, such as the actual `https://…onrender.com` address. |
+The five vendor source parts, seed, requirements.lock, provision.py, the recovery helper and UI03 extractor are checksum-identical to their supplied sources. The source extraction still validates all 1,605 original manifest entries, then produces the same UI03 derived files.
 
-If the address is not yet shown, the package can read `RENDER_EXTERNAL_URL` or `RENDER_EXTERNAL_HOSTNAME` **when the platform supplies them**. If neither is available, startup stops with a request for `PUBLIC_URL`. Copy the actual assigned URL into that variable and redeploy; do not invent a hostname.
+Expected build messages:
 
-Do NOT add `DATABASE_URL`, `WEB_CONCURRENCY`, `UVICORN_*`, local vessel paths or CCVD secrets. Do not bind the inner hosted launcher publicly. The gateway listens on the public platform port; Wavelink itself stays on 127.0.0.1:8765 with one worker.
+```text
+Verified upstream 1.34.19: 1605 tracked files.
+Applied Inventory UI 03: category tools and cumulative UI; demo data changes require explicit administrator review.
+```
 
-The access-cookie signing key is generated on the server and retained in `/var/data/wavelink/operator/gate.key`. It is not a value to paste into GitHub.
+Docker may legitimately reuse unchanged build layers. Check the deployed commit and UI03 badge instead of assuming a CACHED line means the update failed.
 
-## 4. Deploy and complete the one-time setup
+## Apply the example categories without re-importing anything
 
-1. Start the service deployment. Review its build/runtime logs for an actual successful build and healthy service.
-2. On its first authorized run the server imports only the supplied fictional seed, assigns a NEW hub identity, retires the published demo logins and enables **`adriano.admin`** with your password. No Windows Admin is opened.
-3. Open the assigned HTTPS address. You should see **Welcome to the Wavelink demonstration**.
-4. Enter `DEMO_ACCESS_PASSWORD`. Then sign in to Wavelink as **`adriano.admin`** using `INITIAL_ADMIN_PASSWORD`.
-5. In Render, set **`INITIALISE_FICTIONAL_DEMO=NO`**, remove **`INITIAL_ADMIN_PASSWORD`**, and apply/redeploy. Keep `DEMO_ACCESS_PASSWORD` and the correct `PUBLIC_URL`.
-6. Sign in again as needed. Confirm that the hub, sample records and administrator account remain. The initial password is already hashed in the database; removing its environment variable does not delete or reset the account.
+Use your normal administrator account, **not the guest quick link**.
 
-**Do not leave initial seeding enabled.** An initialized directory with missing files is always rejected, but a completely empty replacement disk could look like a first installation while first-deploy authorization remains enabled. Once set to NO, an empty/missing database stops startup rather than silently creating another demo.
+Open **Inventory → DEMO Offshore equipment → Manage categories → Preview demo categories**. Review and confirm the proposed 56 original records / 13 categories. Repeat for **DEMO Consumables** (12 original records / five categories). Type the inventory name exactly, review the reason and explicitly confirm.
 
-Do not delete locks, the deployment identity, SQLite sidecars or `hub.json` to make a failed startup continue. The normal shared app locks prevent cooperating concurrent writers; they are not distributed locking or a guarantee that provider replicas can safely share a volume.
+The category preview changes nothing. The saved action preserves existing choices and skips missing, renamed, identity-changed or archived demo records. Running it again does not duplicate categories. Custom/independently imported inventory can be organised manually. Already-applied categories remain in the current project; do not reset them to install this bundle.
 
-## 5. Use the browser for administration and the presentation
+Categories describe items; they do not move them, change box contents, count stock, dispatch or receive equipment, or release quarantine. Read **docs/INVENTORY_UI03.md** for the complete feature/compatibility instructions and limits.
 
-Open **Administration** in the sidebar. The existing browser interfaces manage named users, departments and permissions; Company branding handles the report identity. The package retains the inventory, nested boxes, manifests, receiving, Tasks, checklists, handovers, Fault Reports and HSE/QSHE workspaces.
+## Before inviting the client again
 
-Create a named client demonstration account through Administration and review its access. Do not give the client your administrator password or hosting/GitHub access. The visitor needs both the invitation password and their personal Wavelink account. For a supervised presentation you can demonstrate your own account over a screen share, rather than granting management rights to the client.
+Test the existing guest link from a fresh/private window; confirm the expected non-admin user and intended permissions. Check a nested box, Asset details, a manifest and one attachment. As administrator, review the category setup. Preserve unsent work, then deliberately restart the hosted service and verify the same users, saved category choices and uploaded files remain. This package does not perform those live checks for you.
 
-The four former sample users stay disabled. Their fictional author/assignment history is retained. To use a sample role deliberately, reset its password through browser administration **before** enabling it. Do not publish the old training credentials.
+The guest link remains a shared demo credential. It is not a per-user invitation, MFA, production SSO or multi-company isolation. The confirmed gate&#x27;s Origin/Referer behavior and shared rate limit are retained, not redesigned as production authentication. Use a separate private window for guest access, particularly when your normal browser holds administrator work. Rotate/revoke shared guest access after the demonstration. No public password/link is printed in this package.
 
-Useful demonstration order: Home → Inventory (open a box, then a nested case) → Asset details → Manifests → Receiving &amp; placement → a Task/checklist → a handover → Fault Reports/HSE → company-branded report. Do not present unfinished or unsupported functions as finished.
+## Rollback
 
-**No laptop or Windows Admin needs to stay on after deployment.** Not every desktop utility has a browser equivalent: bulk project/import setup and disaster recovery remain server-operator procedures. Preloading the fictional project avoids needing desktop import tools for this demonstration. Existing help for some local-vessel functions remains in the application. A few sign-in/connection/help labels are changed at the gateway for this demo only; original documents, reports and JSON evidence are never rewritten by that presentation rule.
+Revert the bundle&#x27;s commit and redeploy the previous known-good commit. Do not restore the very first deployment ZIP, which predates the login fixes. Do not delete the persistent disk, reset the database, clear browser storage or uninstall anything.
 
-## 6. Rehearse before inviting the client
+Once category data/drafts exist, prefer a forward correction. An older category-unaware exporter may omit metadata. Keep the UI03 source and project backup together; do not downgrade ajinventory-3 packages to older format markers.
 
-- In an incognito browser, confirm that app/API/file routes do not bypass the invitation gate, wrong passwords fail, and a limited account cannot open administration.
-- In your administrator session create a temporary fictional Task or inventory item, refresh, then restart/redeploy the service. Confirm the exact same record and project remain. Check an uploaded fictional PDF/image after restarting too.
-- Use desktop and phone browsers through the real URL. Try inventory boxes, a saved manifest, receiving, report downloads and WebSocket-driven updates. Verify no new login/window appears unexpectedly.
-- Test the provider-assigned hostname and any custom hostname. Only the configured canonical application hostname should work, except for a minimal anonymous health probe. Do not weaken the host/proxy checks to suppress an error.
-- Take a recovery copy and practise restoring it before introducing anything important. A healthy homepage or a platform “Live” badge is not proof of these results.
+## Scope and recovery caveat
 
-The invitation gate is a shared, high-entropy demo password with a signed Secure/HttpOnly/SameSite cookie, an eight-hour admission lifetime and throttled login attempts. **It is not named identity-provider SSO, an identity allowlist, MFA, production internet hardening or tenant isolation.** Wavelink accounts remain individual and separate. Rotating the invitation password and restarting rejects old gate cookies. Already-open connections should be closed by a deliberate restart when removing demo access; downloads or previously retained browser data cannot be recalled.
+The existing local vessel installation and CCVD relay are not part of this bundle or its deployment. No vessel/cloud synchronisation is implemented. Original Files folder organisation remains pending.
 
-The existing application password rules are unchanged and can accept shorter passwords elsewhere. Use long passwords for every test account; hosted-wide hardening remains a real-data requirement.
+The retained **ops/staging_recovery.py** is pinned to the original unmodified 1.34.19 manifest. It does **not** accept the UI03-modified /opt/wavelink/app as its source directory. Do not bypass that integrity check. Its historical instructions and previous evidence are preserved in REFERENCE_ONLY; this bundle does not certify off-host recovery of the current deployment. See **docs/RECOVERY_HELPER.md** before using it.
 
-## 7. Add the domain after the assigned URL works
+## Validation and provenance
 
-Do not wait for `mywavelink.com` to finish registration before testing the application. Domain purchase, ownership and DNS have not been verified here.
+See DELIVERY_CHECKS.json and the outer VALIDATION folder for checks actually repeated for this combined package. Historical UI03/initial-package results are separately retained under REFERENCE_ONLY and are not represented as new runs.
 
-For the final presentation address, add **`demo.mywavelink.com`** as a custom domain in the new service. At your DNS provider, create exactly the record Render specifies. Do not guess the destination or change CCVD&#x27;s DNS. After the certificate/domain is actually ready, set `PUBLIC_URL=https://demo.mywavelink.com` and redeploy deliberately. The old hostname should stop serving the app; the health probe can remain minimal/public.
-
-Preserve or synchronise any unsent browser work **before changing hostname**. Existing browser drafts do not move between origins. Complete the hostname change before sending the final client link.
-
-## 8. Storage, backup and recovery boundaries
-
-Persist the entire `/var/data/wavelink` directory. The database holds original documents, photographs, certificate files, manifest attachments, checklist photo evidence, log media and branding; an “uploads” folder alone is not sufficient. Application source remains in the replaceable image. Browser-only unsent work is not in a server backup.
-
-The normal browser menu can export a sensitive unencrypted database snapshot with explicit review. That download is **not a complete encrypted recovery of this container**, because the private hub identity, hosted configuration and deployment/gateway metadata also matter.
-
-The inherited encrypted operator helper is included at `/opt/wavelink/ops/staging_recovery.py`. Read `docs/RECOVERY_HELPER.md` for its exact commands and 500 MB pilot cap. It backs up/restores the prepared database, private hub.json and hosted.json, not this wrapper&#x27;s DEPLOYMENT.json or gate.key. Preserve those additional metadata files through an authorized encrypted operator backup, or deliberately rebuild the demo wrapper after validating the recovered identity. Never place those secrets in Git or an unencrypted public archive.
-
-Actual off-host transfer, scheduling, a one-click browser restore, provider-disk recovery, and a complete wrapper restore rehearsal are NOT delivered or tested here. No real data until they are implemented/rehearsed along with authentication, company/project isolation, browser administration and restart/update persistence. The previous recovery runbook remains a foundation, not approval for production.
-
-## 9. Troubleshooting checkpoints
-
-| Symptom | Check |
-|---|---|
-| Dockerfile cannot be found | Repository root/nesting and the selected branch. Do not upload only a ZIP. |
-| Missing source part or checksum failure | All five source parts plus source_parts.json, unchanged. |
-| Image/package build fails | Capture the actual build error. Dependency versions and base image have not been fetched/built here; do not substitute arbitrary versions without retesting. |
-| Persistent disk required | The disk must be mounted at exactly `/var/data`. No ephemeral fallback. |
-| PUBLIC_URL requested | Enter the exact assigned HTTPS origin and redeploy. |
-| Startup refuses the data directory | Check retained volume/identity; do not delete files or re-enable seeding over lost work. |
-| 400/421 through the real address | Canonical URL, Host and the real TLS forwarding header. Provider integration must be inspected, not disabled. |
-| Login gate works, app login fails | `adriano.admin`, the first administrator password, and whether an existing project was retained. Restart does not reset passwords. |
-| An expired gate returns a JSON message | Preserve unsent work; open `/__demo/login` in the same browser/account context. Do not clear browser storage. |
-
-Keep the running vessel installation and CCVD relay entirely separate. This is NOT vessel/cloud synchronization or a copy of your active operational database.
-</pre></main></html>
+The Docker image was **not built here**, no GitHub commit or Render deployment was performed, and the full application/browser suite, physical phones, actual Render persistence, DNS/TLS and off-host restoration were not tested in this consolidation. Current remote edits/settings have not been independently inspected. The existing client demo remains fictional-only.
+</pre></main></body></html>

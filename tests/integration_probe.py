@@ -37,7 +37,9 @@ def cookie_value(response,name):
 
 def run():
     with tempfile.TemporaryDirectory(prefix='fictional-client-demo-http-') as td:
-        tmp=Path(td);app_port,gate_port,edge_port=free_port(),free_port(),free_port()
+        tmp=Path(td);app_port,gate_port,edge_port=8765,free_port(),free_port()
+        with socket.socket() as reservation:
+            reservation.bind(('127.0.0.1',app_port))  # Refuse to touch an occupied app port.
         origin='https://demo.example.test';authority='demo.example.test'
         env={'PUBLIC_URL':origin,'DEMO_ACCESS_PASSWORD':'Fictional-probe-gate-password-2026',
              'INITIAL_ADMIN_PASSWORD':'Fictional-probe-administrator-2026','INITIALISE_FICTIONAL_DEMO':'YES_FIRST_DEPLOY_ONLY'}
@@ -50,7 +52,8 @@ def run():
         try:
             wait_ready(application,app_port,'/readyz')
             gate_env={**minimal_environment(),'DEMO_GATE_ORIGIN':origin,'DEMO_ACCESS_PASSWORD':env['DEMO_ACCESS_PASSWORD'],
-                      'DEMO_GATE_KEY_FILE':str(cfg['gate_key']),'DEMO_GATE_PORT':str(gate_port)}
+                      'DEMO_GATE_KEY_FILE':str(cfg['gate_key']),'DEMO_GATE_PORT':str(gate_port),
+                      'DEMO_GUEST_LOGIN':'client.demo','DEMO_GUEST_PASSWORD':'Fictional-client-user-password-2026'}
             gate=spawn([sys.executable,'-m','deploy.gate'],ROOT,gate_env,'gate')
             wait_ready(gate,gate_port,'/__demo/check',accepted=(401,))
             ngx=tmp/'nginx.conf';ngx.write_text(render(authority,edge_port,tmp/'nginx',app_port=app_port,gate_port=gate_port,bind='127.0.0.1'))
@@ -105,6 +108,20 @@ def run():
                 assert c.get('/api/admin/directory',headers={**h,'Authorization':'Bearer '+limited,'X-AJ-Hub-ID':cfg['hub_id']}).status_code==403
                 assert c.get('/api/admin/directory',headers={**auth,'X-AJ-Hub-ID':str(uuid.uuid4())}).status_code==409
                 ok('Limited account and incorrect hub identity denied administration')
+                # Use a fresh cookie-free visitor to exercise the complete quick route.
+                quick=c.get('/__demo/quick',params={'key':env['DEMO_ACCESS_PASSWORD']},headers=headers)
+                assert quick.status_code==200,quick.text[:200]
+                assert 'Opening Wavelink' in quick.text and env['DEMO_ACCESS_PASSWORD'] not in quick.text
+                assert 'Fictional-client-user-password-2026' not in quick.text
+                guest_auth=json.loads(re.search(r'const auth = (.+);',quick.text).group(1))
+                assert guest_auth['person']['role']!='admin'
+                guest_cookie='__Host-wavelink-demo='+cookie_value(quick,'__Host-wavelink-demo')
+                gh={**headers,'Cookie':guest_cookie,'Origin':origin,'Authorization':'Bearer '+guest_auth['token'],'X-AJ-Hub-ID':cfg['hub_id']}
+                assert c.get('/api/me',headers=gh).status_code==200
+                assert c.get('/api/admin/directory',headers=gh).status_code==403
+                assert c.get('/static/fieldwork.js',headers=gh).status_code==200
+                ok('Guest quick link authenticates configured non-admin and returns browser bootstrap; guest admin access denied')
+
                 async def ws_probe():
                     async with connect('ws://'+authority+'/ws',host='127.0.0.1',port=edge_port,origin=origin,
                                        additional_headers={'Cookie':cookie,'X-Forwarded-Proto':'https'},proxy=None) as ws:

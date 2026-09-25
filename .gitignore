@@ -1,0 +1,34 @@
+# NEVER commit credentials or live project data.
+.env
+.env.*
+!.env.example
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.pytest_cache/
+/data/
+/project/
+/operator/
+/backups/
+/runtime/
+*.sqlite
+*.sqlite3
+*.sqlite3-wal
+*.sqlite3-shm
+*.db
+hub.json
+hosted.json
+DEPLOYMENT.json
+*.key
+*.pem
+*.p12
+*.wlstaging
+*.log
+# Only the reviewed fictional seed belongs in version control.
+*.ajproject
+!vendor/FICTIONAL_DEMO.ajproject
+# Deployment source is the pinned archive in five verified binary parts.
+*.zip
+.DS_Store
+Thumbs.db

@@ -1,51 +1,71 @@
 {
-  "deployment_package": "client-demo-2026-09-24-r1",
-  "application_version": "1.34.19",
-  "upstream_source_sha256": "8c1b6a8d731d01b05a1290d3a1dd1a544054147aac9048ca345af7983613cd9e",
-  "upstream_manifest_files_verified": 1605,
-  "upstream_source_changed": false,
-  "gateway_presentation_only_changes": "Exact /static/app.js response: online login/help labels. No document/report/JSON substitution.",
-  "new_unit_tests": {
-    "passed": 49,
-    "failed": 0,
-    "skipped": 0
+  "format": "wavelink-full-online-demo-delivery-1",
+  "package": "Wavelink_Online_Demo_Full_UI03",
+  "core_version": "1.34.19",
+  "overlay": "Inventory UI03 (includes UI01/UI02)",
+  "state": "Locally assembled and checked; not deployed by this session",
+  "tests": {
+    "deployment_python_passed": 57,
+    "category_and_extraction_passed": 67,
+    "total_distinct_python_passed": 124,
+    "local_process_checks_passed": 11,
+    "rootless_nginx_checks_passed": 2,
+    "notes": "Initial test-environment omissions/timeouts retained separately; same code passed complete final reruns."
   },
-  "local_process_integration": {
-    "passed": 10,
-    "failed": 0,
-    "real_nginx_http": true,
-    "real_websockets": true,
-    "named_login_and_browser_admin_api_writes": true,
-    "application_restart_on_same_test_directory": true
-  },
-  "real_browser_navigation": {
-    "status": "blocked_before_navigation",
-    "error": "ERR_BLOCKED_BY_ADMINISTRATOR",
-    "completed_browser_ui_checks": 0
-  },
-  "docker_image_built": false,
-  "render_service_created": false,
-  "github_repository_created": false,
-  "actual_render_tls_or_persistent_disk_tested": false,
-  "public_dns_or_domain_verified": false,
-  "full_upstream_regression_suite_rerun": false,
-  "off_host_recovery_tested": false,
-  "production_ready": false,
-  "fictional_client_demo_only": true,
-  "access_gate": "Shared high-entropy invitation password plus signed expiring cookie and separate individual Wavelink account; not MFA or SSO.",
-  "not_implemented": [
-    "Company multi-tenancy",
-    "Vessel/cloud synchronization",
-    "Complete remote browser replacement for all native utilities",
-    "Scheduled/off-host backup transfer",
-    "One-click complete wrapper recovery"
+  "local_process_scope": [
+    "Real Nginx/gate/hosted-app loopback requests",
+    "Guest quick route authenticates configured non-admin and produces bootstrap HTML",
+    "Normal admin API creates test user/department",
+    "WebSocket upgrade and named-session ping/pong",
+    "File-access gate and application restart/session revocation"
   ],
-  "local_vessel_installation_changed": false,
-  "ccvd_relay_changed": false,
-  "bootstrap_switch_must_be_disabled_after_first_success": true,
-  "runtime_notes": [
-    "One hosted application process/worker/instance; separate same-container gateway and gate processes.",
-    "SQLite WAL on mandatory persistent /var/data mount.",
-    "Python packages pinned to locally installed versions; image and package downloads not verified online."
-  ]
+  "structure": {
+    "parents": {
+      "Wavelink_Client_Demo_Deploy": {
+        "manifest_records": 32,
+        "mismatches": []
+      },
+      "Wavelink_Inventory_UI03": {
+        "manifest_records": 132,
+        "mismatches": []
+      }
+    },
+    "deployment_python_syntax_files": 13,
+    "application_javascript_syntax_files": 36,
+    "guest_bootstrap_javascript_syntax": true,
+    "unchanged_deployment_inputs": [
+      "requirements.lock",
+      "deploy/provision.py",
+      "deploy/__init__.py",
+      "ops/staging_recovery.py",
+      ".gitignore",
+      ".dockerignore",
+      "vendor/source.part003",
+      "vendor/source.part004",
+      "vendor/source.part005",
+      "vendor/source_parts.json",
+      "vendor/FICTIONAL_DEMO.ajproject",
+      "vendor/source.part002",
+      "vendor/source.part001"
+    ],
+    "exact_ui03_extractor": true,
+    "ui03_derived_records_matched": 1608
+  },
+  "recovery_helper": "Preserved original helper is pristine-1.34.19-source-pinned. It does not accept UI03 /opt/wavelink/app. No policy override or recovery rehearsal performed.",
+  "preserved_inputs": "Original source parts, seed, provisioning marker/logic, requirements, UI03 extractor are unchanged. No current passwords or private project bytes are in this archive.",
+  "limitations": {
+    "github_current_tree_fetched": false,
+    "render_deployed": false,
+    "docker_image_built": false,
+    "full_application_suite_rerun": false,
+    "full_browser_suite_rerun": false,
+    "guest_indexeddb_handoff_browser_execution_tested": false,
+    "guest_bootstrap_js_syntax_tested": true,
+    "physical_phone_tested": false,
+    "live_restart_persistence_tested": false,
+    "off_host_restore_tested": false,
+    "production_ready": false
+  },
+  "update": "Replace repository files from UPLOAD_TO_GITHUB; keep current Render settings/disk and INITIALISE_FICTIONAL_DEMO=NO. Preview/apply categories explicitly; never reseed.",
+  "provenance_file": "docs/SOURCE_PROVENANCE.json"
 }

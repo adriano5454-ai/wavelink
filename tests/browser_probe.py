@@ -40,7 +40,7 @@ def run():
             app=spawn([sys.executable,'run_hosted.py','serve','--config',str(cfg['config'])],SOURCE,minimal_environment(),'app')
             wait_ready(app,ap,'/readyz')
             g=spawn([sys.executable,'-m','deploy.gate'],ROOT,{**minimal_environment(),'DEMO_GATE_ORIGIN':origin,
-                    'DEMO_ACCESS_PASSWORD':env['DEMO_ACCESS_PASSWORD'],'DEMO_GATE_KEY_FILE':str(cfg['gate_key']),'DEMO_GATE_PORT':str(gp)},'gate')
+                    'DEMO_ACCESS_PASSWORD':env['DEMO_ACCESS_PASSWORD'],'DEMO_GATE_KEY_FILE':str(cfg['gate_key']),'DEMO_GATE_PORT':str(gp),'DEMO_GUEST_LOGIN':'guest.demo','DEMO_GUEST_PASSWORD':'Fictional-browser-guest-2026'},'gate')
             wait_ready(g,gp,'/__demo/check',accepted=(401,))
             key=rsa.generate_private_key(public_exponent=65537,key_size=2048)
             subject=x509.Name([x509.NameAttribute(NameOID.COMMON_NAME,'demo.wavelink.test')])

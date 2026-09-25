@@ -1,8 +1,6 @@
 {
-  "status": "blocked_before_navigation",
-  "error": "net::ERR_BLOCKED_BY_ADMINISTRATOR",
-  "attempted": "real Chromium through a loopback-only local test TLS terminator",
-  "checks_completed": 0,
-  "product_failure_diagnosed": false,
-  "render_tested": false
+  "scope": "consolidation",
+  "full_browser_suite_rerun": false,
+  "live_render_tested": false,
+  "note": "See outer VALIDATION for actual new runs. The original browser-test limitation and prior UI03 browser results are separately preserved under REFERENCE_ONLY."
 }
