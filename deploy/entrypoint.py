@@ -10,6 +10,7 @@ import time
 
 from .provision import DemoError, prepare
 from .nginx_config import render
+from .gate import public_entry_enabled
 
 BASE = Path('/opt/wavelink')
 MOUNT = Path('/var/data')
@@ -74,6 +75,7 @@ def run() -> int:
     missing = [name for name in required_env if not os.environ.get(name)]
     if missing:
         raise DemoError('Missing required hosted-demo setting(s): ' + ', '.join(missing))
+    public_entry = public_entry_enabled(os.environ.get('DEMO_PUBLIC_ENTRY'))
     cfg = prepare(DATA, BASE / 'app', BASE / 'vendor/FICTIONAL_DEMO.ajproject', dict(os.environ))
     runtime = Path('/tmp/wavelink-gateway')
     runtime.mkdir(mode=0o700, exist_ok=True)
@@ -103,13 +105,16 @@ def run() -> int:
                         DEMO_ACCESS_PASSWORD=os.environ['DEMO_ACCESS_PASSWORD'],
                         DEMO_GUEST_LOGIN=os.environ['DEMO_GUEST_LOGIN'],
                         DEMO_GUEST_PASSWORD=os.environ['DEMO_GUEST_PASSWORD'],
-                        DEMO_GATE_PORT=str(GATE_PORT))
+                        DEMO_GATE_PORT=str(GATE_PORT),
+                        DEMO_PUBLIC_ENTRY='YES' if public_entry else 'NO')
         gate = subprocess.Popen([sys.executable, '-m', 'deploy.gate'], cwd=BASE, env=gate_env)
         processes.append(gate)
         wait_ready(gate, GATE_PORT, '/__demo/check', accepted=(401,))
         gateway = subprocess.Popen(['nginx', '-c', str(nginx_file), '-g', 'daemon off;'], env=minimal_environment())
         processes.append(gateway)
-        print('Wavelink fictional client demo started. One application worker; browser administration; guest quick-link enabled; no native Admin.', flush=True)
+        entry_mode = 'public guest entry enabled' if public_entry else 'private password entry'
+        print('Wavelink fictional client demo started. One application worker; browser administration; '
+              + entry_mode + '; guest quick-link enabled; no native Admin.', flush=True)
         while not stopping:
             if any(p.poll() is not None for p in processes):
                 print('A demo service exited. Stopping all components; platform restart is required.', flush=True)

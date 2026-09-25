@@ -1,100 +1,97 @@
-# Wavelink — Workspace UI18
+# Gateway addition G01 — optional public guest entry
 
-**Core 1.34.19 · cumulative UI01–UI18 · prepared 25 September 2026.** Built from the verified supplied complete UI17 archive, not from a fetched live repository. Implemented and tested locally; not deployed to Render.
+This repository is **Workspace UI19 + Gateway G01** (core 1.34.19). For password-free
+entry by fresh visitors, deploy this code and explicitly set **DEMO_PUBLIC_ENTRY=YES**.
+Default is NO. Keep DEMO_ACCESS_PASSWORD and the matching Wavelink guest credentials
+configured. Public visitors get the existing non-administrator guest's actual rights,
+not automatic read-only access. Normal staff entry remains at `/__demo/login`.
 
-## Original files now have shared folders
+Read [G01 setup, source checks and boundaries](docs/GATE_PUBLIC_ENTRY_G01.md) first.
+G01 changes only the deployment gate and supervisor; it does not change UI19's
+application, database or initialization. The UI19 notes below remain historical
+application-release documentation, not a claim that its old tests were rerun for G01.
 
-In the existing browser **Workspace menu → Original files**, open the new saved library. It stays in the current application and project. Close an unfinished operational form before opening the library; opening Help does not submit or replace that form.
+---
 
-The folder pane has **All files**, the **Original files** root and nested saved folder paths. Search matches title, code, revision, original filename and folder path across the entire library, even when a particular folder had been selected. Each result shows its saved location. **Include archived revisions** is explicit; archived revisions are not deleted files.
+# Wavelink UI19 — small GitHub update
 
-Counts refer to individual stored revisions, not document families. Folder counts are direct contents under the current archived filter, not subtree totals. **Details** shows the exact revision/family IDs, file size, checksum and import information. **Open / save original** keeps the existing authorised, checksum-checked file download.
+Core **1.34.19**. Prepared **25 September 2026**. This is a changed-files update, not a full repository and not a live backup.
 
-The phone layout has a collapsible **Browse folders** pane; the dialog scrolls. Desktop keeps folders alongside the file cards. Local Chromium renders at 390 and 320 pixels are included; they are not physical-phone acceptance.
+## Required baseline — check before copying
 
-## Reviewed organisation, not automatic classification
+This release continues only from the actual UI18 archive Adriano supplied, whose extractor SHA-256 is:
 
-A named project administrator with the existing Original files access can create a folder, rename it, move it under another folder or remove it only when empty. An archived revision or a child folder still counts as content for removal. This library has no file-delete button.
+`d63d6de8b7b076893e44c8faf5122be5ac136539685d7744a44adae85b01d980`
 
-Administrators can select and move up to **100 exact revisions** together. Each selected revision can have its own location: moving revision A does not move revision B or all members of the family. Switching a folder, search or archived filter clears the selection so hidden items are not moved inadvertently.
+The other previously reported UI18 extractor (`ee322dc48e08a29a284066e10bb9cb7e2396100c4b5348d521ec08f6966ebc5d`) is **not this baseline**. UI19 does not silently reconcile it, downgrade it, or migrate its different folder schema. A UI18 label alone is not sufficient. Do not apply to UI17, the other UI18, a newer release or an independently modified checkout.
 
-Every change follows **Choose the change and reason → Review exact scope → Confirm → Save folder change**. The preview states the current/destination paths and exact revision IDs when files are selected. Folder rename/reparent reviews state their descendant-path impact. Going back clears confirmation. Reasons can contain ordinary line breaks and are limited to 1,000 characters.
+The included read-only **CHECK_UI19_UPDATE.ps1** checks the complete expected repository baseline, not just the version label. It accepts exact bytes or UTF-8 text differing only by Windows CRLF line endings; binary source parts always require exact bytes. It does not copy files, edit data, connect online or deploy anything. Run it from an extracted patch folder under your approved PowerShell policy:
 
-Folders are project-shared metadata, not private browser preferences or physical filesystem directories. **A folder is not a permissions boundary.** Existing viewers retain the existing Originals permission; organisation and **Folder history** require a current named administrator. Vessel-only and unauthorised sessions do not gain access. There is no new role or permission toggle.
+```powershell
+.\CHECK_UI19_UPDATE.ps1 -RepositoryPath "C:\path\to\your\wavelink" -Mode Baseline
+```
 
-The limits are **200 folders**, **six levels below the library root** and **100 revisions per move**. Folder names are one segment, not paths, and sibling names cannot differ only by case/Unicode composition. Cycles and moves that push descendants beyond the depth limit are refused. There are no automatically created folders, inferred categories or automatic revision moves.
+A failed check means **stop and reconcile the identified source differences**. Do not reset the repository, discard outside edits or edit database tables to bypass it. If your checkout is already UI19, use `-Mode Installed` instead. PowerShell itself was not executable in the Linux test environment; the checksum manifests and matching reference checks were tested, not native Windows execution of this helper.
 
-## What is preserved
+## What UI19 adds
 
-Folder operations do not rewrite original source bytes, filenames, stored document rows, revision/family IDs, checksums or published checklist source references. They write separate location/folder metadata and append audit records. Existing audit entries remain. A folder move does not revise, approve or publish a linked checklist.
+Open **Workspace menu → Original files** as a permitted, named project administrator. This is the existing workspace entry in the supplied UI18 branch, not an invented sidebar replacement.
 
-**Folder history** shows the latest 100 saved organisation operations, with administrator identity, reason and before/after paths or affected exact revisions. Older operation records remain in storage; the current view is limited to 100. Moving a revision also appends its existing original-document audit. Renaming a parent is recorded as a folder operation with affected paths, not a fabricated content revision for each child.
+- **Upload new original:** File & document → Destination & reason → Review upload. Choose one file; enter the document information; explicitly choose Library root or an existing folder; add a reason; then confirm the final review.
+- **Add revision:** use the action on the exact active original revision or its details. Enter a new revision label and explicitly choose the new revision's folder. The selected document family is fixed. Earlier revision bytes, identities, folders, archives and existing checklist/maintenance links are not replaced or repointed.
+- **Saved outcome:** a successful upload shows the saved revision ID, bytes, SHA-256 and destination, with an explicit link to the exact saved revision in the library.
 
-Initial startup adds empty folder tables without classifying existing files. Originals without a location appear in the root. The local upgrade test opened a real UI17-created project using UI18 and checked unchanged original rows/audit, exact bytes and empty new metadata. A restart test and selected transfer tests also ran locally; this is not a live-service or off-host restoration test.
+Supported browser originals: **PDF, DOCX, PNG/JPEG, XLSX, XLSM, XLSB, XLS, XLTX and XLTM**, one file from **1 byte to 20,000,000 bytes (20 MB)**. Excel shares this browser limit; the existing native-admin Excel import still allows its existing 100 MB limit. The browser requires its normal HTTPS/localhost file-digest capability; it does not bypass insecure-origin restrictions. Upload is a byte-preserving library operation, **not** checklist extraction, publishing, approval, a macro/virus scan or a certification that the document is safe/current.
 
-## Saved snapshots, connection failures and unfinished work
+Folders are not access-control boundaries. Existing Original documents access, named-admin upload authority and exact-project checks apply. No new role or permission is invented. Archived parent revisions cannot be used for Add revision. New files are not automatically filed, linked to equipment, made active procedures or assigned to Tasks.
 
-Reading the library is read-only. Changes require a connection to the current project hub and its current saved catalogue snapshot. A concurrent import, archive, deletion or organisation change refuses an older proposal as a whole. Refresh and review it again; no subset of a refused bulk move is applied.
+## Unfinished work, uncertainty and retries
 
-An operation ID makes a repeated identical request return its recorded result rather than apply a second mutation. A lost response is an **unconfirmed outcome**, not proof that no change was saved. The open form retains that exact request and offers **Retry same operation**. After a confirmed response the library reloads its saved state. A failed reload is distinguished from a failed save.
+The selected file and form are **memory-only**. They are not an offline draft and are never put into the checklist outbox. Closing asks before discarding; ordinary Close/Escape and duplicate submissions are blocked during file preparation or an explicit save. Reloading, crashing or losing the tab can still lose this unsent upload form. Other operational drafts/queues are not cleared.
 
-This editor does **not** add an offline queue or persistent browser draft. Do not close an unconfirmed operation casually. Closing an unsaved/uncertain proposal asks first. After a tab or browser is lost, inspect the saved library and administrator history before proposing a replacement action. A replay acknowledges the original recorded operation; it does not recreate something subsequently changed or removed.
+Changing the review clears confirmation. A stale library snapshot is refused without creating a partial original; refresh the review and confirm again. File bytes, chosen location, original audit and duplicate-request receipt commit together in the existing database transaction. No UI19 tables are added.
 
-Account, token, route, project and dialog guards prevent new stale actions and delayed reads from replacing other work. Duplicate save and ordinary Close/Escape are blocked while saving. Already-sent actions can still complete. Unrelated operational drafts, checklist queues and conflict handling are not changed.
+If the response is lost, the hub may already have saved the upload. The open form retains the exact request/reference for **Retry same upload**, or **Check saved upload outcome** without resending the file. A matching explicit receipt lookup may settle only this upload's local warning, not unrelated warnings. No visible receipt yet is **not proof of failure**; a request may still be running. Do not start a replacement upload merely because a response was lost. Once the tab/request has been lost, inspect the saved library and audit before starting different work.
 
-## Uploads, revisions and project transfers
+If local receipt storage fails before sending, the form says the upload was not sent. If the hub has saved but local warning storage fails, the confirmed hub result and remaining local warning are distinguished. The retry cache is not portable across selective project/workspace transfers; those retain document bytes/folder audit but clear operations. Do not replay an old upload into a transferred or restored project.
 
-This release organises **already stored Originals**. It is not a new browser uploader, universal attachment manager or native folder editor. Existing Add original, Add revision, source-linking and lifecycle tools keep their previous locations and rules. Newly imported originals/revisions start in the library root and can then be organised explicitly. Destination choice during upload and native folder-authoring remain follow-up work.
+## Apply after a passing baseline check
 
-Complete project transfers retain folder metadata. Selected workspace exports/imports that include the **documents** module retain its folders, locations and history; excluding documents omits them together, not as orphaned folder records. Reusable setup/template exports retain their existing format and do not carry shared folder organisation. This is not vessel/cloud synchronisation.
+1. Preserve unfinished browser and separate-log-window work, a complete approved project backup, the current approved Git commit and any outside/uncommitted edits. Deploy outside an operational presentation. A source ZIP and a browser-local recovery export are not complete live-service backups.
+2. Copy the **contents of this patch's UPLOAD_TO_GITHUB** into the existing repository root, preserving the subfolders. **Do not replace the repository with this small patch and do not delete files missing from the ZIP.** There are no required deletions, dependencies, environment changes or UI19 table additions.
+3. Check the installed files with `CHECK_UI19_UPDATE.ps1 -RepositoryPath "C:\path\to\your\wavelink" -Mode Installed`. Review the Git diff. Only `deploy/extract_source.py` changes among existing executable repository files; application changes are embedded there. Other changed/new files are current instructions/provenance/checksums.
+4. Commit and push the reviewed change through the existing GitHub workflow; deploy the intended commit through your established service. This package has not pushed or deployed anything for you.
 
-## Server changes in this release
-
-Unlike the preceding static-only increments, UI18 includes a small server extension. Three existing Python files change: `app/original_documents.py`, `app/project_modules.py` and `app/server.py`. Two modules are added: `app/original_folders.py` and `app/original_folders_api.py`. The other **173 existing application Python files remain unchanged**.
-
-Normal store startup ensures three additive tables: `original_document_folders`, `original_document_locations` and `original_document_folder_audit`, with a sibling-name index. Authorised explicit organisation writes are transaction-scoped and audited. The new catalogue/history/organisation endpoints are under the existing Original documents permission route; existing file/list endpoints and document-reference formats remain unchanged.
-
-All source changes are carried by the cumulative verified extractor. Among existing executable files in **UPLOAD_TO_GITHUB**, only `deploy/extract_source.py` changes. Hosting gateway, guest configuration, supervisor, Dockerfile, dependencies, source parts, fictional seed and recovery helper remain byte-identical to supplied UI17. No new production dependency is added. The core version remains **1.34.19**, with the deployment variant identifying UI18.
-
-## Help and retained workflows
-
-**Original files Help** is reviewed against this release, including browser/native distinctions, exact revision moves, permissions, saving/retry and transfer limits. The other **75 article bodies remain unchanged**, including the four previously reviewed topics. There are now **five distinct bounded wording-reviewed topics**: daily, records, maintenance, dashboard and originals. The remaining 71, broader entry-point/authoring/accessibility acceptance, native Help and master PDF still need review.
-
-Home remains **UI13**; the standalone checklist stage remains **UI09**, result editor **UI16**, and approval/readiness/finalisation guides **UI17**. Earlier maintenance, inventory, boxes, shipment/receiving and administration work remains cumulative. No native vessel installer or CCVD component is changed.
-
-## Update through the existing GitHub Desktop workflow
-
-1. Preserve unfinished work in every browser and separate log window, the previous approved commit and the established project backup. Preserve outside edits and fetch/pull the intended branch in the existing Wavelink checkout. The ZIP is source and fictional fixtures, **not a current live-project backup**.
-2. Extract the full ZIP. Copy the **contents of `UPLOAD_TO_GITHUB`** into the repository root, preserving subfolders and `.git`. Do not upload the enclosing folder, `REFERENCE_ONLY`, `PREVIEWS` or `VALIDATION` as application files.
-3. Review the changes, commit and **Push origin**. Reconcile outside modifications before overwriting anything. Deploy the approved commit to the existing Render service outside a presentation.
-4. Keep the current domain, secrets, guest settings and persistent disk, with:
+Preserve **https://demo.mywavelink.com**, current passwords/secrets, guest settings, persistent disk, `.git`, outside changes, and:
 
 ```text
 PUBLIC_URL=https://demo.mywavelink.com
 INITIALISE_FICTIONAL_DEMO=NO
 ```
 
-Keep the initial-admin bootstrap removed. Expected extraction output:
+Keep the initial-admin bootstrap setting removed. **No reset, demonstration re-import, category reset, browser-storage clearing or domain change.** Preserve unsent work before the normal browser/service-worker update; actual service-worker lifecycle acceptance remains outstanding.
+
+Expected build message:
 
 ```text
 Verified upstream 1.34.19: 1605 tracked files.
-Applied Workspace UI 18: shared original-file folders and reviewed Originals Help; includes UI01-UI17; no automatic document classification.
+Applied Workspace UI 19: browser original uploads, new revisions and reviewed destination; supplied UI18 lineage; no new tables or automatic document changes.
 ```
 
-After healthy startup, open **Workspace menu → Original files** and look for **WORKSPACE UI18**. Home still has its earlier badge. Preserve unsent work before reopening older tabs for the service-worker update. **Do not clear site data, reset the project or re-import the demo.** Existing files initially remain in the root until explicitly organised.
+Original Files shows UI19. Home stays UI13; existing checklist/maintenance badges retain their earlier versions. UI19 retains the supplied UI18 folder semantics, not the other unrecovered variant's descriptions.
 
-## Rollback and acceptance
+## Schema check and rollback
 
-The exact UI17 extractor is included at **`REFERENCE_ONLY/Workspace_UI18/rollback/deploy/extract_source.py`**. Reverting the extractor returns the old flat library; it does not reverse folder changes or remove the new metadata. UI17 does not display these folders. Its selected-workspace exporter can refuse unknown UI18 tables: do not delete metadata or weaken transfer checks to force an older export. Return to UI18 or use an accepted complete-project backup process. Never reset the disk to roll back an interface.
+Before ordinary Store initialization writes, a read-only guard refuses the known alternate UI18 folder tables or incomplete/unexpected versions of the supplied folder schema. It is a safeguard, not a general migration tool, database-history proof or off-host recovery acceptance. A refusal means stop and restore the previously approved source/deployment path without resetting data, then reconcile the actual source/schema.
 
-After deployment verify normal/guest/restricted entry; reader versus administrator controls; file details/download; at least one reviewed fictional folder/revision move; a stale review; saved history; and persistence through a deliberate service restart. Check the existing inventory, receiving, maintenance and checklist workflows. Test real phones/Windows and the intended project-transfer procedure. A restart check is not an off-host recovery acceptance.
+Rollback source: your preserved matching supplied-UI18 Git commit, not the unrelated UI18 report. UI19 adds no tables; originals explicitly uploaded during UI19 remain in the library after rollback and are not erased. A local fictional source-upgrade/rollback read check passed, but this is not a complete live/off-host restoration drill. The old pristine-source recovery helper is still unapproved for the overlaid runtime; do not bypass its checks.
 
-The original pristine-source recovery helper remains **unapproved for the overlaid runtime**. Do not bypass its checks. Preserve browser-only unsent work separately; a server backup does not include it.
+## Validation and boundaries
 
-## Local validation
+See `DELIVERY_CHECKS.json` and the separate final packaging report for the completed selected test groups. Local browser tests used delivered assets, fictional SQLite projects and real local TestClient-backed API handling, with injected fetch, in-memory browser persistence and injected SHA-256 because managed Chromium blocked URL navigation. They do not establish native hosted WebCrypto, TLS, durable storage, physical-device or service-worker acceptance. Partial/failed preparatory runs are excluded.
 
-**534 selected Python cases, 268 compound browser checks and 47 JavaScript syntax checks passed** in the final selected runs. All 178 application Python modules parsed. The new folder tests use real temporary SQLite projects and TestClient HTTP; browser tests use local Chromium with shipped scripts/styles, fictional projects and injected in-memory browser persistence. Actual old/new store startup and selected project transfers were exercised. The archive and fresh-extraction byte proof are in the external final ZIP verification JSON.
+No full-product suite, Docker image, live GitHub/Render deployment, real phones/Windows, malware scanning, load/security/company-isolation/full-accessibility acceptance or accepted off-host recovery is claimed. Backend changes are limited to three existing modules and two new upload modules; the other 175 existing application Python modules are byte-identical to the supplied UI18. Hosting, gateway, guest bootstrap, dependencies, source parts, seed and recovery helper are unchanged. Native vessel UI and CCVD remain out of scope; no vessel/cloud synchronization.
 
-Preliminary/incomplete harness attempts are retained separately and excluded from passes. This is **not the full product test suite**. No live GitHub fetch/Render deployment, Docker build, physical phone/Windows, durable browser storage/service-worker lifecycle, full accessibility, production-security/isolation or accepted off-host restoration is claimed.
+Originals Help is re-reviewed. The other 75 instructional article bodies remain unchanged (shared reader cache URLs update); five distinct topics are wording-reviewed and 71 remain, plus native/master-PDF and wider entry-point work.
 
-Next: hosted/user feedback, browser upload with explicit destination and revision workflow, native-folder/attachment scope decisions, and further bounded Help review. These are recorded development steps, not background work running after this delivery.
+Next: actual hosted Home/inventory/Originals feedback; continue the Help review and remaining workflow refinements. Native folder authoring, broader attachment/import formats, production readiness and the retained larger roadmap remain separate work. Development is not running automatically in the background.

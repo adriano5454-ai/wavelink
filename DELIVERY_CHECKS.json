@@ -1,398 +1,201 @@
 {
-  "format": "wavelink-workspace-ui18-delivery-1",
+  "format": "wavelink-workspace-ui19-delivery-1",
   "prepared": "2026-09-25",
   "core": "1.34.19",
-  "cumulative": "UI01-UI18",
-  "parent_archive_sha256": "9b23aae318fe82a862adf33a1d4d4fa17ab9761c5daaaf1ffa4936a4ac3d9dd1",
-  "parent_package_files_verified": 4628,
-  "parent_deployment_files_verified": 84,
-  "patch_id": "workspace-ui18-2026-09-25",
-  "changed_from_ui17": [
-    "app/original_documents.py",
-    "app/original_folders.py",
-    "app/original_folders_api.py",
-    "app/project_modules.py",
-    "app/server.py",
-    "app/static/app.js",
-    "app/static/help.html",
-    "app/static/help_catalogue.json",
-    "app/static/help_topics/accessreview.html",
-    "app/static/help_topics/approvals.html",
-    "app/static/help_topics/assetcalendar.html",
-    "app/static/help_topics/assetdetails.html",
-    "app/static/help_topics/assetlabels.html",
-    "app/static/help_topics/assignments.html",
-    "app/static/help_topics/backups.html",
-    "app/static/help_topics/browseradmin.html",
-    "app/static/help_topics/browserlogs.html",
-    "app/static/help_topics/browsertemplates.html",
-    "app/static/help_topics/browsertoolbox.html",
-    "app/static/help_topics/builder.html",
-    "app/static/help_topics/certificates.html",
-    "app/static/help_topics/companybranding.html",
-    "app/static/help_topics/containers.html",
-    "app/static/help_topics/create.html",
-    "app/static/help_topics/daily.html",
-    "app/static/help_topics/dashboard.html",
-    "app/static/help_topics/datetime.html",
-    "app/static/help_topics/departmentheads.html",
-    "app/static/help_topics/departments.html",
-    "app/static/help_topics/document.html",
-    "app/static/help_topics/documentimport.html",
-    "app/static/help_topics/evidence.html",
-    "app/static/help_topics/evidencereview.html",
-    "app/static/help_topics/faults.html",
-    "app/static/help_topics/fleet.html",
-    "app/static/help_topics/fleetaccess.html",
-    "app/static/help_topics/generaltasks.html",
-    "app/static/help_topics/handovercontinuity.html",
-    "app/static/help_topics/handovers.html",
-    "app/static/help_topics/https.html",
-    "app/static/help_topics/illustrations.html",
-    "app/static/help_topics/importcentre.html",
-    "app/static/help_topics/inventory.html",
-    "app/static/help_topics/inventorybuilder.html",
-    "app/static/help_topics/inventorytransfer.html",
-    "app/static/help_topics/itemjourney.html",
-    "app/static/help_topics/live.html",
-    "app/static/help_topics/logbuilder.html",
-    "app/static/help_topics/logexports.html",
-    "app/static/help_topics/logimport.html",
-    "app/static/help_topics/logreferences.html",
-    "app/static/help_topics/logs.html",
-    "app/static/help_topics/logwindows.html",
-    "app/static/help_topics/lowstock.html",
-    "app/static/help_topics/maintenance.html",
-    "app/static/help_topics/maintenancebuilder.html",
-    "app/static/help_topics/manifests.html",
-    "app/static/help_topics/navigation.html",
-    "app/static/help_topics/network.html",
-    "app/static/help_topics/offsets.html",
-    "app/static/help_topics/originals.html",
-    "app/static/help_topics/permissions.html",
-    "app/static/help_topics/phones.html",
-    "app/static/help_topics/projects.html",
-    "app/static/help_topics/qrverification.html",
-    "app/static/help_topics/qshe.html",
-    "app/static/help_topics/receiving.html",
-    "app/static/help_topics/recordmanagement.html",
-    "app/static/help_topics/records.html",
-    "app/static/help_topics/savestatus.html",
-    "app/static/help_topics/start.html",
-    "app/static/help_topics/stocktake.html",
-    "app/static/help_topics/storage.html",
-    "app/static/help_topics/support.html",
-    "app/static/help_topics/tasks.html",
-    "app/static/help_topics/toolbox.html",
-    "app/static/help_topics/toolboxbuilder.html",
-    "app/static/help_topics/toolboxguests.html",
-    "app/static/help_topics/transfers.html",
-    "app/static/help_topics/types.html",
-    "app/static/help_topics/uninstall.html",
-    "app/static/help_topics/users.html",
-    "app/static/help_topics/vessellogaccess.html",
-    "app/static/help_topics/vessellogs.html",
-    "app/static/help_workspace.js",
-    "app/static/index.html",
-    "app/static/original_library.css",
-    "app/static/original_library.js",
-    "app/static/sw.js"
-  ],
-  "cumulative_overlay_files": 131,
-  "tracked_files": 1635,
-  "extractor_sha256": "d63d6de8b7b076893e44c8faf5122be5ac136539685d7744a44adae85b01d980",
-  "changed_existing_application_python_files": [
-    "app/server.py",
-    "app/original_documents.py",
-    "app/project_modules.py"
-  ],
-  "new_application_python_files": [
-    "app/original_folders_api.py",
-    "app/original_folders.py"
-  ],
-  "unchanged_application_python_count": 173,
-  "application_python_count": 178,
-  "incremental_resources": 89,
-  "upstream_original_sha256": "8c1b6a8d731d01b05a1290d3a1dd1a544054147aac9048ca345af7983613cd9e",
-  "changed_existing_executable_upload_files": [
-    "deploy/extract_source.py"
-  ],
-  "live_repository_fetched": false,
-  "deployed": false,
-  "python": {
-    "passed": 534,
-    "failed": 0,
-    "errors": 0,
-    "skipped": 0,
-    "scope": "Completed distinct selected cases; preliminary/repeated cases not additional coverage. UI17-only source-contract tests are not reused as UI18 contracts.",
-    "runs": [
-      {
-        "name": "inherited_0",
-        "tests": 14,
-        "failures": 0,
-        "errors": 0,
-        "skipped": 0,
-        "evidence": "final/inherited_0.xml"
-      },
-      {
-        "name": "inherited_1",
-        "tests": 52,
-        "failures": 0,
-        "errors": 0,
-        "skipped": 0,
-        "evidence": "final/inherited_1.xml"
-      },
-      {
-        "name": "inherited_2",
-        "tests": 42,
-        "failures": 0,
-        "errors": 0,
-        "skipped": 0,
-        "evidence": "final/inherited_2.xml"
-      },
-      {
-        "name": "inherited_3",
-        "tests": 9,
-        "failures": 0,
-        "errors": 0,
-        "skipped": 0,
-        "evidence": "final/inherited_3.xml"
-      },
-      {
-        "name": "inherited_4",
-        "tests": 34,
-        "failures": 0,
-        "errors": 0,
-        "skipped": 0,
-        "evidence": "final/inherited_4.xml"
-      },
-      {
-        "name": "inherited_5",
-        "tests": 30,
-        "failures": 0,
-        "errors": 0,
-        "skipped": 0,
-        "evidence": "final/inherited_5.xml"
-      },
-      {
-        "name": "inherited_6",
-        "tests": 14,
-        "failures": 0,
-        "errors": 0,
-        "skipped": 0,
-        "evidence": "final/inherited_6.xml"
-      },
-      {
-        "name": "inherited_7",
-        "tests": 19,
-        "failures": 0,
-        "errors": 0,
-        "skipped": 0,
-        "evidence": "final/inherited_7.xml"
-      },
-      {
-        "name": "inherited_8",
-        "tests": 38,
-        "failures": 0,
-        "errors": 0,
-        "skipped": 0,
-        "evidence": "final/inherited_8.xml"
-      },
-      {
-        "name": "new_folders",
-        "tests": 65,
-        "failures": 0,
-        "errors": 0,
-        "skipped": 0,
-        "evidence": "final/new_folders.xml"
-      },
-      {
-        "name": "categories",
-        "tests": 38,
-        "failures": 0,
-        "errors": 0,
-        "skipped": 0,
-        "evidence": "final/categories.xml"
-      },
-      {
-        "name": "deployment",
-        "tests": 57,
-        "failures": 0,
-        "errors": 0,
-        "skipped": 0,
-        "evidence": "final/deployment.xml"
-      },
-      {
-        "name": "template_regression",
-        "tests": 49,
-        "failures": 0,
-        "errors": 0,
-        "skipped": 0,
-        "evidence": "final/template_regression.xml"
-      },
-      {
-        "name": "task_checklist_regression",
-        "tests": 47,
-        "failures": 0,
-        "errors": 0,
-        "skipped": 0,
-        "evidence": "final/task_checklist_regression.xml"
-      },
-      {
-        "name": "legacy_upgrade",
-        "tests": 1,
-        "failures": 0,
-        "errors": 0,
-        "skipped": 0,
-        "evidence": "final/legacy_upgrade.xml"
-      },
-      {
-        "name": "transfer_daily",
-        "tests": 4,
-        "failures": 0,
-        "errors": 0,
-        "skipped": 0,
-        "evidence": "final/transfer_daily.xml"
-      },
-      {
-        "name": "transfer_handover",
-        "tests": 5,
-        "failures": 0,
-        "errors": 0,
-        "skipped": 0,
-        "evidence": "final/transfer_handover.xml"
-      },
-      {
-        "name": "transfer_fault",
-        "tests": 8,
-        "failures": 0,
-        "errors": 0,
-        "skipped": 0,
-        "evidence": "final/transfer_fault.xml"
-      },
-      {
-        "name": "transfer_qshe",
-        "tests": 8,
-        "failures": 0,
-        "errors": 0,
-        "skipped": 0,
-        "evidence": "final/transfer_qshe.xml"
-      }
-    ]
-  },
-  "browser": {
-    "compound_checks_passed": 268,
-    "recorded_errors": 0,
-    "runs": [
-      {
-        "name": "new_browser",
-        "checks": 23,
-        "recorded_errors": 0,
-        "evidence": "final/new_browser/results.json"
-      },
-      {
-        "name": "checklist_review_browser",
-        "checks": 39,
-        "recorded_errors": 0,
-        "evidence": "final/checklist_review_browser/results.json"
-      },
-      {
-        "name": "result_editor_browser",
-        "checks": 39,
-        "recorded_errors": 0,
-        "evidence": "final/result_editor_browser/results.json"
-      },
-      {
-        "name": "linked_browser",
-        "checks": 21,
-        "recorded_errors": 0,
-        "evidence": "final/linked_browser/CHECKS.json"
-      },
-      {
-        "name": "checklist_stage_browser",
-        "checks": 22,
-        "recorded_errors": 0,
-        "evidence": "final/checklist_stage_browser/results.json"
-      },
-      {
-        "name": "help_browser",
-        "checks": 5,
-        "recorded_errors": 0,
-        "evidence": "final/help_browser/CHECKS.json"
-      },
-      {
-        "name": "approval_browser",
-        "checks": 19,
-        "recorded_errors": 0,
-        "evidence": "final/approval_browser/CHECKS.json"
-      },
-      {
-        "name": "home_browser",
-        "checks": 22,
-        "recorded_errors": 0,
-        "evidence": "final/home_browser/CHECKS.json"
-      },
-      {
-        "name": "management_browser",
-        "checks": 18,
-        "recorded_errors": 0,
-        "evidence": "final/management_browser/CHECKS.json"
-      },
-      {
-        "name": "forms_browser",
-        "checks": 26,
-        "recorded_errors": 0,
-        "evidence": "final/forms_browser/CHECKS.json"
-      },
-      {
-        "name": "shipments_browser",
-        "checks": 18,
-        "recorded_errors": 0,
-        "evidence": "final/shipments_browser/BROWSER_SUMMARY.json"
-      },
-      {
-        "name": "inventory_browser",
-        "checks": 16,
-        "recorded_errors": 0,
-        "evidence": "final/inventory_browser/UI04_BROWSER_RESULTS.json"
-      }
+  "source_variant": "supplied UI18 lineage only",
+  "source_build": {
+    "parent_extractor_sha256": "d63d6de8b7b076893e44c8faf5122be5ac136539685d7744a44adae85b01d980",
+    "extractor_sha256": "ac61f992b3f9f7b4a122b70a7b0dec59c55b5466ebce3d0bb4c92e3c0f6831fa",
+    "patch_id": "workspace-ui19-uploaded-ui18-2026-09-25",
+    "changed_runtime_files": [
+      "app/original_documents.py",
+      "app/original_upload.py",
+      "app/original_upload_api.py",
+      "app/server.py",
+      "app/static/app.js",
+      "app/static/help.html",
+      "app/static/help_catalogue.json",
+      "app/static/help_topics/accessreview.html",
+      "app/static/help_topics/approvals.html",
+      "app/static/help_topics/assetcalendar.html",
+      "app/static/help_topics/assetdetails.html",
+      "app/static/help_topics/assetlabels.html",
+      "app/static/help_topics/assignments.html",
+      "app/static/help_topics/backups.html",
+      "app/static/help_topics/browseradmin.html",
+      "app/static/help_topics/browserlogs.html",
+      "app/static/help_topics/browsertemplates.html",
+      "app/static/help_topics/browsertoolbox.html",
+      "app/static/help_topics/builder.html",
+      "app/static/help_topics/certificates.html",
+      "app/static/help_topics/companybranding.html",
+      "app/static/help_topics/containers.html",
+      "app/static/help_topics/create.html",
+      "app/static/help_topics/daily.html",
+      "app/static/help_topics/dashboard.html",
+      "app/static/help_topics/datetime.html",
+      "app/static/help_topics/departmentheads.html",
+      "app/static/help_topics/departments.html",
+      "app/static/help_topics/document.html",
+      "app/static/help_topics/documentimport.html",
+      "app/static/help_topics/evidence.html",
+      "app/static/help_topics/evidencereview.html",
+      "app/static/help_topics/faults.html",
+      "app/static/help_topics/fleet.html",
+      "app/static/help_topics/fleetaccess.html",
+      "app/static/help_topics/generaltasks.html",
+      "app/static/help_topics/handovercontinuity.html",
+      "app/static/help_topics/handovers.html",
+      "app/static/help_topics/https.html",
+      "app/static/help_topics/illustrations.html",
+      "app/static/help_topics/importcentre.html",
+      "app/static/help_topics/inventory.html",
+      "app/static/help_topics/inventorybuilder.html",
+      "app/static/help_topics/inventorytransfer.html",
+      "app/static/help_topics/itemjourney.html",
+      "app/static/help_topics/live.html",
+      "app/static/help_topics/logbuilder.html",
+      "app/static/help_topics/logexports.html",
+      "app/static/help_topics/logimport.html",
+      "app/static/help_topics/logreferences.html",
+      "app/static/help_topics/logs.html",
+      "app/static/help_topics/logwindows.html",
+      "app/static/help_topics/lowstock.html",
+      "app/static/help_topics/maintenance.html",
+      "app/static/help_topics/maintenancebuilder.html",
+      "app/static/help_topics/manifests.html",
+      "app/static/help_topics/navigation.html",
+      "app/static/help_topics/network.html",
+      "app/static/help_topics/offsets.html",
+      "app/static/help_topics/originals.html",
+      "app/static/help_topics/permissions.html",
+      "app/static/help_topics/phones.html",
+      "app/static/help_topics/projects.html",
+      "app/static/help_topics/qrverification.html",
+      "app/static/help_topics/qshe.html",
+      "app/static/help_topics/receiving.html",
+      "app/static/help_topics/recordmanagement.html",
+      "app/static/help_topics/records.html",
+      "app/static/help_topics/savestatus.html",
+      "app/static/help_topics/start.html",
+      "app/static/help_topics/stocktake.html",
+      "app/static/help_topics/storage.html",
+      "app/static/help_topics/support.html",
+      "app/static/help_topics/tasks.html",
+      "app/static/help_topics/toolbox.html",
+      "app/static/help_topics/toolboxbuilder.html",
+      "app/static/help_topics/toolboxguests.html",
+      "app/static/help_topics/transfers.html",
+      "app/static/help_topics/types.html",
+      "app/static/help_topics/uninstall.html",
+      "app/static/help_topics/users.html",
+      "app/static/help_topics/vessellogaccess.html",
+      "app/static/help_topics/vessellogs.html",
+      "app/static/help_workspace.js",
+      "app/static/index.html",
+      "app/static/original_library.css",
+      "app/static/original_library.js",
+      "app/static/original_upload.js",
+      "app/static/sw.js",
+      "app/store.py"
     ],
-    "transport": "Local Chromium; actual shipped scripts/styles; TestClient HTTP; temporary fictional projects; injected in-memory browser persistence."
-  },
-  "javascript_syntax_files": 47,
-  "python_syntax_files": 178,
-  "help": {
-    "reviewed_this_release": [
-      "originals"
+    "cumulative_overlay_files": 135,
+    "tracked_files": 1638,
+    "application_python_count": 180,
+    "changed_existing_application_python_files": [
+      "app/original_documents.py",
+      "app/server.py",
+      "app/store.py"
     ],
-    "other_article_bodies_unchanged": 75,
-    "distinct_bounded_reviewed_topics": [
-      "daily",
-      "records",
-      "maintenance",
-      "dashboard",
-      "originals"
+    "new_application_python_files": [
+      "app/original_upload.py",
+      "app/original_upload_api.py"
     ],
-    "native_pdf_original_reference_unchanged": true,
-    "full_help_review_complete": false
+    "unchanged_existing_application_python_count": 175,
+    "javascript_syntax_count": 48,
+    "other_help_article_bodies_byte_equivalent": 75,
+    "upstream_manifest_count": 1605,
+    "source_runtime_equivalence": true
   },
-  "database_extension": {
-    "new_tables": [
-      "original_document_folders",
-      "original_document_locations",
-      "original_document_folder_audit"
+  "selected_python_cases": 338,
+  "selected_python_groups": {
+    "browser_original_upload": 63,
+    "actual_supplied_ui18_upgrade_and_source_rollback": 1,
+    "inherited_original_folder_workflows": 65,
+    "records_originals_storage_transfers": 70,
+    "maintenance_cycles": 52,
+    "browser_admin": 30,
+    "deployment_contracts": 57
+  },
+  "compound_browser_checks": 49,
+  "browser_groups": {
+    "uploads": 21,
+    "folders": 23,
+    "help": 5
+  },
+  "browser_limitations": {
+    "transport": "injected fetch backed by local TestClient, actual application scripts and API handlers",
+    "digest": "injected Python SHA-256; native WebCrypto/HTTPS not accepted",
+    "navigation": "about:blank; managed Chromium blocked URL navigation, policies unchanged",
+    "persistence": "in-memory, not durable browser storage",
+    "data": "temporary fictional projects"
+  },
+  "syntax": {
+    "application_python_parsed": 180,
+    "javascript_node_syntax": 48
+  },
+  "preliminary_attempts": "Excluded. Initial application finding (matching receipt warning) fixed; browser fixture, collection-path mistakes and incomplete time-limited runs retained separately. No broad incomplete-run cause established.",
+  "not_claimed": [
+    "full product suite",
+    "Docker image build",
+    "live GitHub fetch or push",
+    "Render deployment",
+    "physical Windows/phone acceptance",
+    "native PowerShell helper execution",
+    "hosted TLS/WebCrypto acceptance",
+    "service-worker lifecycle",
+    "durable browser persistence",
+    "load/malware/security/isolation/full accessibility acceptance",
+    "accepted off-host recovery"
+  ],
+  "database": "No new UI19 tables; exact supplied folder schema checked read-only before ordinary startup writes. Explicit upload writes existing originals/locations/original audit/operations transactionally.",
+  "application_python_changes": {
+    "existing_changed": [
+      "app/original_documents.py",
+      "app/server.py",
+      "app/store.py"
     ],
-    "automatic_classification": false,
-    "original_rows_rewritten": false,
-    "normal_store_initialisation_ensures_tables": true,
-    "actual_ui17_project_upgrade_test_passed": true
+    "new": [
+      "app/original_upload.py",
+      "app/original_upload_api.py"
+    ],
+    "existing_unchanged": 175
   },
-  "limitations": [
-    "No live GitHub fetch or Render deployment.",
-    "Not the full product suite, Docker image build or physical Windows/phone acceptance.",
-    "No durable browser storage/service-worker lifecycle, accepted off-host restoration, full accessibility, production-security or multi-company isolation acceptance.",
-    "The new form is connection-required and memory-only; no persistent browser draft or offline action queue.",
-    "Browser uploading/destination at upload/native folder authoring remain outside this release.",
-    "The original pristine-source recovery helper remains unapproved for overlaid runtime; UI17 rollback hides folder metadata and its selected exporter may refuse the new tables."
-  ]
+  "only_existing_executable_repository_file_changed": "deploy/extract_source.py",
+  "hosting_dependencies_vendor_seed_recovery_unchanged": true,
+  "no_live_secrets_or_project_database": true,
+  "gateway_G01": {
+    "date": "2026-09-25",
+    "mode": "optional public guest entry",
+    "default": "NO",
+    "flag": "DEMO_PUBLIC_ENTRY=YES",
+    "core_and_workspace_unchanged": "1.34.19 / UI19",
+    "changed_existing_executables": [
+      "deploy/gate.py",
+      "deploy/entrypoint.py"
+    ],
+    "source_sha256": {
+      "gate": "9dc4ab6f7b7fb324ea06c305a09af8336b0bd10e7be6bef5296af1fd32d2e701",
+      "entrypoint": "a2bbac57635ac6e0b12400bbcbfc7382416ed3d5c7525e4218b7e38c2e7a633f"
+    },
+    "completed_python_cases": 90,
+    "handoff_fixture_checks": 13,
+    "local_nginx_gate_fixture_checks": 13,
+    "javascript_syntax_checks": 1,
+    "real_browser_run": "blocked at navigation, excluded",
+    "application_suite_rerun": false,
+    "deployed": false,
+    "no_permission_db_or_ui_changes": true,
+    "scope": "Addendum only; historical UI19 results elsewhere in this file are not new G01 results."
+  }
 }

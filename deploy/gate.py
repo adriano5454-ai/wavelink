@@ -7,6 +7,10 @@ session in the existing browser workspace. No password is embedded in this file.
 
 Query-string links may remain in messages/history/provider logs. Rotate the demo
 access password and disable/change the guest account after the presentation.
+
+G01: DEMO_PUBLIC_ENTRY=YES optionally admits fresh visitors as the configured
+non-administrator guest. Default is NO. Public entry never overwrites an
+existing saved browser workspace; normal staff sign-in remains separate.
 """
 from __future__ import annotations
 
@@ -44,9 +48,21 @@ BOOT_HEADERS = {
 }
 
 
+
+def public_entry_enabled(value: str | None) -> bool:
+    """Only an explicit YES enables public access; typos do not open the gate."""
+    selected = (value or 'NO').strip()
+    if selected not in ('YES', 'NO'):
+        raise ValueError('DEMO_PUBLIC_ENTRY must be YES or NO.')
+    return selected == 'YES'
+
+
 class Gate:
     def __init__(self, origin: str, password: str, key: bytes,
-                 guest_login: str, guest_password: str, *, clock=time.time):
+                 guest_login: str, guest_password: str, *, clock=time.time, public_entry=False):
+        if type(public_entry) is not bool:
+            raise ValueError('Invalid public demonstration mode.')
+        self.public_entry = public_entry
         if len(key) != 32:
             raise ValueError('Invalid demonstration gate key.')
         if not 20 <= len(password) <= 128:
@@ -65,6 +81,7 @@ class Gate:
         self.epoch = hmac.new(key, b'gate-password:' + self.password_digest,
                               hashlib.sha256).hexdigest()
         self.attempts = deque()
+        self.public_attempts = deque()
 
     def token(self, kind: str, lifetime: int) -> str:
         payload = json.dumps({
@@ -169,13 +186,15 @@ button {{width:100%;padding:14px;border:0;border-radius:8px;background:#087b83;c
                             httponly=True, samesite='strict')
         return response
 
-    def register_attempt(self) -> bool:
+    def register_attempt(self, *, public=False) -> bool:
+        # Separate budget: public traffic must not consume the staff login budget.
+        attempts = self.public_attempts if public else self.attempts
         now = self.clock()
-        while self.attempts and self.attempts[0] < now - 300:
-            self.attempts.popleft()
-        if len(self.attempts) >= 20:
+        while attempts and attempts[0] < now - 300:
+            attempts.popleft()
+        if len(attempts) >= 20:
             return False
-        self.attempts.append(now)
+        attempts.append(now)
         return True
 
     def password_matches(self, supplied: str) -> bool:
@@ -320,6 +339,153 @@ h1 {{margin-top:0}}#error {{color:#9d2534;white-space:pre-wrap}}
 }})();
 </script></body></html>'''
 
+    @staticmethod
+    def public_bootstrap_page(auth: dict) -> str:
+        """Atomically create a fresh guest workspace, never replace a saved one."""
+        encoded = json.dumps(auth, separators=(',', ':')).replace(
+            '<', '\\u003c').replace('>', '\\u003e').replace('&', '\\u0026')
+        script = r"""
+(() => {
+    const auth = __AUTH_JSON__;
+    const error = document.getElementById('error');
+    const fail = message => { error.textContent = message; };
+    if (!window.indexedDB) {
+        fail('Browser storage is unavailable. Use a browser with IndexedDB enabled.');
+        return;
+    }
+    const request = indexedDB.open('pxgeo-dive-check-1', 1);
+    request.onupgradeneeded = () => {
+        const db = request.result;
+        if (!db.objectStoreNames.contains('state')) db.createObjectStore('state');
+    };
+    request.onerror = () => fail('The browser workspace could not be opened. Nothing was cleared.');
+    request.onblocked = () => fail('Another tab is holding this workspace open. '
+        + 'Preserve its work and use a private/incognito window for the demo.');
+    request.onsuccess = () => {
+        const db = request.result;
+        let tx;
+        try { tx = db.transaction('state', 'readwrite'); }
+        catch (_) {
+            db.close();
+            fail('The saved workspace could not be read. Nothing was replaced.');
+            return;
+        }
+        const store = tx.objectStore('state');
+        const mainReq = store.get('main');
+        const leaseReq = store.get('lease');
+        let saved, lease, reads = 0, outcome = '';
+        let message = '';
+        const finishRead = () => {
+            if (++reads !== 2) return;
+            if (saved !== undefined && saved !== null) {
+                // Preserve every byte/field, including unknown future draft types.
+                if (typeof saved?.auth?.token === 'string' && saved.auth.token
+                        && saved?.auth?.person?.user_id
+                        && saved.hub_id === auth.hub_id) {
+                    outcome = 'existing';
+                } else {
+                    outcome = 'blocked';
+                    message = 'This browser already has a saved Wavelink workspace. '
+                        + 'Nothing has been replaced or cleared. Use normal staff sign-in '
+                        + 'or open the public demo in a private/incognito window.';
+                }
+                return;
+            }
+            if (lease && Number(lease.expires) > Date.now()) {
+                outcome = 'blocked';
+                message = 'Another Wavelink tab is using this browser workspace. '
+                    + 'Preserve its work and use a private/incognito window for the demo.';
+                return;
+            }
+            const next = {
+                hub_id:auth.hub_id, info:null, auth:auth,
+                device_id:auth.person.device_id || crypto.randomUUID(), template:null,
+                records:[], snapshots:{}, queue:[], drafts:{}, formDraft:null,
+                lastLogin:auth.person.login_id || '', lastName:auth.person.name || ''
+            };
+            // This put and both reads share one readwrite transaction. A second
+            // simultaneous visit cannot pass an old empty check then replace work.
+            store.put(next, 'main');
+            outcome = 'new';
+        };
+        mainReq.onsuccess = () => { saved = mainReq.result; finishRead(); };
+        leaseReq.onsuccess = () => { lease = leaseReq.result; finishRead(); };
+        tx.oncomplete = () => {
+            db.close();
+            if (outcome === 'new' || outcome === 'existing') location.replace('/#home');
+            else fail(message || 'The workspace could not be prepared. Nothing was replaced.');
+        };
+        tx.onabort = () => {
+            db.close();
+            fail('The workspace could not be saved. No guest session was installed. '
+                + 'Check browser storage and try again.');
+        };
+        tx.onerror = () => { /* Abort handler reports the uncommitted transaction. */ };
+    };
+})();
+""".replace('__AUTH_JSON__', encoded)
+        return (
+            '<!doctype html><html lang="en"><head><meta charset="utf-8">'
+            '<meta name="viewport" content="width=device-width,initial-scale=1">'
+            '<title>Opening Wavelink demo</title><style>'
+            'body{margin:0;min-height:100vh;display:grid;place-items:center;'
+            'background:#eef2f6;color:#182b40;font:16px system-ui,sans-serif}'
+            'main{width:min(460px,calc(100vw - 48px));box-sizing:border-box;'
+            'background:white;padding:28px;border:1px solid #d7e0e8;border-radius:16px}'
+            'h1{margin-top:0}p{line-height:1.5}#error{color:#9d2534}a{color:#086b73}'
+            '</style></head><body><main><h1>Opening Wavelink…</h1>'
+            '<p>Preparing the fictional guest demonstration.</p>'
+            '<p id="error" role="alert"></p>'
+            '<p><a href="/__demo/login">Normal staff sign-in</a></p>'
+            '<noscript>JavaScript is required to open the Wavelink demonstration.</noscript>'
+            '</main><script>' + script + '</script></body></html>'
+        )
+
+    async def public(self, request: Request):
+        """Opt-in anonymous entry into the existing fictional guest account.
+
+        No administrator impersonation, new user, permission edit, database reset,
+        credential in a URL, or replacement of an existing browser workspace.
+        """
+        if not self.public_entry:
+            return Response(status_code=404, headers=HEADERS)
+        if request.method != 'GET':
+            return Response(status_code=405, headers={**HEADERS, 'Allow': 'GET'})
+        if not self.register_attempt(public=True):
+            return JSONResponse(
+                {'error': 'Too many guest openings. Wait five minutes and try again.'},
+                status_code=429, headers={**HEADERS, 'Retry-After': '300'})
+        try:
+            auth = self.authenticate_guest()
+            person = auth.get('person') if isinstance(auth, dict) else None
+            if (not isinstance(person, dict)
+                    or person.get('role') not in ('technician', 'supervisor')
+                    or not person.get('user_id')
+                    or str(person.get('login_id', '')).casefold() != self.guest_login_id.casefold()
+                    or not isinstance(auth.get('token'), str) or not auth['token']
+                    or not isinstance(auth.get('hub_id'), str) or not auth['hub_id']):
+                raise RuntimeError('Unsafe or incomplete public guest identity.')
+        except (RuntimeError, OSError, http.client.HTTPException):
+            # Never send a credential, exception detail or an admin session.
+            return HTMLResponse(
+                '<!doctype html><html lang="en"><meta charset="utf-8">'
+                '<meta name="viewport" content="width=device-width,initial-scale=1">'
+                '<title>Wavelink demo unavailable</title>'
+                '<h1>Guest demonstration unavailable</h1>'
+                '<p>The operator must check the configured guest account, its password, '
+                'and its non-administrator role. No account or permissions were changed.</p>'
+                '<p><a href="/__demo/login">Normal staff sign-in</a></p></html>',
+                status_code=503, headers=BOOT_HEADERS)
+        response = HTMLResponse(
+            self.public_bootstrap_page(auth), headers=BOOT_HEADERS)
+        # Public-only admission is rejected after public mode is switched OFF.
+        # Existing private/staff admission still uses the original "session" kind.
+        response.set_cookie(COOKIE, self.token('public-session', TTL), max_age=TTL,
+                            path='/', secure=True, httponly=True, samesite='strict')
+        response.delete_cookie(CSRF_COOKIE, path='/', secure=True,
+                               httponly=True, samesite='strict')
+        return response
+
     async def quick(self, request: Request):
         supplied = request.query_params.get('key', '')
         if not supplied or len(supplied) > 128:
@@ -363,7 +529,9 @@ h1 {{margin-top:0}}#error {{color:#9d2534;white-space:pre-wrap}}
         return self.admitted_response()
 
     async def check(self, request: Request):
-        valid = self.valid(request.cookies.get(COOKIE), 'session')
+        token = request.cookies.get(COOKIE)
+        valid = (self.valid(token, 'session')
+                 or (self.public_entry and self.valid(token, 'public-session')))
         return Response(status_code=204 if valid else 401, headers=HEADERS)
 
     async def required(self, request: Request):
@@ -372,7 +540,8 @@ h1 {{margin-top:0}}#error {{color:#9d2534;white-space:pre-wrap}}
         accept = request.headers.get('accept', '')
         if (method == 'GET' and (original == '/' or original.startswith(('/fleet', '/admin')))
                 and 'text/html' in accept):
-            return RedirectResponse('/__demo/login', status_code=303, headers=HEADERS)
+            destination = '/__demo/public' if self.public_entry and original == '/' else '/__demo/login'
+            return RedirectResponse(destination, status_code=303, headers=HEADERS)
         return JSONResponse({'error': 'Demo access has expired. Open /__demo/login.',
                              'demo_access_required': True}, 401, headers=HEADERS)
 
@@ -391,6 +560,7 @@ h1 {{margin-top:0}}#error {{color:#9d2534;white-space:pre-wrap}}
 
     def app(self):
         return Starlette(routes=[
+            Route('/__demo/public', self.public, methods=['GET']),
             Route('/__demo/quick', self.quick, methods=['GET']),
             Route('/__demo/login', self.login, methods=['GET', 'POST']),
             Route('/__demo/check', self.check),
@@ -404,7 +574,8 @@ if __name__ == '__main__':
     import uvicorn
     gate = Gate(os.environ['DEMO_GATE_ORIGIN'], os.environ['DEMO_ACCESS_PASSWORD'],
                 Path(os.environ['DEMO_GATE_KEY_FILE']).read_bytes(),
-                os.environ['DEMO_GUEST_LOGIN'], os.environ['DEMO_GUEST_PASSWORD'])
+                os.environ['DEMO_GUEST_LOGIN'], os.environ['DEMO_GUEST_PASSWORD'],
+                public_entry=public_entry_enabled(os.environ.get('DEMO_PUBLIC_ENTRY')))
     uvicorn.run(gate.app(), host='127.0.0.1',
                 port=int(os.environ.get('DEMO_GATE_PORT', '8766')), workers=1,
                 proxy_headers=False, access_log=False, server_header=False,
