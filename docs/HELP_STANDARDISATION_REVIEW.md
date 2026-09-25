@@ -53,3 +53,70 @@ The original UI07 checklist above is preserved as a historical baseline. This se
 | HELP-10 regressions | New tests require exact unchanged instructional text for the other 74 topics, matching catalogue/outline content for the revised two, no desktop import in Help routes, and preserved operational actions. | Consolidated authoring/build workflow and broader CI. |
 
 All 76 browser topics keep the UI07 reader. The other 74 instructional articles remain text-identical, aside from their shared reader's cache-reference change. Native Help, original all-in-one reference and PDF guides are untouched. UI08 source review is explicit; preserving or styling text is not the same as accepting it for current operations.
+
+
+## UI09 progress — 25 September 2026
+
+The UI07 checklist and UI08 updates above are retained as history. This increment does not mark all Help reviewed.
+
+| Item | UI09 change | Still required |
+|---|---|---|
+| HELP-04 | Rechecked `daily` against the actual opened-stage controls: Checks, Team & stage review, Instructions & source, scoped For later, saved/local counts, Record tools and readiness. `records` retains its UI08 review. | Remaining 74 topic articles and detailed editor/evidence/reviewer wording; continue reviewing the two revised topics as controls evolve. |
+| HELP-05 | Daily guidance keeps hosted internet/local-vessel distinctions and does not present local drafts as server saves. | Other local/hosted instruction paths, server operation, imports and recovery. |
+| HELP-06 | Stage Help/Record tools routes use the existing browser Help reader. The inline For later hint now describes the real filtered behavior. | All other menu/dialog/special-page links and return contexts. |
+| HELP-09 | Actual shipped layout checked at 390px/320px, escaped content and scoped dialog/keyboard controls. | Real phones, durable storage, full assistive-technology and live acceptance. |
+| HELP-10 | Tests require unchanged source text for the other 75 articles, matching daily catalogue/outline, and unchanged business functions. | Shared authoring/CI and native/PDF consistency. |
+
+Only the daily article's instructional wording changes. The other 75 article bodies remain exact, including the UI08 records article; cache references advance for the updated catalogue. No native guide, all-in-one reference or master PDF is rebuilt.
+
+
+## UI10 progress — 25 September 2026
+
+The earlier checklist and increments remain historical records, not implied whole-library completion.
+
+| Item | UI10 change | Still required |
+|---|---|---|
+| HELP-04 | Reviewed `maintenance` against actual catalogue/filter/detail/step/review/cycle controls; current labels and action effects verified. | Remaining73 unreviewed article bodies, finer evidence/approval/editor paths and continuing review as the three revised articles evolve. |
+| HELP-05 | Maintenance article distinguishes browser Templates & routines and hosted saves from native Projects export and unapproved overlay recovery. | Remaining hosted/local instruction paths, operator procedures and actual accepted recovery. |
+| HELP-06 | Maintenance Help and template shortcuts use existing routes without submitting an operational form. | All remaining menu/dialog/install/contact/example links and cross-workspace return contexts. |
+| HELP-09 | Local Maintenance Help rendering, narrow layout, current-topic/outline/search and print checks; no Tk dependency in all76 browser topic routes. | Real devices, complete accessibility and durable-storage acceptance. |
+| HELP-10 | Tests preserve the other75 article bodies and native/PDF output, match catalogue text and assert unchanged business services/action editors. | Shared authoring pipeline/CI and full native/PDF consistency. |
+
+Only the Maintenance article's instructional text changes in UI10. The daily and records reviews from prior increments remain, giving three distinct bounded article reviews. Detailed recurring-maintenance guidance is retained. No master PDF or native guide is regenerated; reference files remain original. Original Files logical folders remain pending, not implemented by a Help restyle.
+
+
+## UI11 progress — 25 September 2026
+
+The historical checklist and UI07–UI10 findings above are preserved. UI11 rechecks the Maintenance article again; it does not count as another distinct completed topic.
+
+| Item | UI11 change | Still required |
+|---|---|---|
+| HELP-04 | Maintenance article now describes the four-page catalogue creation form and three-page step form, actual labels, original limits, photo requirements and Saved/Proposed review. | Remaining73 unreviewed article bodies, finer approval/cycle/close paths, continuous review of the three revised topics. |
+| HELP-05 | Keeps server-saved versus local-draft distinction and the separate exact-asset linked-creation route; hosted/local export/recovery caveats retained. | Other hosted/local instruction paths and accepted operator recovery. |
+| HELP-06 | Existing Maintenance Help opens the reviewed article; guide controls do not submit on intermediate pages. | Every other menu/dialog/special-page entry point. |
+| HELP-09 | Local article/current-topic/full-text/print checks and new form viewports320–1512; original proof rules retained. | Physical devices, real storage, full keyboard/screen-reader/contrast/zoom acceptance. |
+| HELP-10 | Tests require75 untouched article bodies, matching maintenance outline/catalogue and identical original create/step API payloads. | Consolidated authoring/CI/native/PDF pipeline. |
+
+All76 registered topics retain the shared reader. Only Maintenance instructional text changed; native Help, all-in-one reference and master PDF remain unchanged. Three distinct bounded reviewed topics remain daily, records and maintenance. Source preservation is not proof that all instructions are current for hosted operations. Original Files folder organisation is still pending.
+
+
+## UI12 progress — 25 September 2026
+
+Prior checkpoint sections remain historical. `maintenance` now documents Saved work & note / Confirm completion or cancellation, saved/proposed cycle reviews, and stopping a blocked pending follow-up. UI12 keeps the original named fields, actions and service meanings. Home refinement is separately pending in the active development list, not a Help-review completion.
+
+| Work item | UI12 progress | Remaining work |
+|---|---|---|
+| HELP-04 current controls | Updated Maintenance with closing/cycle/stop form navigation and their exact effects. | Remaining 73 unreviewed articles plus finer existing topics, screenshots and control alignment. |
+| HELP-05 hosted/local distinction | Retained local-draft versus server-save distinction and no hosted recovery approval. | Full hosted/local wording and native/PDF review. |
+| HELP-06 entry points | Existing Maintenance Help route and shared outline/catalogue stay aligned. | Every other inline/special/modal entry point. |
+| HELP-09 accessibility | Narrow widths, text-only rendering, active topic, print styles and focus checks on changed browser surfaces. | Physical devices and complete keyboard/screen-reader/contrast/zoom acceptance. |
+| HELP-10 regression protection | All76 routes checked with Tk imports blocked;75 other instructional bodies remain text-identical. | Consolidated authoring/build/CI and all-format parity. |
+
+There remain **three distinct bounded wording-reviewed articles** (daily, records, maintenance). Updating maintenance again does not add a fourth. Native Help, reference HTML and master PDF remain unchanged. Original Files folder organisation remains pending.
+
+
+## UI13 progress — 25 September 2026
+
+Earlier sections remain historical. `dashboard` (Use Home) now describes equipment navigation, Continue/Start, local/server drafts, per-category scope and failure states, capability limits and hosted/local operation. Outline and search catalogue match the article. Other75 article bodies remain unchanged, including daily,records,maintenance. Native/master PDF/reference HTML are unchanged.
+
+There are now **four distinct bounded wording-reviewed articles**, leaving72 without that current wording review. HELP-04 and HELP-05 advance for Home only. HELP-06 covers its verified existing Help route and no form submission. HELP-09 has local five-width, focus/landmark/error tests; physical devices and complete accessibility remain pending. HELP-10 checks75 preserved bodies and all76 routes with Tk blocked; consolidated authoring/all-format CI remains pending. The entire Help library is not marked complete.
