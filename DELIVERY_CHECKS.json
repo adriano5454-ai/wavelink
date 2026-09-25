@@ -1,18 +1,18 @@
 {
-  "format": "wavelink-workspace-ui19-delivery-1",
+  "format": "wavelink-workspace-ui21-delivery-1",
   "prepared": "2026-09-25",
   "core": "1.34.19",
-  "source_variant": "supplied UI18 lineage only",
+  "workspace": "UI21",
+  "gateway": "G01 unchanged",
   "source_build": {
-    "parent_extractor_sha256": "d63d6de8b7b076893e44c8faf5122be5ac136539685d7744a44adae85b01d980",
-    "extractor_sha256": "ac61f992b3f9f7b4a122b70a7b0dec59c55b5466ebce3d0bb4c92e3c0f6831fa",
-    "patch_id": "workspace-ui19-uploaded-ui18-2026-09-25",
+    "core": "1.34.19",
+    "patch_id": "workspace-ui21-handover-saved-day-2026-09-25",
+    "parent_extractor_sha256": "b7a2eea361322d0d93e71050ea691c716484b39c5505f4d963c85f0128e328b3",
+    "extractor_sha256": "936ddaeb70f8a65ea31fb42a9b3b89f5ec9203d3513ddd066ddb510961570c3e",
     "changed_runtime_files": [
-      "app/original_documents.py",
-      "app/original_upload.py",
-      "app/original_upload_api.py",
-      "app/server.py",
-      "app/static/app.js",
+      "app/static/handover_day_view.js",
+      "app/static/handovers.css",
+      "app/static/handovers.js",
       "app/static/help.html",
       "app/static/help_catalogue.json",
       "app/static/help_topics/accessreview.html",
@@ -93,109 +93,253 @@
       "app/static/help_topics/vessellogs.html",
       "app/static/help_workspace.js",
       "app/static/index.html",
-      "app/static/original_library.css",
-      "app/static/original_library.js",
-      "app/static/original_upload.js",
       "app/static/sw.js",
-      "app/store.py"
+      "docs/DAILY_HANDOVERS.md",
+      "tests/ui20_schedule/test_assets.py",
+      "tests/ui21_handover/__init__.py",
+      "tests/ui21_handover/browser_checks.py",
+      "tests/ui21_handover/day_view_checks.js",
+      "tests/ui21_handover/test_view.py"
     ],
-    "cumulative_overlay_files": 135,
-    "tracked_files": 1638,
-    "application_python_count": 180,
-    "changed_existing_application_python_files": [
-      "app/original_documents.py",
-      "app/server.py",
-      "app/store.py"
+    "incremental_runtime_files": 90,
+    "cumulative_overlay_files": 151,
+    "new_runtime_files": [
+      "app/static/handover_day_view.js",
+      "tests/ui21_handover/__init__.py",
+      "tests/ui21_handover/browser_checks.py",
+      "tests/ui21_handover/day_view_checks.js",
+      "tests/ui21_handover/test_view.py"
     ],
-    "new_application_python_files": [
-      "app/original_upload.py",
-      "app/original_upload_api.py"
+    "gateway_g01_unchanged": {
+      "deploy/gate.py": "9dc4ab6f7b7fb324ea06c305a09af8336b0bd10e7be6bef5296af1fd32d2e701",
+      "deploy/entrypoint.py": "a2bbac57635ac6e0b12400bbcbfc7382416ed3d5c7525e4218b7e38c2e7a633f"
+    }
+  },
+  "source_checks": {
+    "manifest_files": 1650,
+    "all_runtime_digests_valid": true,
+    "application_python_unchanged_and_parsed": 181,
+    "javascript_syntax_checks": 50,
+    "only_help_article_bodies_changed": [
+      "handovercontinuity",
+      "handovers"
     ],
-    "unchanged_existing_application_python_count": 175,
-    "javascript_syntax_count": 48,
-    "other_help_article_bodies_byte_equivalent": 75,
-    "upstream_manifest_count": 1605,
-    "source_runtime_equivalence": true
-  },
-  "selected_python_cases": 338,
-  "selected_python_groups": {
-    "browser_original_upload": 63,
-    "actual_supplied_ui18_upgrade_and_source_rollback": 1,
-    "inherited_original_folder_workflows": 65,
-    "records_originals_storage_transfers": 70,
-    "maintenance_cycles": 52,
-    "browser_admin": 30,
-    "deployment_contracts": 57
-  },
-  "compound_browser_checks": 49,
-  "browser_groups": {
-    "uploads": 21,
-    "folders": 23,
-    "help": 5
-  },
-  "browser_limitations": {
-    "transport": "injected fetch backed by local TestClient, actual application scripts and API handlers",
-    "digest": "injected Python SHA-256; native WebCrypto/HTTPS not accepted",
-    "navigation": "about:blank; managed Chromium blocked URL navigation, policies unchanged",
-    "persistence": "in-memory, not durable browser storage",
-    "data": "temporary fictional projects"
-  },
-  "syntax": {
-    "application_python_parsed": 180,
-    "javascript_node_syntax": 48
-  },
-  "preliminary_attempts": "Excluded. Initial application finding (matching receipt warning) fixed; browser fixture, collection-path mistakes and incomplete time-limited runs retained separately. No broad incomplete-run cause established.",
-  "not_claimed": [
-    "full product suite",
-    "Docker image build",
-    "live GitHub fetch or push",
-    "Render deployment",
-    "physical Windows/phone acceptance",
-    "native PowerShell helper execution",
-    "hosted TLS/WebCrypto acceptance",
-    "service-worker lifecycle",
-    "durable browser persistence",
-    "load/malware/security/isolation/full accessibility acceptance",
-    "accepted off-host recovery"
-  ],
-  "database": "No new UI19 tables; exact supplied folder schema checked read-only before ordinary startup writes. Explicit upload writes existing originals/locations/original audit/operations transactionally.",
-  "application_python_changes": {
-    "existing_changed": [
-      "app/original_documents.py",
-      "app/server.py",
-      "app/store.py"
+    "other_help_article_bodies_unchanged": 74,
+    "help_catalogue_articles_matching": 75,
+    "inherited_catalogue_mismatch_unchanged": [
+      "create"
     ],
-    "new": [
-      "app/original_upload.py",
-      "app/original_upload_api.py"
+    "changed_catalogue_entries_verified_against_articles": [
+      "handovercontinuity",
+      "handovers"
     ],
-    "existing_unchanged": 175
-  },
-  "only_existing_executable_repository_file_changed": "deploy/extract_source.py",
-  "hosting_dependencies_vendor_seed_recovery_unchanged": true,
-  "no_live_secrets_or_project_database": true,
-  "gateway_G01": {
-    "date": "2026-09-25",
-    "mode": "optional public guest entry",
-    "default": "NO",
-    "flag": "DEMO_PUBLIC_ENTRY=YES",
-    "core_and_workspace_unchanged": "1.34.19 / UI19",
-    "changed_existing_executables": [
+    "other_catalogue_entries_unchanged": 74,
+    "unchanged_handover_form_and_write_functions": [
+      "openForm",
+      "save",
+      "saveDaily",
+      "reviewDaily",
+      "startDaily",
+      "startReview",
+      "handleError",
+      "lock",
+      "reviewPreparation",
+      "savePreparation"
+    ],
+    "unchanged_deployment_files_checked": [
       "deploy/gate.py",
-      "deploy/entrypoint.py"
+      "deploy/entrypoint.py",
+      "deploy/nginx_config.py",
+      "deploy/provision.py",
+      "Dockerfile",
+      "requirements.lock",
+      "ops/staging_recovery.py"
     ],
-    "source_sha256": {
-      "gate": "9dc4ab6f7b7fb324ea06c305a09af8336b0bd10e7be6bef5296af1fd32d2e701",
-      "entrypoint": "a2bbac57635ac6e0b12400bbcbfc7382416ed3d5c7525e4218b7e38c2e7a633f"
+    "core": "1.34.19",
+    "new_workspace": "UI21",
+    "gateway": "G01 unchanged",
+    "parent_repository_files": 94,
+    "parent_deployment_manifest_rows": 93,
+    "new_runtime_resources": [
+      "app/static/handover_day_view.js",
+      "tests/ui21_handover/__init__.py",
+      "tests/ui21_handover/browser_checks.py",
+      "tests/ui21_handover/day_view_checks.js",
+      "tests/ui21_handover/test_view.py"
+    ]
+  },
+  "selected_python_tests": 348,
+  "python_groups": {
+    "handover_day_schedule_privacy_continuity_transfer_backup_help_assets": {
+      "tests": 257,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
     },
-    "completed_python_cases": 90,
-    "handoff_fixture_checks": 13,
-    "local_nginx_gate_fixture_checks": 13,
-    "javascript_syntax_checks": 1,
-    "real_browser_run": "blocked at navigation, excluded",
-    "application_suite_rerun": false,
-    "deployed": false,
-    "no_permission_db_or_ui_changes": true,
-    "scope": "Addendum only; historical UI19 results elsewhere in this file are not new G01 results."
-  }
+    "gateway_public_entry_and_source_reassembly": {
+      "tests": 91,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    }
+  },
+  "compound_browser_checks": 25,
+  "browser_groups": {
+    "ui21_day_and_saved_drafts": {
+      "scope": "UI21 daily-board checks in isolated Chromium with actual in-process APIs and fictional data.\nTransport/storage injected: not live LAN, persistent browser storage or Windows.\n",
+      "checks": [
+        "Resume panel shows only own active daily drafts across days; ignores library filters and excludes colleague, archived and full-hitch drafts",
+        "Resume opens the exact saved older draft in Work & priorities without creating anything; Help click preserves the editor",
+        "Scoped snapshot counts keep drafts/publications/own acknowledgement separate; published view never displays private-revision dates or wording",
+        "Daily board and resume cards fit 1440/1000/768/390/320-pixel viewports without horizontal overflow",
+        "Previous/next day and leap-day navigation change only read context; editing filters clears the previous counts immediately",
+        "Network failure or mismatched response context clears entries and counts instead of presenting zero or stale information",
+        "Multiple visible publications require an explicit source; selected night shift advances the schedule instead of using a recently revised day shift",
+        "Changed source revision is refused before setup; no automatic upgrade to a different publication",
+        "Delayed day response cannot repaint counts after the selected context changes",
+        "Delayed saved-source read cannot replace another handover form",
+        "Delayed saved-source read does not replace an unrelated open dialog",
+        "Delayed source response cannot reopen Handovers after route change",
+        "Account loss clears private handover view; delayed reads do not restore it or erase unrelated saved work"
+      ],
+      "errors": []
+    },
+    "inherited_ui20_schedule": {
+      "scope": "Daily-shift UI in isolated Chromium with actual in-process APIs and fictional data.\nTransport/storage injected: not live LAN, persistent browser storage or Windows.\n",
+      "checks": [
+        "Prominent daily view in the existing sidebar; choosing a day reads only and creates no inferred records",
+        "Default two 12-hour shifts; dates calculated without repeated manual date fields",
+        "06:00 and 12:00 starts derive both shifts and show correct next-day dates",
+        "8-hour and 6-hour presets cover one 24-hour cycle, including midnight",
+        "Custom 10/14 hours accepted; totals and duplicate names validated; injected markup rendered as text",
+        "Manual option, device-today, alternate date and leap-day rollover do not create records",
+        "Time basis required; form fits 1440/768/390/320-pixel layouts without horizontal overflow",
+        "Read-only server review, edit invalidation and exact lost-response retry save one author-private shift",
+        "Calculated period and schedule persist through saved notes and independent publication",
+        "Incoming author reuses schedule/basis without typing dates; no shared draft or altered previous publication",
+        "Final shift proposes next operational day; selected gaps warn and do not invent intervening handovers",
+        "Account loss removes private setup without clearing unrelated operational drafts"
+      ],
+      "errors": []
+    }
+  },
+  "pure_node_checks": 62,
+  "pure_node_groups": {
+    "day_view_44": {
+      "checks": [
+        "Calendar 2026-09-25 1",
+        "Calendar 2026-09-25 -1",
+        "Calendar 2026-12-31 1",
+        "Calendar 2028-02-28 1",
+        "Calendar 2028-03-01 -1",
+        "Calendar 2026-03-01 -1",
+        "Calendar 0001-01-01 1",
+        "Calendar 2026-09-25 0",
+        "Reject invalid date 2026-02-29",
+        "Reject invalid date 2026-09-31",
+        "Reject invalid date 2026-2-01",
+        "Reject invalid date 0000-01-01",
+        "Reject invalid date 10000-01-01",
+        "Reject invalid date null",
+        "Reject invalid date ",
+        "Reject calendar lower bound",
+        "Reject calendar upper bound",
+        "Reject invalid offset",
+        "Empty accessible view offers explicit start",
+        "Single published source retains exact id/revision",
+        "Multiple publications require selection, regardless of publish times",
+        "Single own draft is resumed, not recreated",
+        "Multiple own drafts require explicit selection even if legacy imports contain duplicates",
+        "Draft and retained publication counts overlap deliberately",
+        "Fail closed: wrong actor",
+        "Fail closed: missing rows",
+        "Fail closed: wrong date",
+        "Fail closed: wrong department",
+        "Fail closed: wrong location",
+        "Fail closed: missing context",
+        "Fail closed: duplicate row",
+        "Fail closed: private colleague",
+        "Fail closed: unknown state",
+        "Fail closed: missing counter",
+        "Fail closed: string counter",
+        "Fail closed: missing ack flag",
+        "Fail closed: wrong daily context",
+        "Fail closed: wrong daily date",
+        "Fail closed: bad identifier",
+        "Fail closed: null daily",
+        "Projection does not mutate response or requested context",
+        "Saved drafts exclude colleagues, archived and ungrouped records",
+        "Saved draft panel covers other operational days",
+        "Duplicate saved draft identifiers rejected"
+      ],
+      "errors": []
+    },
+    "schedule_18": {
+      "passed": 18,
+      "checks": [
+        "12-hour default with named day/night",
+        "Day to night retains operational day",
+        "Night to day advances one day",
+        "Noon last shift advances operational day, not another full day",
+        "Three-shift next index is not a reversed pair",
+        "Year boundary next day",
+        "Explicit later board date may be proposed",
+        "Earlier board date never rewinds source",
+        "Legacy source has no inferred schedule",
+        "Edited published actual end falls back to manual",
+        "Edited actual start falls back to manual",
+        "Unknown plan format is not interpreted",
+        "Wrong stored labels are not guessed",
+        "Custom unequal schedule persists to next shift",
+        "Calculator does not mutate published input",
+        "Invalid date rejected",
+        "Non-quarter-hour length rejected",
+        "NaN length rejected"
+      ],
+      "scope": "Pure actual helper; no browser storage, HTTP or live service"
+    }
+  },
+  "counting_note": "Pure Node checks are also exercised inside selected Python cases and are reported separately, not added to the 348 Python tests; repeats add no distinct coverage. Inherited 224 calendar parity cases are within one Python test.",
+  "historical_release_assertions": {
+    "ui20_baseline_reproduction": {
+      "tests": 4,
+      "failures": 4,
+      "errors": 0,
+      "skipped": 0
+    },
+    "excluded_from_final_selection": [
+      "tests/daily_handovers/test_release.py::test_no_other_business_network_or_source_task_logic_changed",
+      "tests/daily_handovers/test_release.py::test_current_daily_help_and_guide_are_explicit_not_automatic",
+      "tests/handover_continuity/test_release.py::test_network_startup_identity_existing_work_tasks_and_operational_services_unchanged",
+      "tests/handover_continuity/test_release.py::test_guide_links_source_alias_and_new_help"
+    ],
+    "status": "All four fail on both untouched verified UI20 and initial UI21; no test weakening or claim that these passed."
+  },
+  "preliminary_attempts_excluded": [
+    "Initial handover run: 257 passed / 4 failed; not added to the final selected 257.",
+    "Initial responsive browser check exposed 768px header overflow after adding Help; wrapping/flex sizing corrected, later final viewports pass.",
+    "Initial UI21 about:blank fixture made the pre-existing generic URL navigation guard throw. Fixture now sets an inert base href; no application code was changed for this fixture issue.",
+    "Attempted loopback navigation was blocked by Chromium policy before assertions; not counted as live/browser-navigation acceptance.",
+    "Initial broad source assertion found create Help catalogue mismatch; reproduced byte-identically on UI20 and left outside the two reviewed articles."
+  ],
+  "limitations": [
+    "No live GitHub fetch/push, Render deployment, current database or credential changes.",
+    "Not a full product suite. Four historical release assertions fail on untouched UI20 as well as this source; explicitly deselected in the final selection and never counted as passes.",
+    "Chromium used shipped UI assets, actual in-process fictional TestClient APIs, injected transport and in-memory persistence; not actual hosted HTTPS, LAN, durable browser storage or service-worker lifecycle acceptance.",
+    "Help-link activation was exercised with navigation suppressed by the fixture; real local navigation was blocked by browser policy (ERR_BLOCKED_BY_ADMINISTRATOR). No browser policy was weakened, and real separate-tab navigation is not accepted here.",
+    "No real phone/Windows, full accessibility, Docker, production security/isolation/load or off-host recovery acceptance. PowerShell checker not run on Windows.",
+    "New day counters are overlapping permission-scoped snapshots, not crew-roster or live completion totals. Saved-draft panel does not inventory unsaved browser text.",
+    "UI20 time-basis and calendar semantics unchanged: device-calendar Today and wall-clock schedules, no timezone/DST conversion.",
+    "Inherited create Help search-index text discrepancy remains unchanged and is recorded for the separate create-article review."
+  ],
+  "existing_executable_repository_changes": [
+    "deploy/extract_source.py"
+  ],
+  "required_deletions": [],
+  "database_migrations": [],
+  "dependencies_changed": [],
+  "environment_changes": [],
+  "persistent_change": "None introduced. Existing explicit UI20 forms/writers and their record formats remain unchanged; the new projections and navigation do not save or create records.",
+  "no_live_database_or_secrets_in_patch": true,
+  "public_entry_user_feedback": "User confirmed G01 public guest entry works after correcting its role; source and settings preserved."
 }

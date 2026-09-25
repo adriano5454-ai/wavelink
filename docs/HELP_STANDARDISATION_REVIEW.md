@@ -1,3 +1,43 @@
+# Current status — UI21 Handovers and continuity review (25 September 2026)
+
+Handovers now describes the cross-date saved-draft panel, calendar navigation,
+scoped snapshot counts, exact source selection and published/private date separation,
+while retaining UI20 schedules. Handover continuity distinguishes exact daily-shift
+continuation from multi-source ungrouped preparation, updates Task-checklist wording
+and the recovery boundary. Seven distinct bounded topics reviewed,69 pending plus
+native/master-PDF/entry-point/accessibility work. Other74 article bodies unchanged;
+shared reader URLs update outside bodies. Only the two revised catalogue entries
+were changed and checked against article text.
+
+A source audit found the create topic's catalogue text differs from its current
+article on both UI20 and UI21. That inherited discrepancy is kept explicit for the
+create-topic review, not counted as solved or silently corrected. All76 topics have
+not been wording-reviewed. Historical counts/status below do not supersede this.
+
+---
+
+# Current status — UI20 Handovers review (25 September 2026)
+
+The Handovers article now describes Start today/operational date, 12-hour default,
+8/6-hour or custom 24-hour schedules, first-start/shift selection, explicit time
+basis, midnight and next-day handling, exact published-source continuation, manual
+legacy fallback and creation-snapshot limits. Existing private authoring/audience/
+publication rules remain. One new distinct bounded review: six topics now reviewed,
+70 still pending. Other 75 article bodies are unchanged, with shared reader cache
+URLs updated. All 76 Help routes were checked with desktop imports blocked.
+
+Native Help/master PDF and the remaining wording/entry-point/accessibility review
+are not complete. Earlier version sections below are historical, not the current
+review count or development priority. UI20 handover feedback is the next priority.
+
+---
+
+# UI19 Originals re-review — 25 September 2026
+
+Originals now distinguishes browser new/revision upload with explicit destination from native import, browser 20 MB versus native workbook 100 MB, memory-only form/uncertain outcome and exact receipt review, unchanged pinned links and selective-transfer cache limits. Only this article body changes; all 75 others remain byte-equivalent apart from shared reader cache-URL updates outside the body. Still five distinct reviewed topics, not six. Native/master PDF and the other 71 topics remain pending.
+
+---
+
 # Wavelink development list — Help standardisation
 
 **Current status: UI18 progress is at the end. Five bounded wording-reviewed topics; Original files shared folders implemented locally. Prior version sections are historical.**
