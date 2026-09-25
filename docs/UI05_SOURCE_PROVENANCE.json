@@ -1,0 +1,47 @@
+{
+  "format": "wavelink-ui05-provenance-1",
+  "parent_full_archive": "Wavelink_Online_Demo_Full_UI04.zip",
+  "parent_sha256": "7b6d1d0964986f5b2f83e5977aa758ce6ff874d491797c78a46991cab6fece8f",
+  "parent_manifest_records_verified": 414,
+  "core": "1.34.19",
+  "core_archive_sha256": "8c1b6a8d731d01b05a1290d3a1dd1a544054147aac9048ca345af7983613cd9e",
+  "incremental_runtime_resources": {
+    "app/static/fieldwork.js": {
+      "before_sha256": "c5fb3c1c997b7e6be817343f6d1239eb51df92ac7b3da548f41b1890e0d025e1",
+      "after_sha256": "2af71b57dde3d40a6aa355f1b6ccaaa8559de59b36fb551b8a270d5801787dcd"
+    },
+    "app/static/fleet.js": {
+      "before_sha256": "477379eb5b5b5978bea43283bb1738852d771ac50fa8315ca979b6b31cd74776",
+      "after_sha256": "14be328b4964c915c0975971e29662bc794405b2b8293dc004c09b8cb02947c7"
+    },
+    "app/static/logistics_workflow.js": {
+      "before_sha256": "7e941e17f92a7edacdf477dcc3c807352c5412c6ac833789f3cc7e55d20243f0",
+      "after_sha256": "d99938ce291cbcd7c55053d91bf448e8df4c59c0de6a0c29eaa5951f5e39f268"
+    },
+    "app/static/logistics_workflow.css": {
+      "before_sha256": "3cf833763b0f6136f49661f03d99db4089ddc10054c35f240e83fa5c70593411",
+      "after_sha256": "d6ebe1aa7db2629f098b150a0e9696f53aa81e98127674ecec03dab2f7ac96d8"
+    },
+    "app/static/index.html": {
+      "before_sha256": "babec0ede55c7d28b2f6639bb6e861a01c355e4300987095abe18a1ecfc6cb54",
+      "after_sha256": "365992f9f7fd3ddfa1ea10f8aa604ab684686e276f217bf8e84133b4bf7079c5"
+    },
+    "app/static/fleet.html": {
+      "before_sha256": "1c4227aa92ea52d3815b1282230460233278c9db2e9d7dec38b1eab89bf5e727",
+      "after_sha256": "324e406da27bf29cc963de1861c0a69b020b02c5b209a26e866795c01e198ed5"
+    },
+    "app/static/sw.js": {
+      "before_sha256": "0653c0eeccf06feea649b84ae31c18ed7b0d7bbacb01d769d1ca415fb6638809",
+      "after_sha256": "fde3570fe1792522f7fd5c2dc07b488666acb6eba9f139218c8bcfa078dda502"
+    }
+  },
+  "cumulative_resource_count": 18,
+  "derived_tracked_count": 1608,
+  "existing_executable_repo_changes": [
+    "deploy/extract_source.py"
+  ],
+  "live_github_tree_fetched": false,
+  "live_deployment": false,
+  "no_live_database_in_package": true,
+  "history": "All supplied historical records remain byte-identical. Full UI04 metadata and validation moved under REFERENCE_ONLY/Full_UI04_Checkpoint."
+}

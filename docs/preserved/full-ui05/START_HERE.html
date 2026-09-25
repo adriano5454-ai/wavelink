@@ -1,0 +1,108 @@
+<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Wavelink Workspace UI05</title><style>body{max-width:1000px;margin:40px auto;padding:0 24px;font:16px/1.6 system-ui,sans-serif;color:#183244;background:#f4f7fa}main{padding:28px;background:white;border:1px solid #cedce5;border-radius:12px}pre{white-space:pre-wrap;overflow-wrap:anywhere;font:inherit}h1{line-height:1.2}a{color:#087b83}</style><main><h1>Wavelink · Workspace UI 05</h1><p>Movement, receiving and placement. Cumulative UI01–UI04. Local update package, not a live deployment.</p><p><a href="README.md">Read setup instructions</a></p><pre># Wavelink — Workspace UI 05
+
+**Core 1.34.19. Cumulative UI01–UI05. Prepared 25 September 2026. Implemented and tested locally; not deployed to GitHub or Render in this session.**
+
+## Scope
+
+This update is limited to the supplied Wavelink deployment repository. It continues the inventory-first roadmap: movement choices, receipt/placement review and the Receiving &amp; placement screen. The UI04 inventory navigation and Record management changes are retained. This is a browser update for computers and phones, not a native Windows Admin release.
+
+The package is derived from `Wavelink_Online_Demo_Full_UI04.zip`. All 414 parent package manifest entries were verified before editing. The current live GitHub tree was not fetched. Relative to that supplied package, the only changed existing executable repository file is `deploy/extract_source.py`. It reconstructs the original, checked source and applies the cumulative overlay during Docker build. Seven browser resources change relative to UI04; operational Python services and save payloads remain unchanged.
+
+## Movement: chosen action first
+
+Select the records in Inventory and use **Move location**, **Put in box**, or **Take out** as before. The form starts with a compact summary of the chosen equipment and selected movement. Expanding the source summary shows its exact names, references and recorded positions. The summary does not automatically expand a long list of contents.
+
+**Change** reveals descriptive action cards. The selected card sets the same existing movement field, then collapses. This avoids filling the phone screen with three choices when you already selected an action from Inventory.
+
+- **Move to a location:** place the selected roots at a storage location outside their current parent box. Any contents of a moved box stay inside it.
+- **Put in a box:** use the existing destination-box search and review. Its location and department apply.
+- **Take out of a box:** remove the selected contents from their parent and choose a destination location. A root that is not inside a box still fails the existing validation.
+
+No destination box is automatically selected merely because it is first in the results. Searching it out of sight clears the choice. Names, references and full paths remain searchable. The existing eligible partial-quantity movement option remains unchanged; no new splitting rules are introduced.
+
+**Destination → Details → Review** is still the workflow. The last page separates **From / current record** and **To / proposed destination**, followed by scope, included contents, department, quantity choice and reason. These values are rendered as text, not interpreted as HTML. Confirm remains separate from browsing and preview. Back retains wording but resets confirmation.
+
+The original operation ID, version checks, reason, selected roots, affected-record versions and destination version are preserved. The existing **Keep draft &amp; close** workflow and account-scoped local movement drafts are unchanged. A locally saved form is not a confirmed server save.
+
+## Receiving: find a group, then place it
+
+Open **Fleet &amp; vessels → Receiving &amp; placement**, or the receiving shortcut in Inventory&#x27;s **More tools**.
+
+This is the queue for equipment already physically received but not yet assigned its final storage destination. It is not the list of all in-transit shipments. **Back to manifests** is the route for recording arrival first.
+
+Search is visible. **Site &amp; condition** opens the longer filters, while their selected values and active count remain visible when closed. A compact summary distinguishes received groups, included inventory records and quarantined groups. None is a sum of stock quantities, readiness certification or permission to operate equipment.
+
+Rows become readable group cards with their name, reference, holding area, condition, included-record count and original manifest link. On desktop the selected group&#x27;s detail is alongside the list. On narrower screens the list gives way to the detail rather than remaining stacked above it. **Back to received groups** restores the list context and selection. Opening a group scrolls the detail into view on a narrow screen.
+
+The detail puts the current holding position, quarantine note and **Place received group** together. **Receipt details** expands the saved event time and related metadata. Open manifest and Item journey remain secondary actions. Only groups for which the service returns `can_place` have a placement button. A label or selected card never grants permission.
+
+If filtering removes the selected group, its selection and placement action clear with a notice. Same-session refresh retains the search/filter context. Reads are guarded by the active request, route and authorised session; a delayed queue read cannot replace a newer workspace. A delayed placement preparation is discarded when the selection, route, session or receiving-list generation changes. A failed refresh removes the old private detail before offering Retry.
+
+## Receipt and final placement have distinct reviews
+
+**Record physical receipt / return** keeps its original operation and exact manifest-number confirmation. **Holding area — place later** and **Final inventory location — direct receipt** now have explanatory choices under Change. Holding remains the original default. Condition, actual UTC event time and reason are still recorded separately. A physical return is still to the manifest&#x27;s origin; neither choice releases quarantine.
+
+**Place received group** offers a final location or an eligible existing box at that site. Its review shows the current holding position, proposed destination, exact manifest, complete group scope, condition, actual placement time and reason before confirmation.
+
+The same inventory identities and complete received groups are used. Remaining unreceived equipment stays in transit. Placement does not verify stock, renew certificates, complete maintenance, release quarantine or authorise equipment use.
+
+The detailed actions remain focused guided dialogs, not embedded editors for every module. The shared guide/picker logic and existing unrelated editors are unchanged; the new choice/review helpers are explicitly used by these movement/receipt/placement forms only.
+
+## Unfinished work and limits
+
+An open Fleet action blocks receiving refresh and navigation from replacing the target underneath it. Existing operation retry and conflict handling still govern writes. Inventory movement retains the established local saved-form workflow. Fleet receipt/placement remains online and page-memory-only: closing/reloading can lose unsubmitted wording. Browsing preferences and the receiving Back trail are temporary, not a new offline queue or a permanent navigation history.
+
+The original secondary Fleet navigation remains. This does not implement a universal return trail across Inventory, Tasks, Assets and Manifests. The new receiving back action is deliberately local to that workspace. There is no new API, SQL migration, category import format, source-document migration or change to hosted authentication.
+
+## Install the complete ZIP with GitHub Desktop
+
+1. Preserve unfinished work in all Wavelink tabs and separate log windows. Retain the previous approved commit and your established project backup. Update outside a client presentation. Do not clear browser storage.
+2. In GitHub Desktop, select the **`wavelink`** repository. Fetch/pull the intended branch, preserving any uncommitted changes first.
+3. Extract the ZIP and open **`UPLOAD_TO_GITHUB`**. Copy its **contents** into your local Wavelink repository root, keeping the subfolders and replacing only the intended files. Do not copy the enclosing folder or delete `.git`.
+4. Review the diff, commit and **Push origin**. Against the supplied complete UI04 bundle, only `deploy/extract_source.py` changes among existing executable code files; new notes, tests and checksums are separate. Stop and reconcile any outside edits before overwriting them. The complete ZIP is not a backup of the current live repository.
+5. Deploy the approved commit through the existing Wavelink Render service. Leave its disk, URL, secrets and environment settings unchanged. Keep **`INITIALISE_FICTIONAL_DEMO=NO`** and the initial administrator bootstrap password removed.
+6. The build should report:
+
+```text
+Verified upstream 1.34.19: 1605 tracked files.
+Applied Workspace UI 05: movement, receipt and receiving layout; includes UI01-UI04; no automatic data changes.
+```
+
+7. After a healthy deployment, reload Inventory and Receiving &amp; placement and look for **UI 05**. The core application version remains **1.34.19**. Record management retains its UI04 implementation. Preserve unsent work before closing/reopening older tabs to activate the updated service worker. Do not delete site data.
+
+For a checkout matching the supplied UI04 repository, replacing only `deploy/extract_source.py` is also sufficient. Full files are supplied for convenient GitHub Desktop replacement.
+
+## Inventory categories remain included, without reseeding
+
+Already-applied category definitions and assignments remain in the hosted project. No inventory upload or re-import is required. Deploying UI05 does not automatically apply categories or reseed the project.
+
+To apply the original fictional category proposal for the first time, use your normal named administrator:
+
+**Inventory → DEMO Offshore equipment → Category: All categories → Manage categories → Preview demo categories → review and apply.**
+
+Repeat for **DEMO Consumables**. The original unchanged examples propose 56 equipment records in 13 categories and 12 consumables in five categories. Existing choices/custom records and changed identities are protected by the unchanged UI03 service.
+
+## Rollback and recovery boundary
+
+Revert the extractor commit and redeploy. An exact UI04 extractor is included at `REFERENCE_ONLY/Workspace_UI05/rollback/deploy/extract_source.py`. This returns to UI04 while retaining category support; it does not reset the database. Keep category operations on a category-aware version.
+
+Do not clear `/var/data`, re-import the original project or enable first-deploy initialization to change the interface.
+
+The preserved `ops/staging_recovery.py` helper is pinned to the pristine 1.34.19 source and has not been accepted for an overlaid runtime. Do not bypass that check to force a backup/restore. Recovery for the overlaid hosted build remains an operator acceptance item, not a capability added or proved by this UI update.
+
+## Validation
+
+See `DELIVERY_CHECKS.json` and `VALIDATION/` for exact counts, initial findings and final reruns. Testing uses temporary fictional projects, real application services, the shipped browser scripts/styles and local Chromium with controlled HTTP and injected in-memory browser persistence. Screenshots are actual local rendering, not the live Render service or native Windows Admin.
+
+The full application regression suite, real Docker image build, live GitHub/Render deployment, physical-phone behavior, durable browser storage, off-host recovery and complete accessibility acceptance were not performed. No new production-readiness, multi-company isolation or vessel/cloud synchronization claim is made.
+
+## Continue from here
+
+The scheduled-improvement roadmap is a development order, not an automatically running background task. Next: review the actual hosted inventory/movement/receiving experience and remaining long forms; then continue consistent checklist and maintenance layouts. Record-management action clarity remains on that roadmap. Original Files logical folders remain separately pending. No original documents are moved by UI05.
+
+### Final local results
+
+**300 distinct targeted Python cases (33 structure, 172 inherited, 38 category and 57 deployment cases) and 100 compound browser checks across seven harnesses passed**, with no failed/error/skipped Python cases and no browser errors. All 36 JavaScript files passed syntax checks. A fresh runtime extraction after the last layout polish was used for these complete final targeted runs; earlier runs are not counted again. Exact commands and JUnit/browser results are in `VALIDATION/final/`.
+
+The separate final ZIP verification records the delivered archive checksum and checks repeated after extracting it. Those repeats are not additional distinct test coverage.
+</pre></main></html>

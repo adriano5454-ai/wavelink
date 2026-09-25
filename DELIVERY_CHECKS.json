@@ -1,71 +1,93 @@
 {
-  "format": "wavelink-full-online-demo-delivery-1",
-  "package": "Wavelink_Online_Demo_Full_UI03",
-  "core_version": "1.34.19",
-  "overlay": "Inventory UI03 (includes UI01/UI02)",
-  "state": "Locally assembled and checked; not deployed by this session",
-  "tests": {
-    "deployment_python_passed": 57,
-    "category_and_extraction_passed": 67,
-    "total_distinct_python_passed": 124,
-    "local_process_checks_passed": 11,
-    "rootless_nginx_checks_passed": 2,
-    "notes": "Initial test-environment omissions/timeouts retained separately; same code passed complete final reruns."
-  },
-  "local_process_scope": [
-    "Real Nginx/gate/hosted-app loopback requests",
-    "Guest quick route authenticates configured non-admin and produces bootstrap HTML",
-    "Normal admin API creates test user/department",
-    "WebSocket upgrade and named-session ping/pong",
-    "File-access gate and application restart/session revocation"
+  "format": "wavelink-workspace-ui08-delivery-1",
+  "core": "1.34.19",
+  "patch_id": "workspace-ui08-2026-09-25",
+  "cumulative": "UI01-UI08",
+  "prepared": "2026-09-25",
+  "parent_archive_sha256": "c68220c0d93634d43e5dd24aa1190bea6f47947880c93728672ccf2adfad969a",
+  "parent_package_files_verified": 1069,
+  "upstream_source_sha256": "8c1b6a8d731d01b05a1290d3a1dd1a544054147aac9048ca345af7983613cd9e",
+  "original_manifest_entries": 1605,
+  "final_extractor_sha256": "8e1e227c1b8b92dc515433183035adf021a6f4d7571d040cc1f8802cf8d940c9",
+  "overlay_resources": 106,
+  "derived_tracked_files": 1615,
+  "incremental_browser_resources": 84,
+  "changed_existing_executable_upload_files": [
+    "deploy/extract_source.py"
   ],
-  "structure": {
-    "parents": {
-      "Wavelink_Client_Demo_Deploy": {
-        "manifest_records": 32,
-        "mismatches": []
-      },
-      "Wavelink_Inventory_UI03": {
-        "manifest_records": 132,
-        "mismatches": []
-      }
+  "all_existing_application_python_files_unchanged": true,
+  "operational_write_functions_checked_unchanged": true,
+  "tests": {
+    "python_distinct": 464,
+    "python_groups": {
+      "categories": 38,
+      "deployment": 57,
+      "inherited_python": 255,
+      "ui08_python": 114
     },
-    "deployment_python_syntax_files": 13,
-    "application_javascript_syntax_files": 36,
-    "guest_bootstrap_javascript_syntax": true,
-    "unchanged_deployment_inputs": [
-      "requirements.lock",
-      "deploy/provision.py",
-      "deploy/__init__.py",
-      "ops/staging_recovery.py",
-      ".gitignore",
-      ".dockerignore",
-      "vendor/source.part003",
-      "vendor/source.part004",
-      "vendor/source.part005",
-      "vendor/source_parts.json",
-      "vendor/FICTIONAL_DEMO.ajproject",
-      "vendor/source.part002",
-      "vendor/source.part001"
-    ],
-    "exact_ui03_extractor": true,
-    "ui03_derived_records_matched": 1608
+    "failed": 0,
+    "errors": 0,
+    "skipped": 0,
+    "browser_compound": 95,
+    "browser_groups": {
+      "help_browser": 20,
+      "help_review": 6,
+      "inventory_navigation": 16,
+      "shipments": 18,
+      "tasks": 14,
+      "ui08_browser": 21
+    },
+    "javascript_files_syntax_checked": 38,
+    "all_76_help_routes_with_desktop_imports_blocked": true
   },
-  "recovery_helper": "Preserved original helper is pristine-1.34.19-source-pinned. It does not accept UI03 /opt/wavelink/app. No policy override or recovery rehearsal performed.",
-  "preserved_inputs": "Original source parts, seed, provisioning marker/logic, requirements, UI03 extractor are unchanged. No current passwords or private project bytes are in this archive.",
-  "limitations": {
-    "github_current_tree_fetched": false,
-    "render_deployed": false,
+  "preview_recheck": {
+    "compound_checks": 21,
+    "added_to_distinct_total": false,
+    "reason": "Wait for the real five-second toast to dismiss before screenshot; no application changes or assertions removed.",
+    "results": "VALIDATION/preview_wait_checked/BROWSER_RESULTS.json"
+  },
+  "scope_limits": {
+    "live_github_fetched": false,
+    "deployed_to_render": false,
     "docker_image_built": false,
-    "full_application_suite_rerun": false,
-    "full_browser_suite_rerun": false,
-    "guest_indexeddb_handoff_browser_execution_tested": false,
-    "guest_bootstrap_js_syntax_tested": true,
-    "physical_phone_tested": false,
-    "live_restart_persistence_tested": false,
-    "off_host_restore_tested": false,
-    "production_ready": false
+    "full_product_suite": false,
+    "physical_phone": false,
+    "native_windows": false,
+    "durable_browser_storage": false,
+    "real_https_browser_navigation": false,
+    "off_host_backup_restore": false,
+    "full_accessibility": false,
+    "real_operations_approval": false
   },
-  "update": "Replace repository files from UPLOAD_TO_GITHUB; keep current Render settings/disk and INITIALISE_FICTIONAL_DEMO=NO. Preview/apply categories explicitly; never reseed.",
-  "provenance_file": "docs/SOURCE_PROVENANCE.json"
+  "data_safety": {
+    "reseed": false,
+    "new_operational_API": false,
+    "new_database_schema": false,
+    "permission_changes": false,
+    "source_documents_moved": false,
+    "automatic_category_assignment": false,
+    "credentials_packaged": false,
+    "existing_data_is_on_persistent_disk": true,
+    "recovery_helper_overlay_approved": false
+  },
+  "help_review": {
+    "wording_reviewed_topics": [
+      "daily",
+      "records"
+    ],
+    "other_74_article_text_unchanged": true,
+    "native_and_pdf_unchanged": true,
+    "complete_help_review_finished": false
+  },
+  "evidence_notes": [
+    "Real application services and shipped browser code with temporary fictional databases, TestClient transport and memory-only persistence.",
+    "New screenshot fixtures use clearly fictional outcomes, not completed operational work.",
+    "Initial browser fixture timed out trying to select a row hidden by the mobile detail view; fixture corrected to use the Back action.",
+    "Initial Help outline metadata corrected before accepted runs.",
+    "Selected suites were rerun completely after the final CSS/navigation polish.",
+    "The later screenshot wait refinement was rerun on identical application source; both passes retained."
+  ],
+  "final_source_unchanged_after_validation": true,
+  "runs": "VALIDATION/final/RUNS.json",
+  "fresh_final_zip_verification": "Provided as a separate external JSON to avoid circular archive hashes."
 }

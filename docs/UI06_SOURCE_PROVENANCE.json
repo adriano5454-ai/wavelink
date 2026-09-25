@@ -1,0 +1,39 @@
+{
+  "format": "wavelink-ui06-provenance-1",
+  "parent_full_archive": "Wavelink_Online_Demo_Full_UI05.zip",
+  "parent_sha256": "675a725c195371381506284e530502bfbf55eb963074d72fcc0e53bca08b13b4",
+  "parent_manifest_records_verified": 649,
+  "core": "1.34.19",
+  "core_archive_sha256": "8c1b6a8d731d01b05a1290d3a1dd1a544054147aac9048ca345af7983613cd9e",
+  "incremental_runtime_resources": {
+    "app/static/fleet.html": {
+      "before_sha256": "324e406da27bf29cc963de1861c0a69b020b02c5b209a26e866795c01e198ed5",
+      "after_sha256": "2fa0b1db2f096728814f07c30c934e4ac2605d73990ce50a7a6527eba1d9d203"
+    },
+    "app/static/fleet.js": {
+      "before_sha256": "14be328b4964c915c0975971e29662bc794405b2b8293dc004c09b8cb02947c7",
+      "after_sha256": "9dd52195b240bec6d4b462f28e0763964a219a38cd85dc0876a7588379c363bb"
+    },
+    "app/static/manifest_ui.css": {
+      "before_sha256": "113b440eb695096d7e1cece40fa16154e4fc4c0a4640519573cdcc37c8ca5d97",
+      "after_sha256": "01747ccae9e728166e4514ad56966a3db79a3d1b81cbd6e16983a097efd6274d"
+    },
+    "app/static/manifest_ui.js": {
+      "before_sha256": "f684ac29aa0e675ef5ae69c499220cb3973cba4ba0807041d5b0162cc354e53e",
+      "after_sha256": "8a7b3bbb2919904c7ce3b2b380f93b901fd9cf6f6dce5bdea7c1f12f556a5414"
+    },
+    "app/static/sw.js": {
+      "before_sha256": "fde3570fe1792522f7fd5c2dc07b488666acb6eba9f139218c8bcfa078dda502",
+      "after_sha256": "6d07a0fa23530e33f58cf447be25da0d2f09363f6fe008b4b1517c50bfde9187"
+    }
+  },
+  "cumulative_resource_count": 20,
+  "derived_tracked_count": 1608,
+  "existing_executable_repo_changes": [
+    "deploy/extract_source.py"
+  ],
+  "live_github_tree_fetched": false,
+  "live_deployment": false,
+  "no_live_database_in_package": true,
+  "history": "Prior supplied reference bytes unchanged. Full UI05 current metadata, previews and validation preserved under REFERENCE_ONLY/Full_UI05_Checkpoint. Overwritten upload docs preserved under docs/preserved/full-ui05."
+}

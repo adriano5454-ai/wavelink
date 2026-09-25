@@ -1,0 +1,47 @@
+{
+  "format": "wavelink-ui04-provenance-1",
+  "parent_full_archive": "Wavelink_Online_Demo_Full_UI03.zip",
+  "parent_sha256": "4cbb318e6d212f50522e3089053257cee93c81892c1eb4c84809557e9a1c239d",
+  "parent_manifest_records_verified": 206,
+  "core": "1.34.19",
+  "core_archive_sha256": "8c1b6a8d731d01b05a1290d3a1dd1a544054147aac9048ca345af7983613cd9e",
+  "incremental_runtime_resources": {
+    "app/static/fieldwork.js": {
+      "before_sha256": "c3648e68a6ed6c39f498e23fdcac8ac4117b2f6cfbde7c1e519df4e01d7c09fd",
+      "after_sha256": "c5fb3c1c997b7e6be817343f6d1239eb51df92ac7b3da548f41b1890e0d025e1"
+    },
+    "app/static/record_management.js": {
+      "before_sha256": "c5f998ae92283846d2b514242f8985ed832979ee2dbb1d18fbc390ee7a12b476",
+      "after_sha256": "e0efc8a986a104be98e0c9cdb4ccd0f0a16c2e34cb11199f86cf8c4884ecc38b"
+    },
+    "app/static/record_management.css": {
+      "before_sha256": "fd686726bac575aa196d02b816a36c4f0290a91a19f0d43972c2903e694b5e84",
+      "after_sha256": "3dc241fcb62f4936370872fef4cc85ff05c5e6ae5bb57458dd7b818b014339a5"
+    },
+    "app/static/ui_polish.css": {
+      "before_sha256": "feb0904e7e50c8e6926a1a9c7ca5988ddc437860e2da2d8cfc5023de249b36f8",
+      "after_sha256": "4bd10c44fe7c0d466ab92f250394bd676dc3a6aaa3b05763b0741bcfb833adfe"
+    },
+    "app/static/index.html": {
+      "before_sha256": "55f724931e0ea3c4e8e93726e68d6e24f1a927bb2dd930947b172d160b3261a8",
+      "after_sha256": "babec0ede55c7d28b2f6639bb6e861a01c355e4300987095abe18a1ecfc6cb54"
+    },
+    "app/static/sw.js": {
+      "before_sha256": "1421f3a6ad41116b01bf859b28c9e0ba95eeac464056b74f9293667f3c48eb1b",
+      "after_sha256": "0653c0eeccf06feea649b84ae31c18ed7b0d7bbacb01d769d1ca415fb6638809"
+    },
+    "app/static/row_selection.js": {
+      "before_sha256": "08e6fb812da1a295127e2d2967e8ac7361659a4e56e12b6a396b0b2c04010075",
+      "after_sha256": "82c9c2d0e922450fbd454418ace96c91763c81d18e58fb9cf58bc7692c04ef01"
+    }
+  },
+  "cumulative_resource_count": 14,
+  "derived_tracked_count": 1608,
+  "existing_executable_repo_changes": [
+    "deploy/extract_source.py"
+  ],
+  "live_github_tree_fetched": false,
+  "render_changed": false,
+  "no_live_database_in_package": true,
+  "history": "Prior full UI03 metadata and validation copied unchanged under REFERENCE_ONLY/Full_UI03_Checkpoint; original Inventory_UI03 reference directory preserved."
+}

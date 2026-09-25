@@ -1,0 +1,79 @@
+{
+  "format": "wavelink-workspace-ui04-delivery-1",
+  "package": "Wavelink_Online_Demo_Full_UI04",
+  "core_version": "1.34.19",
+  "overlay": "Workspace UI04; includes UI01/UI02/UI03",
+  "state": "Implemented and tested locally; not deployed by this session",
+  "tests": {
+    "python": {
+      "structure": 30,
+      "categories": 38,
+      "inherited": 172,
+      "deployment": 57
+    },
+    "distinct_python_passed": 297,
+    "browser": {
+      "logistics_workflow/BROWSER_SUMMARY.json": 11,
+      "category_browser/UI03_BROWSER_SUMMARY.json": 13,
+      "saved_manifests/BROWSER_SUMMARY.json": 13,
+      "row_selection/ROW_SELECTION_RESULTS.json": 5,
+      "ui04/UI04_BROWSER_RESULTS.json": 16,
+      "asset_details/browser_checks.json": 19,
+      "record_management/record_management_checks.json": 8,
+      "preparation/BROWSER_SUMMARY.json": 11
+    },
+    "compound_browser_passed": 96,
+    "javascript_syntax_files": 36,
+    "initial_findings_preserved": true,
+    "findings_file": "VALIDATION/FINDINGS_AND_RECONCILIATION.md"
+  },
+  "changes": {
+    "incremental_ui_resources": 7,
+    "cumulative_overlay_resources": 14,
+    "upstream_manifest_records": 1605,
+    "derived_manifest_records": 1608,
+    "existing_executable_repository_files": [
+      "deploy/extract_source.py"
+    ],
+    "database_schema_changed_from_ui03": false,
+    "backend_service_or_api_changed_from_ui03": false,
+    "authentication_deployment_files_changed_from_parent_full_ui03": false,
+    "demo_category_assignment_automatic": false
+  },
+  "source": "Parent combined UI03 package verified against all 206 manifest records; provenance and readable resource diffs included.",
+  "preserved": [
+    "UI03 categories and UI01/UI02 layouts",
+    "gateway and both login layers",
+    "fictional project initialization safeguards",
+    "source parts and original demo seed",
+    "inventory item identity, box/custody/receiving rules",
+    "record-management permission, revision, typed-confirmation and uncertain-save rules",
+    "prior progress/validation and Original Files plan"
+  ],
+  "scope_notes": [
+    "Browser computer/phone layouts, not native Windows Admin",
+    "List type grouping is navigation, not a new permission boundary",
+    "Inventory path is beside the table; not a globally sticky mobile header",
+    "New name-open behaviour is opt-in only for inventory; default selection helper users unchanged",
+    "Record-management forms remain online/page-memory, not durable offline drafts",
+    "Category metadata is retained but only explicitly previewed/applied"
+  ],
+  "limitations": {
+    "docker_image_built": false,
+    "live_github_tree_fetched": false,
+    "render_deployed": false,
+    "full_application_suite_rerun": false,
+    "full_browser_suite_rerun": false,
+    "physical_phone_tested": false,
+    "durable_browser_storage_tested": false,
+    "real_proxy_and_gateway_retested": false,
+    "live_restart_persistence_tested": false,
+    "backup_restore_tested": false,
+    "full_accessibility_acceptance": false,
+    "production_ready": false
+  },
+  "test_transport": "Actual Chromium and shipped JavaScript/CSS; fictional SQLite/TestClient responses and injected page-memory storage. No live provider requests.",
+  "recovery_helper": "Preserved helper remains pristine-1.34.19-source-pinned; not updated/accepted for overlaid runtime. Do not override its source checks.",
+  "install": "Review and copy contents of UPLOAD_TO_GITHUB into existing wavelink repo. Keep working Render environment/disk and INITIALISE_FICTIONAL_DEMO=NO. Do not reseed.",
+  "rollback": "Revert extractor commit or use exact UI03 extractor in REFERENCE_ONLY/Workspace_UI04/rollback/deploy."
+}

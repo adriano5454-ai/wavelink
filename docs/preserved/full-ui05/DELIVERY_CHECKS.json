@@ -1,0 +1,90 @@
+{
+  "format": "wavelink-workspace-ui05-delivery-checks-1",
+  "prepared": "2026-09-25",
+  "core_version": "1.34.19",
+  "workspace_patch": "UI05",
+  "includes": [
+    "UI01",
+    "UI02",
+    "UI03",
+    "UI04"
+  ],
+  "basis": "Supplied complete UI04 package; no live repository or hosted project read",
+  "parent_sha256": "7b6d1d0964986f5b2f83e5977aa758ce6ff874d491797c78a46991cab6fece8f",
+  "parent_manifest_records_verified": 414,
+  "upstream_tracked_files": 1605,
+  "derived_tracked_files": 1608,
+  "cumulative_overlay_resources": 18,
+  "incremental_browser_resources": [
+    "app/static/fieldwork.js",
+    "app/static/fleet.js",
+    "app/static/logistics_workflow.js",
+    "app/static/logistics_workflow.css",
+    "app/static/index.html",
+    "app/static/fleet.html",
+    "app/static/sw.js"
+  ],
+  "python": {
+    "distinct_cases": 300,
+    "failed": 0,
+    "errors": 0,
+    "skipped": 0,
+    "suites": {
+      "categories": 38,
+      "deployment": 57,
+      "inherited": 172,
+      "structure": 33
+    },
+    "unique_junit_ids_verified": true
+  },
+  "browser": {
+    "compound_checks": 100,
+    "harnesses": 7,
+    "errors": 0,
+    "suites": {
+      "asset_details": 19,
+      "category_browser": 13,
+      "preparation": 11,
+      "record_management": 8,
+      "saved_manifests": 13,
+      "ui04_navigation": 16,
+      "ui05": 20
+    },
+    "real_local_chromium": true,
+    "transport": "controlled HTTP with fictional TestClient/SQLite",
+    "storage": "injected page-memory persistence; not durable browser storage"
+  },
+  "javascript_syntax_files": 36,
+  "unchanged_app_after_final_tests": true,
+  "extractor_sha256": "7dde67bb8bd06a23fbe20321f269e32e749b387401ba872560fce79f13028316",
+  "runtime_manifest_sha256": "4f164f8261735c7dfcaed8edbe16beeaaa1e23e9e646675adcd037b1ddde5451",
+  "only_existing_executable_repository_change": [
+    "deploy/extract_source.py"
+  ],
+  "preserved": [
+    "hosted login and guest-link files",
+    "non-root gateway and startup",
+    "original vendor source and fictional seed",
+    "authoritative Python business services",
+    "movement/receipt/placement write contracts",
+    "UI04 record management",
+    "UI03 categories and explicit administrator application",
+    "project/disk/secret configuration",
+    "all supplied historical release and validation bytes"
+  ],
+  "initial_findings": "Inherited browser locators were adapted for the deliberately collapsed condition filter and boolean details.open attribute; initial failed/time-out runs and corrected passes are retained. Layout polish was followed by a new extraction and every final targeted run. No initial or repeated checks are added to accepted counts.",
+  "not_performed": [
+    "full application regression suite",
+    "entire inherited browser suite",
+    "Docker image build",
+    "live GitHub inspection/write",
+    "Render deployment or verification",
+    "physical phone or native Windows acceptance",
+    "durable IndexedDB/offline acceptance",
+    "off-host backup restore",
+    "complete accessibility acceptance",
+    "production or multi-company hosting approval"
+  ],
+  "recovery_boundary": "Existing staging_recovery helper is source-pinned to pristine 1.34.19 and not accepted for this overlaid runtime; do not bypass its check.",
+  "fresh_archive_verification": "Separate final-package verification record reports exact ZIP hash, manifest audit, extraction and repeated targeted checks."
+}

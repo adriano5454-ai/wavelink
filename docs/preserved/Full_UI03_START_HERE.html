@@ -1,0 +1,84 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Wavelink — full online demo UI03</title><style>body{font:16px/1.6 system-ui,sans-serif;color:#172e43;background:#f0f4f7;margin:0}main{max-width:920px;margin:36px auto;background:white;padding:32px;border-radius:12px}h1,h2{line-height:1.2}pre{white-space:pre-wrap;overflow-wrap:anywhere;font:14px/1.6 ui-monospace,monospace}a{color:#006e76}.notice{border-left:4px solid #007f88;padding:12px 18px;background:#eef9f8}</style></head><body><main><p>AJ OFFSHORE SOLUTIONS · WAVELINK</p><h1>Complete online demo — Inventory UI 03</h1><p class="notice">This folder contains the repository files. Upload its contents to the existing repository root. Keep the existing Render service, secrets and persistent disk. INITIALISE_FICTIONAL_DEMO stays NO.</p><pre># Wavelink — complete online demo repository, Inventory UI 03
+
+**Existing-service replacement bundle. Core 1.34.19 + cumulative Inventory UI01/UI02/UI03.**
+
+This ZIP assembles the original supplied deployment files, the final working hosting/login fixes shown in this conversation, and the exact UI03 extractor. It is **not a live export of your current GitHub repository or Render disk**. Later independent repository changes, if any, are not known to this package. No remote service was changed while preparing it.
+
+## Use only UPLOAD_TO_GITHUB for the repository upload
+
+1. Preserve unfinished work in every Wavelink browser/log window and save a project backup through your established process. The ZIP is code, **not a backup of the running project&#x27;s database**. Save/download your current GitHub source or retain the current commit for rollback. Do this outside a client demonstration.
+2. Extract the ZIP. Open **UPLOAD_TO_GITHUB**. Select its contents (including the folders); do not upload the outer ZIP, the UPLOAD_TO_GITHUB folder itself, REFERENCE_ONLY, or VALIDATION.
+3. In your existing **adriano5454-ai/wavelink** repository, go to the repository root and use your existing file-upload workflow. Upload these files and directories together, preserving names. Review the changes and commit them together. Do not delete the repository, its Git history or unknown custom files first. Review on a branch before merging if your live repository has other edits not made in this chat.
+4. Confirm **Dockerfile** is at the repository root and the scripts are at **deploy/gate.py**, **deploy/entrypoint.py**, **deploy/nginx_config.py**, **deploy/extract_source.py** and **deploy/provision.py**. Keep all five **vendor/source.part001–005** files. Show hidden files in your file manager so **.gitignore** and **.dockerignore** are included; do not copy a local .git directory.
+5. Deploy the approved commit using the **existing** Wavelink Render service. No new service, database or disk is needed. Keep the existing settings and secrets below. The service may restart briefly.
+6. After it is healthy, reload/open Inventory and check the **UI 03** badge. Core Wavelink remains **1.34.19**. Test normal administrator sign-in and the existing guest link in a separate fresh/private browser window. Do not clear site data or overwrite unsent work.
+
+This is the complete repository content needed for this known deployment—not another single-file patch. The compiled Windows installer is not part of this Linux hosting workflow.
+
+## Settings to KEEP in Render
+
+| Setting | Preserve |
+|---|---|
+| PUBLIC_URL | Your existing correct HTTPS origin |
+| DEMO_ACCESS_PASSWORD | Your current private-demo entrance/quick-link secret |
+| DEMO_GUEST_LOGIN | The existing restricted guest account&#x27;s User ID |
+| DEMO_GUEST_PASSWORD | The existing password matching that Wavelink guest account |
+| INITIALISE_FICTIONAL_DEMO | **NO** |
+| INITIAL_ADMIN_PASSWORD | **Leave absent** after the completed initial setup |
+| Persistent disk | Existing mount at **/var/data**, with the same project files |
+| Runtime/workers | Existing Docker service; one application worker/instance |
+| Health check | Existing **/healthz** path |
+
+No real passwords, live project, gate key or environment export are included. The intentionally supplied **vendor/FICTIONAL_DEMO.ajproject** is the original fictional seed, unchanged. Its presence in the image does **not** authorise re-import. The unchanged provisioner checks the existing deployment marker and opens its current project; it refuses a missing/unknown project when initialization is NO. Never re-enable seeding to obtain categories or reset a password.
+
+## Included hosting fixes
+
+The bundle includes the valid one-line Docker CMD and Tk runtime dependency; host-style authority handling; every Nginx temporary directory and error log under the writable runtime directory; the current guest environment pass-through; normal signed-CSRF demo forms; the /__demo/quick guest handoff; and the corrected **guest_login_id / authenticate_guest** names. These are restored from the last supplied working code, not from the obsolete initial gate in the first ZIP.
+
+Runtime files are reformatted/consolidated rather than presented as byte-identical copies of the current remote repository. The supervisor explicitly returns a nonzero status after handled startup errors (restoring the original failure-exit behavior). No account, table, shipment or seed identity is changed by this packaging adjustment.
+
+The five vendor source parts, seed, requirements.lock, provision.py, the recovery helper and UI03 extractor are checksum-identical to their supplied sources. The source extraction still validates all 1,605 original manifest entries, then produces the same UI03 derived files.
+
+Expected build messages:
+
+```text
+Verified upstream 1.34.19: 1605 tracked files.
+Applied Inventory UI 03: category tools and cumulative UI; demo data changes require explicit administrator review.
+```
+
+Docker may legitimately reuse unchanged build layers. Check the deployed commit and UI03 badge instead of assuming a CACHED line means the update failed.
+
+## Apply the example categories without re-importing anything
+
+Use your normal administrator account, **not the guest quick link**.
+
+Open **Inventory → DEMO Offshore equipment → Manage categories → Preview demo categories**. Review and confirm the proposed 56 original records / 13 categories. Repeat for **DEMO Consumables** (12 original records / five categories). Type the inventory name exactly, review the reason and explicitly confirm.
+
+The category preview changes nothing. The saved action preserves existing choices and skips missing, renamed, identity-changed or archived demo records. Running it again does not duplicate categories. Custom/independently imported inventory can be organised manually. Already-applied categories remain in the current project; do not reset them to install this bundle.
+
+Categories describe items; they do not move them, change box contents, count stock, dispatch or receive equipment, or release quarantine. Read **docs/INVENTORY_UI03.md** for the complete feature/compatibility instructions and limits.
+
+## Before inviting the client again
+
+Test the existing guest link from a fresh/private window; confirm the expected non-admin user and intended permissions. Check a nested box, Asset details, a manifest and one attachment. As administrator, review the category setup. Preserve unsent work, then deliberately restart the hosted service and verify the same users, saved category choices and uploaded files remain. This package does not perform those live checks for you.
+
+The guest link remains a shared demo credential. It is not a per-user invitation, MFA, production SSO or multi-company isolation. The confirmed gate&#x27;s Origin/Referer behavior and shared rate limit are retained, not redesigned as production authentication. Use a separate private window for guest access, particularly when your normal browser holds administrator work. Rotate/revoke shared guest access after the demonstration. No public password/link is printed in this package.
+
+## Rollback
+
+Revert the bundle&#x27;s commit and redeploy the previous known-good commit. Do not restore the very first deployment ZIP, which predates the login fixes. Do not delete the persistent disk, reset the database, clear browser storage or uninstall anything.
+
+Once category data/drafts exist, prefer a forward correction. An older category-unaware exporter may omit metadata. Keep the UI03 source and project backup together; do not downgrade ajinventory-3 packages to older format markers.
+
+## Scope and recovery caveat
+
+The existing local vessel installation and CCVD relay are not part of this bundle or its deployment. No vessel/cloud synchronisation is implemented. Original Files folder organisation remains pending.
+
+The retained **ops/staging_recovery.py** is pinned to the original unmodified 1.34.19 manifest. It does **not** accept the UI03-modified /opt/wavelink/app as its source directory. Do not bypass that integrity check. Its historical instructions and previous evidence are preserved in REFERENCE_ONLY; this bundle does not certify off-host recovery of the current deployment. See **docs/RECOVERY_HELPER.md** before using it.
+
+## Validation and provenance
+
+See DELIVERY_CHECKS.json and the outer VALIDATION folder for checks actually repeated for this combined package. Historical UI03/initial-package results are separately retained under REFERENCE_ONLY and are not represented as new runs.
+
+The Docker image was **not built here**, no GitHub commit or Render deployment was performed, and the full application/browser suite, physical phones, actual Render persistence, DNS/TLS and off-host restoration were not tested in this consolidation. Current remote edits/settings have not been independently inspected. The existing client demo remains fictional-only.
+</pre></main></body></html>
