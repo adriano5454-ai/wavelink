@@ -1,4 +1,4 @@
-# Wavelink continuation — UI21 + G01
+# Wavelink continuation — UI23 + G01
 
 **Adriano's 25 September priority: HANDOVER FIRST.** UI20 implements daily Start
 today, selected shift and automatic periods, default 12 hours, alternatives/custom
@@ -8,19 +8,28 @@ source selection with scoped snapshots. No live deployment was made. G01 public
 entry was confirmed working by the user;
 keep its exact source and non-administrator guest requirement intact.
 
+UI22 adds guided saved publication/personal acknowledgement with fresh exact
+review and existing explicit write/retry behaviour. Handovers/Get started Help and
+create search-index drift are updated. No new API/storage/G01 behaviour.
+
+UI23 adds visible handover note sections, opened-draft text comparison and an
+explicit read-only exact previous-shift reference. No automatic copying or saving.
+Draft/publication/acknowledgement action functions and all application Python stay
+unchanged. Handovers and continuity Help re-reviewed; same eight distinct topics.
+
 ## Next work
 
-1. Check the new handover flow on the hosted service with actual shift starts
+1. Check the new note/reference editor and handover flow on the hosted service with actual shift starts
    (06:00/12:00 or agreed local schedule), night-to-next-day continuity, named
    authors, department audience and real phones. Confirm time basis and that
    published predecessor/acknowledgements do not change. Address feedback before
    unrelated feature additions. No new shared live draft/crew roster is implied.
-2. Continue bounded Help wording and entry-point review. Seven distinct topics
-   reviewed locally, 69 still pending, plus native/master-PDF/accessibility work.
-   UI21 includes Handovers and Handover continuity; other related articles remain.
-   Review create Help article/search-index mismatch (reproduced on UI20, unchanged),
-   public-vs-staff sign-in guidance and entrypoints; preserve browser/hosted/native
-   distinctions. Do not treat the four inherited release-test failures as passes.
+2. Continue bounded Help wording and entry-point review. Eight distinct topics
+   reviewed locally,68pending plus native/master-PDF/accessibility work. UI22 adds
+   Get started and re-reviews Handovers. Public-vs-staff instructions now distinguish
+   outer gate from named-account login. Create search index now matches its existing
+   article; the broader create article wording review remains, not silently counted
+   as complete. Keep four historical assertions explicit, not passed.
 3. Address actual Home/inventory/boxes/logistics/maintenance/checklist/Originals
    feedback and refine remaining forms/navigation. Native folder authoring,
    attachment formats and richer import mapping remain separately scoped.
@@ -37,7 +46,7 @@ Task/evidence extensions and recurring reminders; running-hour maintenance; conf
 
 ## Source and delivery rules
 
-Continue from UI21 + G01's exact source identity/checkpoint. This is the supplied UI18 branch, not the other unrecovered UI18 variant. The schema guard must not be bypassed or turned into an unreviewed migration. Verify the source baseline before changing code.
+Continue from UI23 + G01's exact source identity/checkpoint. This is the supplied UI18 branch, not the other unrecovered UI18 variant. The schema guard must not be bypassed or turned into an unreviewed migration. Verify the source baseline before changing code.
 
 Default deliverables are **changed/new GitHub files only**, short instructions and one current checkpoint. Do not accumulate old screenshots, test logs, old releases, rollback extractors or unchanged source/vendor parts in routine ZIPs. Keep one full GitHub baseline and the approved Git history separately. State required baseline, deletions, migrations and dependencies explicitly. Development evidence stays separate; never claim tests or deployments not actually completed.
 

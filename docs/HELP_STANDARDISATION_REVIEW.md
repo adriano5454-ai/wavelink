@@ -1,3 +1,34 @@
+# Current status — UI23 handover note editor and earlier-shift reference (25 September 2026)
+
+Handovers and Handover continuity re-reviewed for visible note sections, text-presence
+(not completion) indicators, opened-draft comparison, explicitly retrieved pinned
+source revision, modal-interruption handling and unchanged memory-only saving.
+The daily single-source panel is distinct from full-hitch multi-source preparation.
+Other74 article bodies unchanged; shared-reader cache URL updates are outside bodies.
+All76 catalogue text/heading fields match. Same eight distinct bounded topics,
+68remaining plus native/masterPDF/entry-point/operational acceptance. No new topic
+is counted merely because an existing article was revised again.
+
+---
+
+# Current status — UI22 saved review and Get started (25 September 2026)
+
+Handovers describes guided publication/personal acknowledgement and fresh exact
+saved review, memory-only summary, reset consent, unchanged explicit retry and
+shared-guest attribution limits. Get started separates hosted public guest, outer
+staff gate/named account, existing-session signout and separate local Windows hub.
+Eight distinct bounded wording-reviewed topics;68remaining,plus native/masterPDF/
+entry-point/accessibility work. Other74 article bodies unchanged. Shared reader
+cache URLs changed outside article bodies.
+
+All76 catalogue text/heading fields match current article bodies. The inherited
+create index mismatch is fixed by matching its existing article, NOT by silently
+rewriting or declaring the create topic reviewed. Only handovers,start,create
+catalogue entries changed; the other73 are unchanged. Earlier counts/findings below
+are historical. No native/master PDF update or blanket procedural acceptance.
+
+---
+
 # Current status — UI21 Handovers and continuity review (25 September 2026)
 
 Handovers now describes the cross-date saved-draft panel, calendar navigation,
