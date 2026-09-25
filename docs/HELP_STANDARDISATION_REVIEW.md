@@ -1,5 +1,7 @@
 # Wavelink development list — Help standardisation
 
+**Current status: UI18 progress is at the end. Five bounded wording-reviewed topics; Original files shared folders implemented locally. Prior version sections are historical.**
+
 Requested by Adriano on 25 September 2026: review all Help because presentation is inconsistent and some pages appear as plain text files. This list is retained alongside the inventory-first and app-wide interface roadmap.
 
 ## Source findings in the supplied UI06 package
@@ -120,3 +122,36 @@ There remain **three distinct bounded wording-reviewed articles** (daily, record
 Earlier sections remain historical. `dashboard` (Use Home) now describes equipment navigation, Continue/Start, local/server drafts, per-category scope and failure states, capability limits and hosted/local operation. Outline and search catalogue match the article. Other75 article bodies remain unchanged, including daily,records,maintenance. Native/master PDF/reference HTML are unchanged.
 
 There are now **four distinct bounded wording-reviewed articles**, leaving72 without that current wording review. HELP-04 and HELP-05 advance for Home only. HELP-06 covers its verified existing Help route and no form submission. HELP-09 has local five-width, focus/landmark/error tests; physical devices and complete accessibility remain pending. HELP-10 checks75 preserved bodies and all76 routes with Tk blocked; consolidated authoring/all-format CI remains pending. The entire Help library is not marked complete.
+
+
+## UI14 progress — 25 September 2026
+
+Earlier sections remain historical. Maintenance now documents the three-page saved-step approval and pending-follow-up-release guides, saved-result/photo review, explicit decisions, assignee scope, original pending date, version/retry/local-draft boundaries and the possibility of a saved continuing block rather than creation. Its outline/catalogue are aligned. All75 other instructional article bodies remain identical to UI13. Shared reader cache references advance; native Help, original reference and master PDF bytes remain unchanged.
+
+There remain **four distinct bounded wording-reviewed articles**, leaving72 without that wording review. UI14 does not turn the repeat Maintenance review into a fifth topic. The new checks serve all76 Help routes and verify their anchors/catalogue, but do not claim a new Tk-import-blocked run or complete native/PDF/accessibility acceptance. Full Help entry-point/hosted-local/authoring-pipeline work and Original Files logical-folder organisation remain pending.
+
+
+## UI15 progress — 25 September 2026
+
+Maintenance now documents exact-item linked creation and the separate read-only saved-evidence viewer. It explains the four creation pages, fixed identity, current published-routine choice, draft-resume/retry boundaries, saved-detail destination, snapshot/refresh behavior, unavailable-image distinction and separate approval. The outline and catalogue match the revised article. All75 other instructional bodies remain unchanged; shared reader cache references advance.
+
+There remain four distinct bounded wording-reviewed topics: daily, records, maintenance and dashboard;72 articles still lack that review. All76 Help routes and anchors were exercised locally in UI15; this is not a new Tk-import-blocked run or full Help/native/PDF/accessibility acceptance. Native Help, original reference and master PDF bytes remain unchanged. Entry-point/hosted-local/authoring-pipeline work and Original Files logical folders remain pending.
+
+
+## UI16 progress — 25 September 2026
+
+Daily checks is re-reviewed for the three-page result/readings/photos/review form; its known snapshot versus local proposal, draft/queue and confirmation semantics, required readings/evidence, conflicts and separate approval/readiness/finalisation are stated. Its outline and search catalogue are updated. The75 other instructional article bodies remain unchanged; shared reader cache references advance.
+
+There remain four distinct bounded wording-reviewed topics (daily, records, maintenance, dashboard), with72 article bodies and all entry-point/native/PDF/accessibility/authoring-pipeline acceptance still pending. All76 actual Help routes were checked under a Tk-import block during route reads with no operational DB change. A five-check browser run covers the current article, search, narrow layout and print. This is not a fully desktop-import-blocked application startup or full Help/accessibility acceptance. Original Files logical folder work remains pending; original document bytes and links are unchanged.
+
+
+## UI17 progress — 25 September 2026
+
+Daily checks is re-reviewed for saved-result approval, own-device readiness and stage finalisation. Fresh authorised decoded evidence, no preselected decision, memory-only review notes, readiness versus completion, snapshot participant scopes, final blockers and uncertain/acknowledged outcomes are explained. Its outline/search are updated; 75 other article HTML bodies are unchanged apart from external shared reader resource references. Four bounded topics remain reviewed, with 72 article bodies and broader entry-point/native/PDF/accessibility/authoring-pipeline acceptance still pending. All 76 actual Help routes were read with Tk imports blocked during requests; not fully blocked application startup. Original Files logical folders remain pending and original documents remain unchanged.
+
+
+## UI18 progress — 25 September 2026 (current continuation)
+
+Originals is reviewed for the actual browser folder library, exact revision and source preservation, administrator review/history, snapshot/retry boundaries, transfer format differences and unchanged native import path. Its outline/search are updated; 75 other instructional bodies are unchanged. Five distinct bounded reviews are now complete locally: daily, records, maintenance, dashboard and originals. Seventy-one article bodies and broader entry-point/native/PDF/authoring/accessibility acceptance remain pending. All 76 actual routes were read with Tk imports blocked during requests, not during startup.
+
+Original Files logical shared folders are implemented and locally tested in UI18, not still pending as in the historical sections above. Browser upload/destination-at-upload, native folder authoring and universal attachment organisation remain follow-up scope. See ORIGINAL_FILES_ORGANISATION.md. This is an additive server metadata change; original bytes/references remain unchanged.

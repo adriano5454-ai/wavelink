@@ -42,3 +42,23 @@ The original UI12 proposal above remains as history. UI13 implements the first b
 | Help | Dashboard article reviewed, outline/catalogue updated,75 other article bodies unchanged. | Remaining72 not-yet-wording-reviewed topics plus finer reviewed topics and native/master PDF. |
 
 No automatic writes, new storage, permissions, domain change or new API accompany Home navigation. A narrow shared form post-save branch refreshes Home after explicit creation instead of falling into Toolbox. Normal workspaces retain their save callbacks and effects.
+
+
+## UI15 continuation note
+
+Home remains the UI13 implementation. UI15 changes the exact-item maintenance form and saved-evidence viewer; it does not declare the remaining Home plan completed. The UI13 Home browser regressions were rerun against UI15. Actual hosted, role-specific and physical-device feedback remains required.
+
+
+## UI16 continuation note
+
+Home remains UI13; the standalone checklist result editor is now UI16. UI13 Home regressions were rerun against the new runtime. Hosted/role/phone feedback and remaining Home plan acceptance are not declared complete by this release.
+
+
+## UI17 continuation note
+
+Home remains UI13; only the three detailed standalone checklist review guides change to UI17. UI13 Home regression checks were rerun. Hosted/role/phone feedback and remaining Home acceptance are not declared complete by this release.
+
+
+## UI18 continuation note
+
+Home stays UI13. Original files now opens the UI18 saved shared-folder library through the existing Workspace menu, without replacing an unfinished operational form. The existing Home browser regressions were rerun. Real-user/hosted/phone Home acceptance and further role-specific refinement are not complete merely because the new library exists.

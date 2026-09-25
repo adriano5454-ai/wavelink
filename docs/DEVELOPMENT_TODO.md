@@ -1,26 +1,21 @@
-# Wavelink — active development to-do list after UI12
+# Wavelink continuation — after UI18
 
-Core **1.34.19**, cumulative **UI01–UI12**. This is a development order and status record, not a scheduled background task.
+## Verified release boundary
 
-| Workstream | Current status | Next work |
-|---|---|---|
-| Inventory, boxes, categories, movements, manifests and receiving | Earlier UI01–UI06 improvements retained; actual hosted feedback remains first priority. | Resolve reported navigation/action problems without changing custody rules or resetting inventory. |
-| Record management | UI04 list/detail and explicit action explanations retained. | Continue workflow and action-clarity review as feedback arrives. No unrestricted delete-all action. |
-| Home page | **New explicit pending item, requested 25 September 2026. Home is unchanged in UI12.** | Review daily actions, personal/project scope, visual hierarchy and mobile use. See HOME_PAGE_IMPROVEMENT_PLAN.md. |
-| Standalone checklists | UI08 catalogue and UI09 stage layout retained. | Remaining detailed reading/photo/approval/finalisation forms and real-device acceptance. |
-| Maintenance | UI10 workspace, UI11 create/result forms and UI12 close/cycle/stop-pending reviews implemented locally. | Item approval, pending follow-up release, linked-asset creation and saved-evidence viewing remain separate pending form reviews. |
-| Help standardisation | Shared 76-topic reader; three distinct articles have bounded wording reviews. | Continue HELP-04–HELP-10, especially current labels, hosted/local instructions, other entry points and native/master-PDF consistency. |
-| Original Files logical folders | Requested, still pending. | Organise library navigation while preserving original bytes, revision identities, links, access and audit history. No files moved by UI12. |
-| Hosted acceptance and recovery | Working custom-domain entry previously confirmed by the user; UI12 not live-deployed here. | Test update persistence, actual devices, company/project isolation and overlay-compatible off-host recovery. Do not bypass the pristine-source helper checks. |
-| Vessel/cloud synchronisation | Not implemented. | Separate data-ownership/conflict design; not implied by hosted availability. |
+Core stays 1.34.19; cumulative UI01–UI18. UI18 implements project-shared logical folders for the existing Originals library, exact-revision moves, administrator preview/confirmation and audit, snapshot/idempotency guards, selected-transfer preservation, and the fifth bounded Help wording review (originals). No original bytes or document-reference structures are rewritten. This release includes five changed/added application Python modules and three additive metadata tables; it is not static-only.
 
-Preserve the working domain, authentication, existing project and all cumulative improvements. The native vessel installation and CCVD relay are outside this Wavelink browser-update scope.
+UI17 checklist approval/readiness/finalisation, UI16 result editor, UI15 asset creation/saved-evidence viewer, UI14 maintenance reviews and UI13 Home remain included. Native vessel/CCVD are outside scope.
 
+## Next work in order
 
-## Current status after UI13
+1. Record real hosted/user feedback for Home, inventory/boxes, maintenance, checklists and the new Originals library. Verify normal/guest/restricted roles, real devices, file downloads, saved folder changes and restart persistence. Preserve deployment and unsent work before any update.
+2. Continue the Originals workflow with a separately reviewed browser upload/add-revision design and explicit destination at import. Reuse existing byte/type/size/identity/reference checks. Do not invent a revision-family move, upload permission, document ACL or ability to organise every attachment. New current imports start at the root; native folder-authoring is not implemented. Confirm how native/other attachment entry points should display the same metadata before widening scope.
+3. Continue Help wording and entry-point review. Five distinct topics reviewed: daily, records, maintenance, dashboard, originals. Seventy-one remaining article bodies, the shared authoring pipeline, native Help, all-in-one/master PDF and complete accessibility acceptance remain pending. Preserve unrelated wording and identify hosted versus native paths accurately.
+4. Continue lifecycle acceptance: durable local work and service-worker update with unfinished forms, offline/conflict recovery, independent browser/device concurrency, multi-device access revocation, and folder action lost-response handling. The new organisation form is online, memory-only, with no automatic queued retry; lost tabs require saved-history review. Local test cases are not broad security or isolation certification.
+5. Validate overlay-compatible off-host recovery separately. The pristine helper remains unapproved. Do not weaken checksum/unknown-table checks. UI17 rollback hides folder metadata and may refuse older selected exports; do not delete tables to bypass that. Preserve complete backups and browser-only work independently. No vessel/cloud synchronisation.
 
-The UI12 table above remains historical. Home now has its first implemented browser pass: equipment destinations, Continue/Start distinction, scope-labelled overview, saved-local-work review and current Help. It is locally tested, not deployed here; physical/live acceptance and ongoing refinement remain.
+## Continuity and packaging
 
-Keep inventory/boxes/manifests/receiving feedback first. Preserve UI04 Record management and all cumulative checklist/maintenance forms. Next detailed-form reviews remain item approval, pending-follow-up release and exact-asset work creation. Help now has four distinct bounded wording reviews (daily, records, maintenance, dashboard), leaving72 registered articles without that wording review; all76 share the reader. Full Help entry points, native/master PDF and accessibility remain pending.
+Continue from verified full UI18 bytes; verify parent manifest and final extraction before editing. Include exact parent extractor rollback, readable runtime/diffs, old evidence history, new final and preliminary evidence separated, and updated checksum manifests. The deployment extractor remains the only changed existing executable upload file; app changes are embedded, not separate executable upload patches. Keep gateway/guest/supervisor/Docker/dependencies/vendor/seed/recovery unchanged unless a separately scoped update explicitly requires them.
 
-Original Files logical folders, overlay-compatible recovery and broader hosted security/company isolation remain separate pending work. No source-document movement, guest/domain change, reseed or vessel/cloud synchronisation is implemented by this Home update.
+Keep `https://demo.mywavelink.com`, current secrets and guest/disk settings, `INITIALISE_FICTIONAL_DEMO=NO`, removed initial-admin bootstrap, `.git` and outside changes. No reset, demonstration re-import, automatic categorisation, site-data clearing or background development. No live repository was fetched or deployed for UI18.

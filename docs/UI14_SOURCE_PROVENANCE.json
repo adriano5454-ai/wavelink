@@ -1,0 +1,247 @@
+{
+  "format": "wavelink-workspace-ui14-delivery-1",
+  "prepared": "2026-09-25",
+  "core": "1.34.19",
+  "cumulative": "UI01-UI14",
+  "parent_archive_sha256": "29e233233b14de9e71123392184100da3e2a6a89a0d3b46b9cbcb050ca516981",
+  "parent_package_files_verified": 2959,
+  "patch_id": "workspace-ui14-2026-09-25",
+  "changed_from_ui13": [
+    "app/static/app.js",
+    "app/static/help.html",
+    "app/static/help_catalogue.json",
+    "app/static/help_topics/accessreview.html",
+    "app/static/help_topics/approvals.html",
+    "app/static/help_topics/assetcalendar.html",
+    "app/static/help_topics/assetdetails.html",
+    "app/static/help_topics/assetlabels.html",
+    "app/static/help_topics/assignments.html",
+    "app/static/help_topics/backups.html",
+    "app/static/help_topics/browseradmin.html",
+    "app/static/help_topics/browserlogs.html",
+    "app/static/help_topics/browsertemplates.html",
+    "app/static/help_topics/browsertoolbox.html",
+    "app/static/help_topics/builder.html",
+    "app/static/help_topics/certificates.html",
+    "app/static/help_topics/companybranding.html",
+    "app/static/help_topics/containers.html",
+    "app/static/help_topics/create.html",
+    "app/static/help_topics/daily.html",
+    "app/static/help_topics/dashboard.html",
+    "app/static/help_topics/datetime.html",
+    "app/static/help_topics/departmentheads.html",
+    "app/static/help_topics/departments.html",
+    "app/static/help_topics/document.html",
+    "app/static/help_topics/documentimport.html",
+    "app/static/help_topics/evidence.html",
+    "app/static/help_topics/evidencereview.html",
+    "app/static/help_topics/faults.html",
+    "app/static/help_topics/fleet.html",
+    "app/static/help_topics/fleetaccess.html",
+    "app/static/help_topics/generaltasks.html",
+    "app/static/help_topics/handovercontinuity.html",
+    "app/static/help_topics/handovers.html",
+    "app/static/help_topics/https.html",
+    "app/static/help_topics/illustrations.html",
+    "app/static/help_topics/importcentre.html",
+    "app/static/help_topics/inventory.html",
+    "app/static/help_topics/inventorybuilder.html",
+    "app/static/help_topics/inventorytransfer.html",
+    "app/static/help_topics/itemjourney.html",
+    "app/static/help_topics/live.html",
+    "app/static/help_topics/logbuilder.html",
+    "app/static/help_topics/logexports.html",
+    "app/static/help_topics/logimport.html",
+    "app/static/help_topics/logreferences.html",
+    "app/static/help_topics/logs.html",
+    "app/static/help_topics/logwindows.html",
+    "app/static/help_topics/lowstock.html",
+    "app/static/help_topics/maintenance.html",
+    "app/static/help_topics/maintenancebuilder.html",
+    "app/static/help_topics/manifests.html",
+    "app/static/help_topics/navigation.html",
+    "app/static/help_topics/network.html",
+    "app/static/help_topics/offsets.html",
+    "app/static/help_topics/originals.html",
+    "app/static/help_topics/permissions.html",
+    "app/static/help_topics/phones.html",
+    "app/static/help_topics/projects.html",
+    "app/static/help_topics/qrverification.html",
+    "app/static/help_topics/qshe.html",
+    "app/static/help_topics/receiving.html",
+    "app/static/help_topics/recordmanagement.html",
+    "app/static/help_topics/records.html",
+    "app/static/help_topics/savestatus.html",
+    "app/static/help_topics/start.html",
+    "app/static/help_topics/stocktake.html",
+    "app/static/help_topics/storage.html",
+    "app/static/help_topics/support.html",
+    "app/static/help_topics/tasks.html",
+    "app/static/help_topics/toolbox.html",
+    "app/static/help_topics/toolboxbuilder.html",
+    "app/static/help_topics/toolboxguests.html",
+    "app/static/help_topics/transfers.html",
+    "app/static/help_topics/types.html",
+    "app/static/help_topics/uninstall.html",
+    "app/static/help_topics/users.html",
+    "app/static/help_topics/vessellogaccess.html",
+    "app/static/help_topics/vessellogs.html",
+    "app/static/help_workspace.js",
+    "app/static/index.html",
+    "app/static/maintenance_management.css",
+    "app/static/maintenance_management.js",
+    "app/static/operations.js",
+    "app/static/sw.js"
+  ],
+  "cumulative_overlay_files": 119,
+  "tracked_files": 1625,
+  "extractor_sha256": "750c43d16d0752873cf49bc54469df98f64de0bcdded36db919f2b6c06f2d292",
+  "all_application_python_identical_to_ui13": true,
+  "incremental_resources": 85,
+  "upstream_original_sha256": "8c1b6a8d731d01b05a1290d3a1dd1a544054147aac9048ca345af7983613cd9e",
+  "changed_existing_executable_upload_files": [
+    "deploy/extract_source.py"
+  ],
+  "live_repository_fetched": false,
+  "deployed": false,
+  "python": {
+    "passed": 405,
+    "failed": 0,
+    "errors": 0,
+    "skipped": 0,
+    "scope": "Only listed completed suites; not the full suite or incomplete extended attempts.",
+    "runs": [
+      {
+        "tests": 38,
+        "errors": 0,
+        "failures": 0,
+        "skipped": 0,
+        "evidence": "final/categories.xml"
+      },
+      {
+        "tests": 57,
+        "errors": 0,
+        "failures": 0,
+        "skipped": 0,
+        "evidence": "final/deployment.xml"
+      },
+      {
+        "tests": 14,
+        "errors": 0,
+        "failures": 0,
+        "skipped": 0,
+        "evidence": "final/inherited_0.xml"
+      },
+      {
+        "tests": 52,
+        "errors": 0,
+        "failures": 0,
+        "skipped": 0,
+        "evidence": "final/inherited_1.xml"
+      },
+      {
+        "tests": 42,
+        "errors": 0,
+        "failures": 0,
+        "skipped": 0,
+        "evidence": "final/inherited_2.xml"
+      },
+      {
+        "tests": 9,
+        "errors": 0,
+        "failures": 0,
+        "skipped": 0,
+        "evidence": "final/inherited_3.xml"
+      },
+      {
+        "tests": 34,
+        "errors": 0,
+        "failures": 0,
+        "skipped": 0,
+        "evidence": "final/inherited_4.xml"
+      },
+      {
+        "tests": 30,
+        "errors": 0,
+        "failures": 0,
+        "skipped": 0,
+        "evidence": "final/inherited_5.xml"
+      },
+      {
+        "tests": 14,
+        "errors": 0,
+        "failures": 0,
+        "skipped": 0,
+        "evidence": "final/inherited_6.xml"
+      },
+      {
+        "tests": 19,
+        "errors": 0,
+        "failures": 0,
+        "skipped": 0,
+        "evidence": "final/inherited_7.xml"
+      },
+      {
+        "tests": 96,
+        "errors": 0,
+        "failures": 0,
+        "skipped": 0,
+        "evidence": "final/ui14_python.xml"
+      }
+    ]
+  },
+  "browser": {
+    "compound_checks_passed": 119,
+    "recorded_errors": 0,
+    "runs": [
+      {
+        "evidence": "final/new_browser/CHECKS.json",
+        "checks": 19,
+        "recorded_errors": 0
+      },
+      {
+        "evidence": "final/home_browser/CHECKS.json",
+        "checks": 22,
+        "recorded_errors": 0
+      },
+      {
+        "evidence": "final/prior_management_browser/CHECKS.json",
+        "checks": 18,
+        "recorded_errors": 0
+      },
+      {
+        "evidence": "final/prior_forms_browser/CHECKS.json",
+        "checks": 26,
+        "recorded_errors": 0
+      },
+      {
+        "evidence": "final/shipments_browser/BROWSER_SUMMARY.json",
+        "checks": 18,
+        "recorded_errors": 0
+      },
+      {
+        "evidence": "final/inventory_browser/UI04_BROWSER_RESULTS.json",
+        "checks": 16,
+        "recorded_errors": 0
+      }
+    ],
+    "transport": "local Chromium, actual scripts/styles, TestClient HTTP, temporary fictional databases; injected in-memory browser persistence"
+  },
+  "javascript_syntax_files": 43,
+  "help": {
+    "reviewed": [
+      "maintenance"
+    ],
+    "other_article_bodies_unchanged": 75,
+    "total_distinct_bounded_reviews": 4,
+    "native_pdf_original_reference_unchanged": true,
+    "full_help_review_complete": false
+  },
+  "limitations": [
+    "No live GitHub fetch or Render deployment.",
+    "No full product suite, Docker image build or physical Windows/phone acceptance.",
+    "No durable browser storage, off-host restoration, full accessibility or production-security/isolation acceptance.",
+    "Extended inherited browser-template/task-checklist runs did not finish cleanly. Their partial results and stalled process exits are retained under development and are excluded from final counts; cause unestablished.",
+    "The pristine-source recovery helper remains unapproved for overlaid runtime."
+  ]
+}

@@ -1,19 +1,15 @@
 {
-  "format": "wavelink-workspace-ui18-delivery-1",
+  "format": "wavelink-workspace-ui16-delivery-1",
   "prepared": "2026-09-25",
   "core": "1.34.19",
-  "cumulative": "UI01-UI18",
-  "parent_archive_sha256": "9b23aae318fe82a862adf33a1d4d4fa17ab9761c5daaaf1ffa4936a4ac3d9dd1",
-  "parent_package_files_verified": 4628,
-  "parent_deployment_files_verified": 84,
-  "patch_id": "workspace-ui18-2026-09-25",
-  "changed_from_ui17": [
-    "app/original_documents.py",
-    "app/original_folders.py",
-    "app/original_folders_api.py",
-    "app/project_modules.py",
-    "app/server.py",
+  "cumulative": "UI01-UI16",
+  "parent_archive_sha256": "ee85f8d740e6a9bc766cf4b1b029311ec2698528ca81aab684e801ce94cb2ecc",
+  "parent_package_files_verified": 3766,
+  "patch_id": "workspace-ui16-2026-09-25",
+  "changed_from_ui15": [
     "app/static/app.js",
+    "app/static/checklist_forms.css",
+    "app/static/checklist_forms.js",
     "app/static/help.html",
     "app/static/help_catalogue.json",
     "app/static/help_topics/accessreview.html",
@@ -94,25 +90,14 @@
     "app/static/help_topics/vessellogs.html",
     "app/static/help_workspace.js",
     "app/static/index.html",
-    "app/static/original_library.css",
-    "app/static/original_library.js",
     "app/static/sw.js"
   ],
-  "cumulative_overlay_files": 131,
-  "tracked_files": 1635,
-  "extractor_sha256": "d63d6de8b7b076893e44c8faf5122be5ac136539685d7744a44adae85b01d980",
-  "changed_existing_application_python_files": [
-    "app/server.py",
-    "app/original_documents.py",
-    "app/project_modules.py"
-  ],
-  "new_application_python_files": [
-    "app/original_folders_api.py",
-    "app/original_folders.py"
-  ],
-  "unchanged_application_python_count": 173,
-  "application_python_count": 178,
-  "incremental_resources": 89,
+  "cumulative_overlay_files": 123,
+  "tracked_files": 1629,
+  "extractor_sha256": "d415fc15eb9f565e22e886cb3949444f07155dc99fae343a2804163b1137d11d",
+  "all_application_python_identical_to_ui15": true,
+  "application_python_count": 176,
+  "incremental_resources": 84,
   "upstream_original_sha256": "8c1b6a8d731d01b05a1290d3a1dd1a544054147aac9048ca345af7983613cd9e",
   "changed_existing_executable_upload_files": [
     "deploy/extract_source.py"
@@ -120,11 +105,11 @@
   "live_repository_fetched": false,
   "deployed": false,
   "python": {
-    "passed": 534,
+    "passed": 729,
     "failed": 0,
     "errors": 0,
     "skipped": 0,
-    "scope": "Completed distinct selected cases; preliminary/repeated cases not additional coverage. UI17-only source-contract tests are not reused as UI18 contracts.",
+    "scope": "Completed selected runs only; repeat and partial attempts are not additional coverage.",
     "runs": [
       {
         "name": "inherited_0",
@@ -199,12 +184,12 @@
         "evidence": "final/inherited_8.xml"
       },
       {
-        "name": "new_folders",
-        "tests": 65,
+        "name": "new_contracts",
+        "tests": 286,
         "failures": 0,
         "errors": 0,
         "skipped": 0,
-        "evidence": "final/new_folders.xml"
+        "evidence": "final/new_contracts.xml"
       },
       {
         "name": "categories",
@@ -237,70 +222,18 @@
         "errors": 0,
         "skipped": 0,
         "evidence": "final/task_checklist_regression.xml"
-      },
-      {
-        "name": "legacy_upgrade",
-        "tests": 1,
-        "failures": 0,
-        "errors": 0,
-        "skipped": 0,
-        "evidence": "final/legacy_upgrade.xml"
-      },
-      {
-        "name": "transfer_daily",
-        "tests": 4,
-        "failures": 0,
-        "errors": 0,
-        "skipped": 0,
-        "evidence": "final/transfer_daily.xml"
-      },
-      {
-        "name": "transfer_handover",
-        "tests": 5,
-        "failures": 0,
-        "errors": 0,
-        "skipped": 0,
-        "evidence": "final/transfer_handover.xml"
-      },
-      {
-        "name": "transfer_fault",
-        "tests": 8,
-        "failures": 0,
-        "errors": 0,
-        "skipped": 0,
-        "evidence": "final/transfer_fault.xml"
-      },
-      {
-        "name": "transfer_qshe",
-        "tests": 8,
-        "failures": 0,
-        "errors": 0,
-        "skipped": 0,
-        "evidence": "final/transfer_qshe.xml"
       }
     ]
   },
   "browser": {
-    "compound_checks_passed": 268,
+    "compound_checks_passed": 206,
     "recorded_errors": 0,
     "runs": [
       {
         "name": "new_browser",
-        "checks": 23,
+        "checks": 39,
         "recorded_errors": 0,
         "evidence": "final/new_browser/results.json"
-      },
-      {
-        "name": "checklist_review_browser",
-        "checks": 39,
-        "recorded_errors": 0,
-        "evidence": "final/checklist_review_browser/results.json"
-      },
-      {
-        "name": "result_editor_browser",
-        "checks": 39,
-        "recorded_errors": 0,
-        "evidence": "final/result_editor_browser/results.json"
       },
       {
         "name": "linked_browser",
@@ -357,42 +290,28 @@
         "evidence": "final/inventory_browser/UI04_BROWSER_RESULTS.json"
       }
     ],
-    "transport": "Local Chromium; actual shipped scripts/styles; TestClient HTTP; temporary fictional projects; injected in-memory browser persistence."
+    "transport": "Local Chromium; actual shipped scripts/styles; TestClient HTTP; temporary fictional databases; injected in-memory browser persistence."
   },
-  "javascript_syntax_files": 47,
-  "python_syntax_files": 178,
+  "javascript_syntax_files": 45,
   "help": {
     "reviewed_this_release": [
-      "originals"
+      "daily"
     ],
     "other_article_bodies_unchanged": 75,
     "distinct_bounded_reviewed_topics": [
       "daily",
       "records",
       "maintenance",
-      "dashboard",
-      "originals"
+      "dashboard"
     ],
     "native_pdf_original_reference_unchanged": true,
     "full_help_review_complete": false
   },
-  "database_extension": {
-    "new_tables": [
-      "original_document_folders",
-      "original_document_locations",
-      "original_document_folder_audit"
-    ],
-    "automatic_classification": false,
-    "original_rows_rewritten": false,
-    "normal_store_initialisation_ensures_tables": true,
-    "actual_ui17_project_upgrade_test_passed": true
-  },
   "limitations": [
     "No live GitHub fetch or Render deployment.",
     "Not the full product suite, Docker image build or physical Windows/phone acceptance.",
-    "No durable browser storage/service-worker lifecycle, accepted off-host restoration, full accessibility, production-security or multi-company isolation acceptance.",
-    "The new form is connection-required and memory-only; no persistent browser draft or offline action queue.",
-    "Browser uploading/destination at upload/native folder authoring remain outside this release.",
-    "The original pristine-source recovery helper remains unapproved for overlaid runtime; UI17 rollback hides folder metadata and its selected exporter may refuse the new tables."
+    "No durable browser storage, service-worker lifecycle, off-host restoration, full accessibility, production-security or multi-company isolation acceptance.",
+    "Initial time-limited/interrupted diagnostics are excluded. Template (49) and Task-checklist (47) groups subsequently completed cleanly in final selected runs; this does not establish the cause of prior incomplete runs or complete the full product suite.",
+    "The original pristine-source recovery helper remains unapproved for overlaid runtime."
   ]
 }
