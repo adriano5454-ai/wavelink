@@ -226,3 +226,16 @@ Daily checks is re-reviewed for saved-result approval, own-device readiness and 
 Originals is reviewed for the actual browser folder library, exact revision and source preservation, administrator review/history, snapshot/retry boundaries, transfer format differences and unchanged native import path. Its outline/search are updated; 75 other instructional bodies are unchanged. Five distinct bounded reviews are now complete locally: daily, records, maintenance, dashboard and originals. Seventy-one article bodies and broader entry-point/native/PDF/authoring/accessibility acceptance remain pending. All 76 actual routes were read with Tk imports blocked during requests, not during startup.
 
 Original Files logical shared folders are implemented and locally tested in UI18, not still pending as in the historical sections above. Browser upload/destination-at-upload, native folder authoring and universal attachment organisation remain follow-up scope. See ORIGINAL_FILES_ORGANISATION.md. This is an additive server metadata change; original bytes/references remain unchanged.
+
+
+## UI24 grouped handover review — 25 September 2026
+
+Handovers and Handover continuity re-reviewed for the opened-versus-proposed private
+draft comparison, compact period details, note/audience differences, exact edit
+and review jumps, and status/reason-only discard protection. Both outlines and
+badges advance; shared reader/index cache references are consistent. Seventy-four
+other article bodies are unchanged; all 76 indexed texts/headings match.
+Eight distinct topics remain bounded-wording-reviewed, 68 topics plus native/master
+PDF, full entry-point and accessibility work remain. Index matching is not a
+complete procedural review. Future related work is grouped into substantial
+releases, not separate releases for individual Help/visual changes.

@@ -1,4 +1,4 @@
-# Wavelink continuation — UI23 + G01
+# Wavelink continuation — UI24 + G01
 
 **Adriano's 25 September priority: HANDOVER FIRST.** UI20 implements daily Start
 today, selected shift and automatic periods, default 12 hours, alternatives/custom
@@ -17,9 +17,20 @@ explicit read-only exact previous-shift reference. No automatic copying or savin
 Draft/publication/acknowledgement action functions and all application Python stay
 unchanged. Handovers and continuity Help re-reviewed; same eight distinct topics.
 
+UI24 bundles private-draft review navigation, compact opened/proposed details,
+changed/cleared note sections, selected-audience differences, field-return actions
+and save-state/reason-only protections. No automatic saves or publication. Existing
+UI20–UI23 handover paths were checked together across two named authors.
+
+**Release cadence:** Adriano explicitly requests fewer, more substantial grouped
+releases. Group related workflow improvements, run integrated regressions, then
+address hosted feedback before expanding. Deliver only changed GitHub files with
+one current checkpoint; separate bulky evidence. UI24 is locally implemented/tested,
+not deployed by this work. Do not infer live version from the latest prepared ZIP.
+
 ## Next work
 
-1. Check the new note/reference editor and handover flow on the hosted service with actual shift starts
+1. Check the bundled drafting/review/save and full handover flow on the hosted service with actual shift starts
    (06:00/12:00 or agreed local schedule), night-to-next-day continuity, named
    authors, department audience and real phones. Confirm time basis and that
    published predecessor/acknowledgements do not change. Address feedback before
@@ -46,7 +57,7 @@ Task/evidence extensions and recurring reminders; running-hour maintenance; conf
 
 ## Source and delivery rules
 
-Continue from UI23 + G01's exact source identity/checkpoint. This is the supplied UI18 branch, not the other unrecovered UI18 variant. The schema guard must not be bypassed or turned into an unreviewed migration. Verify the source baseline before changing code.
+Continue from UI24 + G01's exact source identity/checkpoint. This is the supplied UI18 branch, not the other unrecovered UI18 variant. The schema guard must not be bypassed or turned into an unreviewed migration. Verify the source baseline before changing code.
 
 Default deliverables are **changed/new GitHub files only**, short instructions and one current checkpoint. Do not accumulate old screenshots, test logs, old releases, rollback extractors or unchanged source/vendor parts in routine ZIPs. Keep one full GitHub baseline and the approved Git history separately. State required baseline, deletions, migrations and dependencies explicitly. Development evidence stays separate; never claim tests or deployments not actually completed.
 
