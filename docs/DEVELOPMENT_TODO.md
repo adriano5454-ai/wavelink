@@ -1,3 +1,42 @@
+# UI41 usability correction — 26 September 2026
+
+User says simpler means easier to use, not a more basic product. Restore clear capable choices,
+not just hide them in More or replace them with a generic page. Current task-choice cards include
+Verify inventory; visible Create handover includes all existing paths. Keep modern downstream
+forms/reason-free routine saves, account permissions and exact save/finish/evidence rules.
+
+Every browser Help entry goes to a separate tab/window, preserving operational work. Current-account
+main-browser stored local entries can be selected or discarded in one batch, explicit exact list,
+no reason; server data/receipts/other accounts/uncertain sends remain protected. This is not a reset.
+In-tab-only forms, saved hub drafts and separate-log stores remain outside bulk deletion.
+
+One short real acceptance session: Task/inventory choices; assigned or custom Create handover;
+Help while editing; cancel then discard one disposable local draft. Do not test destructive all
+against valuable unsent work. Further durable-IDB/real-browser lifecycle acceptance still required.
+Grouped useful releases, no isolated one-form churn. Preserve the wider roadmap below, do not
+reintroduce reasons or remove functionality during simplification. No automatic background work.
+
+---
+## Earlier direction retained as history; the current user correction above takes priority
+
+# UI40 grouped reporting and follow-up — 26 September 2026
+
+Implemented Fault Reports AND HSE/QSHE as a coherent workflow: onepage report, optional source,
+searchable retained ownership, full-catalogue responsibility filters, progress and direct closure
+request, deliberate manager decision, routine reason policy with meaningful exceptions and exact audit.
+Private access and separate Task/equipment authority retained; no photo/evidence uploads here.
+
+One fictional named-worker/manager Fault+HSE end-to-end acceptance session before the next batch.
+Do not issue tiny single-form releases requiring individual installation/tests. Run shared regression
+internally; user gets one short scenario. Real feedback first. Broader remaining routine reasons,
+original workflows, linked work, imports/recovery and other planned features stay below. No reintroduction
+of handover friction. All UI29–39 features are retained, not reintroduced as future work.
+
+Compact changes;copy/review/commit/push;PS1optional. PreserveG01/data/unsentwork. Current notes take
+precedence over older design proposals; historical roadmap kept rather than silently dropped.
+
+---
+
 # Current direction — UI39 Toolbox preparation (26 September 2026)
 
 Implemented exact-form search/version guard, compact one-page briefing, optional references/people/

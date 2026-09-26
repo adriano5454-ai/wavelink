@@ -1,3 +1,23 @@
+# UI41 entry points, separate Help and local-work guidance
+
+Handovers/GeneralTasks/Navigation/SaveStatus wording and outlines updated;72otherarticlebodies
+unchanged. All76normalizedcatalogueheadings/textmatch. Shared safe-target support handles dynamic
+Help, and literal Help links are also explicit new-context links. In-page anchors remain local.
+Native/masterPDF procedural review not completed. No old recorded topic-count fabricated.
+
+---
+## Earlier reviews retained
+
+# UI40 paired Fault/HSE Help review — 26 September 2026
+
+Two hosted articles/outlines updated for full report→assign→progress→request→review, responsibility
+filters, privacy, routine/exceptional reason policy, retained links/owners, in-tab retry and no implicit
+Task/equipment completion. 74otherarticlebodiesunchanged;all76normalizedheading/textentriesmatch.
+No native/masterPDF rebuild, all-module reason removal or universal procedural acceptance claimed.
+
+---
+## Earlier reviews retained
+
 # UI39 bounded Toolbox Help review — 26 September 2026
 
 One hosted Toolbox article/outline updated for exact form selection, compact briefing, attendee search/
