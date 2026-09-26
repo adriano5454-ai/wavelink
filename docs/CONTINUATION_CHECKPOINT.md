@@ -1,79 +1,82 @@
-# Wavelink continuation checkpoint — UI30 + working G01
+# Wavelink continuation checkpoint — UI32 + working G01
 
-Prepared 26 September 2026. Core **1.34.19**. User-requested support-contact update
-before resuming simplified handover work. Related feature work stays grouped;
-contact changes are deliberately isolated from new functionality.
+26 September 2026. Core 1.34.19. Simple handovers first; grouped meaningful releases,
+compact changed-file GitHub packages. Main installation is copy/review/commit/push;
+PowerShell checker optional. No live deployment/version assumption.
 
-## Verified source
+## Verified exact source
 
-Parent **UI29 + G01**, exact supplied-UI18 lineage, not the other UI18 variant.
-112 parent repository files / 111 deployment rows / 1689 runtime files verified.
-Core archive remains 8c1b6a8d731d01b05a1290d3a1dd1a544054147aac9048ca345af7983613cd9e.
-Parent extractor: 8920f81cd4b9eff51278e97b264fcbb7a325e15c4600a5e3f14dd931ae71027a.
-UI30 extractor: 5c1fe86a42ecf38d37bbcbbc3d2c00744354fdd9aa3834d254af964fc0084e15.
-Patch ID: workspace-ui30-support-contact-2026-09-26.
-G01 gate: 9dc4ab6f7b7fb324ea06c305a09af8336b0bd10e7be6bef5296af1fd32d2e701.
-G01 entrypoint: a2bbac57635ac6e0b12400bbcbfc7382416ed3d5c7525e4218b7e38c2e7a633f.
-193 changed/new runtime resources, 305 cumulative overlays, 1691 runtime files.
-Only existing executable upload file changed: deploy/extract_source.py.
+Parent: UI31 over the actual uploaded wavelink.zip UI30 + G01, not reconstructed old docs.
+102 parent repository files / 101 deployment rows / 1702 parent runtime files verified.
+Parent extractor: `91a98f84caf16365c27e751947791f6491e1c39c94b9abe22d4dc8b6c6a45ff6`
+UI32 extractor: `26c89c5bf5081309451c4f2ec65e50aa10f8a114d3c3dbe97ef3831f481a7bd3`
+Patch ID: `workspace-ui32-simple-draft-overview-2026-09-26`
+Core archive: `8c1b6a8d731d01b05a1290d3a1dd1a544054147aac9048ca345af7983613cd9e`
+G01 gate: `9dc4ab6f7b7fb324ea06c305a09af8336b0bd10e7be6bef5296af1fd32d2e701`
+G01 entrypoint: `a2bbac57635ac6e0b12400bbcbfc7382416ed3d5c7525e4218b7e38c2e7a633f`
+1605 upstream files, 92 changed/new runtime resources,
+341 cumulative overlays, 1707 derived tracked runtime files.
+Only existing executable GitHub change: deploy/extract_source.py. Target has104repo files/103deployment rows.
 
-## Implemented / not implemented
+## Implemented together
 
-support@mywavelink.com is the current product support address: hosted contact/compose/
-copy/fallback, hosted and native Help, search, preview footer, guide builders, support
-material and eight bundled PDFs (six unique contents). No change to author credit,
-website sales address, project/customer data, user/login emails, credentials or mail
-provider configuration. No automatic email sending or mailbox existence verification.
-Legacy PDF/source filenames and archived evidence/vendor parts retained.
+Continue saved notes in normal My shift for selected department, across dates/sites,
+most-recent saved draft first and others collapsible above day controls. Author-only
+active daily drafts/corrections, not unsent tab text, full-hitch or someone else's notes.
+Direct exact-record resume uses unchanged open service, no duplicate creation or wizard.
+Selected-day team records grouped only by exact saved period/basis/site. Nonmatching old
+records remain under Other saved handovers with their original values. Duplicate proposals
+suppressed using existing same-day/site/index-or-name guard; no change to writer semantics.
+No current setup still permits saved overview, but not new assigned-shift proposal.
 
-Two app Python modules change by email substitution only: branding.py and
-checklist_preview.py. 180 other modules unchanged. G01, operational services/APIs,
-UI29 simple handover writers, shifts/permissions/audit/import rules unchanged.
-No new tables/dependencies/environment/API/storage/deletion/migration. Source for
-native contact is updated, but no Windows installer/executable was rebuilt.
-Contact/Help cache URLs and shell cache advance. Same-origin cache identities and
-all IndexedDB formats/queued work remain. Unsent wording remains in-tab until saved.
+UI31 local reproduction: site-change and missing-setup views both hid saved records (0)
+while DB retained them. UI32 exposes the same permitted records (1); reads do not write DB.
+Backend method board adds board_format and author-only saved_drafts metadata to existing GET;
+no new route/table/permission/write. Current assignments are not historical crew evidence.
+One existing app Python file changed (simple_handovers.py),182 unchanged,183total.
+Only board method changes;16 other class methods exact parent bytes. Frontend editor/setup
+span unchanged. Handovers controller only shell badge and board ownership binding changed.
+Account/token/route/editor/modal/read-generation guards invalidate stale callbacks/snapshots.
+No operational save, autosave, copy, publish, acknowledgement or role changes.
 
-All 76 hosted Help catalogue entries still match their topics. Only the hosted
-support article's contact wording changes; 75 other article bodies unchanged.
-Native topic footers and PDF contacts updated, not a procedural rewrite. Eight
-previously bounded topics / 68 plus native/master-PDF/entrypoint review still pending.
+UI29 simple Save & close / first atomic Finish remain reason-free and unchanged.
+UI31 presence, Originals services/sidebar/permissions, exact website icons, G01 and UI30
+support@mywavelink.com remain. Old advanced handover tools and reissue rules remain separate.
+Device Today and explicit operational date/time basis unchanged; no automatic timezone conversion.
 
-## Completed selected local checks
+Handovers and Handover continuity Help rereviewed;74 other article bodies unchanged,
+all76 catalogue text/headings and edited article outlines match. Fixed those two inherited
+bare-title tags and removed their stale planned-presence wording. No new topic-completion,
+native/manual-PDF review or universal procedural acceptance claimed. Wider Help work pending.
 
-165 Python = 18 contact/branding + 56 simple handover/API/transfer + 91 gateway/package.
-31 compound Chromium = 13 contact + 18 simple handover; 58 JS syntax, 182 app Python
-parses. Test callbacks run real shipped contact logic with simulated Tk/clipboard.
-Browser is set_content/controlled fetch/in-memory persistence, not live navigation.
-PDFs: 172 unique pages compare exact email text substitution, bookmarks/links and
-pixels outside email-containing lines; longer inline address shifts its following
-words within the same line. Poppler master support-page render and six footer crops
-inspected. Alias PDFs stay byte-identical to each other.
+## Tests on this frozen build, not inherited results
 
-Initial PDF check failed on Identity-H glyph encoding, then on expected inline text
-movement. Encoding and comparison-scope handling corrected before final PDF checks;
-failed attempts retained, not counted. No operational application-code finding.
-Prior UI29 historical assertion failures not rerun/claimed fixed here. No full suite,
-real email, live GitHub/Render/deployment/data/secrets, physical/Windows/PowerShell,
-durable IndexedDB/service-worker lifecycle, full accessibility/security/isolation,
-load/Docker/off-host acceptance. Original recovery helper remains unapproved.
-Contact inherited version overline and low-contrast Write email CTA remain; visible
-email hyperlink and copy/fallback verified. Further visual hygiene is separate,
-not a reason to add complexity to daily handovers.
+247 application + 91 gateway/package = 338 selected Python passes.
+76 compound Chromium =18new daily overview +18simple workflow +15presence +12navigation/icons/Originals
++13contact.29new pureNode checks overlap one Python test.59JSsyntax/183Pythonparse.
+Initial API/browser fixture mistakes, screenshot-fixture fixes, collection basename clash,
+current-contact cache expectation update,
+source-audit helper assumption and superseded layouts retained separately, excluded.
+Older historical release assertions were not selected, rerun or declared fixed here.
+Final ZIP replay/source reconstruction recorded in separate verification; repeated tests
+are not additional unique coverage. No full-suite claim.
+
+Shipped browser assets, fictional SQLite/TestClient, injected transport and in-memory
+persistence/set_content. No live GitHub/Render, real data/credentials, physical devices,
+Windows/PowerShell, durable IndexedDB/SW lifecycle, full accessibility/security/isolation/load,
+Docker or accepted off-host recovery validation. Nothing deployed from here.
 
 ## Preserve and next
 
-Keep G01 user-confirmed working, DEMO_PUBLIC_ENTRY=YES, INITIALISE_FICTIONAL_DEMO=NO,
-required access password, matching non-admin guest, named admin, demo.mywavelink.com,
-disk, removed bootstrap, approved commit/complete backup, .git/outside edits and
-unsent browser/separate-log work. No reset/re-import/storage clearing or assumed
-live UI29/UI30. Rollback via approved UI29+G01 source, not old full archives/data.
-Preserve UI29's selective export privacy for shift setup/audit; do not downgrade it.
+Preserve working G01, DEMO_PUBLIC_ENTRY=YES, INITIALISE_FICTIONAL_DEMO=NO, required gate
+secret/matching nonadmin guest/named admin, demo.mywavelink.com, disk, removed bootstrap,
+complete backup/approved commit/.git/outside changes and all unsent browser/log work.
+No reset/re-import/site-data clearing. Source rollback via approved UI31+G01, no data rollback.
+UI29 selective-transfer safeguards unchanged; pristine recovery helper remains unapproved.
 
-Continue **simple handovers first**: setup once, own shift notes, Save & close / first
-Finish without typed reason or routine review wizard. Real surveyor feedback before
-unrelated expansion. Subtle scoped active-user presence is a separate future feature,
-not implemented. Group related substantial releases; compact GitHub changed files,
-short readme, one current checkpoint, bulky evidence separate. Never delete absent
-patch files. Wider roadmap retained in DEVELOPMENT_TODO. Native vessel/CCVD excluded;
-vessel/cloud sync and local phone network investigation parked. No background work.
+Next actual named-surveyor simple-flow/changed-period/phone feedback first. Do not add
+routine reasons or review panels back. Keep UI31 presence connection semantics and Original
+Files guest/admin permissions explicit. Wider roadmap retained in DEVELOPMENT_TODO;
+remaining Help/module usability, task/evidence/recurrence, maintenance usage counters,
+approvals, imports/transfers, reporting/installer and production/recovery work. No automatic
+background development. Native vessel/CCVD outside scope; cloud sync/local-phone investigation parked.

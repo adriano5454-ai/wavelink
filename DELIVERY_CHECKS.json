@@ -1,25 +1,21 @@
 {
-  "format": "wavelink-ui30-contact-verification-1",
+  "format": "wavelink-ui32-delivery-checks-1",
   "core": "1.34.19",
-  "workspace": "UI30",
+  "workspace": "UI32",
   "gateway": "G01 unchanged",
   "support_email": "support@mywavelink.com",
   "prepared_date": "2026-09-26",
   "source": {
-    "core": "1.34.19",
-    "patch_id": "workspace-ui30-support-contact-2026-09-26",
-    "parent_extractor_sha256": "8920f81cd4b9eff51278e97b264fcbb7a325e15c4600a5e3f14dd931ae71027a",
-    "extractor_sha256": "5c1fe86a42ecf38d37bbcbbc3d2c00744354fdd9aa3834d254af964fc0084e15",
-    "changed_runtime_files": [
-      "README.md",
-      "START_HERE.html",
-      "app/branding.py",
-      "app/checklist_preview.py",
-      "app/static/contact.html",
-      "app/static/examples.html",
+    "parent_extractor": "91a98f84caf16365c27e751947791f6491e1c39c94b9abe22d4dc8b6c6a45ff6",
+    "extractor": "26c89c5bf5081309451c4f2ec65e50aa10f8a114d3c3dbe97ef3831f481a7bd3",
+    "patch_id": "workspace-ui32-simple-draft-overview-2026-09-26",
+    "parent_runtime_files": 1702,
+    "incremental_files": [
+      "app/simple_handovers.py",
+      "app/static/handovers.css",
+      "app/static/handovers.js",
       "app/static/help.html",
       "app/static/help_catalogue.json",
-      "app/static/help_reference.html",
       "app/static/help_topics/accessreview.html",
       "app/static/help_topics/approvals.html",
       "app/static/help_topics/assetcalendar.html",
@@ -97,220 +93,142 @@
       "app/static/help_topics/vessellogaccess.html",
       "app/static/help_topics/vessellogs.html",
       "app/static/help_workspace.js",
-      "app/static/support.js",
+      "app/static/index.html",
+      "app/static/simple_handovers.js",
       "app/static/sw.js",
-      "docs/SUPPORT.md",
-      "docs/TASK_CHECKLISTS.md",
-      "docs/user/AJ_OpsCheck_User_Guide.pdf",
-      "docs/user/Wavelink_1.34.11_HSE_QSHE_Guide.pdf",
-      "docs/user/Wavelink_User_Guide.pdf",
-      "docs/user/examples.html",
-      "docs/user/topics/accessreview.html",
-      "docs/user/topics/approvals.html",
-      "docs/user/topics/assetcalendar.html",
-      "docs/user/topics/assetdetails.html",
-      "docs/user/topics/assetlabels.html",
-      "docs/user/topics/assignments.html",
-      "docs/user/topics/backups.html",
-      "docs/user/topics/browseradmin.html",
-      "docs/user/topics/browserlogs.html",
-      "docs/user/topics/browsertemplates.html",
-      "docs/user/topics/browsertoolbox.html",
-      "docs/user/topics/builder.html",
-      "docs/user/topics/certificates.html",
-      "docs/user/topics/containers.html",
-      "docs/user/topics/create.html",
-      "docs/user/topics/daily.html",
-      "docs/user/topics/dashboard.html",
-      "docs/user/topics/datetime.html",
-      "docs/user/topics/departmentheads.html",
-      "docs/user/topics/departments.html",
-      "docs/user/topics/document.html",
-      "docs/user/topics/documentimport.html",
-      "docs/user/topics/evidence.html",
-      "docs/user/topics/evidencereview.html",
-      "docs/user/topics/fleet.html",
-      "docs/user/topics/fleetaccess.html",
-      "docs/user/topics/generaltasks.html",
-      "docs/user/topics/handovercontinuity.html",
-      "docs/user/topics/handovers.html",
-      "docs/user/topics/https.html",
-      "docs/user/topics/illustrations.html",
-      "docs/user/topics/inventory.html",
-      "docs/user/topics/inventorybuilder.html",
-      "docs/user/topics/inventorytransfer.html",
-      "docs/user/topics/itemjourney.html",
-      "docs/user/topics/live.html",
-      "docs/user/topics/logbuilder.html",
-      "docs/user/topics/logexports.html",
-      "docs/user/topics/logimport.html",
-      "docs/user/topics/logreferences.html",
-      "docs/user/topics/logs.html",
-      "docs/user/topics/logwindows.html",
-      "docs/user/topics/lowstock.html",
-      "docs/user/topics/maintenance.html",
-      "docs/user/topics/maintenancebuilder.html",
-      "docs/user/topics/manifests.html",
-      "docs/user/topics/navigation.html",
-      "docs/user/topics/network.html",
-      "docs/user/topics/offsets.html",
-      "docs/user/topics/originals.html",
-      "docs/user/topics/permissions.html",
-      "docs/user/topics/phones.html",
-      "docs/user/topics/projects.html",
-      "docs/user/topics/qrverification.html",
-      "docs/user/topics/receiving.html",
-      "docs/user/topics/records.html",
-      "docs/user/topics/savestatus.html",
-      "docs/user/topics/start.html",
-      "docs/user/topics/stocktake.html",
-      "docs/user/topics/storage.html",
-      "docs/user/topics/support.html",
-      "docs/user/topics/tasks.html",
-      "docs/user/topics/toolbox.html",
-      "docs/user/topics/toolboxbuilder.html",
-      "docs/user/topics/toolboxguests.html",
-      "docs/user/topics/transfers.html",
-      "docs/user/topics/types.html",
-      "docs/user/topics/uninstall.html",
-      "docs/user/topics/users.html",
-      "docs/user/topics/vessellogaccess.html",
-      "docs/user/topics/vessellogs.html",
-      "examples/09_Guides/Wavelink_1.34.10_Company_Branding_Guide.pdf",
-      "examples/09_Guides/Wavelink_Task_Postponement_Guide.pdf",
-      "examples/12_Fault_Reports/Wavelink_1.34.7_Fault_Reports_Guide.pdf",
-      "examples/13_Corrective_Tasks/Wavelink_1.34.8_Corrective_Tasks_Guide.pdf",
-      "examples/16_HSE_QSHE/Wavelink_1.34.11_HSE_QSHE_Guide.pdf",
-      "tests/rebrand/test_branding.py",
       "tests/ui29_simple/test_contract.py",
-      "tests/ui30_contact/browser_checks.py",
       "tests/ui30_contact/test_contact.py",
-      "tools/build_asset_details_guide.py",
-      "tools/build_company_branding_guide.py",
-      "tools/build_continuity_guide.py",
-      "tools/build_corrective_guide.py",
-      "tools/build_daily_guide.py",
-      "tools/build_fault_guide.py",
-      "tools/build_hosted_guide.py",
-      "tools/build_inventory_guide.py",
-      "tools/build_logistics_guide.py",
-      "tools/build_navigation_guide.py",
-      "tools/build_postponement_guide.py",
-      "tools/build_preparation_guide.py",
-      "tools/build_qshe_guide.py",
-      "tools/build_saved_manifest_guide.py",
-      "tools/build_task_checklists_guide.py",
-      "tools/build_task_details_guide.py",
-      "tools/build_task_scratch_guide.py",
-      "tools/build_task_workflow_guide.py",
-      "tools/build_ui_guide.py"
+      "tests/ui32_simple_board/browser_checks.py",
+      "tests/ui32_simple_board/frontend_checks.js",
+      "tests/ui32_simple_board/test_board.py",
+      "tests/ui32_simple_board/test_ui32_contract.py",
+      "tests/ui32_simple_board/unchanged_functions.json"
     ],
-    "incremental_runtime_files": 193,
-    "cumulative_overlay_files": 305,
-    "new_runtime_files": [
-      "tests/ui30_contact/browser_checks.py",
-      "tests/ui30_contact/test_contact.py"
+    "incremental_count": 92,
+    "new_files": [
+      "tests/ui32_simple_board/browser_checks.py",
+      "tests/ui32_simple_board/frontend_checks.js",
+      "tests/ui32_simple_board/test_board.py",
+      "tests/ui32_simple_board/test_ui32_contract.py",
+      "tests/ui32_simple_board/unchanged_functions.json"
     ],
-    "gateway_g01_unchanged": {
-      "deploy/gate.py": "9dc4ab6f7b7fb324ea06c305a09af8336b0bd10e7be6bef5296af1fd32d2e701",
-      "deploy/entrypoint.py": "a2bbac57635ac6e0b12400bbcbfc7382416ed3d5c7525e4218b7e38c2e7a633f"
+    "cumulative_overlays": 341,
+    "runtime_files": 1707,
+    "runtime_manifest_sha256": "6a07f4e8367fc9d0561f20f9528d8d77364c3f9af8d4266538790154424d7f88",
+    "upstream_files": 1605,
+    "parent_repository_files": 102,
+    "target_repository_files": 104,
+    "upstream_sha256": "8c1b6a8d731d01b05a1290d3a1dd1a544054147aac9048ca345af7983613cd9e",
+    "source_audit": {
+      "runtime_files": 1707,
+      "python_parses": 183,
+      "app_python_changed": [
+        "app/simple_handovers.py"
+      ],
+      "app_python_unchanged": 182,
+      "javascript_syntax": 59,
+      "all_runtime_hashes_match": true,
+      "changed_backend_methods": [
+        "SimpleHandovers.board"
+      ],
+      "controller_scope": "exact reconstruction of shell badge and mountSimpleBoard ownership check only",
+      "editor_and_setup_bytes_unchanged": true,
+      "unchanged_methods": 16,
+      "help_articles": 76,
+      "changed_help_article_bodies": [
+        "app/static/help_topics/handovercontinuity.html",
+        "app/static/help_topics/handovers.html"
+      ],
+      "other_help_article_bodies_unchanged": 74,
+      "preserved_source_checks": [
+        "app/project_presence.py",
+        "app/static/project_presence.js",
+        "app/static/project_presence.css",
+        "app/static/icon.svg",
+        "app/static/wavelink-mark.svg",
+        "app/static/contact.html",
+        "app/handovers.py",
+        "app/daily_handovers.py",
+        "app/handover_schedule.py",
+        "app/server.py",
+        "app/handovers_api.py",
+        "app/project_modules.py"
+      ],
+      "gateway_and_entrypoint_unchanged": true
     }
   },
-  "source_audit": {
-    "parent_runtime_files": 1689,
-    "target_runtime_files": 1691,
-    "changed_existing_runtime_files": 191,
-    "new_runtime_files": [
-      "tests/ui30_contact/browser_checks.py",
-      "tests/ui30_contact/test_contact.py"
-    ],
-    "pdf_files": [
-      "docs/user/AJ_OpsCheck_User_Guide.pdf",
-      "docs/user/Wavelink_1.34.11_HSE_QSHE_Guide.pdf",
-      "docs/user/Wavelink_User_Guide.pdf",
-      "examples/09_Guides/Wavelink_1.34.10_Company_Branding_Guide.pdf",
-      "examples/09_Guides/Wavelink_Task_Postponement_Guide.pdf",
-      "examples/12_Fault_Reports/Wavelink_1.34.7_Fault_Reports_Guide.pdf",
-      "examples/13_Corrective_Tasks/Wavelink_1.34.8_Corrective_Tasks_Guide.pdf",
-      "examples/16_HSE_QSHE/Wavelink_1.34.11_HSE_QSHE_Guide.pdf"
-    ],
-    "app_python_modules": 182,
-    "changed_app_python": [
-      "app/branding.py",
-      "app/checklist_preview.py"
-    ],
-    "unchanged_app_python": 180,
-    "javascript_syntax_checks": 58,
-    "exact_contact_and_cache_only_diff": true,
-    "historical_evidence_preserved": true,
-    "non_guide_examples_byte_identical": true,
-    "old_literal_in_current_resources": [],
-    "ui29_operational_api_and_browser_scripts_unchanged": true,
-    "g01_gateway_unchanged": true
+  "python": {
+    "application": 247,
+    "gateway_package": 91,
+    "total": 338,
+    "selected_only": true,
+    "failed": 0,
+    "skipped": 0
   },
-  "checks": {
-    "python": {
-      "pytest_contact": {
-        "tests": 18,
-        "failures": 0,
-        "errors": 0,
-        "skipped": 0,
-        "report": "evidence/final/pytest_contact.xml"
-      },
-      "pytest_simple": {
-        "tests": 56,
-        "failures": 0,
-        "errors": 0,
-        "skipped": 0,
-        "report": "evidence/final/pytest_simple.xml"
-      },
-      "gateway": {
-        "tests": 91,
-        "failures": 0,
-        "errors": 0,
-        "skipped": 0,
-        "report": "evidence/final/gateway.xml"
-      }
-    },
-    "selected_python_tests": 165,
-    "browser": {
-      "contact_browser": {
-        "checks": 13,
-        "errors": [],
-        "report": "evidence/final/contact_browser/contact_browser_checks.json"
-      },
-      "simple_browser": {
+  "browser": {
+    "runs": {
+      "daily_overview": {
         "checks": 18,
-        "errors": [],
-        "report": "evidence/final/simple_browser/ui29_browser_checks.json"
+        "report": "evidence/final/daily_overview/ui32_browser_checks.json"
+      },
+      "simple_workflow": {
+        "checks": 18,
+        "report": "evidence/final/simple_workflow/ui29_browser_checks.json"
+      },
+      "presence": {
+        "checks": 15,
+        "report": "evidence/final/presence/results.json"
+      },
+      "navigation": {
+        "checks": 12,
+        "report": "evidence/final/navigation/results.json"
+      },
+      "contact": {
+        "checks": 13,
+        "report": "evidence/final/contact/contact_browser_checks.json"
       }
     },
-    "compound_browser_checks": 31,
-    "javascript_syntax_checks": 58,
-    "application_python_parses": 182,
-    "pdf": {
-      "files": 8,
-      "unique_pdf_contents": 6,
-      "unique_pages_text_links_and_render_compared": 172,
-      "visible_replacements_in_shipped_pdf_files": 324,
-      "before_after_full_text_only_email_replacement": true,
-      "all_pages_outside_email_containing_lines_pixel_identical": true,
-      "page_counts_bookmarks_and_metadata_preserved": true,
-      "mailto_targets_updated_and_link_rectangles_extended": true,
-      "pdf_alias_bytes_identical": true,
-      "secondary_poppler_render_inspected": "master guide page 43",
-      "complete_pdf_instruction_review": false
-    }
+    "total_compound_checks": 76,
+    "new_pure_node_checks": 29,
+    "node_checks_overlap_python": true
   },
-  "limits": [
-    "Address-only update. No live GitHub/Render access, deployment, real user/account edits, project data writes or mail-service changes. Mailbox delivery/existence not tested. The separate website sales contact is outside this patch.",
-    "165 selected Python tests and 31 compound Chromium checks are not a full-suite result. Previously documented UI29 historical release assertions are not rerun or claimed fixed in this contact-only selection.",
-    "Chromium uses shipped assets and controlled transport/in-memory storage/set_content. Clipboard is simulated. No real mail client, hosted HTTPS/browser navigation, physical device, durable IndexedDB, service-worker lifecycle or Windows/PowerShell acceptance.",
-    "Current embedded/native contact source is updated, but this is not a rebuilt Windows installer or an automatic update to an already-installed vessel program.",
-    "Historical release evidence and archived test snapshots, original vendor source parts and existing user/customer documents are deliberately unchanged. PDF updates change the support text/URI only, not legacy guide instructions or version labels.",
-    "The simple handover remains UI29; ordinary Save & close and first Finish still require no typed reason. Unsent work remains in-tab until saved. Presence remains separate future work.",
-    "Contact-page legacy styling/version labels are retained. Geometry/href/clipboard checks are not a full contrast/accessibility review; the inherited Write email button has low contrast on the light panel in the local standalone rendering.",
-    "No new API/table/dependency/environment/storage format, no automatic email sending, no full accessibility/security/isolation/load/Docker/off-host recovery acceptance. Pristine-source recovery helper remains unapproved for overlays."
+  "syntax": {
+    "javascript": 59,
+    "python": 183
+  },
+  "local_regression_reproduction": {
+    "ui31_site_changed_records_hidden": true,
+    "ui31_no_setup_records_hidden": true,
+    "ui32_saved_records_retained": true,
+    "board_reads_no_database_changes": true,
+    "reports": [
+      "evidence/parent_reproduction.json",
+      "evidence/ui32_reproduction.json"
+    ]
+  },
+  "no_live_operations": true,
+  "limitations": [
+    "Selected local tests, not a full-suite acceptance result; earlier historical release-assertion failures were not rerun or claimed fixed.",
+    "Browser checks use shipped assets and fictional TestClient with injected transport and in-memory persistence through set_content, not live HTTPS navigation.",
+    "No live GitHub/Render inspection, push, deployment, credential change or real project-data access.",
+    "No physical-device, Windows/PowerShell, durable IndexedDB or service-worker lifecycle acceptance.",
+    "No full accessibility/security/isolation/load, Docker or accepted off-host recovery validation.",
+    "Unsent note text remains in-tab until explicit save. Current assignments are not a historical roster. Presence remains recent connectivity, not attendance."
   ],
-  "live_deployed": false
+  "preliminary_attempts_excluded": [
+    "Initial API fixtures used a duplicate department label, incomplete note helper and wrong member-call signature; corrected before final tests.",
+    "Initial browser assertions assumed an error wording and an onclick assignment returned a function; fixture waits/capture corrected.",
+    "Initial screenshot fixture omitted existing styles; final checks load all application stylesheet links and capture at top scroll position.",
+    "A combined pytest collection collided on the new test_contract module basename; the new file was renamed test_ui32_contract.py, without application-code changes.",
+    "Visual review reduced the always-visible saved drafts from three to one and moved resume above the date controls, followed by full frozen-source rerun.",
+    "The current Contact asset assertion still expected the old UI31 cache URLs; only those expected version URLs were advanced to UI32 before rerunning the complete selection.",
+    "A source-audit helper initially assumed the unchanged Contact page had a new cache URL; the strict unchanged-byte comparison passed after correcting the helper."
+  ],
+  "preserved": [
+    "Reason-free Save & close and first Finish; identical-request retry and conflict checks",
+    "Daily settings, dates, authorship, private notes, publications and acknowledgements",
+    "G01, project presence, Original Files services/permissions and exact website icons",
+    "support@mywavelink.com; no account data or external website changes",
+    "No new endpoints/tables/permissions/dependencies/environment/deletions/local-store formats"
+  ]
 }

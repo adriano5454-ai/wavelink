@@ -1,3 +1,25 @@
+# Current direction — UI32 simple daily overview (26 September 2026)
+
+UI32 retains own saved notes across dates/sites directly on My shift; published team
+records group by their actual saved period, not a changed setup. Fixed site/missing-setup
+filters hiding retained records. Routine editor/save/finish is unchanged and reason-free.
+Do not add more daily review screens. Prioritise actual surveyor feedback, then grouped
+related roadmap items rather than isolated micro-releases. No live deployment assumed.
+
+UI31 project presence, direct Documents → Original files and exact website icons are
+implemented locally and retained; presence is no longer an unimplemented future feature.
+It is recent project connectivity, not attendance or shift assignment. UI30 contact is
+support@mywavelink.com. Original upload/folder authority stays administrator-only.
+
+Current instructions: copy UPLOAD_TO_GITHUB contents into existing app repo, review,
+commit and push; PS1 optional. Preserve G01/data/unsent work; no reset/re-import/clearing.
+See current checkpoint for exact source/test/deployment boundaries. All wider roadmap
+below is preserved as historical planning; this current direction supersedes outdated
+presence plans and review-heavy everyday workflows.
+
+---
+## Preserved earlier roadmap and release history
+
 # Current priority — UI30 contact update completed locally
 
 26 September 2026: support@mywavelink.com now replaces the personal support address
@@ -112,3 +134,7 @@ Continue future builds from UI28 + G01's exact source identity/checkpoint. This 
 Default deliverables are **changed/new GitHub files only**, short instructions and one current checkpoint. Do not accumulate old screenshots, test logs, old releases, rollback extractors or unchanged source/vendor parts in routine ZIPs. Keep one full GitHub baseline and the approved Git history separately. State required baseline, deletions, migrations and dependencies explicitly. Development evidence stays separate; never claim tests or deployments not actually completed.
 
 Preserve working Gateway G01 and DEMO_PUBLIC_ENTRY=YES, demo.mywavelink.com, all secrets/guest/disk settings, INITIALISE_FICTIONAL_DEMO=NO, removed bootstrap, .git, outside edits and unsent browser/log-window work. No reset, re-import, storage clearing, cloud synchronization or automatic background development.
+
+
+## UI31 current outcome / next
+Grouped project presence, Original Files sidebar discoverability and Website 2.3.1 icon reuse implemented locally. Simple daily handovers and no routine reasons remain unchanged. Presence is recent foreground connection state, not attendance. Next prioritize actual user feedback; do not keep presence as an entirely unimplemented future item or claim hosting acceptance. Refer to the current checkpoint for boundaries.

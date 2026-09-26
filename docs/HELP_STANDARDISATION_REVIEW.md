@@ -1,3 +1,17 @@
+# UI32 Help review — 26 September 2026
+
+Handovers and Handover continuity now describe Continue saved notes, one visible draft
+and expandable older notes, selected department versus operational day, saved-period
+matching and retained old-site/no-setup records. Simple Save & close/Finish and in-tab-only
+wording remain explicit. Their old planned-presence statement now identifies the retained
+UI31 feature. Their inherited bare browser titles are repaired. All76 catalogue entries
+match current article text/headings and the two updated outlines resolve. Other74 article
+bodies unchanged; shared Help cache URLs outside bodies advance. This is a rereview, not
+new procedural-topic completion or native/PDF/full accessibility acceptance.
+
+---
+## Previous bounded reviews, retained as history
+
 # UI29 Help update — 26 September 2026
 
 Handovers and Handover continuity reorganised around My shift, one-time setup,
@@ -299,3 +313,7 @@ Support address updated to support@mywavelink.com in the one hosted support arti
 PDF files. 75 other hosted article bodies unchanged. PDF layout/bookmarks/links and
 all non-email text preserved. No additional procedural topic marked reviewed.
 The master/native guides retain their legacy instructional scope and version labels.
+
+
+## UI31
+Updated the hosted Navigation and Originals articles for the direct permission-gated sidebar and recent activity control. All 76 index entries regenerated from exact article text/headings. Other 74 article bodies unchanged; icon/reader cache URLs outside bodies updated. Prior eight bounded topic reviews remain historical; this is not a full native/master-PDF rewrite or general procedural acceptance.
