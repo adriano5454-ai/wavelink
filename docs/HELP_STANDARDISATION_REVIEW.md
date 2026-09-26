@@ -1,3 +1,14 @@
+# UI42 Home and Navigation Help
+
+Replaced outdated Home subset/Start-section wording with actual grouped cards, six existing
+creation shortcuts, static activity search and existing local-work protections. Saved overview
+scope table retained. Navigation clarifies synonyms and scope.74otherbodies unchanged, all76
+normalized catalogue entries match; cache URLs updated outside article bodies. No new full-topic
+completion count, native rebuild or master PDF re-review claim. Help remains separate-tab.
+
+---
+## Prior reviews retained
+
 # UI41 entry points, separate Help and local-work guidance
 
 Handovers/GeneralTasks/Navigation/SaveStatus wording and outlines updated;72otherarticlebodies

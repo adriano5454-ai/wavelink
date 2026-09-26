@@ -1,3 +1,19 @@
+# UI42 app-wide discovery — 26 September 2026
+
+User principle applies everywhere: user-friendly and polished, not basic or fewer capabilities.
+Current batch provides grouped full Home destinations, Open/Create distinction and shared sidebar
+activity vocabulary. Retain square Task choices/inventory verification, visible Create handover,
+separate Help, local-work manager and all operational capabilities. One install/acceptance session,
+not isolated form churn. This is not completion of every module's internal UX or real-device QA.
+
+Next named-user Home → stock task/certificate/briefing → existing save/Help → phone check, then
+feedback before coherent module batches. Do not invent record search, favourites or workload
+counts from this static destination directory. Maintain strict permissions and uncertainty labels.
+No background work. Wider roadmap below remains, with this user-friendly direction controlling.
+
+---
+## Prior roadmap/history retained
+
 # UI41 usability correction — 26 September 2026
 
 User says simpler means easier to use, not a more basic product. Restore clear capable choices,
