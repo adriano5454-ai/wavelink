@@ -1,4 +1,4 @@
-# Wavelink continuation — UI24 + G01
+# Wavelink continuation — UI27 + G01
 
 **Adriano's 25 September priority: HANDOVER FIRST.** UI20 implements daily Start
 today, selected shift and automatic periods, default 12 hours, alternatives/custom
@@ -22,15 +22,32 @@ changed/cleared note sections, selected-audience differences, field-return actio
 and save-state/reason-only protections. No automatic saves or publication. Existing
 UI20–UI23 handover paths were checked together across two named authors.
 
+UI25 bundles the incoming-account workflow: latest active publications across all
+dates, independent acknowledgement/type/search filters, complete read-only published
+sections, exact pinned refresh, explicit newer-revision navigation and scoped stale
+read guards. Existing automatic shifts, draft review and personal acknowledgement
+writers are unchanged. No unread tracker, auto-signing or mandatory-signature score.
+
+UI26 bundles publication history and exact two-publication comparison: explicit
+visible revisions, last personal-acknowledgement selection, full notes/details and
+selected audience ID/label differences, exact reader navigation and scoped async
+read guards. Existing save/publication/acknowledgement and automatic shifts unchanged.
+No private-draft comparison, automatic save/copy/signature or roster inference.
+
+UI27 bundles author recipient review: current acknowledgement/source/search filters,
+full-snapshot counts, unavailable audience selections and retained acknowledgement
+evidence, strict projection and scoped refresh/hide. No automatic reminders/signing
+or permission changes. Current membership is not historical delivery tracking.
+
 **Release cadence:** Adriano explicitly requests fewer, more substantial grouped
 releases. Group related workflow improvements, run integrated regressions, then
 address hosted feedback before expanding. Deliver only changed GitHub files with
-one current checkpoint; separate bulky evidence. UI24 is locally implemented/tested,
+one current checkpoint; separate bulky evidence. UI27 is locally implemented/tested,
 not deployed by this work. Do not infer live version from the latest prepared ZIP.
 
 ## Next work
 
-1. Check the bundled drafting/review/save and full handover flow on the hosted service with actual shift starts
+1. Check author recipient filters/exceptions/refresh, history/comparison, incoming/read/exact-revision/acknowledgement and drafting/review/save together on the hosted service with actual shift starts
    (06:00/12:00 or agreed local schedule), night-to-next-day continuity, named
    authors, department audience and real phones. Confirm time basis and that
    published predecessor/acknowledgements do not change. Address feedback before
@@ -57,7 +74,7 @@ Task/evidence extensions and recurring reminders; running-hour maintenance; conf
 
 ## Source and delivery rules
 
-Continue from UI24 + G01's exact source identity/checkpoint. This is the supplied UI18 branch, not the other unrecovered UI18 variant. The schema guard must not be bypassed or turned into an unreviewed migration. Verify the source baseline before changing code.
+Continue future builds from UI27 + G01's exact source identity/checkpoint. This patch requires the exact UI26 + G01 baseline. This is the supplied UI18 branch, not the other unrecovered UI18 variant. The schema guard must not be bypassed or turned into an unreviewed migration. Verify the source baseline before changing code.
 
 Default deliverables are **changed/new GitHub files only**, short instructions and one current checkpoint. Do not accumulate old screenshots, test logs, old releases, rollback extractors or unchanged source/vendor parts in routine ZIPs. Keep one full GitHub baseline and the approved Git history separately. State required baseline, deletions, migrations and dependencies explicitly. Development evidence stays separate; never claim tests or deployments not actually completed.
 

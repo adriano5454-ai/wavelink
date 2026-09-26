@@ -1,3 +1,24 @@
+# Current status — UI26 publication history/comparison (26 September 2026)
+
+Handovers and Handover continuity re-reviewed for the exact published revision pair,
+last personal acknowledgement selection, selected IDs/labels versus roster, non-atomic
+reads, interrupted comparison and exact-reader navigation. All76catalogue text/headings
+match;74other article bodies unchanged. Eight distinct bounded topics reviewed;
+68plusnative/masterPDF/entrypoint/accessibility review remains. No new topic completion
+claimed by this re-review; no live procedural acceptance.
+
+# Current status — UI25 incoming handovers and exact publication reader (25 September 2026)
+
+Handovers and continuity re-reviewed together: independent incoming filters and
+revision-specific counts (not unread/required/crew-completion), active publications,
+view-only/shared guest limits, device retrieval time, pinned refresh, deliberate
+newer-revision opening, visible note sections, read-only focus shortcuts and unchanged
+personal acknowledgement review. Prior UI24 draft review remains described.
+Other74 bodies unchanged; all76 catalogue text/headings match. Eight distinct bounded
+topics reviewed,68plus native/masterPDF/entrypoint/full accessibility pending.
+
+---
+
 # Current status — UI23 handover note editor and earlier-shift reference (25 September 2026)
 
 Handovers and Handover continuity re-reviewed for visible note sections, text-presence
@@ -239,3 +260,12 @@ Eight distinct topics remain bounded-wording-reviewed, 68 topics plus native/mas
 PDF, full entry-point and accessibility work remain. Index matching is not a
 complete procedural review. Future related work is grouped into substantial
 releases, not separate releases for individual Help/visual changes.
+
+## UI27 bounded handover recipient review — 26 September 2026
+
+Handovers and Handover continuity re-reviewed against author-only current recipient
+snapshot, filters/count scope, unavailable selections and retained evidence, exact
+refresh and read-only/permission limits. Two outlines and all76 catalogue entries
+match;74 other article bodies unchanged. Still8 distinct bounded topics reviewed,
+68 pending plus native/masterPDF/entrypoints/full accessibility. No universal
+procedural acceptance. Source/read-only/browser checks are in UI27 evidence.
