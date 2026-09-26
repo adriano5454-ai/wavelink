@@ -1,19 +1,16 @@
 {
-  "format": "wavelink-ui32-delivery-checks-1",
-  "core": "1.34.19",
-  "workspace": "UI32",
-  "gateway": "G01 unchanged",
-  "support_email": "support@mywavelink.com",
+  "format": "wavelink-ui39-delivery-checks-1",
   "prepared_date": "2026-09-26",
+  "core": "1.34.19",
+  "workspace": "UI39",
+  "gateway": "Working G01 and UI34 signing Nginx routes unchanged",
   "source": {
-    "parent_extractor": "91a98f84caf16365c27e751947791f6491e1c39c94b9abe22d4dc8b6c6a45ff6",
-    "extractor": "26c89c5bf5081309451c4f2ec65e50aa10f8a114d3c3dbe97ef3831f481a7bd3",
-    "patch_id": "workspace-ui32-simple-draft-overview-2026-09-26",
-    "parent_runtime_files": 1702,
+    "parent_extractor": "75c2ced958b328e0fc90586feebf44a4752d1fe61018413a654f3c8eadc8abc9",
+    "extractor": "d30d9c076fc7da955195bbd152f0ba34e415c5a67a94fa26abbf6fa74f7071f3",
+    "patch_id": "workspace-ui39-simple-toolbox-conduct-2026-09-26",
+    "parent_runtime_files": 1746,
     "incremental_files": [
-      "app/simple_handovers.py",
-      "app/static/handovers.css",
-      "app/static/handovers.js",
+      "app/static/fieldwork.js",
       "app/static/help.html",
       "app/static/help_catalogue.json",
       "app/static/help_topics/accessreview.html",
@@ -94,141 +91,280 @@
       "app/static/help_topics/vessellogs.html",
       "app/static/help_workspace.js",
       "app/static/index.html",
-      "app/static/simple_handovers.js",
       "app/static/sw.js",
-      "tests/ui29_simple/test_contract.py",
-      "tests/ui30_contact/test_contact.py",
-      "tests/ui32_simple_board/browser_checks.py",
-      "tests/ui32_simple_board/frontend_checks.js",
-      "tests/ui32_simple_board/test_board.py",
-      "tests/ui32_simple_board/test_ui32_contract.py",
-      "tests/ui32_simple_board/unchanged_functions.json"
+      "app/static/toolbox_form.css",
+      "app/static/toolbox_form.js",
+      "app/toolbox.py",
+      "docs/TOOLBOX_BROWSER_UI39.md",
+      "tests/ui39_toolbox/__init__.py",
+      "tests/ui39_toolbox/browser_checks.py",
+      "tests/ui39_toolbox/test_briefing.py"
     ],
-    "incremental_count": 92,
+    "incremental_count": 89,
     "new_files": [
-      "tests/ui32_simple_board/browser_checks.py",
-      "tests/ui32_simple_board/frontend_checks.js",
-      "tests/ui32_simple_board/test_board.py",
-      "tests/ui32_simple_board/test_ui32_contract.py",
-      "tests/ui32_simple_board/unchanged_functions.json"
+      "app/static/toolbox_form.css",
+      "app/static/toolbox_form.js",
+      "docs/TOOLBOX_BROWSER_UI39.md",
+      "tests/ui39_toolbox/__init__.py",
+      "tests/ui39_toolbox/browser_checks.py",
+      "tests/ui39_toolbox/test_briefing.py"
     ],
-    "cumulative_overlays": 341,
-    "runtime_files": 1707,
-    "runtime_manifest_sha256": "6a07f4e8367fc9d0561f20f9528d8d77364c3f9af8d4266538790154424d7f88",
-    "upstream_files": 1605,
-    "parent_repository_files": 102,
-    "target_repository_files": 104,
-    "upstream_sha256": "8c1b6a8d731d01b05a1290d3a1dd1a544054147aac9048ca345af7983613cd9e",
-    "source_audit": {
-      "runtime_files": 1707,
-      "python_parses": 183,
-      "app_python_changed": [
-        "app/simple_handovers.py"
-      ],
-      "app_python_unchanged": 182,
-      "javascript_syntax": 59,
-      "all_runtime_hashes_match": true,
-      "changed_backend_methods": [
-        "SimpleHandovers.board"
-      ],
-      "controller_scope": "exact reconstruction of shell badge and mountSimpleBoard ownership check only",
-      "editor_and_setup_bytes_unchanged": true,
-      "unchanged_methods": 16,
-      "help_articles": 76,
-      "changed_help_article_bodies": [
-        "app/static/help_topics/handovercontinuity.html",
-        "app/static/help_topics/handovers.html"
-      ],
-      "other_help_article_bodies_unchanged": 74,
-      "preserved_source_checks": [
-        "app/project_presence.py",
-        "app/static/project_presence.js",
-        "app/static/project_presence.css",
-        "app/static/icon.svg",
-        "app/static/wavelink-mark.svg",
-        "app/static/contact.html",
-        "app/handovers.py",
-        "app/daily_handovers.py",
-        "app/handover_schedule.py",
-        "app/server.py",
-        "app/handovers_api.py",
-        "app/project_modules.py"
-      ],
-      "gateway_and_entrypoint_unchanged": true
-    }
+    "cumulative_overlays": 400,
+    "runtime_files": 1752,
+    "runtime_manifest_sha256": "fd7748ea9435d99fdf749247dd8bc729bfdf67c23bb8ec37a7db667886b3b342"
   },
-  "python": {
-    "application": 247,
-    "gateway_package": 91,
-    "total": 338,
-    "selected_only": true,
-    "failed": 0,
-    "skipped": 0
-  },
-  "browser": {
-    "runs": {
-      "daily_overview": {
-        "checks": 18,
-        "report": "evidence/final/daily_overview/ui32_browser_checks.json"
-      },
-      "simple_workflow": {
-        "checks": 18,
-        "report": "evidence/final/simple_workflow/ui29_browser_checks.json"
-      },
-      "presence": {
-        "checks": 15,
-        "report": "evidence/final/presence/results.json"
-      },
-      "navigation": {
-        "checks": 12,
-        "report": "evidence/final/navigation/results.json"
-      },
-      "contact": {
-        "checks": 13,
-        "report": "evidence/final/contact/contact_browser_checks.json"
+  "source_audit": {
+    "all_frozen_runtime_hashes_match": true,
+    "runtime_files": 1752,
+    "application_python_parsed": 187,
+    "application_python_changed": [
+      "app/toolbox.py"
+    ],
+    "application_python_new": [],
+    "application_python_unchanged": 186,
+    "javascript_syntax_passes": 65,
+    "unchanged_critical": [
+      "app/static/operations.js",
+      "app/static/maintenance_forms.js",
+      "app/maintenance.py",
+      "app/static/app.js",
+      "app/static/assets.js",
+      "app/certificates.py",
+      "app/static/certificate_form.js",
+      "app/static/maintenance_management.js",
+      "app/static/maintenance_evidence.js",
+      "app/static/maintenance_workspace.js",
+      "app/maintenance_cycles.py",
+      "app/handovers.py",
+      "app/handovers_api.py",
+      "app/simple_handovers.py",
+      "app/daily_handovers.py",
+      "app/handover_schedule.py",
+      "app/handover_attachments.py",
+      "app/static/simple_handovers.js",
+      "app/static/handover_attachments.js",
+      "app/static/save_status.js",
+      "app/project_presence.py",
+      "app/static/project_presence.js",
+      "app/original_documents.py",
+      "app/original_folders.py",
+      "app/original_upload.py",
+      "app/static/original_library.js",
+      "app/static/support.js",
+      "app/branding.py",
+      "app/static/wavelink-mark.svg",
+      "app/static/icon.ico",
+      "app/accounts.py",
+      "app/store.py",
+      "app/access.py",
+      "app/project_modules.py",
+      "app/fieldwork_reports.py",
+      "app/handovers_reports.py",
+      "app/company_reports.py",
+      "app/static/document_join.js",
+      "app/static/document_join.css",
+      "app/static/document_join.html",
+      "app/document_signing_reports.py",
+      "app/document_invitations.py",
+      "app/document_invitations_api.py",
+      "app/static/document_invites.js",
+      "app/static/document_invites.css",
+      "app/general_tasks.py",
+      "app/task_checklists.py",
+      "app/static/task_checklists.js",
+      "app/static/task_create.js",
+      "app/static/task_create.css",
+      "app/static/browser_toolbox.js"
+    ],
+    "unchanged_repository_runtime": [
+      "deploy/gate.py",
+      "deploy/entrypoint.py",
+      "deploy/nginx_config.py",
+      "deploy/provision.py",
+      "Dockerfile",
+      "requirements.lock"
+    ],
+    "toolbox_methods_changed": [
+      "get",
+      "do_create_talk",
+      "do_save_talk"
+    ],
+    "toolbox_methods_unchanged": 12,
+    "javascript_declarations": {
+      "fieldwork.js": {
+        "changed": [
+          "chooseTemplate",
+          "resume",
+          "talkForm"
+        ],
+        "new": [],
+        "unchanged": 35
       }
     },
-    "total_compound_checks": 76,
-    "new_pure_node_checks": 29,
-    "node_checks_overlap_python": true
+    "ordinary_tasks_and_fault_corrective_preserved": true,
+    "help_bodies_changed": [
+      "toolbox"
+    ],
+    "other_help_bodies_unchanged": 75,
+    "help_catalogue_matches": 76,
+    "index_asset_urls_in_sw": 92,
+    "new_tables": [],
+    "new_dependencies": false,
+    "new_environment_variables": false,
+    "new_write_routes": [],
+    "new_read_routes": [],
+    "ordinary_routine_reason_removed": "own unsigned/unshared toolbox preparation; automatic actor/time/before-after retained",
+    "exceptional_reasons_retained": [
+      "other author",
+      "current/past signature",
+      "issued QR even after closure/expiry",
+      "unknown or malformed local provenance",
+      "cancellation/finalisation and template publication unchanged"
+    ],
+    "shared_draft_and_idempotent_writer_unchanged": true,
+    "minimum_compatible_evidence_source": "UI34",
+    "native_layout_rebuilt": false,
+    "live_operations": false
   },
-  "syntax": {
-    "javascript": 59,
-    "python": 183
+  "tests": {
+    "python_application": 598,
+    "python_gateway_package": 91,
+    "python_total": 689,
+    "python_shards": {
+      "toolbox_preparation": {
+        "tests": 27,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0
+      },
+      "tasks": {
+        "tests": 134,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0
+      },
+      "certificates": {
+        "tests": 87,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0
+      },
+      "maintenance": {
+        "tests": 79,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0
+      },
+      "routine_inventory": {
+        "tests": 4,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0
+      },
+      "signing_reports": {
+        "tests": 53,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0
+      },
+      "invitations": {
+        "tests": 61,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0
+      },
+      "toolbox": {
+        "tests": 47,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0
+      },
+      "attachments_simple": {
+        "tests": 84,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0
+      },
+      "handover_transfer": {
+        "tests": 22,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0
+      }
+    },
+    "gateway": {
+      "tests": 91,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    "browser_compound_checks": 153,
+    "browser_runs": {
+      "toolbox_browser": {
+        "checks": 16,
+        "report": "evidence/final/toolbox_browser/results.json"
+      },
+      "task_browser": {
+        "checks": 16,
+        "report": "evidence/final/task_browser/results.json"
+      },
+      "certificate_browser": {
+        "checks": 14,
+        "report": "evidence/final/certificate_browser/results.json"
+      },
+      "maintenance_browser": {
+        "checks": 15,
+        "report": "evidence/final/maintenance_browser/results.json"
+      },
+      "report_browser": {
+        "checks": 14,
+        "report": "evidence/final/report_browser/results.json"
+      },
+      "invitation_browser": {
+        "checks": 19,
+        "report": "evidence/final/invitation_browser/browser_results.json"
+      },
+      "files_people": {
+        "checks": 14,
+        "report": "evidence/final/files_people/ui33_browser_checks.json"
+      },
+      "simple_browser": {
+        "checks": 18,
+        "report": "evidence/final/simple_browser/ui29_browser_checks.json"
+      },
+      "presence_browser": {
+        "checks": 15,
+        "report": "evidence/final/presence_browser/results.json"
+      },
+      "navigation_browser": {
+        "checks": 12,
+        "report": "evidence/final/navigation_browser/results.json"
+      }
+    },
+    "actual_local_proxy_checks": 11,
+    "javascript_syntax": 65,
+    "python_parse": 187,
+    "all_final_selected_passed": true,
+    "native_gui_cases_in_final_selection": 0
   },
-  "local_regression_reproduction": {
-    "ui31_site_changed_records_hidden": true,
-    "ui31_no_setup_records_hidden": true,
-    "ui32_saved_records_retained": true,
-    "board_reads_no_database_changes": true,
-    "reports": [
-      "evidence/parent_reproduction.json",
-      "evidence/ui32_reproduction.json"
-    ]
-  },
-  "no_live_operations": true,
+  "new_python_cases": 27,
   "limitations": [
-    "Selected local tests, not a full-suite acceptance result; earlier historical release-assertion failures were not rerun or claimed fixed.",
-    "Browser checks use shipped assets and fictional TestClient with injected transport and in-memory persistence through set_content, not live HTTPS navigation.",
-    "No live GitHub/Render inspection, push, deployment, credential change or real project-data access.",
-    "No physical-device, Windows/PowerShell, durable IndexedDB or service-worker lifecycle acceptance.",
-    "No full accessibility/security/isolation/load, Docker or accepted off-host recovery validation.",
-    "Unsent note text remains in-tab until explicit save. Current assignments are not a historical roster. Presence remains recent connectivity, not attendance."
+    "Selected frozen-source tests with fictional data, not full-suite or a claim that previous historical failures were fixed. No earlier release pass counts or superseded runs are added.",
+    "Chromium uses actual shipped assets and fictional SQLite/TestClient endpoints with injected fetch and in-memory persistence through set_content. No live navigation/HTTPS, physical phones/camera, durable IndexedDB, service-worker lifecycle or complete accessibility acceptance.",
+    "Actual local Nginx/G01/core checks use loopback hosts and test HTTPS attestation, not live Render/TLS. No production-security, isolation or load certification, Docker build or accepted off-host recovery.",
+    "No GitHub push, Render deployment, real account/project data, credentials or mailbox actions. Optional PowerShell checker not executed on Windows; native GUI/master guide/installed binaries not rebuilt.",
+    "Routine preparation means an original author's open talk with no current/past acknowledgement, issued invitation or retained signing evidence and consistent local history. Other-author, previously signed/QR-shared, missing or inconsistent provenance needs a real correction explanation. Identical saves remain no-ops.",
+    "Saving preparation does not collect signatures, mark attendance, answer questions, display a QR, finalise a talk or authorise work. Actual discussion/understanding, personal/witnessed/QR acknowledgement and finalisation remain distinct.",
+    "Attendee search and visible-only controls retain hidden choices and missing saved references. Current backend eligibility can refuse a stale selection until deliberately changed. Resumption preserves original local record/version, not silently rebased on a fresh server value.",
+    "New browser creation pins the selected form version. The optional template_version field leaves legacy clients compatible. No schema/store/permission/API/dependency/environment additions; the existing transaction and local writer/retry remain.",
+    "Keep compatible UI34+ signing/attachment writers and exporters. No pre-UI34 rollback, resets, reimports, storage clearing or evidence-table deletion."
   ],
   "preliminary_attempts_excluded": [
-    "Initial API fixtures used a duplicate department label, incomplete note helper and wrong member-call signature; corrected before final tests.",
-    "Initial browser assertions assumed an error wording and an onclick assignment returned a function; fixture waits/capture corrected.",
-    "Initial screenshot fixture omitted existing styles; final checks load all application stylesheet links and capture at top scroll position.",
-    "A combined pytest collection collided on the new test_contract module basename; the new file was renamed test_ui32_contract.py, without application-code changes.",
-    "Visual review reduced the always-visible saved drafts from three to one and moved resume above the date controls, followed by full frozen-source rerun.",
-    "The current Contact asset assertion still expected the old UI31 cache URLs; only those expected version URLs were advanced to UI32 before rerunning the complete selection.",
-    "A source-audit helper initially assumed the unchanged Contact page had a new cache URL; the strict unchanged-byte comparison passed after correcting the helper."
+    "Initial source helper/navigation refinements occurred before freezing: saved destination now waits for shared-writer completion and local cleanup; narrow Toolbox resume delegates before the guarded fresh read.",
+    "Initial mutable-source tests and a stale held-read/closed-dialog DOM assertion failure are retained separately. The browser fixture was corrected to test an open dialog and capture the intended new read; these attempts do not contribute to final counts.",
+    "The first complete pre-refinement selection failed one existing signing-report Help assertion: shortened Toolbox Help lacked its established signing-PDF wording. Restored the exact parent QR/PDF guidance, kept the assertion, regenerated catalogue/outline, and added coverage for retained signatures and continuous local audit provenance.",
+    "Final source was re-frozen after the Help/provenance refinements. Every selected backend/browser/proxy test was then repeated on the fresh extraction. Earlier complete or partial passes are excluded, not summed."
   ],
-  "preserved": [
-    "Reason-free Save & close and first Finish; identical-request retry and conflict checks",
-    "Daily settings, dates, authorship, private notes, publications and acknowledgements",
-    "G01, project presence, Original Files services/permissions and exact website icons",
-    "support@mywavelink.com; no account data or external website changes",
-    "No new endpoints/tables/permissions/dependencies/environment/deletions/local-store formats"
-  ]
+  "data_compatibility": "UI39 changes browser Toolbox preparation and validates when routine saved edits need an explanation; no new persistent format, database tables or APIs. Approved UI38 source rollback restores the earlier Toolbox form/reason policy with compatible data. Keep UI34+ signing/file evidence writers and exporters. No data rollback, pre-UI34 source/exporters, reset, reimport or storage clearing.",
+  "no_live_operations": true
 }

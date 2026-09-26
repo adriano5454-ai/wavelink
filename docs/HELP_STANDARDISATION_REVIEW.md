@@ -1,3 +1,87 @@
+# UI39 bounded Toolbox Help review — 26 September 2026
+
+One hosted Toolbox article/outline updated for exact form selection, compact briefing, attendee search/
+retained selections, routine versus issued/signed correction, and explicit separate save/sign/finalise.
+Full earlier QR and signing-PDF instructions retained (limits/identity/read-scope/expiry/export warnings).
+75 other article bodies unchanged, all76 normalized headings/text match; shared reader cache URLs update.
+No native/master PDF rebuild, all-module procedural acceptance or universal reason removal claimed.
+An existing signing-Help assertion caught an initial omission; restored the content and reran, not waived.
+
+---
+## Earlier reviews retained
+
+# UI38 bounded General tasks Help review — 26 September 2026
+
+One hosted article/outline updated: direct ordinary create; exact linked versions and retained
+people; optional checklist-specific sharing consent; own checklist updates versus reset/other
+person; separate Task submission and Fault-corrective audience review; local drafts/retry/cleanup.
+75 other article bodies unchanged, all76 normalized headings/text match. Shared reader cache URLs
+advance. No native/master PDF rebuild or universal procedural/mandatory-reason cleanup claim.
+
+---
+## Earlier reviews retained
+
+# UI37 bounded Certificates Help review — 26 September 2026
+
+One hosted article/outline updated: one-page register, exact equipment and retained missing
+choices, source dates/unknown expiry, routine vs substantive correction, current directory,
+existing local drafts/original version/retry, replacement and separate source attachment.
+75 other article bodies unchanged; all76 normalized text/headings match. Shared reader cache
+URLs advance, not data/policy. Native wizard and master guides untouched; wider procedural
+review remains. No universal reason-cleanup or certificate-authentication claim.
+
+---
+## Earlier reviews retained
+
+# UI36 bounded Maintenance Help review — 26 September 2026
+
+One article updated: direct routine/linked creation, single-page saved result/notes/photos,
+reason-free own unapproved edits, meaningful exception notes, exact asset/assignments,
+retained local drafts and unchanged completion/approval/cycle workflows. One outline refreshed.
+75 other article bodies unchanged; all76 normalized search texts/headings match. Shared reader
+cache URLs advance without storage/policy changes. No native/master-PDF/full procedural review.
+
+---
+## Earlier reviews retained
+
+# UI35 bounded Help maintenance — 26 September 2026
+
+Toolbox, Toolbox guests and Handovers now describe the exact PDF button, collapsed older
+revisions/JSON, saved identity and read-set scope, unshared files, export limits, font escapes
+and no signing/attendance/permission effect. Three article bodies changed,73 unchanged; all76
+catalogue headings/text match. SharedHelpcache URLs aligned. Ordinary PDF statements remain
+valid: this is a separate signing report, not an embedded redesign of regular PDFs.
+No full native/masterguide/procedural/accessibility acceptance claimed.
+
+---
+## Earlier bounded reviews retained as history
+
+# UI34 bounded Help review — 26 September 2026
+
+Toolbox, Toolbox guests, Handovers and Permissions bodies updated for the actual invitation
+buttons, caps, timings, visitor/named distinctions, exact revision/files, no attendee proof,
+no normal session creation, expired receipt handling and backup compatibility. Toolbox manual
+witnessing is preserved but no longer mislabels self-declared QR visitors. All76 catalogue
+headings/text match;72 other article bodies unchanged, shared reader cache outside bodies updated.
+This is not a full Help/native/master-guide/physical-device or procedural-compliance acceptance.
+
+---
+## Earlier reviews retained as history
+
+# UI33 bounded Help maintenance — 26 September 2026
+
+Five hosted article bodies updated: Handovers, Handover continuity, General tasks,
+Inventory and Asset details. Instructions cover People & shifts authority, optional
+simple-note photos/files, limits/private-versus-publication scope, in-tab work, camera
+limitations, byte retention/PDF manifests and the first routine-reason cleanup batch.
+Exceptional corrections, review and deletion rules remain explicit. Outlines rebuilt;
+all 76 catalogue entries match their headings/text. Other 71 article bodies unchanged.
+Shared reader cache URLs outside article bodies advance. This is not completion of
+program-wide reason cleanup, full Help/native/master-PDF or accessibility review.
+
+---
+## Earlier bounded reviews retained as history
+
 # UI32 Help review — 26 September 2026
 
 Handovers and Handover continuity now describe Continue saved notes, one visible draft

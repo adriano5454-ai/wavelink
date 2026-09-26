@@ -1,3 +1,153 @@
+# Current direction — UI39 Toolbox preparation (26 September 2026)
+
+Implemented exact-form search/version guard, compact one-page briefing, optional references/people/
+guests, visible-only selection without losing hidden attendees and direct Save briefing. Own unsigned,
+unshared preparation needs no generic reason. Signed/QR-shared/other-author/unknown-provenance corrections
+keep genuine explanations, exact audit and renewed acknowledgement rules. QR/PDF/witness/finalise unchanged.
+
+FIRST actual Toolbox/phone/QR and normal workflow feedback. Continue remaining unnecessary routine
+reasons and click reduction in grouped releases, never add daily handover friction. Existing Task,
+certificate/maintenance simplicity, people/shifts/files, Original Files, presence, icons/support stay.
+Maintenance-specific invitations, individually issued links and organiser admission remain separate.
+Current release changes no operational signing authority or attendance/identity assurances.
+
+Compact changes, copy/review/commit/push; PS1 optional. Preserve G01/data/unsent work. Current exact
+implementation notes take precedence; earlier roadmap below retained rather than silently dropped.
+
+---
+
+# Current direction — UI38 simple Task entry (26 September 2026)
+
+Implemented one-page ordinary Task create, direct save, searchable assignees retaining hidden
+and unavailable choices, exact source/version linking and optional fixed checklist. Own
+Task-checklist updates need no generic reason. Other/unknown authorship, resets, issue/NA
+explanations and all task review/authority rules remain. Inventory verification and Fault-
+corrective sharing remain separate. No automatic reminder, completion or equipment release.
+
+FIRST actual Task/certificate/maintenance and phone QR feedback. Continue remaining routine
+reason/click-count cleanup as coherent batches, not friction in simple handovers. Existing
+people/shifts/files, QR/PDF, presence, Original Files, icons/support are preserved, not new backlog.
+Maintenance QR, individually issued invitations and organiser admission are separate future work.
+
+Compact changes, copy/review/commit/push; PS1 optional. Preserve G01/data/unsent work.
+Earlier roadmap below retained. Current verified implementation notes take precedence.
+
+---
+
+# Current direction — UI37 certificate simplicity (26 September 2026)
+
+Implemented one-page add/edit, retained exact equipment search, direct save and existing
+local drafts. Routine Draft edits and administrative follow-up need no reason; recorded
+source/state corrections retain a genuine explanation. Audit/version/file/renewal/permissions
+preserved. Hosted Certificates Help updated, not all routine prompts or native/PDF completed.
+
+FIRST actual certificate/maintenance and phone QR/signing feedback. Continue remaining
+routine-reason/click-count cleanup as coherent usability batches. No everyday friction
+added back to simple handovers. Existing people/shift/files, QR/PDF, presence, Original Files,
+icons and support contact are preserved, not new backlog. Maintenance QR, individually issued
+invitations and admission confirmation are separately scoped future work.
+
+Compact changed files, copy/review/commit/push; PS1 optional. Preserve G01/data/unsent work.
+Prior roadmap below is retained. Current implementation notes take precedence.
+
+---
+
+# Current direction — UI36 maintenance simplification (26 September 2026)
+
+Implemented grouped one-page routine recording and work-order creation; own unapproved
+maintenance edits no longer require a reason. Automatic audit and meaningful issue/N/A notes,
+approved/other-worker corrections, approval, closure and cycle controls remain.
+This does not complete every module's routine-reason cleanup or native GUI redesign.
+
+FIRST actual surveyor/maintenance feedback and phone QR read/sign/PDF acceptance. Then reduce
+routine prompts/click counts in remaining coherent workflows, preserving permissions, unsent work
+and evidence. Simple handovers remain normal: open yours, write, save or finish. Never add
+routine review screens back. UI35 signing PDFs, UI34 QR, presence/Originals/icons already exist.
+Maintenance QR/admission/individual links remain separately scoped future work.
+
+Compact changed files; optional PS1; G01/data preserved. No automatic background development.
+Prior roadmap below is retained; current implementation notes take precedence, not deletion.
+
+---
+
+# Current direction — UI35 read-only signing reports (26 September 2026)
+
+Implemented separate author signing PDFs: exact revision/read sets, saved names and times,
+optional drawings, offered file identities, existing company report branding, one download.
+No new participant steps, reasons, permissions, signatures or data tables. Ordinary PDFs and
+full JSON archive remain distinct. PDF is not attendance/identity/legal proof or all normal
+roster evidence. No private draft/newer source substitution, automatic copying or signing.
+
+FIRST: actual phone/hosted QR read/sign/report feedback with fictional users, then cross-module
+routine-reason and click-count cleanup. Keep My shift → write → save/finish simple. Do not add
+new routine review panels. Next QR adapters (maintenance), individual invitations and organiser
+admission are separately scoped, not implemented. Retention/quotas, broader controlled exports,
+company/legal identity requirements and accepted recovery need their own review.
+
+Current signing-PDF item supersedes the earlier plan for this initial report. It does not claim
+all richer report/attendance capabilities complete. Presence/Originals/icons/support contact
+are already implemented. Compact delivery; optional checker; preserve G01/data/unsent work;
+no pre-UI34 source/data rollback and no deployed-version assumption.
+
+---
+## Prior roadmap retained as history; current direction above takes precedence
+
+# Current direction — UI34 document QR invitations (26 September 2026)
+
+Implemented first grouped release: toolbox talks and published-handover acknowledgement,
+separate named/temporary visitor grants, five-minute group QR, optional marks, no broad account
+or navigation, exact revision evidence, expiry/revoke, signature retry and author evidence.
+Keep the ordinary flow Invite → scan → read → Sign & finish. No new routine reason prompts.
+
+FIRST: actual phone/hosted HTTPS/camera tests with fictional named users and visitors; document
+visibility, grants, permissions, exact files, changed revision and closure. Do not equate the
+local controlled-browser tests with operational acceptance. Keep UI34+ for new tables/exporters.
+
+NEXT coherent work: remaining program-wide routine reason cleanup and click-count reduction;
+feedback on simple note/file/save/finish and shifts. Do not reintroduce review-heavy routine
+handovers. Existing presence/Original Files/icons/support contact are implemented, not new work.
+
+QR follow-ups, separately scoped: maintenance participation/witness adapter (never generic work
+approval), individually issued invitations, optional organiser Admit/Confirm present, safe
+retention/quota and richer signature/PDF evidence exports. Not implemented now. No physical
+presence guarantee or automatic shared-guest attribution. Real cryptographic identity/legal or
+company compliance requirements need explicit scope, not a label on a drawn mark.
+
+Preserve G01/permissions/private drafts/unsent work. Compact changed-file copy/review/commit/push;
+checker optional, no resets/reimports/storage clearing, no live deployment assumptions.
+
+---
+## Preserved earlier roadmap (history; current direction above takes precedence)
+
+# Current priority — UI33 simple assignments, handover files and routine reasons
+
+26 September 2026. Handovers remain easy: write, optionally attach, save or finish.
+People & shifts is visible with clear authority; search existing members and save once.
+No automatic guest promotion, account creation or shared private notes. Optional files
+are implemented for simple daily notes with exact publication privacy, not a future plan.
+
+The user explicitly dislikes unnecessary reasons throughout the program. UI33 removes
+routine reasons in Task work notes, inventory details and asset profiles/photo captions.
+NEXT: audit remaining routine create/edit/save prompts and actual click counts in cohesive
+module groups; retain real actor/time/change audit automatically, never fake reasons.
+Do not label ordinary edits as exceptional just to keep old paperwork. Corrections to
+issued records, rejection, deletion, custody changes and overrides need separate review.
+Native dialogs and existing item/profile review controls are not claimed simplified here.
+
+Prioritise real surveyor feedback on shift assignments, phone file/camera selection,
+private save/finish, file recovery and exact publication access. No autosave claim.
+Handovers file retention/storage use and safe recovery are follow-up work, not a purge
+button to add casually. Keep UI33 or later for projects with handover files; older source
+and selective exporters are not accepted. Formats are checked, not malware scanned.
+
+Preserve G01, UI31 presence (connectivity, not attendance), Original Files permissions,
+website icons, support@mywavelink.com, data and unsent work. Compact copy/review/commit/push
+updates; optional checker, no resets. No live deployment assumed. Wider roadmap below is
+preserved history; this direction supersedes review-heavy ordinary handover plans.
+
+---
+## Preserved earlier roadmap
+
 # Current direction — UI32 simple daily overview (26 September 2026)
 
 UI32 retains own saved notes across dates/sites directly on My shift; published team
