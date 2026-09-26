@@ -55,6 +55,15 @@ def wait_ready(child, port, path, *, host=None, accepted=(200,), seconds=90):
 
 
 def run() -> int:
+    # C01 is explicit and default-off: existing demonstration behavior is retained.
+    mode = os.environ.get('WAVELINK_DEPLOYMENT_MODE', 'DEMO')
+    if mode not in ('DEMO', 'COMPANY'):
+        raise DemoError('WAVELINK_DEPLOYMENT_MODE must be DEMO or COMPANY.')
+    if mode == 'COMPANY':
+        from .company_entrypoint import run_company
+        return run_company()
+    if (MOUNT / 'wavelink-company' / 'COMPANY_DEPLOYMENT.json').exists():
+        raise DemoError('This disk belongs to a company installation. Do not start demonstration mode on it.')
     os.umask(0o077)
     if not mounted(MOUNT):
         raise DemoError('A persistent disk must be mounted at /var/data. Refusing ephemeral storage.')

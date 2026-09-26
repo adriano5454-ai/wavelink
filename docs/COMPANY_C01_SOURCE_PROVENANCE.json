@@ -1,0 +1,100 @@
+{
+  "format": "wavelink-company-c01-provenance-1",
+  "date": "2026-09-26",
+  "application": "UI43",
+  "core": "1.34.19",
+  "deployment_update": "C01",
+  "parent_repo_files": 126,
+  "unchanged_runtime_files": 1776,
+  "hashes": {
+    "deploy/entrypoint.py": "f754d4db367983a75473f1d525183b618a25c265837a317df66ffabaf8f4c1e2",
+    "deploy/company_provision.py": "3ef503ee27c4f516d11d05bb9c4b1b12f7152797b351d37ac748e52daf539c98",
+    "deploy/company_runtime.py": "6e6d2b589e697a079a48f81558f7b464dd6e27a22eabcdad363824369ed9ea00",
+    "deploy/company_entrypoint.py": "ab7a0a16677835815ac34222db5b9938d046c3d47aa25f71dfa227922b36375b",
+    "deploy/company_nginx.py": "a08326ca59ede8054be165959e1f677fa775285f23cf161befa45bd3e144a370",
+    "deploy/extract_source.py": "56a0ea34f7bd6bb4648b464edf4d6746df6df4b9dc808e163757e33acbe16243",
+    "deploy/gate.py": "9dc4ab6f7b7fb324ea06c305a09af8336b0bd10e7be6bef5296af1fd32d2e701",
+    "deploy/nginx_config.py": "752563759fd82e20eacc62379f7a3082a8074675a747214a16cff0b9b90b99b8"
+  },
+  "source_lineage": [
+    {
+      "release": 31,
+      "zip_sha256": "54a05c113b52155c53ed5ffa5924fc9137cb20f8ed3cf2b3d9eccbdbd1b047db",
+      "baseline_files": 100,
+      "installed_files": 102
+    },
+    {
+      "release": 32,
+      "zip_sha256": "0f6e84163857fd952768fdece266490e6d58879a3e95c2db706e8ef42b398a86",
+      "baseline_files": 102,
+      "installed_files": 104
+    },
+    {
+      "release": 33,
+      "zip_sha256": "996ff1485e3f74d0ee13d5916d363ac0788b8448389abfcccdde0b96c50923ed",
+      "baseline_files": 104,
+      "installed_files": 106
+    },
+    {
+      "release": 34,
+      "zip_sha256": "75220e35a6a00c3e55f732ecfb34e3e674e7ac1d8e7567952655db7ec373b6d0",
+      "baseline_files": 106,
+      "installed_files": 108
+    },
+    {
+      "release": 35,
+      "zip_sha256": "19f51deea31598d58d2e2aee21d284ce267158a0ebb9dd1cf29fdada73bba7c0",
+      "baseline_files": 108,
+      "installed_files": 110
+    },
+    {
+      "release": 36,
+      "zip_sha256": "03de90850b563a9aed1331a701a50b5bdf9499aac7f608517a759e918d7f9ad8",
+      "baseline_files": 110,
+      "installed_files": 112
+    },
+    {
+      "release": 37,
+      "zip_sha256": "231c28041093ac206ee0ce8b8e65c0e839f8908818a3c85723c6aa1260baca35",
+      "baseline_files": 112,
+      "installed_files": 114
+    },
+    {
+      "release": 38,
+      "zip_sha256": "fd173f71066e524041fff237299e0899dad22eba88fca54c6e4e57040f8905fe",
+      "baseline_files": 114,
+      "installed_files": 116
+    },
+    {
+      "release": 39,
+      "zip_sha256": "b745b0ad1925ea7a06e5a2a45ef09986d08647e16f7c53ba3654a3bc777c857a",
+      "baseline_files": 116,
+      "installed_files": 118
+    },
+    {
+      "release": 40,
+      "zip_sha256": "0c2c47f453262ff4612527ea8456bfea167e18b168b82886419a59aa11d8b04a",
+      "baseline_files": 118,
+      "installed_files": 120
+    },
+    {
+      "release": 41,
+      "zip_sha256": "96da881c124c59f6db5608e3bdb630c85eb7b08be4d0794b8297ce2a87e14c26",
+      "baseline_files": 120,
+      "installed_files": 122
+    },
+    {
+      "release": 42,
+      "zip_sha256": "9f7f31860df20b13301e6fe481d2da6d3fbb5a46fa91d3361502ddc129dc0155",
+      "baseline_files": 122,
+      "installed_files": 124
+    },
+    {
+      "release": 43,
+      "zip_sha256": "479b47abecb9d766999c74309f3117b2bb290bd9b670f50ad6f15139710923da",
+      "baseline_files": 124,
+      "installed_files": 126
+    }
+  ],
+  "no_live_access": true
+}

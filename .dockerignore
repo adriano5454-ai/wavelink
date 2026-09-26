@@ -17,3 +17,9 @@ runtime
 *.wlstaging
 *.log
 README.md
+
+# Never send C01 company setup credentials or data into an image build.
+**/*PRIVATE*
+**/COMPANY_DEPLOYMENT.json
+company-data
+wavelink-company

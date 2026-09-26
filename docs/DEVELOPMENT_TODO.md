@@ -1,3 +1,35 @@
+# C01 separate-company deployment — 26 September 2026
+
+User approved a new Sulmara company, same application GitHub, separate service/disk/address,
+normal named login. C01 implementation is locally tested, not remotely provisioned/deployed.
+Initial named administrator is configured privately; do not retain bootstrap credentials in
+source or future checkpoint/memory. One private forced password-change setup precedes daily
+normal login. DEMO remains default/independent. Retain company boundary/files in future updates;
+never overwrite its entrypoint with the old G01-only source or change an existing company into demo.
+
+FIRST actual new-service/DNS/HTTPS setup, first sign-in and secret removal, named permissions,
+blank-company workflow, retained data through restart and complete independent recovery test.
+No company operational data until accepted. Current UI43 mobile handover/day/PDF feedback still
+pending. Maintain user-friendly full choices, grouped releases and copy/review/commit/push.
+No unsolicited attendance/identity/MFA/security certification; default sample library not copied.
+No automatic background work. The entire prior product roadmap follows unchanged.
+
+---
+# UI43 handover workflow — 26 September 2026
+
+Mobile daily creation must expose department, hours, names/departments as recipients and a direct
+People & shifts route for real lead-managed assignments. Same-subject day navigation and one PDF
+are delivered together. Preserve the four creation choices, My shift, private-draft protections,
+reason-free everyday saving, all specialised capabilities and separate Help. No basic/hidden UI.
+Subjects currently reuse department+location; not an independent new topic data model or a fuzzy
+migration. PDF current-publication scope is explicit; private notes and visitor-signing reports
+stay separate. Need one complete fictional phone/lead+incoming/day/PDF feedback session first.
+Future topic identity or broader private-draft exports require deliberate scoped design, not
+silent inference. Keep all previous roadmap work and production/device/recovery acceptance.
+
+---
+## Previous roadmap/history retained
+
 # UI42 app-wide discovery — 26 September 2026
 
 User principle applies everywhere: user-friendly and polished, not basic or fewer capabilities.

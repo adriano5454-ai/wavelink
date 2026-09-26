@@ -32,3 +32,9 @@ DEPLOYMENT.json
 *.zip
 .DS_Store
 Thumbs.db
+
+# C01 company installation state and first-sign-in material never belong in GitHub.
+COMPANY_DEPLOYMENT.json
+*PRIVATE*
+/company-data/
+/wavelink-company/
