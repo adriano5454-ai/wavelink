@@ -1,4 +1,32 @@
-# Wavelink continuation — UI27 + G01
+# Current priority — UI30 contact update completed locally
+
+26 September 2026: support@mywavelink.com now replaces the personal support address
+across current program contact surfaces and bundled guide contacts. No deployment,
+mailbox provisioning, operational/account/data changes or new feature scope.
+UI29 simplified handovers remain the daily workflow; do not add routine reasons or
+review panels back. Subtle project presence remains separately planned. Resume grouped
+workflow improvements and real surveyor feedback. Historical roadmap follows intact.
+
+# Current priority after UI29 — simple daily handovers
+
+Implemented the user-requested simpler everyday path: reusable named shift setup,
+personal notes, Save & close / atomic first Finish without routine reason/confirmation.
+Older review-heavy tools are under More. Current assignments do not expose private drafts.
+Validate actual surveyor use before expanding daily controls again. Preserve the exact
+UI29/G01 checkpoint; no live deployment is inferred.
+
+**Future separate feature: subtle project presence.** Small top-bar initials/count,
+permitted project names, recent authenticated activity and expiry, one identity per
+account across tabs. Not attendance, proof of productive work, location, read tracking,
+keystroke monitoring, shared drafting or shift assignment. Shared guest stays one account.
+No presence implementation or storage has been added in UI29.
+
+Keep grouped substantial releases and compact changed-file GitHub delivery.
+
+---
+## Retained earlier roadmap/history (current direction above supersedes routine friction)
+
+# Wavelink continuation — UI28 + G01
 
 **Adriano's 25 September priority: HANDOVER FIRST.** UI20 implements daily Start
 today, selected shift and automatic periods, default 12 hours, alternatives/custom
@@ -39,15 +67,20 @@ full-snapshot counts, unavailable audience selections and retained acknowledgeme
 evidence, strict projection and scoped refresh/hide. No automatic reminders/signing
 or permission changes. Current membership is not historical delivery tracking.
 
+UI28 groups previous-handover preparation: Sources & title / Sections & order /
+Review & create, explicit exact published-source preview, visible copy order,
+reviewed combined wording and unchanged private-copy writer/retry. Automatic daily
+shifts remain separate; no autosave or inferred publication.
+
 **Release cadence:** Adriano explicitly requests fewer, more substantial grouped
 releases. Group related workflow improvements, run integrated regressions, then
 address hosted feedback before expanding. Deliver only changed GitHub files with
-one current checkpoint; separate bulky evidence. UI27 is locally implemented/tested,
+one current checkpoint; separate bulky evidence. UI28 is locally implemented/tested,
 not deployed by this work. Do not infer live version from the latest prepared ZIP.
 
 ## Next work
 
-1. Check author recipient filters/exceptions/refresh, history/comparison, incoming/read/exact-revision/acknowledgement and drafting/review/save together on the hosted service with actual shift starts
+1. Check grouped source preparation and private-copy creation, then author recipient filters/exceptions/refresh, history/comparison, incoming/read/exact-revision/acknowledgement and drafting/review/save together on the hosted service with actual shift starts
    (06:00/12:00 or agreed local schedule), night-to-next-day continuity, named
    authors, department audience and real phones. Confirm time basis and that
    published predecessor/acknowledgements do not change. Address feedback before
@@ -74,7 +107,7 @@ Task/evidence extensions and recurring reminders; running-hour maintenance; conf
 
 ## Source and delivery rules
 
-Continue future builds from UI27 + G01's exact source identity/checkpoint. This patch requires the exact UI26 + G01 baseline. This is the supplied UI18 branch, not the other unrecovered UI18 variant. The schema guard must not be bypassed or turned into an unreviewed migration. Verify the source baseline before changing code.
+Continue future builds from UI28 + G01's exact source identity/checkpoint. This patch requires the exact UI27 + G01 baseline. This is the supplied UI18 branch, not the other unrecovered UI18 variant. The schema guard must not be bypassed or turned into an unreviewed migration. Verify the source baseline before changing code.
 
 Default deliverables are **changed/new GitHub files only**, short instructions and one current checkpoint. Do not accumulate old screenshots, test logs, old releases, rollback extractors or unchanged source/vendor parts in routine ZIPs. Keep one full GitHub baseline and the approved Git history separately. State required baseline, deletions, migrations and dependencies explicitly. Development evidence stays separate; never claim tests or deployments not actually completed.
 

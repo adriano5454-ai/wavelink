@@ -1,3 +1,24 @@
+# UI29 Help update — 26 September 2026
+
+Handovers and Handover continuity reorganised around My shift, one-time setup,
+reason-free routine Save/Finish, exact source reading, exceptions and More. All76
+catalogue bodies/headings match,74other article bodies unchanged. Still8distinct
+bounded topics reviewed;68plus native/masterPDF/entrypoints and full acceptance pending.
+An index match does not approve every instruction or native/hosted workflow.
+
+---
+# Current status — UI28 grouped preparation (26 September 2026)
+
+Handovers/continuity re-reviewed for Sources & title / Sections & order / Review &
+create; explicit exact-publication preview; source order and section selection;
+private ungrouped copying versus automatic daily shifts; blank new period/audience;
+unchanged-request retries; source revalidation and in-tab-only reasons. UI27 recipient
+review remains in both articles. 74 other bodies unchanged; 76 index matches. Eight
+distinct bounded topics; 68 plus native/master PDF/entry points/accessibility pending.
+No new topic completion or hosted procedural acceptance claimed by this re-review.
+
+---
+
 # Current status — UI26 publication history/comparison (26 September 2026)
 
 Handovers and Handover continuity re-reviewed for the exact published revision pair,
@@ -269,3 +290,12 @@ refresh and read-only/permission limits. Two outlines and all76 catalogue entrie
 match;74 other article bodies unchanged. Still8 distinct bounded topics reviewed,
 68 pending plus native/masterPDF/entrypoints/full accessibility. No universal
 procedural acceptance. Source/read-only/browser checks are in UI27 evidence.
+
+
+## UI30 contact-only maintenance — 26 September 2026
+
+Support address updated to support@mywavelink.com in the one hosted support article,
+76-entry matching catalogue, current native Help footers, guide builders and eight
+PDF files. 75 other hosted article bodies unchanged. PDF layout/bookmarks/links and
+all non-email text preserved. No additional procedural topic marked reviewed.
+The master/native guides retain their legacy instructional scope and version labels.
