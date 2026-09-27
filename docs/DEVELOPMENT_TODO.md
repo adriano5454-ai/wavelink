@@ -1,3 +1,43 @@
+# Current release: UI46 — work-focused Home
+
+Home reviewed and implemented. Preserve all capabilities and the user definition of simpler: friendlier,
+not more basic. Section-by-section process from now on: review actual desktop/mobile behaviour, agree a
+plan, build a meaningful single-section update, then one short test session. Do not hide choices.
+No background schedule or automatic next-section redesign. User feedback and reproducible regressions first.
+
+Retain all broader roadmap items below. Personal previews only represent the documented account scope,
+not a global completion/assignment score. Empty setup guidance is permission scoped.
+
+---
+
+# Current release: UI45 — reviewed builders and sign-out
+
+Create/Import/View saved cards, scoped counts, focused forms, exact saved destination/retry.
+Fixed nonexistent create() logbook shortcut and lingering admin-only toolbox browser gate.
+Reason-free new/unpublished checklist/routine/toolbox saves; published corrections and lifecycle
+reviews remain. Three Python adapters changed (browser_templates, browser_toolbox, builder_hub),
+189 other app Python modules unchanged /192 total. No new endpoints, tables or permissions.
+
+Main sign-out no longer blocks because drafts exist: direct if clean, one warning if local work
+or editor. Independent dialog, reachable Sign out inside shared modal; cancel retains editor.
+Current operation form flush; stored queue/drafts/receipts/unknown fields kept. Main auth null +
+optional signedOutWorkOwner marker in one state transaction, exact token/account/lease rechecked.
+Same-account resumption enforced, other account refused while retained work remains. Not a new
+multi-account vault. In-tab-only unsaved editor text can be lost after explicit warning/confirmation.
+In-flight writes settle first, new writes/queue pause. Aborted transaction preserves work; retry.
+Offline logout may leave server token valid until expiry; no automatic public-root/guest navigation.
+Embedded Fleet busy/finish hooks, Original library exit status; standalone/separate logs/native/other
+devices not fully managed. No browser-store version/schema change. Keep all irreversible caveats.
+
+Six hosted Help bodies/outlines updated: importcentre/browsertemplates/browsertoolbox/browserlogs/
+navigation/savestatus. 70 others unchanged;76 catalogue matches; no native/PDF/global review claim.
+
+
+## Next priorities
+Keep meaningful builders and prominent Create/Import/View saved choices. Validate named non-admin authoring and same-account local draft resumption on the real company service. No automatic project seeding. Preserve all existing roadmap items below.
+
+---
+
 # C01 separate-company deployment — 26 September 2026
 
 User approved a new Sulmara company, same application GitHub, separate service/disk/address,

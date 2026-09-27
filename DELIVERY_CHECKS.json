@@ -1,39 +1,136 @@
 {
-  "completed_selected": {
-    "app_js_syntax": 71,
-    "app_python_parse": 192,
-    "builder_chromium_viewports": [
-      "1440x1000",
-      "390x1000"
-    ],
-    "company_c01_python": 71,
-    "demo_gate_package_python": 59,
-    "ui44_builders_and_workspace_python": 23
-  },
   "core": "1.34.19",
-  "format": "wavelink-ui44-checks-1",
-  "hosting": "C01 compatible; DEMO default; G01 preserved",
-  "intentional_boundaries": [
-    "Existing non-admin accounts receive builder permissions false until explicitly granted.",
-    "Browser imports create reusable definitions or separate clean structures only; no users/passwords/signatures/completed operational history.",
-    "Original Files upload/folder authority is unchanged by UI44.",
-    "Whole-project/setup bundle and workbook history transfers remain advanced/native workflows."
-  ],
-  "limitations": [
-    "Not a full-suite result. A broader inherited browser-definition suite exceeded the bounded run.",
-    "An inherited release-invariance assertion for checklist/logbook internals is obsolete because UI44 intentionally changes definition-authority adapters.",
-    "No live GitHub/Render deployment, real company data, physical phone, durable browser storage/service-worker, Windows/PowerShell, full security/accessibility/load, Docker-build or accepted off-host recovery acceptance."
-  ],
-  "parent": "UI43 + Company C01 over verified uploaded UI30 lineage",
-  "source": {
-    "app_js": 71,
-    "app_python": 192,
-    "existing_executable_changes": [
-      "deploy/extract_source.py"
-    ],
-    "extractor": "e2b8b8b3b8675ed67984655946ad54c503c31e3bd555956ce6c79feaff280a25",
-    "parent_extractor": "56a0ea34f7bd6bb4648b464edf4d6746df6df4b9dc808e163757e33acbe16243",
-    "runtime_files": 1780
+  "workspace": "UI46",
+  "company": "C01",
+  "gateway": "G01",
+  "parent": "UI45 + Company C01",
+  "implemented_not_deployed": true,
+  "python_passed": 481,
+  "python_breakdown": {
+    "verified_home_py": 44,
+    "verified_authoring": 186,
+    "verified_handovers": 73,
+    "verified_c01": 71,
+    "verified_gateway": 107
   },
-  "workspace": "UI44"
+  "compound_browser_passed": 56,
+  "browser_breakdown": {
+    "verified_home_browser": 15,
+    "verified_shortcuts": 19,
+    "verified_builders": 9,
+    "verified_signout": 13
+  },
+  "javascript_syntax_passed": 72,
+  "application_python_parse_passed": 193,
+  "runtime_files": 1795,
+  "final_commands": {
+    "verified_home_py": {
+      "command": [
+        "pytest",
+        "-q",
+        "tests/ui46_home",
+        "tests/reliability/test_attention.py",
+        "--disable-warnings",
+        "--tb=short"
+      ],
+      "returncode": 0,
+      "seconds": 27.523896582999896
+    },
+    "verified_authoring": {
+      "command": [
+        "pytest",
+        "-q",
+        "tests/ui45_review",
+        "tests/browser_templates/test_templates.py",
+        "tests/browser_toolbox/test_toolbox.py",
+        "tests/browser_logs/test_designer.py",
+        "tests/ui41_usability/test_local_work.py",
+        "tests/workspace_continuity/test_service_worker.py",
+        "--disable-warnings",
+        "--tb=short"
+      ],
+      "returncode": 0,
+      "seconds": 138.42250375999993
+    },
+    "verified_handovers": {
+      "command": [
+        "pytest",
+        "-q",
+        "tests/ui29_simple/test_simple.py",
+        "tests/ui43_handovers/test_workflow.py",
+        "--disable-warnings",
+        "--tb=short"
+      ],
+      "returncode": 0,
+      "seconds": 69.12566154299975
+    },
+    "verified_c01": {
+      "command": [
+        "pytest",
+        "-q",
+        "/mnt/data/ui46_work/target_repo/tests/test_company_c01.py",
+        "--disable-warnings",
+        "--tb=short"
+      ],
+      "returncode": 0,
+      "seconds": 28.106540070999927
+    },
+    "verified_gateway": {
+      "command": [
+        "pytest",
+        "-q",
+        "/mnt/data/ui46_work/target_repo/tests/test_gate.py",
+        "/mnt/data/ui46_work/target_repo/tests/test_public_entry_g01.py",
+        "/mnt/data/ui46_work/target_repo/tests/test_provision.py",
+        "/mnt/data/ui46_work/target_repo/tests/test_package.py",
+        "--disable-warnings",
+        "--tb=short"
+      ],
+      "returncode": 0,
+      "seconds": 6.193014919000234
+    },
+    "verified_home_browser": {
+      "command": [
+        "python",
+        "tests/ui46_home/browser_checks.py",
+        "/mnt/data/ui46_work/evidence/verified_home_browser"
+      ],
+      "returncode": 0,
+      "seconds": 9.531870027999958
+    },
+    "verified_shortcuts": {
+      "command": [
+        "python",
+        "tests/ui46_home/browser_shortcuts.py",
+        "/mnt/data/ui46_work/evidence/verified_shortcuts"
+      ],
+      "returncode": 0,
+      "seconds": 12.452689305000149
+    },
+    "verified_builders": {
+      "command": [
+        "python",
+        "tests/ui45_review/browser_builders.py",
+        "/mnt/data/ui46_work/evidence/verified_builders"
+      ],
+      "returncode": 0,
+      "seconds": 7.30305308800007
+    },
+    "verified_signout": {
+      "command": [
+        "python",
+        "tests/ui45_review/browser_signout.py",
+        "/mnt/data/ui46_work/evidence/verified_signout"
+      ],
+      "returncode": 0,
+      "seconds": 9.872068014999968
+    }
+  },
+  "source_audit": "docs/UI46_SOURCE_PROVENANCE.json",
+  "limitations": [
+    "Selected checks only, not full-suite",
+    "Fictional TestClient data; simulated route and staged in-memory transaction store, not durable IndexedDB",
+    "No live GitHub/Render/Sulmara records or credentials accessed",
+    "No actual browser navigation/HTTPS, physical-device/SW/Windows/PowerShell/native/fullsecurity/accessibility/load/Docker/off-host acceptance"
+  ]
 }

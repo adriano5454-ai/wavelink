@@ -1,3 +1,13 @@
+# UI46 bounded Home / Navigation review
+
+Home and Navigation updated against this implementation. All76 catalogue entries/headings match;
+74 other article bodies unchanged. Cache URLs may change outside bodies. Current native/master PDF,
+all-module procedural/accessibility review remains unfinished. Section reviews will stay explicit.
+
+# UI45 bounded Help update
+
+Six hosted article bodies and outlines updated: importcentre, browserlogs, browsertoolbox, browsertemplates, navigation, savestatus. All 76 catalogue texts match. Other 70 bodies unchanged. Cache links outside bodies advance where needed; native Help and master PDF remain retained references, not re-reviewed current instructions.
+
 # UI43 handover context / day journal / combined export
 
 Handovers and continuity articles describe the new daily context and recipient-vs-roster/author
