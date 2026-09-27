@@ -1,3 +1,34 @@
+# UI50 — bounded Handovers and continuity Help update
+
+Two article bodies/outlines changed: handovers and handovercontinuity. Seventy-four other article bodies
+unchanged; all76 catalogue texts/headings match. Normal next-shift and full-hitch entry now use the same
+routine notes/files/save/first-finish path. Exact predecessor/optional section copy and separate issued
+corrections retain their real review requirements. My saved notes/Incoming direct, compact day journal,
+same-session Back/Refresh/open days/position, transient old-view labelling and denial clearing documented.
+Advanced source preparation, explicit legacy manual/irregular setup, QR/visitor and PDF limits preserved.
+Unsent in-tab context/notes/files are not autosaved. No change to native/master guide or all-topic acceptance.
+Shared reader/cache URLs change outside the other74 bodies. All creation and export meanings remain distinct.
+
+# UI49 — bounded Logs and export Help update
+
+Two article bodies/outlines changed: logs and logexports. Seventy-four bodies unchanged;76catalogue
+headings/texts match. Existing native/advanced transfer guidance in logexports retained under explicit browser
+report/definition-import introduction. Logs covers permissions, complete sections, compact entry/read views,
+no-op versus genuine corrections, narrow current-assignee status/response, draft/retry/privacy semantics,
+stable versus transient/denied refresh and honest report/window limits. Main operational fields/definitions,
+exports and history remain. Shared cache URLs update outside bodies. Not a master PDF/native guide rebuild
+or full procedural/accessibility/security review. No new module attachments/automatic Task or notification claim.
+
+# UI48 — bounded Checklists and Home refresh Help review
+
+Only daily and dashboard article bodies/outlines changed. 74 others are unchanged; all 76 catalogue
+texts/headings match. New wording covers Continue/Summary, one-page result entry with original evidence
+and queue semantics, Finish & devices, permissioned checklist builders, background preservation versus
+transient/denied access, and complete PDF pagination. Shared reader URLs update outside article bodies.
+No universal procedural review, native/master-guide rebuild or new topic-count claim. All existing
+approval/device/finalisation controls and the distinction between collaborative checklists/private tasks
+remain explicit.
+
 # UI47 bounded Tasks review
 
 Tasks and General Tasks article bodies and outlines reviewed against the complete current workflow;

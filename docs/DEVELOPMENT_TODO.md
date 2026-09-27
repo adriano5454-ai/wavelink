@@ -1,3 +1,80 @@
+# Latest prepared release: UI50 — Handovers continuation and navigation
+
+Approved whole-section review implemented: normal exact next shift and full-hitch use the familiar
+routine notes editor and photo/file controls; blank private hitch draft then explicit first-finish;
+compact By day / subject journal with stable opened days/position on Refresh and Back; direct My saved
+notes and Incoming; reset old library filters across accounts. Issued corrections, private/public
+boundaries, exact source/copy/fork/audience rules, personal acknowledgement, QR and PDFs preserved.
+
+One acceptance session: named outgoing/incoming people, day/night/photo/read/ack, optional exact source
+carry, saved full-hitch period/audience/file, journal old-day read/Back/Refresh/export and phone layout.
+Saved local data and unsent text are not tests to discard casually. Main instructions copy/review/commit/push;
+PowerShell optional. No actual company/site inspection or deployment, no changes to approved Home/Tasks/
+Checklists/Logs. Real-device, durable-storage and broader production/recovery acceptance remain separate.
+
+Next: feedback from this complete Handovers session, then the next agreed sidebar section review before
+its implementation. Keep all creation choices and useful wizards. No routine reason pages added back.
+Explicit older manual-irregular and multi-source historical-preparation reviews remain; a published
+successor still blocks a fork and must be opened from the saved journal. Current full-hitch grouping is
+unchanged, not a new topic/roster system. No automatic source-file/signature copy or cross-author draft.
+The unchanged PDF export can leave a short trailing evidence-note page for some lengthy carried text;
+this was recorded during visual review, not silently repaired or advertised as improved pagination.
+
+No new APIs/tables/permissions/dependencies/environment/stores. Preserve C01/G01, active company identity,
+backups, users, settings and unsent work. No resets/reimports/site-data clearing or pre-C01/evidence rollback.
+Keep a UI50-compatible editor when managing the new full-hitch file/context routes. Not a native rebuild.
+Wider retained roadmap follows; historical completed proposals are not new pending features.
+No automatic background development. Native vessel/CCVD/independent cloud sync/local phone network outside scope.
+
+---
+
+# Latest prepared release: UI49 — complete Logs workflow
+
+Implemented the agreed Logs review: permissioned Create/Import/Open; actual existing designers/importers;
+contained desktop ledger and readable phone entries; all sections, colours, fields and table option retained;
+required/time/Notes first and optional survey groups; reachable Save/Keep/Discard; exact delayed-read guards;
+stable unchanged/changed ledger and catalogue; denied-state clearing without deleting drafts; explicit exports.
+New narrow current-assignee Issue follow-up alters only fix/status and retains original event plus named history.
+No-op saved corrections require no reason; substantive historical corrections remain explained.
+
+One named creator/assignee acceptance session: create/import clean logbook, record Activity/Weather/offset,
+keep/resume one draft, follow up assigned Issue without edit-any authority, correct and inspect history,
+export filtered PDF/CSV/all-section Excel, test lower phone/table refresh and one separate-window return.
+Use disposable data; real navigation, camera, durable stores, service-worker and live company acceptance pending.
+
+Next: actual Logs feedback, then the next agreed section review before another coherent implementation.
+No unrequested ordinary-entry attachments, automatic reminders/Tasks, workbook-to-browser-history conversion
+or change-existing-logbook-schema capability introduced. Do not claim universal refresh or production acceptance.
+Approved Home, Tasks, Checklists, handovers/files/QR/PDF, builders, signout/local work, G01 and C01 retained.
+No reset/re-import/browser clearing. Native vessel, CCVD, independent sync/network remain outside this increment.
+Earlier completed-feature proposals below are historical; preserve the wider roadmap without reintroducing
+already delivered modules as new work. No automatic background development.
+
+---
+
+# Latest prepared release: UI48 — Checklists and stable background refresh
+
+Implemented the agreed UI47 checklist/refresh review as one coherent batch: stable catalogue/summary/stage
+rows and disclosures, empty-queue no-op, Home non-blanking refresh, secure denied-state clearing, direct
+Continue versus Summary, compact working screen, one-page results, explicit finish blockers, permissioned
+builder entry and complete-evidence PDF pagination. No timers disabled or private work discarded.
+
+Approved Home and Tasks layouts and their operational writers remain. One named-user checklist session on
+phone/desktop should cover low-down polling, real other-user changes, saved/resumed numeric/photo result,
+assigned approval, all participating devices ready, explicit finalisation and PDF, plus Home/Tasks reading.
+Only disposable offline/conflict data for acceptance. No live service or real storage acceptance yet.
+
+Next: actual feedback on this section and refresh behaviour, then the next agreed section review before
+implementation. Do not claim an all-module blinking fix without reproducing the remaining paths. Keep
+full capabilities, useful wizards and clear controls, not generic reasons or simplified-away functionality.
+No combined checklist journal, new guest QR adapter or arbitrary result-file support introduced here.
+
+C01/Sulmara, G01/demo, UI45 same-owner stored drafts/sign-out, retained evidence and every preserved roadmap
+item below remain. No reset/re-import/storage clearing or automatic background development. Earlier
+completed-feature proposals below are historical, not promises to implement those same features again.
+
+---
+
 # Current prepared release: UI47 — complete Tasks section update
 
 Home is approved and preserved. Tasks review findings F1–F4 fixed, paired ordinary and stock-verification
