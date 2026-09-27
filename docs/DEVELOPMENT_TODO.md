@@ -1,3 +1,20 @@
+# Current prepared release: UI47 — complete Tasks section update
+
+Home is approved and preserved. Tasks review findings F1–F4 fixed, paired ordinary and stock-verification
+workflow updated together. Preserve four task cards, six scopes/three box modes, exact saved evidence,
+privacy and real role/assignment authority. Simpler means user-friendly and full-featured, not basic.
+
+Next: one named-manager/worker fictional create/work/return/review/discrepancy/PDF/phone session, then
+review the next agreed section before implementing it. No extra section silently redesigned. Reports
+are per-task; Task attachments/automatic recurrence/reminders/individual runs/multiple links/subtasks/
+instruction revisions/batch PDF/Task QR remain future. No blanket removal of consequential reasons.
+C01/G01/Home, sign-out/local-work manager, handover attachments/QR/day journal and other writers retained.
+
+All wider roadmap content below is retained; old completed-feature proposals are historical, not new
+unimplemented promises. No automatic background development.
+
+---
+
 # Current release: UI46 — work-focused Home
 
 Home reviewed and implemented. Preserve all capabilities and the user definition of simpler: friendlier,

@@ -1,3 +1,11 @@
+# UI47 bounded Tasks review
+
+Tasks and General Tasks article bodies and outlines reviewed against the complete current workflow;
+74 other bodies unchanged, all 76 catalogue texts/headings matched. Cache URL updates occur outside
+article bodies. New terminology reflects My tasks, scoped preview, task-local drafts and explicit
+review without claiming unsupported task files/recurrence or physical camera acceptance. Native and
+master-PDF guide work still pending; no all-Help procedural acceptance claim.
+
 # UI46 bounded Home / Navigation review
 
 Home and Navigation updated against this implementation. All76 catalogue entries/headings match;

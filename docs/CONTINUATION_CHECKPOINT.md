@@ -1,74 +1,84 @@
-# Wavelink checkpoint — UI46 + Company C01 + working G01
+# Wavelink checkpoint — UI47 + Company C01 + working G01
 
-27 September 2026. Core **1.34.19**. User approved the UI45 Home review and requested section-by-section
-reviews afterwards. Easier means polished, discoverable and fully capable, not basic or hidden features.
+27 September 2026. Core1.34.19. User approved Home and the complete UI46 Tasks review.
+One Tasks workflow batch, not a basic replacement: preserve all four cards, exact stock scopes,
+checklists, lifecycle/privacy/QR/report functionality. Approved Home remains unchanged.
 
-## Source verified
-Exact UI45+C01 reconstructed from the actual uploaded UI30 repository and verified UI31–43/C01/UI44/UI45
-patch lineage. 142 parent repository files and1789 parent runtime files verified.
-Parent extractor 368ec073eb0a310a27734594a63deff62a916fc3a4a9cb8169a746856558a25f.
-UI46 extractor 4840018d682133736b820bc61ad185e66bb74e16406aabdf913820f6e3024243.
-Patch ID workspace-ui46-work-focused-home-2026-09-27.
-93 incremental resources / 469 cumulative overlays / 1795 tracked runtime files.
+## Exact source
+UI46 from actual uploaded UI30 repository plus verified UI31–43/C01/UI44–46 lineage.
+144 parent repository files /1795 parent runtime hashes verified.
+Parent extractor 4840018d682133736b820bc61ad185e66bb74e16406aabdf913820f6e3024243.
+UI47 extractor 52bb01721e148714cd9c8d908263d18ade5341095629eceda17f8a390b22ad9a.
+Patch ID workspace-ui47-tasks-workflow-2026-09-27.
+96 incremental resources /479 cumulative overlays /1803 derived runtime files.
 C01 entrypoint f754d4db367983a75473f1d525183b618a25c265837a317df66ffabaf8f4c1e2;
 G01 gate 9dc4ab6f7b7fb324ea06c305a09af8336b0bd10e7be6bef5296af1fd32d2e701;
-signing Nginx 752563759fd82e20eacc62379f7a3082a8074675a747214a16cff0b9b90b99b8 remain unchanged.
-Only existing executable repository change: deploy/extract_source.py.
+Nginx 752563759fd82e20eacc62379f7a3082a8074675a747214a16cff0b9b90b99b8 unchanged.
+Only changed existing executable repository file deploy/extract_source.py.
 
 ## Implemented
-Work-first Home, compact header without internal badge, four initial personal rows / expandable additional
-previews; full category counts, five previews per category. Exact daily-draft editor route, exact pending
-published revision, explicitly assigned open Tasks (not all admin-accessible Tasks), own-created unfinished
-standalone checklists, existing assigned log-issue inbox. No inferred checklist authorship from a shared name,
-no all-participants checklist claim, no completion/attendance/priority score. Postponed assignments separate.
-Existing record-open participation/read/alert semantics preserved; Home does not sign, submit or complete work.
+Admin My tasks now true assignee scope; All accessible retains authority. Direct My/All/Review/
+Completed/Postponed, searchable compact cards, readable UTC/clock-based overdue. Full filters/reset,
+account/project scoped state, same-account refresh retains choices. Review is initially undecided;
+no automatic completion. Overview foregrounds instructions/next action, expandable facts/progress,
+all checklist/work/discussion/link/history/PDF/management controls retained. Current task forms
+and integrated two-author submit/return/correct/complete behaviour exercised.
 
-Separate project Tasks/maintenance/certificates/admin receiving summaries. Full17 permissioned destinations,
-compact grid, complete card choices and existing creation forms. Handovers/Tasks/Inventory/Manifests near
-front, then Logs/Checklists; five filters/static activity search retained. No private-record search.
-Empty available builder catalogue plus no personal preview entries gives contextual Create/Import. This is
-permission-scoped, not proof the entire company database is empty. Existing real builder/importer opened;
-non-admin builder authority retained. A saved available definition removes the empty-catalogue prompt.
+Inventory creation single page What/Who/Scope, searchable retained people, six base scopes/three
+box modes. Fixed scope and partial-container movement rules preserved. Stored optional preview
+snapshot and attempted payload are not silently rebased on resume. Deliberate Refresh scope preview;
+server compares exact expanded IDs. Original operation ID/payload shape retained for unchanged retry,
+including older requests omitting new optional expanded preview. New task navigation waits for save
+and local-draft cleanup. Phone item cards, desktop table, find/filter cannot reduce completion gates.
+Found/Missing/Discrepancy remain; no bulk verify. Successful move/check and scope-denial tests retained.
 
-New read-only home_work.py and additive metadata on existing /api/attention. attention.py is the only
-changed existing Python module;191 unchanged,193 total. No new routes/tables/dependencies/permissions/stores.
-Shared app.js function declarations/writers unchanged. Handovers load/handles read routing and builders open
-routing changed; other controller declarations unchanged. Existing UI45 sign-out and owner-retained local
-work, handover files/QR/day journal/PDF, inventory verification, Original Files, presence and branding intact.
-Home guards current route/account/token/root/modal/read-generation. A delayed obsolete hash event no longer
-invalidates the current Home's shortcuts; entry still makes a fresh read. Failures clear old private results,
-explicit retry; separate reads are not an atomic or live snapshot. No new local persistence or autosave.
+Date-only/unchanged or raised priority with same people needs no generic reason. Changed people or
+lowered priority still needs one. Own never-submitted/unmoved stock-result correction reason-free;
+other/unknown author, submitted/moved evidence and substantive exception notes retain requirements.
+Standalone inventory correction policy unchanged. Real actor/time/version/before-after audit,
+no fabricated explanation. Published/closed lifecycle and no-op permission/version checks retained.
 
-Home and Navigation Help bodies updated;74 other bodies unchanged;76 catalogue texts/headings match.
-Native Home and master guides are not rebuilt. Shared cache URLs update outside article bodies.
+Task delayed reads capture actor/token/route/view/modal generation, including intervening closed editor.
+Before-send guard after lease renewal prevents replacement-account submission. History/PDF cannot
+replace active work. Task-local drafts, global local manager, sign-out same-account recovery and
+source/checklist protections preserved. No new API route, table, permission, dependency, environment,
+browser store/version or native binary. Optional metadata is inside an existing local-form value.
 
-## Completed local tests
-481 selected Python = 44 Home/assets/existing attention + 186 authoring/local-work +
-73 simple/daily-journal handovers + 71 C01 + 107 demo/gateway/package.
-56 compound browser =15 Home +19 retained operational shortcuts +9 builders +13 sign-out.
-72 JS syntax /193 Python parses. All final selections repeated after the final test-only catalogue correction;
-application bytes did not change in that correction. Final ZIP replay and hashes recorded separately.
+Only app/work_tasks.py (list,create,check,reassign) and app/inventory.py (check_item) change;
+191 other Python modules unchanged,193 total. Shared app.js function declarations/fieldwork writer,
+Home files, task_checklists/verification modules, operational authority and C01/G01 files unchanged.
+New task_workspace.js/css; operations/general_tasks/task_workflow presentation/guard changes audited.
+Tasks and General Tasks Help/outlines updated;74otherbodies unchanged,76catalogue matches. Native
+master guides not rebuilt; no general Task attachments/recurrence/edit-instructions/batchPDF/QR claim.
 
-Preliminary missing fixture metadata/method/start-revision errors, normal-navigation restriction, old catalogue
-role assertion and source-audit tooling assumptions retained/excluded. Real delayed hash-event issue fixed;
-regression retained. No unrelated historical failures declared fixed. No full-suite claim.
-Browser uses actual assets + fictional TestClient + simulated hashes + staged in-memory state. Actual normal
-navigation is policy-blocked and not bypassed. No live GitHub/Render/company-data/credentials, real phone,
-durable IndexedDB/SW, Windows/PowerShell/native, full security/accessibility/load, Docker or accepted off-host
-recovery. Existing handover PDF route tested locally; no report-rendering source changed.
+## Completed selected checks
+690 Python = 282 Tasks +44 Home/attention +186 retained authoring/local work
++71 C01 +107 demo/gateway/provision/package. 111 compound browser checks include
+31 complete Tasks/stock cases,16 retained creation/checklist cases,8 postpone/resume cases,
+15 Home,19 shortcuts,9 builders and13 sign-out.10 pure Node assertions overlap one Python case.
+73 JavaScript syntax checks/193 Python parses. Final ZIP replay/hashes separately verified.
 
-## Preserve / next
-Keep separate demo G01 and Sulmara C01, existing domains/settings/IDs/users/permissions/disks/activation marker,
-backups/approved commit/.git/outside edits/unsent browser and separate-log work. After company activation retain
-INITIALISE_COMPANY=NO and bootstrap-secret removal; never repeat setup or copy demo data/credentials into company.
-No reset, re-import, browser-storage clear or incompatible pre-C01/pre-UI34 writer/exporter rollback.
-UI45 source rollback preserves the old Home but cannot recover deliberately discarded local entries.
+Initial broad attempt included native Tk cases with no display (34 errors) and historical release
+assertions:26 also failed on untouched UI46; one old work_tasks never-changes invariant is deliberately
+superseded. Not counted as passes or broadly repaired. Initial Help article attribute-order replacement,
+Playwright pending-function monkeypatch and simulated-route/teardown fixtures corrected before final
+freeze. Earlier partial and complete superseded runs retained/excluded. A final stock-search touch-control/
+preview-scroll refinement was refrozen; all chosen tests rerun after that refinement.
+Actual assets/fictional SQLite+TestClient/injected fetch/hash/in-memory state, not durable IndexedDB
+or normal navigation (policy restriction not bypassed). Per-task PDFs rendered and visually inspected;
+no report source changed. No fullsuite/liveHTTPS/physicalcamera/SW/WindowsPowerShell/native/fullsecurity/
+accessibility/load/Docker/offhost acceptance. No live data, credentials or remote operations.
 
-Use compact GitHub copy/review/commit/push; PS1 optional, evidence separate. Do not assume a live UI46 deployment.
-Next: one real named-user Home/continuation/empty-builder/mobile check. Then review one section at a time:
-current desktop/mobile workflow -> agreed improvement plan -> coherent implementation -> short acceptance.
-Keep useful choices/wizards and automatic audit; avoid generic routine reasons or hiding capabilities.
-No next section is silently redesigned here. Wider roadmap retained in DEVELOPMENT_TODO, including remaining
-routine-prompt cleanup, richer approved imports/evidence, maintenance/signing extensions and recovery/security.
-Native vessel/CCVD/cloud synchronization/local phone-network work remain outside this increment.
-No automatic background development.
+## Preserve and next
+Preserve independent Sulmara C01 company identity/domain/activated disk/marker and existing G01 demo,
+current permissions/accounts, bootstrap removal/INITIALISE_COMPANY=NO after activation, initial demo
+import OFF, approved commit/backups/.git/outside edits and unsent work. No reset/reimport/storageclear
+or incompatible pre-C01/pre-UI34 writer/exporter rollback. UI46 source rollback brings old Tasks/reasons
+back; protect retained scope/ownership metadata first. Cannot restore deliberately discarded local work.
+
+Compact GitHub changed files; copy/review/commit/push. Optional read-only PS1. Evidence separate.
+Next one named-manager/worker fictional Task+inventory exception/review/PDF/phone acceptance session;
+then next agreed section review, not automatic unrelated implementation. Larger roadmap retained.
+Task files, recurrence/reminders, multi-links/instruction revisions/subtasks/combinedPDF and Task QR
+remain future, not hidden working controls. Nativevessel/CCVD/cloudsync/localnetwork outside this batch.
+No automatic background work or assumption that the live service matches the prepared release.
