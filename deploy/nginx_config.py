@@ -134,4 +134,12 @@ http {{
     substitutions = '            # Demo-only PRESENTATION substitutions; vendored source is untouched.\n            # Do not substitute JSON, downloads, evidence or identifiers.\n            proxy_set_header Accept-Encoding "";\n            sub_filter_types application/javascript text/javascript;\n            sub_filter_once off;\n            sub_filter \'ONBOARD HUB\' \'PRIVATE ONLINE DEMO\';\n            sub_filter \'Need access or a password reset? Ask the PC hub administrator.\' \'Need access or a password reset? Ask your online project administrator.\';\n            sub_filter \'Keep the Windows hub running and awake. Phones must be able to reach its IP address on the approved local network. No internet is needed during local use.\' \'This demonstration runs on the hosting server. No Windows Admin or laptop needs to stay open. An internet connection is required for this separate online demo.\';\n            sub_filter \'This address is saved in the PC Admin console.\' \'This is the configured online demonstration address.\';\n            sub_filter \'To change it, synchronise work, stop the hub, enter the correct PC IP, Save address and restart.\' \'The hosting operator manages the online address. Preserve unsent work before changing domains.\';\n'
     presentation = presentation.replace('            proxy_hide_header Server;\n',
                                         '            proxy_hide_header Server;\n' + substitutions)
-    return config[:start] + presentation + config[start:]
+    # UI34: narrow public document-signing surface. Every dynamic request has
+    # its own invitation/grant authorisation; no ordinary API/login is exposed.
+    signing = common.replace('location / {', 'location ^~ /api/document-sign/ {', 1)
+    signing = signing.replace('            auth_request /_demo_verify;\n', '')
+    signing = signing.replace('            error_page 401 = @demo_denied;\n', '')
+    signing = signing.replace('            proxy_buffering off;', '            client_max_body_size 100k;\n            proxy_buffering off;')
+    page = signing.replace('location ^~ /api/document-sign/ {', 'location ^~ /sign/ {', 1)
+    bare = signing.replace('location ^~ /api/document-sign/ {', 'location = /sign {', 1)
+    return config[:start] + signing + page + bare + presentation + config[start:]
