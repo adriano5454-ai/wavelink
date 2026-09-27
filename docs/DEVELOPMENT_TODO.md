@@ -1,3 +1,23 @@
+# Latest prepared release: UI51 — complete Calendar correction and mobile refinement
+
+Implemented the reviewed source navigation, auth-scoped preferences, keyed refresh/denied-state clearing,
+compact Month/Agenda, meaningful dated/source-status labels and explicit limits together. All eight source
+categories remain, no independent scheduler. Checklist stage re-read, embedded Fleet and protected two-read
+Log entry handoff corrected. Source records/writers are unchanged; Home/Tasks/Checklists/Logs/Handovers retain
+approved layouts. Real-device acceptance is still needed; do not assume deployed company UI51.
+
+One fictional named-user session: day/Agenda/search/source open/Back; changed task date across months;
+checklist pre/post/final; log modal; admin manifest; disposable access revocation; phone layout. Synchronisation
+stays enabled. No new tables/routes/permissions/dependencies/env/stores. Keep C01/G01 identities, disk and
+activation rules, backups and unsent work. No source/data reset or browser-storage clearing.
+
+Next: Calendar feedback, then the next sidebar-section review and agreed complete implementation. Do not
+silently redo approved modules. Separate event creation, Calendar exports, external integration, new source
+categories and automatic reminders are not implemented by this correction. Wider roadmap follows; prior
+completed proposals remain historical. Nativevessel/CCVD/independent sync/local network outside this increment.
+
+---
+
 # Latest prepared release: UI50 — Handovers continuation and navigation
 
 Approved whole-section review implemented: normal exact next shift and full-hitch use the familiar

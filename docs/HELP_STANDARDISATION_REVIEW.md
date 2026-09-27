@@ -1,3 +1,12 @@
+# UI51 — bounded Calendar Help review
+
+Only assetcalendar article body/outline changes;75others unchanged, all76catalogue texts/headings match.
+Covers compact Month/Agenda, current-account temporary filters/return, exact source stages/embeddedFleet/
+protected log handoff, stable versus stale/denied refresh, category-date meanings and2000-event limit.
+No independent scheduler, new reminder/export/source features, operational save or access expansion.
+Native guidance remains labelled separately, not redesigned. Shared reader URLs update outside other
+bodies; no native/masterPDF or universal procedural/accessibility review is claimed.
+
 # UI50 — bounded Handovers and continuity Help update
 
 Two article bodies/outlines changed: handovers and handovercontinuity. Seventy-four other article bodies

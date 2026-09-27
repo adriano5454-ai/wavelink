@@ -1,89 +1,137 @@
 {
   "core": "1.34.19",
-  "workspace": "UI50",
+  "workspace": "UI51",
   "company": "C01",
   "gateway": "G01",
-  "parent": "UI49 + Company C01 + G01",
+  "parent": "UI50 + Company C01 + G01",
   "implemented_not_deployed": true,
-  "python_passed": 920,
+  "python_passed": 502,
   "python_breakdown": {
-    "new_handovers_py": 31,
-    "handovers_py": 358,
-    "invites_reports_py": 114,
-    "approved_modules_py": 192,
-    "local_builders_py": 47,
+    "calendar_py": 54,
     "c01_py": 71,
-    "gateway_py": 107
+    "gateway_py": 107,
+    "local_builders_py": 47,
+    "approved_py": 192,
+    "handovers_py": 31
   },
-  "compound_browser_passed": 124,
+  "compound_browser_passed": 132,
   "browser_breakdown": {
-    "handovers_browser": 17,
-    "logs_browser": 13,
     "checklists_browser": 10,
+    "builders_browser": 9,
+    "signout_browser": 13,
     "stability_browser": 16,
     "tasks_browser": 31,
     "home_browser": 15,
-    "builders_browser": 9,
-    "signout_browser": 13
+    "logs_browser": 13,
+    "calendar_browser": 25
   },
-  "javascript_syntax_passed": 76,
+  "javascript_syntax_passed": 77,
   "application_python_parse_passed": 193,
-  "runtime_files": 1823,
+  "runtime_files": 1832,
   "final_commands": {
-    "new_handovers_py": {
+    "gateway_py": {
       "command": [
         "python",
         "-m",
         "pytest",
         "-q",
-        "tests/ui50_handovers",
+        "/mnt/data/ui51_work/repo/tests/test_gate.py",
+        "/mnt/data/ui51_work/repo/tests/test_public_entry_g01.py",
+        "/mnt/data/ui51_work/repo/tests/test_provision.py",
+        "/mnt/data/ui51_work/repo/tests/test_package.py",
         "--disable-warnings",
         "--tb=short",
-        "--junitxml=/mnt/data/ui50_work/evidence/final/new_handovers_py.xml"
+        "--junitxml=/mnt/data/ui51_work/evidence/final/gateway_py.xml"
       ],
+      "cwd": "/mnt/data/ui51_work/frozen",
+      "environment_keys": [],
+      "started": 1790532978.7679048,
       "returncode": 0,
-      "seconds": 44.019
+      "seconds": 6.505
     },
-    "handovers_py": {
+    "tasks_browser": {
+      "command": [
+        "python",
+        "/mnt/data/ui51_work/frozen/tests/ui47_tasks/browser_workflow.py",
+        "/mnt/data/ui51_work/evidence/final/tasks_browser"
+      ],
+      "cwd": "/mnt/data/ui51_work/frozen",
+      "environment_keys": [],
+      "started": 1790533069.2616754,
+      "returncode": 0,
+      "seconds": 50.158
+    },
+    "stability_browser": {
+      "command": [
+        "python",
+        "/mnt/data/ui51_work/frozen/tests/ui48_checklists/browser_stability.py",
+        "/mnt/data/ui51_work/evidence/final/stability_browser"
+      ],
+      "cwd": "/mnt/data/ui51_work/frozen",
+      "environment_keys": [],
+      "started": 1790533113.9826164,
+      "returncode": 0,
+      "seconds": 6.534
+    },
+    "c01_py": {
       "command": [
         "python",
         "-m",
         "pytest",
         "-q",
-        "tests/handovers/test_handovers.py",
-        "tests/handovers/test_privacy_transfer.py",
-        "tests/daily_handovers/test_daily.py",
-        "tests/daily_handovers/test_transfer.py",
-        "tests/handover_continuity/test_continuity.py",
-        "tests/handover_continuity/test_transfer.py",
-        "tests/ui20_schedule/test_schedule.py",
-        "tests/ui29_simple/test_simple.py",
-        "tests/ui29_simple/test_transfer.py",
-        "tests/ui33_usability/test_files.py",
-        "tests/ui43_handovers/test_workflow.py",
+        "/mnt/data/ui51_work/repo/tests/test_company_c01.py",
         "--disable-warnings",
         "--tb=short",
-        "--junitxml=/mnt/data/ui50_work/evidence/final/handovers_py.xml"
+        "--junitxml=/mnt/data/ui51_work/evidence/final/c01_py.xml"
       ],
+      "cwd": "/mnt/data/ui51_work/frozen",
+      "environment_keys": [],
+      "started": 1790532962.912229,
       "returncode": 0,
-      "seconds": 388.006
+      "seconds": 32.643
     },
-    "invites_reports_py": {
+    "checklists_browser": {
+      "command": [
+        "python",
+        "/mnt/data/ui51_work/frozen/tests/ui48_checklists/browser_workflow.py",
+        "/mnt/data/ui51_work/evidence/final/checklists_browser"
+      ],
+      "cwd": "/mnt/data/ui51_work/frozen",
+      "environment_keys": [],
+      "started": 1790533106.016183,
+      "returncode": 0,
+      "seconds": 7.966
+    },
+    "calendar_py": {
       "command": [
         "python",
         "-m",
         "pytest",
         "-q",
-        "tests/ui34_invites/test_invites.py",
-        "tests/ui35_signing_reports/test_reports.py",
+        "tests/ui51_calendar",
         "--disable-warnings",
         "--tb=short",
-        "--junitxml=/mnt/data/ui50_work/evidence/final/invites_reports_py.xml"
+        "--junitxml=/mnt/data/ui51_work/evidence/final/calendar_py.xml"
       ],
+      "cwd": "/mnt/data/ui51_work/frozen",
+      "environment_keys": [],
+      "started": 1790532923.5870607,
       "returncode": 0,
-      "seconds": 148.75
+      "seconds": 39.325
     },
-    "approved_modules_py": {
+    "logs_browser": {
+      "command": [
+        "python",
+        "/mnt/data/ui51_work/frozen/tests/ui49_logs/browser_workflow.py",
+        "/mnt/data/ui51_work/evidence/final/logs_browser"
+      ],
+      "cwd": "/mnt/data/ui51_work/frozen",
+      "environment_keys": [],
+      "started": 1790533092.044147,
+      "returncode": 0,
+      "seconds": 13.972
+    },
+    "approved_py": {
       "command": [
         "python",
         "-m",
@@ -96,10 +144,54 @@
         "tests/reliability/test_attention.py",
         "--disable-warnings",
         "--tb=short",
-        "--junitxml=/mnt/data/ui50_work/evidence/final/approved_modules_py.xml"
+        "--junitxml=/mnt/data/ui51_work/evidence/final/approved_py.xml"
       ],
+      "cwd": "/mnt/data/ui51_work/frozen",
+      "environment_keys": [],
+      "started": 1790532923.5874305,
       "returncode": 0,
-      "seconds": 175.512
+      "seconds": 136.157
+    },
+    "handovers_py": {
+      "command": [
+        "python",
+        "-m",
+        "pytest",
+        "-q",
+        "tests/ui50_handovers",
+        "--disable-warnings",
+        "--tb=short",
+        "--junitxml=/mnt/data/ui51_work/evidence/final/handovers_py.xml"
+      ],
+      "cwd": "/mnt/data/ui51_work/frozen",
+      "environment_keys": [],
+      "started": 1790532923.5880086,
+      "returncode": 0,
+      "seconds": 31.946
+    },
+    "signout_browser": {
+      "command": [
+        "python",
+        "/mnt/data/ui51_work/frozen/tests/ui45_review/browser_signout.py",
+        "/mnt/data/ui51_work/evidence/final/signout_browser"
+      ],
+      "cwd": "/mnt/data/ui51_work/frozen",
+      "environment_keys": [],
+      "started": 1790533120.5174305,
+      "returncode": 0,
+      "seconds": 10.416
+    },
+    "home_browser": {
+      "command": [
+        "python",
+        "/mnt/data/ui51_work/frozen/tests/ui46_home/browser_checks.py",
+        "/mnt/data/ui51_work/evidence/final/home_browser"
+      ],
+      "cwd": "/mnt/data/ui51_work/frozen",
+      "environment_keys": [],
+      "started": 1790533059.7460687,
+      "returncode": 0,
+      "seconds": 9.515
     },
     "local_builders_py": {
       "command": [
@@ -112,142 +204,48 @@
         "tests/workspace_continuity/test_service_worker.py",
         "--disable-warnings",
         "--tb=short",
-        "--junitxml=/mnt/data/ui50_work/evidence/final/local_builders_py.xml"
+        "--junitxml=/mnt/data/ui51_work/evidence/final/local_builders_py.xml"
       ],
+      "cwd": "/mnt/data/ui51_work/frozen",
+      "environment_keys": [],
+      "started": 1790532955.5343254,
       "returncode": 0,
-      "seconds": 34.08
+      "seconds": 23.233
     },
-    "c01_py": {
+    "calendar_browser": {
       "command": [
         "python",
+        "-u",
         "-m",
-        "pytest",
-        "-q",
-        "/mnt/data/ui50_work/target_repo/tests/test_company_c01.py",
-        "--disable-warnings",
-        "--tb=short",
-        "--junitxml=/mnt/data/ui50_work/evidence/final/c01_py.xml"
+        "tests.ui51_calendar.browser_workflow"
       ],
-      "returncode": 0,
-      "seconds": 41.273
-    },
-    "gateway_py": {
-      "command": [
-        "python",
-        "-m",
-        "pytest",
-        "-q",
-        "/mnt/data/ui50_work/target_repo/tests/test_gate.py",
-        "/mnt/data/ui50_work/target_repo/tests/test_public_entry_g01.py",
-        "/mnt/data/ui50_work/target_repo/tests/test_provision.py",
-        "/mnt/data/ui50_work/target_repo/tests/test_package.py",
-        "--disable-warnings",
-        "--tb=short",
-        "--junitxml=/mnt/data/ui50_work/evidence/final/gateway_py.xml"
+      "cwd": "/mnt/data/ui51_work/frozen",
+      "environment_keys": [
+        "REVIEW_OUT"
       ],
+      "started": 1790533059.7455685,
       "returncode": 0,
-      "seconds": 8.258
-    },
-    "handovers_browser": {
-      "command": [
-        "python",
-        "/mnt/data/ui50_work/tests/browser_workflow.py"
-      ],
-      "returncode": 0,
-      "seconds": 19.137,
-      "fixture_correction": "Existing draft branch, not published-only fork; all assertions rerun on unchanged final source."
-    },
-    "logs_browser": {
-      "command": [
-        "python",
-        "tests/ui49_logs/browser_workflow.py",
-        "/mnt/data/ui50_work/evidence/final/logs_browser"
-      ],
-      "returncode": 0,
-      "seconds": 16.616
-    },
-    "checklists_browser": {
-      "command": [
-        "python",
-        "tests/ui48_checklists/browser_workflow.py",
-        "/mnt/data/ui50_work/evidence/final/checklists_browser"
-      ],
-      "returncode": 0,
-      "seconds": 9.98
-    },
-    "stability_browser": {
-      "command": [
-        "python",
-        "tests/ui48_checklists/browser_stability.py",
-        "/mnt/data/ui50_work/evidence/final/stability_browser"
-      ],
-      "returncode": 0,
-      "seconds": 8.949
-    },
-    "tasks_browser": {
-      "command": [
-        "python",
-        "tests/ui47_tasks/browser_workflow.py",
-        "/mnt/data/ui50_work/evidence/final/tasks_browser"
-      ],
-      "returncode": 0,
-      "seconds": 52.4
-    },
-    "home_browser": {
-      "command": [
-        "python",
-        "tests/ui46_home/browser_checks.py",
-        "/mnt/data/ui50_work/evidence/final/home_browser"
-      ],
-      "returncode": 0,
-      "seconds": 10.621
+      "seconds": 32.298
     },
     "builders_browser": {
       "command": [
         "python",
-        "tests/ui45_review/browser_builders.py",
-        "/mnt/data/ui50_work/evidence/final/builders_browser"
+        "/mnt/data/ui51_work/frozen/tests/ui45_review/browser_builders.py",
+        "/mnt/data/ui51_work/evidence/final/builders_browser"
       ],
+      "cwd": "/mnt/data/ui51_work/frozen",
+      "environment_keys": [],
+      "started": 1790533119.4199886,
       "returncode": 0,
-      "seconds": 7.523
-    },
-    "signout_browser": {
-      "command": [
-        "python",
-        "tests/ui45_review/browser_signout.py",
-        "/mnt/data/ui50_work/evidence/final/signout_browser"
-      ],
-      "returncode": 0,
-      "seconds": 11.345
+      "seconds": 7.732
     }
   },
-  "source_audit": "docs/UI50_SOURCE_PROVENANCE.json",
-  "additional_report_checks": [
-    {
-      "report": "daily_journal.pdf",
-      "pages": 6,
-      "publications": 4,
-      "bookmarks": 4,
-      "private_correction_excluded": true,
-      "attachment_reference_retained": true,
-      "read_only": true,
-      "sha256": "262196042a36242578203013c0ad1032cde384e54ed39acec4da1e12ba75faaa"
-    },
-    {
-      "report": "full_hitch.pdf",
-      "pages": 2,
-      "attachment_reference_retained": true,
-      "named_acknowledgement_present": true,
-      "read_only": true,
-      "sha256": "f452bae2b85ba37c8de2456682a11766ccd2f9c3d9822b3397c3ff20bd009c14"
-    }
-  ],
-  "limitations": [
-    "Selected local checks, not full-suite or every workflow permutation",
-    "Actual fictional SQLite/TestClient services and shipped browser assets; injected fetch/hash/staged in-memory storage, not durable IndexedDB or actual browser navigation",
-    "No live Sulmara/GitHub/Render, real credentials, physical camera/phone, SW lifecycle, Windows/PowerShell/native binaries, full security/accessibility/load, Docker or accepted off-host recovery",
-    "Earlier failed/partial/superseded runs excluded. Final source fully refrozen after header refinement; browser fixture clarified private draft versus published no-fork and waited for normal toast expiry. No application change in final fixture corrections.",
-    "No automatic source-file/signature copying, no private-draft access expansion. Context edits restricted to owned full-hitch drafts; first finish does not bypass issued correction review.",
-    "Existing PDF exporters unchanged; visual review identified short trailing warning pages in some long-text fixtures. No PDF pagination improvement claimed."
+  "test_source_note": "A retained Home cache assertion was advanced from UI50 to UI51; other cache assertions preserved. Final selection repeated. Earlier incomplete or failed runs excluded. No unrelated historical failure claimed fixed.",
+  "test_boundaries": [
+    "fictional local SQLite/TestClient",
+    "actual shipped browser assets with controlled fetch and staged in-memory state",
+    "simulated hash navigation, not real browser navigation or durable IndexedDB",
+    "no live data/credentials/GitHub/Render action",
+    "not full-suite/physical-device/Windows/PowerShell/native/service-worker/full-security/accessibility/load/Docker/off-host acceptance"
   ]
 }
