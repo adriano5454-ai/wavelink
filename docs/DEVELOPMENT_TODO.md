@@ -1,3 +1,23 @@
+# Latest prepared release: UI52 — optional handover notes and precise finish warnings
+
+User-requested corrective priority before the Inventory implementation: no summary or note text is
+required to finish a handover. Blank means no notes recorded, not safe/no issues. No synthetic text,
+new reason prompt or extra no-notes checkbox. Actual period/basis/audience and evidence checks stay.
+Old saved daily drafts can repair missing period/basis in the same editor; no automatic date/time
+conversion, assignment change or rewrite of earlier publications. Both layers and Help corrected.
+
+One fictional acceptance: finish an all-blank valid shift; repair an old missing basis in place;
+check recipient view and unchanged author/date/evidence. Protected issued reissue, QR/attachments,
+Home/Tasks/Checklists/Logs/Calendar and C01/G01 remain. Inventory review is NOT implemented here.
+
+Next: resume the agreed UI51 Inventory review batch (box-only scope mismatch, explicit discrepancy
+acceptance, guarded history, denied-state clearing, stable keyed refresh, permissioned builder
+shortcuts and simple item/standalone-verification workflow). Do not hide capability or remove
+custody/quantity/evidence checks. Keep wider roadmap below, review then coherent implementation.
+No automatic background development, reset, re-import, site-data clearing or live version assumption.
+
+---
+
 # Latest prepared release: UI51 — complete Calendar correction and mobile refinement
 
 Implemented the reviewed source navigation, auth-scoped preferences, keyed refresh/denied-state clearing,

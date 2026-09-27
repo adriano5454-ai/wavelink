@@ -1,3 +1,11 @@
+# UI52 — optional notes and precise handover completion
+
+Handovers and continuity articles/outlines explain optional notes, real required period/basis,
+inline saved-period repair, unchanged issued correction and source-reference boundaries. Two
+bodies updated, 74 unchanged; all 76 catalogue entries and both edited outlines match. Cache
+references advance outside other bodies. docs/HANDOVERS.md publication wording corrected.
+Not a global/native/master-PDF review. Blank content is not an inferred no-issues statement.
+
 # UI51 — bounded Calendar Help review
 
 Only assetcalendar article body/outline changes;75others unchanged, all76catalogue texts/headings match.

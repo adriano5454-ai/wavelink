@@ -1,64 +1,81 @@
-# Wavelink checkpoint — UI51 + Company C01 + working G01
+# Wavelink checkpoint — UI52 + Company C01 + working G01
 
-27 September 2026; core1.34.19. Implements the previously completed Calendar review as one coherent
-section update. Easier means polished, discoverable, fully capable; keep the agreed review then build
-cycle. Compact GitHub copy/review/commit/push, optional PS1, separate evidence. No assumed live UI51.
+27 September 2026; core1.34.19. Focused user-requested handover fix before pending Inventory work.
+All note fields optional, no filler, no routine no-notes checkbox or extra reason. Simpler means
+polished and usable without hiding capability. No assumed live UI51/UI52 deployment.
 
 ## Verified source
 
-Parent full UI50 archive a9e3452da15435653281425696449aefe1afadb88a1630ac949f4b2a08f1e8d2:
-152 repository and1823 runtime files verified. Parent extractor
-75059dd5c30110258165938c888fbb98ff4cb8293bd33425a0ab767396cb23f0.
-UI51 extractor 338f9a5e1dfa212f8f8d8afed544c54eff8f4a936694a25871eaf8b0699f3aee.
-PatchID workspace-ui51-calendar-navigation-stability-2026-09-27.
-94 changed/new runtime resources, 511 cumulative overlays, 1832 tracked runtime.
+Parent full UI50 + exact UI51 patch, 154 repository /1832 runtime hashes verified.
+UI51 patch SHA256 4c747ab846b6cbd3eb166ed1075a6cfd321d270491c380b2427e422637dcc9c2.
+Parent extractor338f9a5e1dfa212f8f8d8afed544c54eff8f4a936694a25871eaf8b0699f3aee.
+UI52 extractor ac3bed735fd0ef07ea0ea01c1ddaad3ace3479c8450104c0e884141470148cae.
+PatchID workspace-ui52-optional-handover-notes-2026-09-27.
+91 changed/new runtime resources, 515 cumulative overlays,
+1834 tracked runtime. Target156repository/155deployment rows.
 C01 entrypoint f754d4db367983a75473f1d525183b618a25c265837a317df66ffabaf8f4c1e2;
 G01 gate9dc4ab6f7b7fb324ea06c305a09af8336b0bd10e7be6bef5296af1fd32d2e701;
 Nginx752563759fd82e20eacc62379f7a3082a8074675a747214a16cff0b9b90b99b8 unchanged.
-Only existing executable repository change: deploy/extract_source.py. No source reset or branch substitution.
+Only changed existing executable repository file deploy/extract_source.py.
 
-## Implemented
+## Actual findings and correction
 
-Compact Month/Agenda/period controls, expandable categories+title/source/date search; all8sources and
-4defaults retained. Search is limited to returned month; explicit2000cap/total/truncation. Agenda dated
-event distinct from source status, no universal overdue/readiness meaning. Auth-scoped temporary prefs/
-reading anchors reset on account/project; same-account return/refresh preserves where applicable.
-Stable keyed grid/day/event rows; temporary error labels last saved data and disables stale opening;
-definitive denial clears dates even behind interrupted modal, preserves editor/local work. Account/token/
-query/route/root/request/modal generations reject superseded callbacks, no persist/save writer added.
-Checklist backend href/status selects recognised saved phase; normal click freshly rechecks firstunfinished/
-lastfinal phase and uses normal router/participation. Manifest exact embeddedFleet route. Log lookup guards
-both reads through old Calendar context; cannot open over Home/newer form. Source access not expanded.
+UI51 backend validate_edit(publication=True) and simple editor both required summary. Generic
+backend message was shared by absent period start/end/basis/summary. Real local parent fixtures
+reproduced blank-summary rejection and populated-summary/missing-basis rejection with the same
+message, DB unchanged. Screenshot contains summary, so do not claim blank summary caused that
+specific live warning or assert its stored time basis was inspected.
 
-Only app/project_calendar.py changes among193existing Python modules (192unchanged); read-only projection,
-no new routes/tables/permissions/dependencies/environment/stores. New scoped project_calendar.js/css;
-assets.js Calendar delegation+log handoff only; remaining asset/cert/maintenance form spans byte-identical.
-Main app.js only render sync hook; approved operational scripts, shared writers, C01/G01 and report generators
-unchanged. All 77 JS syntax checks; Python parses193. UI45 signout/localowner and all evidence preserved.
-Only assetcalendar Help body changes,75otherssame,all76 catalogue matches. No native/masterPDF rebuild.
+Remove summary requirement in client/server, not insert synthetic notes. All seven empty strings
+can first-publish and be deliberately reissued via existing review; partial/file-only notes work.
+Precise missing-field error retains required period/basis, valid ordering and eligible audience.
+Saved daily draft editor exposes folded existing period/basis, automatically open if missing.
+Optional daily_period permitted only on an existing owned stamped daily draft action, exact three
+keys and existing validation. No new/next proposal bypass, author/group/recipient change, automatic
+clock conversion or rewriting existing data. Real context before/after audit and atomic receipt.
+Changed unlinked adjacent-source suggestions invalidated; exact pinned link remains historical.
 
-## Verification and limits
+Blank simple Finish still records the existing system event Handover finished, not a user reason.
+Permissions/version/source/audience/file integrity/reissue/ack semantics preserved. Existing
+publication cannot be first-finished again. Saved corrections stay private; old pub/files/ack remain.
+No new route/table/permission/dependency/environment/browser store or schema migration. In-tab
+period/text/files remain unsaved until explicit save, and existing dirty close/retry are retained.
 
-**502 selected Python tests** and **132 compound browser checks** passed, plus syntax checks for **77 application JavaScript files** and parsing of **193 Python modules**. The frozen runtime contains **1832 tracked files**. Python groups: calendar_py=54, c01_py=71, gateway_py=107, local_builders_py=47, approved_py=192, handovers_py=31. Browser groups: checklists_browser=10, builders_browser=9, signout_browser=13, stability_browser=16, tasks_browser=31, home_browser=15, logs_browser=13, calendar_browser=25. All final selected groups were rerun after the test-only cache-version correction; production application bytes were unchanged by that correction. Source audit and final ZIP replay are separately recorded. These are selected tests, not a full-suite result.
+Only app/handovers.py and app/simple_handovers.py changed among193 modules,191unchanged.
+Only simple_handovers.js executable browser logic changed; shared Help/cache references updated.
+Main app.js, controller/journal, DailyHandovers, file/signature/report services and approved modules
+remain identical. Hosted Handovers and continuity bodies/outlines updated,74otherbodies unchanged,
+76catalogue matches. Current docs/HANDOVERS.md wording corrected, not native/masterPDF redesign.
 
-Earlier partial combined pytest and browser runs excluded. Harness arguments/path-hold selection and
-permission-dependency restoration corrected; inherited Home service-worker cache assertion advanced toUI51
-without dropping its cache tests. No unrelated historical failure declared fixed. Final candidate tests
-and archive replay recorded in DELIVERY_CHECKS and verification, repeated gateway checks not extra coverage.
-Actual shipped browser assets, fictional SQLite/TestClient, controlled fetch/hash and staged store; not
-live/normalnavigation/durableIDB/SW/physical/WindowsPowerShell/native/fullsuite/fullsecurityaccessibilityload/
-Docker/offhost acceptance. No navigation-policy bypass, real data/credentials or remote operations.
+## Checks
 
-## Preserve and next
+**552 selected Python tests, 7 compound browser checks and 77 JavaScript syntax checks passed.** 193 application Python modules parse, and 1834 tracked runtime hashes match. An additional five-step real fictional-service check exercised blank publication, named/visitor signing with exact retry and the unchanged PDF export. Python groups: notes_core=105, history_files=155, signatures=114, hosting=178. Final Help-outline-only refinement did not change any application Python, JavaScript or test bytes; the two outlines/catalogue and complete source were separately verified. File replay/reconstruction is reported separately, not additional application-test coverage.
 
-Keep separate activated Sulmara C01 company ID/domain/disk/marker, INITIALISE_COMPANY=NO/removedbootstrap;
-separate G01demo settings/users/permissions/domain/disk, approvedcommit/backup/.git/outsideedits/unsentwork.
-No reset/reimport/site-data clear/syncdisable/incompatiblepreC01/preUI34writer/exporter. UI50 source rollback
-can restore old Calendar presentation but never recover local entries deliberately discarded; no data rollback.
-Calendar does not edit source dates, complete/sign work, send reminders, or introduce independent scheduling.
+Preliminary bounded run timed out; initial hosting import lacked PYTHONPATH/runtime configuration;
+browser fixtures corrected evaluate-return behaviour, duplicate fixture department, and asynchronous
+bridge teardown. No partial/failed runs counted. Four legacy required-summary test files changed to
+exercise invalid types/remaining fields and supported blank notes; assertions not indiscriminately
+removed. No unrelated historic failures rerun/declared fixed.
 
-One real fictional named-user Calendar/source/changed-date/return/permission/phone check, then next agreed
-sidebar-section review, not an unrequested redesign of approved sections. Wider roadmap retained in
-DEVELOPMENT_TODO, including imports/evidence/maintenanceQR/admission/recovery/security. New calendar event
-creation/export/additional sources/recurrence are separate future scope. Nativevessel/CCVD/cloudsync/local
-phone-network work remain outside this update. No automatic background development.
+Read-only PDF/QR check used actual empty publication: named and visitor admission/sign/retry/expiry,
+separate acknowledgement identities and no invented no-issues content. Existing report renderer
+unchanged; its two-page sample retains an inherited section-heading page break, not a new pagination
+acceptance. Executable/application test bytes remain unchanged by the final Help-outline-only refreeze.
+
+Actual assets/fictional SQLiteTestClient/injected fetch/hash/staged memory store; no live/normal
+navigation/durableIDB/SW/physical/WindowsPowerShell/native/fullsuite/security/accessibility/load/
+Docker/offhost acceptance. No real company data/credentials or remote changes. FinalZIP hashes and
+fresh extraction verified separately; repeated package checks not extra coverage.
+
+## Preserve / next
+
+Keep activated Sulmara C01 identity/domain/disk/marker, INITIALISE_COMPANY=NO and removedbootstrap;
+separate G01demo settings/guest/domain/disk, backups/approvedcommit/.git/independent edits/unsentwork.
+No reset/reimport/site-data clear/syncdisable/repeat company setup/incompatiblepreC01/preUI34writer.
+Older UI51 source restores mandatory-summary friction; preserve unsent new metadata before any
+source rollback, never roll live database back merely for UI. Nothing deployed here.
+
+Next: user feedback on blank Finish and precise missing basis, then agreed whole Inventory update
+from the completed UI51 review (not implemented here). Preserve section review→build workflow,
+compact GitHub delivery/maincopyreviewcommitpush/optionalPS1/evidenceseparate. Wider roadmap in
+DEVELOPMENT_TODO, no automatic background work. Nativevessel/CCVD/cloudsync/localnetwork outside scope.
