@@ -1,0 +1,12 @@
+{
+  "format": "wavelink-ui-source-provenance-1",
+  "workspace": "UI44",
+  "core": "1.34.19",
+  "prepared": "2026-09-26",
+  "parent": "UI43 + Company C01 over verified uploaded UI30 lineage",
+  "parent_extractor_sha256": "56a0ea34f7bd6bb4648b464edf4d6746df6df4b9dc808e163757e33acbe16243",
+  "extractor_sha256": "e2b8b8b3b8675ed67984655946ad54c503c31e3bd555956ce6c79feaff280a25",
+  "patch_id": "workspace-ui44-company-builders-imports-2026-09-26",
+  "hosting": "C01 compatible; DEMO default; G01 preserved",
+  "scope": "Permission-scoped Setup & builders and clean reusable-definition imports; no operational-history import"
+}

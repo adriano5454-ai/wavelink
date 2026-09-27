@@ -1,3 +1,14 @@
+# UI43 handover context / day journal / combined export
+
+Handovers and continuity articles describe the new daily context and recipient-vs-roster/author
+meaning, all-days scope, exact grouping, current-publication-only PDF and limits. Previous QR,
+attachments, signature-PDF and specialised handover guidance retained. Two bodies updated,
+74 unchanged; all76 catalogue entries match. Separate Help context preserved. No native/master
+PDF procedural review claim. Historical report limits and unfinished Help remain below.
+
+---
+## Previous reviews retained
+
 # UI42 Home and Navigation Help
 
 Replaced outdated Home subset/Start-section wording with actual grouped cards, six existing
@@ -432,3 +443,8 @@ The master/native guides retain their legacy instructional scope and version lab
 
 ## UI31
 Updated the hosted Navigation and Originals articles for the direct permission-gated sidebar and recent activity control. All 76 index entries regenerated from exact article text/headings. Other 74 article bodies unchanged; icon/reader cache URLs outside bodies updated. Prior eight bounded topic reviews remain historical; this is not a full native/master-PDF rewrite or general procedural acceptance.
+
+
+## UI44 Setup & builders
+
+Builder/import Help entry points now describe browser create/import for checklists, maintenance routines, toolbox forms, logbook definitions and inventory structures. They distinguish reusable-definition imports from history-bearing/whole-project transfers and state that builder authority can be granted to named non-admin accounts. Full native/master-PDF review remains pending.

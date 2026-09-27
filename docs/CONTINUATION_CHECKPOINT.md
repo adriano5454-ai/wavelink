@@ -1,69 +1,34 @@
-# Wavelink checkpoint — UI43 + optional Company C01 + working G01
+# Wavelink checkpoint — UI44 + optional Company C01 + working G01
 
-26 September 2026; core1.34.19. User approved Sulmara as a separate company installation with
-normal named login. Code/empty-local-project prepared; no live service/DNS/account/deployment.
-Main workflow remains compact changed-file patch → copy/review/commit/push; optional PS1.
+26 September 2026. Core **1.34.19**. UI44 is the clean-company Setup & builders release. User direction remains: simpler means easier to use and discover, not fewer capabilities. Anyone with the corresponding saved permission can create/import the reusable definition; administrator role is not required for builder actions.
 
 ## Exact source
 
-Actual uploaded UI30 wavelink.zip SHA25605d6e0966ef03ea7e72feb6641f8ed6f4fd0495ad8b8b50a418c0611dc3b6b0b
-plus verified UI31–43 chain. UI43 patch SHA256479b47abecb9d766999c74309f3117b2bb290bd9b670f50ad6f15139710923da.
-126 parent repository files/125manifest rows verified; 1776 runtime files unchanged.
-Application UI43 extractor remains 56a0ea34f7bd6bb4648b464edf4d6746df6df4b9dc808e163757e33acbe16243.
-C01 entrypoint f754d4db367983a75473f1d525183b618a25c265837a317df66ffabaf8f4c1e2 replaces old entrypoint
- a2bbac57635ac6e0b12400bbcbfc7382416ed3d5c7525e4218b7e38c2e7a633f.
-G01 gate unchanged 9dc4ab6f7b7fb324ea06c305a09af8336b0bd10e7be6bef5296af1fd32d2e701.
-Original demo/signing Nginx unchanged 752563759fd82e20eacc62379f7a3082a8074675a747214a16cff0b9b90b99b8.
-All190appPython/70appJS unchanged. New deployment modules/assets only; Docker/dependencies/vendor/
-seed/ordinary writers/QR evidence formats untouched. .gitignore/.dockerignore add secret protections.
+Parent is verified **UI43 + Company C01**, over the user's uploaded UI30 repository and verified UI31–43 lineage. Parent application extractor: `56a0ea34f7bd6bb4648b464edf4d6746df6df4b9dc808e163757e33acbe16243`. UI44 extractor: `e2b8b8b3b8675ed67984655946ad54c503c31e3bd555956ce6c79feaff280a25`. C01 entrypoint remains `f754d4db367983a75473f1d525183b618a25c265837a317df66ffabaf8f4c1e2`; G01 gate remains `9dc4ab6f7b7fb324ea06c305a09af8336b0bd10e7be6bef5296af1fd32d2e701`. UI34 signing Nginx remains `752563759fd82e20eacc62379f7a3082a8074675a747214a16cff0b9b90b99b8`.
 
-## Company semantics
+Fresh extraction from the final extractor contains **1,780 tracked runtime files**, **192 application Python modules** and **71 application JavaScript files**. The repository keeps C01 hosting files; the existing executable repository change for UI44 is only `deploy/extract_source.py`.
 
-WAVELINK_DEPLOYMENT_MODE defaults DEMO; COMPANY is explicit. New dedicated /var/data disk,
-/var/data/wavelink-company project, independent company/hub/install/account IDs. No inherited demo
-users/records/files/templates; supported sample-template purged marker only in new empty company.
-Fresh explicit initialization required; unknown, partial, symlink, wrong-company or demo storage
-refused. Repeated start never resets credentials. Existing demo settings remain untouched.
+## Implemented
 
-Private first-sign-in setup key hash + existing salted initial password, 24h window, normal API/
-QR/WS locked until password change. New permanent passphrase14–128, six distinct chars; atomic
-BEGIN IMMEDIATE password/version/session clear+activation audit. Same-request HMAC retry/outcome
-is receipt-only. No password/key literal in source; private user settings delivered separately,
-never include them in future memory/evidence/GitHub. Setup key renewal only pending with new key
-and free project leases, no SQL/account reset; activated installation refuses renewal.
+- New permission-scoped **Setup & builders** workspace and navigation/Home destination.
+- Explicit builder permissions for checklist templates, maintenance routines, toolbox forms, logbook designs and inventory structures. Existing non-admin accounts default false; administrators retain full access; dependencies on the relevant base module remain enforced.
+- Non-admin permissioned accounts can use the existing checklist/maintenance/toolbox/logbook authoring services without general Administration authority.
+- Browser reusable-definition imports: `.ajcheck`, `.ajtoolbox`, `.ajlogs` definitions only and `.ajinventory`. Exact file preview/review token, size/type checks and idempotent retry receipt. No users/passwords/signatures/completed operational history imported.
+- Blank inventory structure creator; existing blank checklist/maintenance/toolbox/logbook builders reused.
+- Existing Import Centre now points common reusable imports to Setup & builders; advanced workbook/project/setup transfers remain deliberately separate.
+- Empty-company guidance appears inside Setup & builders; People & departments is an admin shortcut, not a requirement for builder authors.
+- Help/navigation/catalogue/cache references updated. Original Files retains its existing permissions and admin-only upload/organisation.
 
-After activation root serves normal UI43 named login; no outer demo gate/shared guest/join codes.
-Every ordinary API needs current company named session; info/login minimal exceptions; isolated
-QR endpoints keep their own exact-document grants. Exact HTTPS Host/Origin/proxy boundary; 4KB
-setup/login requests; default unknown host421; health works pending. Single-worker unchanged.
-No new app database tables/API payload/storage format/permissions/dependencies. New deployment
-setup endpoints/marker use existing audit for activation, not a UI44 application release.
+No new SQL tables, migrations, dependencies, environment settings, account roles, operational writers or persistent browser stores. C01 company isolation and first-sign-in behaviour are unchanged.
 
-Retain initial marker and activation evidence together in backups. No older helper approval,
-no pre-C01 company rollback, no disk reset/reimport/site-data clearing. Company mode stays an
-inspected/staging candidate internally, not a production-security assertion or new MFA policy.
+## Selected local checks
 
-## Completed selected checks
+Final selected checks completed in this work: UI44 builder/API/permission tests plus updated workspace catalogue checks **23 passed**; C01 company tests **71 passed**; demo/package/G01 package selection **59 passed**; builder workspace Chromium rendering passed at **1440 px and 390 px**; all **192 app Python modules parse** and all **71 app JavaScript files pass `node --check`**. The final extractor was freshly replayed and produced the expected 1,780-file runtime.
 
-301Python=71C01+107demo/gateway/package+123hosted.19compoundChromium=14firstsetup+5normalapp.
-22real loopback Nginx/company/core checks with simulatedTLSattestation, notHTTPS. 70 unchangedapp
-JS+1newsetupJSsyntax;190unchangedappPython+newdeploy/testparse. Local requested initial account
-verified with empty operationaltables; localDBnotshipped. Source manifest/replay finalreport.
-
-Browser controlledfetch/storage/history/fragment/hash,set_content; mainapp real TestClient API.
-Initial incorrect fixturetable names, absent defaultbrowser executable and superseded69-passrun
-excluded/retained. Final usedinstalled/usr/bin/chromium, no navigationpolicybypass/download.
-No fullsuite/liveGitHubRenderDNSHTTPS/realphones/durableIDB/SW/WindowsPowerShell/native/Docker/
-fullsecurityaccessibilityload/offhostacceptance. Nothing remotely written/provisioned/deployed.
+A broader inherited browser-template/logbook suite did not complete within the bounded run; one old release invariance assertion is intentionally obsolete because UI44 changes checklist/logbook definition-authority adapters. This is not a full-suite result. No live GitHub/Render deployment, real Sulmara data access, physical phone, durable IndexedDB/SW, Windows/PowerShell, Docker build, full accessibility/security/load or accepted off-host recovery is claimed.
 
 ## Preserve / next
 
-Existing demo G01/publicentryYES/fictionalinitNO/guest/domain/disk/backups/unsentwork unchanged.
-New Sulmara company: dedicated service/disk, companymode, exactPUBLIC_URL; private firstsetup,
-thenINITIALISE_COMPANY=NO/removebootstrapsecrets; never copydemocredentials or seed. Never infer
-liveaccount/version from this package. Render/GitHub available-notconnected; cards suggested.
+Existing demo: preserve G01, `DEMO_PUBLIC_ENTRY=YES`, `INITIALISE_FICTIONAL_DEMO=NO`, guest/domain/disk/backups and unsent work. Company C01: preserve COMPANY mode, company ID/name/public URL, dedicated disk and activation marker; after successful first setup keep `INITIALISE_COMPANY=NO` and remove bootstrap secrets as documented. Never copy demo credentials/data into Sulmara.
 
-Verify real company firstsign-in/normalaccount/permissions/files/QR/restart/backup independently;
-UI43 user-mobile/day/combinedPDF feedback remains first operational UX priority. Samepolished
-fullcapabilities/simpledefaults/groupedupdates direction. Wider roadmap preserved inDEVELOPMENT_TODO.
-Nativevessel/CCVD/cloudsync/localnetwork remain outofscope. No automatic background development.
+For Sulmara onboarding after UI44: create departments/accounts, grant only the builder permissions each role needs, then create/import reusable definitions through Setup & builders. Test one permissioned non-admin account before using operational data. No reset/re-import/site-data clearing. Keep grouped substantial releases; broader workbook/setup browser imports remain separate review work.

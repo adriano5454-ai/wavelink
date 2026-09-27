@@ -1,18 +1,13 @@
-# Wavelink UI43 — optional C01 company hosting
+# Wavelink UI44 + Company C01
 
-**Same repository; separate services and persistent data.** C01 adds named-account company
-hosting, including a one-time private password-change setup. The existing DEMO mode is the
-default; do not change the demo's environment/disk. UI43 application and working G01 gate remain.
+**Core 1.34.19. Same application repository for demo and separate company services.**
 
-For the NEW Sulmara service follow [Company C01 setup](docs/COMPANY_C01.md). Never put company
-passwords, setup keys or database files in this repository. This package has not been deployed.
-Current source/verification: [checkpoint](docs/CONTINUATION_CHECKPOINT.md).
+UI44 adds **Setup & builders** for clean companies: create or import reusable checklist templates, maintenance routines, toolbox-talk forms, logbook designs and inventory structures in the browser. Builder authority is permission-based; a Technician or Supervisor with the relevant permission can author definitions without becoming an administrator.
 
----
-## Existing UI43 application instructions retained
+Sulmara/other company services keep Company C01 named-login isolation and their dedicated disk/database. The existing demo keeps G01/public-demo behaviour. Do not copy demo data or credentials into a company service.
 
-# Wavelink application — UI43 + working G01
-Core1.34.19. Handover daily context, chronological subject overview and combined published PDF.
-See docs/WORKSPACE_UI43.md and docs/CONTINUATION_CHECKPOINT.md. support@mywavelink.com.
-Copy UPLOAD_TO_GITHUB contents over UI42 application repo, review/commit/push. PS1 optional.
-Preserve current data, G01 and unsent work. No reset/reimport/storage clearing. Not deployed here.
+- [UI44 workspace](docs/WORKSPACE_UI44.md)
+- [Company C01 setup](docs/COMPANY_C01.md)
+- [Current checkpoint](docs/CONTINUATION_CHECKPOINT.md)
+
+Routine update: copy the supplied `UPLOAD_TO_GITHUB` contents over the existing approved UI43+C01 application repository, review in GitHub Desktop, commit and push. The PowerShell checker is optional. Do not delete files absent from a compact patch, reset data, re-import the demo or clear browser storage.

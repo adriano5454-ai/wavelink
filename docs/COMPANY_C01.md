@@ -190,3 +190,7 @@ restart without losing data, and test a complete backup/restore before operation
 Keep the demonstration independent during this work. No remote account/data/credential actions
 were performed here. The Render/GitHub connection cards are optional; code delivery is not proof
 of a live service. Current provider UI labels and prices were not verified by this package.
+
+## UI44 clean-company onboarding
+
+After the company administrator is activated, UI44 adds **Setup & builders** to the browser. Administrators can grant the five builder permissions to named Technician/Supervisor accounts so the people responsible for checklists, maintenance, toolbox forms, logbooks or inventory can create/import those definitions without administrator access. Existing non-admin accounts receive no builder permissions automatically. This avoids importing fictional demo data just to obtain templates. Whole-project/history-bearing transfers remain separate advanced workflows.

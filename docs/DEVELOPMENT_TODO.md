@@ -375,3 +375,8 @@ Preserve working Gateway G01 and DEMO_PUBLIC_ENTRY=YES, demo.mywavelink.com, all
 
 ## UI31 current outcome / next
 Grouped project presence, Original Files sidebar discoverability and Website 2.3.1 icon reuse implemented locally. Simple daily handovers and no routine reasons remain unchanged. Presence is recent foreground connection state, not attendance. Next prioritize actual user feedback; do not keep presence as an entirely unimplemented future item or claim hosting acceptance. Refer to the current checkpoint for boundaries.
+
+
+## UI44 clean-company builders current outcome
+
+Setup & builders is implemented for checklist templates, maintenance routines, toolbox forms, logbook designs and inventory structures. Builder authority is permission-scoped, not administrator-only; existing non-admin accounts default to no builder rights until explicitly granted. Browser imports create new reusable definitions/separate structures only. Whole-project/setup bundles, operations workbook mapping and history-bearing transfers remain advanced/native review work. Original Files keeps its existing permission/administrator upload boundary. For clean companies, test named permissioned builders before operational rollout; do not seed demo data just to obtain templates.

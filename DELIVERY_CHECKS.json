@@ -1,78 +1,39 @@
 {
-  "format": "wavelink-company-c01-checks-1",
-  "core": "1.34.19",
-  "workspace": "UI43",
-  "hosting": "C01 optional COMPANY; DEMO default",
-  "parent": "UI43 + G01 over uploaded UI30 verified chain",
-  "source": {
-    "unchanged_extractor": "56a0ea34f7bd6bb4648b464edf4d6746df6df4b9dc808e163757e33acbe16243",
-    "unchanged_app_runtime": 1776,
-    "unchanged_app_python": 190,
-    "unchanged_app_js": 70,
-    "existing_executable_change": [
-      "deploy/entrypoint.py"
-    ],
-    "hashes": {
-      "deploy/__init__.py": "e5c5bfe0762232356b056658440bce9137484dabbbd9cbd28524d58ae5e37211",
-      "deploy/company.env.example": "80cf72ccfe3ad853c6d26a0b10ce93ac43e914b5023daf414fbc7425edad0346",
-      "deploy/company_assets/pending.html": "b5f69f83074336ef569d037b255e0095efea1ad35cdccacc3c3da2f15dd4f8f2",
-      "deploy/company_assets/setup.css": "696a40637f564acaf0b124161220714e60c301fa49c012cef265cb7c9ad02951",
-      "deploy/company_assets/setup.html": "06c089d664ea01477869679940682dd8dab423ec3be9effbadc2f616ba38a4b8",
-      "deploy/company_assets/setup.js": "0e3e6e0b9393ede0c2165f0db011edeea9090d7bcfb2ed9f03887e35fe326f69",
-      "deploy/company_entrypoint.py": "ab7a0a16677835815ac34222db5b9938d046c3d47aa25f71dfa227922b36375b",
-      "deploy/company_nginx.py": "a08326ca59ede8054be165959e1f677fa775285f23cf161befa45bd3e144a370",
-      "deploy/company_provision.py": "3ef503ee27c4f516d11d05bb9c4b1b12f7152797b351d37ac748e52daf539c98",
-      "deploy/company_runtime.py": "6e6d2b589e697a079a48f81558f7b464dd6e27a22eabcdad363824369ed9ea00",
-      "deploy/entrypoint.py": "f754d4db367983a75473f1d525183b618a25c265837a317df66ffabaf8f4c1e2",
-      "deploy/extract_source.py": "56a0ea34f7bd6bb4648b464edf4d6746df6df4b9dc808e163757e33acbe16243",
-      "deploy/gate.py": "9dc4ab6f7b7fb324ea06c305a09af8336b0bd10e7be6bef5296af1fd32d2e701",
-      "deploy/nginx_config.py": "752563759fd82e20eacc62379f7a3082a8074675a747214a16cff0b9b90b99b8",
-      "deploy/provision.py": "e188dece33b10be26f7a0a68aedfa201757004956876689d808c0602ea2af70d"
-    }
-  },
   "completed_selected": {
-    "python": 301,
-    "python_groups": {
-      "company_final": 71,
-      "demo_regression": 107,
-      "hosted_regression": 123
-    },
-    "browser_compound": 19,
-    "actual_loopback_nginx_core": 22,
-    "javascript_syntax": 71,
-    "app_python_parses": 190
+    "app_js_syntax": 71,
+    "app_python_parse": 192,
+    "builder_chromium_viewports": [
+      "1440x1000",
+      "390x1000"
+    ],
+    "company_c01_python": 71,
+    "demo_gate_package_python": 59,
+    "ui44_builders_and_workspace_python": 23
   },
-  "local_requested_company": {
-    "company": "Sulmara",
-    "local_only": true,
-    "live_created": false,
-    "account_name": "admin",
-    "role": "admin",
-    "requested_initial_password_matches": true,
-    "plain_secrets_written_to_repo": false,
-    "pending_password_change": true,
-    "operational_row_counts": {
-      "records": 0,
-      "inventory_items": 0,
-      "toolbox_talks": 0,
-      "handover_records": 0,
-      "maintenance_jobs": 0,
-      "original_documents": 0,
-      "document_invites": 0,
-      "document_signatures": 0,
-      "sessions": 0,
-      "ops_departments": 0
-    },
-    "checklist_revisions": 0,
-    "copied_demo_records": false
-  },
-  "limits": [
-    "No live Render/GitHub/DNS/account provisioning or deployment",
-    "No Docker image build/real TLS/physical phones/Windows/PowerShell acceptance",
-    "Browser injected transport/history/in-memory state; no durable IndexedDB or actual navigation",
-    "Selected checks only; not full product suite, production security, accessibility, distributed load or accepted off-host recovery",
-    "Setup and ordinary login checked; not a new full QR/operational signing audit"
+  "core": "1.34.19",
+  "format": "wavelink-ui44-checks-1",
+  "hosting": "C01 compatible; DEMO default; G01 preserved",
+  "intentional_boundaries": [
+    "Existing non-admin accounts receive builder permissions false until explicitly granted.",
+    "Browser imports create reusable definitions or separate clean structures only; no users/passwords/signatures/completed operational history.",
+    "Original Files upload/folder authority is unchanged by UI44.",
+    "Whole-project/setup bundle and workbook history transfers remain advanced/native workflows."
   ],
-  "data": "New company only, existing schema; no demo/project reset or data transfer. Keep private marker and activation audit together; pre-C01 company startup is not a rollback target.",
-  "credentials": "Actual private bootstrap values excluded from GitHub payload and evidence. Blank example only."
+  "limitations": [
+    "Not a full-suite result. A broader inherited browser-definition suite exceeded the bounded run.",
+    "An inherited release-invariance assertion for checklist/logbook internals is obsolete because UI44 intentionally changes definition-authority adapters.",
+    "No live GitHub/Render deployment, real company data, physical phone, durable browser storage/service-worker, Windows/PowerShell, full security/accessibility/load, Docker-build or accepted off-host recovery acceptance."
+  ],
+  "parent": "UI43 + Company C01 over verified uploaded UI30 lineage",
+  "source": {
+    "app_js": 71,
+    "app_python": 192,
+    "existing_executable_changes": [
+      "deploy/extract_source.py"
+    ],
+    "extractor": "e2b8b8b3b8675ed67984655946ad54c503c31e3bd555956ce6c79feaff280a25",
+    "parent_extractor": "56a0ea34f7bd6bb4648b464edf4d6746df6df4b9dc808e163757e33acbe16243",
+    "runtime_files": 1780
+  },
+  "workspace": "UI44"
 }
