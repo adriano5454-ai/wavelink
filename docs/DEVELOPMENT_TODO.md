@@ -1,3 +1,24 @@
+# Latest prepared release: UI53 — complete Inventory & boxes workflow
+
+Resumed the agreed section review after UI52 optional handover notes (which remains included).
+Implemented box-only exclusion/refusal, exact current preview versions, deliberate discrepancy close,
+guarded history/pre-send identity, denied-view clearing, keyed catalogue/explorer/result updates,
+permissioned Create/Import shortcuts, one-page item entry and phone-friendly standalone verification.
+Same-author routine stock corrections use proven real history; no fake reason, automatic Found,
+stock adjustment, custody bypass or private Task permission change. Existing counts/evidence stay.
+
+Next: one named-user fictional full Inventory create/import/box/move/split/scope/results/close/PDF/
+refresh/mobile session, then next sidebar-section review and coherent build. Do not silently redesign
+approved Home/Tasks/Checklists/Logs/Handovers/Calendar or remove their capabilities. Keep websiteicons,
+support email, C01 company isolation, G01 demo entry, builders, separate Help, local-work/signout and
+all evidence features. Ordinary multi-format workbook mapping and broader transfer/signing extensions
+remain separately scoped; this is not an all-module reason/permission/UX rewrite.
+
+Compact changed-files upload → copy/review/commit/push. No reset, re-import, clearing browser data,
+sync disable or repeated company bootstrap. No assumed live deployment or automatic background work.
+
+---
+
 # Latest prepared release: UI52 — optional handover notes and precise finish warnings
 
 User-requested corrective priority before the Inventory implementation: no summary or note text is

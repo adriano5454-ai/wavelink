@@ -1,3 +1,12 @@
+# UI53 — Inventory workflow Help
+
+Four current hosted bodies/outlines reviewed: Inventory, Stock verification, Inventory Builder and
+Inventory transfers. Clear scope modes, boxes-only exclusions, exact preview/retry, result authorship,
+explicit outcome closure, one-page item entry, builder permissions and refresh states. Native advanced
+instructions are labelled separately rather than advertised as browser imports. All76 catalogue
+entries match;72 other bodies unchanged except their shared reader-cache links outside the body.
+No global native/master-PDF procedural acceptance. Exporters remain unchanged.
+
 # UI52 — optional notes and precise handover completion
 
 Handovers and continuity articles/outlines explain optional notes, real required period/basis,
