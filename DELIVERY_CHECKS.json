@@ -1,48 +1,53 @@
 {
-  "release": "UI57 + Company C01 + G01",
+  "release": "UI58 + Company C01 + G01",
   "core": "1.34.19",
-  "parent": "Exact current UI56 + Company C01 + G01",
-  "python_passed": 495,
+  "parent": "UI57 + Company C01 + G01",
+  "python_passed": 575,
   "python_groups": {
-    "shifts_py": 37,
-    "handovers_py": 280,
+    "permissions_py": 222,
+    "handover_history_py": 175,
     "hosting_py": 178
   },
-  "compound_browser_passed": 60,
+  "compound_browser_passed": 78,
   "browser_groups": {
+    "permissions_browser": 9,
+    "tabs_browser": 9,
     "shifts_browser": 19,
     "certificates_browser": 15,
     "refresh_browser": 26
   },
   "javascript_syntax_passed": 81,
   "application_python_parsed": 194,
-  "application_python_unchanged": 192,
-  "runtime_files": 1856,
+  "application_python_unchanged": 189,
+  "runtime_files": 1857,
   "commands": [
     {
-      "name": "shifts_py",
+      "name": "permissions_py",
       "command": [
         "python",
         "-m",
         "pytest",
+        "tests/ui58_shift_permissions/test_permissions.py",
         "tests/ui57_shifts/test_shifts.py",
-        "-q",
-        "--disable-warnings",
-        "--junitxml=/mnt/data/ui57_work/evidence/final/shifts_py.xml"
-      ],
-      "cwd": "/mnt/data/ui57_work/frozen",
-      "runtime": "/mnt/data/ui57_work/frozen"
-    },
-    {
-      "name": "handovers_py",
-      "command": [
-        "python",
-        "-m",
-        "pytest",
         "tests/ui29_simple/test_simple.py",
         "tests/ui29_simple/test_transfer.py",
         "tests/ui50_handovers/test_workflow.py",
         "tests/ui52_notes/test_finish.py",
+        "tests/browser_admin/test_admin.py",
+        "tests/access_review/test_access_review.py",
+        "-q",
+        "--disable-warnings",
+        "--junitxml=/mnt/data/ui58_work/evidence/final/permissions_py.xml"
+      ],
+      "cwd": "/mnt/data/ui58_work/frozen",
+      "runtime": "/mnt/data/ui58_work/frozen"
+    },
+    {
+      "name": "handover_history_py",
+      "command": [
+        "python",
+        "-m",
+        "pytest",
         "tests/handovers/test_handovers.py",
         "tests/handovers/test_privacy_transfer.py",
         "tests/daily_handovers/test_daily.py",
@@ -51,10 +56,10 @@
         "tests/handover_continuity/test_transfer.py",
         "-q",
         "--disable-warnings",
-        "--junitxml=/mnt/data/ui57_work/evidence/final/handovers_py.xml"
+        "--junitxml=/mnt/data/ui58_work/evidence/final/handover_history_py.xml"
       ],
-      "cwd": "/mnt/data/ui57_work/frozen",
-      "runtime": "/mnt/data/ui57_work/frozen"
+      "cwd": "/mnt/data/ui58_work/frozen",
+      "runtime": "/mnt/data/ui58_work/frozen"
     },
     {
       "name": "hosting_py",
@@ -69,56 +74,77 @@
         "tests/test_package.py",
         "-q",
         "--disable-warnings",
-        "--junitxml=/mnt/data/ui57_work/evidence/final/hosting_py.xml"
+        "--junitxml=/mnt/data/ui58_work/evidence/final/hosting_py.xml"
       ],
-      "cwd": "/mnt/data/ui57_work/repo",
-      "runtime": "/mnt/data/ui57_work/frozen"
+      "cwd": "/mnt/data/ui58_work/repo",
+      "runtime": "/mnt/data/ui58_work/frozen"
+    },
+    {
+      "name": "permissions_browser",
+      "command": [
+        "python",
+        "-u",
+        "/mnt/data/ui58_work/scripts/browser_permissions.py",
+        "/mnt/data/ui58_work/evidence/final/permissions_browser"
+      ],
+      "cwd": "/mnt/data/ui58_work/frozen",
+      "runtime": "/mnt/data/ui58_work/frozen"
+    },
+    {
+      "name": "tabs_browser",
+      "command": [
+        "python",
+        "-u",
+        "/mnt/data/ui58_work/scripts/browser_tabs.py",
+        "/mnt/data/ui58_work/evidence/final/tabs_browser"
+      ],
+      "cwd": "/mnt/data/ui58_work/frozen",
+      "runtime": "/mnt/data/ui58_work/frozen"
     },
     {
       "name": "shifts_browser",
       "command": [
         "python",
         "-u",
-        "/mnt/data/ui57_work/scripts/browser_shifts.py",
-        "/mnt/data/ui57_work/evidence/final/shifts_browser"
+        "/mnt/data/ui58_work/parent_evidence/scripts/browser_shifts.py",
+        "/mnt/data/ui58_work/evidence/final/shifts_browser"
       ],
-      "cwd": "/mnt/data/ui57_work/frozen",
-      "runtime": "/mnt/data/ui57_work/frozen"
+      "cwd": "/mnt/data/ui58_work/frozen",
+      "runtime": "/mnt/data/ui58_work/frozen"
     },
     {
       "name": "certificates_browser",
       "command": [
         "python",
         "-u",
-        "/mnt/data/ui57_work/scripts/browser_certificates.py"
+        "/mnt/data/ui58_work/parent_evidence/scripts/browser_certificates.py"
       ],
-      "cwd": "/mnt/data/ui57_work/frozen",
-      "runtime": "/mnt/data/ui57_work/frozen"
+      "cwd": "/mnt/data/ui58_work/frozen",
+      "runtime": "/mnt/data/ui58_work/frozen"
     },
     {
       "name": "refresh_browser",
       "command": [
         "python",
         "-u",
-        "/mnt/data/ui57_work/scripts/refresh_browser/browser_checks.py"
+        "/mnt/data/ui58_work/parent_evidence/scripts/refresh_browser/browser_checks.py"
       ],
-      "cwd": "/mnt/data/ui57_work/frozen",
-      "runtime": "/mnt/data/ui57_work/frozen"
+      "cwd": "/mnt/data/ui58_work/frozen",
+      "runtime": "/mnt/data/ui58_work/frozen"
     }
   ],
   "selected_not_full_suite": true,
-  "application_test_source": "Fresh frozen runtime after the final chooser-close/read epoch correction. All final selected groups rerun against those exact bytes.",
+  "application_test_source": "Frozen runtime after the personal-panel interruption fix; final selected groups only. Earlier attempts excluded.",
   "excluded": [
-    "Initial fixture errors: helper signature, permissions fixture, journal day toggle, modal close selector.",
-    "Initial unchanged-response button closure and subsequent just-closed chooser/read-generation bug found locally, fixed, retained as regressions.",
-    "Superseded complete runs and screenshot-only repeats before final chooser refinement are not added to final counts.",
-    "No unrelated inherited or native/full-suite test assertion declared fixed or passed."
+    "Pre-interruption 221-case permission/handovers run and earlier nine-case browser permission run superseded by current complete tests.",
+    "Initial browser permission fixtures filled a collapsed schedule section and an earlier fixture returned invalid account data; corrected before final runs.",
+    "Source audit initially compared the pre-setup span, including deliberately changed old-board permission wording. Actual notes-editor span is separately byte-identical.",
+    "An unavailable streaming execution mode and an attempted launch before the runner file existed did not run tests and are excluded."
   ],
-  "limitations": [
-    "Shipped assets and fictional SQLite/TestClient with injected fetch/hash/staged memory storage, not live or durable IndexedDB/actual browser navigation.",
-    "Shared periodic refresh checked concurrently for 33.5 seconds with controlled latency, not long-duration/SW/real WebSocket/physical-device acceptance.",
-    "No live Sulmara/demo/GitHub/Render, deployment, real credentials/data access, Windows/PowerShell/native/Chrome launcher, full-suite/security/accessibility/load, Docker or off-host recovery acceptance.",
-    "Reports/evidence writers unchanged; report rendering was not newly tested for this assignment/entry update."
+  "limits": [
+    "Fictional SQLite/TestClient and shipped assets with injected fetch/hash/staged browser store, not live or durable IndexedDB acceptance.",
+    "No new report/PDF/QR rendering acceptance; original services and evidence writers unchanged.",
+    "No real company data or credentials, GitHub/Render operations, physical devices, Windows/PowerShell/native launcher, full-suite/security/accessibility/load, Docker or off-host recovery tests."
   ],
   "deployment_performed": false
 }

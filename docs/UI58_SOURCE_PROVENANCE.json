@@ -1,0 +1,415 @@
+{
+  "parent_extractor_sha256": "0eb0cfca3ca0955f710f4e10dbc227f5ba2ced3f015597b464e8897ce7e9a0a1",
+  "full_ui50_sha256": "a9e3452da15435653281425696449aefe1afadb88a1630ac949f4b2a08f1e8d2",
+  "source_reconstruction": [
+    {
+      "file": "Wavelink_GitHub_Update_UI50_C01_to_UI51.zip",
+      "sha256": "4c747ab846b6cbd3eb166ed1075a6cfd321d270491c380b2427e422637dcc9c2",
+      "baseline": 152,
+      "target": 154
+    },
+    {
+      "file": "Wavelink_GitHub_Update_UI51_C01_to_UI52.zip",
+      "sha256": "bfae6df577479c438bf87e89f3c66e64a0d8534b306eb08b5dd92a8aeb8427f2",
+      "baseline": 154,
+      "target": 156
+    },
+    {
+      "file": "Wavelink_GitHub_Update_UI52_C01_to_UI53.zip",
+      "sha256": "4faad991d1943a2346b84b4777958ad47b5b607952825a765ab43c2b067b4e64",
+      "baseline": 156,
+      "target": 158
+    },
+    {
+      "file": "Wavelink_GitHub_Update_UI53_C01_to_UI54.zip",
+      "sha256": "dc6b71675f9f343ed8e4d59928969fba098a323d57a51272d731151a15a07e70",
+      "baseline": 158,
+      "target": 160
+    },
+    {
+      "file": "Wavelink_GitHub_Update_UI54_C01_to_UI55.zip",
+      "sha256": "0698742e59e19ad030f81f8a17f567e5962dcc53ac80bcee7fbd328688de5fb3",
+      "baseline": 160,
+      "target": 162
+    },
+    {
+      "file": "Wavelink_GitHub_Update_UI55_C01_to_UI56.zip",
+      "sha256": "e8bb237cd2d4527825514ca4c58e959d899eb080d407ea5fe7aecaa64f6bd2a2",
+      "baseline": 162,
+      "target": 164
+    },
+    {
+      "file": "Wavelink_GitHub_Update_UI56_C01_to_UI57.zip",
+      "sha256": "b9bbba5b0fda6a49bffdd92ef0ead3ad74c168a0e5792e3678b7d6404eb737ff",
+      "baseline": 164,
+      "target": 166
+    }
+  ],
+  "parent_runtime_files": 1856,
+  "parent_repository_files": 166,
+  "changed_new_runtime_resources": 95,
+  "cumulative_overlays": 542,
+  "runtime_files": 1857,
+  "extractor_sha256": "b26af15ffa197f2ef92f8dd04411d658b19b37c9f7c7cecda9864bc80d171a86",
+  "changes": {
+    "app/access.py": "8d8925407310f3d0d7962c54eac499b8996422e24f974ad6040bb44f50e3e1bb",
+    "app/access_review.py": "4217deed763a1558742fcfbfc24b74c4e41cf5d528631665cf6fa1f57e8f84c8",
+    "app/static/browser_admin.js": "c15311d5530e80fead4d2c761ccd646e0708a942bafe9b475bbd73503c039025",
+    "app/static/handovers.css": "c7625252c8e1445bb9d32c67cf8b0053dfd029aeb599ceda96cf17f659c50d2a",
+    "app/static/handovers.js": "f4a17462d6cf35a9dea33f09f5e68891abea5554805a1cb0b59ef4cc791be367",
+    "app/static/help.html": "952e1142c7479b4ab5c5f42089baa85e1e9abdaf25aa37fda178e97c8ddb9ead",
+    "app/static/help_topics/accessreview.html": "1b97a84513a757b1890b3346642fe707e6bf539e4d4e6ca120279afb654581be",
+    "app/static/help_topics/approvals.html": "ae3ec0058a93acb8c054f116015c9d48fd671cd9c272a16dd38dc8e16972da08",
+    "app/static/help_topics/assetcalendar.html": "545c0a299a7d8f3813a5ceea7a914fd2ef5ab928b630588f85025468eaf98f20",
+    "app/static/help_topics/assetdetails.html": "859c094bbd9a20910e25b0d72db6291a2e3bcddbbf5f2dbb2d71ed1f0ee370b5",
+    "app/static/help_topics/assetlabels.html": "a309d640445a0f9cb892a1d34e18b2ba60fc78b1dfd45b73c5ca9bf265dd4dd5",
+    "app/static/help_topics/assignments.html": "1b0b92865610d5ac03513f3e518c8607b6c7d7afa9d2bc708c4bb7a876a5683c",
+    "app/static/help_topics/backups.html": "5b28a94af4f5486a6f66c2e6ab1e30a9cd5d9c5ec50a0ef1f136faae3494d1af",
+    "app/static/help_topics/browseradmin.html": "b862c9f3df71a488b2b2a6a1b72b27ff4693631729f387be0fc6ca7126f693e8",
+    "app/static/help_topics/browserlogs.html": "91ebda892aaede2b2e06673fab1e563c74649cfbd2dca93e41e51e2c66e270e2",
+    "app/static/help_topics/browsertemplates.html": "742bbb1256c966647d46a00701b5ee8752859b3cf05fd8f793be53dc2e749f6d",
+    "app/static/help_topics/browsertoolbox.html": "ed0908bb663de2c823df2215e6cc91e51236efa6d55d7b7878529303f75806a2",
+    "app/static/help_topics/builder.html": "d9c20e30e50fc87e40ec9a2cbb29d33b5bcdd337f3699aaa418d2cc9f89d2484",
+    "app/static/help_topics/certificates.html": "9eeb0acbb2514cfaff3e316995516fa99908f6bb085e48c2fe54b6d5d76165db",
+    "app/static/help_topics/companybranding.html": "496c65497c9fe11b8e406a732cb9c3e6936e54a027a77f7f01c4dd27ea96f2d9",
+    "app/static/help_topics/containers.html": "57de187994b98e3dd38db4e1b3fb136f6321e46c867311189b3343bf3061949e",
+    "app/static/help_topics/create.html": "251f5416797db6d84c5daf7e7daa5387925f5d14ce4d46c203ef8b114ea30029",
+    "app/static/help_topics/daily.html": "83e22bb5dca929f4d53840a28f3420a33726dec0db06d3a4a6a2ab2146484b1e",
+    "app/static/help_topics/dashboard.html": "c2c5a249fdcfb5a2d17efd11b9bfb45c2c04433196c3dc064d936d9e41ca18ea",
+    "app/static/help_topics/datetime.html": "fbc7d7251b57d793ae784177420fc583bda5d42d7651bab248ff5f26a991b785",
+    "app/static/help_topics/departmentheads.html": "b36dd2bc18b05edae712ae4f9c32f62e95b09be6c5904ec19211fbb8b6619550",
+    "app/static/help_topics/departments.html": "04e7bf29b0211c868207da4305bea82fb5098c1be033ec8fa24ac03dda8b58be",
+    "app/static/help_topics/document.html": "94556c428a001bb7d85f6555ad6bb4f200cd135f2e2691e97bb5d1d773c7c2b3",
+    "app/static/help_topics/documentimport.html": "d1d0e64462526a28b8deb3a4274ae46047f62e69b1459e40c5d4f99bf6c041a1",
+    "app/static/help_topics/evidence.html": "a3f6a95da1e4e558d5fb52173deae06b221d3306ef5257bf208e4af878e03c3a",
+    "app/static/help_topics/evidencereview.html": "8da84a5eca4630d1d0865e5a3e5f39370899968c23b9843420ac147adc84de59",
+    "app/static/help_topics/faults.html": "8043844b8c45b5a174ef9f98090105aff32de55b720d7383a5c07d37b60fb020",
+    "app/static/help_topics/fleet.html": "0270e3540fb94acacb31e436f042c72a777f30198cd8f07e718a05fc222c84bc",
+    "app/static/help_topics/fleetaccess.html": "2b3bec7d6fcdbc59ab831ba2b23ca03948f234d34ea0b1bcfdd80d9c8ab81b0b",
+    "app/static/help_topics/generaltasks.html": "0da995ef62e02a53a35b5782c803fcc4e16341b48c1821461bc8b5d5e322b78c",
+    "app/static/help_topics/handovercontinuity.html": "d1ccb4bb8a07f978c8a9da8c630176b0f7381b05e564002476c48b24b79262af",
+    "app/static/help_topics/handovers.html": "aa2154c85f8633f6036abf8cd5f0156f5e89d1bc83598a4030f63b9cda3ff0c3",
+    "app/static/help_topics/https.html": "64399e2143f84f9766c8c7d5d554c6fdad6b8fbf8700bf5edc07bec8643c2107",
+    "app/static/help_topics/illustrations.html": "82ae7545267ec6ff593ae7964ccd7a4941a06baa0407fe11178f6dcc0a7f57ff",
+    "app/static/help_topics/importcentre.html": "857e0d396c787110f3fc72511f90217ce102f1d25e519405549892b0a56d4ffa",
+    "app/static/help_topics/inventory.html": "73e8c58c6fe679bf8cf3ccdf23a07afbaf3f98b218bb3e588a190a69e0ce0e10",
+    "app/static/help_topics/inventorybuilder.html": "a783e6a81f074f52e88c8c9c351aec61147463822682eefe2480d7e60088b3fc",
+    "app/static/help_topics/inventorytransfer.html": "6a3a8e1c9373a6f766d0134dd31393ac388369e39477c80403bfdc08abe43200",
+    "app/static/help_topics/itemjourney.html": "07f061992d036cb7b07674088438772137fee8e6579474f51eb0b4b1be06e864",
+    "app/static/help_topics/live.html": "b4fe798db6f4751a46dea18ca89f8a940d562a52adf5dfb4a709438133f232a9",
+    "app/static/help_topics/logbuilder.html": "26524d97ac6e42a9c414f4ba4df9852a0b2a229d712dc108c5e4de746bc68ea5",
+    "app/static/help_topics/logexports.html": "e51e91824c04cf5c6d1cfde535b2939199f3074a308287dccb8da0caca6794bd",
+    "app/static/help_topics/logimport.html": "70231941f26e1ecb7f685815e36848bf3a3d6d8500eaf126a7e3a089862c923f",
+    "app/static/help_topics/logreferences.html": "eb87c1e5d308c48018f625cec1dee36df8a416270170bfa58fd99b28201cf288",
+    "app/static/help_topics/logs.html": "9cedf5c0ae0fb4bee33feb534ce758dbbacb8dd5bdc9645266063eea25bc6d63",
+    "app/static/help_topics/logwindows.html": "66b5e26cf16314397c8438f4614d1329aebd9333afe27a2bad23a7723e563411",
+    "app/static/help_topics/lowstock.html": "30206494ffd597fbcdd5411f23c336923ef1b8a90ffa048e213f9d2765be143d",
+    "app/static/help_topics/maintenance.html": "89376d46c3b15bf027495827f5c897643bf72807d968038c09976de54571fe28",
+    "app/static/help_topics/maintenancebuilder.html": "54adb1176335108f1a64acc25e46935a43505e32c6dcba3e656e260b4d36c2de",
+    "app/static/help_topics/manifests.html": "eaf0d8074aacb5f809bd081b994c393a51a98987e793efa83bfcbd27be612bad",
+    "app/static/help_topics/navigation.html": "48c9671fa278ca563668f1b91f2cb8acba1b56737cecb9be4a213a276aae0e95",
+    "app/static/help_topics/network.html": "548119793b66f18c58b87db4104e6c2fdcda3361b11a9999e9090b8bae86c843",
+    "app/static/help_topics/offsets.html": "2b04068a0dedab7c216b9e619c9fd309f5e6be8bc341e469b82a53d2bf4f2896",
+    "app/static/help_topics/originals.html": "e802fd4c4644dd1ec913133c2c0a0bc1934dbbe51443dcb2a3201de912630ea8",
+    "app/static/help_topics/permissions.html": "2e984e552d599c1cda20ba2fbd4ce479f72f1cc239edd66238725c27020d6c0f",
+    "app/static/help_topics/phones.html": "6aef47916306619b8dc6fbc113e9700a50ca4ceaae01be9ba9e53714cde8fb1d",
+    "app/static/help_topics/projects.html": "9e381b96fd3d4a8459e939b142066146860244581b84a8a614f5d790e2ba7282",
+    "app/static/help_topics/qrverification.html": "424cccb6582346a8179979513e730d9415cc13cf2647ea9bab4ef33f336b205c",
+    "app/static/help_topics/qshe.html": "df1abaab9f9dd82063275522e06440e7aaa5d9bb293a13fd0a882055c73b6f48",
+    "app/static/help_topics/receiving.html": "3ddfe838993789c10824cea1148cc80c28c579a2fd34eb67234ada8b5e30c2c5",
+    "app/static/help_topics/recordmanagement.html": "bc9d37fc45a1aac6716d594d8dd7ec0580cfb1a0e81fd15840f4332c7130d5d7",
+    "app/static/help_topics/records.html": "5c1a02c899d0f3a4187995db1f85f97585db9896b8bad837a8e87cfa5b2a2816",
+    "app/static/help_topics/savestatus.html": "c7b8b4cf68774c6a6b7bf2762a74467155ce2ff9cea1c09d334715eb5ffe159f",
+    "app/static/help_topics/start.html": "7daa65391f3bb18bf3f9e2cdde2fea815d4780f502e91daa0024ec4755a06b2d",
+    "app/static/help_topics/stocktake.html": "d780bccff2f6664e32f061c97b2717ee559a5af72bdb2bd6de0b1c3908d80c48",
+    "app/static/help_topics/storage.html": "a2fb1d1f21751f0115aec5e50b49a34437ef7dcc735dd32704c4d481ca20c342",
+    "app/static/help_topics/support.html": "a77d705be0127b296ec20e91ecff59d2e2c79055ae9968cae3f6c3ac20ac049e",
+    "app/static/help_topics/tasks.html": "90233aec5efb8e5f35593f55c08a75c03e59080f6e32b58c52344c1cf0268b54",
+    "app/static/help_topics/toolbox.html": "4afe53d46c6f38d0eabc867875e6f6728b94ac0048e86d6a1c796a4947d927d0",
+    "app/static/help_topics/toolboxbuilder.html": "14b63653b33d62fc24b7047c46a29af466aa655c09204cbad2bea2d6fd8816fe",
+    "app/static/help_topics/toolboxguests.html": "da31cb62e5cf9558f7a6f40314dd22e0050de4e73bfae5a4d17bc9ba4fcf5f94",
+    "app/static/help_topics/transfers.html": "034bb25914652c03fef59d6681872a54501057c52b8cddc59908b6e06b2b4c14",
+    "app/static/help_topics/types.html": "8f798366d7bc66084b51b8dcbd87df05ce9049039ef155a78d8e53940b9746e4",
+    "app/static/help_topics/uninstall.html": "e3de253ce2d9565a489567c5443ef5365b64c5e6c4d0c67b0092c83c317292a5",
+    "app/static/help_topics/users.html": "c7850e93c0908aa7debf7f2d93bb53c0f27c3ca138aaad9312d25237afa1a991",
+    "app/static/help_topics/vessellogaccess.html": "65b1b42bd84907113a29f0741447add5e8e142f5d4588468a47a0d02d19d8396",
+    "app/static/help_topics/vessellogs.html": "7da9829b6768a35a22dea245b58639582d986b222870d822a36cf4cbd7e30e65",
+    "app/static/index.html": "685dcc83c8dd00c393fbc9f67f46bb0831a618b020de6545fbe05edef3c66cac",
+    "app/static/sw.js": "0ff6deb14d66d24a4b2d534d827623899b088aa9121d0458da9353ec66e20855",
+    "app/handover_overview.py": "c8aab0bd863a2f7a5d96d7e0ed79305d5db58d0497e2888d2b295dd7f6f1a80b",
+    "app/simple_handovers.py": "3cf5285ac4509bd2dd4276d1778b5469a367a55a5fe3e1865be168a433ccb856",
+    "app/static/handover_workspace.js": "54ffd843a0949a18b0610e1d431a0592297605e27951027a824f8d6e82948086",
+    "app/static/help_catalogue.json": "2fd21099440e3cb01046c5642a39cd2178e4c894dfd53f720469809e7cc6f464",
+    "app/static/help_workspace.js": "ac8737ec1135c9beeacc4d2f97882ad2f99b676676e7bf5710a0a9ac1b711164",
+    "app/static/simple_handovers.js": "487f3b1c172f2b4fecb87403eae64c101b6df57f3734730876099d4dc3754f2d",
+    "tests/ui29_simple/test_simple.py": "739d26550a3522e7bc7d1965d03e1e9eaac5849f18afce7e40001063a6ffcc46",
+    "app/handover_shifts.py": "f8c9f56f0bcba4f66d55a6f6d2858bdb2df4c47e7623411ff700396040bf4300",
+    "app/static/shift_workspace.js": "8a21fa83555157175910d4146e9847dba5927b1020012570049280faa401dda3",
+    "tests/ui57_shifts/test_shifts.py": "ddaa9fc5c3c4bebd8705e302f8180d23b89fe393afb6b9c61df91086d01bb727",
+    "tests/ui58_shift_permissions/test_permissions.py": "e03ea13978036deac6d4a83e09a70bc0a80d076682bc5785dcf7ccf32ea05333"
+  },
+  "new_paths": [
+    "tests/ui58_shift_permissions/test_permissions.py"
+  ],
+  "audit": {
+    "javascript_syntax_passed": 81,
+    "application_python_parsed": 194,
+    "application_python_unchanged": 189,
+    "changed_existing_python": [
+      "app/access.py",
+      "app/access_review.py",
+      "app/handover_overview.py",
+      "app/simple_handovers.py",
+      "app/handover_shifts.py"
+    ],
+    "new_python": [],
+    "function_changes": {
+      "simple_handovers": {
+        "changed": [
+          "SimpleHandovers._manager",
+          "SimpleHandovers._department",
+          "SimpleHandovers.directory",
+          "SimpleHandovers.setup_detail",
+          "SimpleHandovers.save_setup",
+          "SimpleHandovers.board"
+        ],
+        "added": [
+          "SimpleHandovers.shift_capabilities"
+        ],
+        "unchanged": 17
+      },
+      "handover_shifts": {
+        "changed": [
+          "HandoverShifts._rows"
+        ],
+        "added": [],
+        "unchanged": 6
+      },
+      "handover_overview": {
+        "changed": [
+          "HandoverOverview._collect"
+        ],
+        "added": [],
+        "unchanged": 7
+      },
+      "access": {
+        "changed": [
+          "defaults",
+          "effective",
+          "save"
+        ],
+        "added": [],
+        "unchanged": 6
+      },
+      "access_review": {
+        "changed": [],
+        "added": [],
+        "unchanged": 2
+      }
+    },
+    "existing_note_editor_and_writers_unchanged": true,
+    "approved_operational_files": {
+      "app/static/app.js": {
+        "exact": true,
+        "cache_references_only": false
+      },
+      "app/static/home_workspace.js": {
+        "exact": true,
+        "cache_references_only": false
+      },
+      "app/static/attention.js": {
+        "exact": true,
+        "cache_references_only": false
+      },
+      "app/static/session_exit.js": {
+        "exact": true,
+        "cache_references_only": false
+      },
+      "app/static/workspace_continuity.js": {
+        "exact": true,
+        "cache_references_only": false
+      },
+      "app/static/operations.js": {
+        "exact": true,
+        "cache_references_only": false
+      },
+      "app/static/maintenance_ui.js": {
+        "exact": true,
+        "cache_references_only": false
+      },
+      "app/static/maintenance_workspace.js": {
+        "exact": true,
+        "cache_references_only": false
+      },
+      "app/static/maintenance_forms.js": {
+        "exact": true,
+        "cache_references_only": false
+      },
+      "app/static/checklist_workspace.js": {
+        "exact": true,
+        "cache_references_only": false
+      },
+      "app/static/checklist_stage.js": {
+        "exact": true,
+        "cache_references_only": false
+      },
+      "app/static/logs.js": {
+        "exact": true,
+        "cache_references_only": false
+      },
+      "app/static/task_workspace.js": {
+        "exact": true,
+        "cache_references_only": false
+      },
+      "app/static/setup_builders.js": {
+        "exact": true,
+        "cache_references_only": false
+      },
+      "app/static/project_calendar.js": {
+        "exact": true,
+        "cache_references_only": false
+      },
+      "app/static/document_join.js": {
+        "exact": true,
+        "cache_references_only": false
+      },
+      "app/static/save_status_ui.js": {
+        "exact": true,
+        "cache_references_only": false
+      },
+      "app/static/project_presence.js": {
+        "exact": true,
+        "cache_references_only": false
+      },
+      "app/static/certificate_workspace.js": {
+        "exact": true,
+        "cache_references_only": false
+      },
+      "app/static/fieldwork.js": {
+        "exact": true,
+        "cache_references_only": false
+      },
+      "app/static/assets.js": {
+        "exact": true,
+        "cache_references_only": false
+      }
+    },
+    "help_bodies_changed": [
+      "accessreview",
+      "permissions",
+      "handovercontinuity",
+      "departmentheads",
+      "handovers"
+    ],
+    "help_bodies_unchanged": 71,
+    "help_catalogue_matches": 76,
+    "hosting_vendor_ops_unchanged": true,
+    "hosting_files": {
+      "deploy/entrypoint.py": "f754d4db367983a75473f1d525183b618a25c265837a317df66ffabaf8f4c1e2",
+      "deploy/gate.py": "9dc4ab6f7b7fb324ea06c305a09af8336b0bd10e7be6bef5296af1fd32d2e701",
+      "deploy/nginx_config.py": "752563759fd82e20eacc62379f7a3082a8074675a747214a16cff0b9b90b99b8"
+    },
+    "installed_app_identity_icons_and_native_installer_unchanged": true,
+    "installer_icon_paths_checked": 27,
+    "index_cache_reference_matches": 119,
+    "changed_paths": [
+      "app/access.py",
+      "app/access_review.py",
+      "app/static/browser_admin.js",
+      "app/static/handovers.css",
+      "app/static/handovers.js",
+      "app/static/help.html",
+      "app/static/help_topics/accessreview.html",
+      "app/static/help_topics/approvals.html",
+      "app/static/help_topics/assetcalendar.html",
+      "app/static/help_topics/assetdetails.html",
+      "app/static/help_topics/assetlabels.html",
+      "app/static/help_topics/assignments.html",
+      "app/static/help_topics/backups.html",
+      "app/static/help_topics/browseradmin.html",
+      "app/static/help_topics/browserlogs.html",
+      "app/static/help_topics/browsertemplates.html",
+      "app/static/help_topics/browsertoolbox.html",
+      "app/static/help_topics/builder.html",
+      "app/static/help_topics/certificates.html",
+      "app/static/help_topics/companybranding.html",
+      "app/static/help_topics/containers.html",
+      "app/static/help_topics/create.html",
+      "app/static/help_topics/daily.html",
+      "app/static/help_topics/dashboard.html",
+      "app/static/help_topics/datetime.html",
+      "app/static/help_topics/departmentheads.html",
+      "app/static/help_topics/departments.html",
+      "app/static/help_topics/document.html",
+      "app/static/help_topics/documentimport.html",
+      "app/static/help_topics/evidence.html",
+      "app/static/help_topics/evidencereview.html",
+      "app/static/help_topics/faults.html",
+      "app/static/help_topics/fleet.html",
+      "app/static/help_topics/fleetaccess.html",
+      "app/static/help_topics/generaltasks.html",
+      "app/static/help_topics/handovercontinuity.html",
+      "app/static/help_topics/handovers.html",
+      "app/static/help_topics/https.html",
+      "app/static/help_topics/illustrations.html",
+      "app/static/help_topics/importcentre.html",
+      "app/static/help_topics/inventory.html",
+      "app/static/help_topics/inventorybuilder.html",
+      "app/static/help_topics/inventorytransfer.html",
+      "app/static/help_topics/itemjourney.html",
+      "app/static/help_topics/live.html",
+      "app/static/help_topics/logbuilder.html",
+      "app/static/help_topics/logexports.html",
+      "app/static/help_topics/logimport.html",
+      "app/static/help_topics/logreferences.html",
+      "app/static/help_topics/logs.html",
+      "app/static/help_topics/logwindows.html",
+      "app/static/help_topics/lowstock.html",
+      "app/static/help_topics/maintenance.html",
+      "app/static/help_topics/maintenancebuilder.html",
+      "app/static/help_topics/manifests.html",
+      "app/static/help_topics/navigation.html",
+      "app/static/help_topics/network.html",
+      "app/static/help_topics/offsets.html",
+      "app/static/help_topics/originals.html",
+      "app/static/help_topics/permissions.html",
+      "app/static/help_topics/phones.html",
+      "app/static/help_topics/projects.html",
+      "app/static/help_topics/qrverification.html",
+      "app/static/help_topics/qshe.html",
+      "app/static/help_topics/receiving.html",
+      "app/static/help_topics/recordmanagement.html",
+      "app/static/help_topics/records.html",
+      "app/static/help_topics/savestatus.html",
+      "app/static/help_topics/start.html",
+      "app/static/help_topics/stocktake.html",
+      "app/static/help_topics/storage.html",
+      "app/static/help_topics/support.html",
+      "app/static/help_topics/tasks.html",
+      "app/static/help_topics/toolbox.html",
+      "app/static/help_topics/toolboxbuilder.html",
+      "app/static/help_topics/toolboxguests.html",
+      "app/static/help_topics/transfers.html",
+      "app/static/help_topics/types.html",
+      "app/static/help_topics/uninstall.html",
+      "app/static/help_topics/users.html",
+      "app/static/help_topics/vessellogaccess.html",
+      "app/static/help_topics/vessellogs.html",
+      "app/static/index.html",
+      "app/static/sw.js",
+      "app/handover_overview.py",
+      "app/simple_handovers.py",
+      "app/static/handover_workspace.js",
+      "app/static/help_catalogue.json",
+      "app/static/help_workspace.js",
+      "app/static/simple_handovers.js",
+      "tests/ui29_simple/test_simple.py",
+      "app/handover_shifts.py",
+      "app/static/shift_workspace.js",
+      "tests/ui57_shifts/test_shifts.py",
+      "tests/ui58_shift_permissions/test_permissions.py",
+      "UI_PATCH.json"
+    ],
+    "scope": "Three explicit shift permission flags and current department scope. No new API routes, tables, migration, environment or persistent browser stores. Existing JSON permission/receipt schema gets additive keys; no rewrite of users, rosters or handovers."
+  }
+}

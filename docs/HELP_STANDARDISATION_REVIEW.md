@@ -1,3 +1,12 @@
+# UI58 — shift permission catalogue, scope and personal panel ownership
+
+Five bodies/outlines: Permissions, Effective access, Department heads, Handovers and Handover continuity.
+Permissions lists the actual current catalogue, dependencies, new default-off delegation and current scope.
+Handovers explains personal/Incoming/saved/advanced locations. 71 other bodies unchanged; all 76 catalogue
+entries match. Native/master PDF guides are not rebuilt; not a universal Help acceptance or total-topic score.
+
+--- Previous record ---
+
 # UI57 — Shift setup and personal assigned entry
 
 Handovers and Handover continuity articles/outlines/catalogue updated for Shifts & people, existing

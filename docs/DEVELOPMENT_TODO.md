@@ -1,3 +1,23 @@
+# Latest prepared release — UI58: explicit shift grants and focused My shift
+
+New explicit schedule/assignment permissions, plus optional all-departments scope. Non-admin defaults off;
+review existing department heads/coordinators and grant only needed actions. Current department membership,
+private-note boundaries and personal My shift still apply. Other new features already have builder and QR
+permission groups; no duplicate or blanket role promotion. No existing user/roster/record rewrite.
+
+My shift is only its own personal panel. Incoming and My saved notes render in their own tabs; the complete
+saved library/manual board remains under By day / subject. Main creation choices, schedules, files,
+publication/acknowledgement/QR/PDF and optional empty handovers stay. The user reported extra information;
+parent local test found common advanced tools beneath all tabs, not a visible incoming panel on that exact
+route. Do not claim inspection of the deployed screen or cache.
+
+Next: one permissioned coordinator + two authors own-shift/tab/mobile check, then resume section-by-section
+review. Keep UI55 refresh stability and prior approved workflows. Compact update delivery; no background work.
+Chrome-installed safe focus-existing launch remains pending. No changes to icon/PWA identity/native installers.
+No resets/reimports/browser storage clearing. Existing C01/G01 service data/IDs/settings remain separate.
+
+--- Retained previous roadmap ---
+
 # Latest prepared release: UI57 — Shifts & people / personal My shift
 
 Implemented the explicit handover coordination request: dedicated department shift setup area and
