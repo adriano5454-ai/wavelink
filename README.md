@@ -1,3 +1,11 @@
+# Wavelink UI61 — Original Files and exact source links
+
+Core **1.34.19**. Company C01 and demo G01 preserved. Read docs/WORKSPACE_UI61.md and docs/CONTINUATION_CHECKPOINT.md.
+
+Visible uploads/folders, delegated actions, source history/usage and reversible lifecycle, exact checklist/maintenance source links. Original bytes, existing references and publications remain. No resets or environment changes. Copy update contents into the existing application repository; review, commit and push.
+
+--- Retained repository/build guidance ---
+
 # Wavelink UI60 — shared browser interface
 
 Core **1.34.19**. Company C01 and demo G01 preserved. Read docs/WORKSPACE_UI60.md and docs/CONTINUATION_CHECKPOINT.md.

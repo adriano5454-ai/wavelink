@@ -1,61 +1,71 @@
-# Wavelink checkpoint — UI60 + Company C01 + G01
+# Wavelink checkpoint — UI61 + Company C01 + G01
 
-28 September 2026; core1.34.19. Implements approved UI59 shared-interface review before further section
-work. User-friendly means polished, full capabilities and consistent surrounding controls, not basic.
-No assumed live UI59/UI60; compact copy/review/commit/push; optional PS1; separate evidence.
+28 September 2026; core1.34.19. Implements approved UI60 Original Files review as one workflow.
+User-friendly means polished full capabilities, explicit action permissions, no generic routine paperwork.
+Shared UI60 controls preserved; compact copy/review/commit/push; optional PS1; separate evidence.
 
 ## Verified source
-Full UI50 + exact UI51–59 replayed:170 parent repository/1864 runtime hashes verified.
-Parent extractor 0f4ecbdaea38949e8c065e878b65f08f7c84d96020fa57816ea5aee0f034b98f.
-UI60 extractor eda0daeebd5f86d85adda30e8c825c1d8fe34a6b00573fbe7e6ad2f8f566c371.
-PatchID workspace-ui60-shared-interface-2026-09-28.
-173 changed/new runtime resources; 568 overlays; 1868 tracked runtime.
-Target172repository/171deploymentrows. Existing executable upload change only deploy/extract_source.py.
-C01entrypoint f754d4db367983a75473f1d525183b618a25c265837a317df66ffabaf8f4c1e2;
-G01gate9dc4ab6f7b7fb324ea06c305a09af8336b0bd10e7be6bef5296af1fd32d2e701;
-Nginx752563759fd82e20eacc62379f7a3082a8074675a747214a16cff0b9b90b99b8 unchanged.
+Full UI50 plus exact UI51–60; 172 parent repository files /1868 runtime files verified.
+Parent extractor eda0daeebd5f86d85adda30e8c825c1d8fe34a6b00573fbe7e6ad2f8f566c371.
+UI61 extractor 727ffd799a9b28c4be971ed84938dc2e9f3b8f70fe8ce12c11645b63e770c3c2.
+Patch ID workspace-ui61-original-files-workflow-2026-09-28.
+101 changed/new runtime resources, 575 cumulative overlays, 1875 tracked runtime.
+Target174repo/173deployment rows. Only existing executable upload change deploy/extract_source.py.
+C01entrypoint f754d4db367983a75473f1d525183b618a25c265837a317df66ffabaf8f4c1e2; gate
+9dc4ab6f7b7fb324ea06c305a09af8336b0bd10e7be6bef5296af1fd32d2e701; signingNginx
+752563759fd82e20eacc62379f7a3082a8074675a747214a16cff0b9b90b99b8 unchanged.
 
-## Implementation
-Shared interface_components.js/css, explicit selectors and topic registry. Detached markup normalized
-at existing renderer assignments, before initial mount/keyed reconciliation, not a live DOM-moving observer.
-Explicit attach only in Original Files button factories and Fleet modal opening. Help preserved by URL/ID,
-contextual accessible name, 44px outlined control, question/external icons, same new-tab/opener handling.
-Workspace heading/title/action family, common primary/secondary/destructive/view/field/notice presentation.
-Specialist layouts, semantic colours and disabled/hidden/inert rules retained. Task/Certificate scrolling
-forms use actual flex space around wrapped heading/actions, not guessed old header-height offsets.
+## Implemented
+Explicit originals.upload / originals.organise / originals.manage, all depend originals.view and defaultOFF
+for non-admins. Manage means archive/restore, NOT permanent delete. Existing administrator/revocation/access
+review retained; no role or saved policy rewritten. Native destructive change remains administrator-bound.
+Original upload and new-folder blank reason accepted genuinely; same real actor/audit/receipt, no synthetic
+reason. Other folder changes/lifecycle keep reason and explicit confirmation/current-snapshot transaction.
 
-Existing linked styles moved into ordered wlLegacy; wlComponents targets explicit components. Removed
-only two forced typography/height !important declarations in builder card actions. No new timers, observer,
-fetch, storage/session or save/permission logic. Original Library body Help removed because dialog has same
-contextual Help. Fleet button factory receives explicit btn/default-secondary; modal uses common styling.
-AST audit removes only new markup adapters and literal cache refs; other semantic exceptions are those
-explicit button factories/modal hook and SW cache/list wiring. All196appPython exactparent; report/QR/source
-services unchanged. No APIs/tables/permissions/dependencies/env/storeversions or live-data migration.
+New original_workspace read-only details/family/history/permission-filtered usage; latest100 source events,
+max500 permitted dependencies with totals, not deletion-safety proof. Authenticated/no-store GET
+/api/original-documents/{ident}/details and POST /api/original-documents/lifecycle; strict bounded request,
+exact operation+actor fingerprint, current named grant and full-library snapshot rechecked inside transaction.
+No tables/migration/dependencies/env/stores. Archived bytes/existing references never erased.
 
-PWA identity/icons/launch_handler, isolated document_join assets, company setup and native/manual surfaces
-unchanged. Existing Help navigation script exact bytes. Common backend writer/queue/authentication semantics
-unchanged; all UI59 guest/drawing/normalPDF evidence and UI58 personal shift/privacy controls retained.
-One hosted Navigation article body updated,75otherssame/all76cataloguematch. 21 trackedPDFfiles unchanged.
-New internal docs/UI_INTERFACE_STANDARD.md for future renderer/component extensions.
+Browser checklist/maintenance projection accepts OPTIONAL source_documents; omission preserves saved refs.
+Changed selections need original viewing and exact checked_refs metadata/hash. Retained archived allowed,
+new archived refused; old snapshots never rewritten. Source tab changes only in-memory draft; normal saved
+draft and explicit publication rules remain, including replacing an old stale retained draft. Source
+pictures/import controls remain protected/native. No Toolbox/other-store source-link expansion.
 
-## Completed checks
-**409 selected Python tests, 107 compound browser checks and 84 JavaScript syntax checks passed.** All 196 application Python modules remain byte-identical to UI59 and parse. The final extractor reconstructs 1868 tracked runtime files. Python groups: interface_py=19, evidence_permissions_py=127, forms_py=85, hosting_py=178. Browser groups: interface_browser=7, refresh_browser=26, participation_browser=15, signout_browser=13, tabs_browser=9, maintenance_browser=18, certificates_browser=15, fleet_browser=4. The 48 main-page style renderings are included in the interface group, not 48 additional functional checks. Expanded Fleet checks supersede the smaller two-scenario run, not duplicate it.
-Six UI55-specific cache-name assertions were deliberately deselected because that historical test hard-codes UI55 URLs; the current full main-script/stylesheet precache contract is checked in the new UI60 tests. No operational assertion was removed. Earlier development/partial runs, a test locator using #root instead of the actual #app, and a Help-click test intercepted by the existing capture handler are retained separately. A retained handover test initially waited on an already-enabled People button rather than completion of Incoming refresh; its external harness now waits for the actual reloaded content and keeps every privacy/state assertion. A guessed-header-height footer clipping issue and double-bordered toolbar disclosure were corrected before the final source freeze. The final complete selections were rerun on frozen application bytes; only additional Fleet/preview checks were added afterwards. A packaging-helper path mistake and source-audit expectation of the retired builder declarations are tooling corrections, not hidden application failures.
-Final commands/status/XML/JSON and source audits in separate evidence. Matrix16mainpages×3widths,
-actual forms and embedded Fleet. Source/helper/layer/AST and all runtime hashes verified. Existing
-signatures, localwork/signout, personal tab isolation, Maintenance/Certificates and UI55 concurrent
-refresh test retained. No inherited counts added as fresh passes; earlier refinements/failures excluded.
+Original Library inner epochs protect newer folder/upload form from late History/detail. Direct visible
+Upload/New folder, one grouped upload, direct folder create, same raw framing/hash/size/retry. Refresh retains
+dialog reading anchor/search/folder disclosure but clears selection explicitly; temporary view labelled and
+stale actions blocked; known viewing denial clears obsolete metadata without deleting unsaved form wording.
+Existing pre-send/Close/Escape/sign-out/file-busy boundaries retained. No new interval or durable draft vault.
+Uncertain close explains earlier request may commit, preserves exact retry while retained in tab.
 
-Actualassets/fictionalSQLiteTestClient, injectedfetch/hash, stagedmemory and srcdocFleet host. Not normal
-live navigation/durableIDB/SW/physical/Windows/native/fullsuite/securityaccessibilityload/Docker/offhost
-acceptance. No current real-user account/credential/settings accessed or remote deployment.
+Seven existing Python modules change plus one new original_workspace; source audit records exact names/count.
+All report/invitation/signature/handovers/store/account/operational writers not needed by this scope unchanged.
+UI60 component/helper bytes, UI55 quiet caching, UI58 personal shifts and UI59 participation/PDFs retained.
+Five Help bodies/outlines (originals,browsertemplates,browseradmin,permissions,accessreview) updated;71same,
+76catalogue matches. New docs/ORIGINAL_FILES_BROWSER.md. Existing PDFs/native/PWA unchanged.
+
+## Tests / limitations
+**426 selected Python tests, 60 compound browser checks and 84 JavaScript syntax checks passed.** All 197 application Python modules parse; 189 existing modules are byte-identical to UI60. The frozen source has 1875 tracked runtime files. Python groups: originals_py=70, retained_authoring_py=83, shared_permissions_py=95, hosting_py=178. Browser groups: originals_browser=14, interface_browser=7, refresh_browser=26, signout_browser=13. The 16-workspace × three-width interface comparison is inside the interface group, not 48 additional functional tests. The shared-refresh group includes the normal 33.5-second concurrent timer check.
+
+Four historical browser-authoring release assertions were reproduced failing on untouched UI60 and explicitly excluded from the current authoring selection; they are not claimed repaired or passed. The old UI60 hard-coded cache-label test is deselected, with its complete main-asset precache/storage-identity checks retained in a new UI61 contract. Two directly superseded blank-reason rejection fixtures now exercise invalid boolean reasons instead, retaining type and safety assertions. Early new-test assumptions about empty checklist items, retained stale drafts and a helper-variable typo were corrected without bypassing the saved-draft publication rules. During development, removing a chosen source initially left its Link button disabled; the UI now immediately allows deliberate re-adding, with a regression check. An inherited sign-out browser script still used the retired Upload new original button label; its external copy uses Upload original and keeps the original text/pending-work assertions. All final selected groups were rerun on the final frozen application after that source refinement. Earlier failed, partial or superseded runs remain separate and are excluded from the final totals. An unrelated container spreadsheet-startup warning did not prevent the completed application runs.
+
+Final source hashes, checks, commands and archive replay are authoritative; do not add earlier counts.
+Actual assets/fictional SQLite/TestClient, controlled fetch/hash/staged memory store, test-only SHA256 shim
+for insecure set_content origin. Not actual TLS/WebCrypto/navigation/durableIDB/SW/installedChrome/physical/
+WindowsPowerShell/native/fullsuite/securityaccessibilityload/Docker/offhost acceptance. No live company
+data/credentials, no deployment or permission changes. Existing PDF/report renderers not modified/tested
+as a new report-design acceptance; original byte fidelity checked through real source download APIs.
 
 ## Preserve / next
-Activated Sulmara C01 IDs/domain/disk/marker INITIALISE_COMPANY=NO removedbootstrap; independentG01demo
-settings/domain/disk/guest;backup/approvedcommit/.git/outsideedits/unsentmain+separatelogwork. No reset,
-reimport/storageclear/syncdisable/repeatsetup/incompatiblepreC01/preUI34writer. Source rollback cannot
-recover deliberately discarded local work. Save/keep editors before reload after deployment.
-One cross-section Help/control/form/mobile/refresh/personalshift/oldsignature acceptance session, then
-resume deeper Original Files and Fleet/Manifests/Receiving reviews without undoing the shared standard.
-Chrome focus-existing-window remains pending; do not kill/reload unsaved windows. Full current manuals,
-advanced imports/evidence and production/recovery work remain separately scoped. No automatic background work.
+Keep activated Sulmara C01 IDs/domain/dedicateddisk/marker INITIALISE_COMPANY=NO removedbootstrap; separate
+G01demo settings/domain/disk/guest; approvedcommit/backup/.git/outside edits/unsentmain+separatelogwork.
+No reset/reimport/storageclear/syncdisable/repeatsetup/incompatiblepreC01/preUI34 evidence writers.
+After granting actions, preserve work and sign back in as same account. No forced reinstall/icon reset.
+Any source rollback loses delegated Original Files support and browser source editing; review authority
+and retained local proposals first, never roll database back merely for UI. Original evidence stays exact.
+First fictional upload/folder/revision/link/history/lifecycle/refresh/phone acceptance; then coordinated
+Fleet/Manifests/Receiving review. Chrome focus-existing remains separately pending without closing/reloading
+unsent windows. Wider roadmap retained in DEVELOPMENT_TODO. No automatic background development.

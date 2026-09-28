@@ -1,3 +1,11 @@
+# Current roadmap — UI61
+
+Delivered: complete reviewed Original Files browser workflow: safe inner views, simple first uploads/folders, explicit action permissions, exact family/history/usage, archive/restore and deliberate draft links from checklist/maintenance builders. Preserve immutable originals and published references. No permanent browser deletion, automatic conversion or new private-folder model.
+
+Next: one fictional delegated upload/folder/revision/source-link/publish/lifecycle/refresh/phone acceptance. Then coordinated Fleet/Manifests/Receiving and vessel-log review. Chrome safe focus-existing remains pending; do not close/reload unsent windows. Retain UI60 common components, UI59 normal participant/signature PDFs, UI58 personal shifts, quiet background caching and the remaining roadmap. No automatic background work or remote actions.
+
+--- Prior roadmap retained ---
+
 # Current roadmap — UI60
 
 Delivered: shared main-workspace/Fleet Help and control/heading/form presentation. Explicit reusable component contract in derived docs/UI_INTERFACE_STANDARD.md; no new DOM-moving observer, timers or operational writes. Keep specialist tables, meaningful event/status colors and all current capabilities. Preserve UI59 participants/drawings in normal views/PDFs, UI58 personal shifts and permissions, UI55 quiet cache writes.

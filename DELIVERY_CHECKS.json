@@ -1,36 +1,35 @@
 {
   "format": "wavelink-selected-delivery-checks-1",
   "core": "1.34.19",
-  "workspace": "UI60",
+  "workspace": "UI61",
   "company": "C01",
   "gateway": "G01",
   "python_groups": {
-    "interface_py": 19,
-    "evidence_permissions_py": 127,
-    "forms_py": 85,
+    "originals_py": 70,
+    "retained_authoring_py": 83,
+    "shared_permissions_py": 95,
     "hosting_py": 178
   },
-  "python_passed": 409,
+  "python_passed": 426,
   "browser_groups": {
+    "originals_browser": 14,
     "interface_browser": 7,
     "refresh_browser": 26,
-    "participation_browser": 15,
-    "signout_browser": 13,
-    "tabs_browser": 9,
-    "maintenance_browser": 18,
-    "certificates_browser": 15,
-    "fleet_browser": 4
+    "signout_browser": 13
   },
-  "browser_checks_passed": 107,
-  "main_layout_comparisons": 48,
+  "browser_checks_passed": 60,
   "javascript_syntax_passed": 84,
-  "python_modules_parsed_and_unchanged": 196,
-  "exclusions_and_refinement": "Six UI55-specific cache-name assertions were deliberately deselected because that historical test hard-codes UI55 URLs; the current full main-script/stylesheet precache contract is checked in the new UI60 tests. No operational assertion was removed. Earlier development/partial runs, a test locator using #root instead of the actual #app, and a Help-click test intercepted by the existing capture handler are retained separately. A retained handover test initially waited on an already-enabled People button rather than completion of Incoming refresh; its external harness now waits for the actual reloaded content and keeps every privacy/state assertion. A guessed-header-height footer clipping issue and double-bordered toolbar disclosure were corrected before the final source freeze. The final complete selections were rerun on frozen application bytes; only additional Fleet/preview checks were added afterwards. A packaging-helper path mistake and source-audit expectation of the retired builder declarations are tooling corrections, not hidden application failures.",
+  "python_modules_parsed": 197,
+  "unchanged_existing_python_modules": 189,
+  "main_layout_comparisons": 48,
+  "exclusions_and_refinements": "Four historical browser-authoring release assertions were reproduced failing on untouched UI60 and explicitly excluded from the current authoring selection; they are not claimed repaired or passed. The old UI60 hard-coded cache-label test is deselected, with its complete main-asset precache/storage-identity checks retained in a new UI61 contract. Two directly superseded blank-reason rejection fixtures now exercise invalid boolean reasons instead, retaining type and safety assertions. Early new-test assumptions about empty checklist items, retained stale drafts and a helper-variable typo were corrected without bypassing the saved-draft publication rules. During development, removing a chosen source initially left its Link button disabled; the UI now immediately allows deliberate re-adding, with a regression check. An inherited sign-out browser script still used the retired Upload new original button label; its external copy uses Upload original and keeps the original text/pending-work assertions. All final selected groups were rerun on the final frozen application after that source refinement. Earlier failed, partial or superseded runs remain separate and are excluded from the final totals. An unrelated container spreadsheet-startup warning did not prevent the completed application runs.",
   "not_full_suite": true,
   "limitations": [
-    "Fictional SQLite/TestClient, controlled fetch/hash and staged in-memory storage; Fleet uses srcdoc host simulation.",
-    "Help target/rel/focus/no-submit checked with native navigation suppressed, not live tab preferences.",
-    "No real company data/credentials, durable IndexedDB, service-worker lifecycle, native Windows, installed Chrome or physical-device acceptance.",
-    "No full security/accessibility/load, Docker/off-host recovery or remote deployment claim."
+    "Fictional SQLite/TestClient; controlled fetch, simulated hash routing and staged memory storage.",
+    "Original upload browser fixture supplies test SHA-256 at its insecure set_content origin; not actual HTTPS/WebCrypto acceptance.",
+    "No live Sulmara/demo, credentials, disk, GitHub/Render or deployment actions.",
+    "No physical device, actual Chrome installation, native Windows/PowerShell, durable IndexedDB or service-worker lifecycle acceptance.",
+    "No full security/accessibility/load, Docker or accepted off-host recovery result.",
+    "Current report and historical guide renderers/files unchanged; exact synthetic original bytes tested, not a new operational report review."
   ]
 }
