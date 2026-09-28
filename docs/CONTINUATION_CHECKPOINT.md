@@ -1,79 +1,61 @@
-# Wavelink checkpoint — UI58 + Company C01 + G01
+# Wavelink checkpoint — UI60 + Company C01 + G01
 
-28 September 2026; core1.34.19. User asks explicit permissions for new actions such as creating shifts,
-then interrupts to report too much unrelated information under My shift. Both treated as one update.
-Polished/full capabilities, user-friendly not basic; compact GitHub copy/review/commit/push, PS1 optional.
+28 September 2026; core1.34.19. Implements approved UI59 shared-interface review before further section
+work. User-friendly means polished, full capabilities and consistent surrounding controls, not basic.
+No assumed live UI59/UI60; compact copy/review/commit/push; optional PS1; separate evidence.
 
 ## Verified source
-Exact UI57 over full UI50 and verified UI51–57; 166 parent repository files/1856 runtime hashes checked.
-Parent extractor0eb0cfca3ca0955f710f4e10dbc227f5ba2ced3f015597b464e8897ce7e9a0a1.
-UI58 extractor b26af15ffa197f2ef92f8dd04411d658b19b37c9f7c7cecda9864bc80d171a86.
-PatchID workspace-ui58-explicit-shift-permissions-2026-09-28.
-95 incremental resources / 542 overlays / 1857 tracked runtime.
-Target168repo/167deployment rows. Only existing executable repository change deploy/extract_source.py.
-C01entrypointf754d4db367983a75473f1d525183b618a25c265837a317df66ffabaf8f4c1e2;
+Full UI50 + exact UI51–59 replayed:170 parent repository/1864 runtime hashes verified.
+Parent extractor 0f4ecbdaea38949e8c065e878b65f08f7c84d96020fa57816ea5aee0f034b98f.
+UI60 extractor eda0daeebd5f86d85adda30e8c825c1d8fe34a6b00573fbe7e6ad2f8f566c371.
+PatchID workspace-ui60-shared-interface-2026-09-28.
+173 changed/new runtime resources; 568 overlays; 1868 tracked runtime.
+Target172repository/171deploymentrows. Existing executable upload change only deploy/extract_source.py.
+C01entrypoint f754d4db367983a75473f1d525183b618a25c265837a317df66ffabaf8f4c1e2;
 G01gate9dc4ab6f7b7fb324ea06c305a09af8336b0bd10e7be6bef5296af1fd32d2e701;
 Nginx752563759fd82e20eacc62379f7a3082a8074675a747214a16cff0b9b90b99b8 unchanged.
 
-## Explicit permissions
-Three new keys: handovers.shifts_manage (schedule names/hours/site/basis), handovers.shifts_assign
-(people in existing schedule), handovers.shifts_all_departments (scope extension, not an action).
-Base handovers.view dependency; extension requires at least one action. Defaults all OFF for non-admins,
-including existing heads and supervisors. No automatic user/role/roster rewrite. Admin retains all.
-No implicit department-head fallback. Administrator reviews old coordinators once and grants deliberately.
-Permission edits retain meaningful reason and session revocation; no new session/authentication policy.
-Existing policy JSON/additive operation receipt keys, no new table/schema/API/env/dependency/browser store.
+## Implementation
+Shared interface_components.js/css, explicit selectors and topic registry. Detached markup normalized
+at existing renderer assignments, before initial mount/keyed reconciliation, not a live DOM-moving observer.
+Explicit attach only in Original Files button factories and Fleet modal opening. Help preserved by URL/ID,
+contextual accessible name, 44px outlined control, question/external icons, same new-tab/opener handling.
+Workspace heading/title/action family, common primary/secondary/destructive/view/field/notice presentation.
+Specialist layouts, semantic colours and disabled/hidden/inert rules retained. Task/Certificate scrolling
+forms use actual flex space around wrapped heading/actions, not guessed old header-height offsets.
 
-Scope is current active membership unless explicit all-department extension. That scope applies to
-coordination only: private notes, personal handover creation outside membership, My shift assignments,
-user administration and other modules retain their own boundaries. Schedule/assign-only UI differences
-match actual backend changed-field validation. A coordinator does not need handovers.create but newly
-assigned authors do. Retained unchanged unavailable members remain; new/reassigned ones must be eligible.
-Schedule-only cannot shorten shifts by removing assignments. Exact-operation retries require current
-scope and original action grants; no recreated requests or assignment drops to recover uncertain saves.
+Existing linked styles moved into ordered wlLegacy; wlComponents targets explicit components. Removed
+only two forced typography/height !important declarations in builder card actions. No new timers, observer,
+fetch, storage/session or save/permission logic. Original Library body Help removed because dialog has same
+contextual Help. Fleet button factory receives explicit btn/default-secondary; modal uses common styling.
+AST audit removes only new markup adapters and literal cache refs; other semantic exceptions are those
+explicit button factories/modal hook and SW cache/list wiring. All196appPython exactparent; report/QR/source
+services unchanged. No APIs/tables/permissions/dependencies/env/storeversions or live-data migration.
 
-Access review and actual permission editor show groups/hints. Existing five builder and three QR flags
-are reused, not duplicated. Operational preset excludes all-departments shift scope and backups.
-Five existing appPython changed: access, access_review, simple_handovers (coordination functions only),
-handover_overview projection and handover_shifts._rows. 189 existing Python modules unchanged,194total.
-SimpleHandovers.open/action, original note editor, evidence/QR/reports/transfer/routes unchanged.
+PWA identity/icons/launch_handler, isolated document_join assets, company setup and native/manual surfaces
+unchanged. Existing Help navigation script exact bytes. Common backend writer/queue/authentication semantics
+unchanged; all UI59 guest/drawing/normalPDF evidence and UI58 personal shift/privacy controls retained.
+One hosted Navigation article body updated,75otherssame/all76cataloguematch. 21 trackedPDFfiles unchanged.
+New internal docs/UI_INTERFACE_STANDARD.md for future renderer/component extensions.
 
-## Personal tab isolation
-Parent UI57 actual-asset check: incoming panel hidden in tested My shift route, but eagerly rendered
-(37descendants), and common All saved handovers & advanced tools visible on every tab. User's exact
-live/install version was not inspected, so don't claim all incoming symptoms were independently reproduced.
-UI58 incoming/saved-note content rendered only on their selected tab, removed otherwise; tab-owned hidden
-and inert state plus scoped CSS. Common legacy daily/library tools only in By day / subject disclosure.
-My shift retains own occurrence/record/direct action/datefallback and creation choices; duplicate header
-team/advanced/globalrefresh and duplicate ready-card shortcuts omitted only there because tabs/personal
-refresh retain access. Incoming acknowledgement not deleted or moved into own notes. No automatic saves.
+## Completed checks
+**409 selected Python tests, 107 compound browser checks and 84 JavaScript syntax checks passed.** All 196 application Python modules remain byte-identical to UI59 and parse. The final extractor reconstructs 1868 tracked runtime files. Python groups: interface_py=19, evidence_permissions_py=127, forms_py=85, hosting_py=178. Browser groups: interface_browser=7, refresh_browser=26, participation_browser=15, signout_browser=13, tabs_browser=9, maintenance_browser=18, certificates_browser=15, fleet_browser=4. The 48 main-page style renderings are included in the interface group, not 48 additional functional checks. Expanded Fleet checks supersede the smaller two-scenario run, not duplicate it.
+Six UI55-specific cache-name assertions were deliberately deselected because that historical test hard-codes UI55 URLs; the current full main-script/stylesheet precache contract is checked in the new UI60 tests. No operational assertion was removed. Earlier development/partial runs, a test locator using #root instead of the actual #app, and a Help-click test intercepted by the existing capture handler are retained separately. A retained handover test initially waited on an already-enabled People button rather than completion of Incoming refresh; its external harness now waits for the actual reloaded content and keeps every privacy/state assertion. A guessed-header-height footer clipping issue and double-bordered toolbar disclosure were corrected before the final source freeze. The final complete selections were rerun on frozen application bytes; only additional Fleet/preview checks were added afterwards. A packaging-helper path mistake and source-audit expectation of the retired builder declarations are tooling corrections, not hidden application failures.
+Final commands/status/XML/JSON and source audits in separate evidence. Matrix16mainpages×3widths,
+actual forms and embedded Fleet. Source/helper/layer/AST and all runtime hashes verified. Existing
+signatures, localwork/signout, personal tab isolation, Maintenance/Certificates and UI55 concurrent
+refresh test retained. No inherited counts added as fresh passes; earlier refinements/failures excluded.
 
-No extra timer or forced shift-boundary navigation. Current account/route/read/dialog guards remain;
-late personal reply cannot switch tabs. Parent personal clock/occurrence functions unchanged. All notes
-remain optional. New explicit workspace error is visible without opening hidden advanced tools.
-Five hosted Help bodies/outlines/catalogue updated (permissions, accessreview, departmentheads, handovers,
-handovercontinuity);71others unchanged/76entries match. No native/masterPDF redesign.
-
-## Actual checks
-**575 selected Python tests, 78 compound browser checks and 81 JavaScript syntax checks passed.** All 194 application Python modules parse; 189 remain unchanged. The frozen runtime contains 1857 tracked files. Python groups: permissions_py=222, handover_history_py=175, hosting_py=178. Browser groups: permissions_browser=9, tabs_browser=9, shifts_browser=19, certificates_browser=15, refresh_browser=26. Selected checks, not full-suite or live acceptance.
-
-Final counted tests use frozen source after the interruption's panel fix. Earlier initial/pre-interruption
-runs and fixture failures excluded; complete parent tabs observation separate from passing fix checks.
-Source-audit pre-setup span assertion corrected to actual mountEditor span (unchanged); old board wording
-is explicitly changed. No unrelated historical failure declared fixed. Exact commands/frozen-source/ZIP
-replay in verification. Actual-assetsTestClient/injectedfetch/hash/stagedmemory; not normalnavigation,
-durableIDB/SW/livecompany/physical/WindowsPowerShell/native/fullsuite/securityaccessibilityload/Docker/
-offhost acceptance. Report renderer unchanged, not newly exercised as report acceptance. No remote actions.
+Actualassets/fictionalSQLiteTestClient, injectedfetch/hash, stagedmemory and srcdocFleet host. Not normal
+live navigation/durableIDB/SW/physical/Windows/native/fullsuite/securityaccessibilityload/Docker/offhost
+acceptance. No current real-user account/credential/settings accessed or remote deployment.
 
 ## Preserve / next
-Activated Sulmara C01 ID/domain/dedicateddisk/marker INITIALISE_COMPANY=NO removedbootstrap; independent
-G01demo users/settings/domain/disk; backups/approvedcommit/.git/outsideedits/unsentmain+separatelogwork.
-No reset/reimport/site-data clearing/sync disabling/repeatsetup/incompatible preC01/preUI34 writers.
-Older UI57 restores implicit head shift authority; review permissions before any source rollback, never
-rollback data to obtain interface. No assumed live UI58. After update grant needed non-admin shift roles
-and sign back in with same account. One permission/ownshift/tab/mobile acceptance then section review.
-Chrome install confirmed; old desktop shortcut is chrome_proxy/Default/app-ID from prior record, presumed
-demo by offline calculation not live inspection. Supplied ICO is appearance-only; focus-existing safe
-launch remains pending and no PWA/native icon/launch changes here. Do not close/reload unsent app windows.
-Widerroadmap retained in DEVELOPMENT_TODO. Nativevessel/CCVD/cloudsync/localnetwork out of scope; no
-background development or implied monitoring.
+Activated Sulmara C01 IDs/domain/disk/marker INITIALISE_COMPANY=NO removedbootstrap; independentG01demo
+settings/domain/disk/guest;backup/approvedcommit/.git/outsideedits/unsentmain+separatelogwork. No reset,
+reimport/storageclear/syncdisable/repeatsetup/incompatiblepreC01/preUI34writer. Source rollback cannot
+recover deliberately discarded local work. Save/keep editors before reload after deployment.
+One cross-section Help/control/form/mobile/refresh/personalshift/oldsignature acceptance session, then
+resume deeper Original Files and Fleet/Manifests/Receiving reviews without undoing the shared standard.
+Chrome focus-existing-window remains pending; do not kill/reload unsaved windows. Full current manuals,
+advanced imports/evidence and production/recovery work remain separately scoped. No automatic background work.

@@ -1,3 +1,21 @@
+# Current roadmap — UI60
+
+Delivered: shared main-workspace/Fleet Help and control/heading/form presentation. Explicit reusable component contract in derived docs/UI_INTERFACE_STANDARD.md; no new DOM-moving observer, timers or operational writes. Keep specialist tables, meaningful event/status colors and all current capabilities. Preserve UI59 participants/drawings in normal views/PDFs, UI58 personal shifts and permissions, UI55 quiet cache writes.
+
+Next: one cross-section desktop/phone Help/control/open-form/refresh acceptance, then deeper Original Files and Fleet/Manifests/Receiving reviews. Native/isolated signing/company-setup/historical-guide surfaces are not silently redesigned. Chrome focus-existing-window remains separate; never kill or reload unsaved work to enforce one window. Keep current company/demo data and outside edits. No automatic background development.
+
+--- Prior roadmap retained ---
+
+# Current roadmap — UI59
+
+Delivered: exact saved guest participation/drawings in normal Toolbox/Handover views and PDFs, authorised per-revision journal projection; existing UI58 evidence read without re-signing. Section-specific local forms, Toolbox builder discovery and read/pre-send/post-save guards; current browser Help/Contact and visible-label consistency. Historic manuals clearly labelled, not rewritten.
+
+Next: one actual named creator + fictional visitor/old receipt/normal PDF/module-draft/mobile acceptance. Do not assume the reported live signature committed; preserve receipt and exact revision. Deeper Original Files routine folder/upload review and Fleet/Manifests/Receiving/standalone logout remain complete section work. Chrome-installed focus-existing main-window remains pending, not a kill/reload workaround. Preserve UI58 explicit shift grants and personal My shift. Do not disable synchronization or change company data to obtain a screen change.
+
+No automatic background development or live deployment. Keep grouped, full-capability workflows; no repeated routine reasons. Evidence, identity/permissions, unknown local fields and historical formats stay protected.
+
+--- Prior roadmap retained ---
+
 # Latest prepared release — UI58: explicit shift grants and focused My shift
 
 New explicit schedule/assignment permissions, plus optional all-departments scope. Non-admin defaults off;

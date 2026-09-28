@@ -1,3 +1,19 @@
+# UI60 — shared browser Help component
+
+One outlined 44px Help control with preserved contextual URLs, new-tab/opener behavior, consistent headings, actions, view selectors, fields/focus and dialogs. 16 main landing pages compared at 1440/390/320px; original library/dialog and Fleet surfaces checked separately. Inline descriptive Help links and the Help reader keep their distinct navigation. One Navigation article body updated,75 unchanged,all76 catalogue entries match. Historical PDF/manual bytes not rewritten. No native Windows or installed Chrome claim.
+
+Six UI55-specific cache-name assertions were deliberately deselected because that historical test hard-codes UI55 URLs; the current full main-script/stylesheet precache contract is checked in the new UI60 tests. No operational assertion was removed. Earlier development/partial runs, a test locator using #root instead of the actual #app, and a Help-click test intercepted by the existing capture handler are retained separately. A retained handover test initially waited on an already-enabled People button rather than completion of Incoming refresh; its external harness now waits for the actual reloaded content and keeps every privacy/state assertion. A guessed-header-height footer clipping issue and double-bordered toolbar disclosure were corrected before the final source freeze. The final complete selections were rerun on frozen application bytes; only additional Fleet/preview checks were added afterwards. A packaging-helper path mistake and source-audit expectation of the retired builder declarations are tooling corrections, not hidden application failures.
+
+--- Previous review retained ---
+
+# UI59 — current browser guidance and historical references
+
+12 article bodies updated: browseradmin, certificates, departments, handovercontinuity, handovers, inventory, maintenance, start, toolbox, toolboxbuilder, toolboxguests, users. 64 other article bodies unchanged; all 76 normalized text/headings match the search catalogue. Reference-link labels outside article bodies changed across the reader. The old PDF/long-form guides remain historical references; all 21 tracked PDFs are byte-identical. This is not a full native/manual review.
+
+After a final PDF inspection, normal participant rows were kept together with their saved mark and receipt; oversized details can still flow across pages without truncation, and handover section headings stay with their text. Two regression cases cover normal and oversized rows. All selected application/hosting and browser groups were rerun on the final frozen source after this refinement and the earlier Help correction. Additional source/package and old-evidence reopening checks are repeats, not extra unique coverage. Earlier failed or superseded runs, including text-extraction whitespace fixture corrections, are retained separately and excluded; no unrelated historical failure is claimed fixed.
+
+--- Previous review record ---
+
 # UI58 — shift permission catalogue, scope and personal panel ownership
 
 Five bodies/outlines: Permissions, Effective access, Department heads, Handovers and Handover continuity.

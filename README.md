@@ -1,3 +1,19 @@
+# Wavelink UI60 — shared browser interface
+
+Core **1.34.19**. Company C01 and demo G01 preserved. Read docs/WORKSPACE_UI60.md and docs/CONTINUATION_CHECKPOINT.md.
+
+Common Help, headings, action/view/form presentation; all existing application Python, authority, data and report semantics retained. No reset or environment change. Copy the supplied GitHub files into the existing application repository, review, commit and push.
+
+--- Retained repository/build guidance ---
+
+# Wavelink UI59 — participants, signatures and browser consistency
+
+Current application core **1.34.19**, Company C01 and G01 retained. Read docs/WORKSPACE_UI59.md and docs/CONTINUATION_CHECKPOINT.md.
+
+New normal document participation/PDF projections read existing saved evidence. No data reset, guest-account creation, mandatory re-signing or environment change. Update by copying the supplied GitHub files into the existing application repository and committing/pushing.
+
+--- Retained repository/build guidance ---
+
 # Wavelink UI58 — explicit shift permissions and a focused My shift
 
 **Core 1.34.19 · UI58 · Company C01 and demo G01 preserved · 28 September 2026.**
