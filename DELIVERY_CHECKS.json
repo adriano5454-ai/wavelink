@@ -2,208 +2,129 @@
   "release": "UI56 + Company C01 + G01",
   "core": "1.34.19",
   "parent": "UI55 + Company C01 + G01",
-  "python_passed": 456,
+  "python_passed": 383,
   "python_groups": {
-    "certificates_py": 101,
-    "extra_files_py": 5,
-    "stability_py": 93,
-    "maintenance_py": 79,
+    "certificates_py": 109,
+    "preserved_py": 96,
     "hosting_py": 178
   },
-  "compound_browser_passed": 73,
+  "compound_browser_passed": 59,
   "browser_groups": {
-    "certificates_browser": 20,
-    "certificate_form_browser": 14,
-    "refresh_browser": 26,
-    "signout_browser": 13
+    "certificates_browser": 15,
+    "maintenance_browser": 18,
+    "refresh_browser": 26
   },
-  "integrated_service_report_checks": 8,
+  "additional_service_report_checks": 9,
   "javascript_syntax_passed": 80,
   "application_python_parsed": 193,
-  "runtime_files": 1851,
+  "application_python_unchanged": 191,
+  "runtime_files": 1852,
   "commands": [
     {
       "name": "certificates_py",
-      "pid": 9352,
+      "pid": 8505,
       "command": [
         "python",
         "-m",
         "pytest",
-        "-q",
-        "-p",
-        "no:cacheprovider",
-        "tests/ui37_certificates/test_register.py",
-        "tests/asset_workspace/test_summary.py",
+        "tests/ui37_certificates",
+        "tests/asset_workspace",
         "tests/ui56_certificates",
+        "--ignore=tests/asset_workspace/test_native.py",
+        "-q",
+        "--disable-warnings",
         "--junitxml=/mnt/data/ui56_work/evidence/final/certificates_py.xml"
       ],
       "cwd": "/mnt/data/ui56_work/frozen"
     },
     {
-      "name": "extra_files_py",
-      "pid": 9353,
+      "name": "preserved_py",
+      "pid": 8506,
       "command": [
         "python",
         "-m",
         "pytest",
-        "-q",
-        "-p",
-        "no:cacheprovider",
-        "/mnt/data/ui56_work/review/scripts/test_extra_certificates.py",
-        "--junitxml=/mnt/data/ui56_work/evidence/final/extra_files_py.xml"
-      ],
-      "cwd": "/mnt/data/ui56_work/frozen"
-    },
-    {
-      "name": "stability_py",
-      "pid": 9354,
-      "command": [
-        "python",
-        "-m",
-        "pytest",
-        "-q",
-        "-p",
-        "no:cacheprovider",
-        "tests/ui55_refresh",
-        "tests/save_status/test_status.py",
-        "tests/ui45_review/test_review.py",
-        "tests/ui31_presence/test_presence.py",
+        "tests/ui54_maintenance",
+        "tests/ui53_inventory",
+        "tests/ui52_notes",
         "-k",
-        "not test_shell_version_and_api_cache_exclusion and not test_preserved_account_and_operational_rules_match_126",
-        "--junitxml=/mnt/data/ui56_work/evidence/final/stability_py.xml"
-      ],
-      "cwd": "/mnt/data/ui56_work/frozen"
-    },
-    {
-      "name": "maintenance_py",
-      "pid": 9355,
-      "command": [
-        "python",
-        "-m",
-        "pytest",
+        "not test_module_is_loaded_before_maintenance_and_cached",
         "-q",
-        "-p",
-        "no:cacheprovider",
-        "tests/ui36_maintenance/test_maintenance_routine.py",
-        "tests/maintenance_cycles/test_cycles.py",
-        "--junitxml=/mnt/data/ui56_work/evidence/final/maintenance_py.xml"
+        "--disable-warnings",
+        "--junitxml=/mnt/data/ui56_work/evidence/final/preserved_py.xml"
       ],
       "cwd": "/mnt/data/ui56_work/frozen"
     },
     {
       "name": "hosting_py",
-      "pid": 9356,
+      "pid": 8507,
       "command": [
         "python",
         "-m",
         "pytest",
-        "-q",
-        "-p",
-        "no:cacheprovider",
         "tests/test_company_c01.py",
         "tests/test_gate.py",
         "tests/test_public_entry_g01.py",
         "tests/test_provision.py",
         "tests/test_package.py",
+        "-q",
         "--junitxml=/mnt/data/ui56_work/evidence/final/hosting_py.xml"
       ],
       "cwd": "/mnt/data/ui56_work/repo"
     },
     {
       "name": "certificates_browser",
-      "pid": 9357,
+      "pid": 8508,
       "command": [
         "python",
         "-u",
-        "/mnt/data/ui56_work/browser_checks.py"
+        "/mnt/data/ui56_work/scripts/browser_certificates.py"
       ],
       "cwd": "/mnt/data/ui56_work/frozen"
     },
     {
-      "name": "parent_exclusions",
-      "pid": 9358,
-      "command": [
-        "python",
-        "-m",
-        "pytest",
-        "-q",
-        "-p",
-        "no:cacheprovider",
-        "tests/save_status/test_status.py::test_shell_version_and_api_cache_exclusion",
-        "tests/save_status/test_status.py::test_preserved_account_and_operational_rules_match_126",
-        "--junitxml=/mnt/data/ui56_work/evidence/final/parent_exclusions.xml"
-      ],
-      "cwd": "/mnt/data/ui56_work/parent_runtime"
-    },
-    {
-      "name": "audit",
-      "pid": 10481,
-      "command": [
-        "python",
-        "/mnt/data/ui56_work/audit.py"
-      ],
-      "cwd": "/mnt/data/ui56_work/frozen"
-    },
-    {
-      "name": "certificate_form_browser",
-      "pid": 10482,
+      "name": "maintenance_browser",
+      "pid": 8555,
       "command": [
         "python",
         "-u",
-        "/mnt/data/ui56_work/retained/browser_form.py",
-        "/mnt/data/ui56_work/evidence/final/certificate_form_browser"
+        "/mnt/data/ui56_work/scripts/maintenance_browser/browser_maintenance.py"
       ],
       "cwd": "/mnt/data/ui56_work/frozen"
     },
     {
       "name": "refresh_browser",
-      "pid": 10483,
+      "pid": 8556,
       "command": [
         "python",
         "-u",
-        "/mnt/data/ui56_work/retained/browser_refresh.py"
+        "/mnt/data/ui56_work/scripts/refresh_browser/browser_checks.py"
       ],
       "cwd": "/mnt/data/ui56_work/frozen"
     },
     {
-      "name": "signout_browser",
-      "pid": 10484,
+      "name": "reports",
+      "pid": 8557,
       "command": [
         "python",
         "-u",
-        "/mnt/data/ui56_work/frozen/tests/ui45_review/browser_signout.py",
-        "/mnt/data/ui56_work/evidence/final/signout_browser"
-      ],
-      "cwd": "/mnt/data/ui56_work/frozen"
-    },
-    {
-      "name": "services_report",
-      "pid": 10485,
-      "command": [
-        "python",
-        "-u",
-        "/mnt/data/ui56_work/retained/services.py"
+        "/mnt/data/ui56_work/scripts/report_checks.py"
       ],
       "cwd": "/mnt/data/ui56_work/frozen"
     }
   ],
   "selected_not_full_suite": true,
-  "application_test_source": "fresh final extractor; all counted selections rerun after final source refinement",
-  "preliminary_runs_excluded": [
-    "Timed initial service attempt and development admin-header fixture KeyError",
-    "Nonexistent initial maintenance test-directory argument",
-    "Earlier broader maintenance invocation: 79 passed but 5 native-window tests errored connecting to display; complete final server-only selection rerun",
-    "Nested-function source-audit expectation corrected to include Certificate-scoped stage/schedule guards",
-    "Retained certificate form browser initially completed with async bridge teardown warnings; clean complete retry retained",
-    "Pre-styling and pre-obsolete-error callback full runs superseded",
-    "Two historical save-status shell-version/backend-hash invariants reproduced failing on untouched UI55 and excluded, not fixed"
+  "application_test_source": "Fresh frozen runtime after final cache reference alignment; subsequent external PDF comparison did not change application source.",
+  "excluded": [
+    "Historical Maintenance test hard-codes UI54 cache and fails on untouched UI55; explicitly deselected, not fixed.",
+    "Three native Tk initialisation errors in initial broader headless run; native window suite excluded from final selection.",
+    "Initial fixture actor signature/root ID/held response mistakes, no-tests collection path typo, superseded cache wiring mismatch and successful pre-alignment runs retained separately."
   ],
   "limitations": [
-    "Shipped assets and fictional SQLite/TestClient services, not live Sulmara/demo records",
-    "Injected fetch/hash routing and staged in-memory local transactions, not durable IndexedDB or real navigation",
-    "Retained UI55 original timers scheduled concurrently for 33.5s; no real WebSocket or service-worker acceptance",
-    "No native-window, physical device/camera, Windows/PowerShell, full-suite, full security/accessibility/load, Docker or accepted off-host recovery",
-    "No antivirus, source authentication, automatic reminders, registry batch export or PDF extraction added"
+    "Fictional SQLite/TestClient and shipped assets with controlled fetch/hash/staged memory, not actual live browser navigation or durable IndexedDB.",
+    "Shared timers exercised at original intervals for 33.5 seconds with controlled local cache latency, not endurance/load/SW/real WebSocket acceptance.",
+    "No live company, GitHub/Render deployment, physical phone, Windows/PowerShell/installer, full-suite/security/accessibility/load, Docker or off-host recovery.",
+    "No installed-shortcut target or actual app-install method identified; icon/window behaviour remains a separately recorded request."
   ],
   "deployment_performed": false
 }

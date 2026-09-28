@@ -1,73 +1,64 @@
-# Wavelink checkpoint — UI56 + Company C01 + working G01
+# Wavelink checkpoint — UI56 + Company C01 + G01
 
-28 September2026; core1.34.19. Approved UI55 Certificates review implemented as one complete section.
-User-friendly means polished/discoverable/full capabilities, not basic. Compact copy/review/commit/push,
-optional PS1; evidence separate. No assumed live UI55/UI56 deployment or real company-data access.
+Certificate implementation following approved UI55 review; core1.34.19. Additional user report:
+old installed desktop icon and duplicate windows. Asked browser Install app vs native .exe; no answer
+yet. Record this separately, do not claim a launcher/installed-icon fix or force-close unsent work.
+Review→coherent section build→one acceptance. User-friendly/polished means full capability, not basic.
 
-## Exact source
-Full UI50 archive a9e3452da15435653281425696449aefe1afadb88a1630ac949f4b2a08f1e8d2 + exact UI51–55 chain,
-162 parent repository files/1846 parent runtime hashes verified. Parent extractor
- a3204bb604d0ea9fd62157738ae28cbab030b59fea2cdc85145be9f57678a0a2.
-UI56 extractor 544f474d73575a486a49f03d0510e33f665bf8e2d7193f205a2188e93080ddd9.
-PatchID workspace-ui56-certificate-workflow-2026-09-28.
-91 changed/new runtime resources, 534 cumulative overlays, 1851 tracked runtime.
-Target164repository/163deployment rows. Existing executable repository change only deploy/extract_source.py.
-C01 entrypoint f754d4db367983a75473f1d525183b618a25c265837a317df66ffabaf8f4c1e2;
-G01 gate9dc4ab6f7b7fb324ea06c305a09af8336b0bd10e7be6bef5296af1fd32d2e701;
-Nginx752563759fd82e20eacc62379f7a3082a8074675a747214a16cff0b9b90b99b8 exact parent bytes.
+## Verified source
+Full UI50 plus exact UI51–55, all162parent repository/1846runtime hashes checked.
+Parent extractor a3204bb604d0ea9fd62157738ae28cbab030b59fea2cdc85145be9f57678a0a2.
+UI56 extractor e88dfd8243b25708ba41fd4ed110bfe938360859f4efdd270fea9aa4924ddfa8.
+PatchID workspace-ui56-certificate-register-2026-09-28.
+92 changed/newruntime, 535 cumulativeoverlays, 1852trackedfiles.
+C01entrypoint f754d4db367983a75473f1d525183b618a25c265837a317df66ffabaf8f4c1e2;
+G01gate9dc4ab6f7b7fb324ea06c305a09af8336b0bd10e7be6bef5296af1fd32d2e701;
+nginx752563759fd82e20eacc62379f7a3082a8074675a747214a16cff0b9b90b99b8 unchanged.
+Only existing executable upload change deploy/extract_source.py. Target164repo/163deploymentrows.
 
-## Implemented and preserved
-New scoped Certificate workspace: Current/Due soon/Expired/Drafts/All revisions, full authorized list
-search and exact user/department-contact filters. My named contact not Task assignment/private audience.
-Same-session filters reset on changed authorized identity. Exact file-count navigation, sources near top,
-folded dates/scope/notes/equipment, revision links/history/archive and original onepage editor retained.
-Stable keyed cards, disclosure/reading anchors; genuine reordering may alter scroll coordinates while
-keeping the reading item at the same screen offset. Temporary stale label blocks old record actions;
-definitive denial clears protected root behind editor, not its local draft. No sync disabling.
+## Implemented
+New scoped Certificate register/record/lifecycle/upload module +CSS. Correct History route; exact
+account/token/route/root/dialog epochs across reads, final beforeSend afterlease, normal-form ownership
+checked beforecleanup/close; obsolete completion cannot close a replacementeditor. Upload FileReader+
+send countasactivework; originalop/payload retry, pendingClose/Escape blocked; selectedfile memoryonly.
+Definitivedenial clears oldbackground behindinterveningeditor; transient lastsavedview blocksstaleactions.
+Keyedrows/disclosures/search/contact state;account/project reset; sixstatusviews withcurrentnonarchive/
+nonsuperseded definition (Draft/Withdrawn maystillcurrent). Filecount/sourcefilesnearheading;fullcontext,
+linkedrecords, exactfiles/history/ReportPDF kept. No newprivatecertificateorcontactTask semantics.
 
-Correct History endpoint with full read ownership; pre-send certificate guards after lease and before
-credential capture; post-response ownership. Scoped form errors cannot reach a replacement editor.
-Normal upload close/Escape/signout blocked while preparing/sending; in-tab-only file/caption, exact locked
-payload/opID retry on uncertainty, no auto retry/new-op fallback. Forced older upload completion cannot
-close or overwrite newer form. A sent request may still commit; closing uncertain actions warns.
+certificate do_save validatedsamevalues→no neweditversion/audit (receiptstillpossible), includescurrent
+resolvedasset/contactsnapshots;permissions/types/versionstillchecked. new_revision optionalrealnote, no
+syntheticreason; blankdates/files/currentpredecessorretained. activate_replacement optionalprevious_version
+checksnewbrowser'stwo-recordreview; oldpayloadcontractretained. Newfocusedreviewuncheckedconfirmation+
+realnote, archive/removal explain. asset_reports only LeadAJ keep-with-next paragraph beforefilestable.
+TwoexistingPythonchanged/191unchanged/193total;80JSsyntax. No new APIs/tables/roles/permissions/env/deps/
+browserstoreversions. UI55 maincache/timer/save/owner rules and approvedsections unchanged. Onlyliteral
+assetrefs/helpwiring advance; one inherited Import Centre index/cache mismatch aligned. OneHelpbody/
+outline+catalogueupdated,75otherssame/76match. No native/masterguide redesign.
 
-Reason-free one-action new_revision keeps old source current, new dates/files/revision blank. Activation
-onepage previous/new/date/file-count review requires real note, sends optional previous_version and
-validates it server-side plus archived/superseded rejection. Old clients keep original version semantics;
-no metadata migration. No-op Save only after all authority/version/type/source validation, blank reason
-and equality of all refreshed snapshots; original operation receipt retained. Typed note remains real
-audit event. Earlier sources/blobs/history retained; source corrections/removal/archive still explained.
+## Tests and limits
+**383 selected Python tests, 59 compound browser checks and 80 JavaScript syntax checks passed.** All 193 application Python modules parse; 191 remain unchanged. The frozen runtime has 1852 tracked files. Python groups: certificates_py=109, preserved_py=96, hosting_py=178. Browser groups: certificates_browser=15, maintenance_browser=18, refresh_browser=26. Nine additional integrated service/report checks passed, including same-record PDF comparison. Selected checks, not full-suite acceptance.
+Same-record parent/currentPDF words/images identical;2pagesbefore/after,filesheadingnowwithtable.
+Parent historicalUI54cacheinvariant reproducedfailingonUI55 andexcluded, notfixed. Initial3nativeTk
+errors, new-testfixture typo, browserwrongroot/held-resolverfixture and pre-freeze SW-reference mismatch
+retainedexcluded. Allcounted finalruns use frozen source aftercachealignment; externalreportparity
+addition didnotchange applicationbytes. No fullsuite/live/physical/nativePowerShell/durableIDB/SW/
+normalnavigation/securityaccessibilityload/Docker/offhostacceptance. OnlyfictionalSQLite/TestClient,
+injectedtransport/hash/stagedstore. Sourceverification/finalZIPreplayseparate, repeatsnotextracoverage.
 
-Only2 appPython changed (certificates.py3methods, asset_reports.pycertificate_pdf);191unchanged/193total.
-Report file heading kept with table using existing LeadAJ keep-with-next style. Two-page fictional sample
-retains original PDF separately and embeds the PNG, not an original issued certificate. No new routes,
-tables, permissions, dependencies, environment or browser store. New JS/CSS helper; assets.js certificate
-branches and shared fieldwork Certificate-only guards; main app.js/stability/queues/signout exactlyUI55.
-Approved Home/Tasks/Checklists/Logs/Handovers/Calendar/Inventory/Maintenance/controller writers retained.
-One Certificates Help body/outline and catalogue updated;75otherbodies same/76catalogue matches.
+## Installed app follow-up
+Current app/static/manifest.webmanifest contains id/start_url/scope '/' and website-derivediconpaths;
+no launch_handler. Actual installedtype/shortcut/cache/version notidentified. No native executable rebuilt,
+no changedPWAidentity/launch/signing/separatelogfiles. Desired focus/restoreexisting correctmainwindow,
+not close/reload unsentform; separateorigin/profile/company and intentional logwindows remainseparate.
+Verify installedlauncherbefore implementing; no wipe/reset/uninstall whileworkunsent.
 
-## Final selected local checks
-**456 selected Python tests, 73 compound browser checks and 80 JavaScript syntax checks passed.** All 193 application Python modules parse; 191 are byte-identical to UI55. The frozen extractor produces 1851 tracked runtime files. Python groups: certificates_py=101, extra_files_py=5, stability_py=93, maintenance_py=79, hosting_py=178. Browser groups: certificates_browser=20, certificate_form_browser=14, refresh_browser=26, signout_browser=13. Eight integrated date/source/permission/replacement/report checks are additional, reported separately rather than counted as pytest cases.
-
-Final source was frozen after visual refinement and the late-error reproduction/fix; all counted suites
-rerun. Earlier complete or partial runs excluded. Native display tests had five TclErrors in an accidental
-broader collection, no native acceptance; final server-only suite complete. Two historical save-status
-version/hash assertions independently fail on unchanged UI55 and are deselected, not removed/passed.
-Initial admin-header fixture, nonexistent maintenance path, source-audit nested-function expectation,
-retained browser bridge teardown warning and superseded screenshot runs recorded separately.
-Browser actual assets/fictionalSQLiteTestClient/injectedfetch/hash/stagedmemory; not real durableIDB/SW/
-WebSocket/live/physical/WindowsPowerShell/native/fullsuite/securityaccessibilityload/Docker/offhost acceptance.
-PDF8integratedchecks separate frompytest; source originals/hash and read-onlyDB checked; final pages inspected.
-No real company accounts, credentials, infrastructure or deployment changes. FreshZIP/repo/runtime replay
-and hashes recorded separately, repeated package checks add no new unique test coverage.
-
-## Preserve and next
-Keep activated Sulmara C01 IDs/domain/dedicateddisk/marker, INITIALISE_COMPANY=NO/bootstrap-secret removal;
-independent demoG01settings/domain/disk/guest; backups/approvedcommit/.git/independentchanges/unsentmain+logs.
-No resets/reimports/browserstorageclear/syncdisable/repeatsetup/incompatiblepreC01/preUI34writerrollback.
-Same-value source rollback does not recover discarded local data or reverse a published replacement.
-UI55 quietcache remains exact; further reported flicker needs actual route/status/build, not blanket claims.
-One fictional named-user Certificates source/draft/history/renewal/replacement/oldfiles/refresh/PDF/mobile
-session, then next agreed sidebar review (Fault Reports). Existing whole-app capabilities/widerroadmap
-retained in DEVELOPMENT_TODO. Automatic reminders/renewalTasks/OCR/registerbulkexport/certificateQR not
-implemented. Nativevessel/CCVD/cloudsync/localnetwork out of scope. No automatic background work.
+## Preserve / next
+Keep activated Sulmara C01 IDs/domain/disk/activationmarker INITIALISE_COMPANY=NO removedbootstrap;
+separateG01demo settings/credentials/disk;backup/approvedcommit/.git/outsideedits/unsentmain+logs.
+No reset/reimport/site-data clear/syncdisable/repeatsetup/incompatiblepreC01/preUI34writerrollback.
+Preserve stored forms before anysourcechange; source rollback cannot recover deliberately discardedwork.
+NormalcopyUPLOADcontents→GitHubDesktopreviewcommitpush,PS1optional;eachservicemayautodeploysamebranch.
+Next actualcertificatehistory/upload/renewal/retaineddraft/phonecheck plus installedtypeclarification,
+then next agreed sectionreview. Widerroadmap retainedbelow DEVELOPMENT_TODO. No backgrounddevelopment,
+no liveversionassumption. Nativevessel/CCVD/cloudsync/localnetwork remainoutsidecurrenthostedupdate.

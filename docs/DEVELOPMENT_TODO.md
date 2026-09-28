@@ -1,16 +1,19 @@
-# Latest prepared release: UI56 — Certificates workflow
+# Latest prepared release: UI56 — Certificates
 
-Completed the approved Certificates section review: correct scoped History; one-page editor retained;
-status/contact filters and visible source files; same-value validated no-op; reason-free replacement
-preparation with explicit two-version activation review; scoped upload/save/read and late-error handling;
-keyed refresh with explicit stale/denied states; source-file PDF heading grouped with its table.
-No new module, permission, table or external service. UI55 quiet cache and C01/G01 remain intact.
+Implemented the approved register/history/upload/identity/replacement and refresh fixes while retaining
+one-page editing and exact source history. Nine further local report checks are not live acceptance.
+After fictional certificate testing, continue the next agreed section review. Do not assume UI56 deployed.
 
-Next: one named-user fictional certificate/source/history/renewal/old-file/PDF/refresh/mobile session,
-then the next sidebar section review (Fault Reports) before another coherent implementation. Keep all
-previously approved sections and optional handover notes. Source authenticity, automatic emails/renewal
-Tasks, PDF extraction, register bulk import/export and certificate QR approval remain separate backlog.
-Preserve ordinary permissions, exact evidence, retained local work and the no-reset/no-reimport rule.
+## New installed-app request — pending installation-type clarification
+Old desktop shortcut icon and duplicate windows on repeat launch. User has been asked whether this is
+Chrome/Edge Install app or a native .exe installer; actual type/target not established. Desired focus/
+restore of existing company/profile window, not destructive close/reload. Keep unsent work, distinct
+Sulmara/demo and intentional separate log windows. Current manifest/icon/native sources inspected but
+unchanged; no .exe rebuilt and no cache/reset/uninstall advice. Investigate the actual launcher before
+changing it. These items are not completed features of UI56.
+
+Preserve C01/G01, all approved sections and UI55 quiet background caching, actual save warnings,
+permissions, data, source evidence and stored/in-tab work. Native vessel/CCVD/cloud sync remain separate.
 
 ---
 

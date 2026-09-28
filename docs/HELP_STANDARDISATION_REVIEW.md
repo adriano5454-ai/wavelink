@@ -1,10 +1,9 @@
-# UI56 — Certificates
+# UI56 — Certificates register and sources
 
-One hosted article body and its outline updated against the actual new controls. All76 catalogue texts
-and headings match;75 other article bodies unchanged. Shared reader cache addresses advance outside
-those bodies. Permissioned editing, status/contact meanings, current versus superseded sources,
-upload/uncertain retry, no-op saved versions and exact replacement review are explicit. This is not
-completion of the native/master-PDF/full Help review. Prior review history follows unchanged.
+One Certificates article/outline/catalogue updated to current views, History, source files, current
+identity/save checks, unknown expiry, no-op saves, renewal/replacement and PDF scope. 75 other article
+bodies unchanged; all76 text/headings match. Shared reader/cache URLs advanced. Native/master guide
+review and installed-app instructions have not been universally updated. Prior record follows.
 
 ---
 
