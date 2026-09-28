@@ -1,3 +1,13 @@
+# UI56 — Certificates
+
+One hosted article body and its outline updated against the actual new controls. All76 catalogue texts
+and headings match;75 other article bodies unchanged. Shared reader cache addresses advance outside
+those bodies. Permissioned editing, status/contact meanings, current versus superseded sources,
+upload/uncertain retry, no-op saved versions and exact replacement review are explicit. This is not
+completion of the native/master-PDF/full Help review. Prior review history follows unchanged.
+
+---
+
 # UI55 — shared refresh / real save feedback
 
 Only the hosted Save-status article and its outline/catalogue gain bounded guidance on quiet

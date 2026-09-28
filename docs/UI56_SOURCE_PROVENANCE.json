@@ -1,0 +1,882 @@
+{
+  "parent_lineage": [
+    {
+      "file": "Wavelink_GitHub_Full_UI50_C01_G01.zip",
+      "sha256": "a9e3452da15435653281425696449aefe1afadb88a1630ac949f4b2a08f1e8d2",
+      "crc_ok": true,
+      "target_files": 152
+    },
+    {
+      "file": "Wavelink_GitHub_Update_UI50_C01_to_UI51.zip",
+      "sha256": "4c747ab846b6cbd3eb166ed1075a6cfd321d270491c380b2427e422637dcc9c2",
+      "crc_ok": true,
+      "target_files": 154
+    },
+    {
+      "file": "Wavelink_GitHub_Update_UI51_C01_to_UI52.zip",
+      "sha256": "bfae6df577479c438bf87e89f3c66e64a0d8534b306eb08b5dd92a8aeb8427f2",
+      "crc_ok": true,
+      "target_files": 156
+    },
+    {
+      "file": "Wavelink_GitHub_Update_UI52_C01_to_UI53.zip",
+      "sha256": "4faad991d1943a2346b84b4777958ad47b5b607952825a765ab43c2b067b4e64",
+      "crc_ok": true,
+      "target_files": 158
+    },
+    {
+      "file": "Wavelink_GitHub_Update_UI53_C01_to_UI54.zip",
+      "sha256": "dc6b71675f9f343ed8e4d59928969fba098a323d57a51272d731151a15a07e70",
+      "crc_ok": true,
+      "target_files": 160
+    },
+    {
+      "file": "Wavelink_GitHub_Update_UI54_C01_to_UI55.zip",
+      "sha256": "0698742e59e19ad030f81f8a17f567e5962dcc53ac80bcee7fbd328688de5fb3",
+      "crc_ok": true,
+      "target_files": 162
+    }
+  ],
+  "full_UI50_archive_sha256": "a9e3452da15435653281425696449aefe1afadb88a1630ac949f4b2a08f1e8d2",
+  "parent_extractor_sha256": "a3204bb604d0ea9fd62157738ae28cbab030b59fea2cdc85145be9f57678a0a2",
+  "parent_runtime_files": 1846,
+  "parent_repository_files": 162,
+  "changed_new_runtime_resources": 91,
+  "cumulative_overlays": 534,
+  "runtime_files": 1851,
+  "extractor_sha256": "544f474d73575a486a49f03d0510e33f665bf8e2d7193f205a2188e93080ddd9",
+  "changes": {
+    "app/asset_reports.py": "958165b866c4be67ea8116dfdfcfd3e67158ba2fb5bcc3152ae3c92a5eb1f748",
+    "app/certificates.py": "456b37e521ed7c03499706f3a2099c71d2ba4f1b7ea6aa09ad6b90f54bc0589f",
+    "app/static/assets.js": "04012bb6b824026744a25fed9d5b6bf43057856cccc23fc2c68b0329f4622fad",
+    "app/static/fieldwork.js": "528de0be965e31f3147aeffee7cce7a5f097ec9f994d83e618931a4999a99789",
+    "app/static/help.html": "ba0cbf584a58b1d321070e1fc8cbcbc5ff6da38879033ee8c5183eea13b8f6eb",
+    "app/static/help_topics/accessreview.html": "17fa4e8a1d866bc99e7cc0074046ca2fd77866939cb4f33974e5a693f9069477",
+    "app/static/help_topics/approvals.html": "385a18eb3391671e905aa345cc16e0ed831758225897e5692e65a7849735834c",
+    "app/static/help_topics/assetcalendar.html": "2d6ab00946a8b46eedf2f053a51d8dbd0ce1f545b4c1303c4bc4d226f856f8a2",
+    "app/static/help_topics/assetdetails.html": "7f28702f4c80b676457eb96869fc7928fbcf847111dab2377e5c14a42cdab005",
+    "app/static/help_topics/assetlabels.html": "52925b521ade30e5db3d845a538bc281fbd7f349c12b4e69608803d04cca8d72",
+    "app/static/help_topics/assignments.html": "10c2dc859297a53256ea2f45b798ddbad56a7c9b959758fabe217de3aabdaf60",
+    "app/static/help_topics/backups.html": "7bef12d80091c1f2c57a2945428a9ed8ab3f8f4cd1a77621477e593e2f16fbd0",
+    "app/static/help_topics/browseradmin.html": "1f457736a92b91fd14a855ab0861e4dc85947d6b553ec1ec52e4f98f0d3b7c83",
+    "app/static/help_topics/browserlogs.html": "3ed712e0f8b7e0d7faa0ef4f0e55f291960664d4244267595ed94c9557407d33",
+    "app/static/help_topics/browsertemplates.html": "710ec28cda01c18a3592ad1358b7879c2a0b3854b5e4c2f47668dc32ebaccceb",
+    "app/static/help_topics/browsertoolbox.html": "7c4449d3926bc7fc515d2b9f1568b0cf268b5fc9fcbd4ea92e22f8bb4c7eba6a",
+    "app/static/help_topics/builder.html": "df12982df042c95c6c60d751067a7808b0a2949bfbab891598a3cfa9d76f7428",
+    "app/static/help_topics/certificates.html": "8e65e838c0b414ad0eac8eec8a4841968b8eb9a18ad6727c64b9aca9ab8aa000",
+    "app/static/help_topics/companybranding.html": "ea1e78e64df72c10450a585e46fb49b733e2a05f6b7fcc2c749de6ea5b840164",
+    "app/static/help_topics/containers.html": "07ef944d4e3750dde0503ea71bebfecdfaf4458e6be40583621641b754608d3a",
+    "app/static/help_topics/create.html": "43150b2538b45c0197c6c808907d498e984c2839cda4fc13d916009ac12faf1b",
+    "app/static/help_topics/daily.html": "fafdac4c9d29f6e008b27bb33e900f912a05052a671e9f8da89a085b524bae22",
+    "app/static/help_topics/dashboard.html": "3f792ce5cc1a0d00c2c3cdfdc77b2e38b5d93ca353cafff90484253a4dbdb1ab",
+    "app/static/help_topics/datetime.html": "36140efad8ba3741124a76962107712de4b47eceb6f7791c9822a68746cf0d26",
+    "app/static/help_topics/departmentheads.html": "190c54580f35168d0c2330f8e82d9cbc031077394c28c16afa352f87bc55ba8e",
+    "app/static/help_topics/departments.html": "fbba1b2373385299e70ed29c290c9604a1d3ef72cba2eaf8473d4a0491bf1f33",
+    "app/static/help_topics/document.html": "9a74b926d6bed1517aab481636a2c2c9ecd1e1bededcc436e86a1e3f381d0bf7",
+    "app/static/help_topics/documentimport.html": "436eb07fc3fdf6d5ccb7a8d31b53858d3cf177730690cc76b338cf8bfc71ef82",
+    "app/static/help_topics/evidence.html": "d80aebae7f5b6a487d6b3184ced88d4c0e0aed3575399892c062cfb3cf5bc11f",
+    "app/static/help_topics/evidencereview.html": "5e8c320d92794a3b689b17aa1eb3c3b1bc606ccc2600350c34b4dcff90cb6565",
+    "app/static/help_topics/faults.html": "9f96cff26568b5b6cda3b69314bb22b3031cd645e228b603741a864069bd8d3f",
+    "app/static/help_topics/fleet.html": "150ffcfe4be6b21028dd228a9b3d8acc79ef9535c1db3d9913c09b2e75f54446",
+    "app/static/help_topics/fleetaccess.html": "5e758ec8f16579eb7e167d134cc906e1ba96677d694b78db7e00e8ee4cfe0f76",
+    "app/static/help_topics/generaltasks.html": "a3d3a8423fc07ccf312b66673b1761182f0f7ee6935dad565a2b2d9884e327b5",
+    "app/static/help_topics/handovercontinuity.html": "8ccba5e5e91773fa5dd7e0578befedbb517412fa63239a7d08856b34d2e75799",
+    "app/static/help_topics/handovers.html": "468c96b7b2e93d3d8bdb029c82193fe7778e0c4695d1afd33177e95b054475cb",
+    "app/static/help_topics/https.html": "18f89ebe78bd81821e8aa65c548a4c6b2829f276d80fa49b6879222026a90415",
+    "app/static/help_topics/illustrations.html": "efa1abf8bc803c197e6243869dbc1f5a9170f0662d794a15413f066584e93f52",
+    "app/static/help_topics/importcentre.html": "34d284e376e7420d093a0c689e10d8964034fd1db3d319321d40446b4d169e6b",
+    "app/static/help_topics/inventory.html": "fdad9d53bacbbbfec11c86c18b508285c2e79674e1ac2e6029d55fd39fa4645e",
+    "app/static/help_topics/inventorybuilder.html": "8b28d3848555f2feb0e22cf2cfb3779cea73e3112b5ea101ab33e8bec1256b3e",
+    "app/static/help_topics/inventorytransfer.html": "26d725d5f6e4ad0bd6cd545e91bb3db54e3f73dec53426c2c38b25bc3444e090",
+    "app/static/help_topics/itemjourney.html": "f6539b34b0272154cf443f006c2a9efb20d0d361b1f36aa7f74adb1973db8301",
+    "app/static/help_topics/live.html": "e17edfaf3f60be7b1bd690e1405a791056c8923dc89e37835c0cd844e79f7c89",
+    "app/static/help_topics/logbuilder.html": "ede3f70036f66312cfc8f780caf1bdd91f3ae9c28344d8e31b7817aa676510f3",
+    "app/static/help_topics/logexports.html": "2f7bca5dba60c556bab8e8039952beafaa1e60f06c5e820a5c0c04951c9e67b4",
+    "app/static/help_topics/logimport.html": "547bad45300305de38e53913b01915a1c0e9179848dfbd309c80bc376300da36",
+    "app/static/help_topics/logreferences.html": "71f042958859cf7908887f56b6019d7fb9493a52789330bd0531af361de0c9ee",
+    "app/static/help_topics/logs.html": "42fb2e9f3bae75fe80a0b02c60252c7fd3fd7677a7d67694547627d6b98e00ff",
+    "app/static/help_topics/logwindows.html": "b8932aeb8d0078960f74410435686c6ef04b04c63d7124da81aff0c591434f01",
+    "app/static/help_topics/lowstock.html": "34a1c32562ddfa5251dd46984d767f8e2b0441461efcf67927ea3b8e9db06dde",
+    "app/static/help_topics/maintenance.html": "5ce5b12e03e96fb0599009ba49635e415718185e6d6f90dcae020f708348886a",
+    "app/static/help_topics/maintenancebuilder.html": "74e172dca3fe4f6651ff9ae9a791d814b8e65915fa4c41fd849e5f8564128a68",
+    "app/static/help_topics/manifests.html": "cabbe1e3029cf85a1c898c96597360a17dc0df160b33d509097932a57ea8952d",
+    "app/static/help_topics/navigation.html": "e63e7682131aee5232d43d1fdd39a1c27633b99c1fbdac68ffac794c811bf1d0",
+    "app/static/help_topics/network.html": "0a2c8c455ea3ad6aca35d79be37524227e2db8d33c66e262d84cbbe1537afd5d",
+    "app/static/help_topics/offsets.html": "67e02e8255ab2108514742fbf9eb9fcc46c3ff476bf31931ffe33c13bf368cf2",
+    "app/static/help_topics/originals.html": "99939d441ae4449aa8cf7d7d6287cc545c9fe115f5ac5a3fd04265e54b78a189",
+    "app/static/help_topics/permissions.html": "dcae0225a0522090e9746f0dcf78174fad016d0edbbf01fe36955a83bbe410ac",
+    "app/static/help_topics/phones.html": "1ea3fdbf910fa8e5b6d6e8b780182613b81db943f960867b140bdebf629a521e",
+    "app/static/help_topics/projects.html": "a9a742c3043b9c2323daa15e924f7cdcff53450e6d3fd692c9e577234c5f9697",
+    "app/static/help_topics/qrverification.html": "9881b4b3cbe4acc916cbdc7d22a983faa6516c8e273f3f33ce831c80d6b46263",
+    "app/static/help_topics/qshe.html": "a393caf4ccce40b00e6af2e84063f17b378add4cd1e90e331f29d577a0519c45",
+    "app/static/help_topics/receiving.html": "bd51f4bb0665a83d817e75721b47433633c0f957ff14f26adb84af0241587563",
+    "app/static/help_topics/recordmanagement.html": "a8c511ffb3a27e25dea77a6a71359d3f4bcb75c78bdc52fba80d11f2768c4748",
+    "app/static/help_topics/records.html": "1cf2daf4dcb17e081ee970f76fff2b161660827fe1ce55dcb0626f8fe06587be",
+    "app/static/help_topics/savestatus.html": "a7c9bfca33b1ad8f16ac49d9790c9a5d79ae2cf6d9ff01ade7abbe555f5df8b5",
+    "app/static/help_topics/start.html": "55ee57bb90ff130e73e93c1f0c1367671bc84942821aee08f38a938924fb28fa",
+    "app/static/help_topics/stocktake.html": "ddae94868a534d6ca864c7f6a1cb69f76dca8b31c3587fd39e34eb47830479ed",
+    "app/static/help_topics/storage.html": "b714fc63819f0b019c668b790e0e848c5dbbb5096b458871323f384554ccb0ac",
+    "app/static/help_topics/support.html": "4417635fb7fe363c4a48fab4bc8f38abaaff401de9e0e6bc2e41d2acfdc8365f",
+    "app/static/help_topics/tasks.html": "1e567cd2b43934645d68fdd61d2814aeed2ad0b7b8c2b1e224b47316dce2c9b7",
+    "app/static/help_topics/toolbox.html": "9251181f3e709b591aa7a4f0a734cbda63db87216367ab2bbf0427e0afa1a671",
+    "app/static/help_topics/toolboxbuilder.html": "523128397b311c854d17e203bd41e80b3e085393d9a92e9d22f9e870f1767047",
+    "app/static/help_topics/toolboxguests.html": "f17078e145caa01084d8914d9a80b46c8bd5ed43ce20d215c0d8d63a2bacc1bf",
+    "app/static/help_topics/transfers.html": "faec0f439fe098876364940179fa6052f6d6b5eb774202ed7830328b303db6ea",
+    "app/static/help_topics/types.html": "dc1e9de89490dbfbeaa0a19faaba9e48ae3c800e13dfe8c572c4eed62023ca0f",
+    "app/static/help_topics/uninstall.html": "9824596c24a801e78808a43e3362ba9d9c4ff575ba1df092ead989f62ac8ba10",
+    "app/static/help_topics/users.html": "f0dc16b66b2e1c1fed99a03d2895470505a65ce4a0c9412d6aacbe8959f9321c",
+    "app/static/help_topics/vessellogaccess.html": "224463051e0ba0f41ad5498005b4abe2eb662fbfb4a3f086273ba4c128827f7b",
+    "app/static/help_topics/vessellogs.html": "86f1ff5e905d4ffd4f344d3844390bf4a41a3300ca7f5edba5c14c99d18b4b4a",
+    "app/static/index.html": "5938a12b1acc99e2cea97ac54ce01278b47e1028bed0066e6f7e01b88d2e31a2",
+    "app/static/sw.js": "ba84244f8986e935cd652bc2f7e8246b9330354de61de3cb3d80a0177767c663",
+    "app/static/certificate_form.js": "1c48430e99774670fd7125a8daf351d2d7b7863a8df785023ee8c12f9c8696ad",
+    "app/static/help_catalogue.json": "72926817f244ddda25e2c48cd1e948646a0a96c65ba5e343a56fe65dd554a972",
+    "app/static/help_workspace.js": "05d084bd033e425c7398b4efa1f148b890ea88053131d029e3a7a96103317d31",
+    "app/static/certificate_workspace.js": "d94ff5fde169fbd37fa571fb1a667b7118a527cff8b927dd43ec75ff9c14d5c9",
+    "app/static/certificate_workspace.css": "2d501345bb8f97e3beba8cfcbbed09ca49b09a67344228a603024622e030eea3",
+    "tests/ui56_certificates/test_workflow.py": "275d4fbc7ea19a1c5bbe961f0e087191d95221da432017d56dcdda77f88f66ed",
+    "tests/ui56_certificates/conftest.py": "6139f96ac79f16b28df72769b41a0259b465946dd163802438a118cdc3813dec",
+    "tests/ui56_certificates/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "new_paths": [
+    "app/static/certificate_workspace.js",
+    "app/static/certificate_workspace.css",
+    "tests/ui56_certificates/test_workflow.py",
+    "tests/ui56_certificates/conftest.py",
+    "tests/ui56_certificates/__init__.py"
+  ],
+  "audit": {
+    "javascript_syntax_passed": 80,
+    "application_python_parsed": 193,
+    "application_python_unchanged": 191,
+    "changed_python": [
+      "app/asset_reports.py",
+      "app/certificates.py"
+    ],
+    "python_functions": {
+      "app/asset_reports.py": {
+        "changed": [
+          "certificate_pdf"
+        ],
+        "unchanged": [],
+        "added": []
+      },
+      "app/certificates.py": {
+        "changed": [
+          "do_save",
+          "do_new_revision",
+          "do_activate_replacement"
+        ],
+        "unchanged": [
+          "requires_change_reason",
+          "date_status",
+          "summary",
+          "__init__",
+          "replay",
+          "list",
+          "directory",
+          "_get",
+          "get",
+          "_values",
+          "do_archive",
+          "_editable",
+          "do_add_attachment",
+          "do_remove_attachment",
+          "file"
+        ],
+        "added": []
+      }
+    },
+    "browser_functions": {
+      "app.js": {
+        "changed": [],
+        "unchanged": [
+          "uid",
+          "storageError",
+          "dbOpen",
+          "finish",
+          "dbRead",
+          "claimTab",
+          "writeWorkspace",
+          "persist",
+          "renewLease",
+          "releaseTab",
+          "workspaceFault",
+          "renderWorkspaceIssue",
+          "validateWorkspace",
+          "toast",
+          "localCount",
+          "phaseQueue",
+          "phaseDrafts",
+          "phasePending",
+          "updateConnection",
+          "api",
+          "apiTransport",
+          "message",
+          "dateText",
+          "modal",
+          "downloadBlob",
+          "exportRecovery",
+          "localBackup",
+          "usableItems",
+          "effective",
+          "counts",
+          "phaseName",
+          "mine",
+          "locked",
+          "countLine",
+          "field",
+          "footer",
+          "legacyLoginView",
+          "canSupervise",
+          "loginView",
+          "passwordDialog",
+          "stageIds",
+          "recordName",
+          "allClosed",
+          "openFleetWorkspace",
+          "workspaceNav",
+          "dashboardWork",
+          "dashboardWorkText",
+          "localWorkAllowed",
+          "dashboardWorkDialog",
+          "discardLocalBatch",
+          "guard",
+          "homeViewContent",
+          "checklistListContent",
+          "refreshTemplates",
+          "metaForm",
+          "pictureGallery",
+          "itemGuidance",
+          "checklistPanelAttributes",
+          "checklistIntroduction",
+          "checkCard",
+          "canManageStructure",
+          "recordPending",
+          "untouchedLiveItem",
+          "liveTools",
+          "bindLiveTools",
+          "livePreflight",
+          "saveLive",
+          "liveModeDialog",
+          "liveItemDialog",
+          "manageLiveItems",
+          "liveHistory",
+          "markRecordDeleted",
+          "deletedRecordView",
+          "localWorkDialog",
+          "originalLinks",
+          "downloadOriginal",
+          "bindOriginalLinks",
+          "originalDocumentsDialog",
+          "openOriginalFilesFromSidebar",
+          "checklistDocumentDetails",
+          "bindStageCards",
+          "renderDiveContent",
+          "projectMismatchView",
+          "switchProjectWorkspace",
+          "pageKey",
+          "pageBusy",
+          "stablePage",
+          "renderDive",
+          "homeView",
+          "checklistListView",
+          "render",
+          "safeRender",
+          "loadRecords",
+          "hideDeniedRecord",
+          "refreshRecord",
+          "heartbeat",
+          "pendingOnItem",
+          "validate",
+          "queueChange",
+          "actItem",
+          "editItem",
+          "syncQueue",
+          "conflictDialog",
+          "resumeEditing",
+          "readyDialog",
+          "finalizeDialog",
+          "leaveStage",
+          "exportDialog",
+          "connectDialog",
+          "installDialog",
+          "menuDialog",
+          "sessionOpenEditor",
+          "sessionExitBusy",
+          "commitLocalSignOut",
+          "leaveSession",
+          "route",
+          "connectLive",
+          "authenticated",
+          "resumeWorkspace",
+          "openWorkspace",
+          "itemNeedsApproval",
+          "approvalState",
+          "approvalLabel",
+          "approvalCard",
+          "approvalSummary",
+          "mayApprove",
+          "approvalDialog",
+          "approvalInbox",
+          "card",
+          "editorMarkup",
+          "compress",
+          "localBudget",
+          "dataURL",
+          "zoom",
+          "mountEditor",
+          "draw",
+          "selected",
+          "galleryMarkup",
+          "mountGallery",
+          "showItem",
+          "bindCards",
+          "recordReference",
+          "canUse",
+          "applyAccessControls",
+          "enhance",
+          "install",
+          "poll",
+          "inbox"
+        ],
+        "added": [],
+        "removed": []
+      },
+      "assets.js": {
+        "changed": [
+          "certificateContext",
+          "open",
+          "uploadFile",
+          "certificateWizard"
+        ],
+        "unchanged": [
+          "linkedMaintenanceContext",
+          "captureAssetView",
+          "revoke",
+          "urlOf",
+          "navigate",
+          "banner",
+          "block",
+          "resultTone",
+          "pill",
+          "responsibleOptions",
+          "responsibleValue",
+          "parseResponsible",
+          "authScope",
+          "refreshScope",
+          "logLinkStamp",
+          "assetView",
+          "mayNavigate",
+          "jump",
+          "filterChildren",
+          "loadHistory",
+          "worker",
+          "copyValue",
+          "profileForm",
+          "printLabels",
+          "alertsView",
+          "maintenanceForAsset",
+          "lookup",
+          "resume",
+          "refreshAlerts"
+        ],
+        "added": [],
+        "removed": [
+          "certificatesView",
+          "certificateView"
+        ]
+      },
+      "fieldwork.js": {
+        "changed": [
+          "act",
+          "history",
+          "form",
+          "stage",
+          "schedule"
+        ],
+        "unchanged": [
+          "options",
+          "input",
+          "select",
+          "textarea",
+          "button",
+          "page",
+          "download",
+          "localStatus",
+          "snapshot",
+          "flush",
+          "drafts",
+          "resume",
+          "inventoryNotice",
+          "openInventory",
+          "open",
+          "poll",
+          "inventoryHome",
+          "categoryForm",
+          "categoryContext",
+          "categorySelection",
+          "categoryManager",
+          "sourceGroup",
+          "sourceGroups",
+          "initialBriefing",
+          "nestedOrder",
+          "draw",
+          "inventoryView",
+          "showInspector",
+          "navigate",
+          "showCategories",
+          "filterCategories",
+          "clearFilters",
+          "itemView",
+          "itemForm",
+          "moveForm",
+          "review",
+          "stocktakes",
+          "startCount",
+          "countView",
+          "checkForm",
+          "toolboxHome",
+          "chooseTemplate",
+          "canManageTalk",
+          "guestHtml",
+          "talkForm",
+          "guestAckForm",
+          "talkView"
+        ],
+        "added": [],
+        "removed": []
+      },
+      "certificate_form.js": {
+        "changed": [
+          "html"
+        ],
+        "unchanged": [
+          "needsReason",
+          "values",
+          "attach",
+          "refresh",
+          "validate"
+        ],
+        "added": [],
+        "removed": []
+      },
+      "view_stability.js": {
+        "changed": [],
+        "unchanged": [
+          "key",
+          "patch",
+          "children",
+          "position",
+          "paint"
+        ],
+        "added": [],
+        "removed": []
+      }
+    },
+    "approved_browser_files": {
+      "app/static/toolbox_form.js": {
+        "exact": true,
+        "only_cache_references": false
+      },
+      "app/static/app.js": {
+        "exact": true,
+        "only_cache_references": false
+      },
+      "app/static/handover_day_view.js": {
+        "exact": true,
+        "only_cache_references": false
+      },
+      "app/static/browser_toolbox.js": {
+        "exact": true,
+        "only_cache_references": false
+      },
+      "app/static/checklist_review.js": {
+        "exact": true,
+        "only_cache_references": false
+      },
+      "app/static/logs.js": {
+        "exact": true,
+        "only_cache_references": false
+      },
+      "app/static/fleet.js": {
+        "exact": true,
+        "only_cache_references": false
+      },
+      "app/static/operations.js": {
+        "exact": true,
+        "only_cache_references": false
+      },
+      "app/static/handover_preparation.js": {
+        "exact": true,
+        "only_cache_references": false
+      },
+      "app/static/task_workflow.js": {
+        "exact": true,
+        "only_cache_references": false
+      },
+      "app/static/local_work.js": {
+        "exact": true,
+        "only_cache_references": false
+      },
+      "app/static/support.js": {
+        "exact": true,
+        "only_cache_references": false
+      },
+      "app/static/checklist_stage.js": {
+        "exact": true,
+        "only_cache_references": false
+      },
+      "app/static/browser_templates.js": {
+        "exact": true,
+        "only_cache_references": false
+      },
+      "app/static/handover_schedule.js": {
+        "exact": true,
+        "only_cache_references": false
+      },
+      "app/static/simple_handovers.js": {
+        "exact": true,
+        "only_cache_references": false
+      },
+      "app/static/row_selection.js": {
+        "exact": true,
+        "only_cache_references": false
+      },
+      "app/static/handover_incoming.js": {
+        "exact": true,
+        "only_cache_references": false
+      },
+      "app/static/general_tasks.js": {
+        "exact": true,
+        "only_cache_references": false
+      },
+      "app/static/handover_attachments.js": {
+        "exact": true,
+        "only_cache_references": false
+      },
+      "app/static/backup_review.js": {
+        "exact": true,
+        "only_cache_references": false
+      },
+      "app/static/maintenance_management.js": {
+        "exact": true,
+        "only_cache_references": false
+      },
+      "app/static/company_branding.js": {
+        "exact": true,
+        "only_cache_references": false
+      },
+      "app/static/browser_admin.js": {
+        "exact": true,
+        "only_cache_references": false
+      },
+      "app/static/maintenance_workspace.js": {
+        "exact": true,
+        "only_cache_references": false
+      },
+      "app/static/help_workspace.js": {
+        "exact": false,
+        "only_cache_references": true
+      },
+      "app/static/home_workspace.js": {
+        "exact": true,
+        "only_cache_references": false
+      },
+      "app/static/project_presence.js": {
+        "exact": true,
+        "only_cache_references": false
+      },
+      "app/static/task_checklists.js": {
+        "exact": true,
+        "only_cache_references": false
+      },
+      "app/static/original_library.js": {
+        "exact": true,
+        "only_cache_references": false
+      },
+      "app/static/install.js": {
+        "exact": true,
+        "only_cache_references": false
+      },
+      "app/static/document_join.js": {
+        "exact": true,
+        "only_cache_references": false
+      },
+      "app/static/log_windows.js": {
+        "exact": true,
+        "only_cache_references": false
+      },
+      "app/static/workspace_catalogue.js": {
+        "exact": true,
+        "only_cache_references": false
+      },
+      "app/static/handover_continue.js": {
+        "exact": true,
+        "only_cache_references": false
+      },
+      "app/static/fault_reports.js": {
+        "exact": true,
+        "only_cache_references": false
+      },
+      "app/static/handover_notes.js": {
+        "exact": true,
+        "only_cache_references": false
+      },
+      "app/static/checklist_forms.js": {
+        "exact": true,
+        "only_cache_references": false
+      },
+      "app/static/record_management.js": {
+        "exact": true,
+        "only_cache_references": false
+      },
+      "app/static/checklist_workspace.js": {
+        "exact": true,
+        "only_cache_references": false
+      },
+      "app/static/attention.js": {
+        "exact": true,
+        "only_cache_references": false
+      },
+      "app/static/handover_review.js": {
+        "exact": true,
+        "only_cache_references": false
+      },
+      "app/static/inventory_workspace.js": {
+        "exact": true,
+        "only_cache_references": false
+      },
+      "app/static/handover_workspace.js": {
+        "exact": true,
+        "only_cache_references": false
+      },
+      "app/static/handover_recipients.js": {
+        "exact": true,
+        "only_cache_references": false
+      },
+      "app/static/task_workspace.js": {
+        "exact": true,
+        "only_cache_references": false
+      },
+      "app/static/browser_logs.js": {
+        "exact": true,
+        "only_cache_references": false
+      },
+      "app/static/setup_builders.js": {
+        "exact": true,
+        "only_cache_references": false
+      },
+      "app/static/view_stability.js": {
+        "exact": true,
+        "only_cache_references": false
+      },
+      "app/static/asset_workspace.js": {
+        "exact": true,
+        "only_cache_references": false
+      },
+      "app/static/logistics_workflow.js": {
+        "exact": true,
+        "only_cache_references": false
+      },
+      "app/static/session_exit.js": {
+        "exact": true,
+        "only_cache_references": false
+      },
+      "app/static/handovers.js": {
+        "exact": true,
+        "only_cache_references": false
+      },
+      "app/static/maintenance_evidence.js": {
+        "exact": true,
+        "only_cache_references": false
+      },
+      "app/static/logs_workspace.js": {
+        "exact": true,
+        "only_cache_references": false
+      },
+      "app/static/save_status.js": {
+        "exact": true,
+        "only_cache_references": false
+      },
+      "app/static/nav_shell.js": {
+        "exact": true,
+        "only_cache_references": false
+      },
+      "app/static/maintenance_forms.js": {
+        "exact": true,
+        "only_cache_references": false
+      },
+      "app/static/document_invites.js": {
+        "exact": true,
+        "only_cache_references": false
+      },
+      "app/static/help_links.js": {
+        "exact": true,
+        "only_cache_references": false
+      },
+      "app/static/handover_draft_review.js": {
+        "exact": true,
+        "only_cache_references": false
+      },
+      "app/static/save_status_ui.js": {
+        "exact": true,
+        "only_cache_references": false
+      },
+      "app/static/preparation_ui.js": {
+        "exact": true,
+        "only_cache_references": false
+      },
+      "app/static/task_scratch.js": {
+        "exact": true,
+        "only_cache_references": false
+      },
+      "app/static/project_calendar.js": {
+        "exact": true,
+        "only_cache_references": false
+      },
+      "app/static/maintenance_ui.js": {
+        "exact": true,
+        "only_cache_references": false
+      },
+      "app/static/original_upload.js": {
+        "exact": true,
+        "only_cache_references": false
+      },
+      "app/static/task_create.js": {
+        "exact": true,
+        "only_cache_references": false
+      },
+      "app/static/manifest_ui.js": {
+        "exact": true,
+        "only_cache_references": false
+      },
+      "app/static/verification.js": {
+        "exact": true,
+        "only_cache_references": false
+      },
+      "app/static/workspace_continuity.js": {
+        "exact": true,
+        "only_cache_references": false
+      },
+      "app/static/report_forms.js": {
+        "exact": true,
+        "only_cache_references": false
+      },
+      "app/static/qshe_reports.js": {
+        "exact": true,
+        "only_cache_references": false
+      },
+      "app/static/handover_history.js": {
+        "exact": true,
+        "only_cache_references": false
+      },
+      "app/static/import_centre.js": {
+        "exact": true,
+        "only_cache_references": false
+      }
+    },
+    "help_bodies_changed": [
+      "certificates"
+    ],
+    "help_bodies_unchanged": 75,
+    "help_catalogue_matches": 76,
+    "hosting_vendor_ops_unchanged": true,
+    "shared_main_app_exact_UI55": true,
+    "changes": [
+      "app/asset_reports.py",
+      "app/certificates.py",
+      "app/static/assets.js",
+      "app/static/fieldwork.js",
+      "app/static/help.html",
+      "app/static/help_topics/accessreview.html",
+      "app/static/help_topics/approvals.html",
+      "app/static/help_topics/assetcalendar.html",
+      "app/static/help_topics/assetdetails.html",
+      "app/static/help_topics/assetlabels.html",
+      "app/static/help_topics/assignments.html",
+      "app/static/help_topics/backups.html",
+      "app/static/help_topics/browseradmin.html",
+      "app/static/help_topics/browserlogs.html",
+      "app/static/help_topics/browsertemplates.html",
+      "app/static/help_topics/browsertoolbox.html",
+      "app/static/help_topics/builder.html",
+      "app/static/help_topics/certificates.html",
+      "app/static/help_topics/companybranding.html",
+      "app/static/help_topics/containers.html",
+      "app/static/help_topics/create.html",
+      "app/static/help_topics/daily.html",
+      "app/static/help_topics/dashboard.html",
+      "app/static/help_topics/datetime.html",
+      "app/static/help_topics/departmentheads.html",
+      "app/static/help_topics/departments.html",
+      "app/static/help_topics/document.html",
+      "app/static/help_topics/documentimport.html",
+      "app/static/help_topics/evidence.html",
+      "app/static/help_topics/evidencereview.html",
+      "app/static/help_topics/faults.html",
+      "app/static/help_topics/fleet.html",
+      "app/static/help_topics/fleetaccess.html",
+      "app/static/help_topics/generaltasks.html",
+      "app/static/help_topics/handovercontinuity.html",
+      "app/static/help_topics/handovers.html",
+      "app/static/help_topics/https.html",
+      "app/static/help_topics/illustrations.html",
+      "app/static/help_topics/importcentre.html",
+      "app/static/help_topics/inventory.html",
+      "app/static/help_topics/inventorybuilder.html",
+      "app/static/help_topics/inventorytransfer.html",
+      "app/static/help_topics/itemjourney.html",
+      "app/static/help_topics/live.html",
+      "app/static/help_topics/logbuilder.html",
+      "app/static/help_topics/logexports.html",
+      "app/static/help_topics/logimport.html",
+      "app/static/help_topics/logreferences.html",
+      "app/static/help_topics/logs.html",
+      "app/static/help_topics/logwindows.html",
+      "app/static/help_topics/lowstock.html",
+      "app/static/help_topics/maintenance.html",
+      "app/static/help_topics/maintenancebuilder.html",
+      "app/static/help_topics/manifests.html",
+      "app/static/help_topics/navigation.html",
+      "app/static/help_topics/network.html",
+      "app/static/help_topics/offsets.html",
+      "app/static/help_topics/originals.html",
+      "app/static/help_topics/permissions.html",
+      "app/static/help_topics/phones.html",
+      "app/static/help_topics/projects.html",
+      "app/static/help_topics/qrverification.html",
+      "app/static/help_topics/qshe.html",
+      "app/static/help_topics/receiving.html",
+      "app/static/help_topics/recordmanagement.html",
+      "app/static/help_topics/records.html",
+      "app/static/help_topics/savestatus.html",
+      "app/static/help_topics/start.html",
+      "app/static/help_topics/stocktake.html",
+      "app/static/help_topics/storage.html",
+      "app/static/help_topics/support.html",
+      "app/static/help_topics/tasks.html",
+      "app/static/help_topics/toolbox.html",
+      "app/static/help_topics/toolboxbuilder.html",
+      "app/static/help_topics/toolboxguests.html",
+      "app/static/help_topics/transfers.html",
+      "app/static/help_topics/types.html",
+      "app/static/help_topics/uninstall.html",
+      "app/static/help_topics/users.html",
+      "app/static/help_topics/vessellogaccess.html",
+      "app/static/help_topics/vessellogs.html",
+      "app/static/index.html",
+      "app/static/sw.js",
+      "app/static/certificate_form.js",
+      "app/static/help_catalogue.json",
+      "app/static/help_workspace.js",
+      "app/static/certificate_workspace.css",
+      "app/static/certificate_workspace.js",
+      "tests/ui56_certificates/__init__.py",
+      "tests/ui56_certificates/conftest.py",
+      "tests/ui56_certificates/test_workflow.py",
+      "UI_PATCH.json"
+    ],
+    "scope": "Certificates workflow only; no APIs/tables/permissions/dependencies/environment changes. Shared form guards narrowly scoped to certificates; main storage/sync/signout and approved section controllers unchanged."
+  }
+}

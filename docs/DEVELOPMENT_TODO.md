@@ -1,3 +1,19 @@
+# Latest prepared release: UI56 — Certificates workflow
+
+Completed the approved Certificates section review: correct scoped History; one-page editor retained;
+status/contact filters and visible source files; same-value validated no-op; reason-free replacement
+preparation with explicit two-version activation review; scoped upload/save/read and late-error handling;
+keyed refresh with explicit stale/denied states; source-file PDF heading grouped with its table.
+No new module, permission, table or external service. UI55 quiet cache and C01/G01 remain intact.
+
+Next: one named-user fictional certificate/source/history/renewal/old-file/PDF/refresh/mobile session,
+then the next sidebar section review (Fault Reports) before another coherent implementation. Keep all
+previously approved sections and optional handover notes. Source authenticity, automatic emails/renewal
+Tasks, PDF extraction, register bulk import/export and certificate QR approval remain separate backlog.
+Preserve ordinary permissions, exact evidence, retained local work and the no-reset/no-reimport rule.
+
+---
+
 # Latest prepared release: UI55 — shared refresh stability
 
 User reported continued flicker after UI54. Confirmed a shared cache-write saving banner outside
