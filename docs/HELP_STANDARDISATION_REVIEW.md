@@ -1,3 +1,13 @@
+# UI57 — Shift setup and personal assigned entry
+
+Handovers and Handover continuity articles/outlines/catalogue updated for Shifts & people, existing
+create/edit authority, My shift's own assignment only, UTC/fixed-offset overnight dates, unknown-clock
+explicit date, and separate My saved notes/team views. 74 other article bodies remain unchanged;
+all 76 catalogue entries match. Shared reader/cache URLs advance outside bodies. No native/master
+PDF overhaul or universal Help acceptance. Prior history follows.
+
+---
+
 # UI56 — Certificates register and sources
 
 One Certificates article/outline/catalogue updated to current views, History, source files, current

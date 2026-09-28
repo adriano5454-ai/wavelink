@@ -1,3 +1,26 @@
+# Latest prepared release: UI57 — Shifts & people / personal My shift
+
+Implemented the explicit handover coordination request: dedicated department shift setup area and
+strictly personal current/next assignment entry, with overnight operational dates, only-own choices
+when ambiguous, and explicit date fallback for descriptive clock labels. Reuses existing one-cycle-per-
+department setup; no new roster database, automatic assignment or shared private editor. Preserve all
+handovers/files/evidence and exact actor/time/version rules. Test fictional named lead/worker/overnight/
+unassigned/phone paths, then resume section-by-section review. Do not assume deployed UI57.
+
+## Installed Chrome app follow-up remains open
+User confirmed Chrome Install app, despite an earlier native .exe installation. Supplied shortcut uses
+chrome_proxy.exe, Default profile and app-id bfoeojghfbddilebjmmlpobdfopiongn; prior offline calculation
+matched demo.mywavelink.com. Approved icon was supplied separately for the shortcut. Repeated launch
+should focus/restore the existing same-company/profile main window, not close or reload unsent work.
+Do not merge Sulmara/demo/intentional log windows. No launch_handler/native launcher change in UI57;
+actual browser support and installed behaviour still need verification. No uninstall/storage clear.
+
+Keep full capabilities, clear card choices and simple normal actions. C01/G01, source evidence, UI55
+quiet caching, UI56 Certificates, saved local work and existing permission boundaries remain intact.
+No background development. Native vessel/CCVD/cloud sync/local-network investigation remain separate.
+
+---
+
 # Latest prepared release: UI56 — Certificates
 
 Implemented the approved register/history/upload/identity/replacement and refresh fixes while retaining

@@ -1,63 +1,63 @@
 {
-  "release": "UI56 + Company C01 + G01",
+  "release": "UI57 + Company C01 + G01",
   "core": "1.34.19",
-  "parent": "UI55 + Company C01 + G01",
-  "python_passed": 383,
+  "parent": "Exact current UI56 + Company C01 + G01",
+  "python_passed": 495,
   "python_groups": {
-    "certificates_py": 109,
-    "preserved_py": 96,
+    "shifts_py": 37,
+    "handovers_py": 280,
     "hosting_py": 178
   },
-  "compound_browser_passed": 59,
+  "compound_browser_passed": 60,
   "browser_groups": {
+    "shifts_browser": 19,
     "certificates_browser": 15,
-    "maintenance_browser": 18,
     "refresh_browser": 26
   },
-  "additional_service_report_checks": 9,
-  "javascript_syntax_passed": 80,
-  "application_python_parsed": 193,
-  "application_python_unchanged": 191,
-  "runtime_files": 1852,
+  "javascript_syntax_passed": 81,
+  "application_python_parsed": 194,
+  "application_python_unchanged": 192,
+  "runtime_files": 1856,
   "commands": [
     {
-      "name": "certificates_py",
-      "pid": 8505,
+      "name": "shifts_py",
       "command": [
         "python",
         "-m",
         "pytest",
-        "tests/ui37_certificates",
-        "tests/asset_workspace",
-        "tests/ui56_certificates",
-        "--ignore=tests/asset_workspace/test_native.py",
+        "tests/ui57_shifts/test_shifts.py",
         "-q",
         "--disable-warnings",
-        "--junitxml=/mnt/data/ui56_work/evidence/final/certificates_py.xml"
+        "--junitxml=/mnt/data/ui57_work/evidence/final/shifts_py.xml"
       ],
-      "cwd": "/mnt/data/ui56_work/frozen"
+      "cwd": "/mnt/data/ui57_work/frozen",
+      "runtime": "/mnt/data/ui57_work/frozen"
     },
     {
-      "name": "preserved_py",
-      "pid": 8506,
+      "name": "handovers_py",
       "command": [
         "python",
         "-m",
         "pytest",
-        "tests/ui54_maintenance",
-        "tests/ui53_inventory",
-        "tests/ui52_notes",
-        "-k",
-        "not test_module_is_loaded_before_maintenance_and_cached",
+        "tests/ui29_simple/test_simple.py",
+        "tests/ui29_simple/test_transfer.py",
+        "tests/ui50_handovers/test_workflow.py",
+        "tests/ui52_notes/test_finish.py",
+        "tests/handovers/test_handovers.py",
+        "tests/handovers/test_privacy_transfer.py",
+        "tests/daily_handovers/test_daily.py",
+        "tests/daily_handovers/test_transfer.py",
+        "tests/handover_continuity/test_continuity.py",
+        "tests/handover_continuity/test_transfer.py",
         "-q",
         "--disable-warnings",
-        "--junitxml=/mnt/data/ui56_work/evidence/final/preserved_py.xml"
+        "--junitxml=/mnt/data/ui57_work/evidence/final/handovers_py.xml"
       ],
-      "cwd": "/mnt/data/ui56_work/frozen"
+      "cwd": "/mnt/data/ui57_work/frozen",
+      "runtime": "/mnt/data/ui57_work/frozen"
     },
     {
       "name": "hosting_py",
-      "pid": 8507,
       "command": [
         "python",
         "-m",
@@ -68,63 +68,57 @@
         "tests/test_provision.py",
         "tests/test_package.py",
         "-q",
-        "--junitxml=/mnt/data/ui56_work/evidence/final/hosting_py.xml"
+        "--disable-warnings",
+        "--junitxml=/mnt/data/ui57_work/evidence/final/hosting_py.xml"
       ],
-      "cwd": "/mnt/data/ui56_work/repo"
+      "cwd": "/mnt/data/ui57_work/repo",
+      "runtime": "/mnt/data/ui57_work/frozen"
+    },
+    {
+      "name": "shifts_browser",
+      "command": [
+        "python",
+        "-u",
+        "/mnt/data/ui57_work/scripts/browser_shifts.py",
+        "/mnt/data/ui57_work/evidence/final/shifts_browser"
+      ],
+      "cwd": "/mnt/data/ui57_work/frozen",
+      "runtime": "/mnt/data/ui57_work/frozen"
     },
     {
       "name": "certificates_browser",
-      "pid": 8508,
       "command": [
         "python",
         "-u",
-        "/mnt/data/ui56_work/scripts/browser_certificates.py"
+        "/mnt/data/ui57_work/scripts/browser_certificates.py"
       ],
-      "cwd": "/mnt/data/ui56_work/frozen"
-    },
-    {
-      "name": "maintenance_browser",
-      "pid": 8555,
-      "command": [
-        "python",
-        "-u",
-        "/mnt/data/ui56_work/scripts/maintenance_browser/browser_maintenance.py"
-      ],
-      "cwd": "/mnt/data/ui56_work/frozen"
+      "cwd": "/mnt/data/ui57_work/frozen",
+      "runtime": "/mnt/data/ui57_work/frozen"
     },
     {
       "name": "refresh_browser",
-      "pid": 8556,
       "command": [
         "python",
         "-u",
-        "/mnt/data/ui56_work/scripts/refresh_browser/browser_checks.py"
+        "/mnt/data/ui57_work/scripts/refresh_browser/browser_checks.py"
       ],
-      "cwd": "/mnt/data/ui56_work/frozen"
-    },
-    {
-      "name": "reports",
-      "pid": 8557,
-      "command": [
-        "python",
-        "-u",
-        "/mnt/data/ui56_work/scripts/report_checks.py"
-      ],
-      "cwd": "/mnt/data/ui56_work/frozen"
+      "cwd": "/mnt/data/ui57_work/frozen",
+      "runtime": "/mnt/data/ui57_work/frozen"
     }
   ],
   "selected_not_full_suite": true,
-  "application_test_source": "Fresh frozen runtime after final cache reference alignment; subsequent external PDF comparison did not change application source.",
+  "application_test_source": "Fresh frozen runtime after the final chooser-close/read epoch correction. All final selected groups rerun against those exact bytes.",
   "excluded": [
-    "Historical Maintenance test hard-codes UI54 cache and fails on untouched UI55; explicitly deselected, not fixed.",
-    "Three native Tk initialisation errors in initial broader headless run; native window suite excluded from final selection.",
-    "Initial fixture actor signature/root ID/held response mistakes, no-tests collection path typo, superseded cache wiring mismatch and successful pre-alignment runs retained separately."
+    "Initial fixture errors: helper signature, permissions fixture, journal day toggle, modal close selector.",
+    "Initial unchanged-response button closure and subsequent just-closed chooser/read-generation bug found locally, fixed, retained as regressions.",
+    "Superseded complete runs and screenshot-only repeats before final chooser refinement are not added to final counts.",
+    "No unrelated inherited or native/full-suite test assertion declared fixed or passed."
   ],
   "limitations": [
-    "Fictional SQLite/TestClient and shipped assets with controlled fetch/hash/staged memory, not actual live browser navigation or durable IndexedDB.",
-    "Shared timers exercised at original intervals for 33.5 seconds with controlled local cache latency, not endurance/load/SW/real WebSocket acceptance.",
-    "No live company, GitHub/Render deployment, physical phone, Windows/PowerShell/installer, full-suite/security/accessibility/load, Docker or off-host recovery.",
-    "No installed-shortcut target or actual app-install method identified; icon/window behaviour remains a separately recorded request."
+    "Shipped assets and fictional SQLite/TestClient with injected fetch/hash/staged memory storage, not live or durable IndexedDB/actual browser navigation.",
+    "Shared periodic refresh checked concurrently for 33.5 seconds with controlled latency, not long-duration/SW/real WebSocket/physical-device acceptance.",
+    "No live Sulmara/demo/GitHub/Render, deployment, real credentials/data access, Windows/PowerShell/native/Chrome launcher, full-suite/security/accessibility/load, Docker or off-host recovery acceptance.",
+    "Reports/evidence writers unchanged; report rendering was not newly tested for this assignment/entry update."
   ],
   "deployment_performed": false
 }
