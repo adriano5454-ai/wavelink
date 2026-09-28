@@ -1,3 +1,41 @@
+# Latest prepared release: UI55 — shared refresh stability
+
+User reported continued flicker after UI54. Confirmed a shared cache-write saving banner outside
+section rendering, plus direct Fault/HSE route remounts. Fixed quiet cached writes with unchanged
+persistence/safety/error rules, overlapping timer prevention, unchanged labels and stable direct
+report reads/history. No new section design, backend rule, permission, table or saved format.
+
+Next: check actual idle Home/builders and direct report/history on the intended deployed build,
+including a real teammate update. If flicker remains, identify exact route/build/top status and
+capture a short recording; don't assume every symptom is this source mechanism. No clearing site
+data, disabling sync or ignoring genuine save/connection failures. Certificates remains the next
+section review AFTER urgent stability feedback. Preserve approved modules, C01/G01, optional
+handover notes, exact evidence, sign-out and bulk-local-work safeguards. Wider roadmap below.
+
+---
+
+# Latest prepared release: UI54 — Maintenance workflow
+
+Completed the approved Maintenance review: retained named selections and selected routine revision,
+explicit current-routine adoption, exact previous-attempt retry, final account/form send guard,
+owned History/directory reads, denied-background clearing, labelled temporary stale view, keyed
+order/step updates, direct order opening and permissioned routine Create/Import/View. Existing
+onepage work/results, approvals, completion/cancellation, cycles and all193appPython remain.
+No automatic reassignment, proof of equipment readiness or new scheduling/signing capabilities.
+
+Next: one named-user fictional full Maintenance create/assignment/result/photo/approval/completion/
+successor/report/refresh/mobile session, then next agreed sidebar section (Certificates) review.
+Keep approved Home/Tasks/Checklists/Logs/Handovers/Calendar/Inventory, optional handover notes,
+full capabilities, useful wizards, separate-tab Help, local-work management, CompanyC01/G01,
+website icons and support@mywavelink.com. No silent redesigns or everyday explanation prompts.
+
+Current-order reassignment/editing, maintenance QR/admission, meter-driven maintenance, automatic
+reminders, job-file/batch reporting and broader imports/recovery remain separately scoped backlog.
+Copy/review/commit/push, optional PS1; no resets/reimports/storage clearing/sync disable or automatic
+background development. No live service/version assumption. Older roadmap retained below.
+
+---
+
 # Latest prepared release: UI53 — complete Inventory & boxes workflow
 
 Resumed the agreed section review after UI52 optional handover notes (which remains included).

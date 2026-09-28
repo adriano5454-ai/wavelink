@@ -1,76 +1,73 @@
 {
-  "release": "UI53 + Company C01 + G01",
+  "release": "UI55 + Company C01 + G01",
   "core": "1.34.19",
-  "parent": "UI52 + Company C01 + G01",
-  "python_passed": 511,
+  "parent": "UI54 + Company C01 + G01",
+  "python_passed": 342,
   "python_groups": {
-    "inventory_py": 133,
-    "tasks_py": 73,
-    "preserved_py": 127,
+    "refresh_py": 93,
+    "reports_py": 36,
+    "checklist_py": 35,
     "hosting_py": 178
   },
-  "compound_browser_passed": 27,
+  "compound_browser_passed": 93,
   "browser_groups": {
-    "inventory_browser": 20,
-    "handover_browser": 7
+    "refresh_browser": 26,
+    "signout_browser": 13,
+    "checklists_browser": 10,
+    "reports_browser": 26,
+    "maintenance_browser": 18
   },
-  "javascript_syntax_passed": 78,
+  "javascript_syntax_passed": 79,
   "application_python_parsed": 193,
-  "runtime_files": 1841,
+  "runtime_files": 1846,
   "commands": [
     {
-      "name": "inventory_py",
-      "pid": 4053,
+      "name": "refresh_py",
+      "pid": 3384,
       "command": [
         "python",
         "-m",
         "pytest",
-        "tests/ui53_inventory",
-        "tests/inventory_explorer/test_presentation.py",
-        "tests/asset_workspace/test_summary.py",
-        "-q",
-        "--junitxml=/mnt/data/ui53_work/evidence/final/inventory_py.xml"
-      ],
-      "cwd": "/mnt/data/ui53_work/frozen"
-    },
-    {
-      "name": "tasks_py",
-      "pid": 6529,
-      "command": [
-        "python",
-        "-m",
-        "pytest",
-        "tests/ui47_tasks/test_updates.py",
-        "tests/ui47_tasks/test_retained_inventory.py",
-        "tests/general_tasks/test_tasks.py",
-        "tests/ui33_usability/test_routine.py",
-        "-q",
-        "--junitxml=/mnt/data/ui53_work/evidence/final/tasks_py.xml"
-      ],
-      "cwd": "/mnt/data/ui53_work/frozen",
-      "repeated_after_test_only_refreeze": true
-    },
-    {
-      "name": "preserved_py",
-      "pid": 4055,
-      "command": [
-        "python",
-        "-m",
-        "pytest",
-        "tests/ui52_notes",
-        "tests/ui29_simple/test_simple.py",
-        "tests/ui29_simple/test_transfer.py",
-        "tests/ui50_handovers/test_workflow.py",
+        "tests/ui55_refresh",
+        "tests/save_status/test_status.py",
         "tests/ui45_review/test_review.py",
-        "tests/ui45_review/test_builder_baseline.py",
+        "tests/ui31_presence/test_presence.py",
+        "-k",
+        "not test_shell_version_and_api_cache_exclusion and not test_preserved_account_and_operational_rules_match_126",
         "-q",
-        "--junitxml=/mnt/data/ui53_work/evidence/final/preserved_py.xml"
+        "--junitxml=/mnt/data/ui55_work/evidence/final/refresh_py.xml"
       ],
-      "cwd": "/mnt/data/ui53_work/frozen"
+      "cwd": "/mnt/data/ui55_work/frozen"
+    },
+    {
+      "name": "reports_py",
+      "pid": 3385,
+      "command": [
+        "python",
+        "-m",
+        "pytest",
+        "tests/ui40_reports/test_workflow.py",
+        "-q",
+        "--junitxml=/mnt/data/ui55_work/evidence/final/reports_py.xml"
+      ],
+      "cwd": "/mnt/data/ui55_work/frozen"
+    },
+    {
+      "name": "checklist_py",
+      "pid": 3386,
+      "command": [
+        "python",
+        "-m",
+        "pytest",
+        "tests/ui48_checklists/test_workflow.py",
+        "-q",
+        "--junitxml=/mnt/data/ui55_work/evidence/final/checklist_py.xml"
+      ],
+      "cwd": "/mnt/data/ui55_work/frozen"
     },
     {
       "name": "hosting_py",
-      "pid": 6530,
+      "pid": 3387,
       "command": [
         "python",
         "-m",
@@ -81,57 +78,95 @@
         "tests/test_provision.py",
         "tests/test_package.py",
         "-q",
-        "--junitxml=/mnt/data/ui53_work/evidence/final/hosting_py.xml"
+        "--junitxml=/mnt/data/ui55_work/evidence/final/hosting_py.xml"
       ],
-      "cwd": "/mnt/data/ui53_work/repo",
-      "repeated_after_test_only_refreeze": true
+      "cwd": "/mnt/data/ui55_work/repo"
     },
     {
-      "name": "inventory_browser",
-      "pid": 4057,
+      "name": "refresh_browser",
+      "pid": 3388,
       "command": [
         "python",
         "-u",
-        "/mnt/data/ui53_work/browser_inventory.py"
+        "/mnt/data/ui55_work/browser_checks.py"
       ],
-      "environment": {
-        "WAVELINK_RUNTIME": "/mnt/data/ui53_work/frozen",
-        "OUT": "/mnt/data/ui53_work/evidence/final/inventory_browser"
-      },
-      "cwd": "/mnt/data/ui53_work/frozen"
+      "cwd": "/mnt/data/ui55_work/frozen"
     },
     {
-      "name": "handover_browser",
-      "pid": 4058,
+      "name": "parent_exclusions",
+      "pid": 3389,
+      "command": [
+        "python",
+        "-m",
+        "pytest",
+        "tests/save_status/test_status.py::test_shell_version_and_api_cache_exclusion",
+        "tests/save_status/test_status.py::test_preserved_account_and_operational_rules_match_126",
+        "-q",
+        "--junitxml=/mnt/data/ui55_work/evidence/final/parent_exclusions.xml"
+      ],
+      "cwd": "/mnt/data/ui55_work/parent_runtime"
+    },
+    {
+      "name": "signout_browser",
+      "pid": 4618,
       "command": [
         "python",
         "-u",
-        "/mnt/data/ui53_work/prior52/browser_harness/browser_notes.py"
+        "/mnt/data/ui55_work/frozen/tests/ui45_review/browser_signout.py",
+        "/mnt/data/ui55_work/evidence/final/signout_browser"
       ],
+      "cwd": "/mnt/data/ui55_work/frozen"
+    },
+    {
+      "name": "checklists_browser",
+      "pid": 4619,
+      "command": [
+        "python",
+        "-u",
+        "/mnt/data/ui55_work/frozen/tests/ui48_checklists/browser_workflow.py",
+        "/mnt/data/ui55_work/evidence/final/checklists_browser"
+      ],
+      "cwd": "/mnt/data/ui55_work/frozen"
+    },
+    {
+      "name": "reports_browser",
+      "pid": 4620,
+      "command": [
+        "python",
+        "-u",
+        "/mnt/data/ui55_work/frozen/tests/ui40_reports/browser_checks.py",
+        "/mnt/data/ui55_work/evidence/final/reports_browser"
+      ],
+      "cwd": "/mnt/data/ui55_work/frozen"
+    },
+    {
+      "name": "maintenance_browser",
+      "pid": 5725,
+      "command": [
+        "python",
+        "-u",
+        "/mnt/data/ui55_work/browser_maintenance.py"
+      ],
+      "cwd": "/mnt/data/ui55_work/frozen",
       "environment": {
-        "UI50_RUNTIME": "/mnt/data/ui53_work/frozen",
-        "UI52_BROWSER_OUT": "/mnt/data/ui53_work/evidence/final/handover_browser"
-      },
-      "cwd": "/mnt/data/ui53_work/frozen"
+        "UI54_RUNTIME": "/mnt/data/ui55_work/frozen",
+        "WAVELINK_RUNTIME": "/mnt/data/ui55_work/frozen",
+        "UI54_BROWSER_OUT": "/mnt/data/ui55_work/evidence/final/maintenance_browser"
+      }
     }
   ],
-  "test_only_refreeze": {
-    "changed_runtime_files": [
-      "tests/ui47_tasks/test_updates.py",
-      "UI_PATCH.json"
-    ],
-    "all_application_bytes_unchanged": true,
-    "reason": "Update intentionally superseded standalone own-result reason expectation; retain version/audit and prohibit foreign-author task-flag bypass. Affected entire Tasks group and all hosting/package rerun. Other completed groups and browser runs use identical application/relevant tests."
-  },
   "selected_not_full_suite": true,
-  "not_deployed": true,
+  "application_test_source": "fresh final extractor, all counted runs after source freeze",
+  "preliminary_runs_excluded": [
+    "Initial tool-interrupted browser attempt before the concurrent-timer check",
+    "Complete development 26-case shorter 17.5-second run superseded by final 33.5-second run",
+    "Two historical save-status shell-version/backend-hash invariants fail on untouched UI54; independently reproduced and excluded, not fixed"
+  ],
   "limitations": [
-    "actual assets and fictional SQLite/TestClient",
-    "injected fetch, staged in-memory transactions, simulated hashes; normal browser navigation policy not bypassed",
-    "not live company, durable IndexedDB/service-worker or physical-device/camera/printer acceptance",
-    "PowerShell not executed on Windows",
-    "no full security/accessibility/load, Docker or accepted off-host recovery",
-    "earlier native/display and historical frozen-version failures are not claimed fixed",
-    "master/native guides and installed binaries not rebuilt"
-  ]
+    "Shipped assets and fictional SQLite/TestClient services",
+    "Injected fetch/hash routing and staged in-memory local transactions with controlled delay, not durable IndexedDB or live navigation",
+    "Actual periodic callbacks scheduled concurrently at original intervals for 33.5s, but no real WebSocket/service-worker lifecycle acceptance",
+    "No live Sulmara/GitHub/Render, physical phone, Windows/PowerShell/native, full-suite, full security/accessibility/load, Docker or accepted off-host recovery"
+  ],
+  "deployment_performed": false
 }

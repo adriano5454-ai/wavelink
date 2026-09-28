@@ -1,75 +1,69 @@
-# Wavelink checkpoint — UI53 + Company C01 + working G01
+# Wavelink checkpoint — UI55 + Company C01 + working G01
 
-27 September 2026; core1.34.19. Resumes whole Inventory review after UI52 optional handover notes.
-Grouped capabilities, polished/user-friendly not basic, review→build→one acceptance session.
-Compact copy/review/commit/push; optional PS1. Do not assume a deployed version or inspect live data.
+28 September 2026; core1.34.19. User reports persistent app-wide flicker after UI54.
+Stability takes priority over the next Certificates review. Polished/full capabilities,
+no routine friction, same compact copy/review/commit/push delivery; PS1 optional.
 
-## Source
-
-Full UI50 + exact UI51/UI52 verified:156 parent repo files/1834 runtime.
-Parent UI52 extractor ac3bed735fd0ef07ea0ea01c1ddaad3ace3479c8450104c0e884141470148cae.
-UI53 extractor 52dbf2c58721d3d1db8fe82a85bcbc6bfa7a7430c1aeb26a63c8898a9e684882.
-Patch ID workspace-ui53-inventory-workflow-2026-09-27.
-92 changed/new runtime resources / 523 cumulative overlays /
-1841 tracked runtime. Target158repo/157deployment rows. Only existing executable upload change
-is deploy/extract_source.py. C01 entrypoint f754d4db367983a75473f1d525183b618a25c265837a317df66ffabaf8f4c1e2;
+## Verified source
+Full UI50 archive a9e3452da15435653281425696449aefe1afadb88a1630ac949f4b2a08f1e8d2 + exact
+UI51–54 patches, every baseline/target hash and ZIP CRC checked. 160 parent repository files,
+1844 runtime files. Parent extractor d38981772e96b7c4f4b10bd7cd1ae8dfab06b9acbb1a21569dc82c4081a930da.
+UI55 extractor a3204bb604d0ea9fd62157738ae28cbab030b59fea2cdc85145be9f57678a0a2.
+PatchID workspace-ui55-shared-refresh-stability-2026-09-28.
+90 changed/new runtime resources; 528 cumulative overlays; 1846 runtime files.
+C01 entrypoint f754d4db367983a75473f1d525183b618a25c265837a317df66ffabaf8f4c1e2;
 G01 gate9dc4ab6f7b7fb324ea06c305a09af8336b0bd10e7be6bef5296af1fd32d2e701;
 Nginx752563759fd82e20eacc62379f7a3082a8074675a747214a16cff0b9b90b99b8 unchanged.
+Only existing executable repository change deploy/extract_source.py. Target162repo/161deployment rows.
 
-## Implemented
+## Findings and implemented correction
+UI54 shared persist showed full-width Saving local workspace during eight-second cached catalogue/
+record/heartbeat writes, not only user edits. Actual-asset delayed-write180ms mobile reproduction:
+Home/builders two appearances over two idle rounds, scroll500–620; native anchoring partly compensated.
+Exact Fault route additionally remounted; do not claim all live symptoms or hidden tab/version verified.
 
-Inventory permissioned Create/Import direct→existing builder exact saved destination. Catalogue query
-retained across changed count; account/project reset. Keyed explorer/result rows, More expansion and
-reading anchors for ordinary updates. Structural refresh can rebuild; polling pauses on selected rows
-and active input/forms as before. Visible-only selection removal explained. Temporary stale view is
-labelled/record actions blocked, definitive denial clears protected view while retaining editor text.
-History and pre-send account/form/route/modal generation guards prevent newer-form takeover/replacement
-credential use. No automatic operation, sync disabling or local work deletion.
+persist({background:true}) only at loadRecords/refreshRecord/heartbeat. SAME writeWorkspace(true),
+transaction/storage-error path, lease checks and overall localWriting counter. Separate foreground
+localFeedbackWriting drives transient banner only. Real drafts/queues/uncertain/conflict/error/offline
+feedback retained. Background writes still block unsafe logout/discard; no skipped persistence.
+Idempotent connection/project/presence text and save-strip attr assignments when unchanged.
+One shared eight-second timer round at a time, finally resets; active writes finish, sync remains on.
 
-One-page item form retains all fields/custom/source/unknown quantity, existing storage authority and
-movement/box/Fleet restrictions. Ordinary local draft writer/context/op-ID/version/cleanup remains;
-only scoped guards added. Four-stage reviewed physical moves and split semantics are unchanged.
-Stock setup shows exact expanded map and visibly excluded nonboxes for boxes_only. Backend rejects
-mixed selection and optionally rechecks reviewed_scope versions. No silent expansion at creation;
-existing clients without the optional preview retain scope semantics except correct boxes_only.
+Fault/HSE direct-route refresh: no full-shell/loading navigation on every render. Exact read context,
+current report/list authority, stable keyed rows and saved-data fingerprints. Other selection retained
+while old URL remains. Reading History not automatically rewritten; current read access still checked.
+Changed account/route/form/modal/selection/generation invalidates delayed success. Definitive denial
+clears protected report rows behind shared modal without deleting its text. Transient last-saved label,
+existing edit fresh-read/version rules retained; not a blanket disabling of all old form actions.
+Report submit/create/review/assignment/lifecycle functions and server payloads unchanged.
 
-Standalone open stock results allow no generic reason only for proven continuous same-author,
-nonmovement history; missing/malformed/reset/foreign history refused as routine. Actual actor/time/
-version/before-after retained; no fake reason. Private Task result policy unchanged. Actual typed
-movement reason also explains same-author result correction; movement permission/review retained.
-One fresh exact-version close review shows unresolved outcomes and requires explicit nonpreselected
-acceptance. Meaningful closing/cancel notes stay; no second generic freeze prompt, no Found/quantity/
-release inference. Setup/closing forms are in-tab only, not new persistent drafts. Uncertain writes
-retain identical request/op; ordinary item/result local drafts use existing store.
+All193applicationPython unchanged;79JS syntax. Shared main function audit: only persist/updateConnection/
+loadRecords/refreshRecord/heartbeat declarations changed,143others byte-identical. Timer callback changed
+outside declarations. writeWorkspace/apiTransport/queueChange/syncQueue/commitLocalSignOut/sessionExitBusy/
+render/safeRender/renewLease unchanged. Fault/HSE only open/detail changed,3read helpers each added;
+writers and form logic unchanged. view_stability adds report row keys only. Approved designs retained.
+No new APIs/tables/permissions/dependencies/environment/saved formats/browser-store versions.
+One Help body savestatus+outline/catalogue;75others unchanged;76 matches. No native or PDF redesign.
 
-Only app/inventory.py changes among193appPython (192unchanged):count_view/do_start_count/do_check_item,
-new routine_count_editors helper;16 otherInventory methods unchanged. New inventory_workspace.js/css,
-scoped fieldwork changes and shared cache wiring. No routes/tables/permissions/env/deps/migrations/new
-browser stores. Read metadata routine_editor_id and optional preview map only. Four Help bodies
-inventory/stocktake/inventorybuilder/inventorytransfer and outlines/catalogue,72 others same.
-All76 catalogue matches. Master/native PDFs/UI not redesigned. Report/QR/profile/custody/Task/evidence
-writers, UI52 blank-handovers and previous approved layouts remain.
+## Actual checks
+**342 selected Python tests, 93 compound browser checks and 79 JavaScript syntax checks passed.** All 193 application Python modules remain byte-identical to UI54. The frozen extractor produces 1846 tracked runtime files. Python groups: refresh_py=93, reports_py=36, checklist_py=35, hosting_py=178. Browser groups: refresh_browser=26, signout_browser=13, checklists_browser=10, reports_browser=26, maintenance_browser=18. Two intentionally excluded historical assertions were reproduced failing on untouched UI54. No full-suite claim.
+Frame-sampled delayed cache writes, actual report writes/access revocation and concurrent original timers
+for33.5s; seven workspace idle entries, report history/selection/modal/network states; actual user-save
+feedback, overlapping user/cache writes, held transaction/no timer overlap, quota failure and retained
+unknown fields/uncertain receipts. Separate retained signout/checklist/paired-report/maintenance browsers.
+Same shipped assets and real fictional SQLite/TestClient services, injected fetch/hash/staged atomic store;
+not durable IndexedDB, real navigation, WebSocket, SW lifecycle or physical-device acceptance.
+Initial interrupted run and superseded short development run excluded. Two old save-status version/hash
+assertions reproduced failing untouchedUI54 and deselected from current selection, not removed/fixed.
+No fullsuite/livecompany/credentials/hosting/WindowsPowerShell/native/Docker/fullsecurityaccessibilityload/
+offhost acceptance. Source/CRC/checksum/replay/fresh runtime verification separate, repeats add no coverage.
 
-## Actual local checks
-
-**511 selected Python tests, 27 compound browser checks and 78 JavaScript syntax checks passed.** All 193 application Python modules parse; 1841 tracked runtime files verified. Python groups: inventory_py=133, tasks_py=73, preserved_py=127, hosting_py=178. Browser groups: inventory_browser=20, handover_browser=7. Thirteen Node scope assertions run within one Python test and are not additional Python cases. Stock PDF, CSV and two label sizes were generated through existing authenticated services; rendered stock/label examples were inspected. These are selected checks, not a full-suite result.
-
-Final commands/logs/source audit and checksum replay in separate report/evidence. Initial partial,
-fixture and old native/manifest assertions excluded. One deliberately obsolete standalone reason
-expectation from UI47 replaced with supported-own edit/audit and denied foreign-author flag test.
-No unrelated old failure claimed fixed. Production bytes unchanged in final test-only refreeze;
-affected Tasks and package groups rerun. Actual-assetsTestClient/injectedfetch/hash/stagedmemorystore,
-not live, normal-navigation/durableIDB/SW/physicalcamera/printer/WindowsPowerShell/native/fullsuite/
-fullsecurity/accessibility/load/Docker/offhost acceptance. No deployment or real accounts/credentials.
-
-## Preserve and next
-
-Keep independent activated Sulmara C01 companyidentity/domain/disk/activationmarker,
-INITIALISE_COMPANY=NO/removedbootstrap; separate G01demo settings/credentials/domain/disk;
-backups/approvedcommit/.git/outsideedits/unsent main/separate-log work. No reset/reimport/storageclear/
-syncdisable/repeatsetup/incompatiblepreC01/preUI34writer rollback. Source rollback cannot restore
-local entries deliberately discarded. Keep UI52 optional handover notes, source/evidence/privacy.
-
-One fictional named Inventory creation/nested-kit/move/split/boxes-only/result/discrepancy close/PDF/
-refresh/history/mobile acceptance, then next agreed sidebar review. Wider roadmap in DEVELOPMENT_TODO;
-nativevessel/CCVD/cloudsync/localphonenetwork outside this increment. No automatic background work.
+## Preserve / next
+Separate activated Sulmara C01 identity/domain/disk/marker, INITIALISE_COMPANY=NO and removed bootstrap;
+independent demo G01settings/domain/disk/guest; backups/approvedcommit/.git/outsideedits/unsentmain+logs.
+No reset/reimport/site-data clearing/sync disabling/repeatsetup/incompatiblepreC01/preUI34writers.
+Test same-account idle Home/builders/report+real-update on the actual deployed build; do not assume UI55live.
+Prior section-specific fixes alone did not cover slow global cached writes. Remaining symptoms need the
+actual tab, top status, deployed build and preferably a short recording; don't claim universal flicker cure.
+Then resume Certificates review→agreed build, keeping approved sections. Wider roadmap retained.
+Nativevessel/CCVD/cloudsync/localnetwork remain outside scope. No automatic background work.

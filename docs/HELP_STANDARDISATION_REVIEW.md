@@ -1,3 +1,22 @@
+# UI55 — shared refresh / real save feedback
+
+Only the hosted Save-status article and its outline/catalogue gain bounded guidance on quiet
+cached reads, actual editing feedback and protected transactions. The other75 article bodies
+are unchanged; all76 catalogue text/headings match. Shared reader/cache references advance.
+This is not a complete native/master PDF guide review. Prior history retained below.
+
+---
+
+# UI54 — Maintenance Help update
+
+One hosted body/outline updated: maintenance. Direct routine authority, direct open vs Summary,
+searchable retained people, explicit routine revision, same-request retry, last-saved and denied
+view handling, account guard and unchanged approval/cycle boundaries documented. The other75
+article bodies remain unchanged; all76 catalogue text/headings match. Not a new complete Help
+library, native guide or master-PDF review. The older review record is retained below.
+
+---
+
 # UI53 — Inventory workflow Help
 
 Four current hosted bodies/outlines reviewed: Inventory, Stock verification, Inventory Builder and
