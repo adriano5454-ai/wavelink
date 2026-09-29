@@ -1,0 +1,41 @@
+{
+  "format": "wavelink-company-mail-startup-m01-provenance-1",
+  "date": "2026-09-29",
+  "release": "UI64 + Mail Startup M01 + C01 + G01",
+  "parent": "Exact UI64 + C01 + G01",
+  "base_reconstructed_from": "Verified full UI50 plus exact UI51-64 patches",
+  "before_company_entrypoint_sha256": "ab7a0a16677835815ac34222db5b9938d046c3d47aa25f71dfa227922b36375b",
+  "after_company_entrypoint_sha256": "2f117d85c439c16ab78908bf5728056cc837e5d1f948a77040ef1d509c04c371",
+  "unchanged_extractor_sha256": "815a635818cb4268957c090e091dab50a95c72b1b6e0bc9f103276fdc630ae09",
+  "unchanged_company_runtime_sha256": "cff4d9ecafdd048377f46000f2d706745efef164f27a22e9301bb1d5ceb68a27",
+  "application_code_changed": false,
+  "additional_schema_changes": false,
+  "only_existing_executable_changed": "deploy/company_entrypoint.py",
+  "company_child_allowlist": [
+    "WAVELINK_DEPLOYMENT_MODE",
+    "COMPANY_ID",
+    "COMPANY_NAME",
+    "PUBLIC_URL",
+    "WAVELINK_MEMBERSHIP_MODE",
+    "MEMBERSHIP_SMTP_HOST",
+    "MEMBERSHIP_SMTP_PORT",
+    "MEMBERSHIP_SMTP_TLS",
+    "MEMBERSHIP_SMTP_USERNAME",
+    "MEMBERSHIP_SMTP_PASSWORD",
+    "MEMBERSHIP_SMTP_FROM"
+  ],
+  "smtp_forwarding_condition": "exact INVITE_ONLY, company application child only",
+  "public_url_source": "Validated canonical origin returned by prepare_company",
+  "does_not_forward": [
+    "bootstrap/setup secrets",
+    "demo credentials",
+    "arbitrary operator keys",
+    "mail credentials to Nginx/demo"
+  ],
+  "root_cause": "UI64 minimal child environment discarded all membership/mail/company configuration; app defaulted OFF.",
+  "future_merge_requirement": "Retain company_application_environment use in run_company; do not restore old minimal-only launch.",
+  "remote_operations": false,
+  "live_credentials_accessed": false,
+  "external_email_sent": false,
+  "parent_test_limitation": "Prior hosted UI64 tests injected settings and a test mailer; did not exercise supervisor environment forwarding."
+}

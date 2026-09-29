@@ -1,3 +1,17 @@
+# Current addition — UI64 Mail Startup M01, 29 September 2026
+
+- Keep M01's allowlisted company-child environment in all future deploy/company_entrypoint.py builds.
+  UI64's unmodified launcher silently removed the mail settings, even with correct Render values.
+- Actual SMTP sender selected: contact@mywavelink.com, a separate Zoho mailbox; provided configuration
+  smtp.zoho.com / 465 / SSL. Never store its credential in source, artifacts or diagnostics.
+- Next acceptance: healthy M01 deployment, existing named admin, Refresh invitations, one unused test
+  mailbox, actual code delivery, pending/no-access then deliberate limited approval. No actual email yet.
+- Professional email-first login, existing-account linking/recovery and verified sulmara.com routing
+  remain Stage C. Do not remove the working administrator login before verified replacement/recovery.
+- Only one existing executable changed here; no runtime/UI feature or schema change. Retain UI64+.
+
+--- Preserved earlier roadmap ---
+
 # Current roadmap — UI64
 
 Stage B implemented: invite-only exact-mailbox verification, disabled deny-all Pending membership, isolated status-only sessions, scoped Home review queue, selective grants with provenance and current independent-authority/allowance/department intersection. Existing users, IDs, source evidence, C01/G01 and UI63 Home/Workspaces retained.

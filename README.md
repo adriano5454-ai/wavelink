@@ -1,3 +1,17 @@
+# Wavelink UI64 + Mail Startup M01
+
+Core **1.34.19**. Company C01 and G01 retained. Read **docs/MAIL_STARTUP_M01.md** first.
+The company supervisor now passes its explicitly configured membership/SMTP environment to the
+application child. The generic demo/proxy environment stays restricted. Only the existing
+`deploy/company_entrypoint.py` executable changes; all UI64 application files are unchanged.
+Copy the complete hotfix payload into the UI64 repository, review, commit and push. No script
+installation step, new env variable, account change or additional schema upgrade. Keep UI64+
+on the existing membership schema; no reset, reinstall or repeat company setup. Credentials
+stay in hosting secrets, never GitHub. Existing admin login can manage invitations. Actual
+email delivery and later email-first login remain separate acceptance/development steps.
+
+--- Retained UI64 application instructions ---
+
 # Wavelink UI64 — controlled company membership
 
 Core **1.34.19**. Read docs/WORKSPACE_UI64.md, docs/COMPANY_MEMBERSHIP.md and docs/CONTINUATION_CHECKPOINT.md. Invite-only verification/pending access and one-level scoped delegation. **Mail defaults OFF. Eleven tables and one users marker are added transactionally; keep UI64+ for upgraded membership data.** Copy the full patch including deploy/company_runtime.py; existing C01 activation, G01 demo, current accounts, Personal Home, operator logo config and evidence remain. No reset or repeat setup. sulmara.com is still unverified and not enabled for routing.

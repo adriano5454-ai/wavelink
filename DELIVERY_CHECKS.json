@@ -1,297 +1,65 @@
 {
-  "format": "wavelink-ui64-delivery-checks-1",
-  "release": "UI64",
-  "parent": "UI63 + C01 + G01",
+  "format": "wavelink-ui64-m01-delivery-checks-1",
+  "release": "UI64 + Mail Startup M01 + C01 + G01",
+  "parent": "UI64 + Company C01 + G01",
   "core": "1.34.19",
-  "python_passed": 417,
-  "browser_passed": 59,
+  "python_passed": 135,
+  "new_tests": 26,
+  "retained_c01_tests": 71,
+  "retained_mail_hosted_tests": 29,
+  "package_tests": 9,
+  "browser_tests_rerun": false,
   "javascript_syntax": 89,
   "python_parse": 203,
   "runtime_files": 1917,
   "extractor_sha256": "815a635818cb4268957c090e091dab50a95c72b1b6e0bc9f103276fdc630ae09",
+  "application_runtime_changed": false,
+  "only_existing_executable_change": "deploy/company_entrypoint.py",
   "python_runs": [
     {
-      "group": "membership_core",
-      "command": [
-        "python",
-        "-m",
-        "pytest",
-        "-q",
-        "tests/ui64_membership/test_smoke.py",
-        "tests/ui64_membership/test_membership.py",
-        "--color=no",
-        "--junitxml=/mnt/data/ui64_work/evidence/final/membership_core.xml"
-      ],
-      "status": 0,
-      "seconds": 60.02,
-      "xml": {
-        "tests": 59,
-        "failures": 0,
-        "errors": 0,
-        "skipped": 0
-      }
+      "group": "m01_and_package_final",
+      "exit_status": 0,
+      "tests": 35,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "xml": "m01_and_package_final.xml",
+      "log": "m01_and_package_final.log"
     },
     {
-      "group": "mail_boundaries",
-      "command": [
-        "python",
-        "-m",
-        "pytest",
-        "-q",
-        "tests/ui64_membership/test_mail_and_boundaries.py",
-        "--color=no",
-        "--junitxml=/mnt/data/ui64_work/evidence/final/mail_boundaries.xml"
-      ],
-      "status": 0,
-      "seconds": 15.06,
-      "xml": {
-        "tests": 24,
-        "failures": 0,
-        "errors": 0,
-        "skipped": 0
-      }
+      "group": "c01_retained",
+      "exit_status": 0,
+      "tests": 71,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "xml": "c01_retained.xml",
+      "log": "c01_retained.log"
     },
     {
-      "group": "upgrade_transfer",
-      "command": [
-        "python",
-        "-m",
-        "pytest",
-        "-q",
-        "tests/ui64_membership/test_upgrade_transfer.py",
-        "--color=no",
-        "--junitxml=/mnt/data/ui64_work/evidence/final/upgrade_transfer.xml"
-      ],
-      "status": 0,
-      "seconds": 14.2,
-      "xml": {
-        "tests": 6,
-        "failures": 0,
-        "errors": 0,
-        "skipped": 0
-      }
-    },
-    {
-      "group": "hosted_membership",
-      "retry_of": "hosted_membership environment omission; production/test bytes unchanged",
-      "command": [
-        "python",
-        "-m",
-        "pytest",
-        "-q",
-        "tests/ui64_membership/test_hosted_membership.py",
-        "--color=no",
-        "--junitxml=/mnt/data/ui64_work/evidence/final/hosted_membership_retry.xml"
-      ],
-      "status": 0,
-      "seconds": 9.81,
-      "xml": {
-        "tests": 5,
-        "failures": 0,
-        "errors": 0,
-        "skipped": 0
-      }
-    },
-    {
-      "group": "contract",
-      "command": [
-        "python",
-        "-m",
-        "pytest",
-        "-q",
-        "tests/ui64_membership/test_contract.py",
-        "--color=no",
-        "--junitxml=/mnt/data/ui64_work/evidence/final/contract.xml"
-      ],
-      "status": 0,
-      "seconds": 3.88,
-      "xml": {
-        "tests": 6,
-        "failures": 0,
-        "errors": 0,
-        "skipped": 0
-      }
-    },
-    {
-      "group": "admin_retained",
-      "command": [
-        "python",
-        "-m",
-        "pytest",
-        "-q",
-        "tests/browser_admin/test_admin.py",
-        "tests/access_review/test_access_review.py",
-        "tests/access_review/test_backup.py",
-        "--color=no",
-        "--junitxml=/mnt/data/ui64_work/evidence/final/admin_retained.xml"
-      ],
-      "status": 0,
-      "seconds": 73.57,
-      "xml": {
-        "tests": 63,
-        "failures": 0,
-        "errors": 0,
-        "skipped": 0
-      }
-    },
-    {
-      "group": "scope_retained",
-      "command": [
-        "python",
-        "-m",
-        "pytest",
-        "-q",
-        "tests/ui58_shift_permissions/test_permissions.py",
-        "tests/ui62_workspace/test_access.py",
-        "--color=no",
-        "--junitxml=/mnt/data/ui64_work/evidence/final/scope_retained.xml"
-      ],
-      "status": 0,
-      "seconds": 58.24,
-      "xml": {
-        "tests": 37,
-        "failures": 0,
-        "errors": 0,
-        "skipped": 0
-      }
-    },
-    {
-      "group": "personal_retained",
-      "command": [
-        "python",
-        "-m",
-        "pytest",
-        "-q",
-        "tests/ui63_personal/test_personal_home.py",
-        "tests/ui63_personal/test_sources.py",
-        "--color=no",
-        "--junitxml=/mnt/data/ui64_work/evidence/final/personal_retained.xml"
-      ],
-      "status": 0,
-      "seconds": 44.2,
-      "xml": {
-        "tests": 39,
-        "failures": 0,
-        "errors": 0,
-        "skipped": 0
-      }
-    },
-    {
-      "group": "company_retained",
-      "command": [
-        "python",
-        "-m",
-        "pytest",
-        "-q",
-        "/mnt/data/ui64_work/repo/tests/test_company_c01.py",
-        "--color=no",
-        "--junitxml=/mnt/data/ui64_work/evidence/final/company_retained.xml"
-      ],
-      "status": 0,
-      "seconds": 39.48,
-      "xml": {
-        "tests": 71,
-        "failures": 0,
-        "errors": 0,
-        "skipped": 0
-      }
-    },
-    {
-      "group": "gateway_retained",
-      "command": [
-        "python",
-        "-m",
-        "pytest",
-        "-q",
-        "/mnt/data/ui64_work/repo/tests/test_gate.py",
-        "/mnt/data/ui64_work/repo/tests/test_public_entry_g01.py",
-        "/mnt/data/ui64_work/repo/tests/test_provision.py",
-        "/mnt/data/ui64_work/repo/tests/test_package.py",
-        "--color=no",
-        "--junitxml=/mnt/data/ui64_work/evidence/final/gateway_retained.xml"
-      ],
-      "status": 0,
-      "seconds": 6.09,
-      "xml": {
-        "tests": 107,
-        "failures": 0,
-        "errors": 0,
-        "skipped": 0
-      }
+      "group": "mail_hosted_retained",
+      "exit_status": 0,
+      "tests": 29,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "xml": "mail_hosted_retained.xml",
+      "log": "mail_hosted_retained.log"
     }
   ],
-  "browser_runs": [
-    {
-      "group": "membership_browser",
-      "command": [
-        "python",
-        "/mnt/data/ui64_work/frozen_runtime/tests/ui64_membership/browser_checks.py",
-        "/mnt/data/ui64_work/evidence/final/membership_browser"
-      ],
-      "status": 0,
-      "seconds": 14.06,
-      "browser_checks": 20,
-      "browser_errors": [],
-      "browser_failure": null
-    },
-    {
-      "group": "refresh_browser",
-      "command": [
-        "python",
-        "/mnt/data/ui64_work/retained/retained_harnesses/refresh/browser_checks.py"
-      ],
-      "status": 0,
-      "seconds": 65.16,
-      "browser_checks": 26,
-      "browser_errors": [],
-      "browser_failure": null
-    },
-    {
-      "group": "signout_browser",
-      "command": [
-        "python",
-        "/mnt/data/ui64_work/retained/retained_harnesses/scripts/browser_signout.py",
-        "/mnt/data/ui64_work/evidence/final/signout_browser"
-      ],
-      "status": 0,
-      "seconds": 14.07,
-      "browser_checks": 13,
-      "browser_errors": [],
-      "browser_failure": null
-    }
-  ],
-  "schema": {
-    "new_tables": 11,
-    "users_column": "membership_required",
-    "new_permission_keys": [
-      "members.invite",
-      "members.review",
-      "members.manage"
-    ],
-    "email_default": "OFF",
-    "requires_UI64_or_later": true
-  },
+  "supervisor_before_after": "Recorded actual old and fixed run_company with genuinely fresh Python probe children; mounts/provisioning/readiness/Nginx simulated.",
+  "hosted_children": "Fresh child environments feed unmodified MembershipSettings and C01 factory; old admin invite/code/pending isolation with SMTP transport stub; no injected settings/ready flag.",
   "excluded_earlier_runs": [
-    "Initial membership test import lacked tests/ui64_membership/__init__.py; fixed test collection.",
-    "Initial hosted fixture used a too-short device ID; corrected to the existing accepted format.",
-    "An early strict-schema helper edit had SQL string quoting errors; corrected before the final source freeze.",
-    "A resend-receipt refinement initially also changed acceptance receipt handling; real browser lost-response retry reproduced the error. Acceptance receipt handling was corrected and all final groups rerun on frozen source.",
-    "An early Fleet-scope regression fixture referenced app.state.fleet instead of the actual store.fleet; corrected without changing the expected access boundary.",
-    "The UI63 upgrade fixture initially passed a string rather than Path, then used user_audit.id instead of its actual seq column. Both fixture assumptions were corrected; all six final real upgrade/backup/import tests passed.",
-    "Initial browser fixtures checked a hidden mobile sidebar as visible, used an old dialog-head selector, and returned an async function from page.evaluate. Corrected to current controls and nonreturning setup callbacks.",
-    "One browser check clicked before the email-settings refresh settled. It now waits for the actual newly loaded context before opening the request.",
-    "The new contract initially looked for the permission expression in nav_shell.js instead of the existing app navigation predicate. The corrected contract checks both the nav identifier and actual predicate.",
-    "The first final hosted-member group omitted required WAVELINK_TEST_REPOSITORY in the runner environment. The exact frozen application and tests were rerun with that environment value: five passed. Earlier collection error is retained and excluded.",
-    "Historical release-specific cache-name and invariant suites were not represented as current passes; current UI64 main-asset, storage-identity, isolated-entry and 77-topic Help contracts were executed instead.",
-    "Earlier development/partial/superseded successful runs are not added to final totals. No unrelated historical failure or native Windows execution is claimed fixed."
+    "Initial company retained run interrupted by tool timeout; complete exit-0 rerun counted instead.",
+    "Earlier 26-case development test run repeated in the final 35-case group; not added to totals."
   ],
+  "settings_secrets_in_package": false,
+  "real_email_sent": false,
+  "live_repository_inspected": false,
+  "deployment_performed": false,
   "limitations": [
-    "No real SMTP connection/email inbox delivery, verified corporate domain or central company routing.",
-    "No live Sulmara/demo account, credential, operational record, hosting/disk/DNS/GitHub change.",
-    "Browser fetch/hash/storage and trusted HTTPS headers are simulated; no real browser navigation/durable IndexedDB/SW/installed Chrome/Windows acceptance.",
-    "Selected tests, not the full product suite or independent production security/accessibility/load certification.",
-    "Database-copy and new-project import checks are not accepted off-host company disaster recovery.",
-    "Existing users keep original role defaults; invitees use the new marked/pending pathway. Existing-account verified-email linking, app email login, SSO/MFA/recovery remain future."
-  ],
-  "deployment_performed": false
+    "Selected local checks, not full-suite or independent production-security acceptance.",
+    "No live Render, actual SMTP/TLS inbox delivery, credentials check, actual Docker/Nginx supervisor startup, Windows or installed Chrome test.",
+    "No browser visual/IndexedDB/service-worker or off-host recovery acceptance; application bytes remain exactly UI64."
+  ]
 }

@@ -1,3 +1,41 @@
+# Current checkpoint — UI64 + Mail Startup M01 + C01 + G01
+
+29 September 2026. Focused repair after the user supplied correct Render INVITE_ONLY/Zoho
+settings but invitations still reported unconfigured. Existing username admin is a valid
+invitation manager; retain legacy stable IDs/login until the approved email-first replacement.
+
+Actual root cause: deploy/company_entrypoint.py launched company_runtime with only the generic
+minimal_environment plus PYTHONPATH. MembershipSettings.from_environment in the CHILD consequently
+saw default OFF and no company/SMTP values. UI64 factory tests injected membership settings and
+missed this supervisor-to-child boundary. New tests explicitly exercise it using fresh processes.
+
+Only existing executable changed: deploy/company_entrypoint.py. New helper
+company_application_environment copies the exact company identity/membership/SMTP allowlist after
+prepare_company validates its captured operator environment; PUBLIC_URL is the validated cfg origin.
+No arbitrary inheritance, bootstrap secrets, demo-password leakage, Nginx mail credentials or logging.
+OFF/invalid/incomplete configurations remain disabled; mail credentials forwarded only for INVITE_ONLY.
+Generic deploy/entrypoint.py, deploy/company_runtime.py and extractor are EXACT UI64 bytes.
+Application runtime remains 1917 tracked files / 203 app Python / 89 JS; no UI65 application claimed.
+No added tables, migration, permissions, routes or browser stores. UI64 schema compatibility remains.
+
+User selected contact@mywavelink.com, confirmed separate mailbox. Supplied Zoho screenshot gives
+smtp.zoho.com, 465/SSL or 587/STARTTLS; selected 465/SSL. Actual SMTP secret stays in Render only.
+No live settings, SMTP/password validation, email delivery, domain proof, account change or deployment.
+The user-supplied sulmara.com remains unverified for future Stage C; sender domain is not domain proof.
+
+Apply compact payload over UI64, copy/review/commit/push. Preserve independent company_entrypoint edits,
+company identities/artwork/.git/backup/unsent main+log work, C01 activation metadata and removedbootstrap,
+independent demo data/settings/disk. No reinstall, browser clearing, service/disk recreation, syncdisable
+or repeated setup. Stay UI64+ on membership data. Future full builds must carry this M01 launcher change.
+Next: actual clean deployment -> existing admin Invitations & access Refresh -> one disposable invitation,
+mailbox code and pending/no-rights acceptance; then continued bounded-delegation and Stage C sign-in work.
+Chrome focus-existing remains pending. Do not promise background work.
+
+Read docs/MAIL_STARTUP_M01.md, docs/MAIL_STARTUP_M01_PROVENANCE.json and DELIVERY_CHECKS.json for the
+actual patch/test boundaries. Earlier UI64 release details retained below; their test counts are historical.
+
+--- Retained UI64 checkpoint ---
+
 # Wavelink checkpoint — UI64 + Company C01 + G01
 
 29 September 2026; core1.34.19. Implements Stage B after UI63 personal Home. User supplied sulmara.com is unverified, not an auth/routing rule. No current domain research, real email, company data or deployment. Keep polish/full capabilities and shared UI60 controls; normal User ID login retained.
@@ -35,3 +73,11 @@ Earlier failures/superseded runs retained in evidence: collectioninit, SQLquotin
 C01companyIDs/PUBLIC_URL/disk/activationmarker INITIALISE_COMPANY=NO removedbootstrap; independentG01democonfig/disks;backup/approvedcommit/.git/independentcode/logos/unsentmain+logs. No reset/reimport/site-dataclear/syncdisable/repeatedsetup. Copyentirepayloadincludingcompany_runtime, optionalPS1. No source rollbackbelowUI64 onmembershipdata.
 
 Next operatorSMTPsenderconfiguration andrealdisposableinvite/status/zerogrant/limitedgrant/delegation/revocation/restart/restore session. StageC verifieddomain/main-siteprofessionalemailentry stillpending; sulmara.com remainsunverified. No automaticaccountlinking/domainSSO/MFA/emailrecovery, no grants from typingemail. Chromefocus-existing and widersectionroadmap remain. No automaticbackgroundwork.
+
+## M01 completed checks
+
+135 selected pytest cases passed with exit 0 and complete XML: 26 new process/configuration
+checks, 71 retained C01 checks, 29 retained membership mail/hosted checks and 9 package checks.
+89 unchanged runtime JavaScript files pass syntax and 203 unchanged app Python modules parse.
+All 1917 runtime hashes still match UI64. The initial interrupted company run is excluded;
+its complete retry is counted once. No browser, live email or production deployment acceptance.

@@ -1,6 +1,7 @@
 """C01 supervisor for one empty/prepared company on its OWN persistent disk."""
 from __future__ import annotations
 import os
+from collections.abc import Mapping
 from pathlib import Path
 import signal
 import subprocess
@@ -14,6 +15,37 @@ BASE=Path('/opt/wavelink')
 MOUNT=Path('/var/data')
 DATA=MOUNT/'wavelink-company'
 APP_PORT=8765
+
+# M01: only the company application needs membership settings. Never forward
+# arbitrary operator environment variables, bootstrap secrets, or demo passwords.
+_MEMBERSHIP_SMTP_ENV = (
+    'MEMBERSHIP_SMTP_HOST', 'MEMBERSHIP_SMTP_PORT', 'MEMBERSHIP_SMTP_TLS',
+    'MEMBERSHIP_SMTP_USERNAME', 'MEMBERSHIP_SMTP_PASSWORD', 'MEMBERSHIP_SMTP_FROM',
+)
+
+
+def company_application_environment(source: Mapping[str, str], *, origin: str) -> dict[str, str]:
+    """Build the private child environment after prepare_company validates identity.
+
+    Keep the generic minimal_environment unchanged: Nginx and demo children must
+    not receive company mail credentials. Use the validated canonical public
+    origin, copy the password exactly, and let MembershipSettings retain its
+    existing OFF/invalid-configuration fail-closed behaviour.
+    """
+    from .entrypoint import minimal_environment
+    if source.get('WAVELINK_DEPLOYMENT_MODE', 'DEMO') != 'COMPANY':
+        raise DemoError('Company application environment requires COMPANY mode.')
+    env = minimal_environment()
+    env.update(PYTHONPATH=str(BASE/'app'), WAVELINK_DEPLOYMENT_MODE='COMPANY',
+               COMPANY_ID=source['COMPANY_ID'], COMPANY_NAME=source['COMPANY_NAME'],
+               PUBLIC_URL=origin)
+    mode = source.get('WAVELINK_MEMBERSHIP_MODE', 'OFF')
+    env['WAVELINK_MEMBERSHIP_MODE'] = mode
+    if mode == 'INVITE_ONLY':
+        for name in _MEMBERSHIP_SMTP_ENV:
+            if name in source:
+                env[name] = source[name]
+    return env
 
 
 def run_company():
@@ -30,7 +62,8 @@ def run_company():
         os.setgroups([]);os.setgid(10001);os.setuid(10001)
     port=int(os.environ.get('PORT','10000'))
     if not 1024<=port<=65535 or port==APP_PORT: raise DemoError('Invalid company public port.')
-    cfg=prepare_company(DATA,BASE/'app',dict(os.environ),app_port=APP_PORT)
+    operator_env=dict(os.environ)
+    cfg=prepare_company(DATA,BASE/'app',operator_env,app_port=APP_PORT)
     runtime=Path('/tmp/wavelink-company-gateway');runtime.mkdir(mode=0o700,exist_ok=True)
     config=runtime/'nginx.conf';config.write_text(render_company(cfg['authority'],port,runtime))
     check=subprocess.run(['nginx','-t','-c',str(config)],env=minimal_environment(),stdout=subprocess.DEVNULL,stderr=subprocess.PIPE,text=True)
@@ -43,7 +76,7 @@ def run_company():
     signal.signal(signal.SIGTERM,request_stop);signal.signal(signal.SIGINT,request_stop)
     processes=[];exitcode=0
     try:
-        env=minimal_environment();env['PYTHONPATH']=str(BASE/'app')
+        env=company_application_environment(operator_env,origin=cfg['origin'])
         core=subprocess.Popen([sys.executable,'-m','deploy.company_runtime','--config',str(cfg['config']),'--root',str(DATA)],cwd=BASE,env=env)
         processes.append(core);wait_ready(core,APP_PORT,'/readyz')
         nginx=subprocess.Popen(['nginx','-c',str(config),'-g','daemon off;'],env=minimal_environment())
