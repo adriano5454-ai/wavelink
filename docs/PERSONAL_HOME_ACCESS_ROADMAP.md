@@ -39,3 +39,7 @@ no passwords or reusable tokens in URLs and no broad cross-company cookies.
 
 These later stages require actual identity/data/deployment work, tested email delivery, abuse
 controls and real HTTPS/company isolation acceptance. UI63 adds none of those capabilities.
+
+
+## UI64 Stage B implementation
+Invite-only verified mailbox enrollment, server-enforced pending/no-access state, review requests and bounded one-level delegation are implemented. Email remains OFF until configured and real delivery checked. See COMPANY_MEMBERSHIP.md. sulmara.com is still unverified planning metadata; Stage C main-site/domain/email sign-in remains unimplemented. Existing IDs/signatures and UI63 personal Home remain.

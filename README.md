@@ -1,3 +1,9 @@
+# Wavelink UI64 — controlled company membership
+
+Core **1.34.19**. Read docs/WORKSPACE_UI64.md, docs/COMPANY_MEMBERSHIP.md and docs/CONTINUATION_CHECKPOINT.md. Invite-only verification/pending access and one-level scoped delegation. **Mail defaults OFF. Eleven tables and one users marker are added transactionally; keep UI64+ for upgraded membership data.** Copy the full patch including deploy/company_runtime.py; existing C01 activation, G01 demo, current accounts, Personal Home, operator logo config and evidence remain. No reset or repeat setup. sulmara.com is still unverified and not enabled for routing.
+
+--- Historical repository/build instructions below; current UI64 notes above take precedence ---
+
 # Wavelink UI63 — Personal Home and separate Workspaces
 
 Core **1.34.19**. Company C01 and demo G01 retained. Read docs/WORKSPACE_UI63.md and docs/CONTINUATION_CHECKPOINT.md.

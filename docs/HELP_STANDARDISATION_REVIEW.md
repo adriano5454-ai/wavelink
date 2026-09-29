@@ -1,3 +1,9 @@
+# UI64 — Company membership, not implicit project access
+
+New hosted membership topic; seven existing article bodies updated: users, permissions, browseradmin, start, dashboard, backups, accessreview. The remaining69 retain body text. All77 article/outline/catalogue entries match. Isolated Help opens separately without bringing pending users into the operational workspace. Public guides are documentation, not access grants. TLS SMTP is OFF until configured; submitted email is not claimed delivered; domain routing remains future. Native/master PDF guides are unchanged.
+
+--- Prior records retained ---
+
 # UI63 — Personal Home versus Workspaces
 
 Five hosted Help bodies/outlines updated: dashboard, navigation, users, departments, browseradmin.71 others retain their article content, and all76 catalogue/outline entries match. External asset references advance. Home is personal; the full directory and direct creation routes remain in Workspaces. Source-history limitations, exact own assignments/reviews, account visibility, local-versus-saved work and unchanged login are explicit. Shared UI60 Help appearance/separate-opening retained. Native/master PDFs remain unchanged.

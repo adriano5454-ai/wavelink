@@ -1,3 +1,15 @@
+# Current roadmap — UI64
+
+Stage B implemented: invite-only exact-mailbox verification, disabled deny-all Pending membership, isolated status-only sessions, scoped Home review queue, selective grants with provenance and current independent-authority/allowance/department intersection. Existing users, IDs, source evidence, C01/G01 and UI63 Home/Workspaces retained.
+
+Mail defaults OFF. Next: actual sender/HTTPS/disposable mailbox verification, permissions/revocation/restart/backup acceptance before operational onboarding. The schema is a forward upgrade, not a frontend-only patch; keep UI64+ and full company backup metadata.
+
+Stage C remains: professional main-site email-first entry, approved verified domain registry (sulmara.com is still unverified), trusted company routing, existing identity linking and tested transactional email delivery. No domain suffix may itself authenticate a person. No shared operational database/cookies, self-escalation or QR visitor conversion. Existing User ID login and status-only email login remain separate.
+
+Chrome safe focus-existing-window, actual approved company artwork, remaining section reviews, source/report enhancements, richer activity coverage, native vessel/CCVD and full recovery/security work remain separately scoped. No background work or remote deployment.
+
+--- Prior roadmap retained ---
+
 # Current roadmap — UI63
 
 Delivered stage A: personal Home with exact own shifts, named work and configured pending actions, saved personal handovers and paginated supported actor-ID contribution history; complete directory under separate Workspaces. No email/login/account migration. Preserve shared styles, stable refreshes, local work, original evidence and approved module workflows.

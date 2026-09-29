@@ -220,7 +220,12 @@ class CompanyAccess:
                 raise SetupError(404, 'First sign-in route not found.')
             if path == '/api/join':
                 raise SetupError(403, 'Use a named company account. Shared-code entry is disabled.')
-            if path.startswith('/api/') and path not in ('/api/info', '/api/login') and not path.startswith('/api/document-sign/'):
+            # UI64: only these exact isolated membership-entry endpoints bypass a
+            # normal project session. Their own invitation/code/status credentials,
+            # HTTPS origin, method and size checks remain inside the core service.
+            from app.membership_api import PUBLIC_METHODS
+            membership_entry = path in PUBLIC_METHODS and method in PUBLIC_METHODS[path]
+            if path.startswith('/api/') and path not in ('/api/info', '/api/login') and not path.startswith('/api/document-sign/') and not membership_entry:
                 auth = request.headers.get('authorization', '')
                 if len(request.headers.getlist('authorization')) != 1 or not auth.startswith('Bearer '):
                     raise SetupError(401, 'Sign in with your company account.')
