@@ -1,35 +1,55 @@
 {
   "format": "wavelink-selected-delivery-checks-1",
   "core": "1.34.19",
-  "workspace": "UI61",
+  "workspace": "UI62",
   "company": "C01",
   "gateway": "G01",
   "python_groups": {
-    "originals_py": 70,
-    "retained_authoring_py": 83,
-    "shared_permissions_py": 95,
+    "workspace_py": 97,
+    "hosted_http_py": 53,
+    "admin_branding_py": 108,
+    "originals_py": 65,
+    "preserved_py": 118,
     "hosting_py": 178
   },
-  "python_passed": 426,
+  "python_passed": 619,
   "browser_groups": {
-    "originals_browser": 14,
+    "admin_browser": 12,
+    "fleet_browser": 20,
     "interface_browser": 7,
     "refresh_browser": 26,
-    "signout_browser": 13
+    "signout_browser": 13,
+    "originals_browser": 14
   },
-  "browser_checks_passed": 60,
-  "javascript_syntax_passed": 84,
-  "python_modules_parsed": 197,
-  "unchanged_existing_python_modules": 189,
-  "main_layout_comparisons": 48,
-  "exclusions_and_refinements": "Four historical browser-authoring release assertions were reproduced failing on untouched UI60 and explicitly excluded from the current authoring selection; they are not claimed repaired or passed. The old UI60 hard-coded cache-label test is deselected, with its complete main-asset precache/storage-identity checks retained in a new UI61 contract. Two directly superseded blank-reason rejection fixtures now exercise invalid boolean reasons instead, retaining type and safety assertions. Early new-test assumptions about empty checklist items, retained stale drafts and a helper-variable typo were corrected without bypassing the saved-draft publication rules. During development, removing a chosen source initially left its Link button disabled; the UI now immediately allows deliberate re-adding, with a regression check. An inherited sign-out browser script still used the retired Upload new original button label; its external copy uses Upload original and keeps the original text/pending-work assertions. All final selected groups were rerun on the final frozen application after that source refinement. Earlier failed, partial or superseded runs remain separate and are excluded from the final totals. An unrelated container spreadsheet-startup warning did not prevent the completed application runs.",
+  "browser_checks_passed": 92,
+  "javascript_syntax_passed": 86,
+  "python_modules_parsed": 198,
+  "unchanged_existing_python_modules": 190,
+  "additional_company_boundary_checks": [
+    "Pending company setup still blocks ordinary company artwork/workspace access",
+    "Activated C01 boundary serves only its selected public logo with exact bytes",
+    "Actual normalized profile over 100 KB saves through the C01 boundary using the 3 MB service contract",
+    "Public artwork does not grant company profile-writing access",
+    "C01 still refuses the wrong company Host",
+    "Database report branding and operator display identity remain independent"
+  ],
+  "pdf_parity": {
+    "exact_body_words_preserved": true,
+    "read_only_database": true,
+    "scenario": "Same saved fictional box+child, damaged receipt, final placement and reviewed closure; quarantine not released",
+    "renderer_changed_only_layout": true
+  },
+  "pdf_pages_before": 2,
+  "pdf_pages_after": 1,
+  "exclusions_and_refinements": "One historical UI60 test hard-codes its retired asset-cache URLs and was deliberately deselected; the new UI62 contract retains the complete current main-script/stylesheet precache and storage-identity assertions. Other operational assertions were not removed. Initial service/browser fixture and selector failures, earlier complete development runs and a prior full candidate run are retained separately and excluded. An actual C01-boundary check caught a missing hosted /api/info identity projection after the earlier candidate passed local-app checks; the projection was fixed, a hosted-factory regression added, and every final counted test group rerun on the refrozen source. An initial new-test anonymous profile read omitted the required project header and correctly received 409; the corrected test supplies the project header and verifies authentication refusal. A source-audit script initially used a nonexistent invitation-module filename; the exact real module is now checked unchanged. After the full final run, the Fleet browser harness's inherited method label was corrected from UI61 to UI62 and that entire browser group rerun; application bytes were unchanged. Earlier runs and these repeat checks are not added to the totals. No unrelated historical failure, native execution or live deployment is claimed fixed.",
   "not_full_suite": true,
   "limitations": [
-    "Fictional SQLite/TestClient; controlled fetch, simulated hash routing and staged memory storage.",
-    "Original upload browser fixture supplies test SHA-256 at its insecure set_content origin; not actual HTTPS/WebCrypto acceptance.",
+    "Actual assets with fictional SQLite/TestClient; injected fetch, simulated hash/iframe and staged memory/sessionStorage.",
+    "Hosted/C01 ASGI tests use simulated trusted TLS headers; no real TLS/Nginx/Docker deployment.",
     "No live Sulmara/demo, credentials, disk, GitHub/Render or deployment actions.",
-    "No physical device, actual Chrome installation, native Windows/PowerShell, durable IndexedDB or service-worker lifecycle acceptance.",
-    "No full security/accessibility/load, Docker or accepted off-host recovery result.",
-    "Current report and historical guide renderers/files unchanged; exact synthetic original bytes tested, not a new operational report review."
+    "No physical device, actual Chrome install/window reuse, Windows/PowerShell/native binary, durable IndexedDB or service-worker lifecycle acceptance.",
+    "No full security/accessibility/load, complete product suite or accepted off-host recovery result.",
+    "Actual Sulmara logo not supplied: name fallback only, no hosting screenshot or guessed artwork embedded.",
+    "Manifest PDF same-record layout comparison only, not a full large-volume report acceptance."
   ]
 }

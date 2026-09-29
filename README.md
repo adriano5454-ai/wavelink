@@ -1,3 +1,11 @@
+# Wavelink UI62 — Administration, site logistics and company identity
+
+Core **1.34.19**. Company C01 and demo G01 retained. Read docs/WORKSPACE_UI62.md and docs/CONTINUATION_CHECKPOINT.md.
+
+Persistent Administration navigation, explicitly additive site logistics, protected Fleet forms/refresh/logout, retained report-branding drafts, corrected bounded logo-profile transport, and a separate per-company operator header identity. Sulmara artwork remains unavailable: logo:null uses its name. Copy the full update contents, including deployment identity configuration, review and commit/push. No reset or new environment values.
+
+--- Retained repository/build guidance ---
+
 # Wavelink UI61 — Original Files and exact source links
 
 Core **1.34.19**. Company C01 and demo G01 preserved. Read docs/WORKSPACE_UI61.md and docs/CONTINUATION_CHECKPOINT.md.

@@ -1,3 +1,13 @@
+# Current roadmap — UI62
+
+Delivered: coordinated Fleet/Manifests/Receiving and persistent Administration navigation; explicit Project + site logistics mode preserving vessel-only restrictions; protected pending forms, known-denial/stale views and truthful standalone logout; same-record refresh and PDF spacing; retained report-branding draft and small-image profile request fix; reusable per-service code-owned header identity. No automatic permission changes, receipt, stock adjustment or quarantine release.
+
+Pending actual artwork: Sulmara currently uses its name only; no usable corporate logo was received. Add the approved PNG/JPEG to deploy/company_logos/sulmara and update deploy/company_identities.json, never credentials or hosting screenshots. Preserve independent future company configuration.
+
+Next: one connected fictional admin/branding/access/shipment/phone acceptance, then next agreed section review. Chrome safe focus-existing-window remains separate; no PWA or native binary changes. Running-hour maintenance, loss/write-off logistics settlement, batch reports, deeper vessel-log review, full current manuals and production/backup acceptance remain separately scoped. Keep the shared UI60 standard, optional handover notes, explicit shifts, retained guest evidence and quiet caching. No background work or remote deployment.
+
+--- Prior roadmap retained ---
+
 # Current roadmap — UI61
 
 Delivered: complete reviewed Original Files browser workflow: safe inner views, simple first uploads/folders, explicit action permissions, exact family/history/usage, archive/restore and deliberate draft links from checklist/maintenance builders. Preserve immutable originals and published references. No permanent browser deletion, automatic conversion or new private-folder model.
