@@ -1,55 +1,39 @@
 {
   "format": "wavelink-selected-delivery-checks-1",
   "core": "1.34.19",
-  "workspace": "UI62",
+  "workspace": "UI63",
   "company": "C01",
   "gateway": "G01",
   "python_groups": {
-    "workspace_py": 97,
-    "hosted_http_py": 53,
-    "admin_branding_py": 108,
-    "originals_py": 65,
-    "preserved_py": 118,
-    "hosting_py": 178
+    "personal_py": 22,
+    "sources_py": 16,
+    "restricted_py": 1,
+    "contract_py": 7,
+    "shifts_py": 66,
+    "retained_py": 78,
+    "hosting_py": 169,
+    "package_py": 9
   },
-  "python_passed": 619,
+  "python_passed": 368,
   "browser_groups": {
-    "admin_browser": 12,
-    "fleet_browser": 20,
-    "interface_browser": 7,
+    "personal_browser": 13,
     "refresh_browser": 26,
     "signout_browser": 13,
-    "originals_browser": 14
+    "changed_browser": 1
   },
-  "browser_checks_passed": 92,
-  "javascript_syntax_passed": 86,
-  "python_modules_parsed": 198,
-  "unchanged_existing_python_modules": 190,
-  "additional_company_boundary_checks": [
-    "Pending company setup still blocks ordinary company artwork/workspace access",
-    "Activated C01 boundary serves only its selected public logo with exact bytes",
-    "Actual normalized profile over 100 KB saves through the C01 boundary using the 3 MB service contract",
-    "Public artwork does not grant company profile-writing access",
-    "C01 still refuses the wrong company Host",
-    "Database report branding and operator display identity remain independent"
-  ],
-  "pdf_parity": {
-    "exact_body_words_preserved": true,
-    "read_only_database": true,
-    "scenario": "Same saved fictional box+child, damaged receipt, final placement and reviewed closure; quarantine not released",
-    "renderer_changed_only_layout": true
-  },
-  "pdf_pages_before": 2,
-  "pdf_pages_after": 1,
-  "exclusions_and_refinements": "One historical UI60 test hard-codes its retired asset-cache URLs and was deliberately deselected; the new UI62 contract retains the complete current main-script/stylesheet precache and storage-identity assertions. Other operational assertions were not removed. Initial service/browser fixture and selector failures, earlier complete development runs and a prior full candidate run are retained separately and excluded. An actual C01-boundary check caught a missing hosted /api/info identity projection after the earlier candidate passed local-app checks; the projection was fixed, a hosted-factory regression added, and every final counted test group rerun on the refrozen source. An initial new-test anonymous profile read omitted the required project header and correctly received 409; the corrected test supplies the project header and verifies authentication refusal. A source-audit script initially used a nonexistent invitation-module filename; the exact real module is now checked unchanged. After the full final run, the Fleet browser harness's inherited method label was corrected from UI61 to UI62 and that entire browser group rerun; application bytes were unchanged. Earlier runs and these repeat checks are not added to the totals. No unrelated historical failure, native execution or live deployment is claimed fixed.",
+  "browser_checks_passed": 53,
+  "javascript_syntax_passed": 87,
+  "python_modules_parsed": 199,
+  "unchanged_existing_python_modules": 197,
+  "exclusions_and_refinements": "Earlier combined development runs did not reliably finish within their bounded run, including one with completed-looking output but no accepted clean process outcome. They are not counted. The final selected source tests were split into bounded groups, each with exit status 0 and complete test XML. The exact cause of every earlier process stall has not been established. Initial fixtures used a nonexistent permissions column, had SQL quoting mistakes and assumed an unadorned h1; those fixtures were corrected. A browser assertion confused CSS uppercase presentation with text content. Development also corrected a real Toolbox title projection, preserved the unaugmented checklist-definition hash for review checks, and used the existing in_progress shift-record state for direct draft continuation. Current regression tests cover those cases. The current UI63 cache/storage contract verifies all main scripts and styles; older release-specific cache-name tests are not claimed as current passes. No unrelated historical failure or native execution is declared fixed. All final counted selections used the same frozen application bytes; the last additional real-update browser scenario changed no application or shipped test files.",
   "not_full_suite": true,
-  "limitations": [
-    "Actual assets with fictional SQLite/TestClient; injected fetch, simulated hash/iframe and staged memory/sessionStorage.",
-    "Hosted/C01 ASGI tests use simulated trusted TLS headers; no real TLS/Nginx/Docker deployment.",
-    "No live Sulmara/demo, credentials, disk, GitHub/Render or deployment actions.",
-    "No physical device, actual Chrome install/window reuse, Windows/PowerShell/native binary, durable IndexedDB or service-worker lifecycle acceptance.",
-    "No full security/accessibility/load, complete product suite or accepted off-host recovery result.",
-    "Actual Sulmara logo not supplied: name fallback only, no hosting screenshot or guessed artwork embedded.",
-    "Manifest PDF same-record layout comparison only, not a full large-volume report acceptance."
+  "limits": [
+    "Actual shipped assets and fictional SQLite/TestClient services; browser fetch, routing and state transactions simulated.",
+    "No live Sulmara/demo, credentials, disks, external network, GitHub/Render actions or deployment.",
+    "No physical phone, installed Chrome/window reuse, actual Windows/PowerShell/native executable, durable IndexedDB, WebSocket or service-worker lifecycle acceptance.",
+    "No full security/accessibility/load certification, complete product suite, real TLS/Docker or accepted off-host recovery.",
+    "No domain verification, email delivery, self-registration, pending membership, delegated access or central sign-in implemented.",
+    "My activity covers allowlisted operational actions with reliable stored account attribution; not every historical/native/builder/Fleet/security event.",
+    "Existing PDF/report/QR renderers were not modified or newly accepted; 21 tracked PDF files and 32 icon files are unchanged."
   ]
 }

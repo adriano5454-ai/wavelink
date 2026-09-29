@@ -1,3 +1,15 @@
+# Current roadmap — UI63
+
+Delivered stage A: personal Home with exact own shifts, named work and configured pending actions, saved personal handovers and paginated supported actor-ID contribution history; complete directory under separate Workspaces. No email/login/account migration. Preserve shared styles, stable refreshes, local work, original evidence and approved module workflows.
+
+User supplied **sulmara.com** (29 September 2026). It is intended email-domain metadata only, NOT verified, registered for authentication or enabled for routing. No email sent. Full stages B/C and trust boundaries: docs/PERSONAL_HOME_ACCESS_ROADMAP.md.
+
+Next stage B: verified membership invitations, genuinely pending/deny-all accounts before operational sessions, access requests and bounded permission delegation (current capability intersection explicit delegate allowance intersection authorised scope, dependencies included). Existing local user IDs and source evidence stay intact. Stage C: professional main-site sign-in, verified exact company domain, trusted tenant routing, chosen safe identity handoff and actual transactional email/HTTPS acceptance. Existing named login continues through the transition; no all-users reset, implicit role defaults for new pending users, naked email authentication or QR-visitor-to-member conversion.
+
+My activity is not every historical/native/Fleet/builder/security event; source-specific broader coverage remains deliberate future scope. Chrome safe focus-existing-window, current guides, deeper vessel logs, richer imports, production recovery and the rest of the section roadmap remain. No automatic background work or deployment.
+
+--- Prior roadmap retained ---
+
 # Current roadmap — UI62
 
 Delivered: coordinated Fleet/Manifests/Receiving and persistent Administration navigation; explicit Project + site logistics mode preserving vessel-only restrictions; protected pending forms, known-denial/stale views and truthful standalone logout; same-record refresh and PDF spacing; retained report-branding draft and small-image profile request fix; reusable per-service code-owned header identity. No automatic permission changes, receipt, stock adjustment or quarantine release.

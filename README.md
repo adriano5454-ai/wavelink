@@ -1,3 +1,11 @@
+# Wavelink UI63 — Personal Home and separate Workspaces
+
+Core **1.34.19**. Company C01 and demo G01 retained. Read docs/WORKSPACE_UI63.md and docs/CONTINUATION_CHECKPOINT.md.
+
+Home now shows the named account's assignments, configured actions, saved handovers and supported contribution history. The complete directory is under Workspaces. Existing login and operational writers remain. sulmara.com is recorded as the user-supplied intended domain only: no verified email signup/routing is enabled. Operator company identity/logo configuration is not replaced.
+
+--- Historical repository/build guidance, retained for reference ---
+
 # Wavelink UI62 — Administration, site logistics and company identity
 
 Core **1.34.19**. Company C01 and demo G01 retained. Read docs/WORKSPACE_UI62.md and docs/CONTINUATION_CHECKPOINT.md.
