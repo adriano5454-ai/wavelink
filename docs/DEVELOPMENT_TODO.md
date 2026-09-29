@@ -1,3 +1,37 @@
+# Current roadmap — after UI65 roles and invitation authority
+
+UI65 delivered the first approved invitations/roles batch on the verified UI64+M01 baseline: versioned job
+roles, immutable access snapshots, exact mailbox verification, pre-authorised activation, legacy Pending
+compatibility, delegated ceilings and real department-bounded task management. Do not weaken this by using
+display titles as authority, silently expanding a participant preset, rewriting existing users/invitations,
+or downgrading an upgraded membership database.
+
+## Next grouped implementation — profiles, Team updates and recognition
+
+Deliver as one coherent experience:
+
+- company-scoped profiles with stable user IDs, optional avatar/initials and biography;
+- controlled role/department display, with members unable to edit authority through their profile;
+- personal-first Home retaining My shift/My work/Needs my action/Saved handovers/My activity;
+- compact permission-aware Team updates and a separate feed view;
+- one reversible like per eligible named account/event, no points or approval effect;
+- server-issued duplicate-safe contribution ledger using canonical completion/adapters;
+- default 1 point, authorised 3/5 selection frozen before work starts;
+- privacy separation between restricted personal awards and team-shareable totals;
+- cumulative tier thresholds and three original selectable badge choices per tier;
+- no leaderboard requirement, streak pressure, safety/incident suppression or rank-based authority.
+
+Start only new eligible work after activation; do not infer historical points from audit rows. First adapters
+remain Task, Maintenance, Checklist, Handover, Toolbox acknowledgement and standalone stock verification,
+with nested/parent ownership deduplicated. Credit documented contributors, not creators/assigners/final-click
+reviewers unless they actually contributed. Likes, profile edits and administrative activity never score.
+
+Before that batch, deploy/accept UI65 in a fictional staging company, including real inbox, restart and
+same-company backup/restore checks. Keep M01, C01/G01 isolation, current user IDs/data/evidence and unsent work.
+Email-first normal sign-in/domain routing is a separate identity project and is not implied by invitations.
+
+--- Retained earlier roadmap history ---
+
 # Current addition — UI64 Mail Startup M01, 29 September 2026
 
 - Keep M01's allowlisted company-child environment in all future deploy/company_entrypoint.py builds.

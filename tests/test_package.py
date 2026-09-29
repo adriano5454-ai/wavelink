@@ -42,3 +42,21 @@ def test_gateway_authority_injection_refused(tmp_path,bad):
 def test_no_real_project_or_secret_files_packaged():
     names=[p.name for p in ROOT.rglob('*') if p.is_file()]
     assert 'dives.sqlite3' not in names and 'hub.json' not in names and 'gate.key' not in names
+
+
+def test_ui65_overlay_and_m01_launcher_are_exact():
+    from deploy.extract_source import UI_PATCH_ID
+    assert UI_PATCH_ID == 'workspace-ui65-role-ready-invitations-2026-09-29'
+    assert hashlib.sha256((ROOT/'deploy/company_entrypoint.py').read_bytes()).hexdigest() == '2f117d85c439c16ab78908bf5728056cc837e5d1f948a77040ef1d509c04c371'
+    assert (ROOT/'docs/WORKSPACE_UI65.md').is_file()
+    assert (ROOT/'docs/UI65_SOURCE_PROVENANCE.json').is_file()
+
+
+def test_ui65_release_keeps_operator_secret_examples_blank():
+    values = {}
+    for line in (ROOT/'deploy/membership.env.example').read_text().splitlines():
+        if line and not line.startswith('#') and '=' in line:
+            key, value = line.split('=', 1)
+            values[key] = value
+    assert values.get('MEMBERSHIP_SMTP_PASSWORD') == ''
+    assert not any((ROOT/name).exists() for name in ('hub.json','gate.key','.env','secrets.json'))

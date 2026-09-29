@@ -1,3 +1,24 @@
+# Wavelink UI65 — role-ready invitations and controlled access
+
+Core **1.34.19** · **Mail Startup M01, Company C01 and demo G01 preserved** · 29 September 2026.
+Read **docs/WORKSPACE_UI65.md**, **docs/COMPANY_MEMBERSHIP.md** and
+**docs/CONTINUATION_CHECKPOINT.md** first.
+
+UI65 adds versioned company job-role profiles, exact invitation permission snapshots, verified
+pre-authorised membership activation, and real department-bounded management scope. Department,
+displayed job role and core security/access remain separate. Existing UI64 invitations stay Pending
+with no operational access; existing accounts, IDs, passwords, evidence and explicit policies are not
+mass-updated. The membership schema advances additively to version 2; keep **UI65-or-later** software
+with an upgraded project. Profiles, Team updates, points, tiers and badges are the next separate batch.
+
+Copy the compact update into the exact **UI64 + M01** application repository, review, commit and push.
+Do not reset the company, re-import data, clear browser storage, remove the persistent disk or repeat
+setup. No new environment key is required. The M01 company launcher remains byte-identical and retains
+the selected INVITE_ONLY/SMTP forwarding path. This package was not pushed or deployed and did not send
+email or inspect live Render, DNS, SMTP credentials or the production database.
+
+--- Retained UI64 + M01 instructions ---
+
 # Wavelink UI64 + Mail Startup M01
 
 Core **1.34.19**. Company C01 and G01 retained. Read **docs/MAIL_STARTUP_M01.md** first.

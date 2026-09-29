@@ -1,0 +1,130 @@
+{
+  "format": "wavelink-ui65-source-provenance-1",
+  "date": "2026-09-29",
+  "release": "UI65 + Mail Startup M01 + Company C01 + G01",
+  "core": "1.34.19",
+  "parent": "Exact verified UI64 + Mail Startup M01 + Company C01 + G01 repository",
+  "parent_repository_tracked_files": 188,
+  "target_repository_tracked_files": 190,
+  "parent_runtime_tracked_files": 1917,
+  "target_runtime_tracked_files": 1922,
+  "parent_extractor_sha256": "815a635818cb4268957c090e091dab50a95c72b1b6e0bc9f103276fdc630ae09",
+  "target_extractor_sha256": "de8c364f9395fb9ef9ef96d5bff70b5a52670a8d1044404ad85f11a287a3a2c5",
+  "unchanged_m01_company_entrypoint_sha256": "2f117d85c439c16ab78908bf5728056cc837e5d1f948a77040ef1d509c04c371",
+  "runtime_overlay_records": 632,
+  "runtime_overlay_records_new_against_pristine_source": 316,
+  "runtime_files_changed_or_added_from_ui64": 25,
+  "runtime_new_files_from_ui64": [
+    "app/company_roles.py",
+    "tests/ui65_roles_access/__init__.py",
+    "tests/ui65_roles_access/browser_checks.py",
+    "tests/ui65_roles_access/conftest.py",
+    "tests/ui65_roles_access/test_roles_access.py"
+  ],
+  "runtime_changed_or_added_sha256": {
+    "README.md": "ecc05fc1192d9be58ceb96d467eac6a00aff3d424e15a11b44d5f2c5e439d7f5",
+    "START_HERE.html": "c903388654c3fa3b1bb33b1d6af37c8c5c81f8d5c8c9033f6eab85e268a6691a",
+    "app/company_membership.py": "49f866a8c43b234f70bcb743b3c28b4dc9fb0fdf476a74e8f413433322187a48",
+    "app/company_roles.py": "bfc1354b94db20b48257702831e85cfb9e5a53560acf2079f6bb892510fdf0fa",
+    "app/membership_api.py": "5bdb36a7504553c07567c26f8c6bd68e2a892677dec5ad3f5c9f8ac348d18f87",
+    "app/membership_policy.py": "f60f5296fcd90a24468964830b521d9798b797047cee33f9c87b462d7ada7df6",
+    "app/project_modules.py": "c1a631b48ec5ce0db7bc56109d3daf0617626d7719fa49273daa4f21d27cb71a",
+    "app/project_transfer.py": "52eae87dc28eae91751caa070d2b9fffdd2ec097473878704aefbf5b732692cc",
+    "app/static/help_catalogue.json": "849706f162fb0e685c51b435d86555fec67d8e43a0fb7d55e77be732a4f7ecfe",
+    "app/static/help_topics/membership.html": "3c3b5c0e31ee3c1f7ee0f79bdfb90c595fcfbd3178f4b74bdfbee43a736df377",
+    "app/static/help_workspace.js": "6c200daccd9998e065a3afc327d2dbd10808bafb680746aa397aaa140dffb1fd",
+    "app/static/index.html": "79712d7eb862ce5ceb13fbc9184f6c5fdbc7414c5be5a280781b1c229e8e2e67",
+    "app/static/membership_entry.css": "a5ff1ead25411dcbe62aeca89404c48c3b4b1f64a0d1829183aa72abfcd9d195",
+    "app/static/membership_entry.html": "e1bc609c6ea3c7e951f88920ea628861f32026fcd806fa937bd94e44c861ba05",
+    "app/static/membership_entry.js": "e05efa33fdab99c8830661dab7b307ffe1a14a5a3a439cfff4b3b4cf6403a377",
+    "app/static/membership_workspace.css": "dd7d2f436232f4d080ad8041d5e274eb666266a5e4fa73b9a790fe5d59bb5d8e",
+    "app/static/membership_workspace.js": "b6cc3bc4c36d64053f9670e72d5dfca63ed834c3d4f669996101999b0d0692ce",
+    "app/static/sw.js": "7dacb0613616e0fb693258800d4f88824b22b354c4a532708807c1dc188a9906",
+    "app/task_access.py": "4172824e93ae34068355a32ac06dc8d609abdf54c7c145bde83f9589c0ff54ac",
+    "docs/COMPANY_MEMBERSHIP.md": "0503656b3d24f060f025ff15f131d2067a560e5e7e2885eda93a89724ac97366",
+    "tests/ui64_membership/test_contract.py": "b968503416947c46080bbe0f24cb76abdfc436be4ad436bad5efd894a3d3bae2",
+    "tests/ui65_roles_access/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "tests/ui65_roles_access/browser_checks.py": "26188cb495d7e54e0b314df603a1f788546ad43614776a6a24a3831c51cfc989",
+    "tests/ui65_roles_access/conftest.py": "7faddae9068fe1072693903af5e8d4d596a86f68fa58e3b0f9e89adefbd4ec41",
+    "tests/ui65_roles_access/test_roles_access.py": "0d0c1d8e0204dda2238fc23d9c190bf4a9e6904b2b32f7839b9912121628e59c"
+  },
+  "fresh_reconstruction": {
+    "source_parts": 5,
+    "upstream_files_verified": 1605,
+    "non_generated_files_compared": 1921,
+    "differences": 0,
+    "generated_runtime_manifest_files": 2,
+    "manifest_integrity": true
+  },
+  "membership_schema": {
+    "from_version": 1,
+    "to_version": 2,
+    "new_tables": [
+      "company_role_presets",
+      "company_role_revisions",
+      "company_invite_proposals",
+      "company_member_roles",
+      "company_management_scopes"
+    ],
+    "seeded_role_profiles": [
+      "Survey",
+      "Survey Tech",
+      "Processor",
+      "Geo",
+      "Trainee",
+      "Contractor",
+      "Supervisor",
+      "Party Chief",
+      "Administrator"
+    ],
+    "participant_capability_count": 28,
+    "legacy_invitation_outcome": "disabled explicit deny-all Pending account; no guessed role",
+    "existing_accounts_or_invitations_mass_rewritten": false
+  },
+  "local_verification": {
+    "selected_python": "57 passed, 1 skipped",
+    "ui64_membership_compatibility": "58 passed in isolated successful groups",
+    "browser_shipped_assets": "9 passed at 1440, 390 and 320 CSS pixels; no JavaScript error or horizontal overflow",
+    "python_compile": "app plus UI64/UI65 membership tests",
+    "javascript_syntax": [
+      "app/static/membership_workspace.js",
+      "app/static/membership_entry.js",
+      "app/static/help_workspace.js",
+      "app/static/sw.js"
+    ],
+    "repository_package_tests": "pending final metadata pass",
+    "repository_package": "11 passed",
+    "mail_startup_m01": "26 passed",
+    "company_c01": "71 passed in isolated successful groups",
+    "gateway_provisioning": "98 passed",
+    "recorded_python_total": "321 passed, 1 skipped",
+    "repository_test_note": "All listed groups ran against the fresh UI65 runtime; counts are test-node counts, not a claim of the complete historical suite."
+  },
+  "preserved_boundaries": [
+    "Mail Startup M01 company launcher bytes and allowlisted child forwarding",
+    "Company C01 activation/identity and separate G01 demo",
+    "existing account IDs, passwords, evidence and explicit policies",
+    "legacy UI64 invitation Pending semantics",
+    "original files, shifts, notes, guest signatures, UI55 refresh protections and device-local unsent work"
+  ],
+  "not_included": [
+    "profiles",
+    "team feed",
+    "likes",
+    "contribution points",
+    "tiers",
+    "badge artwork",
+    "email-first operational sign-in/domain routing"
+  ],
+  "remote_operations": false,
+  "live_repository_inspected": false,
+  "live_services_inspected": false,
+  "live_database_or_account_writes": false,
+  "external_email_sent": false,
+  "deployment_performed": false,
+  "limits": [
+    "Selected local fictional checks, not the complete historical application suite or an independent security review.",
+    "No live Render, DNS, public HTTPS, SMTP/TLS inbox, production load, Windows/installed-PWA or accepted off-host recovery test.",
+    "The uploaded full repository was verified locally; its live GitHub/Render deployment state was not assumed."
+  ]
+}

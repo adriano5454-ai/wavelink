@@ -1,8 +1,8 @@
 """M01 process-boundary regressions. Fictional mail only; no network or live data.
 
-Run from the upload repository with the extracted UI64 runtime on PYTHONPATH:
+Run from the upload repository with the extracted current UI65 runtime on PYTHONPATH:
   WAVELINK_TEST_SOURCE=/path/to/runtime python -m pytest -q tests/test_company_mail_m01.py
-The runtime must be the supplied UI64 version. No SMTP credentials are needed.
+The runtime must retain the supplied M01 launcher contract. No SMTP credentials are needed.
 """
 from __future__ import annotations
 import json

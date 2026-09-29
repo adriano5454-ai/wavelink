@@ -1,3 +1,35 @@
+# Continuation checkpoint — UI65 role-ready invitations and controlled access
+
+**Prepared 29 September 2026 · core 1.34.19 · exact parent UI64 + Mail Startup M01 + Company C01 + G01.**
+
+UI65 is now an actual cumulative source release, not the earlier design-only review. It implements versioned
+company job-role profiles, exact invitation access snapshots, verified pre-authorised activation, preserved
+legacy/proposal-only Pending outcomes and bounded department task-management scopes. Department, displayed
+job role and actual security/access are distinct. Nine initial profiles are seeded; participant profiles use
+an explicit 28-capability allowlist. Existing accounts and UI64 invitations are not mass-rewritten.
+
+Membership storage upgrades transactionally from schema version 1 to 2 by adding role presets/revisions,
+invitation proposal snapshots, member-role assignments and management scopes. Preserve the full company
+backup and keep UI65-or-later software after migration. Do not reset/re-import, clear browser storage,
+recreate C01 or run UI64 against upgraded membership data.
+
+The cumulative extractor was rebuilt from the verified UI64 extractor and fresh extraction matches the
+prepared UI65 runtime exactly outside generated manifests: 1,922 tracked runtime files, 632 overlay records.
+The M01 launcher remains byte-identical at
+`2f117d85c439c16ab78908bf5728056cc837e5d1f948a77040ef1d509c04c371`.
+Nothing was pushed, deployed, emailed or inspected on live Render/SMTP/DNS/company data.
+
+Local release checks completed: 57 selected Python cases passed with one environment-dependent skip; all 58
+original UI64 membership cases passed in isolated groups; nine real shipped-asset browser scenarios passed at
+1440/390/320 pixels. Package/repository checks are recorded in DELIVERY_CHECKS.json. These are local fictional
+checks, not full-suite, independent security, live SMTP, production load or accepted off-host recovery.
+
+**Next coherent batch:** profiles, privacy-aware Team updates, reversible likes, duplicate-safe contribution
+points, 1/3/5 reward controls, tier progression and original selectable badge designs. Preserve UI65 authority
+and migration boundaries. Email-first operational sign-in/domain routing remains separate.
+
+--- Retained prior checkpoint history ---
+
 # Current checkpoint — UI64 + Mail Startup M01 + C01 + G01
 
 29 September 2026. Focused repair after the user supplied correct Render INVITE_ONLY/Zoho
