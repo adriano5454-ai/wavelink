@@ -1,3 +1,25 @@
+# Wavelink UI68 — Data-grounded Home and Profile
+
+Core **1.34.19** · **UI67, UI66, Mail Startup M01, Company C01 and demo G01 preserved** · 30 September 2026.
+Read **docs/WORKSPACE_UI68.md**, **docs/UI68_SOURCE_PROVENANCE.json** and
+**docs/CONTINUATION_CHECKPOINT.md** first.
+
+UI68 redesigns the real Personal Home and My profile around existing authorised data. Home keeps My shift,
+My work, Needs my action, saved handovers, My activity, profile progress and privacy-aware Team updates; it
+does not invent vessel, staff or work statistics to imitate the concept image. Profile now has a clear identity
+hero, real progress and a collapsed-by-tier badge gallery while retaining all unlocked choices.
+
+This is a presentation layer over the exact UI67 runtime: no schema, permission, operational API, recognition
+rule, source adapter or environment-variable change. Copy the compact update into the exact UI67 application
+repository, review the genuine changed/new files in GitHub Desktop, commit and push. Preserve backups, disks,
+C01/G01 identity and activation, secrets, SMTP settings and unsent browser work. Do not reset, re-import,
+repeat setup or clear site data.
+
+No repository push, Render deployment, live database operation, real email, DNS change or production-data
+inspection was performed while preparing this release.
+
+--- Retained UI67 instructions ---
+
 # Wavelink UI67 — Experience Foundation
 
 Core **1.34.19** · **UI66, Mail Startup M01, Company C01 and demo G01 preserved** · 30 September 2026.

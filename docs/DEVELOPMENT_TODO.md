@@ -1,3 +1,17 @@
+# UI69 next — professional operational workflow group
+
+UI68 now supplies the data-grounded Personal Home and Profile experience on top of the UI67 shell. The next
+coherent visual batch should migrate Tasks, Maintenance, Checklists, Handovers and Toolbox Talks to the same
+design system while preserving every existing permission, privacy, evidence, assignment, approval and
+completion rule. Keep grouped delivery and one short acceptance session.
+
+Immediate acceptance before UI69: run UI68 against disposable staging accounts and confirm real personal
+counts, shift state, Team privacy, profile progress, locked-tier disclosure, offline shell refresh and no write
+from opening/refreshing Home. Do not add fictional analytics or begin a global search control until a real,
+authorised search service exists.
+
+--- Retained development roadmap below ---
+
 # Current roadmap — after UI67 Experience Foundation
 
 Delivered locally: the real UI67 shell over UI66—permanent selected badge, first-class Profile/Team

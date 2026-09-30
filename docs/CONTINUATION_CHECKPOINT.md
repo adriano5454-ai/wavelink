@@ -1,3 +1,29 @@
+# Wavelink checkpoint — UI68 Data-grounded Home/Profile + UI67/UI66 + M01 + C01 + G01
+
+30 September 2026; core 1.34.19. Built as a cumulative presentation layer over the verified UI67 release.
+Final variant `workspace-ui68-data-grounded-home-profile-2026-09-30`; 1,968 manifest files; 11 UI68
+runtime records (8 modified, 3 new). Extractor
+`829e73279f860e4e80bdc62b8df42bb16cb78a2f3fd4b43a5acfd881a456a6dd`. M01 launcher remains
+`2f117d85c439c16ab78908bf5728056cc837e5d1f948a77040ef1d509c04c371`.
+
+Delivered: real personal-work/action/saved-handover overview; existing My shift and personal record filters;
+compact Profile and authorised Team panels; profile identity/progress hero; collapsed ten-tier badge gallery;
+local maritime SVG; responsive 1440/390/320 layouts. No fictional operational statistics, new polling loop,
+database schema, permission, operational API, recognition rule, source-adapter or environment change.
+
+Fresh source reconstruction verified 1,605 upstream files, produced 1,968 manifest files and passed manifest
+integrity with no curated/reconstructed byte difference outside generated manifest/provenance files. Local
+UI68/UI67/UI66 and Chromium verification uses fictional data only; see DELIVERY_CHECKS.json.
+
+Preserve UI67/UI66 identities, invitations, permissions, recognition ledger, operational data, M01/C01/G01,
+backups, disks, activation markers, source evidence, signatures, saved notes and device-local unsent work.
+No push, deployment, live migration, external email or production-data action was performed.
+
+Next visual batch: UI69 operational workflow system for Tasks, Maintenance, Checklists, Handovers and Toolbox
+Talks, retaining their authority, evidence and completion semantics.
+
+--- Retained UI67 checkpoint below ---
+
 # Wavelink checkpoint — UI67 Experience Foundation + UI66 + M01 + C01 + G01
 
 30 September 2026; core 1.34.19. Built as a cumulative presentation layer over the verified UI66 release.
