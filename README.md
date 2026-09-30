@@ -1,3 +1,26 @@
+# Wavelink UI67 — Experience Foundation
+
+Core **1.34.19** · **UI66, Mail Startup M01, Company C01 and demo G01 preserved** · 30 September 2026.
+Read **docs/WORKSPACE_UI67.md**, **docs/UI67_SOURCE_PROVENANCE.json** and
+**docs/CONTINUATION_CHECKPOINT.md** first.
+
+UI67 makes My profile and Team first-class navigation destinations, replaces the crowded top-right surface
+with a compact account menu, adds a dedicated read-only Account & access page, and keeps the selected
+contribution badge visible across authorised modules. It converts the supplied badge exploration artwork
+into 30 tier/family WebP assets while retaining UI66 privacy, points and authority rules.
+
+This is a presentation and navigation foundation over the exact UI66 runtime: no schema, permission,
+operational API, recognition rule or environment-variable change. Copy the compact update into the exact
+UI66 application repository, review the genuine changed/new files in GitHub Desktop, commit and push.
+Preserve backups, disks, C01/G01 identity and activation, secrets, SMTP settings and unsent browser work.
+Do not reset, re-import, repeat setup or clear site data. The next visual batch is the data-grounded Home
+and Profile redesign; UI67 does not fabricate the concept dashboard's example figures.
+
+No repository push, Render deployment, live database operation, real email, DNS change or production-data
+inspection was performed while preparing this release.
+
+--- Retained UI66 instructions ---
+
 # Wavelink UI66 — profiles, Team updates and durable recognition
 
 Core **1.34.19** · **Mail Startup M01, Company C01 and demo G01 preserved** · 29 September 2026.

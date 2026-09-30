@@ -1,3 +1,31 @@
+# Wavelink checkpoint — UI67 Experience Foundation + UI66 + M01 + C01 + G01
+
+30 September 2026; core 1.34.19. Built as a cumulative presentation layer over the verified UI66 release.
+Final variant `workspace-ui67-experience-foundation-2026-09-30`; 1,965 manifest files; 41 UI67 runtime
+records (6 modified, 35 new). Extractor `d23e2b97979519845d4e2b4f7196965bd923b9ef40b00b44bca71be64080eb79`.
+M01 launcher remains `2f117d85c439c16ab78908bf5728056cc837e5d1f948a77040ef1d509c04c371`.
+
+Delivered: permanent selected badge in the top bar; first-class My profile and Team sidebar entries; compact
+identity-led account menu; dedicated read-only Account & access destination; existing advanced controls under
+Workspace tools; event-driven badge refresh; responsive 1440/390/320 layouts; 30 production WebP badge
+assets derived from the user-supplied artwork. No database schema, permission, API, recognition-rule or
+environment change.
+
+Fresh source reconstruction verified 1,605 upstream files and matched all 1,964 non-generated target files
+byte-for-byte. UI67 experience 8/8 and retained UI66 recognition 18/18 passed. Chromium 9/9 at
+1440/390/320 with no JavaScript error or overflow. These are local fictional checks, not live Render, SMTP,
+DNS, physical-device or production-data acceptance.
+
+Preserve UI66 identities, invitations, permissions, recognition ledger, operational data, M01/C01/G01,
+backups, disks, activation markers, source evidence, signatures, saved notes and device-local unsent work.
+No push, deployment, live migration, external email or production-data action was performed.
+
+Next visual batch: UI68 data-grounded Home/Profile experience using real My shift, My work, action queues,
+tasks, maintenance/certificate alerts and authorised Team updates. Do not copy fictional statistics from the
+concept image into production.
+
+--- Retained UI66 checkpoint below ---
+
 # Wavelink checkpoint — UI66 + Mail Startup M01 + Company C01 + G01
 
 29 September 2026; core 1.34.19. Built from the clean user repository commit `ac05fa4` after confirming

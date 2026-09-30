@@ -1,0 +1,109 @@
+{
+  "format": "wavelink-ui67-source-provenance-1",
+  "date": "2026-09-30",
+  "release": "UI67 + Mail Startup M01 + Company C01 + G01",
+  "core": "1.34.19",
+  "parent": "Exact UI66 + Mail Startup M01 + Company C01 + G01 repository prepared from ac05fa4324904fa65efdf4eb2d3f0ff1ce1cbe65",
+  "parent_repository_files": 192,
+  "target_repository_files": 194,
+  "parent_runtime_manifest_files": 1930,
+  "target_runtime_manifest_files": 1965,
+  "parent_extractor_sha256": "2c9e15d2e653d736bbab91155074f3e5f5846664954a4d7c0bebddb87a783977",
+  "target_extractor_sha256": "d23e2b97979519845d4e2b4f7196965bd923b9ef40b00b44bca71be64080eb79",
+  "unchanged_m01_company_entrypoint_sha256": "2f117d85c439c16ab78908bf5728056cc837e5d1f948a77040ef1d509c04c371",
+  "parent_overlay_sha256": "2435b043f0a5d06e433a41356cb373eb79081b638c2e615ebd45b0815898c995",
+  "target_overlay_sha256": "1e7367de8b1d780c912d91585841713b0d1913954897c4bc3d7d654c46e57ced",
+  "target_release_manifest_sha256": "563627de140368a9c69370289f04e357337f5178e59cd6a83e40d4993a22e7e6",
+  "runtime_delta": {
+    "modified": 6,
+    "new": 35,
+    "removed": 0,
+    "embedded_records": 41,
+    "uncompressed_bytes": 945303
+  },
+  "fresh_reconstruction": {
+    "upstream_files_verified": 1605,
+    "target_manifest_files": 1965,
+    "non_generated_files_compared": 1964,
+    "byte_differences": 0,
+    "manifest_integrity": true
+  },
+  "data_changes": {
+    "database_schema": false,
+    "permissions": false,
+    "operational_api": false,
+    "recognition_rules": false,
+    "environment_variables": false
+  },
+  "features": [
+    "persistent selected badge in the global top bar",
+    "first-class My profile and Team sidebar destinations",
+    "compact identity-led account menu",
+    "dedicated read-only Account & access page",
+    "responsive experience shell at desktop and phone widths",
+    "thirty tier/family badge artwork assets",
+    "event-driven badge refresh without a new polling loop"
+  ],
+  "badge_art": {
+    "source": "user-supplied Wavelink contribution badge exploration poster in the current development handoff",
+    "source_sha256": "0a269d8c5b121f4bd36480d71a1422f988707ebaa54cd8fd7ac165be2f6a9b0b",
+    "asset_count": 30,
+    "dimensions_px": [
+      300,
+      300
+    ],
+    "format": "WebP RGBA",
+    "stable_id_pattern": "<tier>-<family>",
+    "authority_effect": false
+  },
+  "local_verification": {
+    "ui67_experience": {
+      "passed": 8,
+      "skipped": 0
+    },
+    "ui66_recognition": {
+      "passed": 18,
+      "skipped": 0
+    },
+    "browser": {
+      "checks_passed": 9,
+      "widths_css_px": [
+        1440,
+        390,
+        320
+      ],
+      "javascript_errors": 0,
+      "horizontal_overflow_failures": 0,
+      "fictional_testclient_bridge": true
+    },
+    "javascript_syntax": {
+      "passed": true
+    },
+    "final_wrapper": {
+      "repository_package": 11,
+      "mail_startup_m01": 26,
+      "company_c01": 71,
+      "gateway_gate_provision": 98
+    }
+  },
+  "preserved_boundaries": [
+    "Mail Startup M01 launcher bytes",
+    "Company C01 identity/activation and disk",
+    "separate G01 demo",
+    "existing UI66 users/invites/permissions/recognition records",
+    "operational records and source evidence",
+    "original files/shifts/notes/signatures",
+    "device-local unsent work and session-exit guards"
+  ],
+  "remote_operations": false,
+  "live_repository_inspected": false,
+  "live_services_inspected": false,
+  "live_database_or_account_writes": false,
+  "external_email_sent": false,
+  "deployment_performed": false,
+  "limits": [
+    "Local fictional verification, not an independent security audit.",
+    "The full concept Home/dashboard is not part of UI67; this release provides its shared shell and identity foundation.",
+    "Browser checks did not use live Render, SMTP, DNS, persistent production IndexedDB, physical devices or production data."
+  ]
+}

@@ -1,3 +1,25 @@
+# Current roadmap — after UI67 Experience Foundation
+
+Delivered locally: the real UI67 shell over UI66—permanent selected badge, first-class Profile/Team
+navigation, compact account menu, read-only Account & access, retained Workspace tools and 30 supplied-art
+badge assets. No authority, recognition-rule, schema or operational workflow change.
+
+Next coherent visual batch: UI68 Home and Profile experience. Use actual personal work and operational data:
+My shift, My work, Needs my action, saved handovers, tasks, maintenance/certificate alerts and authorised
+Team updates. Keep the hero compact, preserve all working module routes and do not display invented vessels,
+headcounts, activity or contribution actions merely because they appeared in the concept.
+
+Before UI68, perform one connected fictional acceptance of UI67 at desktop and phone widths, including the
+unsaved-work guard, Workspace tools fallback, profile badge refresh, offline cached badge assets and unchanged
+UI66 privacy/points behavior. Preserve M01, C01/G01 isolation, persistent disks, current identities and data.
+
+Still separate/pending: email-first operational sign-in and verified-domain routing; production SMTP/DNS
+acceptance; broader recognition adapters/policy editor; module-by-module UI69 professionalisation; live Render
+load, security and recovery acceptance. Badges remain cosmetic, likes remain non-scoring and no recognition
+rank grants operational authority.
+
+--- Retained prior roadmap below ---
+
 # Current roadmap — after UI66 profiles and recognition
 
 Delivered locally: the complete coherent UI66 profile/Team/likes/points/tiers/badges batch with six

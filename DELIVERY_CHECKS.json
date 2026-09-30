@@ -1,116 +1,70 @@
 {
-  "format": "wavelink-ui66-delivery-checks-1",
-  "release": "UI66 + Mail Startup M01 + Company C01 + G01",
-  "parent": "Exact clean UI65 + Mail Startup M01 + Company C01 + G01 at ac05fa4324904fa65efdf4eb2d3f0ff1ce1cbe65",
+  "format": "wavelink-ui67-delivery-checks-1",
+  "release": "UI67 + UI66 + Mail Startup M01 + Company C01 + G01",
+  "parent": "Exact UI66 + Mail Startup M01 + Company C01 + G01 repository prepared from ac05fa4324904fa65efdf4eb2d3f0ff1ce1cbe65",
   "core": "1.34.19",
-  "date": "2026-09-29",
-  "repository_files_parent": 190,
-  "repository_files_target": 192,
-  "runtime_manifest_files_parent": 1922,
-  "runtime_manifest_files_target": 1930,
-  "ui66_delta_modified": 25,
-  "ui66_delta_new": 8,
-  "ui66_delta_removed": 0,
-  "ui66_embedded_records": 33,
-  "cumulative_embedded_overlay_records": 665,
-  "parent_extractor_sha256": "de8c364f9395fb9ef9ef96d5bff70b5a52670a8d1044404ad85f11a287a3a2c5",
-  "target_extractor_sha256": "2c9e15d2e653d736bbab91155074f3e5f5846664954a4d7c0bebddb87a783977",
+  "date": "2026-09-30",
+  "repository_files_parent": 192,
+  "repository_files_target": 194,
+  "runtime_manifest_files_parent": 1930,
+  "runtime_manifest_files_target": 1965,
+  "ui67_delta_modified": 6,
+  "ui67_delta_new": 35,
+  "ui67_delta_removed": 0,
+  "ui67_embedded_records": 41,
+  "cumulative_embedded_overlay_records": 706,
+  "parent_extractor_sha256": "2c9e15d2e653d736bbab91155074f3e5f5846664954a4d7c0bebddb87a783977",
+  "target_extractor_sha256": "d23e2b97979519845d4e2b4f7196965bd923b9ef40b00b44bca71be64080eb79",
   "m01_company_entrypoint_sha256": "2f117d85c439c16ab78908bf5728056cc837e5d1f948a77040ef1d509c04c371",
   "fresh_source_replay": {
     "upstream_files_verified": 1605,
-    "target_manifest_files": 1930,
-    "non_generated_files_compared": 1929,
+    "target_manifest_files": 1965,
+    "target_overlay_sha256": "1e7367de8b1d780c912d91585841713b0d1913954897c4bc3d7d654c46e57ced",
+    "target_release_manifest_sha256": "563627de140368a9c69370289f04e357337f5178e59cd6a83e40d4993a22e7e6",
+    "non_generated_files_compared": 1964,
     "byte_differences": 0,
     "manifest_integrity": true
   },
   "python_runs": [
     {
-      "group": "ui66_recognition",
+      "group": "ui67_experience",
+      "passed": 8,
+      "skipped": 0,
+      "runtime": "fresh reconstruction"
+    },
+    {
+      "group": "retained_ui66_recognition",
       "passed": 18,
       "skipped": 0,
-      "source": "fresh reconstructed runtime"
-    },
-    {
-      "group": "general_tasks_functional",
-      "passed": 32,
-      "skipped": 0,
-      "source": "fresh reconstructed runtime; release-contract exactness file excluded"
-    },
-    {
-      "group": "maintenance_cycles",
-      "passed": 52,
-      "skipped": 0,
-      "source": "isolated build runs"
-    },
-    {
-      "group": "inventory_review",
-      "passed": 28,
-      "skipped": 0,
-      "source": "isolated build runs"
-    },
-    {
-      "group": "checklist_workflow",
-      "passed": 35,
-      "skipped": 0,
-      "source": "isolated build runs"
-    },
-    {
-      "group": "toolbox_talks",
-      "passed": 47,
-      "skipped": 0,
-      "source": "isolated build runs"
-    },
-    {
-      "group": "simple_handovers",
-      "passed": 41,
-      "skipped": 0,
-      "source": "isolated build runs"
-    },
-    {
-      "group": "ui64_membership_compatibility",
-      "passed": 94,
-      "skipped": 1,
-      "source": "isolated build runs"
-    },
-    {
-      "group": "ui65_roles_access",
-      "passed": 16,
-      "skipped": 0,
-      "source": "isolated build runs"
-    },
-    {
-      "group": "handover_privacy_transfer",
-      "passed": 18,
-      "skipped": 0,
-      "source": "isolated build runs"
+      "runtime": "fresh reconstruction"
     },
     {
       "group": "repository_package",
       "passed": 11,
       "skipped": 0,
-      "source": "final UI66 wrapper and fresh reconstructed runtime"
+      "runtime": "fresh reconstruction plus repository"
     },
     {
-      "group": "mail_startup_m01_retained",
+      "group": "mail_startup_m01",
       "passed": 26,
       "skipped": 0,
-      "source": "final wrapper with UI66 runtime on PYTHONPATH"
+      "runtime": "fresh reconstruction plus repository"
     },
     {
-      "group": "company_c01_retained",
+      "group": "company_c01",
       "passed": 71,
       "skipped": 0,
-      "source": "final wrapper"
+      "runtime": "fresh reconstruction plus repository"
     },
     {
-      "group": "gateway_gate_provision_retained",
+      "group": "gateway_gate_provision",
       "passed": 98,
       "skipped": 0,
-      "source": "final wrapper"
+      "runtime": "fresh reconstruction plus repository"
     }
   ],
   "browser_run": {
-    "passed": 10,
+    "checks_passed": 9,
     "widths_css_px": [
       1440,
       390,
@@ -119,22 +73,27 @@
     "javascript_errors": 0,
     "horizontal_overflow_failures": 0,
     "fictional_testclient_bridge": true,
-    "live_network": false,
-    "evidence_replayed_on_fresh_reconstruction": true
-  },
-  "migration_fixture": {
-    "ui65_accounts_preserved": 2,
-    "password_hashes_and_ids_preserved": true,
-    "existing_record_preserved_byte_for_byte": true,
-    "retroactive_recognition_rows": 0,
     "replayed_on_fresh_reconstruction": true
   },
-  "schema": {
-    "recognition_version": 1,
-    "new_tables": 9,
-    "existing_accounts_or_operational_records_rewritten": false,
-    "activation_boundary": true
+  "javascript_syntax": {
+    "changed_and_new_scripts_checked": true,
+    "passed": true
   },
+  "badge_assets": {
+    "count": 30,
+    "format": "WebP RGBA",
+    "dimensions_px": [
+      300,
+      300
+    ],
+    "source_sha256": "0a269d8c5b121f4bd36480d71a1422f988707ebaa54cd8fd7ac165be2f6a9b0b",
+    "stable_server_identifiers_match": true
+  },
+  "schema_change": false,
+  "permission_change": false,
+  "operational_api_change": false,
+  "recognition_rule_change": false,
+  "environment_change": false,
   "m01_launcher_unchanged": true,
   "application_runtime_changed": true,
   "settings_secrets_in_package": false,
@@ -142,10 +101,9 @@
   "live_repository_inspected": false,
   "live_services_inspected": false,
   "deployment_performed": false,
-  "known_baseline_issue": "One historical exact-release delta-stripper test fails on unchanged UI65; it is not counted as a UI66 pass or regression.",
   "limitations": [
-    "Selected local fictional checks, not an independent security audit or complete monolithic historical suite.",
-    "No live Render, DNS, public HTTPS, real SMTP/TLS inbox, Windows installed PWA, physical-device, production-load or off-host recovery acceptance.",
-    "Some large historical groups were run in isolated processes because cumulative fixtures exceeded the execution window; incomplete combined runs are not counted."
+    "Local fictional verification is not an independent security audit or production acceptance.",
+    "The full concept Home/dashboard is not included; UI67 supplies the shared shell and identity foundation.",
+    "Browser checks did not use live Render, SMTP, DNS, production IndexedDB, physical devices or production data."
   ]
 }
