@@ -1,68 +1,116 @@
 {
-  "format": "wavelink-ui65-delivery-checks-1",
-  "release": "UI65 + Mail Startup M01 + Company C01 + G01",
-  "parent": "Exact UI64 + Mail Startup M01 + Company C01 + G01",
+  "format": "wavelink-ui66-delivery-checks-1",
+  "release": "UI66 + Mail Startup M01 + Company C01 + G01",
+  "parent": "Exact clean UI65 + Mail Startup M01 + Company C01 + G01 at ac05fa4324904fa65efdf4eb2d3f0ff1ce1cbe65",
   "core": "1.34.19",
   "date": "2026-09-29",
-  "python_passed": 321,
-  "python_skipped": 1,
-  "browser_scenarios_passed": 9,
-  "python_compile_files": 217,
-  "javascript_syntax_files": 4,
-  "repository_files_parent": 188,
-  "repository_files_target": 190,
-  "runtime_files_parent": 1917,
-  "runtime_files_target": 1922,
-  "overlay_records": 632,
-  "runtime_changed_or_added_from_ui64": 25,
-  "runtime_new_files_from_ui64": 5,
-  "parent_extractor_sha256": "815a635818cb4268957c090e091dab50a95c72b1b6e0bc9f103276fdc630ae09",
-  "target_extractor_sha256": "de8c364f9395fb9ef9ef96d5bff70b5a52670a8d1044404ad85f11a287a3a2c5",
+  "repository_files_parent": 190,
+  "repository_files_target": 192,
+  "runtime_manifest_files_parent": 1922,
+  "runtime_manifest_files_target": 1930,
+  "ui66_delta_modified": 25,
+  "ui66_delta_new": 8,
+  "ui66_delta_removed": 0,
+  "ui66_embedded_records": 33,
+  "cumulative_embedded_overlay_records": 665,
+  "parent_extractor_sha256": "de8c364f9395fb9ef9ef96d5bff70b5a52670a8d1044404ad85f11a287a3a2c5",
+  "target_extractor_sha256": "2c9e15d2e653d736bbab91155074f3e5f5846664954a4d7c0bebddb87a783977",
   "m01_company_entrypoint_sha256": "2f117d85c439c16ab78908bf5728056cc837e5d1f948a77040ef1d509c04c371",
   "fresh_source_replay": {
     "upstream_files_verified": 1605,
-    "target_manifest_files": 1922,
-    "non_generated_files_compared": 1921,
+    "target_manifest_files": 1930,
+    "non_generated_files_compared": 1929,
     "byte_differences": 0,
     "manifest_integrity": true
   },
   "python_runs": [
     {
-      "group": "ui65_selected_runtime",
-      "passed": 57,
-      "skipped": 1,
-      "scope": "UI64 contract/hosted/mail/smoke/upgrade plus UI65 roles-access"
+      "group": "ui66_recognition",
+      "passed": 18,
+      "skipped": 0,
+      "source": "fresh reconstructed runtime"
+    },
+    {
+      "group": "general_tasks_functional",
+      "passed": 32,
+      "skipped": 0,
+      "source": "fresh reconstructed runtime; release-contract exactness file excluded"
+    },
+    {
+      "group": "maintenance_cycles",
+      "passed": 52,
+      "skipped": 0,
+      "source": "isolated build runs"
+    },
+    {
+      "group": "inventory_review",
+      "passed": 28,
+      "skipped": 0,
+      "source": "isolated build runs"
+    },
+    {
+      "group": "checklist_workflow",
+      "passed": 35,
+      "skipped": 0,
+      "source": "isolated build runs"
+    },
+    {
+      "group": "toolbox_talks",
+      "passed": 47,
+      "skipped": 0,
+      "source": "isolated build runs"
+    },
+    {
+      "group": "simple_handovers",
+      "passed": 41,
+      "skipped": 0,
+      "source": "isolated build runs"
     },
     {
       "group": "ui64_membership_compatibility",
-      "passed": 58,
+      "passed": 94,
+      "skipped": 1,
+      "source": "isolated build runs"
+    },
+    {
+      "group": "ui65_roles_access",
+      "passed": 16,
       "skipped": 0,
-      "scope": "all original UI64 membership cases; run in four successful isolated groups"
+      "source": "isolated build runs"
+    },
+    {
+      "group": "handover_privacy_transfer",
+      "passed": 18,
+      "skipped": 0,
+      "source": "isolated build runs"
     },
     {
       "group": "repository_package",
       "passed": 11,
-      "skipped": 0
+      "skipped": 0,
+      "source": "final UI66 wrapper and fresh reconstructed runtime"
     },
     {
       "group": "mail_startup_m01_retained",
       "passed": 26,
-      "skipped": 0
+      "skipped": 0,
+      "source": "final wrapper with UI66 runtime on PYTHONPATH"
     },
     {
       "group": "company_c01_retained",
       "passed": 71,
       "skipped": 0,
-      "scope": "run in four successful isolated groups"
+      "source": "final wrapper"
     },
     {
       "group": "gateway_gate_provision_retained",
       "passed": 98,
-      "skipped": 0
+      "skipped": 0,
+      "source": "final wrapper"
     }
   ],
   "browser_run": {
-    "passed": 9,
+    "passed": 10,
     "widths_css_px": [
       1440,
       390,
@@ -70,22 +118,22 @@
     ],
     "javascript_errors": 0,
     "horizontal_overflow_failures": 0,
-    "scope": [
-      "deliberate blank department/role",
-      "narrowed 27-key Survey Tech snapshot",
-      "exact Supervisor profile",
-      "immutable revision",
-      "verified pre-authorised activation",
-      "legacy UI64 Pending wording"
-    ]
+    "fictional_testclient_bridge": true,
+    "live_network": false,
+    "evidence_replayed_on_fresh_reconstruction": true
+  },
+  "migration_fixture": {
+    "ui65_accounts_preserved": 2,
+    "password_hashes_and_ids_preserved": true,
+    "existing_record_preserved_byte_for_byte": true,
+    "retroactive_recognition_rows": 0,
+    "replayed_on_fresh_reconstruction": true
   },
   "schema": {
-    "membership_from": 1,
-    "membership_to": 2,
-    "new_tables": 5,
-    "seeded_profiles": 9,
-    "participant_permissions": 28,
-    "existing_accounts_or_legacy_invites_rewritten": false
+    "recognition_version": 1,
+    "new_tables": 9,
+    "existing_accounts_or_operational_records_rewritten": false,
+    "activation_boundary": true
   },
   "m01_launcher_unchanged": true,
   "application_runtime_changed": true,
@@ -94,9 +142,10 @@
   "live_repository_inspected": false,
   "live_services_inspected": false,
   "deployment_performed": false,
+  "known_baseline_issue": "One historical exact-release delta-stripper test fails on unchanged UI65; it is not counted as a UI66 pass or regression.",
   "limitations": [
-    "Selected local fictional checks, not the complete historical application suite or an independent security review.",
-    "No live Render, DNS/public HTTPS, real SMTP/TLS inbox, production load, Windows/installed-PWA or accepted off-host recovery test.",
-    "One skipped selected test is recorded as environment-dependent; it is not counted as passed."
+    "Selected local fictional checks, not an independent security audit or complete monolithic historical suite.",
+    "No live Render, DNS, public HTTPS, real SMTP/TLS inbox, Windows installed PWA, physical-device, production-load or off-host recovery acceptance.",
+    "Some large historical groups were run in isolated processes because cumulative fixtures exceeded the execution window; incomplete combined runs are not counted."
   ]
 }

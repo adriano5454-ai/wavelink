@@ -44,12 +44,16 @@ def test_no_real_project_or_secret_files_packaged():
     assert 'dives.sqlite3' not in names and 'hub.json' not in names and 'gate.key' not in names
 
 
-def test_ui65_overlay_and_m01_launcher_are_exact():
-    from deploy.extract_source import UI_PATCH_ID
+def test_ui66_overlay_parent_and_m01_launcher_are_exact():
+    from deploy.extract_source import UI_PATCH_ID, UI66_PATCH_ID, _UI66_FILES
     assert UI_PATCH_ID == 'workspace-ui65-role-ready-invitations-2026-09-29'
+    assert UI66_PATCH_ID == 'workspace-ui66-profiles-recognition-2026-09-29'
+    assert len(_UI66_FILES) == 33
     assert hashlib.sha256((ROOT/'deploy/company_entrypoint.py').read_bytes()).hexdigest() == '2f117d85c439c16ab78908bf5728056cc837e5d1f948a77040ef1d509c04c371'
     assert (ROOT/'docs/WORKSPACE_UI65.md').is_file()
     assert (ROOT/'docs/UI65_SOURCE_PROVENANCE.json').is_file()
+    assert (ROOT/'docs/WORKSPACE_UI66.md').is_file()
+    assert (ROOT/'docs/UI66_SOURCE_PROVENANCE.json').is_file()
 
 
 def test_ui65_release_keeps_operator_secret_examples_blank():

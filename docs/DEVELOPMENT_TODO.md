@@ -1,3 +1,22 @@
+# Current roadmap — after UI66 profiles and recognition
+
+Delivered locally: the complete coherent UI66 profile/Team/likes/points/tiers/badges batch with six
+source adapters, activation boundary, duplicate-safe ledger, privacy rechecks and durable repair. It is
+packaged as a real UI65→UI66 GitHub update, not the superseded diagnostics-only fallback.
+
+Before extending recognition, perform one staging acceptance with disposable named accounts and fictional
+records. Verify existing UI65 access, profile privacy, restricted-source exclusion, all six completions,
+1/3/5 authority, idempotent retries, reversal/restoration, tier thresholds, locked-badge refusal, complete
+backup/restore and outbox repair after deliberate projection failure. Do not deploy by resetting or
+re-importing data.
+
+Still separate/pending: email-first operational sign-in and verified-domain routing; production SMTP/DNS
+acceptance; historical recognition backfill (only if separately previewed and attributable); wider source
+adapters; company recognition-policy editor; approved final badge artwork replacement; live Render load,
+security and recovery acceptance. Likes remain non-scoring and badges non-authorising.
+
+--- Retained prior roadmap below ---
+
 # Current roadmap — after UI65 roles and invitation authority
 
 UI65 delivered the first approved invitations/roles batch on the verified UI64+M01 baseline: versioned job

@@ -1,3 +1,35 @@
+# Wavelink checkpoint — UI66 + Mail Startup M01 + Company C01 + G01
+
+29 September 2026; core 1.34.19. Built from the clean user repository commit `ac05fa4` after confirming
+that the prior diagnostics-only UI66 bundle contained no deployable UI66 application change. This release
+contains a real second cumulative overlay: 25 modified and 8 new runtime files. Final variant
+`workspace-ui66-profiles-recognition-2026-09-29`; 1,930 manifest files; extractor `2c9e15d2e653d736bbab91155074f3e5f5846664954a4d7c0bebddb87a783977`.
+M01 launcher remains `2f117d85c439c16ab78908bf5728056cc837e5d1f948a77040ef1d509c04c371`.
+
+Delivered: company-scoped profiles; editable biography/verified avatar/unlocked badge; privacy-aware Team
+feed; idempotent likes with no points; activation-boundary scoring; frozen 1/3/5 values with source-specific
+server authority; Tasks, maintenance, checklist, handover, Toolbox Talk and standalone stock-verification
+adapters; immutable award/reversal/restoration ledger; duplicate-safe outbox and reconciliation; ten
+cumulative tiers and three original inline-SVG badge families per tier.
+
+Existing UI65 identities, passwords, invitation roles, explicit permissions and operational records remain.
+Old records have no UI66 marker and do not score. Complete backup retains recognition. Selective/new-company
+transfer clears company profiles/events/awards/reactions while retaining compatible schema metadata. Keep
+UI66+ after migration; rollback requires the matching predeployment commit and complete database backup.
+
+Fresh reconstruction is byte-identical to the curated UI66 application outside generated provenance files.
+Dedicated recognition 18/18 and General Tasks functional 32/32 passed on reconstructed source. Broader
+maintenance/inventory/checklist/toolbox/handover/membership/UI65-access groups passed in isolated build runs;
+see DELIVERY_CHECKS.json. Chromium 10/10 at 1440/390/320, no JS error/overflow, fictional TestClient bridge.
+A historical release delta-stripper test already fails on exact UI65 and is not claimed as UI66 regression.
+
+No push, deployment, live migration, SMTP, DNS or production-data action. Preserve C01/G01 disks and
+identities, activation markers, environment values, backups, original files, signatures, saved notes and
+device-local unsent work. Next acceptance is one connected fictional staging run through the six adapters,
+privacy changes, retries/reversal, backup/restore and deliberate projection recovery.
+
+--- Retained UI65 checkpoint below ---
+
 # Continuation checkpoint — UI65 role-ready invitations and controlled access
 
 **Prepared 29 September 2026 · core 1.34.19 · exact parent UI64 + Mail Startup M01 + Company C01 + G01.**

@@ -1,3 +1,25 @@
+# Wavelink UI66 — profiles, Team updates and durable recognition
+
+Core **1.34.19** · **Mail Startup M01, Company C01 and demo G01 preserved** · 29 September 2026.
+Read **docs/WORKSPACE_UI66.md**, **docs/UI66_SOURCE_PROVENANCE.json** and
+**docs/CONTINUATION_CHECKPOINT.md** first.
+
+UI66 adds company-scoped profiles, privacy-aware Team accomplishments, reversible likes, an immutable
+contribution ledger, frozen server-authorised 1/3/5-point source values, cumulative tiers and three
+original selectable badge families per tier. Six source adapters cover Tasks, maintenance, checklists,
+handovers, Toolbox Talks and standalone stock verification without counting ordinary saves or old UI65
+history. The additive schema uses an activation boundary, durable outbox and duplicate-safe natural keys.
+
+Copy the compact update into the exact clean **UI65 + M01** application repository, review the genuine
+changed/new files in GitHub Desktop, commit and push. Preserve backups, disks, C01/G01 identity and
+activation, secrets, SMTP settings and unsent browser work. Do not reset, re-import, repeat setup or clear
+site data. Keep **UI66-or-later** application software after the recognition schema opens.
+
+No repository push, Render deployment, live database migration, real email, DNS change or production-data
+inspection was performed while preparing this release.
+
+--- Retained UI65 instructions ---
+
 # Wavelink UI65 — role-ready invitations and controlled access
 
 Core **1.34.19** · **Mail Startup M01, Company C01 and demo G01 preserved** · 29 September 2026.
