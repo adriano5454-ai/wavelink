@@ -1,0 +1,76 @@
+{
+  "format": "wavelink-ui75-source-provenance-1",
+  "date": "2026-09-30",
+  "release": "UI75 + UI74 + UI73 + UI72 + UI71 + UI70 + UI69 + UI68 + UI67 + UI66 + Mail Startup M01 + Company C01 + G01",
+  "core": "1.34.19",
+  "parent": "Exact UI74 cumulative repository reconstructed from the user-applied Wavelink lineage",
+  "parent_repository_files": 208,
+  "target_repository_files": 210,
+  "parent_runtime_manifest_files": 1993,
+  "target_runtime_manifest_files": 1997,
+  "parent_extractor_sha256": "0ec975cdd4284eb1a1cc98c22e3438b1b62fa24b9826b85fe892b58d97abbae5",
+  "target_extractor_sha256": "c97f39864c285ba562f0f5078f2c248c25552a3984e631bcc65bb80ca0e42034",
+  "unchanged_m01_company_entrypoint_sha256": "2f117d85c439c16ab78908bf5728056cc837e5d1f948a77040ef1d509c04c371",
+  "parent_overlay_sha256": "bf916291c49b50e0a2a700613a4105dd3a81627a07a857f06f01dda707df1783",
+  "target_overlay_sha256": "6ea6ce5b14d56abac752e5860b716563114a393a1e372bbbd184c32dd456ee42",
+  "target_release_manifest_sha256": "7f8831050d8b5a9d9d4606a4749db61f59bb45cfd8c94bc44f7a66334a51fef1",
+  "runtime_delta": {
+    "modified": 8,
+    "new": 4,
+    "removed": 0,
+    "embedded_records": 12,
+    "uncompressed_bytes": 204739
+  },
+  "fresh_reconstruction": {
+    "upstream_files_verified": 1605,
+    "target_manifest_files": 1997,
+    "embedded_files_compared": 12,
+    "byte_differences": 0,
+    "manifest_integrity": true
+  },
+  "architecture": {
+    "authoritative_admin_stylesheet": "app/static/admin_workspace_ui75.css",
+    "legacy_admin_stylesheets_loaded": false,
+    "legacy_admin_stylesheets_cached": false,
+    "route_owned_workspaces": true,
+    "people_directory_explicit_ownership_marker": true,
+    "in_place_people_and_company_refresh": true,
+    "new_post_render_decorator": false,
+    "new_shell_mutation_observer": false,
+    "new_route_dom_reparenting": false,
+    "new_animation": false,
+    "new_polling_loop": false,
+    "service_worker_cache": "pxgeo-dive-check-shell-1.34.19-ui75"
+  },
+  "browser_acceptance": {
+    "checks_passed": 15,
+    "widths_css_px": [
+      1440,
+      390,
+      320
+    ],
+    "desktop_routes": [
+      "People & access",
+      "Departments",
+      "Templates & routines",
+      "Logbook designer",
+      "Record management",
+      "Imports & examples",
+      "Company branding & reports",
+      "Builders"
+    ],
+    "real_timer_idle_seconds": 9.2,
+    "route_mutations_after_settlement": 0,
+    "unexpected_javascript_errors": 0,
+    "fixture_network_warnings": 1,
+    "horizontal_overflow_failures": 0
+  },
+  "database_migration": false,
+  "destructive_reset": false,
+  "permission_or_authority_change": false,
+  "operational_api_change": false,
+  "recognition_rule_change": false,
+  "environment_change": false,
+  "live_services_inspected": false,
+  "deployment_performed": false
+}

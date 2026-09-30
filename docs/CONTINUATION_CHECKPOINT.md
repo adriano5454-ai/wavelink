@@ -1,3 +1,32 @@
+# Wavelink checkpoint — UI75 Native Administration + UI74/UI73/UI72/UI71/UI70/UI69/UI68/UI67/UI66 + M01 + C01 + G01
+
+30 September 2026; core 1.34.19. UI75 is a direct Administration/setup cutover over the accepted UI74 recovery
+baseline. Final variant `workspace-ui75-native-administration-2026-09-30`; 1,997 manifest files; 12 UI75 runtime records
+(8 modified, 4 new). Extractor `c97f39864c285ba562f0f5078f2c248c25552a3984e631bcc65bb80ca0e42034`. M01 launcher remains
+`2f117d85c439c16ab78908bf5728056cc837e5d1f948a77040ef1d509c04c371`.
+
+Delivered: one final Administration stylesheet replacing six active historical route stylesheets; direct route
+ownership for People, Departments, Templates, Logbook Designer, Builders, Records, Imports and Company
+Branding; in-place People/Company refresh; and an explicit People-directory ownership marker that prevents an
+unrelated Administration host from blocking route replacement.
+
+Fresh reconstruction verified 1,605 upstream files, produced 1,997 manifest files and matched all 12 UI75
+payloads byte-for-byte. Browser acceptance covered eight desktop routes, three 390-pixel phone routes and one
+320-pixel route with no horizontal overflow. People remained mutation-free for more than 9.2 seconds after
+settlement. The fictional bridge recorded one expected placeholder WebSocket warning and zero unexpected
+application JavaScript errors.
+
+No new decorator, MutationObserver, route-time DOM movement, animation, timer, schema, reset, permission, API,
+recognition, environment or company-identity change is introduced.
+
+Next development should continue replacing dense route markup directly in coherent groups. Do not reactivate
+the retired Administration stylesheets, reintroduce a second shell or solve visual differences with post-render
+DOM movement.
+
+No remote GitHub, Render, database, SMTP, DNS, Zoho or production-data operation was performed.
+
+--- Retained UI74 checkpoint below ---
+
 # Wavelink checkpoint — UI74 GUI Recovery + UI73/UI72/UI71/UI70/UI69/UI68/UI67/UI66 + M01 + C01 + G01
 
 30 September 2026; core 1.34.19. UI74 is a corrective release over the exact UI73 repository. Final variant

@@ -1,3 +1,29 @@
+# Wavelink UI75 — Native Administration and Setup
+
+Core **1.34.19** · **UI74, UI73, UI72, UI71, UI70, UI69, UI68, UI67, UI66, Mail Startup M01, Company C01 and demo G01 retained** · 30 September 2026.
+Read **docs/WORKSPACE_UI75.md**, **docs/UI75_SOURCE_PROVENANCE.json** and
+**docs/CONTINUATION_CHECKPOINT.md** before applying or deploying.
+
+UI75 continues from the accepted UI74 recovery baseline. Six separately loaded historical Administration/setup
+stylesheets are replaced in the active document and offline cache by one authoritative final stylesheet. People,
+Departments, Templates, Logbook Designer, Builders, Record Management, Imports and Company Branding retain
+their existing controls and authority while rendering as direct route-owned workspaces.
+
+People/Departments and Company Branding refresh in place instead of replacing the whole screen with a loading
+page. Returning from another Administration route to People also uses an explicit route-ownership marker, so an
+unrelated `#admin-workspace` cannot block the correct page. No decorator, MutationObserver, animation,
+independent timer, database migration, reset, permission, operational API, recognition rule or environment
+variable is added.
+
+Copy the compact update over the exact UI74 application repository, review the real changes, commit and push
+normally. After deployment becomes healthy, reload one open tab once or close/reopen the installed app. A
+company reset, project import or browser-storage clear is not required.
+
+No GitHub push, Render deployment, production database operation, external email, DNS/Zoho change or live-data
+inspection was performed while preparing this release.
+
+--- Retained UI74 instructions ---
+
 # Wavelink UI74 — GUI Recovery Baseline
 
 Core **1.34.19** · **UI73, UI72, UI71, UI70, UI69, UI68, UI67, UI66, Mail Startup M01, Company C01 and demo G01 retained** · 30 September 2026.

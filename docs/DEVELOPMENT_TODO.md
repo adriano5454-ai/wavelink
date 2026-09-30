@@ -1,3 +1,23 @@
+# UI75 development checkpoint — native Administration and setup
+
+Completed in UI75:
+
+- consolidate the six active historical Administration/setup stylesheets into one final static asset;
+- give People, Departments, Templates, Records, Imports and Company Branding direct route-owned hierarchy;
+- retain Builders and Logbook Designer under the same authoritative visual system;
+- refresh People/Departments and Company Branding in place;
+- correct Company/other Administration route → People ownership and replacement;
+- verify desktop, phone, narrow-phone, long-idle and in-place-refresh behavior without a new decorator.
+
+Next grouped visual work:
+
+- continue direct replacement of remaining dense route-owned forms and inspectors;
+- preserve UI74/UI75 left alignment, route ownership and no-unrelated-repaint boundaries;
+- do not reactivate retired route stylesheets or add mutation-driven restyling;
+- keep each release small enough for one focused demo acceptance session.
+
+--- Retained development history below ---
+
 # Current roadmap — after UI74 GUI Recovery
 
 UI74 is a regression-recovery checkpoint. It removes the legacy class collision that centred the sidebar,
