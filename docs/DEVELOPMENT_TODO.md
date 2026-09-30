@@ -1,3 +1,28 @@
+# Current roadmap — after UI74 GUI Recovery
+
+UI74 is a regression-recovery checkpoint. It removes the legacy class collision that centred the sidebar,
+adds one final static route presentation layer, and prevents checklist collection refreshes from repainting
+unrelated workspaces. Do not start another broad visual batch until the fictional/demo service confirms:
+
+- sidebar rows stay left aligned at desktop and phone widths;
+- Tasks and Maintenance remain visually stable for at least 15 seconds;
+- rapid navigation does not flash an old layout before the current one;
+- Checklists still refreshes its own list and editor correctly;
+- Fleet navigation uses the same hierarchy;
+- account menus/dialogs remain above route content.
+
+After acceptance, replace remaining dense route-owned markup directly by workflow group. Do not load retired
+UI69/UI70 decorators, add a second shell, observe/move completed DOM, or make global timers repaint unrelated
+routes. Because this remains a test deployment, a direct markup replacement is preferred over compatibility
+shims.
+
+Still separate: email-first operational sign-in and verified-domain routing; live SMTP/DNS acceptance;
+production recovery/security/load acceptance; native installed-app focus-existing-window behavior; wider
+recognition policies/adapters; and final company artwork. Badges remain cosmetic and no visual label grants
+authority.
+
+--- Retained UI73 roadmap below ---
+
 # Current roadmap — after UI73 Integrated Shell Context
 
 Delivered locally: UI73 integrates main/Fleet project context and install access into the static sidebar,

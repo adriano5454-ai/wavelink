@@ -1,3 +1,31 @@
+# Wavelink checkpoint — UI74 GUI Recovery + UI73/UI72/UI71/UI70/UI69/UI68/UI67/UI66 + M01 + C01 + G01
+
+30 September 2026; core 1.34.19. UI74 is a corrective release over the exact UI73 repository. Final variant
+`workspace-ui74-gui-recovery-baseline-2026-09-30`; 1,993 manifest files; 9 UI74 runtime records (5 modified,
+4 new). Extractor `0ec975cdd4284eb1a1cc98c22e3438b1b62fa24b9826b85fe892b58d97abbae5`. M01 launcher remains
+`2f117d85c439c16ab78908bf5728056cc837e5d1f948a77040ef1d509c04c371`.
+
+Confirmed regression causes: the permanent sidebar still carried the legacy `.workspace-nav` class and inherited
+centred/mobile-column rules; UI69/UI70 decorators had been retired before every route had a complete native
+presentation; and the central route controller loaded checklist records then called `safeRender()` on unrelated
+routes, including every eight seconds. UI74 fixes those causes directly rather than adding another decorator.
+
+Delivered: unique `.shell-navigation` ownership; left-aligned full-width rows at desktop and phone widths; one
+last-loaded static recovery stylesheet; no animation or post-render movement; checklist data refresh restricted
+to the checklist-list route; UI74 cache replacement; and focused static/browser tests including a real-timer
+Tasks route with no DOM mutation for more than nine seconds after settlement.
+
+Fresh reconstruction verified 1,605 upstream files, produced 1,993 manifest files and matched all nine UI74
+payloads byte-for-byte. No schema, reset, permission, API, recognition, environment or company-identity change.
+
+Next development should start only after demo acceptance confirms the recovered shell is stable. Continue by
+replacing dense route markup directly in grouped workspaces; do not reintroduce decorators, duplicate shells or
+unrelated global repaint loops.
+
+No remote GitHub, Render, database, SMTP, DNS, Zoho or production-data operation was performed.
+
+--- Retained UI73 checkpoint below ---
+
 # Wavelink checkpoint — UI73 Integrated Shell Context + UI72/UI71/UI70/UI69/UI68/UI67/UI66 + M01 + C01 + G01
 
 30 September 2026; core 1.34.19. Built as the next aggressive browser-frame consolidation over the exact UI72

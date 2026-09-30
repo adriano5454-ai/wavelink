@@ -1,3 +1,26 @@
+# Wavelink UI74 — GUI Recovery Baseline
+
+Core **1.34.19** · **UI73, UI72, UI71, UI70, UI69, UI68, UI67, UI66, Mail Startup M01, Company C01 and demo G01 retained** · 30 September 2026.
+Read **docs/WORKSPACE_UI74.md**, **docs/UI74_SOURCE_PROVENANCE.json** and
+**docs/CONTINUATION_CHECKPOINT.md** before applying or deploying.
+
+UI74 corrects regressions confirmed in UI73. The sidebar no longer inherits the old centred `.workspace-nav`
+rules; main and Fleet navigation rows are vertical, full-width and left aligned. A last-loaded static stylesheet
+restores one shared hierarchy to route-owned workspaces without another decorator. The central route controller
+also stops checklist record loads, WebSocket events and the eight-second maintenance cycle from repainting
+unrelated pages such as Tasks, Maintenance, Profile or Administration.
+
+This is a recovery release rather than another visual layer. It adds no database migration, reset, permission,
+operational API, recognition rule, source adapter or environment variable. Copy the compact update over the
+exact UI73 application repository, review the real changes, commit and push normally. After deployment becomes
+healthy, reload one open tab once or close/reopen the installed app. Do not reset the company, re-import a
+project or clear browser storage merely to load UI74.
+
+No GitHub push, Render deployment, production database operation, external email, DNS/Zoho change or live-data
+inspection was performed while preparing this release.
+
+--- Retained UI73 instructions ---
+
 # Wavelink UI73 — Integrated Shell Context and Render Stability
 
 Core **1.34.19** · **UI72, UI71, UI70, UI69, UI68, UI67, UI66, Mail Startup M01, Company C01 and demo G01 retained** · 30 September 2026.
