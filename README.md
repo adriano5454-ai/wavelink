@@ -1,3 +1,86 @@
+# Wavelink UI73 — Integrated Shell Context and Render Stability
+
+Core **1.34.19** · **UI72, UI71, UI70, UI69, UI68, UI67, UI66, Mail Startup M01, Company C01 and demo G01 retained** · 30 September 2026.
+Read **docs/WORKSPACE_UI73.md**, **docs/UI73_SOURCE_PROVENANCE.json** and
+**docs/CONTINUATION_CHECKPOINT.md** before applying or deploying.
+
+UI73 removes the remaining standalone project, install-app and Fleet context bands from the active page frame.
+Current project and active-workspace status now belong to the permanent sidebar, while operational save status
+mounts once before the content root and stays hidden until real state is known. Project presence and detached
+log-window status use the same shell context. This removes another source of content offsets, post-load flashes
+and popups competing with the navigation layer.
+
+No route-time shell decorator, DOM re-parenting observer, one-second presence wake-up, database migration,
+permission, operational API, recognition rule or environment variable is introduced. The visual cutover is
+aggressive because the current service is a test deployment, but backend authority and company isolation remain.
+
+Copy the compact update into the exact UI72 application repository. GitHub Desktop should show **9 modified
+files and 2 new files**. Review, commit and push normally. After the intended deployment becomes healthy,
+reload one open tab or close/reopen the installed app once. Do not reset the company, re-import a project or
+clear browser storage merely to load UI73.
+
+No GitHub push, Render deployment, production database operation, external email, DNS/Zoho change or live-data
+inspection was performed while preparing this release.
+
+--- Retained UI72 instructions ---
+
+# Wavelink UI72 — Native Workspaces Cutover
+
+Core **1.34.19** · **UI71, UI70, UI69, UI68, UI67, UI66, Mail Startup M01, Company C01 and demo G01 retained** · 30 September 2026.
+Read **docs/WORKSPACE_UI72.md**, **docs/UI72_SOURCE_PROVENANCE.json** and
+**docs/CONTINUATION_CHECKPOINT.md** before applying or deploying.
+
+UI72 completes the next part of the aggressive single-GUI cutover. UI71 made the main header, sidebar,
+account surface and badge static before first paint, but the older Administration controller still injected a
+second frame above `#app` after route load. UI72 removes that script and stylesheet from the active entry point
+and offline cache. Administration is now a real route inside the one stable shell, and People, Departments,
+builders, logbook design, Calendar, Fault Reports and HSE/QSHE render their final hierarchy directly from
+their route modules.
+
+No post-render decorator, DOM re-parenting observer, independent timer, fetch or browser-storage writer is
+introduced. UI72 adds no database migration, permission, operational API, recognition rule, completion
+adapter or environment variable. It deliberately drops visual compatibility with the injected Administration
+navigator, while retaining the existing backend authority and company isolation.
+
+Copy the compact update into the exact UI71 application repository. GitHub Desktop should show **9 modified
+files and 2 new files**. Review, commit and push normally. After the intended deployment becomes healthy,
+reload one open tab or close/reopen the installed app once. The UI72 service worker installs the complete new
+cache, activates immediately and removes older Wavelink shell caches. Do not reset the company, re-import a
+project or clear browser storage just to load the interface.
+
+No GitHub push, Render deployment, production database operation, external email, DNS/Zoho change or live-data
+inspection was performed while preparing this release.
+
+--- Retained UI71 instructions ---
+
+# Wavelink UI71 — Single GUI Cutover
+
+Core **1.34.19** · **UI70, UI69, UI68, UI67, UI66, Mail Startup M01, Company C01 and demo G01 retained** · 30 September 2026.
+Read **docs/WORKSPACE_UI71.md**, **docs/UI71_SOURCE_PROVENANCE.json** and
+**docs/CONTINUATION_CHECKPOINT.md** before applying or deploying.
+
+UI71 replaces the competing browser presentation layers with one static application frame. The top bar,
+sidebar, account surface, permanent badge and content offsets exist before first paint. The active shell no
+longer builds or moves navigation after render, and the UI69/UI70 work/logistics decorators are no longer
+loaded. One central layer scale keeps menus and native dialogs above workspaces, and shell layout transitions
+are disabled to remove the visible old-GUI → new-GUI blink.
+
+This is an intentionally aggressive visual cutover because the current service is not carrying real users or
+valuable operational forms/inventory. It does not preserve the layered UI70 visual architecture. It also does
+not reset any database or browser storage: backend workflows, permissions, membership, recognition and M01
+startup remain unchanged. The UI71 service worker activates immediately after its new cache is ready and
+removes older Wavelink shell caches on activation.
+
+Copy the compact update into the exact UI70 application repository, review the real 9 modified and 2 new
+repository files, commit and push. After the intended service finishes deploying, close/reopen an installed
+Wavelink window or reload one open tab once so the already-rendered UI70 document is replaced. Do not copy
+this into `Wavelink-Website`.
+
+No GitHub push, Render deployment, production database operation, external email, DNS/Zoho change or live-data
+inspection was performed while preparing this release.
+
+--- Retained UI70 instructions ---
+
 # Wavelink UI70 — Equipment and Logistics Experience
 
 Core **1.34.19** · **UI69, UI68, UI67, UI66, Mail Startup M01, Company C01 and demo G01 preserved** · 30 September 2026.

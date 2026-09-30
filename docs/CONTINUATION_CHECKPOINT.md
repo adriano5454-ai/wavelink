@@ -1,3 +1,117 @@
+# Wavelink checkpoint — UI73 Integrated Shell Context + UI72/UI71/UI70/UI69/UI68/UI67/UI66 + M01 + C01 + G01
+
+30 September 2026; core 1.34.19. Built as the next aggressive browser-frame consolidation over the exact UI72
+release. Final variant `workspace-ui73-integrated-shell-context-2026-09-30`; 1,989 manifest files; 12 UI73
+runtime records (9 modified, 3 new). Extractor `aa6d4ec15fdd58966cab2c5755061304c7791ee844d26a4e8b41fbe66b93c713`. M01 launcher remains
+`2f117d85c439c16ab78908bf5728056cc837e5d1f948a77040ef1d509c04c371`.
+
+User acceptance direction remains explicit: the current service is a test deployment without valuable live
+forms or inventory, so visual architecture may be changed aggressively. UI73 therefore removes the remaining
+standalone project/install/Fleet context bands instead of preserving their placement. This is not a database
+reset; backend workflows, authority, identities, profiles, recognition and company isolation remain.
+
+Delivered: main and Fleet project context inside the permanent sidebar; install access in the sidebar footer;
+one save-status element inserted immediately before the route-content root; hidden initial save state; fixed
+presence overlay above shell content; 30-second presence protocol interval without a one-second wake-up;
+detached log status in the shell context; one content offset owner; and UI73 cache replacement.
+
+Fresh reconstruction verified 1,605 upstream files, produced 1,989 manifest files and matched all 12 UI73
+payloads byte-for-byte. Dedicated static checks passed 8 tests. Chromium acceptance covered Home, Tasks,
+Administration and Fleet Receiving at 1440/390/320 px with 8 scenarios, no tested JavaScript error, active
+legacy context band, context-layer hit-test failure or document-level horizontal overflow.
+
+Deployment: apply only over exact UI72. After the intended service reports healthy, reload one tab or
+close/reopen the installed app once. The UI73 cache activates only after complete installation, deletes older
+Wavelink shell caches and claims clients. Do not clear browser storage, reset a company or re-import a project
+for this GUI release.
+
+Next: convert remaining dense route-owned forms, records/imports, Fleet setup/logbooks and configuration pages
+to native components directly in their renderers. Keep one shell and one content layer. Because the service is
+non-production, larger markup replacement is acceptable; do not reintroduce top-level bands, a second shell or
+post-render DOM movement.
+
+No remote GitHub, Render, database, SMTP, DNS, Zoho or production-data operation was performed.
+
+--- Retained UI72 checkpoint below ---
+
+# Wavelink checkpoint — UI72 Native Workspaces + UI71/UI70/UI69/UI68/UI67/UI66 + M01 + C01 + G01
+
+30 September 2026; core 1.34.19. Built as the next aggressive browser-interface cutover over the exact UI71
+release. Final variant `workspace-ui72-native-workspaces-cutover-2026-09-30`; 1,986 manifest files; 12 UI72
+runtime records (8 modified, 4 new). Extractor
+`3393a54c21b87525dd88305be8d869e4eb2eba652a1770dc0d6aa8376eecd82f`. M01 launcher remains
+`2f117d85c439c16ab78908bf5728056cc837e5d1f948a77040ef1d509c04c371`.
+
+User acceptance direction remains explicit: the present service is a test deployment without valuable live
+forms or inventory, so interface architecture may be changed aggressively. UI72 therefore removes the final
+active injected Administration frame instead of trying to style or position it beside the UI71 shell. This is
+not a database reset; backend workflows, authority, identities, profiles, recognition and company isolation
+remain in place.
+
+Delivered: `admin_navigation.js` and `admin_navigation.css` removed from active HTML/service-worker assets;
+one native Administration hub inside `#app`; direct native renderers for People & access, Departments, Setup
+& builders, Logbook designer, Calendar, Fault Reports and HSE/QSHE; responsive desktop/phone hierarchy; and
+a defensive stale-frame hide for a previously open cached document. No new decorator, mutation observer,
+timer, fetch or storage write was added.
+
+Fresh reconstruction verified 1,605 upstream files, produced 1,986 manifest files and matched all 12 UI72
+payloads byte-for-byte. Dedicated UI72 static checks and Chromium acceptance cover eight desktop routes and
+eight phone/narrow-phone routes at 1440/390/320 px, with no tested JavaScript error, injected Administration
+frame, retired decorator heading or document-level horizontal overflow. The retained UI71 shell acceptance
+also passed on the reconstructed runtime.
+
+Deployment: apply only over exact UI71. After the intended service reports healthy, reload one tab or
+close/reopen the installed app once. The UI72 cache skips waiting only after its complete install, deletes older
+Wavelink shell caches and claims clients. Do not clear browser storage, reset a company or re-import a project
+for this GUI release.
+
+Next: inspect the remaining large route modules and replace any residual old internal page structures directly,
+one workflow group at a time. Do not reintroduce a second shell or post-render decorator. Preserve operational
+validation and authority even while visual compatibility may be broken in the test service.
+
+No remote GitHub, Render, database, SMTP, DNS, Zoho or production-data operation was performed.
+
+--- Retained UI71 checkpoint below ---
+
+# Wavelink checkpoint — UI71 Single GUI Cutover + UI70/UI69/UI68/UI67/UI66 + M01 + C01 + G01
+
+30 September 2026; core 1.34.19. Built as an aggressive browser-frame replacement over the exact UI70
+release. Final variant `workspace-ui71-single-gui-cutover-2026-09-30`; 1,982 manifest files; 11 UI71 runtime
+records (7 modified, 4 new). Extractor
+`381dbdf31d4312feb635e13c359779f12f83ebe98d17ec141b80b5086f2c6de5`. M01 launcher remains
+`2f117d85c439c16ab78908bf5728056cc837e5d1f948a77040ef1d509c04c371`.
+
+User acceptance direction: the current service has no real operational users or valuable forms/inventory, so
+future interface changes may be aggressive. UI71 therefore removes visual compatibility with the stacked
+UI69/UI70 decorator approach rather than preserving it. No destructive reset is included; the existing
+backend and authority model remain.
+
+Delivered: one static main shell and one static Fleet shell before first paint; permanent badge and compact
+account surfaces built into the entry points; one navigation update after route/permission state settles;
+central layer scale; native modal top layer; stable desktop/phone offsets; dynamic save-status strips aligned
+beside the desktop sidebar; UI69/UI70 post-render decorators removed from active HTML and service-worker
+assets; immediate UI71 service-worker activation and old-shell-cache removal.
+
+Root cause addressed: the previous shell/decorator chain dynamically created, moved and regrouped controls
+after the route had rendered, while multiple positioned layers used unrelated z-index values. This produced
+visible redraws and could place a new menu behind an older surface. UI71 active shell controllers update only
+state/visibility and do not create, append, insert or reparent workspace nodes.
+
+Fresh reconstruction verified 1,605 upstream files, produced 1,982 manifest files and matched all 11 UI71
+records byte-for-byte. Dedicated static contracts and Chromium checks cover Home, Tasks, Maintenance,
+Inventory, Handovers, Profile, Fleet sites, Manifests and Receiving at 1440/390/320 px, including stable shell
+geometry, mobile drawer closure, account/dialog hit-testing, zero tested JavaScript errors and zero tested
+document-level overflow.
+
+Deployment: apply only over exact UI70. After deployment, close/reopen the installed app or reload one open
+tab once. The new service worker skips waiting after its complete cache is ready, claims clients and deletes
+older Wavelink shell caches. A browser-storage clear, company reset or re-import is not required.
+
+No remote GitHub, Render, database, SMTP, DNS, Zoho or production-data operation was performed. Continue with
+remaining workspace simplification only after checking the single-shell cutover in the fictional service.
+
+--- Retained UI70 checkpoint below ---
+
 # Wavelink checkpoint — UI70 Equipment & Logistics + UI69/UI68/UI67/UI66 + M01 + C01 + G01
 
 30 September 2026; core 1.34.19. Built as a cumulative presentation layer over the verified UI69 release.

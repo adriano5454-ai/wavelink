@@ -1,3 +1,95 @@
+# Current roadmap — after UI73 Integrated Shell Context
+
+Delivered locally: UI73 integrates main/Fleet project context and install access into the static sidebar,
+removes the active legacy context bands, mounts save status once before route content and hides it until state
+is known. Project-presence and detached-window status now use the shell layer. No page decorator, route-time
+DOM re-parenting or one-second wake-up was added.
+
+Immediate acceptance on the fictional/demo service:
+
+- deploy the exact UI72→UI73 update and reload/close-reopen once after the service is healthy;
+- open Home, Tasks and Administration repeatedly and confirm no context strip flashes above the page;
+- confirm the project/active-workspace control remains in the sidebar and its panel is never clipped;
+- open Fleet Receiving with local saving available and unavailable, confirming meaningful status remains above
+  Fleet content without shifting underneath the sidebar;
+- repeat on 390 px and 320 px widths and confirm one mobile drawer and no horizontal overflow;
+- open a detached log window and confirm its status uses the shell context;
+- exercise representative forms so permission, validation and unsaved-work behaviour remain established.
+
+Next aggressive GUI batch: replace dense route-owned screens directly rather than layering them. Prioritise
+record management/imports, company branding, Fleet setup/logbooks, long administration forms and other pages
+that still use legacy fixed-width panels or duplicate headings. Shared components may replace markup; they must
+not duplicate services, authority checks or unsaved-work state.
+
+Still separate: email-first operational sign-in and verified-domain routing; live SMTP/DNS acceptance;
+production recovery/security/load acceptance; native installed-app focus-existing-window behaviour; wider
+recognition policies/adapters; and final company artwork. Badges remain cosmetic, likes non-scoring and no
+visual label grants authority.
+
+--- Retained UI72 roadmap below ---
+
+# Current roadmap — after UI72 Native Workspaces Cutover
+
+Delivered locally: UI72 removes the final active injected Administration frame from the UI71 single shell.
+Administration is now one native route inside `#app`; People, Departments, builders, logbook design, Calendar,
+Fault Reports and HSE/QSHE own their final page hierarchy directly. The old Administration navigator remains
+only as historical lineage and is not loaded or cached. No new post-render decorator, shell observer, timer,
+fetch or storage writer was introduced.
+
+Immediate acceptance on the fictional/demo service:
+
+- deploy the exact UI71→UI72 update without resetting the company or clearing browser storage;
+- open Administration repeatedly and confirm no second navigation frame appears or flashes;
+- open People, Departments, builders, logbook designer, Calendar, Fault Reports and HSE/QSHE;
+- verify account menus and dialogs remain above route content;
+- move rapidly between routes at desktop and phone widths and confirm stable shell geometry;
+- exercise representative existing create/edit actions with permitted and denied users so authority and
+  unsaved-work guards remain unchanged.
+
+Next aggressive GUI batch: review remaining route-owned markup rather than adding another global decorator.
+Prioritise dense Administration subpages, Records/Imports/branding, Fleet setup/logbooks and any route still
+mixing legacy headings, duplicate toolbars or fixed-width panels. Convert each renderer directly, retain one
+shell and one content layer, and keep operational handlers/validation in their existing services.
+
+Still separate: email-first operational sign-in and verified-domain routing; production SMTP/DNS acceptance;
+full recovery/security/load acceptance; native installed-app focus-existing-window behaviour; wider recognition
+policy/adapters; and actual company artwork. Badges remain cosmetic, likes non-scoring, and no visual role label
+or recognition tier grants authority.
+
+--- Retained UI71 roadmap below ---
+
+# Current roadmap — after UI71 Single GUI Cutover
+
+Delivered locally: an aggressive replacement of the conflicting layered UI70 browser frame. Main and Fleet
+now use one pre-rendered shell; UI69/UI70 post-paint decorators are retired from active loading; account and
+badge surfaces are static; shell navigation commits once; menus/dialogs use one explicit layer system; old
+shell caches are replaced immediately after the complete UI71 cache installs.
+
+The current test/demo service has no valuable production users, forms or inventory. Do not spend future work
+preserving visual compatibility with the retired shell. Keep backend authority, audit, workflow and tenant
+isolation unless a later decision explicitly replaces those systems. Avoid adding another MutationObserver
+or decorator that moves controls after paint.
+
+Immediate acceptance:
+
+- deploy UI71 to the fictional service and close/reopen the installed app once;
+- verify one top bar/sidebar only, no blinking or control jumps on route changes;
+- verify account menu and native modals never appear behind workspaces;
+- verify mobile navigation closes after selection;
+- verify Fleet save-status messages and workflow modals are not clipped under the sidebar;
+- verify established workflow buttons still reach their forms and permission checks.
+
+Next development should simplify remaining Admin, builders, Logs/Calendar and report surfaces directly in
+their source renderers or shared components—not through post-render DOM movement. Because the test site is
+non-production, larger markup replacements are acceptable, but each release should still keep a coherent
+acceptance session and an exact source/runtime lineage.
+
+Still separate: email-first operational sign-in/domain routing; real SMTP/DNS acceptance; connected Render
+security/recovery; physical device and durable offline acceptance; broader recognition policy. Badges remain
+cosmetic and likes non-scoring.
+
+--- Retained earlier roadmap below ---
+
 # Current roadmap — after UI70 Equipment and Logistics Experience
 
 Delivered locally: a real UI70 layer over the exact UI69 runtime for Inventory catalogues, boxes/subitems,
