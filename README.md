@@ -1,3 +1,25 @@
+# Wavelink UI69 — Professional Work Execution
+
+Core **1.34.19** · **UI68, UI67, UI66, Mail Startup M01, Company C01 and demo G01 preserved** · 30 September 2026.
+Read **docs/WORKSPACE_UI69.md**, **docs/UI69_SOURCE_PROVENANCE.json** and
+**docs/CONTINUATION_CHECKPOINT.md** first.
+
+UI69 brings Tasks, Maintenance, Checklists, Handovers and Toolbox Talks into one professional Wavelink
+interaction system: compact module identity, clearer daily actions, grouped setup tools, consistent views,
+filters, cards, empty states and responsive operational forms. The five modules keep their existing backend,
+permissions, privacy, evidence, approval, completion, publication and acknowledgement behavior.
+
+This is a presentation layer over the exact UI68 runtime: no schema, permission, operational API, recognition
+rule, source adapter, environment variable, polling loop or browser-storage writer is added. Copy the compact
+update into the exact UI68 application repository, review the real changed/new files in GitHub Desktop, commit
+and push. Preserve backups, disks, C01/G01 identity and activation, secrets, SMTP settings and unsent browser
+work. Do not reset, re-import, repeat setup or clear site data.
+
+No repository push, Render deployment, live database operation, real email, DNS change or production-data
+inspection was performed while preparing this release.
+
+--- Retained UI68 instructions ---
+
 # Wavelink UI68 — Data-grounded Home and Profile
 
 Core **1.34.19** · **UI67, UI66, Mail Startup M01, Company C01 and demo G01 preserved** · 30 September 2026.

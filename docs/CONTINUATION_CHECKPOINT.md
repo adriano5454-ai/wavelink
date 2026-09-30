@@ -1,3 +1,32 @@
+# Wavelink checkpoint — UI69 Professional Work Execution + UI68/UI67/UI66 + M01 + C01 + G01
+
+30 September 2026; core 1.34.19. Built as a cumulative presentation layer over the verified UI68 release.
+Final variant `workspace-ui69-work-execution-experience-2026-09-30`; 1,973 manifest files; 9 UI69 runtime
+records (4 modified, 5 new). Extractor
+`105cc98e25fd731c739c9b24f3269ba5bb8098ee4ce0277b5aec76711bb66408`. M01 launcher remains
+`2f117d85c439c16ab78908bf5728056cc837e5d1f948a77040ef1d509c04c371`.
+
+Delivered: shared professional presentation for Tasks, Maintenance, Checklists, Handovers and Toolbox Talks;
+visible daily primary actions; routine/template/form/people setup grouped without removing controls; consistent
+views, finders, empty states, split views and form hierarchy; responsive 1440/390/320 layouts. No database,
+permission, API, recognition, completion, evidence, privacy, polling or environment change.
+
+Fresh source reconstruction verified 1,605 upstream files, produced 1,973 manifest files and passed manifest
+integrity. The 9 UI69 embedded files matched the curated build byte-for-byte. Dedicated UI69 + retained UI68
+and UI67 tests passed 20/20; General Tasks functional tests passed 32/32. Chromium passed 13 workflow scenarios
+with no page JavaScript error or document-level horizontal overflow. Three separate native Tk tests require a
+graphical display and error before exercising application behavior in this headless environment.
+
+Preserve UI68/UI67/UI66 identities, invitations, permissions, recognition data, operational records,
+M01/C01/G01, backups, disks, activation markers, files, signatures, saved notes and device-local unsent work.
+No push, deployment, live migration, external email or production-data action was performed.
+
+Next visual batch: UI70 equipment and logistics—Inventory, boxes/subitems, Manifests, movement/receipt,
+stock verification, Certificates and Fleet context—with QR, custody, quantity and certificate authority
+unchanged.
+
+--- Retained UI68 checkpoint below ---
+
 # Wavelink checkpoint — UI68 Data-grounded Home/Profile + UI67/UI66 + M01 + C01 + G01
 
 30 September 2026; core 1.34.19. Built as a cumulative presentation layer over the verified UI67 release.

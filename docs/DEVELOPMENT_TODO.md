@@ -1,14 +1,24 @@
-# UI69 next — professional operational workflow group
+# Current roadmap — after UI69 Professional Work Execution
 
-UI68 now supplies the data-grounded Personal Home and Profile experience on top of the UI67 shell. The next
-coherent visual batch should migrate Tasks, Maintenance, Checklists, Handovers and Toolbox Talks to the same
-design system while preserving every existing permission, privacy, evidence, assignment, approval and
-completion rule. Keep grouped delivery and one short acceptance session.
+Delivered locally: a real UI69 layer over the exact UI68 runtime for Tasks, Maintenance, Checklists,
+Handovers and Toolbox Talks. Daily primary actions stay visible; routine/template/form/people setup remains
+reachable through progressive disclosure; existing permissions, privacy, evidence, approvals, completion,
+publication, acknowledgement, points and unsent-work boundaries remain unchanged.
 
-Immediate acceptance before UI69: run UI68 against disposable staging accounts and confirm real personal
-counts, shift state, Team privacy, profile progress, locked-tier disclosure, offline shell refresh and no write
-from opening/refreshing Home. Do not add fictional analytics or begin a global search control until a real,
-authorised search service exists.
+Immediate staging acceptance: use disposable named accounts and fictional work to compare the five workflows
+with UI68, including participant/admin visibility, create/close without save, one completed record per module,
+private Task exclusion, Help in a separate tab, restart persistence and desktop/phone/narrow-phone layout.
+Do not use production records to test destructive or authority-sensitive paths.
+
+Next coherent visual batch: **UI70 equipment and logistics**. Apply the same design system to Inventory,
+boxes/subitems, Manifests, shore-to-vessel receipt and placement, item movement history, stock verification,
+Certificates and Fleet context. Preserve QR identity, custody, quantity, low-stock, certificate, manifest and
+movement authority. Do not fabricate fleet status or bypass existing receipt/placement confirmation.
+
+Still separate/pending: email-first operational sign-in and verified-domain routing; production SMTP/DNS
+acceptance; global search only after an authorised search service exists; live Render load/security/recovery;
+physical-device and durable offline acceptance; wider recognition policy/adapters. Badges remain cosmetic,
+likes remain non-scoring and no recognition tier grants operational authority.
 
 --- Retained development roadmap below ---
 
