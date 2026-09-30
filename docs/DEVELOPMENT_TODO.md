@@ -1,3 +1,28 @@
+# Current roadmap — after UI70 Equipment and Logistics Experience
+
+Delivered locally: a real UI70 layer over the exact UI69 runtime for Inventory catalogues, boxes/subitems,
+stock verification, low-stock, Certificates, connected asset identity and Fleet logistics. Daily actions stay
+visible; selected setup/report controls remain reachable through progressive disclosure; existing QR, custody,
+quantity, Manifest, receipt, placement, Certificate, audit, recognition and unsent-work boundaries remain
+unchanged.
+
+Immediate staging acceptance: use disposable named accounts and fictional equipment to compare UI70 with
+UI69, including participant/admin visibility, box containment, QR scope, one Manifest through dispatch/receipt/
+placement, stock verification results, Certificate source files, restart persistence and desktop/phone/narrow-
+phone layout. Do not use production records for destructive or authority-sensitive paths.
+
+Next coherent visual batch: **UI71 administration and remaining operations**. Apply the shared design system to
+Members/Roles, invitations, builders, Calendar/Logs, Fault Reports, HSE/QSHE and remaining report/export
+surfaces. Preserve exact access, approval, privacy, signature and audit semantics. Do not hide consequential
+controls or convert configuration into ordinary participant authority.
+
+Still separate/pending: email-first operational sign-in and verified-domain routing; production SMTP/DNS
+acceptance; global search only after an authorised search service exists; live Render load/security/recovery;
+physical-device and durable offline acceptance; wider recognition policy/adapters. Badges remain cosmetic,
+likes remain non-scoring and no recognition tier grants operational authority.
+
+--- Retained UI69 roadmap below ---
+
 # Current roadmap — after UI69 Professional Work Execution
 
 Delivered locally: a real UI69 layer over the exact UI68 runtime for Tasks, Maintenance, Checklists,

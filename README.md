@@ -1,3 +1,25 @@
+# Wavelink UI70 — Equipment and Logistics Experience
+
+Core **1.34.19** · **UI69, UI68, UI67, UI66, Mail Startup M01, Company C01 and demo G01 preserved** · 30 September 2026.
+Read **docs/WORKSPACE_UI70.md**, **docs/UI70_SOURCE_PROVENANCE.json** and
+**docs/CONTINUATION_CHECKPOINT.md** before applying or deploying.
+
+UI70 brings Inventory, boxes/subitems, stock verification, Certificates, connected asset identity and Fleet
+logistics into the shared Wavelink design system. Existing controls and handlers remain authoritative; the
+new presentation layer performs no fetch, polling, storage write, custody change, receipt, placement,
+quantity adjustment, workflow transition or recognition award.
+
+This is a cumulative presentation layer over the exact UI69 runtime: no schema, permission, operational API,
+recognition rule, source adapter or environment change. Preserve the approved commit, complete backup,
+persistent disks, C01/G01 identities, activation markers, secrets and unfinished browser work. Copy the full
+update into the exact UI69 application repository, review the real changed/new files in GitHub Desktop, commit
+and push normally. Do not reset, re-import, repeat setup or clear browser storage.
+
+No GitHub push, Render deployment, production database operation, external email, DNS/Zoho or live-data
+inspection was performed while preparing this release.
+
+--- Retained UI69 instructions ---
+
 # Wavelink UI69 — Professional Work Execution
 
 Core **1.34.19** · **UI68, UI67, UI66, Mail Startup M01, Company C01 and demo G01 preserved** · 30 September 2026.

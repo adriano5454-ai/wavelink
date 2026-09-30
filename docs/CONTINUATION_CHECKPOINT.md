@@ -1,3 +1,31 @@
+# Wavelink checkpoint — UI70 Equipment & Logistics + UI69/UI68/UI67/UI66 + M01 + C01 + G01
+
+30 September 2026; core 1.34.19. Built as a cumulative presentation layer over the verified UI69 release.
+Final variant `workspace-ui70-equipment-logistics-experience-2026-09-30`; 1,978 manifest files; 8 UI70 runtime
+records (3 modified, 5 new). Extractor `3e99877da22dd820a3baea24f3ed5c5426eb558bb858ca74696d93a305e3c66a`. M01 launcher remains
+`2f117d85c439c16ab78908bf5728056cc837e5d1f948a77040ef1d509c04c371`.
+
+Delivered: shared professional presentation for Inventory catalogues, boxes/subitems, connected assets, stock
+verification, low-stock, Certificates and Fleet sites/Manifests/receiving/current assets/journey/calendar/
+setup/logbooks. Existing daily controls remain direct; selected setup and evidence/report controls use
+progressive disclosure. The decorator adds no fetch, timer, storage write or workflow transition.
+
+Fresh source reconstruction verified 1,605 upstream files, produced 1,978 manifest files and passed manifest
+integrity. The 8 UI70 embedded files matched the curated build byte-for-byte. Dedicated UI70 tests passed;
+23 fictional Chromium scenarios covered 1440/390/320 layouts with no page JavaScript error, duplicate Help
+or document-level overflow. Historical exact-cache tests and slow environment-heavy QR/PDF suites are not
+claimed as complete UI70 passes.
+
+Preserve UI69/UI68/UI67/UI66 identities, invitations, permissions, recognition data, operational records,
+M01/C01/G01, backups, disks, activation markers, source evidence, files, signatures, shifts, saved notes and
+device-local unsent work. No push, deployment, live migration, external email or production-data action was
+performed.
+
+Next visual batch: UI71 Administration, Members/Roles, builders, Calendar/Logs, Fault/HSE/QSHE and remaining
+report surfaces, with authority, privacy and evidence rules unchanged.
+
+--- Retained UI69 checkpoint below ---
+
 # Wavelink checkpoint — UI69 Professional Work Execution + UI68/UI67/UI66 + M01 + C01 + G01
 
 30 September 2026; core 1.34.19. Built as a cumulative presentation layer over the verified UI68 release.
