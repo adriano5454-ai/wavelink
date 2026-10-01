@@ -1,3 +1,21 @@
+# Current checkpoint — UI82 Authorised Search and Personal Action Centre Batch
+
+**1 October 2026 · core 1.34.19 · exact parent UI81.**
+
+UI82 combines permission-aware cross-module search with a personal current-action centre. Search returns only rows collected through the current account's source services and does not expose a hidden-match count. The action centre re-derives current source text and stores only read/dismiss receipts, preferences and idempotency metadata. The permanent unread badge is global across dialog views; open lists receive a deliberate **New updates** control instead of forced replacement.
+
+The release modifies 6 runtime files, adds 7 runtime/test files and advances the manifest from 2,022 to 2,029 files. It adds four additive/idempotent action-centre metadata tables and authenticated search/action-centre APIs. It adds no permission key, recognition rule, environment variable, independent timer, post-render decorator or shell re-parenting. M01 remains byte-identical.
+
+Exact runtime variant: `workspace-ui82-authorised-search-action-centre-batch-2026-10-01`.  
+Parent extractor SHA-256: `a90c195204a804bb433970c21fd66b8be4496772555ba174aa66ec795613a857`  
+Target extractor SHA-256: `8c23772919f284b03d82b801d63659a54595f097263f81a7ee6f558c5adfba48`  
+Target overlay SHA-256: `f06816a54a06bb380b5f33629ff51fa47428284ddcc906df5f1fdc2f487d2ebc`  
+M01 launcher SHA-256: `2f117d85c439c16ab78908bf5728056cc837e5d1f948a77040ef1d509c04c371`
+
+Next: complete connected fictional privacy and source-access acceptance, then keep UI83 as a separate security batch for email-first identity, two-step verification, sessions/recovery and real SMTP/DNS inbox checks. Do not treat UI82 search as authentication or notification delivery.
+
+--- Retained UI81 checkpoint below ---
+
 # Current checkpoint — UI81 Workflow Foundation Batch
 
 **1 October 2026 · core 1.34.19 · exact parent UI80.**

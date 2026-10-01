@@ -1,0 +1,118 @@
+{
+  "format": "wavelink-ui82-source-provenance-1",
+  "release": "UI82 Authorised Search and Personal Action Centre Batch",
+  "date": "2026-10-01",
+  "core": "1.34.19",
+  "parent": "Exact UI81 + UI80 + UI79 + UI78 + UI77 + UI76 + UI75 + UI74 + UI73 + UI72 + UI71 + UI70 + UI69 + UI68 + UI67 + UI66 + Mail Startup M01 + Company C01 + G01",
+  "parent_repository_files": 222,
+  "target_repository_files": 224,
+  "parent_runtime_manifest_files": 2022,
+  "target_runtime_manifest_files": 2029,
+  "runtime_delta": {
+    "modified": 6,
+    "new": 7,
+    "removed": 0,
+    "embedded_records": 13
+  },
+  "parent_extractor_sha256": "a90c195204a804bb433970c21fd66b8be4496772555ba174aa66ec795613a857",
+  "target_extractor_sha256": "8c23772919f284b03d82b801d63659a54595f097263f81a7ee6f558c5adfba48",
+  "parent_overlay_sha256": "30bc56415df22bc83576b36924a078cda0305bf3de769dd5dc47ff914f2f9aa1",
+  "target_overlay_sha256": "f06816a54a06bb380b5f33629ff51fa47428284ddcc906df5f1fdc2f487d2ebc",
+  "target_release_manifest_sha256": "179355e687271a21e052b91ab763b43d6d4232ce8eae8ab187807d83d35f514d",
+  "m01_company_entrypoint_sha256": "2f117d85c439c16ab78908bf5728056cc837e5d1f948a77040ef1d509c04c371",
+  "batch_scope": [
+    "authorised cross-module search with no hidden-match count",
+    "personal current-action centre derived from existing Personal Home and Attention services",
+    "idempotent read, unread, dismiss and restore receipts",
+    "category and IANA-time-zone quiet-hour preferences",
+    "stable New updates presentation without forced list replacement",
+    "complete-backup preservation and selective-transfer clearing of personal action metadata",
+    "responsive top-bar search/action entry points and Ctrl/Cmd+K search"
+  ],
+  "new_runtime_assets": [
+    "app/action_center.py",
+    "app/action_center_api.py",
+    "app/static/action_center_ui82.css",
+    "app/static/action_center_ui82.js"
+  ],
+  "schema": {
+    "migration": "additive and idempotent",
+    "version": 1,
+    "tables": [
+      "action_center_meta",
+      "action_center_preferences",
+      "action_center_receipts",
+      "action_center_operations"
+    ],
+    "operational_records_rewritten": false,
+    "selective_transfer": "retain action_center_meta; clear preferences, receipts and operation replays"
+  },
+  "boundaries": {
+    "database_migration": true,
+    "destructive_reset": false,
+    "permission_change": false,
+    "operational_api_change": true,
+    "recognition_rule_change": false,
+    "source_adapter_change": false,
+    "environment_change": false,
+    "post_render_decorator": false,
+    "shell_dom_reparenting": false,
+    "mutation_observer_restyling": false,
+    "new_timer": false,
+    "push_or_email_notification_delivery": false,
+    "email_first_identity": false
+  },
+  "python_acceptance": [
+    {
+      "group": "ui82_search_actions",
+      "passed": 12,
+      "skipped": 0
+    },
+    {
+      "group": "ui65_roles_access",
+      "passed": 16,
+      "skipped": 0
+    },
+    {
+      "group": "ui66_recognition_core",
+      "passed": 12,
+      "skipped": 0
+    },
+    {
+      "group": "ui66_recognition_adapters",
+      "passed": 6,
+      "skipped": 0
+    },
+    {
+      "group": "attention_service",
+      "passed": 14,
+      "skipped": 0
+    },
+    {
+      "group": "mail_startup_m01",
+      "passed": 26,
+      "skipped": 0
+    },
+    {
+      "group": "repository_package",
+      "passed": 11,
+      "skipped": 0
+    }
+  ],
+  "browser_acceptance": {
+    "ui82_scenarios": 13,
+    "widths_css_px": [
+      1440,
+      390,
+      320
+    ],
+    "unexpected_javascript_errors": 0,
+    "document_overflow_failures": 0,
+    "data": "fictional local test records; not live Render, inbox or physical-device acceptance"
+  },
+  "javascript_syntax": {
+    "scripts_checked": 95,
+    "failures": 0
+  },
+  "remote_operations_performed": false
+}

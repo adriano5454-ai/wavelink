@@ -1,3 +1,15 @@
+# Wavelink UI82 — Authorised Search and Personal Action Centre Batch
+
+Current prepared repository: **UI82 + UI81 + UI80 + UI79 + UI78 + UI77 + UI76 + UI75 + UI74 + UI73 + UI72 + UI71 + UI70 + UI69 + UI68 + UI67 + UI66 + Mail Startup M01 + Company C01 + G01**, core **1.34.19**.
+
+Read **docs/WORKSPACE_UI82.md**, **docs/UI82_SOURCE_PROVENANCE.json** and **docs/CONTINUATION_CHECKPOINT.md** before changing the application.
+
+UI82 groups permission-aware cross-module search, a personal current-action centre, read/dismiss receipts, category and quiet-hour preferences, stable **New updates** presentation and responsive top-bar entry points. It adds an additive/idempotent action-centre metadata schema and new authenticated APIs; it does not add a permission key, recognition rule, environment variable, independent timer, post-render decorator or shell re-parenting.
+
+The search result count is based only on currently authorised results. The action centre stores receipt/preference metadata but does not copy restricted source titles or details into a notification table. Email-first operational sign-in, two-step verification and live SMTP/DNS acceptance remain a separate security batch.
+
+--- Retained UI81 release record ---
+
 # Wavelink UI81 — Workflow Foundation Batch
 
 Current prepared repository: **UI81 + UI80 + UI79 + UI78 + UI77 + UI76 + UI75 + UI74 + UI73 + UI72 + UI71 + UI70 + UI69 + UI68 + UI67 + UI66 + Mail Startup M01 + Company C01 + G01**, core **1.34.19**.

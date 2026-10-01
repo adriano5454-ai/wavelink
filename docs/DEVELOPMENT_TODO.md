@@ -1,3 +1,32 @@
+# UI82 Authorised Search and Personal Action Centre — completed 1 October 2026
+
+- [x] Add authenticated, exact-project global search entry points on desktop and phone.
+- [x] Search only source-service rows currently available to the named account.
+- [x] Exclude hidden matches from titles, suggestions and counts.
+- [x] Keep profile search free of private email/login identifiers.
+- [x] Add a personal current-action centre derived from Personal Home and Attention sources.
+- [x] Store only read/dismiss receipts, preferences and idempotency metadata; no copied source text.
+- [x] Re-derive source access so revoked items/titles disappear immediately.
+- [x] Add idempotent read, unread, dismiss and restore actions.
+- [x] Add category preferences and IANA-time-zone quiet hours without claiming push delivery.
+- [x] Show stable New updates control instead of replacing an open list.
+- [x] Keep the permanent unread count global across selected action views/categories.
+- [x] Add no independent timer, MutationObserver, decorator or shell DOM movement.
+- [x] Verify fresh reconstruction, dedicated Python contracts and 1440/390/320 browser layouts.
+
+## Next batched group — UI83 identity and account security
+
+- [ ] Email-first entry from the main Wavelink site without trusting a domain suffix alone.
+- [ ] Exact mailbox verification and safe existing-account linking.
+- [ ] Verified company-domain registry and controlled company routing.
+- [ ] Two-step verification, recovery codes and session/device management.
+- [ ] Password/account recovery with rate limiting and audit.
+- [ ] Real Zoho SMTP sender, SPF/DKIM/DMARC and inbox delivery acceptance.
+- [ ] Wrong-recipient, forwarded-link, replay, expiry and concurrent-acceptance tests.
+- [ ] Preserve working named/User ID login during a reviewed transition.
+
+--- Retained UI81 roadmap below ---
+
 # UI81 current priorities — batched workflow foundation
 
 UI81 is the prepared baseline. Do not add another global decorator or shell. First run connected fictional acceptance for shared forms/dialogs, direct Unsaved work management, protected batch discard, Original Files and 1440/390/320 layouts. Fix any route-specific conflict in the owning renderer or UI81 foundation rather than adding a competing layer.
