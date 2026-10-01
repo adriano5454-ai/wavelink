@@ -44,7 +44,7 @@ def test_no_real_project_or_secret_files_packaged():
     assert 'dives.sqlite3' not in names and 'hub.json' not in names and 'gate.key' not in names
 
 
-def test_ui82_overlay_parent_and_m01_launcher_are_exact():
+def test_ui83_overlay_parent_and_m01_launcher_are_exact():
     from deploy.extract_source import (
         UI_PATCH_ID,
         UI66_PATCH_ID,
@@ -64,6 +64,7 @@ def test_ui82_overlay_parent_and_m01_launcher_are_exact():
         UI80_PATCH_ID,
         UI81_PATCH_ID,
         UI82_PATCH_ID,
+        UI83_PATCH_ID,
         _UI66_FILES,
         _UI67_FILES,
         _UI68_FILES,
@@ -81,6 +82,7 @@ def test_ui82_overlay_parent_and_m01_launcher_are_exact():
         _UI80_FILES,
         _UI81_FILES,
         _UI82_FILES,
+        _UI83_FILES,
     )
     assert UI_PATCH_ID == 'workspace-ui65-role-ready-invitations-2026-09-29'
     assert UI66_PATCH_ID == 'workspace-ui66-profiles-recognition-2026-09-29'
@@ -100,6 +102,7 @@ def test_ui82_overlay_parent_and_m01_launcher_are_exact():
     assert UI80_PATCH_ID == 'workspace-ui80-native-work-execution-2026-10-01'
     assert UI81_PATCH_ID == 'workspace-ui81-workflow-foundation-batch-2026-10-01'
     assert UI82_PATCH_ID == 'workspace-ui82-authorised-search-action-centre-batch-2026-10-01'
+    assert UI83_PATCH_ID == 'workspace-ui83-account-security-sessions-batch-2026-10-01'
     assert len(_UI66_FILES) == 33
     assert len(_UI67_FILES) == 41
     assert len(_UI68_FILES) == 11
@@ -117,6 +120,7 @@ def test_ui82_overlay_parent_and_m01_launcher_are_exact():
     assert len(_UI80_FILES) == 12
     assert len(_UI81_FILES) == 15
     assert len(_UI82_FILES) == 13
+    assert len(_UI83_FILES) == 14
     assert len([name for name in _UI67_FILES if name.startswith('app/static/badges/')]) == 30
     assert hashlib.sha256((ROOT/'deploy/company_entrypoint.py').read_bytes()).hexdigest() == '2f117d85c439c16ab78908bf5728056cc837e5d1f948a77040ef1d509c04c371'
     assert (ROOT/'docs/WORKSPACE_UI65.md').is_file()
@@ -155,6 +159,8 @@ def test_ui82_overlay_parent_and_m01_launcher_are_exact():
     assert (ROOT/'docs/UI81_SOURCE_PROVENANCE.json').is_file()
     assert (ROOT/'docs/WORKSPACE_UI82.md').is_file()
     assert (ROOT/'docs/UI82_SOURCE_PROVENANCE.json').is_file()
+    assert (ROOT/'docs/WORKSPACE_UI83.md').is_file()
+    assert (ROOT/'docs/UI83_SOURCE_PROVENANCE.json').is_file()
 
 
 def test_ui65_release_keeps_operator_secret_examples_blank():

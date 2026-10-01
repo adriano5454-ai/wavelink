@@ -1,0 +1,146 @@
+{
+  "format": "wavelink-ui83-source-provenance-1",
+  "release": "UI83 Account Security and Sessions Batch",
+  "date": "2026-10-01",
+  "core": "1.34.19",
+  "parent": "Exact UI82 + UI81 + UI80 + UI79 + UI78 + UI77 + UI76 + UI75 + UI74 + UI73 + UI72 + UI71 + UI70 + UI69 + UI68 + UI67 + UI66 + Mail Startup M01 + Company C01 + G01",
+  "parent_repository_files": 224,
+  "target_repository_files": 226,
+  "parent_runtime_manifest_files": 2029,
+  "target_runtime_manifest_files": 2036,
+  "runtime_delta": {
+    "modified": 7,
+    "new": 7,
+    "removed": 0,
+    "embedded_records": 14
+  },
+  "parent_extractor_sha256": "8c23772919f284b03d82b801d63659a54595f097263f81a7ee6f558c5adfba48",
+  "target_extractor_sha256": "1890099fd199461c69a779fd92b38fcdab8b26a7bbfdb58873bbea3c6a96a2fa",
+  "parent_overlay_sha256": "f06816a54a06bb380b5f33629ff51fa47428284ddcc906df5f1fdc2f487d2ebc",
+  "target_overlay_sha256": "13d39cd555dccc2294702d26da29bc001bc12dd2b6dcc3f1c887bd24ebc5bd74",
+  "target_release_manifest_sha256": "103974abbdd8929ca5dc8850a8ec5471cf858b64cd191c6d47a2985e472254f7",
+  "m01_company_entrypoint_sha256": "2f117d85c439c16ab78908bf5728056cc837e5d1f948a77040ef1d509c04c371",
+  "batch_scope": [
+    "exact verified-email alias inside the already-selected company service while retaining User ID login",
+    "encrypted TOTP enrolment and login challenges that issue no operational token before factor success",
+    "one-time keyed-hash recovery codes and regeneration",
+    "active-session inventory and individual/all-other session revocation",
+    "native Account & security workspace at desktop, phone and narrow-phone widths",
+    "additive fail-closed schema plus complete-backup/selective-transfer rules"
+  ],
+  "schema": {
+    "migration": "additive, transactional and idempotent",
+    "version": 1,
+    "tables": [
+      "account_security_meta",
+      "account_mfa",
+      "account_recovery_codes",
+      "account_login_challenges",
+      "account_security_operations",
+      "account_security_audit"
+    ],
+    "operational_records_rewritten": false,
+    "complete_backup": "preserves account-security tables",
+    "selective_transfer": "retains account_security_meta and clears account-bound security rows"
+  },
+  "boundaries": {
+    "database_migration": true,
+    "destructive_reset": false,
+    "permission_change": false,
+    "operational_api_change": true,
+    "recognition_rule_change": false,
+    "source_adapter_change": false,
+    "environment_change": false,
+    "new_timer": false,
+    "post_render_decorator": false,
+    "public_company_domain_routing": false,
+    "live_smtp_dns_or_inbox_validation": false
+  },
+  "runtime_records": [
+    {
+      "path": "app/account_security.py",
+      "before_sha256": null,
+      "after_sha256": "f4fc238347c63aafba2525c64c62c50ce62c045b2a7a56f380667360c78dee86",
+      "bytes": 28023
+    },
+    {
+      "path": "app/account_security_api.py",
+      "before_sha256": null,
+      "after_sha256": "642ec7ecaf4352870a37b4425a3f7f826715d269d339bf1136d5afcdec153bb3",
+      "bytes": 3582
+    },
+    {
+      "path": "app/accounts.py",
+      "before_sha256": "3a66ff2667748c21e5ae95efa46d87d170b05d00f0b66e103acae9f607881400",
+      "after_sha256": "bbadba94afe1cf9f0ae87db31d1d441ff029a571994626e91fd1b8306a3b11f4",
+      "bytes": 18389
+    },
+    {
+      "path": "app/project_modules.py",
+      "before_sha256": "118eafaaed9334210ae558edebc7d6d16b9b734931e32b10ac2a4f79d7bd4b6f",
+      "after_sha256": "d0130eeb4ea802111be86bfc3dcfd35af46d88c8b06ce786c0ede12dd4ed56a4",
+      "bytes": 26101
+    },
+    {
+      "path": "app/server.py",
+      "before_sha256": "5b4adf25cf9a38fda1132ed4f6b0d4525b8d6ddfee3aa2de36219f5f4e7017dc",
+      "after_sha256": "f3cf1174cb8adc897bdab02e352f559e9483d86634fc017b9740fd1e49ab921f",
+      "bytes": 37079
+    },
+    {
+      "path": "app/static/account_security_ui83.css",
+      "before_sha256": null,
+      "after_sha256": "0d95d8b7264d7eff9460a5e326603fa680d0baf53a8d061b19c24552c354c8ec",
+      "bytes": 2774
+    },
+    {
+      "path": "app/static/account_security_ui83.js",
+      "before_sha256": null,
+      "after_sha256": "db19b0a2ac867205acbb7101520e980b7127f58b66b792b4aa10741913485fc6",
+      "bytes": 11432
+    },
+    {
+      "path": "app/static/app.js",
+      "before_sha256": "55a1cdc588f488cccb7073f7f5ac994571f339ca5f7941afa80892237171a256",
+      "after_sha256": "53b24a77019dea4e283af77ffd6dac8985ab313151632495d4aa9e5d292811cb",
+      "bytes": 165819
+    },
+    {
+      "path": "app/static/index.html",
+      "before_sha256": "8fe1d43f4f25a7432fc9030e04248288031b796f4649a8bb9f3a7fd0faccb370",
+      "after_sha256": "535c16079eddf829cb9e02324ae23078cb53dac787f31e69bc560f7e0fb1b0b5",
+      "bytes": 23729
+    },
+    {
+      "path": "app/static/recognition_workspace.js",
+      "before_sha256": "c029015b02fef0a929c5121048eb1002c962f238b65cf025e5de65675aecd661",
+      "after_sha256": "a9cae273e90bcd49f6c7353e7cde31e389325339141f7e70b8fb48e84fc161a8",
+      "bytes": 25687
+    },
+    {
+      "path": "app/static/sw.js",
+      "before_sha256": "72ef92b4cbc893e5e3d193f068d9088ea83e9782bddb07d682c8b711f0ad1846",
+      "after_sha256": "1dc967f6f0f5ca9f66252ed671f659ac61adec3976639eaee874d8a9e8fa2ea1",
+      "bytes": 12338
+    },
+    {
+      "path": "tests/ui83_account_security/__init__.py",
+      "before_sha256": null,
+      "after_sha256": "504ea8b9521488e3c11ec57d8b685c02a607e9db6aa5a7b9fc544042465e2715",
+      "bytes": 35
+    },
+    {
+      "path": "tests/ui83_account_security/browser_checks.py",
+      "before_sha256": null,
+      "after_sha256": "2ccb33434a17f86de88b9fc01d7073574d5318c51adf7e6b58a811076b67a59a",
+      "bytes": 5218
+    },
+    {
+      "path": "tests/ui83_account_security/test_account_security.py",
+      "before_sha256": null,
+      "after_sha256": "3fd45d006b243b6f133051d0d81dea86be952b3173c984b164afd099b73981cc",
+      "bytes": 12240
+    }
+  ],
+  "verification_status": "local fictional source/runtime/browser verification; not live deployment or independent security certification"
+}

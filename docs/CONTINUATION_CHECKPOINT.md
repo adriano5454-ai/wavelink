@@ -1,3 +1,19 @@
+# UI83 continuation checkpoint — Account Security and Sessions Batch
+
+**Prepared:** 1 October 2026  
+**Exact parent:** UI82 Authorised Search and Personal Action Centre Batch  
+**Runtime variant:** `workspace-ui83-account-security-sessions-batch-2026-10-01`
+
+UI83 is the current prepared baseline. It adds exact verified-email aliases only inside an already-selected company service, encrypted TOTP MFA, one-time recovery codes, short-lived attempt-capped challenges, session inventory/revocation and the Account & security workspace.
+
+Do not describe UI83 as public email-first company routing. Domain registry, main-site company discovery, multi-company selection, password-recovery mail, live Zoho/DNS/inbox acceptance, passkeys and SSO remain pending.
+
+Before the next batch, run connected fictional acceptance for User ID and exact-email login, MFA enrolment, recovery-code use, challenge expiry/attempt cap, session revocation, backup/restore and selective-transfer re-enrolment. Pair any rollback with the matching pre-UI83 complete database backup.
+
+Next grouped work should focus on deeper operational workflows and offline/recovery resilience; do not combine that work with unverified public identity routing merely to create a larger release.
+
+--- Retained UI82 checkpoint and history ---
+
 # Current checkpoint — UI82 Authorised Search and Personal Action Centre Batch
 
 **1 October 2026 · core 1.34.19 · exact parent UI81.**

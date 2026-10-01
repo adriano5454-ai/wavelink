@@ -1,3 +1,51 @@
+# UI83 Account Security and Sessions — completed 1 October 2026
+
+- [x] Retain existing User ID login.
+- [x] Accept an exact approved/verified membership mailbox only inside the already-selected company service.
+- [x] Refuse unknown or ambiguous email identity through the generic credential response.
+- [x] Issue no operational token before the required second factor succeeds.
+- [x] Add encrypted-at-rest TOTP setup and verification.
+- [x] Add ten one-time recovery codes stored only as keyed hashes.
+- [x] Persist challenge failures, cap attempts and consume expired/replayed challenges.
+- [x] Add active-session listing, individual revocation and revoke-other-sessions.
+- [x] Revoke sessions when MFA is enabled or disabled.
+- [x] Add an additive, idempotent and fail-closed account-security schema.
+- [x] Preserve all security rows in complete backup and clear account-bound security rows in selective transfer.
+- [x] Add responsive Account & security presentation without another timer or decorator.
+- [x] Preserve the M01 launcher byte-for-byte.
+
+## Next batched groups
+
+### UI84 — Operational depth batch
+
+- [ ] Recurring and dependency-aware Tasks with due/priority/blocker handling.
+- [ ] Running-hour/date/cycle Maintenance triggers and controlled parts/evidence links.
+- [ ] Richer Checklist conditions/import mapping and revision comparison.
+- [ ] 2×12, 3×8, 4×6 and custom Handover shift models.
+- [ ] Stronger Toolbox QR admission, deduplication and signed-revision rules.
+- [ ] Connected Fault/HSE corrective actions, Tasks and Maintenance links.
+- [ ] Wider Logs/Calendar connections and deliberate new-entry controls.
+- [ ] Logistics exception handling for short/damaged receipt, quarantine and final placement.
+
+### UI85 — Offline, backup and recovery batch
+
+- [ ] Durable offline queue, explicit pending/sent/conflict states and attachment/signature recovery.
+- [ ] Storage diagnostics and unsent-work export/repair.
+- [ ] Full-company encrypted backups, scheduled retention and isolated restore drills.
+- [ ] Forward-only migration framework and old-version database guard.
+- [ ] Paired code/database rollback procedure.
+- [ ] PWA cache repair, installed-app focus behaviour and local-vessel diagnostics.
+
+### Public identity/mail security track — still pending
+
+- [ ] Main-site email-first company discovery without trusting a suffix alone.
+- [ ] Verified domain registry and safe multi-company account selection.
+- [ ] Password recovery and mailbox ownership verification.
+- [ ] Real Zoho SMTP, SPF, DKIM, DMARC, bounce and inbox acceptance.
+- [ ] Passkeys/SSO evaluation, session/device naming and formal penetration testing.
+
+--- Retained UI82 roadmap below ---
+
 # UI82 Authorised Search and Personal Action Centre — completed 1 October 2026
 
 - [x] Add authenticated, exact-project global search entry points on desktop and phone.

@@ -1,3 +1,15 @@
+# Wavelink UI83 — Account Security and Sessions Batch
+
+Current prepared repository: **UI83 + UI82 + UI81 + UI80 + UI79 + UI78 + UI77 + UI76 + UI75 + UI74 + UI73 + UI72 + UI71 + UI70 + UI69 + UI68 + UI67 + UI66 + Mail Startup M01 + Company C01 + G01**, core **1.34.19**.
+
+Read **docs/WORKSPACE_UI83.md**, **docs/UI83_SOURCE_PROVENANCE.json** and **docs/CONTINUATION_CHECKPOINT.md** before changing or deploying the application.
+
+UI83 groups exact verified-email sign-in inside the already-selected company service, encrypted TOTP two-step verification, one-time recovery codes, short-lived login challenges, active-session review/revocation and a native Account & security workspace. Existing User ID login remains available.
+
+This release does **not** implement public company discovery or domain routing, password-recovery mail, live Zoho/DNS/inbox acceptance, passkeys or SSO. It adds an additive account-security schema and authenticated APIs but no permission key, recognition rule, environment variable, timer, decorator or shell movement.
+
+--- Retained UI82 release record ---
+
 # Wavelink UI82 — Authorised Search and Personal Action Centre Batch
 
 Current prepared repository: **UI82 + UI81 + UI80 + UI79 + UI78 + UI77 + UI76 + UI75 + UI74 + UI73 + UI72 + UI71 + UI70 + UI69 + UI68 + UI67 + UI66 + Mail Startup M01 + Company C01 + G01**, core **1.34.19**.
