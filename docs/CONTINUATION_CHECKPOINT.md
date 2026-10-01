@@ -1,14 +1,28 @@
-# Current checkpoint — UI86 Authentic Visual Covers
+# Continuation checkpoint — UI87 Visual Reconciliation
 
-**Prepared:** 1 October 2026 · **Core:** 1.34.19 · **Parent:** exact UI85 cumulative repository.
+Current prepared baseline: **UI87 + UI86 + UI85 + UI84 + UI83 + UI82 + UI81 + UI80 + UI79 + UI78 + UI77 + UI76 + UI75 + UI74 + UI73 + UI72 + UI71 + UI70 + UI69 + UI68 + UI67 + UI66 + Mail Startup M01 + Company C01 + G01**, core **1.34.19**.
 
-UI86 is now the prepared development baseline. It replaces the generic cinematic Home, Profile and sign-in cover art with four local hand-authored technical SVG illustrations; integrates the Home heading into the cover; reduces the company logo to a compact signature; and adds restrained contour artwork to route-owned headers and Original Files.
+UI87 supersedes both conflicting UI86 visual packages. Continue only from UI87. Wavelink owns the fixed product header; the deployment company appears once in the left company context; route covers do not repeat company branding; Profile has no detached title/action row; and navigation plus Workspaces use the same icon family.
 
-The exact runtime variant is `workspace-ui86-authentic-visual-covers-2026-10-01`. The runtime overlay contains 14 records: 6 modified and 8 new. No database migration, permission, operational API, recognition/scoring rule, company identity, environment variable, timer, decorator or shell movement was added. Mail Startup M01 remains byte-identical.
+Exact runtime variant: `workspace-ui87-visual-reconciliation-2026-10-01`. Runtime manifest: **2,055 files**; runtime including generated manifest: **2,056 files**; UI87 overlay records: **13**. Mail Startup M01 remains byte-identical.
 
-Do not claim the wider application-art programme complete. Report covers, the full module-icon family, the complete empty-state illustration family and the public marketing-site refresh remain separate future visual batches. Continue from the exact UI86 repository and preserve the UI83-or-later database compatibility boundary.
+Do not reintroduce the UI86 company lockup in the header, the Home company card, generic Profile shortcut rows, or separate icon maps. The next product batch may begin localisation only after connected UI87 acceptance.
 
---- Retained prior checkpoint and roadmap ---
+--- Retained UI86 checkpoint ---
+
+# Continuation checkpoint — UI86 Authentic Visual Refresh and Branding Boundaries
+
+Current prepared baseline: **UI86 + UI85 + UI84 + UI83 + UI82 + UI81 + UI80 + UI79 + UI78 + UI77 + UI76 + UI75 + UI74 + UI73 + UI72 + UI71 + UI70 + UI69 + UI68 + UI67 + UI66 + Mail Startup M01 + Company C01 + G01**, core **1.34.19**.
+
+UI86 is the accepted visual baseline. Sulmara is shown once through the fixed operator-controlled deployment identity; Home/Profile use local editable SVG cover art; the current navigation/module icon family is preserved; and user-accessible branding is explicitly report/export-only.
+
+Exact runtime variant: `workspace-ui86-authentic-visual-branding-boundaries-2026-10-01`. Runtime manifest: **2,049 files**; runtime including generated manifest: **2,050 files**; UI86 overlay records: **21**. Mail Startup M01 remains byte-identical.
+
+Next planned product batch includes localisation: a company default language chosen during company provisioning, per-user Settings override and fallback user → company → English. Initial target languages are English and Portuguese. Do not implement this as blind text replacement or rewrite saved operational content.
+
+Continue from exact UI86. Do not put the company logo/name back inside Home/Profile covers, do not let report branding affect the application identity, and do not replace the existing tab/module icon set without a separate reviewed visual decision.
+
+--- Retained UI85 release record ---
 
 # Continuation checkpoint — UI85 Authentic Contribution Badges
 

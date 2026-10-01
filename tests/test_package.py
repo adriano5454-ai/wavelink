@@ -2,11 +2,15 @@ from pathlib import Path
 import json
 import hashlib
 import os
+import sys
 import pytest
 from deploy.extract_source import extract_parts, SOURCE_SHA256
 from deploy.nginx_config import render
 
 ROOT=Path(__file__).resolve().parents[1]
+SOURCE_ROOT=Path(os.environ.get('WAVELINK_TEST_SOURCE','')).resolve()
+if SOURCE_ROOT.is_dir() and str(SOURCE_ROOT) not in sys.path:
+    sys.path.insert(0,str(SOURCE_ROOT))
 
 def test_reassembled_source_is_exact(tmp_path):
     count=extract_parts(ROOT/'vendor/source_parts.json',tmp_path/'source')
@@ -44,7 +48,7 @@ def test_no_real_project_or_secret_files_packaged():
     assert 'dives.sqlite3' not in names and 'hub.json' not in names and 'gate.key' not in names
 
 
-def test_ui86_overlay_parent_authentic_visuals_and_m01_launcher_are_exact():
+def test_ui87_overlay_visual_reconciliation_and_m01_launcher_are_exact():
     from deploy.extract_source import (
         UI_PATCH_ID,
         UI66_PATCH_ID,
@@ -68,6 +72,7 @@ def test_ui86_overlay_parent_authentic_visuals_and_m01_launcher_are_exact():
         UI84_PATCH_ID,
         UI85_PATCH_ID,
         UI86_PATCH_ID,
+        UI87_PATCH_ID,
         _UI66_FILES,
         _UI67_FILES,
         _UI68_FILES,
@@ -89,6 +94,7 @@ def test_ui86_overlay_parent_authentic_visuals_and_m01_launcher_are_exact():
         _UI84_FILES,
         _UI85_FILES,
         _UI86_FILES,
+        _UI87_FILES,
     )
     assert UI_PATCH_ID == 'workspace-ui65-role-ready-invitations-2026-09-29'
     assert UI66_PATCH_ID == 'workspace-ui66-profiles-recognition-2026-09-29'
@@ -111,7 +117,8 @@ def test_ui86_overlay_parent_authentic_visuals_and_m01_launcher_are_exact():
     assert UI83_PATCH_ID == 'workspace-ui83-account-security-sessions-batch-2026-10-01'
     assert UI84_PATCH_ID == 'workspace-ui84-company-workspace-identity-native-originals-2026-10-01'
     assert UI85_PATCH_ID == 'workspace-ui85-authentic-contribution-badges-2026-10-01'
-    assert UI86_PATCH_ID == 'workspace-ui86-authentic-visual-covers-2026-10-01'
+    assert UI86_PATCH_ID == 'workspace-ui86-authentic-visual-branding-boundaries-2026-10-01'
+    assert UI87_PATCH_ID == 'workspace-ui87-visual-reconciliation-2026-10-01'
     assert len(_UI66_FILES) == 33
     assert len(_UI67_FILES) == 41
     assert len(_UI68_FILES) == 11
@@ -132,9 +139,9 @@ def test_ui86_overlay_parent_authentic_visuals_and_m01_launcher_are_exact():
     assert len(_UI83_FILES) == 14
     assert len(_UI84_FILES) == 50
     assert len(_UI85_FILES) == 39
-    assert len(_UI86_FILES) == 14
+    assert len(_UI86_FILES) == 21
+    assert len(_UI87_FILES) == 13
     assert len([name for name in _UI85_FILES if name.startswith('app/static/badges/')]) == 30
-    assert len([name for name in _UI86_FILES if name.startswith('app/static/art/')]) == 4
     assert len([name for name in _UI67_FILES if name.startswith('app/static/badges/')]) == 30
     assert hashlib.sha256((ROOT/'deploy/company_entrypoint.py').read_bytes()).hexdigest() == '2f117d85c439c16ab78908bf5728056cc837e5d1f948a77040ef1d509c04c371'
     assert (ROOT/'docs/WORKSPACE_UI65.md').is_file()
@@ -181,6 +188,8 @@ def test_ui86_overlay_parent_authentic_visuals_and_m01_launcher_are_exact():
     assert (ROOT/'docs/UI85_SOURCE_PROVENANCE.json').is_file()
     assert (ROOT/'docs/WORKSPACE_UI86.md').is_file()
     assert (ROOT/'docs/UI86_SOURCE_PROVENANCE.json').is_file()
+    assert (ROOT/'docs/WORKSPACE_UI87.md').is_file()
+    assert (ROOT/'docs/UI87_SOURCE_PROVENANCE.json').is_file()
 
 
 
@@ -239,38 +248,34 @@ def test_ui85_badge_assets_keep_stable_ids_and_cosmetic_boundaries():
     badges=badges_for(1000)
     assert len(badges) == 30 and all(row['unlocked'] for row in badges)
     patch=json.loads((source/'UI_PATCH.json').read_text())
-    assert patch['patch_id'] == 'workspace-ui86-authentic-visual-covers-2026-10-01'
-    assert patch['parent_patch_id'] == 'workspace-ui85-authentic-contribution-badges-2026-10-01'
-    assert patch['boundaries']['badge_system_preserved'] is True
-    assert patch['boundaries']['recognition_scoring_change'] is False
-    assert patch['boundaries']['artwork_cosmetic_only'] is True
+    ui85=json.loads((ROOT/'docs/UI85_SOURCE_PROVENANCE.json').read_text())
+    assert patch['patch_id'] == 'workspace-ui87-visual-reconciliation-2026-10-01'
+    assert patch['parent_patch_id'] == 'workspace-ui86-authentic-visual-branding-boundaries-2026-10-01'
+    assert patch['boundaries']['recognition_rule_change'] is False
+    assert ui85['boundaries']['badge_id_change'] is False
+    assert ui85['boundaries']['recognition_scoring_change'] is False
 
 
 
-def test_ui86_visual_assets_are_local_self_contained_and_presentation_only():
-    import xml.etree.ElementTree as ET
+def test_ui86_visual_art_and_report_branding_boundaries_are_explicit():
     source=Path(os.environ['WAVELINK_TEST_SOURCE'])
-    art=source/'app/static/art'
-    names={
-        'home-survey-chart-ui86.svg',
-        'profile-survey-chart-ui86.svg',
-        'login-operations-ui86.svg',
-        'module-contours-ui86.svg',
-    }
-    assert {p.name for p in art.glob('*-ui86.svg')} == names
-    for name in names:
-        data=(art/name).read_bytes(); root=ET.fromstring(data)
-        assert root.tag.endswith('svg')
-        text=data.decode('utf-8').lower()
-        assert '<image' not in text and 'data:image' not in text and 'base64' not in text
-    css=(source/'app/static/authentic_visuals_ui86.css').read_text()
-    assert 'home-survey-chart-ui86.svg' in css
-    assert 'profile-survey-chart-ui86.svg' in css
-    assert 'login-operations-ui86.svg' in css
-    assert 'module-contours-ui86.svg' in css
-    assert 'setInterval' not in css and 'MutationObserver' not in css
-    worker=(source/'app/static/sw.js').read_text()
-    assert 'pxgeo-dive-check-shell-1.34.19-ui86' in worker
+    patch=json.loads((source/'UI_PATCH.json').read_text())
+    assert patch['patch_id'] == 'workspace-ui87-visual-reconciliation-2026-10-01'
+    assert patch['parent_patch_id'] == 'workspace-ui86-authentic-visual-branding-boundaries-2026-10-01'
+    assert patch['boundaries']['report_branding_changes_app_identity'] is False
+    ui86=json.loads((ROOT/'docs/UI86_SOURCE_PROVENANCE.json').read_text())
+    assert ui86['localisation_roadmap']['implemented'] is False
+    assert (source/'app/static/wavelink-home-cover-ui86.svg').is_file()
+    assert (source/'app/static/wavelink-profile-cover-ui86.svg').is_file()
+    index=(source/'app/static/index.html').read_text()
+    assert 'visual_refresh_ui86.css' in index
+    assert 'pxgeo-dive-check-shell-1.34.19-ui87' in (source/'app/static/sw.js').read_text()
+    deployment=(source/'app/static/deployment_branding.js').read_text()
+    report=(source/'app/static/company_branding.js').read_text()
+    assert '/api/admin/company-branding' not in deployment
+    assert 'Reports and exports only' in report
+    assert 'never alter the application header' in report
+    assert 'wavelink-approved-offshore-ui87.webp' in (source/'app/static/visual_reconciliation_ui87.css').read_text()
 
 
 def test_ui65_release_keeps_operator_secret_examples_blank():

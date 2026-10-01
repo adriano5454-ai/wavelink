@@ -1,0 +1,33 @@
+{
+  "format": "wavelink-ui87-source-provenance-1",
+  "date": "2026-10-01",
+  "core": "1.34.19",
+  "parent": "UI86 Authentic Visual Branding Boundaries",
+  "parent_patch_id": "workspace-ui86-authentic-visual-branding-boundaries-2026-10-01",
+  "target_patch_id": "workspace-ui87-visual-reconciliation-2026-10-01",
+  "parent_extractor_sha256": "fe6e2e0f16fa2bc61036ae79293d33bef7e757cf9a636882c9aa18d1149ca92c",
+  "target_extractor_sha256": "76a3686e9871bde187697f766d86f8c25e3a454ed021c561259ab6cdbc35dc12",
+  "parent_overlay_sha256": "72bc88da4d59a88e3b8c2034ec9a4d4f3630fcc18def9ccca223f25db4ae26ec",
+  "target_overlay_sha256": "f389e83ffd2eb1173cba7959b03780cfaac2f135f99f4c9f17eb6fde1caaa5d6",
+  "target_release_manifest_sha256": "903b121eec94371a09d57959f6e786a7d11c025829828a7417d2a3ee56039c6f",
+  "runtime_manifest_files_parent": 2049,
+  "runtime_manifest_files_target": 2055,
+  "runtime_files_including_generated_manifest": 2056,
+  "runtime_delta": {
+    "modified": 7,
+    "new": 6,
+    "removed": 0,
+    "records": 13
+  },
+  "corrections": [
+    "one Wavelink product header",
+    "one Sulmara company label in sidebar context",
+    "no duplicate Home/Profile company card",
+    "approved offshore Home/Profile production crops",
+    "native Profile without detached shortcut row",
+    "consistent Maintenance and Toolbox Talks icons in navigation and Workspaces cards"
+  ],
+  "database_migration": false,
+  "m01_company_entrypoint_sha256": "2f117d85c439c16ab78908bf5728056cc837e5d1f948a77040ef1d509c04c371",
+  "remote_actions_performed": false
+}

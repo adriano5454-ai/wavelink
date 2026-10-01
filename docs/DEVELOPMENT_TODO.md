@@ -1,18 +1,50 @@
-# Current direction after UI86 — complete the authentic visual system in coherent batches
+# UI87 current priorities — connected visual acceptance
 
-UI86 completes the core in-app cover batch: Home, Profile, sign-in/MFA, route-owned headers and Original Files now use local hand-authored technical survey-chart artwork. Do not reintroduce cinematic offshore illustrations, glossy game-like visuals, remote art dependencies or another post-render decorator.
+UI87 is the prepared corrective baseline. Do not begin localisation or another visual batch until the connected demo confirms the six regressions below are resolved.
 
-## Next grouped visual and product work
+- [x] Restore Wavelink as the fixed product brand.
+- [x] Keep the company identity once in the left company context.
+- [x] Remove duplicate company cards/chips from Home and Profile.
+- [x] Use the approved offshore scene for Home and Profile.
+- [x] Remove detached Profile heading and unrelated shortcut row.
+- [x] Apply one icon map to navigation and Workspaces, including Maintenance and Toolbox Talks.
+- [ ] Confirm the connected service after deployment at desktop and phone widths.
+- [ ] Confirm no stale UI86 service-worker client remains after one normal reload/reopen.
+- [ ] Then proceed to the English/Portuguese localisation foundation previously recorded.
 
-1. **Report and export art:** one company-aware Wavelink report-cover system, continuation headers and restrained technical motifs; preserve report evidence, text, page numbers and accessibility.
-2. **Module icon family:** replace mixed-generation icons with one editable line-art set for Tasks, Maintenance, Checklists, Handovers, Toolbox Talks, Logs, Fault/HSE, Inventory, Certificates, Fleet, Original Files, Search, Actions and Account.
-3. **Empty states and guidance:** grounded technical diagrams for true empty states only; no invented metrics, fake records or decorative cartoons.
-4. **Marketing alignment:** bring the public website to the same authentic technical visual language without claiming future security capabilities as already live.
-5. **Continue functional batches:** deeper workflows, offline/recovery, accessibility/device acceptance and release engineering remain in the batched roadmap; visual work must not delay operational acceptance or expand authority.
+--- Retained UI86 priorities ---
 
-Before the next visual batch, check UI86 on the connected demo at 1440, 390 and 320 CSS pixels and on at least one real phone. Confirm Home/Profile/sign-in appear immediately, the Sulmara signature is not duplicated, route headers remain readable, and no screen blinks or widens.
+# UI86 current priorities — visual acceptance and localisation preparation
 
---- Retained prior development roadmap ---
+UI86 is the prepared baseline. Run connected fictional/demo acceptance for the single company identity, Home/Profile covers, preserved icons and report-only branding boundary before another broad visual release.
+
+## UI86 acceptance
+
+- [x] Replace Home cover with local editable maritime SVG art.
+- [x] Replace Profile cover with the matching local editable SVG art.
+- [x] Remove duplicate company logo/name cards from Home/Profile content.
+- [x] Keep deployment identity once in the top-left brand on desktop.
+- [x] Preserve the current navigation/module icon family.
+- [x] Rename the user-accessible surface to Report branding.
+- [x] State and enforce that report branding does not change the site/app identity.
+- [x] Add no database migration, API, permission, timer, decorator or shell movement.
+- [ ] Confirm the boundaries on the connected demo and generated report previews.
+- [ ] Check Home/Profile/Report branding on real phone/tablet hardware.
+
+## Next grouped batch — localisation foundation
+
+- [ ] Add versioned locale catalogues for English and Portuguese.
+- [ ] Select a company default language during new-company provisioning.
+- [ ] Add a per-user language override under Settings.
+- [ ] Use fallback order: user preference → company default → English.
+- [ ] Translate product UI, validation, navigation and Help labels.
+- [ ] Do not translate or rewrite saved user-entered content, evidence, signatures, audit history, IDs, API keys or record semantics.
+- [ ] Preserve stable route/API/storage identifiers independently of display language.
+- [ ] Add missing-key diagnostics, catalogue-version checks and English fallback tests.
+- [ ] Test mixed-language users in one company and preserve each user preference through backup/restore.
+- [ ] Include generated report-language choice as a separately explicit report setting rather than silently inheriting browser language.
+
+--- Retained UI85 release record ---
 
 # UI85 Authentic Contribution Badges — completed 1 October 2026
 
