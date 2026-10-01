@@ -1,19 +1,38 @@
-# Per-company application header logos
+# Per-company Wavelink identity artwork
 
-Public brand artwork only. Never put passwords, setup files, credentials or original reports here.
+Every hosted **COMPANY** service must have one approved, code-owned company logo before it starts. Public brand artwork only belongs here. Never put passwords, setup keys, credentials, customer records or original reports in this directory.
 
-The existing COMPANY_ID in COMPANY mode selects the entry in deploy/company_identities.json.
-For Sulmara, add the actual approved logo at deploy/company_logos/sulmara/logo.png and set
-its entry's "logo" to "logo.png". Until artwork is supplied, null intentionally renders the
-company name; no substitute logo is included. Commit both the logo and JSON change.
+## Add a new company site
 
-For another company, create its own directory and JSON entry with that company's COMPANY_ID.
-The same shared repository can serve every company. DEMO mode does not display these identities.
-The installer/Chrome icon and database-owned PDF report branding are separate and are not changed.
+1. Choose the exact `COMPANY_ID` used by the service, for example `sulmara`.
+2. Create `deploy/company_logos/<COMPANY_ID>/`.
+3. Add one approved PNG or JPEG, normally named `logo.png`.
+4. Add the matching entry to `deploy/company_identities.json`:
 
-Accepts a single PNG/JPEG, <=2,000,000 bytes, <=4,096 pixels on either side and <=8 million pixels.
-Keep transparent/white-background artwork legible in a compact header. Aspect ratio is preserved.
-Only the selected company's validated logo is served by /static/company-identity/logo; filenames
-and directory paths are not request parameters. Missing/invalid artwork falls back to the name.
-The display configuration is code-owned and takes effect on process restart/deploy; no database
-reset, Company C01 initialisation or browser-data clearing is needed.
+   ```json
+   {
+     "example-company": {
+       "name": "Example Company",
+       "logo": "logo.png"
+     }
+   }
+   ```
+
+5. Confirm the JSON name exactly matches `COMPANY_NAME`, commit the logo and configuration together, then deploy.
+
+Actual COMPANY startup now fails closed when the identity entry is missing, the configured name differs, or the logo is unavailable/invalid. This prevents a newly provisioned customer service from launching with a generic or incorrect company identity. Direct development/test preparation without `WAVELINK_DEPLOYMENT_MODE=COMPANY` retains its existing name-only behaviour.
+
+The shared repository can contain separate entries for multiple companies; only the exact runtime `COMPANY_ID` is selected. DEMO mode does not display a company identity.
+
+## Accepted artwork
+
+- One PNG or JPEG.
+- Maximum 2,000,000 bytes.
+- Maximum 4,096 pixels on either side.
+- Maximum 8 million pixels total.
+- Transparent or white-background artwork should remain legible in a compact header and on the Home cover card.
+- Aspect ratio is preserved.
+
+Only the selected company’s validated asset is served through `/static/company-identity/logo`; filenames and directory paths are never request parameters. The installer/Chrome icon and database-owned PDF report branding are separate systems.
+
+Changing this code-owned display identity takes effect after process restart/deployment. It does not reset the database, repeat Company C01 initialization or require browser-data clearing.

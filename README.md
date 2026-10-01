@@ -1,3 +1,15 @@
+# Wavelink UI84 — Company Workspace Identity and Native Original Files
+
+Current prepared repository: **UI84 + UI83 + UI82 + UI81 + UI80 + UI79 + UI78 + UI77 + UI76 + UI75 + UI74 + UI73 + UI72 + UI71 + UI70 + UI69 + UI68 + UI67 + UI66 + Mail Startup M01 + Company C01 + G01**, core **1.34.19**.
+
+Read **docs/WORKSPACE_UI84.md**, **docs/UI84_SOURCE_PROVENANCE.json** and **docs/CONTINUATION_CHECKPOINT.md** before changing or deploying the application.
+
+UI84 treats the isolated hosted service as a **company workspace** in the user interface while retaining internal project/hub identifiers and real operational **Project / job** fields. It adds the approved code-owned Sulmara logo to the deployment identity and Home cover, requires a valid identity/logo for actual COMPANY startup, and opens Original Files as the native `#original-files` page instead of a popup.
+
+This release adds no database migration, permission, role, operational API, recognition rule, timer, decorator or shell movement. Mail Startup M01 remains byte-identical.
+
+--- Retained UI83 release record ---
+
 # Wavelink UI83 — Account Security and Sessions Batch
 
 Current prepared repository: **UI83 + UI82 + UI81 + UI80 + UI79 + UI78 + UI77 + UI76 + UI75 + UI74 + UI73 + UI72 + UI71 + UI70 + UI69 + UI68 + UI67 + UI66 + Mail Startup M01 + Company C01 + G01**, core **1.34.19**.

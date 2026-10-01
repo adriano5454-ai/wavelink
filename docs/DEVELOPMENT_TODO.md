@@ -1,3 +1,27 @@
+# UI84 Company Workspace Identity and Native Original Files — completed 1 October 2026
+
+- [x] Replace user-facing tenant/project labels with Company / Company workspace where the hosted service is the company boundary.
+- [x] Preserve internal project/hub IDs and operational Project / job and Project number fields.
+- [x] Integrate the approved Sulmara logo as a bounded code-owned PNG.
+- [x] Require a valid exact company identity/logo before actual COMPANY startup.
+- [x] Show the validated company logo in the existing header and Home cover with a name fallback.
+- [x] Convert Original Files from a modal into the native `#original-files` workspace route.
+- [x] Preserve Original Files permissions, revisions, receipts, uploads and provenance.
+- [x] Add no database migration, authority change, operational API, recognition rule, timer or GUI decorator.
+- [x] Preserve the M01 launcher byte-for-byte.
+
+## Next grouped batch — UI85 operational depth
+
+- [ ] Recurring/dependency-aware Tasks with due dates, priorities and blockers.
+- [ ] Running-hour/date/cycle Maintenance triggers and controlled parts/evidence links.
+- [ ] Stronger Checklist conditions, imports and revision comparison.
+- [ ] 2×12, 3×8, 4×6 and custom Handover shift models.
+- [ ] Stronger Toolbox QR admission and signed-revision rules.
+- [ ] Connected Fault/HSE corrective actions, Tasks and Maintenance links.
+- [ ] Logistics exception handling for short/damaged receipt, quarantine and placement.
+
+--- Retained UI83 roadmap below ---
+
 # UI83 Account Security and Sessions — completed 1 October 2026
 
 - [x] Retain existing User ID login.

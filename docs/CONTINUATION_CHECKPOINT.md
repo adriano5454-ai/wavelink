@@ -1,3 +1,17 @@
+# Continuation checkpoint — UI84 Company Workspace Identity and Native Original Files
+
+Current prepared baseline: **UI84 + UI83 + UI82 + UI81 + UI80 + UI79 + UI78 + UI77 + UI76 + UI75 + UI74 + UI73 + UI72 + UI71 + UI70 + UI69 + UI68 + UI67 + UI66 + Mail Startup M01 + Company C01 + G01**, core **1.34.19**.
+
+UI84 follows the actual deployment model: each hosted customer service is presented as a **company workspace**, not as a project. Internal `project_name`, hub/storage identifiers and operational **Project / job** fields are retained for compatibility and real work references.
+
+The approved Sulmara logo is code-owned at `deploy/company_logos/sulmara/logo.png`. Actual COMPANY startup now requires an exact identity entry/name and valid bounded raster logo. Original Files is a normal `#original-files` route inside the single Wavelink shell, not a modal.
+
+Exact runtime variant: `workspace-ui84-company-workspace-identity-native-originals-2026-10-01`. Runtime manifest: **2,040 files**; runtime including generated manifest: **2,041 files**; UI84 overlay records: **50**. Mail Startup M01 remains byte-identical.
+
+Continue from exact UI84. Do not restore user-facing Current project labels, do not remove the operational Project / job fields, and do not turn Original Files back into a popup. Every new COMPANY service must add its approved logo and exact identity configuration before deployment.
+
+--- Retained UI83 checkpoint ---
+
 # UI83 continuation checkpoint — Account Security and Sessions Batch
 
 **Prepared:** 1 October 2026  

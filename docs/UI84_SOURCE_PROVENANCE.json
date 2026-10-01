@@ -1,0 +1,48 @@
+{
+  "format": "wavelink-ui84-source-provenance-1",
+  "release": "UI84 Company Workspace Identity and Native Original Files",
+  "core": "1.34.19",
+  "date": "2026-10-01",
+  "parent": "Exact UI83 + UI82 + UI81 + UI80 + UI79 + UI78 + UI77 + UI76 + UI75 + UI74 + UI73 + UI72 + UI71 + UI70 + UI69 + UI68 + UI67 + UI66 + Mail Startup M01 + Company C01 + G01",
+  "target_variant": "workspace-ui84-company-workspace-identity-native-originals-2026-10-01",
+  "scope": "company-site terminology and identity: user-facing company workspace context, code-owned Sulmara cover logo, fail-closed per-company deployment branding, and Original Files as a native route rather than a popup",
+  "user_directions": {
+    "company_site_not_project": true,
+    "per_company_logo_required": true,
+    "sulmara_logo_integrated": true,
+    "original_files_native_page": true
+  },
+  "runtime": {
+    "parent_manifest_files": 2036,
+    "target_manifest_files": 2040,
+    "target_files_including_generated_manifest": 2041,
+    "modified": 46,
+    "new": 4,
+    "deleted": 0,
+    "embedded_records": 50,
+    "overlay_sha256": "5268d4dcb9a693fb9f9bc3b7d029d8c372135bf3e4a56fa6a614b16e12645905",
+    "release_manifest_sha256": "ed4f6fb9c11f996fd539e8d0bd0fe11f327a7eebdb24c32562502667f200aa31"
+  },
+  "deployment_branding": {
+    "identity_descriptor": "deploy/company_identities.json",
+    "sulmara_logo": "deploy/company_logos/sulmara/logo.png",
+    "logo_sha256": "11e998c4136982060ba6a3252917d643669a182e45419e14e7ca07312f99d633",
+    "logo_bytes": 180986,
+    "provisioning_validation": "COMPANY startup fails closed for missing, mismatched or invalid code-owned identity/logo"
+  },
+  "boundaries": {
+    "database_migration": false,
+    "operational_api_change": false,
+    "permission_change": false,
+    "recognition_rule_change": false,
+    "environment_change": false,
+    "new_timer": false,
+    "post_render_decorator": false,
+    "public_company_domain_routing": false,
+    "internal_project_identifiers_preserved": true,
+    "operational_project_job_fields_preserved": true
+  },
+  "m01_company_entrypoint_sha256": "2f117d85c439c16ab78908bf5728056cc837e5d1f948a77040ef1d509c04c371",
+  "extractor_sha256": "6704e40e1a646749cbe7a7eb7b935e40e16a3f8086f1795c55bdd3bbfb44df99",
+  "remote_operations_performed": false
+}
