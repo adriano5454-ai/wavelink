@@ -1,4 +1,4 @@
-"""C01: new, isolated company project; never import/reseed the fictional demo.
+"""C01: new, isolated company workspace; never import/reseed the fictional demo.
 
 Secrets are runtime inputs only. A weak initial password is usable only with an
 independent setup secret, before normal API access is enabled. No public reset.
@@ -47,33 +47,6 @@ def validate_environment(env: dict) -> tuple[str, str, str]:
     return slug, name, origin
 
 
-
-def validate_company_branding(source: Path, env: dict, *, deploy_root: Path | None = None) -> dict | None:
-    """Require one code-owned company identity/logo for actual COMPANY startup.
-
-    Direct prepare_company() tests and non-company tooling remain compatible when
-    WAVELINK_DEPLOYMENT_MODE is absent. The production company supervisor sets it
-    explicitly, so a new company site cannot start with an unconfigured or invalid
-    logo. This is public display configuration only; no database image or secret is
-    read or written here.
-    """
-    if env.get('WAVELINK_DEPLOYMENT_MODE', '').upper() != 'COMPANY':
-        return None
-    source = source.resolve()
-    if str(source) not in sys.path:
-        sys.path.insert(0, str(source))
-    from app.deployment_branding import read_identity
-    root = Path(deploy_root) if deploy_root is not None else Path(__file__).resolve().parent
-    identity, logo = read_identity(env, root)
-    slug, name = env.get('COMPANY_ID', ''), env.get('COMPANY_NAME', '')
-    if not identity or identity.get('id') != slug:
-        raise DemoError('Company branding is not configured for COMPANY_ID. Add its code-owned identity and logo before startup.')
-    if identity.get('name') != name:
-        raise DemoError('Configured company identity name does not match COMPANY_NAME. Review the code-owned company branding entry.')
-    if identity.get('logo_status') != 'ready' or not logo:
-        raise DemoError('A valid company logo is required before this company site can start. Add the approved PNG/JPEG and identity entry.')
-    return identity
-
 def read_marker(root: Path) -> dict:
     from app.hosted_config import read_object
     record = read_object(root / MARKER)
@@ -81,7 +54,7 @@ def read_marker(root: Path) -> dict:
             'admin_id', 'admin_login', 'initial_hash', 'initial_credential_version',
             'setup_key_sha256', 'created_at', 'created_epoch', 'setup_expires_epoch'}
     if set(record) != keys or record.get('format') != FORMAT:
-        raise DemoError('Company installation marker is missing, incomplete or incompatible. No project was created.')
+        raise DemoError('Company installation marker is missing, incomplete or incompatible. No company workspace was created.')
     for key in ('hub_id', 'installation_id', 'admin_id'):
         if str(uuid.UUID(record[key])) != record[key]:
             raise DemoError('Company installation identity is invalid.')
@@ -138,7 +111,15 @@ def prepare_company(root: Path, source: Path, env: dict, *, app_port: int = 8765
     from app.accounts import normal_login
 
     slug, name, origin = validate_environment(env)
-    validate_company_branding(source, env)
+    from app.deployment_branding import read_identity
+    branding_env = {**env, 'WAVELINK_DEPLOYMENT_MODE': 'COMPANY'}
+    identity, logo = read_identity(branding_env, Path(__file__).resolve().parent)
+    if (not identity or identity.get('id') != slug or identity.get('name') != name
+            or identity.get('logo_status') != 'ready' or logo is None):
+        raise DemoError(
+            'Company deployment requires a reviewed repository company identity and logo '
+            'that exactly match COMPANY_ID and COMPANY_NAME before initialization or restart.'
+        )
     if not root.is_absolute() or root == Path('/') or root.resolve() != root or any(p.is_symlink() for p in (root, *root.parents)):
         raise DemoError('Company storage must be a separate absolute directory without links.')
     if root.exists() and not root.is_dir():

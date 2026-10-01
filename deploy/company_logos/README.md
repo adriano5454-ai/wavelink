@@ -1,38 +1,46 @@
-# Per-company Wavelink identity artwork
+# Per-company Wavelink identity assets
 
-Every hosted **COMPANY** service must have one approved, code-owned company logo before it starts. Public brand artwork only belongs here. Never put passwords, setup keys, credentials, customer records or original reports in this directory.
+Public brand artwork only. Never place passwords, setup files, credentials,
+private records or operational evidence in this directory.
 
-## Add a new company site
+Every COMPANY deployment must have a reviewed identity entry in
+`deploy/company_identities.json` and a valid local PNG or JPEG in:
 
-1. Choose the exact `COMPANY_ID` used by the service, for example `sulmara`.
-2. Create `deploy/company_logos/<COMPANY_ID>/`.
-3. Add one approved PNG or JPEG, normally named `logo.png`.
-4. Add the matching entry to `deploy/company_identities.json`:
+```text
+deploy/company_logos/<COMPANY_ID>/
+```
 
-   ```json
-   {
-     "example-company": {
-       "name": "Example Company",
-       "logo": "logo.png"
-     }
-   }
-   ```
+The identity and logo are selected only by the configured `COMPANY_ID`. Host
+headers, browser values and uploaded files never choose deployment branding.
+Commit the image and JSON change together before provisioning or restarting a
+company service. Company mode now fails closed when its reviewed identity or
+logo is missing, invalid or inconsistent with `COMPANY_NAME`.
 
-5. Confirm the JSON name exactly matches `COMPANY_NAME`, commit the logo and configuration together, then deploy.
+Sulmara uses:
 
-Actual COMPANY startup now fails closed when the identity entry is missing, the configured name differs, or the logo is unavailable/invalid. This prevents a newly provisioned customer service from launching with a generic or incorrect company identity. Direct development/test preparation without `WAVELINK_DEPLOYMENT_MODE=COMPANY` retains its existing name-only behaviour.
+```text
+deploy/company_logos/sulmara/sulmara-primary.png
+```
 
-The shared repository can contain separate entries for multiple companies; only the exact runtime `COMPANY_ID` is selected. DEMO mode does not display a company identity.
+For a new company:
 
-## Accepted artwork
+1. Create a directory whose name exactly matches its `COMPANY_ID`.
+2. Add the approved primary logo as one PNG or JPEG.
+3. Add the exact company name and filename to `company_identities.json`.
+4. Run package and company-provisioning checks before deployment.
+5. Keep the identity in the shared application repository; do not store it in
+   the company database or copy a different company logo between services.
 
-- One PNG or JPEG.
-- Maximum 2,000,000 bytes.
-- Maximum 4,096 pixels on either side.
-- Maximum 8 million pixels total.
-- Transparent or white-background artwork should remain legible in a compact header and on the Home cover card.
-- Aspect ratio is preserved.
+The image must be a single PNG/JPEG, at most 2,000,000 bytes, no more than
+4,096 pixels on either side and no more than 8 million pixels in total. Preserve
+its aspect ratio and keep it legible in a compact header. Wide wordmarks are
+shown as complete artwork; compact marks may be paired with the controlled
+company-name field.
 
-Only the selected company’s validated asset is served through `/static/company-identity/logo`; filenames and directory paths are never request parameters. The installer/Chrome icon and database-owned PDF report branding are separate systems.
+Only the selected company's validated logo is served from
+`/static/company-identity/logo`; filenames and filesystem paths are never
+request parameters. The installer/Chrome icon and database-owned PDF report
+profile remain separate identities.
 
-Changing this code-owned display identity takes effect after process restart/deployment. It does not reset the database, repeat Company C01 initialization or require browser-data clearing.
+`fictional-company` is a deliberately fictional automated-test identity. It is
+not a customer deployment and must not be reused for a real company service.

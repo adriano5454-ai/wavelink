@@ -1,6 +1,10 @@
 {
+  "fictional-company": {
+    "logo": "fictional-company.png",
+    "name": "Fictional Company"
+  },
   "sulmara": {
-    "name": "Sulmara",
-    "logo": "logo.png"
+    "logo": "sulmara-primary.png",
+    "name": "Sulmara"
   }
 }

@@ -9,7 +9,6 @@ import json
 import os
 from pathlib import Path
 import signal
-import shutil
 import subprocess
 import sys
 from types import SimpleNamespace
@@ -287,14 +286,7 @@ print(json.dumps(results))
 def test_fresh_hosted_child_uses_environment_not_injected_settings(tmp_path,monkeypatch,mode):
     base=tmp_path/'base';base.mkdir()
     (base/'app').symlink_to(SOURCE,target_is_directory=True)
-    deploy_source=Path(ce.__file__).parent
-    shutil.copytree(deploy_source,base/'deploy',ignore=shutil.ignore_patterns('__pycache__','*.pyc'))
-    fixture_logo=base/'deploy/company_logos/fictional-company/logo.png'
-    fixture_logo.parent.mkdir(parents=True,exist_ok=True)
-    shutil.copy2(deploy_source/'company_logos/sulmara/logo.png',fixture_logo)
-    (base/'deploy/company_identities.json').write_text(json.dumps({
-        'fictional-company': {'name':'Fictional Company','logo':'logo.png'}
-    })+'\n')
+    (base/'deploy').symlink_to(Path(ce.__file__).parent,target_is_directory=True)
     monkeypatch.setattr(ce,'BASE',base)
     env=child_env({**FAKE_ENV,'WAVELINK_MEMBERSHIP_MODE':mode})
     result=subprocess.run([sys.executable,'-c',HOSTED_PROBE,str(tmp_path/'company'),str(SOURCE),mode],

@@ -252,7 +252,7 @@ def test_active_public_entry_only_normal_login_and_scoped_signing(instance):
 
 def test_cross_company_tokens_and_hub_headers_do_not_cross(instance,tmp_path):
     other_root=tmp_path/'other'
-    env={**ENV,'COMPANY_ID':'other','COMPANY_NAME':'Other','PUBLIC_URL':'https://other.example.test'}
+    env={**ENV,'COMPANY_ID':'sulmara','COMPANY_NAME':'Sulmara','PUBLIC_URL':'https://other.example.test'}
     cfg=prepare_company(other_root,SOURCE,env);s=HostedSettings.from_file(cfg['config'],environ={});other=(other_root,cfg,s)
     service(instance).complete(ENV['COMPANY_SETUP_KEY'],body());service(other).complete(ENV['COMPANY_SETUP_KEY'],body())
     assert cfg['hub_id']!=instance[1]['hub_id']

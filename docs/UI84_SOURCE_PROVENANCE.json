@@ -1,35 +1,10 @@
 {
-  "format": "wavelink-ui84-source-provenance-1",
-  "release": "UI84 Company Workspace Identity and Native Original Files",
-  "core": "1.34.19",
+  "format": "wavelink-runtime-overlay-1",
   "date": "2026-10-01",
-  "parent": "Exact UI83 + UI82 + UI81 + UI80 + UI79 + UI78 + UI77 + UI76 + UI75 + UI74 + UI73 + UI72 + UI71 + UI70 + UI69 + UI68 + UI67 + UI66 + Mail Startup M01 + Company C01 + G01",
-  "target_variant": "workspace-ui84-company-workspace-identity-native-originals-2026-10-01",
-  "scope": "company-site terminology and identity: user-facing company workspace context, code-owned Sulmara cover logo, fail-closed per-company deployment branding, and Original Files as a native route rather than a popup",
-  "user_directions": {
-    "company_site_not_project": true,
-    "per_company_logo_required": true,
-    "sulmara_logo_integrated": true,
-    "original_files_native_page": true
-  },
-  "runtime": {
-    "parent_manifest_files": 2036,
-    "target_manifest_files": 2040,
-    "target_files_including_generated_manifest": 2041,
-    "modified": 46,
-    "new": 4,
-    "deleted": 0,
-    "embedded_records": 50,
-    "overlay_sha256": "5268d4dcb9a693fb9f9bc3b7d029d8c372135bf3e4a56fa6a614b16e12645905",
-    "release_manifest_sha256": "ed4f6fb9c11f996fd539e8d0bd0fe11f327a7eebdb24c32562502667f200aa31"
-  },
-  "deployment_branding": {
-    "identity_descriptor": "deploy/company_identities.json",
-    "sulmara_logo": "deploy/company_logos/sulmara/logo.png",
-    "logo_sha256": "11e998c4136982060ba6a3252917d643669a182e45419e14e7ca07312f99d633",
-    "logo_bytes": 180986,
-    "provisioning_validation": "COMPANY startup fails closed for missing, mismatched or invalid code-owned identity/logo"
-  },
+  "parent_patch_id": "workspace-ui83-account-security-sessions-batch-2026-10-01",
+  "parent_overlay_sha256": "13d39cd555dccc2294702d26da29bc001bc12dd2b6dcc3f1c887bd24ebc5bd74",
+  "patch_id": "workspace-ui84-company-workspace-branding-original-files-2026-10-01",
+  "scope": "company-first hosted terminology, required repository-owned deployment identities and logos, full-wordmark-safe PDF report branding, and a route-owned Original Files page",
   "boundaries": {
     "database_migration": false,
     "operational_api_change": false,
@@ -38,11 +13,346 @@
     "environment_change": false,
     "new_timer": false,
     "post_render_decorator": false,
-    "public_company_domain_routing": false,
-    "internal_project_identifiers_preserved": true,
-    "operational_project_job_fields_preserved": true
+    "company_identity_requirement": "repository identity and valid logo required by company provisioning; no browser or host-header selection",
+    "internal_project_identifiers": "preserved for database, transfer and compatibility semantics; active hosted copy is company-first",
+    "report_wordmark_rule": "wide uploaded artwork is treated as a complete wordmark and the controlled company name is not printed again"
   },
-  "m01_company_entrypoint_sha256": "2f117d85c439c16ab78908bf5728056cc837e5d1f948a77040ef1d509c04c371",
-  "extractor_sha256": "6704e40e1a646749cbe7a7eb7b935e40e16a3f8086f1795c55bdd3bbfb44df99",
-  "remote_operations_performed": false
+  "records": [
+    {
+      "path": "app/company_branding.py",
+      "before_sha256": "4cc675ee246265b0f01d09353eee94a092778ba0162eb093a5bbbf71978fd11d",
+      "after_sha256": "476e39c96c9d55e3969a14327692199f01633a1ea8e99c27d76f3a0ce706a2e3",
+      "bytes": 12005
+    },
+    {
+      "path": "app/company_reports.py",
+      "before_sha256": "2692abe55a884615bb5b445a1b52370679bda36f8e0f04d0e6781fdd9de1bd5e",
+      "after_sha256": "2fc5eda3c6941c16d6a9422dd44466855c116bab288566549bbb78297bddbdfd",
+      "bytes": 11148
+    },
+    {
+      "path": "app/home_ui.py",
+      "before_sha256": "858499450ac68dc82be1c75897908baaebbbd98f6a0a253bd6ea4cc9b9bf563f",
+      "after_sha256": "20eb0b515c8f48b23325fb02b478cb507873feed90d50cc10f5797db296ba911",
+      "bytes": 4470
+    },
+    {
+      "path": "app/static/app.js",
+      "before_sha256": "53b24a77019dea4e283af77ffd6dac8985ab313151632495d4aa9e5d292811cb",
+      "after_sha256": "5df4565754d4e36ba9fbfccc1f9a4f3b3ffe0fb8d22f094776b6c268f1a447ef",
+      "bytes": 166039
+    },
+    {
+      "path": "app/static/assets.js",
+      "before_sha256": "849c9421adab282c9713ab1c1ccc37cf0b0eb39f13642f7950f5d7f5bf85ca36",
+      "after_sha256": "c0ae44c2cffedb80dea8d789e56d82d60a6f87558404668e02f6ea8823369ab2",
+      "bytes": 32554
+    },
+    {
+      "path": "app/static/attention.js",
+      "before_sha256": "edf02335df55fe2f0251c72c4ca64e54de22a7788a7b550082ca42c782af8083",
+      "after_sha256": "cdf8909dcbfe63664cc6f2ff6a689b3cac8f81a26e273fdb4733de64023baf6e",
+      "bytes": 18751
+    },
+    {
+      "path": "app/static/backup_review.js",
+      "before_sha256": "8703b36b85591b777fcc9244ae0b7a19d38ae1af1fee1e1fa969d96b81e4676d",
+      "after_sha256": "71d9b01a82550cd1999441d6e59ffd99f6c9fac7d5e8e26c070bebb39e39a9a1",
+      "bytes": 4370
+    },
+    {
+      "path": "app/static/browser_admin.js",
+      "before_sha256": "347a18792a589540bac154932f541ad5fced24914b4a0bf334e963fe9fa3e702",
+      "after_sha256": "5d19c1d8acced9cd3e13e25bcfd19b0813e03270e2b863d91251cab71fd10d7e",
+      "bytes": 27467
+    },
+    {
+      "path": "app/static/browser_logs.js",
+      "before_sha256": "8710219ea9d329170d6eee0f8974e9ada7a6814a20735105e87e5c63fc466776",
+      "after_sha256": "213341fefb00aa9564b74fd98224535435b94c9142eb9298840824ea23903330",
+      "bytes": 20710
+    },
+    {
+      "path": "app/static/certificate_workspace.js",
+      "before_sha256": "7e65cdc2b6be5f38b16f2217dccee70c8819686ab0db2e17052ede10faf8cb15",
+      "after_sha256": "d72f7ac8b575fa1a77da60058e10b73dcfc6ba8c064eeb0b2dd907a30f8666c8",
+      "bytes": 26246
+    },
+    {
+      "path": "app/static/checklist_review.js",
+      "before_sha256": "2e0b464f18687d0bbfa911a4ce6ad0bae7d0ddf489080827284819701c7fa2c8",
+      "after_sha256": "48440078fc18be23df38d7c3137f72ece3f0ef4d340d73e80d9d851b8d251dca",
+      "bytes": 29637
+    },
+    {
+      "path": "app/static/company_branding.js",
+      "before_sha256": "323f7a8a252d2771381a6067bffa230947c5ac0fd429ea8e74e0e0277d52bc13",
+      "after_sha256": "1f6ac88ea2245ddd79bba27908ade9fbdabb0f0c7ea5ce4dccd9f75aecf85b7f",
+      "bytes": 19424
+    },
+    {
+      "path": "app/static/company_workspace_ui84.css",
+      "before_sha256": null,
+      "after_sha256": "1223354f8a9b4cb8c5173ffb49639df56503d4367d523cb2abb5365629769099",
+      "bytes": 1882
+    },
+    {
+      "path": "app/static/document_invites.js",
+      "before_sha256": "ce9dcb795df197d2b4efae12329e096f300703532b490f52da8cf09a2d49d621",
+      "after_sha256": "42b69e8ba27177e4a71828422f5ebb5ddb604f680d69d85b6d3af3f521cbf970",
+      "bytes": 15720
+    },
+    {
+      "path": "app/static/experience_shell.js",
+      "before_sha256": "ec04ec6863ae6be80e3d6849e2ef19c4e06903e2993415519b897563b600da8c",
+      "after_sha256": "4ed44e651e1e91c281449a7a01c21890cc64b7bf794630e09289d15b7764ad78",
+      "bytes": 9556
+    },
+    {
+      "path": "app/static/fault_reports.js",
+      "before_sha256": "e6ec45e10d118578fb5d16dbc88dc548ca497cc22de41fe0266ccbd575f8923e",
+      "after_sha256": "2d956b55838e2b241dcdc0997a5709d2088e3a989c4cd7be1b704582f106b460",
+      "bytes": 23687
+    },
+    {
+      "path": "app/static/fieldwork.js",
+      "before_sha256": "354cbd193c821481b452955dc643570a7c4c88f5307e54958a7531c083f5dcfd",
+      "after_sha256": "b71f8944e2af96c9d855765d6cf6d284f334b96716cbc1aa20b1b37a4bee7f59",
+      "bytes": 94022
+    },
+    {
+      "path": "app/static/fleet.html",
+      "before_sha256": "61e51f72f3c0737baf8a5d675629239c5eec0faa089afbc67e4d6baa5e071f71",
+      "after_sha256": "003da76978f5039ea245d501c75693d27cdc8c178851a0dca25262c59fb45a85",
+      "bytes": 6521
+    },
+    {
+      "path": "app/static/fleet.js",
+      "before_sha256": "06fc81808823ecd96034aafe6e8a735ab5afcfe788bdaddd8259029228110154",
+      "after_sha256": "9909fa1697826f4e36b66705642ca5c94de101b18e30ba3e166ec923085535a2",
+      "bytes": 134006
+    },
+    {
+      "path": "app/static/general_tasks.js",
+      "before_sha256": "a4ccc22eed4637c7b9fa42adc1e48e7e8acb0d8bdf20873e9a3c279029699665",
+      "after_sha256": "17a0651c50be991b3052329bde8a2efe961028af09b9f3315ed32787d123c7a8",
+      "bytes": 31709
+    },
+    {
+      "path": "app/static/handover_workspace.js",
+      "before_sha256": "debf9c39dd142db4954ee685cb31647adf5e70e147dfdc55f34edc932433f62c",
+      "after_sha256": "eb97de48aa8881dcb908121b487d3d8c81eaa072827520f379c58e8120474344",
+      "bytes": 27590
+    },
+    {
+      "path": "app/static/handovers.js",
+      "before_sha256": "59346a652fdefacb01e06833e5d1a45bd76b0660bc9b65ceeeacd6cf07e04f45",
+      "after_sha256": "b0a615422dd286a35e7fc703ebee27a8c96252a1eb6eaad44884002974aa9997",
+      "bytes": 107015
+    },
+    {
+      "path": "app/static/home_workspace.js",
+      "before_sha256": "05d23e3e63edf8d3397bfeaf47ffc3599928af82fd140e183abdeb2ee65c297f",
+      "after_sha256": "75564fb6bdea84aae99da0c361b3fea7fd7790dfae91c8ac9714cc66122f8389",
+      "bytes": 11086
+    },
+    {
+      "path": "app/static/import_centre.js",
+      "before_sha256": "8fdabb107915bad51bb1a65bd2e3385af74b5ed68d42f9ceab36bdf97565bebf",
+      "after_sha256": "ca5c3e2a80d448d0b613958e676059202b1fd50673042a943417f8bebd79a0d8",
+      "bytes": 3529
+    },
+    {
+      "path": "app/static/index.html",
+      "before_sha256": "535c16079eddf829cb9e02324ae23078cb53dac787f31e69bc560f7e0fb1b0b5",
+      "after_sha256": "56b0fb698c2a201d880b9794f37147dffa0008ebf83833a9f4308bae5f3c2356",
+      "bytes": 23820
+    },
+    {
+      "path": "app/static/local_work.js",
+      "before_sha256": "150c4925218292c879634a8bc651ea8483f3200bda4d4d52ce57e8f259ddbbdd",
+      "after_sha256": "47a3fae2d8de33470da8c6f36629cec2a385553e958a64a7a5dcfcaf5348c802",
+      "bytes": 13708
+    },
+    {
+      "path": "app/static/log_windows.js",
+      "before_sha256": "6d6dce9541e6b94e40955477bd6762103f420876af05da5faab01e31c96af2e5",
+      "after_sha256": "c84a978e6731de3d1217f3042b7db4c37d9085a6a2f68ba9e2490905af689df6",
+      "bytes": 5955
+    },
+    {
+      "path": "app/static/logs.js",
+      "before_sha256": "c8da6f7a05b159d5364510a8da833be950cee61c3eaab032c2d6773e6738a24f",
+      "after_sha256": "401b262019e16e925a94857088f69a8087d9af451454849d41eaf6a51537a4ff",
+      "bytes": 46911
+    },
+    {
+      "path": "app/static/maintenance_evidence.js",
+      "before_sha256": "132a62ed2499ffd2317d91f84eff74521ad7bf8a38443066a686ca1824cf3ecf",
+      "after_sha256": "539f3d98de2a6056e0f4693e847a7179d71a01997f42daf70b35257c0b6796c9",
+      "bytes": 10011
+    },
+    {
+      "path": "app/static/maintenance_forms.js",
+      "before_sha256": "de276564ed85dd8ef3a20c17bfb655e522b97d36eab11061f09cccc48ca29d07",
+      "after_sha256": "f7c3be5d2aa1e9a64a7a832c3f841a8f977a8bcabc33fda31e8390929b4a300c",
+      "bytes": 16926
+    },
+    {
+      "path": "app/static/maintenance_management.js",
+      "before_sha256": "a67e07908e8fe05fe019fad0a2ca6d7c6010a65a3eaee68088f69cd764a67d44",
+      "after_sha256": "33ffa538932c111be3614983113b79f718a70c9001eade5ab549ab6ab3e49862",
+      "bytes": 22051
+    },
+    {
+      "path": "app/static/maintenance_workspace.js",
+      "before_sha256": "79d7c7a7fe58b7f108e59b93a73c338c7c8045554b888fc8f663d72505e80de7",
+      "after_sha256": "c0270beafaac75ae866c9aa9db021cf62044870b054a333d9783f04b6e32cd5f",
+      "bytes": 24152
+    },
+    {
+      "path": "app/static/operations.js",
+      "before_sha256": "258e7636fc014570dd37e228cc00816f316652f36d1db5c49d6fd576dba99a64",
+      "after_sha256": "a50a1e720e55288cbe7eabba8402ff59dd915a57754c518a771068299ce548f7",
+      "bytes": 52438
+    },
+    {
+      "path": "app/static/original_library.js",
+      "before_sha256": "24b570928eb580a6261a93ed7317333abc489818e129d7eda0e8a37a1d21efc5",
+      "after_sha256": "448310798cb72a14cd7d1c41ece16cfa90bcc0b55253ea751930dd7986ecfb33",
+      "bytes": 34412
+    },
+    {
+      "path": "app/static/original_upload.js",
+      "before_sha256": "8d43e3499276954facac6a310823d4c968b582d5c087b2f612722c32bfd756eb",
+      "after_sha256": "a99fc0bfe1438902cd0775e1e30d01f992f755aa5bc13e80cf6b3fffc1f62513",
+      "bytes": 12734
+    },
+    {
+      "path": "app/static/project_calendar.js",
+      "before_sha256": "c19c83069c134b3a829d0eba814fc23e9a4b006e477161fd0ba252d5e191d60f",
+      "after_sha256": "b4b6d639ca35798deb1ba1b4e461f5fd67fb8f5f88f0d5bb567ac232667b4d9e",
+      "bytes": 25433
+    },
+    {
+      "path": "app/static/project_presence.js",
+      "before_sha256": "ace68f30d03466824098ad9d99296b91702d125ecf4edbccfedbdcc76b58427f",
+      "after_sha256": "cdbcf28e2f7003f3a3e091301cba836394af98acb4af132577c6aec503b12133",
+      "bytes": 8393
+    },
+    {
+      "path": "app/static/qshe_reports.js",
+      "before_sha256": "8b90e52ebf6866de729649c327c2981f7b7bb12e3b9523059fb309e7ac488905",
+      "after_sha256": "fa85f41fa5ee661393624d2869954c0c74ce2c86fdeeec7c8f2da3d1f4c0ca10",
+      "bytes": 24572
+    },
+    {
+      "path": "app/static/recognition_workspace.js",
+      "before_sha256": "a9cae273e90bcd49f6c7353e7cde31e389325339141f7e70b8fb48e84fc161a8",
+      "after_sha256": "c2ec3fcdde5460adbe745cf306778b44c908ccbd27394a48ebd26b8abd00183a",
+      "bytes": 25622
+    },
+    {
+      "path": "app/static/record_management.js",
+      "before_sha256": "0a4a624b58c166eff3d0913800ad169362d23bb357f58dd9ce78d812acfc628a",
+      "after_sha256": "1ad6b28d9073d1e01534850cf0201d5746a2c500f8185f9db9dabdb4d5e2d22e",
+      "bytes": 20102
+    },
+    {
+      "path": "app/static/report_forms.js",
+      "before_sha256": "6b50f4255908d2d74a8f6b5883b851868e54dde42658a4d9fc924e74fd635091",
+      "after_sha256": "71de9b70d4cd8a201e1ca4e95c9c86254ba50f495ff1000b4bf0247cc3f1cbd4",
+      "bytes": 17962
+    },
+    {
+      "path": "app/static/save_status.js",
+      "before_sha256": "08882557890239533311f066c8d5457610d0117490e65bce73ef3765aeb1a19c",
+      "after_sha256": "b282086dd10bb6595fbdd65dff6726cd636491d21ae5555fa1a81e1518dabd00",
+      "bytes": 14629
+    },
+    {
+      "path": "app/static/save_status_ui.js",
+      "before_sha256": "a2e9c298f7070c8932c59519028474b58bd5ccef64145d5a8134464674851ace",
+      "after_sha256": "2bff54087837b924e29aea8938e9905651cfa1e0674908cde192307d7d7cda5b",
+      "bytes": 12628
+    },
+    {
+      "path": "app/static/session_exit.js",
+      "before_sha256": "ea2111d9d94726b4d0bc9c10ff31c7ee6e3d7cebf244564761d990c6a94639d5",
+      "after_sha256": "15f04c0747dd81151cff088f69a0d93ccc686db3ed0078541726d302fcf1a23a",
+      "bytes": 7162
+    },
+    {
+      "path": "app/static/setup_builders.js",
+      "before_sha256": "aa4cd60d03ed3b0bfdcbb509d454daa9718c1e67486c5ac78d9e0a27cbfb6043",
+      "after_sha256": "aaf51173c33cbca2d1e8c44a6712ea1404d3c8b9a2cbb571d9852c2118f106af",
+      "bytes": 18285
+    },
+    {
+      "path": "app/static/shift_workspace.js",
+      "before_sha256": "1942a4b0a28d671557a8c819599a934de76b1b7509a4d081811343c28bd3cb7d",
+      "after_sha256": "45113d66bdd9142290c448c6495332a0670a788730c599eb3720c51cfcd610b3",
+      "bytes": 16621
+    },
+    {
+      "path": "app/static/sw.js",
+      "before_sha256": "1dc967f6f0f5ca9f66252ed671f659ac61adec3976639eaee874d8a9e8fa2ea1",
+      "after_sha256": "bb689773b007721978a1c225aa036ba6ba0ef28797f56b985232b0fbf8134b37",
+      "bytes": 12405
+    },
+    {
+      "path": "app/static/task_checklists.js",
+      "before_sha256": "86d692e8824a4db5e5caa120aa079e8418b3c805f824ba7ccfb2bc02ff073cd7",
+      "after_sha256": "92498e7749cca19a3441e60bc05d7a43dbcb3f738f161158bcb88a43b6c50b76",
+      "bytes": 16967
+    },
+    {
+      "path": "app/static/task_create.js",
+      "before_sha256": "9877174801fc8d1082cd2344217a2a9556d61349e96550fa0f4b57f325502314",
+      "after_sha256": "f64711a7959c00ff5b40c04f453d8ac34fd5b9304fdbc2f7faf82483d9282556",
+      "bytes": 14543
+    },
+    {
+      "path": "app/static/task_scratch.js",
+      "before_sha256": "b920851e076b45e24860dabf1be4aa6a5f335497c19bbda7a03dc864fe320e92",
+      "after_sha256": "fa24e7be659c7e585945fadf18bee84feb97fb8e1075fe3b8f98b11804cdb068",
+      "bytes": 11081
+    },
+    {
+      "path": "app/static/task_workspace.js",
+      "before_sha256": "f47503d1aead11474974130549bf0f43c8c0a16d42cd901e4dd56908da6e3b21",
+      "after_sha256": "3e78c692b4bcf4ed1dd2e83214af71015799012b06d3f354ab5ad3f2968aa70c",
+      "bytes": 16998
+    },
+    {
+      "path": "app/static/toolbox_form.js",
+      "before_sha256": "6c8cd22a2fee58c3a0982c3ca0133f99bd568206c13b8c6e82190a5e9a6d7982",
+      "after_sha256": "eb1be8a12d952480665e9067fecdffe84d96a8f96dfb07bf7a90a10e4d63afe2",
+      "bytes": 18333
+    },
+    {
+      "path": "app/static/verification.js",
+      "before_sha256": "2daf04dc54d7eb02d871df08a965f16ae51b014a4720ff5d0f3a6f5b961bf06d",
+      "after_sha256": "d3a47e04609ade42e7b496928c93157195bbf8efce1e9bf3cf755bffa1331c1d",
+      "bytes": 17421
+    },
+    {
+      "path": "tests/ui84_company_workspace/__init__.py",
+      "before_sha256": null,
+      "after_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "tests/ui84_company_workspace/browser_checks.py",
+      "before_sha256": null,
+      "after_sha256": "968ddd22932aba0a06254abfb59d6ae2357d41b9fe0ca2b022c2172331646f02",
+      "bytes": 3492
+    },
+    {
+      "path": "tests/ui84_company_workspace/test_company_workspace.py",
+      "before_sha256": null,
+      "after_sha256": "ed53d81586d3ea043bd5de58f3e5f82fa972a5a452a96b0aa64c0fbea9c8d55d",
+      "bytes": 4242
+    }
+  ]
 }
