@@ -1,0 +1,79 @@
+{
+  "format": "wavelink-ui77-source-provenance-1",
+  "date": "2026-09-30",
+  "release": "UI77 + UI76 + UI75 + UI74 + UI73 + UI72 + UI71 + UI70 + UI69 + UI68 + UI67 + UI66 + Mail Startup M01 + Company C01 + G01",
+  "core": "1.34.19",
+  "parent": "Exact UI76 cumulative repository reconstructed from the user-applied Wavelink lineage",
+  "parent_repository_files": 212,
+  "target_repository_files": 214,
+  "parent_runtime_manifest_files": 2001,
+  "target_runtime_manifest_files": 2005,
+  "parent_extractor_sha256": "01a46bdd67e8257400cbe3a0df95664e8e87459e274a7d507fa2e52f3d1318f9",
+  "target_extractor_sha256": "5c3bdfdb5e3146a79f0815028dd294bd7c9bd40aa3f0591e7f529575d1bd86c3",
+  "unchanged_m01_company_entrypoint_sha256": "2f117d85c439c16ab78908bf5728056cc837e5d1f948a77040ef1d509c04c371",
+  "parent_overlay_sha256": "fa841c4a001ee21205b17aa395652c5ba2283224386e5d6a729163e399382833",
+  "target_overlay_sha256": "0e126b9ac92e4502621ad0e6345d2c28e8cf876075d6984e44f04fde0ef4fcff",
+  "target_release_manifest_sha256": "1745b87a3efa8bcb8f0deea3240af376cf9fa807a0b6100a8603605849a38648",
+  "runtime_delta": {
+    "modified": 3,
+    "new": 4,
+    "removed": 0,
+    "embedded_records": 7,
+    "uncompressed_bytes": 333556
+  },
+  "fresh_reconstruction": {
+    "upstream_files_verified": 1605,
+    "target_manifest_files": 2005,
+    "embedded_files_compared": 7,
+    "byte_differences": 0,
+    "manifest_integrity": true
+  },
+  "architecture": {
+    "authoritative_fleet_stylesheet": "app/static/fleet_workspace_ui77.css",
+    "historical_fleet_stylesheets_loaded": false,
+    "historical_fleet_stylesheets_cached": false,
+    "route_owned_fleet_workspaces": true,
+    "left_aligned_fleet_navigation": true,
+    "contained_mobile_tables": true,
+    "old_logbook_refresh_interval_ms": null,
+    "quiet_logbook_refresh_interval_ms": 30000,
+    "new_entries_require_deliberate_apply": true,
+    "new_post_render_decorator": false,
+    "new_shell_mutation_observer": false,
+    "new_route_dom_reparenting": false,
+    "new_animation": false,
+    "new_independent_polling_loop": false,
+    "service_worker_cache": "pxgeo-dive-check-shell-1.34.19-ui77"
+  },
+  "browser_acceptance": {
+    "checks_passed": 14,
+    "widths_css_px": [
+      1440,
+      390,
+      320
+    ],
+    "desktop_routes": [
+      "Vessels & shore bases",
+      "Fleet access & setup",
+      "Vessel logbooks",
+      "Vessel logbook setup",
+      "Vessel log permissions",
+      "Assigned log issues",
+      "Shipment & log calendar"
+    ],
+    "real_timer_idle_seconds": 9.2,
+    "route_mutations_after_settlement": 0,
+    "quiet_refresh_preserved_visible_rows": true,
+    "deliberate_apply_updated_rows": true,
+    "unexpected_javascript_errors": 0,
+    "horizontal_overflow_failures": 0
+  },
+  "database_migration": false,
+  "destructive_reset": false,
+  "permission_or_authority_change": false,
+  "operational_api_change": false,
+  "recognition_rule_change": false,
+  "environment_change": false,
+  "live_services_inspected": false,
+  "deployment_performed": false
+}

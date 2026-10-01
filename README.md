@@ -1,3 +1,77 @@
+# Wavelink UI78 — Native Fleet Logistics Journey
+
+Core **1.34.19** · **UI77, UI76, UI75, UI74, UI73, UI72, UI71, UI70, UI69, UI68, UI67, UI66, Mail Startup M01, Company C01 and demo G01 retained** · 30 September 2026.
+Read **docs/WORKSPACE_UI78.md**, **docs/UI78_SOURCE_PROVENANCE.json** and
+**docs/CONTINUATION_CHECKPOINT.md** before applying or deploying.
+
+UI78 completes the next Fleet-native group: Manifests, saved shipment records, Receiving & placement, Assets &
+transit, asset detail and Item journey. These routes now own their final readable hierarchy directly instead of
+exposing pale text and mixed cards from older logistics styles. Receiving refresh stays inside the mounted
+workspace, and the new logistics layer adds no decorator, MutationObserver, animation or independent timer.
+
+The existing Fleet APIs and permission checks remain authoritative. Opening, filtering or refreshing a route
+does not dispatch, receive, place, release, approve or alter equipment. No database migration, reset,
+permission, operational API, recognition rule or environment variable is added.
+
+Copy the compact update over the exact UI77 application repository, review the real changes, commit and push
+normally. After deployment becomes healthy, reload one open tab once or close/reopen the installed app. A
+company reset, project import or browser-storage clear is not required.
+
+No GitHub push, Render deployment, production database operation, external email, DNS/Zoho change or live-data
+inspection was performed while preparing this release.
+
+--- Retained UI77 instructions ---
+
+# Wavelink UI77 — Native Fleet and Vessel Logs
+
+Core **1.34.19** · **UI76, UI75, UI74, UI73, UI72, UI71, UI70, UI69, UI68, UI67, UI66, Mail Startup M01, Company C01 and demo G01 retained** · 30 September 2026.
+Read **docs/WORKSPACE_UI77.md**, **docs/UI77_SOURCE_PROVENANCE.json** and
+**docs/CONTINUATION_CHECKPOINT.md** before applying or deploying.
+
+UI77 continues the direct native-workspace cutover for Fleet and vessel logs. The Fleet document no longer
+loads twelve presentation stylesheets from several GUI generations. Their required functional rules are
+consolidated into one authoritative Fleet stylesheet, while Vessels/bases, setup, Calendar, logbooks, assigned
+issues, logbook setup and log permissions own their final hierarchy directly.
+
+The selected vessel logbook no longer performs a visible reload every eight seconds. A quiet 30-second check
+leaves unchanged content untouched; new saved entries present a deliberate **Show new saved entries** control
+without moving the reader's current rows. Manual refresh remains immediate. No database migration, reset,
+permission, operational API, recognition rule or environment variable is added.
+
+Copy the compact update over the exact UI76 application repository, review the real changes, commit and push
+normally. After deployment becomes healthy, reload one open tab once or close/reopen the installed app. A
+company reset, project import or browser-storage clear is not required.
+
+No GitHub push, Render deployment, production database operation, external email, DNS/Zoho change or live-data
+inspection was performed while preparing this release.
+
+--- Retained UI76 instructions ---
+
+# Wavelink UI76 — Native Operational Records
+
+Core **1.34.19** · **UI75, UI74, UI73, UI72, UI71, UI70, UI69, UI68, UI67, UI66, Mail Startup M01, Company C01 and demo G01 retained** · 30 September 2026.
+Read **docs/WORKSPACE_UI76.md**, **docs/UI76_SOURCE_PROVENANCE.json** and
+**docs/CONTINUATION_CHECKPOINT.md** before applying or deploying.
+
+UI76 continues the native-workspace cutover for Logs, Calendar, Fault Reports, HSE/QSHE and the shared report
+editor. Five separately loaded historical route stylesheets are removed from the active document and offline
+cache; their required functional rules are consolidated into one authoritative final stylesheet. The route
+renderers now own their final hierarchy directly.
+
+Fault and HSE list refresh stays inside the mounted route host, and an explicit ownership check prevents the
+shared report editor from being mistaken for the list. No decorator, MutationObserver, animation, independent
+timer, database migration, reset, permission, operational API, recognition rule or environment variable is
+added.
+
+Copy the compact update over the exact UI75 application repository, review the real changes, commit and push
+normally. After deployment becomes healthy, reload one open tab once or close/reopen the installed app. A
+company reset, project import or browser-storage clear is not required.
+
+No GitHub push, Render deployment, production database operation, external email, DNS/Zoho change or live-data
+inspection was performed while preparing this release.
+
+--- Retained UI75 instructions ---
+
 # Wavelink UI75 — Native Administration and Setup
 
 Core **1.34.19** · **UI74, UI73, UI72, UI71, UI70, UI69, UI68, UI67, UI66, Mail Startup M01, Company C01 and demo G01 retained** · 30 September 2026.

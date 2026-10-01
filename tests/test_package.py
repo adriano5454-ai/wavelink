@@ -44,7 +44,7 @@ def test_no_real_project_or_secret_files_packaged():
     assert 'dives.sqlite3' not in names and 'hub.json' not in names and 'gate.key' not in names
 
 
-def test_ui75_overlay_parent_and_m01_launcher_are_exact():
+def test_ui78_overlay_parent_and_m01_launcher_are_exact():
     from deploy.extract_source import (
         UI_PATCH_ID,
         UI66_PATCH_ID,
@@ -57,6 +57,9 @@ def test_ui75_overlay_parent_and_m01_launcher_are_exact():
         UI73_PATCH_ID,
         UI74_PATCH_ID,
         UI75_PATCH_ID,
+        UI76_PATCH_ID,
+        UI77_PATCH_ID,
+        UI78_PATCH_ID,
         _UI66_FILES,
         _UI67_FILES,
         _UI68_FILES,
@@ -67,6 +70,9 @@ def test_ui75_overlay_parent_and_m01_launcher_are_exact():
         _UI73_FILES,
         _UI74_FILES,
         _UI75_FILES,
+        _UI76_FILES,
+        _UI77_FILES,
+        _UI78_FILES,
     )
     assert UI_PATCH_ID == 'workspace-ui65-role-ready-invitations-2026-09-29'
     assert UI66_PATCH_ID == 'workspace-ui66-profiles-recognition-2026-09-29'
@@ -79,6 +85,9 @@ def test_ui75_overlay_parent_and_m01_launcher_are_exact():
     assert UI73_PATCH_ID == 'workspace-ui73-integrated-shell-context-2026-09-30'
     assert UI74_PATCH_ID == 'workspace-ui74-gui-recovery-baseline-2026-09-30'
     assert UI75_PATCH_ID == 'workspace-ui75-native-administration-2026-09-30'
+    assert UI76_PATCH_ID == 'workspace-ui76-native-operational-records-2026-09-30'
+    assert UI77_PATCH_ID == 'workspace-ui77-native-fleet-vessel-logs-2026-09-30'
+    assert UI78_PATCH_ID == 'workspace-ui78-native-fleet-logistics-2026-09-30'
     assert len(_UI66_FILES) == 33
     assert len(_UI67_FILES) == 41
     assert len(_UI68_FILES) == 11
@@ -89,6 +98,9 @@ def test_ui75_overlay_parent_and_m01_launcher_are_exact():
     assert len(_UI73_FILES) == 12
     assert len(_UI74_FILES) == 9
     assert len(_UI75_FILES) == 12
+    assert len(_UI76_FILES) == 12
+    assert len(_UI77_FILES) == 7
+    assert len(_UI78_FILES) == 7
     assert len([name for name in _UI67_FILES if name.startswith('app/static/badges/')]) == 30
     assert hashlib.sha256((ROOT/'deploy/company_entrypoint.py').read_bytes()).hexdigest() == '2f117d85c439c16ab78908bf5728056cc837e5d1f948a77040ef1d509c04c371'
     assert (ROOT/'docs/WORKSPACE_UI65.md').is_file()
@@ -113,6 +125,12 @@ def test_ui75_overlay_parent_and_m01_launcher_are_exact():
     assert (ROOT/'docs/UI74_SOURCE_PROVENANCE.json').is_file()
     assert (ROOT/'docs/WORKSPACE_UI75.md').is_file()
     assert (ROOT/'docs/UI75_SOURCE_PROVENANCE.json').is_file()
+    assert (ROOT/'docs/WORKSPACE_UI76.md').is_file()
+    assert (ROOT/'docs/UI76_SOURCE_PROVENANCE.json').is_file()
+    assert (ROOT/'docs/WORKSPACE_UI77.md').is_file()
+    assert (ROOT/'docs/UI77_SOURCE_PROVENANCE.json').is_file()
+    assert (ROOT/'docs/WORKSPACE_UI78.md').is_file()
+    assert (ROOT/'docs/UI78_SOURCE_PROVENANCE.json').is_file()
 
 
 def test_ui65_release_keeps_operator_secret_examples_blank():

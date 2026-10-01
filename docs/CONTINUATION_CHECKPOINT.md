@@ -1,3 +1,86 @@
+# Wavelink checkpoint — UI78 Native Fleet Logistics Journey + UI77/UI76/UI75/UI74/UI73/UI72/UI71/UI70/UI69/UI68/UI67/UI66 + M01 + C01 + G01
+
+30 September 2026; core 1.34.19. UI78 is a direct Fleet logistics cutover over the accepted UI77 native Fleet
+baseline. Final variant `workspace-ui78-native-fleet-logistics-2026-09-30`; 2,009 manifest files; 7 UI78
+runtime records (3 modified, 4 new). Extractor
+`48fd1ce285fed2c949f56068146aad8e708eca6baa6a363c9d7ef4fb37c9cbc5`. M01 launcher remains
+`2f117d85c439c16ab78908bf5728056cc837e5d1f948a77040ef1d509c04c371`.
+
+Delivered: direct final hierarchy and readable surfaces for Manifests, saved shipment records, Receiving &
+placement, Assets & transit, asset detail and Item journey; data-grounded summary cards; contained mobile
+tables; explicit operational-boundary wording; and in-place Receiving refresh with no new timer.
+
+Fresh reconstruction verified 1,605 upstream files, produced 2,009 manifest files and matched the curated UI78
+runtime byte-for-byte. Browser acceptance covered six desktop logistics routes plus 390/320-pixel layouts and a
+9.2-second Receiving stability check. No unexpected JavaScript error, route mutation after settlement or
+document-level overflow failure was recorded.
+
+No new decorator, MutationObserver, route-time DOM movement, animation, schema, reset, permission, API,
+recognition, environment or company-identity change is introduced.
+
+Next development should continue direct replacement of remaining main-application record inspectors and dense
+forms in one coherent group. Do not reactivate retired styles, reintroduce a second shell or solve visual
+differences with post-render DOM movement.
+
+No remote GitHub, Render, database, SMTP, DNS or production-data action was performed.
+
+--- Retained UI77 checkpoint below ---
+
+# Wavelink checkpoint — UI77 Native Fleet and Vessel Logs + UI76/UI75/UI74/UI73/UI72/UI71/UI70/UI69/UI68/UI67/UI66 + M01 + C01 + G01
+
+30 September 2026; core 1.34.19. UI77 is a direct Fleet/vessel-log cutover over the accepted UI76 native
+operational-record baseline. Final variant `workspace-ui77-native-fleet-vessel-logs-2026-09-30`; 2,005 manifest
+files; 7 UI77 runtime records (3 modified, 4 new). Extractor
+`5c3bdfdb5e3146a79f0815028dd294bd7c9bd40aa3f0591e7f529575d1bd86c3`. M01 launcher remains
+`2f117d85c439c16ab78908bf5728056cc837e5d1f948a77040ef1d509c04c371`.
+
+Delivered: one final Fleet stylesheet replacing twelve active historical presentation stylesheets; direct route
+ownership for Vessels/bases, Fleet setup, Calendar and vessel-log administration; contained mobile tables; and
+quiet 30-second saved-entry checks that preserve the visible log until the user deliberately applies new rows.
+
+Fresh reconstruction verified 1,605 upstream files, produced 2,005 manifest files and matched all 7 UI77
+payloads byte-for-byte. Browser acceptance covered seven desktop Fleet routes, 390/320-pixel layouts, quiet
+update detection, deliberate update application and a 9.2-second real-timer stability check. No unexpected
+browser JavaScript error or document-level overflow failure was recorded.
+
+No new decorator, MutationObserver, route-time DOM movement, animation, schema, reset, permission, API,
+recognition, environment or company-identity change is introduced.
+
+Next development should continue direct replacement of remaining dense Fleet record journeys—Manifests,
+receiving, assets/transit, custody and item journey—plus remaining main-app detail inspectors. Do not reactivate
+retired Fleet stylesheets, reintroduce a second shell, or solve visual differences with post-render DOM movement.
+
+No remote GitHub, Render, database, SMTP, DNS or production-data action was performed.
+
+--- Retained UI76 checkpoint below ---
+
+# Wavelink checkpoint — UI76 Native Operational Records + UI75/UI74/UI73/UI72/UI71/UI70/UI69/UI68/UI67/UI66 + M01 + C01 + G01
+
+30 September 2026; core 1.34.19. UI76 is a direct operational-record cutover over the accepted UI75 native
+Administration baseline. Final variant `workspace-ui76-native-operational-records-2026-09-30`; 2,001 manifest files; 12 UI76 runtime records
+(8 modified, 4 new). Extractor `01a46bdd67e8257400cbe3a0df95664e8e87459e274a7d507fa2e52f3d1318f9`. M01 launcher remains
+`2f117d85c439c16ab78908bf5728056cc837e5d1f948a77040ef1d509c04c371`.
+
+Delivered: one final operational-record stylesheet replacing five active historical route stylesheets; direct
+route ownership for Logs, Calendar, Fault Reports, HSE/QSHE and the shared report editor; data-grounded summary
+cards; in-place Fault/HSE list refresh; and an exact route-ownership guard for the shared editor/list host.
+
+Fresh reconstruction verified 1,605 upstream files, produced 2,001 manifest files and matched all 12 UI76
+payloads byte-for-byte. Browser acceptance covered the four desktop routes, the report editor, three 390-pixel
+phone routes and one 320-pixel route with no horizontal overflow. Fault Reports remained mutation-free for
+more than 9.2 seconds after settlement. No unexpected browser JavaScript error was recorded.
+
+No new decorator, MutationObserver, route-time DOM movement, animation, timer, schema, reset, permission, API,
+recognition, environment or company-identity change is introduced.
+
+Next development should continue replacing remaining dense route markup directly in coherent groups. Do not
+reactivate the retired operational-record stylesheets, reintroduce a second shell or solve visual differences
+with post-render DOM movement.
+
+No remote GitHub, Render, database, SMTP, DNS, Zoho or production-data operation was performed.
+
+--- Retained UI75 checkpoint below ---
+
 # Wavelink checkpoint — UI75 Native Administration + UI74/UI73/UI72/UI71/UI70/UI69/UI68/UI67/UI66 + M01 + C01 + G01
 
 30 September 2026; core 1.34.19. UI75 is a direct Administration/setup cutover over the accepted UI74 recovery

@@ -1,3 +1,59 @@
+# UI78 native Fleet logistics journey — completed 30 September 2026
+
+- [x] Replace the remaining mixed-generation Manifest, Receiving, Assets, asset-detail and journey presentation with direct route-owned hierarchy.
+- [x] Correct low-contrast text and inconsistent white/dark card inheritance without another post-render decorator.
+- [x] Keep counts data-grounded and filters/read-only route opening free of workflow writes.
+- [x] Keep Receiving mounted during manual refresh and add no independent timer.
+- [x] Contain wide asset tables inside their card at phone widths while keeping navigation left aligned.
+- [x] Preserve existing dispatch, receipt, placement, quarantine and custody authority checks.
+- [x] Verify six desktop logistics routes, 390/320 px layouts and a 9.2-second zero-mutation Receiving route.
+
+## Next coherent GUI group
+
+Continue direct replacement of remaining main-application detail inspectors and dense forms. Use route-owned
+markup and shared static components. Do not add a global decorator, MutationObserver, parallel shell or timer
+that repaints unrelated routes. Keep operational authority and recognition rules separate from presentation.
+
+--- Retained roadmap below ---
+
+# UI77 native Fleet and vessel logs — completed 30 September 2026
+
+- [x] Consolidate the twelve active Fleet presentation stylesheets into one authoritative static asset.
+- [x] Keep Vessels/bases, setup, Calendar and vessel-log pages in direct route-owned renderers.
+- [x] Preserve full-width, left-aligned Fleet navigation and contain wide phone tables inside cards.
+- [x] Remove the visible 8-second selected-logbook reload.
+- [x] Compare saved entries quietly every 30 seconds and preserve the reader's current rows.
+- [x] Present and test a deliberate **Show new saved entries** action when server data changes.
+- [x] Preserve Fleet APIs, permissions, drafts, validation and manual refresh semantics.
+- [x] Verify 1440/390/320 px layouts, 9.2-second idle stability and zero document-level overflow failures.
+
+## Next coherent GUI group
+
+Continue direct replacement of the remaining dense Fleet record journeys—Manifests, receiving, assets/transit,
+custody and item journey—and remaining main-app record inspectors. Use route-owned markup and shared static
+components. Do not add a global decorator, MutationObserver, parallel shell or timer that repaints unrelated
+routes. Keep operational authority and recognition rules separate from presentation.
+
+--- Retained roadmap below ---
+
+# UI76 native operational records — completed 30 September 2026
+
+- [x] Consolidate Logs, Calendar, Fault Reports, HSE/QSHE and shared report-editor presentation into one final static stylesheet.
+- [x] Remove the five historical route stylesheets from the active document and service-worker cache.
+- [x] Keep final hierarchy in direct route renderers; add no post-render decorator, shell observer or DOM re-parenting.
+- [x] Refresh Fault/HSE lists in place with exact list-route ownership so the shared editor cannot be reused incorrectly.
+- [x] Preserve existing endpoints, permissions, report lifecycle, Logs drafts and Calendar data boundaries.
+- [x] Verify 1440/390/320 px layouts, a 9.2-second idle route with zero mutations, and zero document-level overflow failures.
+
+## Next coherent GUI group
+
+Continue with remaining dense route-owned screens—especially Fleet setup/logbooks, detailed record inspectors,
+imports and long configuration forms—using direct renderer markup and shared static components. Do not add a
+new global decorator, independent polling loop or parallel shell. Keep operational authority and recognition
+rules separate from visual presentation.
+
+--- Retained roadmap below ---
+
 # UI75 development checkpoint — native Administration and setup
 
 Completed in UI75:

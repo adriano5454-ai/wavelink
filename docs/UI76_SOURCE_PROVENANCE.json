@@ -1,0 +1,73 @@
+{
+  "format": "wavelink-ui76-source-provenance-1",
+  "date": "2026-09-30",
+  "release": "UI76 + UI75 + UI74 + UI73 + UI72 + UI71 + UI70 + UI69 + UI68 + UI67 + UI66 + Mail Startup M01 + Company C01 + G01",
+  "core": "1.34.19",
+  "parent": "Exact UI75 cumulative repository reconstructed from the user-applied Wavelink lineage",
+  "parent_repository_files": 210,
+  "target_repository_files": 212,
+  "parent_runtime_manifest_files": 1997,
+  "target_runtime_manifest_files": 2001,
+  "parent_extractor_sha256": "c97f39864c285ba562f0f5078f2c248c25552a3984e631bcc65bb80ca0e42034",
+  "target_extractor_sha256": "01a46bdd67e8257400cbe3a0df95664e8e87459e274a7d507fa2e52f3d1318f9",
+  "unchanged_m01_company_entrypoint_sha256": "2f117d85c439c16ab78908bf5728056cc837e5d1f948a77040ef1d509c04c371",
+  "parent_overlay_sha256": "6ea6ce5b14d56abac752e5860b716563114a393a1e372bbbd184c32dd456ee42",
+  "target_overlay_sha256": "fa841c4a001ee21205b17aa395652c5ba2283224386e5d6a729163e399382833",
+  "target_release_manifest_sha256": "db3c4b7493e77250c473a58040850d4f1f8046055514782eb0f72e40cfd7d0cc",
+  "runtime_delta": {
+    "modified": 8,
+    "new": 4,
+    "removed": 0,
+    "embedded_records": 12,
+    "uncompressed_bytes": 224914
+  },
+  "fresh_reconstruction": {
+    "upstream_files_verified": 1605,
+    "target_manifest_files": 2001,
+    "embedded_files_compared": 12,
+    "byte_differences": 0,
+    "manifest_integrity": true
+  },
+  "architecture": {
+    "authoritative_operations_stylesheet": "app/static/operations_workspace_ui76.css",
+    "legacy_operations_stylesheets_loaded": false,
+    "legacy_operations_stylesheets_cached": false,
+    "route_owned_workspaces": true,
+    "exact_report_list_ownership_guard": true,
+    "in_place_report_refresh": true,
+    "new_post_render_decorator": false,
+    "new_shell_mutation_observer": false,
+    "new_route_dom_reparenting": false,
+    "new_animation": false,
+    "new_polling_loop": false,
+    "service_worker_cache": "pxgeo-dive-check-shell-1.34.19-ui76"
+  },
+  "browser_acceptance": {
+    "checks_passed": 11,
+    "widths_css_px": [
+      1440,
+      390,
+      320
+    ],
+    "desktop_routes": [
+      "Logs",
+      "Calendar",
+      "Fault Reports",
+      "HSE / QSHE",
+      "Fault report editor"
+    ],
+    "real_timer_idle_seconds": 9.2,
+    "route_mutations_after_settlement": 0,
+    "unexpected_javascript_errors": 0,
+    "fixture_network_warnings": 0,
+    "horizontal_overflow_failures": 0
+  },
+  "database_migration": false,
+  "destructive_reset": false,
+  "permission_or_authority_change": false,
+  "operational_api_change": false,
+  "recognition_rule_change": false,
+  "environment_change": false,
+  "live_services_inspected": false,
+  "deployment_performed": false
+}
