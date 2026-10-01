@@ -1,3 +1,17 @@
+# Wavelink UI86 — Authentic Visual Covers
+
+Current prepared repository: **UI86 + UI85 + UI84 + UI83 + UI82 + UI81 + UI80 + UI79 + UI78 + UI77 + UI76 + UI75 + UI74 + UI73 + UI72 + UI71 + UI70 + UI69 + UI68 + UI67 + UI66 + Mail Startup M01 + Company C01 + G01**, core **1.34.19**.
+
+Read **docs/WORKSPACE_UI86.md**, **docs/UI86_SOURCE_PROVENANCE.json** and **docs/CONTINUATION_CHECKPOINT.md** before changing or deploying the application.
+
+UI86 replaces the generic cinematic Home, Profile and sign-in covers with local hand-authored technical survey-chart artwork. It integrates the Home heading into the cover, reduces Sulmara to a compact company signature, adds distinct Profile and sign-in illustrations, and applies a subtle bathymetric-contour treatment to route-owned headers and Original Files.
+
+This release adds no database migration, permission, operational API, recognition/scoring rule, company identity change, environment variable, timer, decorator or shell movement. UI85 badges, UI84 company workspace/Original Files and Mail Startup M01 remain intact.
+
+UI86 does not claim that report covers, every module icon, every empty-state illustration or the marketing site have already been redesigned. Those remain separate visual-art batches.
+
+--- Retained UI85 release record ---
+
 # Wavelink UI85 — Authentic Contribution Badges
 
 Current prepared repository: **UI85 + UI84 + UI83 + UI82 + UI81 + UI80 + UI79 + UI78 + UI77 + UI76 + UI75 + UI74 + UI73 + UI72 + UI71 + UI70 + UI69 + UI68 + UI67 + UI66 + Mail Startup M01 + Company C01 + G01**, core **1.34.19**.

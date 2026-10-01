@@ -1,3 +1,15 @@
+# Current checkpoint — UI86 Authentic Visual Covers
+
+**Prepared:** 1 October 2026 · **Core:** 1.34.19 · **Parent:** exact UI85 cumulative repository.
+
+UI86 is now the prepared development baseline. It replaces the generic cinematic Home, Profile and sign-in cover art with four local hand-authored technical SVG illustrations; integrates the Home heading into the cover; reduces the company logo to a compact signature; and adds restrained contour artwork to route-owned headers and Original Files.
+
+The exact runtime variant is `workspace-ui86-authentic-visual-covers-2026-10-01`. The runtime overlay contains 14 records: 6 modified and 8 new. No database migration, permission, operational API, recognition/scoring rule, company identity, environment variable, timer, decorator or shell movement was added. Mail Startup M01 remains byte-identical.
+
+Do not claim the wider application-art programme complete. Report covers, the full module-icon family, the complete empty-state illustration family and the public marketing-site refresh remain separate future visual batches. Continue from the exact UI86 repository and preserve the UI83-or-later database compatibility boundary.
+
+--- Retained prior checkpoint and roadmap ---
+
 # Continuation checkpoint — UI85 Authentic Contribution Badges
 
 Current prepared baseline: **UI85 + UI84 + UI83 + UI82 + UI81 + UI80 + UI79 + UI78 + UI77 + UI76 + UI75 + UI74 + UI73 + UI72 + UI71 + UI70 + UI69 + UI68 + UI67 + UI66 + Mail Startup M01 + Company C01 + G01**, core **1.34.19**.

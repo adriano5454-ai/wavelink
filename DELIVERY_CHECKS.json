@@ -1,65 +1,122 @@
 {
-  "format": "wavelink-ui85-delivery-checks-1",
-  "release": "UI85 + UI84 + UI83 + UI82 + UI81 + UI80 + UI79 + UI78 + UI77 + UI76 + UI75 + UI74 + UI73 + UI72 + UI71 + UI70 + UI69 + UI68 + UI67 + UI66 + Mail Startup M01 + Company C01 + G01",
-  "parent": "Exact UI84 cumulative repository reconstructed from the user-applied Wavelink lineage",
+  "format": "wavelink-ui86-delivery-checks-1",
+  "release": "UI86 + UI85 + UI84 + UI83 + UI82 + UI81 + UI80 + UI79 + UI78 + UI77 + UI76 + UI75 + UI74 + UI73 + UI72 + UI71 + UI70 + UI69 + UI68 + UI67 + UI66 + Mail Startup M01 + Company C01 + G01",
+  "parent": "Exact UI85 cumulative repository reconstructed from the supplied UI85 update and verified UI85 deployment manifest",
   "core": "1.34.19",
   "date": "2026-10-01",
-  "repository_files_parent": 229,
-  "repository_files_target": 231,
+  "repository_files_parent": 231,
+  "repository_files_target": 233,
   "repository_delta_modified": 9,
   "repository_delta_new": 2,
   "repository_delta_removed": 0,
-  "runtime_manifest_files_parent": 2040,
-  "runtime_manifest_files_target": 2043,
-  "runtime_files_including_generated_manifest": 2044,
-  "ui85_delta_modified": 36,
-  "ui85_delta_new": 3,
-  "ui85_delta_removed": 0,
-  "ui85_embedded_records": 39,
-  "cumulative_embedded_overlay_records": 969,
-  "parent_extractor_sha256": "6704e40e1a646749cbe7a7eb7b935e40e16a3f8086f1795c55bdd3bbfb44df99",
-  "target_extractor_sha256": "c42b9fbfa18e74413f0e1a854002f1148b0676c67edee56d8be123527ff5eb60",
+  "runtime_manifest_files_parent": 2043,
+  "runtime_manifest_files_target": 2051,
+  "runtime_files_including_generated_manifest": 2052,
+  "ui86_delta_modified": 6,
+  "ui86_delta_new": 8,
+  "ui86_delta_removed": 0,
+  "ui86_embedded_records": 14,
+  "cumulative_embedded_overlay_records": 983,
+  "parent_extractor_sha256": "c42b9fbfa18e74413f0e1a854002f1148b0676c67edee56d8be123527ff5eb60",
+  "target_extractor_sha256": "524e728d7a92350cbdb2bd60ff6aaf91bfca5c19e7eddf46e0dbb688dd4762ee",
   "m01_company_entrypoint_sha256": "2f117d85c439c16ab78908bf5728056cc837e5d1f948a77040ef1d509c04c371",
   "fresh_source_replay": {
     "upstream_files_verified": 1605,
-    "target_manifest_files": 2043,
-    "target_overlay_sha256": "842cd32e0fd547b062db687aef70432e210834c4bb229aec90b45f0c403e89f0",
-    "target_release_manifest_sha256": "cb258a4062ac41d777e09020bf42bb63db54f09c806df8f2d267ddf35cdd8224",
-    "embedded_payload_files_compared": 39,
-    "total_runtime_files_compared": 2044,
+    "target_manifest_files": 2051,
+    "target_overlay_sha256": "4b42d19c0f07b2a5334eb58198c9a013503e0a8a8dd6895c4a5ec7355502cdec",
+    "target_release_manifest_sha256": "9122d28a52eb2a88013dc538c09ec0a751c2d9f930e2ed4f63de498e15963090",
+    "embedded_payload_files_compared": 14,
+    "total_runtime_files_compared": 2052,
     "byte_differences": 0,
     "manifest_integrity": true
   },
   "python_runs": [
-    {"group": "ui85_authentic_badges", "passed": 7, "skipped": 0},
-    {"group": "ui66_recognition", "passed": 18, "skipped": 0},
-    {"group": "ui84_company_workspace_nonhistorical", "passed": 5, "deselected": 1, "reason": "exact UI84-only cache assertion superseded by UI85"},
-    {"group": "ui83_account_security_nonhistorical", "passed": 11, "deselected": 1, "reason": "exact UI83-only static/cache assertion superseded by later cumulative releases"},
-    {"group": "ui82_search_action_nonhistorical", "passed": 11, "deselected": 1, "reason": "exact UI82-only static/cache assertion superseded by later cumulative releases"},
-    {"group": "ui65_roles_access_individual", "passed": 16, "skipped": 0},
-    {"group": "mail_startup_m01", "passed": 26, "skipped": 0},
-    {"group": "repository_package", "passed": 14, "skipped": 0}
+    {
+      "group": "ui86_authentic_visuals",
+      "passed": 8,
+      "skipped": 0
+    },
+    {
+      "group": "ui85_badge_compatibility_nonhistorical",
+      "passed": 5,
+      "deselected": 2,
+      "reason": "literal UI85-only asset/cache version assertions are superseded by UI86; stable IDs, artwork files, metadata and authority boundaries passed"
+    },
+    {
+      "group": "ui84_company_workspace_preservation",
+      "passed": 4,
+      "deselected": 2,
+      "reason": "the former UI84 Home-cover literal and exact UI84 cache assertion are intentionally superseded by UI86; company terminology, native Original Files, code-owned identity and schema boundary passed"
+    },
+    {
+      "group": "ui83_account_security_nonhistorical",
+      "passed": 11,
+      "deselected": 1,
+      "reason": "exact UI83-only static/cache assertion superseded by later cumulative releases"
+    },
+    {
+      "group": "ui82_search_action_nonhistorical",
+      "passed": 11,
+      "deselected": 1,
+      "reason": "exact UI82-only static/cache assertion superseded by later cumulative releases"
+    },
+    {
+      "group": "ui66_recognition",
+      "passed": 18,
+      "skipped": 0
+    },
+    {
+      "group": "mail_startup_m01",
+      "passed": 26,
+      "skipped": 0
+    },
+    {
+      "group": "repository_package",
+      "passed": 15,
+      "skipped": 0
+    }
   ],
-  "python_passed_total_recorded": 108,
+  "python_passed_total_recorded": 98,
   "browser_runs": [
     {
-      "group": "ui85_authentic_badges",
-      "checks_passed": 5,
-      "widths_css_px": [1440, 390, 320],
-      "surfaces": ["Profile selected badge", "all ten badge tiers", "thirty stable choices", "permanent top-bar badge"],
+      "group": "ui86_authentic_visual_covers",
+      "checks_passed": 18,
+      "widths_css_px": [
+        1440,
+        390,
+        320
+      ],
+      "surfaces": [
+        "Personal Home",
+        "My Profile",
+        "sign-in",
+        "Tasks route header",
+        "Original Files"
+      ],
+      "screenshots": 9,
       "unexpected_javascript_errors": 0,
       "horizontal_overflow_failures": 0,
       "fictional_local_bridge": true,
       "replayed_on_fresh_reconstruction": true
     }
   ],
-  "javascript_syntax": {"scripts_checked": 96, "failures": 0, "passed": 96},
-  "authentic_badge_assets": true,
-  "badge_assets": 30,
-  "editable_svg_masters_supplied_separately": true,
-  "stable_badge_ids_preserved": true,
-  "badge_thresholds_preserved": true,
-  "recognition_scoring_preserved": true,
+  "javascript_syntax": {
+    "scripts_checked": 96,
+    "failures": 0,
+    "passed": 96
+  },
+  "hand_authored_local_svg_assets": 4,
+  "remote_image_requests": false,
+  "embedded_raster_images_in_svg": false,
+  "font_files_packaged": false,
+  "home_cover_replaced": true,
+  "profile_cover_replaced": true,
+  "sign_in_cover_replaced": true,
+  "route_header_contour_treatment": true,
+  "report_covers_complete": false,
+  "full_module_icon_family_complete": false,
+  "empty_state_art_family_complete": false,
+  "public_site_art_refresh_complete": false,
   "artwork_cosmetic_only": true,
   "new_post_render_decorator": false,
   "new_shell_dom_reparenting": false,
@@ -70,7 +127,9 @@
   "permission_change": false,
   "operational_api_change": false,
   "recognition_rule_change": false,
-  "source_adapter_change": false,
+  "recognition_scoring_change": false,
+  "badge_change": false,
+  "company_identity_change": false,
   "environment_change": false,
   "m01_launcher_unchanged": true,
   "application_runtime_changed": true,
@@ -81,8 +140,8 @@
   "deployment_performed": false,
   "limitations": [
     "Local fictional verification is not live Render/company acceptance, physical-device certification or an independent security audit.",
-    "Badge titles and descriptions are symbolic cosmetic metadata; they do not prove that points came from a particular operational module.",
-    "The editable SVG/PNG art pack is supplied separately from the compact GitHub update; application assets are embedded lossless WebP files.",
+    "UI86 completes the principal in-app cover batch only; report covers, the full module icon family, empty-state art and the public marketing site remain future visual batches.",
+    "The SVG artwork is original local technical illustration, not an official vessel drawing or survey specification.",
     "No live DNS, Zoho SMTP, inbox, production database or customer records were inspected."
   ]
 }

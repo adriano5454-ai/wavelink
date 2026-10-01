@@ -1,3 +1,19 @@
+# Current direction after UI86 — complete the authentic visual system in coherent batches
+
+UI86 completes the core in-app cover batch: Home, Profile, sign-in/MFA, route-owned headers and Original Files now use local hand-authored technical survey-chart artwork. Do not reintroduce cinematic offshore illustrations, glossy game-like visuals, remote art dependencies or another post-render decorator.
+
+## Next grouped visual and product work
+
+1. **Report and export art:** one company-aware Wavelink report-cover system, continuation headers and restrained technical motifs; preserve report evidence, text, page numbers and accessibility.
+2. **Module icon family:** replace mixed-generation icons with one editable line-art set for Tasks, Maintenance, Checklists, Handovers, Toolbox Talks, Logs, Fault/HSE, Inventory, Certificates, Fleet, Original Files, Search, Actions and Account.
+3. **Empty states and guidance:** grounded technical diagrams for true empty states only; no invented metrics, fake records or decorative cartoons.
+4. **Marketing alignment:** bring the public website to the same authentic technical visual language without claiming future security capabilities as already live.
+5. **Continue functional batches:** deeper workflows, offline/recovery, accessibility/device acceptance and release engineering remain in the batched roadmap; visual work must not delay operational acceptance or expand authority.
+
+Before the next visual batch, check UI86 on the connected demo at 1440, 390 and 320 CSS pixels and on at least one real phone. Confirm Home/Profile/sign-in appear immediately, the Sulmara signature is not duplicated, route headers remain readable, and no screen blinks or widens.
+
+--- Retained prior development roadmap ---
+
 # UI85 Authentic Contribution Badges — completed 1 October 2026
 
 - [x] Replace all thirty glossy/ornate badge assets with restrained hand-authored maritime medallions.
