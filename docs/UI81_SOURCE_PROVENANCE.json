@@ -1,0 +1,61 @@
+{
+  "format": "wavelink-ui81-source-provenance-1",
+  "release": "UI81 Workflow Foundation Batch",
+  "date": "2026-10-01",
+  "core": "1.34.19",
+  "parent": "Exact UI80 + UI79 + UI78 + UI77 + UI76 + UI75 + UI74 + UI73 + UI72 + UI71 + UI70 + UI69 + UI68 + UI67 + UI66 + Mail Startup M01 + Company C01 + G01",
+  "parent_repository_files": 220,
+  "target_repository_files": 222,
+  "parent_runtime_manifest_files": 2017,
+  "target_runtime_manifest_files": 2022,
+  "runtime_delta": {
+    "modified": 10,
+    "new": 5,
+    "removed": 0,
+    "embedded_records": 15
+  },
+  "parent_extractor_sha256": "6a00cebb84a7df55b8f9e51067052123dbc7217001059413f7d69c948a6a8a5b",
+  "target_extractor_sha256": "a90c195204a804bb433970c21fd66b8be4496772555ba174aa66ec795613a857",
+  "parent_overlay_sha256": "0b86988da0ec10da579d4571d7cad950bc4aabc228b66e21ec5789b32d7e46d0",
+  "target_overlay_sha256": "30bc56415df22bc83576b36924a078cda0305bf3de769dd5dc47ff914f2f9aa1",
+  "target_release_manifest_sha256": "9a014c3006a60d537c0161e28b1699b1a670809ee5f4975b0206adfef21ee8b0",
+  "m01_company_entrypoint_sha256": "2f117d85c439c16ab78908bf5728056cc837e5d1f948a77040ef1d509c04c371",
+  "batch_scope": [
+    "shared form semantics and validation presentation",
+    "native dialog top layer, focus restoration and busy protection",
+    "account-menu unsaved-work count and direct manager access",
+    "selective and batch discard of eligible browser-local work",
+    "Original Files final presentation ownership",
+    "mobile action areas, visible focus and reduced-motion support"
+  ],
+  "active_assets": [
+    "app/static/workflow_foundation_ui81.css",
+    "app/static/dialog_system_ui81.js"
+  ],
+  "retired_active_stylesheets": [
+    "app/static/original_library.css"
+  ],
+  "boundaries": {
+    "database_migration": false,
+    "destructive_reset": false,
+    "permission_change": false,
+    "operational_api_change": false,
+    "recognition_rule_change": false,
+    "source_adapter_change": false,
+    "environment_change": false,
+    "new_storage_engine": false,
+    "post_render_decorator": false,
+    "shell_dom_reparenting": false,
+    "mutation_observer_restyling": false,
+    "new_timer": false
+  },
+  "browser_acceptance": {
+    "ui81_scenarios": 15,
+    "retained_ui80_scenarios": 16,
+    "widths_css_px": [1440, 390, 320],
+    "unexpected_javascript_errors": 0,
+    "document_overflow_failures": 0,
+    "data": "fictional local test records; not live Render or physical-device acceptance"
+  },
+  "remote_operations_performed": false
+}

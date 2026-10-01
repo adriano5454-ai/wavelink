@@ -1,3 +1,50 @@
+# Wavelink UI81 — Workflow Foundation Batch
+
+Current prepared repository: **UI81 + UI80 + UI79 + UI78 + UI77 + UI76 + UI75 + UI74 + UI73 + UI72 + UI71 + UI70 + UI69 + UI68 + UI67 + UI66 + Mail Startup M01 + Company C01 + G01**, core **1.34.19**.
+
+Read **docs/WORKSPACE_UI81.md**, **docs/UI81_SOURCE_PROVENANCE.json** and **docs/CONTINUATION_CHECKPOINT.md** before changing the application.
+
+UI81 groups shared form semantics, native dialog/focus control, direct Unsaved work management, Original Files presentation ownership and the first reduced-motion/mobile workflow foundation into one release. It adds no database migration, permission, operational API, recognition rule, environment variable, new timer or post-render GUI decorator.
+
+--- Retained UI80 release record ---
+
+# Wavelink UI80 — Native Work Execution
+
+Current prepared repository: **UI80 + UI79 + UI78 + UI77 + UI76 + UI75 + UI74 + UI73 + UI72 + UI71 + UI70 + UI69 + UI68 + UI67 + UI66 + Mail Startup M01 + Company C01 + G01**, core **1.34.19**.
+
+Read **docs/WORKSPACE_UI80.md**, **docs/UI80_SOURCE_PROVENANCE.json** and **docs/CONTINUATION_CHECKPOINT.md** before changing the application.
+
+UI80 gives Tasks, Maintenance, Checklists, Handovers and Toolbox Talks one authoritative route-owned presentation system. Seventeen historical work-execution styles are removed from the active entry document and service-worker cache; required functional rules are retained in one final stylesheet. No new decorator, shell observer, timer, database migration, permission, API or recognition rule is introduced.
+
+The next planning reference is the separate UI80 master future-improvements roadmap supplied with the delivery.
+
+--- Retained UI79 release record ---
+
+# Wavelink UI79 — Native Inventory, Asset and Certificate Records
+
+Core **1.34.19** · **UI78, UI77, UI76, UI75, UI74, UI73, UI72, UI71, UI70, UI69, UI68, UI67, UI66, Mail Startup M01, Company C01 and demo G01 retained** · 1 October 2026.
+Read **docs/WORKSPACE_UI79.md**, **docs/UI79_SOURCE_PROVENANCE.json** and
+**docs/CONTINUATION_CHECKPOINT.md** before applying or deploying.
+
+UI79 moves Inventory catalogue/detail, stock verification, asset/equipment detail and Certificate register/detail
+to one direct route-owned presentation. Three separately loaded historical Inventory/Certificate styles are
+retired from the active document and cache; their required functional rules are consolidated into one final
+equipment stylesheet. Unchanged manual asset and Certificate refreshes keep the mounted record surface instead
+of repainting it.
+
+The summaries use only records already returned to the authorised route. No database migration, reset,
+permission, operational API, recognition rule, environment variable, post-render decorator, MutationObserver
+or independent timer is added.
+
+Copy the compact update over the exact UI78 application repository, review the real changes, commit and push
+normally. After deployment becomes healthy, reload one open tab once or close/reopen the installed app. A
+company reset, project import or browser-storage clear is not required.
+
+No GitHub push, Render deployment, production database operation, external email, DNS/Zoho change or live-data
+inspection was performed while preparing this release.
+
+--- Retained UI78 instructions ---
+
 # Wavelink UI78 — Native Fleet Logistics Journey
 
 Core **1.34.19** · **UI77, UI76, UI75, UI74, UI73, UI72, UI71, UI70, UI69, UI68, UI67, UI66, Mail Startup M01, Company C01 and demo G01 retained** · 30 September 2026.

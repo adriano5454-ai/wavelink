@@ -1,3 +1,68 @@
+# UI81 current priorities — batched workflow foundation
+
+UI81 is the prepared baseline. Do not add another global decorator or shell. First run connected fictional acceptance for shared forms/dialogs, direct Unsaved work management, protected batch discard, Original Files and 1440/390/320 layouts. Fix any route-specific conflict in the owning renderer or UI81 foundation rather than adding a competing layer.
+
+## Next grouped batches
+
+1. **Action centre batch:** authorised global search, notifications, assigned/review queues, expiry/due alerts and stable New updates controls without restricted-data leakage or another polling loop.
+2. **Identity/security batch:** email-first routing design, exact mailbox/company verification, recovery, two-step verification, session/device controls and real SMTP/DNS/inbox acceptance.
+3. **Operational depth batch:** recurring Tasks, running-hour Maintenance, stronger Checklist imports/conditions, expanded shift models and connected Fault/HSE corrective-action workflows.
+4. **Offline/recovery batch:** durable queue/conflict review, storage diagnostics, restore drills, forward migration tooling and paired application/database rollback.
+5. **Accessibility/device batch:** WCAG 2.2 AA target, keyboard/screen-reader acceptance, real Android/iPhone/tablet checks, camera QR, signatures and high-zoom testing.
+
+The full UI80 future-improvements catalogue remains the planning source; group compatible items, but do not combine unrelated authority, migration and visual changes merely to make a larger release.
+
+--- Retained prior roadmap and history ---
+
+# Current roadmap — after UI80 Native Work Execution
+
+Delivered locally: UI80 consolidates Tasks, Maintenance, Checklists, Handovers and Toolbox Talks into one authoritative native presentation layer. Seventeen historical work-execution styles are no longer active; route renderers own the final hierarchy directly. No new decorator, shell observer, timer, migration, permission, API or recognition rule is added.
+
+Immediate demo acceptance:
+
+- confirm all five route families appear directly in the current GUI with no old-layout flash;
+- leave Tasks and Maintenance open at least 15 seconds and confirm no rebuild/blink;
+- exercise one permitted and denied action per family;
+- confirm draft, local-work, evidence, approval, publication and acknowledgement protections remain intact;
+- verify desktop, 390 px and 320 px layouts with left-aligned navigation and no document-level overflow.
+
+Next implementation sequence:
+
+1. UI81 remaining native forms, inspectors, dialogs and Original Files/source-library cutover.
+2. UI82 shared editor/form behaviour: validation, save state, keyboard flow, drawers/modals and destructive-action review.
+3. UI83 authorised global search, notifications and personal action centre using real server data only.
+4. UI84 accessibility, physical-device, mobile/tablet and durable offline acceptance.
+5. AUTH/MAIL/SEC/RECOVERY production tracks: email-first identity, verified-domain routing, real mail acceptance, security hardening, backup/restore and migration drills.
+
+The complete current future-improvements catalogue is supplied separately with the UI80 delivery. Items explicitly requested or preserved in project decisions are distinguished from recommended product/production work.
+
+--- Retained UI79 roadmap ---
+
+# Current roadmap — after UI79 Native Equipment Records
+
+Delivered locally: UI79 consolidates main Inventory, asset, stock-verification and Certificate presentation into
+one final equipment stylesheet and direct route-owned workspaces. Asset and Certificate unchanged refreshes no
+longer replace their mounted content. No new decorator, shell observer, timer, authority or migration is added.
+
+Immediate demo acceptance:
+
+- confirm Inventory catalogue/detail, asset, verification and Certificate pages share one stable hierarchy;
+- leave an asset open at least 15 seconds and confirm no blinking or rebuild;
+- refresh unchanged asset and Certificate pages and confirm mounted content stays in place;
+- test desktop, 390 px and 320 px layouts without document-level overflow;
+- verify permitted/denied write actions still use existing backend authority;
+- keep sidebar rows left aligned and overlays above route content.
+
+Next coherent visual group: remaining main-application dense inspectors and long forms not yet directly owned by
+the native route layer. Replace renderer markup or consolidate route styles at source; do not add another global
+decorator or re-enable retired stylesheets.
+
+Still separate: email-first operational sign-in/domain routing; live SMTP/DNS acceptance; production
+recovery/security/load acceptance; installed-app focus-existing-window behaviour; broader recognition adapters;
+and final company artwork.
+
+--- Retained UI78 roadmap ---
+
 # UI78 native Fleet logistics journey — completed 30 September 2026
 
 - [x] Replace the remaining mixed-generation Manifest, Receiving, Assets, asset-detail and journey presentation with direct route-owned hierarchy.

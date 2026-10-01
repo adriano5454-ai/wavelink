@@ -1,0 +1,86 @@
+{
+  "format": "wavelink-ui-source-provenance-1",
+  "release": "UI79 Native Inventory, Asset and Certificate Records",
+  "date": "2026-10-01",
+  "core": "1.34.19",
+  "parent": "Exact UI78 cumulative repository reconstructed from the user-applied Wavelink lineage",
+  "parent_repository_files": 216,
+  "target_repository_files": 218,
+  "parent_runtime_manifest_files": 2009,
+  "target_runtime_manifest_files": 2013,
+  "parent_extractor_sha256": "48fd1ce285fed2c949f56068146aad8e708eca6baa6a363c9d7ef4fb37c9cbc5",
+  "target_extractor_sha256": "ad5dfa510c28ca3d7aca870868789b4084d903ecef6ec3ffc90eed64f266f0bc",
+  "unchanged_m01_company_entrypoint_sha256": "2f117d85c439c16ab78908bf5728056cc837e5d1f948a77040ef1d509c04c371",
+  "parent_overlay_sha256": "cd839058b8ebb097e76d3229ed799b879e8068ddf9189bbf56621605a2c6bb9d",
+  "target_overlay_sha256": "085d7d358ebdfdc4103e62c9a0a2eeb48112d54c0ee205dfcd7ada7e344a7468",
+  "target_release_manifest_sha256": "66ff68b34dc9347a58dbd49987bdb416d58524df6d6d2656ab046815b5d98c3b",
+  "runtime_delta": {
+    "modified": 6,
+    "new": 4,
+    "removed": 0,
+    "embedded_records": 10,
+    "uncompressed_bytes": 252014
+  },
+  "fresh_reconstruction": {
+    "upstream_files_verified": 1605,
+    "target_manifest_files": 2013,
+    "embedded_files_compared": 10,
+    "byte_differences": 0,
+    "manifest_integrity": true
+  },
+  "architecture": {
+    "native_equipment_stylesheet": "app/static/equipment_workspace_ui79.css",
+    "retired_active_stylesheets": [
+      "app/static/inventory_workspace.css",
+      "app/static/certificate_workspace.css",
+      "app/static/certificate_form.css"
+    ],
+    "route_owned_workspaces": true,
+    "routes": [
+      "Inventory catalogue",
+      "Inventory record",
+      "stock verification",
+      "asset/equipment record",
+      "Certificate register",
+      "Certificate record"
+    ],
+    "data_grounded_summaries": true,
+    "unchanged_asset_refresh_preserves_host": true,
+    "unchanged_certificate_refresh_preserves_host_and_card": true,
+    "new_post_render_decorator": false,
+    "new_shell_mutation_observer": false,
+    "new_route_dom_reparenting": false,
+    "new_animation": false,
+    "new_independent_polling_loop": false,
+    "service_worker_cache": "pxgeo-dive-check-shell-1.34.19-ui79"
+  },
+  "browser_acceptance": {
+    "checks_passed": 14,
+    "widths_css_px": [
+      1440,
+      390,
+      320
+    ],
+    "desktop_routes": [
+      "Inventory catalogue",
+      "Inventory record",
+      "Asset record",
+      "Stock verification",
+      "Certificate register",
+      "Certificate record"
+    ],
+    "real_timer_idle_route": "Asset record",
+    "real_timer_idle_seconds": 9.2,
+    "route_mutations_after_settlement": 0,
+    "unexpected_javascript_errors": 0,
+    "horizontal_overflow_failures": 0
+  },
+  "database_migration": false,
+  "destructive_reset": false,
+  "permission_or_authority_change": false,
+  "operational_api_change": false,
+  "recognition_rule_change": false,
+  "environment_change": false,
+  "live_services_inspected": false,
+  "deployment_performed": false
+}

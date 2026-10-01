@@ -1,34 +1,47 @@
 {
-  "format": "wavelink-ui78-delivery-checks-1",
-  "release": "UI78 + UI77 + UI76 + UI75 + UI74 + UI73 + UI72 + UI71 + UI70 + UI69 + UI68 + UI67 + UI66 + Mail Startup M01 + Company C01 + G01",
-  "parent": "Exact UI77 cumulative repository reconstructed from the user-applied Wavelink lineage",
+  "format": "wavelink-ui81-delivery-checks-1",
+  "release": "UI81 + UI80 + UI79 + UI78 + UI77 + UI76 + UI75 + UI74 + UI73 + UI72 + UI71 + UI70 + UI69 + UI68 + UI67 + UI66 + Mail Startup M01 + Company C01 + G01",
+  "parent": "Exact UI80 cumulative repository reconstructed from the user-applied Wavelink lineage",
   "core": "1.34.19",
-  "date": "2026-09-30",
-  "repository_files_parent": 214,
-  "repository_files_target": 216,
-  "runtime_manifest_files_parent": 2005,
-  "runtime_manifest_files_target": 2009,
-  "ui78_delta_modified": 3,
-  "ui78_delta_new": 4,
-  "ui78_delta_removed": 0,
-  "ui78_embedded_records": 7,
-  "cumulative_embedded_overlay_records": 816,
-  "parent_extractor_sha256": "5c3bdfdb5e3146a79f0815028dd294bd7c9bd40aa3f0591e7f529575d1bd86c3",
-  "target_extractor_sha256": "48fd1ce285fed2c949f56068146aad8e708eca6baa6a363c9d7ef4fb37c9cbc5",
+  "date": "2026-10-01",
+  "repository_files_parent": 220,
+  "repository_files_target": 222,
+  "runtime_manifest_files_parent": 2017,
+  "runtime_manifest_files_target": 2022,
+  "ui81_delta_modified": 10,
+  "ui81_delta_new": 5,
+  "ui81_delta_removed": 0,
+  "ui81_embedded_records": 15,
+  "cumulative_embedded_overlay_records": 853,
+  "parent_extractor_sha256": "6a00cebb84a7df55b8f9e51067052123dbc7217001059413f7d69c948a6a8a5b",
+  "target_extractor_sha256": "a90c195204a804bb433970c21fd66b8be4496772555ba174aa66ec795613a857",
   "m01_company_entrypoint_sha256": "2f117d85c439c16ab78908bf5728056cc837e5d1f948a77040ef1d509c04c371",
   "fresh_source_replay": {
     "upstream_files_verified": 1605,
-    "target_manifest_files": 2009,
-    "target_overlay_sha256": "cd839058b8ebb097e76d3229ed799b879e8068ddf9189bbf56621605a2c6bb9d",
-    "target_release_manifest_sha256": "68f04eec371d160c56a97e6d058c76d96d1755fb66f158cc3bc953146b76efe5",
-    "embedded_payload_files_compared": 7,
+    "target_manifest_files": 2022,
+    "target_overlay_sha256": "30bc56415df22bc83576b36924a078cda0305bf3de769dd5dc47ff914f2f9aa1",
+    "target_release_manifest_sha256": "9a014c3006a60d537c0161e28b1699b1a670809ee5f4975b0206adfef21ee8b0",
+    "embedded_payload_files_compared": 15,
+    "total_runtime_files_compared": 2023,
     "byte_differences": 0,
     "manifest_integrity": true
   },
   "python_runs": [
     {
-      "group": "ui78_native_fleet_logistics",
-      "passed": 7,
+      "group": "ui81_workflow_foundation_plus_local_work",
+      "passed": 30,
+      "skipped": 0,
+      "runtime": "fresh reconstruction"
+    },
+    {
+      "group": "ui61_original_files_preservation",
+      "passed": 34,
+      "skipped": 0,
+      "runtime": "fresh reconstruction"
+    },
+    {
+      "group": "ui61_original_files_workflow",
+      "passed": 31,
       "skipped": 0,
       "runtime": "fresh reconstruction"
     },
@@ -36,7 +49,7 @@
       "group": "ui65_roles_access",
       "passed": 16,
       "skipped": 0,
-      "runtime": "fresh reconstruction plus exact repository launcher"
+      "runtime": "fresh reconstruction plus exact UI81 repository launcher"
     },
     {
       "group": "ui66_recognition",
@@ -45,80 +58,62 @@
       "runtime": "fresh reconstruction"
     },
     {
-      "group": "logistics_models_and_helpers",
-      "passed": 33,
-      "skipped": 0,
-      "runtime": "fresh reconstruction"
-    },
-    {
-      "group": "fleet_lifecycle_scope_and_journey_focused",
-      "passed": 18,
-      "skipped": 0,
-      "runtime": "fresh reconstruction"
-    },
-    {
       "group": "mail_startup_m01",
       "passed": 26,
       "skipped": 0,
-      "runtime": "final UI78 repository with fresh reconstructed runtime"
+      "runtime": "final UI81 repository with fresh reconstructed runtime"
     },
     {
       "group": "repository_package",
       "passed": 11,
       "skipped": 0,
-      "runtime": "final UI78 repository with fresh reconstructed runtime"
+      "runtime": "final UI81 repository with fresh reconstructed runtime"
     }
   ],
   "browser_runs": [
     {
-      "group": "ui78_native_fleet_logistics",
-      "checks_passed": 12,
-      "widths_css_px": [
-        1440,
-        390,
-        320
+      "group": "ui81_workflow_foundation",
+      "checks_passed": 15,
+      "widths_css_px": [1440, 390, 320],
+      "surfaces": [
+        "account unsaved-work entry and count",
+        "selective and batch local-work manager",
+        "main application form/dialog",
+        "Fleet form/dialog",
+        "focus restoration"
       ],
-      "desktop_routes": [
-        "Manifests",
-        "Saved manifest",
-        "Receiving & placement",
-        "Assets & transit",
-        "Asset detail",
-        "Item journey"
-      ],
-      "phone_routes": [
-        "Manifests",
-        "Receiving & placement",
-        "Assets & transit",
-        "Asset detail",
-        "Item journey"
-      ],
-      "real_timer_idle_route": "Receiving & placement",
-      "real_timer_idle_seconds": 9.2,
-      "route_mutations_after_settlement": 0,
       "unexpected_javascript_errors": 0,
       "horizontal_overflow_failures": 0,
       "fictional_local_bridge": true,
       "replayed_on_fresh_reconstruction": true
+    },
+    {
+      "group": "retained_ui80_work_execution",
+      "checks_passed": 16,
+      "widths_css_px": [1440, 390, 320],
+      "unexpected_javascript_errors": 0,
+      "horizontal_overflow_failures": 0,
+      "route_mutations_after_settlement": 0,
+      "fictional_local_bridge": true
     }
   ],
   "javascript_syntax": {
-    "scripts_checked": 111,
+    "scripts_checked": 94,
     "failures": 0,
-    "passed": 111
+    "passed": 94
   },
-  "native_logistics_stylesheet": true,
-  "route_owned_logistics_workspaces": true,
-  "readable_light_surfaces_verified": true,
-  "left_aligned_fleet_navigation": true,
-  "contained_mobile_tables": true,
-  "receiving_refresh_keeps_mounted_route": true,
+  "shared_form_system": true,
+  "shared_native_dialog_system": true,
+  "account_unsaved_work_entry": true,
+  "protected_selective_batch_discard_retained": true,
+  "original_files_active_stylesheet_consolidated": true,
+  "reduced_motion_foundation": true,
+  "mobile_action_foundation": true,
   "new_post_render_decorator": false,
   "new_shell_dom_reparenting": false,
   "new_shell_mutation_observer": false,
-  "new_animation": false,
   "new_independent_polling_loop": false,
-  "browser_storage_write": false,
+  "browser_storage_engine_change": false,
   "workflow_state_write": false,
   "destructive_reset": false,
   "schema_change": false,
@@ -136,9 +131,8 @@
   "deployment_performed": false,
   "limitations": [
     "Local fictional verification is not an independent security audit or production acceptance.",
-    "Focused Fleet backend coverage was used for the UI78 journey; the full historical Tk/desktop logistics suites were not represented as complete UI78 passes.",
-    "The environment-heavy Company C01 and Gateway G01 suites were not rerun for UI78 and are not represented as passes. UI78 does not modify their provisioning or startup files.",
-    "Browser checks use local fictional Fleet fixtures, not a live Render service or physical phone.",
-    "No SMTP credentials, external email, GitHub push, Render deployment, DNS/Zoho operation or production data were used."
+    "Real Android, iPhone, tablet, screen-reader, high-zoom and mobile-keyboard acceptance remain connected follow-up work.",
+    "The full environment-heavy Company C01 and Gateway G01 suites were not rerun for UI81; their startup/provisioning files are unchanged.",
+    "No live SMTP, Zoho inbox, DNS, Render service or company data was inspected."
   ]
 }

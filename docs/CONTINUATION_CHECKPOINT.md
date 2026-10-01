@@ -1,3 +1,49 @@
+# Current checkpoint — UI81 Workflow Foundation Batch
+
+**1 October 2026 · core 1.34.19 · exact parent UI80.**
+
+UI81 groups the next related interface foundations into one cumulative release: shared form semantics and validation presentation, one native dialog/focus/busy controller for Wavelink and Fleet, a direct account-menu Unsaved work entry using the existing protected selective/batch-discard manager, Original Files presentation ownership and reduced-motion/mobile action foundations. The runtime variant is `workspace-ui81-workflow-foundation-batch-2026-10-01`.
+
+The release modifies 10 runtime files, adds 5 runtime/test files and advances the manifest from 2,017 to 2,022 files. Fresh extraction must match the prepared UI81 runtime byte-for-byte outside no generated exception; the final generated release manifest is also fixed. M01 remains byte-identical. No database migration, permission, API, recognition, environment or new-timer change is included.
+
+Next: complete connected fictional acceptance across representative long forms, local-work discard/recovery, focus restoration, Original Files and phone/reduced-motion behaviour before combining authorised search, notifications/action-centre foundations and remaining route inspectors. Keep email-first identity, two-step verification, real SMTP/DNS acceptance and recovery drills as separate security/production batches.
+
+--- Retained UI80 checkpoint below ---
+
+# Continuation checkpoint — UI80 Native Work Execution
+
+Current prepared baseline: **UI80 + UI79 + UI78 + UI77 + UI76 + UI75 + UI74 + UI73 + UI72 + UI71 + UI70 + UI69 + UI68 + UI67 + UI66 + Mail Startup M01 + Company C01 + G01**, core **1.34.19**.
+
+UI80 gives Tasks, Maintenance, Checklists, Handovers and Toolbox Talks direct route ownership and one authoritative work-execution stylesheet. Seventeen historical module styles are no longer active. No UI80 decorator, DOM re-parenting, observer-driven restyling, route animation or new timer was introduced.
+
+Exact runtime variant: `workspace-ui80-native-work-execution-2026-10-01`. Runtime manifest: **2,017 files**. Repository target: **220 files**.
+
+Parent extractor SHA-256: `ad5dfa510c28ca3d7aca870868789b4084d903ecef6ec3ffc90eed64f266f0bc`  
+Target extractor SHA-256: `6a00cebb84a7df55b8f9e51067052123dbc7217001059413f7d69c948a6a8a5b`  
+Target overlay SHA-256: `0b86988da0ec10da579d4571d7cad950bc4aabc228b66e21ec5789b32d7e46d0`  
+M01 launcher SHA-256: `2f117d85c439c16ab78908bf5728056cc837e5d1f948a77040ef1d509c04c371`
+
+Continue from the exact UI80 repository. Do not re-enable retired work-execution styles or add a global page decorator to solve route-specific presentation. Use the delivery master roadmap for future phases and keep requested commitments separate from recommendations.
+
+--- Retained UI79 checkpoint ---
+
+# Continuation checkpoint — UI79 Native Equipment Records
+
+Current prepared baseline: **UI79 + UI78 + UI77 + UI76 + UI75 + UI74 + UI73 + UI72 + UI71 + UI70 + UI69 + UI68 + UI67 + UI66 + Mail Startup M01 + Company C01 + G01**, core **1.34.19**.
+
+UI79 directly owns Inventory catalogue/detail, stock verification, asset detail and Certificate register/detail.
+One active equipment stylesheet replaces three separately linked historical module sheets. Unchanged manual
+asset/Certificate refreshes preserve their mounted route. Do not reintroduce post-render decorators, mutation-
+driven restyling, duplicate shells or unrelated timers.
+
+Exact UI79 runtime variant: `workspace-ui79-native-equipment-records-2026-10-01`.
+Runtime manifest: **2,013 files**. Repository target: **218 files**. M01 company launcher remains byte-identical.
+
+Next GUI work should continue by direct route-owned replacement of remaining main-application inspectors/forms,
+with one focused acceptance batch and no new global presentation layer.
+
+--- Retained UI78 checkpoint ---
+
 # Wavelink checkpoint — UI78 Native Fleet Logistics Journey + UI77/UI76/UI75/UI74/UI73/UI72/UI71/UI70/UI69/UI68/UI67/UI66 + M01 + C01 + G01
 
 30 September 2026; core 1.34.19. UI78 is a direct Fleet logistics cutover over the accepted UI77 native Fleet
