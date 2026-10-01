@@ -44,7 +44,7 @@ def test_no_real_project_or_secret_files_packaged():
     assert 'dives.sqlite3' not in names and 'hub.json' not in names and 'gate.key' not in names
 
 
-def test_ui84_overlay_parent_and_m01_launcher_are_exact():
+def test_ui85_overlay_parent_authentic_badges_and_m01_launcher_are_exact():
     from deploy.extract_source import (
         UI_PATCH_ID,
         UI66_PATCH_ID,
@@ -66,6 +66,7 @@ def test_ui84_overlay_parent_and_m01_launcher_are_exact():
         UI82_PATCH_ID,
         UI83_PATCH_ID,
         UI84_PATCH_ID,
+        UI85_PATCH_ID,
         _UI66_FILES,
         _UI67_FILES,
         _UI68_FILES,
@@ -85,6 +86,7 @@ def test_ui84_overlay_parent_and_m01_launcher_are_exact():
         _UI82_FILES,
         _UI83_FILES,
         _UI84_FILES,
+        _UI85_FILES,
     )
     assert UI_PATCH_ID == 'workspace-ui65-role-ready-invitations-2026-09-29'
     assert UI66_PATCH_ID == 'workspace-ui66-profiles-recognition-2026-09-29'
@@ -105,7 +107,8 @@ def test_ui84_overlay_parent_and_m01_launcher_are_exact():
     assert UI81_PATCH_ID == 'workspace-ui81-workflow-foundation-batch-2026-10-01'
     assert UI82_PATCH_ID == 'workspace-ui82-authorised-search-action-centre-batch-2026-10-01'
     assert UI83_PATCH_ID == 'workspace-ui83-account-security-sessions-batch-2026-10-01'
-    assert UI84_PATCH_ID == 'workspace-ui84-company-workspace-branding-original-files-2026-10-01'
+    assert UI84_PATCH_ID == 'workspace-ui84-company-workspace-identity-native-originals-2026-10-01'
+    assert UI85_PATCH_ID == 'workspace-ui85-authentic-contribution-badges-2026-10-01'
     assert len(_UI66_FILES) == 33
     assert len(_UI67_FILES) == 41
     assert len(_UI68_FILES) == 11
@@ -124,7 +127,9 @@ def test_ui84_overlay_parent_and_m01_launcher_are_exact():
     assert len(_UI81_FILES) == 15
     assert len(_UI82_FILES) == 13
     assert len(_UI83_FILES) == 14
-    assert len(_UI84_FILES) == 56
+    assert len(_UI84_FILES) == 50
+    assert len(_UI85_FILES) == 39
+    assert len([name for name in _UI85_FILES if name.startswith('app/static/badges/')]) == 30
     assert len([name for name in _UI67_FILES if name.startswith('app/static/badges/')]) == 30
     assert hashlib.sha256((ROOT/'deploy/company_entrypoint.py').read_bytes()).hexdigest() == '2f117d85c439c16ab78908bf5728056cc837e5d1f948a77040ef1d509c04c371'
     assert (ROOT/'docs/WORKSPACE_UI65.md').is_file()
@@ -167,18 +172,70 @@ def test_ui84_overlay_parent_and_m01_launcher_are_exact():
     assert (ROOT/'docs/UI83_SOURCE_PROVENANCE.json').is_file()
     assert (ROOT/'docs/WORKSPACE_UI84.md').is_file()
     assert (ROOT/'docs/UI84_SOURCE_PROVENANCE.json').is_file()
+    assert (ROOT/'docs/WORKSPACE_UI85.md').is_file()
+    assert (ROOT/'docs/UI85_SOURCE_PROVENANCE.json').is_file()
 
 
-def test_ui84_company_deployments_have_reviewed_local_identity_assets():
-    identities = json.loads((ROOT/'deploy/company_identities.json').read_text())
-    assert identities['sulmara'] == {'name': 'Sulmara', 'logo': 'sulmara-primary.png'}
-    assert identities['fictional-company'] == {'name': 'Fictional Company', 'logo': 'fictional-company.png'}
-    for company_id, item in identities.items():
-        logo = ROOT/'deploy/company_logos'/company_id/item['logo']
-        assert logo.is_file() and 0 < logo.stat().st_size <= 2_000_000
-    provision = (ROOT/'deploy/company_provision.py').read_text()
-    assert 'Company deployment requires a reviewed repository company identity and logo' in provision
-    assert "'WAVELINK_DEPLOYMENT_MODE': 'COMPANY'" in provision
+
+def test_ui84_sulmara_company_identity_is_code_owned_and_valid(tmp_path):
+    from PIL import Image
+    from app.deployment_branding import read_identity
+    from deploy.company_provision import validate_company_branding
+    from deploy.provision import DemoError
+    source=Path(os.environ['WAVELINK_TEST_SOURCE'])
+
+    descriptor=json.loads((ROOT/'deploy/company_identities.json').read_text())
+    assert descriptor == {'sulmara': {'name': 'Sulmara', 'logo': 'logo.png'}}
+    logo=ROOT/'deploy/company_logos/sulmara/logo.png'
+    assert logo.is_file() and 0 < logo.stat().st_size <= 2_000_000
+    with Image.open(logo) as image:
+        assert image.format == 'PNG' and image.width == 1496 and image.height == 412
+        assert getattr(image, 'n_frames', 1) == 1
+    env={'WAVELINK_DEPLOYMENT_MODE':'COMPANY','COMPANY_ID':'sulmara','COMPANY_NAME':'Sulmara'}
+    identity, asset=read_identity(env, ROOT/'deploy')
+    assert identity['logo_status'] == 'ready' and identity['name'] == 'Sulmara'
+    assert identity['logo_url'].startswith('/static/company-identity/logo?v=')
+    assert asset['content'] == logo.read_bytes() and asset['mime'] == 'image/png'
+    assert validate_company_branding(source, env, deploy_root=ROOT/'deploy') == identity
+
+    empty=tmp_path/'deploy'; (empty/'company_logos').mkdir(parents=True)
+    (empty/'company_identities.json').write_text('{}\n')
+    with pytest.raises(DemoError, match='not configured|valid company logo'):
+        validate_company_branding(source, env, deploy_root=empty)
+
+
+def test_ui84_keeps_operational_project_job_fields_and_native_originals():
+    source=Path(os.environ['WAVELINK_TEST_SOURCE'])
+    app=(source/'app/static/app.js').read_text()
+    originals=(source/'app/static/original_library.js').read_text()
+    assert 'Project / job' in app  # operational reference remains valid
+    assert "location.hash='#original-files'" in originals
+    assert 'showModal(' not in originals
+    assert 'Current project' not in (source/'app/static/index.html').read_text()
+
+
+def test_ui85_badge_assets_keep_stable_ids_and_cosmetic_boundaries():
+    from PIL import Image
+    from app.recognition import BADGE_CATALOG, TIERS, badges_for
+    source=Path(os.environ['WAVELINK_TEST_SOURCE'])
+    paths=sorted((source/'app/static/badges').glob('*.webp'))
+    expected={f'{tier}-{family}' for tier, _label, _threshold in TIERS
+              for family in ('compass','survey-wave','sonar')}
+    assert {path.stem for path in paths} == expected
+    assert set(BADGE_CATALOG) == expected
+    assert len({BADGE_CATALOG[key][0] for key in BADGE_CATALOG}) == 30
+    assert len(paths) == 30
+    for path in paths:
+        with Image.open(path) as image:
+            assert image.format == 'WEBP' and image.size == (300,300)
+            assert image.convert('RGBA').getchannel('A').getextrema() == (0,255)
+    badges=badges_for(1000)
+    assert len(badges) == 30 and all(row['unlocked'] for row in badges)
+    patch=json.loads((source/'UI_PATCH.json').read_text())
+    assert patch['patch_id'] == 'workspace-ui85-authentic-contribution-badges-2026-10-01'
+    assert patch['boundaries']['badge_id_change'] is False
+    assert patch['boundaries']['recognition_scoring_change'] is False
+    assert patch['boundaries']['artwork_cosmetic_only'] is True
 
 
 def test_ui65_release_keeps_operator_secret_examples_blank():

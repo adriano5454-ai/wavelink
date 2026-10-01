@@ -1,0 +1,53 @@
+{
+  "format": "wavelink-ui85-source-provenance-1",
+  "release": "UI85 Authentic Contribution Badges",
+  "core": "1.34.19",
+  "date": "2026-10-01",
+  "parent": "Exact UI84 + UI83 + UI82 + UI81 + UI80 + UI79 + UI78 + UI77 + UI76 + UI75 + UI74 + UI73 + UI72 + UI71 + UI70 + UI69 + UI68 + UI67 + UI66 + Mail Startup M01 + Company C01 + G01",
+  "target_variant": "workspace-ui85-authentic-contribution-badges-2026-10-01",
+  "scope": "replace all thirty contribution-badge visuals with restrained hand-authored maritime medallions, expose honest human titles/descriptions and preserve every stable badge ID, threshold, profile choice and recognition authority boundary",
+  "user_direction": {
+    "replace_ai_looking_badges": true,
+    "use_approved_grounded_maritime_direction": true,
+    "integrate_in_application": true
+  },
+  "artwork": {
+    "badge_count": 30,
+    "tiers": 10,
+    "choices_per_tier": 3,
+    "app_format": "transparent 300 x 300 lossless WebP",
+    "editable_pack": "30 SVG masters, 30 PNG exports and one machine-readable catalogue",
+    "stable_ids_preserved": true,
+    "visual_language": "restrained navy medallions, aged brass/steel rims and clean survey/vessel/subsea symbols",
+    "cosmetic_only": true
+  },
+  "runtime": {
+    "parent_manifest_files": 2040,
+    "target_manifest_files": 2043,
+    "target_files_including_generated_manifest": 2044,
+    "modified": 36,
+    "new": 3,
+    "deleted": 0,
+    "embedded_records": 39,
+    "overlay_sha256": "842cd32e0fd547b062db687aef70432e210834c4bb229aec90b45f0c403e89f0",
+    "release_manifest_sha256": "cb258a4062ac41d777e09020bf42bb63db54f09c806df8f2d267ddf35cdd8224"
+  },
+  "boundaries": {
+    "database_migration": false,
+    "operational_api_change": false,
+    "permission_change": false,
+    "recognition_rule_change": false,
+    "recognition_scoring_change": false,
+    "badge_threshold_change": false,
+    "badge_id_change": false,
+    "environment_change": false,
+    "new_timer": false,
+    "post_render_decorator": false,
+    "shell_dom_reparenting": false,
+    "existing_profile_badge_choices_preserved": true
+  },
+  "m01_company_entrypoint_sha256": "2f117d85c439c16ab78908bf5728056cc837e5d1f948a77040ef1d509c04c371",
+  "parent_extractor_sha256": "6704e40e1a646749cbe7a7eb7b935e40e16a3f8086f1795c55bdd3bbfb44df99",
+  "extractor_sha256": "c42b9fbfa18e74413f0e1a854002f1148b0676c67edee56d8be123527ff5eb60",
+  "remote_operations_performed": false
+}

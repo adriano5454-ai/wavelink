@@ -1,24 +1,625 @@
-# Wavelink UI84 - Company Workspace, Branding and Original Files
+# Wavelink UI85 — Authentic Contribution Badges
+
+Current prepared repository: **UI85 + UI84 + UI83 + UI82 + UI81 + UI80 + UI79 + UI78 + UI77 + UI76 + UI75 + UI74 + UI73 + UI72 + UI71 + UI70 + UI69 + UI68 + UI67 + UI66 + Mail Startup M01 + Company C01 + G01**, core **1.34.19**.
+
+Read **docs/WORKSPACE_UI85.md**, **docs/UI85_SOURCE_PROVENANCE.json** and **docs/CONTINUATION_CHECKPOINT.md** before changing or deploying the application.
+
+UI85 replaces all thirty glossy/ornate contribution-badge assets with a restrained hand-authored maritime system. It retains every stable badge ID, cumulative tier threshold, saved profile choice, point rule, privacy rule and authority boundary. Human titles and symbolic descriptions now appear consistently in Profile, Team and the permanent badge surface.
+
+This release adds no database migration, permission, operational API, recognition/scoring rule, adapter, timer, decorator or shell movement. UI84 company identity/native Original Files and Mail Startup M01 remain intact.
+
+--- Retained UI84 release record ---
+
+# Wavelink UI84 — Company Workspace Identity and Native Original Files
 
 Current prepared repository: **UI84 + UI83 + UI82 + UI81 + UI80 + UI79 + UI78 + UI77 + UI76 + UI75 + UI74 + UI73 + UI72 + UI71 + UI70 + UI69 + UI68 + UI67 + UI66 + Mail Startup M01 + Company C01 + G01**, core **1.34.19**.
 
-Read these files before deployment:
+Read **docs/WORKSPACE_UI84.md**, **docs/UI84_SOURCE_PROVENANCE.json** and **docs/CONTINUATION_CHECKPOINT.md** before changing or deploying the application.
 
-- `docs/WORKSPACE_UI84.md`
-- `docs/UI84_SOURCE_PROVENANCE.json`
-- `docs/CONTINUATION_CHECKPOINT.md`
+UI84 treats the isolated hosted service as a **company workspace** in the user interface while retaining internal project/hub identifiers and real operational **Project / job** fields. It adds the approved code-owned Sulmara logo to the deployment identity and Home cover, requires a valid identity/logo for actual COMPANY startup, and opens Original Files as the native `#original-files` page instead of a popup.
 
-UI84 makes the hosted interface company-first, requires a reviewed local logo for
-each COMPANY deployment, corrects duplicate names when a report logo is already a
-full wordmark, and turns Original files into a normal route-owned page.
+This release adds no database migration, permission, role, operational API, recognition rule, timer, decorator or shell movement. Mail Startup M01 remains byte-identical.
 
-The update does not reset databases, change permissions, alter recognition rules
-or add another interface decorator. UI83 remains the latest schema boundary.
+--- Retained UI83 release record ---
 
-The Mail Startup M01 launcher must remain exactly:
+# Wavelink UI83 — Account Security and Sessions Batch
 
-```text
-2f117d85c439c16ab78908bf5728056cc837e5d1f948a77040ef1d509c04c371
-```
+Current prepared repository: **UI83 + UI82 + UI81 + UI80 + UI79 + UI78 + UI77 + UI76 + UI75 + UI74 + UI73 + UI72 + UI71 + UI70 + UI69 + UI68 + UI67 + UI66 + Mail Startup M01 + Company C01 + G01**, core **1.34.19**.
 
-Use `VERIFY_UI84_UPDATE.py` from the update package before and after copying.
+Read **docs/WORKSPACE_UI83.md**, **docs/UI83_SOURCE_PROVENANCE.json** and **docs/CONTINUATION_CHECKPOINT.md** before changing or deploying the application.
+
+UI83 groups exact verified-email sign-in inside the already-selected company service, encrypted TOTP two-step verification, one-time recovery codes, short-lived login challenges, active-session review/revocation and a native Account & security workspace. Existing User ID login remains available.
+
+This release does **not** implement public company discovery or domain routing, password-recovery mail, live Zoho/DNS/inbox acceptance, passkeys or SSO. It adds an additive account-security schema and authenticated APIs but no permission key, recognition rule, environment variable, timer, decorator or shell movement.
+
+--- Retained UI82 release record ---
+
+# Wavelink UI82 — Authorised Search and Personal Action Centre Batch
+
+Current prepared repository: **UI82 + UI81 + UI80 + UI79 + UI78 + UI77 + UI76 + UI75 + UI74 + UI73 + UI72 + UI71 + UI70 + UI69 + UI68 + UI67 + UI66 + Mail Startup M01 + Company C01 + G01**, core **1.34.19**.
+
+Read **docs/WORKSPACE_UI82.md**, **docs/UI82_SOURCE_PROVENANCE.json** and **docs/CONTINUATION_CHECKPOINT.md** before changing the application.
+
+UI82 groups permission-aware cross-module search, a personal current-action centre, read/dismiss receipts, category and quiet-hour preferences, stable **New updates** presentation and responsive top-bar entry points. It adds an additive/idempotent action-centre metadata schema and new authenticated APIs; it does not add a permission key, recognition rule, environment variable, independent timer, post-render decorator or shell re-parenting.
+
+The search result count is based only on currently authorised results. The action centre stores receipt/preference metadata but does not copy restricted source titles or details into a notification table. Email-first operational sign-in, two-step verification and live SMTP/DNS acceptance remain a separate security batch.
+
+--- Retained UI81 release record ---
+
+# Wavelink UI81 — Workflow Foundation Batch
+
+Current prepared repository: **UI81 + UI80 + UI79 + UI78 + UI77 + UI76 + UI75 + UI74 + UI73 + UI72 + UI71 + UI70 + UI69 + UI68 + UI67 + UI66 + Mail Startup M01 + Company C01 + G01**, core **1.34.19**.
+
+Read **docs/WORKSPACE_UI81.md**, **docs/UI81_SOURCE_PROVENANCE.json** and **docs/CONTINUATION_CHECKPOINT.md** before changing the application.
+
+UI81 groups shared form semantics, native dialog/focus control, direct Unsaved work management, Original Files presentation ownership and the first reduced-motion/mobile workflow foundation into one release. It adds no database migration, permission, operational API, recognition rule, environment variable, new timer or post-render GUI decorator.
+
+--- Retained UI80 release record ---
+
+# Wavelink UI80 — Native Work Execution
+
+Current prepared repository: **UI80 + UI79 + UI78 + UI77 + UI76 + UI75 + UI74 + UI73 + UI72 + UI71 + UI70 + UI69 + UI68 + UI67 + UI66 + Mail Startup M01 + Company C01 + G01**, core **1.34.19**.
+
+Read **docs/WORKSPACE_UI80.md**, **docs/UI80_SOURCE_PROVENANCE.json** and **docs/CONTINUATION_CHECKPOINT.md** before changing the application.
+
+UI80 gives Tasks, Maintenance, Checklists, Handovers and Toolbox Talks one authoritative route-owned presentation system. Seventeen historical work-execution styles are removed from the active entry document and service-worker cache; required functional rules are retained in one final stylesheet. No new decorator, shell observer, timer, database migration, permission, API or recognition rule is introduced.
+
+The next planning reference is the separate UI80 master future-improvements roadmap supplied with the delivery.
+
+--- Retained UI79 release record ---
+
+# Wavelink UI79 — Native Inventory, Asset and Certificate Records
+
+Core **1.34.19** · **UI78, UI77, UI76, UI75, UI74, UI73, UI72, UI71, UI70, UI69, UI68, UI67, UI66, Mail Startup M01, Company C01 and demo G01 retained** · 1 October 2026.
+Read **docs/WORKSPACE_UI79.md**, **docs/UI79_SOURCE_PROVENANCE.json** and
+**docs/CONTINUATION_CHECKPOINT.md** before applying or deploying.
+
+UI79 moves Inventory catalogue/detail, stock verification, asset/equipment detail and Certificate register/detail
+to one direct route-owned presentation. Three separately loaded historical Inventory/Certificate styles are
+retired from the active document and cache; their required functional rules are consolidated into one final
+equipment stylesheet. Unchanged manual asset and Certificate refreshes keep the mounted record surface instead
+of repainting it.
+
+The summaries use only records already returned to the authorised route. No database migration, reset,
+permission, operational API, recognition rule, environment variable, post-render decorator, MutationObserver
+or independent timer is added.
+
+Copy the compact update over the exact UI78 application repository, review the real changes, commit and push
+normally. After deployment becomes healthy, reload one open tab once or close/reopen the installed app. A
+company reset, project import or browser-storage clear is not required.
+
+No GitHub push, Render deployment, production database operation, external email, DNS/Zoho change or live-data
+inspection was performed while preparing this release.
+
+--- Retained UI78 instructions ---
+
+# Wavelink UI78 — Native Fleet Logistics Journey
+
+Core **1.34.19** · **UI77, UI76, UI75, UI74, UI73, UI72, UI71, UI70, UI69, UI68, UI67, UI66, Mail Startup M01, Company C01 and demo G01 retained** · 30 September 2026.
+Read **docs/WORKSPACE_UI78.md**, **docs/UI78_SOURCE_PROVENANCE.json** and
+**docs/CONTINUATION_CHECKPOINT.md** before applying or deploying.
+
+UI78 completes the next Fleet-native group: Manifests, saved shipment records, Receiving & placement, Assets &
+transit, asset detail and Item journey. These routes now own their final readable hierarchy directly instead of
+exposing pale text and mixed cards from older logistics styles. Receiving refresh stays inside the mounted
+workspace, and the new logistics layer adds no decorator, MutationObserver, animation or independent timer.
+
+The existing Fleet APIs and permission checks remain authoritative. Opening, filtering or refreshing a route
+does not dispatch, receive, place, release, approve or alter equipment. No database migration, reset,
+permission, operational API, recognition rule or environment variable is added.
+
+Copy the compact update over the exact UI77 application repository, review the real changes, commit and push
+normally. After deployment becomes healthy, reload one open tab once or close/reopen the installed app. A
+company reset, project import or browser-storage clear is not required.
+
+No GitHub push, Render deployment, production database operation, external email, DNS/Zoho change or live-data
+inspection was performed while preparing this release.
+
+--- Retained UI77 instructions ---
+
+# Wavelink UI77 — Native Fleet and Vessel Logs
+
+Core **1.34.19** · **UI76, UI75, UI74, UI73, UI72, UI71, UI70, UI69, UI68, UI67, UI66, Mail Startup M01, Company C01 and demo G01 retained** · 30 September 2026.
+Read **docs/WORKSPACE_UI77.md**, **docs/UI77_SOURCE_PROVENANCE.json** and
+**docs/CONTINUATION_CHECKPOINT.md** before applying or deploying.
+
+UI77 continues the direct native-workspace cutover for Fleet and vessel logs. The Fleet document no longer
+loads twelve presentation stylesheets from several GUI generations. Their required functional rules are
+consolidated into one authoritative Fleet stylesheet, while Vessels/bases, setup, Calendar, logbooks, assigned
+issues, logbook setup and log permissions own their final hierarchy directly.
+
+The selected vessel logbook no longer performs a visible reload every eight seconds. A quiet 30-second check
+leaves unchanged content untouched; new saved entries present a deliberate **Show new saved entries** control
+without moving the reader's current rows. Manual refresh remains immediate. No database migration, reset,
+permission, operational API, recognition rule or environment variable is added.
+
+Copy the compact update over the exact UI76 application repository, review the real changes, commit and push
+normally. After deployment becomes healthy, reload one open tab once or close/reopen the installed app. A
+company reset, project import or browser-storage clear is not required.
+
+No GitHub push, Render deployment, production database operation, external email, DNS/Zoho change or live-data
+inspection was performed while preparing this release.
+
+--- Retained UI76 instructions ---
+
+# Wavelink UI76 — Native Operational Records
+
+Core **1.34.19** · **UI75, UI74, UI73, UI72, UI71, UI70, UI69, UI68, UI67, UI66, Mail Startup M01, Company C01 and demo G01 retained** · 30 September 2026.
+Read **docs/WORKSPACE_UI76.md**, **docs/UI76_SOURCE_PROVENANCE.json** and
+**docs/CONTINUATION_CHECKPOINT.md** before applying or deploying.
+
+UI76 continues the native-workspace cutover for Logs, Calendar, Fault Reports, HSE/QSHE and the shared report
+editor. Five separately loaded historical route stylesheets are removed from the active document and offline
+cache; their required functional rules are consolidated into one authoritative final stylesheet. The route
+renderers now own their final hierarchy directly.
+
+Fault and HSE list refresh stays inside the mounted route host, and an explicit ownership check prevents the
+shared report editor from being mistaken for the list. No decorator, MutationObserver, animation, independent
+timer, database migration, reset, permission, operational API, recognition rule or environment variable is
+added.
+
+Copy the compact update over the exact UI75 application repository, review the real changes, commit and push
+normally. After deployment becomes healthy, reload one open tab once or close/reopen the installed app. A
+company reset, project import or browser-storage clear is not required.
+
+No GitHub push, Render deployment, production database operation, external email, DNS/Zoho change or live-data
+inspection was performed while preparing this release.
+
+--- Retained UI75 instructions ---
+
+# Wavelink UI75 — Native Administration and Setup
+
+Core **1.34.19** · **UI74, UI73, UI72, UI71, UI70, UI69, UI68, UI67, UI66, Mail Startup M01, Company C01 and demo G01 retained** · 30 September 2026.
+Read **docs/WORKSPACE_UI75.md**, **docs/UI75_SOURCE_PROVENANCE.json** and
+**docs/CONTINUATION_CHECKPOINT.md** before applying or deploying.
+
+UI75 continues from the accepted UI74 recovery baseline. Six separately loaded historical Administration/setup
+stylesheets are replaced in the active document and offline cache by one authoritative final stylesheet. People,
+Departments, Templates, Logbook Designer, Builders, Record Management, Imports and Company Branding retain
+their existing controls and authority while rendering as direct route-owned workspaces.
+
+People/Departments and Company Branding refresh in place instead of replacing the whole screen with a loading
+page. Returning from another Administration route to People also uses an explicit route-ownership marker, so an
+unrelated `#admin-workspace` cannot block the correct page. No decorator, MutationObserver, animation,
+independent timer, database migration, reset, permission, operational API, recognition rule or environment
+variable is added.
+
+Copy the compact update over the exact UI74 application repository, review the real changes, commit and push
+normally. After deployment becomes healthy, reload one open tab once or close/reopen the installed app. A
+company reset, project import or browser-storage clear is not required.
+
+No GitHub push, Render deployment, production database operation, external email, DNS/Zoho change or live-data
+inspection was performed while preparing this release.
+
+--- Retained UI74 instructions ---
+
+# Wavelink UI74 — GUI Recovery Baseline
+
+Core **1.34.19** · **UI73, UI72, UI71, UI70, UI69, UI68, UI67, UI66, Mail Startup M01, Company C01 and demo G01 retained** · 30 September 2026.
+Read **docs/WORKSPACE_UI74.md**, **docs/UI74_SOURCE_PROVENANCE.json** and
+**docs/CONTINUATION_CHECKPOINT.md** before applying or deploying.
+
+UI74 corrects regressions confirmed in UI73. The sidebar no longer inherits the old centred `.workspace-nav`
+rules; main and Fleet navigation rows are vertical, full-width and left aligned. A last-loaded static stylesheet
+restores one shared hierarchy to route-owned workspaces without another decorator. The central route controller
+also stops checklist record loads, WebSocket events and the eight-second maintenance cycle from repainting
+unrelated pages such as Tasks, Maintenance, Profile or Administration.
+
+This is a recovery release rather than another visual layer. It adds no database migration, reset, permission,
+operational API, recognition rule, source adapter or environment variable. Copy the compact update over the
+exact UI73 application repository, review the real changes, commit and push normally. After deployment becomes
+healthy, reload one open tab once or close/reopen the installed app. Do not reset the company, re-import a
+project or clear browser storage merely to load UI74.
+
+No GitHub push, Render deployment, production database operation, external email, DNS/Zoho change or live-data
+inspection was performed while preparing this release.
+
+--- Retained UI73 instructions ---
+
+# Wavelink UI73 — Integrated Shell Context and Render Stability
+
+Core **1.34.19** · **UI72, UI71, UI70, UI69, UI68, UI67, UI66, Mail Startup M01, Company C01 and demo G01 retained** · 30 September 2026.
+Read **docs/WORKSPACE_UI73.md**, **docs/UI73_SOURCE_PROVENANCE.json** and
+**docs/CONTINUATION_CHECKPOINT.md** before applying or deploying.
+
+UI73 removes the remaining standalone project, install-app and Fleet context bands from the active page frame.
+Current project and active-workspace status now belong to the permanent sidebar, while operational save status
+mounts once before the content root and stays hidden until real state is known. Project presence and detached
+log-window status use the same shell context. This removes another source of content offsets, post-load flashes
+and popups competing with the navigation layer.
+
+No route-time shell decorator, DOM re-parenting observer, one-second presence wake-up, database migration,
+permission, operational API, recognition rule or environment variable is introduced. The visual cutover is
+aggressive because the current service is a test deployment, but backend authority and company isolation remain.
+
+Copy the compact update into the exact UI72 application repository. GitHub Desktop should show **9 modified
+files and 2 new files**. Review, commit and push normally. After the intended deployment becomes healthy,
+reload one open tab or close/reopen the installed app once. Do not reset the company, re-import a project or
+clear browser storage merely to load UI73.
+
+No GitHub push, Render deployment, production database operation, external email, DNS/Zoho change or live-data
+inspection was performed while preparing this release.
+
+--- Retained UI72 instructions ---
+
+# Wavelink UI72 — Native Workspaces Cutover
+
+Core **1.34.19** · **UI71, UI70, UI69, UI68, UI67, UI66, Mail Startup M01, Company C01 and demo G01 retained** · 30 September 2026.
+Read **docs/WORKSPACE_UI72.md**, **docs/UI72_SOURCE_PROVENANCE.json** and
+**docs/CONTINUATION_CHECKPOINT.md** before applying or deploying.
+
+UI72 completes the next part of the aggressive single-GUI cutover. UI71 made the main header, sidebar,
+account surface and badge static before first paint, but the older Administration controller still injected a
+second frame above `#app` after route load. UI72 removes that script and stylesheet from the active entry point
+and offline cache. Administration is now a real route inside the one stable shell, and People, Departments,
+builders, logbook design, Calendar, Fault Reports and HSE/QSHE render their final hierarchy directly from
+their route modules.
+
+No post-render decorator, DOM re-parenting observer, independent timer, fetch or browser-storage writer is
+introduced. UI72 adds no database migration, permission, operational API, recognition rule, completion
+adapter or environment variable. It deliberately drops visual compatibility with the injected Administration
+navigator, while retaining the existing backend authority and company isolation.
+
+Copy the compact update into the exact UI71 application repository. GitHub Desktop should show **9 modified
+files and 2 new files**. Review, commit and push normally. After the intended deployment becomes healthy,
+reload one open tab or close/reopen the installed app once. The UI72 service worker installs the complete new
+cache, activates immediately and removes older Wavelink shell caches. Do not reset the company, re-import a
+project or clear browser storage just to load the interface.
+
+No GitHub push, Render deployment, production database operation, external email, DNS/Zoho change or live-data
+inspection was performed while preparing this release.
+
+--- Retained UI71 instructions ---
+
+# Wavelink UI71 — Single GUI Cutover
+
+Core **1.34.19** · **UI70, UI69, UI68, UI67, UI66, Mail Startup M01, Company C01 and demo G01 retained** · 30 September 2026.
+Read **docs/WORKSPACE_UI71.md**, **docs/UI71_SOURCE_PROVENANCE.json** and
+**docs/CONTINUATION_CHECKPOINT.md** before applying or deploying.
+
+UI71 replaces the competing browser presentation layers with one static application frame. The top bar,
+sidebar, account surface, permanent badge and content offsets exist before first paint. The active shell no
+longer builds or moves navigation after render, and the UI69/UI70 work/logistics decorators are no longer
+loaded. One central layer scale keeps menus and native dialogs above workspaces, and shell layout transitions
+are disabled to remove the visible old-GUI → new-GUI blink.
+
+This is an intentionally aggressive visual cutover because the current service is not carrying real users or
+valuable operational forms/inventory. It does not preserve the layered UI70 visual architecture. It also does
+not reset any database or browser storage: backend workflows, permissions, membership, recognition and M01
+startup remain unchanged. The UI71 service worker activates immediately after its new cache is ready and
+removes older Wavelink shell caches on activation.
+
+Copy the compact update into the exact UI70 application repository, review the real 9 modified and 2 new
+repository files, commit and push. After the intended service finishes deploying, close/reopen an installed
+Wavelink window or reload one open tab once so the already-rendered UI70 document is replaced. Do not copy
+this into `Wavelink-Website`.
+
+No GitHub push, Render deployment, production database operation, external email, DNS/Zoho change or live-data
+inspection was performed while preparing this release.
+
+--- Retained UI70 instructions ---
+
+# Wavelink UI70 — Equipment and Logistics Experience
+
+Core **1.34.19** · **UI69, UI68, UI67, UI66, Mail Startup M01, Company C01 and demo G01 preserved** · 30 September 2026.
+Read **docs/WORKSPACE_UI70.md**, **docs/UI70_SOURCE_PROVENANCE.json** and
+**docs/CONTINUATION_CHECKPOINT.md** before applying or deploying.
+
+UI70 brings Inventory, boxes/subitems, stock verification, Certificates, connected asset identity and Fleet
+logistics into the shared Wavelink design system. Existing controls and handlers remain authoritative; the
+new presentation layer performs no fetch, polling, storage write, custody change, receipt, placement,
+quantity adjustment, workflow transition or recognition award.
+
+This is a cumulative presentation layer over the exact UI69 runtime: no schema, permission, operational API,
+recognition rule, source adapter or environment change. Preserve the approved commit, complete backup,
+persistent disks, C01/G01 identities, activation markers, secrets and unfinished browser work. Copy the full
+update into the exact UI69 application repository, review the real changed/new files in GitHub Desktop, commit
+and push normally. Do not reset, re-import, repeat setup or clear browser storage.
+
+No GitHub push, Render deployment, production database operation, external email, DNS/Zoho or live-data
+inspection was performed while preparing this release.
+
+--- Retained UI69 instructions ---
+
+# Wavelink UI69 — Professional Work Execution
+
+Core **1.34.19** · **UI68, UI67, UI66, Mail Startup M01, Company C01 and demo G01 preserved** · 30 September 2026.
+Read **docs/WORKSPACE_UI69.md**, **docs/UI69_SOURCE_PROVENANCE.json** and
+**docs/CONTINUATION_CHECKPOINT.md** first.
+
+UI69 brings Tasks, Maintenance, Checklists, Handovers and Toolbox Talks into one professional Wavelink
+interaction system: compact module identity, clearer daily actions, grouped setup tools, consistent views,
+filters, cards, empty states and responsive operational forms. The five modules keep their existing backend,
+permissions, privacy, evidence, approval, completion, publication and acknowledgement behavior.
+
+This is a presentation layer over the exact UI68 runtime: no schema, permission, operational API, recognition
+rule, source adapter, environment variable, polling loop or browser-storage writer is added. Copy the compact
+update into the exact UI68 application repository, review the real changed/new files in GitHub Desktop, commit
+and push. Preserve backups, disks, C01/G01 identity and activation, secrets, SMTP settings and unsent browser
+work. Do not reset, re-import, repeat setup or clear site data.
+
+No repository push, Render deployment, live database operation, real email, DNS change or production-data
+inspection was performed while preparing this release.
+
+--- Retained UI68 instructions ---
+
+# Wavelink UI68 — Data-grounded Home and Profile
+
+Core **1.34.19** · **UI67, UI66, Mail Startup M01, Company C01 and demo G01 preserved** · 30 September 2026.
+Read **docs/WORKSPACE_UI68.md**, **docs/UI68_SOURCE_PROVENANCE.json** and
+**docs/CONTINUATION_CHECKPOINT.md** first.
+
+UI68 redesigns the real Personal Home and My profile around existing authorised data. Home keeps My shift,
+My work, Needs my action, saved handovers, My activity, profile progress and privacy-aware Team updates; it
+does not invent vessel, staff or work statistics to imitate the concept image. Profile now has a clear identity
+hero, real progress and a collapsed-by-tier badge gallery while retaining all unlocked choices.
+
+This is a presentation layer over the exact UI67 runtime: no schema, permission, operational API, recognition
+rule, source adapter or environment-variable change. Copy the compact update into the exact UI67 application
+repository, review the genuine changed/new files in GitHub Desktop, commit and push. Preserve backups, disks,
+C01/G01 identity and activation, secrets, SMTP settings and unsent browser work. Do not reset, re-import,
+repeat setup or clear site data.
+
+No repository push, Render deployment, live database operation, real email, DNS change or production-data
+inspection was performed while preparing this release.
+
+--- Retained UI67 instructions ---
+
+# Wavelink UI67 — Experience Foundation
+
+Core **1.34.19** · **UI66, Mail Startup M01, Company C01 and demo G01 preserved** · 30 September 2026.
+Read **docs/WORKSPACE_UI67.md**, **docs/UI67_SOURCE_PROVENANCE.json** and
+**docs/CONTINUATION_CHECKPOINT.md** first.
+
+UI67 makes My profile and Team first-class navigation destinations, replaces the crowded top-right surface
+with a compact account menu, adds a dedicated read-only Account & access page, and keeps the selected
+contribution badge visible across authorised modules. It converts the supplied badge exploration artwork
+into 30 tier/family WebP assets while retaining UI66 privacy, points and authority rules.
+
+This is a presentation and navigation foundation over the exact UI66 runtime: no schema, permission,
+operational API, recognition rule or environment-variable change. Copy the compact update into the exact
+UI66 application repository, review the genuine changed/new files in GitHub Desktop, commit and push.
+Preserve backups, disks, C01/G01 identity and activation, secrets, SMTP settings and unsent browser work.
+Do not reset, re-import, repeat setup or clear site data. The next visual batch is the data-grounded Home
+and Profile redesign; UI67 does not fabricate the concept dashboard's example figures.
+
+No repository push, Render deployment, live database operation, real email, DNS change or production-data
+inspection was performed while preparing this release.
+
+--- Retained UI66 instructions ---
+
+# Wavelink UI66 — profiles, Team updates and durable recognition
+
+Core **1.34.19** · **Mail Startup M01, Company C01 and demo G01 preserved** · 29 September 2026.
+Read **docs/WORKSPACE_UI66.md**, **docs/UI66_SOURCE_PROVENANCE.json** and
+**docs/CONTINUATION_CHECKPOINT.md** first.
+
+UI66 adds company-scoped profiles, privacy-aware Team accomplishments, reversible likes, an immutable
+contribution ledger, frozen server-authorised 1/3/5-point source values, cumulative tiers and three
+original selectable badge families per tier. Six source adapters cover Tasks, maintenance, checklists,
+handovers, Toolbox Talks and standalone stock verification without counting ordinary saves or old UI65
+history. The additive schema uses an activation boundary, durable outbox and duplicate-safe natural keys.
+
+Copy the compact update into the exact clean **UI65 + M01** application repository, review the genuine
+changed/new files in GitHub Desktop, commit and push. Preserve backups, disks, C01/G01 identity and
+activation, secrets, SMTP settings and unsent browser work. Do not reset, re-import, repeat setup or clear
+site data. Keep **UI66-or-later** application software after the recognition schema opens.
+
+No repository push, Render deployment, live database migration, real email, DNS change or production-data
+inspection was performed while preparing this release.
+
+--- Retained UI65 instructions ---
+
+# Wavelink UI65 — role-ready invitations and controlled access
+
+Core **1.34.19** · **Mail Startup M01, Company C01 and demo G01 preserved** · 29 September 2026.
+Read **docs/WORKSPACE_UI65.md**, **docs/COMPANY_MEMBERSHIP.md** and
+**docs/CONTINUATION_CHECKPOINT.md** first.
+
+UI65 adds versioned company job-role profiles, exact invitation permission snapshots, verified
+pre-authorised membership activation, and real department-bounded management scope. Department,
+displayed job role and core security/access remain separate. Existing UI64 invitations stay Pending
+with no operational access; existing accounts, IDs, passwords, evidence and explicit policies are not
+mass-updated. The membership schema advances additively to version 2; keep **UI65-or-later** software
+with an upgraded project. Profiles, Team updates, points, tiers and badges are the next separate batch.
+
+Copy the compact update into the exact **UI64 + M01** application repository, review, commit and push.
+Do not reset the company, re-import data, clear browser storage, remove the persistent disk or repeat
+setup. No new environment key is required. The M01 company launcher remains byte-identical and retains
+the selected INVITE_ONLY/SMTP forwarding path. This package was not pushed or deployed and did not send
+email or inspect live Render, DNS, SMTP credentials or the production database.
+
+--- Retained UI64 + M01 instructions ---
+
+# Wavelink UI64 + Mail Startup M01
+
+Core **1.34.19**. Company C01 and G01 retained. Read **docs/MAIL_STARTUP_M01.md** first.
+The company supervisor now passes its explicitly configured membership/SMTP environment to the
+application child. The generic demo/proxy environment stays restricted. Only the existing
+`deploy/company_entrypoint.py` executable changes; all UI64 application files are unchanged.
+Copy the complete hotfix payload into the UI64 repository, review, commit and push. No script
+installation step, new env variable, account change or additional schema upgrade. Keep UI64+
+on the existing membership schema; no reset, reinstall or repeat company setup. Credentials
+stay in hosting secrets, never GitHub. Existing admin login can manage invitations. Actual
+email delivery and later email-first login remain separate acceptance/development steps.
+
+--- Retained UI64 application instructions ---
+
+# Wavelink UI64 — controlled company membership
+
+Core **1.34.19**. Read docs/WORKSPACE_UI64.md, docs/COMPANY_MEMBERSHIP.md and docs/CONTINUATION_CHECKPOINT.md. Invite-only verification/pending access and one-level scoped delegation. **Mail defaults OFF. Eleven tables and one users marker are added transactionally; keep UI64+ for upgraded membership data.** Copy the full patch including deploy/company_runtime.py; existing C01 activation, G01 demo, current accounts, Personal Home, operator logo config and evidence remain. No reset or repeat setup. sulmara.com is still unverified and not enabled for routing.
+
+--- Historical repository/build instructions below; current UI64 notes above take precedence ---
+
+# Wavelink UI63 — Personal Home and separate Workspaces
+
+Core **1.34.19**. Company C01 and demo G01 retained. Read docs/WORKSPACE_UI63.md and docs/CONTINUATION_CHECKPOINT.md.
+
+Home now shows the named account's assignments, configured actions, saved handovers and supported contribution history. The complete directory is under Workspaces. Existing login and operational writers remain. sulmara.com is recorded as the user-supplied intended domain only: no verified email signup/routing is enabled. Operator company identity/logo configuration is not replaced.
+
+--- Historical repository/build guidance, retained for reference ---
+
+# Wavelink UI62 — Administration, site logistics and company identity
+
+Core **1.34.19**. Company C01 and demo G01 retained. Read docs/WORKSPACE_UI62.md and docs/CONTINUATION_CHECKPOINT.md.
+
+Persistent Administration navigation, explicitly additive site logistics, protected Fleet forms/refresh/logout, retained report-branding drafts, corrected bounded logo-profile transport, and a separate per-company operator header identity. Sulmara artwork remains unavailable: logo:null uses its name. Copy the full update contents, including deployment identity configuration, review and commit/push. No reset or new environment values.
+
+--- Retained repository/build guidance ---
+
+# Wavelink UI61 — Original Files and exact source links
+
+Core **1.34.19**. Company C01 and demo G01 preserved. Read docs/WORKSPACE_UI61.md and docs/CONTINUATION_CHECKPOINT.md.
+
+Visible uploads/folders, delegated actions, source history/usage and reversible lifecycle, exact checklist/maintenance source links. Original bytes, existing references and publications remain. No resets or environment changes. Copy update contents into the existing application repository; review, commit and push.
+
+--- Retained repository/build guidance ---
+
+# Wavelink UI60 — shared browser interface
+
+Core **1.34.19**. Company C01 and demo G01 preserved. Read docs/WORKSPACE_UI60.md and docs/CONTINUATION_CHECKPOINT.md.
+
+Common Help, headings, action/view/form presentation; all existing application Python, authority, data and report semantics retained. No reset or environment change. Copy the supplied GitHub files into the existing application repository, review, commit and push.
+
+--- Retained repository/build guidance ---
+
+# Wavelink UI59 — participants, signatures and browser consistency
+
+Current application core **1.34.19**, Company C01 and G01 retained. Read docs/WORKSPACE_UI59.md and docs/CONTINUATION_CHECKPOINT.md.
+
+New normal document participation/PDF projections read existing saved evidence. No data reset, guest-account creation, mandatory re-signing or environment change. Update by copying the supplied GitHub files into the existing application repository and committing/pushing.
+
+--- Retained repository/build guidance ---
+
+# Wavelink UI58 — explicit shift permissions and a focused My shift
+
+**Core 1.34.19 · UI58 · Company C01 and demo G01 preserved · 28 September 2026.**
+This is one update for the exact prepared UI57 + C01 + G01 repository. It is not a full repository,
+a project backup or proof of the version deployed to either service.
+
+## Update using GitHub Desktop
+
+Preserve your current commit, independent source changes, complete backup and unsent main/separate-log
+work. Extract the ZIP. Copy **everything inside UPLOAD_TO_GITHUB into your existing UI57 Wavelink
+application repository**, replacing matching filenames. Review in GitHub Desktop, commit and Push origin.
+Do not replace the whole repository, delete files absent from this patch or use Wavelink-Website.
+CHECK_UI58_UPDATE.ps1 is an optional read-only checker, not an installer or required upload. It was not
+run on Windows here. Both services may auto-deploy the same branch; review that before pushing.
+
+No new environment variables, API routes, dependencies, database tables or browser stores are required.
+There ARE three new permission flags in the existing account-permissions JSON. They are not automatically
+granted to non-admin accounts. Do not reset data, re-import the demo, clear browser storage, repeat company
+setup or disable sync. Keep Sulmara's C01 identity/domain/disk/activation marker and completed-setup settings,
+and the separate G01 demonstration configuration. No credentials or live data were inspected or changed.
+
+## Grant the actual shift action
+
+As a named administrator, open **Administration → People & access → select a person → Project permissions**.
+The new **Shifts & people** group contains:
+
+| Permission | What it grants |
+|---|---|
+| Create and edit shift schedules in your departments | Create a department cycle; change its hours, shift names, subject/site and time basis. |
+| Assign and remove people from shifts in your departments | Change which eligible existing department members occupy the shifts of an existing cycle. |
+| Extend granted shift actions to all active departments | Extend whichever of the preceding actions are granted beyond the person's current department memberships. Does not grant the other action. |
+
+Handovers view is required. The all-departments extension requires at least one shift action. Grant both
+first actions when someone should set the hours and assign people. Grant only assignment when they should
+manage people without editing hours. Without all-departments scope, the actions apply only to active
+departments the person currently belongs to. No department-head appointment or administrator promotion is
+needed. This is not a general user/department creator, task-management grant or broader private-record access.
+
+**New flags default OFF for all non-admin accounts, including existing department heads and Supervisors.**
+Administrators retain full access. Review existing coordinators and deliberately grant their needed actions
+once. Current users/roles/memberships, saved shift setups and handovers are not rewritten. Old explicitly
+saved policies missing the new keys receive no implicit delegation. Corrupt policies fail closed.
+
+The ordinary permission-change review/reason remains because it changes access. Saving a policy revokes that
+person's existing sessions: preserve their work, then sign in again as the same account. An old permission
+form missing the new keys is refused; reopen the current form instead of saving an incomplete policy.
+
+All operational access does not add all-departments shift scope or backup access. Use role defaults restores
+that role's defaults, including the three shift flags OFF for non-admin roles. Existing builder/import and QR
+invitation groups remain, with short explanations; no duplicate flags or expanded document-sharing rights.
+Review effective access includes the shift-scope boundaries. Original Files upload/folder administration and
+account/department administration remain governed by their separate existing authorities.
+
+## The setup screen matches the granted capabilities
+
+In **Handovers → Shifts & people**, the action is Create shifts, Edit shifts & people, Edit shift schedule
+or Assign people as appropriate. Schedule-only users see people but cannot change their assignments.
+Assignment-only users see saved hours as read-only; they cannot create the initial schedule. Both actions
+can be saved together by someone with both grants. A coordinator need not have Create handovers simply to
+coordinate; each newly assigned author still needs Handovers view/create and current department membership.
+
+The service checks the actual changed fields, not just the hidden/disabled controls. Schedule-only edits
+cannot remove people when shortening the number of shifts; assignment-only requests cannot change hours,
+names, site or clock basis. A lost-response retry keeps its exact operation ID and payload, with current
+department and originally required action grants checked before returning its stored receipt.
+
+Retained unavailable assignments are shown rather than silently removed. A schedule-only edit may retain
+them unchanged; a newly assigned/reassigned person must be eligible now. Someone with assignment permission
+can remove obsolete assignments deliberately. Changed membership or revoked permission blocks stale saves.
+No private handover or publication is changed by coordinating shifts. One current cycle per department is
+still the supported setup, not a new multiple-site or historic rotation planner.
+
+## My shift has only your own shift content
+
+My shift shows your own assigned hours, department/site, personal handover status and Open/Edit/Read action.
+It no longer includes the common advanced/team panel underneath it. Duplicate team/advanced toolbar controls
+are omitted from this personal view; the clearly visible view tabs still provide access to those features.
+The current/next occurrence, overnight dates, explicit fallback for an unknown clock basis and only-own
+choice for ambiguous assignments remain. All notes are optional; Save & close and Finish are unchanged.
+
+**Incoming** renders its incoming publication list only when selected. **My saved notes** renders the wider
+own-draft list only in that tab. **By day / subject → All saved handovers & advanced tools** retains the full
+permitted library and old manual department/day board. Shifts & people retains coordination. None of those
+features, saved publications, acknowledgements or drafts are deleted. Main Create handover still has its
+four choices. The handover editor, files, exact source links, publication/acknowledgement writers, QR signing
+and PDF export are unchanged.
+
+In the inspected UI57 build, the incoming panel itself was hidden on the tested My shift route, but its
+content was still eagerly built and the expandable all-saved/team tools remained visible beneath every tab.
+This does not establish which installed/live build produced every part of the user's reported screen. UI58
+makes ownership explicit, renders incoming/saved-note contents only in their views and hides/inactivates
+nonselected panels. Tests inspect the entire workspace, not just the inner personal card.
+
+The same personal refreshes keep existing cards. A late read cannot switch the active tab or reveal an
+inactive panel. No additional timer, forced reload, automatic handover creation or navigation at a shift
+boundary is introduced. Existing local cache, unsent-work, same-account sign-out and bulk-discard safeguards
+remain. Navigation and filtering are not security grants; exact backend permissions still apply.
+
+## One acceptance session
+
+Use fictional data and a named administrator plus a non-head Technician/Supervisor. Grant the worker only
+Create and edit shift schedules and verify they can create hours but not assign people. Grant assignment
+as well (sign back in), assign two existing authors to different shifts, and open My shift as each author.
+Each should see only their own shift content; Incoming should appear only under Incoming. Check that the
+full library/advanced board is still available under By day / subject and that an existing personal draft
+opens unchanged. Check the same route on a phone. No valuable unsent work should be used to test revocation
+or discarding.
+
+## Verification and limits
+
+**575 selected Python tests, 78 compound browser checks and 81 JavaScript syntax checks passed.** All 194 application Python modules parse; 189 remain unchanged. The frozen runtime contains 1857 tracked files. Python groups: permissions_py=222, handover_history_py=175, hosting_py=178. Browser groups: permissions_browser=9, tabs_browser=9, shifts_browser=19, certificates_browser=15, refresh_browser=26. Selected checks, not full-suite or live acceptance.
+
+Checks use shipped assets, real fictional SQLite/TestClient APIs, injected fetch/hash navigation and a staged
+in-memory browser store. They are not a full product suite, live Sulmara/GitHub/Render, physical device,
+durable IndexedDB/service worker, Windows/PowerShell/native installer, production-security/accessibility/load,
+Docker or accepted off-host recovery test. UI55's concurrent periodic-callback check and the UI56 certificate
+browser checks are retained. Report/QR rendering was not newly accepted for this permission/panel update.
+
+The pre-interruption tests and initial UI58 fixture attempts are not added to final totals. A source-audit
+assertion initially compared the entire pre-setup file, including deliberately changed old-board permission
+wording; the corrected audit verifies the actual notes-editor span byte-for-byte and separately accounts for
+changed board wording. No operational assertion was removed to hide a failure. Specific final commands,
+source fingerprints and packaging replay are in the verification/evidence files.
+
+Do not roll the database back for a UI change. Older source does not enforce these explicit delegation flags
+and can restore implicit department-head authority; any source rollback needs a permission review and must
+retain C01/UI34+ evidence compatibility. Source rollback cannot restore deliberately discarded local work.
+The Chrome-installed shortcut/window-reuse follow-up remains separate; no launcher, icon, installer or PWA
+identity changes are included. No uninstall or site-data clearing is required.
+
+**Nothing has been pushed or deployed from here.** Resume the section-by-section workflow after checking
+these related permission and personal-view changes; the wider roadmap remains in DEVELOPMENT_TODO.
