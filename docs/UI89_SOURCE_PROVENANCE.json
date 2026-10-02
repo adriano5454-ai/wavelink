@@ -1,0 +1,63 @@
+{
+  "format": "wavelink-ui89-source-provenance-1",
+  "date": "2026-10-02",
+  "core": "1.34.19",
+  "parent": "UI88 Mobile-first Visual Hardening",
+  "patch_id": "workspace-ui89-core-visual-system-refinement-2026-10-02",
+  "parent_patch_id": "workspace-ui88-mobile-first-visual-hardening-2026-10-02",
+  "repository_files_parent": 237,
+  "repository_files_target": 239,
+  "runtime_manifest_files_parent": 2060,
+  "runtime_manifest_files_target": 2064,
+  "runtime_files_including_generated_manifest": 2065,
+  "runtime_records": 6,
+  "cumulative_embedded_overlay_records": 1017,
+  "extractor_sha256": "a7faa1be68599b719f731e215ccffca69cbdeac3d4f10ce21ac09468ac86d38b",
+  "m01_company_entrypoint_sha256": "2f117d85c439c16ab78908bf5728056cc837e5d1f948a77040ef1d509c04c371",
+  "active_visual_stylesheet": "app/static/visual_system_ui89.css",
+  "inactive_but_retained_lineage_assets": [
+    "app/static/visual_refresh_ui86.css",
+    "app/static/visual_reconciliation_ui87.css",
+    "app/static/mobile_foundation_ui88.css"
+  ],
+  "boundaries": {
+    "database_migration": false,
+    "operational_api_change": false,
+    "permission_change": false,
+    "recognition_rule_change": false,
+    "company_identity_change": false,
+    "report_branding_scope_change": false,
+    "environment_change": false,
+    "new_timer": false,
+    "mutation_observer_restyle": false,
+    "post_render_decorator": false,
+    "shell_dom_reparenting": false,
+    "local_storage_clear": false,
+    "m01_launcher_changed": false,
+    "report_branding_changes_app_identity": false
+  },
+  "browser_acceptance": {
+    "widths_css_px": [
+      1440,
+      390,
+      320
+    ],
+    "routes": [
+      "Home",
+      "Profile",
+      "Workspaces",
+      "Tasks",
+      "Maintenance",
+      "Toolbox Talks",
+      "Inventory",
+      "Original Files",
+      "Administration"
+    ],
+    "checks_passed": 36,
+    "unexpected_javascript_errors": 0,
+    "horizontal_overflow_failures": 0,
+    "controls_outside_viewport_failures": 0,
+    "fictional_local_bridge": true
+  },
+  "remote_actions_performed": false
+}

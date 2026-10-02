@@ -1,3 +1,15 @@
+# Wavelink UI89 — Core Visual System Refinement
+
+Current prepared repository: **UI89 + UI88 + UI87 + UI86 + UI85 + UI84 + UI83 + UI82 + UI81 + UI80 + UI79 + UI78 + UI77 + UI76 + UI75 + UI74 + UI73 + UI72 + UI71 + UI70 + UI69 + UI68 + UI67 + UI66 + Mail Startup M01 + Company C01 + G01**, core **1.34.19**.
+
+Read **docs/WORKSPACE_UI89.md**, **docs/UI89_SOURCE_PROVENANCE.json** and **docs/CONTINUATION_CHECKPOINT.md** before changing or deploying the application.
+
+UI89 is the first post-UI88 visual refinement pass. It replaces three separately active visual layers with one authoritative stylesheet and refines the product shell, route hierarchy, Home, Profile, Workspaces, cards, controls and responsive spacing. It keeps the approved offshore art, authentic badges, module icons and mobile containment.
+
+UI89 adds no database migration, permission, operational API, scoring rule, report-branding scope, environment variable, timer, decorator or shell movement. Visual work remains intentionally open for further grouped UI90–UI92 passes.
+
+--- Retained prior release history ---
+
 # Wavelink UI88 — Mobile-first visual hardening
 
 Current prepared repository: **UI88 + UI87 + UI86 + UI85 + UI84 + UI83 + UI82 + UI81 + UI80 + UI79 + UI78 + UI77 + UI76 + UI75 + UI74 + UI73 + UI72 + UI71 + UI70 + UI69 + UI68 + UI67 + UI66 + Mail Startup M01 + Company C01 + G01**, core **1.34.19**.

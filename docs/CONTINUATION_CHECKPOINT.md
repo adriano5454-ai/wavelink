@@ -1,3 +1,21 @@
+# Current checkpoint — UI89 Core Visual System Refinement
+
+**Prepared 2 October 2026.** UI89 supersedes UI88 as the prepared development baseline.
+
+- Exact parent: UI88 Mobile-first Visual Hardening.
+- Core: 1.34.19.
+- Patch ID: `workspace-ui89-core-visual-system-refinement-2026-10-02`.
+- Active main visual layer: `app/static/visual_system_ui89.css`.
+- UI86/UI87/UI88 visual files remain in lineage but are no longer separately linked.
+- Approved offshore art, UI85 badges, current module icons and UI88 responsive containment remain.
+- No database, authority, workflow, scoring, report-branding or environment change.
+- M01 launcher remains byte-identical.
+- Next visual batches: UI90 dense records/Fleet, UI91 states/art/reports, UI92 real-device/accessibility/visual-regression acceptance.
+
+Do not restart broad functionality work by layering another global stylesheet or decorator over UI89. Refine the owning component or add changes to the authoritative visual system, with route-specific tests.
+
+--- Retained historical checkpoint ---
+
 # Current checkpoint — UI88 Mobile-first visual hardening
 
 2 October 2026; core 1.34.19. UI88 follows UI87 and fixes the reported mobile containment failures. Main top utilities are visible at 430/390/360/320 CSS pixels, Search owns a second row, route actions use bounded grids, Profile and Original Files remain readable, and Fleet uses compact status/account controls at 390/320. No workflow, permission, database, report-branding scope, timer or storage change.

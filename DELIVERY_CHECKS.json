@@ -1,52 +1,45 @@
 {
-  "format": "wavelink-ui88-delivery-checks-1",
-  "release": "UI88 + UI87 + UI86 + UI85 + UI84 + UI83 + UI82 + UI81 + UI80 + UI79 + UI78 + UI77 + UI76 + UI75 + UI74 + UI73 + UI72 + UI71 + UI70 + UI69 + UI68 + UI67 + UI66 + Mail Startup M01 + Company C01 + G01",
-  "parent": "Exact UI87 Visual Reconciliation repository",
+  "format": "wavelink-delivery-checks-1",
+  "release": "UI89 + UI88 + UI87 + UI86 + UI85 + UI84 + UI83 + UI82 + UI81 + UI80 + UI79 + UI78 + UI77 + UI76 + UI75 + UI74 + UI73 + UI72 + UI71 + UI70 + UI69 + UI68 + UI67 + UI66 + Mail Startup M01 + Company C01 + G01",
+  "parent": "Exact UI88 Mobile-first Visual Hardening repository",
   "core": "1.34.19",
   "date": "2026-10-02",
-  "repository_files_parent": 235,
-  "repository_files_target": 237,
+  "repository_files_parent": 237,
+  "repository_files_target": 239,
   "repository_delta_modified": 9,
   "repository_delta_new": 2,
   "repository_delta_removed": 0,
-  "runtime_manifest_files_parent": 2055,
-  "runtime_manifest_files_target": 2060,
-  "runtime_files_including_generated_manifest": 2061,
-  "ui88_delta_modified": 3,
-  "ui88_delta_new": 5,
-  "ui88_delta_removed": 0,
-  "ui88_embedded_records": 8,
-  "cumulative_embedded_overlay_records": 1011,
-  "parent_extractor_sha256": "76a3686e9871bde187697f766d86f8c25e3a454ed021c561259ab6cdbc35dc12",
-  "target_extractor_sha256": "0cca56c1e0870864f268abc64978223dcdf65c5fbc2e3858ba301da1117be63b",
+  "runtime_manifest_files_parent": 2060,
+  "runtime_manifest_files_target": 2064,
+  "runtime_files_including_generated_manifest": 2065,
+  "ui89_delta_modified": 2,
+  "ui89_delta_new": 4,
+  "ui89_delta_removed": 0,
+  "ui89_embedded_records": 6,
+  "cumulative_embedded_overlay_records": 1017,
+  "parent_extractor_sha256": "0cca56c1e0870864f268abc64978223dcdf65c5fbc2e3858ba301da1117be63b",
+  "target_extractor_sha256": "a7faa1be68599b719f731e215ccffca69cbdeac3d4f10ce21ac09468ac86d38b",
   "m01_company_entrypoint_sha256": "2f117d85c439c16ab78908bf5728056cc837e5d1f948a77040ef1d509c04c371",
   "fresh_source_replay": {
     "upstream_files_verified": 1605,
-    "target_manifest_files": 2060,
-    "target_overlay_sha256": "618d513166583730c1af5fa4a3c1ae90347fe141d91a48a8e867886988069917",
-    "target_release_manifest_sha256": "dc2378cccec7f6ecafa15faa6d1941cc45b90b3d7823b02d39b58eaf31a9dff1",
-    "total_runtime_files_compared": 2061,
+    "target_manifest_files": 2064,
+    "target_overlay_sha256": "d398f2e40a4bf7ece35b7f80316455ba7702142a465894fd2c232857dbc3efc9",
+    "target_release_manifest_sha256": "28895de32577d6954d944e42de7db839f93c4657d10466b58c9da9357db0cc56",
+    "total_runtime_files_compared": 2065,
     "byte_differences": 0,
     "manifest_integrity": true,
     "reconstructed_runtime_matches_prepared_target": true
   },
   "python_runs": [
     {
-      "group": "ui88_mobile_foundation",
-      "passed": 8,
+      "group": "ui89_visual_system",
+      "passed": 7,
       "skipped": 0
     },
     {
-      "group": "ui87_visual_reconciliation_non_historical",
-      "passed": 6,
-      "skipped": 0,
-      "deselected_historical_exact_cache_assertions": 1
-    },
-    {
-      "group": "ui85_authentic_badges_non_historical",
-      "passed": 5,
-      "skipped": 0,
-      "deselected_superseded_exact_asset_link_assertions": 2
+      "group": "ui66_recognition_core_and_adapters",
+      "passed": 18,
+      "skipped": 0
     },
     {
       "group": "mail_startup_m01",
@@ -61,12 +54,11 @@
   ],
   "browser_runs": [
     {
-      "group": "ui88_main_mobile_containment",
-      "checks_passed": 60,
+      "group": "ui89_core_visual_system",
+      "checks_passed": 36,
       "widths_css_px": [
-        430,
+        1440,
         390,
-        360,
         320
       ],
       "surfaces": [
@@ -75,63 +67,14 @@
         "Workspaces",
         "Tasks",
         "Maintenance",
-        "Checklists",
-        "Handovers",
         "Toolbox Talks",
         "Inventory",
-        "Certificates",
         "Original Files",
-        "Administration",
-        "navigation drawer",
-        "account menu",
-        "Search dialog"
+        "Administration"
       ],
       "unexpected_javascript_errors": 0,
       "horizontal_overflow_failures": 0,
       "controls_outside_viewport_failures": 0,
-      "fictional_local_bridge": true,
-      "replayed_on_fresh_reconstruction": true
-    },
-    {
-      "group": "ui88_fleet_mobile_containment",
-      "checks_passed": 18,
-      "widths_css_px": [
-        390,
-        320
-      ],
-      "surfaces": [
-        "Sites",
-        "Manifests",
-        "Receiving",
-        "Assets",
-        "asset detail",
-        "item journey",
-        "Logbooks",
-        "navigation drawer",
-        "account surface"
-      ],
-      "unexpected_javascript_errors": 0,
-      "horizontal_overflow_failures": 0,
-      "controls_outside_viewport_failures": 0,
-      "fictional_local_bridge": true,
-      "replayed_on_fresh_reconstruction": true
-    },
-    {
-      "group": "retained_ui87_visual_reconciliation",
-      "checks_passed": 9,
-      "widths_css_px": [
-        1440,
-        390,
-        320
-      ],
-      "surfaces": [
-        "Home single brand",
-        "Profile native hero",
-        "ordinary route no stray Profile shortcut",
-        "Maintenance and Toolbox icon consistency"
-      ],
-      "unexpected_javascript_errors": 0,
-      "horizontal_overflow_failures": 0,
       "fictional_local_bridge": true,
       "replayed_on_fresh_reconstruction": true
     }
@@ -140,16 +83,16 @@
   "report_branding_scope_changed": false,
   "localisation_implemented": false,
   "remote_actions_performed": false,
-  "python_passed_total_recorded": 60,
+  "python_passed_total_recorded": 66,
   "javascript_syntax": {
     "scripts_checked": 96,
     "failures": 0,
     "passed": 96
   },
-  "browser_checks_passed_total_recorded": 87,
+  "browser_checks_passed_total_recorded": 36,
   "known_limits": [
     "The browser evidence uses fictional local TestClient/bridge data, not a live Render service or physical device.",
-    "A superseded UI85 static assertion that requires the former exact stylesheet link is not counted as a UI88 compatibility pass.",
-    "UI88 is a responsive-layout foundation; route-specific visual refinement remains future work after connected-device acceptance."
+    "UI89 is the first of several visual refinement passes; dense records, Fleet parity, states/supporting art and real-device accessibility remain planned for UI90-UI92.",
+    "Historical tests requiring literal older cache names or separate UI86-UI88 stylesheet links are superseded by the UI89 consolidated visual-system contract."
   ]
 }

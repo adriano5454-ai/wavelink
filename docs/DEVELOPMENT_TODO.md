@@ -1,3 +1,32 @@
+# UI89 onward — grouped visual programme
+
+## UI90 — Records and data density
+
+- Harmonise dense tables, filters, form sections and master/detail inspectors.
+- Bring Fleet route hierarchy and controls to parity with the main application.
+- Remove remaining mixed-generation spacing and pale/dark contrast conflicts in record detail pages.
+- Preserve route ownership; no new global decorator or re-parenting layer.
+
+## UI91 — States and supporting art
+
+- One loading/skeleton language.
+- Genuine empty, error, offline and unavailable states.
+- Evidence, attachment, Original Files and export/report-cover art.
+- Consistent icon sizing and status semantics without changing the approved module-icon family.
+
+## UI92 — Real-device and accessibility polish
+
+- Android, iPhone, tablet, landscape and mobile-keyboard acceptance.
+- 200% zoom, large text, visible focus and reduced motion.
+- Camera, QR, file upload, drawn signature and long-form paths.
+- Freeze a visual-regression matrix after acceptance.
+
+## Later functional batch
+
+- English/Portuguese localisation with company default and per-user override, after the visual baseline is stable.
+
+--- Retained backlog ---
+
 # UI88 next work
 
 1. Check UI88 on the connected fictional demo with real phones: portrait/landscape, browser text zoom, keyboard opening, notches/safe areas, drawer scrolling, account menu, Search, dialogs and the five daily-work routes.
