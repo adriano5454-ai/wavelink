@@ -1,3 +1,15 @@
+# Wavelink UI91 — Visual Continuity and Route Reliability
+
+Current prepared repository: **UI91 + UI90 + UI89 + UI88 + UI87 + UI86 + UI85 + UI84 + UI83 + UI82 + UI81 + UI80 + UI79 + UI78 + UI77 + UI76 + UI75 + UI74 + UI73 + UI72 + UI71 + UI70 + UI69 + UI68 + UI67 + UI66 + Mail Startup M01 + Company C01 + G01**, core **1.34.19**.
+
+Read **docs/WORKSPACE_UI91.md**, **docs/UI91_SOURCE_PROVENANCE.json** and **docs/CONTINUATION_CHECKPOINT.md** before changing or deploying the application.
+
+UI91 gives Team and Logs the same direct full-width route cover used by the current visual system and makes ordinary sidebar hash links explicitly activate inside the existing document. Certificates now displays immediate route-owned loading feedback before its authorised read completes, so the tab cannot look like a no-op on a slow response.
+
+UI91 changes no database schema, operational API, permission, recognition rule, company identity, Report Branding boundary, environment setting or saved record. It adds no visual decorator, independent timer or shell DOM re-parenting.
+
+--- Retained prior release history ---
+
 # Wavelink UI90 — Navigation Simplification and Route-theme Parity
 
 Current prepared repository: **UI90 + UI89 + UI88 + UI87 + UI86 + UI85 + UI84 + UI83 + UI82 + UI81 + UI80 + UI79 + UI78 + UI77 + UI76 + UI75 + UI74 + UI73 + UI72 + UI71 + UI70 + UI69 + UI68 + UI67 + UI66 + Mail Startup M01 + Company C01 + G01**, core **1.34.19**.

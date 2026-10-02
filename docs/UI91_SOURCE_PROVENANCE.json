@@ -1,0 +1,105 @@
+{
+  "format": "wavelink-ui91-source-provenance-1",
+  "date": "2026-10-02",
+  "release": "UI91 Visual Continuity and Route Reliability",
+  "core": "1.34.19",
+  "parent": {
+    "release": "UI90 Navigation Simplification and Route-theme Parity",
+    "patch_id": "workspace-ui90-navigation-theme-parity-2026-10-02",
+    "runtime_overlay_sha256": "259f0ca89927f3cd98f909290353d425ad28f0975a28b22d80f92c7f1b6f4d6b",
+    "runtime_manifest_files": 2068,
+    "repository_extractor_sha256": "2dbdf63c4b6c2ce66581bcb332dd7afe1c228d696364dbf93470fd3cbeedef64"
+  },
+  "target": {
+    "patch_id": "workspace-ui91-visual-continuity-route-reliability-2026-10-02",
+    "runtime_overlay_sha256": "43385c725a9c8ecfb3c0645d184a1a8d8525e55ad9c60fc3af84486975cd9ddc",
+    "runtime_manifest_files": 2072,
+    "repository_extractor_sha256": "47639e1b74866fcbd32f0c009e6f84f6e59d47cc251d9b350d246f1d92fc4915"
+  },
+  "runtime_records": [
+    {
+      "path": "app/static/index.html",
+      "before_sha256": "0d3a5f43aff3c04f21ffb97ae1eb5e2d90f6f6baf8958b74d3a803c9255b63da",
+      "after_sha256": "9939c715fc56479ece41df793e47c39de1ff299b872786bed0380716aba3fe56",
+      "bytes": 23814
+    },
+    {
+      "path": "app/static/fleet.html",
+      "before_sha256": "b37aa35347d4008ce71185d2720f7dac72db0ae8823c4833e88604fcfac5c4ea",
+      "after_sha256": "7af7ecb5b9a46a00e62959d8be0e8006d886006b680a46f07812265d3d891ba8",
+      "bytes": 6279
+    },
+    {
+      "path": "app/static/nav_shell.js",
+      "before_sha256": "4eb8e81758a1062ee9f744cfd602d0d8ac69047c79b704b04e911a07069090d5",
+      "after_sha256": "495c4789d58f9cf2979caa6227751aa7d5ece6e4e64ef8234b86b80a8b3d62fc",
+      "bytes": 5933
+    },
+    {
+      "path": "app/static/sw.js",
+      "before_sha256": "4d536f4fc60428bc068331f0465ddc9a6f7204d3f835188e110db6f86074b8b5",
+      "after_sha256": "1048701a134bd80b3d191383f46dd271484a5418f5b75fd543a738a312086e27",
+      "bytes": 12681
+    },
+    {
+      "path": "app/static/recognition_workspace.js",
+      "before_sha256": "ca65ad51ce7dff07f357c87ebe2338a0e52a750288ee9e6bf0878f1c1b0c9a8a",
+      "after_sha256": "fe26843239bd2d12ef59a07a21071f666d688edcc61bfa5ed1f0f2568448e65c",
+      "bytes": 26155
+    },
+    {
+      "path": "app/static/logs.js",
+      "before_sha256": "446992803aa418396f55f1d87e63614e8b54c0ea32050fe43457f05a536cd3ca",
+      "after_sha256": "3269d7654f3807a891fcd0f877725f12eb1b42fa3103324f8f59b8695decac59",
+      "bytes": 47046
+    },
+    {
+      "path": "app/static/certificate_workspace.js",
+      "before_sha256": "7e6e04e754ce9bc5d0f30058be21059f838e11a02a82e779ff8255207f76db45",
+      "after_sha256": "b243a9c2aa2d5b4a6aa47d3cbdec01d7a0370df1401522ed4c96f0d0bf5b4908",
+      "bytes": 26848
+    },
+    {
+      "path": "app/static/visual_system_ui91.css",
+      "before_sha256": null,
+      "after_sha256": "78a24a306591e980b1d52e5d5726917afc0e27c75f4d6c2f87e002d1c312fcb5",
+      "bytes": 75715
+    },
+    {
+      "path": "tests/ui91_visual_continuity/__init__.py",
+      "before_sha256": null,
+      "after_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "tests/ui91_visual_continuity/browser_checks.py",
+      "before_sha256": null,
+      "after_sha256": "7c3191f2d329b4f1553ab6f264815e394b2fa864e62a3bed686e60718026bd93",
+      "bytes": 9384
+    },
+    {
+      "path": "tests/ui91_visual_continuity/test_visual_continuity.py",
+      "before_sha256": null,
+      "after_sha256": "9357c6cf3c70df4e1daf24028bc7234e33db9fb7c9825158bfd8e23789b62530",
+      "bytes": 4566
+    }
+  ],
+  "boundaries": {
+    "database_migration": false,
+    "operational_api_change": false,
+    "permission_change": false,
+    "recognition_rule_change": false,
+    "company_identity_change": false,
+    "report_branding_scope_change": false,
+    "report_branding_changes_app_identity": false,
+    "environment_change": false,
+    "new_timer": false,
+    "mutation_observer_restyle": false,
+    "post_render_decorator": false,
+    "shell_dom_reparenting": false,
+    "local_storage_clear": false,
+    "m01_launcher_changed": false
+  },
+  "m01_company_entrypoint_sha256": "2f117d85c439c16ab78908bf5728056cc837e5d1f948a77040ef1d509c04c371",
+  "remote_actions_performed": false
+}

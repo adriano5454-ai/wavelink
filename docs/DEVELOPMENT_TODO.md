@@ -1,3 +1,23 @@
+# UI91 follow-up and visual roadmap
+
+## Connected acceptance for UI91
+
+- Confirm Team uses the full shared route cover on desktop and phone.
+- Confirm Logs catalogue and selected Logbook do not show a small nested banner.
+- Confirm Certificates gives immediate feedback and opens from the real sidebar link.
+- Confirm Certificate permissions, local forms, create/edit/file actions and version checks remain unchanged.
+- Confirm no route becomes a full-page browser navigation or `chrome-error://` document.
+
+## Next grouped visual batches
+
+1. Dense tables, filters, long forms and master/detail inspectors across main Wavelink and Fleet.
+2. Loading, empty, unavailable, error and offline-state system.
+3. Evidence, attachments and report-cover visual parity.
+4. Real Android/iPhone/tablet, landscape, mobile keyboard, zoom, large-text and accessibility acceptance.
+5. English/Portuguese localisation after the visual baseline is stable.
+
+--- Retained development history ---
+
 # UI90 current priorities — navigation and route-theme parity
 
 UI90 is the prepared baseline.

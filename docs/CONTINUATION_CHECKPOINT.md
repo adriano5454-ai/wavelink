@@ -1,3 +1,19 @@
+# Wavelink UI91 continuation checkpoint
+
+**Prepared baseline:** UI91 Visual Continuity and Route Reliability, core 1.34.19.
+
+- Exact parent: UI90 Navigation Simplification and Route-theme Parity.
+- Runtime patch: `workspace-ui91-visual-continuity-route-reliability-2026-10-02`.
+- Team and Logs own one full shared route cover; no nested small heading.
+- Certificate links use explicit same-document activation and immediate loading feedback.
+- Active visual asset: `app/static/visual_system_ui91.css`.
+- No database, authority, scoring, company identity or Report Branding change.
+- M01 launcher remains byte-identical.
+
+**Next visual work:** dense records/forms/inspectors, loading-empty-error-offline states, Fleet detail parity and real-device/accessibility acceptance. Do not reintroduce a second shell, global decorator or periodic visual repaint.
+
+--- Retained checkpoint history ---
+
 # Continuation checkpoint — UI90 Navigation Simplification and Route-theme Parity
 
 **Current prepared baseline:** UI90, core 1.34.19, cumulative through Mail Startup M01, Company C01 and G01.
