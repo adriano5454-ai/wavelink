@@ -1,3 +1,13 @@
+# UI88 next work
+
+1. Check UI88 on the connected fictional demo with real phones: portrait/landscape, browser text zoom, keyboard opening, notches/safe areas, drawer scrolling, account menu, Search, dialogs and the five daily-work routes.
+2. Fix any route-specific mobile defects in its owning markup/component; do not restore horizontal action rails or add a post-render decorator.
+3. Keep Report Branding restricted to reports/exports.
+4. Implement English/Portuguese later as a separate company-default plus user-override localisation batch.
+5. Preserve M01, C01/G01 isolation, records, signatures and local unsent work.
+
+--- Retained prior roadmap ---
+
 # UI87 current priorities — connected visual acceptance
 
 UI87 is the prepared corrective baseline. Do not begin localisation or another visual batch until the connected demo confirms the six regressions below are resolved.

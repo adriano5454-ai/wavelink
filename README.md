@@ -1,3 +1,15 @@
+# Wavelink UI88 — Mobile-first visual hardening
+
+Current prepared repository: **UI88 + UI87 + UI86 + UI85 + UI84 + UI83 + UI82 + UI81 + UI80 + UI79 + UI78 + UI77 + UI76 + UI75 + UI74 + UI73 + UI72 + UI71 + UI70 + UI69 + UI68 + UI67 + UI66 + Mail Startup M01 + Company C01 + G01**, core **1.34.19**.
+
+Read **docs/WORKSPACE_UI88.md**, **docs/UI88_SOURCE_PROVENANCE.json** and **docs/CONTINUATION_CHECKPOINT.md** before changing or deploying the application.
+
+UI88 keeps every essential top-bar utility and route action visible on narrow phones, bounds Profile and Original Files, and gives Fleet a compact mobile status/account header. It uses final CSS only: no new timer, DOM-moving decorator, permission, workflow or database change.
+
+Report Branding remains report/export-only. English/Portuguese localisation remains a separate later batch.
+
+--- Retained prior release history ---
+
 # Wavelink UI87 — Visual Reconciliation
 
 Current prepared repository: **UI87 + UI86 + UI85 + UI84 + UI83 + UI82 + UI81 + UI80 + UI79 + UI78 + UI77 + UI76 + UI75 + UI74 + UI73 + UI72 + UI71 + UI70 + UI69 + UI68 + UI67 + UI66 + Mail Startup M01 + Company C01 + G01**, core **1.34.19**.

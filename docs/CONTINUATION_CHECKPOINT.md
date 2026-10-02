@@ -1,3 +1,13 @@
+# Current checkpoint — UI88 Mobile-first visual hardening
+
+2 October 2026; core 1.34.19. UI88 follows UI87 and fixes the reported mobile containment failures. Main top utilities are visible at 430/390/360/320 CSS pixels, Search owns a second row, route actions use bounded grids, Profile and Original Files remain readable, and Fleet uses compact status/account controls at 390/320. No workflow, permission, database, report-branding scope, timer or storage change.
+
+Fresh cumulative source replay: 1,605 upstream files verified; 2,060 runtime-manifest files / 2,061 files including generated manifest; zero byte differences from the prepared target. M01 remains byte-identical. Localisation is still pending and must not be mixed into this visual baseline.
+
+**Next:** connected-demo acceptance on real Android/iPhone/tablet widths, then grouped accessibility/remaining visual refinements or the separately scoped English/Portuguese localisation batch. Do not add another shell/decorator layer.
+
+--- Retained prior checkpoint history ---
+
 # Continuation checkpoint — UI87 Visual Reconciliation
 
 Current prepared baseline: **UI87 + UI86 + UI85 + UI84 + UI83 + UI82 + UI81 + UI80 + UI79 + UI78 + UI77 + UI76 + UI75 + UI74 + UI73 + UI72 + UI71 + UI70 + UI69 + UI68 + UI67 + UI66 + Mail Startup M01 + Company C01 + G01**, core **1.34.19**.

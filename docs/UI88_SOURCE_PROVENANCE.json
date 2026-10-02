@@ -1,0 +1,45 @@
+{
+  "format": "wavelink-ui88-source-provenance-1",
+  "date": "2026-10-02",
+  "core": "1.34.19",
+  "parent": "UI87 Visual Reconciliation",
+  "parent_patch_id": "workspace-ui87-visual-reconciliation-2026-10-01",
+  "target_patch_id": "workspace-ui88-mobile-first-visual-hardening-2026-10-02",
+  "parent_extractor_sha256": "76a3686e9871bde187697f766d86f8c25e3a454ed021c561259ab6cdbc35dc12",
+  "target_extractor_sha256": "0cca56c1e0870864f268abc64978223dcdf65c5fbc2e3858ba301da1117be63b",
+  "parent_overlay_sha256": "f389e83ffd2eb1173cba7959b03780cfaac2f135f99f4c9f17eb6fde1caaa5d6",
+  "target_overlay_sha256": "618d513166583730c1af5fa4a3c1ae90347fe141d91a48a8e867886988069917",
+  "target_release_manifest_sha256": "dc2378cccec7f6ecafa15faa6d1941cc45b90b3d7823b02d39b58eaf31a9dff1",
+  "runtime_manifest_files_parent": 2055,
+  "runtime_manifest_files_target": 2060,
+  "runtime_files_including_generated_manifest": 2061,
+  "runtime_delta": {
+    "modified": 3,
+    "new": 5,
+    "removed": 0,
+    "records": 8
+  },
+  "acceptance_widths_main": [
+    430,
+    390,
+    360,
+    320
+  ],
+  "acceptance_widths_fleet": [
+    390,
+    320
+  ],
+  "corrections": [
+    "all main top-bar utilities visible on narrow phones",
+    "route actions use bounded responsive grids",
+    "Profile hero and all tabs contained",
+    "Original Files title readable",
+    "main navigation drawer, account menu and Search dialog contained",
+    "Fleet status/account controls and route actions contained",
+    "device safe-area insets respected"
+  ],
+  "database_migration": false,
+  "localisation_implemented": false,
+  "m01_company_entrypoint_sha256": "2f117d85c439c16ab78908bf5728056cc837e5d1f948a77040ef1d509c04c371",
+  "remote_actions_performed": false
+}
