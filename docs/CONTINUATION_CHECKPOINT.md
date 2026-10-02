@@ -1,3 +1,32 @@
+# Continuation checkpoint — UI90 Navigation Simplification and Route-theme Parity
+
+**Current prepared baseline:** UI90, core 1.34.19, cumulative through Mail Startup M01, Company C01 and G01.
+
+## Confirmed UI90 decisions
+
+- Keep one authorised global Search in the product top bar.
+- Do not restore a second sidebar workspace finder.
+- Show company context once as a compact **Company / Sulmara / presence** card.
+- On mobile, keep the navigation Close action inside that same context card.
+- Preserve permission-owned links and hide empty navigation groups.
+- Use the shared dark oceanic route-cover hierarchy on normal workspaces.
+- Keep the approved image covers for Home and Profile.
+- Preserve the current module icon family, including Maintenance and Toolbox Talks.
+- Make route-specific fixes in the owning renderer/component; do not add another global GUI decorator.
+
+## Preserved boundaries
+
+No database migration, API change, authority change, recognition change, company-identity change, report-branding scope change, environment change, timer, local-storage clear or M01 launcher change is part of UI90.
+
+## Next visual acceptance
+
+1. Confirm the compact sidebar on the connected demo at desktop and phone widths.
+2. Confirm Tasks, Maintenance, Checklists, Handovers, Toolbox Talks, Inventory, Certificates and Administration share the route-cover system.
+3. Continue with dense tables, long forms and master/detail inspectors only after UI90 is accepted.
+4. Retain English/Portuguese localisation as a later functional batch after the visual baseline is stable.
+
+--- Retained prior release history ---
+
 # Current checkpoint — UI89 Core Visual System Refinement
 
 **Prepared 2 October 2026.** UI89 supersedes UI88 as the prepared development baseline.

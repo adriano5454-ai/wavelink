@@ -48,7 +48,7 @@ def test_no_real_project_or_secret_files_packaged():
     assert 'dives.sqlite3' not in names and 'hub.json' not in names and 'gate.key' not in names
 
 
-def test_ui89_overlay_visual_system_and_m01_launcher_are_exact():
+def test_ui90_overlay_navigation_theme_and_m01_launcher_are_exact():
     from deploy.extract_source import (
         UI_PATCH_ID,
         UI66_PATCH_ID,
@@ -75,6 +75,7 @@ def test_ui89_overlay_visual_system_and_m01_launcher_are_exact():
         UI87_PATCH_ID,
         UI88_PATCH_ID,
         UI89_PATCH_ID,
+        UI90_PATCH_ID,
         _UI66_FILES,
         _UI67_FILES,
         _UI68_FILES,
@@ -99,6 +100,7 @@ def test_ui89_overlay_visual_system_and_m01_launcher_are_exact():
         _UI87_FILES,
         _UI88_FILES,
         _UI89_FILES,
+        _UI90_FILES,
     )
     assert UI_PATCH_ID == 'workspace-ui65-role-ready-invitations-2026-09-29'
     assert UI66_PATCH_ID == 'workspace-ui66-profiles-recognition-2026-09-29'
@@ -125,6 +127,7 @@ def test_ui89_overlay_visual_system_and_m01_launcher_are_exact():
     assert UI87_PATCH_ID == 'workspace-ui87-visual-reconciliation-2026-10-01'
     assert UI88_PATCH_ID == 'workspace-ui88-mobile-first-visual-hardening-2026-10-02'
     assert UI89_PATCH_ID == 'workspace-ui89-core-visual-system-refinement-2026-10-02'
+    assert UI90_PATCH_ID == 'workspace-ui90-navigation-theme-parity-2026-10-02'
     assert len(_UI66_FILES) == 33
     assert len(_UI67_FILES) == 41
     assert len(_UI68_FILES) == 11
@@ -149,6 +152,7 @@ def test_ui89_overlay_visual_system_and_m01_launcher_are_exact():
     assert len(_UI87_FILES) == 13
     assert len(_UI88_FILES) == 8
     assert len(_UI89_FILES) == 6
+    assert len(_UI90_FILES) == 8
     assert len([name for name in _UI85_FILES if name.startswith('app/static/badges/')]) == 30
     assert len([name for name in _UI67_FILES if name.startswith('app/static/badges/')]) == 30
     assert hashlib.sha256((ROOT/'deploy/company_entrypoint.py').read_bytes()).hexdigest() == '2f117d85c439c16ab78908bf5728056cc837e5d1f948a77040ef1d509c04c371'
@@ -202,6 +206,8 @@ def test_ui89_overlay_visual_system_and_m01_launcher_are_exact():
     assert (ROOT/'docs/UI88_SOURCE_PROVENANCE.json').is_file()
     assert (ROOT/'docs/WORKSPACE_UI89.md').is_file()
     assert (ROOT/'docs/UI89_SOURCE_PROVENANCE.json').is_file()
+    assert (ROOT/'docs/WORKSPACE_UI90.md').is_file()
+    assert (ROOT/'docs/UI90_SOURCE_PROVENANCE.json').is_file()
 
 
 
@@ -261,8 +267,8 @@ def test_ui85_badge_assets_keep_stable_ids_and_cosmetic_boundaries():
     assert len(badges) == 30 and all(row['unlocked'] for row in badges)
     patch=json.loads((source/'UI_PATCH.json').read_text())
     ui85=json.loads((ROOT/'docs/UI85_SOURCE_PROVENANCE.json').read_text())
-    assert patch['patch_id'] == 'workspace-ui89-core-visual-system-refinement-2026-10-02'
-    assert patch['parent_patch_id'] == 'workspace-ui88-mobile-first-visual-hardening-2026-10-02'
+    assert patch['patch_id'] == 'workspace-ui90-navigation-theme-parity-2026-10-02'
+    assert patch['parent_patch_id'] == 'workspace-ui89-core-visual-system-refinement-2026-10-02'
     assert patch['boundaries']['recognition_rule_change'] is False
     assert ui85['boundaries']['badge_id_change'] is False
     assert ui85['boundaries']['recognition_scoring_change'] is False
@@ -272,25 +278,25 @@ def test_ui85_badge_assets_keep_stable_ids_and_cosmetic_boundaries():
 def test_ui86_visual_art_and_report_branding_boundaries_are_explicit():
     source=Path(os.environ['WAVELINK_TEST_SOURCE'])
     patch=json.loads((source/'UI_PATCH.json').read_text())
-    assert patch['patch_id'] == 'workspace-ui89-core-visual-system-refinement-2026-10-02'
-    assert patch['parent_patch_id'] == 'workspace-ui88-mobile-first-visual-hardening-2026-10-02'
+    assert patch['patch_id'] == 'workspace-ui90-navigation-theme-parity-2026-10-02'
+    assert patch['parent_patch_id'] == 'workspace-ui89-core-visual-system-refinement-2026-10-02'
     assert patch['boundaries']['report_branding_changes_app_identity'] is False
     ui86=json.loads((ROOT/'docs/UI86_SOURCE_PROVENANCE.json').read_text())
     assert ui86['localisation_roadmap']['implemented'] is False
     assert (source/'app/static/wavelink-home-cover-ui86.svg').is_file()
     assert (source/'app/static/wavelink-profile-cover-ui86.svg').is_file()
     index=(source/'app/static/index.html').read_text()
-    assert 'visual_system_ui89.css?v=1.34.19-ui89' in index
+    assert 'visual_system_ui90.css?v=1.34.19-ui90' in index
     assert 'visual_refresh_ui86.css' not in index
     assert 'visual_reconciliation_ui87.css' not in index
     assert 'mobile_foundation_ui88.css' not in index
-    assert 'pxgeo-dive-check-shell-1.34.19-ui89' in (source/'app/static/sw.js').read_text()
+    assert 'pxgeo-dive-check-shell-1.34.19-ui90' in (source/'app/static/sw.js').read_text()
     deployment=(source/'app/static/deployment_branding.js').read_text()
     report=(source/'app/static/company_branding.js').read_text()
     assert '/api/admin/company-branding' not in deployment
     assert 'Reports and exports only' in report
     assert 'never alter the application header' in report
-    visual=(source/'app/static/visual_system_ui89.css').read_text()
+    visual=(source/'app/static/visual_system_ui90.css').read_text()
     assert 'wavelink-approved-offshore-ui87.webp' in visual
     assert 'wavelink-approved-offshore-profile-ui87.webp' in visual
 

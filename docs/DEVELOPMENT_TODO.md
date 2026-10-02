@@ -1,3 +1,35 @@
+# UI90 current priorities — navigation and route-theme parity
+
+UI90 is the prepared baseline.
+
+## Completed
+
+- [x] Remove the redundant **Company workspace** heading from the sidebar.
+- [x] Remove the redundant **Find a workspace** input and Clear action.
+- [x] Keep the existing authorised global search in the product header.
+- [x] Consolidate Company name and active-presence state into one compact context card.
+- [x] Keep mobile Close inside the compact context card.
+- [x] Remove local sidebar filtering logic from the shell controller.
+- [x] Preserve permission-owned links, empty-group hiding, focus trapping and mobile route closure.
+- [x] Extend the Home/Profile oceanic visual hierarchy to normal operational route headings.
+- [x] Keep Home and Profile approved image covers as explicit exceptions.
+- [x] Align Fleet company context and route headings with the main application.
+- [x] Add no database, API, authority, recognition, identity, timer or storage change.
+
+## Next visual batches
+
+- [ ] Refine dense tables, filters, long forms and master/detail inspectors.
+- [ ] Standardise loading, empty, unavailable, error, offline, attachment and evidence states.
+- [ ] Refine generated report covers without changing the report-only branding boundary.
+- [ ] Run physical Android, iPhone and tablet acceptance including landscape, keyboard, camera, QR, signature, zoom and large text.
+- [ ] Lock accepted screens with visual-regression references.
+
+## Later functional batch
+
+- [ ] Add English/Portuguese localisation with a company default and per-user override after the visual baseline is stable.
+
+--- Retained prior release history ---
+
 # UI89 onward — grouped visual programme
 
 ## UI90 — Records and data density
