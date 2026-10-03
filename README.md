@@ -1,3 +1,13 @@
+# Wavelink UI92 — Consistent browsing and hosted clarity
+
+Prepared from the exact working UI91 upload and GitHub commit `c7724cfba997837a22dc86dd1774ef990cdf5aee`. Core **1.34.19**; M01, C01 and G01 remain unchanged.
+
+Read **docs/WORKSPACE_UI92.md** for changes and installation, **docs/CONTINUATION_CHECKPOINT.md** for the current development state, and **DELIVERY_CHECKS.json** for executed checks.
+
+This grouped update standardises ordinary route banners, adds a real expandable Original Files tree, introduces Certificates list/detail browsing, fixes cached-register return, and removes repetitive healthy-state hub/recovery clutter. Permissions, operational APIs, database schema, company settings, signatures and recovery safeguards are not changed. No GitHub push or live deployment was performed while preparing this package.
+
+--- Historical release notes below; UI92 above is current ---
+
 # Wavelink UI91 — Visual Continuity and Route Reliability
 
 Current prepared repository: **UI91 + UI90 + UI89 + UI88 + UI87 + UI86 + UI85 + UI84 + UI83 + UI82 + UI81 + UI80 + UI79 + UI78 + UI77 + UI76 + UI75 + UI74 + UI73 + UI72 + UI71 + UI70 + UI69 + UI68 + UI67 + UI66 + Mail Startup M01 + Company C01 + G01**, core **1.34.19**.

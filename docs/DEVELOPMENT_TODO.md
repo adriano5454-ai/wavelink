@@ -1,3 +1,26 @@
+# UI92 current priorities
+
+UI92 is the current prepared release, based on the actual UI91 repository. No deployment has been performed by this build.
+
+## Completed in UI92
+
+- Standard ordinary route-cover geometry and route-owned Original Files, Administration and Fleet headings.
+- Expandable parent-ID Original Files folder tree, retaining file selection and the original controlled operations.
+- Certificates list/detail inspector and mobile Back interaction; full editing/source/history/renewal remain on the full record.
+- Fix unchanged-register return getting stuck on loading.
+- Remove routine Local hub and no-work recovery clutter while preserving all real save warnings and recovery paths.
+- Keep tablet top-bar actions, account and badge in view.
+
+## Next
+
+1. User acceptance of UI92 on the existing hosted service and real phone; no data resets or storage clearing.
+2. Extend list/detail browsing to suitable operational modules, without bypassing open-editor guards or reducing existing actions.
+3. Continue a common visual language for forms, filters, evidence/source files and unavailable/error states.
+4. Real-device landscape, mobile keyboard, zoom, large text and accessibility review.
+5. English/Portuguese localisation only after visual stabilization.
+
+--- Historical development notes follow; UI92 above is current ---
+
 # UI91 follow-up and visual roadmap
 
 ## Connected acceptance for UI91

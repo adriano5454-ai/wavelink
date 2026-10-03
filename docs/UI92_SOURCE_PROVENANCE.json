@@ -1,0 +1,189 @@
+{
+  "format": "wavelink-ui92-build-source-1",
+  "parent_patch_id": "workspace-ui91-visual-continuity-route-reliability-2026-10-02",
+  "patch_id": "workspace-ui92-consistent-browsing-hosted-clarity-2026-10-03",
+  "parent_manifest_sha256": "9c0740be3265e610cdb962d3e2a0fcd38584acd6c6eafb6c255d0c52ffefb992",
+  "runtime_manifest_sha256": "071e70c9b15d81fb0c0ffeea9c25cf2efb2eb8ff93679c0458cb9043e74e1525",
+  "parent_overlay_sha256": "43385c725a9c8ecfb3c0645d184a1a8d8525e55ad9c60fc3af84486975cd9ddc",
+  "target_overlay_sha256": "c48ea116e850ef464e7d365a9b5b337a0b8ab1e4d08b3c483eba34d4b0314a26",
+  "extractor_sha256": "57550f076fe6474523d77ecb9fc5b119c0a183f0f6a45be3361c61de0c381fc1",
+  "changed_runtime_payloads": 17,
+  "runtime_manifest_entries": 2077,
+  "new_runtime_files": 5,
+  "records": [
+    {
+      "path": "app/static/app.js",
+      "before_sha256": "6aae91e342ee185543d410f0fd71aecfed843a6b15edb7a0e4b3daaab5984c78",
+      "after_sha256": "3d52d4d050eaa536d3f91c3017e622a88365b0ce7f4fcd74fab8b4a1d68d9eda",
+      "bytes": 165442
+    },
+    {
+      "path": "app/static/browser_admin.js",
+      "before_sha256": "addf140d6549ba62606b9f6989c3b0adff1ec17faa843e1bef89abc55985f78c",
+      "after_sha256": "2154b13437b07f7edefa9ea8e2caa43b74abefd4142df6285e4b7da966a46827",
+      "bytes": 27529
+    },
+    {
+      "path": "app/static/certificate_workspace.js",
+      "before_sha256": "b243a9c2aa2d5b4a6aa47d3cbdec01d7a0370df1401522ed4c96f0d0bf5b4908",
+      "after_sha256": "156cf7c11276ec89919a95f0b05311e315e5fe44e154bc7b675952c0cc727471",
+      "bytes": 33235
+    },
+    {
+      "path": "app/static/experience_shell.js",
+      "before_sha256": "d554a77269250aea6de465221ed796b75c03a13140e8f8e01fd1febb30838536",
+      "after_sha256": "9dc532466393a961c0112ae83460cc84dd3e575839489b995cf70a7cc45aefb7",
+      "bytes": 9636
+    },
+    {
+      "path": "app/static/fleet.html",
+      "before_sha256": "7af7ecb5b9a46a00e62959d8be0e8006d886006b680a46f07812265d3d891ba8",
+      "after_sha256": "f24c7ec05d1c8dcff84bda0727a8680c35faa6f9471ca8de6450a327d26f63bc",
+      "bytes": 6293
+    },
+    {
+      "path": "app/static/fleet.js",
+      "before_sha256": "c3e1c6216b78a74d7f382e9f30754144e446873b21922fcd816bf2fa97c6a2fd",
+      "after_sha256": "65cdb076f031c3f1125ccd9b846bef61c8bcef8c3ed07843d5062b69c352f191",
+      "bytes": 134282
+    },
+    {
+      "path": "app/static/home_workspace.js",
+      "before_sha256": "21747052710059b6b52209d2e538a9374df8cb050e2adc39dbb8247d59872028",
+      "after_sha256": "a8d57210bbdc4ad9d41dd0374ff330e2a0ccfef4fc67ba3c1671419f09566bdc",
+      "bytes": 10816
+    },
+    {
+      "path": "app/static/index.html",
+      "before_sha256": "9939c715fc56479ece41df793e47c39de1ff299b872786bed0380716aba3fe56",
+      "after_sha256": "c895e781681f78e7efddceddedd2bacaf71dd7e9b0cac10b4782bb9891be48e6",
+      "bytes": 23822
+    },
+    {
+      "path": "app/static/original_library.js",
+      "before_sha256": "e63a5e02479a398cb22c0278581230de7d28c990f47e875b1db659b18c96e10a",
+      "after_sha256": "62f1a493af4191225ca3cb7d75de9bd387db7b7e6edc2f93c7659012ed2d3cb4",
+      "bytes": 36938
+    },
+    {
+      "path": "app/static/personal_home.js",
+      "before_sha256": "65045e4cb12767a4afb9033467d9159739f62a6469b6a2c7fbe8f1286fd6e2c0",
+      "after_sha256": "2d18e4b7f19ed611391e104fb1457842b5376585d9ae5f18282f50eb24517931",
+      "bytes": 19733
+    },
+    {
+      "path": "app/static/save_status_ui.js",
+      "before_sha256": "81c96c310b6fcedffee14896ba01600ba1e82fdc2ef437c107d4365570671536",
+      "after_sha256": "02f10539b12715421e41025113bb540064e6760ccea0cf244a3167e53bb356fb",
+      "bytes": 12516
+    },
+    {
+      "path": "app/static/sw.js",
+      "before_sha256": "1048701a134bd80b3d191383f46dd271484a5418f5b75fd543a738a312086e27",
+      "after_sha256": "204740ca2c6637ae919b2ab6dfad7d301170297890ab9e0ab0692e3fd645ccc8",
+      "bytes": 12681
+    },
+    {
+      "path": "app/static/visual_system_ui92.css",
+      "before_sha256": null,
+      "after_sha256": "7176804b46f8a2a332a9ca7540c96082bbbc0d0229b0ba31f48e55a6a3dd77a2",
+      "bytes": 90742
+    },
+    {
+      "path": "tests/ui92_workspace_flow/__init__.py",
+      "before_sha256": null,
+      "after_sha256": "cdffc609867233445ae5cebfa90e83472eedad96301014ce92a27bbca8afb2b2",
+      "bytes": 54
+    },
+    {
+      "path": "tests/ui92_workspace_flow/browser_checks.py",
+      "before_sha256": null,
+      "after_sha256": "a9882b17b6d0402ad15796a1077d3df144ae3419677d4ee046d16901013c8543",
+      "bytes": 11743
+    },
+    {
+      "path": "tests/ui92_workspace_flow/safety_checks.py",
+      "before_sha256": null,
+      "after_sha256": "796c5348605229487ffc98fa25cb9773cc0c7ec640bd721914b1183cf04593db",
+      "bytes": 7094
+    },
+    {
+      "path": "tests/ui92_workspace_flow/test_contract.py",
+      "before_sha256": null,
+      "after_sha256": "adb0640631cd8ecf46f45001d19502842c02d45a7a6f2d6f77aef73b4b0f359e",
+      "bytes": 4613
+    }
+  ],
+  "repository_parent": {
+    "url": "https://github.com/adriano5454-ai/wavelink",
+    "commit": "c7724cfba997837a22dc86dd1774ef990cdf5aee",
+    "git_tree": "896d57b2eefbe584195346bcd37117c15e23727b",
+    "tracked_files_checked": 241,
+    "tracked_worktree_differences": 0,
+    "old_deployment_manifest_drift": [
+      {
+        "path": "deploy/company_identities.json",
+        "status": "tracked_override_preserved"
+      },
+      {
+        "path": "deploy/company_logos/README.md",
+        "status": "tracked_override_preserved"
+      },
+      {
+        "path": "deploy/company_provision.py",
+        "status": "tracked_override_preserved"
+      },
+      {
+        "path": "docs/UI71_SOURCE_PROVENANCE.json",
+        "status": "absent_in_actual_upload"
+      },
+      {
+        "path": "docs/UI72_SOURCE_PROVENANCE.json",
+        "status": "absent_in_actual_upload"
+      },
+      {
+        "path": "docs/UI84_SOURCE_PROVENANCE.json",
+        "status": "tracked_override_preserved"
+      },
+      {
+        "path": "docs/UI86_SOURCE_PROVENANCE.json",
+        "status": "tracked_override_preserved"
+      },
+      {
+        "path": "docs/WORKSPACE_UI71.md",
+        "status": "absent_in_actual_upload"
+      },
+      {
+        "path": "docs/WORKSPACE_UI72.md",
+        "status": "absent_in_actual_upload"
+      },
+      {
+        "path": "docs/WORKSPACE_UI84.md",
+        "status": "tracked_override_preserved"
+      },
+      {
+        "path": "docs/WORKSPACE_UI86.md",
+        "status": "tracked_override_preserved"
+      },
+      {
+        "path": "tests/test_company_c01.py",
+        "status": "tracked_override_preserved"
+      }
+    ]
+  },
+  "protected_files": {
+    "Dockerfile": "ed12b7d2e53f662d69072b3715a54831f73f6311f3ce58fd9b6204d53334e260",
+    "deploy/entrypoint.py": "f754d4db367983a75473f1d525183b618a25c265837a317df66ffabaf8f4c1e2",
+    "deploy/company_entrypoint.py": "2f117d85c439c16ab78908bf5728056cc837e5d1f948a77040ef1d509c04c371",
+    "deploy/company_provision.py": "d38aa6358d404d95b53cfafdfc1ee458baef8a0a6dd4e4a9b0db9d53962f3234",
+    "deploy/company_identities.json": "7e4d0d1744c27fdaa583f42d124ba9cf9f59d75c184104537fbfd208105a2436",
+    "deploy/company_logos/README.md": "5df3583b9f47ddda5934dd620fca361f5c02319eb9072c6242ed44f6a35ed9b9",
+    "tests/test_company_c01.py": "82733db626ef77e676612393dd6bf3f4ce59a009fe40fda096cd982b91068cbc",
+    "vendor/source_parts.json": "cc8dc3918773ef4cc6416a458ff79f25f82cb6a4237aa85cec6ab4f7695e2bc5"
+  },
+  "remote_actions": {
+    "github_write": false,
+    "render_deployment": false,
+    "database_change": false
+  }
+}
