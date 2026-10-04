@@ -41,6 +41,7 @@ def company_application_environment(source: Mapping[str, str], *, origin: str) -
                PUBLIC_URL=origin)
     mode = source.get('WAVELINK_MEMBERSHIP_MODE', 'OFF')
     env['WAVELINK_MEMBERSHIP_MODE'] = mode
+    env['WAVELINK_ALERT_EMAIL'] = source.get('WAVELINK_ALERT_EMAIL', 'OFF')
     if mode == 'INVITE_ONLY':
         for name in _MEMBERSHIP_SMTP_ENV:
             if name in source:

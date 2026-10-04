@@ -1,0 +1,125 @@
+{
+  "format": "wavelink-runtime-overlay-1",
+  "date": "2026-10-04",
+  "patch_id": "workspace-ui93-email-alerts-account-layout-2026-10-04",
+  "parent_patch_id": "workspace-ui92-consistent-browsing-hosted-clarity-2026-10-03",
+  "parent_manifest_sha256": "071e70c9b15d81fb0c0ffeea9c25cf2efb2eb8ff93679c0458cb9043e74e1525",
+  "scope": "Optional personal email alerts, verified alert mailboxes and restored account card layout. UI92 operational workflows, companies, gateway and data retained.",
+  "schema": {
+    "database_migration": true,
+    "migration": "Additive email_alert_* tables; default off; full backups retain receipts; selective transfers clear personal mail state."
+  },
+  "boundaries": {
+    "operational_record_schema_change": false,
+    "operational_write_sends_email": false,
+    "email_default_on": false,
+    "demo_email_enabled": false,
+    "source_parts_change": false,
+    "permission_grant": false,
+    "browser_storage_clear": false,
+    "database_reset": false,
+    "new_timer": "one server-side 60-second mail scan when explicitly enabled; no browser poller"
+  },
+  "files": [
+    {
+      "path": "app/action_center.py",
+      "before_sha256": "bed029ca8b4af77781c2415dee2f5fe5ac7b8e8e8cf1a0457f5fdf11374ead85",
+      "after_sha256": "887c63c500a37d83c91706637afba7402ef3adf57ca07642fb2ce49db8330706"
+    },
+    {
+      "path": "app/attention.py",
+      "before_sha256": "ebd448f5bb4ddf8c142dc28e4cc8b1720f52bfdd47bb6578033de2dae010958c",
+      "after_sha256": "084c0f094716bc9994eb555394db89c67c580796e6a329d23337ba6a46fdb066"
+    },
+    {
+      "path": "app/email_alerts.py",
+      "before_sha256": null,
+      "after_sha256": "d78da5f0db62bb64582262f730d68a07ecb8a572792edcf9a92c8eecf232cdae"
+    },
+    {
+      "path": "app/email_alerts_api.py",
+      "before_sha256": null,
+      "after_sha256": "c0628de2dab321652f4d145e5e6bab3d0657e0e9a65409f97eec4ee27955cf07"
+    },
+    {
+      "path": "app/handover_continuity.py",
+      "before_sha256": "b6ce57b5ffb0a9d213dff65a4fb32799e33d8fb4506add7dc7c102b59bca8feb",
+      "after_sha256": "1febaf93611dde8fd1fdafc3e509bccbb0ed28deb44233399fcdf5b36c376649"
+    },
+    {
+      "path": "app/project_modules.py",
+      "before_sha256": "d0130eeb4ea802111be86bfc3dcfd35af46d88c8b06ce786c0ede12dd4ed56a4",
+      "after_sha256": "ededd4d6574c5efe5523e984fc166d668ccb2127e1e3d6e9ac14c03045871bdd"
+    },
+    {
+      "path": "app/server.py",
+      "before_sha256": "1417e6aaaca40b1db154bab4c696cb49868eee6f78ac277a94bbe380b745a96d",
+      "after_sha256": "e48c90cc918ca73061e6b2ed420ec92a56726c0c61db7563aa691695ab219d4f"
+    },
+    {
+      "path": "app/static/app.js",
+      "before_sha256": "3d52d4d050eaa536d3f91c3017e622a88365b0ce7f4fcd74fab8b4a1d68d9eda",
+      "after_sha256": "c5adf2019e577e224b7cd5c217edc6f56438268dadbccc51b8937debe1395120"
+    },
+    {
+      "path": "app/static/email_alerts_ui93.css",
+      "before_sha256": null,
+      "after_sha256": "ceeb8fa6fd364ee799d6822d74e1f0e9d0095724d6f4a9af39dd40d30c98bf8b"
+    },
+    {
+      "path": "app/static/email_alerts_ui93.js",
+      "before_sha256": null,
+      "after_sha256": "c96495d49e159cb3513ca95ece006dd1a34ad35fb5dedfbba52dd3140fcac8f8"
+    },
+    {
+      "path": "app/static/fleet.html",
+      "before_sha256": "f24c7ec05d1c8dcff84bda0727a8680c35faa6f9471ca8de6450a327d26f63bc",
+      "after_sha256": "c3c47e3c99b662b42f03037afac13eb6c90c4c50746e3189a99934b10f9f8a26"
+    },
+    {
+      "path": "app/static/help_topics/assignments.html",
+      "before_sha256": "ee82f1f610269e64496ae13c19b11e338cfc334958685fa97e409b420c5612df",
+      "after_sha256": "c22e438d87e656fdeb085e04910f2d5e2d4846347b00b9809d6d9bd2c5bea71e"
+    },
+    {
+      "path": "app/static/help_topics/certificates.html",
+      "before_sha256": "661355f851adc11ac001205ca72f9bd9091be3c9c5f8875fb342f03c18439de4",
+      "after_sha256": "e444877e9659020028a75db7c38b6b83889c5314d97298efcef1c72d7cc6d476"
+    },
+    {
+      "path": "app/static/help_topics/lowstock.html",
+      "before_sha256": "07340cc7a2ab9b2c9870d5e2cd035933b3af93c97e654de924328fd83020d89c",
+      "after_sha256": "a701bd3d81a0d5031f5305cfd0d8c629c75fb92b3aa83c0e4cb9db38e54ff88f"
+    },
+    {
+      "path": "app/static/index.html",
+      "before_sha256": "c895e781681f78e7efddceddedd2bacaf71dd7e9b0cac10b4782bb9891be48e6",
+      "after_sha256": "2729ddcfa9facc44bf6fc9ec2cc9d0241d4ce906449e9df4ea6e5c63bddaaebc"
+    },
+    {
+      "path": "app/static/recognition_workspace.js",
+      "before_sha256": "fe26843239bd2d12ef59a07a21071f666d688edcc61bfa5ed1f0f2568448e65c",
+      "after_sha256": "00506d4299c62b82004f0b41a943d0f75e1d09a7814352221a7540ea9e067fbc"
+    },
+    {
+      "path": "app/static/sw.js",
+      "before_sha256": "204740ca2c6637ae919b2ab6dfad7d301170297890ab9e0ab0692e3fd645ccc8",
+      "after_sha256": "72619b66dab855641675252eaafca4464c04fa49619174ae879e9451d33f1ecb"
+    },
+    {
+      "path": "app/static/visual_system_ui93.css",
+      "before_sha256": null,
+      "after_sha256": "e91cac91e77db92a5e698d127f1abdbfc9d4b1e89c1aa7586ab6529725cbafcb"
+    },
+    {
+      "path": "tests/browser_email_ui93.py",
+      "before_sha256": null,
+      "after_sha256": "71b7c32ae993144786a75fafb9e2bc451244aa1f9c313fd455f555da03b1ebe4"
+    },
+    {
+      "path": "tests/test_email_alerts_ui93.py",
+      "before_sha256": null,
+      "after_sha256": "9ba3234e75fca5c0589122e33fa44f12e37477be3a366fc80993835eb2a1e9ee"
+    }
+  ]
+}

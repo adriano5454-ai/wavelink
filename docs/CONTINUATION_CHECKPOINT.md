@@ -1,35 +1,29 @@
-# Wavelink continuation checkpoint — UI92
+# Wavelink continuation checkpoint — UI93
 
-## Current prepared baseline
+## Current prepared release
 
-- Core: **1.34.19**.
-- UI patch: `workspace-ui92-consistent-browsing-hosted-clarity-2026-10-03`.
-- Authoritative visual asset: `app/static/visual_system_ui92.css`; index and Fleet load only this visual-system version.
-- Parent: actual `wavelink(1).zip`, all 241 Git-tracked files matching `adriano5454-ai/wavelink` main commit `c7724cfba997837a22dc86dd1774ef990cdf5aee`.
-- Parent extractor SHA-256: `47639e1b74866fcbd32f0c009e6f84f6e59d47cc251d9b350d246f1d92fc4915`.
-- UI92 extractor SHA-256: `57550f076fe6474523d77ecb9fc5b119c0a183f0f6a45be3361c61de0c381fc1`.
-- Rebuilt runtime: 2077 manifest entries plus generated RELEASE_FILES.json.
-- Runtime manifest SHA-256: `071e70c9b15d81fb0c0ffeea9c25cf2efb2eb8ff93679c0458cb9043e74e1525`.
-- Delivery is a compact changed-files ZIP, **not** a GitHub commit or live deployment. No main-branch push, service change or production-data access occurred.
+- Core **1.34.19**; `workspace-ui93-email-alerts-account-layout-2026-10-04`.
+- Exact parent: all 243 UI92 repository files verified against the supplied ZIP and GitHub main `ba27ddeee79fd77579beecb02d601ec09443b8dc`.
+- Parent extractor remains `57550f076fe6474523d77ecb9fc5b119c0a183f0f6a45be3361c61de0c381fc1`; vendor/source parts are unchanged.
+- UI93 is applied by the pinned companion `deploy/apply_ui93.py` once after UI92 extraction in Docker.
+- Runtime manifest: 2,084 tracked entries plus generated RELEASE_FILES.json. Parent manifest: `071e70c9b15d81fb0c0ffeea9c25cf2efb2eb8ff93679c0458cb9043e74e1525`.
+- One authoritative visual asset: `app/static/visual_system_ui93.css` in the main app and Fleet.
+- GitHub main was readable, but creating the review branch returned 403 Resource not accessible by integration. No remote branch, commit or pull request was created. A verified compact UI92-to-UI93 update bundle is the delivery fallback. Hosting configuration and live deployment remain separate actions. No live company data, credentials or inboxes were used.
 
-## Implemented here
+## Implemented
 
-Shared ordinary route covers, including route-owned Original Files/Administration/Fleet headings; true nested expandable folders; the Certificates read-only list/detail inspector with mobile back navigation; cached-register return repair; quieter normal Home/Workspaces/account recovery presentation; tablet header containment. Full certificate editing/source-file workflows stay on their established record screen.
+Optional personal email alerts, category choices, notification quiet-hours integration, verified membership/alert-only mailbox routing, background scans and durable delivery claims. Email starts off; the COMPANY service also requires `WAVELINK_ALERT_EMAIL=ON` and its existing M01 mail settings. Read/dismissed and currently inaccessible sources are excluded. Complete projections include assignments beyond the first 50 and date/stock/acknowledgement attention beyond Home's previews. Operational writes remain independent of SMTP. Unconfirmed/interrupted mail is never automatically resent.
 
-See WORKSPACE_UI92.md for exact behavior and one acceptance session. Do not claim all modules have been converted to inspectors. Other record screens remain the next grouped visual work.
+Account & security regains the card layout/facts/spacing omitted during earlier CSS consolidation and gets a visible Email alerts shortcut. Email controls and their mailbox verification flow are responsive. Three relevant Help articles now describe optional company email. Other UI92 list/detail, folder tree, route, badge and recovery behaviors remain intact.
 
 ## Preserve
 
-One authoritative visual layer, the left sidebar, visible primary actions, the fixed Wavelink identity and existing company context. Keep approved artwork/icons and the persistent badge. Help remains a separate tab. Simpler means discoverable and easier, not fewer capabilities.
+Company C01 / M01 / G01 separation, persistent disk/database, company identity/logo, named administrator access, exact verified membership state, MFA/session rules, existing permissions, source identities, signatures, audit, daily handover continuation and assigned shifts, task chooser and inventory verification. Keep the sidebar, primary actions, approved artwork and permanent badge. Help opens in a separate tab. Report Branding remains report/export-only. Keep DEMO_PUBLIC_ENTRY=YES and INITIALISE_FICTIONAL_DEMO=NO on the demo. Do not reset, import fixtures, repeat setup or clear browser storage.
 
-Preserve the task chooser, inventory-verification option, daily handover continuation and Create handover, named-session authorization, M01/C01/G01 isolation, Report Branding as report/export-only, source-file identities, signatures, audit history and actual unsent work. No added post-render decorator, observer-restyle pass, independent refresh loop or shell DOM re-parenting layer. Never clear browser storage or reset/import a company to apply this visual update.
+## Verified boundary
 
-## Validation and limitations
-
-The source parts replay through UI92 and are compared byte-for-byte with the prepared runtime. New source contracts, the browser route/layout matrix, certificate race/denial checks and Fleet checks use fictional local fixtures. Exact counts are in DELIVERY_CHECKS.json. Seven legacy tests in the broad regression selection fail on both UI91 and UI92; none was rewritten to manufacture a pass. Live deployment, actual-device behavior and browser service-worker lifecycle remain user acceptance work.
-
-The supplied repository's older DEPLOYMENT_FILES.json did not match several tracked company overrides and absent historical documents. The uploaded Git object tree matched the connected commit; actual files were used as the parent. UI92 preserves those company overrides and inventories the actual repository, without fabricating missing history or replacing company launchers with earlier canonical versions.
+See UI93_REVIEW_REPORT.json. Broad selected review: 1,083 passed / 14 initial failures / 1 skip. Two initial failures were harness paths and pass with correct paths; eleven source assertions reproduce on the unmodified UI92 runtime; the final legacy launcher byte assertion is superseded by the deliberate new switch plus updated M01 tests. No historical assertion was rewritten to manufacture a pass. Final targeted run: 237 passed; companion build/replay checks: 3 passed; no candidate manifest mismatch. Browser main/Fleet/email/selection/navigation/equipment/work checks pass on fictional fixtures. Actual inbox, deployed service, devices, Windows and service-worker update lifecycle remain acceptance work.
 
 ## Next grouped work
 
-First collect UI92 visual acceptance and repair any regression. Then extend the list/detail model to suitable Tasks, Maintenance and other record screens with their owning renderers, preserve unsaved editors/selection, and simplify module-specific routine status text. Continue unified forms, source/evidence presentation and phone/tablet ergonomics. Keep English/Portuguese localisation in a later functional batch after visual stability.
+First complete hosted UI93/mail acceptance with a mailbox the operator controls and address any actual regression. Then continue the UI92 roadmap: suitable Tasks/Maintenance record inspectors, unified forms/source evidence and phone ergonomics, while retaining all capabilities and actual unsaved editors. Keep wider operations, fault/HSE workflows, QR invitations, company administration and later English/Portuguese localisation in the retained DEVELOPMENT_TODO. Unconfirmed-delivery review/resend tooling may be a separate consequential-action batch; do not silently add automatic uncertain retries.

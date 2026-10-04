@@ -1,5 +1,21 @@
 # Local-only validation
 
+## Current UI93 replay and mail checks
+
+Use two new, disposable runtime directories. Keep the first as the exact UI92 parent; apply UI93 only to its copy. These checks use fictional projects and mocked mail, never a live mailbox or company project.
+
+```bash
+python deploy/extract_source.py vendor/source_parts.json /tmp/WAVELINK_UI92_TEST_BASE
+cp -a /tmp/WAVELINK_UI92_TEST_BASE /tmp/WAVELINK_UI93_TEST_SOURCE
+python deploy/apply_ui93.py /tmp/WAVELINK_UI93_TEST_SOURCE
+WAVELINK_UI92_TEST_SOURCE=/tmp/WAVELINK_UI92_TEST_BASE WAVELINK_TEST_SOURCE=/tmp/WAVELINK_UI93_TEST_SOURCE PYTHONPATH=. python -m pytest -q tests/test_ui93_build.py
+PYTHONPATH=/tmp/WAVELINK_UI93_TEST_SOURCE python -m pytest -q /tmp/WAVELINK_UI93_TEST_SOURCE/tests/test_email_alerts_ui93.py
+```
+
+The two parent-replay checks skip when the optional UI92 test-source variable is absent. Existing broad suites contain historical source/cache-version assertions; see docs/UI93_REVIEW_REPORT.json for the unchanged-baseline comparison and current validation boundary.
+
+## Retained historical validation instructions
+
 Use a disposable extracted UI03 source and a test environment with pytest/httpx and the shipped runtime dependencies. Never point these probes at the live Render/vessel/CCVD projects.
 
 ```

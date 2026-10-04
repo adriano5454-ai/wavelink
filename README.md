@@ -1,3 +1,15 @@
+# Wavelink UI93 — Optional email alerts and aligned account settings
+
+Core **1.34.19**, built from verified UI92 / main `ba27ddeee79fd77579beecb02d601ec09443b8dc`.
+
+Users can turn email on/off in **Account & security → Email alerts**, choose categories and follow their quiet hours. Approved membership mailboxes are reused; existing User ID accounts can verify an alert-only address. Every user starts with email off. Account card alignment/spacing is restored, and the Email alerts shortcut is visible.
+
+Deploy the reviewed change, then set **`WAVELINK_ALERT_EMAIL=ON`** on the intended COMPANY service with its existing private M01 mail settings. The demo remains isolated. No reset, import or browser-storage clearing is required. Docker applies the new pinned companion once after the unchanged UI92 extractor.
+
+Read [docs/WORKSPACE_UI93.md](docs/WORKSPACE_UI93.md) for activation and acceptance, [docs/CONTINUATION_CHECKPOINT.md](docs/CONTINUATION_CHECKPOINT.md) for continuation, and [docs/UI93_REVIEW_REPORT.json](docs/UI93_REVIEW_REPORT.json) for checks and known historical assertions. Real SMTP inbox delivery and live hosting are not claimed by the local checks.
+
+--- Historical releases below; UI93 above is current ---
+
 # Wavelink UI92 — Consistent browsing and hosted clarity
 
 Prepared from the exact working UI91 upload and GitHub commit `c7724cfba997837a22dc86dd1774ef990cdf5aee`. Core **1.34.19**; M01, C01 and G01 remain unchanged.

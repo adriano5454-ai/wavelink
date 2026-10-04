@@ -51,7 +51,8 @@ def test_exact_allowlist_and_validated_origin():
     env = child_env(source)
     assert set(env) == set(entry.minimal_environment()) | set(SMTP_KEYS) | {
         'PYTHONPATH', 'WAVELINK_DEPLOYMENT_MODE', 'WAVELINK_MEMBERSHIP_MODE',
-        'COMPANY_ID', 'COMPANY_NAME', 'PUBLIC_URL'}
+        'COMPANY_ID', 'COMPANY_NAME', 'PUBLIC_URL', 'WAVELINK_ALERT_EMAIL'}
+    assert env['WAVELINK_ALERT_EMAIL'] == 'OFF'
     assert env['PUBLIC_URL'] == ORIGIN and env['PUBLIC_URL'] != source['PUBLIC_URL']
     assert env['PYTHONPATH'] == str(ce.BASE/'app')
     assert env['MEMBERSHIP_SMTP_PASSWORD'] == FAKE_ENV['MEMBERSHIP_SMTP_PASSWORD']
@@ -306,3 +307,11 @@ def test_fresh_hosted_child_uses_environment_not_injected_settings(tmp_path,monk
         assert out['pending_isolated'] and out['exact_retry_no_second_mail']
     else:
         assert out['off_invite_refused']
+
+
+def test_ui93_alert_switch_is_company_only_and_explicit():
+    env = child_env({**FAKE_ENV, 'WAVELINK_ALERT_EMAIL': 'ON'})
+    assert env['WAVELINK_ALERT_EMAIL'] == 'ON'
+    assert 'WAVELINK_ALERT_EMAIL' not in entry.minimal_environment()
+    with pytest.raises(DemoError):
+        child_env({**FAKE_ENV, 'WAVELINK_ALERT_EMAIL': 'ON', 'WAVELINK_DEPLOYMENT_MODE': 'DEMO'})

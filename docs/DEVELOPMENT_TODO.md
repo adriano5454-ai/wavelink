@@ -1416,3 +1416,8 @@ Grouped project presence, Original Files sidebar discoverability and Website 2.3
 ## UI44 clean-company builders current outcome
 
 Setup & builders is implemented for checklist templates, maintenance routines, toolbox forms, logbook designs and inventory structures. Builder authority is permission-scoped, not administrator-only; existing non-admin accounts default to no builder rights until explicitly granted. Browser imports create new reusable definitions/separate structures only. Whole-project/setup bundles, operations workbook mapping and history-bearing transfers remain advanced/native review work. Original Files keeps its existing permission/administrator upload boundary. For clean companies, test named permissioned builders before operational rollout; do not seed demo data just to obtain templates.
+
+
+## UI93 — Email alerts and account layout (4 October 2026)
+
+Implemented default-off personal email settings, verified mailbox setup, category choices, quiet hours, complete authorised projections, background summaries and durable duplicate barriers. Restored Account & security card geometry and visible email shortcut. Preserve UI92 workflows and all wider roadmap capabilities. Complete hosted/mail acceptance before unrelated expansion; real SMTP inbox/device/service-worker acceptance remains outstanding. Unconfirmed submissions require deliberate future review tooling and must never be blindly retried. See the current checkpoint.

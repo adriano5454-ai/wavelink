@@ -1,0 +1,163 @@
+{
+  "format": "wavelink-ui93-review-1",
+  "date": "2026-10-04",
+  "core": "1.34.19",
+  "parent_commit": "ba27ddeee79fd77579beecb02d601ec09443b8dc",
+  "runtime_variant": "workspace-ui93-email-alerts-account-layout-2026-10-04",
+  "runtime_manifest_sha256": "580d7f0d0c65c46d78029834e7014216d702862832429255df4dda35ea2f1849",
+  "implemented": [
+    "Optional personal email switch, all twelve alert categories and notification quiet hours.",
+    "Verified approved membership recipients or password-and-code verified alert-only mailboxes.",
+    "COMPANY-only operator switch, default off, existing M01 SMTP configuration reused.",
+    "Background mail summaries, current access/read-state rechecks and durable no-duplicate claims.",
+    "Complete email attention projections beyond Home preview and first assignment page.",
+    "Restored responsive Account & security card grid, spacing and facts layout.",
+    "Visible Email alerts shortcut and responsive verification/preferences controls.",
+    "Current authoritative UI93 visual asset, versioned shell assets and three help updates."
+  ],
+  "broad_selected_functional_review": {
+    "initial_passed": 1083,
+    "initial_failed": 14,
+    "skipped": 1,
+    "corrected_harness_checks_passed": 2,
+    "passing_selected_checks_after_path_correction": 1085,
+    "known_unchanged_ui92_source_assertions": [
+      "tests/ui56_certificates/test_ui56_browser_contract.py::test_sources_register_client_guards_and_scripts",
+      "tests/ui61_originals/test_contract.py::test_help_catalogue_and_outlines_match_current_articles",
+      "tests/ui61_originals/test_contract.py::test_current_main_precache_without_changing_storage_identity",
+      "tests/ui63_personal/test_contract.py::test_every_current_main_script_and_stylesheet_is_precached",
+      "tests/ui63_personal/test_contract.py::test_admin_and_branding_helpers_load_before_initial_render",
+      "tests/ui63_personal/test_contract.py::test_current_help_catalogue_and_outlines_match",
+      "tests/ui64_membership/test_contract.py::test_current_main_assets_are_available_and_precached",
+      "tests/ui64_membership/test_contract.py::test_help_catalogue_and_outline_match_current_topics",
+      "tests/ui64_membership/test_contract.py::test_personal_home_and_workspaces_remain_separate",
+      "tests/ui82_search_actions/test_search_actions.py::test_ui82_static_shell_and_cache_are_single_owned",
+      "tests/ui83_account_security/test_account_security.py::test_ui83_static_contract_is_single_owned"
+    ],
+    "legacy_launcher_assertion": "tests/ui65_roles_access/test_roles_access.py::test_m01_launcher_bytes_are_unchanged_from_verified_baseline",
+    "legacy_launcher_resolution": "The deliberate COMPANY allowlist change invalidates the old byte hash. Updated M01 default-off, allowlist and child-process isolation checks pass.",
+    "historical_tests_changed_to_manufacture_pass": false,
+    "scope": "Selected API, permissions, session/security, account, tasks, maintenance, checklists, handovers, toolbox, logs, inventory, certificates, original files, fault/HSE, receiving, membership, search/actions, continuity and company/demo/gateway suites. Native GUI and historical release assertions were not represented as a complete green suite."
+  },
+  "focused_final_functional_checks": {
+    "passed": 237,
+    "failed": 0,
+    "new_email_checks": 19,
+    "covers": "Default off; personal version/idempotency; recipient verification/rates/expiry; categories/quiet hours; access, account and membership revocation; read/dismissed exclusion; restart/concurrent delivery claims; uncertain mail; optout/access withdrawal before send; selected transfers; complete attention/assignment paging; background lifespan; personal Home, handover continuity and COMPANY/M01/G01 isolation."
+  },
+  "build_replay_checks": {
+    "passed": 3,
+    "failed": 0,
+    "byte_identical_to_tested_runtime": true,
+    "tampered_parent_rejected_before_writes": true,
+    "double_apply_rejected": true,
+    "docker_companion_runs": 1
+  },
+  "syntax": {
+    "python": 711,
+    "javascript": 97,
+    "errors": []
+  },
+  "browser": {
+    "checks_passed": 188,
+    "unexpected_javascript_errors": 0,
+    "runs": [
+      {
+        "group": "main_routes",
+        "checks_passed": 106,
+        "evidence_file": "EVIDENCE/main_routes.json"
+      },
+      {
+        "group": "fleet",
+        "checks_passed": 18,
+        "evidence_file": "EVIDENCE/fleet.json"
+      },
+      {
+        "group": "certificate_selection_safety",
+        "checks_passed": 9,
+        "evidence_file": "EVIDENCE/certificate_selection_safety.json"
+      },
+      {
+        "group": "sidebar_navigation",
+        "checks_passed": 12,
+        "evidence_file": "EVIDENCE/sidebar_navigation.json"
+      },
+      {
+        "group": "equipment",
+        "checks_passed": 14,
+        "evidence_file": "EVIDENCE/equipment.json"
+      },
+      {
+        "group": "work_execution",
+        "checks_passed": 16,
+        "evidence_file": "EVIDENCE/work_execution.json"
+      },
+      {
+        "group": "email_settings",
+        "checks_passed": 13,
+        "evidence_file": "EVIDENCE/email_settings.json"
+      }
+    ],
+    "main_routes": [
+      "home",
+      "profile",
+      "workspaces",
+      "team",
+      "logs",
+      "tasks",
+      "maintenance",
+      "checklists",
+      "handovers",
+      "toolbox",
+      "inventory",
+      "certificates",
+      "original-files",
+      "admin",
+      "faults",
+      "qshe",
+      "calendar"
+    ],
+    "widths_css_pixels": [
+      1440,
+      1024,
+      768,
+      390,
+      320
+    ],
+    "method": "Headless Linux Chromium persistent context with fictional in-process FastAPI TestClient bridge. Browser timers suppressed; desktop/phone viewport emulation.",
+    "known_fixture_warnings": "Two equipment and one work-execution WebSocket bridge warnings are classified separately from JavaScript errors. Live WebSocket transport was not tested.",
+    "visual_findings": "Account card grid/facts/spacing had been omitted during prior CSS consolidation. Restored in the authoritative visual stylesheet. Verified shortcut stays below fixed header; controls stack and fit at small widths. Main route covers, certificate inspector, original-file tree and Fleet containment verified."
+  },
+  "mail_acceptance": {
+    "real_smtp_sent": false,
+    "real_inbox_confirmed": false,
+    "transport_tests": "Controlled mock mailer; uncertain acceptance and cancellation tested.",
+    "required_live_step": "After company deployment, enable WAVELINK_ALERT_EMAIL=ON with existing private M01 settings and run the fictional-task acceptance session from docs/WORKSPACE_UI93.md."
+  },
+  "remote_actions": {
+    "github_read_verified": true,
+    "github_branch_creation_attempted": true,
+    "github_write_succeeded": false,
+    "github_write_error": "403 Resource not accessible by integration",
+    "pull_request_created": false,
+    "hosting_environment_changed": false,
+    "live_deployment": false,
+    "production_data_access": false
+  },
+  "not_claimed": [
+    "Full legacy test suite pass",
+    "Live deployment or real inbox delivery",
+    "Actual mobile-device validation",
+    "Windows/native GUI validation",
+    "Real service-worker installation/update lifecycle",
+    "Live WebSocket or production network failure acceptance"
+  ],
+  "preserved": [
+    "Unchanged original UI92 extractor and vendor source parts",
+    "Company identity/logo and demo/gateway isolation",
+    "Named login, MFA and membership/session rules",
+    "Operational record identities, permissions, signatures and audit",
+    "Persistent projects/data and recovery storage"
+  ],
+  "schema": "Additive email_alert_* personal mail tables. Default off; full backup retains state; selective transfer clears personal mail state. No operational record schema change, database reset, fixture import or browser-storage clearing."
+}
