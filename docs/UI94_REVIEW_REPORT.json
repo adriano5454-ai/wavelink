@@ -1,0 +1,129 @@
+{
+  "format": "wavelink-ui94-review-1",
+  "date": "2026-10-04",
+  "core": "1.34.19",
+  "parent_git_commit": "ba27ddeee79fd77579beecb02d601ec09443b8dc",
+  "runtime_variant": "workspace-ui94-quiet-header-anchored-profile-2026-10-04",
+  "runtime_manifest_sha256": "b03ae6f967b358750c70f9373fc8bcc1448f65686bf881723b1ab7f815259d55",
+  "findings_and_fixes": [
+    "Top bar combined boxed badge name/progress, action label/count, connection label and two-line account identity. Reduced to a single compact row; detailed identity/progress/ordinary connection status moved into Account.",
+    "At the 768-pixel baseline, the menu right edge was 54.8 pixels beyond its button. Phone menu was separated by a second search row. Position now derives from the button and clamps to the viewport, with resize/scroll/visual-viewport support.",
+    "Profile title copy could collapse at tablet widths between avatar, badge and Help. Identity/badge panels now stack before space is insufficient; long names remain within the heading. Home uses available tablet width and maintains readable shading.",
+    "Three exact Fleet entry asset URLs were absent from the existing precache. Added those URLs while retaining API/export cache exclusion."
+  ],
+  "art": {
+    "static_assets_validated": 72,
+    "raster_decode_and_svg_parse_errors": 0,
+    "active_cover_images": 2,
+    "badges": 30,
+    "approved_cover_and_badge_bytes_unchanged": true,
+    "active_art_decoded_in_chromium": 32,
+    "manual_review": "Approved covers, badge contact sheet, all fifteen ordinary desktop banner covers, desktop/phone Home and Profile, account menu and representative workflow screenshots viewed."
+  },
+  "browser_runs": [
+    {
+      "group": "header_banners_art",
+      "passed": 161,
+      "unexpected_javascript_errors": 0,
+      "evidence": "EVIDENCE/shell/UI94_SHELL_REVIEW.json"
+    },
+    {
+      "group": "workflow_regression",
+      "passed": 106,
+      "unexpected_javascript_errors": 0,
+      "evidence": "EVIDENCE/workflows/UI92_BROWSER_EVIDENCE.json"
+    },
+    {
+      "group": "email_settings",
+      "passed": 13,
+      "unexpected_javascript_errors": 0,
+      "evidence": "EVIDENCE/email/UI93_EMAIL_BROWSER.json"
+    },
+    {
+      "group": "fleet",
+      "passed": 18,
+      "unexpected_javascript_errors": 0,
+      "evidence": "EVIDENCE/fleet/fleet_browser_checks.json"
+    }
+  ],
+  "counts_overlap_do_not_treat_as_unique_user_journeys": true,
+  "header_widths_css_pixels": [
+    1440,
+    1280,
+    1100,
+    1024,
+    1000,
+    900,
+    820,
+    768,
+    760,
+    600,
+    430,
+    390,
+    360,
+    320
+  ],
+  "banner_routes": 17,
+  "banner_widths_css_pixels": [
+    1440,
+    1024,
+    768,
+    390,
+    320
+  ],
+  "browser_method": "Headless Linux Chromium persistent context; fictional temporary FastAPI/SQLite projects; in-process TestClient fetch bridge; browser timers suppressed; viewport emulation.",
+  "browser_covers": "Permanent badge, compact controls, exact menu anchoring, current account details, Escape/focus return, search/action dialogs, original save panel, visible failure indicators, banner name/action containment, resize/scroll/route closure, short landscape scrolling, all active image decoding and badge fallback; retained certificate inspectors/full records, Original Files tree/selection/search, healthy/draft status, email verification/preferences/optout and Fleet containment.",
+  "functional_checks": {
+    "current_email_tests_passed": 19,
+    "failed": 0,
+    "real_smtp_sent": false
+  },
+  "build_checks": {
+    "passed": 7,
+    "failed": 0,
+    "includes": "UI93 and UI94 replay, exact final runtime, cumulative UI92 -> UI93 -> UI94, tampered-parent rejection before writes, double-apply rejection, Docker order/once and unchanged email server bytes."
+  },
+  "syntax_and_entry_assets": {
+    "python": 712,
+    "javascript": 97,
+    "errors": [],
+    "entry_assets": [
+      {
+        "entry": "index.html",
+        "assets_verified_and_precached": 117,
+        "authoritative_visual_asset": "visual_system_ui94.css"
+      },
+      {
+        "entry": "fleet.html",
+        "assets_verified_and_precached": 19,
+        "authoritative_visual_asset": "visual_system_ui94.css"
+      }
+    ],
+    "python_scope": "all runtime Python files"
+  },
+  "inherited_ui93_review": {
+    "reference": "docs/UI93_REVIEW_REPORT.json",
+    "full_broad_suite_rerun_in_ui94": false,
+    "boundary": "Previous broad review passed 1,085 selected checks after correcting harness paths; eleven source assertions also fail on unmodified UI92 and the legacy M01 launcher hash is intentionally superseded. The previous 237 focused checks are historical evidence; current UI94 reruns are listed separately."
+  },
+  "remote_actions": {
+    "github_read_verified": true,
+    "main_still_ui92_when_checked": true,
+    "github_write_succeeded": false,
+    "github_write_blocker": "Earlier branch creation returned 403 Resource not accessible by integration; no write retry in UI94.",
+    "pull_request_created": false,
+    "hosting_changed": false,
+    "live_deployment": false,
+    "production_data_access": false
+  },
+  "not_claimed": [
+    "Full historical test suite pass",
+    "Live Render deployment",
+    "Real inbox delivery",
+    "Physical mobile-device or Windows/native GUI acceptance",
+    "Real service-worker installation/update lifecycle",
+    "Production WebSocket/network failure acceptance"
+  ],
+  "preserved": "UI93 email logic/API/schema, existing operational records/access/signatures/audit, editor and recovery safeguards, company/demo isolation, private settings/data, original UI92 extractor/vendor source and all approved cover/badge bytes.",
+  "delivery": "One cumulative compact source update usable on exact UI92 or prepared UI93; bulky screenshots/logs in separate evidence ZIP."
+}

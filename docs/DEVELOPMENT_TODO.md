@@ -1,3 +1,9 @@
+# UI94 current visual outcome
+
+Completed compact header, button-anchored account menu, persistent badge with progress in Account, and responsive Home/Profile banner containment. Approved cover and badge assets are unchanged. UI93 email is retained. First collect one hosted desktop/tablet/phone acceptance session; then continue the retained grouped roadmap below. Current checks are in UI94_REVIEW_REPORT.json. No deployment has been performed.
+
+--- Retained roadmap follows ---
+
 # UI92 current priorities
 
 UI92 is the current prepared release, based on the actual UI91 repository. No deployment has been performed by this build.

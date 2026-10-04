@@ -5,7 +5,7 @@ import pytest
 ROOT=Path(__file__).resolve().parents[1]
 spec=importlib.util.spec_from_file_location('ui93build',ROOT/'deploy/apply_ui93.py');overlay=importlib.util.module_from_spec(spec);spec.loader.exec_module(overlay)
 BASE=Path(os.environ['WAVELINK_UI92_TEST_SOURCE']) if os.environ.get('WAVELINK_UI92_TEST_SOURCE') else None
-CANDIDATE=Path(os.environ['WAVELINK_TEST_SOURCE'])
+CANDIDATE=Path(os.environ.get('WAVELINK_UI93_TEST_SOURCE',os.environ['WAVELINK_TEST_SOURCE']))
 
 @pytest.fixture
 def baseline_source():
@@ -16,7 +16,8 @@ def baseline_source():
 def test_docker_applies_ui93_exactly_once_and_copies_runner():
     source=(ROOT/'Dockerfile').read_text()
     assert source.count('&& python apply_ui93.py /opt/wavelink/app')==1
-    assert 'COPY deploy/extract_source.py deploy/apply_ui93.py ./' in source
+    copy=next(line for line in source.splitlines() if line.startswith('COPY deploy/extract_source.py'))
+    assert 'deploy/apply_ui93.py' in copy
     assert source.index('python extract_source.py')<source.index('&& python apply_ui93.py')
 
 def test_overlay_replay_is_byte_identical_and_rejects_double_apply(tmp_path,baseline_source):

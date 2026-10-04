@@ -1,0 +1,60 @@
+{
+  "format": "wavelink-runtime-overlay-1",
+  "date": "2026-10-04",
+  "patch_id": "workspace-ui94-quiet-header-anchored-profile-2026-10-04",
+  "parent_patch_id": "workspace-ui93-email-alerts-account-layout-2026-10-04",
+  "parent_manifest_sha256": "580d7f0d0c65c46d78029834e7014216d702862832429255df4dda35ea2f1849",
+  "scope": "Compact header, button-anchored account menu and long-name banner containment. Approved artwork and UI93 email/workflows retained.",
+  "schema": {
+    "database_migration": false,
+    "migration": "No new schema change beyond retained UI93."
+  },
+  "boundaries": {
+    "operational_record_schema_change": false,
+    "operational_write_sends_email": false,
+    "email_default_on": false,
+    "demo_email_enabled": false,
+    "source_parts_change": false,
+    "permission_grant": false,
+    "browser_storage_clear": false,
+    "database_reset": false,
+    "new_timer": false
+  },
+  "files": [
+    {
+      "path": "app/static/app.js",
+      "before_sha256": "c5adf2019e577e224b7cd5c217edc6f56438268dadbccc51b8937debe1395120",
+      "after_sha256": "c0f5e6ac45b72b2f863f69e61fc0841dd46a5485fc2696a687173260d5877b39"
+    },
+    {
+      "path": "app/static/experience_shell.js",
+      "before_sha256": "9dc532466393a961c0112ae83460cc84dd3e575839489b995cf70a7cc45aefb7",
+      "after_sha256": "e6c43cf7cf9860d488ad0640fd9859761bd87d2bdb03b09b76ea1f9a0fd51ae5"
+    },
+    {
+      "path": "app/static/fleet.html",
+      "before_sha256": "c3c47e3c99b662b42f03037afac13eb6c90c4c50746e3189a99934b10f9f8a26",
+      "after_sha256": "354e103588d0ff996fd01db030a0fea9075b442bf44f7ac925293e0cde1c76d9"
+    },
+    {
+      "path": "app/static/index.html",
+      "before_sha256": "2729ddcfa9facc44bf6fc9ec2cc9d0241d4ce906449e9df4ea6e5c63bddaaebc",
+      "after_sha256": "1b8792aa0b01f823ec91889a4fe0c85bf3c9b2352271eaadcd2c33ca47dd1783"
+    },
+    {
+      "path": "app/static/sw.js",
+      "before_sha256": "72619b66dab855641675252eaafca4464c04fa49619174ae879e9451d33f1ecb",
+      "after_sha256": "190b6b304a49f54e9186ed9a13f22f69ee67b3d1afe9108b7c767c6b21906fe3"
+    },
+    {
+      "path": "app/static/visual_system_ui94.css",
+      "before_sha256": null,
+      "after_sha256": "260557281dfc9c724635f0b81ec02ac8b1f0565d50657bd12c9a61950dec72ab"
+    },
+    {
+      "path": "tests/browser_shell_ui94.py",
+      "before_sha256": null,
+      "after_sha256": "d788e0ddb2991a8db15d657a1f1a20537b8149c5afe14ea97fc53da60e9cc7c2"
+    }
+  ]
+}

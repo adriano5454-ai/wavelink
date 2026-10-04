@@ -1,68 +1,96 @@
 {
   "format": "wavelink-delivery-checks-1",
-  "release": "UI93 Optional Email Alerts and Account Layout + retained UI92, M01, C01 and G01",
+  "release": "UI94 Quiet Header, Anchored Account Menu and Banner Review + retained UI93 optional email",
   "core": "1.34.19",
   "date": "2026-10-04",
-  "parent": "Exact uploaded UI92 repository matching GitHub main ba27ddeee79fd77579beecb02d601ec09443b8dc",
-  "repository_files_parent": 243,
-  "repository_files_target": 248,
-  "runtime_manifest_files_parent": 2077,
-  "runtime_manifest_files_target": 2084,
-  "runtime_files_including_generated_manifest": 2085,
-  "runtime_overlay_records": 21,
-  "extractor_sha256": "57550f076fe6474523d77ecb9fc5b119c0a183f0f6a45be3361c61de0c381fc1",
-  "parent_runtime_manifest_sha256": "071e70c9b15d81fb0c0ffeea9c25cf2efb2eb8ff93679c0458cb9043e74e1525",
-  "target_runtime_manifest_sha256": "580d7f0d0c65c46d78029834e7014216d702862832429255df4dda35ea2f1849",
-  "python_runs": {
-    "broad_selected_passed_after_harness_corrections": 1085,
-    "focused_final_passed": 237,
-    "build_passed": 3,
-    "counts_overlap_do_not_sum": true,
-    "known_unchanged_ui92_source_assertions": 11,
-    "intentional_superseded_launcher_hash_assertion": 1,
-    "broad_skipped": 1
-  },
-  "browser_checks_passed": 188,
-  "unexpected_javascript_errors": 0,
+  "repository_parent_commit": "ba27ddeee79fd77579beecb02d601ec09443b8dc",
+  "repository_files_ui92": 243,
+  "repository_files_ui93": 248,
+  "repository_files_target": 253,
+  "runtime_manifest_files_target": 2086,
+  "runtime_files_with_manifest": 2087,
+  "runtime_manifest_sha256": "b03ae6f967b358750c70f9373fc8bcc1448f65686bf881723b1ab7f815259d55",
+  "parent_ui93_runtime_manifest_sha256": "580d7f0d0c65c46d78029834e7014216d702862832429255df4dda35ea2f1849",
+  "original_ui92_extractor_sha256": "57550f076fe6474523d77ecb9fc5b119c0a183f0f6a45be3361c61de0c381fc1",
+  "current_browser_runs": [
+    {
+      "group": "header_banners_art",
+      "passed": 161,
+      "unexpected_javascript_errors": 0,
+      "evidence": "EVIDENCE/shell/UI94_SHELL_REVIEW.json"
+    },
+    {
+      "group": "workflow_regression",
+      "passed": 106,
+      "unexpected_javascript_errors": 0,
+      "evidence": "EVIDENCE/workflows/UI92_BROWSER_EVIDENCE.json"
+    },
+    {
+      "group": "email_settings",
+      "passed": 13,
+      "unexpected_javascript_errors": 0,
+      "evidence": "EVIDENCE/email/UI93_EMAIL_BROWSER.json"
+    },
+    {
+      "group": "fleet",
+      "passed": 18,
+      "unexpected_javascript_errors": 0,
+      "evidence": "EVIDENCE/fleet/fleet_browser_checks.json"
+    }
+  ],
+  "current_mail_tests_passed": 19,
+  "current_build_tests_passed": 7,
   "syntax": {
-    "python": 711,
+    "python": 712,
     "javascript": 97,
-    "errors": []
+    "errors": [],
+    "entry_assets": [
+      {
+        "entry": "index.html",
+        "assets_verified_and_precached": 117,
+        "authoritative_visual_asset": "visual_system_ui94.css"
+      },
+      {
+        "entry": "fleet.html",
+        "assets_verified_and_precached": 19,
+        "authoritative_visual_asset": "visual_system_ui94.css"
+      }
+    ],
+    "python_scope": "all runtime Python files"
   },
-  "build_integrity": {
-    "passed": 3,
-    "failed": 0,
-    "byte_identical_to_tested_runtime": true,
-    "tampered_parent_rejected_before_writes": true,
-    "double_apply_rejected": true,
-    "docker_companion_runs": 1
+  "art": {
+    "static_assets_validated": 72,
+    "raster_decode_and_svg_parse_errors": 0,
+    "active_cover_images": 2,
+    "badges": 30,
+    "approved_cover_and_badge_bytes_unchanged": true,
+    "active_art_decoded_in_chromium": 32,
+    "manual_review": "Approved covers, badge contact sheet, all fifteen ordinary desktop banner covers, desktop/phone Home and Profile, account menu and representative workflow screenshots viewed."
   },
+  "inherited_evidence": {
+    "reference": "docs/UI93_REVIEW_REPORT.json",
+    "full_broad_suite_rerun_in_ui94": false,
+    "boundary": "Previous broad review passed 1,085 selected checks after correcting harness paths; eleven source assertions also fail on unmodified UI92 and the legacy M01 launcher hash is intentionally superseded. The previous 237 focused checks are historical evidence; current UI94 reruns are listed separately."
+  },
+  "not_claimed": [
+    "Full historical test suite pass",
+    "Live Render deployment",
+    "Real inbox delivery",
+    "Physical mobile-device or Windows/native GUI acceptance",
+    "Real service-worker installation/update lifecycle",
+    "Production WebSocket/network failure acceptance"
+  ],
   "remote_actions": {
     "github_read_verified": true,
-    "github_branch_creation_attempted": true,
+    "main_still_ui92_when_checked": true,
     "github_write_succeeded": false,
-    "github_write_error": "403 Resource not accessible by integration",
+    "github_write_blocker": "Earlier branch creation returned 403 Resource not accessible by integration; no write retry in UI94.",
     "pull_request_created": false,
-    "hosting_environment_changed": false,
+    "hosting_changed": false,
     "live_deployment": false,
     "production_data_access": false
   },
-  "not_claimed": [
-    "Full legacy test suite pass",
-    "Live deployment or real inbox delivery",
-    "Actual mobile-device validation",
-    "Windows/native GUI validation",
-    "Real service-worker installation/update lifecycle",
-    "Live WebSocket or production network failure acceptance"
-  ],
-  "review_report": "docs/UI93_REVIEW_REPORT.json",
-  "acceptance_guide": "docs/WORKSPACE_UI93.md",
-  "preserved": [
-    "Unchanged original UI92 extractor and vendor source parts",
-    "Company identity/logo and demo/gateway isolation",
-    "Named login, MFA and membership/session rules",
-    "Operational record identities, permissions, signatures and audit",
-    "Persistent projects/data and recovery storage"
-  ],
-  "schema": "Additive email_alert_* personal mail tables. Default off; full backup retains state; selective transfer clears personal mail state. No operational record schema change, database reset, fixture import or browser-storage clearing."
+  "review_report": "docs/UI94_REVIEW_REPORT.json",
+  "acceptance_guide": "docs/WORKSPACE_UI94.md",
+  "schema": "No additional UI94 migration; UI93 additive personal mail tables retained. No operational-record schema change or reset."
 }

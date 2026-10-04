@@ -1,3 +1,13 @@
+# Wavelink UI94 — Quieter header, clearer banners and anchored account menu
+
+Core **1.34.19**, cumulative from verified UI92/main `ba27ddeee79fd77579beecb02d601ec09443b8dc`. Includes the UI93 optional email update.
+
+The top bar is one compact row, with a permanent badge and action bell. Badge progress, role/department and ordinary connection details are in the account menu, which now opens beside its button and follows screen changes. Home/Profile banners have more usable tablet space and names stay within their panels. Approved cover and badge art is unchanged.
+
+Read [docs/WORKSPACE_UI94.md](docs/WORKSPACE_UI94.md) for applying and acceptance, [docs/UI94_REVIEW_REPORT.json](docs/UI94_REVIEW_REPORT.json) for evidence scope, and [docs/CONTINUATION_CHECKPOINT.md](docs/CONTINUATION_CHECKPOINT.md) for continuation. UI93 email activation still uses the intended COMPANY service's private M01 settings and `WAVELINK_ALERT_EMAIL=ON`; personal email starts off. No reset or storage clearing is required.
+
+--- Historical releases below; UI94 above is current ---
+
 # Wavelink UI93 — Optional email alerts and aligned account settings
 
 Core **1.34.19**, built from verified UI92 / main `ba27ddeee79fd77579beecb02d601ec09443b8dc`.

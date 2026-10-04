@@ -1,29 +1,23 @@
-# Wavelink continuation checkpoint — UI93
+# Wavelink continuation checkpoint — UI94
 
 ## Current prepared release
 
-- Core **1.34.19**; `workspace-ui93-email-alerts-account-layout-2026-10-04`.
-- Exact parent: all 243 UI92 repository files verified against the supplied ZIP and GitHub main `ba27ddeee79fd77579beecb02d601ec09443b8dc`.
-- Parent extractor remains `57550f076fe6474523d77ecb9fc5b119c0a183f0f6a45be3361c61de0c381fc1`; vendor/source parts are unchanged.
-- UI93 is applied by the pinned companion `deploy/apply_ui93.py` once after UI92 extraction in Docker.
-- Runtime manifest: 2,084 tracked entries plus generated RELEASE_FILES.json. Parent manifest: `071e70c9b15d81fb0c0ffeea9c25cf2efb2eb8ff93679c0458cb9043e74e1525`.
-- One authoritative visual asset: `app/static/visual_system_ui93.css` in the main app and Fleet.
-- GitHub main was readable, but creating the review branch returned 403 Resource not accessible by integration. No remote branch, commit or pull request was created. A verified compact UI92-to-UI93 update bundle is the delivery fallback. Hosting configuration and live deployment remain separate actions. No live company data, credentials or inboxes were used.
+Core **1.34.19**; `workspace-ui94-quiet-header-anchored-profile-2026-10-04`. Exact repository parent is verified UI92 / GitHub main `ba27ddeee79fd77579beecb02d601ec09443b8dc`; UI93 is included. Docker runs the unchanged UI92 extractor, UI93 companion once, then UI94 companion once. One authoritative visual asset is visual_system_ui94.css. UI94 makes no additional database change; UI93's additive personal mail tables and company-only explicit opt-in remain.
+
+GitHub read access worked; writes were denied by the integration with 403. No remote branch, commit, pull request, hosting configuration or deployment was made. Compact changes and separate evidence are the delivery fallback.
 
 ## Implemented
 
-Optional personal email alerts, category choices, notification quiet-hours integration, verified membership/alert-only mailbox routing, background scans and durable delivery claims. Email starts off; the COMPANY service also requires `WAVELINK_ALERT_EMAIL=ON` and its existing M01 mail settings. Read/dismissed and currently inaccessible sources are excluded. Complete projections include assignments beyond the first 50 and date/stock/acknowledgement attention beyond Home's previews. Operational writes remain independent of SMTP. Unconfirmed/interrupted mail is never automatically resent.
-
-Account & security regains the card layout/facts/spacing omitted during earlier CSS consolidation and gets a visible Email alerts shortcut. Email controls and their mailbox verification flow are responsive. Three relevant Help articles now describe optional company email. Other UI92 list/detail, folder tree, route, badge and recovery behaviors remain intact.
+Optional verified per-user email/categories/quiet hours from UI93. Quieter single-row header; persistent badge without three-line summary; one action bell/count; role/progress/healthy connection details in Account. Account menu anchored to its button and constrained to viewport, with resize/scroll support, keyboard Escape/focus return and preserved existing actions. Current offline/saving warnings and actual unsaved work remain reviewable. Responsive Home/Profile banner improvements prevent narrow tablet copy and collapsed profile headings. Both approved cover images and all thirty badges remain byte-identical.
 
 ## Preserve
 
 Company C01 / M01 / G01 separation, persistent disk/database, company identity/logo, named administrator access, exact verified membership state, MFA/session rules, existing permissions, source identities, signatures, audit, daily handover continuation and assigned shifts, task chooser and inventory verification. Keep the sidebar, primary actions, approved artwork and permanent badge. Help opens in a separate tab. Report Branding remains report/export-only. Keep DEMO_PUBLIC_ENTRY=YES and INITIALISE_FICTIONAL_DEMO=NO on the demo. Do not reset, import fixtures, repeat setup or clear browser storage.
 
-## Verified boundary
+## Verification boundary
 
-See UI93_REVIEW_REPORT.json. Broad selected review: 1,083 passed / 14 initial failures / 1 skip. Two initial failures were harness paths and pass with correct paths; eleven source assertions reproduce on the unmodified UI92 runtime; the final legacy launcher byte assertion is superseded by the deliberate new switch plus updated M01 tests. No historical assertion was rewritten to manufacture a pass. Final targeted run: 237 passed; companion build/replay checks: 3 passed; no candidate manifest mismatch. Browser main/Fleet/email/selection/navigation/equipment/work checks pass on fictional fixtures. Actual inbox, deployed service, devices, Windows and service-worker update lifecycle remain acceptance work.
+See UI94_REVIEW_REPORT.json and DELIVERY_CHECKS.json. Current UI94 browser/overlay/mail regression checks are reported separately from inherited UI93 evidence; counts overlap. Main banners and controls were reviewed at five widths; header/menu at fourteen widths. Fictional projects, in-process API bridge, emulated widths and suppressed timers. Actual inbox/deployment/device/native GUI/service-worker update acceptance remains separate. Previous broad tests contain eleven historical assertions that also fail on unchanged UI92, plus the superseded M01 byte hash; they are not represented as a green full suite.
 
 ## Next grouped work
 
-First complete hosted UI93/mail acceptance with a mailbox the operator controls and address any actual regression. Then continue the UI92 roadmap: suitable Tasks/Maintenance record inspectors, unified forms/source evidence and phone ergonomics, while retaining all capabilities and actual unsaved editors. Keep wider operations, fault/HSE workflows, QR invitations, company administration and later English/Portuguese localisation in the retained DEVELOPMENT_TODO. Unconfirmed-delivery review/resend tooling may be a separate consequential-action batch; do not silently add automatic uncertain retries.
+Complete hosted UI94 visual/account/mail acceptance, then address concrete regressions. Continue the retained Tasks/Maintenance inspectors, unified forms/source evidence, phone ergonomics, broader operations/fault/HSE workflows, QR invitations and company administration. English/Portuguese localisation follows visual stability. Unconfirmed mail review/resend tooling remains separate; do not silently retry uncertain submissions.
