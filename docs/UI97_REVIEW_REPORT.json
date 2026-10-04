@@ -1,0 +1,150 @@
+{
+  "format": "wavelink-ui97-review-1",
+  "release": "UI97 Email Password Recovery",
+  "core": "1.34.19",
+  "date": "2026-10-04",
+  "parent_git_commit": "0cd4582d82e1ef8bab6a2b02f41a5264fa0183e2",
+  "parent_repository_files_verified": 263,
+  "github_main_same_at_final_read": true,
+  "parent_ui96_runtime_manifest_sha256": "81fbcd7eea2615babe2d3b6796734482080fe4e7fcae2848d1e120137f1c5227",
+  "runtime_manifest_sha256": "95f800876f7278c8c0ad43e97e76a75deb5cc23a987aaebb582ba7285bc9e52b",
+  "runtime_manifest_files": 2102,
+  "implemented": [
+    "Independent responsive Forgot password page from refreshed login",
+    "Eight-digit code sent only to exact unique verified approved company-account email; ten-minute expiry and five committed failed attempts",
+    "Generic responses, 90-second resend cooldown, five sends per account/hour and client/global limits",
+    "Exact HTTPS Origin/hub/method/path, bounded strict JSON and no operational session token",
+    "Confirmed password reset ends operational, pending MFA and membership-status sessions; preserves MFA, identity, access and saved work",
+    "Same-operation retry after lost response, slow password-verifier receipt, concurrent password change only once",
+    "Deferred captured transactional mail and credential-free reset notification; optional alert opt-out remains independent",
+    "Additive schema; backup/transfer copies discard temporary recovery proofs without changing active work"
+  ],
+  "functional_tests": {
+    "passed": 120,
+    "new_password_recovery_cases": 54,
+    "retained_account_security": 11,
+    "retained_email_alerts": 19,
+    "retained_document_import": 31,
+    "retained_membership_upgrade_transfer": 5,
+    "skipped": 1,
+    "deselected": 1,
+    "skip_reason": "Exact UI63 cross-version fixture unavailable",
+    "deselected_reason": "Historical UI83 asset/version-specific static contract",
+    "ui96_actual_startup_upgrade_passed": true
+  },
+  "build_tests_passed": 19,
+  "browser_runs": [
+    {
+      "group": "email_password_recovery",
+      "passed": 55,
+      "unexpected_javascript_errors": 0,
+      "evidence": "EVIDENCE/recovery/UI97_RECOVERY_REVIEW.json"
+    },
+    {
+      "group": "retained_sign_in",
+      "passed": 119,
+      "unexpected_javascript_errors": 0,
+      "evidence": "EVIDENCE/login/UI96_LOGIN_REVIEW.json"
+    },
+    {
+      "group": "header_banners_art",
+      "passed": 161,
+      "unexpected_javascript_errors": 0,
+      "evidence": "EVIDENCE/shell/UI94_SHELL_REVIEW.json"
+    },
+    {
+      "group": "documents_toolbox",
+      "passed": 72,
+      "unexpected_javascript_errors": 0,
+      "evidence": "EVIDENCE/documents/UI95_BROWSER_REVIEW.json"
+    }
+  ],
+  "browser_counts_overlap": true,
+  "recovery_widths": [
+    1440,
+    1024,
+    768,
+    680,
+    430,
+    390,
+    360,
+    320
+  ],
+  "login_widths": [
+    1440,
+    1280,
+    1024,
+    900,
+    768,
+    680,
+    600,
+    430,
+    390,
+    360,
+    320
+  ],
+  "browser_method": "Recovery uses real HTTPS-origin Chromium routed to fictional temporary FastAPI/SQLite TestClient endpoints and a captured mailbox. Retained shell runs use real local origin/fetch bridge, simulated persistence and suppressed timers/WebSockets; all widths are emulated.",
+  "manual_visual_review": "Desktop request/code and phone code/success screenshots viewed; card bounds, contrast, label/control spacing and no horizontal overflow verified. Approved artwork bytes retain UI96 hashes.",
+  "syntax_assets_art": {
+    "isolated_recovery_assets_valid": 3,
+    "isolated_recovery_network_only": true,
+    "python_files": 722,
+    "javascript_files": 99,
+    "syntax_errors": [],
+    "entry_assets": {
+      "index.html": {
+        "count": 125,
+        "missing_precache": [],
+        "missing_local": []
+      },
+      "fleet.html": {
+        "count": 21,
+        "missing_precache": [],
+        "missing_local": []
+      }
+    },
+    "art_assets_valid": 72,
+    "all_art_bytes_equal_ui96": true
+  },
+  "protected_files_equal_ui96": [
+    "app/accounts.py",
+    "app/account_security.py",
+    "app/account_security_api.py",
+    "app/membership_mail.py",
+    "app/membership_api.py",
+    "app/membership_policy.py",
+    "app/company_membership.py",
+    "app/email_alerts.py",
+    "app/email_alerts_api.py",
+    "app/document_import.py",
+    "app/document_extract.py",
+    "app/static/document_import.js",
+    "app/static/document_import.css",
+    "app/static/fieldwork.js",
+    "app/static/email_alerts_ui93.js",
+    "app/static/save_status.js",
+    "app/static/save_status_ui.js",
+    "app/static/experience_shell.js",
+    "app/static/action_center_ui82.js",
+    "app/static/visual_system_ui94.css"
+  ],
+  "data_boundary": "Only deliberate valid recovery changes the account password/version and ends its sessions/challenges. No approval, access grant, identity/email change, MFA removal, project reset, operational-record edit, browser-storage clear or fixture import. Additive recovery tables; backup copy sanitisation only. All local acceptance uses fictional data.",
+  "mail_boundary": "Existing M01 TLS transactional company SMTP configuration; no new provider or user-email connector. Alert-only mailbox not promoted to login/recovery identity. Live SMTP/inbox delivery not exercised.",
+  "remote_actions": {
+    "commit": false,
+    "pull_request": false,
+    "deployed": false,
+    "reason": "Earlier GitHub integration write returned 403; current main is exact UI96. Compact update follows the established apply/commit/push workflow."
+  },
+  "not_claimed": [
+    "Full historical test suite green",
+    "Actual Docker/Render deployment",
+    "Live inbox delivery or sender reputation",
+    "Physical device keyboard/autofill behavior",
+    "Real service-worker install/update lifecycle",
+    "Windows/native setup acceptance",
+    "Production network/WebSocket behavior"
+  ],
+  "design_reference": "https://cheatsheetseries.owasp.org/cheatsheets/Forgot_Password_Cheat_Sheet.html",
+  "delivery": "Compact source ZIP for exact UI96 checkout; one current continuation checkpoint; screenshots and logs in separate evidence ZIP."
+}

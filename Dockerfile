@@ -10,13 +10,14 @@ WORKDIR /opt/wavelink
 COPY requirements.lock ./requirements.lock
 RUN python -m pip install --no-cache-dir -r requirements.lock
 COPY vendor/source.part* vendor/source_parts.json ./vendor/
-COPY deploy/extract_source.py deploy/apply_ui93.py deploy/apply_ui94.py deploy/apply_ui95.py deploy/apply_ui96.py ./
+COPY deploy/extract_source.py deploy/apply_ui93.py deploy/apply_ui94.py deploy/apply_ui95.py deploy/apply_ui96.py deploy/apply_ui97.py ./
 RUN python extract_source.py vendor/source_parts.json /opt/wavelink/app \
     && python apply_ui93.py /opt/wavelink/app \
     && python apply_ui94.py /opt/wavelink/app \
     && python apply_ui95.py /opt/wavelink/app \
     && python apply_ui96.py /opt/wavelink/app \
-    && rm vendor/source.part* vendor/source_parts.json extract_source.py apply_ui93.py apply_ui94.py apply_ui95.py apply_ui96.py
+    && python apply_ui97.py /opt/wavelink/app \
+    && rm vendor/source.part* vendor/source_parts.json extract_source.py apply_ui93.py apply_ui94.py apply_ui95.py apply_ui96.py apply_ui97.py
 COPY vendor/FICTIONAL_DEMO.ajproject ./vendor/FICTIONAL_DEMO.ajproject
 COPY deploy ./deploy
 COPY ops ./ops

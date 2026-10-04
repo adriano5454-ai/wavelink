@@ -1,4 +1,12 @@
-# Current update: UI96
+# Current update: UI97
+
+Password recovery by email: Forgot password opens an independent recovery page, sends an eight-digit code to the existing verified company-account email, and lets the user set and confirm a new password. Codes expire in ten minutes; reset ends existing sessions while retaining two-step verification, account identity, access permissions and saved work.
+
+Read [WORKSPACE_UI97.md](docs/WORKSPACE_UI97.md) and the single [continuation checkpoint](docs/CONTINUATION_CHECKPOINT.md). Apply the compact update to the verified UI96 checkout. Recovery uses the existing company transactional SMTP setup; alert email opt-out does not disable account security mail. Bulky review evidence is separate.
+
+--- Historical releases below; UI97 above is current ---
+
+# Previous update: UI96
 
 Clear, responsive sign-in with the unexplained 01/02 counters removed. Account, access-code, verification and setup screens now share a focused layout; password visibility, account help and submitting/error feedback are clearer. Existing authentication, local-work recovery, artwork, email and document imports are retained.
 

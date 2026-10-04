@@ -1,3 +1,9 @@
+# Current UI97 follow-up
+
+Prepared email password recovery; see WORKSPACE_UI97.md and the single CONTINUATION_CHECKPOINT.md. Pending acceptance: normal commit/push/deployment, configured company inbox delivery, physical device/autofill/keyboard checks and actual service-worker lifecycle. Existing alert SMTP/OCR/native acceptance remains deployment-specific. No fixtures, project reset or storage clearing.
+
+--- Historical work below ---
+
 # UI96 implemented / next acceptance
 
 Clear, responsive sign-in, verification, existing access-code and administrator-setup pages are implemented. Next: actual company-address deployment acceptance, physical phone keyboard/autofill and short-viewport review using WORKSPACE_UI96.md. Prior optional-email, document/OCR and native-device acceptance remains pending where not yet exercised. Historical roadmap follows.

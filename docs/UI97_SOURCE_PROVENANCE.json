@@ -1,0 +1,95 @@
+{
+  "format": "wavelink-runtime-overlay-1",
+  "date": "2026-10-04",
+  "patch_id": "workspace-ui97-email-password-recovery-2026-10-04",
+  "parent_patch_id": "workspace-ui96-clear-responsive-sign-in-2026-10-04",
+  "parent_git_commit": "0cd4582d82e1ef8bab6a2b02f41a5264fa0183e2",
+  "parent_manifest_sha256": "81fbcd7eea2615babe2d3b6796734482080fe4e7fcae2848d1e120137f1c5227",
+  "scope": "Verified-company-mail password recovery with expiring eight-digit codes, bounded retries, session revocation and retained MFA/access; isolated responsive no-storage entry and backup-proof sanitisation.",
+  "schema": {
+    "database_migration": "additive recovery metadata, challenge, rate and receipt tables; existing accounts retained"
+  },
+  "boundaries": {
+    "auth_backend_change": true,
+    "permission_grant": false,
+    "transactional_recovery_mail_added": true,
+    "alert_preferences_or_document_import_change": false,
+    "artwork_bytes_change": false,
+    "database_reset": false,
+    "browser_storage_clear": false,
+    "source_parts_change": false,
+    "new_timer": false
+  },
+  "files": [
+    {
+      "path": "app/password_recovery.py",
+      "before_sha256": null,
+      "after_sha256": "f821c9cec74405c7244e26daed47208c63e4ea6de5ff646cddc94d2419a86dce"
+    },
+    {
+      "path": "app/password_recovery_api.py",
+      "before_sha256": null,
+      "after_sha256": "bb357abb09662a4025c2dc768ce2511f0ec7285fdcf8acaad7b442b6d70eb7e8"
+    },
+    {
+      "path": "app/project_modules.py",
+      "before_sha256": "ededd4d6574c5efe5523e984fc166d668ccb2127e1e3d6e9ac14c03045871bdd",
+      "after_sha256": "65fc7a0371b09cad7848f3bf3aee9aa6eefa751d2f5dde211596cbbf222567a9"
+    },
+    {
+      "path": "app/server.py",
+      "before_sha256": "f61859d941bbe7a63650d0645dce55bfc11960b3846efb3cf3201ba02ac2cf2e",
+      "after_sha256": "45328dc5e0034fbff021c3c8b2a94ab6bc569c202409f06a1dc5f1b6936966b0"
+    },
+    {
+      "path": "app/static/app.js",
+      "before_sha256": "0295585dd53975101e83dfe27d2a0c453b936efc643f208724bd55218012beb9",
+      "after_sha256": "7d34fe50cd1ff58670220177628bcfbbc2863a68bd3bbf8c9b75812a7fe9628c"
+    },
+    {
+      "path": "app/static/index.html",
+      "before_sha256": "f79c736120b60cc49328666e3e00306e57890f2c8b62fbfbaea85cc8eb186158",
+      "after_sha256": "bdda0632747e5349aaff1b4999119c414db9bfe6ccbf9b4684a44f7df94c52ff"
+    },
+    {
+      "path": "app/static/login_ui96.css",
+      "before_sha256": "6b25fd3e4e2ed3cd6265323c23a56ca4830237424674b0e5d521706e26722226",
+      "after_sha256": "bad913696de99b30f05ea7df7f84c85bd3b776f040a457ae827864c5f187c094"
+    },
+    {
+      "path": "app/static/password_recovery.css",
+      "before_sha256": null,
+      "after_sha256": "8a798ce844ff796268328fb35542ae3fcdd942b8ba5e708350f393ec180ec4b5"
+    },
+    {
+      "path": "app/static/password_recovery.html",
+      "before_sha256": null,
+      "after_sha256": "7557dfb566ffb4273ee88c15dc829e3fbb00d5c1c0fee902f24fdb57524bdc98"
+    },
+    {
+      "path": "app/static/password_recovery.js",
+      "before_sha256": null,
+      "after_sha256": "410eccea2abbdf5b2e54a98e563f21e92572eb008ae441df1af2d17c01b3c75e"
+    },
+    {
+      "path": "app/static/sw.js",
+      "before_sha256": "df079d540b7ef164dd2a9c42204613947c3161e876887bb2e1e81b42bd835e6c",
+      "after_sha256": "5e1ce04f09605d87c7d9d03cf86ab86fa8dfeaf2bb6f9f5afc3647647c57dbe2"
+    },
+    {
+      "path": "app/store.py",
+      "before_sha256": "dc3b2fc2ebd6d3f1f790628ab72fa254be3041602f2ebe46404619820d3f378f",
+      "after_sha256": "41173e7b62b8b58c53e34deab3eb20efffe6a7ded4d276d5c0262e30afdfead7"
+    },
+    {
+      "path": "tests/browser_password_recovery_ui97.py",
+      "before_sha256": null,
+      "after_sha256": "8c7f2ece7b1328d32929d67af4b209a7e8365a5825184400e7db354ac0c7ab86"
+    },
+    {
+      "path": "tests/test_password_recovery_ui97.py",
+      "before_sha256": null,
+      "after_sha256": "a93b6fb29d6c3c37cbaf125f694eea45df179b0297a2efbb206dfaea4f668a8a"
+    }
+  ]
+}

@@ -1,3 +1,11 @@
+# Current UI97 recovery and replay checks
+
+Use only temporary fictional projects. Keep exact UI92, UI93, UI94, UI95 and UI96 parent runtimes. Set WAVELINK_UI97_TEST_SOURCE to the derived UI97 runtime and WAVELINK_UI96_TEST_SOURCE to the untouched UI96 runtime. Retained tests use WAVELINK_UI95_TEST_SOURCE=UI95, WAVELINK_TEST_SOURCE=UI95, WAVELINK_UI94_TEST_SOURCE=UI94, WAVELINK_UI93_TEST_SOURCE=UI93 and WAVELINK_UI92_TEST_SOURCE=UI92. Run test_ui93_build.py through test_ui97_build.py together. Companions reject altered parents and repeated application.
+
+In UI97 run tests/test_password_recovery_ui97.py, with WAVELINK_UI96_TEST_SOURCE set for the real startup-upgrade check. New tests capture fictional mail and exercise reset/expiry/replay/rates, mail/account changes, session revocation, retained MFA/access, strict boundaries, additive schema, backup sanitisation and concurrent retry. tests/browser_password_recovery_ui97.py needs Playwright/Chromium and routes a real HTTPS page origin to fictional TestClient APIs; no real email is sent. It checks responsive request/code/success forms, correction, unknown/unconfigured states, refresh and same-request retry after a lost response. Retained sign-in/header/document/Toolbox browser scripts verify the current runtime. See docs/UI97_REVIEW_REPORT.json for executed cases and limits.
+
+--- Historical instructions below ---
+
 # Current UI96 replay and sign-in checks
 
 Use disposable fictional runtime folders, never production data. Keep the exact UI92, UI93, UI94 and UI95 parents. Apply UI96 only to a UI95 copy. Set WAVELINK_UI96_TEST_SOURCE to that UI96 copy and WAVELINK_UI95_TEST_SOURCE to the untouched UI95 parent; retained tests use WAVELINK_TEST_SOURCE=UI95, WAVELINK_UI94_TEST_SOURCE=UI94, WAVELINK_UI93_TEST_SOURCE=UI93 and WAVELINK_UI92_TEST_SOURCE=UI92. Run test_ui93_build.py, test_ui94_build.py, test_ui95_build.py and test_ui96_build.py together.

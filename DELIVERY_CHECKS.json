@@ -1,26 +1,37 @@
 {
   "format": "wavelink-delivery-checks-1",
-  "release": "UI96 Clear Responsive Sign-in",
+  "release": "UI97 Email Password Recovery",
   "core": "1.34.19",
   "date": "2026-10-04",
-  "repository_parent_commit": "dd8eff975a594e41b10bf5e589577bcf4e954cee",
-  "repository_files_parent": 258,
-  "repository_files_target": 263,
-  "runtime_manifest_sha256": "81fbcd7eea2615babe2d3b6796734482080fe4e7fcae2848d1e120137f1c5227",
-  "runtime_manifest_files_target": 2095,
-  "runtime_delta_files": 12,
+  "repository_parent_commit": "0cd4582d82e1ef8bab6a2b02f41a5264fa0183e2",
+  "repository_files_parent": 263,
+  "repository_files_target": 268,
+  "runtime_manifest_sha256": "95f800876f7278c8c0ad43e97e76a75deb5cc23a987aaebb582ba7285bc9e52b",
+  "runtime_manifest_files_target": 2102,
+  "runtime_delta_files": 15,
   "functional_tests": {
-    "security_email_document_passed": 61,
-    "new_mfa_transport_and_retained_delivery_scenarios_passed": 36,
-    "total_distinct_selected_cases_passed": 97,
-    "historical_static_assertions_deselected": 4,
-    "new_mfa_transport_cases": 1,
-    "auth_backend_unchanged": true
+    "passed": 120,
+    "new_password_recovery_cases": 54,
+    "retained_account_security": 11,
+    "retained_email_alerts": 19,
+    "retained_document_import": 31,
+    "retained_membership_upgrade_transfer": 5,
+    "skipped": 1,
+    "deselected": 1,
+    "skip_reason": "Exact UI63 cross-version fixture unavailable",
+    "deselected_reason": "Historical UI83 asset/version-specific static contract",
+    "ui96_actual_startup_upgrade_passed": true
   },
-  "build_tests_passed": 15,
+  "build_tests_passed": 19,
   "browser_runs": [
     {
-      "group": "sign_in",
+      "group": "email_password_recovery",
+      "passed": 55,
+      "unexpected_javascript_errors": 0,
+      "evidence": "EVIDENCE/recovery/UI97_RECOVERY_REVIEW.json"
+    },
+    {
+      "group": "retained_sign_in",
       "passed": 119,
       "unexpected_javascript_errors": 0,
       "evidence": "EVIDENCE/login/UI96_LOGIN_REVIEW.json"
@@ -36,23 +47,13 @@
       "passed": 72,
       "unexpected_javascript_errors": 0,
       "evidence": "EVIDENCE/documents/UI95_BROWSER_REVIEW.json"
-    },
-    {
-      "group": "fleet",
-      "passed": 18,
-      "unexpected_javascript_errors": 0,
-      "evidence": "EVIDENCE/fleet/fleet_browser_checks.json"
-    },
-    {
-      "group": "legacy_background_repaint",
-      "passed": 1,
-      "unexpected_javascript_errors": 0,
-      "evidence": "EVIDENCE/login/UI96_LEGACY_BACKGROUND.json"
     }
   ],
   "syntax_assets_art": {
-    "python_files": 718,
-    "javascript_files": 98,
+    "isolated_recovery_assets_valid": 3,
+    "isolated_recovery_network_only": true,
+    "python_files": 722,
+    "javascript_files": 99,
     "syntax_errors": [],
     "entry_assets": {
       "index.html": {
@@ -67,24 +68,24 @@
       }
     },
     "art_assets_valid": 72,
-    "all_art_bytes_equal_ui95": true
+    "all_art_bytes_equal_ui96": true
   },
-  "schema_migration": false,
-  "review_report": "docs/UI96_REVIEW_REPORT.json",
-  "current_acceptance_guide": "docs/WORKSPACE_UI96.md",
+  "schema_migration": "Four additive recovery tables; preserves existing accounts, MFA and operational records",
+  "review_report": "docs/UI97_REVIEW_REPORT.json",
+  "current_acceptance_guide": "docs/WORKSPACE_UI97.md",
   "remote_actions": {
     "commit": false,
     "pull_request": false,
     "deployed": false,
-    "reason": "Earlier GitHub integration write returned 403; current read verifies UI95 main. Compact source update prepared for the established commit/push workflow."
+    "reason": "Earlier GitHub integration write returned 403; current main is exact UI96. Compact update follows the established apply/commit/push workflow."
   },
   "not_claimed": [
     "Full historical test suite green",
     "Actual Docker/Render deployment",
-    "Physical device keyboard/autofill/browser behavior",
+    "Live inbox delivery or sender reputation",
+    "Physical device keyboard/autofill behavior",
     "Real service-worker install/update lifecycle",
     "Windows/native setup acceptance",
-    "Production network/WebSocket behavior",
-    "Live inbox delivery"
+    "Production network/WebSocket behavior"
   ]
 }
