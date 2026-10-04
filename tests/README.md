@@ -1,3 +1,11 @@
+# Current UI98 hosted recovery correction checks
+
+The core runtime remains exact UI97. Set WAVELINK_TEST_SOURCE to that runtime and put the runtime and this upload repository on PYTHONPATH. Run tests/test_hosted_auth_ui98.py together with test_company_c01.py, test_company_mail_m01.py, test_gate.py and test_public_entry_g01.py. These use fictional disposable projects/captured mail, not production storage. The new cases exercise the actual C01 HostedBoundary/CompanyAccess/core before normal authentication; pending setup and unrelated APIs must remain closed.
+
+With Playwright/Chromium, run tests/browser_hosted_auth_ui98.py with the same source/PYTHONPATH. It routes a real HTTPS browser origin through the actual hosted company middleware and captures mail; inspect request/code/success and unconfigured states at desktop/phone widths. Demo exact-location config guards are covered by the new Python tests; actual Nginx requires a separate available binary and is not claimed here. See docs/UI98_REVIEW_REPORT.json for executed results/limits. No new core overlay is needed.
+
+--- Historical instructions below ---
+
 # Current UI97 recovery and replay checks
 
 Use only temporary fictional projects. Keep exact UI92, UI93, UI94, UI95 and UI96 parent runtimes. Set WAVELINK_UI97_TEST_SOURCE to the derived UI97 runtime and WAVELINK_UI96_TEST_SOURCE to the untouched UI96 runtime. Retained tests use WAVELINK_UI95_TEST_SOURCE=UI95, WAVELINK_TEST_SOURCE=UI95, WAVELINK_UI94_TEST_SOURCE=UI94, WAVELINK_UI93_TEST_SOURCE=UI93 and WAVELINK_UI92_TEST_SOURCE=UI92. Run test_ui93_build.py through test_ui97_build.py together. Companions reject altered parents and repeated application.

@@ -1,3 +1,9 @@
+# Current UI98 follow-up
+
+Prepared hosted recovery/MFA routing correction. Apply UI97-to-UI98 and redeploy normally; inspect recovery before sign-in at the actual company address. If company SMTP is configured, perform authorised inbox/code/reset/MFA acceptance. Actual Nginx, Render/Docker, device, service-worker and native checks remain pending. Keep all data/local work; do not repeat setup or clear browser storage. Read the single CONTINUATION_CHECKPOINT.md and WORKSPACE_UI98.md.
+
+--- Historical work below ---
+
 # Current UI97 follow-up
 
 Prepared email password recovery; see WORKSPACE_UI97.md and the single CONTINUATION_CHECKPOINT.md. Pending acceptance: normal commit/push/deployment, configured company inbox delivery, physical device/autofill/keyboard checks and actual service-worker lifecycle. Existing alert SMTP/OCR/native acceptance remains deployment-specific. No fixtures, project reset or storage clearing.

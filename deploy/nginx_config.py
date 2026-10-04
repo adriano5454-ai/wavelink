@@ -142,4 +142,19 @@ http {{
     signing = signing.replace('            proxy_buffering off;', '            client_max_body_size 100k;\n            proxy_buffering off;')
     page = signing.replace('location ^~ /api/document-sign/ {', 'location ^~ /sign/ {', 1)
     bare = signing.replace('location ^~ /api/document-sign/ {', 'location = /sign {', 1)
-    return config[:start] + signing + page + bare + presentation + config[start:]
+    # UI98: recovery deliberately omits normal cookies/session credentials. Its
+    # three exact API methods must not require the demo admission cookie first.
+    # Demo SMTP remains OFF; the core returns availability/admin assistance.
+    # Keep canonical host/TLS and the normal header whitelist on every route.
+    recovery = ''
+    for path, method in (('/api/password-recovery/info', 'GET'),
+                         ('/api/password-recovery/request', 'POST'),
+                         ('/api/password-recovery/reset', 'POST')):
+        route = common.replace('location / {', 'location = ' + path + ' {', 1)
+        route = route.replace('            auth_request /_demo_verify;\n', '')
+        route = route.replace('            error_page 401 = @demo_denied;\n', '')
+        route = route.replace('            proxy_buffering off;',
+                              '            limit_except ' + method + ' { deny all; }\n'
+                              '            client_max_body_size 4k;\n            proxy_buffering off;')
+        recovery += route
+    return config[:start] + signing + page + bare + recovery + presentation + config[start:]

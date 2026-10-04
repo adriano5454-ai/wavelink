@@ -1,4 +1,12 @@
-# Current update: UI97
+# Current update: UI98
+
+Hosted password recovery now reaches its code/reset service before normal sign-in. The company gateway previously returned 401 to the new recovery API, causing the screenshot's misleading Connection needed message. The same pre-session blocker on MFA completion is corrected. Demo recovery's exact API methods also work without the admission cookie deliberately omitted by the isolated client.
+
+Read [WORKSPACE_UI98.md](docs/WORKSPACE_UI98.md) and the single [continuation checkpoint](docs/CONTINUATION_CHECKPOINT.md). Apply this compact correction to the verified UI97 checkout and redeploy normally. Existing mail setup remains required; unavailable mail shows administrator assistance. Core UI97 runtime, artwork, data and deployment settings are unchanged.
+
+--- Historical releases below; UI98 above is current ---
+
+# Previous update: UI97
 
 Password recovery by email: Forgot password opens an independent recovery page, sends an eight-digit code to the existing verified company-account email, and lets the user set and confirm a new password. Codes expire in ten minutes; reset ends existing sessions while retaining two-step verification, account identity, access permissions and saved work.
 

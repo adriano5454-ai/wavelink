@@ -1,0 +1,33 @@
+{
+  "format": "wavelink-deployment-correction-1",
+  "patch_id": "workspace-ui98-hosted-recovery-routing-2026-10-04",
+  "date": "2026-10-04",
+  "parent_git_commit": "c1c7151fdce67dc6ab76836c9463480298194af3",
+  "parent_repository_files": 268,
+  "runtime_manifest_sha256": "95f800876f7278c8c0ad43e97e76a75deb5cc23a987aaebb582ba7285bc9e52b",
+  "runtime_resources_unchanged": 2102,
+  "runtime_overlay_added": false,
+  "database_schema_change": false,
+  "files": [
+    {
+      "path": "deploy/company_runtime.py",
+      "before_sha256": "cff4d9ecafdd048377f46000f2d706745efef164f27a22e9301bb1d5ceb68a27",
+      "after_sha256": "c61cae1e086549e9f0bb94eaef24f47b0a923a6bd85ea94459486c56fc82bc34"
+    },
+    {
+      "path": "deploy/nginx_config.py",
+      "before_sha256": "752563759fd82e20eacc62379f7a3082a8074675a747214a16cff0b9b90b99b8",
+      "after_sha256": "d6a59061002191d7d4049078529d772151e8c8c44d9e5be90aac66fad8c9ac40"
+    },
+    {
+      "path": "tests/test_hosted_auth_ui98.py",
+      "before_sha256": null,
+      "after_sha256": "2abfec5c29e9cd696a2d9c1d681efb2a4e8f7112c15d69b1ca046106dbdf843e"
+    },
+    {
+      "path": "tests/browser_hosted_auth_ui98.py",
+      "before_sha256": null,
+      "after_sha256": "d132e1b0e1ed99f32919ff0367661744060036504060ed41e4ad50c106e993b3"
+    }
+  ]
+}

@@ -1,91 +1,69 @@
 {
   "format": "wavelink-delivery-checks-1",
-  "release": "UI97 Email Password Recovery",
+  "release": "UI98 Hosted Recovery Routing Fix",
   "core": "1.34.19",
   "date": "2026-10-04",
-  "repository_parent_commit": "0cd4582d82e1ef8bab6a2b02f41a5264fa0183e2",
-  "repository_files_parent": 263,
-  "repository_files_target": 268,
+  "repository_parent_commit": "c1c7151fdce67dc6ab76836c9463480298194af3",
+  "repository_files_parent": 268,
+  "repository_files_target": 273,
   "runtime_manifest_sha256": "95f800876f7278c8c0ad43e97e76a75deb5cc23a987aaebb582ba7285bc9e52b",
-  "runtime_manifest_files_target": 2102,
-  "runtime_delta_files": 15,
-  "functional_tests": {
-    "passed": 120,
-    "new_password_recovery_cases": 54,
-    "retained_account_security": 11,
-    "retained_email_alerts": 19,
-    "retained_document_import": 31,
-    "retained_membership_upgrade_transfer": 5,
-    "skipped": 1,
-    "deselected": 1,
-    "skip_reason": "Exact UI63 cross-version fixture unavailable",
-    "deselected_reason": "Historical UI83 asset/version-specific static contract",
-    "ui96_actual_startup_upgrade_passed": true
+  "runtime_resources_unchanged": 2102,
+  "runtime_overlay_added": false,
+  "schema_migration": false,
+  "tests": {
+    "passed": 210,
+    "new_hosted_authentication_boundary_cases": 30,
+    "retained_company_mail_private_demo_public_guest_cases": 180,
+    "skipped": 0,
+    "deselected": 0,
+    "test_files": [
+      "tests/test_hosted_auth_ui98.py",
+      "tests/test_company_c01.py",
+      "tests/test_company_mail_m01.py",
+      "tests/test_gate.py",
+      "tests/test_public_entry_g01.py"
+    ]
   },
-  "build_tests_passed": 19,
-  "browser_runs": [
-    {
-      "group": "email_password_recovery",
-      "passed": 55,
-      "unexpected_javascript_errors": 0,
-      "evidence": "EVIDENCE/recovery/UI97_RECOVERY_REVIEW.json"
-    },
-    {
-      "group": "retained_sign_in",
-      "passed": 119,
-      "unexpected_javascript_errors": 0,
-      "evidence": "EVIDENCE/login/UI96_LOGIN_REVIEW.json"
-    },
-    {
-      "group": "header_banners_art",
-      "passed": 161,
-      "unexpected_javascript_errors": 0,
-      "evidence": "EVIDENCE/shell/UI94_SHELL_REVIEW.json"
-    },
-    {
-      "group": "documents_toolbox",
-      "passed": 72,
-      "unexpected_javascript_errors": 0,
-      "evidence": "EVIDENCE/documents/UI95_BROWSER_REVIEW.json"
-    }
-  ],
-  "syntax_assets_art": {
-    "isolated_recovery_assets_valid": 3,
-    "isolated_recovery_network_only": true,
-    "python_files": 722,
-    "javascript_files": 99,
+  "browser": {
+    "passed": 15,
+    "unexpected_javascript_errors": 0,
+    "widths": [
+      1440,
+      390,
+      320
+    ],
+    "evidence": "EVIDENCE/browser/UI98_HOSTED_BROWSER_REVIEW.json",
+    "method": "Real HTTPS-origin Chromium routed to actual HostedBoundary/CompanyAccess/core with fictional prepared projects and captured mail. No live Nginx/Render/SMTP."
+  },
+  "syntax_and_unchanged_runtime": {
+    "runtime_files_unchanged": 2102,
+    "runtime_manifest_sha256": "95f800876f7278c8c0ad43e97e76a75deb5cc23a987aaebb582ba7285bc9e52b",
+    "python_files_checked": [
+      "deploy/company_runtime.py",
+      "deploy/nginx_config.py",
+      "tests/test_hosted_auth_ui98.py",
+      "tests/browser_hosted_auth_ui98.py"
+    ],
     "syntax_errors": [],
-    "entry_assets": {
-      "index.html": {
-        "count": 125,
-        "missing_precache": [],
-        "missing_local": []
-      },
-      "fleet.html": {
-        "count": 21,
-        "missing_precache": [],
-        "missing_local": []
-      }
-    },
-    "art_assets_valid": 72,
-    "all_art_bytes_equal_ui96": true
+    "database_schema_change": false,
+    "new_core_runtime_overlay": false
   },
-  "schema_migration": "Four additive recovery tables; preserves existing accounts, MFA and operational records",
-  "review_report": "docs/UI97_REVIEW_REPORT.json",
-  "current_acceptance_guide": "docs/WORKSPACE_UI97.md",
+  "review_report": "docs/UI98_REVIEW_REPORT.json",
+  "current_acceptance_guide": "docs/WORKSPACE_UI98.md",
   "remote_actions": {
     "commit": false,
     "pull_request": false,
     "deployed": false,
-    "reason": "Earlier GitHub integration write returned 403; current main is exact UI96. Compact update follows the established apply/commit/push workflow."
+    "reason": "Earlier integration writes returned 403. Exact current UI97 main read and compact correction prepared for normal commit/push/redeploy."
   },
   "not_claimed": [
-    "Full historical test suite green",
-    "Actual Docker/Render deployment",
-    "Live inbox delivery or sender reputation",
-    "Physical device keyboard/autofill behavior",
-    "Real service-worker install/update lifecycle",
-    "Windows/native setup acceptance",
-    "Production network/WebSocket behavior"
+    "Live service reproduction at an unspecified user URL",
+    "Actual Nginx listener or nginx -t (binary unavailable)",
+    "Live SMTP inbox delivery",
+    "Render/Docker deployment",
+    "Physical device keyboard/autofill",
+    "Actual service-worker lifecycle",
+    "Windows/native setup",
+    "Full historical runtime test suite rerun"
   ]
 }
