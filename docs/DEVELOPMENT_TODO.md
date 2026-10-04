@@ -1,3 +1,7 @@
+# UI95 implemented / next acceptance
+
+Common document and scan extraction, explicit worksheet selection, inventory mapping/box validation and edited draft review are implemented. Next: real deployment/OCR-language/device acceptance using WORKSPACE_UI95.md. Future improvements may add handwriting, complex merged-layout interpretation, richer reading-field mappings and deliberate multi-sheet inventory combination after representative samples. Current imports keep sheets separate and do not ingest completed history.
+
 # UI94 current visual outcome
 
 Completed compact header, button-anchored account menu, persistent badge with progress in Account, and responsive Home/Profile banner containment. Approved cover and badge assets are unchanged. UI93 email is retained. First collect one hosted desktop/tablet/phone acceptance session; then continue the retained grouped roadmap below. Current checks are in UI94_REVIEW_REPORT.json. No deployment has been performed.

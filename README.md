@@ -1,4 +1,10 @@
-# Wavelink UI94 — Quieter header, clearer banners and anchored account menu
+# Current update: UI95
+
+Document/worksheet imports, reliable Toolbox Talks navigation and removal of the duplicate assignment sidebar entry. Read [WORKSPACE_UI95.md](docs/WORKSPACE_UI95.md) and the single [continuation checkpoint](docs/CONTINUATION_CHECKPOINT.md). Build retains UI93 optional email and UI94 header/account/art updates. Source ZIP and bulky review evidence are separate.
+
+--- Historical releases below; UI95 above is current ---
+
+# Previous update: Wavelink UI94 — Quieter header, clearer banners and anchored account menu
 
 Core **1.34.19**, cumulative from verified UI92/main `ba27ddeee79fd77579beecb02d601ec09443b8dc`. Includes the UI93 optional email update.
 
@@ -6,7 +12,7 @@ The top bar is one compact row, with a permanent badge and action bell. Badge pr
 
 Read [docs/WORKSPACE_UI94.md](docs/WORKSPACE_UI94.md) for applying and acceptance, [docs/UI94_REVIEW_REPORT.json](docs/UI94_REVIEW_REPORT.json) for evidence scope, and [docs/CONTINUATION_CHECKPOINT.md](docs/CONTINUATION_CHECKPOINT.md) for continuation. UI93 email activation still uses the intended COMPANY service's private M01 settings and `WAVELINK_ALERT_EMAIL=ON`; personal email starts off. No reset or storage clearing is required.
 
---- Historical releases below; UI94 above is current ---
+--- Retained historical release ---
 
 # Wavelink UI93 — Optional email alerts and aligned account settings
 
@@ -18,7 +24,7 @@ Deploy the reviewed change, then set **`WAVELINK_ALERT_EMAIL=ON`** on the intend
 
 Read [docs/WORKSPACE_UI93.md](docs/WORKSPACE_UI93.md) for activation and acceptance, [docs/CONTINUATION_CHECKPOINT.md](docs/CONTINUATION_CHECKPOINT.md) for continuation, and [docs/UI93_REVIEW_REPORT.json](docs/UI93_REVIEW_REPORT.json) for checks and known historical assertions. Real SMTP inbox delivery and live hosting are not claimed by the local checks.
 
---- Historical releases below; UI93 above is current ---
+--- Retained historical release ---
 
 # Wavelink UI92 — Consistent browsing and hosted clarity
 

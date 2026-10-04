@@ -1,0 +1,129 @@
+{
+  "format": "wavelink-ui95-review-1",
+  "release": "UI95 Documents, Worksheets and Toolbox Navigation",
+  "core": "1.34.19",
+  "date": "2026-10-04",
+  "parent_git_commit": "c3fcc81eac8a8e67cbb608efd91e734797136b89",
+  "parent_repository_files_verified": 253,
+  "parent_ui94_runtime_manifest_sha256": "b03ae6f967b358750c70f9373fc8bcc1448f65686bf881723b1ab7f815259d55",
+  "runtime_manifest_sha256": "2c915745acf1e3ae331ccd230c67afd1424be60ebf52f36fbe899d3e0895549b",
+  "runtime_manifest_files": 2092,
+  "implemented": [
+    "Toolbox screen ownership checked before reusing an unchanged response; original re-entry bug reproduced on UI94",
+    "Duplicate Assigned to me sidebar control removed while Home/My actions issue-opening paths remain",
+    "Local passive extraction for PDF/DOCX/XLSX/XLSM/CSV/TSV/TXT/Markdown and single-page PNG/JPEG/TIFF/WebP; copied-text fallback",
+    "Visible worksheets/table names, row counts and suggested types; explicit single-sheet selection",
+    "Inventory header/column mapping, human-readable preview and full edited rows; box-parent validation before creation",
+    "Editable checklist/routine/toolbox/logbook proposals, exact review invalidation, explicit confirmation, saved-result destination and unchanged-operation retry"
+  ],
+  "functional_tests": {
+    "latest_import_suite_passed": 31,
+    "retained_builder_toolbox_email_suite_passed": 75,
+    "earlier_combined_run_passed": 102,
+    "earlier_combined_import_cases": 27,
+    "total_distinct_current_cases": 106,
+    "all_passed": true,
+    "real_english_image_and_scanned_pdf_ocr": true,
+    "portuguese_ocr": "Docker data dependency configured; local acceptance not claimed"
+  },
+  "browser_runs": [
+    {
+      "group": "document_navigation",
+      "passed": 72,
+      "unexpected_javascript_errors": 0,
+      "evidence": "EVIDENCE/browser/UI95_BROWSER_REVIEW.json"
+    },
+    {
+      "group": "header_banners_art",
+      "passed": 161,
+      "unexpected_javascript_errors": 0,
+      "evidence": "EVIDENCE/shell/UI94_SHELL_REVIEW.json"
+    },
+    {
+      "group": "workflow_regression",
+      "passed": 106,
+      "unexpected_javascript_errors": 0,
+      "evidence": "EVIDENCE/workflows/UI92_BROWSER_EVIDENCE.json"
+    },
+    {
+      "group": "email_settings",
+      "passed": 13,
+      "unexpected_javascript_errors": 0,
+      "evidence": "EVIDENCE/email/UI93_EMAIL_BROWSER.json"
+    },
+    {
+      "group": "fleet",
+      "passed": 18,
+      "unexpected_javascript_errors": 0,
+      "evidence": "EVIDENCE/fleet/fleet_browser_checks.json"
+    }
+  ],
+  "browser_counts_overlap": true,
+  "browser_method": "Headless Linux Chromium with temporary fictional FastAPI/SQLite TestClient fetch bridge, suppressed timers and viewport emulation. New form tests establish a local origin for genuine history guards. No live company data.",
+  "responsive_import_widths": [
+    1440,
+    1024,
+    768,
+    390,
+    320
+  ],
+  "manual_visual_review": "Desktop and phone inventory import screenshots viewed; worksheet selection, mapped table and bottom actions verified. Tablet table overflow found and corrected. UI94 broader banner/account/art review rerun unchanged.",
+  "syntax_assets_and_art": {
+    "python_files": 716,
+    "javascript_files": 98,
+    "syntax_errors": [],
+    "entry_assets": {
+      "index.html": {
+        "count": 124,
+        "missing_precache": [],
+        "missing_local": []
+      },
+      "fleet.html": {
+        "count": 21,
+        "missing_precache": [],
+        "missing_local": []
+      }
+    },
+    "art_assets_valid": 72,
+    "all_art_bytes_equal_ui94": true
+  },
+  "limits": {
+    "input_bytes": 12000000,
+    "extracted_text_characters": 200000,
+    "source_lines": 5000,
+    "pdf_pages": 80,
+    "scanned_pdf_pages": 12,
+    "worksheets": 25,
+    "spreadsheet_stored_cells": 50000,
+    "spreadsheet_columns": 80,
+    "simultaneous_extraction_workers": 1,
+    "worker_timeout_seconds": 65,
+    "linux_worker_address_space_mb": 384
+  },
+  "preserved": [
+    "All 72 static artwork assets exact UI94 bytes",
+    "Original UI92 extractor and vendor parts",
+    "UI93 email backend/preferences and UI94 header/menu/art CSS",
+    "Existing operations/history/signatures/access and recovery safeguards"
+  ],
+  "data_boundary": "No schema migration/reset. Extraction/review are read-only. Explicit saves create unpublished definitions, empty logbook designs or separate inventory lists only; no merge/completion/signature/verification/custody inference. Original bytes are temporary, not automatically persisted as Original files. Source filename/SHA and selected worksheet are recorded.",
+  "remote_actions": {
+    "github_main_read_verified_twice": true,
+    "github_write_succeeded": false,
+    "pull_request_created": false,
+    "deployed": false,
+    "reason": "Earlier GitHub integration write returned 403; this turn prepares the compact source update for the usual commit/push workflow."
+  },
+  "not_claimed": [
+    "Every document layout or handwriting recognized",
+    "Full historical test suite green",
+    "Portuguese OCR locally exercised",
+    "Actual Docker/Render build or deployment",
+    "Physical mobile or Windows/native GUI acceptance",
+    "Service-worker install/update lifecycle",
+    "Production WebSocket/network behavior",
+    "Live SMTP inbox delivery"
+  ],
+  "inherited_historical_suite_limits": "UI93/UI94 reports remain historical evidence. One outdated UI45 copy assertion is updated to the actual current import wording; other historical source assertions are not claimed resolved by this task.",
+  "delivery": "One compact source ZIP for the exact verified UI94 repository; one current continuation checkpoint; bulky screenshots/logs in separate evidence ZIP."
+}

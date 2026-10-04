@@ -7,7 +7,7 @@ def module(name):
     spec=importlib.util.spec_from_file_location(name,ROOT/'deploy'/f'apply_{name}.py')
     value=importlib.util.module_from_spec(spec);spec.loader.exec_module(value);return value
 UI93=module('ui93');UI94=module('ui94')
-CANDIDATE=Path(os.environ['WAVELINK_TEST_SOURCE'])
+CANDIDATE=Path(os.environ.get('WAVELINK_UI94_TEST_SOURCE',os.environ['WAVELINK_TEST_SOURCE']))
 
 @pytest.fixture
 def sources():
@@ -25,7 +25,8 @@ def test_docker_copies_both_companions_and_runs_each_once_in_order():
     assert text.count('&& python apply_ui93.py /opt/wavelink/app')==1
     assert text.count('&& python apply_ui94.py /opt/wavelink/app')==1
     assert text.index('python extract_source.py')<text.index('python apply_ui93.py')<text.index('python apply_ui94.py')
-    assert 'COPY deploy/extract_source.py deploy/apply_ui93.py deploy/apply_ui94.py ./' in text
+    copy=next(line for line in text.splitlines() if line.startswith('COPY deploy/extract_source.py'))
+    assert 'deploy/apply_ui93.py' in copy and 'deploy/apply_ui94.py' in copy
 
 def test_ui93_replay_matches_final_runtime_and_double_apply_is_rejected(tmp_path,sources):
     shutil.copytree(sources[1],tmp_path/'runtime');path=tmp_path/'runtime';UI94.apply(path);identical(path)

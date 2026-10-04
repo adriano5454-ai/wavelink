@@ -21,3 +21,4 @@ typing-extensions==4.16.0
 typing-inspection==0.4.2
 uvicorn==0.48.0
 websockets==16.0
+pypdf==6.19.0

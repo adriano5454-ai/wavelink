@@ -1,3 +1,7 @@
+# Current UI95 replay
+
+Set WAVELINK_TEST_SOURCE to the derived UI95 runtime and WAVELINK_UI94_TEST_SOURCE to the exact derived UI94 runtime. Keep UI92/UI93 parent variables from the retained instructions below. Run test_ui93_build.py, test_ui94_build.py and test_ui95_build.py together. In the derived runtime run tests/test_document_import_ui95.py and tests/browser_document_ui95.py. Browser scripts require Playwright/Chromium and fictional temporary TestClient fixtures; never use production data.
+
 # Local-only validation
 
 ## Current UI94 cumulative replay

@@ -1,18 +1,33 @@
 {
   "format": "wavelink-delivery-checks-1",
-  "release": "UI94 Quiet Header, Anchored Account Menu and Banner Review + retained UI93 optional email",
+  "release": "UI95 Documents, Worksheets and Toolbox Navigation",
   "core": "1.34.19",
   "date": "2026-10-04",
-  "repository_parent_commit": "ba27ddeee79fd77579beecb02d601ec09443b8dc",
-  "repository_files_ui92": 243,
-  "repository_files_ui93": 248,
-  "repository_files_target": 253,
-  "runtime_manifest_files_target": 2086,
-  "runtime_files_with_manifest": 2087,
-  "runtime_manifest_sha256": "b03ae6f967b358750c70f9373fc8bcc1448f65686bf881723b1ab7f815259d55",
-  "parent_ui93_runtime_manifest_sha256": "580d7f0d0c65c46d78029834e7014216d702862832429255df4dda35ea2f1849",
-  "original_ui92_extractor_sha256": "57550f076fe6474523d77ecb9fc5b119c0a183f0f6a45be3361c61de0c381fc1",
-  "current_browser_runs": [
+  "repository_parent_commit": "c3fcc81eac8a8e67cbb608efd91e734797136b89",
+  "repository_files_parent": 253,
+  "repository_files_target": 258,
+  "runtime_manifest_sha256": "2c915745acf1e3ae331ccd230c67afd1424be60ebf52f36fbe899d3e0895549b",
+  "runtime_manifest_files_target": 2092,
+  "runtime_files_with_manifest": 2093,
+  "runtime_delta_files": 21,
+  "functional_tests": {
+    "latest_import_suite_passed": 31,
+    "retained_builder_toolbox_email_suite_passed": 75,
+    "earlier_combined_run_passed": 102,
+    "earlier_combined_import_cases": 27,
+    "total_distinct_current_cases": 106,
+    "all_passed": true,
+    "real_english_image_and_scanned_pdf_ocr": true,
+    "portuguese_ocr": "Docker data dependency configured; local acceptance not claimed"
+  },
+  "build_tests_passed": 11,
+  "browser_runs": [
+    {
+      "group": "document_navigation",
+      "passed": 72,
+      "unexpected_javascript_errors": 0,
+      "evidence": "EVIDENCE/browser/UI95_BROWSER_REVIEW.json"
+    },
     {
       "group": "header_banners_art",
       "passed": 161,
@@ -38,59 +53,43 @@
       "evidence": "EVIDENCE/fleet/fleet_browser_checks.json"
     }
   ],
-  "current_mail_tests_passed": 19,
-  "current_build_tests_passed": 7,
-  "syntax": {
-    "python": 712,
-    "javascript": 97,
-    "errors": [],
-    "entry_assets": [
-      {
-        "entry": "index.html",
-        "assets_verified_and_precached": 117,
-        "authoritative_visual_asset": "visual_system_ui94.css"
+  "syntax_art": {
+    "python_files": 716,
+    "javascript_files": 98,
+    "syntax_errors": [],
+    "entry_assets": {
+      "index.html": {
+        "count": 124,
+        "missing_precache": [],
+        "missing_local": []
       },
-      {
-        "entry": "fleet.html",
-        "assets_verified_and_precached": 19,
-        "authoritative_visual_asset": "visual_system_ui94.css"
+      "fleet.html": {
+        "count": 21,
+        "missing_precache": [],
+        "missing_local": []
       }
-    ],
-    "python_scope": "all runtime Python files"
+    },
+    "art_assets_valid": 72,
+    "all_art_bytes_equal_ui94": true
   },
-  "art": {
-    "static_assets_validated": 72,
-    "raster_decode_and_svg_parse_errors": 0,
-    "active_cover_images": 2,
-    "badges": 30,
-    "approved_cover_and_badge_bytes_unchanged": true,
-    "active_art_decoded_in_chromium": 32,
-    "manual_review": "Approved covers, badge contact sheet, all fifteen ordinary desktop banner covers, desktop/phone Home and Profile, account menu and representative workflow screenshots viewed."
-  },
-  "inherited_evidence": {
-    "reference": "docs/UI93_REVIEW_REPORT.json",
-    "full_broad_suite_rerun_in_ui94": false,
-    "boundary": "Previous broad review passed 1,085 selected checks after correcting harness paths; eleven source assertions also fail on unmodified UI92 and the legacy M01 launcher hash is intentionally superseded. The previous 237 focused checks are historical evidence; current UI94 reruns are listed separately."
+  "schema_migration": false,
+  "review_report": "docs/UI95_REVIEW_REPORT.json",
+  "current_acceptance_guide": "docs/WORKSPACE_UI95.md",
+  "remote_actions": {
+    "github_main_read_verified_twice": true,
+    "github_write_succeeded": false,
+    "pull_request_created": false,
+    "deployed": false,
+    "reason": "Earlier GitHub integration write returned 403; this turn prepares the compact source update for the usual commit/push workflow."
   },
   "not_claimed": [
-    "Full historical test suite pass",
-    "Live Render deployment",
-    "Real inbox delivery",
-    "Physical mobile-device or Windows/native GUI acceptance",
-    "Real service-worker installation/update lifecycle",
-    "Production WebSocket/network failure acceptance"
-  ],
-  "remote_actions": {
-    "github_read_verified": true,
-    "main_still_ui92_when_checked": true,
-    "github_write_succeeded": false,
-    "github_write_blocker": "Earlier branch creation returned 403 Resource not accessible by integration; no write retry in UI94.",
-    "pull_request_created": false,
-    "hosting_changed": false,
-    "live_deployment": false,
-    "production_data_access": false
-  },
-  "review_report": "docs/UI94_REVIEW_REPORT.json",
-  "acceptance_guide": "docs/WORKSPACE_UI94.md",
-  "schema": "No additional UI94 migration; UI93 additive personal mail tables retained. No operational-record schema change or reset."
+    "Every document layout or handwriting recognized",
+    "Full historical test suite green",
+    "Portuguese OCR locally exercised",
+    "Actual Docker/Render build or deployment",
+    "Physical mobile or Windows/native GUI acceptance",
+    "Service-worker install/update lifecycle",
+    "Production WebSocket/network behavior",
+    "Live SMTP inbox delivery"
+  ]
 }

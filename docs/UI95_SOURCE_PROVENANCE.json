@@ -1,0 +1,126 @@
+{
+  "format": "wavelink-runtime-overlay-1",
+  "date": "2026-10-04",
+  "patch_id": "workspace-ui95-document-and-worksheet-import-toolbox-navigation-2026-10-04",
+  "parent_patch_id": "workspace-ui94-quiet-header-anchored-profile-2026-10-04",
+  "parent_git_commit": "c3fcc81eac8a8e67cbb608efd91e734797136b89",
+  "parent_manifest_sha256": "b03ae6f967b358750c70f9373fc8bcc1448f65686bf881723b1ab7f815259d55",
+  "scope": "Reopen Toolbox Talks after navigation; remove duplicate sidebar assignment entry; bounded local document/OCR extraction, worksheet identification, inventory mapping and edited review before new reusable definitions or separate inventory lists.",
+  "schema": {
+    "database_migration": false
+  },
+  "boundaries": {
+    "automatic_publication": false,
+    "automatic_acknowledgement": false,
+    "completed_history_import": false,
+    "existing_inventory_merge": false,
+    "external_document_service": false,
+    "source_parts_change": false,
+    "permission_grant": false,
+    "browser_storage_clear": false,
+    "database_reset": false,
+    "new_timer": false
+  },
+  "files": [
+    {
+      "path": "app/builder_hub_api.py",
+      "before_sha256": "fe828b745a54ff1985b2f1853ac49cae19d533a4ddf5b7e148d9ddd4c10a6bee",
+      "after_sha256": "3fd1aa82f93a9118614ec868a95e418e897ba8ed554dd29b55a9ee0f7412a1f2"
+    },
+    {
+      "path": "app/document_extract.py",
+      "before_sha256": null,
+      "after_sha256": "0438cf729b9b240c3c5b038d95caf04af55f680051773a52e1f2226ddf14c462"
+    },
+    {
+      "path": "app/document_import.py",
+      "before_sha256": null,
+      "after_sha256": "b302741714cb358cec7ea502acf7d594438ff305d631193b41f98bf47b3cb87d"
+    },
+    {
+      "path": "app/server.py",
+      "before_sha256": "e48c90cc918ca73061e6b2ed420ec92a56726c0c61db7563aa691695ab219d4f",
+      "after_sha256": "f61859d941bbe7a63650d0645dce55bfc11960b3846efb3cf3201ba02ac2cf2e"
+    },
+    {
+      "path": "app/static/app.js",
+      "before_sha256": "c0f5e6ac45b72b2f863f69e61fc0841dd46a5485fc2696a687173260d5877b39",
+      "after_sha256": "69ee8444c77e9f53c4fbe36ff89a864bf5ea656539f264d1faf48ad506780937"
+    },
+    {
+      "path": "app/static/document_import.css",
+      "before_sha256": null,
+      "after_sha256": "481e5a5efb887c7faea187679def9831af8967c0f1d903bbb90343893a8a20ba"
+    },
+    {
+      "path": "app/static/document_import.js",
+      "before_sha256": null,
+      "after_sha256": "586abf30de2955b3254f03991261264894ee1e5cdba0200defa0b1f449c4faf2"
+    },
+    {
+      "path": "app/static/fieldwork.js",
+      "before_sha256": "1cd2ccbedabc8d5ab68e40343c4a8cd33cbbab44501a603fbbe8cf04ce605b46",
+      "after_sha256": "9751ab353fb8d0cb07893e970a69d22e21f1d21b9bc41e44bb8dc882ff591158"
+    },
+    {
+      "path": "app/static/fleet.html",
+      "before_sha256": "354e103588d0ff996fd01db030a0fea9075b442bf44f7ac925293e0cde1c76d9",
+      "after_sha256": "ddfd4d112d41b74148783c7bd134fe7523af8c645295242a67f12b25fe9449a6"
+    },
+    {
+      "path": "app/static/help_topics/documentimport.html",
+      "before_sha256": "74c9c032c6c044e05e1e04514ad8f9fa948b89e2db26ecf78ab3c466e56b3d5e",
+      "after_sha256": "403505b2abf560c3c22553dca0129d3ec4ebeb03deea5165a2eef632a5f6bbb3"
+    },
+    {
+      "path": "app/static/help_topics/importcentre.html",
+      "before_sha256": "c3a639d4322bab19e514c69a97b9bea17f9f95cca42a9ba834f215bd6b8b0b3b",
+      "after_sha256": "1df9cbda6c3f66954ca38c68e1642eed470af1f0d935fb06aaed90539d75a8db"
+    },
+    {
+      "path": "app/static/import_centre.js",
+      "before_sha256": "cacc214d5c31aa8ec4fd1434cd24e7ab0863c3cc4845059b6c0c67b0656039f0",
+      "after_sha256": "edd0bc12b36bb79728017358670e863107ca79ecf2b8eb25410e48df50461310"
+    },
+    {
+      "path": "app/static/index.html",
+      "before_sha256": "1b8792aa0b01f823ec91889a4fe0c85bf3c9b2352271eaadcd2c33ca47dd1783",
+      "after_sha256": "4badf94585cdd912ba08d6e52dccba9678ce461b4526bac17c5e9d97c249b23a"
+    },
+    {
+      "path": "app/static/save_status.js",
+      "before_sha256": "b282086dd10bb6595fbdd65dff6726cd636491d21ae5555fa1a81e1518dabd00",
+      "after_sha256": "67545f9d67a3fc46f243c9a747621aa579c9853073daab0173f7e8c1815a172f"
+    },
+    {
+      "path": "app/static/setup_builders.js",
+      "before_sha256": "9e944c70d264f46c56847be31ab4c8c3ee90006d599c9a6f275254a1cee38c9c",
+      "after_sha256": "f9bfa25c759461acc2e122ddce731591af65caaf333b619c533ca32ab830a922"
+    },
+    {
+      "path": "app/static/sw.js",
+      "before_sha256": "190b6b304a49f54e9186ed9a13f22f69ee67b3d1afe9108b7c767c6b21906fe3",
+      "after_sha256": "d6c69930ac19a261df257b28f75c49567fd307bfa2324643581c0b6a1707ca03"
+    },
+    {
+      "path": "requirements.txt",
+      "before_sha256": "8cc3b55ba3e46a78e0b99cb7df65db765b9be2257abf3acc102abd6ef2dbba81",
+      "after_sha256": "1cf39d92dfcf54efe07b7ea1662fd3e0c76a624bb4466dc2e72353e27a2bb686"
+    },
+    {
+      "path": "tests/browser_document_ui95.py",
+      "before_sha256": null,
+      "after_sha256": "6403701611005f93bb72cf5de9c01af3999c04c3ab892e0f3907f3d2c604f424"
+    },
+    {
+      "path": "tests/test_document_import_ui95.py",
+      "before_sha256": null,
+      "after_sha256": "f5e06e81d990d36cc91b3f2a7ea85fbb541257c47176b885d1dc01807f143e8f"
+    },
+    {
+      "path": "tests/ui45_review/test_builder_baseline.py",
+      "before_sha256": "6321e0ad675f974278e3b2e2fbc2b9879db27dfb539d49470b4628af333e4af5",
+      "after_sha256": "971798b710b9d2c7c2d161ce9996cf6ed91a6e0ea08c11f3ea9c4737a200b80e"
+    }
+  ]
+}
