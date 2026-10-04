@@ -1,0 +1,79 @@
+{
+  "format": "wavelink-runtime-overlay-1",
+  "date": "2026-10-04",
+  "patch_id": "workspace-ui96-clear-responsive-sign-in-2026-10-04",
+  "parent_patch_id": "workspace-ui95-document-and-worksheet-import-toolbox-navigation-2026-10-04",
+  "parent_git_commit": "dd8eff975a594e41b10bf5e589577bcf4e954cee",
+  "parent_manifest_sha256": "2c915745acf1e3ae331ccd230c67afd1424be60ebf52f36fbe899d3e0895549b",
+  "scope": "Modern responsive account/access-code sign-in, clear MFA and setup screens, compact account help, accessible password reveal and submission feedback; quiet only healthy sign-in status with visible problems/recovery.",
+  "schema": {
+    "database_migration": false
+  },
+  "boundaries": {
+    "auth_backend_change": false,
+    "permission_grant": false,
+    "email_or_document_import_change": false,
+    "artwork_bytes_change": false,
+    "database_reset": false,
+    "browser_storage_clear": false,
+    "source_parts_change": false,
+    "new_timer": false
+  },
+  "files": [
+    {
+      "path": "app/static/action_center_ui82.js",
+      "before_sha256": "dbc0eeec9a80c0ced7daf5b907a551c1d38e4889ab03179fff6182deadb48f52",
+      "after_sha256": "c45a1b4ab052e41a2bfcc954d230f4f2e062ca54087f60f951e2611a0646292a"
+    },
+    {
+      "path": "app/static/app.js",
+      "before_sha256": "69ee8444c77e9f53c4fbe36ff89a864bf5ea656539f264d1faf48ad506780937",
+      "after_sha256": "0295585dd53975101e83dfe27d2a0c453b936efc643f208724bd55218012beb9"
+    },
+    {
+      "path": "app/static/experience_shell.js",
+      "before_sha256": "e6c43cf7cf9860d488ad0640fd9859761bd87d2bdb03b09b76ea1f9a0fd51ae5",
+      "after_sha256": "201ca18d5499ddbb1fe30b193cc35284cea02cebab4f956d283dcfde6970b1d8"
+    },
+    {
+      "path": "app/static/fleet.html",
+      "before_sha256": "ddfd4d112d41b74148783c7bd134fe7523af8c645295242a67f12b25fe9449a6",
+      "after_sha256": "36ce8cc90e463fdb00f1dce9a642fba4cd839d414801ca9e06ff5f3ff4f8f22c"
+    },
+    {
+      "path": "app/static/index.html",
+      "before_sha256": "4badf94585cdd912ba08d6e52dccba9678ce461b4526bac17c5e9d97c249b23a",
+      "after_sha256": "f79c736120b60cc49328666e3e00306e57890f2c8b62fbfbaea85cc8eb186158"
+    },
+    {
+      "path": "app/static/login_ui96.css",
+      "before_sha256": null,
+      "after_sha256": "6b25fd3e4e2ed3cd6265323c23a56ca4830237424674b0e5d521706e26722226"
+    },
+    {
+      "path": "app/static/save_status.js",
+      "before_sha256": "67545f9d67a3fc46f243c9a747621aa579c9853073daab0173f7e8c1815a172f",
+      "after_sha256": "8a0e584bb71cb8cf4194eb743152d36debadedf1f3744621c1f9706f3af05297"
+    },
+    {
+      "path": "app/static/save_status_ui.js",
+      "before_sha256": "02f10539b12715421e41025113bb540064e6760ccea0cf244a3167e53bb356fb",
+      "after_sha256": "32997665df9a81ee1c2bd733964e01adeede5ef91731924e19236ba8760a9168"
+    },
+    {
+      "path": "app/static/sw.js",
+      "before_sha256": "d6c69930ac19a261df257b28f75c49567fd307bfa2324643581c0b6a1707ca03",
+      "after_sha256": "df079d540b7ef164dd2a9c42204613947c3161e876887bb2e1e81b42bd835e6c"
+    },
+    {
+      "path": "tests/browser_login_ui96.py",
+      "before_sha256": null,
+      "after_sha256": "bdcc78ac601f02979f022dcd100fa117676fc9ba2214b354b7d56db3064c4d87"
+    },
+    {
+      "path": "tests/test_login_ui96.py",
+      "before_sha256": null,
+      "after_sha256": "06282ab36c798384ab22d49657d92774ac132374ac6e2fad400745de587189da"
+    }
+  ]
+}

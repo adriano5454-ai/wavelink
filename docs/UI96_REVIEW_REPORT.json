@@ -1,0 +1,131 @@
+{
+  "format": "wavelink-ui96-review-1",
+  "release": "UI96 Clear Responsive Sign-in",
+  "core": "1.34.19",
+  "date": "2026-10-04",
+  "parent_git_commit": "dd8eff975a594e41b10bf5e589577bcf4e954cee",
+  "parent_repository_files_verified": 258,
+  "github_main_same_at_final_read": true,
+  "parent_ui95_runtime_manifest_sha256": "2c915745acf1e3ae331ccd230c67afd1424be60ebf52f36fbe899d3e0895549b",
+  "runtime_manifest_sha256": "81fbcd7eea2615babe2d3b6796734482080fe4e7fcae2848d1e120137f1c5227",
+  "runtime_manifest_files": 2095,
+  "implemented": [
+    "Focused sign-in, approved offshore desktop art and form-first mobile layout",
+    "Cryptic 01/02 and 02/02 counters removed; selected company identity and concise expandable account help",
+    "Accessible password/access-code Show/Hide, appropriate autofill and input hints, loading/duplicate-submit prevention and focused errors",
+    "Distinct authenticator/recovery labels, numeric/text inputs, method-switch code reset and back navigation",
+    "Matching initial administrator setup with live status recheck",
+    "Only healthy redundant sign-in strip is quiet; actual connection/save/storage problems and local recovery remain visible",
+    "Exact MFA endpoint excluded from operational receipt journal so verification can occur before authentication; unrelated operational writes still guarded",
+    "Legacy access-code sessions no longer trigger named-only profile/action reads that signed them out; Home uses existing Workspace directory and personal deep links explain the requirement"
+  ],
+  "functional_tests": {
+    "security_email_document_passed": 61,
+    "new_mfa_transport_and_retained_delivery_scenarios_passed": 36,
+    "total_distinct_selected_cases_passed": 97,
+    "historical_static_assertions_deselected": 4,
+    "new_mfa_transport_cases": 1,
+    "auth_backend_unchanged": true
+  },
+  "build_tests_passed": 15,
+  "browser_runs": [
+    {
+      "group": "sign_in",
+      "passed": 119,
+      "unexpected_javascript_errors": 0,
+      "evidence": "EVIDENCE/login/UI96_LOGIN_REVIEW.json"
+    },
+    {
+      "group": "header_banners_art",
+      "passed": 161,
+      "unexpected_javascript_errors": 0,
+      "evidence": "EVIDENCE/shell/UI94_SHELL_REVIEW.json"
+    },
+    {
+      "group": "documents_toolbox",
+      "passed": 72,
+      "unexpected_javascript_errors": 0,
+      "evidence": "EVIDENCE/documents/UI95_BROWSER_REVIEW.json"
+    },
+    {
+      "group": "fleet",
+      "passed": 18,
+      "unexpected_javascript_errors": 0,
+      "evidence": "EVIDENCE/fleet/fleet_browser_checks.json"
+    },
+    {
+      "group": "legacy_background_repaint",
+      "passed": 1,
+      "unexpected_javascript_errors": 0,
+      "evidence": "EVIDENCE/login/UI96_LEGACY_BACKGROUND.json"
+    }
+  ],
+  "browser_counts_overlap": true,
+  "sign_in_widths": [
+    1440,
+    1280,
+    1024,
+    900,
+    768,
+    680,
+    600,
+    430,
+    390,
+    360,
+    320
+  ],
+  "browser_method": "Headless Linux Chromium with fictional temporary FastAPI/SQLite TestClient fetch bridge, a real local page origin, suppressed timers/WebSockets, simulated persistence and viewport emulation. Actual named/password/MFA/recovery and existing legacy join endpoints exercised. No live company data.",
+  "manual_visual_review": "Before/after desktop and phone screenshots viewed; strong text contrast, bounded card, whitespace, visible mobile Workspace options and form controls verified. Existing CSS layer conflicts were corrected and browser assertions protect title color/card bounds.",
+  "syntax_assets_art": {
+    "python_files": 718,
+    "javascript_files": 98,
+    "syntax_errors": [],
+    "entry_assets": {
+      "index.html": {
+        "count": 125,
+        "missing_precache": [],
+        "missing_local": []
+      },
+      "fleet.html": {
+        "count": 21,
+        "missing_precache": [],
+        "missing_local": []
+      }
+    },
+    "art_assets_valid": 72,
+    "all_art_bytes_equal_ui95": true
+  },
+  "protected_files_equal_ui95": [
+    "app/accounts.py",
+    "app/account_security.py",
+    "app/account_security_api.py",
+    "app/server.py",
+    "app/document_import.py",
+    "app/document_extract.py",
+    "app/email_alerts.py",
+    "app/email_alerts_api.py",
+    "app/static/document_import.js",
+    "app/static/document_import.css",
+    "app/static/fieldwork.js",
+    "app/static/email_alerts_ui93.js",
+    "app/static/visual_system_ui94.css"
+  ],
+  "data_boundary": "No backend or database-schema change, operational data write, reset, storage clear, setup marker change, permission grant or new mail/service provider. Profile/action account eligibility is narrowed for legacy sessions; server auth and all account-adoption/local-work safeguards retained.",
+  "remote_actions": {
+    "commit": false,
+    "pull_request": false,
+    "deployed": false,
+    "reason": "Earlier GitHub integration write returned 403; current read verifies UI95 main. Compact source update prepared for the established commit/push workflow."
+  },
+  "not_claimed": [
+    "Full historical test suite green",
+    "Actual Docker/Render deployment",
+    "Physical device keyboard/autofill/browser behavior",
+    "Real service-worker install/update lifecycle",
+    "Windows/native setup acceptance",
+    "Production network/WebSocket behavior",
+    "Live inbox delivery"
+  ],
+  "historical_assertion_limits": "Selected retained security/delivery tests omit four release-specific source/version contracts. An old save-status static assertion expects a historic Fleet asset query string; exact current entry/cache URLs are checked separately. Previous release evidence remains historical, not this task\u2019s acceptance.",
+  "delivery": "Compact source ZIP for exact UI95 checkout; one current continuation checkpoint; bulky screenshot/log proof in separate evidence ZIP."
+}

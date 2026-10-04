@@ -1,3 +1,7 @@
+# UI96 implemented / next acceptance
+
+Clear, responsive sign-in, verification, existing access-code and administrator-setup pages are implemented. Next: actual company-address deployment acceptance, physical phone keyboard/autofill and short-viewport review using WORKSPACE_UI96.md. Prior optional-email, document/OCR and native-device acceptance remains pending where not yet exercised. Historical roadmap follows.
+
 # UI95 implemented / next acceptance
 
 Common document and scan extraction, explicit worksheet selection, inventory mapping/box validation and edited draft review are implemented. Next: real deployment/OCR-language/device acceptance using WORKSPACE_UI95.md. Future improvements may add handwriting, complex merged-layout interpretation, richer reading-field mappings and deliberate multi-sheet inventory combination after representative samples. Current imports keep sheets separate and do not ingest completed history.

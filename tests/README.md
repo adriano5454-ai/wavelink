@@ -1,3 +1,11 @@
+# Current UI96 replay and sign-in checks
+
+Use disposable fictional runtime folders, never production data. Keep the exact UI92, UI93, UI94 and UI95 parents. Apply UI96 only to a UI95 copy. Set WAVELINK_UI96_TEST_SOURCE to that UI96 copy and WAVELINK_UI95_TEST_SOURCE to the untouched UI95 parent; retained tests use WAVELINK_TEST_SOURCE=UI95, WAVELINK_UI94_TEST_SOURCE=UI94, WAVELINK_UI93_TEST_SOURCE=UI93 and WAVELINK_UI92_TEST_SOURCE=UI92. Run test_ui93_build.py, test_ui94_build.py, test_ui95_build.py and test_ui96_build.py together.
+
+In the derived UI96 runtime, tests/browser_login_ui96.py exercises actual local auth APIs in temporary fictional projects. It requires Playwright/Chromium and the normal application dependencies. The browser harness deliberately simulates persistence, suppresses timers/WebSockets and uses viewport emulation. Tests/browser_shell_ui94.py, tests/browser_document_ui95.py and retained Fleet checks can verify unchanged authenticated behavior. See docs/UI96_REVIEW_REPORT.json for executed results and limits.
+
+--- Historical instructions below ---
+
 # Current UI95 replay
 
 Set WAVELINK_TEST_SOURCE to the derived UI95 runtime and WAVELINK_UI94_TEST_SOURCE to the exact derived UI94 runtime. Keep UI92/UI93 parent variables from the retained instructions below. Run test_ui93_build.py, test_ui94_build.py and test_ui95_build.py together. In the derived runtime run tests/test_document_import_ui95.py and tests/browser_document_ui95.py. Browser scripts require Playwright/Chromium and fictional temporary TestClient fixtures; never use production data.

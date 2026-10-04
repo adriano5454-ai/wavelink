@@ -1,4 +1,12 @@
-# Current update: UI95
+# Current update: UI96
+
+Clear, responsive sign-in with the unexplained 01/02 counters removed. Account, access-code, verification and setup screens now share a focused layout; password visibility, account help and submitting/error feedback are clearer. Existing authentication, local-work recovery, artwork, email and document imports are retained.
+
+Read [WORKSPACE_UI96.md](docs/WORKSPACE_UI96.md) and the single [continuation checkpoint](docs/CONTINUATION_CHECKPOINT.md). Apply the compact update to the verified UI95 checkout; bulky screenshots and logs remain separate.
+
+--- Historical releases below; UI96 above is current ---
+
+# Previous update: UI95
 
 Document/worksheet imports, reliable Toolbox Talks navigation and removal of the duplicate assignment sidebar entry. Read [WORKSPACE_UI95.md](docs/WORKSPACE_UI95.md) and the single [continuation checkpoint](docs/CONTINUATION_CHECKPOINT.md). Build retains UI93 optional email and UI94 header/account/art updates. Source ZIP and bulky review evidence are separate.
 
