@@ -1,0 +1,105 @@
+{
+  "format": "wavelink-runtime-overlay-1",
+  "date": "2026-10-05",
+  "patch_id": "workspace-ui101-workbook-roles-and-native-log-designs-2026-10-05",
+  "parent_patch_id": "workspace-ui100-structured-document-import-2026-10-04",
+  "parent_git_commit": "80e9090500c33e80c97bcf2296c84d4772870e19",
+  "parent_manifest_sha256": "6db1c1e9b3edff4581c5e40d6215290caf61c34ee402f7f43f5ed40537fa3372",
+  "scope": "Generic worksheet roles and inventory mapping provenance; bounded browser-local native logbook form extraction, reviewed prepared package and honest source metadata.",
+  "boundaries": {
+    "database_reset": false,
+    "browser_storage_clear": false,
+    "auth_backend_change": false,
+    "server_schema_change": false,
+    "artwork_bytes_change": false,
+    "source_log_answers_or_history_copied": false,
+    "UI98_hosted_recovery_UI99_tabs_UI100_structure_retained": true
+  },
+  "files": [
+    {
+      "path": "app/builder_hub.py",
+      "before_sha256": "75333519eff5392574ed07d6d335f0a1b002dbb54e13fdfe6ee49c22b086fdf5",
+      "after_sha256": "9ef479fc202beed16572429341651f3b563ff93b41cfef06d4c2ed4d8db91b0d"
+    },
+    {
+      "path": "app/document_extract.py",
+      "before_sha256": "7c585592acef5ae54e6a969b6bf20e30d540238c7dd28d5d3d7140de57fb03ee",
+      "after_sha256": "71b0b8e06875960a800956629b1183cc4b26f434f8e43677786fd5367eda0e58"
+    },
+    {
+      "path": "app/document_import.py",
+      "before_sha256": "b9757eadae17c9072320bf0d97293f39802d0714732536453654921dfcc7f9f5",
+      "after_sha256": "06a629a4d6466edcbef3ca9a2c478978b8eb07e858d973f9fb01ba289971380e"
+    },
+    {
+      "path": "app/log_schema.py",
+      "before_sha256": "1212bd00c56ea030eafbbc86c1047e45f065c5ee0e8d7e72e9778acdcb9ede4d",
+      "after_sha256": "30fa041a500446be32887943c0296b4f6fb3604d6d21bd23cf3f0e70e2141020"
+    },
+    {
+      "path": "app/static/admin_workspace_ui75.css",
+      "before_sha256": "6a90725cb67bc7642f2ab8ad99221e56237aac9357d4515e3cdd35ef4ccd5eb0",
+      "after_sha256": "9649a1e1974ce04755361c8d544cafc4d068bcccccaef9dd816426e6a52dce16"
+    },
+    {
+      "path": "app/static/document_import.css",
+      "before_sha256": "749bab88ef66202a992bf9fbb93b56cc74214870dccf80d42a4899fea0b0e9d2",
+      "after_sha256": "db2f51f6ff0a54c1a236012eba2498388f039311fa3718c761bcdbd1d46c30ff"
+    },
+    {
+      "path": "app/static/document_import.js",
+      "before_sha256": "15e4bedfa0170c26cb3c4f08b1a81ce70563256196b86fc760a4179b4a5827a3",
+      "after_sha256": "8b2e9eed77abf6a277395c6c225dd10afa4aaf84e53a351dbab4fd28542ac235"
+    },
+    {
+      "path": "app/static/index.html",
+      "before_sha256": "d5774b70195078c8f8c0b4bd612ada5617078ac74daab8603a271d40271cda93",
+      "after_sha256": "ad3af34ff7eff6b0a3b5b89386c0bffb63c468acf7c98ca7bab66c84fba054cb"
+    },
+    {
+      "path": "app/static/log_package_worker.js",
+      "before_sha256": null,
+      "after_sha256": "42f690efc88b0ad3fb9bb421ef5184da601fbb27d65e948aa363957ebcad71bf"
+    },
+    {
+      "path": "app/static/setup_builders.js",
+      "before_sha256": "f9bfa25c759461acc2e122ddce731591af65caaf333b619c533ca32ab830a922",
+      "after_sha256": "c06cca2bc43afdedec296cb18821a7213cc03e3e195be735e6b39ec68365f922"
+    },
+    {
+      "path": "app/static/sw.js",
+      "before_sha256": "a66b041634d3bd946fa1fed48d54608cd356b4cd3374359a6be34e9feb090f30",
+      "after_sha256": "8be2dfac731ec801573d29b16aa55e7d8f38b86c72e6ef45049eab3b67d04dbe"
+    },
+    {
+      "path": "tests/browser_native_log_safety_ui101.py",
+      "before_sha256": null,
+      "after_sha256": "0d1c17dfcd6b61074ced8b32da04ef6850c0c8c18bad414d82e2ff158734c48b"
+    },
+    {
+      "path": "tests/test_builder_log_ui101.py",
+      "before_sha256": null,
+      "after_sha256": "2cc769495a16d38c53a245fe255c39e8829da7562c61a326ccb40fbdd7516d06"
+    },
+    {
+      "path": "tests/test_document_sheets_ui101.py",
+      "before_sha256": null,
+      "after_sha256": "6e761a8df2afd5a5f71ba2dd755416c201feac07f088de76215aae5710afb3f8"
+    },
+    {
+      "path": "tests/test_log_package_ui101.py",
+      "before_sha256": null,
+      "after_sha256": "7818ed3c84b7758fd0dae67f79b56f33fe342092cc3569b3d2da0ab69b1caaca"
+    }
+  ],
+  "repository_parent_files": {
+    "UI98": 273,
+    "UI99": 279,
+    "UI100": 285
+  },
+  "runtime_manifest_sha256": "47fd3e1086b72242b438e4bbeae9a9133cdc3a79c731df4d2dc7213040c48f5d",
+  "runtime_resources": 2114,
+  "unchanged_resources_from_UI100": 2098,
+  "approved_art_files_unchanged": 72,
+  "cumulative_UI99_UI100_included": true
+}

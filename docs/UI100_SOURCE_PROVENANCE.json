@@ -1,0 +1,179 @@
+{
+  "format": "wavelink-runtime-overlay-1",
+  "date": "2026-10-04",
+  "patch_id": "workspace-ui100-structured-document-import-2026-10-04",
+  "parent_patch_id": "workspace-ui99-independent-browser-tabs-2026-10-04",
+  "parent_git_commit": "80e9090500c33e80c97bcf2296c84d4772870e19",
+  "parent_manifest_sha256": "438b99b90b9f4db27a95e7b767a57bbc68b71c3a5293320b8fb05d1197b8752f",
+  "scope": "Source-aware instructions, tools, workflow, checks and answer fields with editable reviewed document proposals; select readings and optional source bounds across consumers.",
+  "boundaries": {
+    "database_reset": false,
+    "browser_storage_clear": false,
+    "auth_backend_change": false,
+    "server_schema_change": false,
+    "artwork_bytes_change": false,
+    "source_answers_or_history_copied": false,
+    "UI98_hosted_recovery_and_UI99_tabs_retained": true
+  },
+  "files": [
+    {
+      "path": "app/browser_templates.py",
+      "before_sha256": "244431bc17b8fb2fd804711d25392b51fd1862430a8a44d86e10d8d397274312",
+      "after_sha256": "68512b1f4d053358520f5d852c5384bc0da0ba2bb422e4b7d88d6f032fb556af"
+    },
+    {
+      "path": "app/checklist_editor.py",
+      "before_sha256": "95e745ef0a53f927bb95f6fc3428363db6045bf715ad5159ff25043dd322af0f",
+      "after_sha256": "4803a61290db18d82903c8f2e8dfafc9854d065c8d166ff183c15651b8e28f06"
+    },
+    {
+      "path": "app/checklists.py",
+      "before_sha256": "5c7354558921208a20fe3bf92e7f07d046069219c01323bb04e51da994889e0c",
+      "after_sha256": "f5500023648b73f986bb1846f1e8486568a72bb83e10a6ae779287ca63a5b241"
+    },
+    {
+      "path": "app/document_extract.py",
+      "before_sha256": "0438cf729b9b240c3c5b038d95caf04af55f680051773a52e1f2226ddf14c462",
+      "after_sha256": "7c585592acef5ae54e6a969b6bf20e30d540238c7dd28d5d3d7140de57fb03ee"
+    },
+    {
+      "path": "app/document_import.py",
+      "before_sha256": "b302741714cb358cec7ea502acf7d594438ff305d631193b41f98bf47b3cb87d",
+      "after_sha256": "b9757eadae17c9072320bf0d97293f39802d0714732536453654921dfcc7f9f5"
+    },
+    {
+      "path": "app/document_structure.py",
+      "before_sha256": null,
+      "after_sha256": "5bef9a3848991aab1ac568920eb38138348076facbe7b90af674d90bdb5ddd78"
+    },
+    {
+      "path": "app/examples.py",
+      "before_sha256": "26d4b3aa5e378393d0585cd41414fa16512cc1c84fb0a310546b7523e0a16c3c",
+      "after_sha256": "956d1c99328ad598efffe13a684158c7bbcdbe865152ec6ea72b5caa03dc9959"
+    },
+    {
+      "path": "app/operations_reports.py",
+      "before_sha256": "a844c95966da9ed5874a560521578c925d06f79aa1403661144ef4da9439d3af",
+      "after_sha256": "c3aaeb8c89cc709a2ac580ea52f448d080041bed6f9606b972f55cbd562fa9e9"
+    },
+    {
+      "path": "app/operations_ui.py",
+      "before_sha256": "7de092bb391ac94428584662dcc60ea1fdbb7e8d92e019636423e2343087026b",
+      "after_sha256": "99fe976007da2bac12f3e4a14667521c6dcd6c80a23b9e5ce1204c694e790184"
+    },
+    {
+      "path": "app/pdf_export.py",
+      "before_sha256": "ed81666cb718d36e33ecf7dfbe829fa04385843810f41874fc53e200e37e96f6",
+      "after_sha256": "8bf4fb706e75121733cb22f7d8b4f30da29f916919e9810a484c651881d3eb72"
+    },
+    {
+      "path": "app/static/app.js",
+      "before_sha256": "a8a669c944e2a76a23264cbb8e7025147b4b7a6f6acffa76b80f05a136d10ab0",
+      "after_sha256": "e3bda50042462e365c7f71de03da0e223c744e261d572e59327217afd6849974"
+    },
+    {
+      "path": "app/static/browser_templates.js",
+      "before_sha256": "44caa77b6c92813fea3f1edc8f7648937857f39f2fa0263f0f4252c99bf49c4f",
+      "after_sha256": "d19048bf4611647f8e8aaf38d562155b2010e341878d296d910acda1027e0781"
+    },
+    {
+      "path": "app/static/document_import.css",
+      "before_sha256": "481e5a5efb887c7faea187679def9831af8967c0f1d903bbb90343893a8a20ba",
+      "after_sha256": "749bab88ef66202a992bf9fbb93b56cc74214870dccf80d42a4899fea0b0e9d2"
+    },
+    {
+      "path": "app/static/document_import.js",
+      "before_sha256": "586abf30de2955b3254f03991261264894ee1e5cdba0200defa0b1f449c4faf2",
+      "after_sha256": "15e4bedfa0170c26cb3c4f08b1a81ce70563256196b86fc760a4179b4a5827a3"
+    },
+    {
+      "path": "app/static/help_topics/documentimport.html",
+      "before_sha256": "403505b2abf560c3c22553dca0129d3ec4ebeb03deea5165a2eef632a5f6bbb3",
+      "after_sha256": "7afd53f403659701054276e67f24db9d22195e332179c719702a1c72423b7bde"
+    },
+    {
+      "path": "app/static/index.html",
+      "before_sha256": "2b5cf4a7d535324d2b559d348993bcbc79c85a7a33a1db075ee3b68d565822f2",
+      "after_sha256": "d5774b70195078c8f8c0b4bd612ada5617078ac74daab8603a271d40271cda93"
+    },
+    {
+      "path": "app/static/maintenance_forms.js",
+      "before_sha256": "f7c3be5d2aa1e9a64a7a832c3f841a8f977a8bcabc33fda31e8390929b4a300c",
+      "after_sha256": "4b1bac4db21ff24dad6ad15909130c1d61559b5877ae5bf80502fe6056a0c4e3"
+    },
+    {
+      "path": "app/static/operations.js",
+      "before_sha256": "93016592146369cf8ff79ad0bba2318bf99b2469ea096975cdef945a2dd5a2cb",
+      "after_sha256": "1d4f7b0a3a351bdf07532114290c18f5a2befa63b5bda072bbbde93f808d4ffc"
+    },
+    {
+      "path": "app/static/sw.js",
+      "before_sha256": "ab64c17d1f07f3655db2bf6d3ec43032c26889ad2cfb98ebbdb1bf4dca608b7e",
+      "after_sha256": "a66b041634d3bd946fa1fed48d54608cd356b4cd3374359a6be34e9feb090f30"
+    },
+    {
+      "path": "app/static/task_checklists.js",
+      "before_sha256": "92498e7749cca19a3441e60bc05d7a43dbcb3f738f161158bcb88a43b6c50b76",
+      "after_sha256": "87dbc9e4a0f63722f25bb14be9471082d6822a6675fb1d9cb004ee91ab3edc9a"
+    },
+    {
+      "path": "app/store.py",
+      "before_sha256": "41173e7b62b8b58c53e34deab3eb20efffe6a7ded4d276d5c0262e30afdfead7",
+      "after_sha256": "aea69093fd41f8d0b89b23cee27717caec427ce72cdc18038b37413d2bad801e"
+    },
+    {
+      "path": "app/task_checklists.py",
+      "before_sha256": "b3c49849fca95fbdfd159b181e274d58c8ac78f121bf97c984dc132ee59e4c05",
+      "after_sha256": "a230649d25eeda813b5ed374bbc1eecebfbdad324e04301c8ad82b9b7b078946"
+    },
+    {
+      "path": "app/task_checklists_reports.py",
+      "before_sha256": "3195d93f88ca97d09b978c266d872ab04f1ccb9ba3708256f318eb7b7d4bc6d7",
+      "after_sha256": "b6a09bce7d2cc877956b372b3f5fb22ec2c1613cecc409934510bbfc6646f2c5"
+    },
+    {
+      "path": "app/task_checklists_ui.py",
+      "before_sha256": "dd1242701689a685f425a0238a6ec67e6132e10dee45a7029cf885672d7db334",
+      "after_sha256": "755fb5a86163bcb9e0827d4be6fffc7af7b67ead5fd80d47e725e55fe0ceda98"
+    },
+    {
+      "path": "tests/browser_choices_ui100.py",
+      "before_sha256": null,
+      "after_sha256": "0a3122f486a6a160fa482556e5cd459d15dc02ff85c22d53b8a10ea0b4f04790"
+    },
+    {
+      "path": "tests/test_choice_readings_ui100.py",
+      "before_sha256": null,
+      "after_sha256": "7fba3046625dee58b59651328b9b8878e6f74f8e77aa80fb486380390fade208"
+    },
+    {
+      "path": "tests/test_document_import_ui100.py",
+      "before_sha256": null,
+      "after_sha256": "170214b5ee03e07d2d4ee4cc86984ec208e45a9f5be2c160f787a05a520bc19e"
+    },
+    {
+      "path": "tests/test_document_import_ui95.py",
+      "before_sha256": "f5e06e81d990d36cc91b3f2a7ea85fbb541257c47176b885d1dc01807f143e8f",
+      "after_sha256": "856d4342ae759c1efd3b199aa22d945ca258e12b09f62a41ec1006bce3a1a597"
+    },
+    {
+      "path": "tests/test_document_layout_ui100.py",
+      "before_sha256": null,
+      "after_sha256": "b12d90fbcc83f1743f652fd34310fa05f1e7ac39886bc99f763a2cd8f2b113d9"
+    },
+    {
+      "path": "tests/test_document_structure_ui100.py",
+      "before_sha256": null,
+      "after_sha256": "e7d357fa91628a7fc1212a60f042cb3feab756d64bdf5b44b99819f1b89a733c"
+    }
+  ],
+  "repository_parent_files": {
+    "UI98": 273,
+    "UI99": 279
+  },
+  "runtime_manifest_sha256": "6db1c1e9b3edff4581c5e40d6215290caf61c34ee402f7f43f5ed40537fa3372",
+  "runtime_resources": 2109,
+  "unchanged_resources_from_UI99": 2078,
+  "approved_art_files_unchanged": 72,
+  "cumulative_UI99_included": true
+}

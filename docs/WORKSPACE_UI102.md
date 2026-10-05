@@ -1,0 +1,25 @@
+# UI102 — shipping workbook and inventory-check search
+
+## Inventory checking
+
+Stock verifications and private assigned inventory tasks start in their pending view. Saving a current Found, Missing or Discrepancy result removes that item from pending; the recorded result stays in the same fixed scope. A changed or moved item becomes Recheck needed and returns to pending. Checking a box does not check its contents.
+
+Type into Find an item. The first nonempty search selects all scoped statuses, so already checked items are discoverable. Names, both serial and asset identifiers, model, type/category, notes, custom item values, paired identities, department, current/expected positions, container path, source labels and full item UUID can match. Search is case/accent tolerant; every query word must match somewhere in the item details. Select a result filter to narrow the active search. Clearing the query restores its previous view; Clear filters returns to pending. Filters never change completion requirements or add outside-scope items.
+
+A saved result opens read-only with Already checked plus the actual outcome, author, time, counted quantity and notes. Explicit Correct result first requests the latest permitted row from the current scoped verification, then opens the normal editor. The previous result stays stale when rechecking is required. A QR lookup is also read-only for an already checked item and never automatically saves Found. Lookups and delayed corrections cannot replace another account, route or dialog. Closing/submitting still retains missing/discrepancy outcomes, does not resolve them and never adjusts inventory quantities.
+
+A primary-tab reload could previously fork a new empty local workspace when its old IndexedDB lease survived pagehide. UI102 reopens the same workspace only after obtaining its exclusive Web Lock and confirming the old lease was also Web-Lock-backed. Active duplicate tabs, legacy leases and unsupported browsers keep the existing isolation rules. Draft bytes are not merged or reset. Existing draft retention, version conflicts, identical-request retry and access restrictions remain in place. Search only the current verification scope; it is not a company-wide item finder or a change to task creation pickers. No live user data was changed during testing.
+
+## Shipping workbook import
+
+The supplied example contains five visible sheets: a commercial invoice/packing cover and four detailed stock sheets with 56, 58, 4 and 102 named rows. Generic source wording identifies the shipping cover as summary while retaining deliberate selection. Detailed sheets remain separately selectable; the largest recommended stock sheet is selected initially. Import one reviewed sheet at a time; this release does not combine all sheets into one inventory.
+
+Qty Shall, expected/required/planned quantity labels take priority over a generic Qty column. The user confirmed Qty Counted was for an earlier Excel verification only. Those historical values are unused by Wavelink stock/count verification; they remain labeled Source Notes and do not need to be resolved. Wavelink records the actual count during its own explicit verification. Part numbers stay in Notes rather than becoming unique asset tags. Blank quantities remain unknown. Nonnumeric markers and expressions are preserved literally in source evidence, with a review warning; they are not evaluated or guessed. The example retains all 220 named detailed records, including ten kit/group records with both quantity cells blank and one expected X requiring review. These are records, not a claim of 220 physical pieces. Two prior counted expressions, 14+9 and 4+2, stay literal evidence.
+
+No native containers, kit hierarchies, shipping receipts, department assignments or verification results are inferred from formatting. Existing row provenance, formula omission and explicit mapping/review confirmation remain. The original workbook is unchanged and excluded from the delivery.
+
+## Delivery and acceptance
+
+The compact cumulative ZIP supports exact UI98/main, prepared UI99, UI100 or UI101. Its Docker chain applies the pinned UI102 overlay after UI101. Run the wrapper before/after verifier and redeploy through the existing workflow. Core remains 1.34.19; accounts/MFA, recovery/email settings, hosted boundaries, independent tabs, native logbook extraction, source dependencies, database schema and all 72 approved art files are retained. No reset, browser-storage clearing, email delivery or production import was performed.
+
+Tests and screenshots use fictional disposable companies and actual local C01 APIs/IndexedDB. Read UI102_REVIEW_REPORT.json for exact execution counts and methods. Live Render/SMTP, actual service-worker upgrade/WebSocket/BFCache, physical QR camera and native desktop display acceptance are not claimed. Render is listed as enabled/installed, but no callable service/deploy tools were exposed; its signed-in account and deployment were not independently verified. Ambiguous documents still require review.

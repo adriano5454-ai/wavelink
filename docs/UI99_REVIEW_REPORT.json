@@ -1,0 +1,112 @@
+{
+  "format": "wavelink-ui99-review-1",
+  "release": "UI99 Normal Tabs and Back Navigation",
+  "core": "1.34.19",
+  "date": "2026-10-04",
+  "parent_git_commit": "80e9090500c33e80c97bcf2296c84d4772870e19",
+  "parent_repository_blobs_verified": 273,
+  "github_main_same_at_final_read": true,
+  "implemented": [
+    "Independent durable tab state/queues/drafts/receipts/project archives inside original IndexedDB store and version",
+    "Stable Back/Reload handles and safe forks for duplicated/active saved tabs",
+    "Web Lock proof for immediate abandoned managed lease recovery; lease-only fallback retained",
+    "Fresh tab uses validated shared online session without copying drafts or cached private records",
+    "Pending seed marker survives interruption and fails closed; offline seed failure does not clear another shared sign-in",
+    "Atomic metadata/token publication; stale local sign-out cannot clear a newer shared token",
+    "Atomic same-account/target cross-tab receipt guard before sending; unrelated records/navigation continue",
+    "Other tabs & saved drafts through Connection & saves and Workspace tools, with scoped discovery and exact closed-tab reopening",
+    "Original offline main/project state and old-client lease retained, no automatic draft merge/copy",
+    "Existing exact detached-log database/handoff retained"
+  ],
+  "tests": {
+    "passed": 139,
+    "skipped": 1,
+    "deselected": 4,
+    "final_build_subset_repeated_passed": 9,
+    "repeat_not_added_to_total": true,
+    "files": [
+      "tests/test_ui99_build.py",
+      "tests/test_hosted_auth_ui98.py",
+      "runtime/tests/test_password_recovery_ui97.py",
+      "runtime/tests/ui83_account_security/test_account_security.py",
+      "runtime/tests/save_status/test_status.py",
+      "runtime/tests/test_login_ui96.py"
+    ],
+    "skipped_reason": "Historical exact UI63 fixture is unavailable.",
+    "deselected_reason": "Four historical static assertions require UI83 or unversioned worker name, old Fleet CSS URL or 1.26-era account hashes. Already incompatible with UI98; current asset ordering/cache and identical UI98 backend bytes verified separately.",
+    "initial_run": "Four stale static-contract failures, 138 passed, one skipped. Current selected run: 139 passed, one skipped, four deselected. Final build subset rerun after the small saved-tab markup refinement: nine passed."
+  },
+  "browser": {
+    "passed": 148,
+    "new_tabs_checks": 29,
+    "retained_login_checks": 119,
+    "unexpected_javascript_errors": 0,
+    "tabs_widths": [
+      1440,
+      390,
+      320
+    ],
+    "login_widths": [
+      1440,
+      1280,
+      1024,
+      900,
+      768,
+      680,
+      600,
+      430,
+      390,
+      360,
+      320
+    ],
+    "tabs_method": "Real shared-origin Chromium IndexedDB, sessionStorage, Web Locks and history; actual fictional C01 HostedBoundary/CompanyAccess/core API responses. WebSockets and service-worker registration suppressed in this harness.",
+    "login_method": "Temporary fictional FastAPI/SQLite TestClient bridge; real auth APIs; timers and WebSockets suppressed; emulated desktop/mobile viewports.",
+    "tabs_report": "EVIDENCE/browser/UI99_TABS_BROWSER_REVIEW.json",
+    "login_report": "EVIDENCE/login/UI96_LOGIN_REVIEW.json"
+  },
+  "manual_visual_review": "Desktop and 390 px saved-tabs screenshots viewed; final compact row markup and 1440/390/320 containment checks pass. Original sign-in visuals retained.",
+  "syntax_and_preservation": {
+    "python_ast": 722,
+    "node_syntax": 118,
+    "errors": [],
+    "runtime_files": 2103,
+    "unchanged_resources": 2096,
+    "art_files_unchanged": 72,
+    "manifest_sha256": "438b99b90b9f4db27a95e7b767a57bbc68b71c3a5293320b8fb05d1197b8752f"
+  },
+  "repository_python_ast": [
+    "deploy/apply_ui99.py",
+    "tests/test_ui99_build.py",
+    "tests/browser_tabs_ui99.py"
+  ],
+  "standards_references": [
+    "https://www.w3.org/TR/web-locks/",
+    "https://html.spec.whatwg.org/multipage/webstorage.html"
+  ],
+  "retained_boundaries": {
+    "server_authentication_permission_mfa_recovery_backend_unchanged": true,
+    "UI98_hosted_company_demo_routing_unchanged": true,
+    "existing_account_adoption_unsent_work_guards_unchanged": true,
+    "mail_configuration_unchanged": true,
+    "database_schema_version_unchanged": true,
+    "no_database_or_browser_storage_reset": true,
+    "no_fixture_import_or_production_data_access": true,
+    "no_art_or_dependency_vendor_change": true
+  },
+  "remote_actions": {
+    "commit": false,
+    "pull_request": false,
+    "deployed": false,
+    "reason": "Earlier integration writes returned 403; established compact apply/commit/push/redeploy workflow."
+  },
+  "not_claimed": [
+    "Live user-company URL reproduction",
+    "Actual WebSocket/SW lifecycle or BFCache engine caching",
+    "Render/Docker/Nginx deployment",
+    "Real SMTP inbox delivery",
+    "Physical phone/native Windows acceptance",
+    "Full historical test suite rerun",
+    "New durability for memory-only Fleet/admin/dialog forms",
+    "Automatic draft merge or new server synchronization protocol"
+  ]
+}

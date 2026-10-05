@@ -1,0 +1,55 @@
+{
+  "format": "wavelink-runtime-overlay-1",
+  "date": "2026-10-04",
+  "patch_id": "workspace-ui99-independent-browser-tabs-2026-10-04",
+  "parent_patch_id": "workspace-ui97-email-password-recovery-2026-10-04",
+  "parent_git_commit": "80e9090500c33e80c97bcf2296c84d4772870e19",
+  "parent_manifest_sha256": "95f800876f7278c8c0ad43e97e76a75deb5cc23a987aaebb582ba7285bc9e52b",
+  "scope": "Independent per-tab local drafts and save receipts, stable Back/Reload handles, validated shared online session and discoverable retained saved tabs.",
+  "boundaries": {
+    "database_reset": false,
+    "browser_storage_clear": false,
+    "auth_backend_change": false,
+    "server_schema_change": false,
+    "artwork_bytes_change": false,
+    "drafts_automatically_merged_or_copied": false,
+    "UI98_hosted_recovery_retained": true
+  },
+  "files": [
+    {
+      "path": "app/static/app.js",
+      "before_sha256": "7d34fe50cd1ff58670220177628bcfbbc2863a68bd3bbf8c9b75812a7fe9628c",
+      "after_sha256": "a8a669c944e2a76a23264cbb8e7025147b4b7a6f6acffa76b80f05a136d10ab0"
+    },
+    {
+      "path": "app/static/browser_workspace.js",
+      "before_sha256": null,
+      "after_sha256": "87b59a35bc2df44a92353537374c635d75715031e6e82c0708e742cb16858340"
+    },
+    {
+      "path": "app/static/index.html",
+      "before_sha256": "bdda0632747e5349aaff1b4999119c414db9bfe6ccbf9b4684a44f7df94c52ff",
+      "after_sha256": "2b5cf4a7d535324d2b559d348993bcbc79c85a7a33a1db075ee3b68d565822f2"
+    },
+    {
+      "path": "app/static/save_status.js",
+      "before_sha256": "8a0e584bb71cb8cf4194eb743152d36debadedf1f3744621c1f9706f3af05297",
+      "after_sha256": "da539add2d6441c93cb7ed465956f2ad8d27bec81fe22b1646c739249c431d5f"
+    },
+    {
+      "path": "app/static/save_status_ui.js",
+      "before_sha256": "32997665df9a81ee1c2bd733964e01adeede5ef91731924e19236ba8760a9168",
+      "after_sha256": "901e4e8278e14884cd83e730a4dd1f1b907ab46eb7e6ef1d91c2df1827b87892"
+    },
+    {
+      "path": "app/static/sw.js",
+      "before_sha256": "5e1ce04f09605d87c7d9d03cf86ab86fa8dfeaf2bb6f9f5afc3647647c57dbe2",
+      "after_sha256": "ab64c17d1f07f3655db2bf6d3ec43032c26889ad2cfb98ebbdb1bf4dca608b7e"
+    }
+  ],
+  "repository_parent_files": 273,
+  "runtime_manifest_sha256": "438b99b90b9f4db27a95e7b767a57bbc68b71c3a5293320b8fb05d1197b8752f",
+  "runtime_resources": 2103,
+  "unchanged_resources": 2096,
+  "approved_art_files_unchanged": 72
+}

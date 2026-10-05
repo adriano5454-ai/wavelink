@@ -1,0 +1,171 @@
+{
+  "format": "wavelink-ui101-review-1",
+  "release": "UI101 Workbook Roles and Native Logbook Designs",
+  "core": "1.34.19",
+  "date": "2026-10-05",
+  "github_main": "80e9090500c33e80c97bcf2296c84d4772870e19",
+  "github_main_same_at_final_read": true,
+  "repository_parents": {
+    "UI98": 273,
+    "UI99": 279,
+    "UI100": 285
+  },
+  "implemented": [
+    "Generic worksheet header/role evidence and destination-specific recommendations; audit cover and overlapping review rows kept separate",
+    "Selectable worksheet roles/reasons/recommendations; require explicit sheet when no data sheet recommended",
+    "Source actual Excel row positions and formula counts survive passive extraction",
+    "Inventory aliases align with data evidence; prefer imported/reviewed physical location over source cell wording",
+    "Unmapped and original workbook/tab/row/date/department/verification evidence retained as labelled Source Notes",
+    "Unknown quantities/locations remain unknown/Unassigned; explicit box flags only; repeated names/asset refs preserved separately",
+    "Late headers through row30; formula-only names excluded with warnings; mapped formula values stay unknown; manual mapping/TSV edits retain review safeguards",
+    "Native log designs read directly without flattening; permitted native types auto-detected from generic Import",
+    "Bounded same-origin Worker exact ZIP/CRC/SHA/strict JSON/native definition checks; curated source metadata; no original content fallback upload",
+    "Deterministic small native package with exact definitions, no entries/history/offset values/references/media",
+    "Honest original browser-reported vs prepared server-validated source details; strict provenance/empty-collection validation",
+    "Permissions before parse and under transaction; exact-package/account review proof and unchanged retry preserved",
+    "Invalid unpaired Unicode surrogates return422 before writes; valid Unicode/emoji preserved",
+    "Original/prepared filenames wrap in actual loaded builder stylesheet; source provenance detail kept out of crowded count summary",
+    "Updated shell and worker URLs; all UI98/99/100 behavior retained"
+  ],
+  "source_examples": {
+    "inventory": {
+      "visible_sheets": 3,
+      "roles": {
+        "Source Reconciliation": "summary",
+        "All Source Items": "data",
+        "Location Review": "review"
+      },
+      "recommended_sheet": "All Source Items",
+      "items": 315,
+      "exception_rows_not_appended": 8,
+      "formula_cells_omitted": 26,
+      "unassigned_locations": 92,
+      "unknown_quantity_rows": 315,
+      "inferred_containers": 0,
+      "source_onboard_dates_as_notes": 86,
+      "source_departments_as_notes": 315,
+      "source_unchanged": true
+    },
+    "logs": {
+      "original_bytes": 44943684,
+      "prepared_zip_bytes": 11426,
+      "observed_review_post_bytes": 15332,
+      "sections": 9,
+      "fields": 103,
+      "omitted": {
+        "entries": 561,
+        "history": 562,
+        "references": 30,
+        "media": 216
+      },
+      "original_unchanged": true,
+      "offset_values_not_defaults": true,
+      "exact_definition_ids_types_units_required_choices": true
+    },
+    "private_sources_not_bundled": true,
+    "filename_specific_parser_shortcuts": false
+  },
+  "tests": {
+    "unique_passed": 457,
+    "functional_selected": 419,
+    "build_and_hosted_passed": 38,
+    "skipped": 0,
+    "repeat_runs_not_added": true,
+    "new_focused": {
+      "workbook": 23,
+      "native_builder": 48,
+      "native_worker_node": 9
+    },
+    "retained_log_designer_lifecycle": 67,
+    "groups": [
+      "UI101 worksheet/provenance/native worker",
+      "UI95/UI100 document formats/layout/structure/choices",
+      "retained browser templates/tasks/native builder",
+      "retained UI97 recovery with exact UI96 upgrade",
+      "retained log designer and lifecycle",
+      "UI101 pinned+cumulative overlay and UI98 hosted boundary"
+    ],
+    "historic_full_suite_claimed": false,
+    "diagnostic_runs": {
+      "broader_historical_directories": "5 historical asset/delta contracts also fail on exact UI100 parent; their archived old-release expectations do not apply to this current overlay. Verified separately on unchanged parent. Final selected suites and current overlay preservation checks pass.",
+      "native_Tk": "4 GUI tests from a broader diagnostic require a display; no display is available. Physical/native display acceptance is not claimed."
+    }
+  },
+  "browser": {
+    "passed": 73,
+    "real_C01_checks": 27,
+    "independent_real_worker_CSP_checks": 22,
+    "synthetic_editor_checks": 24,
+    "alias_cases_included_in_editor_total": 5,
+    "unexpected_javascript_errors": 0,
+    "widths": [
+      1440,
+      390,
+      320
+    ],
+    "methods": [
+      "Actual fictional C01 HostedBoundary/CompanyAccess/core APIs, Chromium IndexedDB and native package Worker. Service-worker registration and WebSockets are suppressed.",
+      "Independent UI101 worker safety review using public fictional archives.\nReal Chromium DedicatedWorker, decompression, SHA/CRC and compact payload decoding.\nNo live account, document, saved entries or private user examples are read.\n",
+      "Synthetic editor server responses with actual frontend code and supplied315-row table; isolated, not durable/server acceptance."
+    ],
+    "reports": [
+      "EVIDENCE/examples/UI101_EXAMPLES_BROWSER_REVIEW.json",
+      "EVIDENCE/native-review/UI101_NATIVE_WORKER_SAFETY.json",
+      "EVIDENCE/inventory/WORKBOOK_EDITOR_SMOKE_REVIEW.json"
+    ],
+    "main_run_final_app_hashes": {
+      "app/document_import.py": "06a629a4d6466edcbef3ca9a2c478978b8eb07e858d973f9fb01ba289971380e",
+      "app/document_extract.py": "71b0b8e06875960a800956629b1183cc4b26f434f8e43677786fd5367eda0e58",
+      "app/builder_hub.py": "9ef479fc202beed16572429341651f3b563ff93b41cfef06d4c2ed4d8db91b0d",
+      "app/static/document_import.js": "8b2e9eed77abf6a277395c6c225dd10afa4aaf84e53a351dbab4fd28542ac235",
+      "app/static/document_import.css": "db2f51f6ff0a54c1a236012eba2498388f039311fa3718c761bcdbd1d46c30ff",
+      "app/static/setup_builders.js": "c06cca2bc43afdedec296cb18821a7213cc03e3e195be735e6b39ec68365f922",
+      "app/static/admin_workspace_ui75.css": "9649a1e1974ce04755361c8d544cafc4d068bcccccaef9dd816426e6a52dce16",
+      "app/static/log_package_worker.js": "42f690efc88b0ad3fb9bb421ef5184da601fbb27d65e948aa363957ebcad71bf"
+    },
+    "served_asset_hashes": {
+      "app/static/document_import.css": "db2f51f6ff0a54c1a236012eba2498388f039311fa3718c761bcdbd1d46c30ff",
+      "app/static/admin_workspace_ui75.css": "9649a1e1974ce04755361c8d544cafc4d068bcccccaef9dd816426e6a52dce16",
+      "app/static/document_import.js": "8b2e9eed77abf6a277395c6c225dd10afa4aaf84e53a351dbab4fd28542ac235",
+      "app/static/setup_builders.js": "c06cca2bc43afdedec296cb18821a7213cc03e3e195be735e6b39ec68365f922",
+      "app/static/log_package_worker.js": "42f690efc88b0ad3fb9bb421ef5184da601fbb27d65e948aa363957ebcad71bf"
+    }
+  },
+  "visual_review": "Actual C01 native source/omission and workbook mapping/role screens inspected at1440/390/320. Filename wrapping applied to loaded admin stylesheet. No page horizontal overflow; wide source tables have contained scroll. Existing artwork unchanged.",
+  "syntax_and_preservation": {
+    "python_ast": 773,
+    "javascript_node": 120,
+    "errors": [],
+    "art_unchanged": 72,
+    "unchanged_resources": 2098,
+    "runtime_resources": 2114,
+    "manifest_sha256": "47fd3e1086b72242b438e4bbeae9a9133cdc3a79c731df4d2dc7213040c48f5d"
+  },
+  "retained_boundaries": {
+    "UI98_company_demo_gateways": true,
+    "UI99_independent_tabs": true,
+    "UI100_structured_import_and_choices": true,
+    "auth_MFA_recovery_alert_preferences_SMTP": true,
+    "source_dependency_vendor_bytes": true,
+    "server_schema": true,
+    "no_data_reset_storage_clear_or_source_fixture_import": true,
+    "no_production_data_or_mail": true,
+    "art_bytes": true
+  },
+  "remote_actions": {
+    "commit": false,
+    "pull_request": false,
+    "deployed": false,
+    "reason": "Earlier GitHub integration writes returned403; established compact apply/commit/push/redeploy workflow."
+  },
+  "not_claimed": [
+    "Universal document recognition; ambiguities/OCR/irregular layouts still need source review",
+    "Full native saved-work transfer through browser design import; use existing reviewed desktop transfer for saved entries/history/references/media",
+    "Original source authenticity verified by server; source filename/hash/counts are browser-reported",
+    "Live Render/company/Nginx/SMTP acceptance",
+    "Actual service-worker upgrade/WebSocket/BFCache lifecycle (native file Worker tested separately)",
+    "Physical phone memory/native Tk/Windows display acceptance",
+    "Full historical suite green"
+  ],
+  "technical_reference": "https://compression.spec.whatwg.org/ (raw-deflate stream support and worker exposure checked against the primary specification)"
+}

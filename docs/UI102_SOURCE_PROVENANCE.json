@@ -1,0 +1,111 @@
+{
+  "format": "wavelink-runtime-overlay-1",
+  "date": "2026-10-05",
+  "patch_id": "workspace-ui102-shipping-inventory-and-check-search-2026-10-05",
+  "parent_patch_id": "workspace-ui101-workbook-roles-and-native-log-designs-2026-10-05",
+  "parent_git_commit": "80e9090500c33e80c97bcf2296c84d4772870e19",
+  "parent_manifest_sha256": "47fd3e1086b72242b438e4bbeae9a9133cdc3a79c731df4d2dc7213040c48f5d",
+  "scope": "Shipping cover roles and expected-quantity mapping; scoped inventory-check search, saved result summaries, explicit fresh correction and safe primary reload lease takeover.",
+  "boundaries": {
+    "database_reset": false,
+    "browser_storage_clear": false,
+    "auth_backend_change": false,
+    "server_schema_change": false,
+    "artwork_bytes_change": false,
+    "source_log_answers_or_history_copied": false,
+    "UI98_hosted_recovery_UI99_tabs_UI100_structure_UI101_native_designs_retained": true
+  },
+  "files": [
+    {
+      "path": "app/document_import.py",
+      "before_sha256": "06a629a4d6466edcbef3ca9a2c478978b8eb07e858d973f9fb01ba289971380e",
+      "after_sha256": "c7b160df99b0e671b3cbda76b4f5166cafcad6e12aa5ec1c0c2b6e5e7755c015"
+    },
+    {
+      "path": "app/static/browser_workspace.js",
+      "before_sha256": "87b59a35bc2df44a92353537374c635d75715031e6e82c0708e742cb16858340",
+      "after_sha256": "565d7009e1786be630b482c6d7d9a6d7c61f4d90b17c0e0069865146483f7a75"
+    },
+    {
+      "path": "app/static/document_import.js",
+      "before_sha256": "8b2e9eed77abf6a277395c6c225dd10afa4aaf84e53a351dbab4fd28542ac235",
+      "after_sha256": "b9dab4cca6516ee897c3c1d8a99729770b1f48b5a46e0934b898c9ccabc1bd9a"
+    },
+    {
+      "path": "app/static/equipment_workspace_ui79.css",
+      "before_sha256": "4518283663dae629c79e08d5359c43a6162b039a08309f17aba3be9721e1c27e",
+      "after_sha256": "6179d3d57d16bc4f133820310e317b42e28e128577dde2d5f4f4c28391a97815"
+    },
+    {
+      "path": "app/static/index.html",
+      "before_sha256": "ad3af34ff7eff6b0a3b5b89386c0bffb63c468acf7c98ca7bab66c84fba054cb",
+      "after_sha256": "17f68a9334370f2d07da05f6086006b491b21a149e4e7ab2ea99daf633046f99"
+    },
+    {
+      "path": "app/static/inventory_workspace.js",
+      "before_sha256": "9ad3e85d75c21bd9f020e101b9a472e35e205586896bcefaf6cf5271b75c1f98",
+      "after_sha256": "d4fce97bd513f01565266b5faeb71e8a85bc0062ce0d6d2e67fa51b8ac0128ec"
+    },
+    {
+      "path": "app/static/operations.js",
+      "before_sha256": "1d4f7b0a3a351bdf07532114290c18f5a2befa63b5bda072bbbde93f808d4ffc",
+      "after_sha256": "5fe5cc0283521033e52f908952f1376d8f6abefe834dfab36cf05fa81d37dea8"
+    },
+    {
+      "path": "app/static/sw.js",
+      "before_sha256": "8be2dfac731ec801573d29b16aa55e7d8f38b86c72e6ef45049eab3b67d04dbe",
+      "after_sha256": "006568176aa76bfa16984a701e562c2fd53ee353af3ed67686d42fe599b9af01"
+    },
+    {
+      "path": "app/static/task_workspace.js",
+      "before_sha256": "3e78c692b4bcf4ed1dd2e83214af71015799012b06d3f354ab5ad3f2968aa70c",
+      "after_sha256": "c40def5f8585cbddd18d03cee7709fe644e5e04aed3969a1ba42497d75835119"
+    },
+    {
+      "path": "app/static/verification.js",
+      "before_sha256": "ddc033aa683ab4f033c42e2951722c08d15945ae93ad1507955885a18eda634d",
+      "after_sha256": "f481a07885b97a7b2ecacba48e1a4bd4d23f965f8c7cfeeaa0c2aeec46156dc9"
+    },
+    {
+      "path": "app/static/work_execution_ui80.css",
+      "before_sha256": "3eb5630df3d1996a74cdca5145be51cf4b2ae116536b6a78d1aae7afe31f25de",
+      "after_sha256": "2e15aa54a3ccf468a1ad1cfae6339425d5e30e3714fc8da3ba1596a0c475cc1f"
+    },
+    {
+      "path": "tests/browser_inventory_search_safety_ui102.py",
+      "before_sha256": null,
+      "after_sha256": "34891ce0bcbe4620bc6b15c2610d7e9785df8ee1f7d9efa3952c330c2276655a"
+    },
+    {
+      "path": "tests/test_browser_reload_ui102.js",
+      "before_sha256": null,
+      "after_sha256": "cbfa4c09e78f7933aa2624f079dcf2f22cdfe0d02f7d3ba57e6e0f86289da95d"
+    },
+    {
+      "path": "tests/test_import_shipping_ui102.py",
+      "before_sha256": null,
+      "after_sha256": "7ece8a40ee673c4b6b4e3267feca02de7c96661c48aeede8adca54230d333ec3"
+    },
+    {
+      "path": "tests/test_inventory_search_ui102.js",
+      "before_sha256": null,
+      "after_sha256": "9672c76699f7eb58189d4ea41ee7250f0f522d15cd8dce6be2e19f0fdf39b84b"
+    },
+    {
+      "path": "tests/test_verification_ui102.py",
+      "before_sha256": null,
+      "after_sha256": "6acbc57038f9c6e3429a675aedbee5a7745d4b0eb4225603b5da92504a9558d7"
+    }
+  ],
+  "repository_parent_files": {
+    "UI98": 273,
+    "UI99": 279,
+    "UI100": 285,
+    "UI101": 291
+  },
+  "runtime_manifest_sha256": "efeae63adf89d69968321c88d0e09faa4e95a195e837ad00f74c9dae864d9b1f",
+  "runtime_resources": 2119,
+  "unchanged_resources_from_UI101": 2102,
+  "approved_art_files_unchanged": 72,
+  "cumulative_UI99_UI100_UI101_included": true
+}
