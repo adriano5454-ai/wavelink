@@ -1,0 +1,207 @@
+{
+  "format": "wavelink-runtime-overlay-1",
+  "date": "2026-10-05",
+  "patch_id": "workspace-ui103-combined-inventory-import-and-part-numbers-2026-10-05",
+  "parent_patch_id": "workspace-ui102-shipping-inventory-and-check-search-2026-10-05",
+  "parent_git_commit": "3894005cee821ba94459acd7facfe8712e30cd01",
+  "parent_manifest_sha256": "efeae63adf89d69968321c88d0e09faa4e95a195e837ad00f74c9dae864d9b1f",
+  "scope": "Reviewed multiple worksheets into one inventory with sheet locations, atomic additions to an existing inventory, native part numbers and anchored identity aliases.",
+  "boundaries": {
+    "database_reset": false,
+    "browser_storage_clear": false,
+    "sql_schema_migration": false,
+    "inventory_optional_json_field": "part_number",
+    "auth_backend_change": false,
+    "artwork_bytes_change": false,
+    "prior_counted_values_copied_as_verification": false,
+    "existing_items_counts_and_task_scopes_replaced": false
+  },
+  "files": [
+    {
+      "path": "app/assets.py",
+      "before_sha256": "73dc6e67a6c4c220f9bfde2b30e29c376676aa127d121aa00b44ff94038adcfa",
+      "after_sha256": "9b56f80d3c89c119b2e3f0b8bce525cd6be219243c4a2a56ad0e6d424c4ae2dc"
+    },
+    {
+      "path": "app/document_import.py",
+      "before_sha256": "c7b160df99b0e671b3cbda76b4f5166cafcad6e12aa5ec1c0c2b6e5e7755c015",
+      "after_sha256": "f2ff1e87ce06ea5812ae7093324b10761d5be14ac48d8eafabe0b24d72bdae3f"
+    },
+    {
+      "path": "app/fieldwork_reports.py",
+      "before_sha256": "92d7f8ad34a928d893ffe7ed2c6a491afebd185f87729696e077eb94381ae9bd",
+      "after_sha256": "0f545ebc6443de54823366fcacd1373216ba1e0c70be3b2f3a89c4402394223b"
+    },
+    {
+      "path": "app/fleet.py",
+      "before_sha256": "2e67bfe6402cf9a323df854f8e63d68fe21819378eebf36f044fd15905fb4763",
+      "after_sha256": "2474ceef4fb2d54c469dd003faec4daaae5f5855d6afee4f303eade683906445"
+    },
+    {
+      "path": "app/fleet_reports.py",
+      "before_sha256": "b3b02b0a7ac4f663ee63d04beb84b37ea53cd98c7514374a57879d5c21f907e7",
+      "after_sha256": "2d09c5250e904c5513d9ab6e824a9365ff7645a314e68d03cf0fd99c3f458fda"
+    },
+    {
+      "path": "app/inventory.py",
+      "before_sha256": "19ac339ea0050e64bf806137ddcb57e5e39853d205b455fff76100c4a65212b1",
+      "after_sha256": "3ab0e5c7821d1c1ca8592291335d85fd267c9e909c19be0c7eabb01f3dffc9ec"
+    },
+    {
+      "path": "app/operations_reports.py",
+      "before_sha256": "c3aaeb8c89cc709a2ac580ea52f448d080041bed6f9606b972f55cbd562fa9e9",
+      "after_sha256": "58f90983e09b63630800e6b2f66f096a01c9c94c0ab87b21f47e8b392cf0418c"
+    },
+    {
+      "path": "app/static/asset_workspace.js",
+      "before_sha256": "8cc020be4e04ee9774097438c6a268bedfbe755dedf8ed949944567a982cdc90",
+      "after_sha256": "5a1fd86249cfbf60d996e69d7b48acce24cccba01af3131388bdb477dabe4f34"
+    },
+    {
+      "path": "app/static/document_import.css",
+      "before_sha256": "db2f51f6ff0a54c1a236012eba2498388f039311fa3718c761bcdbd1d46c30ff",
+      "after_sha256": "fed879475e31f13de765049bb803ed2669f0dd76b7187c109b990c0a67a98a7f"
+    },
+    {
+      "path": "app/static/document_import.js",
+      "before_sha256": "b9dab4cca6516ee897c3c1d8a99729770b1f48b5a46e0934b898c9ccabc1bd9a",
+      "after_sha256": "63b56ab0fbae91f3ae76747a4f1d66dd8a2e84f5507a3bfa88c02034835f5ae3"
+    },
+    {
+      "path": "app/static/fieldwork.js",
+      "before_sha256": "9751ab353fb8d0cb07893e970a69d22e21f1d21b9bc41e44bb8dc882ff591158",
+      "after_sha256": "368c8a44a547643353c172c907b7fb9690ee29b833d602388898e40909ed6007"
+    },
+    {
+      "path": "app/static/fleet.js",
+      "before_sha256": "65cdb076f031c3f1125ccd9b846bef61c8bcef8c3ed07843d5062b69c352f191",
+      "after_sha256": "a20a19876b4f493ed3797509d674d8172a73bd6add516262927899bd19f3f029"
+    },
+    {
+      "path": "app/static/help_topics/importcentre.html",
+      "before_sha256": "1df9cbda6c3f66954ca38c68e1642eed470af1f0d935fb06aaed90539d75a8db",
+      "after_sha256": "dd07ab6b402b744f7fa74d2c57976aef494f1546dba00ec55e735eddafd07300"
+    },
+    {
+      "path": "app/static/help_topics/inventory.html",
+      "before_sha256": "0d4220d5e604876adc5e754468bffdb4e752b9da2ffc3035ab71974120b0188a",
+      "after_sha256": "52b71ece9ebd6b7d2a926703d722f6d7f2486fde6102ff52de580aadfc81b3d3"
+    },
+    {
+      "path": "app/static/help_topics/inventorybuilder.html",
+      "before_sha256": "bdbe836ad38693548ad9c7922c8fb645ee564f936a50f66bf7a74dcf739bbbca",
+      "after_sha256": "69a6968747360828d18cf2926e2bd9466e09ff0f59f2c4301eee173c30b05063"
+    },
+    {
+      "path": "app/static/help_topics/inventorytransfer.html",
+      "before_sha256": "47657e07113043a29dd3411ae292d8313d7d82edac913990698d7ecdf5a0d04b",
+      "after_sha256": "528d9b1479675fdefe7d20a11898ca98d9ac700b7a1152e1cc679d8f5e802938"
+    },
+    {
+      "path": "app/static/index.html",
+      "before_sha256": "17f68a9334370f2d07da05f6086006b491b21a149e4e7ab2ea99daf633046f99",
+      "after_sha256": "08f710ff87f4d7c01351da1e6f5697eb0f16a626f11312ce6e05f20a1e7f89c9"
+    },
+    {
+      "path": "app/static/inventory_workspace.js",
+      "before_sha256": "d4fce97bd513f01565266b5faeb71e8a85bc0062ce0d6d2e67fa51b8ac0128ec",
+      "after_sha256": "0e60b665a3bdced1a21ba0ff3d7ff0c71a586c866faecdf37ca804aa650b8484"
+    },
+    {
+      "path": "app/static/operations.js",
+      "before_sha256": "5fe5cc0283521033e52f908952f1376d8f6abefe834dfab36cf05fa81d37dea8",
+      "after_sha256": "a303ecb9f9b2a5a3064942d477bdb38d57add43264299ce8a2b9c88adc839bb0"
+    },
+    {
+      "path": "app/static/setup_builders.js",
+      "before_sha256": "c06cca2bc43afdedec296cb18821a7213cc03e3e195be735e6b39ec68365f922",
+      "after_sha256": "0b1ce5b1395d5009a4c7821e5f91dad2ae6aa20d2ea2e1ba3680315606c73028"
+    },
+    {
+      "path": "app/static/sw.js",
+      "before_sha256": "006568176aa76bfa16984a701e562c2fd53ee353af3ed67686d42fe599b9af01",
+      "after_sha256": "352930f8315b0c07e2cc6745acd225fe0111fc6f53757e514ac5f302eef108e4"
+    },
+    {
+      "path": "app/static/task_workspace.js",
+      "before_sha256": "c40def5f8585cbddd18d03cee7709fe644e5e04aed3969a1ba42497d75835119",
+      "after_sha256": "eca13368e44300648ef2fedb14c483d85f39d7e3a0f6ce638c16a931155e477e"
+    },
+    {
+      "path": "app/static/verification.js",
+      "before_sha256": "f481a07885b97a7b2ecacba48e1a4bd4d23f965f8c7cfeeaa0c2aeec46156dc9",
+      "after_sha256": "04cd77a36c0b6c0ce9eb5bcfdf53e21f255acffd91fc57f070213ae6fc4c9649"
+    },
+    {
+      "path": "app/work_tasks.py",
+      "before_sha256": "22e31b7d2279f3eacbb290807ff5850cebfcf78ccf93b8b3e2ce01013ef9688b",
+      "after_sha256": "cd386c2144f36d31ca1202631920367d7da46734ca0bfa70684c9875e963f6aa"
+    },
+    {
+      "path": "docs/user/topics/inventory.html",
+      "before_sha256": "b66226f9270e471ebafaf7424b0c4e7821fb73214ff58f7ed13d5618f829aa8d",
+      "after_sha256": "1706331170edb6c17c29c47f3f59498a120a10c58446eb06b0d2b2f356696fa7"
+    },
+    {
+      "path": "docs/user/topics/inventorybuilder.html",
+      "before_sha256": "c7dafe61d3192c2ecbac1791335542ef7c871765189a175b24fc566094c0242f",
+      "after_sha256": "16704d282c91e1c295271c24e65c0bcd9e200aa63c2660b00ea06be798911cd1"
+    },
+    {
+      "path": "docs/user/topics/inventorytransfer.html",
+      "before_sha256": "d8908c6d964d58d71b2772a187abef051bc7c4e7d6f66762fcad5b6406e99b30",
+      "after_sha256": "f954458e55a86076fae046385a6f7766cc3cdbbd8933a1c32f6cf5b7dcb9c295"
+    },
+    {
+      "path": "tests/browser_inventory_identity_form_ui103.py",
+      "before_sha256": null,
+      "after_sha256": "256ee4bc5dd38ae9028ba0d6ea28a4a4a3f17f5c556b799b1f65dd28c2087bc5"
+    },
+    {
+      "path": "tests/test_document_import_ui103.js",
+      "before_sha256": null,
+      "after_sha256": "362070903189f7b32d7c76772dc6f08e98e550ec854d124c578d3d708c884853"
+    },
+    {
+      "path": "tests/test_document_import_ui103.py",
+      "before_sha256": null,
+      "after_sha256": "1392b0a7b27ccb44da3ce020200f9f1ca4be48ca742974ef03fa8c78b71f8387"
+    },
+    {
+      "path": "tests/test_import_shipping_ui102.py",
+      "before_sha256": "7ece8a40ee673c4b6b4e3267feca02de7c96661c48aeede8adca54230d333ec3",
+      "after_sha256": "5793725ab671f603b2334945609e65a1b87d68175964e8de1196e753908ff4a4"
+    },
+    {
+      "path": "tests/test_import_source_reconciliation_ui103.py",
+      "before_sha256": null,
+      "after_sha256": "78fda37b5f3616e83e82625a9b5362c1e8668308e9aacf9f3c2bbe1bb47c28ff"
+    },
+    {
+      "path": "tests/test_inventory_identity_ui103.js",
+      "before_sha256": null,
+      "after_sha256": "77686113f3b19797c2427c96666626d3f16f430607f6b2815f92219220755d57"
+    },
+    {
+      "path": "tests/test_inventory_identity_views_ui103.py",
+      "before_sha256": null,
+      "after_sha256": "10a1882eab725f4aa03b1445cd5d347a4f93dc84d04a59c50447d66f07db3e5d"
+    },
+    {
+      "path": "tests/test_inventory_import_ui103.py",
+      "before_sha256": null,
+      "after_sha256": "58a07370d9a55bf1ffa5b79c4c038b5e19031e953401771e0283140d7b34cded"
+    }
+  ],
+  "runtime_manifest_sha256": "f26d5c2201451c727eb243f362dbb3fef366aec386ecb8f5a5377ff2de40c828",
+  "runtime_resources": 2126,
+  "runtime_resources_unchanged_from_UI102": 2090,
+  "repository_parent_files": {
+    "UI98": 273,
+    "UI99": 279,
+    "UI100": 285,
+    "UI101": 291,
+    "UI102": 297
+  },
+  "approved_art_files_unchanged": 72
+}

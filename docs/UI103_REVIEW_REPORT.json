@@ -1,0 +1,546 @@
+{
+  "format": "wavelink-ui103-review-1",
+  "release": "UI103 Combined Inventory Imports and Part Numbers",
+  "core": "1.34.19",
+  "date": "2026-10-05",
+  "repository": "adriano5454-ai/wavelink",
+  "implemented": [
+    "Combine explicitly reviewed inventory worksheets into one inventory, with editable locations per sheet",
+    "Preserve other sheet mappings, edited rows and selection when switching; mixed-purpose data sheets are not automatically selected",
+    "Add new document items to a permitted existing inventory with current version, active state and named granular permissions",
+    "Explicitly refresh inventory destinations without dropping edited mappings or silently updating a reviewed save version",
+    "Preserve existing items, saved verification, fixed task scope, custom schema, categories and Fleet custody",
+    "Atomic add-only imports and exact receipt retries; duplicate or uncertain overlapping source rows stop the whole batch",
+    "Native optional part_number field alongside serial and asset, identity aliases and exact leading-zero strings",
+    "PN in item editor/list/details, scoped/private verification, asset/Fleet displays, native packages, CSV and relevant PDF reports",
+    "Punctuated identifiers match as one token; normal multiword AND, compact and accent-tolerant searches remain",
+    "Original mapped locations and prior Counted values stay source evidence; ambiguous expected quantities remain Unknown",
+    "Existing auth/mail/recovery/tab/reload/native-log designs, SQL definitions, source dependencies and 72 art files retained"
+  ],
+  "source_reconciliation": {
+    "source_sha256": "243fa340992f6adc6b8776cbaf9520972e27d61bd82dfc6a3374a6525184e755",
+    "source_bytes": 67200,
+    "source_unchanged": true,
+    "source_values_retained": false,
+    "baseline": "UI102",
+    "sheets": [
+      {
+        "sheet": "Commercial Invoice and PL ",
+        "role": "summary",
+        "recommended": false,
+        "formula_cells": 19,
+        "structure": {
+          "visible": true,
+          "stored_rows": 61,
+          "merged_ranges": [
+            "G10:K10",
+            "A56:J59",
+            "A33:O34",
+            "A1:F9",
+            "G1:O1",
+            "A27:J30",
+            "A10:F10",
+            "A31:O32",
+            "A19:F26",
+            "A18:F18",
+            "G18:O18",
+            "G19:O26",
+            "A11:F17",
+            "H9:O9",
+            "M27:N30"
+          ],
+          "indent_cells": 0,
+          "outline_rows": 0,
+          "hidden_rows": 0,
+          "identity_cell_storage_types": {
+            "A:s": 8,
+            "C:s": 19,
+            "A:n": 18
+          }
+        },
+        "recognised_header": true,
+        "header_excel_row": 35,
+        "headers": [
+          "QTY",
+          "DESCRIPTION",
+          "Department",
+          "PO Number",
+          "SERIAL No.",
+          "MAKER",
+          "HS CODE",
+          "COO",
+          "ECCN",
+          "LIC",
+          "No. of Pallet/Box",
+          "Weight KG",
+          "Dimensions CM",
+          "Unit Value",
+          "Total Value (SEK)"
+        ],
+        "mapped_columns": {
+          "serial": 4,
+          "quantity": 0,
+          "name": 1
+        },
+        "record_rows": 18,
+        "data_row_range": [
+          36,
+          53
+        ],
+        "nonempty_rows_skipped_for_blank_name": [
+          56,
+          57,
+          58,
+          59
+        ],
+        "summary_row_numbers": [],
+        "serial_present": 18,
+        "serial_blank": 0,
+        "part_number_present": 0,
+        "part_number_blank": 18,
+        "quantity_missing_rows": [],
+        "quantity_invalid_rows": [],
+        "expected_numeric_quantity_sum": 18.0,
+        "physical_location_present": 0,
+        "explicit_container_columns": [],
+        "excluded_nonitem_heading_rows": [],
+        "unresolved_missing_name_rows": [
+          56,
+          57,
+          58,
+          59
+        ]
+      },
+      {
+        "sheet": "Vehicle MR 07",
+        "role": "data",
+        "recommended": false,
+        "formula_cells": 0,
+        "structure": {
+          "visible": true,
+          "stored_rows": 58,
+          "merged_ranges": [],
+          "indent_cells": 54,
+          "outline_rows": 0,
+          "hidden_rows": 0,
+          "identity_cell_storage_types": {
+            "A:s": 52,
+            "C:s": 32,
+            "A:n": 5
+          }
+        },
+        "recognised_header": true,
+        "header_excel_row": 1,
+        "headers": [
+          "PN",
+          "Description",
+          "SN",
+          "QTY Shall",
+          "QTY Counted",
+          "Location"
+        ],
+        "mapped_columns": {
+          "serial": 2,
+          "quantity": 3,
+          "location": 5,
+          "name": 1
+        },
+        "record_rows": 56,
+        "data_row_range": [
+          3,
+          58
+        ],
+        "nonempty_rows_skipped_for_blank_name": [
+          2
+        ],
+        "summary_row_numbers": [],
+        "serial_present": 32,
+        "serial_blank": 24,
+        "part_number_present": 56,
+        "part_number_blank": 0,
+        "quantity_missing_rows": [],
+        "quantity_invalid_rows": [
+          6
+        ],
+        "expected_numeric_quantity_sum": 63.0,
+        "physical_location_present": 18,
+        "explicit_container_columns": [],
+        "excluded_nonitem_heading_rows": [
+          2
+        ],
+        "unresolved_missing_name_rows": []
+      },
+      {
+        "sheet": "Pallet 1",
+        "role": "data",
+        "recommended": false,
+        "formula_cells": 0,
+        "structure": {
+          "visible": true,
+          "stored_rows": 59,
+          "merged_ranges": [],
+          "indent_cells": 53,
+          "outline_rows": 0,
+          "hidden_rows": 0,
+          "identity_cell_storage_types": {
+            "A:s": 58,
+            "C:n": 4,
+            "C:s": 6
+          }
+        },
+        "recognised_header": true,
+        "header_excel_row": 1,
+        "headers": [
+          "PN",
+          "Description",
+          "SN",
+          "QTY Shall",
+          "QTY Counted",
+          "Location"
+        ],
+        "mapped_columns": {
+          "serial": 2,
+          "quantity": 3,
+          "location": 5,
+          "name": 1
+        },
+        "record_rows": 58,
+        "data_row_range": [
+          2,
+          59
+        ],
+        "nonempty_rows_skipped_for_blank_name": [],
+        "summary_row_numbers": [],
+        "serial_present": 10,
+        "serial_blank": 48,
+        "part_number_present": 58,
+        "part_number_blank": 0,
+        "quantity_missing_rows": [
+          2,
+          8,
+          11,
+          20,
+          40,
+          45,
+          53
+        ],
+        "quantity_invalid_rows": [],
+        "expected_numeric_quantity_sum": 179.0,
+        "physical_location_present": 0,
+        "explicit_container_columns": [],
+        "excluded_nonitem_heading_rows": [],
+        "unresolved_missing_name_rows": []
+      },
+      {
+        "sheet": "Pallet 2",
+        "role": "data",
+        "recommended": false,
+        "formula_cells": 0,
+        "structure": {
+          "visible": true,
+          "stored_rows": 5,
+          "merged_ranges": [],
+          "indent_cells": 2,
+          "outline_rows": 0,
+          "hidden_rows": 0,
+          "identity_cell_storage_types": {
+            "A:s": 4,
+            "C:n": 3,
+            "C:s": 1
+          }
+        },
+        "recognised_header": true,
+        "header_excel_row": 1,
+        "headers": [
+          "PN",
+          "Description",
+          "SN",
+          "QTY Shall",
+          "QTY Counted",
+          "Location"
+        ],
+        "mapped_columns": {
+          "serial": 2,
+          "quantity": 3,
+          "location": 5,
+          "name": 1
+        },
+        "record_rows": 4,
+        "data_row_range": [
+          2,
+          5
+        ],
+        "nonempty_rows_skipped_for_blank_name": [],
+        "summary_row_numbers": [],
+        "serial_present": 4,
+        "serial_blank": 0,
+        "part_number_present": 4,
+        "part_number_blank": 0,
+        "quantity_missing_rows": [],
+        "quantity_invalid_rows": [],
+        "expected_numeric_quantity_sum": 4.0,
+        "physical_location_present": 0,
+        "explicit_container_columns": [],
+        "excluded_nonitem_heading_rows": [],
+        "unresolved_missing_name_rows": []
+      },
+      {
+        "sheet": "Pallet 3,4",
+        "role": "data",
+        "recommended": true,
+        "formula_cells": 0,
+        "structure": {
+          "visible": true,
+          "stored_rows": 103,
+          "merged_ranges": [],
+          "indent_cells": 10,
+          "outline_rows": 0,
+          "hidden_rows": 0,
+          "identity_cell_storage_types": {
+            "A:s": 98,
+            "C:n": 2,
+            "C:s": 18,
+            "A:n": 4
+          }
+        },
+        "recognised_header": true,
+        "header_excel_row": 1,
+        "headers": [
+          "PN",
+          "Description",
+          "SN",
+          "QTY Shall",
+          "QTY Counted",
+          "Location"
+        ],
+        "mapped_columns": {
+          "serial": 2,
+          "quantity": 3,
+          "location": 5,
+          "name": 1
+        },
+        "record_rows": 102,
+        "data_row_range": [
+          2,
+          103
+        ],
+        "nonempty_rows_skipped_for_blank_name": [],
+        "summary_row_numbers": [],
+        "serial_present": 20,
+        "serial_blank": 82,
+        "part_number_present": 102,
+        "part_number_blank": 0,
+        "quantity_missing_rows": [
+          2,
+          92,
+          95
+        ],
+        "quantity_invalid_rows": [],
+        "expected_numeric_quantity_sum": 219.0,
+        "physical_location_present": 1,
+        "explicit_container_columns": [],
+        "excluded_nonitem_heading_rows": [],
+        "unresolved_missing_name_rows": []
+      }
+    ],
+    "totals": {
+      "data_sheets": 4,
+      "records": 220,
+      "serial_present": 66,
+      "part_number_present": 220,
+      "quantity_unknown": 11,
+      "quantity_missing": 10,
+      "quantity_invalid": 1,
+      "numeric_expected_quantity_sum": 465.0,
+      "skipped_nonempty_blank_name_rows": 1,
+      "explicit_location_present": 19,
+      "repeated_serial_values": 1,
+      "records_with_repeated_serial": 3,
+      "excluded_nonitem_headings": 1,
+      "unresolved_missing_name_rows": 0,
+      "quantity_sum_excludes_unknown_rows": true
+    }
+  },
+  "identity_source_formats": {
+    "source_sha256": "243fa340992f6adc6b8776cbaf9520972e27d61bd82dfc6a3374a6525184e755",
+    "source_unchanged": true,
+    "metrics": {
+      "part_number": {
+        "records": 220,
+        "storage_types": {
+          "s": 211,
+          "n": 9
+        },
+        "number_format_ids": {
+          "0": 220
+        },
+        "numeric_zero_pad_format": 0,
+        "numeric_date_format": 0,
+        "numeric_scientific_literal": 0,
+        "text_leading_zero": 153,
+        "numeric_decimal_literal": 0,
+        "formula": 0
+      },
+      "serial": {
+        "records": 66,
+        "storage_types": {
+          "s": 57,
+          "n": 9
+        },
+        "number_format_ids": {
+          "49": 57,
+          "0": 9
+        },
+        "numeric_zero_pad_format": 0,
+        "numeric_date_format": 0,
+        "numeric_scientific_literal": 0,
+        "text_leading_zero": 9,
+        "numeric_decimal_literal": 0,
+        "formula": 0
+      }
+    },
+    "source_identifiers_retained": false
+  },
+  "tests": {
+    "unique_selected_pytest_passed": 641,
+    "functional_passed": 628,
+    "build_replay_passed": 13,
+    "unresolved_failures": 0,
+    "unresolved_skips": 0,
+    "node_checks_by_script": {
+      "test_document_import_ui103.js": 35,
+      "test_inventory_identity_ui103.js": 15,
+      "test_inventory_search_ui102.js": 20,
+      "test_browser_reload_ui102.js": 12
+    },
+    "repeated_subsets_not_added": true,
+    "selection": {
+      "runtime": [
+        "tests/test_import_shipping_ui102.py",
+        "tests/test_verification_ui102.py",
+        "tests/test_document_sheets_ui101.py",
+        "tests/test_document_import_ui95.py",
+        "tests/test_document_import_ui100.py",
+        "tests/test_document_layout_ui100.py",
+        "tests/test_document_structure_ui100.py",
+        "tests/test_choice_readings_ui100.py",
+        "tests/ui53_inventory/test_changes.py",
+        "tests/ui53_inventory/test_review_regressions.py",
+        "tests/ui53_inventory/test_labels_categories.py",
+        "tests/ui47_tasks/test_updates.py",
+        "tests/ui47_tasks/test_retained_inventory.py",
+        "tests/task_checklists/test_checklists.py",
+        "tests/browser_templates/test_templates.py",
+        "tests/test_builder_log_ui101.py",
+        "tests/test_log_package_ui101.py",
+        "tests/test_password_recovery_ui97.py",
+        "tests/ui45_review/test_builder_baseline.py",
+        "tests/test_document_import_ui103.py",
+        "tests/test_inventory_import_ui103.py",
+        "tests/test_inventory_identity_views_ui103.py",
+        "tests/test_import_source_reconciliation_ui103.py",
+        "tests/asset_workspace/test_summary.py",
+        "tests/rebrand/test_inherited_review.py"
+      ]
+    },
+    "initial_failures_resolved": "Four preserved UI101 single-worksheet validation assertions needed legacy wording restored; final selected suite passes.",
+    "historical_diagnostic_exclusions": {
+      "count": 3,
+      "reproduced_on_exact_UI102": true,
+      "cases": [
+        "rebrand static JavaScript assertion requires 36 files while both UI102/UI103 have 101",
+        "two unchanged Tk uninstall fixtures fail without DISPLAY before running assertions"
+      ],
+      "source_observation_write": "Historical test observations redirected outside runtime; exact parent fixture restored and final runtime manifest verified."
+    },
+    "full_historical_suite_claimed": false
+  },
+  "browser": {
+    "actual_C01_checks": 36,
+    "synthetic_transport_form_checks": 5,
+    "unexpected_javascript_errors": 0,
+    "widths": [
+      1440,
+      390,
+      320
+    ],
+    "actual_screenshots": 18,
+    "synthetic_form_screenshots": 3,
+    "actual_method": "Real Chromium, fictional disposable C01 HostedBoundary/CompanyAccess/core APIs and IndexedDB; no production requests. WebSocket and service-worker registration are suppressed.",
+    "synthetic_method": "Real UI103 native item form/guard checks on synthetic Chromium-only fixtures.\n\nUses real fieldwork/inventory scripts and current CSS. Transport is deliberately\nsynthetic; backend acceptance is tested separately on disposable projects.\n",
+    "source_hashes": {
+      "app/document_import.py": "f2ff1e87ce06ea5812ae7093324b10761d5be14ac48d8eafabe0b24d72bdae3f",
+      "app/inventory.py": "3ab0e5c7821d1c1ca8592291335d85fd267c9e909c19be0c7eabb01f3dffc9ec",
+      "app/builder_hub.py": "9ef479fc202beed16572429341651f3b563ff93b41cfef06d4c2ed4d8db91b0d",
+      "app/static/document_import.js": "63b56ab0fbae91f3ae76747a4f1d66dd8a2e84f5507a3bfa88c02034835f5ae3",
+      "app/static/document_import.css": "fed879475e31f13de765049bb803ed2669f0dd76b7187c109b990c0a67a98a7f",
+      "app/static/setup_builders.js": "0b1ce5b1395d5009a4c7821e5f91dad2ae6aa20d2ea2e1ba3680315606c73028",
+      "app/static/fieldwork.js": "368c8a44a547643353c172c907b7fb9690ee29b833d602388898e40909ed6007",
+      "app/static/inventory_workspace.js": "0e60b665a3bdced1a21ba0ff3d7ff0c71a586c866faecdf37ca804aa650b8484",
+      "app/static/verification.js": "04cd77a36c0b6c0ce9eb5bcfdf53e21f255acffd91fc57f070213ae6fc4c9649",
+      "app/static/task_workspace.js": "eca13368e44300648ef2fedb14c483d85f39d7e3a0f6ce638c16a931155e477e",
+      "app/static/browser_workspace.js": "565d7009e1786be630b482c6d7d9a6d7c61f4d90b17c0e0069865146483f7a75",
+      "app/static/equipment_workspace_ui79.css": "6179d3d57d16bc4f133820310e317b42e28e128577dde2d5f4f4c28391a97815",
+      "app/static/work_execution_ui80.css": "2e15aa54a3ccf468a1ad1cfae6339425d5e30e3714fc8da3ba1596a0c475cc1f",
+      "app/static/index.html": "08f710ff87f4d7c01351da1e6f5697eb0f16a626f11312ce6e05f20a1e7f89c9",
+      "app/static/sw.js": "352930f8315b0c07e2cc6745acd225fe0111fc6f53757e514ac5f302eef108e4"
+    },
+    "served_asset_hashes": {
+      "app/static/task_workspace.js": "eca13368e44300648ef2fedb14c483d85f39d7e3a0f6ce638c16a931155e477e",
+      "app/static/document_import.css": "fed879475e31f13de765049bb803ed2669f0dd76b7187c109b990c0a67a98a7f",
+      "app/static/equipment_workspace_ui79.css": "6179d3d57d16bc4f133820310e317b42e28e128577dde2d5f4f4c28391a97815",
+      "app/static/work_execution_ui80.css": "2e15aa54a3ccf468a1ad1cfae6339425d5e30e3714fc8da3ba1596a0c475cc1f",
+      "app/static/inventory_workspace.js": "0e60b665a3bdced1a21ba0ff3d7ff0c71a586c866faecdf37ca804aa650b8484",
+      "app/static/fieldwork.js": "368c8a44a547643353c172c907b7fb9690ee29b833d602388898e40909ed6007",
+      "app/static/verification.js": "04cd77a36c0b6c0ce9eb5bcfdf53e21f255acffd91fc57f070213ae6fc4c9649",
+      "app/static/document_import.js": "63b56ab0fbae91f3ae76747a4f1d66dd8a2e84f5507a3bfa88c02034835f5ae3",
+      "app/static/setup_builders.js": "0b1ce5b1395d5009a4c7821e5f91dad2ae6aa20d2ea2e1ba3680315606c73028",
+      "app/static/browser_workspace.js": "565d7009e1786be630b482c6d7d9a6d7c61f4d90b17c0e0069865146483f7a75"
+    },
+    "report": "EVIDENCE/browser/UI103_IMPORT_INVENTORY_BROWSER_REVIEW.json"
+  },
+  "syntax_and_preservation": {
+    "python_ast": 787,
+    "javascript_node": 124,
+    "errors": [],
+    "art_unchanged": 72,
+    "unchanged_resources": 2090,
+    "runtime_resources": 2126,
+    "manifest_sha256": "f26d5c2201451c727eb243f362dbb3fef366aec386ecb8f5a5377ff2de40c828"
+  },
+  "remote_actions": {
+    "github_main_commit": "3894005cee821ba94459acd7facfe8712e30cd01",
+    "main_exact_UI102_verified": true,
+    "all_297_git_blobs_verified": true,
+    "read_access_working": true,
+    "create_branch_attempted": "codex/ui103-combined-inventory-20261005",
+    "create_branch_result": "GitHub integration 403: Resource not accessible by integration",
+    "branch_created": false,
+    "commit": false,
+    "pull_request": false,
+    "merged": false,
+    "deployed": false
+  },
+  "retained_boundaries": {
+    "sql_migration": false,
+    "new_optional_inventory_JSON_field": "part_number",
+    "existing_data_reset": false,
+    "browser_storage_clear": false,
+    "production_inventory_write": false,
+    "auth_MFA_mail_recovery_changes": false,
+    "vendor_dependencies_changes": false,
+    "original_source_documents_changed_or_distributed": false,
+    "art_files_unchanged": 72
+  },
+  "not_claimed": [
+    "Universal document interpretation or evaluated formulas",
+    "Automatic identity/kit/container merging",
+    "Old Excel Counted values as current Wavelink verification",
+    "Native package additions to existing inventory",
+    "Windows native display or physical QR camera acceptance",
+    "Live Render/SMTP production acceptance",
+    "Actual service-worker upgrade, WebSockets and BFCache; Chromium harness suppresses registration/WS",
+    "Full historical suite green",
+    "Remote UI103 commit, PR or deployment"
+  ]
+}
