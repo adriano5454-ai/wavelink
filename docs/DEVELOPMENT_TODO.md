@@ -1,3 +1,15 @@
+# Current UI102 follow-up
+
+Apply cumulative UI102 and redeploy normally. Review live inventory search, already checked QR results, expected quantity mapping and separate shipping worksheets. Keep user inventory/browser data; no reset/new mail configuration. See UI102_REVIEW_REPORT.json and the single CONTINUATION_CHECKPOINT.md. Render account is connected but callable service/deploy tools were unavailable in this session. Continue representative document review and full service-worker/physical-device acceptance; multi-sheet merging and style-based assembly suggestions are not part of this release.
+
+--- Historical roadmap below ---
+
+# Previous UI99 follow-up
+
+Independent normal tabs, stable Back/Reload, validated shared sign-in, saved-tab recovery and scoped cross-tab uncertain-save guards are implemented. Apply UI98-to-UI99 and redeploy normally; verify two real tabs, Help→Back, Reload, local draft recovery and actual worker update. Keep original/offline drafts and all project data. Real Render/Nginx/SMTP, physical/BFCache/service-worker/native acceptance remains pending. Existing wider module/import/email/visual roadmap follows; read the single CONTINUATION_CHECKPOINT.md.
+
+--- Historical instructions below ---
+
 # Current UI98 follow-up
 
 Prepared hosted recovery/MFA routing correction. Apply UI97-to-UI98 and redeploy normally; inspect recovery before sign-in at the actual company address. If company SMTP is configured, perform authorised inbox/code/reset/MFA acceptance. Actual Nginx, Render/Docker, device, service-worker and native checks remain pending. Keep all data/local work; do not repeat setup or clear browser storage. Read the single CONTINUATION_CHECKPOINT.md and WORKSPACE_UI98.md.

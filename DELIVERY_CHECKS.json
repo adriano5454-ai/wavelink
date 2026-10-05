@@ -1,69 +1,180 @@
 {
   "format": "wavelink-delivery-checks-1",
-  "release": "UI98 Hosted Recovery Routing Fix",
+  "release": "UI102 Shipping Workbook and Inventory Check Search",
   "core": "1.34.19",
-  "date": "2026-10-04",
-  "repository_parent_commit": "c1c7151fdce67dc6ab76836c9463480298194af3",
-  "repository_files_parent": 268,
-  "repository_files_target": 273,
-  "runtime_manifest_sha256": "95f800876f7278c8c0ad43e97e76a75deb5cc23a987aaebb582ba7285bc9e52b",
-  "runtime_resources_unchanged": 2102,
-  "runtime_overlay_added": false,
-  "schema_migration": false,
+  "date": "2026-10-05",
+  "repository_parent_commit": "80e9090500c33e80c97bcf2296c84d4772870e19",
+  "repository_files_parents": {
+    "UI98": 273,
+    "UI99": 279,
+    "UI100": 285,
+    "UI101": 291
+  },
+  "repository_files_target": 297,
+  "runtime_manifest_sha256": "efeae63adf89d69968321c88d0e09faa4e95a195e837ad00f74c9dae864d9b1f",
+  "runtime_resources": 2119,
+  "runtime_overlay_resources": 17,
+  "runtime_resources_unchanged_from_UI101": 2102,
+  "server_schema_migration": false,
   "tests": {
-    "passed": 210,
-    "new_hosted_authentication_boundary_cases": 30,
-    "retained_company_mail_private_demo_public_guest_cases": 180,
-    "skipped": 0,
-    "deselected": 0,
-    "test_files": [
-      "tests/test_hosted_auth_ui98.py",
-      "tests/test_company_c01.py",
-      "tests/test_company_mail_m01.py",
-      "tests/test_gate.py",
-      "tests/test_public_entry_g01.py"
-    ]
+    "unique_selected_pytest_passed": 520,
+    "functional_passed": 481,
+    "actual_shipping_followup_passed": 1,
+    "build_and_hosted_passed": 38,
+    "unresolved_skips": 0,
+    "source_skip_resolved": "The broad run skipped the private shipping case because its environment variable was omitted. That exact case was subsequently run with the original workbook and passed; only its passing follow-up is counted.",
+    "repeated_subsets_not_added": true,
+    "selection": {
+      "runtime": [
+        "tests/test_import_shipping_ui102.py",
+        "tests/test_verification_ui102.py",
+        "tests/test_document_sheets_ui101.py",
+        "tests/test_document_import_ui95.py",
+        "tests/test_document_import_ui100.py",
+        "tests/test_document_layout_ui100.py",
+        "tests/test_document_structure_ui100.py",
+        "tests/test_choice_readings_ui100.py",
+        "tests/ui53_inventory/test_changes.py",
+        "tests/ui53_inventory/test_review_regressions.py",
+        "tests/ui53_inventory/test_labels_categories.py",
+        "tests/ui47_tasks/test_updates.py",
+        "tests/ui47_tasks/test_retained_inventory.py",
+        "tests/task_checklists/test_checklists.py",
+        "tests/browser_templates/test_templates.py",
+        "tests/test_builder_log_ui101.py",
+        "tests/test_log_package_ui101.py",
+        "tests/test_password_recovery_ui97.py",
+        "tests/ui45_review/test_builder_baseline.py"
+      ]
+    },
+    "node_helper_render_checks": 20,
+    "node_reload_checks": 12,
+    "full_historical_suite_claimed": false,
+    "diagnostics": "Two legacy UI53 browser-contract assertions fail identically on frozen UI101 and UI102 (old consolidated CSS/help catalogue expectations). Separate evidence retained; excluded from selected pass total."
   },
   "browser": {
-    "passed": 15,
+    "actual_C01_checks": 52,
+    "independent_synthetic_lifecycle_layout_checks": 11,
     "unexpected_javascript_errors": 0,
     "widths": [
       1440,
       390,
       320
     ],
-    "evidence": "EVIDENCE/browser/UI98_HOSTED_BROWSER_REVIEW.json",
-    "method": "Real HTTPS-origin Chromium routed to actual HostedBoundary/CompanyAccess/core with fictional prepared projects and captured mail. No live Nginx/Render/SMTP."
+    "method": "Actual fictional C01 HostedBoundary/CompanyAccess/core APIs, Chromium and real IndexedDB. WebSockets and service-worker registration are suppressed.",
+    "independent_method": "Independent UI102 delayed-read and modal review, using only fictional fixtures.\n\nLoads the real verification script and current index CSS in real Chromium.\nDeferred lookup responses are synthetic: this proves UI guards, not backend saves.\n",
+    "source_hashes": {
+      "app/static/verification.js": "f481a07885b97a7b2ecacba48e1a4bd4d23f965f8c7cfeeaa0c2aeec46156dc9",
+      "app/static/inventory_workspace.js": "d4fce97bd513f01565266b5faeb71e8a85bc0062ce0d6d2e67fa51b8ac0128ec",
+      "app/static/operations.js": "5fe5cc0283521033e52f908952f1376d8f6abefe834dfab36cf05fa81d37dea8",
+      "app/static/task_workspace.js": "c40def5f8585cbddd18d03cee7709fe644e5e04aed3969a1ba42497d75835119",
+      "app/static/fieldwork.js": "9751ab353fb8d0cb07893e970a69d22e21f1d21b9bc41e44bb8dc882ff591158",
+      "app/static/browser_workspace.js": "565d7009e1786be630b482c6d7d9a6d7c61f4d90b17c0e0069865146483f7a75",
+      "app/static/equipment_workspace_ui79.css": "6179d3d57d16bc4f133820310e317b42e28e128577dde2d5f4f4c28391a97815",
+      "app/static/work_execution_ui80.css": "2e15aa54a3ccf468a1ad1cfae6339425d5e30e3714fc8da3ba1596a0c475cc1f",
+      "app/static/document_import.js": "b9dab4cca6516ee897c3c1d8a99729770b1f48b5a46e0934b898c9ccabc1bd9a",
+      "app/static/document_import.css": "db2f51f6ff0a54c1a236012eba2498388f039311fa3718c761bcdbd1d46c30ff",
+      "app/document_import.py": "c7b160df99b0e671b3cbda76b4f5166cafcad6e12aa5ec1c0c2b6e5e7755c015",
+      "app/inventory.py": "19ac339ea0050e64bf806137ddcb57e5e39853d205b455fff76100c4a65212b1",
+      "app/verification_tools.py": "eccef09701ba4d8ea1319662fdb5b6d2a031553b14bd66482dc40a77f57979dc",
+      "app/work_tasks.py": "22e31b7d2279f3eacbb290807ff5850cebfcf78ccf93b8b3e2ce01013ef9688b"
+    },
+    "served_asset_hashes": {
+      "app/static/task_workspace.js": "c40def5f8585cbddd18d03cee7709fe644e5e04aed3969a1ba42497d75835119",
+      "app/static/document_import.css": "db2f51f6ff0a54c1a236012eba2498388f039311fa3718c761bcdbd1d46c30ff",
+      "app/static/equipment_workspace_ui79.css": "6179d3d57d16bc4f133820310e317b42e28e128577dde2d5f4f4c28391a97815",
+      "app/static/work_execution_ui80.css": "2e15aa54a3ccf468a1ad1cfae6339425d5e30e3714fc8da3ba1596a0c475cc1f",
+      "app/static/inventory_workspace.js": "d4fce97bd513f01565266b5faeb71e8a85bc0062ce0d6d2e67fa51b8ac0128ec",
+      "app/static/fieldwork.js": "9751ab353fb8d0cb07893e970a69d22e21f1d21b9bc41e44bb8dc882ff591158",
+      "app/static/operations.js": "5fe5cc0283521033e52f908952f1376d8f6abefe834dfab36cf05fa81d37dea8",
+      "app/static/verification.js": "f481a07885b97a7b2ecacba48e1a4bd4d23f965f8c7cfeeaa0c2aeec46156dc9",
+      "app/static/document_import.js": "b9dab4cca6516ee897c3c1d8a99729770b1f48b5a46e0934b898c9ccabc1bd9a",
+      "app/static/browser_workspace.js": "565d7009e1786be630b482c6d7d9a6d7c61f4d90b17c0e0069865146483f7a75"
+    },
+    "reload_workspace": {
+      "before": {
+        "window_id": "primary",
+        "state_key": "main",
+        "draft_ids": [
+          "c288217c-c0fc-48a0-93d0-f975dc6a100d"
+        ]
+      },
+      "after": {
+        "window_id": "primary",
+        "state_key": "main",
+        "draft_ids": [
+          "c288217c-c0fc-48a0-93d0-f975dc6a100d"
+        ]
+      }
+    },
+    "actual_shipping_import": {
+      "source_filename": "MR07 to Sulmara Aberdeen September-26 Rev 1.xlsx",
+      "source_bytes": 67200,
+      "source_sha256": "243fa340992f6adc6b8776cbaf9520972e27d61bd82dfc6a3374a6525184e755",
+      "destination": "Disposable fictional C01 company only",
+      "sheets": {
+        "Vehicle MR 07": {
+          "records": 56,
+          "expected_quantity_sum": 63,
+          "unknown_quantities": 1,
+          "history_copied": false,
+          "containers_inferred": false
+        },
+        "Pallet 1": {
+          "records": 58,
+          "expected_quantity_sum": 179,
+          "unknown_quantities": 7,
+          "history_copied": false,
+          "containers_inferred": false
+        },
+        "Pallet 2": {
+          "records": 4,
+          "expected_quantity_sum": 4,
+          "unknown_quantities": 0,
+          "history_copied": false,
+          "containers_inferred": false
+        },
+        "Pallet 3,4": {
+          "records": 102,
+          "expected_quantity_sum": 219,
+          "unknown_quantities": 3,
+          "history_copied": false,
+          "containers_inferred": false
+        }
+      }
+    },
+    "reports": [
+      "EVIDENCE/inventory/UI102_INVENTORY_BROWSER_REVIEW.json",
+      "EVIDENCE/search-safety/UI102_SEARCH_LIFECYCLE_SAFETY.json",
+      "EVIDENCE/search-safety/UI102_SEARCH_HELPER_SAFETY.json",
+      "EVIDENCE/reload-unit/UI102_BROWSER_RELOAD.json"
+    ]
   },
-  "syntax_and_unchanged_runtime": {
-    "runtime_files_unchanged": 2102,
-    "runtime_manifest_sha256": "95f800876f7278c8c0ad43e97e76a75deb5cc23a987aaebb582ba7285bc9e52b",
-    "python_files_checked": [
-      "deploy/company_runtime.py",
-      "deploy/nginx_config.py",
-      "tests/test_hosted_auth_ui98.py",
-      "tests/browser_hosted_auth_ui98.py"
-    ],
-    "syntax_errors": [],
-    "database_schema_change": false,
-    "new_core_runtime_overlay": false
+  "syntax_and_preservation": {
+    "python_ast": 779,
+    "javascript_node": 122,
+    "errors": [],
+    "art_unchanged": 72,
+    "unchanged_resources": 2102,
+    "runtime_resources": 2119,
+    "manifest_sha256": "efeae63adf89d69968321c88d0e09faa4e95a195e837ad00f74c9dae864d9b1f"
   },
-  "review_report": "docs/UI98_REVIEW_REPORT.json",
-  "current_acceptance_guide": "docs/WORKSPACE_UI98.md",
+  "review_report": "docs/UI102_REVIEW_REPORT.json",
+  "current_acceptance_guide": "docs/WORKSPACE_UI102.md",
   "remote_actions": {
     "commit": false,
     "pull_request": false,
     "deployed": false,
-    "reason": "Earlier integration writes returned 403. Exact current UI97 main read and compact correction prepared for normal commit/push/redeploy."
+    "reason": "Earlier GitHub writes returned403; established compact apply/commit/push/redeploy workflow."
   },
   "not_claimed": [
-    "Live service reproduction at an unspecified user URL",
-    "Actual Nginx listener or nginx -t (binary unavailable)",
-    "Live SMTP inbox delivery",
-    "Render/Docker deployment",
-    "Physical device keyboard/autofill",
-    "Actual service-worker lifecycle",
-    "Windows/native setup",
-    "Full historical runtime test suite rerun"
+    "Universal document recognition or evaluated source formulas",
+    "Automatically combined multi-sheet inventory or native kit/container hierarchy",
+    "Prior source counts as new Wavelink verified stock or shipping receipt",
+    "Company-wide search or expanded task creation picker/native desktop behavior",
+    "Live Render/SMTP/production company acceptance",
+    "Physical QR camera/native desktop acceptance",
+    "Actual service-worker upgrade/WebSockets/BFCache lifecycle; test harness suppresses registration/WS",
+    "Full historical suite green"
   ]
 }
