@@ -1,25 +1,228 @@
 {
-  "format": "wavelink-delivery-checks-1",
+  "format": "wavelink-ui109-review-1",
   "release": "UI109 \u2014 reusable log definitions and individual inventory review",
   "core": "1.34.19",
   "date": "2026-10-10",
-  "repository_files_target": 341,
-  "repository_files_parents": {
-    "UI108": 334
+  "repository": "adriano5454-ai/wavelink",
+  "runtime": {
+    "variant": "workspace-ui109-log-and-item-review-2026-10-10",
+    "manifest_sha256": "37270fa93be13d6ba247300095d9f042b23a4310d7ef64e4e9ee6f3680c7e370",
+    "resources": 2146,
+    "overlay_resources": 22,
+    "parent_manifest_sha256": "5a10e73acaaaf0d74e4bb530f8c6461d044476ecbf0aa76bfbd1583ee426a9f5",
+    "parent_release": "UI108",
+    "parent_repository_files": 334,
+    "parent_git_commit": "52e8f9a280520fbdffc0d827613edae1e256c0bb",
+    "parent_full_repository_zip_sha256": "98a9a8f0b4c134225537277ebe5a1afb90b562f0677a6698ad07e6f5b306728b",
+    "parent_source": "verified-committed-UI108-full-repository",
+    "current_remote_release": "UI108",
+    "current_remote_commit": "52e8f9a280520fbdffc0d827613edae1e256c0bb",
+    "current_remote_tree": "67d0a11da423e20f2d667616ab811605ee77d19d",
+    "target_repository_files": 341,
+    "compact_supported_parents": [
+      "UI108"
+    ]
   },
-  "repository_parent_commit": "52e8f9a280520fbdffc0d827613edae1e256c0bb",
-  "repository_git_baseline": {
-    "release": "UI108",
-    "commit": "52e8f9a280520fbdffc0d827613edae1e256c0bb",
-    "files": 334
+  "implemented": [
+    "Supported log table headings become reusable empty field definitions rather than checklists or imported completed log entries; bounded leading context is reviewed as guidance.",
+    "Recognized log field definitions omit the unrelated checklist-row warning while retaining other missing/ambiguous-definition guidance.",
+    "Toolbox discussion-topic tables retain supported topic wording while excluding completed attendee answers, names and signatures from reusable definitions.",
+    "Inventory import supports explicit corrections to individual incoming rows before approval, with retained source references and item identity boundaries; quantity zero and Unknown remain distinct.",
+    "Changes to an incoming item invalidate prior approval and require another check. Read-only inspection preserves approval, and pending or uncertain saves retain their original retry request.",
+    "Five served/offline Help topics include current instructions inside their content and outlines; the existing catalogue is regenerated from actual current articles with retained bookmark identifiers.",
+    "UI108 source review and Toolbox recovery, UI107 relationships, UI106 document review, UI105 inventory verification and UI94 navigation/art/profile layouts remain covered by unchanged retained suites."
+  ],
+  "source_examples": {
+    "report": "evidence/examples/UI109_RETAINED_EXAMPLE_REVIEW.json",
+    "report_sha256": "27255e27619b1a9849ef2aa305ecf476ac55c7376b315ae0ee97b8f7b5ca621f",
+    "representative_results": {
+      "ambiguous_box_reference": {
+        "ambiguous_source_reference_retained": true,
+        "automatically_linked_records": 0,
+        "explicit_manual_links": 1,
+        "fixture": "Fictional in-memory XLSX",
+        "original_rows_preserved": true,
+        "records": 2
+      },
+      "ambiguous_container_id": {
+        "ambiguous_source_reference_retained": true,
+        "automatically_linked_records": 0,
+        "explicit_manual_links": 1,
+        "fixture": "Fictional in-memory XLSX",
+        "original_rows_preserved": true,
+        "records": 2
+      },
+      "ambiguous_container_reference": {
+        "ambiguous_source_reference_retained": true,
+        "automatically_linked_records": 0,
+        "explicit_manual_links": 1,
+        "fixture": "Fictional in-memory XLSX",
+        "original_rows_preserved": true,
+        "records": 2
+      },
+      "cross_sheet_reference_rejected": {
+        "cross_sheet_parent_inferred": false,
+        "error_source_row": 6,
+        "error_worksheet_located": true,
+        "fixture": "Fictional in-memory XLSX",
+        "repeated_serial_and_part_number_used_as_parent": false,
+        "review_read_only": true
+      },
+      "excluded_parent_restore": {
+        "excluded_parent_error_source_row": 6,
+        "fixture": "Fictional in-memory XLSX",
+        "full_records": 8,
+        "full_tsv_and_source_rows_retained": true,
+        "restored_records": 8,
+        "subset_original_positions": [
+          2,
+          3
+        ],
+        "subset_original_rows": [
+          9,
+          12
+        ],
+        "subset_records": 5,
+        "worksheet_error_located": true
+      },
+      "explicit_depth_boundary": {
+        "accepted_records": 9,
+        "error_worksheet_located": true,
+        "fixture": "Fictional in-memory XLSX",
+        "hierarchy_not_flattened": true,
+        "rejected_ancestors": 9,
+        "rejected_review_read_only": true,
+        "rejected_source_row": 7,
+        "reviewed_root_location_equal": true,
+        "supported_ancestors": 8
+      },
+      "invalid_cycle": {
+        "error_source_row": 6,
+        "error_worksheet_located": true,
+        "fixture": "Fictional in-memory XLSX",
+        "invalid_relationship": "cycle",
+        "original_coordinates_retained": true,
+        "partial_items_created": 0,
+        "partial_locations_created": 0,
+        "receipt_created": false
+      },
+      "invalid_duplicate": {
+        "error_source_row": 15,
+        "error_worksheet_located": true,
+        "fixture": "Fictional in-memory XLSX",
+        "invalid_relationship": "duplicate",
+        "original_coordinates_retained": true,
+        "partial_items_created": 0,
+        "partial_locations_created": 0,
+        "receipt_created": false
+      },
+      "invalid_multiple_boxes": {
+        "error_source_row": 9,
+        "error_worksheet_located": true,
+        "fixture": "Fictional in-memory XLSX",
+        "invalid_relationship": "multiple_boxes",
+        "original_coordinates_retained": true,
+        "partial_items_created": 0,
+        "partial_locations_created": 0,
+        "receipt_created": false
+      },
+      "original_flat_220": {
+        "automatically_inferred_boxes": 0,
+        "automatically_inferred_parent_links": 0,
+        "current_counts_created": 0,
+        "original_identifiers_quantities_and_coordinates_exact": true,
+        "records": 220,
+        "repeated_serial_records": 3,
+        "review_read_only": true,
+        "source_bytes_unchanged": true,
+        "source_counted_column_only_notes": true,
+        "source_sha256": "243fa340992f6adc6b8776cbaf9520972e27d61bd82dfc6a3374a6525184e755",
+        "unknown_quantities": 11,
+        "worksheet_count": 4
+      },
+      "original_flat_315": {
+        "automatically_inferred_boxes": 0,
+        "automatically_inferred_parent_links": 0,
+        "current_counts_created": 0,
+        "original_identifiers_quantities_and_coordinates_exact": true,
+        "records": 315,
+        "repeated_serial_records": 0,
+        "review_read_only": true,
+        "source_bytes_unchanged": true,
+        "source_counted_column_only_notes": true,
+        "source_sha256": "281f5ea2310997b269a3536753d164c57d62d1d426f17b885ba46ac51eef3337",
+        "unknown_quantities": 315,
+        "worksheet_count": 1
+      },
+      "relationship_append_preservation": {
+        "appended_boxes": 3,
+        "appended_records": 8,
+        "custody_unchanged": true,
+        "existing_box_reference_inferred": false,
+        "existing_count_rows_unchanged": true,
+        "existing_found_zero_count_unchanged": true,
+        "existing_item_body_unchanged": true,
+        "final_records": 9,
+        "fixture": "Fictional in-memory XLSX",
+        "identical_retry_single_addition": true,
+        "old_records": 1,
+        "private_new_items": 0,
+        "private_task_scope": 1,
+        "public_count_scope": 1,
+        "public_new_items": 8,
+        "repeated_identity_records_retained": true
+      },
+      "relationship_approval_and_receipt": {
+        "changed_parent_old_approval_status": 409,
+        "changed_parent_write_count": 0,
+        "fixture": "Fictional in-memory XLSX",
+        "identical_retry_receipts": 1,
+        "identical_retry_single_addition": true
+      },
+      "sparse_en_pt_native_roundtrip": {
+        "boxes": 3,
+        "child_before_parent_saved": true,
+        "differing_source_locations_retained": true,
+        "fixture": "Fictional in-memory XLSX",
+        "identical_retry_single_addition": true,
+        "known_zero_quantities": 2,
+        "original_rows_preserved": true,
+        "parent_links": 6,
+        "records": 8,
+        "repeated_part_number_records": 5,
+        "repeated_serial_records": 5,
+        "reviewed_locations_equal_saved_locations": true,
+        "same_reference_resolves_only_within_sheet": true,
+        "saved_count_sessions": 0,
+        "source_counted_values_only_notes": true,
+        "unknown_quantities": 2,
+        "worksheet_count": 2
+      }
+    },
+    "original_source_files_in_release": false,
+    "retained_original_checklist": {
+      "report": "evidence/document-reference/UI109_ORIGINAL_DOCUMENT_REVIEW.json",
+      "report_sha256": "2c732e61a4231984feafb4e2729a68477fb68487cab93dc859803c2c73d9baa3",
+      "reference_counts": {
+        "answer_fields": 7,
+        "checks": 56,
+        "post_checks": 56,
+        "pre_checks": 55,
+        "section_checks": [
+          22,
+          27,
+          7
+        ],
+        "tools": 6
+      },
+      "additional_unique_cases": 0,
+      "method": "Read-only extraction and reusable-proposal proof; native save tested separately."
+    },
+    "limitations": [
+      "Representative layouts establish the tested behavior, not universal recognition or procedural correctness.",
+      "Ambiguous layouts require deliberate review/manual correction. Original documents remain read-only and unbundled."
+    ]
   },
-  "parent_full_repository_zip_sha256": "98a9a8f0b4c134225537277ebe5a1afb90b562f0677a6698ad07e6f5b306728b",
-  "runtime_manifest_sha256": "37270fa93be13d6ba247300095d9f042b23a4310d7ef64e4e9ee6f3680c7e370",
-  "runtime_resources": 2146,
-  "runtime_overlay_resources": 22,
-  "server_sql_migration": false,
-  "review_report": "docs/UI109_REVIEW_REPORT.json",
-  "current_acceptance_guide": "docs/WORKSPACE_UI109.md",
   "tests": {
     "functional_passed": 970,
     "build_replay_passed": 13,
@@ -713,6 +916,10 @@
       }
     ]
   },
+  "independent_review": {
+    "method": "Read-only implementation and guide review; final independent archive audit before delivery.",
+    "remaining_material_findings": []
+  },
   "remote_actions": {
     "repository": "adriano5454-ai/wavelink",
     "date": "2026-10-10",
@@ -767,6 +974,20 @@
       "local_parent_git_commit": "52e8f9a280520fbdffc0d827613edae1e256c0bb",
       "source": "exact delivered UI108 full repository ZIP; all remote Git blobs and sizes match"
     }
+  },
+  "retained_boundaries": {
+    "sql_schema_migration": false,
+    "data_reset": false,
+    "browser_storage_clear": false,
+    "inventory_core_changed": false,
+    "mail_or_auth_backend_changes": false,
+    "approved_art_files_unchanged": 72,
+    "sql_definition_resources_unchanged": 31,
+    "document_extractor_changed": false,
+    "document_structure_backend_changed": true,
+    "fieldwork_browser_read_changed": false,
+    "dependencies_and_vendor_bytes_unchanged": true,
+    "existing_items_counts_task_scope_and_custody_replaced": false
   },
   "not_claimed": [
     "Universal document recognition, automatic OCR or procedural correctness.",

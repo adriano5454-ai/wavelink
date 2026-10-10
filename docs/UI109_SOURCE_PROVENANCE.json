@@ -1,0 +1,204 @@
+{
+  "format": "wavelink-runtime-overlay-1",
+  "date": "2026-10-10",
+  "patch_id": "workspace-ui109-log-and-item-review-2026-10-10",
+  "parent_patch_id": "workspace-ui108-table-structure-review-2026-10-10",
+  "parent_git_commit": "52e8f9a280520fbdffc0d827613edae1e256c0bb",
+  "parent_manifest_sha256": "5a10e73acaaaf0d74e4bb530f8c6461d044476ecbf0aa76bfbd1583ee426a9f5",
+  "parent_full_repository_zip_sha256": "98a9a8f0b4c134225537277ebe5a1afb90b562f0677a6698ad07e6f5b306728b",
+  "parent_source": "verified-committed-UI108-full-repository",
+  "remote_ancestor_release": "UI108",
+  "remote_ancestor_commit": "52e8f9a280520fbdffc0d827613edae1e256c0bb",
+  "scope": "Review reusable log definitions, Toolbox discussion tables, explicit inventory item corrections and Help navigation while retaining source evidence, identities and existing records.",
+  "boundaries": {
+    "database_reset": false,
+    "browser_storage_clear": false,
+    "sql_schema_migration": false,
+    "auth_backend_change": false,
+    "mail_backend_change": false,
+    "artwork_bytes_change": false,
+    "existing_items_counts_and_task_scopes_replaced": false,
+    "automatic_identity_deduplication": false,
+    "inventory_backend_change": false,
+    "document_extraction_backend_change": false,
+    "automatic_ambiguity_resolution": false,
+    "document_structure_backend_change": true,
+    "toolbox_browser_read_change": false,
+    "inventory_item_review_browser_change": true,
+    "help_catalogue_browser_change": true,
+    "automatic_inventory_relationship_assignment": false
+  },
+  "files": [
+    {
+      "path": "app/document_import.py",
+      "before_sha256": "976667cda38af56a5c852536a9983a0ccb466349eeb482ea2fefcdd99f8e3ee0",
+      "after_sha256": "dfc781b5a9e6a61379c0aaf58118f6ed3b30700a4bf5e3b3f66641948b377bda"
+    },
+    {
+      "path": "app/document_structure.py",
+      "before_sha256": "578ed4c98eb418ca81890c28fa7b52358df0cc7442acb7535eabeb0d37b6db40",
+      "after_sha256": "01ac26f9c12ac4ca920f9ef5f36c49013ed1611a1400be9cc1263b2770ba930e"
+    },
+    {
+      "path": "app/static/document_import.css",
+      "before_sha256": "9b771ae0622a25e612e4b3ecc890d1c7f3f59d2ec4a4ee3b9bfcc64b5401d7da",
+      "after_sha256": "fd660c82bd371e6b243936dc1cb97edec08c5f902c623be0d88aa8f49ad2879f"
+    },
+    {
+      "path": "app/static/document_import.js",
+      "before_sha256": "46dad7401331adac538bd0f6dede84283f6c4d1e92ce28479d4e38bedd105a54",
+      "after_sha256": "b7f8d7f509b84a86e0329c41d24d6ba7cb2187e0f83bcdd27579e9c5a6d4e32c"
+    },
+    {
+      "path": "app/static/help_catalogue.json",
+      "before_sha256": "849706f162fb0e685c51b435d86555fec67d8e43a0fb7d55e77be732a4f7ecfe",
+      "after_sha256": "92086627dd852c5b3e6110a284472f039dad6a50fef4c6f4a8f7ce516a73d017"
+    },
+    {
+      "path": "app/static/help_topics/documentimport.html",
+      "before_sha256": "535bbdb724b209444649b957ee4417449cb039e3efae71afaf19b7a90e69c83b",
+      "after_sha256": "71e3365c7580d502a10b2394ac4bbd012dba61448ccd74e3df0ede877970377a"
+    },
+    {
+      "path": "app/static/help_topics/importcentre.html",
+      "before_sha256": "2968b3f0effbf22159e1666045f0e5ec34ebfc95acdefb67cbfd5c73c72f73fd",
+      "after_sha256": "b71f0d5af63234d207f4f4d8e765582c73b828f90d229cb478502b0e28d60985"
+    },
+    {
+      "path": "app/static/help_topics/inventorybuilder.html",
+      "before_sha256": "fd3103afb3b6ddc3d6702effaead94c205584ec40a1794b7b8f186a0f8bb83e6",
+      "after_sha256": "20c0ca1a1cb3500eab864d457896db5e1d5832a1f408c687ca15dcd522403c33"
+    },
+    {
+      "path": "app/static/help_topics/toolbox.html",
+      "before_sha256": "c5fee7daf3bf30adce7259fc51c3d649922f4b677b039df8403a690d69d407be",
+      "after_sha256": "784e8ea304a57b507b71ee4ecf2bc9bf68e67fb22064d6b5a8330c9226faa319"
+    },
+    {
+      "path": "app/static/help_topics/toolboxbuilder.html",
+      "before_sha256": "921c56f5a556d9e1317e75d06880559357b3ed1215d9b2515a75c19ab77465ce",
+      "after_sha256": "f62333a3dd3c4b67ff284849aa0d3e446edc969405dc5e8eed54a0d1eb94bb48"
+    },
+    {
+      "path": "app/static/index.html",
+      "before_sha256": "0841918d643df919b475ac42da9283f79d18a04ab63d9d225e0fe99c484dea2e",
+      "after_sha256": "cec72a2bb03dcf9c9ca46f2daea9819bd4aecc911caa7f2ee9d35b45155b4cb8"
+    },
+    {
+      "path": "app/static/sw.js",
+      "before_sha256": "59e3952fe425c50c2e44dda3853abebff1a2104d9456f9dac5ea90e7f5b9d500",
+      "after_sha256": "a0954c4b1eaebdd4997447d0e570f087dd55cb6250a33c453cf40952586b7c01"
+    },
+    {
+      "path": "docs/user/topics/documentimport.html",
+      "before_sha256": "80e496781a426d257f764f7c90b03dfb8d5d292bd3b2a68d788b88a2456dbf17",
+      "after_sha256": "6800e0ecf6e779fdcad9ab86c67a3f22b2d9f788a4007b84a8a4c50e4a83d62d"
+    },
+    {
+      "path": "docs/user/topics/importcentre.html",
+      "before_sha256": "db813e3f9f25a8f8a681d3c78c330234013f5c6b12c8d2f954e9d2692fb394ca",
+      "after_sha256": "dd1f275c0ecdd09c0865e18a84ff9857aa2698e8d87828b38b1bbc5cf7badc27"
+    },
+    {
+      "path": "docs/user/topics/inventorybuilder.html",
+      "before_sha256": "3bdf9160c10023aa2e14e37267975531808212cf360908a4dabffa0cb6c14b76",
+      "after_sha256": "21a5937f29384ebc3f9fe0f75d792d7119291de267f3982a7b73e88165c2bd7d"
+    },
+    {
+      "path": "docs/user/topics/toolbox.html",
+      "before_sha256": "74b7e7dff071faaba06c58447c55723865a7ea1ff03df6e7fca4ea02b642b6da",
+      "after_sha256": "c991a4304757325cb3918e73e18cf1fb74cda13eca24a2930a83edb4bb6ec71d"
+    },
+    {
+      "path": "docs/user/topics/toolboxbuilder.html",
+      "before_sha256": "5cabc950b5bb380992d1c60336f25df042b7d9e55d590bedbdf62f1ac82b723b",
+      "after_sha256": "25879371e24054b4e5c1609d0100b0a46ae484cea6a34810a8913f8de9ddc01c"
+    },
+    {
+      "path": "tests/test_document_definitions_ui109.js",
+      "before_sha256": null,
+      "after_sha256": "309d77d33803ea0522a85e5e28f01473159cb19ce54734520c4f2c55f51f22cd"
+    },
+    {
+      "path": "tests/test_document_definitions_ui109.py",
+      "before_sha256": null,
+      "after_sha256": "5633cc0bf3bfd292d99fa9b8b66a463c6064fae6f8239abbf31ed2f119e1d0a5"
+    },
+    {
+      "path": "tests/test_help_current_ui109.py",
+      "before_sha256": null,
+      "after_sha256": "5034db3c8aa0e0b701eb5e4117561aac88cab63af6bb1e00aeb8e4cd03278f09"
+    },
+    {
+      "path": "tests/test_inventory_item_review_ui109.js",
+      "before_sha256": null,
+      "after_sha256": "f208d4a5a4cc53266399de2fad60e5b5f3c6f3474e768ea2354baae15865dccf"
+    }
+  ],
+  "runtime_manifest_sha256": "37270fa93be13d6ba247300095d9f042b23a4310d7ef64e4e9ee6f3680c7e370",
+  "runtime_resources": 2146,
+  "runtime_resources_unchanged_from_UI108": 2124,
+  "approved_art_files_unchanged": 72,
+  "sql_definition_resources_unchanged": [
+    "app/access.py",
+    "app/account_security.py",
+    "app/accounts.py",
+    "app/action_center.py",
+    "app/assets.py",
+    "app/checklist_library.py",
+    "app/checklist_migrations.py",
+    "app/company_branding.py",
+    "app/departments.py",
+    "app/document_details.py",
+    "app/document_invitations.py",
+    "app/email_alerts.py",
+    "app/fault_reports.py",
+    "app/fieldwork_common.py",
+    "app/fleet.py",
+    "app/fleet_access.py",
+    "app/handovers.py",
+    "app/log_assignments.py",
+    "app/logs.py",
+    "app/membership_policy.py",
+    "app/original_documents.py",
+    "app/original_folders.py",
+    "app/password_recovery.py",
+    "app/photo_evidence.py",
+    "app/qshe_reports.py",
+    "app/recognition.py",
+    "app/store.py",
+    "app/task_access.py",
+    "app/type_management.py",
+    "app/user_lifecycle.py",
+    "app/vessel_logs.py"
+  ],
+  "inherited_hosting_vendor_dependency_resources_unchanged": [
+    "deploy/apply_ui100.py",
+    "deploy/apply_ui101.py",
+    "deploy/apply_ui102.py",
+    "deploy/apply_ui103.py",
+    "deploy/apply_ui104.py",
+    "deploy/apply_ui105.py",
+    "deploy/apply_ui106.py",
+    "deploy/apply_ui107.py",
+    "deploy/apply_ui108.py",
+    "deploy/apply_ui93.py",
+    "deploy/apply_ui94.py",
+    "deploy/apply_ui95.py",
+    "deploy/apply_ui96.py",
+    "deploy/apply_ui97.py",
+    "deploy/apply_ui99.py",
+    "deploy/company_runtime.py",
+    "deploy/entrypoint.py",
+    "deploy/extract_source.py",
+    "deploy/nginx_config.py",
+    "requirements.lock",
+    "vendor/FICTIONAL_DEMO.ajproject",
+    "vendor/source.part001",
+    "vendor/source.part002",
+    "vendor/source.part003",
+    "vendor/source.part004",
+    "vendor/source.part005",
+    "vendor/source_parts.json"
+  ]
+}
