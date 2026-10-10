@@ -1,45 +1,46 @@
 {
   "format": "wavelink-delivery-checks-1",
-  "release": "UI105 \u2014 choose inventory rows before import",
+  "release": "UI106 \u2014 review document interpretation before import",
   "core": "1.34.19",
   "date": "2026-10-10",
-  "repository_files_target": 315,
+  "repository_files_target": 321,
   "repository_files_parents": {
-    "UI103": 303,
-    "UI104": 309
+    "UI105": 315
   },
-  "repository_parent_commit": null,
+  "repository_parent_commit": "acb57a8265bbeac43b081e493b3a0f0ffb8a7cd6",
   "repository_git_baseline": {
-    "release": "UI103",
-    "commit": "7e84154f8dbee41a195852ff9f0ad1bc1ef336dc",
-    "files": 303
+    "release": "UI105",
+    "commit": "acb57a8265bbeac43b081e493b3a0f0ffb8a7cd6",
+    "files": 315
   },
   "repository_local_parent": {
-    "release": "UI104",
-    "git_commit": null,
-    "files": 309,
-    "runtime_manifest_sha256": "f2832bb1bfe9f0ec11aa34d90a6fca6f2cf4ec69bf0fd9dc701953d93a25c2ed",
-    "full_repository_zip_sha256": "a7efaeb98beb84566bcae843f988359f36b390b53f57e7af7c721f33ff7264e2"
+    "release": "UI105",
+    "git_commit": "acb57a8265bbeac43b081e493b3a0f0ffb8a7cd6",
+    "files": 315,
+    "runtime_manifest_sha256": "d79cfed733d10b84a1ba3842e57dfab69cbaa1a6d27bbe42155c442d6bdfb6b0",
+    "full_repository_zip_sha256": "a0c665984914c21df41fffd638540c128be800ab6edc551734ac55b5f1beb39c"
   },
-  "runtime_manifest_sha256": "d79cfed733d10b84a1ba3842e57dfab69cbaa1a6d27bbe42155c442d6bdfb6b0",
-  "runtime_resources": 2132,
-  "runtime_overlay_resources": 12,
+  "runtime_manifest_sha256": "33061d55bc682ce98bf528cd5e13681e78acb2be48dad981d2e91b081144d591",
+  "runtime_resources": 2135,
+  "runtime_overlay_resources": 16,
   "server_sql_migration": false,
-  "review_report": "docs/UI105_REVIEW_REPORT.json",
-  "current_acceptance_guide": "docs/WORKSPACE_UI105.md",
+  "review_report": "docs/UI106_REVIEW_REPORT.json",
+  "current_acceptance_guide": "docs/WORKSPACE_UI106.md",
   "tests": {
-    "unique_selected_pytest_passed": 711,
-    "functional_passed": 698,
+    "unique_selected_pytest_passed": 783,
+    "functional_passed": 770,
     "build_replay_passed": 13,
     "unresolved_failures": 0,
     "unresolved_skips": 0,
-    "node_checks_passed": 107,
+    "node_checks_passed": 143,
     "node_checks_by_script": {
+      "test_document_interpretation_ui106.js": 36,
       "test_document_row_selection_ui105.js": 40,
       "test_document_review_ui104.js": 32,
       "test_document_import_ui103.js": 35
     },
-    "browser_checks_passed": 94,
+    "browser_checks_passed": 43,
+    "retained_inventory_browser_checks_passed": 90,
     "repeated_subsets_not_added": true,
     "selection": {
       "runtime": [
@@ -71,62 +72,29 @@
         "tests/test_document_review_ui104.py",
         "tests/test_import_review_examples_ui104.py",
         "tests/test_document_row_selection_ui105.py",
-        "tests/test_import_row_selection_examples_ui105.py"
+        "tests/test_import_row_selection_examples_ui105.py",
+        "tests/test_document_recognition_ui106.py",
+        "tests/test_import_recognition_examples_ui106.py"
       ]
     },
     "functional_evidence": {
-      "junit": "functional-tests-complete.xml",
-      "junit_sha256": "4921861ff5324a97f164dc3c0cf219b6dae83c3e0a46175c777dcc5bc99d20c2",
+      "junit": "functional-tests-final.xml",
+      "junit_sha256": "dcfb7551eb2d29d932a95a9db56e7a4e02427ea9332924a3b5ab095e1147a8ab",
       "raw_log": "functional-tests-final.log",
-      "raw_log_sha256": "8c86d4231c8ff00b04be7265983c86b03688e2d556960fc5b4d36e33dac63f07",
-      "aggregation": {
-        "format": "wavelink-ui105-unique-functional-aggregation-1",
-        "unique_cases": 698,
-        "passed": 698,
-        "failures": 0,
-        "errors": 0,
-        "unresolved_skips": 0,
-        "method": "Keep the raw broad run (697 passed, one resource-hash mismatch while the necessary mobile visual fix changed CSS). After refreezing the final runtime, rerun only that exact resource-hash case; replace its outcome in the consolidated unique-case XML. No repeated cases added to totals.",
-        "source_fix": "Collapse the mapped source preview on mobile; data semantics remained unchanged.",
-        "final_runtime_manifest_sha256": "d79cfed733d10b84a1ba3842e57dfab69cbaa1a6d27bbe42155c442d6bdfb6b0",
-        "runs": [
-          {
-            "junit": "functional-tests-final.xml",
-            "passed": 697,
-            "failed": 1,
-            "skipped": 0
-          },
-          {
-            "junit": "functional-refreeze-check.xml",
-            "passed": 1,
-            "failed": 0,
-            "skipped": 0
-          }
-        ],
-        "completed_case": {
-          "module": "tests.rebrand.test_inherited_review",
-          "case": "test_release_manifest_362_entries_match"
-        },
-        "files": {
-          "functional-tests-final.xml": "5373368c9d472e505f42ee6cf68ecce7bb497390d90285668651a547ffacdde3",
-          "functional-tests-final.log": "8c86d4231c8ff00b04be7265983c86b03688e2d556960fc5b4d36e33dac63f07",
-          "functional-refreeze-check.xml": "8629ac70d168c1e311515d8452ee74dc42a71fc21cef4b3ed5145eed4a596861",
-          "functional-refreeze-check.log": "0cddb2f9522c5fc98e9503738cea759bed811b3ad3b391083a46a5d5f403e174",
-          "functional-tests-complete.xml": "4921861ff5324a97f164dc3c0cf219b6dae83c3e0a46175c777dcc5bc99d20c2"
-        }
-      },
+      "raw_log_sha256": "806a79dc3a936ca9a1ed3601472512ba8e3093410adafa21b37c2a534af81ff5",
+      "consolidated_junit": "functional-tests-complete.xml",
+      "consolidated_junit_sha256": "dcfb7551eb2d29d932a95a9db56e7a4e02427ea9332924a3b5ab095e1147a8ab",
+      "method": "One wholly passing selected broad run; consolidated XML is byte-identical. Focused repeated subsets are not added.",
       "all_optional_original_fixtures_and_exact_UI96_parent_present": true
     },
     "frontend_evidence": {
-      "path": "evidence/frontend/UI105_FRONTEND_REVIEW.json",
-      "sha256": "6948107ab6f10680e4678b704900a290f3b8a67f642626f0f2e6eb0ef4bbb46c",
-      "method": "Completed tool results from final parallel Node run using CODEX_PRIMARY_RUNTIME_NODE",
-      "raw_stdout_logs_saved": true,
-      "note": "Final successful raw Node logs are included."
+      "path": "evidence/frontend/UI106_FRONTEND_REVIEW.json",
+      "sha256": "04aadcca3bc1ff1b4df519809c4efba3ddf2fcc948a3eea3e835a04f84616e53",
+      "raw_stdout_logs_saved": true
     },
     "historical_diagnostic_exclusions": {
       "count": 3,
-      "inherited_from_UI103_UI104": true,
+      "inherited_from_UI103_UI104_UI105": true,
       "previously_reproduced_on_exact_UI102": true,
       "cases": [
         {
@@ -142,103 +110,287 @@
           "reason": "Unchanged Tk fixture requires DISPLAY before reaching assertions."
         }
       ],
-      "source_observation_write": "Legacy observations are redirected outside runtime; every frozen runtime hash verified."
+      "source_observation_write": "Legacy observations redirected outside runtime; all frozen resource hashes verified."
     },
     "full_historical_suite_claimed": false
   },
   "browser": {
-    "method": "Real Chromium, fictional disposable C01 HostedBoundary/CompanyAccess/core APIs and IndexedDB; no production requests. WebSocket and service-worker registration are suppressed.",
-    "checks_passed": 94,
+    "method": "Real Chromium with genuine IndexedDB and disposable fictional C01 HostedBoundary/company/core APIs. Screenshots contain only literal fictional fixtures.",
+    "checks_passed": 43,
     "unexpected_errors": 0,
     "widths": [
       1440,
       390,
       320
     ],
-    "screenshots": 57,
-    "harness": "tests/browser_import_row_selection_ui105.py",
-    "harness_sha256": "1104b7c35909f401cecd7699d05039eeb71f19b467bb03ebd0b8e637160a1e47",
-    "report_sha256": "7a98f0c74280f9fd157057bc9c9a11e3e1e0c0cfd3c7fa283dc6ece88edababe",
+    "screenshots": 21,
+    "harness": "tests/browser_document_recognition_ui106.py",
+    "harness_sha256": "460b22b857d4c8821bb122a4f03a6e8444879f6fd400c2adcdf7f4243034267d",
+    "report_sha256": "e4e78f87d4ac1d7c85cfda3bc5abdfb0d1833f60e8ab1f3d5dd5e26c034282b8",
     "source_hashes": {
-      "app/document_import.py": "89bcb461ab0f1ed24fad05c04b4caa190090263aba5cf6abae22e1a9e23933e2",
+      "app/document_import.py": "48c971dc11be923fd9c98ec3b078974dfef009f90bcaec885e8e9078f10d3643",
+      "app/document_structure.py": "6f53a543303a9e1b5b59e511af4c25583da0b668967334ce8d4569aecf9e5957",
+      "app/document_extract.py": "71b0b8e06875960a800956629b1183cc4b26f434f8e43677786fd5367eda0e58",
       "app/inventory.py": "499d53a2bf892b709e25c00c6348a3ba8bd93e044dfb4074380ca1dca73d0180",
       "app/builder_hub.py": "9ef479fc202beed16572429341651f3b563ff93b41cfef06d4c2ed4d8db91b0d",
-      "app/static/document_import.js": "3848c1acde08165da6ccfb893ae092f753171e128900d9cbae26392db9b2b920",
-      "app/static/document_import.css": "fc67c7b2bb3cdb645afbac13e82d54b95aa684a485f414c0c17e15247f81672a",
+      "app/static/document_import.js": "199a96c8cd7db6665ac8a5eb3b575c5021875732ef1c09b7e132ccf0f0c40559",
+      "app/static/document_import.css": "1987719c3d03fc39aa626da057bbaf9a5488a406ff07cb1804f7c7caa12ef37c",
       "app/static/setup_builders.js": "0b1ce5b1395d5009a4c7821e5f91dad2ae6aa20d2ea2e1ba3680315606c73028",
-      "app/static/fieldwork.js": "368c8a44a547643353c172c907b7fb9690ee29b833d602388898e40909ed6007",
-      "app/static/inventory_workspace.js": "0e60b665a3bdced1a21ba0ff3d7ff0c71a586c866faecdf37ca804aa650b8484",
-      "app/static/verification.js": "04cd77a36c0b6c0ce9eb5bcfdf53e21f255acffd91fc57f070213ae6fc4c9649",
-      "app/static/task_workspace.js": "eca13368e44300648ef2fedb14c483d85f39d7e3a0f6ce638c16a931155e477e",
-      "app/static/browser_workspace.js": "565d7009e1786be630b482c6d7d9a6d7c61f4d90b17c0e0069865146483f7a75",
-      "app/static/equipment_workspace_ui79.css": "6179d3d57d16bc4f133820310e317b42e28e128577dde2d5f4f4c28391a97815",
-      "app/static/work_execution_ui80.css": "2e15aa54a3ccf468a1ad1cfae6339425d5e30e3714fc8da3ba1596a0c475cc1f",
-      "app/static/index.html": "aaabbc26ae2a07ff41859e4df6205b811f38714b8e85ad9a44a5aa37c47d0b47",
-      "app/static/sw.js": "77ba998155c15e95c64106634b3af2483c7f5439f5b4f1d9579e2babfb6c223b"
+      "app/static/index.html": "c855d1fc2eab5e6c789a42488f5c129b4c83699c10b94cacfb63496886ae4c11",
+      "app/static/sw.js": "82b7797fb061d97c7923ce3ae72f275f3859a8e3b426f39bcd9fece303986442"
     },
     "served_asset_hashes": {
-      "app/static/task_workspace.js": "eca13368e44300648ef2fedb14c483d85f39d7e3a0f6ce638c16a931155e477e",
-      "app/static/document_import.css": "fc67c7b2bb3cdb645afbac13e82d54b95aa684a485f414c0c17e15247f81672a",
-      "app/static/equipment_workspace_ui79.css": "6179d3d57d16bc4f133820310e317b42e28e128577dde2d5f4f4c28391a97815",
-      "app/static/work_execution_ui80.css": "2e15aa54a3ccf468a1ad1cfae6339425d5e30e3714fc8da3ba1596a0c475cc1f",
-      "app/static/inventory_workspace.js": "0e60b665a3bdced1a21ba0ff3d7ff0c71a586c866faecdf37ca804aa650b8484",
-      "app/static/fieldwork.js": "368c8a44a547643353c172c907b7fb9690ee29b833d602388898e40909ed6007",
-      "app/static/verification.js": "04cd77a36c0b6c0ce9eb5bcfdf53e21f255acffd91fc57f070213ae6fc4c9649",
-      "app/static/document_import.js": "3848c1acde08165da6ccfb893ae092f753171e128900d9cbae26392db9b2b920",
-      "app/static/setup_builders.js": "0b1ce5b1395d5009a4c7821e5f91dad2ae6aa20d2ea2e1ba3680315606c73028",
-      "app/static/browser_workspace.js": "565d7009e1786be630b482c6d7d9a6d7c61f4d90b17c0e0069865146483f7a75"
+      "app/static/document_import.css": "1987719c3d03fc39aa626da057bbaf9a5488a406ff07cb1804f7c7caa12ef37c",
+      "app/static/document_import.js": "199a96c8cd7db6665ac8a5eb3b575c5021875732ef1c09b7e132ccf0f0c40559",
+      "app/static/setup_builders.js": "0b1ce5b1395d5009a4c7821e5f91dad2ae6aa20d2ea2e1ba3680315606c73028"
     },
-    "shipping_example": {
-      "source_sha256": "243fa340992f6adc6b8776cbaf9520972e27d61bd82dfc6a3374a6525184e755",
-      "source_bytes": 67200,
-      "records": 220,
-      "locations": 4,
-      "expected_quantity_sum": 465,
-      "unknown_expected_quantities": 11,
-      "summary_included": false,
-      "verification_created": false
-    },
-    "visual_acceptance": "Expanded chooser, collapsed sheet totals and blocked/conflict states reviewed at desktop and narrow mobile widths.",
+    "visual_acceptance": "Collapsed/expanded source review, located points, editable structures and toolbox source notes checked at desktop and narrow phone widths.",
     "limitations": [
       "Service-worker registration and WebSockets are suppressed.",
       "No production, Render, live email, physical camera, Windows display or worker-upgrade acceptance.",
-      "The shipping workbook is exercised only when WAVELINK_IMPORT_SHIPPING_EXAMPLE is provided; otherwise only disposable literal XLSX fixtures are used."
-    ]
+      "Serialized draft rehydration is exercised through a transparently captured live form and a real Import-as repaint; the product has no end-user builder reload/restore workflow.",
+      "Recognition is a bounded advisory from original extraction, not a guarantee that every document can be converted."
+    ],
+    "retained_inventory_regression": {
+      "checks_passed": 90,
+      "unexpected_errors": 0,
+      "screenshots": 54,
+      "widths": [
+        1440,
+        390,
+        320
+      ],
+      "harness": "tests/browser_import_row_selection_ui105.py",
+      "harness_sha256": "1104b7c35909f401cecd7699d05039eeb71f19b467bb03ebd0b8e637160a1e47",
+      "report_sha256": "1bb78f8c1f9a3882d00196618f72acc50774fa9a80593b9d586927ad93ad1dcb",
+      "source_hashes": {
+        "app/document_import.py": "48c971dc11be923fd9c98ec3b078974dfef009f90bcaec885e8e9078f10d3643",
+        "app/inventory.py": "499d53a2bf892b709e25c00c6348a3ba8bd93e044dfb4074380ca1dca73d0180",
+        "app/builder_hub.py": "9ef479fc202beed16572429341651f3b563ff93b41cfef06d4c2ed4d8db91b0d",
+        "app/static/document_import.js": "199a96c8cd7db6665ac8a5eb3b575c5021875732ef1c09b7e132ccf0f0c40559",
+        "app/static/document_import.css": "1987719c3d03fc39aa626da057bbaf9a5488a406ff07cb1804f7c7caa12ef37c",
+        "app/static/setup_builders.js": "0b1ce5b1395d5009a4c7821e5f91dad2ae6aa20d2ea2e1ba3680315606c73028",
+        "app/static/fieldwork.js": "368c8a44a547643353c172c907b7fb9690ee29b833d602388898e40909ed6007",
+        "app/static/inventory_workspace.js": "0e60b665a3bdced1a21ba0ff3d7ff0c71a586c866faecdf37ca804aa650b8484",
+        "app/static/verification.js": "04cd77a36c0b6c0ce9eb5bcfdf53e21f255acffd91fc57f070213ae6fc4c9649",
+        "app/static/task_workspace.js": "eca13368e44300648ef2fedb14c483d85f39d7e3a0f6ce638c16a931155e477e",
+        "app/static/browser_workspace.js": "565d7009e1786be630b482c6d7d9a6d7c61f4d90b17c0e0069865146483f7a75",
+        "app/static/equipment_workspace_ui79.css": "6179d3d57d16bc4f133820310e317b42e28e128577dde2d5f4f4c28391a97815",
+        "app/static/work_execution_ui80.css": "2e15aa54a3ccf468a1ad1cfae6339425d5e30e3714fc8da3ba1596a0c475cc1f",
+        "app/static/index.html": "c855d1fc2eab5e6c789a42488f5c129b4c83699c10b94cacfb63496886ae4c11",
+        "app/static/sw.js": "82b7797fb061d97c7923ce3ae72f275f3859a8e3b426f39bcd9fece303986442"
+      },
+      "served_asset_hashes": {
+        "app/static/task_workspace.js": "eca13368e44300648ef2fedb14c483d85f39d7e3a0f6ce638c16a931155e477e",
+        "app/static/document_import.css": "1987719c3d03fc39aa626da057bbaf9a5488a406ff07cb1804f7c7caa12ef37c",
+        "app/static/equipment_workspace_ui79.css": "6179d3d57d16bc4f133820310e317b42e28e128577dde2d5f4f4c28391a97815",
+        "app/static/work_execution_ui80.css": "2e15aa54a3ccf468a1ad1cfae6339425d5e30e3714fc8da3ba1596a0c475cc1f",
+        "app/static/inventory_workspace.js": "0e60b665a3bdced1a21ba0ff3d7ff0c71a586c866faecdf37ca804aa650b8484",
+        "app/static/fieldwork.js": "368c8a44a547643353c172c907b7fb9690ee29b833d602388898e40909ed6007",
+        "app/static/verification.js": "04cd77a36c0b6c0ce9eb5bcfdf53e21f255acffd91fc57f070213ae6fc4c9649",
+        "app/static/document_import.js": "199a96c8cd7db6665ac8a5eb3b575c5021875732ef1c09b7e132ccf0f0c40559",
+        "app/static/setup_builders.js": "0b1ce5b1395d5009a4c7821e5f91dad2ae6aa20d2ea2e1ba3680315606c73028",
+        "app/static/browser_workspace.js": "565d7009e1786be630b482c6d7d9a6d7c61f4d90b17c0e0069865146483f7a75"
+      },
+      "overlapping_runs_not_added_to_blanket_total": true
+    }
   },
   "syntax_and_preservation": {
-    "python": 797,
-    "javascript": 126,
-    "errors": [],
+    "art_resource_set_sha256": "02830a28bea9a816c457d04fe55bec9edb1245ef34b9597032c3809f0eab8fcb",
     "art_unchanged": 72,
-    "runtime_resources": 2132,
-    "unchanged_resources": 2120,
-    "manifest_sha256": "d79cfed733d10b84a1ba3842e57dfab69cbaa1a6d27bbe42155c442d6bdfb6b0"
+    "data_reset": false,
+    "errors": [],
+    "inherited_hosting_vendor_dependency_resources_unchanged": 24,
+    "inherited_repository_boundaries": [
+      "deploy/apply_ui100.py",
+      "deploy/apply_ui101.py",
+      "deploy/apply_ui102.py",
+      "deploy/apply_ui103.py",
+      "deploy/apply_ui104.py",
+      "deploy/apply_ui105.py",
+      "deploy/apply_ui93.py",
+      "deploy/apply_ui94.py",
+      "deploy/apply_ui95.py",
+      "deploy/apply_ui96.py",
+      "deploy/apply_ui97.py",
+      "deploy/apply_ui99.py",
+      "deploy/company_runtime.py",
+      "deploy/entrypoint.py",
+      "deploy/extract_source.py",
+      "deploy/nginx_config.py",
+      "requirements.lock",
+      "vendor/FICTIONAL_DEMO.ajproject",
+      "vendor/source.part001",
+      "vendor/source.part002",
+      "vendor/source.part003",
+      "vendor/source.part004",
+      "vendor/source.part005",
+      "vendor/source_parts.json"
+    ],
+    "javascript": 127,
+    "live_service_changes": false,
+    "manifest_sha256": "33061d55bc682ce98bf528cd5e13681e78acb2be48dad981d2e91b081144d591",
+    "parent_manifest_sha256": "d79cfed733d10b84a1ba3842e57dfab69cbaa1a6d27bbe42155c442d6bdfb6b0",
+    "parent_runtime_hashes_verified": 2132,
+    "preserved_runtime_boundaries": [
+      "app/accounts.py",
+      "app/email_alerts.py",
+      "app/password_recovery.py",
+      "app/membership_mail.py",
+      "app/company_membership.py",
+      "app/account_security.py",
+      "app/static/app.js",
+      "app/static/browser_workspace.js",
+      "app/static/save_status.js",
+      "app/static/save_status_ui.js",
+      "app/document_extract.py",
+      "app/static/log_package_worker.js",
+      "app/builder_hub.py",
+      "app/verification_tools.py",
+      "app/inventory.py"
+    ],
+    "preserved_runtime_boundary_sha256": {
+      "app/account_security.py": "f4fc238347c63aafba2525c64c62c50ce62c045b2a7a56f380667360c78dee86",
+      "app/accounts.py": "bbadba94afe1cf9f0ae87db31d1d441ff029a571994626e91fd1b8306a3b11f4",
+      "app/builder_hub.py": "9ef479fc202beed16572429341651f3b563ff93b41cfef06d4c2ed4d8db91b0d",
+      "app/company_membership.py": "49f866a8c43b234f70bcb743b3c28b4dc9fb0fdf476a74e8f413433322187a48",
+      "app/document_extract.py": "71b0b8e06875960a800956629b1183cc4b26f434f8e43677786fd5367eda0e58",
+      "app/email_alerts.py": "d78da5f0db62bb64582262f730d68a07ecb8a572792edcf9a92c8eecf232cdae",
+      "app/inventory.py": "499d53a2bf892b709e25c00c6348a3ba8bd93e044dfb4074380ca1dca73d0180",
+      "app/membership_mail.py": "89fac5ff5cc0786a7623c198342fdba4656869f025416fe82be7052181d66262",
+      "app/password_recovery.py": "f821c9cec74405c7244e26daed47208c63e4ea6de5ff646cddc94d2419a86dce",
+      "app/static/app.js": "e3bda50042462e365c7f71de03da0e223c744e261d572e59327217afd6849974",
+      "app/static/browser_workspace.js": "565d7009e1786be630b482c6d7d9a6d7c61f4d90b17c0e0069865146483f7a75",
+      "app/static/log_package_worker.js": "42f690efc88b0ad3fb9bb421ef5184da601fbb27d65e948aa363957ebcad71bf",
+      "app/static/save_status.js": "da539add2d6441c93cb7ed465956f2ad8d27bec81fe22b1646c739249c431d5f",
+      "app/static/save_status_ui.js": "901e4e8278e14884cd83e730a4dd1f1b907ab46eb7e6ef1d91c2df1827b87892",
+      "app/verification_tools.py": "eccef09701ba4d8ea1319662fdb5b6d2a031553b14bd66482dc40a77f57979dc"
+    },
+    "python": 802,
+    "python_syntax_warnings": 2,
+    "repository_boundary_sha256": {
+      "deploy/apply_ui100.py": "08f43c04862fa2876af58f67cb7d5353d7871b24f120e7abab57ac6b8a8985c0",
+      "deploy/apply_ui101.py": "da0b565a5fd0801b3354fc653d31ac79b6bc4b22f4c2944d8fd1dafa7ad3017b",
+      "deploy/apply_ui102.py": "34e064721c36508c48b32fcc2772d4e2bbd744f39c565a0f41b67a7bb7dea390",
+      "deploy/apply_ui103.py": "75559a04bfaae1748af53c4dc0bf92585f5b1b8442978b9fe79fdb48a41598b2",
+      "deploy/apply_ui104.py": "4c6f534a99c418728de825dc81e803edcbe57a49d0925fdfc58abacb1226bdd9",
+      "deploy/apply_ui105.py": "5c50826395169963bad0f273af5b8f5c5bf3c4326cf654ff825be5f27fbdb708",
+      "deploy/apply_ui93.py": "b864c3ef24a53e23cfd8dd627178968eea0954cb7c126f4049bc639827fa7b71",
+      "deploy/apply_ui94.py": "8eab555681b14f1ed7ef6e27f0974525cda905cfd342813fce035ea7324e4c0e",
+      "deploy/apply_ui95.py": "48ac16642fdd1bfcfcfa52f71e1fe6b336ed227739d7ea1f8ab229d3398c7137",
+      "deploy/apply_ui96.py": "3837b45575b4fc926e9f2ee36892039e66cd28c672b3409876083f830515fd88",
+      "deploy/apply_ui97.py": "08a37e450635e46f01bf753172818e1580b06e1d4195a72198cf75d9bb82dd60",
+      "deploy/apply_ui99.py": "6d9e3f9761b0f51b66a375a2867e5e92dd6e98c3940d8b6a30aabe0245d6731f",
+      "deploy/company_runtime.py": "c61cae1e086549e9f0bb94eaef24f47b0a923a6bd85ea94459486c56fc82bc34",
+      "deploy/entrypoint.py": "f754d4db367983a75473f1d525183b618a25c265837a317df66ffabaf8f4c1e2",
+      "deploy/extract_source.py": "57550f076fe6474523d77ecb9fc5b119c0a183f0f6a45be3361c61de0c381fc1",
+      "deploy/nginx_config.py": "d6a59061002191d7d4049078529d772151e8c8c44d9e5be90aac66fad8c9ac40",
+      "requirements.lock": "6c510bc4ac5a9d348dc4c029985a6327304e6ee68af0315f433bd6ef4c3642a2",
+      "vendor/FICTIONAL_DEMO.ajproject": "6a406262adb2fc593cdc6dbc620f591bb79eca28d93f3735f58b66a0a03aa702",
+      "vendor/source.part001": "b568934581bc6ae06da601368352788083b95d1c77cad15f00b15df5e0ddc018",
+      "vendor/source.part002": "3594229b220ce2f7b39ed87ccab17d6b0c2c5583a18e6960cddd8725fb1db76b",
+      "vendor/source.part003": "b51ac5da6100f5cf372683130318ad38a438cd958b1821cf6c2d6fdb486d84ad",
+      "vendor/source.part004": "458d0b06b36d08c940289f4229040fac81d0dbe55b75707636541502aa702a4f",
+      "vendor/source.part005": "99a008607d60003ce74dba0a8101d1638938af4c99433ff5f72f8735a5350018",
+      "vendor/source_parts.json": "cc8dc3918773ef4cc6416a458ff79f25f82cb6a4237aa85cec6ab4f7695e2bc5"
+    },
+    "repository_javascript": 1,
+    "repository_python": 56,
+    "runtime_hashes_verified": 2135,
+    "runtime_javascript": 126,
+    "runtime_python": 746,
+    "runtime_resources": 2135,
+    "source_bytes_executed": false,
+    "sql_definition_count_unchanged": 31,
+    "sql_definition_resources": [
+      "app/access.py",
+      "app/account_security.py",
+      "app/accounts.py",
+      "app/action_center.py",
+      "app/assets.py",
+      "app/checklist_library.py",
+      "app/checklist_migrations.py",
+      "app/company_branding.py",
+      "app/departments.py",
+      "app/document_details.py",
+      "app/document_invitations.py",
+      "app/email_alerts.py",
+      "app/fault_reports.py",
+      "app/fieldwork_common.py",
+      "app/fleet.py",
+      "app/fleet_access.py",
+      "app/handovers.py",
+      "app/log_assignments.py",
+      "app/logs.py",
+      "app/membership_policy.py",
+      "app/original_documents.py",
+      "app/original_folders.py",
+      "app/password_recovery.py",
+      "app/photo_evidence.py",
+      "app/qshe_reports.py",
+      "app/recognition.py",
+      "app/store.py",
+      "app/task_access.py",
+      "app/type_management.py",
+      "app/user_lifecycle.py",
+      "app/vessel_logs.py"
+    ],
+    "sql_definition_resources_unchanged": 31,
+    "sql_definition_set_sha256": "2fe41809a24c209177a1d4f13c190b41bea9fa7547e68583e3fa2a4c3ab93fb1",
+    "status": "PASS",
+    "syntax_log_bytes": 83606,
+    "syntax_log_file": "syntax-checks.log",
+    "syntax_log_sha256": "502d2da8d365389fa6cde5d25ee952542f838ba6cb39e5ff053b58e98966b846",
+    "syntax_paths_sha256": "f2b6a2d5ba1738d975a21789e772854e7693276b32181691944c7c253a8eaf99",
+    "unchanged_resources": 2119,
+    "variant": "workspace-ui106-document-recognition-review-2026-10-10",
+    "warnings": [
+      {
+        "category": "SyntaxWarning",
+        "filename": "/workspace/scratch/9143aa0c5f71/ui106/runtime/tests/ui22_review/browser_checks.py",
+        "inherited_unchanged_source": true,
+        "line": 80,
+        "message": "invalid escape sequence '\\d'"
+      },
+      {
+        "category": "SyntaxWarning",
+        "filename": "/workspace/scratch/9143aa0c5f71/ui106/runtime/tests/ui23_notes/browser_checks.py",
+        "inherited_unchanged_source": true,
+        "line": 109,
+        "message": "invalid escape sequence '\\d'"
+      }
+    ]
   },
   "remote_actions": {
-    "main_verified": {
-      "remote_commit": "7e84154f8dbee41a195852ff9f0ad1bc1ef336dc",
-      "repository_files": 303,
-      "matches_saved_release": "UI103",
-      "different": [],
-      "extra": [],
-      "missing": [],
-      "truncated": false,
-      "local_parent": "Saved verified UI104 full repository, 309 files; includes unuploaded UI104 work"
-    },
-    "branch_attempted": "codex/ui105-inventory-row-selection-20261010",
-    "branch_creation": "GitHub API returned HTTP 403 Resource not accessible by integration",
+    "branch_attempted": "codex/ui106-document-recognition-review-20261010",
+    "parent_commit": "acb57a8265bbeac43b081e493b3a0f0ffb8a7cd6",
+    "branch_creation": "GitHub API returned HTTP 403: Resource not accessible by integration",
     "branch_created": false,
     "commit_created": false,
     "pull_request_created": false,
     "main_modified": false,
     "deployed": false,
-    "production_data_modified": false
+    "production_data_modified": false,
+    "fallback": "Complete reviewed repository, compact update and evidence ZIP delivery",
+    "main_verified": {
+      "main_commit": "acb57a8265bbeac43b081e493b3a0f0ffb8a7cd6",
+      "tree_sha": "e927b9e691d7eaafc3d9e1c921522146d4156d7c",
+      "truncated": false,
+      "remote_blobs": 315,
+      "delivered_ui105_repository_files": 315,
+      "different_files": [],
+      "extra_remote": [],
+      "missing_remote": [],
+      "verified_full_zip_sha256": "a0c665984914c21df41fffd638540c128be800ab6edc551734ac55b5f1beb39c"
+    }
   },
   "not_claimed": [
-    "Universal document recognition or automatic equipment-kit relationships.",
-    "A pass of every historical test: three inherited environment/obsolete diagnostics remain deselected.",
-    "Live Render deployment, production SMTP, physical camera, Windows display, actual service-worker upgrade, WebSocket transport or BFCache acceptance.",
-    "Automatic conflict removal, same-identity merging or fabricated original source rows.",
-    "A GitHub branch, commit or PR: the integration denied branch creation with HTTP 403."
+    "Universal recognition, automatic OCR or verification that an imported procedure is correct.",
+    "Source review points being automatically resolved or recomputed after manual edits.",
+    "Automatic equipment-kit hierarchy or merging repeated serial/part numbers.",
+    "A pass of every historical test; three inherited diagnostics remain deselected.",
+    "Actual product reload recovery: the browser exercises in-memory serialized captured-form restoration.",
+    "Live Render/SMTP, physical camera, Windows display, service-worker upgrade, WebSocket transport or BFCache acceptance.",
+    "A production deployment or main-branch merge."
   ]
 }

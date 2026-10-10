@@ -1,0 +1,960 @@
+{
+  "format": "wavelink-ui106-review-1",
+  "release": "UI106 \u2014 review document interpretation before import",
+  "core": "1.34.19",
+  "date": "2026-10-10",
+  "repository": "adriano5454-ai/wavelink",
+  "runtime": {
+    "variant": "workspace-ui106-document-recognition-review-2026-10-10",
+    "manifest_sha256": "33061d55bc682ce98bf528cd5e13681e78acb2be48dad981d2e91b081144d591",
+    "resources": 2135,
+    "overlay_resources": 16,
+    "parent_manifest_sha256": "d79cfed733d10b84a1ba3842e57dfab69cbaa1a6d27bbe42155c442d6bdfb6b0",
+    "local_parent_release": "UI105",
+    "local_parent_repository_files": 315,
+    "local_parent_git_commit": "acb57a8265bbeac43b081e493b3a0f0ffb8a7cd6",
+    "current_remote_release": "UI105",
+    "current_remote_repository_files": 315,
+    "target_repository_files": 321
+  },
+  "implemented": [
+    "Collapsed Review source interpretation panel explains uncertain classification, answers, stages, tools, unmapped content and extraction limits, with bounded original-source excerpts and honest page, sheet, row, line or extracted-block references.",
+    "Review points focus existing editable controls without changing approval. Whole-document and worksheet evidence remain separate; source interpretation remains an advisory about the original extraction after manual editing.",
+    "Recognizes explicit Sim/N\u00e3o and Pass/Fail answer labels, including printed N/A when present, accented Portuguese instruction/supervisor/declaration labels, and tool tables under explicit required-tools headings while retaining quantity and unit together.",
+    "Strong Check/Inspection item headers outrank incidental Date/Time history when suggesting a checklist; genuine activity logs retain logbook classification. Unsupported response columns remain visible for manual review rather than copying historical answers.",
+    "Toolbox imports offer an explicit Add instructions and tools to discussion action. It adds full retained source notes to the current edited outline, respects native prompt limits atomically and avoids duplicating identical existing source chunks.",
+    "Import type changes and source-note copying enforce busy, uncertain-save, departed-form and capability guards in action code. Actual edits invalidate approval; inspection and identical no-op copying preserve it.",
+    "Recognition evidence stays outside strict drafts and native save schemas. Existing inventory row selection, source coordinates, worksheet locations, SN/PN identities, Unknown quantities and all-or-nothing append protections remain included.",
+    "Import help and asset/cache versions are updated through UI106. Existing artwork, account/mail/browser core, database schema, vendor parts and dependencies are preserved."
+  ],
+  "source_examples": {
+    "report": "evidence/examples/UI106_EXAMPLE_REVIEW.json",
+    "report_sha256": "64a470ec571f9a469900b746e27ba7d401d9d89af2cec5d25c850389bdb3430c",
+    "evidence": {
+      "case_identity_sha256": "c5db20e0bc925f7ead86239845ce8fd3300ffa7ca845622aad0a798175a95f87",
+      "current_frozen_original_pdf_cases_passed": 7,
+      "current_frozen_unique_example_cases_passed": 34,
+      "errors": 0,
+      "examples": {
+        "choices_pass": {
+          "checks": 1,
+          "explicit_response_definition_retained": true,
+          "fixture": "Fictional printed response labels",
+          "interpretation_points": 0,
+          "operational_answers_blank": true,
+          "printed_choices": 2,
+          "review_read_only": true,
+          "selected_response_not_guessed": true,
+          "source_sha256": "2c7fbaf1734893cf759e1850566786413c25d07dc003883b7b0a034fd36a4a1b"
+        },
+        "choices_sim": {
+          "checks": 1,
+          "explicit_response_definition_retained": true,
+          "fixture": "Fictional printed response labels",
+          "interpretation_points": 0,
+          "operational_answers_blank": true,
+          "printed_choices": 3,
+          "review_read_only": true,
+          "selected_response_not_guessed": true,
+          "source_sha256": "1e777813de737e834e53e9e5488569b0799fe3ec814656137563a07836ed0747"
+        },
+        "choices_yes": {
+          "checks": 1,
+          "explicit_response_definition_retained": true,
+          "fixture": "Fictional printed response labels",
+          "interpretation_points": 0,
+          "operational_answers_blank": true,
+          "printed_choices": 3,
+          "review_read_only": true,
+          "selected_response_not_guessed": true,
+          "source_sha256": "e0d9405f0d28b2ca6fdc3a443587253f66acc2df06c01aba21b20c7d1fcc11d2"
+        },
+        "passive_widget_mutation": {
+          "fixture": "Fictional in-memory PDF geometry",
+          "operational_answers_blank": true,
+          "proposal_identical": true,
+          "source_geometry_unchanged": true,
+          "values_defaults_answers_signatures_ignored": true,
+          "widget_order_and_names_ignored": true,
+          "widgets": 9
+        },
+        "pdf_checklist": {
+          "answer_fields": 7,
+          "checks": 56,
+          "interpretation_points": 2,
+          "located_page_points": 2,
+          "no_worksheet_provenance_claim": true,
+          "operational_answers_blank": true,
+          "original_structure_retained": true,
+          "post_checks": 56,
+          "pre_checks": 55,
+          "real_pdf_page_and_printed_row_locations": true,
+          "reusable_destination": "checklist",
+          "review_read_only": true,
+          "section_item_counts": [
+            22,
+            27,
+            7
+          ],
+          "source_bytes": 147726,
+          "source_bytes_unchanged": true,
+          "source_pages": 4,
+          "source_sha256": "14a19fa9e545f5880bf42d327c1a01ee4607bbabf68ac458340e40800140a9ad",
+          "tools": 6
+        },
+        "pdf_maintenance": {
+          "answer_fields": 7,
+          "checks": 56,
+          "interpretation_points": 2,
+          "located_page_points": 2,
+          "no_worksheet_provenance_claim": true,
+          "operational_answers_blank": true,
+          "original_structure_retained": true,
+          "post_checks": 56,
+          "pre_checks": 55,
+          "real_pdf_page_and_printed_row_locations": true,
+          "reusable_destination": "maintenance",
+          "review_read_only": true,
+          "section_item_counts": [
+            22,
+            27,
+            7
+          ],
+          "source_bytes": 147726,
+          "source_bytes_unchanged": true,
+          "source_pages": 4,
+          "source_sha256": "14a19fa9e545f5880bf42d327c1a01ee4607bbabf68ac458340e40800140a9ad",
+          "tools": 6
+        },
+        "sparse_worksheet_checklist": {
+          "checks": 2,
+          "dense_row_numbers_not_claimed": true,
+          "fixture": "Fictional sparse workbook",
+          "historical_cell_ticks_not_answers": true,
+          "interpretation_points": 3,
+          "operational_answers_blank": true,
+          "original_coordinates_preserved": true,
+          "original_source_rows": [
+            2,
+            5,
+            11,
+            14
+          ],
+          "printed_before_after_stages_preserved": true,
+          "reusable_destination": "checklist",
+          "review_read_only": true,
+          "sheet_interpretation_points": 3,
+          "source_sha256": "bb5e8b05405f9863c12a254907d2f0056701fed8e0b816d93e9fc28695b6add8"
+        },
+        "sparse_worksheet_maintenance": {
+          "checks": 2,
+          "dense_row_numbers_not_claimed": true,
+          "fixture": "Fictional sparse workbook",
+          "historical_cell_ticks_not_answers": true,
+          "interpretation_points": 3,
+          "operational_answers_blank": true,
+          "original_coordinates_preserved": true,
+          "original_source_rows": [
+            2,
+            5,
+            11,
+            14
+          ],
+          "printed_before_after_stages_preserved": true,
+          "reusable_destination": "maintenance",
+          "review_read_only": true,
+          "sheet_interpretation_points": 3,
+          "source_sha256": "bb5e8b05405f9863c12a254907d2f0056701fed8e0b816d93e9fc28695b6add8"
+        },
+        "toolbox_en": {
+          "accented_roles_recognized": false,
+          "deliberate_discussion_copy_preserved": true,
+          "fixture": "Fictional in-memory discussion",
+          "hidden_structure_not_automatically_projected": true,
+          "interpretation_points": 5,
+          "operational_answers_blank": true,
+          "recognized_tools": 2,
+          "reusable_declaration_and_supervisor": true,
+          "review_read_only": true,
+          "source_sha256": "949ab11b5022b9b191b09d8a9e8b24e2c8a40d0cd59de8dbece4e9b0cfa06468",
+          "source_signatures_and_dates_not_copied": true
+        },
+        "toolbox_pt": {
+          "accented_roles_recognized": true,
+          "deliberate_discussion_copy_preserved": true,
+          "fixture": "Fictional in-memory discussion",
+          "hidden_structure_not_automatically_projected": true,
+          "interpretation_points": 5,
+          "operational_answers_blank": true,
+          "recognized_tools": 2,
+          "reusable_declaration_and_supervisor": true,
+          "review_read_only": true,
+          "source_sha256": "fe471b64407e24049e7be8082d231dcb08a70c2a86700fdc1a43621208ed6dba",
+          "source_signatures_and_dates_not_copied": true
+        },
+        "uncertain_status_stage": {
+          "fixture": "Fictional uncertain Word source",
+          "historical_status_not_copied": true,
+          "interpretation_points": 3,
+          "operational_answers_blank": true,
+          "review_read_only": true,
+          "short_before_phrase_has_located_stage_review": true,
+          "source_block_and_extracted_row_locations_present": true,
+          "source_sha256": "b52319c8ff799fb866ff8d69974b44ce97065344e8006f8ab82b6f2f5c9f9d52",
+          "unproven_physical_table_row_not_claimed": true,
+          "unspecified_choices_not_guessed": true
+        },
+        "word_checklist": {
+          "answer_fields": 4,
+          "checks": 2,
+          "fixture": "Fictional in-memory Word tables",
+          "interpretation_points": 3,
+          "labeled_table_tools": 4,
+          "number_unit_retained": true,
+          "operational_answers_blank": true,
+          "printed_choices_retained": true,
+          "reusable_destination": "checklist",
+          "review_read_only": true,
+          "source_answers_signatures_not_copied": true,
+          "source_sha256": "228993f0ce52e9741074af2358474ada692b2f4ee03e780c9df501ff4b53002a"
+        },
+        "word_maintenance": {
+          "answer_fields": 4,
+          "checks": 2,
+          "fixture": "Fictional in-memory Word tables",
+          "interpretation_points": 3,
+          "labeled_table_tools": 4,
+          "number_unit_retained": true,
+          "operational_answers_blank": true,
+          "printed_choices_retained": true,
+          "reusable_destination": "maintenance",
+          "review_read_only": true,
+          "source_answers_signatures_not_copied": true,
+          "source_sha256": "228993f0ce52e9741074af2358474ada692b2f4ee03e780c9df501ff4b53002a"
+        }
+      },
+      "failed": 0,
+      "final_backend_confirmation": {
+        "app_sha256": {
+          "app/document_import.py": "48c971dc11be923fd9c98ec3b078974dfef009f90bcaec885e8e9078f10d3643",
+          "app/document_structure.py": "6f53a543303a9e1b5b59e511af4c25583da0b668967334ce8d4569aecf9e5957"
+        },
+        "evidence": "../backend/recognition-focused.xml",
+        "evidence_sha256": "ad0a9f93cfe7d694455ab0b6a5e2d0fcd1a2f3e03a54248390edb60c16e4cfd9",
+        "final_confirmation_no_duplicate_test_execution": true,
+        "full_run_passed": 139,
+        "original_new_case_names_exact": true,
+        "remaining_retained_example_case_scope": [
+          "UI104 private PDF2 plus generic procedures2 and toolbox1",
+          "UI105 private PDF2"
+        ],
+        "remaining_retained_example_cases": 7,
+        "remaining_retained_example_final_cases_passed": 7,
+        "remaining_retained_examples_current_frozen_confirmation": "final_broad_confirmation",
+        "remaining_retained_examples_earlier_green": true,
+        "selected_new_example_cases_passed": 13,
+        "selected_retained_structure_cases_passed": 14,
+        "synthetic_and_private_inputs_still_pass": true,
+        "test_sha256": "1223b58d90ec80201e37338aa5063e09583d8fd650421b28b0eeb94e3ed6766b"
+      },
+      "final_broad_confirmation": {
+        "app_and_test_pins_match_current_frozen_source": true,
+        "app_sha256": {
+          "app/document_import.py": "48c971dc11be923fd9c98ec3b078974dfef009f90bcaec885e8e9078f10d3643",
+          "app/document_structure.py": "6f53a543303a9e1b5b59e511af4c25583da0b668967334ce8d4569aecf9e5957"
+        },
+        "classname_prefixes_normalized": true,
+        "errors": 0,
+        "evidence": "../../functional-tests-final.xml",
+        "evidence_sha256": "dcfb7551eb2d29d932a95a9db56e7a4e02427ea9332924a3b5ab095e1147a8ab",
+        "exact_case_names_matched": true,
+        "failures": 0,
+        "frozen_manifest_sha256": "33061d55bc682ce98bf528cd5e13681e78acb2be48dad981d2e91b081144d591",
+        "full_run_passed": 770,
+        "log": "../../functional-tests-final.log",
+        "log_sha256": "806a79dc3a936ca9a1ed3601472512ba8e3093410adafa21b37c2a534af81ff5",
+        "new_case_identities": [
+          {
+            "case": "test_authorized_pdf_layout_keeps_existing_checks_and_honest_located_review_without_answers[checklist]",
+            "module": "test_import_recognition_examples_ui106"
+          },
+          {
+            "case": "test_authorized_pdf_layout_keeps_existing_checks_and_honest_located_review_without_answers[maintenance]",
+            "module": "test_import_recognition_examples_ui106"
+          },
+          {
+            "case": "test_explicit_printed_response_options_are_definitions_without_selected_values[Pass / Fail-expected2]",
+            "module": "test_import_recognition_examples_ui106"
+          },
+          {
+            "case": "test_explicit_printed_response_options_are_definitions_without_selected_values[Sim / N\\xe3o / N/A-expected1]",
+            "module": "test_import_recognition_examples_ui106"
+          },
+          {
+            "case": "test_explicit_printed_response_options_are_definitions_without_selected_values[Yes / No / N/A-expected0]",
+            "module": "test_import_recognition_examples_ui106"
+          },
+          {
+            "case": "test_pdf_widget_names_values_defaults_and_order_cannot_change_recognition",
+            "module": "test_import_recognition_examples_ui106"
+          },
+          {
+            "case": "test_sparse_worksheet_locations_reference_source_rows_and_not_compacted_positions[checklist]",
+            "module": "test_import_recognition_examples_ui106"
+          },
+          {
+            "case": "test_sparse_worksheet_locations_reference_source_rows_and_not_compacted_positions[maintenance]",
+            "module": "test_import_recognition_examples_ui106"
+          },
+          {
+            "case": "test_toolbox_source_roles_are_reusable_but_hidden_structure_needs_deliberate_copy[en]",
+            "module": "test_import_recognition_examples_ui106"
+          },
+          {
+            "case": "test_toolbox_source_roles_are_reusable_but_hidden_structure_needs_deliberate_copy[pt]",
+            "module": "test_import_recognition_examples_ui106"
+          },
+          {
+            "case": "test_unlabelled_status_and_short_before_phrase_have_honest_located_uncertainty",
+            "module": "test_import_recognition_examples_ui106"
+          },
+          {
+            "case": "test_word_labeled_tools_table_and_answer_definitions_preserve_blank_native_history[checklist]",
+            "module": "test_import_recognition_examples_ui106"
+          },
+          {
+            "case": "test_word_labeled_tools_table_and_answer_definitions_preserve_blank_native_history[maintenance]",
+            "module": "test_import_recognition_examples_ui106"
+          }
+        ],
+        "no_testcase_count_inflation": true,
+        "remaining_seven_case_identities": [
+          {
+            "case": "test_generic_procedure_instruction_tools_yes_no_and_before_after_keep_blank_answers[checklist]",
+            "module": "test_import_review_examples_ui104"
+          },
+          {
+            "case": "test_generic_procedure_instruction_tools_yes_no_and_before_after_keep_blank_answers[maintenance]",
+            "module": "test_import_review_examples_ui104"
+          },
+          {
+            "case": "test_generic_toolbox_supervisor_declaration_and_discussion_remain_reusable",
+            "module": "test_import_review_examples_ui104"
+          },
+          {
+            "case": "test_private_pdf_prepost_tools_groups_readings_and_source_guidance_are_retained[checklist]",
+            "module": "test_import_review_examples_ui104"
+          },
+          {
+            "case": "test_private_pdf_prepost_tools_groups_readings_and_source_guidance_are_retained[maintenance]",
+            "module": "test_import_review_examples_ui104"
+          },
+          {
+            "case": "test_ui105_inventory_selection_keeps_original_pdf_reusable_structure_unchanged[checklist]",
+            "module": "test_import_row_selection_examples_ui105"
+          },
+          {
+            "case": "test_ui105_inventory_selection_keeps_original_pdf_reusable_structure_unchanged[maintenance]",
+            "module": "test_import_row_selection_examples_ui105"
+          }
+        ],
+        "remaining_seven_retained_cases_passed": 7,
+        "retained_case_identities": [
+          {
+            "case": "test_legacy_table_text_is_not_duplicated",
+            "module": "test_document_structure_ui100"
+          },
+          {
+            "case": "test_pdf_geometry_groups_units_and_source_refs_ignore_widget_names_answers",
+            "module": "test_document_structure_ui100"
+          },
+          {
+            "case": "test_pdf_standalone_instructions_are_not_tools_or_answerable_tasks",
+            "module": "test_document_structure_ui100"
+          },
+          {
+            "case": "test_pdf_yes_no_columns_create_reviewable_choices",
+            "module": "test_document_structure_ui100"
+          },
+          {
+            "case": "test_quantity_and_safety_limit_are_not_operational_readings",
+            "module": "test_document_structure_ui100"
+          },
+          {
+            "case": "test_recognition_bounds_are_visible_not_silent",
+            "module": "test_document_structure_ui100"
+          },
+          {
+            "case": "test_sequential_phases_wrapping_and_instructions",
+            "module": "test_document_structure_ui100"
+          },
+          {
+            "case": "test_source_example_optional_private_fixture",
+            "module": "test_document_structure_ui100"
+          },
+          {
+            "case": "test_task_row_with_completed_cell_is_not_repeated_header",
+            "module": "test_document_structure_ui100"
+          },
+          {
+            "case": "test_toolbox_declaration_supervisor_and_questions_remain_text",
+            "module": "test_document_structure_ui100"
+          },
+          {
+            "case": "test_uncertain_prose_preserved_as_information_not_check",
+            "module": "test_document_structure_ui100"
+          },
+          {
+            "case": "test_unmarked_strong_tasks_are_not_a_title_or_prose",
+            "module": "test_document_structure_ui100"
+          },
+          {
+            "case": "test_word_roles_table_choices_and_answer_history_are_separate",
+            "module": "test_document_structure_ui100"
+          },
+          {
+            "case": "test_worksheet_preamble_and_tools_survive_before_table",
+            "module": "test_document_structure_ui100"
+          },
+          {
+            "case": "test_generic_procedure_instruction_tools_yes_no_and_before_after_keep_blank_answers[checklist]",
+            "module": "test_import_review_examples_ui104"
+          },
+          {
+            "case": "test_generic_procedure_instruction_tools_yes_no_and_before_after_keep_blank_answers[maintenance]",
+            "module": "test_import_review_examples_ui104"
+          },
+          {
+            "case": "test_generic_toolbox_supervisor_declaration_and_discussion_remain_reusable",
+            "module": "test_import_review_examples_ui104"
+          },
+          {
+            "case": "test_private_pdf_prepost_tools_groups_readings_and_source_guidance_are_retained[checklist]",
+            "module": "test_import_review_examples_ui104"
+          },
+          {
+            "case": "test_private_pdf_prepost_tools_groups_readings_and_source_guidance_are_retained[maintenance]",
+            "module": "test_import_review_examples_ui104"
+          },
+          {
+            "case": "test_ui105_inventory_selection_keeps_original_pdf_reusable_structure_unchanged[checklist]",
+            "module": "test_import_row_selection_examples_ui105"
+          },
+          {
+            "case": "test_ui105_inventory_selection_keeps_original_pdf_reusable_structure_unchanged[maintenance]",
+            "module": "test_import_row_selection_examples_ui105"
+          }
+        ],
+        "selected_case_identity_sha256": "4e19e3b8bfb214da70d9c59504425341a2338ff07dbcc33e09cb57261f080f39",
+        "selected_new_example_cases_passed": 13,
+        "selected_retained_example_cases_passed": 21,
+        "skips": 0,
+        "unique_selected_example_cases_passed": 34
+      },
+      "initial_source_sha256": {
+        "app/document_import.py": "d76e3f3cc14e51eea26dda1609d2e38df38af03e146bae20ff95377772f40887",
+        "app/document_structure.py": "ee842eb2f4385ff29bfbc953494b89b101bc4c1e9f69d45d511504d70963f715",
+        "tests/test_document_structure_ui100.py": "e7d357fa91628a7fc1212a60f042cb3feab756d64bdf5b44b99819f1b89a733c",
+        "tests/test_import_recognition_examples_ui106.py": "1223b58d90ec80201e37338aa5063e09583d8fd650421b28b0eeb94e3ed6766b",
+        "tests/test_import_review_examples_ui104.py": "08507b5df48e51de7507e34e552214390caac7009384d757fe8f696272941dd9",
+        "tests/test_import_row_selection_examples_ui105.py": "4993fc1bed56cc92896114d5382041bc4fc7cc8214fdf01f90d773f4fec586f9"
+      },
+      "new_cases": 13,
+      "notes": [
+        "These 34 selected cases overlap the broad regression suite; only 13 cases are new in UI106.",
+        "An initial test assertion wrongly required physical row coordinates for a Word table. The final case requires the honest extracted-row label and excludes unproven row/sheet coordinates. Initial diagnostics are outside final evidence.",
+        "A short unmarked Before phrase remains a proposed stage with a located review advisory. The report does not claim that ambiguous prose is always automatically classified correctly.",
+        "The optional original PDF is not embedded in this repository or evidence. PDF text areas are approximate, and diagnostics use real extracted page and printed-row locations.",
+        "Native toolbox schemas are unchanged; instructions and tools become native discussion prompts only after deliberate editing or the separately tested frontend copy control.",
+        "The backend final 139-case run re-executed all 13 unchanged new examples plus 14 retained source-structure cases. Its authentic XML separately confirms those cases at final app hashes. Seven other retained example cases were green in the earlier run and are included in the planned final broad regression.",
+        "The final frozen broad run passed 770 unique cases and authentically contains all 13 new plus 21 retained selected example cases, including the seven earlier-only retained cases. Exact case identities are matched after normalizing the runtime.tests versus tests prefix. Those 34 are a subset of the broad count, not extra tests, and no per-case evidence files were regenerated."
+      ],
+      "per_case_json_origin": "Earlier green 13-case run, pinned by initial_source_sha256; preserved honestly without claiming regeneration by the final backend confirmation.",
+      "proofs": {
+        "operational_answers_and_signatures_blank": true,
+        "private_source_bytes_not_packaged": true,
+        "private_source_excerpts_not_recorded": true,
+        "private_source_read_only": true,
+        "sidecar_item_targets_resolve_to_current_items": true,
+        "sidecar_outside_strict_draft": true,
+        "source_review_and_native_validation_read_only": true,
+        "unproven_physical_rows_not_claimed": true
+      },
+      "release": "UI106",
+      "retained_cases": 21,
+      "runs": [
+        {
+          "cases": 13,
+          "errors": 0,
+          "failed": 0,
+          "junit_file": "ui106-examples-focused.xml",
+          "junit_sha256": "7344d805ea895c5e4b0493a936508d7d9c57eed1e3a44f016cd49183ef9ddc75",
+          "log_file": "ui106-examples-focused.log",
+          "log_sha256": "39aa3b55224941eb9911586067ec1e2762167b4830acefc73c5123dace86abe2",
+          "passed": 13,
+          "phase": "Earlier green example review before final backend label/classification refinements",
+          "skipped": 0,
+          "source_sha256_at_run": {
+            "app/document_import.py": "d76e3f3cc14e51eea26dda1609d2e38df38af03e146bae20ff95377772f40887",
+            "app/document_structure.py": "ee842eb2f4385ff29bfbc953494b89b101bc4c1e9f69d45d511504d70963f715"
+          }
+        },
+        {
+          "cases": 21,
+          "errors": 0,
+          "failed": 0,
+          "junit_file": "ui106-examples-retained.xml",
+          "junit_sha256": "19847a42dfc8d040e3fe4a0d876d7fe99e094aa5f5c398fa10cc29822fe78276",
+          "log_file": "ui106-examples-retained.log",
+          "log_sha256": "ae17d01f6cc94e216532281402cafe8e7b5230c9aa308e51e4192b8b397c1ec7",
+          "passed": 21,
+          "phase": "Earlier green example review before final backend label/classification refinements",
+          "skipped": 0,
+          "source_sha256_at_run": {
+            "app/document_import.py": "d76e3f3cc14e51eea26dda1609d2e38df38af03e146bae20ff95377772f40887",
+            "app/document_structure.py": "ee842eb2f4385ff29bfbc953494b89b101bc4c1e9f69d45d511504d70963f715"
+          }
+        }
+      ],
+      "scope": [
+        "Reusable English and accented Portuguese toolbox roles",
+        "Deliberate toolbox native discussion copy boundary",
+        "Labeled tools in Word tables",
+        "Printed Yes/No/N/A, Sim/N\u00e3o/N/A and Pass/Fail definitions",
+        "Sparse Excel source row coordinates and before/after labels",
+        "Located unspecified-status and short-before-stage ambiguity",
+        "Authorized original PDF source/layout regression",
+        "Passive PDF widget mutation and deterministic review points"
+      ],
+      "skipped": 0,
+      "source_sha256": {
+        "app/document_import.py": "48c971dc11be923fd9c98ec3b078974dfef009f90bcaec885e8e9078f10d3643",
+        "app/document_structure.py": "6f53a543303a9e1b5b59e511af4c25583da0b668967334ce8d4569aecf9e5957",
+        "tests/test_document_structure_ui100.py": "e7d357fa91628a7fc1212a60f042cb3feab756d64bdf5b44b99819f1b89a733c",
+        "tests/test_import_recognition_examples_ui106.py": "1223b58d90ec80201e37338aa5063e09583d8fd650421b28b0eeb94e3ed6766b",
+        "tests/test_import_review_examples_ui104.py": "08507b5df48e51de7507e34e552214390caac7009384d757fe8f696272941dd9",
+        "tests/test_import_row_selection_examples_ui105.py": "4993fc1bed56cc92896114d5382041bc4fc7cc8214fdf01f90d773f4fec586f9"
+      },
+      "status": "PASS",
+      "unique_focused_cases": 34
+    },
+    "original_source_files_in_release": false,
+    "representative_results": {
+      "original_pdf": {
+        "checks": 56,
+        "tools": 6,
+        "reading_fields": 7,
+        "pre_checks": 55,
+        "post_checks": 56,
+        "destinations": [
+          "checklist",
+          "maintenance"
+        ],
+        "completed_answers_copied": false
+      },
+      "coverage": [
+        "English and Portuguese toolbox outlines",
+        "Word instructions and labelled tools",
+        "Sparse original Excel rows",
+        "Explicit answer choices and ambiguous Status labels",
+        "Located original PDF readings and widget-state invariance",
+        "Retained inventory worksheet/selection flows"
+      ]
+    },
+    "limitations": [
+      "Representative examples do not establish universal recognition or procedural correctness.",
+      "Original Excel rows are claimed only when supplied by extraction; DOCX table rows and text blocks are labelled as extracted positions.",
+      "PDF positions derive from extracted text, not OCR geometry. Source field names, ticks, answers, defaults and signatures never become operational state.",
+      "Short Before/After prose can still produce a stage proposal; a located advisory asks the user to check it. Standalone stock tables without an explicit tools heading remain source text."
+    ]
+  },
+  "tests": {
+    "unique_selected_pytest_passed": 783,
+    "functional_passed": 770,
+    "build_replay_passed": 13,
+    "unresolved_failures": 0,
+    "unresolved_skips": 0,
+    "node_checks_passed": 143,
+    "node_checks_by_script": {
+      "test_document_interpretation_ui106.js": 36,
+      "test_document_row_selection_ui105.js": 40,
+      "test_document_review_ui104.js": 32,
+      "test_document_import_ui103.js": 35
+    },
+    "browser_checks_passed": 43,
+    "retained_inventory_browser_checks_passed": 90,
+    "repeated_subsets_not_added": true,
+    "selection": {
+      "runtime": [
+        "tests/test_import_shipping_ui102.py",
+        "tests/test_verification_ui102.py",
+        "tests/test_document_sheets_ui101.py",
+        "tests/test_document_import_ui95.py",
+        "tests/test_document_import_ui100.py",
+        "tests/test_document_layout_ui100.py",
+        "tests/test_document_structure_ui100.py",
+        "tests/test_choice_readings_ui100.py",
+        "tests/ui53_inventory/test_changes.py",
+        "tests/ui53_inventory/test_review_regressions.py",
+        "tests/ui53_inventory/test_labels_categories.py",
+        "tests/ui47_tasks/test_updates.py",
+        "tests/ui47_tasks/test_retained_inventory.py",
+        "tests/task_checklists/test_checklists.py",
+        "tests/browser_templates/test_templates.py",
+        "tests/test_builder_log_ui101.py",
+        "tests/test_log_package_ui101.py",
+        "tests/test_password_recovery_ui97.py",
+        "tests/ui45_review/test_builder_baseline.py",
+        "tests/test_document_import_ui103.py",
+        "tests/test_inventory_import_ui103.py",
+        "tests/test_inventory_identity_views_ui103.py",
+        "tests/test_import_source_reconciliation_ui103.py",
+        "tests/asset_workspace/test_summary.py",
+        "tests/rebrand/test_inherited_review.py",
+        "tests/test_document_review_ui104.py",
+        "tests/test_import_review_examples_ui104.py",
+        "tests/test_document_row_selection_ui105.py",
+        "tests/test_import_row_selection_examples_ui105.py",
+        "tests/test_document_recognition_ui106.py",
+        "tests/test_import_recognition_examples_ui106.py"
+      ]
+    },
+    "functional_evidence": {
+      "junit": "functional-tests-final.xml",
+      "junit_sha256": "dcfb7551eb2d29d932a95a9db56e7a4e02427ea9332924a3b5ab095e1147a8ab",
+      "raw_log": "functional-tests-final.log",
+      "raw_log_sha256": "806a79dc3a936ca9a1ed3601472512ba8e3093410adafa21b37c2a534af81ff5",
+      "consolidated_junit": "functional-tests-complete.xml",
+      "consolidated_junit_sha256": "dcfb7551eb2d29d932a95a9db56e7a4e02427ea9332924a3b5ab095e1147a8ab",
+      "method": "One wholly passing selected broad run; consolidated XML is byte-identical. Focused repeated subsets are not added.",
+      "all_optional_original_fixtures_and_exact_UI96_parent_present": true
+    },
+    "frontend_evidence": {
+      "path": "evidence/frontend/UI106_FRONTEND_REVIEW.json",
+      "sha256": "04aadcca3bc1ff1b4df519809c4efba3ddf2fcc948a3eea3e835a04f84616e53",
+      "raw_stdout_logs_saved": true
+    },
+    "historical_diagnostic_exclusions": {
+      "count": 3,
+      "inherited_from_UI103_UI104_UI105": true,
+      "previously_reproduced_on_exact_UI102": true,
+      "cases": [
+        {
+          "case": "test_all_12_javascript_files_parse",
+          "reason": "Obsolete fixed requirement of 36 JavaScript resources."
+        },
+        {
+          "case": "test_uninstall_defaults_to_keep_all_project_data",
+          "reason": "Unchanged Tk fixture requires DISPLAY before reaching assertions."
+        },
+        {
+          "case": "test_refresh_preserves_cleared_deletion_selection",
+          "reason": "Unchanged Tk fixture requires DISPLAY before reaching assertions."
+        }
+      ],
+      "source_observation_write": "Legacy observations redirected outside runtime; all frozen resource hashes verified."
+    },
+    "full_historical_suite_claimed": false
+  },
+  "browser": {
+    "method": "Real Chromium with genuine IndexedDB and disposable fictional C01 HostedBoundary/company/core APIs. Screenshots contain only literal fictional fixtures.",
+    "checks_passed": 43,
+    "unexpected_errors": 0,
+    "widths": [
+      1440,
+      390,
+      320
+    ],
+    "screenshots": 21,
+    "harness": "tests/browser_document_recognition_ui106.py",
+    "harness_sha256": "460b22b857d4c8821bb122a4f03a6e8444879f6fd400c2adcdf7f4243034267d",
+    "report_sha256": "e4e78f87d4ac1d7c85cfda3bc5abdfb0d1833f60e8ab1f3d5dd5e26c034282b8",
+    "source_hashes": {
+      "app/document_import.py": "48c971dc11be923fd9c98ec3b078974dfef009f90bcaec885e8e9078f10d3643",
+      "app/document_structure.py": "6f53a543303a9e1b5b59e511af4c25583da0b668967334ce8d4569aecf9e5957",
+      "app/document_extract.py": "71b0b8e06875960a800956629b1183cc4b26f434f8e43677786fd5367eda0e58",
+      "app/inventory.py": "499d53a2bf892b709e25c00c6348a3ba8bd93e044dfb4074380ca1dca73d0180",
+      "app/builder_hub.py": "9ef479fc202beed16572429341651f3b563ff93b41cfef06d4c2ed4d8db91b0d",
+      "app/static/document_import.js": "199a96c8cd7db6665ac8a5eb3b575c5021875732ef1c09b7e132ccf0f0c40559",
+      "app/static/document_import.css": "1987719c3d03fc39aa626da057bbaf9a5488a406ff07cb1804f7c7caa12ef37c",
+      "app/static/setup_builders.js": "0b1ce5b1395d5009a4c7821e5f91dad2ae6aa20d2ea2e1ba3680315606c73028",
+      "app/static/index.html": "c855d1fc2eab5e6c789a42488f5c129b4c83699c10b94cacfb63496886ae4c11",
+      "app/static/sw.js": "82b7797fb061d97c7923ce3ae72f275f3859a8e3b426f39bcd9fece303986442"
+    },
+    "served_asset_hashes": {
+      "app/static/document_import.css": "1987719c3d03fc39aa626da057bbaf9a5488a406ff07cb1804f7c7caa12ef37c",
+      "app/static/document_import.js": "199a96c8cd7db6665ac8a5eb3b575c5021875732ef1c09b7e132ccf0f0c40559",
+      "app/static/setup_builders.js": "0b1ce5b1395d5009a4c7821e5f91dad2ae6aa20d2ea2e1ba3680315606c73028"
+    },
+    "visual_acceptance": "Collapsed/expanded source review, located points, editable structures and toolbox source notes checked at desktop and narrow phone widths.",
+    "limitations": [
+      "Service-worker registration and WebSockets are suppressed.",
+      "No production, Render, live email, physical camera, Windows display or worker-upgrade acceptance.",
+      "Serialized draft rehydration is exercised through a transparently captured live form and a real Import-as repaint; the product has no end-user builder reload/restore workflow.",
+      "Recognition is a bounded advisory from original extraction, not a guarantee that every document can be converted."
+    ],
+    "retained_inventory_regression": {
+      "checks_passed": 90,
+      "unexpected_errors": 0,
+      "screenshots": 54,
+      "widths": [
+        1440,
+        390,
+        320
+      ],
+      "harness": "tests/browser_import_row_selection_ui105.py",
+      "harness_sha256": "1104b7c35909f401cecd7699d05039eeb71f19b467bb03ebd0b8e637160a1e47",
+      "report_sha256": "1bb78f8c1f9a3882d00196618f72acc50774fa9a80593b9d586927ad93ad1dcb",
+      "source_hashes": {
+        "app/document_import.py": "48c971dc11be923fd9c98ec3b078974dfef009f90bcaec885e8e9078f10d3643",
+        "app/inventory.py": "499d53a2bf892b709e25c00c6348a3ba8bd93e044dfb4074380ca1dca73d0180",
+        "app/builder_hub.py": "9ef479fc202beed16572429341651f3b563ff93b41cfef06d4c2ed4d8db91b0d",
+        "app/static/document_import.js": "199a96c8cd7db6665ac8a5eb3b575c5021875732ef1c09b7e132ccf0f0c40559",
+        "app/static/document_import.css": "1987719c3d03fc39aa626da057bbaf9a5488a406ff07cb1804f7c7caa12ef37c",
+        "app/static/setup_builders.js": "0b1ce5b1395d5009a4c7821e5f91dad2ae6aa20d2ea2e1ba3680315606c73028",
+        "app/static/fieldwork.js": "368c8a44a547643353c172c907b7fb9690ee29b833d602388898e40909ed6007",
+        "app/static/inventory_workspace.js": "0e60b665a3bdced1a21ba0ff3d7ff0c71a586c866faecdf37ca804aa650b8484",
+        "app/static/verification.js": "04cd77a36c0b6c0ce9eb5bcfdf53e21f255acffd91fc57f070213ae6fc4c9649",
+        "app/static/task_workspace.js": "eca13368e44300648ef2fedb14c483d85f39d7e3a0f6ce638c16a931155e477e",
+        "app/static/browser_workspace.js": "565d7009e1786be630b482c6d7d9a6d7c61f4d90b17c0e0069865146483f7a75",
+        "app/static/equipment_workspace_ui79.css": "6179d3d57d16bc4f133820310e317b42e28e128577dde2d5f4f4c28391a97815",
+        "app/static/work_execution_ui80.css": "2e15aa54a3ccf468a1ad1cfae6339425d5e30e3714fc8da3ba1596a0c475cc1f",
+        "app/static/index.html": "c855d1fc2eab5e6c789a42488f5c129b4c83699c10b94cacfb63496886ae4c11",
+        "app/static/sw.js": "82b7797fb061d97c7923ce3ae72f275f3859a8e3b426f39bcd9fece303986442"
+      },
+      "served_asset_hashes": {
+        "app/static/task_workspace.js": "eca13368e44300648ef2fedb14c483d85f39d7e3a0f6ce638c16a931155e477e",
+        "app/static/document_import.css": "1987719c3d03fc39aa626da057bbaf9a5488a406ff07cb1804f7c7caa12ef37c",
+        "app/static/equipment_workspace_ui79.css": "6179d3d57d16bc4f133820310e317b42e28e128577dde2d5f4f4c28391a97815",
+        "app/static/work_execution_ui80.css": "2e15aa54a3ccf468a1ad1cfae6339425d5e30e3714fc8da3ba1596a0c475cc1f",
+        "app/static/inventory_workspace.js": "0e60b665a3bdced1a21ba0ff3d7ff0c71a586c866faecdf37ca804aa650b8484",
+        "app/static/fieldwork.js": "368c8a44a547643353c172c907b7fb9690ee29b833d602388898e40909ed6007",
+        "app/static/verification.js": "04cd77a36c0b6c0ce9eb5bcfdf53e21f255acffd91fc57f070213ae6fc4c9649",
+        "app/static/document_import.js": "199a96c8cd7db6665ac8a5eb3b575c5021875732ef1c09b7e132ccf0f0c40559",
+        "app/static/setup_builders.js": "0b1ce5b1395d5009a4c7821e5f91dad2ae6aa20d2ea2e1ba3680315606c73028",
+        "app/static/browser_workspace.js": "565d7009e1786be630b482c6d7d9a6d7c61f4d90b17c0e0069865146483f7a75"
+      },
+      "overlapping_runs_not_added_to_blanket_total": true
+    }
+  },
+  "syntax_and_preservation": {
+    "art_resource_set_sha256": "02830a28bea9a816c457d04fe55bec9edb1245ef34b9597032c3809f0eab8fcb",
+    "art_unchanged": 72,
+    "data_reset": false,
+    "errors": [],
+    "inherited_hosting_vendor_dependency_resources_unchanged": 24,
+    "inherited_repository_boundaries": [
+      "deploy/apply_ui100.py",
+      "deploy/apply_ui101.py",
+      "deploy/apply_ui102.py",
+      "deploy/apply_ui103.py",
+      "deploy/apply_ui104.py",
+      "deploy/apply_ui105.py",
+      "deploy/apply_ui93.py",
+      "deploy/apply_ui94.py",
+      "deploy/apply_ui95.py",
+      "deploy/apply_ui96.py",
+      "deploy/apply_ui97.py",
+      "deploy/apply_ui99.py",
+      "deploy/company_runtime.py",
+      "deploy/entrypoint.py",
+      "deploy/extract_source.py",
+      "deploy/nginx_config.py",
+      "requirements.lock",
+      "vendor/FICTIONAL_DEMO.ajproject",
+      "vendor/source.part001",
+      "vendor/source.part002",
+      "vendor/source.part003",
+      "vendor/source.part004",
+      "vendor/source.part005",
+      "vendor/source_parts.json"
+    ],
+    "javascript": 127,
+    "live_service_changes": false,
+    "manifest_sha256": "33061d55bc682ce98bf528cd5e13681e78acb2be48dad981d2e91b081144d591",
+    "parent_manifest_sha256": "d79cfed733d10b84a1ba3842e57dfab69cbaa1a6d27bbe42155c442d6bdfb6b0",
+    "parent_runtime_hashes_verified": 2132,
+    "preserved_runtime_boundaries": [
+      "app/accounts.py",
+      "app/email_alerts.py",
+      "app/password_recovery.py",
+      "app/membership_mail.py",
+      "app/company_membership.py",
+      "app/account_security.py",
+      "app/static/app.js",
+      "app/static/browser_workspace.js",
+      "app/static/save_status.js",
+      "app/static/save_status_ui.js",
+      "app/document_extract.py",
+      "app/static/log_package_worker.js",
+      "app/builder_hub.py",
+      "app/verification_tools.py",
+      "app/inventory.py"
+    ],
+    "preserved_runtime_boundary_sha256": {
+      "app/account_security.py": "f4fc238347c63aafba2525c64c62c50ce62c045b2a7a56f380667360c78dee86",
+      "app/accounts.py": "bbadba94afe1cf9f0ae87db31d1d441ff029a571994626e91fd1b8306a3b11f4",
+      "app/builder_hub.py": "9ef479fc202beed16572429341651f3b563ff93b41cfef06d4c2ed4d8db91b0d",
+      "app/company_membership.py": "49f866a8c43b234f70bcb743b3c28b4dc9fb0fdf476a74e8f413433322187a48",
+      "app/document_extract.py": "71b0b8e06875960a800956629b1183cc4b26f434f8e43677786fd5367eda0e58",
+      "app/email_alerts.py": "d78da5f0db62bb64582262f730d68a07ecb8a572792edcf9a92c8eecf232cdae",
+      "app/inventory.py": "499d53a2bf892b709e25c00c6348a3ba8bd93e044dfb4074380ca1dca73d0180",
+      "app/membership_mail.py": "89fac5ff5cc0786a7623c198342fdba4656869f025416fe82be7052181d66262",
+      "app/password_recovery.py": "f821c9cec74405c7244e26daed47208c63e4ea6de5ff646cddc94d2419a86dce",
+      "app/static/app.js": "e3bda50042462e365c7f71de03da0e223c744e261d572e59327217afd6849974",
+      "app/static/browser_workspace.js": "565d7009e1786be630b482c6d7d9a6d7c61f4d90b17c0e0069865146483f7a75",
+      "app/static/log_package_worker.js": "42f690efc88b0ad3fb9bb421ef5184da601fbb27d65e948aa363957ebcad71bf",
+      "app/static/save_status.js": "da539add2d6441c93cb7ed465956f2ad8d27bec81fe22b1646c739249c431d5f",
+      "app/static/save_status_ui.js": "901e4e8278e14884cd83e730a4dd1f1b907ab46eb7e6ef1d91c2df1827b87892",
+      "app/verification_tools.py": "eccef09701ba4d8ea1319662fdb5b6d2a031553b14bd66482dc40a77f57979dc"
+    },
+    "python": 802,
+    "python_syntax_warnings": 2,
+    "repository_boundary_sha256": {
+      "deploy/apply_ui100.py": "08f43c04862fa2876af58f67cb7d5353d7871b24f120e7abab57ac6b8a8985c0",
+      "deploy/apply_ui101.py": "da0b565a5fd0801b3354fc653d31ac79b6bc4b22f4c2944d8fd1dafa7ad3017b",
+      "deploy/apply_ui102.py": "34e064721c36508c48b32fcc2772d4e2bbd744f39c565a0f41b67a7bb7dea390",
+      "deploy/apply_ui103.py": "75559a04bfaae1748af53c4dc0bf92585f5b1b8442978b9fe79fdb48a41598b2",
+      "deploy/apply_ui104.py": "4c6f534a99c418728de825dc81e803edcbe57a49d0925fdfc58abacb1226bdd9",
+      "deploy/apply_ui105.py": "5c50826395169963bad0f273af5b8f5c5bf3c4326cf654ff825be5f27fbdb708",
+      "deploy/apply_ui93.py": "b864c3ef24a53e23cfd8dd627178968eea0954cb7c126f4049bc639827fa7b71",
+      "deploy/apply_ui94.py": "8eab555681b14f1ed7ef6e27f0974525cda905cfd342813fce035ea7324e4c0e",
+      "deploy/apply_ui95.py": "48ac16642fdd1bfcfcfa52f71e1fe6b336ed227739d7ea1f8ab229d3398c7137",
+      "deploy/apply_ui96.py": "3837b45575b4fc926e9f2ee36892039e66cd28c672b3409876083f830515fd88",
+      "deploy/apply_ui97.py": "08a37e450635e46f01bf753172818e1580b06e1d4195a72198cf75d9bb82dd60",
+      "deploy/apply_ui99.py": "6d9e3f9761b0f51b66a375a2867e5e92dd6e98c3940d8b6a30aabe0245d6731f",
+      "deploy/company_runtime.py": "c61cae1e086549e9f0bb94eaef24f47b0a923a6bd85ea94459486c56fc82bc34",
+      "deploy/entrypoint.py": "f754d4db367983a75473f1d525183b618a25c265837a317df66ffabaf8f4c1e2",
+      "deploy/extract_source.py": "57550f076fe6474523d77ecb9fc5b119c0a183f0f6a45be3361c61de0c381fc1",
+      "deploy/nginx_config.py": "d6a59061002191d7d4049078529d772151e8c8c44d9e5be90aac66fad8c9ac40",
+      "requirements.lock": "6c510bc4ac5a9d348dc4c029985a6327304e6ee68af0315f433bd6ef4c3642a2",
+      "vendor/FICTIONAL_DEMO.ajproject": "6a406262adb2fc593cdc6dbc620f591bb79eca28d93f3735f58b66a0a03aa702",
+      "vendor/source.part001": "b568934581bc6ae06da601368352788083b95d1c77cad15f00b15df5e0ddc018",
+      "vendor/source.part002": "3594229b220ce2f7b39ed87ccab17d6b0c2c5583a18e6960cddd8725fb1db76b",
+      "vendor/source.part003": "b51ac5da6100f5cf372683130318ad38a438cd958b1821cf6c2d6fdb486d84ad",
+      "vendor/source.part004": "458d0b06b36d08c940289f4229040fac81d0dbe55b75707636541502aa702a4f",
+      "vendor/source.part005": "99a008607d60003ce74dba0a8101d1638938af4c99433ff5f72f8735a5350018",
+      "vendor/source_parts.json": "cc8dc3918773ef4cc6416a458ff79f25f82cb6a4237aa85cec6ab4f7695e2bc5"
+    },
+    "repository_javascript": 1,
+    "repository_python": 56,
+    "runtime_hashes_verified": 2135,
+    "runtime_javascript": 126,
+    "runtime_python": 746,
+    "runtime_resources": 2135,
+    "source_bytes_executed": false,
+    "sql_definition_count_unchanged": 31,
+    "sql_definition_resources": [
+      "app/access.py",
+      "app/account_security.py",
+      "app/accounts.py",
+      "app/action_center.py",
+      "app/assets.py",
+      "app/checklist_library.py",
+      "app/checklist_migrations.py",
+      "app/company_branding.py",
+      "app/departments.py",
+      "app/document_details.py",
+      "app/document_invitations.py",
+      "app/email_alerts.py",
+      "app/fault_reports.py",
+      "app/fieldwork_common.py",
+      "app/fleet.py",
+      "app/fleet_access.py",
+      "app/handovers.py",
+      "app/log_assignments.py",
+      "app/logs.py",
+      "app/membership_policy.py",
+      "app/original_documents.py",
+      "app/original_folders.py",
+      "app/password_recovery.py",
+      "app/photo_evidence.py",
+      "app/qshe_reports.py",
+      "app/recognition.py",
+      "app/store.py",
+      "app/task_access.py",
+      "app/type_management.py",
+      "app/user_lifecycle.py",
+      "app/vessel_logs.py"
+    ],
+    "sql_definition_resources_unchanged": 31,
+    "sql_definition_set_sha256": "2fe41809a24c209177a1d4f13c190b41bea9fa7547e68583e3fa2a4c3ab93fb1",
+    "status": "PASS",
+    "syntax_log_bytes": 83606,
+    "syntax_log_file": "syntax-checks.log",
+    "syntax_log_sha256": "502d2da8d365389fa6cde5d25ee952542f838ba6cb39e5ff053b58e98966b846",
+    "syntax_paths_sha256": "f2b6a2d5ba1738d975a21789e772854e7693276b32181691944c7c253a8eaf99",
+    "unchanged_resources": 2119,
+    "variant": "workspace-ui106-document-recognition-review-2026-10-10",
+    "warnings": [
+      {
+        "category": "SyntaxWarning",
+        "filename": "/workspace/scratch/9143aa0c5f71/ui106/runtime/tests/ui22_review/browser_checks.py",
+        "inherited_unchanged_source": true,
+        "line": 80,
+        "message": "invalid escape sequence '\\d'"
+      },
+      {
+        "category": "SyntaxWarning",
+        "filename": "/workspace/scratch/9143aa0c5f71/ui106/runtime/tests/ui23_notes/browser_checks.py",
+        "inherited_unchanged_source": true,
+        "line": 109,
+        "message": "invalid escape sequence '\\d'"
+      }
+    ]
+  },
+  "independent_review": {
+    "method": "Read-only implementation and guide review; separate frozen-archive audit required before delivery.",
+    "material_findings_corrected": [
+      "Tool table roles and quantity/unit retention",
+      "Accented labels and printed two-choice correctness",
+      "Honest source coordinates and continuation overflow disclosure",
+      "Strong checklist header classification",
+      "Guarded import-type changes preserving uncertain retry receipts"
+    ],
+    "remaining_material_findings": []
+  },
+  "remote_actions": {
+    "branch_attempted": "codex/ui106-document-recognition-review-20261010",
+    "parent_commit": "acb57a8265bbeac43b081e493b3a0f0ffb8a7cd6",
+    "branch_creation": "GitHub API returned HTTP 403: Resource not accessible by integration",
+    "branch_created": false,
+    "commit_created": false,
+    "pull_request_created": false,
+    "main_modified": false,
+    "deployed": false,
+    "production_data_modified": false,
+    "fallback": "Complete reviewed repository, compact update and evidence ZIP delivery",
+    "main_verified": {
+      "main_commit": "acb57a8265bbeac43b081e493b3a0f0ffb8a7cd6",
+      "tree_sha": "e927b9e691d7eaafc3d9e1c921522146d4156d7c",
+      "truncated": false,
+      "remote_blobs": 315,
+      "delivered_ui105_repository_files": 315,
+      "different_files": [],
+      "extra_remote": [],
+      "missing_remote": [],
+      "verified_full_zip_sha256": "a0c665984914c21df41fffd638540c128be800ab6edc551734ac55b5f1beb39c"
+    }
+  },
+  "retained_boundaries": {
+    "sql_schema_migration": false,
+    "data_reset": false,
+    "browser_storage_clear": false,
+    "inventory_core_changed": false,
+    "mail_or_auth_backend_changes": false,
+    "approved_art_files_unchanged": 72,
+    "sql_definition_resources_unchanged": 31,
+    "dependencies_and_vendor_bytes_unchanged": true,
+    "existing_items_counts_task_scope_and_custody_replaced": false
+  },
+  "not_claimed": [
+    "Universal recognition, automatic OCR or verification that an imported procedure is correct.",
+    "Source review points being automatically resolved or recomputed after manual edits.",
+    "Automatic equipment-kit hierarchy or merging repeated serial/part numbers.",
+    "A pass of every historical test; three inherited diagnostics remain deselected.",
+    "Actual product reload recovery: the browser exercises in-memory serialized captured-form restoration.",
+    "Live Render/SMTP, physical camera, Windows display, service-worker upgrade, WebSocket transport or BFCache acceptance.",
+    "A production deployment or main-branch merge."
+  ]
+}
