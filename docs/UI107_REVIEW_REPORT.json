@@ -1,31 +1,399 @@
 {
-  "format": "wavelink-delivery-checks-1",
+  "format": "wavelink-ui107-review-1",
   "release": "UI107 \u2014 review imported boxes and their contents",
   "core": "1.34.19",
   "date": "2026-10-10",
-  "repository_files_target": 327,
-  "repository_files_parents": {
-    "UI106": 321
+  "repository": "adriano5454-ai/wavelink",
+  "runtime": {
+    "variant": "workspace-ui107-document-relationships-review-2026-10-10",
+    "manifest_sha256": "8de54f37d7b044473f171746164eab90bb0de9532eeca7551961e242edeb06cb",
+    "resources": 2138,
+    "overlay_resources": 16,
+    "parent_manifest_sha256": "33061d55bc682ce98bf528cd5e13681e78acb2be48dad981d2e91b081144d591",
+    "local_parent_release": "UI106",
+    "local_parent_repository_files": 321,
+    "local_parent_git_commit": "a7e5d4dfac358744599939b1a861309476a1ccc3",
+    "current_remote_release": "UI106",
+    "current_remote_repository_files": 321,
+    "target_repository_files": 327
   },
-  "repository_parent_commit": "a7e5d4dfac358744599939b1a861309476a1ccc3",
-  "repository_git_baseline": {
-    "release": "UI106",
-    "commit": "a7e5d4dfac358744599939b1a861309476a1ccc3",
-    "files": 321
+  "implemented": [
+    "Collapsed Boxes and contents editor per worksheet: inspect, search, filter and page mapped rows; edit existing asset/tag reference, box flag, parent reference and expected quantity fields without raw TSV editing.",
+    "Exact parent suggestions require a unique included explicitly marked box in the same worksheet. No relationship inference from names, indentation, styling, SN/PN or matching existing destination items.",
+    "Actual field edits preserve row order, full Notes, source coordinates and selection while invalidating approval. Read-only inspection and identical no-op edits preserve checked receipts. Busy, uncertain, departed, disposed, stale-kind and stale-sheet handlers cannot mutate old drafts.",
+    "Explicit English/Portuguese relationship headers identify Name-only inventory. Legacy Parent labels remain supported; ambiguous unqualified container identifiers show a manual-mapping notice and remain source Notes until deliberately mapped.",
+    "Located duplicate, missing, excluded, unmarked, cross-worksheet, self, cycle, depth and quantity errors require correction before save. Eight ancestor edges remain the native limit; Unknown and zero are preserved and box counts are never silently coerced.",
+    "Contained rows use the root box location before ledger review and native saving. Different reviewed mapped locations remain in full Notes as Mapped location before containment; overflow refuses rather than truncating retained evidence.",
+    "Safe append and identical retry preserve existing inventory items, count checks, task scope and custody. Existing 13-field draft/native schemas are retained; cross-worksheet and existing-destination box links are outside this import workflow.",
+    "Help explains relationship review and retained document/inventory workflows. Offline document, inventory and toolbox guidance is aligned inside the main content column. Import asset and cache versions advance to UI107."
+  ],
+  "source_examples": {
+    "report": "evidence/examples/UI107_EXAMPLE_REVIEW.json",
+    "report_sha256": "175d365b4486a25d451152c93f0aea0d9780739c4d3184f2d013c531cd96da4e",
+    "evidence": {
+      "case_identity_sha256": "abf32013cadfbb37f02aa14999abc2e7ada7cf161be4b42b0affbcd16a57f022",
+      "core": "1.34.19",
+      "counts_are_subset_of_broad_functional_run": true,
+      "errors": 0,
+      "evidence_kind": "Focused representative examples, without private workbook rows or original source attachments.",
+      "examples": {
+        "ambiguous_box_reference": {
+          "ambiguous_source_reference_retained": true,
+          "automatically_linked_records": 0,
+          "explicit_manual_links": 1,
+          "fixture": "Fictional in-memory XLSX",
+          "original_rows_preserved": true,
+          "records": 2
+        },
+        "ambiguous_container_id": {
+          "ambiguous_source_reference_retained": true,
+          "automatically_linked_records": 0,
+          "explicit_manual_links": 1,
+          "fixture": "Fictional in-memory XLSX",
+          "original_rows_preserved": true,
+          "records": 2
+        },
+        "ambiguous_container_reference": {
+          "ambiguous_source_reference_retained": true,
+          "automatically_linked_records": 0,
+          "explicit_manual_links": 1,
+          "fixture": "Fictional in-memory XLSX",
+          "original_rows_preserved": true,
+          "records": 2
+        },
+        "cross_sheet_reference_rejected": {
+          "cross_sheet_parent_inferred": false,
+          "error_source_row": 6,
+          "error_worksheet_located": true,
+          "fixture": "Fictional in-memory XLSX",
+          "repeated_serial_and_part_number_used_as_parent": false,
+          "review_read_only": true
+        },
+        "excluded_parent_restore": {
+          "excluded_parent_error_source_row": 6,
+          "fixture": "Fictional in-memory XLSX",
+          "full_records": 8,
+          "full_tsv_and_source_rows_retained": true,
+          "restored_records": 8,
+          "subset_original_positions": [
+            2,
+            3
+          ],
+          "subset_original_rows": [
+            9,
+            12
+          ],
+          "subset_records": 5,
+          "worksheet_error_located": true
+        },
+        "explicit_depth_boundary": {
+          "accepted_records": 9,
+          "error_worksheet_located": true,
+          "fixture": "Fictional in-memory XLSX",
+          "hierarchy_not_flattened": true,
+          "rejected_ancestors": 9,
+          "rejected_review_read_only": true,
+          "rejected_source_row": 7,
+          "reviewed_root_location_equal": true,
+          "supported_ancestors": 8
+        },
+        "invalid_cycle": {
+          "error_source_row": 6,
+          "error_worksheet_located": true,
+          "fixture": "Fictional in-memory XLSX",
+          "invalid_relationship": "cycle",
+          "original_coordinates_retained": true,
+          "partial_items_created": 0,
+          "partial_locations_created": 0,
+          "receipt_created": false
+        },
+        "invalid_duplicate": {
+          "error_source_row": 15,
+          "error_worksheet_located": true,
+          "fixture": "Fictional in-memory XLSX",
+          "invalid_relationship": "duplicate",
+          "original_coordinates_retained": true,
+          "partial_items_created": 0,
+          "partial_locations_created": 0,
+          "receipt_created": false
+        },
+        "invalid_multiple_boxes": {
+          "error_source_row": 9,
+          "error_worksheet_located": true,
+          "fixture": "Fictional in-memory XLSX",
+          "invalid_relationship": "multiple_boxes",
+          "original_coordinates_retained": true,
+          "partial_items_created": 0,
+          "partial_locations_created": 0,
+          "receipt_created": false
+        },
+        "original_flat_220": {
+          "automatically_inferred_boxes": 0,
+          "automatically_inferred_parent_links": 0,
+          "current_counts_created": 0,
+          "original_identifiers_quantities_and_coordinates_exact": true,
+          "records": 220,
+          "repeated_serial_records": 3,
+          "review_read_only": true,
+          "source_bytes_unchanged": true,
+          "source_counted_column_only_notes": true,
+          "source_sha256": "243fa340992f6adc6b8776cbaf9520972e27d61bd82dfc6a3374a6525184e755",
+          "unknown_quantities": 11,
+          "worksheet_count": 4
+        },
+        "original_flat_315": {
+          "automatically_inferred_boxes": 0,
+          "automatically_inferred_parent_links": 0,
+          "current_counts_created": 0,
+          "original_identifiers_quantities_and_coordinates_exact": true,
+          "records": 315,
+          "repeated_serial_records": 0,
+          "review_read_only": true,
+          "source_bytes_unchanged": true,
+          "source_counted_column_only_notes": true,
+          "source_sha256": "281f5ea2310997b269a3536753d164c57d62d1d426f17b885ba46ac51eef3337",
+          "unknown_quantities": 315,
+          "worksheet_count": 1
+        },
+        "relationship_append_preservation": {
+          "appended_boxes": 3,
+          "appended_records": 8,
+          "custody_unchanged": true,
+          "existing_box_reference_inferred": false,
+          "existing_count_rows_unchanged": true,
+          "existing_found_zero_count_unchanged": true,
+          "existing_item_body_unchanged": true,
+          "final_records": 9,
+          "fixture": "Fictional in-memory XLSX",
+          "identical_retry_single_addition": true,
+          "old_records": 1,
+          "private_new_items": 0,
+          "private_task_scope": 1,
+          "public_count_scope": 1,
+          "public_new_items": 8,
+          "repeated_identity_records_retained": true
+        },
+        "relationship_approval_and_receipt": {
+          "changed_parent_old_approval_status": 409,
+          "changed_parent_write_count": 0,
+          "fixture": "Fictional in-memory XLSX",
+          "identical_retry_receipts": 1,
+          "identical_retry_single_addition": true
+        },
+        "sparse_en_pt_native_roundtrip": {
+          "boxes": 3,
+          "child_before_parent_saved": true,
+          "differing_source_locations_retained": true,
+          "fixture": "Fictional in-memory XLSX",
+          "identical_retry_single_addition": true,
+          "known_zero_quantities": 2,
+          "original_rows_preserved": true,
+          "parent_links": 6,
+          "records": 8,
+          "repeated_part_number_records": 5,
+          "repeated_serial_records": 5,
+          "reviewed_locations_equal_saved_locations": true,
+          "same_reference_resolves_only_within_sheet": true,
+          "saved_count_sessions": 0,
+          "source_counted_values_only_notes": true,
+          "unknown_quantities": 2,
+          "worksheet_count": 2
+        }
+      },
+      "execution_source": "Actual production JavaScript mapper in a Node VM, authenticated in-process HTTP API and native SQLite services in temporary fictional projects.",
+      "failed": 0,
+      "final_broad_confirmation": {
+        "app_and_test_pins_match_current_frozen_source": true,
+        "app_sha256": {
+          "app/builder_hub.py": "9ef479fc202beed16572429341651f3b563ff93b41cfef06d4c2ed4d8db91b0d",
+          "app/builder_hub_api.py": "3fd1aa82f93a9118614ec868a95e418e897ba8ed554dd29b55a9ee0f7412a1f2",
+          "app/document_extract.py": "71b0b8e06875960a800956629b1183cc4b26f434f8e43677786fd5367eda0e58",
+          "app/document_import.py": "43e46772be9997a4713c20cc70e2926c3cffd3fe7cf034ba9ecb5a043960d449",
+          "app/document_structure.py": "6f53a543303a9e1b5b59e511af4c25583da0b668967334ce8d4569aecf9e5957",
+          "app/inventory.py": "499d53a2bf892b709e25c00c6348a3ba8bd93e044dfb4074380ca1dca73d0180",
+          "app/inventory_boxes.py": "0a7b64fea118ecf64c22593a2f9fe1daf9e954eaf028590cd0aa19fc9e2e1550",
+          "app/static/document_import.css": "82bd55645c90162b2b04e739fa795987979c18a358ed397ef4bac5a3782ad6a2",
+          "app/static/document_import.js": "92c5aef52797e2b8d8ebfc01d17cb52cbbce17d2cd93f4d502e9d485fab418f1"
+        },
+        "classname_prefixes_normalized": true,
+        "errors": 0,
+        "evidence": "../../functional-tests-final.xml",
+        "evidence_sha256": "6613c65f061f406de39929469a483155f0e1d319e12b0aecab74a6019283a486",
+        "exact_case_names_matched": true,
+        "failures": 0,
+        "frozen_manifest_sha256": "8de54f37d7b044473f171746164eab90bb0de9532eeca7551961e242edeb06cb",
+        "full_run_passed": 833,
+        "log": "../../functional-tests-final.log",
+        "log_sha256": "15fb80b401211127587fb9964203cd43ee3c7deaf5d7b787a959c8db69619881",
+        "new_case_identities": [
+          {
+            "case": "test_ambiguous_reference_headers_remain_evidence_until_user_maps_parent[Box reference]",
+            "module": "test_import_relationship_examples_ui107"
+          },
+          {
+            "case": "test_ambiguous_reference_headers_remain_evidence_until_user_maps_parent[Container ID]",
+            "module": "test_import_relationship_examples_ui107"
+          },
+          {
+            "case": "test_ambiguous_reference_headers_remain_evidence_until_user_maps_parent[Container reference]",
+            "module": "test_import_relationship_examples_ui107"
+          },
+          {
+            "case": "test_append_explicit_containment_preserves_old_checks_private_scope_and_custody",
+            "module": "test_import_relationship_examples_ui107"
+          },
+          {
+            "case": "test_cross_sheet_only_reference_is_not_resolved_by_matching_name_sn_pn_or_asset",
+            "module": "test_import_relationship_examples_ui107"
+          },
+          {
+            "case": "test_excluded_parent_is_located_and_restoration_keeps_full_tsv_original_coordinates",
+            "module": "test_import_relationship_examples_ui107"
+          },
+          {
+            "case": "test_explicit_eight_ancestor_boundary_and_ninth_ancestor_error_are_not_collapsed",
+            "module": "test_import_relationship_examples_ui107"
+          },
+          {
+            "case": "test_invalid_explicit_workbook_relationships_report_original_rows_before_writes[cycle-2-changes1-6]",
+            "module": "test_import_relationship_examples_ui107"
+          },
+          {
+            "case": "test_invalid_explicit_workbook_relationships_report_original_rows_before_writes[duplicate-4-changes0-15]",
+            "module": "test_import_relationship_examples_ui107"
+          },
+          {
+            "case": "test_invalid_explicit_workbook_relationships_report_original_rows_before_writes[multiple_boxes-2-changes2-9]",
+            "module": "test_import_relationship_examples_ui107"
+          },
+          {
+            "case": "test_original_flat_workbooks_keep_every_record_without_inferred_boxes_or_current_counts[path0-220-243fa340992f6adc6b8776cbaf9520972e27d61bd82dfc6a3374a6525184e755-11]",
+            "module": "test_import_relationship_examples_ui107"
+          },
+          {
+            "case": "test_original_flat_workbooks_keep_every_record_without_inferred_boxes_or_current_counts[path1-315-281f5ea2310997b269a3536753d164c57d62d1d426f17b885ba46ac51eef3337-315]",
+            "module": "test_import_relationship_examples_ui107"
+          },
+          {
+            "case": "test_relationship_changes_invalidate_approval_and_unchanged_retry_retains_one_receipt",
+            "module": "test_import_relationship_examples_ui107"
+          },
+          {
+            "case": "test_sparse_en_pt_child_before_parent_same_reference_is_local_and_saved_location_matches_review",
+            "module": "test_import_relationship_examples_ui107"
+          }
+        ],
+        "no_testcase_count_inflation": true,
+        "selected_case_identity_sha256": "fbc3f2680e883e6f7b64d9ddc405c82c6a5572b1beff647b7b03c01dfba8fb3b",
+        "selected_new_example_cases_passed": 14,
+        "skips": 0,
+        "unique_selected_example_cases_passed": 14
+      },
+      "finished_at_utc": "2026-10-10T08:01:41.461003+00:00",
+      "frozen_target_confirmation": {
+        "all_run_source_hashes_equal_frozen_manifest": true,
+        "critical_source_resources": 14,
+        "manifest_unchanged_during_run": true,
+        "run_after_freeze": true,
+        "runtime_manifest_sha256": "8de54f37d7b044473f171746164eab90bb0de9532eeca7551961e242edeb06cb",
+        "runtime_resources": 2138,
+        "runtime_variant": "workspace-ui107-document-relationships-review-2026-10-10"
+      },
+      "limitations": [
+        "Focused local examples; no production writes, deployment, live email, real service-worker/BFCache or Windows-installer acceptance.",
+        "No name/style/serial/part-number containment inference and no cross-worksheet or existing-destination parent lookup.",
+        "Original source workbooks remain private, read-only and unbundled."
+      ],
+      "passed": 14,
+      "release": "UI107",
+      "runs": [
+        {
+          "duration_seconds": 13.477,
+          "errors": 0,
+          "failed": 0,
+          "junit_file": "ui107-examples-final.xml",
+          "junit_sha256": "d08476f2878f203378b8d93d9e44e030856b9f95bfe6144c0bc662802225ea63",
+          "log_file": "ui107-examples-final.log",
+          "log_sha256": "f2fc5becfa56c32f26e05672f62168a070200c1a83aba9ba983ea93b6a0d5ff1",
+          "passed": 14,
+          "returncode": 0,
+          "skipped": 0,
+          "source_sha256_at_run": {
+            "app/builder_hub.py": "9ef479fc202beed16572429341651f3b563ff93b41cfef06d4c2ed4d8db91b0d",
+            "app/builder_hub_api.py": "3fd1aa82f93a9118614ec868a95e418e897ba8ed554dd29b55a9ee0f7412a1f2",
+            "app/document_extract.py": "71b0b8e06875960a800956629b1183cc4b26f434f8e43677786fd5367eda0e58",
+            "app/document_import.py": "43e46772be9997a4713c20cc70e2926c3cffd3fe7cf034ba9ecb5a043960d449",
+            "app/document_structure.py": "6f53a543303a9e1b5b59e511af4c25583da0b668967334ce8d4569aecf9e5957",
+            "app/inventory.py": "499d53a2bf892b709e25c00c6348a3ba8bd93e044dfb4074380ca1dca73d0180",
+            "app/inventory_boxes.py": "0a7b64fea118ecf64c22593a2f9fe1daf9e954eaf028590cd0aa19fc9e2e1550",
+            "app/static/document_import.css": "82bd55645c90162b2b04e739fa795987979c18a358ed397ef4bac5a3782ad6a2",
+            "app/static/document_import.js": "92c5aef52797e2b8d8ebfc01d17cb52cbbce17d2cd93f4d502e9d485fab418f1",
+            "tests/browser_admin/test_admin.py": "d93ed92657539c221ab8a19349ddcc4a08d1bbb81a011772943f640051d328e9",
+            "tests/test_document_import_ui95.py": "856d4342ae759c1efd3b199aa22d945ca258e12b09f62a41ec1006bce3a1a597",
+            "tests/test_import_relationship_examples_ui107.py": "5ab9f9848a3abe1c6aaa1e5cba4f2713f663a8532f60684b3de5e10e435a3bef",
+            "tests/test_import_source_reconciliation_ui103.py": "78fda37b5f3616e83e82625a9b5362c1e8668308e9aacf9f3c2bbe1bb47c28ff",
+            "tests/test_inventory_import_ui103.py": "58a07370d9a55bf1ffa5b79c4c038b5e19031e953401771e0283140d7b34cded"
+          },
+          "stderr_file": "ui107-examples-final.stderr.log",
+          "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      ],
+      "scope": [
+        "Explicit EN/PT worksheet box flags and qualified parent references",
+        "Sparse original Excel rows and child-before-parent imports",
+        "Identical references remain local to each worksheet",
+        "Reviewed root-container locations equal native saved locations with differing mapped locations retained in Notes",
+        "Unknown versus zero, leading-zero identifiers and repeated serial/part-number records",
+        "Excluded-parent correction restores full TSV and original source coordinates",
+        "Located missing/cross-sheet/duplicate/cycle/multiple-box and excessive-depth failures",
+        "Eight-parent-container boundary retained without flattening",
+        "Ambiguous reference headers preserved as source evidence until manual mapping",
+        "Relationship edits invalidate prior approval; identical retry produces one receipt",
+        "Append preserves existing item bodies, count rows, Found zero, public/private task scopes and custody",
+        "Authorized original 220/315 flat workbook records remain flat without inferred boxes or current counts"
+      ],
+      "skipped": 0,
+      "source_hashes_unchanged_during_run": true,
+      "source_sha256": {
+        "app/builder_hub.py": "9ef479fc202beed16572429341651f3b563ff93b41cfef06d4c2ed4d8db91b0d",
+        "app/builder_hub_api.py": "3fd1aa82f93a9118614ec868a95e418e897ba8ed554dd29b55a9ee0f7412a1f2",
+        "app/document_extract.py": "71b0b8e06875960a800956629b1183cc4b26f434f8e43677786fd5367eda0e58",
+        "app/document_import.py": "43e46772be9997a4713c20cc70e2926c3cffd3fe7cf034ba9ecb5a043960d449",
+        "app/document_structure.py": "6f53a543303a9e1b5b59e511af4c25583da0b668967334ce8d4569aecf9e5957",
+        "app/inventory.py": "499d53a2bf892b709e25c00c6348a3ba8bd93e044dfb4074380ca1dca73d0180",
+        "app/inventory_boxes.py": "0a7b64fea118ecf64c22593a2f9fe1daf9e954eaf028590cd0aa19fc9e2e1550",
+        "app/static/document_import.css": "82bd55645c90162b2b04e739fa795987979c18a358ed397ef4bac5a3782ad6a2",
+        "app/static/document_import.js": "92c5aef52797e2b8d8ebfc01d17cb52cbbce17d2cd93f4d502e9d485fab418f1",
+        "tests/browser_admin/test_admin.py": "d93ed92657539c221ab8a19349ddcc4a08d1bbb81a011772943f640051d328e9",
+        "tests/test_document_import_ui95.py": "856d4342ae759c1efd3b199aa22d945ca258e12b09f62a41ec1006bce3a1a597",
+        "tests/test_import_relationship_examples_ui107.py": "5ab9f9848a3abe1c6aaa1e5cba4f2713f663a8532f60684b3de5e10e435a3bef",
+        "tests/test_import_source_reconciliation_ui103.py": "78fda37b5f3616e83e82625a9b5362c1e8668308e9aacf9f3c2bbe1bb47c28ff",
+        "tests/test_inventory_import_ui103.py": "58a07370d9a55bf1ffa5b79c4c038b5e19031e953401771e0283140d7b34cded"
+      },
+      "started_at_utc": "2026-10-10T08:01:27.293840+00:00",
+      "status": "PASS",
+      "unique_focused_cases": 14
+    },
+    "original_source_files_in_release": false,
+    "representative_results": {
+      "fictional_sparse_en_pt": {
+        "incoming_records": 8,
+        "boxes": 3,
+        "links": 6,
+        "worksheets": 2
+      },
+      "original_inventory_1_records": 220,
+      "original_inventory_2_records": 315,
+      "original_flat_workbooks_inferred_boxes": 0,
+      "source_counted_values_become_verification": false
+    },
+    "limitations": [
+      "Representative examples establish these tested cases, not universal recognition or procedural correctness.",
+      "Parent links are same-worksheet incoming explicit boxes only; later movement can place imports into existing boxes.",
+      "Original Excel coordinates are claimed only when proven by extraction; otherwise messages identify mapped rows.",
+      "Retained checklist, maintenance and toolbox interpretation is tested separately; this release adds inventory relationship review."
+    ]
   },
-  "repository_local_parent": {
-    "release": "UI106",
-    "git_commit": "a7e5d4dfac358744599939b1a861309476a1ccc3",
-    "files": 321,
-    "runtime_manifest_sha256": "33061d55bc682ce98bf528cd5e13681e78acb2be48dad981d2e91b081144d591",
-    "full_repository_zip_sha256": "9055c15ed1e93c68f6a8677acfefd55945d927bd92fe7fc8997b849fe32e87a8"
-  },
-  "runtime_manifest_sha256": "8de54f37d7b044473f171746164eab90bb0de9532eeca7551961e242edeb06cb",
-  "runtime_resources": 2138,
-  "runtime_overlay_resources": 16,
-  "server_sql_migration": false,
-  "review_report": "docs/UI107_REVIEW_REPORT.json",
-  "current_acceptance_guide": "docs/WORKSPACE_UI107.md",
   "tests": {
     "unique_selected_pytest_passed": 846,
     "functional_passed": 833,
@@ -528,6 +896,17 @@
       }
     ]
   },
+  "independent_review": {
+    "method": "Read-only implementation, guide and local reproduction review; separate frozen-archive audit before delivery.",
+    "material_findings_corrected": [
+      "Review/save root-location mismatch and lost mapped-location evidence",
+      "Explicit relationship classification and trailing header-number marker parity",
+      "Part # identity alias preserved by limiting number-marker normalization to relationship headers",
+      "Disposed, departed and stale-kind/sheet event guards",
+      "Offline guide sections rendered outside the content column"
+    ],
+    "remaining_material_findings": []
+  },
   "remote_actions": {
     "repository": "adriano5454-ai/wavelink",
     "date": "2026-10-10",
@@ -560,6 +939,18 @@
       "missing_remote": [],
       "verified_full_zip_sha256": "9055c15ed1e93c68f6a8677acfefd55945d927bd92fe7fc8997b849fe32e87a8"
     }
+  },
+  "retained_boundaries": {
+    "sql_schema_migration": false,
+    "data_reset": false,
+    "browser_storage_clear": false,
+    "inventory_core_changed": false,
+    "mail_or_auth_backend_changes": false,
+    "approved_art_files_unchanged": 72,
+    "sql_definition_resources_unchanged": 31,
+    "document_structure_backend_changed": false,
+    "dependencies_and_vendor_bytes_unchanged": true,
+    "existing_items_counts_task_scope_and_custody_replaced": false
   },
   "not_claimed": [
     "Universal recognition, automatic OCR or verification of procedural correctness.",

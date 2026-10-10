@@ -1,5 +1,5 @@
-# Current UI106 follow-up
+# Current UI107 follow-up
 
-Apply and verify UI106 through the existing deployment workflow. Review located source interpretation, explicit toolbox notes, printed answer choices and original source coordinates. Preserve existing inventories, count verification, task scopes, custody and saved browser drafts.
+Apply and verify UI107 through the existing deployment workflow. Review explicit same-worksheet boxes and contents, ambiguous headers, effective root locations and retained mapped Notes. Keep existing inventory verification, task scope, custody and saved drafts intact.
 
-Continue substantial grouped releases using representative documents. Improve equipment/container relationships only where the source explicitly supports them; never infer hierarchy from styles or merge repeated SN/PN identities. Verify production mail, service-worker upgrades and physical devices in their actual environments when authorized. Keep full repository download links and one current checkpoint with every release.
+Continue substantial grouped releases with representative documents. Improve equipment relationships only where the source explicitly supports them; never infer hierarchy from appearance or merge repeated SN/PN. Validate production email, synchronization/navigation, service-worker upgrades and physical devices in their actual environments when authorized. Retain full repository links and one current checkpoint every release.
