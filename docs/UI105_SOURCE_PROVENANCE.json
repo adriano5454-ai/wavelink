@@ -1,0 +1,129 @@
+{
+  "format": "wavelink-runtime-overlay-1",
+  "date": "2026-10-10",
+  "patch_id": "workspace-ui105-inventory-row-selection-2026-10-10",
+  "parent_patch_id": "workspace-ui104-import-review-and-source-conflicts-2026-10-10",
+  "parent_git_commit": null,
+  "parent_manifest_sha256": "f2832bb1bfe9f0ec11aa34d90a6fca6f2cf4ec69bf0fd9dc701953d93a25c2ed",
+  "scope": "Deliberate per-worksheet inventory row selection with full mapped source rows and original row identities retained.",
+  "boundaries": {
+    "database_reset": false,
+    "browser_storage_clear": false,
+    "sql_schema_migration": false,
+    "auth_backend_change": false,
+    "mail_backend_change": false,
+    "artwork_bytes_change": false,
+    "existing_items_counts_and_task_scopes_replaced": false,
+    "automatic_identity_deduplication": false,
+    "inventory_backend_change": false
+  },
+  "files": [
+    {
+      "path": "app/document_import.py",
+      "before_sha256": "eb280bd3ddcab7b52addbe38cb5a857e813c95b08e7329df525e1bc839ec5fa6",
+      "after_sha256": "89bcb461ab0f1ed24fad05c04b4caa190090263aba5cf6abae22e1a9e23933e2"
+    },
+    {
+      "path": "app/static/document_import.css",
+      "before_sha256": "baa0c84a74a6c5ae6c5770a110e2f83f35e180d229954a3061f5969ca8c4544a",
+      "after_sha256": "fc67c7b2bb3cdb645afbac13e82d54b95aa684a485f414c0c17e15247f81672a"
+    },
+    {
+      "path": "app/static/document_import.js",
+      "before_sha256": "b13377bd0f6e612ecf13a950ed3ea993f1053af21f546b2d027a94986f72b2de",
+      "after_sha256": "3848c1acde08165da6ccfb893ae092f753171e128900d9cbae26392db9b2b920"
+    },
+    {
+      "path": "app/static/index.html",
+      "before_sha256": "cb20355ab6de429d5f2072d13f11bb6fe8fdb7a8e058191e3ae9624e8bb49007",
+      "after_sha256": "aaabbc26ae2a07ff41859e4df6205b811f38714b8e85ad9a44a5aa37c47d0b47"
+    },
+    {
+      "path": "app/static/sw.js",
+      "before_sha256": "45aadf2a302867b75df175cb799294892a1d3b6498226740d8876db955493344",
+      "after_sha256": "77ba998155c15e95c64106634b3af2483c7f5439f5b4f1d9579e2babfb6c223b"
+    },
+    {
+      "path": "docs/user/topics/importcentre.html",
+      "before_sha256": "a0a9e57f091b2e7e4748558fbc06e269afc318a776ffde6b124d066e44e78db0",
+      "after_sha256": "582331c7e6bd55ce1a16881c1d5103847685958fe33da19349571764afbbaecf"
+    },
+    {
+      "path": "docs/user/topics/inventory.html",
+      "before_sha256": "7c385dcae08c3ec15544b544a6ee7bd9f7467d84d61a1a6de5f6c42c4fdcb9ba",
+      "after_sha256": "9c998c6d94e5345cc911d1f8c984760583e374389d680f251407c8750cf5c007"
+    },
+    {
+      "path": "docs/user/topics/inventorytransfer.html",
+      "before_sha256": "fc62634146fd1774a4a243dfd37c73a4f302bc22aba2a4c569e72b02794e226e",
+      "after_sha256": "3c39c438ea5bb566bf0267dccebcf38266b18f9da3263d944b4639d0f81ee699"
+    },
+    {
+      "path": "tests/test_document_row_selection_ui105.js",
+      "before_sha256": null,
+      "after_sha256": "8c04a4fd89b8f90469945967a229ba1c8b0e063e390bf3adb1bc0a174a82c9ca"
+    },
+    {
+      "path": "tests/test_document_row_selection_ui105.py",
+      "before_sha256": null,
+      "after_sha256": "77597a0a9caba9f0fcd7e86a6484d650badd21ef1d8d2fe00a79c80ca181299e"
+    },
+    {
+      "path": "tests/test_import_row_selection_examples_ui105.py",
+      "before_sha256": null,
+      "after_sha256": "4993fc1bed56cc92896114d5382041bc4fc7cc8214fdf01f90d773f4fec586f9"
+    }
+  ],
+  "runtime_manifest_sha256": "d79cfed733d10b84a1ba3842e57dfab69cbaa1a6d27bbe42155c442d6bdfb6b0",
+  "runtime_resources": 2132,
+  "runtime_resources_unchanged_from_UI104": 2120,
+  "approved_art_files_unchanged": 72,
+  "sql_definition_resources_unchanged": [
+    "app/access.py",
+    "app/account_security.py",
+    "app/accounts.py",
+    "app/action_center.py",
+    "app/assets.py",
+    "app/checklist_library.py",
+    "app/checklist_migrations.py",
+    "app/company_branding.py",
+    "app/departments.py",
+    "app/document_details.py",
+    "app/document_invitations.py",
+    "app/email_alerts.py",
+    "app/fault_reports.py",
+    "app/fieldwork_common.py",
+    "app/fleet.py",
+    "app/fleet_access.py",
+    "app/handovers.py",
+    "app/log_assignments.py",
+    "app/logs.py",
+    "app/membership_policy.py",
+    "app/original_documents.py",
+    "app/original_folders.py",
+    "app/password_recovery.py",
+    "app/photo_evidence.py",
+    "app/qshe_reports.py",
+    "app/recognition.py",
+    "app/store.py",
+    "app/task_access.py",
+    "app/type_management.py",
+    "app/user_lifecycle.py",
+    "app/vessel_logs.py"
+  ],
+  "inherited_hosting_vendor_dependency_resources_unchanged": [
+    "deploy/apply_ui104.py",
+    "deploy/company_runtime.py",
+    "deploy/entrypoint.py",
+    "deploy/extract_source.py",
+    "deploy/nginx_config.py",
+    "requirements.lock",
+    "vendor/FICTIONAL_DEMO.ajproject",
+    "vendor/source.part001",
+    "vendor/source.part002",
+    "vendor/source.part003",
+    "vendor/source.part004",
+    "vendor/source.part005",
+    "vendor/source_parts.json"
+  ]
+}

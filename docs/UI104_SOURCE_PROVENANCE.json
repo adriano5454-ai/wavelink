@@ -1,0 +1,133 @@
+{
+  "format": "wavelink-runtime-overlay-1",
+  "date": "2026-10-10",
+  "patch_id": "workspace-ui104-import-review-and-source-conflicts-2026-10-10",
+  "parent_patch_id": "workspace-ui103-combined-inventory-import-and-part-numbers-2026-10-05",
+  "parent_git_commit": "7e84154f8dbee41a195852ff9f0ad1bc1ef336dc",
+  "parent_manifest_sha256": "f26d5c2201451c727eb243f362dbb3fef366aec386ecb8f5a5377ff2de40c828",
+  "scope": "Guided worksheet review, import provenance and explicit source conflict decisions for existing inventories.",
+  "boundaries": {
+    "database_reset": false,
+    "browser_storage_clear": false,
+    "sql_schema_migration": false,
+    "auth_backend_change": false,
+    "mail_backend_change": false,
+    "artwork_bytes_change": false,
+    "existing_items_counts_and_task_scopes_replaced": false,
+    "automatic_identity_deduplication": false
+  },
+  "files": [
+    {
+      "path": "app/document_import.py",
+      "before_sha256": "f2ff1e87ce06ea5812ae7093324b10761d5be14ac48d8eafabe0b24d72bdae3f",
+      "after_sha256": "eb280bd3ddcab7b52addbe38cb5a857e813c95b08e7329df525e1bc839ec5fa6"
+    },
+    {
+      "path": "app/inventory.py",
+      "before_sha256": "3ab0e5c7821d1c1ca8592291335d85fd267c9e909c19be0c7eabb01f3dffc9ec",
+      "after_sha256": "499d53a2bf892b709e25c00c6348a3ba8bd93e044dfb4074380ca1dca73d0180"
+    },
+    {
+      "path": "app/static/document_import.css",
+      "before_sha256": "fed879475e31f13de765049bb803ed2669f0dd76b7187c109b990c0a67a98a7f",
+      "after_sha256": "baa0c84a74a6c5ae6c5770a110e2f83f35e180d229954a3061f5969ca8c4544a"
+    },
+    {
+      "path": "app/static/document_import.js",
+      "before_sha256": "63b56ab0fbae91f3ae76747a4f1d66dd8a2e84f5507a3bfa88c02034835f5ae3",
+      "after_sha256": "b13377bd0f6e612ecf13a950ed3ea993f1053af21f546b2d027a94986f72b2de"
+    },
+    {
+      "path": "app/static/index.html",
+      "before_sha256": "08f710ff87f4d7c01351da1e6f5697eb0f16a626f11312ce6e05f20a1e7f89c9",
+      "after_sha256": "cb20355ab6de429d5f2072d13f11bb6fe8fdb7a8e058191e3ae9624e8bb49007"
+    },
+    {
+      "path": "app/static/sw.js",
+      "before_sha256": "352930f8315b0c07e2cc6745acd225fe0111fc6f53757e514ac5f302eef108e4",
+      "after_sha256": "45aadf2a302867b75df175cb799294892a1d3b6498226740d8876db955493344"
+    },
+    {
+      "path": "docs/user/topics/importcentre.html",
+      "before_sha256": "e55143a102c2e3eef18f4da63b890d61e4511b6825c048836b37202ed249baa8",
+      "after_sha256": "a0a9e57f091b2e7e4748558fbc06e269afc318a776ffde6b124d066e44e78db0"
+    },
+    {
+      "path": "docs/user/topics/inventory.html",
+      "before_sha256": "1706331170edb6c17c29c47f3f59498a120a10c58446eb06b0d2b2f356696fa7",
+      "after_sha256": "7c385dcae08c3ec15544b544a6ee7bd9f7467d84d61a1a6de5f6c42c4fdcb9ba"
+    },
+    {
+      "path": "docs/user/topics/inventorytransfer.html",
+      "before_sha256": "f954458e55a86076fae046385a6f7766cc3cdbbd8933a1c32f6cf5b7dcb9c295",
+      "after_sha256": "fc62634146fd1774a4a243dfd37c73a4f302bc22aba2a4c569e72b02794e226e"
+    },
+    {
+      "path": "tests/test_document_review_ui104.js",
+      "before_sha256": null,
+      "after_sha256": "d21f5ce92d6291dc0e89285f8700b5b21a42e2c2cb2a4c8610f9d78638a75458"
+    },
+    {
+      "path": "tests/test_document_review_ui104.py",
+      "before_sha256": null,
+      "after_sha256": "db37d1d15adc3e50f3b671d4fff87343fd83247222e9383db819ed2bc6ed98ff"
+    },
+    {
+      "path": "tests/test_import_review_examples_ui104.py",
+      "before_sha256": null,
+      "after_sha256": "08507b5df48e51de7507e34e552214390caac7009384d757fe8f696272941dd9"
+    }
+  ],
+  "runtime_manifest_sha256": "f2832bb1bfe9f0ec11aa34d90a6fca6f2cf4ec69bf0fd9dc701953d93a25c2ed",
+  "runtime_resources": 2129,
+  "runtime_resources_unchanged_from_UI103": 2116,
+  "approved_art_files_unchanged": 72,
+  "sql_definition_resources_unchanged": [
+    "app/access.py",
+    "app/account_security.py",
+    "app/accounts.py",
+    "app/action_center.py",
+    "app/assets.py",
+    "app/checklist_library.py",
+    "app/checklist_migrations.py",
+    "app/company_branding.py",
+    "app/departments.py",
+    "app/document_details.py",
+    "app/document_invitations.py",
+    "app/email_alerts.py",
+    "app/fault_reports.py",
+    "app/fieldwork_common.py",
+    "app/fleet.py",
+    "app/fleet_access.py",
+    "app/handovers.py",
+    "app/log_assignments.py",
+    "app/logs.py",
+    "app/membership_policy.py",
+    "app/original_documents.py",
+    "app/original_folders.py",
+    "app/password_recovery.py",
+    "app/photo_evidence.py",
+    "app/qshe_reports.py",
+    "app/recognition.py",
+    "app/store.py",
+    "app/task_access.py",
+    "app/type_management.py",
+    "app/user_lifecycle.py",
+    "app/vessel_logs.py"
+  ],
+  "inherited_hosting_vendor_dependency_resources_unchanged": [
+    "deploy/apply_ui103.py",
+    "deploy/company_runtime.py",
+    "deploy/entrypoint.py",
+    "deploy/extract_source.py",
+    "deploy/nginx_config.py",
+    "requirements.lock",
+    "vendor/FICTIONAL_DEMO.ajproject",
+    "vendor/source.part001",
+    "vendor/source.part002",
+    "vendor/source.part003",
+    "vendor/source.part004",
+    "vendor/source.part005",
+    "vendor/source_parts.json"
+  ]
+}

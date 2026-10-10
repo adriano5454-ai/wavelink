@@ -1,0 +1,381 @@
+{
+  "format": "wavelink-ui104-review-1",
+  "release": "UI104 \u2014 clear inventory import review",
+  "core": "1.34.19",
+  "date": "2026-10-10",
+  "repository": "adriano5454-ai/wavelink",
+  "runtime": {
+    "variant": "workspace-ui104-import-review-and-source-conflicts-2026-10-10",
+    "manifest_sha256": "f2832bb1bfe9f0ec11aa34d90a6fca6f2cf4ec69bf0fd9dc701953d93a25c2ed",
+    "resources": 2129,
+    "overlay_resources": 13,
+    "parent_manifest_sha256": "f26d5c2201451c727eb243f362dbb3fef366aec386ecb8f5a5377ff2de40c828",
+    "parent_repository_files": 303,
+    "target_repository_files": 309
+  },
+  "implemented": [
+    "Readable destination overview with current/proposed item record totals and locations being added; record totals remain separate from physical stock quantities.",
+    "Individual worksheet cards with reviewed locations, record counts, serial/part-number coverage and Unknown expected quantities; optional details keep the primary review concise.",
+    "Read-only existing-inventory source conflict preview uses the same original-document, worksheet and row evidence as the final atomic save guard. The reason is visible near the review heading.",
+    "Duplicate source rows and missing provenance for previously imported sheets block the entire batch. Full conflict count is retained; up to 50 original-row details are displayed.",
+    "Editing the draft, destination or mapping clears confirmation. Malformed or blocked responses cannot retain approval or trigger save. Current access, destination-version refresh and uncertain-save receipt retry remain enforced.",
+    "Distinct original rows with the same serial number, part number or item name remain distinct; no automatic identity merge or inferred kit relationships.",
+    "Updated import/inventory help and versioned importer assets; prior combined-sheet import, native part numbers, inventory verification search, structured documents, recovery and email features remain included."
+  ],
+  "source_examples": {
+    "method": "Real source extraction, production JavaScript mapping, native validation and authenticated in-process HTTP over disposable fictional SQLite projects",
+    "observations": {
+      "generic_checklist": {
+        "checks": 2,
+        "completed_source_answers_copied": false,
+        "fixture": "Fictional in-memory procedure",
+        "instructions_and_warning_retained": true,
+        "reusable_destination": "checklist",
+        "review_read_only": true,
+        "tools": 2,
+        "workflow": "prepost",
+        "yes_no_na_choices_retained": true
+      },
+      "generic_maintenance": {
+        "checks": 2,
+        "completed_source_answers_copied": false,
+        "fixture": "Fictional in-memory procedure",
+        "instructions_and_warning_retained": true,
+        "reusable_destination": "maintenance",
+        "review_read_only": true,
+        "tools": 2,
+        "workflow": "prepost",
+        "yes_no_na_choices_retained": true
+      },
+      "generic_toolbox": {
+        "completed_answers_or_attendees_copied": false,
+        "fixture": "Fictional in-memory discussion",
+        "questions": 2,
+        "review_read_only": true,
+        "supervisor_instructions_and_declaration_retained": true
+      },
+      "mr07_repeat_append": {
+        "conflict_details_returned": 50,
+        "conflict_details_truncated": true,
+        "current_verification_counts": 0,
+        "destination_unchanged": true,
+        "imported_records": 220,
+        "original_row_coordinates_correct": true,
+        "repeated_source_rows": 220,
+        "review_read_only": true,
+        "save_rejected_status": 409,
+        "source_bytes_unchanged": true,
+        "source_sha256": "243fa340992f6adc6b8776cbaf9520972e27d61bd82dfc6a3374a6525184e755"
+      },
+      "mr07_review": {
+        "expected_quantity_sum": 465,
+        "leading_zero_part_numbers": 153,
+        "leading_zero_serials": 9,
+        "occupied_locations": 4,
+        "old_counted_retained_only_as_notes": true,
+        "original_invoice_selected": false,
+        "original_source_rows": 220,
+        "part_numbers": 220,
+        "preflight_can_save": true,
+        "records": 220,
+        "repeated_serial_rows_retained": 3,
+        "review_read_only": true,
+        "serials": 66,
+        "source_bytes": 67200,
+        "source_bytes_unchanged": true,
+        "source_sha256": "243fa340992f6adc6b8776cbaf9520972e27d61bd82dfc6a3374a6525184e755",
+        "unknown_expected_quantities": 11,
+        "worksheet_record_counts": [
+          56,
+          58,
+          4,
+          102
+        ]
+      },
+      "pdf_checklist": {
+        "answer_fields": 7,
+        "checks": 56,
+        "completed_source_answers_copied": false,
+        "grouped_guidance_and_page_references_retained": true,
+        "numeric_unit_and_named_fields_retained": true,
+        "post_checks": 56,
+        "pre_checks": 55,
+        "reusable_destination": "checklist",
+        "review_read_only": true,
+        "section_item_counts": [
+          22,
+          27,
+          7
+        ],
+        "source_bytes": 147726,
+        "source_bytes_unchanged": true,
+        "source_pages": 4,
+        "source_sha256": "14a19fa9e545f5880bf42d327c1a01ee4607bbabf68ac458340e40800140a9ad",
+        "tools": 6,
+        "workflow": "prepost"
+      },
+      "pdf_maintenance": {
+        "answer_fields": 7,
+        "checks": 56,
+        "completed_source_answers_copied": false,
+        "grouped_guidance_and_page_references_retained": true,
+        "numeric_unit_and_named_fields_retained": true,
+        "post_checks": 56,
+        "pre_checks": 55,
+        "reusable_destination": "maintenance",
+        "review_read_only": true,
+        "section_item_counts": [
+          22,
+          27,
+          7
+        ],
+        "source_bytes": 147726,
+        "source_bytes_unchanged": true,
+        "source_pages": 4,
+        "source_sha256": "14a19fa9e545f5880bf42d327c1a01ee4607bbabf68ac458340e40800140a9ad",
+        "tools": 6,
+        "workflow": "prepost"
+      },
+      "reconciliation_review": {
+        "original_source_rows": 315,
+        "part_numbers": 0,
+        "preflight_can_save": true,
+        "records": 315,
+        "review_read_only": true,
+        "review_worksheets_excluded": 1,
+        "selected_data_worksheets": 1,
+        "serials": 290,
+        "source_bytes": 30173,
+        "source_bytes_unchanged": true,
+        "source_item_names_and_serials_exact": true,
+        "source_sha256": "281f5ea2310997b269a3536753d164c57d62d1d426f17b885ba46ac51eef3337",
+        "summary_worksheets_excluded": 1,
+        "unknown_expected_quantities": 315
+      }
+    },
+    "original_files_unchanged": true,
+    "original_source_contents_in_release": false,
+    "visual_pdf_pages_reviewed": 4,
+    "limits": [
+      "Three original source examples establish representative acceptance, not universal document recognition.",
+      "The original PDF provides checkbox columns and numeric/text reading cells. Explicit Yes/No/N/A choices and separate instruction/warning blocks are tested in a fictional in-memory procedure.",
+      "MR07 has 11 unresolved expected quantities. Reconciliation contains no quantity or part-number column, so 315 quantities remain Unknown and no part numbers are invented.",
+      "No live company data, Render service, mail delivery, physical camera, service-worker upgrade or Windows UI was exercised."
+    ]
+  },
+  "tests": {
+    "unique_selected_pytest_passed": 664,
+    "functional_passed": 651,
+    "build_replay_passed": 13,
+    "unresolved_failures": 0,
+    "unresolved_skips": 0,
+    "functional_run_accounting": {
+      "format": "wavelink-ui104-unique-test-aggregation-1",
+      "method": "Replace only the three skipped fixture cases with their matching passing supplemental cases. Original raw logs and XML remain unchanged. No repeated subsets added.",
+      "unique_cases": 651,
+      "passed": 651,
+      "failures": 0,
+      "errors": 0,
+      "unresolved_skips": 0,
+      "runs": [
+        {
+          "junit": "functional-tests-final.xml",
+          "passed": 648,
+          "skipped": 3
+        },
+        {
+          "junit": "functional-fixtures-complete.xml",
+          "passed": 3,
+          "skipped": 0
+        }
+      ],
+      "supplemental_cases": [
+        {
+          "module": "tests.test_document_import_ui100",
+          "case": "test_supplied_pdf_roundtrip_unpublished_definition"
+        },
+        {
+          "module": "tests.test_log_package_ui101",
+          "case": "test_uploaded_native_example_when_available"
+        },
+        {
+          "module": "tests.test_password_recovery_ui97",
+          "case": "test_actual_ui96_startup_upgrade_preserves_existing_accounts_and_mfa"
+        }
+      ],
+      "files": {
+        "functional-tests-final.xml": "2cb3d147a86810aa839b9fe19a89505a093d71f954806dd5616c64b1e2b32257",
+        "functional-tests-final.log": "d59d63c19323a8c1a6398041bb859efc8c3b67791cd60602ac2055e80a91cb59",
+        "functional-fixtures-complete.xml": "6e23f068b8052b541ce229c2239f5da43c32caedabc8d85b423e1d7e4fb273dc",
+        "functional-fixtures-complete.log": "855edd0d888a9f29753d6ec64a93fd49fea06311d8e913957b016bd7b3e128d6",
+        "functional-tests-complete.xml": "d312c1d8f433eb3e8a4d7a54d423588d21207d06c36ab47d0f6335e0a9b79190"
+      }
+    },
+    "node_checks_passed": 114,
+    "node_checks_by_script": {
+      "test_browser_reload_ui102.js": 12,
+      "test_document_import_ui103.js": 35,
+      "test_document_review_ui104.js": 32,
+      "test_inventory_search_ui102.js": 20,
+      "test_inventory_identity_ui103.js": 15
+    },
+    "browser_checks_passed": 65,
+    "repeated_subsets_not_added": true,
+    "selection": {
+      "runtime": [
+        "tests/test_import_shipping_ui102.py",
+        "tests/test_verification_ui102.py",
+        "tests/test_document_sheets_ui101.py",
+        "tests/test_document_import_ui95.py",
+        "tests/test_document_import_ui100.py",
+        "tests/test_document_layout_ui100.py",
+        "tests/test_document_structure_ui100.py",
+        "tests/test_choice_readings_ui100.py",
+        "tests/ui53_inventory/test_changes.py",
+        "tests/ui53_inventory/test_review_regressions.py",
+        "tests/ui53_inventory/test_labels_categories.py",
+        "tests/ui47_tasks/test_updates.py",
+        "tests/ui47_tasks/test_retained_inventory.py",
+        "tests/task_checklists/test_checklists.py",
+        "tests/browser_templates/test_templates.py",
+        "tests/test_builder_log_ui101.py",
+        "tests/test_log_package_ui101.py",
+        "tests/test_password_recovery_ui97.py",
+        "tests/ui45_review/test_builder_baseline.py",
+        "tests/test_document_import_ui103.py",
+        "tests/test_inventory_import_ui103.py",
+        "tests/test_inventory_identity_views_ui103.py",
+        "tests/test_import_source_reconciliation_ui103.py",
+        "tests/asset_workspace/test_summary.py",
+        "tests/rebrand/test_inherited_review.py",
+        "tests/test_document_review_ui104.py",
+        "tests/test_import_review_examples_ui104.py"
+      ]
+    },
+    "historical_diagnostic_exclusions": {
+      "count": 3,
+      "inherited_from_UI103": true,
+      "reproduced_on_exact_UI102_in_UI103_review": true,
+      "cases": [
+        {
+          "case": "test_all_12_javascript_files_parse",
+          "reason": "Obsolete fixed assertion of 36 JavaScript resources; exact UI103 already has 101."
+        },
+        {
+          "case": "test_uninstall_defaults_to_keep_all_project_data",
+          "reason": "Unchanged Tk fixture requires DISPLAY before executing its assertions."
+        },
+        {
+          "case": "test_refresh_preserves_cleared_deletion_selection",
+          "reason": "Unchanged Tk fixture requires DISPLAY before executing its assertions."
+        }
+      ],
+      "source_observation_write": "Legacy observations redirected outside runtime; all frozen runtime hashes verified."
+    },
+    "full_historical_suite_claimed": false,
+    "build_cases": "13 exact/cumulative overlay replay, repeated apply, pre-write tamper/collision/payload refusal, preservation and Docker/cache-version checks.",
+    "syntax_warnings": "Two inherited invalid escape SyntaxWarnings in older browser harnesses; no parse failures."
+  },
+  "browser": {
+    "method": "Real Chromium, fictional disposable C01 HostedBoundary/CompanyAccess/core APIs and IndexedDB; no production requests. WebSocket and service-worker registration are suppressed.",
+    "checks_passed": 65,
+    "unexpected_errors": 0,
+    "widths": [
+      1440,
+      390,
+      320
+    ],
+    "screenshots": 39,
+    "harness": "tests/browser_import_review_ui104.py",
+    "harness_sha256": "3a873bde7b7db9671f92bb9215e31d561ab73615fbde21cd125cf89c22309376",
+    "source_hashes": {
+      "app/document_import.py": "eb280bd3ddcab7b52addbe38cb5a857e813c95b08e7329df525e1bc839ec5fa6",
+      "app/inventory.py": "499d53a2bf892b709e25c00c6348a3ba8bd93e044dfb4074380ca1dca73d0180",
+      "app/builder_hub.py": "9ef479fc202beed16572429341651f3b563ff93b41cfef06d4c2ed4d8db91b0d",
+      "app/static/document_import.js": "b13377bd0f6e612ecf13a950ed3ea993f1053af21f546b2d027a94986f72b2de",
+      "app/static/document_import.css": "baa0c84a74a6c5ae6c5770a110e2f83f35e180d229954a3061f5969ca8c4544a",
+      "app/static/setup_builders.js": "0b1ce5b1395d5009a4c7821e5f91dad2ae6aa20d2ea2e1ba3680315606c73028",
+      "app/static/fieldwork.js": "368c8a44a547643353c172c907b7fb9690ee29b833d602388898e40909ed6007",
+      "app/static/inventory_workspace.js": "0e60b665a3bdced1a21ba0ff3d7ff0c71a586c866faecdf37ca804aa650b8484",
+      "app/static/verification.js": "04cd77a36c0b6c0ce9eb5bcfdf53e21f255acffd91fc57f070213ae6fc4c9649",
+      "app/static/task_workspace.js": "eca13368e44300648ef2fedb14c483d85f39d7e3a0f6ce638c16a931155e477e",
+      "app/static/browser_workspace.js": "565d7009e1786be630b482c6d7d9a6d7c61f4d90b17c0e0069865146483f7a75",
+      "app/static/equipment_workspace_ui79.css": "6179d3d57d16bc4f133820310e317b42e28e128577dde2d5f4f4c28391a97815",
+      "app/static/work_execution_ui80.css": "2e15aa54a3ccf468a1ad1cfae6339425d5e30e3714fc8da3ba1596a0c475cc1f",
+      "app/static/index.html": "cb20355ab6de429d5f2072d13f11bb6fe8fdb7a8e058191e3ae9624e8bb49007",
+      "app/static/sw.js": "45aadf2a302867b75df175cb799294892a1d3b6498226740d8876db955493344"
+    },
+    "served_asset_hashes": {
+      "app/static/task_workspace.js": "eca13368e44300648ef2fedb14c483d85f39d7e3a0f6ce638c16a931155e477e",
+      "app/static/document_import.css": "baa0c84a74a6c5ae6c5770a110e2f83f35e180d229954a3061f5969ca8c4544a",
+      "app/static/equipment_workspace_ui79.css": "6179d3d57d16bc4f133820310e317b42e28e128577dde2d5f4f4c28391a97815",
+      "app/static/work_execution_ui80.css": "2e15aa54a3ccf468a1ad1cfae6339425d5e30e3714fc8da3ba1596a0c475cc1f",
+      "app/static/inventory_workspace.js": "0e60b665a3bdced1a21ba0ff3d7ff0c71a586c866faecdf37ca804aa650b8484",
+      "app/static/fieldwork.js": "368c8a44a547643353c172c907b7fb9690ee29b833d602388898e40909ed6007",
+      "app/static/verification.js": "04cd77a36c0b6c0ce9eb5bcfdf53e21f255acffd91fc57f070213ae6fc4c9649",
+      "app/static/document_import.js": "b13377bd0f6e612ecf13a950ed3ea993f1053af21f546b2d027a94986f72b2de",
+      "app/static/setup_builders.js": "0b1ce5b1395d5009a4c7821e5f91dad2ae6aa20d2ea2e1ba3680315606c73028",
+      "app/static/browser_workspace.js": "565d7009e1786be630b482c6d7d9a6d7c61f4d90b17c0e0069865146483f7a75"
+    },
+    "shipping_example": {
+      "source_sha256": "243fa340992f6adc6b8776cbaf9520972e27d61bd82dfc6a3374a6525184e755",
+      "source_bytes": 67200,
+      "records": 220,
+      "locations": 4,
+      "expected_quantity_sum": 465,
+      "unknown_expected_quantities": 11,
+      "summary_included": false,
+      "verification_created": false
+    },
+    "visual_acceptance": "Reviewed desktop overview and 320-pixel worksheet/conflict screens; location/identity text wraps within the viewport and the blocked reason appears near the heading.",
+    "limitations": [
+      "Service-worker registration and WebSockets are suppressed.",
+      "No production, Render, live email, physical camera, Windows display or worker-upgrade acceptance.",
+      "The shipping workbook is exercised only when WAVELINK_IMPORT_SHIPPING_EXAMPLE is provided; otherwise only disposable literal XLSX fixtures are used."
+    ]
+  },
+  "syntax_and_preservation": {
+    "python": 792,
+    "javascript": 125,
+    "errors": [],
+    "art_unchanged": 72,
+    "runtime_resources": 2129,
+    "unchanged_resources": 2116,
+    "manifest_sha256": "f2832bb1bfe9f0ec11aa34d90a6fca6f2cf4ec69bf0fd9dc701953d93a25c2ed"
+  },
+  "remote_actions": {
+    "main_verified": {
+      "remote_commit": "7e84154f8dbee41a195852ff9f0ad1bc1ef336dc",
+      "repository_files": 303,
+      "different": [],
+      "extra": [],
+      "missing": [],
+      "truncated": false
+    },
+    "branch_attempted": "codex/ui104-import-review-20261010",
+    "branch_creation": "GitHub API returned 403 Resource not accessible by integration",
+    "branch_created": false,
+    "commit_created": false,
+    "pull_request_created": false,
+    "main_modified": false,
+    "deployed": false,
+    "production_data_modified": false
+  },
+  "retained_boundaries": {
+    "sql_schema_migration": false,
+    "data_reset": false,
+    "browser_storage_clear": false,
+    "mail_or_auth_backend_changes": false,
+    "approved_art_files_unchanged": 72,
+    "sql_definition_resources_unchanged": 31,
+    "dependencies_and_vendor_bytes_unchanged": true,
+    "existing_items_counts_task_scope_and_custody_replaced": false
+  },
+  "not_claimed": [
+    "Universal document recognition or automatic equipment-kit inference.",
+    "A blanket pass of every historical test: three documented inherited environment/obsolete diagnostics remain deselected.",
+    "Live Render deployment, production SMTP delivery, actual service-worker upgrade, WebSocket transport, BFCache navigation, physical camera or Windows display acceptance.",
+    "Automatic conflict-row selection, identity deduplication or overwriting source example files.",
+    "A GitHub branch, commit or pull request: the integration denied branch creation with HTTP 403."
+  ]
+}

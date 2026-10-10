@@ -1,32 +1,163 @@
 {
-  "format": "wavelink-delivery-checks-1",
+  "format": "wavelink-ui105-review-1",
   "release": "UI105 \u2014 choose inventory rows before import",
   "core": "1.34.19",
   "date": "2026-10-10",
-  "repository_files_target": 315,
-  "repository_files_parents": {
-    "UI103": 303,
-    "UI104": 309
+  "repository": "adriano5454-ai/wavelink",
+  "runtime": {
+    "variant": "workspace-ui105-inventory-row-selection-2026-10-10",
+    "manifest_sha256": "d79cfed733d10b84a1ba3842e57dfab69cbaa1a6d27bbe42155c442d6bdfb6b0",
+    "resources": 2132,
+    "overlay_resources": 12,
+    "parent_manifest_sha256": "f2832bb1bfe9f0ec11aa34d90a6fca6f2cf4ec69bf0fd9dc701953d93a25c2ed",
+    "local_parent_release": "UI104",
+    "local_parent_repository_files": 309,
+    "local_parent_git_commit": null,
+    "current_remote_release": "UI103",
+    "current_remote_repository_files": 303,
+    "target_repository_files": 315
   },
-  "repository_parent_commit": null,
-  "repository_git_baseline": {
-    "release": "UI103",
-    "commit": "7e84154f8dbee41a195852ff9f0ad1bc1ef336dc",
-    "files": 303
+  "implemented": [
+    "Collapsed per-worksheet item chooser searches mapped item names, serial and part numbers, filters All/Included/Excluded/Needs review and paginates at 50 rows.",
+    "Explicit include/exclude controls apply to individual rows or the current displayed page only. Searching, filtering and paging leave choices and approval unchanged; excluded rows remain available to restore.",
+    "Full mapped TSV and full original source-row references remain paired. Optional selected_rows uses strict unique one-based mapped positions; default absence preserves legacy all-row imports.",
+    "Selections preserve original source_id, reviewed_row and Excel source_row positions rather than renumbering the filtered set. Repeated SN/PN on distinct source rows remain separate.",
+    "Mapped/included/excluded per-sheet totals distinguish item records from stock quantity. Zero remains zero, blank quantity remains Unknown, missing identifiers remain optional and source Counted values remain notes.",
+    "Manually exclude previously imported original source rows, then check again to add only selected new rows to an existing permitted inventory. Conflict review and final all-or-nothing save guards remain.",
+    "Changing choices clears review/request/confirmation. Pending/uncertain saves freeze selection controls and retain identical operation receipts; current access, destination-version refresh, departed route/account and old verification/task/custody protections remain.",
+    "Mapping changes carry exclusions only by confirmed original Excel row matches; otherwise visible reset guidance requires reviewing choices. Manual full-text edits reset positional selection and typed original references.",
+    "Manual headerless/current-header/legacy-header TSV interpretation now agrees with backend row positions. Remapping updates provenance notices, and chooser redraws preserve keyboard focus without scrolling.",
+    "Selected children with excluded required parent boxes produce a located worksheet and source/mapped row error; no implicit reparenting or hierarchy inference.",
+    "Updated import help is inside the existing content chapters; importer assets and shell cache are versioned UI105. Prior checklist/maintenance/toolbox/logbook/email/recovery workflows remain included."
+  ],
+  "source_examples": {
+    "method": "Production JavaScript mapping, authenticated in-process HTTP and native SQLite in fictional projects; optional original files read only",
+    "observations": {
+      "fictional_zero_unknown_selection": {
+        "canonical_positions_sorted": true,
+        "excluded_records": 1,
+        "fixture": "Fictional in-memory CSV",
+        "leading_zero_identifiers_retained": true,
+        "mapped_positions_exact": true,
+        "mapped_records": 3,
+        "old_counted_is_current_verification": false,
+        "original_coordinates_available": false,
+        "review_read_only": true,
+        "selected_known_zero_quantities": 1,
+        "selected_records": 2,
+        "selected_unknown_quantities": 1
+      },
+      "mr07_partial_overlap_append": {
+        "append_records": 2,
+        "appended_records_added_to_private_scope": 0,
+        "current_count_sessions": 2,
+        "custody_unchanged": true,
+        "definite_source_conflicts": 3,
+        "existing_found_zero_count_unchanged": true,
+        "existing_item_bodies_unchanged": true,
+        "final_records": 5,
+        "full_records_retained": 220,
+        "identical_retry_is_single_addition": true,
+        "manually_excluded_conflicts": 3,
+        "original_coordinates_retained": true,
+        "original_records": 3,
+        "private_task_scope": 3,
+        "public_checked_records": 1,
+        "public_count_scope": 3,
+        "remaining_full_source_available": true,
+        "review_read_only": true,
+        "source_bytes_unchanged": true,
+        "source_sha256": "243fa340992f6adc6b8776cbaf9520972e27d61bd82dfc6a3374a6525184e755"
+      },
+      "mr07_selected_subset": {
+        "changed_selection_invalidates_review_status": 409,
+        "excluded_records": 206,
+        "full_records": 220,
+        "full_tsv_and_source_rows_retained": true,
+        "identifiers_and_original_coordinates_exact": true,
+        "leading_zero_identifiers_retained": true,
+        "occupied_locations": 4,
+        "repeated_serial_rows_retained": 3,
+        "restored_part_numbers": 220,
+        "restored_records": 220,
+        "restored_serials": 66,
+        "restored_unknown_quantities": 11,
+        "review_read_only": true,
+        "selected_records": 14,
+        "selected_records_per_sheet": [
+          4,
+          4,
+          2,
+          4
+        ],
+        "selected_unknown_quantities": 4,
+        "source_bytes_unchanged": true,
+        "source_sha256": "243fa340992f6adc6b8776cbaf9520972e27d61bd82dfc6a3374a6525184e755"
+      },
+      "reconciliation_selected_subset": {
+        "excluded_records": 310,
+        "full_records": 315,
+        "full_tsv_and_source_rows_retained": true,
+        "original_coordinates_and_identifiers_exact": true,
+        "restored_records": 315,
+        "restored_unknown_quantities": 315,
+        "review_read_only": true,
+        "selected_part_numbers": 0,
+        "selected_records": 5,
+        "selected_unknown_quantities": 5,
+        "source_bytes_unchanged": true,
+        "source_sha256": "281f5ea2310997b269a3536753d164c57d62d1d426f17b885ba46ac51eef3337"
+      },
+      "retained_pdf_checklist": {
+        "answer_fields": 7,
+        "checks": 56,
+        "completed_answers_copied": false,
+        "guidance_and_source_references_retained": true,
+        "inventory_selection_applied_to_document": false,
+        "post_checks": 56,
+        "pre_checks": 55,
+        "reusable_destination": "checklist",
+        "review_read_only": true,
+        "section_item_counts": [
+          22,
+          27,
+          7
+        ],
+        "source_bytes_unchanged": true,
+        "source_sha256": "14a19fa9e545f5880bf42d327c1a01ee4607bbabf68ac458340e40800140a9ad",
+        "tools": 6,
+        "workflow": "prepost"
+      },
+      "retained_pdf_maintenance": {
+        "answer_fields": 7,
+        "checks": 56,
+        "completed_answers_copied": false,
+        "guidance_and_source_references_retained": true,
+        "inventory_selection_applied_to_document": false,
+        "post_checks": 56,
+        "pre_checks": 55,
+        "reusable_destination": "maintenance",
+        "review_read_only": true,
+        "section_item_counts": [
+          22,
+          27,
+          7
+        ],
+        "source_bytes_unchanged": true,
+        "source_sha256": "14a19fa9e545f5880bf42d327c1a01ee4607bbabf68ac458340e40800140a9ad",
+        "tools": 6,
+        "workflow": "prepost"
+      }
+    },
+    "original_files_unchanged": true,
+    "original_source_files_in_release": false,
+    "limitations": [
+      "The MR07 original expected quantities contain no zero values. A fictional CSV tests zero versus Unknown, and an actual-source Unknown item receives an explicit Found-zero verification in a disposable project.",
+      "CSV extraction does not supply original Excel coordinates. The CSV example checks stable mapped positions and does not invent worksheet row provenance.",
+      "Row selection changes inventory imports only. Retained PDF checklist and maintenance structures remain reusable drafts with blank answers.",
+      "Representative sources do not establish universal document recognition. No live company or deployment data was touched."
+    ]
   },
-  "repository_local_parent": {
-    "release": "UI104",
-    "git_commit": null,
-    "files": 309,
-    "runtime_manifest_sha256": "f2832bb1bfe9f0ec11aa34d90a6fca6f2cf4ec69bf0fd9dc701953d93a25c2ed",
-    "full_repository_zip_sha256": "a7efaeb98beb84566bcae843f988359f36b390b53f57e7af7c721f33ff7264e2"
-  },
-  "runtime_manifest_sha256": "d79cfed733d10b84a1ba3842e57dfab69cbaa1a6d27bbe42155c442d6bdfb6b0",
-  "runtime_resources": 2132,
-  "runtime_overlay_resources": 12,
-  "server_sql_migration": false,
-  "review_report": "docs/UI105_REVIEW_REPORT.json",
-  "current_acceptance_guide": "docs/WORKSPACE_UI105.md",
   "tests": {
     "unique_selected_pytest_passed": 711,
     "functional_passed": 698,
@@ -214,6 +345,12 @@
     "unchanged_resources": 2120,
     "manifest_sha256": "d79cfed733d10b84a1ba3842e57dfab69cbaa1a6d27bbe42155c442d6bdfb6b0"
   },
+  "independent_review": {
+    "material_finding": "Headerless manual TSV could show different row positions from the backend; corrected before freeze and covered by Node and browser acceptance.",
+    "polish_findings": "Restored mapping notice and keyboard focus after chooser redraw corrected before freeze.",
+    "other_material_findings": [],
+    "method": "Read-only implementation and guide review; archive review separately required before delivery."
+  },
   "remote_actions": {
     "main_verified": {
       "remote_commit": "7e84154f8dbee41a195852ff9f0ad1bc1ef336dc",
@@ -233,6 +370,17 @@
     "main_modified": false,
     "deployed": false,
     "production_data_modified": false
+  },
+  "retained_boundaries": {
+    "sql_schema_migration": false,
+    "data_reset": false,
+    "browser_storage_clear": false,
+    "inventory_core_changed": false,
+    "mail_or_auth_backend_changes": false,
+    "approved_art_files_unchanged": 72,
+    "sql_definition_resources_unchanged": 31,
+    "dependencies_and_vendor_bytes_unchanged": true,
+    "existing_items_counts_task_scope_and_custody_replaced": false
   },
   "not_claimed": [
     "Universal document recognition or automatic equipment-kit relationships.",
