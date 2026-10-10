@@ -1,40 +1,663 @@
 {
-  "format": "wavelink-delivery-checks-1",
+  "format": "wavelink-ui108-review-1",
   "release": "UI108 \u2014 review document tables and recover Toolbox reads",
   "core": "1.34.19",
   "date": "2026-10-10",
-  "repository_files_target": 334,
-  "repository_files_parents": {
-    "UI106": 321,
-    "UI107": 327
-  },
-  "repository_parent_commit": "1d71f5bbd2fa2af01a405c6bc3d8aeb8b76b0de1",
-  "runtime_overlay_parent_git_commit_at_preparation": null,
-  "repository_git_baseline": {
-    "release": "UI107",
-    "commit": "1d71f5bbd2fa2af01a405c6bc3d8aeb8b76b0de1",
-    "files": 327
-  },
-  "initial_repository_git_ancestor": {
-    "release": "UI106",
-    "commit": "a7e5d4dfac358744599939b1a861309476a1ccc3",
-    "files": 321
-  },
-  "repository_local_parent": {
-    "release": "UI107",
-    "git_commit_at_preparation": null,
+  "repository": "adriano5454-ai/wavelink",
+  "runtime": {
+    "variant": "workspace-ui108-table-structure-review-2026-10-10",
+    "manifest_sha256": "5a10e73acaaaf0d74e4bb530f8c6461d044476ecbf0aa76bfbd1583ee426a9f5",
+    "resources": 2142,
+    "overlay_resources": 22,
+    "parent_manifest_sha256": "8de54f37d7b044473f171746164eab90bb0de9532eeca7551961e242edeb06cb",
+    "local_parent_release": "UI107",
+    "local_parent_repository_files": 327,
+    "local_parent_git_commit": null,
     "parent_git_commit_semantics": "archive-origin-at-preparation",
-    "verified_equivalent_git_commit": "1d71f5bbd2fa2af01a405c6bc3d8aeb8b76b0de1",
-    "files": 327,
-    "runtime_manifest_sha256": "8de54f37d7b044473f171746164eab90bb0de9532eeca7551961e242edeb06cb",
-    "full_repository_zip_sha256": "a6b11412e590581cff2245e3151f27668c1b6471d94f384aa4335c2f7dffdac9"
+    "verified_equivalent_parent_git_commit": "1d71f5bbd2fa2af01a405c6bc3d8aeb8b76b0de1",
+    "local_parent_full_repository_zip_sha256": "a6b11412e590581cff2245e3151f27668c1b6471d94f384aa4335c2f7dffdac9",
+    "current_remote_release": "UI107",
+    "current_remote_repository_files": 327,
+    "current_remote_commit": "1d71f5bbd2fa2af01a405c6bc3d8aeb8b76b0de1",
+    "current_remote_tree": "059709ae85fe262a4c29d53bd9a67932ee7d13f8",
+    "initial_remote_release_at_preparation": "UI106",
+    "initial_remote_repository_files_at_preparation": 321,
+    "remote_ancestor_commit": "a7e5d4dfac358744599939b1a861309476a1ccc3",
+    "target_repository_files": 334,
+    "compact_supported_parents": [
+      "UI106",
+      "UI107"
+    ]
   },
-  "runtime_manifest_sha256": "5a10e73acaaaf0d74e4bb530f8c6461d044476ecbf0aa76bfbd1583ee426a9f5",
-  "runtime_resources": 2142,
-  "runtime_overlay_resources": 22,
-  "server_sql_migration": false,
-  "review_report": "docs/UI108_REVIEW_REPORT.json",
-  "current_acceptance_guide": "docs/WORKSPACE_UI108.md",
+  "implemented": [
+    "Supported label/value tables and labelled rows retain descriptions, instructions, tools, supervisor guidance and declaration wording for editable review.",
+    "Changed explicit table headers apply to their following segment; short explicit stage headings organize checks. Printed answer definitions produce empty fields rather than importing completed answers, names or signatures.",
+    "Needs source review gives conservative original-source advice for repeated headers, titles, summaries, instructions and footers. All mapped rows remain included until deliberately excluded; name-only items, Unknown quantities and legitimate Total/Instructions names remain supported.",
+    "Find header row searches and pages through extracted worksheet rows within existing extraction limits. Proven Excel coordinates and notices about pre-header data or alternative headers support deliberate mapping; different layouts are not silently combined.",
+    "Read-only inspection preserves approval; mapping/inclusion changes require another check. Relationship-only edits preserve source references and advice, while complete raw-table edits clear evidence that cannot be established. Pending/uncertain save retries retain their original request.",
+    "Toolbox Talks shows a recoverable waiting/retry state when another form interrupts its read. Retry uses the current workspace, retains unsent work and rejects late data from a previous route.",
+    "UI107 boxes/contents, exact incoming same-worksheet parents, root locations, full Notes, SN/PN identities, append preservation and inventory verification remain covered by separate retained tests.",
+    "Ten static/offline Help pages explain table/source-row review and Toolbox retry. Changed importer and fieldwork assets and the shell cache use UI108 versions."
+  ],
+  "source_examples": {
+    "report": "evidence/examples/UI108_RETAINED_EXAMPLE_REVIEW.json",
+    "report_sha256": "1a6d336814e42b389073a14467db62b131dcdb363b813175d9e2befa7c7422f4",
+    "evidence": {
+      "case_identities": [
+        {
+          "case": "test_ambiguous_reference_headers_remain_evidence_until_user_maps_parent[Box reference]",
+          "module": "test_import_relationship_examples_ui107"
+        },
+        {
+          "case": "test_ambiguous_reference_headers_remain_evidence_until_user_maps_parent[Container ID]",
+          "module": "test_import_relationship_examples_ui107"
+        },
+        {
+          "case": "test_ambiguous_reference_headers_remain_evidence_until_user_maps_parent[Container reference]",
+          "module": "test_import_relationship_examples_ui107"
+        },
+        {
+          "case": "test_append_explicit_containment_preserves_old_checks_private_scope_and_custody",
+          "module": "test_import_relationship_examples_ui107"
+        },
+        {
+          "case": "test_cross_sheet_only_reference_is_not_resolved_by_matching_name_sn_pn_or_asset",
+          "module": "test_import_relationship_examples_ui107"
+        },
+        {
+          "case": "test_excluded_parent_is_located_and_restoration_keeps_full_tsv_original_coordinates",
+          "module": "test_import_relationship_examples_ui107"
+        },
+        {
+          "case": "test_explicit_eight_ancestor_boundary_and_ninth_ancestor_error_are_not_collapsed",
+          "module": "test_import_relationship_examples_ui107"
+        },
+        {
+          "case": "test_invalid_explicit_workbook_relationships_report_original_rows_before_writes[cycle-2-changes1-6]",
+          "module": "test_import_relationship_examples_ui107"
+        },
+        {
+          "case": "test_invalid_explicit_workbook_relationships_report_original_rows_before_writes[duplicate-4-changes0-15]",
+          "module": "test_import_relationship_examples_ui107"
+        },
+        {
+          "case": "test_invalid_explicit_workbook_relationships_report_original_rows_before_writes[multiple_boxes-2-changes2-9]",
+          "module": "test_import_relationship_examples_ui107"
+        },
+        {
+          "case": "test_original_flat_workbooks_keep_every_record_without_inferred_boxes_or_current_counts[path0-220-243fa340992f6adc6b8776cbaf9520972e27d61bd82dfc6a3374a6525184e755-11]",
+          "module": "test_import_relationship_examples_ui107"
+        },
+        {
+          "case": "test_original_flat_workbooks_keep_every_record_without_inferred_boxes_or_current_counts[path1-315-281f5ea2310997b269a3536753d164c57d62d1d426f17b885ba46ac51eef3337-315]",
+          "module": "test_import_relationship_examples_ui107"
+        },
+        {
+          "case": "test_relationship_changes_invalidate_approval_and_unchanged_retry_retains_one_receipt",
+          "module": "test_import_relationship_examples_ui107"
+        },
+        {
+          "case": "test_sparse_en_pt_child_before_parent_same_reference_is_local_and_saved_location_matches_review",
+          "module": "test_import_relationship_examples_ui107"
+        }
+      ],
+      "core": "1.34.19",
+      "counts_are_subset_of_broad_functional_run": true,
+      "errors": 0,
+      "evidence_kind": "Actual current frozen-source retained examples; sanitized counts and proof flags only.",
+      "examples": {
+        "ambiguous_box_reference": {
+          "ambiguous_source_reference_retained": true,
+          "automatically_linked_records": 0,
+          "explicit_manual_links": 1,
+          "fixture": "Fictional in-memory XLSX",
+          "original_rows_preserved": true,
+          "records": 2
+        },
+        "ambiguous_container_id": {
+          "ambiguous_source_reference_retained": true,
+          "automatically_linked_records": 0,
+          "explicit_manual_links": 1,
+          "fixture": "Fictional in-memory XLSX",
+          "original_rows_preserved": true,
+          "records": 2
+        },
+        "ambiguous_container_reference": {
+          "ambiguous_source_reference_retained": true,
+          "automatically_linked_records": 0,
+          "explicit_manual_links": 1,
+          "fixture": "Fictional in-memory XLSX",
+          "original_rows_preserved": true,
+          "records": 2
+        },
+        "cross_sheet_reference_rejected": {
+          "cross_sheet_parent_inferred": false,
+          "error_source_row": 6,
+          "error_worksheet_located": true,
+          "fixture": "Fictional in-memory XLSX",
+          "repeated_serial_and_part_number_used_as_parent": false,
+          "review_read_only": true
+        },
+        "excluded_parent_restore": {
+          "excluded_parent_error_source_row": 6,
+          "fixture": "Fictional in-memory XLSX",
+          "full_records": 8,
+          "full_tsv_and_source_rows_retained": true,
+          "restored_records": 8,
+          "subset_original_positions": [
+            2,
+            3
+          ],
+          "subset_original_rows": [
+            9,
+            12
+          ],
+          "subset_records": 5,
+          "worksheet_error_located": true
+        },
+        "explicit_depth_boundary": {
+          "accepted_records": 9,
+          "error_worksheet_located": true,
+          "fixture": "Fictional in-memory XLSX",
+          "hierarchy_not_flattened": true,
+          "rejected_ancestors": 9,
+          "rejected_review_read_only": true,
+          "rejected_source_row": 7,
+          "reviewed_root_location_equal": true,
+          "supported_ancestors": 8
+        },
+        "invalid_cycle": {
+          "error_source_row": 6,
+          "error_worksheet_located": true,
+          "fixture": "Fictional in-memory XLSX",
+          "invalid_relationship": "cycle",
+          "original_coordinates_retained": true,
+          "partial_items_created": 0,
+          "partial_locations_created": 0,
+          "receipt_created": false
+        },
+        "invalid_duplicate": {
+          "error_source_row": 15,
+          "error_worksheet_located": true,
+          "fixture": "Fictional in-memory XLSX",
+          "invalid_relationship": "duplicate",
+          "original_coordinates_retained": true,
+          "partial_items_created": 0,
+          "partial_locations_created": 0,
+          "receipt_created": false
+        },
+        "invalid_multiple_boxes": {
+          "error_source_row": 9,
+          "error_worksheet_located": true,
+          "fixture": "Fictional in-memory XLSX",
+          "invalid_relationship": "multiple_boxes",
+          "original_coordinates_retained": true,
+          "partial_items_created": 0,
+          "partial_locations_created": 0,
+          "receipt_created": false
+        },
+        "original_flat_220": {
+          "automatically_inferred_boxes": 0,
+          "automatically_inferred_parent_links": 0,
+          "current_counts_created": 0,
+          "original_identifiers_quantities_and_coordinates_exact": true,
+          "records": 220,
+          "repeated_serial_records": 3,
+          "review_read_only": true,
+          "source_bytes_unchanged": true,
+          "source_counted_column_only_notes": true,
+          "source_sha256": "243fa340992f6adc6b8776cbaf9520972e27d61bd82dfc6a3374a6525184e755",
+          "unknown_quantities": 11,
+          "worksheet_count": 4
+        },
+        "original_flat_315": {
+          "automatically_inferred_boxes": 0,
+          "automatically_inferred_parent_links": 0,
+          "current_counts_created": 0,
+          "original_identifiers_quantities_and_coordinates_exact": true,
+          "records": 315,
+          "repeated_serial_records": 0,
+          "review_read_only": true,
+          "source_bytes_unchanged": true,
+          "source_counted_column_only_notes": true,
+          "source_sha256": "281f5ea2310997b269a3536753d164c57d62d1d426f17b885ba46ac51eef3337",
+          "unknown_quantities": 315,
+          "worksheet_count": 1
+        },
+        "relationship_append_preservation": {
+          "appended_boxes": 3,
+          "appended_records": 8,
+          "custody_unchanged": true,
+          "existing_box_reference_inferred": false,
+          "existing_count_rows_unchanged": true,
+          "existing_found_zero_count_unchanged": true,
+          "existing_item_body_unchanged": true,
+          "final_records": 9,
+          "fixture": "Fictional in-memory XLSX",
+          "identical_retry_single_addition": true,
+          "old_records": 1,
+          "private_new_items": 0,
+          "private_task_scope": 1,
+          "public_count_scope": 1,
+          "public_new_items": 8,
+          "repeated_identity_records_retained": true
+        },
+        "relationship_approval_and_receipt": {
+          "changed_parent_old_approval_status": 409,
+          "changed_parent_write_count": 0,
+          "fixture": "Fictional in-memory XLSX",
+          "identical_retry_receipts": 1,
+          "identical_retry_single_addition": true
+        },
+        "sparse_en_pt_native_roundtrip": {
+          "boxes": 3,
+          "child_before_parent_saved": true,
+          "differing_source_locations_retained": true,
+          "fixture": "Fictional in-memory XLSX",
+          "identical_retry_single_addition": true,
+          "known_zero_quantities": 2,
+          "original_rows_preserved": true,
+          "parent_links": 6,
+          "records": 8,
+          "repeated_part_number_records": 5,
+          "repeated_serial_records": 5,
+          "reviewed_locations_equal_saved_locations": true,
+          "same_reference_resolves_only_within_sheet": true,
+          "saved_count_sessions": 0,
+          "source_counted_values_only_notes": true,
+          "unknown_quantities": 2,
+          "worksheet_count": 2
+        }
+      },
+      "execution_source": "Production JavaScript mapping in Node, authenticated in-process APIs and temporary fictional SQLite projects.",
+      "failed": 0,
+      "final_broad_confirmation": {
+        "app_and_test_pins_match_current_frozen_source": true,
+        "classname_prefixes_normalized": true,
+        "errors": 0,
+        "evidence": "../../functional-tests-final.xml",
+        "evidence_sha256": "fdeb247ed8570734ffa074fd4a094fde39df3469ef532303bcdb69ed94d43d90",
+        "exact_case_names_matched": true,
+        "failures": 0,
+        "focused_case_identities": [
+          {
+            "case": "test_ambiguous_reference_headers_remain_evidence_until_user_maps_parent[Box reference]",
+            "module": "test_import_relationship_examples_ui107"
+          },
+          {
+            "case": "test_ambiguous_reference_headers_remain_evidence_until_user_maps_parent[Container ID]",
+            "module": "test_import_relationship_examples_ui107"
+          },
+          {
+            "case": "test_ambiguous_reference_headers_remain_evidence_until_user_maps_parent[Container reference]",
+            "module": "test_import_relationship_examples_ui107"
+          },
+          {
+            "case": "test_append_explicit_containment_preserves_old_checks_private_scope_and_custody",
+            "module": "test_import_relationship_examples_ui107"
+          },
+          {
+            "case": "test_cross_sheet_only_reference_is_not_resolved_by_matching_name_sn_pn_or_asset",
+            "module": "test_import_relationship_examples_ui107"
+          },
+          {
+            "case": "test_excluded_parent_is_located_and_restoration_keeps_full_tsv_original_coordinates",
+            "module": "test_import_relationship_examples_ui107"
+          },
+          {
+            "case": "test_explicit_eight_ancestor_boundary_and_ninth_ancestor_error_are_not_collapsed",
+            "module": "test_import_relationship_examples_ui107"
+          },
+          {
+            "case": "test_invalid_explicit_workbook_relationships_report_original_rows_before_writes[cycle-2-changes1-6]",
+            "module": "test_import_relationship_examples_ui107"
+          },
+          {
+            "case": "test_invalid_explicit_workbook_relationships_report_original_rows_before_writes[duplicate-4-changes0-15]",
+            "module": "test_import_relationship_examples_ui107"
+          },
+          {
+            "case": "test_invalid_explicit_workbook_relationships_report_original_rows_before_writes[multiple_boxes-2-changes2-9]",
+            "module": "test_import_relationship_examples_ui107"
+          },
+          {
+            "case": "test_original_flat_workbooks_keep_every_record_without_inferred_boxes_or_current_counts[path0-220-243fa340992f6adc6b8776cbaf9520972e27d61bd82dfc6a3374a6525184e755-11]",
+            "module": "test_import_relationship_examples_ui107"
+          },
+          {
+            "case": "test_original_flat_workbooks_keep_every_record_without_inferred_boxes_or_current_counts[path1-315-281f5ea2310997b269a3536753d164c57d62d1d426f17b885ba46ac51eef3337-315]",
+            "module": "test_import_relationship_examples_ui107"
+          },
+          {
+            "case": "test_relationship_changes_invalidate_approval_and_unchanged_retry_retains_one_receipt",
+            "module": "test_import_relationship_examples_ui107"
+          },
+          {
+            "case": "test_sparse_en_pt_child_before_parent_same_reference_is_local_and_saved_location_matches_review",
+            "module": "test_import_relationship_examples_ui107"
+          }
+        ],
+        "frozen_manifest_sha256": "5a10e73acaaaf0d74e4bb530f8c6461d044476ecbf0aa76bfbd1583ee426a9f5",
+        "full_run_passed": 897,
+        "log": "../../functional-tests-final.log",
+        "log_sha256": "1ebc917294723b0899390be8ac7083c848538881b096b3880459f99fda1b4f11",
+        "no_testcase_count_inflation": true,
+        "skips": 0,
+        "unique_selected_example_cases_passed": 14
+      },
+      "finished_at_utc": "2026-10-10T08:40:16.299039+00:00",
+      "frozen_target_confirmation": {
+        "all_run_source_hashes_equal_frozen_manifest": true,
+        "manifest_unchanged_during_run": true,
+        "run_after_freeze": true,
+        "runtime_manifest_sha256": "5a10e73acaaaf0d74e4bb530f8c6461d044476ecbf0aa76bfbd1583ee426a9f5",
+        "runtime_resources": 2142,
+        "runtime_variant": "workspace-ui108-table-structure-review-2026-10-10"
+      },
+      "limitations": [
+        "Focused cases are a subset of the selected broad run; do not add their count.",
+        "Representative source coverage does not establish universal recognition or procedural correctness.",
+        "Original source workbooks remain read-only and are not included in release archives.",
+        "No live deployment, email, physical-device, service-worker or browser back/forward-cache acceptance."
+      ],
+      "passed": 14,
+      "release": "UI108",
+      "retained_harness_release": "UI107",
+      "runs": [
+        {
+          "duration_seconds": 16.28,
+          "errors": 0,
+          "failed": 0,
+          "junit_file": "ui108-retained-examples-final.xml",
+          "junit_sha256": "1c5ae9fb0a5ef23c6322476cc7912a3dfe57b790b8d054bd9649c4427152340e",
+          "log_file": "ui108-retained-examples-final.log",
+          "log_sha256": "8a8cf25594f452da3f607d37f8259037b573dd08705388c4a852fdd3c10f1540",
+          "passed": 14,
+          "returncode": 0,
+          "skipped": 0,
+          "source_sha256_at_run": {
+            "app/builder_hub.py": "9ef479fc202beed16572429341651f3b563ff93b41cfef06d4c2ed4d8db91b0d",
+            "app/builder_hub_api.py": "3fd1aa82f93a9118614ec868a95e418e897ba8ed554dd29b55a9ee0f7412a1f2",
+            "app/document_extract.py": "71b0b8e06875960a800956629b1183cc4b26f434f8e43677786fd5367eda0e58",
+            "app/document_import.py": "976667cda38af56a5c852536a9983a0ccb466349eeb482ea2fefcdd99f8e3ee0",
+            "app/document_structure.py": "578ed4c98eb418ca81890c28fa7b52358df0cc7442acb7535eabeb0d37b6db40",
+            "app/inventory.py": "499d53a2bf892b709e25c00c6348a3ba8bd93e044dfb4074380ca1dca73d0180",
+            "app/inventory_boxes.py": "0a7b64fea118ecf64c22593a2f9fe1daf9e954eaf028590cd0aa19fc9e2e1550",
+            "app/static/document_import.css": "9b771ae0622a25e612e4b3ecc890d1c7f3f59d2ec4a4ee3b9bfcc64b5401d7da",
+            "app/static/document_import.js": "46dad7401331adac538bd0f6dede84283f6c4d1e92ce28479d4e38bedd105a54",
+            "app/static/fieldwork.js": "417c4f39966b98f64b508babbc591f8340ffc93495fa6c9e232953748d5bb3e9",
+            "tests/browser_admin/test_admin.py": "d93ed92657539c221ab8a19349ddcc4a08d1bbb81a011772943f640051d328e9",
+            "tests/test_document_import_ui95.py": "856d4342ae759c1efd3b199aa22d945ca258e12b09f62a41ec1006bce3a1a597",
+            "tests/test_import_relationship_examples_ui107.py": "5ab9f9848a3abe1c6aaa1e5cba4f2713f663a8532f60684b3de5e10e435a3bef",
+            "tests/test_import_source_reconciliation_ui103.py": "78fda37b5f3616e83e82625a9b5362c1e8668308e9aacf9f3c2bbe1bb47c28ff",
+            "tests/test_inventory_import_ui103.py": "58a07370d9a55bf1ffa5b79c4c038b5e19031e953401771e0283140d7b34cded"
+          },
+          "stderr_file": "ui108-retained-examples-final.stderr.log",
+          "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      ],
+      "skipped": 0,
+      "source_hashes_unchanged_during_run": true,
+      "source_sha256": {
+        "app/builder_hub.py": "9ef479fc202beed16572429341651f3b563ff93b41cfef06d4c2ed4d8db91b0d",
+        "app/builder_hub_api.py": "3fd1aa82f93a9118614ec868a95e418e897ba8ed554dd29b55a9ee0f7412a1f2",
+        "app/document_extract.py": "71b0b8e06875960a800956629b1183cc4b26f434f8e43677786fd5367eda0e58",
+        "app/document_import.py": "976667cda38af56a5c852536a9983a0ccb466349eeb482ea2fefcdd99f8e3ee0",
+        "app/document_structure.py": "578ed4c98eb418ca81890c28fa7b52358df0cc7442acb7535eabeb0d37b6db40",
+        "app/inventory.py": "499d53a2bf892b709e25c00c6348a3ba8bd93e044dfb4074380ca1dca73d0180",
+        "app/inventory_boxes.py": "0a7b64fea118ecf64c22593a2f9fe1daf9e954eaf028590cd0aa19fc9e2e1550",
+        "app/static/document_import.css": "9b771ae0622a25e612e4b3ecc890d1c7f3f59d2ec4a4ee3b9bfcc64b5401d7da",
+        "app/static/document_import.js": "46dad7401331adac538bd0f6dede84283f6c4d1e92ce28479d4e38bedd105a54",
+        "app/static/fieldwork.js": "417c4f39966b98f64b508babbc591f8340ffc93495fa6c9e232953748d5bb3e9",
+        "tests/browser_admin/test_admin.py": "d93ed92657539c221ab8a19349ddcc4a08d1bbb81a011772943f640051d328e9",
+        "tests/test_document_import_ui95.py": "856d4342ae759c1efd3b199aa22d945ca258e12b09f62a41ec1006bce3a1a597",
+        "tests/test_import_relationship_examples_ui107.py": "5ab9f9848a3abe1c6aaa1e5cba4f2713f663a8532f60684b3de5e10e435a3bef",
+        "tests/test_import_source_reconciliation_ui103.py": "78fda37b5f3616e83e82625a9b5362c1e8668308e9aacf9f3c2bbe1bb47c28ff",
+        "tests/test_inventory_import_ui103.py": "58a07370d9a55bf1ffa5b79c4c038b5e19031e953401771e0283140d7b34cded"
+      },
+      "started_at_utc": "2026-10-10T08:39:59.885199+00:00",
+      "status": "PASS",
+      "unique_focused_cases": 14
+    },
+    "original_source_files_in_release": false,
+    "representative_results": {
+      "ambiguous_box_reference": {
+        "ambiguous_source_reference_retained": true,
+        "automatically_linked_records": 0,
+        "explicit_manual_links": 1,
+        "fixture": "Fictional in-memory XLSX",
+        "original_rows_preserved": true,
+        "records": 2
+      },
+      "ambiguous_container_id": {
+        "ambiguous_source_reference_retained": true,
+        "automatically_linked_records": 0,
+        "explicit_manual_links": 1,
+        "fixture": "Fictional in-memory XLSX",
+        "original_rows_preserved": true,
+        "records": 2
+      },
+      "ambiguous_container_reference": {
+        "ambiguous_source_reference_retained": true,
+        "automatically_linked_records": 0,
+        "explicit_manual_links": 1,
+        "fixture": "Fictional in-memory XLSX",
+        "original_rows_preserved": true,
+        "records": 2
+      },
+      "cross_sheet_reference_rejected": {
+        "cross_sheet_parent_inferred": false,
+        "error_source_row": 6,
+        "error_worksheet_located": true,
+        "fixture": "Fictional in-memory XLSX",
+        "repeated_serial_and_part_number_used_as_parent": false,
+        "review_read_only": true
+      },
+      "excluded_parent_restore": {
+        "excluded_parent_error_source_row": 6,
+        "fixture": "Fictional in-memory XLSX",
+        "full_records": 8,
+        "full_tsv_and_source_rows_retained": true,
+        "restored_records": 8,
+        "subset_original_positions": [
+          2,
+          3
+        ],
+        "subset_original_rows": [
+          9,
+          12
+        ],
+        "subset_records": 5,
+        "worksheet_error_located": true
+      },
+      "explicit_depth_boundary": {
+        "accepted_records": 9,
+        "error_worksheet_located": true,
+        "fixture": "Fictional in-memory XLSX",
+        "hierarchy_not_flattened": true,
+        "rejected_ancestors": 9,
+        "rejected_review_read_only": true,
+        "rejected_source_row": 7,
+        "reviewed_root_location_equal": true,
+        "supported_ancestors": 8
+      },
+      "invalid_cycle": {
+        "error_source_row": 6,
+        "error_worksheet_located": true,
+        "fixture": "Fictional in-memory XLSX",
+        "invalid_relationship": "cycle",
+        "original_coordinates_retained": true,
+        "partial_items_created": 0,
+        "partial_locations_created": 0,
+        "receipt_created": false
+      },
+      "invalid_duplicate": {
+        "error_source_row": 15,
+        "error_worksheet_located": true,
+        "fixture": "Fictional in-memory XLSX",
+        "invalid_relationship": "duplicate",
+        "original_coordinates_retained": true,
+        "partial_items_created": 0,
+        "partial_locations_created": 0,
+        "receipt_created": false
+      },
+      "invalid_multiple_boxes": {
+        "error_source_row": 9,
+        "error_worksheet_located": true,
+        "fixture": "Fictional in-memory XLSX",
+        "invalid_relationship": "multiple_boxes",
+        "original_coordinates_retained": true,
+        "partial_items_created": 0,
+        "partial_locations_created": 0,
+        "receipt_created": false
+      },
+      "original_flat_220": {
+        "automatically_inferred_boxes": 0,
+        "automatically_inferred_parent_links": 0,
+        "current_counts_created": 0,
+        "original_identifiers_quantities_and_coordinates_exact": true,
+        "records": 220,
+        "repeated_serial_records": 3,
+        "review_read_only": true,
+        "source_bytes_unchanged": true,
+        "source_counted_column_only_notes": true,
+        "source_sha256": "243fa340992f6adc6b8776cbaf9520972e27d61bd82dfc6a3374a6525184e755",
+        "unknown_quantities": 11,
+        "worksheet_count": 4
+      },
+      "original_flat_315": {
+        "automatically_inferred_boxes": 0,
+        "automatically_inferred_parent_links": 0,
+        "current_counts_created": 0,
+        "original_identifiers_quantities_and_coordinates_exact": true,
+        "records": 315,
+        "repeated_serial_records": 0,
+        "review_read_only": true,
+        "source_bytes_unchanged": true,
+        "source_counted_column_only_notes": true,
+        "source_sha256": "281f5ea2310997b269a3536753d164c57d62d1d426f17b885ba46ac51eef3337",
+        "unknown_quantities": 315,
+        "worksheet_count": 1
+      },
+      "relationship_append_preservation": {
+        "appended_boxes": 3,
+        "appended_records": 8,
+        "custody_unchanged": true,
+        "existing_box_reference_inferred": false,
+        "existing_count_rows_unchanged": true,
+        "existing_found_zero_count_unchanged": true,
+        "existing_item_body_unchanged": true,
+        "final_records": 9,
+        "fixture": "Fictional in-memory XLSX",
+        "identical_retry_single_addition": true,
+        "old_records": 1,
+        "private_new_items": 0,
+        "private_task_scope": 1,
+        "public_count_scope": 1,
+        "public_new_items": 8,
+        "repeated_identity_records_retained": true
+      },
+      "relationship_approval_and_receipt": {
+        "changed_parent_old_approval_status": 409,
+        "changed_parent_write_count": 0,
+        "fixture": "Fictional in-memory XLSX",
+        "identical_retry_receipts": 1,
+        "identical_retry_single_addition": true
+      },
+      "sparse_en_pt_native_roundtrip": {
+        "boxes": 3,
+        "child_before_parent_saved": true,
+        "differing_source_locations_retained": true,
+        "fixture": "Fictional in-memory XLSX",
+        "identical_retry_single_addition": true,
+        "known_zero_quantities": 2,
+        "original_rows_preserved": true,
+        "parent_links": 6,
+        "records": 8,
+        "repeated_part_number_records": 5,
+        "repeated_serial_records": 5,
+        "reviewed_locations_equal_saved_locations": true,
+        "same_reference_resolves_only_within_sheet": true,
+        "saved_count_sessions": 0,
+        "source_counted_values_only_notes": true,
+        "unknown_quantities": 2,
+        "worksheet_count": 2
+      }
+    },
+    "retained_original_checklist": {
+      "report": "evidence/document-reference/UI108_ORIGINAL_DOCUMENT_REVIEW.json",
+      "report_sha256": "4237ca4a63a634a6a9a573eae456c36ccf9936955c5b688a79ce3bf3846e14c9",
+      "evidence": {
+        "additional_unique_cases": 0,
+        "case_identities": [
+          {
+            "case": "test_source_example_optional_private_fixture",
+            "module": "test_document_structure_ui100"
+          }
+        ],
+        "evidence_contains_original_file_rows_or_screens": false,
+        "existing_selected_case_subset": true,
+        "frozen_runtime_manifest_sha256": "5a10e73acaaaf0d74e4bb530f8c6461d044476ecbf0aa76bfbd1583ee426a9f5",
+        "limitation": "Read-only extraction and reusable-proposal proof; native save behavior is checked separately by retained examples and the selected functional suite.",
+        "original_operational_answer_keys_absent": true,
+        "reference_counts": {
+          "answer_fields": 7,
+          "checks": 56,
+          "post_checks": 56,
+          "pre_checks": 55,
+          "section_checks": [
+            22,
+            27,
+            7
+          ],
+          "tools": 6
+        },
+        "reference_source_sha256": "14a19fa9e545f5880bf42d327c1a01ee4607bbabf68ac458340e40800140a9ad",
+        "release": "UI108",
+        "runs": [
+          {
+            "returncode": 0,
+            "stderr_log": "ui108-original-document-final.stderr.log",
+            "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "stdout_log": "ui108-original-document-final.log",
+            "stdout_sha256": "364fae48cbe8f4ef8e995f8fb3224d43792e784eb9919ceefea2fe0106918edf",
+            "tests": 1,
+            "xml": "ui108-original-document-final.xml",
+            "xml_sha256": "eddacd2dc701cc4f042a660962f835c8730f70d644c4c9de34e562c4b27dffec"
+          }
+        ],
+        "source_bytes_unchanged": true,
+        "source_hashes": {
+          "app/document_extract.py": "71b0b8e06875960a800956629b1183cc4b26f434f8e43677786fd5367eda0e58",
+          "app/document_import.py": "976667cda38af56a5c852536a9983a0ccb466349eeb482ea2fefcdd99f8e3ee0",
+          "app/document_structure.py": "578ed4c98eb418ca81890c28fa7b52358df0cc7442acb7535eabeb0d37b6db40",
+          "tests/test_document_structure_ui100.py": "e7d357fa91628a7fc1212a60f042cb3feab756d64bdf5b44b99819f1b89a733c",
+          "tests/test_document_tables_ui108.py": "2e3c3479a14ef6a50feced01bf734b92cf9f8ce8751651858ddf296b4d617769"
+        },
+        "source_hashes_unchanged_during_run": true,
+        "status": "PASS"
+      },
+      "reference_counts": {
+        "answer_fields": 7,
+        "checks": 56,
+        "post_checks": 56,
+        "pre_checks": 55,
+        "section_checks": [
+          22,
+          27,
+          7
+        ],
+        "tools": 6
+      },
+      "additional_unique_cases": 0,
+      "method": "Read-only extraction and reusable-proposal proof; native save is covered separately."
+    },
+    "limitations": [
+      "Representative cases establish these tested layouts, not universal recognition or procedural correctness.",
+      "Unsupported or ambiguous layouts require deliberate mapping/manual correction.",
+      "Original documents remain read-only and are excluded from archives."
+    ]
+  },
   "tests": {
     "functional_passed": 897,
     "build_replay_passed": 13,
@@ -637,6 +1260,13 @@
       }
     ]
   },
+  "independent_review": {
+    "method": "Read-only implementation/guide review; separate final archive audit before delivery.",
+    "remaining_material_findings": []
+  },
+  "nonblocking_observations": [
+    "The inherited static Toolbox Builder Browse-all Help actions precede the retained UI106 source chapter. Final browser review found no overflow, clipping or UI108 content misplacement; chapter/action ordering remains a follow-up."
+  ],
   "remote_actions": {
     "repository": "adriano5454-ai/wavelink",
     "date": "2026-10-10",
@@ -701,6 +1331,20 @@
       "remote_ancestor_commit": "a7e5d4dfac358744599939b1a861309476a1ccc3",
       "ui107_changes_not_uploaded": true
     }
+  },
+  "retained_boundaries": {
+    "sql_schema_migration": false,
+    "data_reset": false,
+    "browser_storage_clear": false,
+    "inventory_core_changed": false,
+    "mail_or_auth_backend_changes": false,
+    "approved_art_files_unchanged": 72,
+    "sql_definition_resources_unchanged": 31,
+    "document_extractor_changed": false,
+    "document_structure_backend_changed": true,
+    "fieldwork_browser_read_changed": true,
+    "dependencies_and_vendor_bytes_unchanged": true,
+    "existing_items_counts_task_scope_and_custody_replaced": false
   },
   "not_claimed": [
     "Universal recognition, automatic OCR or procedural correctness.",

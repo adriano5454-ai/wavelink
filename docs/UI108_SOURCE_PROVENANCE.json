@@ -1,0 +1,201 @@
+{
+  "format": "wavelink-runtime-overlay-1",
+  "date": "2026-10-10",
+  "patch_id": "workspace-ui108-table-structure-review-2026-10-10",
+  "parent_patch_id": "workspace-ui107-document-relationships-review-2026-10-10",
+  "parent_git_commit": null,
+  "parent_manifest_sha256": "8de54f37d7b044473f171746164eab90bb0de9532eeca7551961e242edeb06cb",
+  "parent_full_repository_zip_sha256": "a6b11412e590581cff2245e3151f27668c1b6471d94f384aa4335c2f7dffdac9",
+  "parent_source": "approved-delivered-local-UI107",
+  "remote_ancestor_release": "UI106",
+  "remote_ancestor_commit": "a7e5d4dfac358744599939b1a861309476a1ccc3",
+  "scope": "Review supported document table structure while retaining source evidence, explicit choices, item identities and existing records.",
+  "boundaries": {
+    "database_reset": false,
+    "browser_storage_clear": false,
+    "sql_schema_migration": false,
+    "auth_backend_change": false,
+    "mail_backend_change": false,
+    "artwork_bytes_change": false,
+    "existing_items_counts_and_task_scopes_replaced": false,
+    "automatic_identity_deduplication": false,
+    "inventory_backend_change": false,
+    "document_extraction_backend_change": false,
+    "automatic_ambiguity_resolution": false,
+    "document_structure_backend_change": true,
+    "toolbox_browser_read_change": true,
+    "automatic_inventory_relationship_assignment": false
+  },
+  "files": [
+    {
+      "path": "app/document_import.py",
+      "before_sha256": "43e46772be9997a4713c20cc70e2926c3cffd3fe7cf034ba9ecb5a043960d449",
+      "after_sha256": "976667cda38af56a5c852536a9983a0ccb466349eeb482ea2fefcdd99f8e3ee0"
+    },
+    {
+      "path": "app/document_structure.py",
+      "before_sha256": "6f53a543303a9e1b5b59e511af4c25583da0b668967334ce8d4569aecf9e5957",
+      "after_sha256": "578ed4c98eb418ca81890c28fa7b52358df0cc7442acb7535eabeb0d37b6db40"
+    },
+    {
+      "path": "app/static/document_import.css",
+      "before_sha256": "82bd55645c90162b2b04e739fa795987979c18a358ed397ef4bac5a3782ad6a2",
+      "after_sha256": "9b771ae0622a25e612e4b3ecc890d1c7f3f59d2ec4a4ee3b9bfcc64b5401d7da"
+    },
+    {
+      "path": "app/static/document_import.js",
+      "before_sha256": "92c5aef52797e2b8d8ebfc01d17cb52cbbce17d2cd93f4d502e9d485fab418f1",
+      "after_sha256": "46dad7401331adac538bd0f6dede84283f6c4d1e92ce28479d4e38bedd105a54"
+    },
+    {
+      "path": "app/static/fieldwork.js",
+      "before_sha256": "368c8a44a547643353c172c907b7fb9690ee29b833d602388898e40909ed6007",
+      "after_sha256": "417c4f39966b98f64b508babbc591f8340ffc93495fa6c9e232953748d5bb3e9"
+    },
+    {
+      "path": "app/static/help_topics/documentimport.html",
+      "before_sha256": "16dba7b45edc3a30fdde3a449cd265c848a587419d6fe1cbe9e47f66eb1e8e78",
+      "after_sha256": "535bbdb724b209444649b957ee4417449cb039e3efae71afaf19b7a90e69c83b"
+    },
+    {
+      "path": "app/static/help_topics/importcentre.html",
+      "before_sha256": "7acbafe63f018ecf2add5d1b3645a8f149fa10922e8bec44cbd098b280e1f61b",
+      "after_sha256": "2968b3f0effbf22159e1666045f0e5ec34ebfc95acdefb67cbfd5c73c72f73fd"
+    },
+    {
+      "path": "app/static/help_topics/inventorybuilder.html",
+      "before_sha256": "e150d6518cc2e381107f2694af3c94e11569df6da973f595dc48ec705ea1bea1",
+      "after_sha256": "fd3103afb3b6ddc3d6702effaead94c205584ec40a1794b7b8f186a0f8bb83e6"
+    },
+    {
+      "path": "app/static/help_topics/toolbox.html",
+      "before_sha256": "9d9f17051a3c2a705a017110bdf7c8cb7e4f265de5d34d7317aeb294ca70f699",
+      "after_sha256": "c5fee7daf3bf30adce7259fc51c3d649922f4b677b039df8403a690d69d407be"
+    },
+    {
+      "path": "app/static/help_topics/toolboxbuilder.html",
+      "before_sha256": "78703af9ffdc2d8204a39a18eb6d5db83968ce1d9b821ed217dada9c2256988c",
+      "after_sha256": "921c56f5a556d9e1317e75d06880559357b3ed1215d9b2515a75c19ab77465ce"
+    },
+    {
+      "path": "app/static/index.html",
+      "before_sha256": "ef592513e9f237912116facd5c5e791d51d18fa3e497e65b0bafe56ddb4fa5f3",
+      "after_sha256": "0841918d643df919b475ac42da9283f79d18a04ab63d9d225e0fe99c484dea2e"
+    },
+    {
+      "path": "app/static/sw.js",
+      "before_sha256": "6e8a18e2f22b64f4f4a988966e8be00508e2d9400aebd34b0bb1cd3435bc8b50",
+      "after_sha256": "59e3952fe425c50c2e44dda3853abebff1a2104d9456f9dac5ea90e7f5b9d500"
+    },
+    {
+      "path": "docs/user/topics/documentimport.html",
+      "before_sha256": "f9f0fd5240ed786bc61052aa4abd580b7018380673bba95b52416f98a9ed60eb",
+      "after_sha256": "80e496781a426d257f764f7c90b03dfb8d5d292bd3b2a68d788b88a2456dbf17"
+    },
+    {
+      "path": "docs/user/topics/importcentre.html",
+      "before_sha256": "6c3964685fad33bfde57418faa699088cd99d838db4dddfaae17027361284e5a",
+      "after_sha256": "db813e3f9f25a8f8a681d3c78c330234013f5c6b12c8d2f954e9d2692fb394ca"
+    },
+    {
+      "path": "docs/user/topics/inventorybuilder.html",
+      "before_sha256": "6c05e860a957642b0323942ebe89a57d0c7c0d9120071b05ed9281fe82f0b210",
+      "after_sha256": "3bdf9160c10023aa2e14e37267975531808212cf360908a4dabffa0cb6c14b76"
+    },
+    {
+      "path": "docs/user/topics/toolbox.html",
+      "before_sha256": "934090e19f2893bba47014c0af99070f35d39b3f1d8a4d118cf34c131e532858",
+      "after_sha256": "74b7e7dff071faaba06c58447c55723865a7ea1ff03df6e7fca4ea02b642b6da"
+    },
+    {
+      "path": "docs/user/topics/toolboxbuilder.html",
+      "before_sha256": "5560d7bcf68a3e6d12bf6d2085a1ceaaebdf17f3b925c74989054ea368da2a1a",
+      "after_sha256": "5cabc950b5bb380992d1c60336f25df042b7d9e55d590bedbdf62f1ac82b723b"
+    },
+    {
+      "path": "tests/test_document_tables_ui108.py",
+      "before_sha256": null,
+      "after_sha256": "2e3c3479a14ef6a50feced01bf734b92cf9f8ce8751651858ddf296b4d617769"
+    },
+    {
+      "path": "tests/test_inventory_source_review_ui108.js",
+      "before_sha256": null,
+      "after_sha256": "8010236945265b3125f950cd9309ec21bb64784171754366159a5b5577d24c75"
+    },
+    {
+      "path": "tests/test_inventory_source_review_ui108.py",
+      "before_sha256": null,
+      "after_sha256": "fb4a902b44d4748f82625e33f7d57f7b97d6d805ec952cf557a22ac2fa306298"
+    },
+    {
+      "path": "tests/test_toolbox_read_ui108.js",
+      "before_sha256": null,
+      "after_sha256": "b6602fe82f15177473807d8e63b61e36a7808c89bd18fc36d53cc291650c94a4"
+    }
+  ],
+  "runtime_manifest_sha256": "5a10e73acaaaf0d74e4bb530f8c6461d044476ecbf0aa76bfbd1583ee426a9f5",
+  "runtime_resources": 2142,
+  "runtime_resources_unchanged_from_UI107": 2120,
+  "approved_art_files_unchanged": 72,
+  "sql_definition_resources_unchanged": [
+    "app/access.py",
+    "app/account_security.py",
+    "app/accounts.py",
+    "app/action_center.py",
+    "app/assets.py",
+    "app/checklist_library.py",
+    "app/checklist_migrations.py",
+    "app/company_branding.py",
+    "app/departments.py",
+    "app/document_details.py",
+    "app/document_invitations.py",
+    "app/email_alerts.py",
+    "app/fault_reports.py",
+    "app/fieldwork_common.py",
+    "app/fleet.py",
+    "app/fleet_access.py",
+    "app/handovers.py",
+    "app/log_assignments.py",
+    "app/logs.py",
+    "app/membership_policy.py",
+    "app/original_documents.py",
+    "app/original_folders.py",
+    "app/password_recovery.py",
+    "app/photo_evidence.py",
+    "app/qshe_reports.py",
+    "app/recognition.py",
+    "app/store.py",
+    "app/task_access.py",
+    "app/type_management.py",
+    "app/user_lifecycle.py",
+    "app/vessel_logs.py"
+  ],
+  "inherited_hosting_vendor_dependency_resources_unchanged": [
+    "deploy/apply_ui100.py",
+    "deploy/apply_ui101.py",
+    "deploy/apply_ui102.py",
+    "deploy/apply_ui103.py",
+    "deploy/apply_ui104.py",
+    "deploy/apply_ui105.py",
+    "deploy/apply_ui106.py",
+    "deploy/apply_ui107.py",
+    "deploy/apply_ui93.py",
+    "deploy/apply_ui94.py",
+    "deploy/apply_ui95.py",
+    "deploy/apply_ui96.py",
+    "deploy/apply_ui97.py",
+    "deploy/apply_ui99.py",
+    "deploy/company_runtime.py",
+    "deploy/entrypoint.py",
+    "deploy/extract_source.py",
+    "deploy/nginx_config.py",
+    "requirements.lock",
+    "vendor/FICTIONAL_DEMO.ajproject",
+    "vendor/source.part001",
+    "vendor/source.part002",
+    "vendor/source.part003",
+    "vendor/source.part004",
+    "vendor/source.part005",
+    "vendor/source_parts.json"
+  ]
+}
