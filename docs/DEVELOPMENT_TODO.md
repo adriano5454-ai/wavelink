@@ -1,7 +1,7 @@
-# Current UI110 follow-up
+# Current UI111 follow-up
 
-Review Tasks and Maintenance summaries in the existing deployment. Verify explicit full-record work actions, retained drafts, filters and phone Back navigation in one acceptance session.
+Apply UI111 through the existing workflow and exercise one representative import: cancel remapping of a corrected row, check and confirm, inspect another worksheet, then save the same proposal. Verify blocked conflict details remain visible while browsing and that a real edit requires another check. Preserve genuine unsent work.
 
-Next grouped import work: protect deliberate item corrections before reapplying a worksheet mapping, and distinguish inspection-only worksheet navigation from material proposal changes. Preserve explicit exclusions, source coordinates, complete Notes, SN/PN/leading zeros, box relationships, unknown versus zero quantities and exact uncertain-save requests. Never discard rows or infer relationships from names or repeated identifiers.
+Next grouped work: simplify import review around real source layouts and mapping decisions. Keep editable uncertainty notices, explicit row choices, worksheet locations, source evidence, SN/PN/leading zeros, full Notes, unknown versus zero quantities and box relationships. Never silently remove or merge records. Existing inventory, verification scopes, checks, custody and saved receipt retry remain intact.
 
-Continue substantial workflow releases with a full repository, compact exact-parent update and one current checkpoint. Reverify GitHub before editing. Preserve company data, unsent work, permissions, artwork, named sessions, C01/G01/M01 boundaries and the established handover workflow. Live mail, physical devices, service-worker upgrades and production synchronization need acceptance in their actual environments.
+Continue substantial workflow releases with a full repository, exact-parent compact update and one current checkpoint. Reverify GitHub before editing. Preserve permissions, artwork, named sessions, UI110 summary browsing, C01/G01/M01 isolation and the established handover workflow. Live mail, physical devices, service-worker upgrades and production synchronization need acceptance in their actual environments.

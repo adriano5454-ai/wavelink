@@ -1,16 +1,15 @@
 {
-  "release": "UI110",
+  "release": "UI111",
   "core": "1.34.19",
-  "parent_git_commit": "3329dddcf39bc7065d53b731ca3524f508183dcf",
-  "runtime_manifest_sha256": "d503d55a08ca488a3c1275a234ef7d61743f07e58c8fc165bee744f0ab370b92",
+  "parent_git_commit": "61a18def0e11f4663fb1e23321ed6d6ceecea657",
+  "runtime_manifest_sha256": "3a2063b04e50a8753580dcc5507f73e3b11d647425cb3b568f66d14b2ebe1793",
   "checks": {
-    "selected_pytest_passed": 98,
-    "full_replay_passed": true,
-    "real_c01_browser_passed": 25,
-    "task_delayed_response_browser_passed": 18,
-    "maintenance_browser_passed": 43
+    "selected_pytest_passed": 41,
+    "node_checks_passed": 193,
+    "genuine_c01_browser_passed": 28,
+    "complete_replay_passed": true
   },
-  "scope": "Selected local fictional acceptance; see docs/UI110_REVIEW_REPORT.json.",
   "main_modified": false,
-  "production_deployed": false
+  "production_deployed": false,
+  "details": "docs/UI111_REVIEW_REPORT.json"
 }
