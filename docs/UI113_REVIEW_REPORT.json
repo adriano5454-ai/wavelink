@@ -1,0 +1,843 @@
+{
+  "release": "UI113",
+  "core": "1.34.19",
+  "date": "2026-10-13",
+  "repository": "adriano5454-ai/wavelink",
+  "parent_release": "UI112",
+  "parent_git_commit": "3e3fc54d6a3bf16d085d8e97fad5d34da6799a96",
+  "runtime_manifest_sha256": "14166458114e9eaeaeac1cd57cdca4b8931e8c5395c966425ae8abc9372968ed",
+  "runtime_resources": 2152,
+  "overlay_resources": 11,
+  "implemented": [
+    "Restore last applied mapping discards pending header/column choices for the inspected worksheet while preserving current rows, corrections, full Notes, quantities, exclusions, source references, manual status, relationships, locations and destination.",
+    "Pending diagnostics show header and destination-field changes against the recorded applied mapping, with numbered source-column labels.",
+    "An editor-only applied-mapping record is created on fresh initialization and successful Apply, validated against current source/token/worksheet/header. Missing or invalid legacy records remain unavailable; row text is never used to guess a prior mapping.",
+    "Restore requires a fresh check and confirmation; accepted/blocked outcomes and old requests are cleared. No routine confirmation, remapping, API call or native record write occurs on Restore.",
+    "Busy/uncertain/modal/session and stale-control guards protect the unchanged request. Cancelled or failed Apply does not overwrite a valid prior baseline.",
+    "UI112 worksheet/section inspection and UI111 signed-proposal/remapping/save/retry safeguards remain; served/offline Help and current searchable catalogue explain recovery."
+  ],
+  "checks": {
+    "selected_pytest_passed": 41,
+    "pytest_breakdown": {
+      "overlay_and_assets": 7,
+      "retained_help_relationships": 23,
+      "backend_signed_boundary": 11
+    },
+    "node_checks_passed": 271,
+    "node_suites": [
+      {
+        "file": "test_document_review_ui104.js",
+        "result": {
+          "checks": 32,
+          "passed": 32,
+          "names": [
+            "Readable new inventory overview shows item records and each worksheet location",
+            "Existing inventory explains current, incoming and proposed record counts",
+            "Optional identifier details count missing identifiers without blocking",
+            "Source row locations retain their explained fallback when no override is chosen",
+            "Destination, worksheet, item, location and reason text are always escaped",
+            "Definite duplicate diagnostics show original source row and whole-batch block",
+            "Duplicate reason appears before the destination on the checked overview",
+            "Unproven source reason reports a bounded worksheet count before the destination",
+            "Unproven row evidence is visibly distinct from an original Excel row",
+            "Bounded diagnostic rows state that additional rows remain blocked",
+            "A blocked overview with no listed rows still explains how to recheck",
+            "Ready response cannot contain definite duplicate conflicts",
+            "Ready response cannot contain uncertain source conflicts",
+            "Mismatched sheet counts cannot appear as a checked total",
+            "Mismatched identifier totals are rejected",
+            "Negative and noninteger record counts are rejected",
+            "Resulting destination count must include all incoming records",
+            "A new inventory cannot claim existing items",
+            "Conflict original rows require a positive integer or explicit null",
+            "Inventory review requires its explicit overview contract",
+            "Successful real review retains its receipt and requires unchecked confirmation",
+            "Blocked 200 review renders diagnostics but cannot issue a save request",
+            "Even a manually retained blocked review cannot create a save request",
+            "A failed recheck removes the prior success summary and confirmation",
+            "A mismatched source response cannot enable inventory confirmation",
+            "Lost account or route ownership cannot inject a returned review",
+            "Busy, uncertain and departed forms cannot request another review",
+            "Editing a reviewed draft clears the prior review and pending request",
+            "Changed worksheet location and destination are sent only in a new checked draft",
+            "Blocked diagnostics do not disable the controls needed to adjust and recheck",
+            "Other document types keep their established readable summary flow",
+            "Overview layout uses bounded wrapping cards and one column on narrow screens"
+          ]
+        }
+      },
+      {
+        "file": "test_document_row_selection_ui105.js",
+        "result": {
+          "checks": 40,
+          "passed": 40,
+          "names": [
+            "Default includes every mapped row without adding selection metadata",
+            "Exclude keeps full TSV and full original source coordinates",
+            "Repeated names serials and part numbers stay separate selectable rows",
+            "Chooser distinguishes expected zero from Unknown and labels original rows",
+            "Uploaded item and identity text is escaped in chooser cards and search",
+            "PN search retains leading zeros and returns full mapped positions",
+            "SN name and asset searches are case independent",
+            "Search filter and paging preserve checked receipt and pending operation",
+            "Shown-page exclusion changes only its 50 visible mapped rows",
+            "Filtered shown actions use original mapped indices without excluding other matches",
+            "Excluded filter permits explicit restoration and keeps full source evidence",
+            "Needs review includes Unknown and optional missing identifiers without removing rows",
+            "Selection changes discard checked approval receipt confirmation and summary",
+            "No-op selection retains checked approval",
+            "Busy uncertain and departed forms cannot change choices views or raw rows",
+            "Invalid row positions do not change selection or approval",
+            "Stored duplicate and out of range choices fail safely instead of silently changing rows",
+            "Chosen rows survive worksheet deselection and kept draft restoration",
+            "Existing inventory refresh keeps explicit item choices and full source rows",
+            "Excluding every row keeps source draft and prevents any review request",
+            "A wholly excluded worksheet can accompany another selected worksheet",
+            "Applying mapping preserves exclusions by original row after positions move",
+            "New mapped rows are included while confirmed source exclusions remain excluded",
+            "Ambiguous or unavailable coordinates visibly reset choices rather than shift exclusions",
+            "Raw TSV editing resets positional choices and clears original coordinates",
+            "Apply mapping after raw editing restores coordinates and replaces stale notice",
+            "Manual choices cannot be preserved when mapping restores previously unavailable coordinates",
+            "Headerless manual TSV retains the first item and mapped positions match full payload",
+            "Exact legacy header is removed and its twelve-column rows retain blank PN",
+            "An approximate or shifted header is not guessed and removed",
+            "Explicit review totals show mapped included and excluded records",
+            "Optional mapped and excluded count fields require a consistent integer pair",
+            "Reviewed selection must match exact worksheet names and selected record counts",
+            "Missing explicit selection ledger cannot restore approval after a new check",
+            "Successful selected-row review and save request keep full rows and original provenance",
+            "Chooser replacement preserves keyboard focus by original mapped position without scrolling",
+            "Filtering out the focused chosen row moves focus to the next visible row",
+            "Shown page button retains focus when its contents repaint",
+            "Mapped column preview starts collapsed while retaining every preview column and source Notes",
+            "Chooser is collapsed by default with bounded cards and narrow-screen layout"
+          ]
+        }
+      },
+      {
+        "file": "test_document_interpretation_ui106.js",
+        "result": {
+          "checks": 36,
+          "passed": 36,
+          "names": [
+            "Whole document and selected worksheet use only their matching original review points",
+            "Old scans without a sidecar keep established editing behavior",
+            "Inventory and logbook views do not display checklist interpretation diagnostics",
+            "Interpretation panel starts collapsed and explains original evidence rather than current resolution",
+            "Questionable classification remains original source evidence after manual corrections and kept draft restoration",
+            "Uploaded location reason excerpt and point IDs are safely escaped",
+            "A bounded report explains omitted additional interpretation points",
+            "Invalid diagnostic versions bounds duplicates types and unknown roles fail verification",
+            "Unicode character bounds match backend character counting",
+            "Malformed restored diagnostics remain an explicit advisory and never a guessed target",
+            "Source position types distinguish original rows and extracted lines or blocks",
+            "Navigation finds a check by stable ID after card reordering without mutating approval or draft",
+            "Removed check target falls back to a section instead of another item",
+            "Tools workflow instructions and source roles focus existing editors only",
+            "Unknown point and departed route cannot navigate old diagnostics",
+            "Toolbox interpretation clearly states native destination limits",
+            "Toolbox discussion question supervisor and declaration points focus their actual native fields",
+            "Checklist stage and typed answer points do not pretend to create native toolbox fields",
+            "Copy adds full source instructions and tools to current editable discussion without replacing prompts",
+            "Explicit source copy clears prior approval request confirmation and summary",
+            "Repeating explicit copy skips only exact existing group and text pairs",
+            "Same text in another discussion group stays distinct",
+            "Long instructions are split into bounded prompts without losing the end or unicode",
+            "Repeated source chunks consume matching current occurrences without dropping later repeated text",
+            "Long source headings are retained as prompt text instead of truncated native group names",
+            "Source body starting with a hash remains prompt text instead of becoming an accidental group",
+            "Adding all source notes rejects over 100 native prompts atomically without partial projection",
+            "All retained source notes must fit; overlong source is never silently partially copied",
+            "Discussion text cap is checked before mutation even when extra headers carry no prompts",
+            "Busy uncertain and departed forms cannot copy source notes or navigate interpretation",
+            "Busy and uncertain state disables both source navigation and explicit projection controls",
+            "Delivered kind changes cannot mutate busy uncertain or departed draft and unchanged retry receipt",
+            "Allowed material kind change retains current edits and source evidence while invalidating approval",
+            "Unsupported unavailable or unchanged kind values cannot discard approval",
+            "Interpretation evidence is excluded from collected draft and saved native projection",
+            "Stable editor anchors and wrapped collapsed panels remain accessible on small screens"
+          ]
+        }
+      },
+      {
+        "file": "test_document_relationships_ui107.js",
+        "result": {
+          "checks": 43,
+          "passed": 43,
+          "names": [
+            "Inspector is collapsed by default and shows exact source rows without changing data",
+            "Explicit English Portuguese and canonical flag/parent headers map deliberately",
+            "Unqualified box and container identifiers are retained without guessing a relationship",
+            "SN PN and repeated item names stay distinct and never become parent references",
+            "Child before nested and root boxes resolves without changing original order or source locations",
+            "Worksheet override controls root location without overwriting mapped literals or source notes",
+            "Root blank locations use worksheet name and item locations remain separate",
+            "Excluded parent is located and excluded rows stay available to restore",
+            "Parent candidates contain only unique included explicit same-sheet boxes",
+            "Duplicate box references are diagnosed and excluded from candidate choices",
+            "Exact trimmed reference matching is case sensitive and does not use item names",
+            "Missing unmarked self parent and cyclic references need review without auto-repair",
+            "Eight ancestor edges are allowed and nine are visibly too deep",
+            "Plural zero and malformed box quantities require explicit repair while Unknown is allowed",
+            "Unrecognized source flags and unreferenced blank-asset boxes are honest advisories",
+            "Actual field edits change one cell and retain exact row order source coordinates notes and choices",
+            "Notes with quotes tabs and multiline text survive canonical serialization byte for byte",
+            "No-op normalized flag and identical text preserve exact source bytes checked approval and retry",
+            "Clearing a parent is deliberate and keeps original mapped location and source provenance",
+            "Busy uncertain and departed forms cannot edit any field clear parent or change views",
+            "Dirty mapping and invalid positions field names values and lengths are rejected atomically",
+            "Native field codepoint bounds allow long Unicode without silently truncating it",
+            "Malformed column widths fail safely and keep all original rows without dropping unknown cells",
+            "Read-only search filter pagination and panel inspection preserve checked approval and pending request",
+            "Search uses original mapped positions and searches name asset parent SN and PN",
+            "View filters show boxes contents excluded and advisory rows without changing selections",
+            "Unavailable source coordinates are labelled mapped rows without fabricating Excel positions",
+            "Kept form serialization preserves per-sheet edits row choices and views without inventing cross-sheet links",
+            "Destination refresh retains relationship edits full coordinates and explicit choices",
+            "Reapplying mapping visibly replaces field edits while preserving proven source row exclusions",
+            "Full text editing visibly replaces field edits and clears unverifiable row identity and choices",
+            "Exact legacy twelve-column TSV is editable with empty PN and unchanged item order",
+            "Inspector metadata stays outside strict native draft and inventory payloads",
+            "Uploaded names flags references identities and query text are safely escaped",
+            "Mapped preview displays resolved root location while TSV retains child location",
+            "Relationship controls use bounded cards and narrow screen wrapping",
+            "Typing a relationship field keeps row and field focus and text selection across repaint",
+            "Explicit DOM locks protect fields clear controls search and paging while busy uncertain or mapping dirty",
+            "Programmatic input select clear and search events cannot mutate a frozen or departed form",
+            "Opening and filtering actual DOM controls keeps confirmation and pending operation",
+            "Captured old handlers cannot edit or inspect a different import kind after switching away",
+            "Captured previous worksheet handlers cannot change the newly active worksheet",
+            "Captured handlers safely stop after normal form disposal clears its document"
+          ]
+        }
+      },
+      {
+        "file": "test_inventory_source_review_ui108.js",
+        "result": {
+          "checks": 27,
+          "passed": 27,
+          "names": [
+            "All named rows remain included; five nonitem-like source rows get located original-source advice",
+            "Source-review filter differs from retained Unknown quantity and optional identity review",
+            "Model and explicit containment evidence avoid guessing an instruction or total is nonitem",
+            "Plain name-only Unknown spare and Check valve are valid selectable rows",
+            "Portuguese total section instruction and footer produce conservative advisory points",
+            "Only explicit exclusion changes selected_rows; all cells Notes and positions remain",
+            "SN PN leading zeros and Counted zero or blank stay distinct original evidence",
+            "Advisory facts and chooser views never enter strict native sheets or draft schema",
+            "Searching filtering paging and inspecting source advice preserve checked receipt",
+            "Actual filtered Exclude shown invalidates approval and keeps all seven mapped rows",
+            "Field-only quantity asset and parent corrections preserve original-source advice honestly",
+            "Full TSV editing clears advice and provenance with an immediately visible honest notice",
+            "Older kept draft without source advice is explicitly unavailable rather than claimed clean",
+            "Reapplying original mapping restores advice and preserves confirmed exclusions",
+            "Automatic header scan covers row32 and row250 but does not claim unbounded auto discovery",
+            "Source browser is collapsed and bounded at fifty cards over a full 1200-row sheet",
+            "Source browser searches literal source text and proven sparse Excel numbers",
+            "Opening searching paging and same-header choice preserve checked receipt",
+            "A chosen header beyond250 truly changes dirty mapping while retaining prior rows until Apply",
+            "Actual header choice places keyboard focus on Apply mapping without forced scrolling",
+            "Later stronger headers and preheader rows get located notices without weak remapping",
+            "Unproved coordinates use extracted-row labels and do not invent Excel references",
+            "Source text identities query and advisory excerpts are safely escaped",
+            "Busy uncertain departed kind-switch sheet-switch and disposed controls cannot mutate source metadata",
+            "Header chooser and source selection visibly lock on busy or uncertain and recover boundaries",
+            "Invalid header positions and duplicate choice cannot clear approval or change mapping",
+            "Paged header cards and source advisories use wrapping within mobile content"
+          ]
+        }
+      },
+      {
+        "file": "test_inventory_item_review_ui109.js",
+        "result": {
+          "checks": 28,
+          "passed": 28,
+          "names": [
+            "Only the three ordinary identity fields change; full Notes, choices, coordinates and containment stay exact",
+            "No-op identity correction preserves exact approval, pending request, row text and sidecars",
+            "Repeated corrected SN or PN do not merge rows or change explicit inclusion choices",
+            "Unknown and zero expected quantity plus leading-zero identities remain literal separate fields",
+            "Excluded rows remain editable and excluded with their original source-row identity",
+            "Strict payload contains edited rows and existing sidecars but no editor-only advisory state",
+            "Invalid names, over-limit text, controls and extra field names are rejected atomically",
+            "Native codepoint limits accept Unicode identity text without numeric conversion",
+            "Wrong positions, malformed rows and dirty mappings cannot mutate approved content",
+            "Busy, uncertain, departed, kind-switched and disposed forms reject direct mutations",
+            "Opening and typing in the focused dialog keep approval and exact existing draft unchanged",
+            "Dialog Apply closes the modal before guarded commit and preserves exclusions and coordinates",
+            "No-op Apply and Cancel keep the checked receipt and exact draft",
+            "Invalid dialog text stays available to correct and cannot clear approval",
+            "Captured dialog submit cannot apply after route/account/permission departure, sheet switch or disposal",
+            "Busy or uncertain changes lock every editor field and reject captured submits until safe",
+            "Captured card handlers cannot open a different active sheet or disposed builder",
+            "Additional open dialogs and mapping changes block editor creation and commits",
+            "Stale Cancel closes its temporary dialog without applying edits or focusing departed content",
+            "Inventory-only permission revocation blocks Apply but leaves an available Cancel when still owned",
+            "Captured closed-editor callbacks cannot edit a new dialog or steal its focus",
+            "Quotes, CRLF and embedded tabs in untouched full Notes remain byte-for-byte equal after correction",
+            "Full TSV editing retains its existing reset semantics after item corrections",
+            "Applying original mapping replaces item corrections and preserves confirmed source exclusions honestly",
+            "Already-manual valid rows can be corrected without inventing original source coordinates",
+            "Source-advice filter retains original source facts after a row gets corrected item identity",
+            "Dangerous-looking item identities remain escaped in card and dialog markup",
+            "Searching current corrected SN or PN keeps checked receipt and does not reclassify source"
+          ]
+        }
+      },
+      {
+        "file": "test_inventory_review_safeguards_ui111.js",
+        "result": {
+          "checks": 23,
+          "passed": 23,
+          "names": [
+            "Cancelling remapping corrected identities retains every state and DOM review value exactly",
+            "Accepting remapping replaces corrected identities and retains only proven row choices",
+            "Expected quantity and box corrections get their own warning and Cancel keeps all corrections",
+            "Full mapped-row corrections require consent and Cancel keeps missing-source ledger and explicit exclusions",
+            "Manual-source exclusion reset is confirmed even when current row text matches source text",
+            "Ordinary mapping and edits restored to exact source values do not add routine confirmation",
+            "Accepted stale native dialogs cannot remap a changed owner, source, active sheet, rows, mapping or save state",
+            "Busy, uncertain and departed mapping paths never show a prompt or change a receipt",
+            "Completed confirmation and summary survive inventory-only worksheet inspection with exact signed save draft",
+            "Unchecked confirmation stays unchecked across worksheet inspection",
+            "Excluded summary-sheet inspection retains included worksheets, reviewed provenance and pending op identity",
+            "Mapping, inclusion, destination, name, SN, PN, quantity and location edits clear review after inspection",
+            "Silent material drift cannot inherit approval when inspecting or building an action request",
+            "Missing retained review, missing authoritative sheets and replacing the review object cannot create a signed save request",
+            "Returned action draft is a defensive copy and cannot mutate retained signed review bytes",
+            "Busy and uncertain save attempts freeze worksheet control and preserve existing unchanged request",
+            "Captured old sheet and mapping controls cannot mutate after repaint or new source",
+            "Departed review response cannot restore a token or summary in another owner",
+            "Review response for replaced source cannot restore the previous signed draft",
+            "Blocked source-conflict overview survives included and excluded sheet inspection without becoming saveable",
+            "Material edits clear blocked diagnostics permanently across subsequent inspection",
+            "Starting a recheck drops old blocked diagnostics; failed or malformed outcomes cannot revive them",
+            "Blocked diagnostics with silent material or source drift fail the same retained-draft guard"
+          ]
+        }
+      },
+      {
+        "file": "test_inventory_navigation_ui112.js",
+        "result": {
+          "checks": 18,
+          "passed": 18,
+          "names": [
+            "Inspector context distinguishes inspected data and excluded summary sheets without selecting them",
+            "Inspecting the current worksheet opens mapping without changing an accepted signed review",
+            "Direct inspection preserves checked draft, confirmation, selections and source evidence",
+            "View jumps open and focus the requested section with zero API, review, payload or selection changes",
+            "Overview shortcut is unavailable before a check and enabled for a retained accepted outcome",
+            "Blocked diagnostic overview remains navigable without enabling save or confirmation",
+            "Material edits remove accepted and blocked overview navigation until another successful check",
+            "Missing Name mapping is prominent immediately and invalid Apply focuses Name without discarding rows",
+            "Pending column mapping explicitly shows previously applied rows and does not automatically change their values",
+            "Clearing Name preserves previous mapped rows and source ledger while telling the user to choose Name",
+            "Applying a valid chosen mapping clears pending status and rebuilds rows only on explicit Apply",
+            "Repeated or blank source headings have distinct column-number option labels and all 13 mappings remain",
+            "Shared source-column reuse is advisory and accepted mapping retains literal values and full source Notes",
+            "Shared-column advisory escapes source headings without restricting names or interpreting source values",
+            "Busy and uncertain states disable every new button and captured callbacks cannot bypass that lock",
+            "Stale navigation and inspection callbacks cannot act after source, host, active sheet, kind or owner changes",
+            "An open modal blocks shortcuts and inspection without modifying the current draft",
+            "Changing worksheet selection refreshes the active inclusion context independently of inspection"
+          ]
+        }
+      },
+      {
+        "file": "test_inventory_mapping_restore_ui113.js",
+        "result": {
+          "checks": 24,
+          "passed": 24,
+          "names": [
+            "Fresh mapping records a detached source-associated header and all 13 source-column choices",
+            "Pending header and column diagnostics name original and proposed fields without remapping rows",
+            "Restore discards pending header and columns while preserving all corrected row state and destination",
+            "Restoring manual TSV keeps manual state, exact multiline Notes and unavailable original coordinates",
+            "Restore always clears an accepted review, request, confirmation and outcome even when choices already match",
+            "Restore clears blocked diagnostics without reviving an accepted review or save request",
+            "Returning pending choices to their original values still requires explicit Restore and a fresh check",
+            "Clean no-op Restore preserves an accepted review, request and confirmation exactly",
+            "Pending mapping and applied proof persist independently through worksheet inspection",
+            "Current kept-state JSON roundtrip preserves the proven baseline and restored row edits honestly",
+            "Legacy clean or dirty kept states without prior proof never invent or adopt an applied baseline",
+            "Malformed or mismatched source, sheet, header and columns fail proof without changing current rows",
+            "A successful explicit Apply records a new baseline, and surviving Restore handlers use that newer baseline",
+            "Native remapping Cancel preserves the baseline, pending choices, exact corrected rows and review",
+            "Missing Name and unverifiable Apply choices cannot replace the successful baseline or current rows",
+            "Baseline metadata and restore notices remain outside strict collected and native inventory payloads",
+            "Restore on an excluded inspected worksheet clears old approval, then allows a fresh selected-sheet check",
+            "Busy and uncertain requests freeze Restore and preserve original action identity and payload",
+            "Captured Restore callbacks stop after source, host, active sheet, kind, owner or repaint changes",
+            "An open unrelated modal blocks Restore without modifying pending choices or corrections",
+            "Pending source headings and worksheet content are escaped in diagnostics",
+            "A proven initial mapping without Name can be restored honestly and focuses its required selector",
+            "Lost or malformed source association cannot establish a replacement baseline through local Apply",
+            "Switching import kind away and back retains same-source baseline and pending choices without re-adopting them"
+          ]
+        }
+      }
+    ],
+    "genuine_c01_restore_checks_passed": 20,
+    "retained_ui111_c01_safeguards_checks_passed": 28,
+    "browser_results": [
+      {
+        "evidence": "browser-restore/UI113_MAPPING_RESTORE_BROWSER_RESULTS.json",
+        "report_sha256": "df1147b5f44459348abcdd5dd90474c5866e21d1711e2284736428b95da53658",
+        "checks_passed": 20,
+        "unexpected_errors": 0,
+        "harness_sha256": "8466155009604ddd080ffbada14e69fa8d6792135055a40437b62f769f4c82e1",
+        "result": {
+          "checks": [
+            "pending header and column changes: restore/change guidance is visible below the shell; Apply/Restore fit without overlap or page overflow at 1440px",
+            "pending header and column changes: restore/change guidance is visible below the shell; Apply/Restore fit without overlap or page overflow at 1024px",
+            "pending header and column changes: restore/change guidance is visible below the shell; Apply/Restore fit without overlap or page overflow at 390px",
+            "pending header and column changes: restore/change guidance is visible below the shell; Apply/Restore fit without overlap or page overflow at 320px",
+            "Restore receives actual visible mapping focus below the shell at 1440px, preserving complete source draft/corrections/row choices and every native SQLite table without API calls",
+            "Restore receives actual visible mapping focus below the shell at 1024px, preserving complete source draft/corrections/row choices and every native SQLite table without API calls",
+            "Restore receives actual visible mapping focus below the shell at 390px, preserving complete source draft/corrections/row choices and every native SQLite table without API calls",
+            "Restore receives actual visible mapping focus below the shell at 320px, preserving complete source draft/corrections/row choices and every native SQLite table without API calls",
+            "Restore of pending header and source-column choices preserves edited identity/SN/PN, Notes, exact Excel provenance, row exclusions, boxes/quantity, locations, other worksheet edits and existing destination; approval is cleared and real fresh Check is required",
+            "Concise UI112 regression: excluded/included inspection and Source/Overview/Items shortcuts retain selected drafts, the new signed approval, overview, API calls and all native SQLite tables",
+            "Last successful Apply updates the proven baseline; native Cancel does not overwrite it; subsequent Restore returns to the newest header/column choices while preserving later item/box/quantity corrections and requires genuine fresh Check",
+            "Restore is disabled during controlled busy/uncertain states; captured callbacks under busy/uncertain, another open modal or a replaced session cannot change mapping/rows, reviews, API calls, native SQLite or modal focus",
+            "legacy pending restore unavailable: restore/change guidance is visible below the shell; Apply/Restore fit without overlap or page overflow at 1440px",
+            "legacy pending restore unavailable: restore/change guidance is visible below the shell; Apply/Restore fit without overlap or page overflow at 1024px",
+            "legacy pending restore unavailable: restore/change guidance is visible below the shell; Apply/Restore fit without overlap or page overflow at 390px",
+            "legacy pending restore unavailable: restore/change guidance is visible below the shell; Apply/Restore fit without overlap or page overflow at 320px",
+            "Legacy pending mapping without the proven sidecar leaves Restore unavailable; direct callbacks neither infer a baseline nor change corrected rows, source proof, API calls or native SQLite",
+            "A captured Restore callback from a closed/replaced builder cannot mutate the fresh new-inventory proposal or its source baseline, API, SQLite or focus",
+            "Fresh new-inventory Restore also retains its destination, worksheet choices, source baseline/rows and every native SQLite table without API writes",
+            "Browser sends no action writes or unhandled JS errors; served assets equal pinned source and source/manifest/harness/Chromium/fictional XLSX hashes remain unchanged"
+          ],
+          "errors": [],
+          "widths": [
+            1440,
+            1024,
+            390,
+            320
+          ],
+          "screenshots": [
+            "pending_header_and_column_changes_1440.png",
+            "pending_header_and_column_changes_1024.png",
+            "pending_header_and_column_changes_390.png",
+            "pending_header_and_column_changes_320.png",
+            "restored_mapping_focus_1440.png",
+            "restored_mapping_focus_1024.png",
+            "restored_mapping_focus_390.png",
+            "restored_mapping_focus_320.png",
+            "legacy_pending_restore_unavailable_1440.png",
+            "legacy_pending_restore_unavailable_1024.png",
+            "legacy_pending_restore_unavailable_390.png",
+            "legacy_pending_restore_unavailable_320.png"
+          ],
+          "method": "Real Chromium/IndexedDB, disposable fictional C01 HostedBoundary/CompanyAccess/core APIs and native SQLite; generated fictional XLSX only.",
+          "source_hashes": {
+            "app/document_import.py": "dfc781b5a9e6a61379c0aaf58118f6ed3b30700a4bf5e3b3f66641948b377bda",
+            "app/document_structure.py": "01ac26f9c12ac4ca920f9ef5f36c49013ed1611a1400be9cc1263b2770ba930e",
+            "app/document_extract.py": "71b0b8e06875960a800956629b1183cc4b26f434f8e43677786fd5367eda0e58",
+            "app/inventory.py": "499d53a2bf892b709e25c00c6348a3ba8bd93e044dfb4074380ca1dca73d0180",
+            "app/inventory_boxes.py": "0a7b64fea118ecf64c22593a2f9fe1daf9e954eaf028590cd0aa19fc9e2e1550",
+            "app/builder_hub.py": "9ef479fc202beed16572429341651f3b563ff93b41cfef06d4c2ed4d8db91b0d",
+            "app/static/document_import.js": "74bbf3c4282d687bb691a8df53f803d2be54f5ec78e26eafddc7f05729a5c097",
+            "app/static/document_import.css": "e3b65532e8ae69bf27d6e35d71bd2b243ae0ab39cf1ef635530e6b326afec375",
+            "app/static/setup_builders.js": "0b1ce5b1395d5009a4c7821e5f91dad2ae6aa20d2ea2e1ba3680315606c73028",
+            "app/static/fieldwork.js": "417c4f39966b98f64b508babbc591f8340ffc93495fa6c9e232953748d5bb3e9",
+            "app/static/inventory_workspace.js": "0e60b665a3bdced1a21ba0ff3d7ff0c71a586c866faecdf37ca804aa650b8484",
+            "app/static/verification.js": "04cd77a36c0b6c0ce9eb5bcfdf53e21f255acffd91fc57f070213ae6fc4c9649",
+            "app/static/browser_workspace.js": "565d7009e1786be630b482c6d7d9a6d7c61f4d90b17c0e0069865146483f7a75",
+            "app/static/index.html": "e1abac46ae3fefd81b1d1a149a7c84799022cad0df7c8a9b1065109b1cd3bed9",
+            "app/static/sw.js": "4ffca91a12d152a051c6638763aad39556679a8d0ef132a7e554dd643c7e5174"
+          },
+          "served_asset_hashes": {
+            "app/static/document_import.css": "e3b65532e8ae69bf27d6e35d71bd2b243ae0ab39cf1ef635530e6b326afec375",
+            "app/static/inventory_workspace.js": "0e60b665a3bdced1a21ba0ff3d7ff0c71a586c866faecdf37ca804aa650b8484",
+            "app/static/fieldwork.js": "417c4f39966b98f64b508babbc591f8340ffc93495fa6c9e232953748d5bb3e9",
+            "app/static/verification.js": "04cd77a36c0b6c0ce9eb5bcfdf53e21f255acffd91fc57f070213ae6fc4c9649",
+            "app/static/document_import.js": "74bbf3c4282d687bb691a8df53f803d2be54f5ec78e26eafddc7f05729a5c097",
+            "app/static/setup_builders.js": "0b1ce5b1395d5009a4c7821e5f91dad2ae6aa20d2ea2e1ba3680315606c73028",
+            "app/static/browser_workspace.js": "565d7009e1786be630b482c6d7d9a6d7c61f4d90b17c0e0069865146483f7a75"
+          },
+          "harness_sha256": "8466155009604ddd080ffbada14e69fa8d6792135055a40437b62f769f4c82e1",
+          "runtime_manifest_sha256": "14166458114e9eaeaeac1cd57cdca4b8931e8c5395c966425ae8abc9372968ed",
+          "chromium_executable_sha256": "53a15d6c3a3d27dfb54c4ba60278b1683136f70cf1e67e989da7dfbd3d451ef0",
+          "repository_helper_hashes": {
+            "test_company_c01.py": "82733db626ef77e676612393dd6bf3f4ce59a009fe40fda096cd982b91068cbc",
+            "browser_import_row_selection_ui105.py": "1104b7c35909f401cecd7699d05039eeb71f19b467bb03ebd0b8e637160a1e47"
+          },
+          "limitations": [
+            "Service-worker registration and WebSockets are suppressed.",
+            "No production, Render, live email, physical camera, Windows display or worker-upgrade acceptance.",
+            "Controlled busy/uncertain flags and captured event callbacks verify navigation ownership locks; retained UI111 safeguards harness separately verifies genuine save/retry.",
+            "One empty fictional destination is created through the real API before the read-only restore cases; browser never sends write actions. Legacy-sidecar and ownership states are controlled fixtures, not user reload workflows."
+          ],
+          "fictional_fixture_hashes": {
+            "Fictional_UI113_NEW.xlsx": "32567b5c10e9a1aea8e3f2a26300bf612a99fbd7ea4f6f0d97fb23dd824ada45",
+            "Fictional_UI113_APPEND.xlsx": "1c14370e016accb0161a6228fbb90c2e2656517ea6124589b866fb5fca80295a",
+            "Fictional_UI113_MANUAL.xlsx": "9dd7d335b83b251507671b34e74f5a800f90d07e8ab52ae330b6b9dfcbd63b8a",
+            "Fictional_UI113_STALE.xlsx": "ca90ab101873dec23d38fa8dae36b5e25fe98c942a6ae4b7fa3d2f87fb6f62f5"
+          },
+          "chromium_version": "153.0.8010.0",
+          "fixture_setup": {
+            "method": "One empty inventory create_list through disposable TestClient; no imported items",
+            "id": "24f4ea7d-c327-4499-85ff-c62d4e30448d"
+          },
+          "initial_material_sha256": "b60d783406afd3b6a4c94c4cf63d9e25c2935dbbe206179d7e56bb6ac857f91c",
+          "initial_source_baseline_sha256": "0aea66deb84bbed6a72d296421de21ef5e4a62e8cad9d28e428a0ba02a4426b6",
+          "initial_sqlite_sha256": "750379e042440d147aee7ffc6687ce2c6e315a9f852915c336985904bab8f155",
+          "mapping_confirmations": [
+            "Apply mapping to worksheet \u201cFictional deck stock\u201d? This replaces your item names, serial numbers and part numbers; expected quantities and box relationships with mapped source values. Item choices are retained only when original rows can be confirmed. Cancel keeps this worksheet draft and its review.",
+            "Apply mapping to worksheet \u201cFictional deck stock\u201d? This replaces your item names, serial numbers and part numbers; expected quantities and box relationships with mapped source values. Item choices are retained only when original rows can be confirmed. Cancel keeps this worksheet draft and its review."
+          ],
+          "latest_applied_baseline_sha256": "536cf7f88ced4d0853511c4311d79427daa1e4d61f2c3d9c1d31a1e4df9ebe8b",
+          "latest_corrected_material_sha256": "97db123c2af7c35769f9694f9a4e28f611abbe5285e7912545ca2dbdc9976eb2",
+          "passed": true,
+          "summary": {
+            "checks_passed": 20,
+            "unexpected_errors": 0
+          }
+        }
+      },
+      {
+        "evidence": "browser-safeguards/UI111_IMPORT_SAFEGUARDS_BROWSER_RESULTS.json",
+        "report_sha256": "34ed498563e468cccb2e6a4b5b7553374c49e84c20e6c8b753a940b5a257e5f2",
+        "checks_passed": 28,
+        "unexpected_errors": 0,
+        "harness_sha256": "4d25a3a25b0cef409ecb8f0611be6e042f9fc437471f1b2d8d6a12afdb58016e",
+        "result": {
+          "checks": [
+            "corrected remap proposal fits 1440px without page overflow or clipped controls",
+            "corrected remap proposal fits 1024px without page overflow or clipped controls",
+            "corrected remap proposal fits 390px without page overflow or clipped controls",
+            "corrected remap proposal fits 320px without page overflow or clipped controls",
+            "Cancel remapping preserves corrected name/SN/PN, explicit box relation, all source Notes, expected quantity seven, exact Excel coordinates/exclusions, other worksheet edits and checked approval without any SQLite mutation",
+            "Confirmed remapping restores only active deck source fields/relationships, retains proven exclusions and the corrected workshop worksheet, and requires a fresh Check and confirmation",
+            "checked sheet browsing new fits 1440px without page overflow or clipped controls",
+            "checked sheet browsing new fits 1024px without page overflow or clipped controls",
+            "checked sheet browsing new fits 390px without page overflow or clipped controls",
+            "checked sheet browsing new fits 320px without page overflow or clipped controls",
+            "Checked worksheet browsing/search/filter retains overview and confirmation; real new-inventory Save sends the exact signed draft/token without another Review and SQLite records preserve corrected identity, Notes, manually reviewed expected seven and box containment",
+            "blocked duplicate sheet browsing fits 1440px without page overflow or clipped controls",
+            "blocked duplicate sheet browsing fits 1024px without page overflow or clipped controls",
+            "blocked duplicate sheet browsing fits 390px without page overflow or clipped controls",
+            "blocked duplicate sheet browsing fits 320px without page overflow or clipped controls",
+            "Duplicate append stays blocked with no SQLite writes; browsing another worksheet retains exact conflict overview while approval/Save remain disabled; an actual field correction clears stale diagnostics",
+            "Native Cancel preserves manual quantity seven, edited identity/box text and explicit exclusions in the intentionally unproven TSV draft; confirmed reset restores original zero, Notes/source references and resets choices instead of inventing row matches",
+            "checked sheet browsing existing fits 1440px without page overflow or clipped controls",
+            "checked sheet browsing existing fits 1024px without page overflow or clipped controls",
+            "checked sheet browsing existing fits 390px without page overflow or clipped controls",
+            "checked sheet browsing existing fits 320px without page overflow or clipped controls",
+            "uncertain append lock fits 1440px without page overflow or clipped controls",
+            "uncertain append lock fits 1024px without page overflow or clipped controls",
+            "uncertain append lock fits 390px without page overflow or clipped controls",
+            "uncertain append lock fits 320px without page overflow or clipped controls",
+            "Busy and uncertain native append lock sheet/remap navigation and captured callbacks; retry uses identical signed payload/op_id and server receipt, adds exactly three rows once and preserves old SQLite items/fixed verification results",
+            "Session-stale and replaced-form sheet/remap callbacks cannot mutate current proposals; actual item, description and inclusion edits still clear confirmation and disable Save pending another Check",
+            "Served tracked assets match pinned source; runtime/manifest/harness/Chromium/fictional XLSX remain unchanged; no unhandled JavaScript errors occur"
+          ],
+          "errors": [],
+          "widths": [
+            1440,
+            1024,
+            390,
+            320
+          ],
+          "screenshots": [
+            "corrected_remap_proposal_1440.png",
+            "corrected_remap_proposal_1024.png",
+            "corrected_remap_proposal_390.png",
+            "corrected_remap_proposal_320.png",
+            "checked_sheet_browsing_new_1440.png",
+            "checked_sheet_browsing_new_1024.png",
+            "checked_sheet_browsing_new_390.png",
+            "checked_sheet_browsing_new_320.png",
+            "blocked_duplicate_sheet_browsing_1440.png",
+            "blocked_duplicate_sheet_browsing_1024.png",
+            "blocked_duplicate_sheet_browsing_390.png",
+            "blocked_duplicate_sheet_browsing_320.png",
+            "checked_sheet_browsing_existing_1440.png",
+            "checked_sheet_browsing_existing_1024.png",
+            "checked_sheet_browsing_existing_390.png",
+            "checked_sheet_browsing_existing_320.png",
+            "uncertain_append_lock_1440.png",
+            "uncertain_append_lock_1024.png",
+            "uncertain_append_lock_390.png",
+            "uncertain_append_lock_320.png"
+          ],
+          "method": "Real Chromium/IndexedDB, disposable fictional C01 HostedBoundary/CompanyAccess/core APIs and native SQLite; generated fictional XLSX only.",
+          "source_hashes": {
+            "app/document_import.py": "dfc781b5a9e6a61379c0aaf58118f6ed3b30700a4bf5e3b3f66641948b377bda",
+            "app/document_structure.py": "01ac26f9c12ac4ca920f9ef5f36c49013ed1611a1400be9cc1263b2770ba930e",
+            "app/document_extract.py": "71b0b8e06875960a800956629b1183cc4b26f434f8e43677786fd5367eda0e58",
+            "app/inventory.py": "499d53a2bf892b709e25c00c6348a3ba8bd93e044dfb4074380ca1dca73d0180",
+            "app/inventory_boxes.py": "0a7b64fea118ecf64c22593a2f9fe1daf9e954eaf028590cd0aa19fc9e2e1550",
+            "app/builder_hub.py": "9ef479fc202beed16572429341651f3b563ff93b41cfef06d4c2ed4d8db91b0d",
+            "app/static/document_import.js": "74bbf3c4282d687bb691a8df53f803d2be54f5ec78e26eafddc7f05729a5c097",
+            "app/static/document_import.css": "e3b65532e8ae69bf27d6e35d71bd2b243ae0ab39cf1ef635530e6b326afec375",
+            "app/static/setup_builders.js": "0b1ce5b1395d5009a4c7821e5f91dad2ae6aa20d2ea2e1ba3680315606c73028",
+            "app/static/fieldwork.js": "417c4f39966b98f64b508babbc591f8340ffc93495fa6c9e232953748d5bb3e9",
+            "app/static/inventory_workspace.js": "0e60b665a3bdced1a21ba0ff3d7ff0c71a586c866faecdf37ca804aa650b8484",
+            "app/static/verification.js": "04cd77a36c0b6c0ce9eb5bcfdf53e21f255acffd91fc57f070213ae6fc4c9649",
+            "app/static/browser_workspace.js": "565d7009e1786be630b482c6d7d9a6d7c61f4d90b17c0e0069865146483f7a75",
+            "app/static/index.html": "e1abac46ae3fefd81b1d1a149a7c84799022cad0df7c8a9b1065109b1cd3bed9",
+            "app/static/sw.js": "4ffca91a12d152a051c6638763aad39556679a8d0ef132a7e554dd643c7e5174"
+          },
+          "served_asset_hashes": {
+            "app/static/document_import.css": "e3b65532e8ae69bf27d6e35d71bd2b243ae0ab39cf1ef635530e6b326afec375",
+            "app/static/inventory_workspace.js": "0e60b665a3bdced1a21ba0ff3d7ff0c71a586c866faecdf37ca804aa650b8484",
+            "app/static/fieldwork.js": "417c4f39966b98f64b508babbc591f8340ffc93495fa6c9e232953748d5bb3e9",
+            "app/static/verification.js": "04cd77a36c0b6c0ce9eb5bcfdf53e21f255acffd91fc57f070213ae6fc4c9649",
+            "app/static/document_import.js": "74bbf3c4282d687bb691a8df53f803d2be54f5ec78e26eafddc7f05729a5c097",
+            "app/static/setup_builders.js": "0b1ce5b1395d5009a4c7821e5f91dad2ae6aa20d2ea2e1ba3680315606c73028",
+            "app/static/browser_workspace.js": "565d7009e1786be630b482c6d7d9a6d7c61f4d90b17c0e0069865146483f7a75"
+          },
+          "harness_sha256": "4d25a3a25b0cef409ecb8f0611be6e042f9fc437471f1b2d8d6a12afdb58016e",
+          "runtime_manifest_sha256": "14166458114e9eaeaeac1cd57cdca4b8931e8c5395c966425ae8abc9372968ed",
+          "chromium_executable_sha256": "53a15d6c3a3d27dfb54c4ba60278b1683136f70cf1e67e989da7dfbd3d451ef0",
+          "repository_helper_hashes": {
+            "test_company_c01.py": "82733db626ef77e676612393dd6bf3f4ce59a009fe40fda096cd982b91068cbc",
+            "browser_import_row_selection_ui105.py": "1104b7c35909f401cecd7699d05039eeb71f19b467bb03ebd0b8e637160a1e47"
+          },
+          "limitations": [
+            "Service-worker registration and WebSockets are suppressed.",
+            "No production, Render, live email, physical camera, Windows display or worker-upgrade acceptance.",
+            "Captured local event callbacks exercise busy/stale ownership guards only; they are not user reload workflows.",
+            "Full mapped TSV editing intentionally clears source-row proof; the separate cancellation case verifies that this state is retained, then remapping restores original rows."
+          ],
+          "fictional_fixture_hashes": {
+            "Fictional_UI111_NEW.xlsx": "f853046bbd6e4bd8cab7a39a3f78312e21eff12ef3d67fb594d33c35c75a0043",
+            "Fictional_UI111_APPEND.xlsx": "f78ae14d3cc433249aa96945f772012842e0334c4da1e70151956b98d2edfabe",
+            "Fictional_UI111_MANUAL.xlsx": "b273ec3183767fcaedfd246ea65cf14949bfa7aad202941497fdf3a832fd13c7",
+            "Fictional_UI111_STALE.xlsx": "c579e5c096ef5ff32676202492b301555f0f29537cc96733f50a07c86ca751bf"
+          },
+          "chromium_version": "153.0.8010.0",
+          "mapping_confirmations": [
+            "Apply mapping to worksheet \u201cFictional deck stock\u201d? This replaces your item names, serial numbers and part numbers; expected quantities and box relationships with mapped source values. Item choices are retained only when original rows can be confirmed. Cancel keeps this worksheet draft and its review.",
+            "Apply mapping to worksheet \u201cFictional deck stock\u201d? This replaces your item names, serial numbers and part numbers; expected quantities and box relationships with mapped source values. Item choices are retained only when original rows can be confirmed. Cancel keeps this worksheet draft and its review.",
+            "Apply mapping to worksheet \u201cFictional deck stock\u201d? This replaces your full mapped-row edits; item choices made after full mapped-row editing with mapped source values. Item choices are retained only when original rows can be confirmed. Cancel keeps this worksheet draft and its review.",
+            "Apply mapping to worksheet \u201cFictional deck stock\u201d? This replaces your full mapped-row edits; item choices made after full mapped-row editing with mapped source values. Item choices are retained only when original rows can be confirmed. Cancel keeps this worksheet draft and its review."
+          ],
+          "new_inventory_save": {
+            "reviewed_draft_sha256": "ac078c38cb4db6991c662968c837098bdff6904896aac08911614ffbcdd3f664",
+            "saved_draft_sha256": "ac078c38cb4db6991c662968c837098bdff6904896aac08911614ffbcdd3f664",
+            "reviewed_sheet": "Fictional deck stock",
+            "inspected_sheet_at_save": "Fictional workshop stock",
+            "saved_sheet": "Fictional deck stock",
+            "op_id": "e987882b-dc6d-49cb-a86c-49c56d9e1270",
+            "additional_reviews": 0,
+            "exact_token_match": true
+          },
+          "append_retry": {
+            "reviewed_draft_sha256": "8a7b7fbd24931799c3fba80f781c142bdfc83b2e381f5d644d77fc82e8c82f20",
+            "first_action_draft_sha256": "8a7b7fbd24931799c3fba80f781c142bdfc83b2e381f5d644d77fc82e8c82f20",
+            "retry_action_draft_sha256": "8a7b7fbd24931799c3fba80f781c142bdfc83b2e381f5d644d77fc82e8c82f20",
+            "reviewed_sheet": "Fictional deck stock",
+            "inspected_sheet_at_save": "Fictional workshop stock",
+            "first_op_id": "dfcce2a6-4b07-43dd-8336-835570629e2d",
+            "retry_op_id": "dfcce2a6-4b07-43dd-8336-835570629e2d",
+            "additional_reviews": 0,
+            "saved_receipt_id": "fa25de7a-8cd3-44a0-a223-d144b660cc1c",
+            "exact_request_match": true
+          },
+          "passed": true,
+          "summary": {
+            "checks_passed": 28,
+            "unexpected_errors": 0
+          }
+        }
+      }
+    ],
+    "complete_replay": {
+      "release": "UI113",
+      "passed": true,
+      "runtime_manifest_sha256": "14166458114e9eaeaeac1cd57cdca4b8931e8c5395c966425ae8abc9372968ed",
+      "runtime_resources_verified": 2152,
+      "frozen_runtime_byte_equal": true,
+      "steps": [
+        {
+          "script": "extract_source.py",
+          "exit_code": 0,
+          "output": "Verified upstream 1.34.19: 1605 tracked files.\nApplied Workspace UI91: Team and Logs route-cover parity plus reliable Certificate route activation; UI90 navigation and all operational boundaries preserved.\nApplied Workspace UI92: consistent covers, nested folders, certificate inspector and quieter hosted status; company settings and recovery safeguards preserved.",
+          "manifest_resources_verified": 2077
+        },
+        {
+          "script": "apply_ui93.py",
+          "exit_code": 0,
+          "output": "Applied Workspace UI93: optional email alerts, personal verification and aligned account settings; existing records and permissions retained.",
+          "manifest_resources_verified": 2084
+        },
+        {
+          "script": "apply_ui94.py",
+          "exit_code": 0,
+          "output": "Applied Workspace UI94: quiet header and account menu anchored to its button; approved art and UI93 email settings retained.",
+          "manifest_resources_verified": 2086
+        },
+        {
+          "script": "apply_ui95.py",
+          "exit_code": 0,
+          "output": "Applied Workspace UI95: document/worksheet imports, reliable Toolbox navigation and duplicate sidebar cleanup; UI93 email and UI94 header retained.",
+          "manifest_resources_verified": 2092
+        },
+        {
+          "script": "apply_ui96.py",
+          "exit_code": 0,
+          "output": "Applied Workspace UI96: clear responsive sign-in, verification and setup; existing accounts, recovery, email and document imports retained.",
+          "manifest_resources_verified": 2095
+        },
+        {
+          "script": "apply_ui97.py",
+          "exit_code": 0,
+          "output": "Applied Workspace UI97: email password recovery; MFA, permissions and saved work retained.",
+          "manifest_resources_verified": 2102
+        },
+        {
+          "script": "apply_ui99.py",
+          "exit_code": 0,
+          "output": "Applied Workspace UI99: independent browser tabs and saved draft recovery; UI98 gateway and email recovery retained.",
+          "manifest_resources_verified": 2103
+        },
+        {
+          "script": "apply_ui100.py",
+          "exit_code": 0,
+          "output": "Applied Workspace UI100: structured document import and answer fields; prior tabs, recovery and access retained.",
+          "manifest_resources_verified": 2109
+        },
+        {
+          "script": "apply_ui101.py",
+          "exit_code": 0,
+          "output": "Applied Workspace UI101: workbook roles and native logbook designs; prior imports, tabs, recovery and access retained.",
+          "manifest_resources_verified": 2114
+        },
+        {
+          "script": "apply_ui102.py",
+          "exit_code": 0,
+          "output": "Applied Workspace UI102: shipping workbook and inventory-check search; prior imports, tabs, recovery and access retained.",
+          "manifest_resources_verified": 2119
+        },
+        {
+          "script": "apply_ui103.py",
+          "exit_code": 0,
+          "output": "Applied Workspace UI103: combined inventory imports and native part numbers; prior data, counts, tabs and recovery retained.",
+          "manifest_resources_verified": 2126
+        },
+        {
+          "script": "apply_ui104.py",
+          "exit_code": 0,
+          "output": "Applied Workspace UI104: guided import review and explicit source conflicts; prior inventory, counts, permissions and recovery retained.",
+          "manifest_resources_verified": 2129
+        },
+        {
+          "script": "apply_ui105.py",
+          "exit_code": 0,
+          "output": "Applied Workspace UI105: deliberate inventory row selection; full source rows, existing records, permissions and recovery retained.",
+          "manifest_resources_verified": 2132
+        },
+        {
+          "script": "apply_ui106.py",
+          "exit_code": 0,
+          "output": "Applied Workspace UI106: located document recognition review; source rows, inventory, permissions and recovery retained.",
+          "manifest_resources_verified": 2135
+        },
+        {
+          "script": "apply_ui107.py",
+          "exit_code": 0,
+          "output": "Applied Workspace UI107: explicit inventory relationship review; source rows, item identities, permissions and recovery retained.",
+          "manifest_resources_verified": 2138
+        },
+        {
+          "script": "apply_ui108.py",
+          "exit_code": 0,
+          "output": "Applied Workspace UI108: document table structure review; source evidence, explicit choices, item identities, permissions and recovery retained.",
+          "manifest_resources_verified": 2142
+        },
+        {
+          "script": "apply_ui109.py",
+          "exit_code": 0,
+          "output": "Applied Workspace UI109: reusable log and item review; source evidence, explicit choices, item identities, permissions and recovery retained.",
+          "manifest_resources_verified": 2146
+        },
+        {
+          "script": "apply_ui110.py",
+          "exit_code": 0,
+          "output": "Applied Workspace UI110: compact Tasks and Maintenance browsing; saved work and existing actions retained.",
+          "manifest_resources_verified": 2148
+        },
+        {
+          "script": "apply_ui111.py",
+          "exit_code": 0,
+          "output": "Applied Workspace UI111: protected inventory corrections and retained worksheet review; saved work and exact retry requests retained.",
+          "manifest_resources_verified": 2150
+        },
+        {
+          "script": "apply_ui112.py",
+          "exit_code": 0,
+          "output": "Applied Workspace UI112: clearer inventory review navigation and source-column mapping; rows, signed review and retry requests retained.",
+          "manifest_resources_verified": 2151
+        },
+        {
+          "script": "apply_ui113.py",
+          "exit_code": 0,
+          "output": "Applied Workspace UI113: restore applied mapping choices while retaining corrected rows; pending choices explained and fresh review required.",
+          "manifest_resources_verified": 2152
+        }
+      ],
+      "elapsed_seconds": 14.33,
+      "method": "Isolated fresh reconstruction in /tmp from byte-verified copies of all deployment scripts and pinned source parts; all resources verified after every overlay in Docker order in separate Python processes; final resources compared by SHA256 and bytes to frozen runtime.",
+      "earlier_attempts": "Two workspace attempts stopped on inherited shell/app.js resource mismatches; no pinned source or overlay was changed. Final isolated reconstruction verifies every resource after each step."
+    },
+    "node_evidence_sha256": "05cdaf8adcac63b584eef6958fefe7a7cc7e1dfa09bef717ea42fddd1009e0f5",
+    "build_test_sha256": "d0230202fe73c9effe11cd9ab55f03a07e8f24f4a929e5ed1cb4f52e542311a5",
+    "count_policy": "Grouped browser checks and Node cases may overlap; browser suites are reported separately rather than claimed as unique assertions."
+  },
+  "preserved": {
+    "application_python": true,
+    "schemas": true,
+    "auth_and_mail": true,
+    "artwork": true,
+    "work_result_writers": true,
+    "all_13_mappings": true,
+    "full_source_and_notes": true,
+    "tasks_and_maintenance": true,
+    "c01_g01_m01": true,
+    "ui111_browser_harness_byte_equal": true
+  },
+  "audit": "Mapping recovery uses recorded source-associated choices and does not call mappedRows. Native draft collection and save payload exclude editor-only mapping records. Recorded mappings are never reconstructed from corrected rows. Source or token association loss makes Restore unavailable.",
+  "visual_review": {
+    "widths": [
+      1440,
+      1024,
+      390,
+      320
+    ],
+    "actual_application": true,
+    "screenshots_reviewed": [
+      "pending_header_and_column_changes_320.png",
+      "restored_mapping_focus_390.png",
+      "legacy_pending_restore_unavailable_320.png",
+      "pending_header_and_column_changes_1440.png"
+    ],
+    "screenshots_bundled": false
+  },
+  "verification_notes": [
+    "The new build-check fixture was corrected to reference the preserved work_execution_ui80.css; final seven build checks passed without runtime changes.",
+    "The UI113 acceptance process exited successfully (code 0) after all 20 grouped checks passed with zero unhandled page JavaScript errors. During browser teardown, Playwright emitted 1 asyncio CancelledError callback trace(s) for pending intercepted requests. These occurred after acceptance assertions completed and are retained in browser-restore.log. No application source or runtime file was changed during the run."
+  ],
+  "limits": [
+    "Selected local suites only; no full historical-suite claim.",
+    "Generated fictional workbooks and temporary C01 databases; no real company data touched.",
+    "Browser service workers and WebSockets were suppressed; physical devices, cache upgrades, live email and production synchronization were not exercised.",
+    "Applied-mapping metadata survives current editor state clones/repaints; there is no claim of browser-reload builder-draft recovery.",
+    "No backend/parser, automatic source interpretation or item-editor Cancel behavior change. Legacy drafts without a valid recorded baseline cannot use Restore."
+  ],
+  "github": {
+    "main_reverified": "3e3fc54d6a3bf16d085d8e97fad5d34da6799a96",
+    "branch_creation_error": "403 Resource not accessible by integration",
+    "pushed": false,
+    "pull_request_created": false,
+    "main_modified": false
+  },
+  "deployed": false,
+  "database_reset": false,
+  "inventory_reimport": false,
+  "browser_storage_cleared": false
+}
