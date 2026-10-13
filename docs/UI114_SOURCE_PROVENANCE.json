@@ -1,0 +1,73 @@
+{
+  "format": "wavelink-runtime-overlay-1",
+  "date": "2026-10-13",
+  "patch_id": "workspace-ui114-inventory-worksheet-overview-2026-10-13",
+  "parent_patch_id": "workspace-ui113-inventory-mapping-recovery-2026-10-13",
+  "parent_git_commit": "59516b37dcc3a4b3d5e48269872f03d4ce8c1dbf",
+  "parent_manifest_sha256": "14166458114e9eaeaeac1cd57cdca4b8931e8c5395c966425ae8abc9372968ed",
+  "scope": "Show current worksheet mapping attention and safe view filters across the inventory import without changing selected drafts or approval.",
+  "boundaries": {
+    "database_reset": false,
+    "browser_storage_clear": false,
+    "schema_migration": false,
+    "backend_change": false,
+    "auth_or_mail_change": false,
+    "artwork_change": false,
+    "work_result_writers_change": false
+  },
+  "files": [
+    {
+      "path": "app/static/document_import.css",
+      "before_sha256": "e3b65532e8ae69bf27d6e35d71bd2b243ae0ab39cf1ef635530e6b326afec375",
+      "after_sha256": "5c40322da712dfd9d8bef5a1929d3767f76cf6590f0833814c4c0ecb284a7a23"
+    },
+    {
+      "path": "app/static/document_import.js",
+      "before_sha256": "74bbf3c4282d687bb691a8df53f803d2be54f5ec78e26eafddc7f05729a5c097",
+      "after_sha256": "6e1704f4c78de6087a5361d681368940e28c4c103da9dc050ac28915083dc3cf"
+    },
+    {
+      "path": "app/static/help_catalogue.json",
+      "before_sha256": "bba8556e17e89fe559e5b1f002e1b72f33e359844a517832db161951da067771",
+      "after_sha256": "93a5e3c5447b39aed550b3b621ae181060767cb365c5e0153083b234b5124df9"
+    },
+    {
+      "path": "app/static/help_topics/documentimport.html",
+      "before_sha256": "8d454c605e5e367a7febadbbcdbdf5649cc6a56864b460b26765bac638ee03f4",
+      "after_sha256": "4c88d1e9f3b6e091d0b1a929bff9233cdb50b1f4a5703e2859fff3cfd5a9b928"
+    },
+    {
+      "path": "app/static/help_topics/inventorybuilder.html",
+      "before_sha256": "1729bf46c93e14f6b0c1dab76b2d5400ef081ce2db08488f86b21792f941cb71",
+      "after_sha256": "806d8a9674b84c34c018e9908263038993dd9dfc117bfbba33d38c4fdaf3bc8f"
+    },
+    {
+      "path": "app/static/index.html",
+      "before_sha256": "e1abac46ae3fefd81b1d1a149a7c84799022cad0df7c8a9b1065109b1cd3bed9",
+      "after_sha256": "b3f767c4efa85ca85e22ddfe43d3152f00a710af420c0fcc0539a36daf7e6cff"
+    },
+    {
+      "path": "app/static/sw.js",
+      "before_sha256": "4ffca91a12d152a051c6638763aad39556679a8d0ef132a7e554dd643c7e5174",
+      "after_sha256": "26e771398088f5c53c0e4b1c712c5d230efbd51222580450df89bd2af6adfe99"
+    },
+    {
+      "path": "docs/user/topics/documentimport.html",
+      "before_sha256": "c16d959be1e52ff4ffe5afba601486e04a1d2e367edb17d05ca1ea7330eb33db",
+      "after_sha256": "70f8be36d6861bea0c99924245b5658c741fcfdf63df01d4ce1193f974345c6a"
+    },
+    {
+      "path": "docs/user/topics/inventorybuilder.html",
+      "before_sha256": "46242277f7ea80ff51a13efa734f8694d95aadb9be3b697970754ad8e27c0694",
+      "after_sha256": "12260ab3d0e4ee9f78295a799fab4e27822e65e5aa02a2c2d576cc7818c4c0e8"
+    },
+    {
+      "path": "tests/test_inventory_worksheet_overview_ui114.js",
+      "before_sha256": null,
+      "after_sha256": "d2efa14f4d54690dc6980383b6ff7043b22aafd69524b67c7be5c77243484a6c"
+    }
+  ],
+  "runtime_manifest_sha256": "e15c1fcd284be4224c83199836f27def2af10d44c758ff1118c088005d5e6b7b",
+  "runtime_resources": 2153,
+  "overlay_resources": 11
+}

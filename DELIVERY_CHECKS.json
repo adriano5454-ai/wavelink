@@ -1,16 +1,17 @@
 {
-  "release": "UI113",
+  "release": "UI114",
   "core": "1.34.19",
-  "parent_git_commit": "3e3fc54d6a3bf16d085d8e97fad5d34da6799a96",
-  "runtime_manifest_sha256": "14166458114e9eaeaeac1cd57cdca4b8931e8c5395c966425ae8abc9372968ed",
+  "parent_git_commit": "59516b37dcc3a4b3d5e48269872f03d4ce8c1dbf",
+  "runtime_manifest_sha256": "e15c1fcd284be4224c83199836f27def2af10d44c758ff1118c088005d5e6b7b",
   "checks": {
     "selected_pytest_passed": 41,
-    "node_checks_passed": 271,
-    "genuine_c01_restore_passed": 20,
+    "node_checks_passed": 295,
+    "genuine_c01_overview_passed": 22,
     "retained_ui111_c01_safeguards_passed": 28,
+    "private_representative_source_passed": true,
     "complete_replay_passed": true
   },
   "main_modified": false,
   "production_deployed": false,
-  "details": "docs/UI113_REVIEW_REPORT.json"
+  "details": "docs/UI114_REVIEW_REPORT.json"
 }
