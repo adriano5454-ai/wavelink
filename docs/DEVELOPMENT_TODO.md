@@ -1,5 +1,7 @@
-# Current UI109 follow-up
+# Current UI110 follow-up
 
-Apply and verify UI109 through the existing deployment workflow. Review reusable log fields and Toolbox discussion-topic tables with representative sources. Exercise explicit incoming-item corrections, approval invalidation, saved-receipt retry and retained inventory verification without replacing existing data. Review current Help outlines, catalogue and preserved bookmarks.
+Review Tasks and Maintenance summaries in the existing deployment. Verify explicit full-record work actions, retained drafts, filters and phone Back navigation in one acceptance session.
 
-Continue substantial grouped source-format improvements using real layouts and clear uncertainty notices. Never remove rows or infer equipment relationships from appearance or repeated identifiers. Preserve unsent work, source rows, identities, counts, checks, scopes and custody. Validate deployed mail, navigation/synchronization, service-worker upgrades and physical devices in their actual environments when authorized. Deliver the full repository, exact-parent compact update and separate evidence every release.
+Next grouped import work: protect deliberate item corrections before reapplying a worksheet mapping, and distinguish inspection-only worksheet navigation from material proposal changes. Preserve explicit exclusions, source coordinates, complete Notes, SN/PN/leading zeros, box relationships, unknown versus zero quantities and exact uncertain-save requests. Never discard rows or infer relationships from names or repeated identifiers.
+
+Continue substantial workflow releases with a full repository, compact exact-parent update and one current checkpoint. Reverify GitHub before editing. Preserve company data, unsent work, permissions, artwork, named sessions, C01/G01/M01 boundaries and the established handover workflow. Live mail, physical devices, service-worker upgrades and production synchronization need acceptance in their actual environments.

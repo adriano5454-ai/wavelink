@@ -1,0 +1,68 @@
+{
+  "format": "wavelink-runtime-overlay-1",
+  "date": "2026-10-13",
+  "patch_id": "workspace-ui110-tasks-maintenance-browsing-2026-10-13",
+  "parent_patch_id": "workspace-ui109-log-and-item-review-2026-10-10",
+  "parent_git_commit": "3329dddcf39bc7065d53b731ca3524f508183dcf",
+  "parent_manifest_sha256": "37270fa93be13d6ba247300095d9f042b23a4310d7ef64e4e9ee6f3680c7e370",
+  "scope": "Compact Tasks and Maintenance lists with read-only summaries and explicit full-record actions.",
+  "boundaries": {
+    "database_reset": false,
+    "browser_storage_clear": false,
+    "schema_migration": false,
+    "backend_change": false,
+    "auth_or_mail_change": false,
+    "artwork_change": false,
+    "work_result_writers_change": false
+  },
+  "files": [
+    {
+      "path": "app/static/index.html",
+      "before_sha256": "cec72a2bb03dcf9c9ca46f2daea9819bd4aecc911caa7f2ee9d35b45155b4cb8",
+      "after_sha256": "e49244a2e67781e26b2cbdd0bc32a023009ae8f11d817d2eb6c3973cf448225b"
+    },
+    {
+      "path": "app/static/maintenance_workspace.css",
+      "before_sha256": "6c7c12b7c8d68e9230fcb8d62207cea20e9d28d5598a50ba213780494d08db45",
+      "after_sha256": "ead615b858e7d53e1bcec5adc9b2175f8ccd9eaf15dbf0137b068a7f150214d1"
+    },
+    {
+      "path": "app/static/maintenance_workspace.js",
+      "before_sha256": "c0270beafaac75ae866c9aa9db021cf62044870b054a333d9783f04b6e32cd5f",
+      "after_sha256": "cad4a866358822523fc5e0e045da36a71d3b44eabf2f02d6bddf5802def26012"
+    },
+    {
+      "path": "app/static/sw.js",
+      "before_sha256": "a0954c4b1eaebdd4997447d0e570f087dd55cb6250a33c453cf40952586b7c01",
+      "after_sha256": "2805c5f2a9fcdf937af2939706fa84e03c5ace13e269f5102ccf40720192b540"
+    },
+    {
+      "path": "app/static/task_workspace.css",
+      "before_sha256": "f2f9e7da267c4043e412cd0a05619cc0efd1e95f677d985e03a74166ffc87aa7",
+      "after_sha256": "40bb67d5a83b0ff7f03eae106e471641cf94627984bcd23eaf911e53f0ebf96e"
+    },
+    {
+      "path": "app/static/task_workspace.js",
+      "before_sha256": "eca13368e44300648ef2fedb14c483d85f39d7e3a0f6ce638c16a931155e477e",
+      "after_sha256": "cfaf53486d5adadc46a100d267a0e30f02430a3240077e1e2271545b56c8caab"
+    },
+    {
+      "path": "app/static/work_execution_ui80.css",
+      "before_sha256": "2e15aa54a3ccf468a1ad1cfae6339425d5e30e3714fc8da3ba1596a0c475cc1f",
+      "after_sha256": "a224dd8bc8db95b6b1b56cfcfba2c06a677bec45a007d53382d2e2ea4404c6d2"
+    },
+    {
+      "path": "tests/ui110_maintenance/__init__.py",
+      "before_sha256": null,
+      "after_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "tests/ui110_maintenance/browser_checks.py",
+      "before_sha256": null,
+      "after_sha256": "9e94b50762db2a4806523efbdd8d674b2c5c2362fb0b65bada4687f1269a6bdb"
+    }
+  ],
+  "runtime_manifest_sha256": "d503d55a08ca488a3c1275a234ef7d61743f07e58c8fc165bee744f0ab370b92",
+  "runtime_resources": 2148,
+  "overlay_resources": 10
+}

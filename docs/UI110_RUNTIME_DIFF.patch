@@ -1,0 +1,271 @@
+--- a/app/static/task_workspace.js
++++ b/app/static/task_workspace.js
+@@ -26,22 +26,79 @@
+   F().click('task-drafts-all',dashboardWorkDialog);
+  }
+  function header(title,sub,controls=''){return `<header class="tw47-heading"><div><p class="eyebrow">TASKS</p><h1>${E(title)}</h1>${sub?`<p class="muted">${E(sub)}</p>`:''}</div><div class="actions">${controls}</div></header>`;}
++ // UI110: inspector choices stay in memory for this account and access scope.
++ // Detail reads never acknowledge an alert, sign or write a task.
++ let browserOwner='',browserScope='',previewId='',previewData=null,previewError='',previewSerial=0,detailOpen=false,listScroll=0,browserPageScroll=0;
++ // pageBusy also protects a focused register filter from background repaint.
++ // Deliberate Task filter changes may use that control; operational editors stay blocked.
++ const browserBusy=(allowRegisterFilters=false)=>{
++  if(dlg.open||document.querySelector('dialog[open]')||(typeof editingMeta!=='undefined'&&editingMeta))return true;
++  if(typeof pageBusy!=='function'||!pageBusy())return false;
++  const focused=document.activeElement,ownedFilter=location.hash==='#tasks'&&root.firstElementChild?.classList.contains('tw47-workspace')&&root.contains(focused)&&focused?.closest('.tw47-filters')&&focused.matches('input[name="task-query"],select[name="scope"],select[name="task-kind"],select[name="task-status"]');
++  return !(allowRegisterFilters&&ownedFilter);
++ };
++ function clearPreview(clearSelection=true){previewSerial++;previewData=null;previewError='';if(clearSelection){previewId='';detailOpen=false;}}
++ window.addEventListener('hashchange',()=>{if(location.hash!=='#tasks'){previewSerial++;previewData=null;previewError='';}});
+  function list(tasks,scope,filter,reload){
+-  const owner=key(),types=AJGeneralTasks.types;
+-  F().page(header('Tasks','',B('task-new','New task','tasks.manage','')+B('op-refresh','Refresh')+B('op-drafts',`Task drafts (${taskDrafts().length})`))+`<nav class="tw47-views" aria-label="Task views">${[['mine','My tasks'],['all','All accessible'],['review','Awaiting review'],['completed','Completed'],['postponed','Postponed']].map(([id,text])=>`<button class="btn secondary" type="button" data-task-view="${id}">${text}</button>`).join('')}</nav><div class="gt-task-filters tw47-filters">${I('task-query','Find a task',filter.query,'search','placeholder="Title, person or department" maxlength="200"')}<details id="task-filter-options" ${filter.expanded?'open':''}><summary>More filters <span id="task-filter-summary"></span></summary><div class="tw47-filter-fields">${S('scope','Access scope',[['all','All accessible tasks'],['mine','Assigned to me'],['department','My department reviews']],scope.value)}${S('task-kind','Task type',[['all','All task types'],...Object.entries(types)],filter.kind)}${S('task-status','Status',[['open','Open work'],['all','All statuses'],['not_started','Not started'],['in_progress','In progress'],['returned','Returned for correction'],['submitted','Awaiting review'],['postponed','Postponed'],['completed','Completed'],['cancelled','Cancelled']],filter.status)}</div></details>${B('task-reset','Reset filters')}</div><p id="task-filter-count" class="small muted" role="status"></p><div class="tw47-list">${tasks.map(t=>{
+-   const progress=t.kind==='stock_verification'?`${t.verified} / ${t.total} verified · ${t.remaining} remaining`:t.checklist_summary?`${t.checklist_summary.recorded} / ${t.checklist_summary.total} checklist results · ${t.checklist_summary.exceptions} exceptions`:'Work findings & review';
+-   return `<a class="card gt-task-card tw47-task" data-task-id="${E(t.id)}" href="#tasks/${E(t.id)}" aria-label="Open task: ${E(t.title)}"><div class="tw47-task-top"><span class="eyebrow">${E(types[t.kind]||'Task')}</span><span class="tw47-status" data-state="${E(t.status)}">${E(states[t.status]||label(t.status))}</span></div><h2>${E(t.title)}</h2><p class="tw47-owner">${E((t.assignees||[]).map(x=>x.name).join(', ')||'No saved assignee')} · ${E(t.department_name||'Company administration')}</p><div class="tw47-task-meta"><span>${E(progress)}</span><span class="${overdue(t)?'tw47-overdue':''}">${overdue(t)?'Overdue · ':''}${t.due_at?E(date(t.due_at)):'No due date'}</span>${t.kind!=='stock_verification'?`<span>${E(label(t.priority||'normal'))} priority</span>`:''}${t.unread?'<b class="tw47-unread">New update</b>':''}</div>${t.status==='postponed'?`<p class="small">Review date: ${E(date(t.postponement?.review_on))} · Saved work retained</p>`:''}<span class="tw47-open">Open task <span aria-hidden="true">→</span></span></a>`;
+-  }).join('')}</div><section id="task-empty" class="card" hidden><h2>No tasks match this view</h2><p>Try All accessible or Reset filters. A private task is visible only through your existing permissions.</p></section>`);
+-  root.firstElementChild.classList.add('tw47-workspace');root.firstElementChild.dataset.workExecution='tasks';const view=root.firstElementChild,current=()=>owner===key()&&view===root.firstElementChild&&location.hash==='#tasks';
++  if(browserBusy(true))return;
++  const owner=key(),types=AJGeneralTasks.types,mountedScope=scope.value;
++  if(browserOwner!==owner||browserScope!==mountedScope){clearPreview();listScroll=0;browserPageScroll=0;browserOwner=owner;browserScope=mountedScope;}
++  else clearPreview(false);
++  const matches=t=>{const q=filter.query.trim().toLocaleLowerCase(),status=filter.status==='all'||filter.status==='open'&&!['completed','cancelled','postponed'].includes(t.status)||t.status===filter.status;return [t.title,t.department_name,...(t.assignees||[]).map(x=>x.name)].join(' ').toLocaleLowerCase().includes(q)&&status&&(filter.kind==='all'||t.kind===filter.kind)&&(!filter.reviewOnly||t.can_review);};
++  const blockedIds=new Set(),visible=id=>tasks.some(t=>t.id===id&&matches(t)&&!blockedIds.has(id));
++  if(previewId&&!visible(previewId))clearPreview();
++  const progress=t=>t.kind==='stock_verification'?`${t.verified} / ${t.total} verified · ${t.remaining} remaining`:t.checklist_summary?`${t.checklist_summary.recorded} / ${t.checklist_summary.total} checklist results · ${t.checklist_summary.exceptions} exceptions`:'Work findings & review';
++  F().page(header('Tasks','',B('task-new','New task','tasks.manage','')+B('op-refresh','Refresh')+B('op-drafts',`Task drafts (${taskDrafts().length})`))+`<nav class="tw47-views" aria-label="Task views">${[['mine','My tasks'],['all','All accessible'],['review','Awaiting review'],['completed','Completed'],['postponed','Postponed']].map(([id,text])=>`<button class="btn secondary" type="button" data-task-view="${id}">${text}</button>`).join('')}</nav><div class="gt-task-filters tw47-filters">${I('task-query','Find a task',filter.query,'search','placeholder="Title, person or department" maxlength="200"')}<details id="task-filter-options" ${filter.expanded?'open':''}><summary>More filters <span id="task-filter-summary"></span></summary><div class="tw47-filter-fields">${S('scope','Access scope',[['all','All accessible tasks'],['mine','Assigned to me'],['department','My department reviews']],scope.value)}${S('task-kind','Task type',[['all','All task types'],...Object.entries(types)],filter.kind)}${S('task-status','Status',[['open','Open work'],['all','All statuses'],['not_started','Not started'],['in_progress','In progress'],['returned','Returned for correction'],['submitted','Awaiting review'],['postponed','Postponed'],['completed','Completed'],['cancelled','Cancelled']],filter.status)}</div></details>${B('task-reset','Reset filters')}</div><p id="task-filter-count" class="small muted" role="status"></p><p id="tw110-read-state" class="notice" role="alert" hidden></p><div class="tw110-browser" data-detail-open="${detailOpen}"><section class="tw110-register" aria-label="Accessible tasks"><div id="tw110-list" class="tw110-list">${tasks.map(t=>`<button type="button" class="tw110-row" data-task-id="${E(t.id)}" aria-label="View task summary: ${E(t.title)}" aria-current="${t.id===previewId}"><span class="tw110-row-top"><span class="eyebrow">${E(types[t.kind]||'Task')}</span><span class="tw47-status" data-state="${E(t.status)}">${E(states[t.status]||label(t.status))}</span></span><strong>${E(t.title)}</strong><span class="tw110-row-owner">${E((t.assignees||[]).map(x=>x.name).join(', ')||'No saved assignee')} · ${E(t.department_name||'Company administration')}</span><span class="tw110-row-meta"><span class="${overdue(t)?'tw47-overdue':''}">${overdue(t)?'Overdue · ':''}${t.due_at?E(date(t.due_at)):'No due date'}</span>${t.unread?'<b class="tw47-unread">New update</b>':''}</span></button>`).join('')}</div><section id="task-empty" class="tw110-empty" hidden><h2>No tasks match this view</h2><p>Try All accessible or Reset filters. A private task is visible only through your existing permissions.</p></section></section><section id="tw110-detail" class="tw110-detail" aria-label="Selected task summary" tabindex="-1"></section></div>`);
++  root.firstElementChild.classList.add('tw47-workspace');root.firstElementChild.dataset.workExecution='tasks';const view=root.firstElementChild;
++  const current=()=>!!state.auth&&owner===key()&&browserOwner===owner&&scope.value===mountedScope&&browserScope===mountedScope&&view===root.firstElementChild&&location.hash==='#tasks'&&canUse('tasks.view');
++  const safe=()=>{if(!current())return false;if(browserBusy(true)){F().showError(err('Keep or close the open form before changing the Tasks view.'));return false;}return true;};
+   const activeView=()=>filter.reviewOnly?'review':filter.status==='completed'?'completed':filter.status==='postponed'?'postponed':scope.value==='mine'?'mine':'all';
+-  function draw(){if(!current())return;let count=0;const q=filter.query.trim().toLocaleLowerCase();for(const el of view.querySelectorAll('[data-task-id]')){const t=tasks.find(x=>x.id===el.dataset.taskId);const status=filter.status==='all'||filter.status==='open'&&!['completed','cancelled','postponed'].includes(t.status)||t.status===filter.status;const match=[t.title,t.department_name,...(t.assignees||[]).map(x=>x.name)].join(' ').toLocaleLowerCase().includes(q);const show=match&&status&&(filter.kind==='all'||t.kind===filter.kind)&&(!filter.reviewOnly||t.can_review);el.hidden=!show;if(show)count++;}
++  function paintPreview(focus=false){
++   if(!current())return;const box=view.querySelector('#tw110-detail'),browser=view.querySelector('.tw110-browser');browser.dataset.detailOpen=String(detailOpen);
++   for(const row of view.querySelectorAll('[data-task-id]'))row.setAttribute('aria-current',String(row.dataset.taskId===previewId));
++   let html='<div class="tw110-empty"><p class="eyebrow">TASK SUMMARY</p><h2>Select a task</h2><p>Review its assignment, instructions and saved progress here, then open the task to continue work.</p></div>';
++   if(previewId){
++    html='<button type="button" class="btn secondary tw110-back" id="tw110-back">← Task list</button>';
++    if(previewError)html+=`<div role="alert"><h2>Task details unavailable</h2><p>${E(previewError)}</p><button type="button" class="btn secondary" id="tw110-retry">Retry details</button></div>`;
++    else if(!previewData)html+='<div class="tw110-empty" role="status" aria-busy="true"><p class="eyebrow">TASK SUMMARY</p><h2>Loading task…</h2><p>Checking the current saved record and access.</p></div>';
++    else {
++     const t=previewData,r=t.linked_record,stock=t.kind==='stock_verification',v=t.verification;
++     const saved=stock?`${v.checked} / ${v.total} verified · ${v.remaining} remaining`:progress(t);
++     html+=`<p class="eyebrow">${E(types[t.kind]||'TASK')} · SAVED REVISION ${E(t.version)}</p><h2>${E(t.title)}</h2><div class="tw110-summary-status"><span class="tw47-status" data-state="${E(t.status)}">${E(states[t.status]||label(t.status))}</span>${!stock?`<span>${E(label(t.priority||'normal'))} priority</span>`:''}${overdue(t)?'<b class="tw47-overdue">Overdue</b>':''}</div><dl class="tw110-facts">${[['Assigned people',(t.assignees||[]).map(x=>x.name).join(', ')||'No saved assignee'],['Department',t.department_name||'Company administration'],['Due (UTC)',date(t.due_at)],['Saved progress',saved]].map(([n,val])=>`<dt>${E(n)}</dt><dd>${E(val)}</dd>`).join('')}</dl><div class="actions"><a class="btn" id="tw110-open" href="#tasks/${E(t.id)}">Open task &amp; saved work →</a></div><h3>Instructions</h3><p class="preserve-lines">${E(t.instructions||'No additional instructions.')}</p>${t.status==='postponed'?`<p class="notice"><b>Work postponed</b> · Review on: ${E(date(t.postponement?.review_on))}<br>${E(t.postponement?.reason||'')}<br>Saved work is retained. Resume remains a separate authorised action.</p>`:''}${!stock&&t.result_note?`<details><summary>Saved findings</summary><p class="preserve-lines">${E(t.result_note)}</p></details>`:''}${r?`<h3>Linked record</h3><p>${E(r.label||label(r.kind))}${r.available===false?' · Source access is not available for this account.':r.changed?' · Source has changed since this task was created.':''}</p>`:''}<p class="small muted tw110-boundary">Viewing this summary does not mark updates as read, save work or approve completion. Open the task to record results, discuss, submit or review.</p>`;
++    }
++   }
++   box.innerHTML=AJInterface.markup(html,{headings:false});
++   const back=box.querySelector('#tw110-back');if(back)back.onclick=()=>{if(!safe())return;detailOpen=false;browser.dataset.detailOpen='false';const row=[...view.querySelectorAll('[data-task-id]')].find(x=>x.dataset.taskId===previewId);view.querySelector('#tw110-list').scrollTop=listScroll;row?.focus({preventScroll:true});if(innerWidth<=850)window.scrollTo({top:browserPageScroll,behavior:'instant'});};
++   const retry=box.querySelector('#tw110-retry');if(retry)retry.onclick=()=>select(previewId,true);
++   const open=box.querySelector('#tw110-open');if(open)open.onclick=e=>{if(e.button!==0||e.ctrlKey||e.metaKey||e.shiftKey||e.altKey)return;e.preventDefault();if(!safe()||previewData?.id!==previewId||!visible(previewId))return;listScroll=view.querySelector('#tw110-list').scrollTop;location.hash='#tasks/'+encodeURIComponent(previewId);};
++   if(focus){box.focus({preventScroll:true});if(innerWidth<=850)box.scrollIntoView({block:'start'});}
++   if(previewData&&detailOpen&&innerWidth<=850&&document.activeElement===box){const top=box.getBoundingClientRect().top,limit=(document.getElementById('wl-topbar')?.getBoundingClientRect().bottom||0)+12;if(top<limit)window.scrollBy({top:top-limit,behavior:'instant'});}
++  }
++  async function select(id,focus=false){
++   if(!safe()||!visible(id))return;if(focus)browserPageScroll=window.scrollY;view.querySelector('#tw110-read-state').hidden=true;listScroll=view.querySelector('#tw110-list').scrollTop;previewId=id;previewData=null;previewError='';detailOpen=true;const ticket=++previewSerial,read=capture(current);
++   paintPreview(focus);const host=view.querySelector('#tw110-detail');
++   const same=()=>current()&&ticket===previewSerial&&previewId===id&&host===view.querySelector('#tw110-detail')&&visible(id);
++   const pending=()=>same()&&read.pending()&&!browserBusy(true);
++   try{
++    const t=await api('/api/tasks/'+encodeURIComponent(id),{beforeSend:()=>{read.before();if(!pending())throw err('The task selection or open form changed.');}});
++    if(!same())return;if(!pending()){previewError='A form or another read interrupted these details. Keep or close the form, then Retry details.';paintPreview();return;}
++    if(t?.id!==id||!Number.isSafeInteger(t.version)||t.version<1||t.version<(tasks.find(x=>x.id===id)?.version||1)||!types[t.kind]||!states[t.status]||!Array.isArray(t.assignees)||typeof t.can_perform!=='boolean'||typeof t.can_review!=='boolean'||t.kind==='stock_verification'&&(!t.verification||!Number.isFinite(t.verification.total)||!Number.isFinite(t.verification.checked)||!Number.isFinite(t.verification.remaining)))throw err('The selected task response could not be verified. Retry the current record.');
++    if(!matches(t)||mountedScope==='mine'&&(!Array.isArray(t.assignee_ids)||!t.assignee_ids.includes(state.auth.person.user_id))||mountedScope==='department'&&!t.can_review){blockedIds.add(id);clearPreview();const note=view.querySelector('#tw110-read-state');note.textContent='This task no longer matches the current filters or access scope. Refresh Tasks to see the current list.';note.hidden=false;draw();paintPreview();return;}previewData=t;paintPreview();
++   }catch(e){if(!same())return;if([401,403,404,409].includes(Number(e?.status||e?.code))){blockedIds.add(id);clearPreview();const note=view.querySelector('#tw110-read-state');note.textContent='The selected task is no longer available. Refresh Tasks to check current access. '+message(e);note.hidden=false;draw();paintPreview();return;}previewData=null;previewError=read.pending()?message(e):'A form or another read interrupted these details. Keep or close the form, then Retry details.';paintPreview();}
++  }
++  function draw(){if(!current())return;let count=0;for(const el of view.querySelectorAll('[data-task-id]')){const t=tasks.find(x=>x.id===el.dataset.taskId),show=matches(t)&&!blockedIds.has(t.id);el.hidden=!show;if(show)count++;}
++   if(previewId&&!visible(previewId)){clearPreview();paintPreview();}
+    view.querySelector('#task-empty').hidden=!!count;view.querySelector('#task-filter-count').textContent=`${count} shown · ${tasks.length} available in this access scope`+(filter.reviewOnly?' · Awaiting your review':'');view.querySelector('#task-filter-summary').textContent=(filter.kind!=='all'?' · '+types[filter.kind]:'')+(scope.value==='department'?' · Department reviews':'');for(const b of view.querySelectorAll('[data-task-view]'))b.setAttribute('aria-pressed',String(b.dataset.taskView===activeView()));
+   }
+-  F().click('task-new',()=>{if(current())return AJGeneralTasks.choose();});F().click('op-refresh',()=>{if(current())return reload();});F().click('op-drafts',()=>{if(current())return drafts();});
+-  for(const b of view.querySelectorAll('[data-task-view]'))b.onclick=()=>{if(!current()||dlg.open)return;const value=b.dataset.taskView;scope.value=value==='mine'?'mine':'all';filter.reviewOnly=value==='review';filter.status=value==='review'?'submitted':value==='completed'?'completed':value==='postponed'?'postponed':'open';reload();};
+-  view.querySelector('[name=scope]').onchange=e=>{if(!current())return;scope.value=e.target.value;filter.reviewOnly=false;reload();};
+-  for(const [n,k] of [['task-query','query'],['task-kind','kind'],['task-status','status']])view.querySelector(`[name="${n}"]`).addEventListener(k==='query'?'input':'change',e=>{if(!current())return;filter[k]=e.target.value;if(k==='status')filter.reviewOnly=false;draw();});
+-  view.querySelector('#task-filter-options').ontoggle=e=>{if(current())filter.expanded=e.target.open;};F().click('task-reset',()=>{if(!current())return;Object.assign(filter,{query:'',kind:'all',status:'open',reviewOnly:false,expanded:false});scope.value='mine';reload();});draw();
++  function refresh(){if(!safe())return;listScroll=view.querySelector('#tw110-list').scrollTop;clearPreview(false);paintPreview();return reload();}
++  F().click('task-new',()=>{if(safe())return AJGeneralTasks.choose();});F().click('op-refresh',refresh);F().click('op-drafts',()=>{if(safe())return drafts();});
++  for(const b of view.querySelectorAll('[data-task-view]'))b.onclick=()=>{if(!safe())return;const value=b.dataset.taskView;clearPreview();paintPreview();scope.value=value==='mine'?'mine':'all';filter.reviewOnly=value==='review';filter.status=value==='review'?'submitted':value==='completed'?'completed':value==='postponed'?'postponed':'open';listScroll=0;reload();};
++  view.querySelector('[name=scope]').onchange=e=>{if(!safe()){e.target.value=scope.value;return;}clearPreview();paintPreview();scope.value=e.target.value;filter.reviewOnly=false;listScroll=0;reload();};
++  for(const [n,k] of [['task-query','query'],['task-kind','kind'],['task-status','status']])view.querySelector(`[name="${n}"]`).addEventListener(k==='query'?'input':'change',e=>{if(!safe()){e.target.value=filter[k];return;}filter[k]=e.target.value;if(k==='status')filter.reviewOnly=false;draw();});
++  view.querySelector('#task-filter-options').ontoggle=e=>{if(current())filter.expanded=e.target.open;};F().click('task-reset',()=>{if(!safe())return;clearPreview();paintPreview();Object.assign(filter,{query:'',kind:'all',status:'open',reviewOnly:false,expanded:false});scope.value='mine';listScroll=0;reload();});
++  for(const row of view.querySelectorAll('[data-task-id]'))row.onclick=()=>select(row.dataset.taskId,true);
++  const scroll=view.querySelector('#tw110-list');scroll.scrollTop=listScroll;scroll.onscroll=()=>{if(current()&&innerWidth>850)listScroll=scroll.scrollTop;};
++  draw();paintPreview();if(previewId)select(previewId);
+  }
+  function fitForm(f,label){formContext(f);f.classList.add('tw47-form');f.dataset.saveLabel=label;f.querySelector('#fw-save').textContent=label;const buttons=f.querySelector('#fw-save').closest('.actions');buttons.classList.add('tw47-form-footer');const body=document.createElement('div');body.className='tw47-form-body';while(f.firstChild&&f.firstChild!==buttons)body.append(f.firstChild);f.insertBefore(body,buttons);const wrap=f.closest('.modal');wrap?.classList.add('tw47-modal');return f;}
+  function people(users,ids=[],values={}){const xs=users.map(x=>({...x}));for(const id of new Set([...ids,...Object.entries(values).filter(([n,v])=>n.startsWith('person_')&&v===true).map(([n])=>n.slice(7))]))if(!xs.some(x=>(x.id||x.user_id)===id))xs.push({id,name:'Retained assignee',login_id:id,retained:true});return `<label>Find people<input id="task-people-search" type="search" maxlength="160" placeholder="Name, login or account ID"></label><p id="task-people-count" class="small" role="status"></p><fieldset class="operation-persons tw47-people"><legend>Who will do this? Choose at least one</legend>${xs.map(u=>{const id=u.id||u.user_id;return `<label class="checkline" data-task-person="${E(id)}"><input type="checkbox" name="person_${E(id)}" value="${E(id)}" ${ids.includes(id)?'checked':''}><span><b>${E(u.name)}</b><small>${E(u.login_id||id)}</small>${u.retained?'<small>Retained reference; no longer in the eligible list. Remove deliberately or ask an administrator.</small>':''}</span></label>`;}).join('')}</fieldset>`;}
+--- a/app/static/task_workspace.css
++++ b/app/static/task_workspace.css
+@@ -19,3 +19,45 @@
+ .tw47-stock-filters label{display:grid;gap:6px;font-size:.85rem;font-weight:600}.tw47-stock-filters input,.tw47-stock-filters select{width:100%;min-height:44px;padding:10px 12px;border:1px solid var(--line,#d1dbe4);border-radius:8px;background:var(--surface,#fff);color:var(--ink,#17364c);font:inherit;line-height:1.35}.tw47-stock-filters input:focus-visible,.tw47-stock-filters select:focus-visible{outline:3px solid var(--accent,#087f87);outline-offset:2px}
+
+ }
++
++/* UI110 read-only Tasks browser. Full task editors keep their existing styles. */
++.tw47-workspace .tw110-browser{display:grid;grid-template-columns:minmax(260px,min(340px,38%)) minmax(0,1fr);gap:18px;align-items:start;min-width:0;}
++.tw47-workspace .tw110-register{border:1px solid #c7d9df;border-radius:14px;background:#fff;min-width:0;overflow:hidden;}
++.tw47-workspace .tw110-list{max-height:65vh;overflow:auto;scrollbar-gutter:stable;}
++.tw47-workspace .tw110-row{display:flex;flex-direction:column;gap:7px;width:100%;max-width:100%;min-width:0;border:0;border-bottom:1px solid #d7e4e8;border-radius:0;background:#fff;color:var(--ink,#17364c);padding:14px 16px;text-align:left;font:inherit;cursor:pointer;overflow-wrap:anywhere;}
++.tw47-workspace .tw110-row:last-child{border-bottom:0;}
++.tw47-workspace .tw110-row:hover{background:#edf6f8;}
++.tw47-workspace .tw110-row[aria-current=true]{background:#dceff2;box-shadow:inset 4px 0 #0b7884;}
++.tw47-workspace .tw110-row:focus-visible{outline:3px solid #0b7884;outline-offset:-3px;}
++.tw47-workspace .tw110-row>strong{font-size:16px;line-height:1.35;}
++.tw47-workspace .tw110-row-top{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:7px;}
++.tw47-workspace .tw110-row-top .eyebrow{font-size:10px;margin:0;}
++.tw47-workspace .tw110-row .tw47-status{font-size:11px;line-height:1.3;padding:3px 6px;}
++.tw47-workspace .tw110-row-owner{font-size:12px;line-height:1.45;color:#526d7c;}
++.tw47-workspace .tw110-row-meta{display:flex;flex-wrap:wrap;justify-content:space-between;gap:6px;font-size:12px;line-height:1.45;}
++.tw47-workspace .tw110-detail{border:1px solid #c7d9df;border-radius:14px;background:#fff;padding:22px;min-width:0;min-height:280px;overflow-wrap:anywhere;scroll-margin-top:calc(var(--wl88-mobile-header,106px) + 12px);}
++.tw47-workspace .tw110-detail h2{margin:6px 0 14px;font-size:23px;line-height:1.25;}
++.tw47-workspace .tw110-detail h3{font-size:16px;margin:20px 0 10px;}
++.tw47-workspace .tw110-summary-status{display:flex;align-items:center;flex-wrap:wrap;gap:10px;font-size:13px;}
++.tw47-workspace .tw110-facts{display:grid;grid-template-columns:minmax(120px,32%) minmax(0,1fr);gap:10px 18px;margin:20px 0;}
++.tw47-workspace .tw110-facts dt{font-size:12px;color:#587180;}
++.tw47-workspace .tw110-facts dd{font-size:14px;line-height:1.45;margin:0;min-width:0;overflow-wrap:anywhere;}
++.tw47-workspace .tw110-detail .actions{display:flex;flex-wrap:wrap;gap:8px;}
++.tw47-workspace .tw110-detail .actions>*{max-width:100%;min-width:0;white-space:normal;min-height:44px;}
++.tw47-workspace .tw110-detail details{margin-top:18px;}
++.tw47-workspace .tw110-detail summary{cursor:pointer;min-height:32px;font-weight:650;}
++.tw47-workspace .tw110-detail>.eyebrow{margin:0;font-size:10px;}
++.tw47-workspace .tw110-empty{display:grid;align-content:center;min-height:230px;gap:8px;}
++.tw47-workspace .tw110-empty h2,.tw47-workspace .tw110-empty p{margin:0;}
++.tw47-workspace .tw110-register>.tw110-empty{padding:18px;}
++.tw47-workspace .tw110-boundary{border-top:1px solid #d7e4e8;padding-top:16px;margin-top:20px;line-height:1.55;}
++.tw47-workspace .tw110-back{display:none!important;}
++@media(max-width:850px){
++ .tw47-workspace .tw110-browser{grid-template-columns:minmax(0,1fr);}
++ .tw47-workspace .tw110-browser[data-detail-open=false] .tw110-detail{display:none;}
++ .tw47-workspace .tw110-browser[data-detail-open=true] .tw110-register{display:none;}
++ .tw47-workspace .tw110-back{display:inline-flex!important;margin:0 0 16px!important;}
++ .tw47-workspace .tw110-detail{padding:16px;}
++ .tw47-workspace .tw110-list{max-height:none;overflow:visible;}
++ .tw47-workspace .tw110-facts{grid-template-columns:minmax(95px,34%) minmax(0,1fr);gap:8px 12px;}
++}
+--- a/app/static/maintenance_workspace.js
++++ b/app/static/maintenance_workspace.js
+@@ -41,10 +41,14 @@
+       if (next!==session) {session=next;generation++;prefs=initial();detail=emptyDetail();data=null;fromId=null;ctx.root.querySelector('#maintenance-workspace')?.remove();}
+     }
+     const active=()=>ctx.active() && ctx.can('maintenance.view') && session===ctx.session();
+-    function safe() {sync();if(ctx.busy()){ctx.toast('Finish or close the open form before changing maintenance views.');return false;}return active();}
++    function safe(source=null) {
++      const owner=session;sync();
++      if(owner!==session || source && (!source.isConnected || !ctx.root.contains(source) || source.closest('#maintenance-workspace')!==el('maintenance-workspace')))return false;
++      if(ctx.busy()){ctx.toast('Finish or close the open form before changing maintenance views.');return false;}return active();
++    }
+     const button=(id,label,cls='secondary')=>`<button type="button" class="btn ${cls}" id="${id}">${E(label)}</button>`;
+     const options=(rows,value)=>rows.map(([id,label])=>`<option value="${E(id)}" ${id===value?'selected':''}>${E(label)}</option>`).join('');
+-    function click(id, fn) {const e=el(id);if(e)e.onclick=event=>{event.preventDefault();if(safe())Promise.resolve(fn()).catch(ctx.error);};}
++    function click(id, fn) {const e=el(id);if(e)e.onclick=event=>{event.preventDefault();if(safe(event.currentTarget))Promise.resolve(fn()).catch(ctx.error);};}
+     function formCount(id=null) {return ctx.drafts().filter(([,d]) => (d.kind?.startsWith('Maintenance ') || d.kind==='Asset maintenance order') && (!id || d.context?.job_id===id)).length;}
+     function localBanner(id=null) {
+       const count=formCount(id);
+@@ -77,10 +81,10 @@
+       click('mw-clear',()=>{saveScroll();prefs={...initial(),selected:prefs.selected};showHome(data);});
+       click('mw-filters',()=>{prefs.filters=!prefs.filters;el('mw-filter-fields').hidden=!prefs.filters;el('mw-filters').setAttribute('aria-expanded',String(prefs.filters));});
+       el('mw-filters').setAttribute('aria-expanded',String(prefs.filters));el('mw-filters').setAttribute('aria-controls','mw-filter-fields');
+-      el('mw-search').oninput=e=>{if(!safe()){e.target.value=prefs.query;return;}prefs.query=e.target.value;prefs.scroll=0;drawRows();};
+-      for(const [id,key] of [['mw-routine','routine'],['mw-people','people'],['mw-sort','sort']])el(id).onchange=e=>{if(!safe()){e.target.value=prefs[key];return;}prefs[key]=e.target.value;prefs.scroll=0;drawRows();};
+-      ctx.root.querySelectorAll('[data-mw-view]').forEach(b=>b.onclick=()=>{if(safe()){prefs.view=b.dataset.mwView;prefs.scroll=0;drawRows();}});
+-      el('mw-show').onchange=e=>{if(!safe()){e.target.value=prefs.view;return;}prefs.view=e.target.value;prefs.scroll=0;drawRows();};
++      el('mw-search').oninput=e=>{if(!safe(e.currentTarget)){e.target.value=prefs.query;return;}prefs.query=e.target.value;prefs.scroll=0;drawRows();};
++      for(const [id,key] of [['mw-routine','routine'],['mw-people','people'],['mw-sort','sort']])el(id).onchange=e=>{if(!safe(e.currentTarget)){e.target.value=prefs[key];return;}prefs[key]=e.target.value;prefs.scroll=0;drawRows();};
++      ctx.root.querySelectorAll('[data-mw-view]').forEach(b=>b.onclick=()=>{if(safe(b)){prefs.view=b.dataset.mwView;prefs.scroll=0;drawRows();}});
++      el('mw-show').onchange=e=>{if(!safe(e.currentTarget)){e.target.value=prefs.view;return;}prefs.view=e.target.value;prefs.scroll=0;drawRows();};
+       guardLinks();drawRows();AJMaintenanceUI.restore(position);
+     }
+     function drawRows() {
+@@ -92,23 +96,23 @@
+       el('mw-match-count').textContent=`${rows.length} matching · ${(data.jobs||[]).length} accessible work orders${lost?' · Selection cleared because it is no longer in this view.':''}`;
+       el('mw-filter-summary').textContent=[views.find(v=>v[0]===prefs.view)?.[1],el('mw-routine').selectedOptions[0]?.textContent,el('mw-people').selectedOptions[0]?.textContent,el('mw-sort').selectedOptions[0]?.textContent].join(' · ');
+       ctx.root.querySelectorAll('[data-mw-view]').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.mwView===prefs.view)));el('mw-show').value=prefs.view;
+-      AJMaintenanceUI.keyed(el('mw-results'),rows.map(j=>`<article data-mw-order="${E(j.id)}" class="mw-order ${j.id===prefs.selected?'is-selected':''}"><div class="mw-order-top"><span class="mw-status ${dueState(j,ctx.now())==='overdue'?'mw-late':''}">${E(title(j.status))}</span>${dueState(j,ctx.now())==='overdue'?'<span class="mw-due-warning">Overdue</span>':''}</div><button type="button" class="mw-order-title" data-mw-open="${E(j.id)}" aria-pressed="${j.id===prefs.selected}">${E(j.name)}</button><p>${E(j.asset_name || 'Equipment not specified')}</p><small>${E(j.reference || 'No external reference')} · Routine Rev ${N(j.routine_revision)}</small><div class="mw-order-meta"><span>Due: ${E(AJMaintenanceUI.date(j.due_at))}</span><span>${N(j.checked)} / ${N(j.total)} Complete or N/A</span></div>${j.follow_up?.state==='blocked'?'<p class="mw-followup">Follow-up needs review · no next order yet</p>':''}<button type="button" class="btn secondary mw-open-direct" data-mw-open="${E(j.id)}">${isOpen(j)?'Continue work':'Open order'}</button> <button type="button" class="mw-summary-link" data-mw-select="${E(j.id)}">View summary →</button></article>`).join('') || '<div class="mw-empty"><h2>No work orders in this view</h2><p>Clear filters to see the full list, or ask a manager to create work from a reviewed routine.</p>'+button('mw-empty-clear','Clear filters')+'</div>');
++      AJMaintenanceUI.keyed(el('mw-results'),rows.map(j=>`<article data-mw-order="${E(j.id)}" class="mw-order ${j.id===prefs.selected?'is-selected':''}"><div class="mw-order-top"><span class="mw-status ${dueState(j,ctx.now())==='overdue'?'mw-late':''}">${E(title(j.status))}</span>${dueState(j,ctx.now())==='overdue'?'<span class="mw-due-warning">Overdue</span>':''}</div><button type="button" class="mw-order-title" data-mw-select="${E(j.id)}" aria-controls="mw-selected" aria-pressed="${j.id===prefs.selected}" aria-label="View summary: ${E(j.name)}">${E(j.name)}</button><p>${E(j.asset_name || 'Equipment not specified')}</p><small>${E(j.reference || 'No external reference')} · Routine Rev ${N(j.routine_revision)}</small><div class="mw-order-meta"><span>Due: ${E(AJMaintenanceUI.date(j.due_at))}</span><span>${N(j.checked)} / ${N(j.total)} Complete or N/A</span></div>${j.follow_up?.state==='blocked'?'<p class="mw-followup">Follow-up needs review · no next order yet</p>':''}<button type="button" class="btn secondary mw-open-direct" data-mw-open="${E(j.id)}">${isOpen(j)?'Continue work':'Open order'}</button></article>`).join('') || '<div class="mw-empty"><h2>No work orders in this view</h2><p>Clear filters to see the full list, or ask a manager to create work from a reviewed routine.</p>'+button('mw-empty-clear','Clear filters')+'</div>');
+       el('mw-results').scrollTop=prefs.scroll;
+       el('mw-results').onscroll=()=>{if(!el('maintenance-workspace')?.classList.contains('mw-phone-detail'))prefs.scroll=el('mw-results').scrollTop;};
+-      ctx.root.querySelectorAll('[data-mw-open]').forEach(b=>b.onclick=()=>{if(safe()){const j=data.jobs.find(j=>j.id===b.dataset.mwOpen);if(j)openJob(j);}});
+-      ctx.root.querySelectorAll('[data-mw-select]').forEach(b=>b.onclick=()=>{if(!safe())return;saveScroll();prefs.selected=b.dataset.mwSelect;prefs.mobileDetail=matchMedia('(max-width:850px)').matches;drawRows();if(prefs.mobileDetail){el('mw-selected').focus({preventScroll:true});el('mw-selected').scrollIntoView({block:'start'});}});
++      ctx.root.querySelectorAll('[data-mw-open]').forEach(b=>b.onclick=()=>{if(safe(b)){const j=data.jobs.find(j=>j.id===b.dataset.mwOpen);if(j)openJob(j);}});
++      ctx.root.querySelectorAll('[data-mw-select]').forEach(b=>b.onclick=()=>{if(!safe(b))return;saveScroll();prefs.selected=b.dataset.mwSelect;prefs.mobileDetail=matchMedia('(max-width:850px)').matches;drawRows();if(prefs.mobileDetail){el('mw-selected').focus({preventScroll:true});el('mw-selected').scrollIntoView({block:'start'});}});
+       click('mw-empty-clear',()=>{prefs=initial();prefs.view='all';showHome(data);});
+       const j=rows.find(j=>j.id===prefs.selected);drawSelected(j);
+     }
+     function drawSelected(j) {
+       if(!j){AJMaintenanceUI.keyed(el('mw-selected'),'<div class="mw-empty"><p class="eyebrow">SAVED ORDER SUMMARY</p><h2>Choose a work order</h2><p>Inspect its assignment, due date and cycle here, then open the saved work. Viewing a summary records nothing.</p></div>');return;}
+       const follow=j.follow_up?.state==='blocked';
+-      AJMaintenanceUI.keyed(el('mw-selected'),`${button('mw-list-back','Back to work orders','secondary mw-mobile-back')}<p class="eyebrow">${E(j.reference || 'WORK ORDER')} · SAVED REVISION ${N(j.version)}</p><h2>${E(j.name)}</h2><p>${E(j.asset_name || 'Equipment not specified')}</p><div class="mw-next"><strong>${follow?'Review the pending follow-up':isOpen(j)?'Continue the saved work':'View the retained results'}</strong><p>${follow?'The completed evidence remains saved. A manager must review the changed requirements before creating a next order.':isOpen(j)?'Open the order to record steps or review submitted results. Progress counts are not completion approval.':'This order is locked. Its saved evidence and history remain available.'}</p>${button('mw-open-order','Open work order →','')}</div><dl class="mw-facts"><dt>Status</dt><dd>${E(title(j.status))}</dd><dt>Due (UTC)</dt><dd>${E(AJMaintenanceUI.date(j.due_at))}</dd><dt>Saved results</dt><dd>${N(j.checked)} / ${N(j.total)} Complete or N/A</dd><dt>Assigned people</dt><dd>${E((j.assignees||[]).map(a=>a.name).join(', ') || 'No named assignees — maintenance workers')}</dd><dt>Routine revision</dt><dd>${N(j.routine_revision)}</dd><dt>Cycle</dt><dd>${E(j.cycle_description || 'One-off work order')}</dd></dl>${follow?`<p class="notice">${E(j.follow_up.message)}<br>Pending due (UTC): ${E(j.follow_up.due_at || 'Needs review')}</p>`:''}<details><summary>Work instructions & record identity</summary><p class="preserve-lines">${E(j.instructions || 'No additional work-order instructions.')}</p><p class="small">Order ID: ${E(j.id)}</p></details>`);
+-      click('mw-open-order',()=>openJob(j));click('mw-list-back',()=>{prefs.mobileDetail=false;drawRows();const b=[...ctx.root.querySelectorAll('.mw-order-title')].find(e=>e.dataset.mwOpen===prefs.selected);b?.focus({preventScroll:true});window.scrollTo(0,prefs.pageScroll);});
++      AJMaintenanceUI.keyed(el('mw-selected'),`${button('mw-list-back','Back to work orders','secondary mw-mobile-back')}<p class="eyebrow">${E(j.reference || 'WORK ORDER')} · SAVED REVISION ${N(j.version)}</p><h2>${E(j.name)}</h2><p>${E(j.asset_name || 'Equipment not specified')}</p><div class="mw-next"><strong>${follow?'Review the pending follow-up':isOpen(j)?'Continue the saved work':'View the retained results'}</strong><p>${follow?'The completed evidence remains saved. A manager must review the changed requirements before creating a next order.':isOpen(j)?'Open the order to record steps or review submitted results. Progress counts are not completion approval.':'This order is locked. Its saved evidence and history remain available.'}</p>${button('mw-open-order',isOpen(j)?'Continue work':'Open order','')}</div><dl class="mw-facts"><dt>Status</dt><dd>${E(title(j.status))}</dd><dt>Due (UTC)</dt><dd>${E(AJMaintenanceUI.date(j.due_at))}</dd><dt>Saved results</dt><dd>${N(j.checked)} / ${N(j.total)} Complete or N/A</dd><dt>Assigned people</dt><dd>${E((j.assignees||[]).map(a=>a.name).join(', ') || 'No named assignees — maintenance workers')}</dd><dt>Routine revision</dt><dd>${N(j.routine_revision)}</dd><dt>Cycle</dt><dd>${E(j.cycle_description || 'One-off work order')}</dd></dl>${follow?`<p class="notice">${E(j.follow_up.message)}<br>Pending due (UTC): ${E(j.follow_up.due_at || 'Needs review')}</p>`:''}<details><summary>Work instructions & record identity</summary><p class="preserve-lines">${E(j.instructions || 'No additional work-order instructions.')}</p><p class="small">Order ID: ${E(j.id)}</p></details>`);
++      click('mw-open-order',()=>openJob(j));click('mw-list-back',()=>{prefs.mobileDetail=false;drawRows();const b=[...ctx.root.querySelectorAll('.mw-order-title')].find(e=>e.dataset.mwSelect===prefs.selected);b?.focus({preventScroll:true});window.scrollTo(0,prefs.pageScroll);});
+     }
+     function guardLinks() {
+       const shell=el('maintenance-workspace');
+-      if(shell)shell.onclick=e=>{const a=e.target.closest('a');if(a&&!safe())e.preventDefault();};
++      if(shell)shell.onclick=e=>{const a=e.target.closest('a');if(a&&!safe(a))e.preventDefault();};
+     }
+     function detailHtml(j, fragments) {
+       sync();if(detail.id!==j.id){detail=emptyDetail();detail.id=j.id;}
+@@ -131,14 +135,14 @@
+       if(detail.section && !sections.includes(detail.section))detail.section='';
+       el('mw-step-section').innerHTML=AJInterface.markup(options([['','All sections'],...sections.map(x=>[x,x])],detail.section));
+       const showTab=()=>{ctx.root.querySelectorAll('[data-mw-tab]').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.mwTab===detail.tab)));for(const key of ['steps','review','source','links'])el('mw-panel-'+key).hidden=key!==detail.tab;};
+-      ctx.root.querySelectorAll('[data-mw-tab]').forEach(b=>b.onclick=()=>{if(safe()){detail.tab=b.dataset.mwTab;showTab();}});showTab();
++      ctx.root.querySelectorAll('[data-mw-tab]').forEach(b=>b.onclick=()=>{if(safe(b)){detail.tab=b.dataset.mwTab;showTab();}});showTab();
+       click('mw-back-orders',()=>ctx.navigate('#maintenance'));click('mw-local-forms',ctx.showDrafts);
+       const apply=()=>{
+         const q=detail.query.trim().toLocaleLowerCase();let shown=0;
+         ctx.root.querySelectorAll('[data-mw-step-key]').forEach(card=>{const s=j.steps.find(x=>x.key===card.dataset.mwStepKey);if(!s){card.hidden=true;return;}const value=[s.definition.number,s.definition.text,s.section,s.phase_label,s.check?.note,...Object.values(s.check?.values||{})].join(' ').toLocaleLowerCase();const yes=(!detail.section||detail.section===(s.section || 'Unsectioned'))&&(!q||value.includes(q))&&(detail.view==='all'||detail.view==='attention'&&stepAttention(s)||detail.view==='approvals'&&stepReview(s)||detail.view==='recorded'&&stepDone(s));card.hidden=!yes;if(yes)shown++;});
+         el('mw-step-count').textContent=`${shown} matching · ${N(j.total)} saved steps. Complete/N/A results can still require approval.`;el('mw-step-empty').hidden=shown>0;
+       };
+-      for(const [id,key,event] of [['mw-step-search','query','input'],['mw-step-section','section','change'],['mw-step-view','view','change']])el(id)['on'+event]=e=>{if(!safe()){e.target.value=detail[key];return;}detail[key]=e.target.value;apply();};
++      for(const [id,key,event] of [['mw-step-search','query','input'],['mw-step-section','section','change'],['mw-step-view','view','change']])el(id)['on'+event]=e=>{if(!safe(e.currentTarget)){e.target.value=detail[key];return;}detail[key]=e.target.value;apply();};
+       const next=()=>{detail.tab='steps';detail.query='';detail.section='';detail.view='attention';el('mw-step-search').value='';el('mw-step-section').value='';el('mw-step-view').value='attention';showTab();apply();const card=[...ctx.root.querySelectorAll('[data-mw-step-key]')].find(c=>!c.hidden);if(card){card.focus();card.scrollIntoView({block:'nearest'});}else ctx.toast('No saved unfinished steps or outstanding step approvals. Review required evidence before completing the order.');};
+       click('mw-next-step',next);click('mw-review-unfinished',next);click('mw-step-clear',()=>{detail.query='';detail.section='';detail.view='all';el('mw-step-search').value='';el('mw-step-section').value='';el('mw-step-view').value='all';apply();});
+       el('mw-step-filter').ontoggle=()=>{detail.filters=el('mw-step-filter').open;};guardLinks();apply();
+--- a/app/static/maintenance_workspace.css
++++ b/app/static/maintenance_workspace.css
+@@ -92,6 +92,7 @@
+  .mw-step-controls label:first-child { grid-column:1/-1; }
+  .mw-local,.mw-section-heading { flex-direction:column; align-items:flex-start; }
+ }
++
+ @media(max-width:450px) {
+  .mw-heading h1 { font-size:24px; }
+  .mw-controls,.mw-selected { padding:14px; }
+@@ -138,3 +139,37 @@
+ .mf-form legend.mw-sr-only{position:absolute!important;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+
+ }
++
++/* UI110: the saved order browser shares the compact list/detail layout used
++   by Tasks and Certificates. Selection is presentation only. */
++#maintenance-workspace .mw-list-detail {display:grid;grid-template-columns:minmax(260px,min(340px,38%)) minmax(0,1fr);gap:16px;align-items:start;min-width:0;}
++#maintenance-workspace .mw-results {display:block;min-width:0;max-height:65dvh;overflow:auto;padding:0;border:1px solid #c7d9df;border-radius:14px!important;background:#f8fbfc;box-shadow:none;scrollbar-gutter:stable;}
++#maintenance-workspace .mw-order {min-width:0;margin:0!important;padding:14px!important;border:0!important;border-bottom:1px solid #d7e4e8!important;border-radius:0!important;background:transparent!important;box-shadow:none!important;}
++#maintenance-workspace .mw-order:last-child {border-bottom:0!important;}
++#maintenance-workspace .mw-order:hover {background:#edf6f8!important;}
++#maintenance-workspace .mw-order.is-selected {background:#dceff2!important;box-shadow:inset 4px 0 #0b7884!important;}
++#maintenance-workspace .mw-order-top {flex-wrap:wrap;gap:8px;margin:0 0 5px;}
++#maintenance-workspace .mw-order-title {display:block;width:100%;max-width:100%;min-height:36px;padding:4px 0;font-size:16px;line-height:1.35;text-align:left;white-space:normal;}
++#maintenance-workspace .mw-order p {font-size:12px;line-height:1.45;margin:4px 0;overflow-wrap:anywhere;}
++#maintenance-workspace .mw-order small {display:block;font-size:11px;line-height:1.45;}
++#maintenance-workspace .mw-order-meta {display:grid;gap:4px;margin:8px 0;font-size:12px;line-height:1.45;overflow-wrap:anywhere;}
++#maintenance-workspace .mw-open-direct {min-height:38px;max-width:100%;margin:3px 0 0;padding:7px 10px;font-size:12px;white-space:normal;}
++#maintenance-workspace .mw-selected {display:block;box-sizing:border-box;min-width:0;min-height:280px;padding:22px;border:1px solid #c7d9df;border-radius:14px!important;background:#fff;box-shadow:none;scroll-margin-top:calc(var(--wl88-mobile-header,106px) + 12px);}
++#maintenance-workspace .mw-selected h2 {font-size:23px;line-height:1.25;margin:6px 0 14px;}
++#maintenance-workspace .mw-selected>.mw-empty {border:0!important;background:transparent!important;padding:0!important;min-height:230px;display:grid;align-content:center;gap:8px;}
++#maintenance-workspace .mw-selected>.mw-empty h2,#maintenance-workspace .mw-selected>.mw-empty p {margin:0;}
++#maintenance-workspace .mw-mobile-back {display:none;}
++@media(min-width:851px) {
++ #maintenance-workspace.mw-phone-detail .mw-results,#maintenance-workspace.mw-phone-detail .mw-controls,#maintenance-workspace.mw-phone-detail .mw-library,#maintenance-workspace.mw-phone-detail .mw-read-note {display:block;}
++ #maintenance-workspace.mw-phone-detail .mw-mobile-back {display:none;}
++}
++@media(max-width:850px) {
++ #maintenance-workspace .mw-list-detail {display:block;}
++ #maintenance-workspace .mw-results {max-height:none;overflow:visible;}
++ #maintenance-workspace .mw-selected {display:none;padding:16px;}
++ #maintenance-workspace.mw-phone-detail .mw-selected {display:block;}
++ #maintenance-workspace.mw-phone-detail .mw-results,#maintenance-workspace.mw-phone-detail .mw-controls,#maintenance-workspace.mw-phone-detail .mw-library,#maintenance-workspace.mw-phone-detail .mw-read-note {display:none;}
++ #maintenance-workspace.mw-phone-detail .mw-mobile-back {display:inline-flex;margin:0 0 16px;}
++ #maintenance-workspace .mw-order-title {min-height:44px;}
++ #maintenance-workspace .mw-open-direct {min-height:44px;}
++}

@@ -1,0 +1,309 @@
+{
+  "release": "UI110",
+  "core": "1.34.19",
+  "date": "2026-10-13",
+  "repository": "adriano5454-ai/wavelink",
+  "parent_commit": "3329dddcf39bc7065d53b731ca3524f508183dcf",
+  "runtime_manifest_sha256": "d503d55a08ca488a3c1275a234ef7d61743f07e58c8fc165bee744f0ab370b92",
+  "runtime_resources": 2148,
+  "overlay_resources": 10,
+  "implemented": [
+    "Compact Tasks list and freshly authorised read-only detail summary.",
+    "Guarded delayed reads, filter/scope/session changes and actual open editors.",
+    "Explicit full Task action preserves existing acknowledgement and all saved-work writers.",
+    "Maintenance titles select summary; explicit Continue work opens saved order.",
+    "Phone Back preserves filters, selection, focus and position.",
+    "Updated owning scripts and the existing bundled styles, with matching offline cache URLs."
+  ],
+  "executed_checks": {
+    "selected_backend_pytest": 92,
+    "overlay_and_asset_pytest": 6,
+    "full_deployment_chain_replay": {
+      "complete_deployment_chain": true,
+      "resources": 2148,
+      "manifest_sha256": "d503d55a08ca488a3c1275a234ef7d61743f07e58c8fc165bee744f0ab370b92",
+      "path": "/workspace/scratch/b61cdfac1b29/ui110-frozen-replay-ygb901et"
+    },
+    "real_c01_browser": {
+      "checks_passed": 25,
+      "errors": [],
+      "widths": [
+        1440,
+        850,
+        768,
+        390,
+        320
+      ],
+      "checks": [
+        "Task summaries use genuine authorised GET responses; selection preserves unread alerts, every operational table and the list route",
+        "Filtering out the selected Task clears its private summary and returns all rows without acknowledgement or writes",
+        "The visible four-card Task chooser retains Inventory verification; opening and closing it creates no work",
+        "task summary fits 1440px without page overflow or clipped actions",
+        "task summary fits 850px without page overflow or clipped actions",
+        "task summary fits 768px without page overflow or clipped actions",
+        "task summary fits 390px without page overflow or clipped actions",
+        "Task list Back restores the selected row and keyboard focus at 390px",
+        "task summary fits 320px without page overflow or clipped actions",
+        "Task list Back restores the selected row and keyboard focus at 320px",
+        "Task desktop/tablet/mobile summary and Back navigation remain read only",
+        "Explicit Open task enters the established full record and acknowledges only that opened revision; task work, versions, evidence and the other unread Task remain unchanged",
+        "Selecting Maintenance titles changes only the summary; the saved order route, results, evidence and every operational table remain unchanged",
+        "Maintenance search clears a filtered-out order summary without creating or editing an order",
+        "maintenance summary fits 1440px without page overflow or clipped actions",
+        "maintenance summary fits 850px without page overflow or clipped actions",
+        "maintenance summary fits 768px without page overflow or clipped actions",
+        "maintenance summary fits 390px without page overflow or clipped actions",
+        "Maintenance Back restores the selected order and keyboard focus at 390px",
+        "maintenance summary fits 320px without page overflow or clipped actions",
+        "Maintenance Back restores the selected order and keyboard focus at 320px",
+        "Maintenance desktop/tablet/mobile summary and Back navigation remain read only",
+        "The direct Continue work button opens the existing exact order and step-entry controls without recording a step or completing maintenance",
+        "Returning to the register retains selection; the summary Continue work button opens the same order without operational mutations",
+        "Loaded tracked scripts and the shell are served byte for byte from the prepared source; no unexpected JavaScript errors"
+      ]
+    },
+    "controlled_response_task_browser": {
+      "checks_passed": 18,
+      "errors": [],
+      "checks": [
+        "Task selection is a GET-only preview and does not acknowledge notifications",
+        "Newest selection rejects a reversed late detail response",
+        "Production focused-register busy checks permit query, type, status and scope changes",
+        "Pending preview survives an owned filter focus only while its selected record remains visible",
+        "Focused non-filter edits and actual editor state still block Tasks controls",
+        "Filtered-out pending selection is cleared and its response is ignored",
+        "Scope changes clear selection and require a new permitted read",
+        "Refresh preserves selection but clears unverified content and revalidates the detail",
+        "Denied detail refresh does not expose the previous detail",
+        "A returned task outside the current filters or assignment scope clears selection",
+        "An older detail revision cannot replace a newer listed task",
+        "Mismatched identities and malformed permissions never enable full task opening",
+        "Open editor blocks selection, filtering, refresh and task chooser without changing typed work",
+        "A dialog epoch interruption rejects a detail even after the dialog closes",
+        "Changed token, route, host or permission suppresses outstanding detail content",
+        "Return from the full task route retains valid selection and rechecks its detail",
+        "Desktop compact list supports nested scroll and retains it when returning",
+        "Phone summary and Back preserve filter, selection and focus without horizontal overflow"
+      ]
+    },
+    "maintenance_browser": {
+      "format": "wavelink-ui110-maintenance-browser-1",
+      "checks": [
+        {
+          "kind": "title-selection-read-only",
+          "width": 1440
+        },
+        {
+          "kind": "compact-desktop-list-detail",
+          "width": 1440,
+          "boxes": {
+            "list": 340,
+            "detail": 718.125,
+            "right": true
+          }
+        },
+        {
+          "kind": "live-dialog-guards-order-action",
+          "width": 1440
+        },
+        {
+          "kind": "full-order-and-selection-return-retained",
+          "width": 1440
+        },
+        {
+          "kind": "filter-clears-hidden-selection-and-retained-order-action",
+          "width": 1440
+        },
+        {
+          "kind": "detached-and-changed-session-guards",
+          "width": 1440
+        },
+        {
+          "kind": "title-selection-read-only",
+          "width": 1024
+        },
+        {
+          "kind": "compact-desktop-list-detail",
+          "width": 1024,
+          "boxes": {
+            "list": 260,
+            "detail": 403.78125,
+            "right": true
+          }
+        },
+        {
+          "kind": "live-dialog-guards-order-action",
+          "width": 1024
+        },
+        {
+          "kind": "full-order-and-selection-return-retained",
+          "width": 1024
+        },
+        {
+          "kind": "filter-clears-hidden-selection-and-retained-order-action",
+          "width": 1024
+        },
+        {
+          "kind": "detached-and-changed-session-guards",
+          "width": 1024
+        },
+        {
+          "kind": "title-selection-read-only",
+          "width": 800
+        },
+        {
+          "kind": "mobile-back-restores-list-focus",
+          "width": 800
+        },
+        {
+          "kind": "live-dialog-guards-order-action",
+          "width": 800
+        },
+        {
+          "kind": "full-order-and-selection-return-retained",
+          "width": 800
+        },
+        {
+          "kind": "filter-clears-hidden-selection-and-retained-order-action",
+          "width": 800
+        },
+        {
+          "kind": "detached-and-changed-session-guards",
+          "width": 800
+        },
+        {
+          "kind": "title-selection-read-only",
+          "width": 768
+        },
+        {
+          "kind": "mobile-back-restores-list-focus",
+          "width": 768
+        },
+        {
+          "kind": "live-dialog-guards-order-action",
+          "width": 768
+        },
+        {
+          "kind": "full-order-and-selection-return-retained",
+          "width": 768
+        },
+        {
+          "kind": "filter-clears-hidden-selection-and-retained-order-action",
+          "width": 768
+        },
+        {
+          "kind": "detached-and-changed-session-guards",
+          "width": 768
+        },
+        {
+          "kind": "title-selection-read-only",
+          "width": 760
+        },
+        {
+          "kind": "mobile-back-restores-list-focus",
+          "width": 760
+        },
+        {
+          "kind": "live-dialog-guards-order-action",
+          "width": 760
+        },
+        {
+          "kind": "full-order-and-selection-return-retained",
+          "width": 760
+        },
+        {
+          "kind": "filter-clears-hidden-selection-and-retained-order-action",
+          "width": 760
+        },
+        {
+          "kind": "detached-and-changed-session-guards",
+          "width": 760
+        },
+        {
+          "kind": "title-selection-read-only",
+          "width": 390
+        },
+        {
+          "kind": "mobile-back-restores-list-focus",
+          "width": 390
+        },
+        {
+          "kind": "live-dialog-guards-order-action",
+          "width": 390
+        },
+        {
+          "kind": "full-order-and-selection-return-retained",
+          "width": 390
+        },
+        {
+          "kind": "filter-clears-hidden-selection-and-retained-order-action",
+          "width": 390
+        },
+        {
+          "kind": "detached-and-changed-session-guards",
+          "width": 390
+        },
+        {
+          "kind": "title-selection-read-only",
+          "width": 320
+        },
+        {
+          "kind": "mobile-back-restores-list-focus",
+          "width": 320
+        },
+        {
+          "kind": "live-dialog-guards-order-action",
+          "width": 320
+        },
+        {
+          "kind": "full-order-and-selection-return-retained",
+          "width": 320
+        },
+        {
+          "kind": "filter-clears-hidden-selection-and-retained-order-action",
+          "width": 320
+        },
+        {
+          "kind": "detached-and-changed-session-guards",
+          "width": 320
+        },
+        {
+          "kind": "all-saved-records-byte-equivalent-after-browsing"
+        }
+      ],
+      "errors": [],
+      "summary": {
+        "checks_passed": 43,
+        "unexpected_errors": 0
+      }
+    }
+  },
+  "counting_note": "The 60 Maintenance service checks reported by the module agent are a subset of the 92 selected backend tests, not additional tests. Browser checks are separate suites and are not a unique-test total.",
+  "preserved": [
+    "All application Python files, schema definitions, auth/mail and operational result writers.",
+    "Vendor parts, prior overlays, company settings, C01/G01/M01 launchers and persistent data.",
+    "All approved artwork, badge assets, task chooser and inventory-verification option.",
+    "Existing inventory/import, handover, evidence and unsent-work workflows."
+  ],
+  "diagnostics": [
+    "One selected PDF test initially lacked the local fitz test dependency; after installing that test-only dependency the same test passed. Production dependencies did not change.",
+    "Earlier concurrent diagnostic replay directories had sporadic inherited resource mismatches. The final isolated complete deployment-chain replay passed and matches every one of the 2148 prepared resources. No production-code fix was inferred from those transient diagnostics."
+  ],
+  "limitations": [
+    "No live deployment, physical-device or real-user acceptance.",
+    "Service-worker registration and WebSockets are suppressed.",
+    "Evidence compares operational tables, not authentication/session refresh tables.",
+    "The 18 delayed-response Task checks use controlled GET responses in real Chromium.",
+    "This is selected acceptance, not a universal historical-suite or live-mail pass."
+  ],
+  "deployment_status": {
+    "main_modified": false,
+    "render_deployed": false,
+    "prepared_branch": "codex/ui110-record-browsing",
+    "status": "Prepared local release; GitHub write blocked by integration permissions.",
+    "branch_created": false,
+    "code_pushed": false,
+    "pull_request_created": false,
+    "github_error": "403 Resource not accessible by integration"
+  }
+}
