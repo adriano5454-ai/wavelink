@@ -1,15 +1,16 @@
 {
-  "release": "UI111",
+  "release": "UI112",
   "core": "1.34.19",
-  "parent_git_commit": "61a18def0e11f4663fb1e23321ed6d6ceecea657",
-  "runtime_manifest_sha256": "3a2063b04e50a8753580dcc5507f73e3b11d647425cb3b568f66d14b2ebe1793",
+  "parent_git_commit": "cd10b38dcea4e3bca79cd1ac284ce6eb98e4c5ce",
+  "runtime_manifest_sha256": "3363358bb4825d999cf5f1f1c742991637b0053230c293a6670cbd781270d98c",
   "checks": {
     "selected_pytest_passed": 41,
-    "node_checks_passed": 193,
-    "genuine_c01_browser_passed": 28,
+    "node_checks_passed": 247,
+    "genuine_c01_navigation_passed": 27,
+    "retained_ui111_c01_safeguards_passed": 28,
     "complete_replay_passed": true
   },
   "main_modified": false,
   "production_deployed": false,
-  "details": "docs/UI111_REVIEW_REPORT.json"
+  "details": "docs/UI112_REVIEW_REPORT.json"
 }
