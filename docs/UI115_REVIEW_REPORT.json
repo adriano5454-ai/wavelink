@@ -1,0 +1,63 @@
+{
+  "release": "UI115",
+  "core": "1.34.19",
+  "repository": "adriano5454-ai/wavelink",
+  "parent_git_commit": "b444631404fe9c358cec74f2947252896c8a8b63",
+  "runtime_manifest_sha256": "e2b3148c715f3309ca28f97c883b3a47ce896479a7d49b975d7a1c48957a1edc",
+  "runtime_resources": 2154,
+  "overlay_resources": 12,
+  "checks": {
+    "selected_pytest_passed": 48,
+    "build_pytest_passed": 14,
+    "help_pytest_passed": 23,
+    "signed_boundary_pytest_passed": 11,
+    "node_suites_passed": 13,
+    "node_cases_passed": 344,
+    "genuine_c01_overlap_grouped_passed": 15,
+    "retained_ui114_c01_worksheet_grouped_passed": 22,
+    "retained_ui111_c01_save_retry_grouped_passed": 28,
+    "unexpected_javascript_errors": 0,
+    "full_source_chain_verified": true,
+    "exact_final_overlay_replay_verified": true
+  },
+  "test_only_compatibility_change": "Retained UI108 Node mock now models native DOM connectivity and detachment; its 27 cases pass. Application source is identical to final browser runs. Final manifest changed after browser runs only for this test fixture.",
+  "visual_acceptance": {
+    "widths": [
+      1440,
+      1024,
+      390,
+      320
+    ],
+    "chromium": "141.0.7390.37",
+    "headless_shell": true,
+    "single_process": true
+  },
+  "preserved": {
+    "all_application_python": true,
+    "auth_mail_and_schemas": true,
+    "artwork": true,
+    "operational_writers": true,
+    "company_isolation": true,
+    "all_13_inventory_fields": true
+  },
+  "github": {
+    "main_modified": false,
+    "branch_created": false,
+    "pushed": false,
+    "error": "403 Resource not accessible by integration"
+  },
+  "render": {
+    "ui115_deployed": false,
+    "verified_ui114_live": [
+      "wavelink-sulmara",
+      "wavelink-client-demo"
+    ]
+  },
+  "limits": [
+    "Fictional workbooks and disposable native C01 SQLite only; no actual inventory import or reset.",
+    "Service workers and WebSockets suppressed; browser acceptance does not test their upgrade or live synchronization.",
+    "No production data, live mail, physical device or Windows desktop acceptance.",
+    "Browser grouped checks and Node cases are counted separately; no full historical-suite claim.",
+    "Screenshots and temporary databases are not included in deliverables."
+  ]
+}

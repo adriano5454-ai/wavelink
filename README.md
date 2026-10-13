@@ -1,7 +1,5 @@
-# Wavelink — UI114
+# Wavelink — UI115
 
-Inventory worksheet cards now show mapping status and row choices. Included mapping attention lists pending blockers separately from advice. All worksheets, Included and Needs mapping filters narrow the cards without changing selected sheets, locations, inspected worksheet, corrected drafts or checked approval. UI113 Restore, UI112 navigation and UI111 signed/save/retry safeguards remain included. Core 1.34.19.
+Review possible inventory overlap across included worksheets using exact SN or asset references. Inspect mapped items and original source rows without changing a completed Check, confirmation or unchanged retry. Rows remain separate until you make deliberate edits. UI114 mapping filters and earlier safeguards remain included. Core 1.34.19.
 
-Read `docs/WORKSPACE_UI114.md`, `docs/UI114_REVIEW_REPORT.json` and `docs/CONTINUATION_CHECKPOINT.md`. Copy the **contents of REPOSITORY** from the full ZIP into the application checkout root, retaining Git metadata, private settings and company data. The compact update supports the exact verified UI113 repository only.
-
-Docker reconstructs the pinned five-part source and applies overlays through UI114. Keep environment settings and persistent data. No schema migration, reset, account/mail setup, dependency change or browser-storage clearing is required.
+Read `docs/WORKSPACE_UI115.md`, `docs/UI115_REVIEW_REPORT.json` and `docs/CONTINUATION_CHECKPOINT.md`. Docker reconstructs the pinned source and applies overlays through UI115. Preserve company data, private settings and existing environment settings.
