@@ -100,6 +100,9 @@ def verify_activation(con, record: dict) -> bool:
 
 def prepare_company(root: Path, source: Path, env: dict, *, app_port: int = 8765) -> dict:
     """Fresh empty directory or exact existing marker only. No seed parameter."""
+    pending_rename = root / 'COMPANY_RENAME_PENDING.json'
+    if pending_rename.exists() or pending_rename.is_symlink():
+        raise DemoError('A company rename was interrupted. Keep the service stopped and recover the offline rename before startup.')
     source = source.resolve()
     if str(source) not in sys.path:
         sys.path.insert(0, str(source))
@@ -128,6 +131,8 @@ def prepare_company(root: Path, source: Path, env: dict, *, app_port: int = 8765
     if (root / '.bootstrap.lock').is_symlink():
         raise DemoError('Unsafe company preparation lease.')
     with FileLease(root / '.bootstrap.lock'):
+        if pending_rename.exists() or pending_rename.is_symlink():
+            raise DemoError('A company rename was interrupted. Keep the service stopped and recover the offline rename before startup.')
         marker = root / MARKER
         if not marker.exists():
             if env.get('COMPANY_RENEW_SETUP') == 'YES':

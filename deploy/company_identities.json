@@ -1,4 +1,8 @@
 {
+  "corcovado": {
+    "logo": "corcovado-wordmark.png",
+    "name": "Corcovado"
+  },
   "fictional-company": {
     "logo": "fictional-company.png",
     "name": "Fictional Company"

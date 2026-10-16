@@ -16,11 +16,17 @@ Commit the image and JSON change together before provisioning or restarting a
 company service. Company mode now fails closed when its reviewed identity or
 logo is missing, invalid or inconsistent with `COMPANY_NAME`.
 
-Sulmara uses:
+The existing Sulmara identity uses:
 
 ```text
 deploy/company_logos/sulmara/sulmara-primary.png
 ```
+
+The prepared Corcovado transition uses
+`deploy/company_logos/corcovado/corcovado-wordmark.png`: a neutral text wordmark,
+not an asserted official logo. See `docs/CORCOVADO_TRANSITION.md` before changing
+an existing installation's ID/name. The old identity remains available during
+the staged transition so preparation can deploy without renaming an active disk.
 
 For a new company:
 
