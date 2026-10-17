@@ -1,0 +1,81 @@
+{
+  "release": "UI117",
+  "core": "1.34.19",
+  "parent_git_commit": "1f1f75401f9c404cb5859de3b1a3742af2e60010",
+  "runtime_manifest_sha256": "aa271015a243d4b687f420b2bfe93bd02675f5bcc9bac9af89174493e4cd96f6",
+  "runtime_resources": 2162,
+  "overlay_resources": 33,
+  "checks": {
+    "final_selected_pytest_passed": 157,
+    "hr_native_api_passed": 75,
+    "hr_backup_passed": 23,
+    "hr_alert_role_integration_passed": 11,
+    "build_pytest_passed": 14,
+    "help_pytest_passed": 23,
+    "signed_inventory_boundary_passed": 11,
+    "retained_email_action_role_behaviour_passed": 45,
+    "retained_private_backup_transfer_passed": 46,
+    "retained_node_suites_passed": 14,
+    "retained_node_cases_passed": 360,
+    "hr_browser_grouped_passed": 16,
+    "retained_ui111_browser_grouped_passed": 28,
+    "retained_ui116_browser_grouped_passed": 10,
+    "persisted_hr_file_integrity_passed": 8,
+    "unexpected_javascript_errors": 0,
+    "independent_full_chain_replay_verified": true
+  },
+  "inventory_vs_personal_certificates": "Inventory/equipment certificates retain their original service, storage, permissions and functions; personal certificates/documents use private company-local HR records/files and separate per-kind row authorization.",
+  "implemented": [
+    "Private personal certificates, passports, medicals, seaman books, training and visa records/files linked from own profile.",
+    "Date-based own/authorised HR expiry alerts in overview and bell; optional counts-only HR email defaults OFF and uses verified mailbox/quiet-hours/dedupe.",
+    "HR-managed travel details and dated crew assignments, independent of existing handover cycles.",
+    "Employee timesheets with exact decimal hours and expenses with receipts and separate currency totals; draft, submitted, returned, approved states and independent review.",
+    "Paged historic retrieval with bounded100-record source pages and20-card display pages.",
+    "Current authority, immutable owner, version, original operation receipt and unchanged retry checks; no self-review or edits to submitted/approved evidence.",
+    "Preserved in-tab unsent forms, actual restored employee identity and individual capability invalidation; stale private reads/downloads suppressed.",
+    "Additive HR tables, private archive classification, administrator backup guard and selected HR exports initially unchecked; immutable legacy role snapshots preserved."
+  ],
+  "visual_acceptance": {
+    "widths": [
+      1440,
+      390,
+      320
+    ],
+    "chromium": "141.0.7390.37",
+    "headless_shell": true,
+    "single_process": true,
+    "review_and_historic_paging_screenshots_inspected": true
+  },
+  "scope_of_database_change": "Five additive company-local HR tables only; no existing company records, private settings, memberships, handover cycles or unsent operational data reset.",
+  "preservation": {
+    "unrelated_runtime_resources": 2129,
+    "art_font_resources": 275,
+    "existing_inventory_import_source": true,
+    "inventory_certificates_service": true,
+    "account_credentials": true,
+    "operational_writers": true,
+    "company_isolation": true
+  },
+  "known_historical_assertions": "Two retained tests pin obsolete UI65 launcher/UI82 cache identities. Their diagnostics and exact verified-parent byte proof are included; current release build/cache and original launcher preservation checks pass. No old tests rewritten to hide this.",
+  "github": {
+    "pushed": false,
+    "remote_branch_created": false,
+    "error": "403 Resource not accessible by integration"
+  },
+  "render": {
+    "ui117_deployed": false,
+    "verified_ui116_live": [
+      "wavelink-sulmara",
+      "wavelink-client-demo"
+    ],
+    "verified_ui116_commit": "1f1f75401f9c404cb5859de3b1a3742af2e60010"
+  },
+  "limits": [
+    "Disposable fictional native C01 companies only; no production database or actual employee documents changed.",
+    "WebSockets and service-worker registration suppressed in browsers; no live synchronization or worker-upgrade acceptance.",
+    "Same-token individual permission revocation is a controlled fixture updating native policy and observed browser permissions together.",
+    "No live mail, booking, payroll, payments, Windows desktop or production acceptance.",
+    "Private HR editor values/files remain in this tab until saved; they are not included in local browser recovery exports.",
+    "User-facing evidence excludes source file bytes, database files and screenshots."
+  ]
+}

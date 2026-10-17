@@ -1,0 +1,185 @@
+{
+  "format": "wavelink-runtime-overlay-1",
+  "date": "2026-10-14",
+  "patch_id": "workspace-ui117-human-resources-2026-10-14",
+  "parent_patch_id": "workspace-ui116-inventory-source-headers-2026-10-13",
+  "parent_git_commit": "1f1f75401f9c404cb5859de3b1a3742af2e60010",
+  "parent_manifest_sha256": "a45ff3edb65df12fcb31d64eb2eedc3da135ad89393aa506683be797276106ec",
+  "scope": "Private personal HR documents and expiry reminders, travel and dated crew assignments, reviewed employee timesheets and expenses; inventory certificates remain separate.",
+  "boundaries": {
+    "database_reset": false,
+    "browser_storage_clear": false,
+    "schema_migration": true,
+    "schema_change": "Additive company-local HR tables only; preserve existing records and immutable authority snapshots.",
+    "backend_change": true,
+    "auth_or_mail_change": true,
+    "artwork_change": false,
+    "operational_writers_change": false,
+    "live_mail_sent": false
+  },
+  "files": [
+    {
+      "path": "app/access.py",
+      "before_sha256": "26ae994521921deecb31a0ee0b77895f3227a3733ad70210644b7a0ff58ec96a",
+      "after_sha256": "4ea76b2684f231d9c137ca099a6a6b12aab8a6353aaa4e397b7c329b519768f1"
+    },
+    {
+      "path": "app/action_center.py",
+      "before_sha256": "887c63c500a37d83c91706637afba7402ef3adf57ca07642fb2ce49db8330706",
+      "after_sha256": "efe986bf13e99b94071a7ad3ddf246b539415eb737d44f09598b508a0982a69d"
+    },
+    {
+      "path": "app/company_roles.py",
+      "before_sha256": "bfc1354b94db20b48257702831e85cfb9e5a53560acf2079f6bb892510fdf0fa",
+      "after_sha256": "778ce84f1994ec4617e288743201d94356efbb381a759585bf5cdfaaf6566c2c"
+    },
+    {
+      "path": "app/email_alerts.py",
+      "before_sha256": "d78da5f0db62bb64582262f730d68a07ecb8a572792edcf9a92c8eecf232cdae",
+      "after_sha256": "56f30b3eb53a20ad43b115d733219bed2a95c3be06ad4f2335e56f36adbb4256"
+    },
+    {
+      "path": "app/export_policy.py",
+      "before_sha256": "69b831d4e91f70b27c952b8e6538d490b9dab2aa95fb889970c66f74ebd8d928",
+      "after_sha256": "728775074a388582b540b0a913029f14ed36e5b0af7e4d6718af2ea106821dd7"
+    },
+    {
+      "path": "app/hr.py",
+      "before_sha256": null,
+      "after_sha256": "e5dbe7c0deb5f49a9d331a5741d22cc38770252730ea441bebc646f3da8b50c3"
+    },
+    {
+      "path": "app/hr_api.py",
+      "before_sha256": null,
+      "after_sha256": "c724d82c4434e8dd619fa85c6b759d4c0f870ab71427352f32ddcbff0f95aa62"
+    },
+    {
+      "path": "app/hub_manager.py",
+      "before_sha256": "5302df6a9a65afc31a36a9d64a19e466812f2f42b2a779dc9426d9f473f91656",
+      "after_sha256": "03b81f24434aef63979aa21262bf390aa28f8e3b7adf6f48f5d16d396133d788"
+    },
+    {
+      "path": "app/membership_policy.py",
+      "before_sha256": "f60f5296fcd90a24468964830b521d9798b797047cee33f9c87b462d7ada7df6",
+      "after_sha256": "538d6af9339a6f1cde6429e47e6c761227c318e9a54622508cfe6965601f35fc"
+    },
+    {
+      "path": "app/project_module_ui.py",
+      "before_sha256": "162f8772d1c6870da16df95e42681c13168bb9d36ed12bad79cb026de4047c50",
+      "after_sha256": "37dfb7b0deb039aa2b17c98b5ced4c160e0aedf9a4fc6493f6e4f285c898f217"
+    },
+    {
+      "path": "app/project_modules.py",
+      "before_sha256": "65fc7a0371b09cad7848f3bf3aee9aa6eefa751d2f5dde211596cbbf222567a9",
+      "after_sha256": "2eb9713354eca10d97b1b0963b31364a4d91137928336b0e1fe999eecb559cfe"
+    },
+    {
+      "path": "app/project_transfer.py",
+      "before_sha256": "52eae87dc28eae91751caa070d2b9fffdd2ec097473878704aefbf5b732692cc",
+      "after_sha256": "849ce3576060197ae6b3c877b44adb62d22403681ea3e206c710d7731d13e000"
+    },
+    {
+      "path": "app/server.py",
+      "before_sha256": "45328dc5e0034fbff021c3c8b2a94ab6bc569c202409f06a1dc5f1b6936966b0",
+      "after_sha256": "6f78492a6cf30e83e98b87f01bba6bdeab9ea3ab670b4fe8ddcb1f229d758c66"
+    },
+    {
+      "path": "app/static/action_center_ui82.js",
+      "before_sha256": "c45a1b4ab052e41a2bfcc954d230f4f2e062ca54087f60f951e2611a0646292a",
+      "after_sha256": "b5c4a6ae97fa33db2cd92b58b594196104c5e210cd1196a10d8dc79e79ad8a48"
+    },
+    {
+      "path": "app/static/app.js",
+      "before_sha256": "e3bda50042462e365c7f71de03da0e223c744e261d572e59327217afd6849974",
+      "after_sha256": "b1965f4e1404d39c08e6f2d4ee7a15f2925ff1a54d0d108e240ccea6b0651cae"
+    },
+    {
+      "path": "app/static/browser_admin.js",
+      "before_sha256": "2154b13437b07f7edefa9ea8e2caa43b74abefd4142df6285e4b7da966a46827",
+      "after_sha256": "cd74d5cbdab05b360accb1521a769f8ff404bee3d0bffd32c360c47456766aa9"
+    },
+    {
+      "path": "app/static/certificate_workspace.js",
+      "before_sha256": "156cf7c11276ec89919a95f0b05311e315e5fe44e154bc7b675952c0cc727471",
+      "after_sha256": "95f6fba421485118d90bd3e04d6464d8d3e4c89f319b857275540a6b4fe8d55c"
+    },
+    {
+      "path": "app/static/help_catalogue.json",
+      "before_sha256": "c01cadcb3fc1d58783d1fead34cdb55130ae5343e60d8818ad06688a935c96ff",
+      "after_sha256": "9b62a076499a14e8ab43c843c32865a65eb90844fb4e43c8c089f85215157136"
+    },
+    {
+      "path": "app/static/help_topics/certificates.html",
+      "before_sha256": "e444877e9659020028a75db7c38b6b83889c5314d97298efcef1c72d7cc6d476",
+      "after_sha256": "b9e67fdfb53f0867ef59203d227af04da15ae55b2f051ddc185f00eb6f5539c6"
+    },
+    {
+      "path": "app/static/help_topics/users.html",
+      "before_sha256": "0d28c36136af46f1b5cd2d266d0c00486a9d01ed8a7f3aee79ab36d0f9d22c24",
+      "after_sha256": "e5e22b5c771a44860eb23bbb022f1c353e03a948f9f225334cc3cb17c2027360"
+    },
+    {
+      "path": "app/static/hr_workspace.css",
+      "before_sha256": null,
+      "after_sha256": "960a878ae08732ee1702e288732fdb3c117f99300027b7f43731f21357443a8b"
+    },
+    {
+      "path": "app/static/hr_workspace.js",
+      "before_sha256": null,
+      "after_sha256": "ab89c00255be0af7612d8c9ca54f7734ef47f55475e948c5749442ed571f69aa"
+    },
+    {
+      "path": "app/static/index.html",
+      "before_sha256": "95943de5cc4aad84721f64cce62b4681064771e680f9bea7479c2456d2841791",
+      "after_sha256": "d277aca7e9b4bdedd9e466fc6861e7dc6615962b1a597b7bba9aa50466a4fb0f"
+    },
+    {
+      "path": "app/static/recognition_workspace.js",
+      "before_sha256": "00506d4299c62b82004f0b41a943d0f75e1d09a7814352221a7540ea9e067fbc",
+      "after_sha256": "4e6f857aa03291c44505d9668f22d8031f9931a7976bdf1c8b78ef9386cef658"
+    },
+    {
+      "path": "app/static/sw.js",
+      "before_sha256": "5975f6d2e02937834159f18ec16fa1e723cd478b36b0a72db87b3661d94f5c5c",
+      "after_sha256": "534c9356354a3793308c1c41aa6f39c1ff479b52a4fae489f101195696e29118"
+    },
+    {
+      "path": "app/static/workspace_catalogue.js",
+      "before_sha256": "4c753985c05bedec1d99dec07d328d04d25cb79db23c058f09c9ddfb173decc6",
+      "after_sha256": "4f85dfe9d6346ac9e117e813a8fed8ed0b9f0de8244655a863c27fdf750a499d"
+    },
+    {
+      "path": "app/store.py",
+      "before_sha256": "aea69093fd41f8d0b89b23cee27717caec427ce72cdc18038b37413d2bad801e",
+      "after_sha256": "9f27daaff8b75f0e5a82cf6a4e4759a7e656a524546c57ddbef6d0b426c18106"
+    },
+    {
+      "path": "docs/user/topics/certificates.html",
+      "before_sha256": "234cc95caf1cf4b18bd2db5418cf1c50eb95a68968c76a08f0ecff775874e979",
+      "after_sha256": "a8b9c764bb81e2191472cb26b18312b15e244275575d760c8e038643c656781b"
+    },
+    {
+      "path": "docs/user/topics/users.html",
+      "before_sha256": "93f9b643b8a824bedbce2efe853cfdf44bfbff1d21afc53c9d225c99aceb2cd9",
+      "after_sha256": "b1258dcdb371cbbb96a24cd55e561ae5466c98cc452600c06b2949065653c723"
+    },
+    {
+      "path": "tests/test_hr_backup_ui117.py",
+      "before_sha256": null,
+      "after_sha256": "9ffe90a1a1f4b2fad875453e02d4f7de183f7f978fca4eff248bea5fff276c48"
+    },
+    {
+      "path": "tests/test_hr_integration_ui117.py",
+      "before_sha256": null,
+      "after_sha256": "c968648e061675d19814c81f53aec6ecc8eff98fec169a32e8fbfa00c3514933"
+    },
+    {
+      "path": "tests/test_hr_ui117.py",
+      "before_sha256": null,
+      "after_sha256": "c907f3422872c49fa1ef85e8db489318f81f2c180e6d38d83c5ce568876918d1"
+    }
+  ],
+  "runtime_manifest_sha256": "aa271015a243d4b687f420b2bfe93bd02675f5bcc9bac9af89174493e4cd96f6",
+  "runtime_resources": 2162,
+  "overlay_resources": 33
+}

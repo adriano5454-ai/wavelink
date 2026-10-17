@@ -1,10 +1,9 @@
-# Wavelink — UI116
+# Wavelink — UI118
 
-Prepared company transition: [Sulmara → Corcovado](docs/CORCOVADO_TRANSITION.md).
-This is an offline identity migration on the existing company disk, not a new
-company initialization. It has not been applied to production. The independent
-UI117/RH delivery is not included in this UI116-based transition preparation.
+Corcovado em português, com a frente privada de Recursos Humanos da UI117 integrada. Core 1.34.19. Interface, 77 tópicos de ajuda, manual PDF, relatórios e mensagens do sistema em português quando o serviço está configurado como COMPANY e COMPANY_ID=corcovado. Demo e outras empresas mantêm o inglês.
 
-Review source table header candidates against all 13 recorded applied column choices. Inspect source rows and uniquely associated mapped items without changing the checked proposal, confirmation or unchanged retry. UI115 overlap review and earlier protections remain included. Core 1.34.19.
+O módulo **Recursos Humanos** fica na navegação principal; o perfil oferece acesso aos próprios registros privados. Inclui documentos/certificados pessoais, viagens/escalas, folhas de horas, despesas e revisão independente. Certificados de equipamentos continuam no Inventário. Permissões existentes não são ampliadas automaticamente.
 
-Read `docs/WORKSPACE_UI116.md`, `docs/UI116_REVIEW_REPORT.json` and `docs/CONTINUATION_CHECKPOINT.md`. Docker reconstructs the pinned source and applies overlays through UI116. Preserve company data, private settings and environment settings.
+Leia [o escopo e os limites](docs/WORKSPACE_UI118.md), [as verificações](docs/UI118_REVIEW_REPORT.json) e [o ponto de continuação](docs/CONTINUATION_CHECKPOINT.md). Docker reconstrói a fonte fixada e aplica os overlays até UI118. Preserve dados, configurações privadas e ambiente.
+
+A [transição Sulmara → Corcovado](docs/CORCOVADO_TRANSITION.md) permanece uma operação separada, no disco existente. Este pacote não executa migração, DNS ou publicação. Código preparado e testado localmente; publicação ainda pendente.

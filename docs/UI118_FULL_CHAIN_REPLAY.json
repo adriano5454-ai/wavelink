@@ -1,0 +1,359 @@
+{
+  "source_repository": "/workspace/scratch/a604da6cd82b/wavelink-pt-hr",
+  "snapshot": "/tmp/ui118-independent-chain-1u13ays3",
+  "runtime": "/tmp/ui118-independent-chain-1u13ays3/runtime",
+  "expected_ui117_manifest_sha256": "aa271015a243d4b687f420b2bfe93bd02675f5bcc9bac9af89174493e4cd96f6",
+  "ui118_applied": true,
+  "stages": [
+    {
+      "stage": "extract_source.py",
+      "variant": "workspace-ui92-consistent-browsing-hosted-clarity-2026-10-03",
+      "manifest_sha256": "071e70c9b15d81fb0c0ffeea9c25cf2efb2eb8ff93679c0458cb9043e74e1525",
+      "files": 2077,
+      "mismatches": [],
+      "elapsed_seconds": 3.271,
+      "exit_code": 0
+    },
+    {
+      "stage": "apply_ui93.py",
+      "variant": "workspace-ui93-email-alerts-account-layout-2026-10-04",
+      "manifest_sha256": "580d7f0d0c65c46d78029834e7014216d702862832429255df4dda35ea2f1849",
+      "files": 2084,
+      "mismatches": [],
+      "elapsed_seconds": 0.301,
+      "exit_code": 0
+    },
+    {
+      "stage": "apply_ui94.py",
+      "variant": "workspace-ui94-quiet-header-anchored-profile-2026-10-04",
+      "manifest_sha256": "b03ae6f967b358750c70f9373fc8bcc1448f65686bf881723b1ab7f815259d55",
+      "files": 2086,
+      "mismatches": [],
+      "elapsed_seconds": 0.284,
+      "exit_code": 0
+    },
+    {
+      "stage": "apply_ui95.py",
+      "variant": "workspace-ui95-document-and-worksheet-import-toolbox-navigation-2026-10-04",
+      "manifest_sha256": "2c915745acf1e3ae331ccd230c67afd1424be60ebf52f36fbe899d3e0895549b",
+      "files": 2092,
+      "mismatches": [],
+      "elapsed_seconds": 0.28,
+      "exit_code": 0
+    },
+    {
+      "stage": "apply_ui96.py",
+      "variant": "workspace-ui96-clear-responsive-sign-in-2026-10-04",
+      "manifest_sha256": "81fbcd7eea2615babe2d3b6796734482080fe4e7fcae2848d1e120137f1c5227",
+      "files": 2095,
+      "mismatches": [],
+      "elapsed_seconds": 0.296,
+      "exit_code": 0
+    },
+    {
+      "stage": "apply_ui97.py",
+      "variant": "workspace-ui97-email-password-recovery-2026-10-04",
+      "manifest_sha256": "95f800876f7278c8c0ad43e97e76a75deb5cc23a987aaebb582ba7285bc9e52b",
+      "files": 2102,
+      "mismatches": [],
+      "elapsed_seconds": 0.308,
+      "exit_code": 0
+    },
+    {
+      "stage": "apply_ui99.py",
+      "variant": "workspace-ui99-independent-browser-tabs-2026-10-04",
+      "manifest_sha256": "438b99b90b9f4db27a95e7b767a57bbc68b71c3a5293320b8fb05d1197b8752f",
+      "files": 2103,
+      "mismatches": [],
+      "elapsed_seconds": 0.286,
+      "exit_code": 0
+    },
+    {
+      "stage": "apply_ui100.py",
+      "variant": "workspace-ui100-structured-document-import-2026-10-04",
+      "manifest_sha256": "6db1c1e9b3edff4581c5e40d6215290caf61c34ee402f7f43f5ed40537fa3372",
+      "files": 2109,
+      "mismatches": [],
+      "elapsed_seconds": 0.305,
+      "exit_code": 0
+    },
+    {
+      "stage": "apply_ui101.py",
+      "variant": "workspace-ui101-workbook-roles-and-native-log-designs-2026-10-05",
+      "manifest_sha256": "47fd3e1086b72242b438e4bbeae9a9133cdc3a79c731df4d2dc7213040c48f5d",
+      "files": 2114,
+      "mismatches": [],
+      "elapsed_seconds": 0.32,
+      "exit_code": 0
+    },
+    {
+      "stage": "apply_ui102.py",
+      "variant": "workspace-ui102-shipping-inventory-and-check-search-2026-10-05",
+      "manifest_sha256": "efeae63adf89d69968321c88d0e09faa4e95a195e837ad00f74c9dae864d9b1f",
+      "files": 2119,
+      "mismatches": [],
+      "elapsed_seconds": 0.321,
+      "exit_code": 0
+    },
+    {
+      "stage": "apply_ui103.py",
+      "variant": "workspace-ui103-combined-inventory-import-and-part-numbers-2026-10-05",
+      "manifest_sha256": "f26d5c2201451c727eb243f362dbb3fef366aec386ecb8f5a5377ff2de40c828",
+      "files": 2126,
+      "mismatches": [],
+      "elapsed_seconds": 0.299,
+      "exit_code": 0
+    },
+    {
+      "stage": "apply_ui104.py",
+      "variant": "workspace-ui104-import-review-and-source-conflicts-2026-10-10",
+      "manifest_sha256": "f2832bb1bfe9f0ec11aa34d90a6fca6f2cf4ec69bf0fd9dc701953d93a25c2ed",
+      "files": 2129,
+      "mismatches": [],
+      "elapsed_seconds": 0.309,
+      "exit_code": 0
+    },
+    {
+      "stage": "apply_ui105.py",
+      "variant": "workspace-ui105-inventory-row-selection-2026-10-10",
+      "manifest_sha256": "d79cfed733d10b84a1ba3842e57dfab69cbaa1a6d27bbe42155c442d6bdfb6b0",
+      "files": 2132,
+      "mismatches": [],
+      "elapsed_seconds": 0.315,
+      "exit_code": 0
+    },
+    {
+      "stage": "apply_ui106.py",
+      "variant": "workspace-ui106-document-recognition-review-2026-10-10",
+      "manifest_sha256": "33061d55bc682ce98bf528cd5e13681e78acb2be48dad981d2e91b081144d591",
+      "files": 2135,
+      "mismatches": [],
+      "elapsed_seconds": 0.31,
+      "exit_code": 0
+    },
+    {
+      "stage": "apply_ui107.py",
+      "variant": "workspace-ui107-document-relationships-review-2026-10-10",
+      "manifest_sha256": "8de54f37d7b044473f171746164eab90bb0de9532eeca7551961e242edeb06cb",
+      "files": 2138,
+      "mismatches": [],
+      "elapsed_seconds": 0.308,
+      "exit_code": 0
+    },
+    {
+      "stage": "apply_ui108.py",
+      "variant": "workspace-ui108-table-structure-review-2026-10-10",
+      "manifest_sha256": "5a10e73acaaaf0d74e4bb530f8c6461d044476ecbf0aa76bfbd1583ee426a9f5",
+      "files": 2142,
+      "mismatches": [],
+      "elapsed_seconds": 0.353,
+      "exit_code": 0
+    },
+    {
+      "stage": "apply_ui109.py",
+      "variant": "workspace-ui109-log-and-item-review-2026-10-10",
+      "manifest_sha256": "37270fa93be13d6ba247300095d9f042b23a4310d7ef64e4e9ee6f3680c7e370",
+      "files": 2146,
+      "mismatches": [],
+      "elapsed_seconds": 0.322,
+      "exit_code": 0
+    },
+    {
+      "stage": "apply_ui110.py",
+      "variant": "workspace-ui110-tasks-maintenance-browsing-2026-10-13",
+      "manifest_sha256": "d503d55a08ca488a3c1275a234ef7d61743f07e58c8fc165bee744f0ab370b92",
+      "files": 2148,
+      "mismatches": [],
+      "elapsed_seconds": 0.304,
+      "exit_code": 0
+    },
+    {
+      "stage": "apply_ui111.py",
+      "variant": "workspace-ui111-inventory-review-safeguards-2026-10-13",
+      "manifest_sha256": "3a2063b04e50a8753580dcc5507f73e3b11d647425cb3b568f66d14b2ebe1793",
+      "files": 2150,
+      "mismatches": [],
+      "elapsed_seconds": 0.331,
+      "exit_code": 0
+    },
+    {
+      "stage": "apply_ui112.py",
+      "variant": "workspace-ui112-inventory-review-navigation-2026-10-13",
+      "manifest_sha256": "3363358bb4825d999cf5f1f1c742991637b0053230c293a6670cbd781270d98c",
+      "files": 2151,
+      "mismatches": [],
+      "elapsed_seconds": 0.319,
+      "exit_code": 0
+    },
+    {
+      "stage": "apply_ui113.py",
+      "variant": "workspace-ui113-inventory-mapping-recovery-2026-10-13",
+      "manifest_sha256": "14166458114e9eaeaeac1cd57cdca4b8931e8c5395c966425ae8abc9372968ed",
+      "files": 2152,
+      "mismatches": [],
+      "elapsed_seconds": 0.306,
+      "exit_code": 0
+    },
+    {
+      "stage": "apply_ui114.py",
+      "variant": "workspace-ui114-inventory-worksheet-overview-2026-10-13",
+      "manifest_sha256": "e15c1fcd284be4224c83199836f27def2af10d44c758ff1118c088005d5e6b7b",
+      "files": 2153,
+      "mismatches": [],
+      "elapsed_seconds": 0.315,
+      "exit_code": 0
+    },
+    {
+      "stage": "apply_ui115.py",
+      "variant": "workspace-ui115-inventory-worksheet-overlap-2026-10-13",
+      "manifest_sha256": "e2b3148c715f3309ca28f97c883b3a47ce896479a7d49b975d7a1c48957a1edc",
+      "files": 2154,
+      "mismatches": [],
+      "elapsed_seconds": 0.297,
+      "exit_code": 0
+    },
+    {
+      "stage": "apply_ui116.py",
+      "variant": "workspace-ui116-inventory-source-headers-2026-10-13",
+      "manifest_sha256": "a45ff3edb65df12fcb31d64eb2eedc3da135ad89393aa506683be797276106ec",
+      "files": 2155,
+      "mismatches": [],
+      "elapsed_seconds": 0.283,
+      "exit_code": 0
+    },
+    {
+      "stage": "apply_ui117.py",
+      "variant": "workspace-ui117-human-resources-2026-10-14",
+      "manifest_sha256": "aa271015a243d4b687f420b2bfe93bd02675f5bcc9bac9af89174493e4cd96f6",
+      "files": 2162,
+      "mismatches": [],
+      "elapsed_seconds": 0.318,
+      "exit_code": 0
+    },
+    {
+      "stage": "apply_ui118.py",
+      "variant": "workspace-ui118-corcovado-portuguese-hr-2026-10-17",
+      "manifest_sha256": "c0d5406e73f0dddd1cdc8cdb92591ee4ca9dba6e3bc5bc87be71babe443c8b37",
+      "files": 2256,
+      "mismatches": [],
+      "exit_code": 0
+    }
+  ],
+  "passed": true,
+  "dockerfile_sha256": "85b45a516a9124abd909d433d8c98f9de6db3680468f18c888c65479ce6d8f7a",
+  "docker_order_through_ui117": [
+    "extract_source.py",
+    "apply_ui93.py",
+    "apply_ui94.py",
+    "apply_ui95.py",
+    "apply_ui96.py",
+    "apply_ui97.py",
+    "apply_ui99.py",
+    "apply_ui100.py",
+    "apply_ui101.py",
+    "apply_ui102.py",
+    "apply_ui103.py",
+    "apply_ui104.py",
+    "apply_ui105.py",
+    "apply_ui106.py",
+    "apply_ui107.py",
+    "apply_ui108.py",
+    "apply_ui109.py",
+    "apply_ui110.py",
+    "apply_ui111.py",
+    "apply_ui112.py",
+    "apply_ui113.py",
+    "apply_ui114.py",
+    "apply_ui115.py",
+    "apply_ui116.py",
+    "apply_ui117.py"
+  ],
+  "script_sha256": {
+    "extract_source.py": "57550f076fe6474523d77ecb9fc5b119c0a183f0f6a45be3361c61de0c381fc1",
+    "apply_ui93.py": "b864c3ef24a53e23cfd8dd627178968eea0954cb7c126f4049bc639827fa7b71",
+    "apply_ui94.py": "8eab555681b14f1ed7ef6e27f0974525cda905cfd342813fce035ea7324e4c0e",
+    "apply_ui95.py": "48ac16642fdd1bfcfcfa52f71e1fe6b336ed227739d7ea1f8ab229d3398c7137",
+    "apply_ui96.py": "3837b45575b4fc926e9f2ee36892039e66cd28c672b3409876083f830515fd88",
+    "apply_ui97.py": "08a37e450635e46f01bf753172818e1580b06e1d4195a72198cf75d9bb82dd60",
+    "apply_ui99.py": "6d9e3f9761b0f51b66a375a2867e5e92dd6e98c3940d8b6a30aabe0245d6731f",
+    "apply_ui100.py": "08f43c04862fa2876af58f67cb7d5353d7871b24f120e7abab57ac6b8a8985c0",
+    "apply_ui101.py": "da0b565a5fd0801b3354fc653d31ac79b6bc4b22f4c2944d8fd1dafa7ad3017b",
+    "apply_ui102.py": "34e064721c36508c48b32fcc2772d4e2bbd744f39c565a0f41b67a7bb7dea390",
+    "apply_ui103.py": "75559a04bfaae1748af53c4dc0bf92585f5b1b8442978b9fe79fdb48a41598b2",
+    "apply_ui104.py": "4c6f534a99c418728de825dc81e803edcbe57a49d0925fdfc58abacb1226bdd9",
+    "apply_ui105.py": "5c50826395169963bad0f273af5b8f5c5bf3c4326cf654ff825be5f27fbdb708",
+    "apply_ui106.py": "f36d7818bfeaa11775f30aa68a7a4455b043b5c397c87328f6d27d621255ddb5",
+    "apply_ui107.py": "6fb74bf09a305f2c1f434813433daa1d8efb849c609aa591a1d74cac4d3eacb8",
+    "apply_ui108.py": "2b7422c5c5937395718dfc33299eea6c99175810bc25e0d7be593c9aefad5a0a",
+    "apply_ui109.py": "dd2f6f5afae1a91532510af046aeea617dacfb3414583fbe3befe602225a3db2",
+    "apply_ui110.py": "40576ef0600537ad6f176594a895e90e44157cdb21008e69f54c2b7f632555e1",
+    "apply_ui111.py": "b3bcdc010e6ec1f54fac4c42d93cb30ea985642f276298194362aefae37ba1c1",
+    "apply_ui112.py": "f59314e3d3e4707c30f974454da091a0d08ec96c64c3a7110e467f7ac90d3790",
+    "apply_ui113.py": "9314bc8ccb92f379419b2c2100fa7f3f1f3fc340a3d2925dcab9879cb4a1fdc5",
+    "apply_ui114.py": "8b6c0bd164046568a17c195cffe2bb9110a717cad3404f058dba0efec3e707f5",
+    "apply_ui115.py": "bdd14d8e9505bb9aa56073d4f6adbfd47d48117e3d79221561fbfaa26bd7413c",
+    "apply_ui116.py": "a998acdc52c914ffea354a2ab390c3c762a34d86eb97327974691f92fb083059",
+    "apply_ui117.py": "dd488ec1145ba4aa72d6a267faff32392ce6fe61c360bfa7b15ae2d2e469da52"
+  },
+  "vendor_parts": [
+    {
+      "name": "source.part001",
+      "bytes": 8388608,
+      "sha256": "b568934581bc6ae06da601368352788083b95d1c77cad15f00b15df5e0ddc018"
+    },
+    {
+      "name": "source.part002",
+      "bytes": 8388608,
+      "sha256": "3594229b220ce2f7b39ed87ccab17d6b0c2c5583a18e6960cddd8725fb1db76b"
+    },
+    {
+      "name": "source.part003",
+      "bytes": 8388608,
+      "sha256": "b51ac5da6100f5cf372683130318ad38a438cd958b1821cf6c2d6fdb486d84ad"
+    },
+    {
+      "name": "source.part004",
+      "bytes": 8388608,
+      "sha256": "458d0b06b36d08c940289f4229040fac81d0dbe55b75707636541502aa702a4f"
+    },
+    {
+      "name": "source.part005",
+      "bytes": 5952982,
+      "sha256": "99a008607d60003ce74dba0a8101d1638938af4c99433ff5f72f8735a5350018"
+    }
+  ],
+  "vendor_archive_sha256": "8c1b6a8d731d01b05a1290d3a1dd1a544054147aac9048ca345af7983613cd9e",
+  "ui117_resources_verified": 2162,
+  "ui117_manifest_sha256": "aa271015a243d4b687f420b2bfe93bd02675f5bcc9bac9af89174493e4cd96f6",
+  "ui118_resources_verified": 2256,
+  "ui118_manifest_sha256": "c0d5406e73f0dddd1cdc8cdb92591ee4ca9dba6e3bc5bc87be71babe443c8b37",
+  "ui118_script_sha256": "e577b28b7b35a995d84387fbc28d08dd41be59174fe68bee7225e0d5c103b148",
+  "final_untracked_files": [],
+  "final_symlinks": [],
+  "checked_at_utc": "2026-10-17T14:19:03.203815+00:00",
+  "python_version": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]",
+  "container_built": false,
+  "live_deployment_validated": false,
+  "docker_source_environment": {
+    "PYTHONDONTWRITEBYTECODE": "1",
+    "PYTHONUNBUFFERED": "1"
+  },
+  "first_attempt_anomaly": {
+    "evidence": "/workspace/scratch/a604da6cd82b/ui118-full-chain-check-attempt1.json",
+    "scope": "Initial shared-workspace run without Docker PYTHONDONTWRITEBYTECODE env; UI110 returned success but immediate resource audit found three changed JavaScript files. Untouched UI111 refused them. Cause not established; not reproduced in isolated fresh replay. No historical overlays were modified."
+  },
+  "runtime_identity": {
+    "path": "/tmp/ui118-independent-chain-1u13ays3/runtime",
+    "resolved_path": "/tmp/ui118-independent-chain-1u13ays3/runtime",
+    "device": 27,
+    "inode": 131110,
+    "is_symlink": false
+  },
+  "first_attempt_runtime_identity": {
+    "path": "/workspace/scratch/a604da6cd82b/ui118-independent-chain-d1xm86rt/runtime",
+    "resolved_path": "/workspace/scratch/a604da6cd82b/ui118-independent-chain-d1xm86rt/runtime",
+    "device": 27,
+    "inode": 1966569,
+    "is_symlink": false
+  }
+}

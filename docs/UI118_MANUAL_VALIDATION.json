@@ -1,0 +1,20 @@
+{
+  "pages": 213,
+  "topics": 77,
+  "outline_entries": 77,
+  "checked_text_blocks": {
+    "h2": 295,
+    "p": 1116,
+    "h1": 77,
+    "h3": 144,
+    "li": 187,
+    "th": 32,
+    "td": 152,
+    "pre": 1
+  },
+  "checked_text_total": 2004,
+  "missing_text_blocks": [],
+  "last_topic": "Convidar pessoas com funções e acesso revisados",
+  "sha256": "ee160bed74007d62ff5569e7d1df0571f08269ab4f89e5dfe317721900f56859",
+  "bytes": 674164
+}

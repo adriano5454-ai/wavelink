@@ -1,7 +1,11 @@
-# Current UI116 follow-up
+# Prioridade atual — UI118
 
-UI115 was verified on GitHub main and live on both Render services. UI116 is prepared locally; GitHub branch writes remain blocked by integration 403. Apply the exact-UI115 update or full repository, preserving private settings and company data. See `CONTINUATION_CHECKPOINT.md` and run the package verifier before/after copying contents into the application checkout.
+Publicar o pacote Corcovado em português com RH integrado, preservando mudanças concorrentes; conferir a versão servida e conceder direitos de RH deliberadamente. Validar o serviço real depois da migração separada de identidade e domínio. Sem data definida para a publicação.
 
-Exercise a disposable worksheet with repeated/reordered headers. Check/confirm, open Review source table headers and compare all 13 recorded mapping columns. Inspect exact source rows and uniquely associated mapped items while retaining the checked proposal. Custom/shared column choices, pending/manual warnings and unavailable provenance must remain honest. Use existing deliberate controls for remapping/exclusions; candidate inspection changes no records.
+# Current UI117 follow-up
 
-Next group: verify uploaded UI116 and Render before editing; continue representative source-layout and worksheet-intent review without automatic record removal, merging or table-boundary inference. Preserve mappings, row selections, full Notes, source references, explicit box relationships, permissions, handover protections, original receipts and unchanged retries. The user-reported transient import succeeded on retry; no persistent backend regression was established. Live mail, devices, worker upgrades and production synchronization need separate actual-environment acceptance.
+UI116 is verified on GitHub and live on both Render services. UI117 HR is implemented, tested and packaged locally; GitHub writes still return integration403. Upload the exact-UI116 compact update or full repository after the read-only package checks, preserving company/private data.
+
+First company acceptance: administrator grants needed HR self-service/management/review flags; employee adds a personal document, saves timesheet/expense drafts and submits; a separate HR reviewer returns/approves the exact submitted evidence. Check expiry/reminders, receipt downloads, staff travel/dated crew assignments, old-record paging and restoration of unsent forms. Inventory certificates must remain equipment records. Enable HR email only through personal verified-mailbox preferences after actual company delivery acceptance.
+
+Verify GitHub/Render UI117 before more changes. Continue from actual HR feedback, then the retained source-layout/import and operational roadmap. Preserve private documents, evidence, original receipts, membership/permission boundaries, handover cycles and all unsent work. No reset, re-import or browser-storage clearing. Use UI117 or later for databases with HR evidence. Live mail, Windows/mobile devices, worker upgrades and production synchronization remain separate actual-environment checks.

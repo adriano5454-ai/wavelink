@@ -24,6 +24,8 @@ from starlette.responses import Response, JSONResponse, FileResponse
 
 from .company_provision import read_marker, verify_activation, activation, ACTIVATION, digest
 from .provision import DemoError
+from app.localization import marker_locale, localized_send, locale_bootstrap, PT_BR
+from .company_localization import localized_asset
 
 ASSETS = Path(__file__).with_name('company_assets')
 HEADERS = {'Cache-Control': 'no-store', 'X-Content-Type-Options': 'nosniff', 'Referrer-Policy': 'no-referrer',
@@ -130,6 +132,7 @@ class CompanyAccess:
     def __init__(self, app, *, hosted, settings, root):
         self.app, self.hosted, self.settings = app, hosted, settings
         self.record = read_marker(Path(root))
+        self.locale = marker_locale(self.record)
         if self.record['hub_id'] != settings.expected_hub_id:
             raise DemoError('Company wrapper and project identities differ.')
         self.service = None
@@ -145,7 +148,7 @@ class CompanyAccess:
 
     async def respond(self, response, scope, receive, send):
         for k, v in HEADERS.items(): response.headers[k] = v
-        await response(scope, receive, send)
+        await response(scope, receive, localized_send(send, path=scope.get('path', ''), locale=self.locale))
 
     async def body(self, request):
         if request.headers.get('origin') != self.settings.external_origin:
@@ -172,6 +175,10 @@ class CompanyAccess:
         if scope['type'] not in ('http', 'websocket'):
             return await self.app(scope, receive, send)
         path, method = scope.get('path', ''), scope.get('method', '')
+        if scope['type'] == 'http' and path == '/static/workspace-locale.js' and method in ('GET', 'HEAD'):
+            # This immutable presentation setting comes from the validated marker,
+            # never the requested domain, a query string or the browser language.
+            return await self.respond(Response(locale_bootstrap(self.locale), media_type='application/javascript'), scope, receive, send)
         # Health reveals no project content and is needed before external activation.
         if scope['type'] == 'http' and path in ('/healthz', '/readyz') and method in ('GET', 'HEAD'):
             return await self.app(scope, receive, send)
@@ -188,7 +195,7 @@ class CompanyAccess:
             request = Request(scope, receive)
             if path == '/company-setup/status' and method == 'GET':
                 return await self.respond(JSONResponse({'company': self.record['company_name'], 'active': active,
-                    'login_id': self.record['admin_login'] if not active else None}), scope, receive, send)
+                    'login_id': self.record['admin_login'] if not active else None, 'ui_locale': self.locale}), scope, receive, send)
             if path in ('/company-setup/activate', '/company-setup/outcome') and method == 'POST':
                 if len(request.headers.getlist('authorization')) != 1:
                     raise SetupError(403, 'Use the private first sign-in link.')
@@ -207,13 +214,15 @@ class CompanyAccess:
                       '/company-setup/setup.css': ('setup.css','text/css')}
             if path in static and method in ('GET', 'HEAD'):
                 filename, media = static[path]
+                if self.locale == PT_BR and filename in ('setup.html', 'setup.js'):
+                    return await self.respond(Response(localized_asset((ASSETS / filename).read_text(encoding='utf-8'), self.locale), media_type=media), scope, receive, send)
                 return await self.respond(FileResponse(ASSETS / filename, media_type=media), scope, receive, send)
             if path == '/company-setup/icon.svg' and method in ('GET', 'HEAD'):
                 from app.server import BASE
                 return await self.respond(FileResponse(BASE/'static/wavelink-mark.svg',media_type='image/svg+xml'),scope,receive,send)
             if not active:
                 if path == '/' and method in ('GET', 'HEAD'):
-                    text = (ASSETS/'pending.html').read_text().replace('COMPANY_NAME', html.escape(self.record['company_name']))
+                    text = localized_asset((ASSETS/'pending.html').read_text(encoding='utf-8'), self.locale).replace('COMPANY_NAME', html.escape(self.record['company_name']))
                     return await self.respond(Response(text, media_type='text/html'), scope, receive, send)
                 raise SetupError(423, 'Company first sign-in is pending. Normal account access is locked.')
             if path.startswith('/company-setup/'):
@@ -243,7 +252,7 @@ class CompanyAccess:
                     message['headers'] = [(k,v) for k,v in message.get('headers',[]) if k.lower() != b'cache-control']
                     message['headers'].append((b'cache-control',b'no-store'))
                 await send(message)
-            return await self.app(scope, receive, private_api)
+            return await self.app(scope, receive, localized_send(private_api, path=path, locale=self.locale))
         except SetupError as exc:
             response = JSONResponse({'error': exc.message}, status_code=exc.code)
         except Exception as exc:
