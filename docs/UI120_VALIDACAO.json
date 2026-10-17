@@ -1,0 +1,84 @@
+{
+  "release": "UI120",
+  "version": "1.34.20",
+  "base_commit": "c435332618811aa29ac59e856a5ed922513f4e5e",
+  "prepared": true,
+  "published": false,
+  "production_tested": false,
+  "production_mutations": false,
+  "mail_sent": false,
+  "python": {
+    "selected_unique_tests": 190,
+    "functional_first_run_passed": 187,
+    "stale_release_contracts_updated": 3,
+    "final_contract_recheck_passed": 3,
+    "hr_new_tests": 13,
+    "details": [
+      "validation/ui120-functional-first-run.xml",
+      "validation/ui120-static-final.xml"
+    ],
+    "note": "Three first-run failures were stale version/cache assertions and launcher path/hash expectations, corrected against UI119; the final three checks pass."
+  },
+  "javascript": {
+    "behavioral_checks_passed": 16,
+    "areas": [
+      "form serialization",
+      "independent review payload",
+      "BR decimal notation",
+      "staffing headcount",
+      "CSV formula neutralization",
+      "date translation without double translation"
+    ]
+  },
+  "browser": {
+    "tool": "Connected user Chrome",
+    "origin": "http://127.0.0.1:8773",
+    "data": "isolated fictional company only",
+    "verified": [
+      "Administrator login and Operations home",
+      "Dedicated HR navigation and return to Operations",
+      "Document detail and authenticated PNG preview",
+      "Independent document verification saved",
+      "Hours review saved",
+      "Expense approval displays Reembolso aprovado without payment claim",
+      "Private personnel details edited and saved",
+      "Staffing need created and uncovered positions displayed",
+      "Calendar shows planned work, rest, crew changes and document expiry",
+      "Date range filtering",
+      "Invalid period shows Portuguese error and hides old results",
+      "Mobile agenda at 390x844, rendered content width 375px with no page overflow",
+      "Ordinary employee sees only own records and no review queue",
+      "Employee creates 7.5-hour entry using BR comma notation and submits; edit is then unavailable"
+    ],
+    "screenshots": [
+      "rh-ui120-visao-geral.jpg",
+      "rh-ui120-calendario.jpg",
+      "rh-ui120-cadastro.jpg",
+      "rh-ui120-celular.jpg",
+      "rh-ui120-colaborador.jpg"
+    ]
+  },
+  "not_validated": [
+    "Production deployment, HTTPS and real persisted company data for UI120",
+    "Linux container build on Render",
+    "PDF inline viewer across browsers",
+    "Real notification email delivery for UI120",
+    "Large-volume performance and HR operational acceptance"
+  ],
+  "limits": [
+    "No payroll, regulated time clock, payment execution, flight booking or external certificate validation",
+    "Coverage relies on saved needs and explicitly linked confirmed assignments; does not determine fitness",
+    "Company-wide management grants; department filters do not create security boundaries",
+    "93-day period, 3000 records and 500 staffing needs per workspace query"
+  ],
+  "build": {
+    "final_manifest_sha256": "03824bd51a9826cf0e723b1b9ff1516ddd420b5ea487438d01466df70e0cab5c",
+    "final_resources": 2261,
+    "full_chain_reconstructed": true,
+    "full_chain_note": "Vendor and all 28 stages were reconstructed; final UI120 was then independently reapplied to the exact UI119 parent and every final resource verified after the last UI wording changes.",
+    "exact_final_overlay_verified": true,
+    "tampered_parent_refused_before_write": true,
+    "repeated_apply_refused": true,
+    "evidence": "validation/ui120-final-reconstruction.json"
+  }
+}
