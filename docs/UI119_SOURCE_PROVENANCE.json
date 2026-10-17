@@ -1,0 +1,114 @@
+{
+  "format": "wavelink-runtime-overlay-1",
+  "date": "2026-10-17",
+  "patch_id": "workspace-ui119-corcovado-password-policy-2026-10-17",
+  "parent_patch_id": "workspace-ui118-corcovado-portuguese-hr-2026-10-17",
+  "parent_manifest_sha256": "c0d5406e73f0dddd1cdc8cdb92591ee4ca9dba6e3bc5bc87be71babe443c8b37",
+  "scope": "Corcovado minimum password length of eight for invitation, recovery and account changes; UI118 HR and Portuguese retained.",
+  "boundaries": {
+    "database_reset": false,
+    "browser_storage_clear": false,
+    "operational_writers_changed": false,
+    "live_deployment": false
+  },
+  "runtime_manifest_sha256": "ca6b88365ac081eece880bd24214683299fec4ef9903676c96cb374f5672861d",
+  "runtime_resources": 2258,
+  "overlay_resources": 19,
+  "files": [
+    {
+      "path": "UI_PATCH.json",
+      "before_sha256": "9de0a867f5b8a7ff34a29d8f400a62d3f52943db9497fe2bed857a92f69a2889",
+      "after_sha256": "9157d7157ca9a007bbabca83381c1246a21e4d2e72a57485fc8f5085db8a3dd9"
+    },
+    {
+      "path": "app/accounts.py",
+      "before_sha256": "bbadba94afe1cf9f0ae87db31d1d441ff029a571994626e91fd1b8306a3b11f4",
+      "after_sha256": "37340259248d38c2407c1fdcb971f0365a630cb70b52eec716ea25a412638ffb"
+    },
+    {
+      "path": "app/company_membership.py",
+      "before_sha256": "07889a82913b9421feb2ccacabc0843f7a6dbdcaf0eb512b1534bc0b0e6580bf",
+      "after_sha256": "ff66a335e84bf933658123341640b962cb0f24dbf383044c3853d9ae8d24c740"
+    },
+    {
+      "path": "app/localization.py",
+      "before_sha256": "782effca3429b7d8f0d6f737fb42ca0e03b45ead305152880f9409b94ab8b102",
+      "after_sha256": "3c8c88168298c6da0d3ea18d1b3765bf3074c492a8f3c56f2a5f9000767b9edf"
+    },
+    {
+      "path": "app/password_policy.py",
+      "before_sha256": null,
+      "after_sha256": "3f22fb55a817c5a48730afe43c187b7e92abe854cb5227ef7ba914a34578cc51"
+    },
+    {
+      "path": "app/password_recovery.py",
+      "before_sha256": "6e6f1fd2d208e26575457de1550d7364b634891fb8376ed2db6623261d39b190",
+      "after_sha256": "6a905f458e7b03f6060c3b414cd0f386dbe7de9976b3328b46260cd51c624a07"
+    },
+    {
+      "path": "app/static/app.js",
+      "before_sha256": "82515803254274d317c44b221b0f824537386e85bd848df0214f0b5a75601a0e",
+      "after_sha256": "7231bbf2cf99ba32a4d213d3318c67d61d82717f08a142a4b3f1c65fae617ca5"
+    },
+    {
+      "path": "app/static/index.html",
+      "before_sha256": "e5a23c3dd51c76ab86cf8a9d6f41ed4f710d11a45150c196db51d5b276bbaa68",
+      "after_sha256": "b6c5b958e3a563f83f8ce38589ea664acec9bf954eeea73f12d13ca6b0796367"
+    },
+    {
+      "path": "app/static/locale_pt_br.js",
+      "before_sha256": "6efbcd26d33d07dc0aa56de9ae08c5566de61352007468c6c200c3e757f6ea40",
+      "after_sha256": "7168ae1c819e61afc7cc357ebf0eb9ec64985b5204218ede2af790cfcba85d55"
+    },
+    {
+      "path": "app/static/membership_entry.html",
+      "before_sha256": "cb1b267969f1e729bac81f8f3c473929f2d9182e3d7f81d1db8f0698a40bd94a",
+      "after_sha256": "b7ee013f052a66ab25e3fb3fbdeb94fa9e020a26c119694aa521cf81c5eee18b"
+    },
+    {
+      "path": "app/static/membership_entry.js",
+      "before_sha256": "0d342ced51da97843a4c14e2d30b5efe664a77aee7a2133e89c11f63ca5a54b4",
+      "after_sha256": "e4553dcd00ce775868e85b592d963a6e4e92eafca269c6d22a8e70c877c16402"
+    },
+    {
+      "path": "app/static/password_recovery.html",
+      "before_sha256": "1b71ac5c79a346a0bbaf731d206152f24b2bc6dddd29b5ccb94662ec8f6a5372",
+      "after_sha256": "2455a4d5eaa1c7b519d5ed5012e21dffce0531fd9efd660342598a3df6e6d712"
+    },
+    {
+      "path": "app/static/password_recovery.js",
+      "before_sha256": "5204819666d8f263ce63bfb11090c3b08a5c349c384d523ef10c5e98d18e7ec5",
+      "after_sha256": "08e2591f91f152ab5e21b492deb5f31a2c48985f462a7560431413cd3db9ebeb"
+    },
+    {
+      "path": "app/static/pt-BR/help_topics/membership.html",
+      "before_sha256": "cd6a59b0fcc7f4eea5650ebe5d9b02b1ac07a94f95b9478c0272ea4c2c0656c0",
+      "after_sha256": "ce687ce48e0a10ff43e016a9e2eff26dc7a305ee9ab55266b7838d38a286111f"
+    },
+    {
+      "path": "app/static/pt-BR/index.html",
+      "before_sha256": "def9d1a96842e78ed3559251cf2793551385c3b5b6c80d4cb38695f376280380",
+      "after_sha256": "8c9d6f0a1630e9ed048cc08cb36dc275bdff6a9908f50ee27c5b98978648903f"
+    },
+    {
+      "path": "app/static/pt-BR/membership_entry.html",
+      "before_sha256": "d7fcc830b5a72e1231635caa7786ac7a1b86d47eb079a8925220a102efaae9c8",
+      "after_sha256": "027ed1612fa4188c6bd92212753ecb200bbb8e94ce63a31ebdd7aae94bc323d0"
+    },
+    {
+      "path": "app/static/pt-BR/password_recovery.html",
+      "before_sha256": "3c75d348f484295be2b84c27912968e8e014fd947d6b44167797f27d2e5843e4",
+      "after_sha256": "7934b2ec978bbbd25a12f50ab19844d2eac267346f51c7d28c5c742d45351d08"
+    },
+    {
+      "path": "app/static/sw.js",
+      "before_sha256": "8eba870037fc6993c045ca702239d676457c7d60d8fef220cc82f2cba53f9a0a",
+      "after_sha256": "9ccd66a3424f58ac8d44212519618a2e79de59f598e78243f51e3d67ac333932"
+    },
+    {
+      "path": "tests/test_password_policy_ui119.py",
+      "before_sha256": null,
+      "after_sha256": "3fadc7df2b10c61ef282bed76e798ac27cb57d1ea2596e4e92ce46851c60c8c6"
+    }
+  ]
+}
