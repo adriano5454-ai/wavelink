@@ -1,0 +1,30 @@
+{
+  "final_manifest_sha256": "06a5e6b85ca3b1e925976405f2f6ea473578501f002d358f155241db7ef81584",
+  "final_resources": 2268,
+  "all_final_resources_verified": true,
+  "full_chain_reconstructed": true,
+  "final_overlay_replayed": true,
+  "tampered_parent_refused_without_writes": true,
+  "repeated_apply_refused": true,
+  "original_media_resources_unchanged": 275,
+  "python_unique_checks_passed": 194,
+  "javascript_behavior_checks_passed": 31,
+  "new_asset_bytes": {
+    "workspace_ux_ui121.js": 3600,
+    "hr_planning_ui121.js": 8989,
+    "hr_locale_ui121.js": 20001,
+    "experience_ui121.css": 20096
+  },
+  "new_asset_gzip_estimate_bytes": {
+    "workspace_ux_ui121.js": 1745,
+    "hr_planning_ui121.js": 3625,
+    "hr_locale_ui121.js": 7516,
+    "experience_ui121.css": 4386
+  },
+  "contrast_samples": {
+    "main_text_on_white": 12.4,
+    "muted_text_on_white": 6.14,
+    "white_on_primary": 6.15,
+    "focus_on_white": 4.02
+  }
+}
