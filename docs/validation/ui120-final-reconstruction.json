@@ -1,0 +1,14 @@
+{
+  "resources": 2261,
+  "manifest_sha256": "03824bd51a9826cf0e723b1b9ff1516ddd420b5ea487438d01466df70e0cab5c",
+  "tampered_parent_refused_before_write": true,
+  "repeated_apply_refused": true,
+  "preserved_core": [
+    "app/store.py",
+    "app/inventory.py",
+    "app/membership_policy.py",
+    "app/account_security.py",
+    "app/password_policy.py",
+    "app/project_modules.py"
+  ]
+}

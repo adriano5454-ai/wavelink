@@ -1,0 +1,27 @@
+{
+  "release": "UI120",
+  "core": "1.34.20",
+  "base_git_commit": "c435332618811aa29ac59e856a5ed922513f4e5e",
+  "runtime_manifest_sha256": "03824bd51a9826cf0e723b1b9ff1516ddd420b5ea487438d01466df70e0cab5c",
+  "status": "prepared_and_locally_verified",
+  "production_deployed": false,
+  "production_tested": false,
+  "github_modified": false,
+  "production_data_modified": false,
+  "python_selected_unique_checks_passed": 190,
+  "python_evidence": "187 initial passes plus 3 corrected static release contracts passing on recheck; not one all-green run.",
+  "javascript_behavioral_checks_passed": 16,
+  "browser": "Connected Chrome, isolated fictional data, administrator and employee journeys",
+  "build": {
+    "final_manifest_sha256": "03824bd51a9826cf0e723b1b9ff1516ddd420b5ea487438d01466df70e0cab5c",
+    "final_resources": 2261,
+    "full_chain_reconstructed": true,
+    "full_chain_note": "Vendor and all 28 stages were reconstructed; final UI120 was then independently reapplied to the exact UI119 parent and every final resource verified after the last UI wording changes.",
+    "exact_final_overlay_verified": true,
+    "tampered_parent_refused_before_write": true,
+    "repeated_apply_refused": true,
+    "evidence": "validation/ui120-final-reconstruction.json"
+  },
+  "details": "docs/UI120_VALIDACAO.json",
+  "historical_delivery_metadata": "docs/preserved/UI119_BASE_DELIVERY_CHECKS.json"
+}
