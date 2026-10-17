@@ -4,6 +4,7 @@ Call before substituting the company name. Nothing from the disk's user records
 or browser input is passed through the fixed template replacements below.
 """
 from app.localization import PT_BR
+from app.password_policy import password_min_length
 
 GATEWAY_PT_BR = {
     'WAVELINK / COMPANY WORKSPACE': 'WAVELINK / AMBIENTE DA EMPRESA',
@@ -41,6 +42,10 @@ GATEWAY_PT_BR = {
 def localized_asset(text: str, locale: str) -> str:
     if locale != PT_BR:
         return text
+    if password_min_length() == 8:
+        text = text.replace('minlength="14"', 'minlength="8"').replace(
+            '14–128 characters. A few unrelated words make a memorable passphrase.',
+            'De 8 a 128 caracteres. Use pelo menos seis caracteres diferentes.')
     text = text.replace('lang="en"', 'lang="pt-BR"')
     for source in sorted(GATEWAY_PT_BR, key=len, reverse=True):
         text = text.replace(source, GATEWAY_PT_BR[source])

@@ -26,6 +26,7 @@ from .company_provision import read_marker, verify_activation, activation, ACTIV
 from .provision import DemoError
 from app.localization import marker_locale, localized_send, locale_bootstrap, PT_BR
 from .company_localization import localized_asset
+from app.password_policy import password_min_length
 
 ASSETS = Path(__file__).with_name('company_assets')
 HEADERS = {'Cache-Control': 'no-store', 'X-Content-Type-Options': 'nosniff', 'Referrer-Policy': 'no-referrer',
@@ -93,9 +94,9 @@ class ActivationService:
         if login != self.record['admin_login'] or not password_matches(data['temporary_password'], self.record['initial_hash']):
             raise SetupError(403, 'Incorrect initial account or temporary password.')
         password = data['new_password']
-        if (not 14 <= len(password) <= 128 or password != password.strip() or any(ord(c) < 32 for c in password)
+        if (not password_min_length() <= len(password) <= 128 or password != password.strip() or any(ord(c) < 32 for c in password)
                 or len(set(password)) < 6 or password == secret or password == data['temporary_password']):
-            raise SetupError(422, 'Choose a different passphrase of 14-128 characters, with at least six distinct characters and no outer spaces.')
+            raise SetupError(422, f'Choose a different passphrase of {password_min_length()}-128 characters, with at least six distinct characters and no outer spaces.')
         if password != data['confirm_password']:
             raise SetupError(422, 'The new passphrases do not match.')
         encoded = password_hash(password)
