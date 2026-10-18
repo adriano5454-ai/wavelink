@@ -1,3 +1,30 @@
+# UI129 — Apontamento semanal e aprovação por projeto
+
+Wavelink **1.34.29**, preparado sobre o commit `ed02ac6bc42b882a6397494698b70691768dbb92` (UI128). A interface permite preencher de segunda a domingo, distribuir as horas entre projetos, salvar os projetos alterados de uma vez e enviar cada projeto para aprovação. Preserva os registros antigos, a identidade Corcovado, os demais idiomas, os dados existentes e o usuário temporário `teste-rh-ui121-2`.
+
+**Preparado, integrado e testado localmente; ainda não publicado. Produção permanece UI128 (1.34.28).** O coordenador controla o backup, a publicação no serviço existente e a conferência do deployment.
+
+- [Guia de uso, permissões, glossário, fontes e reversão](docs/UI129_GUIA.html)
+- [Validação final e seus limites](validation/ui129-validation.json)
+- [Revisão independente de segurança e backup](validation/ui129-quality-report.json)
+- [Proveniência dos arquivos](docs/UI129_SOURCE_PROVENANCE.json)
+
+O administrador cadastra os projetos e designa os responsáveis. Uma aprovação por um responsável designado e diferente do autor é suficiente. Essa designação dá acesso somente aos apontamentos enviados, aprovados ou rejeitados dos projetos atribuídos; não libera documentos, despesas ou o RH inteiro. Mesmo administradores precisam da designação para aprovar horas de um projeto. Devolver exige justificativa e permite corrigir; rejeitar é uma decisão final.
+
+As horas são efetivamente apontadas pelo usuário: não são inferidas da escala nem geram folha de pagamento. A soma diária considera os projetos e os registros antigos sobrepostos e não pode ultrapassar 24 horas. Salvar a semana não significa enviá-la ou aprová-la.
+
+Backup pré-publicação verificado pelo coordenador: [comprovante de integridade](validation/ui129-backup-receipt.json). Cópia consistente do SQLite, sem restauração e sem alteração dos registros ativos.
+
+**Compatibilidade de dados:** a primeira gravação válida de projeto ativa o formato `wavelink-hr-2`. A partir desse momento, não fazer rollback isolado para UI128, que recusa o novo formato para proteger as aprovações. Preferir correção adiante; restaurar backup anterior exige escritores parados e conciliação das alterações posteriores. A mera abertura da tela não promove HR1.
+
+Reconstrução em uma pasta nova: `python deploy/materialize_runtime.py ./runtime-ui129`. O manifesto final registra **2.315 recursos**, com **200 arquivos no overlay**, SHA-256 `fa74c025978b5cd3b4594908a229eb2c2067fa9a92d26ee922f6cbc8f4bf9033`. A reconstrução e todos os hashes foram verificados. Passaram 51 testes Python focados (15 de backend, 34 de segurança e 2 da central de ações), 49 suítes JavaScript e 109 verificações de sintaxe. O formulário semanal inclui 145 verificações. Os 122 testes de regressão anterior de RH também passaram, sem alegar que toda a bateria histórica está verde. Nenhum cenário fictício deve ser importado na empresa ativa.
+
+A branch contém somente preparação parcial (`f2f5addbb43e9e98170119e7216cef4bfe1c71e2` e `98b24f2010193cf229c906e8be3510d5f2e40283`, da Dockerfile); o overlay posterior ao último ajuste do filtro precisa ser enviado. O Chrome bloqueou o controle após um aviso nativo. A aprovação e devolução por projeto foram verificadas no Chrome local; o último ajuste do filtro foi verificado no teste de formulário, sem nova prova visual. A publicação e a validação autenticada da versão final na Corcovado estão pendentes.
+
+As seções abaixo são registros históricos; seus estados de publicação, contagens e limitações pertencem à versão indicada.
+
+---
+
 # UI128 — Revisão integrada de RH, Documentos e Operações
 
 Wavelink **1.34.28**, preparado sobre `ebd92c43ec7c92431a1def49137e3ff1fe36bf2d`. Integra correções de navegação e cancelamento, permissões e mensagens em português, importações, inventário, etiquetas QR e evidências de manutenção. Preserva dados, usuários, permissões, rascunhos, identificadores, idiomas e o serviço existente. O usuário temporário `teste-rh-ui121-2` permanece.
