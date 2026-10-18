@@ -1,81 +1,121 @@
 {
-  "release": "UI128",
-  "version": "1.34.28",
-  "base_commit": "ebd92c43ec7c92431a1def49137e3ff1fe36bf2d",
-  "status": "preparado_integrado_testado_localmente",
+  "release": "UI129",
+  "version": "1.34.29",
+  "base_commit": "ed02ac6bc42b882a6397494698b70691768dbb92",
+  "status": "preparado_integrado_testado_localmente_nao_publicado",
   "runtime": {
-    "path": "work/ui128-replay-final-r2",
-    "manifest_sha256": "760e140a1fc88da138b1295b14fcfddc1445b20642ebf43c26b0fc16ef494da8",
-    "resources": 2307,
-    "overlay_resources": 235,
+    "path": "work/ui129-replay-final-r4",
+    "manifest_sha256": "fa74c025978b5cd3b4594908a229eb2c2067fa9a92d26ee922f6cbc8f4bf9033",
+    "resources": 2315,
+    "overlay_resources": 200,
     "full_chain_reconstructed": true,
-    "reported_by": "coordenador"
+    "reconstruction_detail": "Cadeia completa do arquivo-base até UI129 executada primeiro; última revisão aplicada em pasta nova sobre o mesmo pai UI128 verificado. Todos os hashes finais conferidos.",
+    "initial_full_chain_log": "validation/ui129-reconstruction-final.txt",
+    "final_overlay_log": "validation/ui129-reconstruction-final-r4.txt",
+    "verification": "validation/ui129-release-verification.json"
   },
-  "focused_python": {
-    "passed": 40,
-    "failed": 0,
-    "evidence": "validation/ui128-r2-tests.xml",
-    "runtime_manifest_sha256": "760e140a1fc88da138b1295b14fcfddc1445b20642ebf43c26b0fc16ef494da8"
-  },
-  "javascript": {
-    "passed_suites": 47,
-    "failed_suites": 0,
-    "syntax_files": 108,
-    "location_checks": 81,
-    "evidence": "validation/ui128-r2-js-tests.json"
-  },
-  "historical_python": {
-    "cases": 625,
-    "passed": 244,
-    "failed": 381,
-    "result": "NOT_GREEN",
-    "diagnosed_failed_cases": 381,
-    "unexplained_diagnostics": 0,
-    "diagnosis_is_not_pass": true,
-    "evidence": "ui128-triage-unresolved.json"
-  },
-  "browser": {
-    "browser": "Chrome conectado",
-    "environment": "Servidor local isolado 8781, dados fictícios; sem mensagens a terceiros.",
-    "flows": [
-      {
-        "fluxo": "Administração: cancelar edição",
-        "resultado": "Sem alteração ou após restaurar os valores originais, cancelar preservou o filtro Ana, a pessoa selecionada e a sessão."
-      },
-      {
-        "fluxo": "Administração: alteração não salva",
-        "resultado": "O aviso apareceu; recusar o descarte manteve o texto alterado e a conta conectada."
-      },
-      {
-        "fluxo": "RH: Ver registro",
-        "resultado": "Fechar e Voltar do navegador preservaram a sessão no computador e com largura de 390 px."
-      },
-      {
-        "fluxo": "Calendário e escalas",
-        "resultado": "Calendário legível no celular, sem transbordamento horizontal no cenário verificado."
-      },
-      {
-        "fluxo": "Importação de inventário",
-        "resultado": "Planilha importada com 3 linhas após excluir Total; códigos PN com zeros à esquerda e números de série repetidos foram preservados."
-      },
-      {
-        "fluxo": "Etiquetas QR",
-        "resultado": "Mensagens em português e contagens de itens/páginas conferidas; geração não significa verificar ou movimentar estoque."
-      }
+  "publication": {
+    "status": "branch_parcial_producao_permanece_ui128",
+    "commit": null,
+    "deployment": null,
+    "url": "https://corcovado.mywavelink.com",
+    "authenticated_production_ui_validated": false,
+    "preparation_commit": "f2f5addbb43e9e98170119e7216cef4bfe1c71e2",
+    "preparation_status": "Parcial: f2f5addbb43e9e98170119e7216cef4bfe1c71e2 e Dockerfile enviados; o overlay final posterior ao filtro de aprovador ainda não foi enviado.",
+    "current_production_commit": "ed02ac6bc42b882a6397494698b70691768dbb92",
+    "current_production_version": "1.34.28",
+    "blocker": "Controle do Chrome bloqueado em Emulation.setFocusEmulationEnabled após aviso nativo; aguardando ação do usuário para liberar a interface.",
+    "preparation_latest_commit": "98b24f2010193cf229c906e8be3510d5f2e40283",
+    "preparation_commits": [
+      "f2f5addbb43e9e98170119e7216cef4bfe1c71e2",
+      "98b24f2010193cf229c906e8be3510d5f2e40283"
     ]
   },
+  "browser": {
+    "status": "fluxos_locais_conferidos_com_limite_final_documentado",
+    "evidence": "validation/ui129-chrome-proof.json",
+    "production_authenticated_test": false,
+    "final_filter_visual_check": "Pendente: busca e cancelamento após correção final cobertos por teste real de formulário; conferência visual não concluída devido ao bloqueio do Chrome."
+  },
+  "focused_python": {
+    "status": "passed",
+    "passed": 51,
+    "cases": 51,
+    "failed": 0,
+    "errors": 0,
+    "skipped": 0,
+    "groups": [
+      {
+        "group": "backend",
+        "cases": 15,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "seconds": 197.765,
+        "evidence": "validation/ui129-release-backend.xml"
+      },
+      {
+        "group": "security",
+        "cases": 34,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "seconds": 329.0,
+        "evidence": "validation/ui129-release-security.xml"
+      },
+      {
+        "group": "actions",
+        "cases": 2,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "seconds": 33.25,
+        "evidence": "validation/ui129-release-actions.xml"
+      }
+    ],
+    "tested_runtime": "work/ui129-replay-final-r3",
+    "final_runtime_manifest_sha256": "fa74c025978b5cd3b4594908a229eb2c2067fa9a92d26ee922f6cbc8f4bf9033",
+    "source_equivalence": "validation/ui129-final-backend-equivalence.json",
+    "scope": "15 casos de backend, 34 de segurança e 2 da central de ações. Todos os módulos Python da aplicação e os testes são idênticos à reconstrução final R4."
+  },
+  "javascript": {
+    "passed_suites": 49,
+    "failed_suites": 0,
+    "syntax_files": 109,
+    "syntax_failures": 0,
+    "weekly_component_checks": 145,
+    "new_save_status_locale_checks": 62,
+    "evidence": "validation/ui129-release-js-tests.json",
+    "runtime_manifest_sha256": "fa74c025978b5cd3b4594908a229eb2c2067fa9a92d26ee922f6cbc8f4bf9033"
+  },
+  "legacy_regression": {
+    "passed": 122,
+    "failed": 0,
+    "errors": 0,
+    "seconds": 209.973,
+    "evidence": "validation/ui129-legacy-tests.xml",
+    "scope": "Regressões RH UI117/UI120/backup; fonte atual antes dos últimos ajustes pontuais cobertos nos testes UI129."
+  },
+  "security": {
+    "unique_cases": 34,
+    "report": "validation/ui129-quality-report.json",
+    "final_same_source_replay_pending": false,
+    "final_passed_cases": 34
+  },
   "boundaries": {
-    "active_production_records_modified": false,
     "database_reset": false,
-    "service_recreated": false,
+    "operational_writers_changed": false,
+    "hr_writers_changed": true,
+    "hr_schema_additive": true,
+    "existing_records_converted": false,
     "temporary_user": "teste-rh-ui121-2",
     "temporary_user_preserved": true,
-    "other_languages_preserved": true,
     "third_party_messages_sent": false,
-    "nota": "Esta entrega de código não executou limpeza ou migração de dados. Dados, permissões, rascunhos, IDs, auditoria e marca Wavelink/AJ Offshore Solutions preservados."
+    "service_recreated": false,
+    "other_deployment_languages_preserved": true
   },
   "backup": {
-    "path": "/var/data/wavelink-release-backups/20261018T185445Z-before-ui128",
+    "path": "/var/data/wavelink-release-backups/20261018T195604Z-before-ui129",
     "method": "SQLite online backup API plus stable configuration copy",
     "owner_uid": 10001,
     "database_integrity": "ok",
@@ -83,31 +123,133 @@
     "verified_archive": true,
     "files": 7,
     "database_sha256": "77e0a82aced0fbf410b1c3f8e35c2a0b5d525df6fd1f7b9eb84737c798341986",
-    "archive_sha256": "79ca22554c7367ebd5c05538f3fc28a5ba462e680f801c0e438ebc1a97b6b442",
-    "source_commit": "ebd92c43ec7c92431a1def49137e3ff1fe36bf2d",
-    "source_deployment": "dep-dbafrs67bikc73ejrdh0",
+    "archive_sha256": "45e260e29cd1a3bbe6f6ca70b1fde38293ec9e2f9b980ad24443c3f2172b1485",
+    "source_commit": "ed02ac6bc42b882a6397494698b70691768dbb92",
+    "source_deployment": "dep-dbahmeivcj2c73a8o8qg",
     "active_records_modified": false,
-    "writers_stopped": false
+    "writers_stopped": false,
+    "reported_by": "coordenador",
+    "active_data_restore_performed": false
   },
   "rollback": {
-    "code_commit": "ebd92c43ec7c92431a1def49137e3ff1fe36bf2d",
-    "deployment": "dep-dbafrs67bikc73ejrdh0",
-    "service_id": "srv-das4ujojo6nc73a7u53g",
-    "data_restore_automatic": false,
-    "instruction": "Para problema somente de código, reverter o deployment no mesmo serviço. Não restaurar dados automaticamente. Restauração de dados exige plano separado, validação do backup e processos escritores efetivamente parados."
+    "before_first_project": "Antes de criar o primeiro projeto, a empresa permanece no formato HR1; confirmar marcador antes de qualquer reversão de código.",
+    "after_first_project": "A primeira gravação válida de projeto ativa HR2. Não reverter isoladamente para UI128: ela recusa esse formato para impedir aprovação sem designação. Preferir correção adiante; restauração do backup anterior exige planejamento explícito, processos escritores parados e conciliação das alterações posteriores.",
+    "automatic_data_restore": false
   },
-  "publication": {
-    "status": "pendente_de_registro_pelo_coordenador",
-    "commit": null,
-    "deployment": null,
-    "authenticated_production_ui_validated": false,
-    "url": "https://corcovado.mywavelink.com",
-    "preparation_branch": "ui128-revisao-final",
-    "preparation_branch_created": true
-  },
-  "validation": "validation/ui128-validation.json",
-  "guide": "docs/UI128_GUIA.html",
+  "validation": "validation/ui129-validation.json",
+  "guide": "docs/UI129_GUIA.html",
   "historical_delivery_checks": [
+    {
+      "release": "UI128",
+      "version": "1.34.28",
+      "base_commit": "ebd92c43ec7c92431a1def49137e3ff1fe36bf2d",
+      "status": "preparado_integrado_testado_localmente",
+      "runtime": {
+        "path": "work/ui128-replay-final-r2",
+        "manifest_sha256": "760e140a1fc88da138b1295b14fcfddc1445b20642ebf43c26b0fc16ef494da8",
+        "resources": 2307,
+        "overlay_resources": 235,
+        "full_chain_reconstructed": true,
+        "reported_by": "coordenador"
+      },
+      "focused_python": {
+        "passed": 40,
+        "failed": 0,
+        "evidence": "validation/ui128-r2-tests.xml",
+        "runtime_manifest_sha256": "760e140a1fc88da138b1295b14fcfddc1445b20642ebf43c26b0fc16ef494da8"
+      },
+      "javascript": {
+        "passed_suites": 47,
+        "failed_suites": 0,
+        "syntax_files": 108,
+        "location_checks": 81,
+        "evidence": "validation/ui128-r2-js-tests.json"
+      },
+      "historical_python": {
+        "cases": 625,
+        "passed": 244,
+        "failed": 381,
+        "result": "NOT_GREEN",
+        "diagnosed_failed_cases": 381,
+        "unexplained_diagnostics": 0,
+        "diagnosis_is_not_pass": true,
+        "evidence": "ui128-triage-unresolved.json"
+      },
+      "browser": {
+        "browser": "Chrome conectado",
+        "environment": "Servidor local isolado 8781, dados fictícios; sem mensagens a terceiros.",
+        "flows": [
+          {
+            "fluxo": "Administração: cancelar edição",
+            "resultado": "Sem alteração ou após restaurar os valores originais, cancelar preservou o filtro Ana, a pessoa selecionada e a sessão."
+          },
+          {
+            "fluxo": "Administração: alteração não salva",
+            "resultado": "O aviso apareceu; recusar o descarte manteve o texto alterado e a conta conectada."
+          },
+          {
+            "fluxo": "RH: Ver registro",
+            "resultado": "Fechar e Voltar do navegador preservaram a sessão no computador e com largura de 390 px."
+          },
+          {
+            "fluxo": "Calendário e escalas",
+            "resultado": "Calendário legível no celular, sem transbordamento horizontal no cenário verificado."
+          },
+          {
+            "fluxo": "Importação de inventário",
+            "resultado": "Planilha importada com 3 linhas após excluir Total; códigos PN com zeros à esquerda e números de série repetidos foram preservados."
+          },
+          {
+            "fluxo": "Etiquetas QR",
+            "resultado": "Mensagens em português e contagens de itens/páginas conferidas; geração não significa verificar ou movimentar estoque."
+          }
+        ]
+      },
+      "boundaries": {
+        "active_production_records_modified": false,
+        "database_reset": false,
+        "service_recreated": false,
+        "temporary_user": "teste-rh-ui121-2",
+        "temporary_user_preserved": true,
+        "other_languages_preserved": true,
+        "third_party_messages_sent": false,
+        "nota": "Esta entrega de código não executou limpeza ou migração de dados. Dados, permissões, rascunhos, IDs, auditoria e marca Wavelink/AJ Offshore Solutions preservados."
+      },
+      "backup": {
+        "path": "/var/data/wavelink-release-backups/20261018T185445Z-before-ui128",
+        "method": "SQLite online backup API plus stable configuration copy",
+        "owner_uid": 10001,
+        "database_integrity": "ok",
+        "foreign_key_violations": 0,
+        "verified_archive": true,
+        "files": 7,
+        "database_sha256": "77e0a82aced0fbf410b1c3f8e35c2a0b5d525df6fd1f7b9eb84737c798341986",
+        "archive_sha256": "79ca22554c7367ebd5c05538f3fc28a5ba462e680f801c0e438ebc1a97b6b442",
+        "source_commit": "ebd92c43ec7c92431a1def49137e3ff1fe36bf2d",
+        "source_deployment": "dep-dbafrs67bikc73ejrdh0",
+        "active_records_modified": false,
+        "writers_stopped": false
+      },
+      "rollback": {
+        "code_commit": "ebd92c43ec7c92431a1def49137e3ff1fe36bf2d",
+        "deployment": "dep-dbafrs67bikc73ejrdh0",
+        "service_id": "srv-das4ujojo6nc73a7u53g",
+        "data_restore_automatic": false,
+        "instruction": "Para problema somente de código, reverter o deployment no mesmo serviço. Não restaurar dados automaticamente. Restauração de dados exige plano separado, validação do backup e processos escritores efetivamente parados."
+      },
+      "publication": {
+        "status": "pendente_de_registro_pelo_coordenador",
+        "commit": null,
+        "deployment": null,
+        "authenticated_production_ui_validated": false,
+        "url": "https://corcovado.mywavelink.com",
+        "preparation_branch": "ui128-revisao-final",
+        "preparation_branch_created": true
+      },
+      "validation": "validation/ui128-validation.json",
+      "guide": "docs/UI128_GUIA.html",
+      "coverage": "docs/UI128_COVERAGE.json"
+    },
     {
       "release": "UI127",
       "version": "1.34.27",
@@ -220,6 +362,5 @@
         "ticket_module": "Nenhum módulo de chamados de TI existente; contato externo revisado, fila/histórico de TI não implementados."
       }
     }
-  ],
-  "coverage": "docs/UI128_COVERAGE.json"
+  ]
 }

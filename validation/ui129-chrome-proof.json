@@ -1,0 +1,67 @@
+{
+  "release": "UI129",
+  "environment": "Chrome conectado; base local fictícia em 127.0.0.1:8782",
+  "production_authenticated_test": false,
+  "steps": [
+    {
+      "case": "Selecionar segunda a quarta e preencher projeto Atlântico, 8h, local e atividade em lote",
+      "passed": true
+    },
+    {
+      "case": "Preencher quinta/sexta com Marlim6h; alterar só sexta7,5h; segundo projeto segunda2h",
+      "passed": true
+    },
+    {
+      "case": "Salvar semana: Atlântico24h, Marlim15,5h; registro legado7,5h preservado; total47h",
+      "passed": true
+    },
+    {
+      "case": "Enviar Marlim não envia Atlântico; depois enviar Atlântico separadamente",
+      "passed": true
+    },
+    {
+      "case": "Aprovador Atlântico vê apenas Atlântico24h e aprova; Marlim invisível",
+      "passed": true
+    },
+    {
+      "case": "Aprovador Marlim vê apenas Marlim; devolver sem justificativa bloqueado; com justificativa confirmado",
+      "passed": true
+    },
+    {
+      "case": "Autor corrige só sextaMarlim7h; totalMarlim15h; Atlântico continuaAprovado24h e bloqueado para edição",
+      "passed": true
+    },
+    {
+      "case": "Largura390x844: cartões legíveis, controles em coluna, fechar preserva sessão",
+      "passed": true,
+      "limit": "Iframe com aplicação real em harness local; não é aparelho físico."
+    },
+    {
+      "case": "Reenvio da correção aparece apenas na fila Marlim; devolução final explica privacidade e não oferece link inacessível",
+      "passed": true
+    },
+    {
+      "case": "Administrador acessa Projetos e aprovadores, vê designações existentes e filtra pelo nome; Tab mostra foco no responsável",
+      "passed": true,
+      "scope": "Somente consulta; nenhum acesso concedido pelo navegador."
+    }
+  ],
+  "screenshots": [
+    "UI129-antes-horas.png",
+    "UI129-semana-preenchida.png",
+    "UI129-aprovacao-projeto.png",
+    "UI129-celular-390px.png",
+    "UI129-devolucao-projeto.png"
+  ],
+  "findings_fixed": [
+    "Modal estreito e pouco espaço para dias: largura1200, cabeçalho compacto e outroprojeto emDetalhes",
+    "Avisos de rede autorais eminglês:traduçõesPT/ENtestadas",
+    "Recibo de devolução oferecendo link inacessível a aprovador restrito: corrigido com teste do fluxo saveForm",
+    "Busca de aprovador marcava edição como alterada: corrigida e testada com 145 verificações; conferência visual pós-correção pendente por travamento do Chrome."
+  ],
+  "remaining": [
+    "Publicação e confirmação do commitservido",
+    "Validação autenticada real segue bloqueada porpermissão do Chrome paraorigemCorcovado",
+    "Reabrir a interface após o último ajuste do filtro: Chrome bloqueado no aviso nativo da cópia local; nenhuma modificação de produção."
+  ]
+}

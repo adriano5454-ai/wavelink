@@ -1,0 +1,1 @@
+{"parent_manifest_sha256": "760e140a1fc88da138b1295b14fcfddc1445b20642ebf43c26b0fc16ef494da8", "manifest_sha256": "2caf207edfc62d1a67a104561d50373a5ca3694e3c6bb431965f2872bb0e700a", "resources": 2315, "method": "Exact verified UI128 parent copied to new directory; final UI129 overlay applied; all hashes verified."}

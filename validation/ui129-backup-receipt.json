@@ -1,0 +1,15 @@
+{
+  "path": "/var/data/wavelink-release-backups/20261018T195604Z-before-ui129",
+  "method": "SQLite online backup API plus stable configuration copy",
+  "owner_uid": 10001,
+  "database_integrity": "ok",
+  "foreign_key_violations": 0,
+  "verified_archive": true,
+  "files": 7,
+  "database_sha256": "77e0a82aced0fbf410b1c3f8e35c2a0b5d525df6fd1f7b9eb84737c798341986",
+  "archive_sha256": "45e260e29cd1a3bbe6f6ca70b1fde38293ec9e2f9b980ad24443c3f2172b1485",
+  "source_commit": "ed02ac6bc42b882a6397494698b70691768dbb92",
+  "source_deployment": "dep-dbahmeivcj2c73a8o8qg",
+  "active_records_modified": false,
+  "writers_stopped": false
+}

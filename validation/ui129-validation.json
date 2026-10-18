@@ -1,0 +1,144 @@
+{
+  "release": "UI129",
+  "version": "1.34.29",
+  "state": "preparado_integrado_testado_localmente_nao_publicado",
+  "runtime": {
+    "path": "work/ui129-replay-final-r4",
+    "manifest_sha256": "fa74c025978b5cd3b4594908a229eb2c2067fa9a92d26ee922f6cbc8f4bf9033",
+    "resources": 2315,
+    "overlay_resources": 200,
+    "full_chain_reconstructed": true,
+    "reconstruction_detail": "Cadeia completa do arquivo-base até UI129 executada primeiro; última revisão aplicada em pasta nova sobre o mesmo pai UI128 verificado. Todos os hashes finais conferidos.",
+    "initial_full_chain_log": "validation/ui129-reconstruction-final.txt",
+    "final_overlay_log": "validation/ui129-reconstruction-final-r4.txt",
+    "verification": "validation/ui129-release-verification.json"
+  },
+  "focused_python": {
+    "status": "passed",
+    "passed": 51,
+    "cases": 51,
+    "failed": 0,
+    "errors": 0,
+    "skipped": 0,
+    "groups": [
+      {
+        "group": "backend",
+        "cases": 15,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "seconds": 197.765,
+        "evidence": "validation/ui129-release-backend.xml"
+      },
+      {
+        "group": "security",
+        "cases": 34,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "seconds": 329.0,
+        "evidence": "validation/ui129-release-security.xml"
+      },
+      {
+        "group": "actions",
+        "cases": 2,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "seconds": 33.25,
+        "evidence": "validation/ui129-release-actions.xml"
+      }
+    ],
+    "tested_runtime": "work/ui129-replay-final-r3",
+    "final_runtime_manifest_sha256": "fa74c025978b5cd3b4594908a229eb2c2067fa9a92d26ee922f6cbc8f4bf9033",
+    "source_equivalence": "validation/ui129-final-backend-equivalence.json",
+    "scope": "15 casos de backend, 34 de segurança e 2 da central de ações. Todos os módulos Python da aplicação e os testes são idênticos à reconstrução final R4."
+  },
+  "javascript": {
+    "passed_suites": 49,
+    "failed_suites": 0,
+    "syntax_files": 109,
+    "syntax_failures": 0,
+    "weekly_component_checks": 145,
+    "new_save_status_locale_checks": 62,
+    "evidence": "validation/ui129-release-js-tests.json",
+    "runtime_manifest_sha256": "fa74c025978b5cd3b4594908a229eb2c2067fa9a92d26ee922f6cbc8f4bf9033"
+  },
+  "legacy_regression": {
+    "passed": 122,
+    "failed": 0,
+    "errors": 0,
+    "seconds": 209.973,
+    "evidence": "validation/ui129-legacy-tests.xml",
+    "scope": "Regressões RH UI117/UI120/backup; fonte atual antes dos últimos ajustes pontuais cobertos nos testes UI129."
+  },
+  "browser": {
+    "status": "fluxos_locais_conferidos_com_limite_final_documentado",
+    "evidence": "validation/ui129-chrome-proof.json",
+    "production_authenticated_test": false,
+    "final_filter_visual_check": "Pendente: busca e cancelamento após correção final cobertos por teste real de formulário; conferência visual não concluída devido ao bloqueio do Chrome."
+  },
+  "backup": {
+    "path": "/var/data/wavelink-release-backups/20261018T195604Z-before-ui129",
+    "method": "SQLite online backup API plus stable configuration copy",
+    "owner_uid": 10001,
+    "database_integrity": "ok",
+    "foreign_key_violations": 0,
+    "verified_archive": true,
+    "files": 7,
+    "database_sha256": "77e0a82aced0fbf410b1c3f8e35c2a0b5d525df6fd1f7b9eb84737c798341986",
+    "archive_sha256": "45e260e29cd1a3bbe6f6ca70b1fde38293ec9e2f9b980ad24443c3f2172b1485",
+    "source_commit": "ed02ac6bc42b882a6397494698b70691768dbb92",
+    "source_deployment": "dep-dbahmeivcj2c73a8o8qg",
+    "active_records_modified": false,
+    "writers_stopped": false,
+    "reported_by": "coordenador",
+    "active_data_restore_performed": false
+  },
+  "security": {
+    "unique_cases": 34,
+    "report": "validation/ui129-quality-report.json",
+    "final_same_source_replay_pending": false,
+    "final_passed_cases": 34
+  },
+  "publication": {
+    "status": "branch_parcial_producao_permanece_ui128",
+    "commit": null,
+    "deployment": null,
+    "url": "https://corcovado.mywavelink.com",
+    "authenticated_production_ui_validated": false,
+    "preparation_commit": "f2f5addbb43e9e98170119e7216cef4bfe1c71e2",
+    "preparation_status": "Parcial: f2f5addbb43e9e98170119e7216cef4bfe1c71e2 e Dockerfile enviados; o overlay final posterior ao filtro de aprovador ainda não foi enviado.",
+    "current_production_commit": "ed02ac6bc42b882a6397494698b70691768dbb92",
+    "current_production_version": "1.34.28",
+    "blocker": "Controle do Chrome bloqueado em Emulation.setFocusEmulationEnabled após aviso nativo; aguardando ação do usuário para liberar a interface.",
+    "preparation_latest_commit": "98b24f2010193cf229c906e8be3510d5f2e40283",
+    "preparation_commits": [
+      "f2f5addbb43e9e98170119e7216cef4bfe1c71e2",
+      "98b24f2010193cf229c906e8be3510d5f2e40283"
+    ]
+  },
+  "boundaries": {
+    "database_reset": false,
+    "operational_writers_changed": false,
+    "hr_writers_changed": true,
+    "hr_schema_additive": true,
+    "existing_records_converted": false,
+    "temporary_user": "teste-rh-ui121-2",
+    "temporary_user_preserved": true,
+    "third_party_messages_sent": false,
+    "service_recreated": false,
+    "other_deployment_languages_preserved": true
+  },
+  "limitations": [
+    "Nenhum deployment de produção é confirmado por este registro.",
+    "Testes de backend/API usam dados fictícios; UI Chrome é evidência local do coordenador.",
+    "Imagem Docker não construída/executada por este agente; cadeia de arquivos validada.",
+    "Instalador Windows não construído nem instalado.",
+    "Bateria histórica ampla não declarada integralmente verde.",
+    "Após HR2, rollback isolado para UI128 é bloqueado.",
+    "A última correção do filtro de aprovador passou em teste de formulário; a nova conferência visual ficou pendente devido ao bloqueio do Chrome.",
+    "O upload em branch está parcial e contém um overlay anterior. O pacote final não foi publicado; produção permanece UI128.",
+    "Tentativa Python combinada sofreu exceção nativa Windows sem relatório completo; as três execuções finais separadas passaram, sem reprodução do erro."
+  ]
+}

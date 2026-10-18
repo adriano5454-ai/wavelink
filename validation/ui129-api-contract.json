@@ -1,0 +1,139 @@
+{
+  "version": "ui129-weekly-v1",
+  "status": "contract_for_frontend_backend_coordination",
+  "scope": "Company-local internal timesheet projects, separate from app/projects.py and local database catalogs.",
+  "transport": {
+    "headers": [
+      "Authorization: Bearer named session",
+      "x-aj-hub-id: exact company"
+    ],
+    "action_endpoint": "POST /api/hr/action",
+    "action_envelope": {
+      "action": "action_name",
+      "payload": {},
+      "op_id": "UUID retained for exact retry"
+    }
+  },
+  "projects": {
+    "get": "GET /api/hr/timesheet-projects",
+    "response": {
+      "projects": [
+        {
+          "id": "UUID",
+          "version": 1,
+          "name": "Project name",
+          "active": true,
+          "approver_ids": [
+            "user UUID"
+          ],
+          "approvers": [
+            {
+              "user_id": "UUID",
+              "name": "Current name",
+              "active": true
+            }
+          ],
+          "can_submit": true,
+          "can_review": false
+        }
+      ],
+      "can_manage": false,
+      "approver_candidates": "Only administrators: list of active approved accounts with hr.view_own, each {user_id,name}. Others receive []."
+    },
+    "visibility": "Non-administrators receive active projects; administrators receive all. Existing weekly records include their current project metadata even when inactive. can_submit means project active and at least one active designated approver other than the current user, not a grant of hr.timesheets_submit.",
+    "save_action": "save_timesheet_project",
+    "save_payload": {
+      "id": "Existing UUID; omitted or empty string only for new project",
+      "version": "0 new; exact current version for existing",
+      "name": "Required, maximum 160 chars, casefold-unique including inactive names",
+      "active": true,
+      "approver_ids": [
+        "Current active approved hr.view_own account UUIDs"
+      ]
+    },
+    "save_response": {
+      "project": "Current presented project"
+    },
+    "authorization": "Named current administrator only. Audited and idempotent; no implicit account grants or production assignments. Removing/disabling a project or approver revokes project review immediately. Replay rechecks current authorization."
+  },
+  "week": {
+    "get": "GET /api/hr/timesheet-week?week_start=YYYY-MM-DD&user_id=optional",
+    "period": "week_start must be Monday; week_end is Sunday. ISO dates are local work dates, not UTC instants.",
+    "response": {
+      "user_id": "UUID",
+      "week_start": "YYYY-MM-DD",
+      "week_end": "YYYY-MM-DD",
+      "records": [
+        "Presented project-linked timesheet records in this exact week, including submitted, approved and rejected locked records"
+      ],
+      "projects": [
+        "Current project metadata for active choices and all existing records"
+      ],
+      "legacy_records": [
+        "Existing projectless records overlapping this week; read-only here and edited with existing legacy editor"
+      ],
+      "daily_totals": [
+        {
+          "date": "YYYY-MM-DD",
+          "hours": "0.00"
+        }
+      ],
+      "can_edit": true
+    },
+    "visibility": "Own week is allowed with hr.view_own. Other users only under existing global timesheet-review scope; designated project reviewers use scoped records/review queue, never another person's complete week.",
+    "record_additions": {
+      "timesheet_project_id": "UUID",
+      "week_start": "Monday date",
+      "project": "Presented current project or inactive metadata",
+      "can_edit": "Owner, submit capability and draft/returned; inactive project is not editable",
+      "can_submit": "Editable, nonempty and independent active designated approver",
+      "can_review": "Currently submitted, designated active approver, not author"
+    },
+    "save_action": "save_timesheet_week",
+    "save_payload": {
+      "week_start": "YYYY-MM-DD Monday",
+      "user_id": "Own UUID; optional defaults to current user",
+      "records": [
+        {
+          "project_id": "UUID",
+          "id": "Existing timesheet UUID; omit for new",
+          "version": "Exact current record version; 0 for new",
+          "entries": [
+            {
+              "date": "YYYY-MM-DD within week",
+              "activity": "Required enum: offshore|onshore|travel|standby|leave|other; no inferred default",
+              "hours": "Decimal string from 0 through 24, at most 2 decimal places; zero must be explicit, never inferred",
+              "notes": "Optional, max 2000 chars",
+              "location": "Optional work location, maximum 240 chars; preserves legacy optionality"
+            }
+          ],
+          "notes": "Optional record notes, max4000 chars; omission preserves existing record notes, explicit empty string clears current value with history retained."
+        }
+      ]
+    },
+    "save_semantics": [
+      "records contains only changed projects; each entry replaces that project's week completely, not a per-day patch.",
+      "At most one record per user+week+project; duplicate dates within a project rejected. Same date across different projects allowed.",
+      "Existing IDs and exact versions required; only draft/returned records editable. Never alter another user's record.",
+      "Daily sum across all persisted timesheets for this user, including untouched projects and legacy records, must remain <=24. All changes validate and commit together or none do.",
+      "Removing every line of an existing project keeps the same record as an empty draft with history. A new project requires at least one entry. No deletions.",
+      "All edits share one operation receipt. Exact replay returns current authorized week without duplicating writes; changed payload under same op_id rejected.",
+      "No inferred 8-hour days, work schedules, wages, payroll or expenses. No timesheet attachments."
+    ],
+    "save_response": "Same structure as GET timesheet-week after the whole transaction commits."
+  },
+  "workflow": {
+    "submit_action": "submit_timesheet with existing {id,version} payload, individually per project",
+    "review_action": "review_timesheet with existing {id,version,decision:approve|return|reject,comment} payload, individually per project",
+    "review_rules": "Project-linked records require current project designation for every reviewer, including admin/global HR reviewer, and prohibit own approval/return/rejection. Project must be active; reviewer must remain enabled/approved with hr.view_own. Global HR rights permit reading as before, but cannot approve without designation. Records without project retain legacy rules.",
+    "reviewer_visibility": "Designation plus hr.view_own grants only submitted, approved or rejected timesheets for assigned projects, never drafts or returned records (which the author may edit), documents, expenses, full people records or other projects. Queue/pending actions show only currently actionable submitted records; history rechecks current project access. Revocation takes effect on reads, writes and retries.",
+    "returned_record_visibility": "Returned records are private to owner and pre-existing global HR reader scope until resubmitted. Restricted project reviewers cannot read returned current data or history. Project linkage is immutable on each record, including all historical snapshots.",
+    "approval_count": "Any one currently designated independent approver. No all-approvers consensus or partial approvals."
+  },
+  "errors": "Use existing HTTP Problem {detail,...} conventions; 401 account changed, 403 unauthorized own/action, 404 hidden record, 409 stale version/receipt or locked state, 422 invalid inputs/daily total/approver availability. New authored text supports pt-BR via hr_text context and defaults to English.",
+  "directory_flags": {
+    "timesheet_project_review": "Top-level boolean: active project currently designates current user",
+    "timesheet_projects_manage": "Top-level boolean: current named administrator; does not mutate account permission capabilities"
+  },
+  "storage_compatibility": "First project configuration atomically promotes hr_meta.format to wavelink-hr-2. UI129 accepts formats1/2; format2 requires hr_timesheet_projects already present. UI128 fails closed on format2, so code-only downgrade after use is unsupported; restore a compatible verified backup instead."
+}

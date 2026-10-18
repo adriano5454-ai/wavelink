@@ -1,0 +1,110 @@
+{
+  "release": "UI129",
+  "status": "prepared_verified_not_published",
+  "version": "1.34.29",
+  "runtime": "work/ui129-replay-final-r4",
+  "runtime_manifest_sha256": "fa74c025978b5cd3b4594908a229eb2c2067fa9a92d26ee922f6cbc8f4bf9033",
+  "runtime_resources": 2315,
+  "overlay_resources": 200,
+  "reconstruction": {
+    "full_chain_first_run": "validation/ui129-reconstruction-final.txt",
+    "final_revision_exact_parent_replay": "validation/ui129-reconstruction-final-r4.txt",
+    "verified_parent_manifest_sha256": "760e140a1fc88da138b1295b14fcfddc1445b20642ebf43c26b0fc16ef494da8",
+    "all_final_runtime_and_source_hashes_match": true
+  },
+  "tests": {
+    "python_focused": {
+      "status": "passed",
+      "passed": 51,
+      "cases": 51,
+      "failed": 0,
+      "errors": 0,
+      "skipped": 0,
+      "groups": [
+        {
+          "group": "backend",
+          "cases": 15,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "seconds": 197.765,
+          "evidence": "validation/ui129-release-backend.xml"
+        },
+        {
+          "group": "security",
+          "cases": 34,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "seconds": 329.0,
+          "evidence": "validation/ui129-release-security.xml"
+        },
+        {
+          "group": "actions",
+          "cases": 2,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "seconds": 33.25,
+          "evidence": "validation/ui129-release-actions.xml"
+        }
+      ],
+      "tested_runtime": "work/ui129-replay-final-r3",
+      "final_runtime_manifest_sha256": "fa74c025978b5cd3b4594908a229eb2c2067fa9a92d26ee922f6cbc8f4bf9033",
+      "source_equivalence": "validation/ui129-final-backend-equivalence.json",
+      "scope": "15 casos de backend, 34 de segurança e 2 da central de ações. Todos os módulos Python da aplicação e os testes são idênticos à reconstrução final R4."
+    },
+    "python_regression": {
+      "passed": 122,
+      "failed": 0,
+      "evidence": "validation/ui129-legacy-tests.xml"
+    },
+    "javascript_suites": 49,
+    "javascript_failed": 0,
+    "syntax_files": 109,
+    "syntax_failed": 0,
+    "weekly_form_checks": 145,
+    "save_status_locale_checks": 62
+  },
+  "backend_equivalence": {
+    "application_python_modules": 226,
+    "test_files": 3,
+    "all_identical": true,
+    "evidence": "validation/ui129-final-backend-equivalence.json"
+  },
+  "docker_and_provenance": "Docker stage ordering, materializer sequence, vendor-part hashes, generated overlay parent/final hashes and cache-token references verified; image not built or run.",
+  "native_test_attempt": "Combined Windows process raised a native access violation without a complete result. The final three separate test processes completed successfully; cause unproven and failed attempt not counted as a pass.",
+  "publication": {
+    "status": "branch_parcial_producao_permanece_ui128",
+    "commit": null,
+    "deployment": null,
+    "url": "https://corcovado.mywavelink.com",
+    "authenticated_production_ui_validated": false,
+    "preparation_commit": "f2f5addbb43e9e98170119e7216cef4bfe1c71e2",
+    "preparation_status": "Parcial: f2f5addbb43e9e98170119e7216cef4bfe1c71e2 e Dockerfile enviados; o overlay final posterior ao filtro de aprovador ainda não foi enviado.",
+    "current_production_commit": "ed02ac6bc42b882a6397494698b70691768dbb92",
+    "current_production_version": "1.34.28",
+    "blocker": "Controle do Chrome bloqueado em Emulation.setFocusEmulationEnabled após aviso nativo; aguardando ação do usuário para liberar a interface.",
+    "preparation_latest_commit": "98b24f2010193cf229c906e8be3510d5f2e40283",
+    "preparation_commits": [
+      "f2f5addbb43e9e98170119e7216cef4bfe1c71e2",
+      "98b24f2010193cf229c906e8be3510d5f2e40283"
+    ]
+  },
+  "limits": [
+    "Latest administrator search-filter correction passed real form-event tests but lacks repeat visual proof because Chrome is blocked.",
+    "Production UI129 not deployed or authenticated-tested; current production remains UI128.",
+    "Windows executable not built/installed; broad historical test suite not declared green.",
+    "After the first project activates HR2, a code-only downgrade to UI128 is refused."
+  ],
+  "commands": [
+    "python -B -X utf8 work/prepare_ui129_release.py",
+    "python -B -X utf8 work/wavelink-ui129/deploy/build_ui129_overlay.py work/ui128-replay-final-r2 work/runtime-ui129",
+    "python -B -X utf8 work/replay_ui129_final_r4.py",
+    "python -B -X utf8 work/verify_ui129_release.py ui129-replay-final-r4 fa74c025978b5cd3b4594908a229eb2c2067fa9a92d26ee922f6cbc8f4bf9033",
+    "node work/run_ui129_release_js.cjs ui129-replay-final-r4",
+    "python -B -X utf8 work/run_ui129_release_groups.py backend",
+    "python -B -X utf8 work/run_ui129_release_groups.py security",
+    "python -B -X utf8 work/run_ui129_release_groups.py actions"
+  ]
+}

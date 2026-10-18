@@ -1,0 +1,41 @@
+{
+  "status": "passed",
+  "passed": 51,
+  "cases": 51,
+  "failed": 0,
+  "errors": 0,
+  "skipped": 0,
+  "groups": [
+    {
+      "group": "backend",
+      "cases": 15,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "seconds": 197.765,
+      "evidence": "validation/ui129-release-backend.xml"
+    },
+    {
+      "group": "security",
+      "cases": 34,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "seconds": 329.0,
+      "evidence": "validation/ui129-release-security.xml"
+    },
+    {
+      "group": "actions",
+      "cases": 2,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "seconds": 33.25,
+      "evidence": "validation/ui129-release-actions.xml"
+    }
+  ],
+  "tested_runtime": "work/ui129-replay-final-r3",
+  "final_runtime_manifest_sha256": "fa74c025978b5cd3b4594908a229eb2c2067fa9a92d26ee922f6cbc8f4bf9033",
+  "source_equivalence": "validation/ui129-final-backend-equivalence.json",
+  "scope": "15 casos de backend, 34 de segurança e 2 da central de ações. Todos os módulos Python da aplicação e os testes são idênticos à reconstrução final R4."
+}
