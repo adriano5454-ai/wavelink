@@ -3,15 +3,16 @@
   "version": "1.34.27",
   "base_commit": "736c9c9c82e9b0a0f93f41d59d063c1ade13da27",
   "runtime": {
-    "manifest_sha256": "e0355e75841d7c1e102cb05526876f125d229fd9f7e755af01e7534efbdde446",
+    "manifest_sha256": "0a33169d87dbcfe486551c44378b0b6bc6c9385241fdf67f6f1215fd1f519e58",
     "resources": 2281,
-    "overlay_resources": 54,
-    "full_chain_reconstructed": true
+    "overlay_resources": 65,
+    "full_chain_reconstructed": true,
+    "reconstruction_note": "Cadeia completa reconstruída em pasta nova; limite de 180 s interrompeu após UI126 verificada, UI127 aplicada em seguida; 2.281 hashes conferidos sem divergências."
   },
   "javascript": {
     "standalone_suites": 20,
     "passed_suites": 20,
-    "new_assertions": 91,
+    "new_assertions": 153,
     "inherited_cjs_suites": 7,
     "inherited_cjs_assertions": 93,
     "syntax_files": 108,
@@ -51,9 +52,14 @@
     "coverage_file": "docs/UI127_COVERAGE.json",
     "areas": 21,
     "views": 193,
-    "views_with_detailed_evidence": 100,
+    "views_with_detailed_evidence": 130,
     "all_views_concluded": false,
-    "frontend_current_backend_version_during_browser_test": "1.34.26 backend process with current UI127 static files; modified backend exports separately tested with current source."
+    "frontend_current_backend_version_during_browser_test": "1.34.26 backend process with current UI127 static files; modified backend exports separately tested with current source.",
+    "additional_limits": [
+      "Permissão salva do Chrome nega acesso automatizado à origem de produção.",
+      "Controle intermitente: abas locais e GitHub tiveram timeouts; criar outra aba recuperou parte do acesso, sem comprovar causa no aplicativo.",
+      "Não houve conclusão das variantes ainda sem evidência detalhada."
+    ]
   },
   "boundaries": {
     "production_records_modified": false,
@@ -83,5 +89,7 @@
     "deployment": "dep-dba9sqdg1s2s73b3sihg",
     "commit": "736c9c9c82e9b0a0f93f41d59d063c1ade13da27",
     "instruction": "Rollback code on the same Render service. Do not restore company data for a code-only issue; any data restoration must be separately planned with stopped writers."
-  }
+  },
+  "revision": "UI127 complementar",
+  "publication_base": "24073d1ea2d6b593cdcabfe82182e66028bb1f4f"
 }
