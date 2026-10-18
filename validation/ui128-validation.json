@@ -1,0 +1,823 @@
+{
+  "schema": "wavelink-ui128-validation-1",
+  "release": "UI128",
+  "version": "1.34.28",
+  "base_commit": "ebd92c43ec7c92431a1def49137e3ff1fe36bf2d",
+  "status": "preparado_integrado_testado_localmente",
+  "publication": {
+    "status": "pendente_de_registro_pelo_coordenador",
+    "commit": null,
+    "deployment": null,
+    "authenticated_production_ui_validated": false,
+    "url": "https://corcovado.mywavelink.com",
+    "preparation_branch": "ui128-revisao-final",
+    "preparation_branch_created": true
+  },
+  "review": {
+    "functions": 54,
+    "areas": {
+      "rh": 16,
+      "documentos_inventario": 18,
+      "operacoes": 20
+    },
+    "all_54_browser_end_to_end": false,
+    "nota": "Cada função tem evidência individual; fontes, API/serviço e interface sintética não equivalem a 54 percursos completos em Chrome.",
+    "coverage": [
+      {
+        "id": "RH-01",
+        "area": "RH, acessos e ajuda",
+        "funcao": "Início: troca de empresa",
+        "evidencia": "Troca explícita de empresa preserva filas e rascunhos de cada contexto; referência antiga ou empresa incorreta é recusada. Não houve troca de empresa em produção.",
+        "limite": "Testes locais com contas e dados fictícios. A evidência completa e os limites específicos constam em ui128-agent-rh.json.",
+        "teste_navegador_por_funcao": false
+      },
+      {
+        "id": "RH-02",
+        "area": "RH, acessos e ajuda",
+        "funcao": "Perfil: conta e acesso",
+        "evidencia": "Diálogos de segurança permitem cancelar sem validar campos obrigatórios, bloqueiam fechamento durante envio e devolvem o foco. Testes locais cobrem MFA, expiração e revogação; não houve alteração real de credenciais.",
+        "limite": "Testes locais com contas e dados fictícios. A evidência completa e os limites específicos constam em ui128-agent-rh.json.",
+        "teste_navegador_por_funcao": false
+      },
+      {
+        "id": "RH-03",
+        "area": "RH, acessos e ajuda",
+        "funcao": "RH: necessidades e cobertura",
+        "evidencia": "Cobertura exige necessidade cadastrada e colaboradores vinculados confirmados, sem contagem duplicada. Escala planejada não cria apontamento de horas nem comprova disponibilidade.",
+        "limite": "Testes locais com contas e dados fictícios. A evidência completa e os limites específicos constam em ui128-agent-rh.json.",
+        "teste_navegador_por_funcao": false
+      },
+      {
+        "id": "RH-04",
+        "area": "RH, acessos e ajuda",
+        "funcao": "Acessos: pendentes",
+        "evidencia": "Conta pendente permanece desabilitada e só consulta seu estado; permissões e fila de análise respeitam o escopo. Nenhum convite real foi enviado.",
+        "limite": "Testes locais com contas e dados fictícios. A evidência completa e os limites específicos constam em ui128-agent-rh.json.",
+        "teste_navegador_por_funcao": false
+      },
+      {
+        "id": "RH-05",
+        "area": "RH, acessos e ajuda",
+        "funcao": "Acessos: revisão de solicitação",
+        "evidencia": "Cancelar compara valores atuais com o início da edição, inclusive caixas de seleção. Alterações de conta, permissão ou versão impedem envio antigo.",
+        "limite": "Testes locais com contas e dados fictícios. A evidência completa e os limites específicos constam em ui128-agent-rh.json.",
+        "teste_navegador_por_funcao": false
+      },
+      {
+        "id": "RH-06",
+        "area": "RH, acessos e ajuda",
+        "funcao": "Acessos: entrada por convite",
+        "evidencia": "Títulos, verificação e estados de repetição estão em português; nomes e e-mails são preservados. Prova temporária é removida do endereço e não ativa acesso automaticamente.",
+        "limite": "Testes locais com contas e dados fictícios. A evidência completa e os limites específicos constam em ui128-agent-rh.json.",
+        "teste_navegador_por_funcao": false
+      },
+      {
+        "id": "RH-07",
+        "area": "RH, acessos e ajuda",
+        "funcao": "Acessos: recuperação de senha",
+        "evidencia": "Mensagens de erro e sucesso em português; mínimo de 8 caracteres, confirmação da senha, expiração e tentativas testados com transporte de e-mail fictício. Sessões são revogadas sem perder identidade, permissões ou MFA.",
+        "limite": "Testes locais com contas e dados fictícios. A evidência completa e os limites específicos constam em ui128-agent-rh.json.",
+        "teste_navegador_por_funcao": false
+      },
+      {
+        "id": "RH-08",
+        "area": "RH, acessos e ajuda",
+        "funcao": "Administração: usuários",
+        "evidencia": "Busca e filtros permanecem ao cancelar ou atualizar. Alterar ou restaurar valores produz o aviso correspondente; testes de API cobrem validações e desfazimento integral em erro.",
+        "limite": "Testes locais com contas e dados fictícios. A evidência completa e os limites específicos constam em ui128-agent-rh.json.",
+        "teste_navegador_por_funcao": false
+      },
+      {
+        "id": "RH-09",
+        "area": "RH, acessos e ajuda",
+        "funcao": "Administração: detalhe da conta",
+        "evidencia": "Cancelar retorna à conta selecionada e mantém a sessão. Resultado incerto preserva a mesma tentativa; outra conta não assume a edição.",
+        "limite": "Testes locais com contas e dados fictícios. A evidência completa e os limites específicos constam em ui128-agent-rh.json.",
+        "teste_navegador_por_funcao": false
+      },
+      {
+        "id": "RH-10",
+        "area": "RH, acessos e ajuda",
+        "funcao": "Administração: departamentos",
+        "evidencia": "Renomear departamento preserva referências e histórico; regras de situação ativa continuam aplicadas.",
+        "limite": "Testes locais com contas e dados fictícios. A evidência completa e os limites específicos constam em ui128-agent-rh.json.",
+        "teste_navegador_por_funcao": false
+      },
+      {
+        "id": "RH-11",
+        "area": "RH, acessos e ajuda",
+        "funcao": "Administração: membros e responsáveis",
+        "evidencia": "Responsável deve ser membro ativo; alterações antigas são rejeitadas. Remover e readmitir membro não reativa permissões revogadas.",
+        "limite": "Testes locais com contas e dados fictícios. A evidência completa e os limites específicos constam em ui128-agent-rh.json.",
+        "teste_navegador_por_funcao": false
+      },
+      {
+        "id": "RH-12",
+        "area": "RH, acessos e ajuda",
+        "funcao": "Ajuda contextual",
+        "evidencia": "Ajuda aceita somente destinos internos permitidos; abre em outra aba sem acesso à janela de origem e preserva rascunho e sessão.",
+        "limite": "Testes locais com contas e dados fictícios. A evidência completa e os limites específicos constam em ui128-agent-rh.json.",
+        "teste_navegador_por_funcao": false
+      },
+      {
+        "id": "RH-13",
+        "area": "RH, acessos e ajuda",
+        "funcao": "Ajuda: tópicos",
+        "evidencia": "Busca por acentos, filtros, falha e repetição testados. 77tópicos por idioma e 154sumários conferidos; títulos e âncoras corrigidos.",
+        "limite": "Testes locais com contas e dados fictícios. A evidência completa e os limites específicos constam em ui128-agent-rh.json.",
+        "teste_navegador_por_funcao": false
+      },
+      {
+        "id": "RH-14",
+        "area": "RH, acessos e ajuda",
+        "funcao": "Ajuda: instalação",
+        "evidencia": "Orientações deixam de fixar versão antiga; pedido de instalação e alternativa manual preservados. Fechar devolve foco. Nenhum dispositivo foi instalado.",
+        "limite": "Testes locais com contas e dados fictícios. A evidência completa e os limites específicos constam em ui128-agent-rh.json.",
+        "teste_navegador_por_funcao": false
+      },
+      {
+        "id": "RH-15",
+        "area": "RH, acessos e ajuda",
+        "funcao": "Ajuda: falhas de acesso",
+        "evidencia": "Conta pendente, empresa incorreta, convite inválido e sessão revogada são recusados. Não houve bloqueio proposital de conta real.",
+        "limite": "Testes locais com contas e dados fictícios. A evidência completa e os limites específicos constam em ui128-agent-rh.json.",
+        "teste_navegador_por_funcao": false
+      },
+      {
+        "id": "RH-16",
+        "area": "RH, acessos e ajuda",
+        "funcao": "Ajuda: estados de conexão",
+        "evidencia": "Busca informa modo limitado e permite nova tentativa após restauração da página. Estados de conexão preservam identidade da operação; condição real de PWA móvel sem rede continua limitada.",
+        "limite": "Testes locais com contas e dados fictícios. A evidência completa e os limites específicos constam em ui128-agent-rh.json.",
+        "teste_navegador_por_funcao": false
+      },
+      {
+        "id": "DOC-01",
+        "area": "Documentos, inventário e importações",
+        "funcao": "Inventário — Etiquetas QR",
+        "resultado": "Localizadores não contêm credenciais; leitura de item continua autenticada e dependente das permissões.",
+        "evidencia": [
+          "tests/ui53_inventory/test_labels_categories.py",
+          "tests/test_ui128_docs_qr_locale.js"
+        ],
+        "cobertura": {
+          "api_or_service": "Geração real de PDF nos layouts A4/70×40, links para os IDs esperados, 401 sem sessão, 403 sem exportação e banco inalterado.",
+          "interface_in_synthetic_dom": "Formulário real de seleção/previsão e geração de etiquetas com API simulada: contagens A4/individual, arquivados excluídos, seleção explícita e payload/nomes preservados; menu real com permissões de exportação.",
+          "browser_end_to_end_by_this_agent": false,
+          "limits": "Não inclui leitura do QR por câmera física nem impressão física."
+        },
+        "teste_navegador_por_funcao": false
+      },
+      {
+        "id": "DOC-02",
+        "area": "Documentos, inventário e importações",
+        "funcao": "Inventário — Importar planilha",
+        "resultado": "Importação aditiva preserva itens existentes, escopo de tarefas e contagens; erro tardio desfaz todo o lote; repetição exata não duplica.",
+        "evidencia": [
+          "tests/test_inventory_import_ui103.py",
+          "tests/test_ui128_docs_import_language.py"
+        ],
+        "cobertura": {
+          "api_or_service": "Adicionar lote a inventário existente, preservar itens/contagens/tarefas, desfazer erro tardio e repetir solicitação sem duplicar.",
+          "interface_in_synthetic_dom": "Helpers reais de mapeamento/seleção e formulário de idioma em DOM sintético.",
+          "browser_end_to_end_by_this_agent": false,
+          "limits": "Fluxo completo de escolher arquivo, revisar e salvar pelo Chrome não foi executado por este agente."
+        },
+        "teste_navegador_por_funcao": false
+      },
+      {
+        "id": "DOC-03",
+        "area": "Documentos, inventário e importações",
+        "funcao": "Inventário — Conferir fontes",
+        "resultado": "Fonte/linhas originais mantidas; excluir linhas informativas salva somente itens selecionados; mudança exige nova conferência.",
+        "evidencia": [
+          "tests/test_inventory_source_review_ui108.py"
+        ],
+        "cobertura": {
+          "api_or_service": "Excluir linhas informativas antes de salvar e preservar coordenadas e metadados da fonte.",
+          "interface_in_synthetic_dom": "Navegação da fonte e cabeçalhos conferida por helpers reais.",
+          "browser_end_to_end_by_this_agent": false,
+          "limits": "Qualidade visual e conferência humana do conteúdo original ficam com o coordenador."
+        },
+        "teste_navegador_por_funcao": false
+      },
+      {
+        "id": "DOC-04",
+        "area": "Documentos, inventário e importações",
+        "funcao": "Inventário — Mapeamento e seleção de linhas",
+        "resultado": "Mantém índices originais, zeros à esquerda, quantidade desconhecida distinta de zero e rascunho conferido.",
+        "evidencia": [
+          "tests/test_document_row_selection_ui105.py",
+          "tests/test_inventory_mapping_restore_ui113.js",
+          "tests/test_inventory_source_headers_ui116.js"
+        ],
+        "cobertura": {
+          "api_or_service": "Linhas escolhidas mantêm números originais; zero e desconhecido continuam distintos; seleção alterada não reutiliza recibo.",
+          "interface_in_synthetic_dom": "Eventos sintéticos de escolha/restauração de mapeamento, filtro e linhas.",
+          "browser_end_to_end_by_this_agent": false,
+          "limits": "Não representa exercício completo do formulário no navegador real."
+        },
+        "teste_navegador_por_funcao": false
+      },
+      {
+        "id": "DOC-05",
+        "area": "Documentos, inventário e importações",
+        "funcao": "Inventário — Comparação de duplicados",
+        "resultado": "Duplicata por linha de origem já importada bloqueia gravação. Comparador visual consultivo agrupa SN/ativo somente entre abas distintas; título e ajuda deixam explícito que zero grupos não descarta repetições na mesma aba.",
+        "evidencia": [
+          "tests/test_document_review_ui104.py",
+          "tests/test_inventory_overlap_ui115.js",
+          "tests/test_ui128_docs_overlap_scope.js"
+        ],
+        "cobertura": {
+          "api_or_service": "Conflitos de fonte já importada bloqueiam lote; números de série iguais em linhas comprovadamente distintas não são deduplicados pelo servidor.",
+          "interface_in_synthetic_dom": "Comparador consultivo de SN/referência de ativo ENTRE abas, com preservação de linhas; novo teste reproduz SN repetido na mesma aba.",
+          "browser_end_to_end_by_this_agent": false,
+          "limits": "O comparador não detecta repetições dentro da mesma aba. Nenhuma união/exclusão automática foi implementada."
+        },
+        "teste_navegador_por_funcao": false
+      },
+      {
+        "id": "DOC-06",
+        "area": "Documentos, inventário e importações",
+        "funcao": "Inventário — Estoque mínimo",
+        "resultado": "Limite 2: desconhecido permanece desconhecido; 0/1 alertam; 2/3 não. Configurar/desativar alerta não muda quantidade. Prefixos traduzidos preservam notas/nomes.",
+        "evidencia": [
+          "tests/test_ui128_docs_low_stock.py",
+          "tests/test_ui128_docs_low_stock_locale.js"
+        ],
+        "cobertura": {
+          "api_or_service": "Salvar perfil, alterar quantidade por operação normal, verificar estados desconhecido/baixo/normal, rejeitar limite negativo e desativar sem mudar item.",
+          "interface_in_synthetic_dom": "Formulário real executado em ambiente sintético PT/EN; nomes, notas, payload e contador preservados.",
+          "browser_end_to_end_by_this_agent": false,
+          "limits": "Sem conferência visual móvel desse formulário pelo agente."
+        },
+        "teste_navegador_por_funcao": false
+      },
+      {
+        "id": "DOC-07",
+        "area": "Documentos, inventário e importações",
+        "funcao": "Editores — Rotinas de manutenção",
+        "resultado": "Importar cria rascunho; publicar/reordenar/revisar mantém registros concluídos e ordens existentes ligados à revisão gravada.",
+        "evidencia": [
+          "tests/browser_templates/test_templates.py",
+          "tests/test_ui128_docs_temp_packages.py"
+        ],
+        "cobertura": {
+          "api_or_service": "Criar rascunho, publicar e revisar rotina; ordens e registros concluídos preservam revisão anterior; importação nativa verificada.",
+          "interface_in_synthetic_dom": "Regressões de cancelamento existentes executadas; nenhuma edição visual nova do designer.",
+          "browser_end_to_end_by_this_agent": false,
+          "limits": "Editor completo não foi usado pelo agente em navegador real."
+        },
+        "teste_navegador_por_funcao": false
+      },
+      {
+        "id": "DOC-08",
+        "area": "Documentos, inventário e importações",
+        "funcao": "Editores — Estruturas de inventário",
+        "resultado": "Cria estrutura vazia por usuário autorizado, importa estrutura separada, nega autorização/hub incorretos e mantém relações válidas; fluxos visuais não declarados concluídos.",
+        "evidencia": [
+          "tests/ui45_review/test_builder_baseline.py::test_permissioned_non_admin_can_create_checklist_and_inventory_structure",
+          "tests/ui45_review/test_builder_baseline.py::test_toolbox_and_inventory_browser_imports_create_clean_structures",
+          "tests/ui45_review/test_builder_baseline.py::test_import_routes_reject_wrong_permission_bad_hub_and_readonly_review_receipt",
+          "tests/test_document_relationships_ui107.py"
+        ],
+        "cobertura": {
+          "api_or_service": "Criação de estrutura por não administrador com permissão, importação de estrutura vazia e rejeição de permissão/hub incorretos.",
+          "interface_in_synthetic_dom": "Exercício adicional de relações em propostas de importação; não equivale a editor completo de estrutura.",
+          "browser_end_to_end_by_this_agent": false,
+          "limits": "Roteiro visual completo de criação e edição de locais ainda depende do coordenador."
+        },
+        "teste_navegador_por_funcao": false
+      },
+      {
+        "id": "DOC-09",
+        "area": "Documentos, inventário e importações",
+        "funcao": "Editores — Importação avançada",
+        "resultado": "Corrigido arquivo temporário reaberto no Windows; arquivos são removidos em sucesso/erro. Português inicial em pt-BR; idioma explícito preservado e cancelar troca mantém proposta. Ajuda .ajlogs contextual.",
+        "evidencia": [
+          "tests/test_builder_log_ui101.py",
+          "tests/test_ui128_docs_temp_packages.py",
+          "tests/test_ui128_docs_import_language.js"
+        ],
+        "cobertura": {
+          "api_or_service": "Revisão e gravação idempotente de pacotes; parser reabre arquivo fechado; diretório temporário removido em sucesso/erro.",
+          "interface_in_synthetic_dom": "Idioma inicial, escolha explícita, cancelamento e ajuda contextual executados no formulário real com DOM sintético.",
+          "browser_end_to_end_by_this_agent": false,
+          "limits": "OCR PNG/PDF não validado por falta de Tesseract local; transferência integral .ajproject não é fornecida pelo importador web."
+        },
+        "teste_navegador_por_funcao": false
+      },
+      {
+        "id": "DOC-10",
+        "area": "Documentos, inventário e importações",
+        "funcao": "Editores — Interpretação e mapeamento",
+        "resultado": "Rótulos portugueses e acentos preservados; coordenadas esparsas permanecem originais; evidência passiva não altera conteúdo conferido.",
+        "evidencia": [
+          "tests/test_document_recognition_ui106.py",
+          "tests/test_document_interpretation_ui106.js"
+        ],
+        "cobertura": {
+          "api_or_service": "Reconhecimento de rótulos portugueses, coordenadas esparsas e separação de evidência passiva versus correção efetiva.",
+          "interface_in_synthetic_dom": "Mapeamento e painéis de interpretação executados com fontes fictícias e preservação dos trechos originais.",
+          "browser_end_to_end_by_this_agent": false,
+          "limits": "Não certifica todos os formatos ou digitalizações possíveis."
+        },
+        "teste_navegador_por_funcao": false
+      },
+      {
+        "id": "DOC-11",
+        "area": "Documentos, inventário e importações",
+        "funcao": "Editores — Conferência de fontes",
+        "resultado": "Navegar/inspecionar é somente leitura; assinatura da proposta inclui seleção original completa; alteração material exige conferência nova.",
+        "evidencia": [
+          "tests/test_inventory_review_boundary_ui111.py",
+          "tests/test_document_review_ui104.js"
+        ],
+        "cobertura": {
+          "api_or_service": "Assinatura exige proposta exata, seleção original completa e nova revisão após alteração material.",
+          "interface_in_synthetic_dom": "Inspecionar linhas/abas/grupos preserva revisão, confirmação e rascunho nos testes de eventos.",
+          "browser_end_to_end_by_this_agent": false,
+          "limits": "Conferência visual real segue separada."
+        },
+        "teste_navegador_por_funcao": false
+      },
+      {
+        "id": "DOC-12",
+        "area": "Documentos, inventário e importações",
+        "funcao": "Originais — Baixar original",
+        "resultado": "Download/revisão preserva bytes exatos; acesso exige projeto e sessão corretos; voltar da visualização mantém contexto/conta.",
+        "evidencia": [
+          "tests/ui61_originals/test_workflow.py",
+          "tests/test_ui127_documents_agent.js"
+        ],
+        "cobertura": {
+          "api_or_service": "Upload/revisão e download com bytes exatos; metadados/leitura com escopo; links para revisões originais.",
+          "interface_in_synthetic_dom": "Regressão de voltar/fechar/cancelar e navegação de biblioteca executada em DOM sintético.",
+          "browser_end_to_end_by_this_agent": false,
+          "limits": "Download pelo navegador real e anexos privados do perfil RH dependem da validação integrada; não foram ampliadas permissões."
+        },
+        "teste_navegador_por_funcao": false
+      },
+      {
+        "id": "DOC-13",
+        "area": "Documentos, inventário e importações",
+        "funcao": "Registros — Pendências e acompanhamento",
+        "resultado": "Responsável limitado ao acompanhamento; motivo/histórico mantidos; permissão revogada bloqueia tentativa antiga; erro de auditoria desfaz estado/notificação/recibo.",
+        "evidencia": [
+          "tests/ui49_logs/test_followup.py",
+          "tests/ui49_logs/test_retained_logs.py",
+          "tests/test_ui127_quality_agent_logs.js"
+        ],
+        "cobertura": {
+          "api_or_service": "Atribuir/acompanhar/resolver/reabrir, preservar observação/autor, exigir motivo, bloquear revogação e desfazer erro de auditoria.",
+          "interface_in_synthetic_dom": "Regressões dos fluxos de registros executadas em ambiente sintético.",
+          "browser_end_to_end_by_this_agent": false,
+          "limits": "Nenhum usuário ou registro da produção foi alterado pelo agente."
+        },
+        "teste_navegador_por_funcao": false
+      },
+      {
+        "id": "DOC-14",
+        "area": "Documentos, inventário e importações",
+        "funcao": "Registros — Referência original",
+        "resultado": "Liberação explícita e revogação respeitadas; links históricos conservam revisão; referência arquivada/adulterada não vira origem nova.",
+        "evidencia": [
+          "tests/ui49_logs/test_retained_logs.py::test_references_explicit_release_and_revocation",
+          "tests/ui61_originals/test_workflow.py"
+        ],
+        "cobertura": {
+          "api_or_service": "Liberação e revogação explícitas de referência; links históricos preservam revisão; novas referências inválidas são recusadas.",
+          "interface_in_synthetic_dom": "Regressões de navegação de documentos; nenhuma interface nova de vínculos foi criada.",
+          "browser_end_to_end_by_this_agent": false,
+          "limits": "Percurso item→pasta→perfil no navegador integrado pertence ao coordenador/RH."
+        },
+        "teste_navegador_por_funcao": false
+      },
+      {
+        "id": "DOC-15",
+        "area": "Documentos, inventário e importações",
+        "funcao": "Admin — Editor de livros",
+        "resultado": "Cria somente estrutura vazia; IDs, unidades e ordem preservados; consulta não revela histórico; pacote exportado pode ser reimportado.",
+        "evidencia": [
+          "tests/browser_logs/test_designer.py"
+        ],
+        "cobertura": {
+          "api_or_service": "Criar livro vazio com definições, repetir sem duplicar, preservar IDs/unidades/ordem e exportar/reimportar pacote nativo.",
+          "interface_in_synthetic_dom": null,
+          "browser_end_to_end_by_this_agent": false,
+          "limits": "Arrastar/reordenar e preencher editor real no Chrome não executados por este agente."
+        },
+        "teste_navegador_por_funcao": false
+      },
+      {
+        "id": "DOC-16",
+        "area": "Documentos, inventário e importações",
+        "funcao": "Admin — Gestão de registros",
+        "resultado": "Arquivo/restauração preserva respostas/bytes; encerrado não é desbloqueado; filtro/busca não escreve; relatório privado permanece restrito ao autor mesmo para admin.",
+        "evidencia": [
+          "tests/record_management/test_records.py",
+          "tests/record_management/test_safety.py"
+        ],
+        "cobertura": {
+          "api_or_service": "Arquivar/restaurar sem apagar respostas/bytes, manter registro finalizado bloqueado, busca sem escrita e privacidade de passagem de serviço.",
+          "interface_in_synthetic_dom": null,
+          "browser_end_to_end_by_this_agent": false,
+          "limits": "Não cobre exclusão de dados de produção; interface administrativa real depende da conferência do coordenador."
+        },
+        "teste_navegador_por_funcao": false
+      },
+      {
+        "id": "DOC-17",
+        "area": "Documentos, inventário e importações",
+        "funcao": "Admin — Importações e exemplos",
+        "resultado": "Página orientativa de oito caminhos e limites de importação; acesso administrativo e links corretos testados. Não é um importador de projetos completos nem gerador de exemplos.",
+        "evidencia": [
+          "tests/record_management/test_imports.py",
+          "tests/test_builder_log_ui101.py",
+          "tests/test_ui128_docs_import_centre_boundary.js"
+        ],
+        "cobertura": {
+          "api_or_service": "Importação de rotina e validações de pacote/OOXML testadas separadamente; a página de orientação não faz essas importações sozinha.",
+          "interface_in_synthetic_dom": "Página real executada: oito orientações, link ao editor e guia, bloqueio sem admin/para vessel_only, sessão imutável e ausência de API/escrita.",
+          "browser_end_to_end_by_this_agent": false,
+          "limits": "É uma página informativa. Não implementa criação automática de exemplos nem restauração de workspace completo no navegador."
+        },
+        "teste_navegador_por_funcao": false
+      },
+      {
+        "id": "DOC-18",
+        "area": "Documentos, inventário e importações",
+        "funcao": "Admin — Identidade de relatórios",
+        "resultado": "Somente admin altera identidade; prévia/importação são somente leitura; PDF mantém snapshot e empresa gravada; fluxo da tarefa inalterado.",
+        "evidencia": [
+          "tests/company_branding/test_branding.py"
+        ],
+        "cobertura": {
+          "api_or_service": "Alterar perfil com auditoria/repetição/conflito, negar não admin, prévia somente leitura e PDF preservando snapshot/empresa gravada.",
+          "interface_in_synthetic_dom": null,
+          "browser_end_to_end_by_this_agent": false,
+          "limits": "Aparência do PDF e percurso completo do editor de identidade precisam de inspeção visual integrada."
+        },
+        "teste_navegador_por_funcao": false
+      },
+      {
+        "id": "OPS-01",
+        "area": "Tarefas",
+        "funcao": "Assumir / confirmar atribuição",
+        "resultado": "Não há ação distinta de aceite. A gestão atribui responsáveis; abrir a tarefa pode marcar o alerta como lido sem assumir, iniciar ou concluir o trabalho.",
+        "evidencia": [
+          "tests.general_tasks.test_tasks::test_private_list_detail_history_report_and_alerts"
+        ],
+        "limite": "Não apresentar marcação de alerta como aceite formal. Novo fluxo de aceite não foi criado.",
+        "teste_navegador_por_funcao": false
+      },
+      {
+        "id": "OPS-02",
+        "area": "Tarefas",
+        "funcao": "Adiar / reatribuir",
+        "resultado": "Pausa e reatribuição exigem autoridade atual, motivo quando aplicável e versão exata; trabalho salvo e auditoria são mantidos.",
+        "evidencia": [
+          "tests.task_postponement.test_postponement::test_pause_and_resume_keep_exact_saved_work",
+          "tests.general_tasks.test_tasks::test_reassign_removes_old_access_changes_due_priority_not_evidence"
+        ],
+        "limite": "API e funções de interface em ambiente isolado; não representa fluxo completo em Chrome.",
+        "teste_navegador_por_funcao": false
+      },
+      {
+        "id": "OPS-03",
+        "area": "Passagens de turno",
+        "funcao": "Meu turno",
+        "resultado": "Rascunho privado é do autor; reabrir mantém conteúdo e período, sem publicação automática ou acesso por outro administrador.",
+        "evidencia": [
+          "tests.ui50_handovers.test_workflow::test_full_hitch_save_edit_context_resume_and_privacy",
+          "tests.daily_handovers.test_daily::test_private_context_not_in_colleague_list_autocomplete_or_admin_override"
+        ],
+        "limite": "API e funções de interface em ambiente isolado; não representa fluxo completo em Chrome.",
+        "teste_navegador_por_funcao": false
+      },
+      {
+        "id": "OPS-04",
+        "area": "Passagens de turno",
+        "funcao": "Escala de turnos",
+        "resultado": "Ciclos, data operacional e turnos atravessando meia-noite preservam a data e exigem escolha explícita do próximo dia.",
+        "evidencia": [
+          "tests.daily_handovers.test_daily::test_full_24_hour_two_authors_preserve_first_publication_and_ack",
+          "tests.daily_handovers.test_daily::test_next_operational_day_is_explicit_no_fabricated_intervening_days"
+        ],
+        "limite": "API e funções de interface em ambiente isolado; não representa fluxo completo em Chrome.",
+        "teste_navegador_por_funcao": false
+      },
+      {
+        "id": "OPS-05",
+        "area": "Passagens de turno",
+        "funcao": "Preparação de fontes",
+        "resultado": "Copiar apenas seções selecionadas de publicações acessíveis cria novo rascunho privado; não copia assinaturas, anexos ou ciência.",
+        "evidencia": [
+          "tests.handover_continuity.test_continuity::test_prepare_is_fresh_private_identity_no_signature_publication_or_source_mutation",
+          "tests.handover_continuity.test_continuity::test_multi_source_selected_sections_order_and_exact_text_no_truncation"
+        ],
+        "limite": "API e funções de interface em ambiente isolado; não representa fluxo completo em Chrome.",
+        "teste_navegador_por_funcao": false
+      },
+      {
+        "id": "OPS-06",
+        "area": "Passagens de turno",
+        "funcao": "Histórico",
+        "resultado": "Histórico e comparação consultam revisões exatas e nunca registram ciência; permissões atual e histórica são verificadas.",
+        "evidencia": [
+          "tests.handovers.test_handovers::test_reading_history_and_export_never_acknowledge",
+          "tests.handovers.test_handovers::test_current_and_historical_audiences_both_enforced"
+        ],
+        "limite": "API e funções de interface em ambiente isolado; não representa fluxo completo em Chrome.",
+        "teste_navegador_por_funcao": false
+      },
+      {
+        "id": "OPS-07",
+        "area": "Passagens de turno",
+        "funcao": "Anexos",
+        "resultado": "Arquivo fica ligado à publicação/revisão exata; correção e cliente antigo preservam referências salvas; acesso é revalidado.",
+        "evidencia": [
+          "tests.ui50_handovers.test_workflow::test_full_hitch_open_is_readonly_and_finish_atomic_no_fake_reason",
+          "tests.ui50_handovers.test_workflow::test_full_hitch_issued_correction_keeps_publication_files_and_needs_review",
+          "tests.ui50_handovers.test_workflow::test_full_hitch_omitted_file_references_from_old_clients_preserve_saved_files"
+        ],
+        "limite": "API e funções de interface em ambiente isolado; não representa fluxo completo em Chrome.",
+        "teste_navegador_por_funcao": false
+      },
+      {
+        "id": "OPS-08",
+        "area": "Passagens de turno",
+        "funcao": "Relatórios",
+        "resultado": "PDF contém publicação salva; rascunho privado não é exposto; leitura/exportação não registra ciência.",
+        "evidencia": [
+          "tests.handovers.test_handovers::test_pdf_published_only_markup_safe_long_text_and_export_recheck",
+          "tests.daily_handovers.test_daily::test_midnight_period_does_not_move_operational_date_and_pdf_metadata_is_published",
+          "tests.test_ui128_ops_agent::test_handover_current_pdf_and_participation_keep_reader_own_scope"
+        ],
+        "limite": "API e funções de interface em ambiente isolado; não representa fluxo completo em Chrome.",
+        "teste_navegador_por_funcao": false
+      },
+      {
+        "id": "OPS-09",
+        "area": "Manutenção",
+        "funcao": "Leituras e anexos",
+        "resultado": "Resultado e foto persistem na revisão; corrigir resultado aprovado requer justificativa e reinicia aprovação. Visualização não aprova nada.",
+        "evidencia": [
+          "tests.ui36_maintenance.test_maintenance_routine::test_required_photo_and_repeat_save_preserves_reference_and_bytes",
+          "tests.ui36_maintenance.test_maintenance_routine::test_approved_correction_requires_explanation_and_resets_approval",
+          "tests.ui36_maintenance.test_maintenance_routine::test_stale_step_version_preserves_newer_work"
+        ],
+        "limite": "API e funções de interface em ambiente isolado; não representa fluxo completo em Chrome.",
+        "teste_navegador_por_funcao": false
+      },
+      {
+        "id": "OPS-10",
+        "area": "Manutenção",
+        "funcao": "Pendências",
+        "resultado": "Ciclo bloqueado aparece como pendência, sem gerar conclusão ou sucessor automaticamente; usuário sem leitura não vê título.",
+        "evidencia": [
+          "tests.maintenance_cycles.test_cycles::test_blocked_work_appears_in_attention_and_asset_without_read_side_effects",
+          "tests.maintenance_cycles.test_cycles::test_no_maintenance_view_means_no_cycle_or_blocked_title_disclosure",
+          "tests.maintenance_cycles.test_cycles::test_report_records_cycle_and_links_without_duplicate_results"
+        ],
+        "limite": "API e funções de interface em ambiente isolado; não representa fluxo completo em Chrome.",
+        "teste_navegador_por_funcao": false
+      },
+      {
+        "id": "OPS-11",
+        "area": "Frota",
+        "funcao": "Livros da embarcação",
+        "resultado": "Livro vinculado mantém sua embarcação e registros; outra embarcação é inacessível; retirar vínculo retira acesso, não exclui dados.",
+        "evidencia": [
+          "tests.test_ui128_ops_agent::test_fleet_books_issue_lifecycle_scope_and_revocation"
+        ],
+        "limite": "API e funções de interface em ambiente isolado; não representa fluxo completo em Chrome.",
+        "teste_navegador_por_funcao": false
+      },
+      {
+        "id": "OPS-12",
+        "area": "Frota",
+        "funcao": "Registros e pendências",
+        "resultado": "Criar registro, ler aviso, corrigir e resolver são ações distintas. A correção conserva histórico e exige versão atual.",
+        "evidencia": [
+          "tests.test_ui128_ops_agent::test_fleet_books_issue_lifecycle_scope_and_revocation"
+        ],
+        "limite": "API e funções de interface em ambiente isolado; não representa fluxo completo em Chrome.",
+        "teste_navegador_por_funcao": false
+      },
+      {
+        "id": "OPS-13",
+        "area": "Frota",
+        "funcao": "Permissões por local",
+        "resultado": "Permissão logística não concede leitura dos livros. Direitos dos livros são explícitos, por local, e alterações revogam sessões antigas.",
+        "evidencia": [
+          "tests.test_ui128_ops_agent::test_fleet_books_issue_lifecycle_scope_and_revocation",
+          "tests.ui62_workspace.test_access::test_additive_does_not_grant_project_modules_or_log_rights",
+          "tests.ui62_workspace.test_access::test_additive_cannot_self_escalate_or_replay_revoked_action"
+        ],
+        "limite": "API e funções de interface em ambiente isolado; não representa fluxo completo em Chrome.",
+        "teste_navegador_por_funcao": false
+      },
+      {
+        "id": "OPS-14",
+        "area": "Remessas",
+        "funcao": "Divergências",
+        "resultado": "Recebimento parcial e item faltante continuam pendentes; avaria não libera quarentena; anexos não atravessam remessas.",
+        "evidencia": [
+          "tests.ui62_workspace.test_journey::test_group_partial_receipt_and_missing_exception_remain_outstanding",
+          "tests.ui62_workspace.test_journey::test_damaged_placement_does_not_release_quarantine",
+          "tests.ui62_workspace.test_journey::test_attachment_hash_and_cross_manifest_isolation"
+        ],
+        "limite": "API e funções de interface em ambiente isolado; não representa fluxo completo em Chrome.",
+        "teste_navegador_por_funcao": false
+      },
+      {
+        "id": "OPS-15",
+        "area": "Falhas",
+        "funcao": "Revisar e encerrar",
+        "resultado": "Revisão é explícita; devolução exige nova resolução; encerrar não resolve automaticamente tarefas privadas vinculadas.",
+        "evidencia": [
+          "tests.fault_reports.test_faults::test_full_fault_lifecycle_preserves_operational_tables",
+          "tests.fault_reports.test_faults::test_review_return_requires_new_resolution_and_owner_only",
+          "tests.fault_reports.test_faults::test_same_person_review_explicit_not_independent"
+        ],
+        "limite": "API e funções de interface em ambiente isolado; não representa fluxo completo em Chrome.",
+        "teste_navegador_por_funcao": false
+      },
+      {
+        "id": "OPS-16",
+        "area": "Segurança",
+        "funcao": "Vincular tarefa / registro",
+        "resultado": "Vínculo não concede acesso ao objeto privado nem encerra a ocorrência; revogar acesso oculta os dados do objeto vinculado.",
+        "evidencia": [
+          "tests.qshe.test_qshe::test_private_task_links_never_grant_access_or_close_qshe",
+          "tests.qshe.test_qshe::test_asset_link_redacted_in_all_paths_after_source_revocation",
+          "tests.qshe.test_qshe::test_full_qshe_lifecycle_preserves_operational_tables"
+        ],
+        "limite": "API e funções de interface em ambiente isolado; não representa fluxo completo em Chrome.",
+        "teste_navegador_por_funcao": false
+      },
+      {
+        "id": "OPS-17",
+        "area": "DDS",
+        "funcao": "Participantes",
+        "resultado": "Mudar lista de participantes não assina por ninguém; ciência depende da identidade e ação pessoal.",
+        "evidencia": [
+          "tests.ui39_toolbox.test_briefing::test_ticks_answers_and_roster_change_without_any_automatic_sign"
+        ],
+        "limite": "API e funções de interface em ambiente isolado; não representa fluxo completo em Chrome.",
+        "teste_navegador_por_funcao": false
+      },
+      {
+        "id": "OPS-18",
+        "area": "DDS",
+        "funcao": "Ciência e assinaturas",
+        "resultado": "Ciência identifica pessoa e texto exato; corrigir documento já assinado exige motivo, conserva evidência anterior e invalida ciência da nova revisão.",
+        "evidencia": [
+          "tests.ui34_invites.test_invites::test_complete_group_flow_identity_exact_wording_and_atomic_sign",
+          "tests.ui34_invites.test_invites::test_retained_evidence_after_document_closure_and_restart",
+          "tests.ui39_toolbox.test_briefing::test_signed_correction_needs_reason_even_after_current_signatures_cleared"
+        ],
+        "limite": "API e funções de interface em ambiente isolado; não representa fluxo completo em Chrome.",
+        "teste_navegador_por_funcao": false
+      },
+      {
+        "id": "OPS-19",
+        "area": "DDS",
+        "funcao": "Relatório",
+        "resultado": "PDF usa evidência salva e identifica corretamente visitante autodeclarado, sem afirmar verificação de identidade inexistente.",
+        "evidencia": [
+          "tests.ui34_invites.test_invites::test_toolbox_pdf_truthfully_labels_self_declared_guest"
+        ],
+        "limite": "API e funções de interface em ambiente isolado; não representa fluxo completo em Chrome.",
+        "teste_navegador_por_funcao": false
+      },
+      {
+        "id": "OPS-20",
+        "area": "Administração",
+        "funcao": "Configuração da frota",
+        "resultado": "Criação/alteração de local e concessão de escopo pertencem ao administrador; atribuir papel logístico não cria acesso administrativo.",
+        "evidencia": [
+          "tests.test_ui128_ops_agent::test_fleet_books_issue_lifecycle_scope_and_revocation",
+          "tests.ui62_workspace.test_journey::test_nonadmins_cannot_create_sites_or_change_user_scope"
+        ],
+        "limite": "API e funções de interface em ambiente isolado; não representa fluxo completo em Chrome.",
+        "teste_navegador_por_funcao": false
+      }
+    ],
+    "integrated_matrix": "../docs/UI128_COVERAGE.json"
+  },
+  "final_focused_tests": {
+    "python": {
+      "passed": 40,
+      "failed": 0
+    },
+    "javascript": {
+      "passed_suites": 47,
+      "failed_suites": 0,
+      "syntax_files": 108,
+      "location_checks": 81
+    },
+    "nota": "Contagens da integração final informadas pelo coordenador. As baterias diagnósticas dos agentes têm sobreposição e não devem ser somadas a estes números."
+  },
+  "historical_cohort": {
+    "cases": 625,
+    "passed": 244,
+    "failed": 381,
+    "result": "NOT_GREEN",
+    "diagnosed_failed_cases": 381,
+    "unexplained_diagnostics": 0,
+    "diagnosis_is_not_pass": true,
+    "evidence": "ui128-triage-unresolved.json"
+  },
+  "runtime_replay": {
+    "path": "work/ui128-replay-final-r2",
+    "manifest_sha256": "760e140a1fc88da138b1295b14fcfddc1445b20642ebf43c26b0fc16ef494da8",
+    "resources": 2307,
+    "overlay_resources": 235,
+    "full_chain_reconstructed": true,
+    "reported_by": "coordenador"
+  },
+  "browser_local": {
+    "browser": "Chrome conectado",
+    "environment": "Servidor local isolado 8781, dados fictícios; sem mensagens a terceiros.",
+    "flows": [
+      {
+        "fluxo": "Administração: cancelar edição",
+        "resultado": "Sem alteração ou após restaurar os valores originais, cancelar preservou o filtro Ana, a pessoa selecionada e a sessão."
+      },
+      {
+        "fluxo": "Administração: alteração não salva",
+        "resultado": "O aviso apareceu; recusar o descarte manteve o texto alterado e a conta conectada."
+      },
+      {
+        "fluxo": "RH: Ver registro",
+        "resultado": "Fechar e Voltar do navegador preservaram a sessão no computador e com largura de 390 px."
+      },
+      {
+        "fluxo": "Calendário e escalas",
+        "resultado": "Calendário legível no celular, sem transbordamento horizontal no cenário verificado."
+      },
+      {
+        "fluxo": "Importação de inventário",
+        "resultado": "Planilha importada com 3 linhas após excluir Total; códigos PN com zeros à esquerda e números de série repetidos foram preservados."
+      },
+      {
+        "fluxo": "Etiquetas QR",
+        "resultado": "Mensagens em português e contagens de itens/páginas conferidas; geração não significa verificar ou movimentar estoque."
+      }
+    ]
+  },
+  "preservation": {
+    "active_production_records_modified": false,
+    "database_reset": false,
+    "service_recreated": false,
+    "temporary_user": "teste-rh-ui121-2",
+    "temporary_user_preserved": true,
+    "other_languages_preserved": true,
+    "third_party_messages_sent": false,
+    "nota": "Esta entrega de código não executou limpeza ou migração de dados. Dados, permissões, rascunhos, IDs, auditoria e marca Wavelink/AJ Offshore Solutions preservados."
+  },
+  "backup": {
+    "path": "/var/data/wavelink-release-backups/20261018T185445Z-before-ui128",
+    "method": "SQLite online backup API plus stable configuration copy",
+    "owner_uid": 10001,
+    "database_integrity": "ok",
+    "foreign_key_violations": 0,
+    "verified_archive": true,
+    "files": 7,
+    "database_sha256": "77e0a82aced0fbf410b1c3f8e35c2a0b5d525df6fd1f7b9eb84737c798341986",
+    "archive_sha256": "79ca22554c7367ebd5c05538f3fc28a5ba462e680f801c0e438ebc1a97b6b442",
+    "source_commit": "ebd92c43ec7c92431a1def49137e3ff1fe36bf2d",
+    "source_deployment": "dep-dbafrs67bikc73ejrdh0",
+    "active_records_modified": false,
+    "writers_stopped": false
+  },
+  "rollback": {
+    "code_commit": "ebd92c43ec7c92431a1def49137e3ff1fe36bf2d",
+    "deployment": "dep-dbafrs67bikc73ejrdh0",
+    "service_id": "srv-das4ujojo6nc73a7u53g",
+    "data_restore_automatic": false,
+    "instruction": "Para problema somente de código, reverter o deployment no mesmo serviço. Não restaurar dados automaticamente. Restauração de dados exige plano separado, validação do backup e processos escritores efetivamente parados."
+  },
+  "limitations": [
+    "A bateria histórica permanece com 381 falhas em 625 casos; todas têm diagnóstico, mas diagnóstico não transforma falha em aprovação.",
+    "O acesso automatizado autenticado à Corcovado continua bloqueado pelo navegador. Testes locais não comprovam comportamento em produção.",
+    "OCR de imagens/PDFs não foi aprovado no ambiente local, que não tem Tesseract disponível.",
+    "O instalador nativo Windows não foi construído nem executado. Seus arquivos de versão foram alinhados a 1.34.28 e as validações de entrada foram verificadas.",
+    "A migração específica a partir da UI96 não foi exercitada: falta a cópia histórica exigida pelo teste.",
+    "Casos de links simbólicos no Windows exigem privilégios que o ambiente local não tinha.",
+    "Não existe módulo de chamados de TI com fila/histórico; ele não foi criado nesta entrega.",
+    "Não existe aceite formal de atribuição de tarefa. Ler um alerta não significa assumir ou concluir a tarefa.",
+    "A limpeza de antigos registros de teste UI121 em produção permanece pendente. O usuário temporário teste-rh-ui121-2 foi preservado.",
+    "No Chrome foi confirmado recusar o descarte e manter a edição. Aceitar o descarte foi coberto pelos testes de componente, sem comprovação visual naquele diálogo nativo."
+  ],
+  "agent_evidence": [
+    "ui128-agent-rh.json",
+    "ui128-agent-docs.json",
+    "ui128-agent-ops.json"
+  ],
+  "scope_note": "Registros históricos abaixo do README e dentro de historical_delivery_checks mantêm seus estados da época; a seção UI128 é a referência atual.",
+  "diagnostic_snapshot_note": "Os relatórios dos agentes preservam evidências e limites do momento de execução. A versão final do instalador está alinhada a 1.34.28 sem executável compilado; o replay e as contagens finais deste documento substituem hashes anteriores citados nos diagnósticos. Nenhuma falha histórica é convertida em aprovação."
+}

@@ -1,0 +1,534 @@
+{
+  "phase": "UI128",
+  "base_commit": "ebd92c43ec7c92431a1def49137e3ff1fe36bf2d",
+  "source": "work/runtime-ui128",
+  "status": "Concluído e congelado: seis arquivos de aplicação, quatro arquivos nativos com versão alinhada, nove testes novos e21traduções integradas. Último ajuste de localização passou81verificações PT/EN; QR54 e estoque30 também passaram. Coordenador sela, publica e valida a integração.",
+  "functions": [
+    {
+      "number": 1,
+      "function": "Inventário — Etiquetas QR",
+      "test_sources": [
+        "tests/ui53_inventory/test_labels_categories.py",
+        "tests/test_ui128_docs_qr_locale.js"
+      ],
+      "result": "Localizadores não contêm credenciais; leitura de item continua autenticada e dependente das permissões.",
+      "validation": "Cobertura local por API/serviço e/ou funções reais de interface; não classificada como teste ponta a ponta em navegador.",
+      "existing_functionality": true,
+      "new_implementation": "Rótulos e mensagens das etiquetas passam pelo tradutor, mantendo permissões, seleção, contagem e geração.",
+      "coverage": {
+        "api_or_service": "Geração real de PDF nos layouts A4/70×40, links para os IDs esperados, 401 sem sessão, 403 sem exportação e banco inalterado.",
+        "interface_in_synthetic_dom": "Formulário real de seleção/previsão e geração de etiquetas com API simulada: contagens A4/individual, arquivados excluídos, seleção explícita e payload/nomes preservados; menu real com permissões de exportação.",
+        "browser_end_to_end_by_this_agent": false,
+        "limits": "Não inclui leitura do QR por câmera física nem impressão física."
+      }
+    },
+    {
+      "number": 2,
+      "function": "Inventário — Importar planilha",
+      "test_sources": [
+        "tests/test_inventory_import_ui103.py",
+        "tests/test_ui128_docs_import_language.py"
+      ],
+      "result": "Importação aditiva preserva itens existentes, escopo de tarefas e contagens; erro tardio desfaz todo o lote; repetição exata não duplica.",
+      "validation": "Cobertura local por API/serviço e/ou funções reais de interface; não classificada como teste ponta a ponta em navegador.",
+      "existing_functionality": true,
+      "new_implementation": "Nenhuma funcionalidade nova foi alegada; comportamento existente foi exercitado.",
+      "coverage": {
+        "api_or_service": "Adicionar lote a inventário existente, preservar itens/contagens/tarefas, desfazer erro tardio e repetir solicitação sem duplicar.",
+        "interface_in_synthetic_dom": "Helpers reais de mapeamento/seleção e formulário de idioma em DOM sintético.",
+        "browser_end_to_end_by_this_agent": false,
+        "limits": "Fluxo completo de escolher arquivo, revisar e salvar pelo Chrome não foi executado por este agente."
+      }
+    },
+    {
+      "number": 3,
+      "function": "Inventário — Conferir fontes",
+      "test_sources": [
+        "tests/test_inventory_source_review_ui108.py"
+      ],
+      "result": "Fonte/linhas originais mantidas; excluir linhas informativas salva somente itens selecionados; mudança exige nova conferência.",
+      "validation": "Cobertura local por API/serviço e/ou funções reais de interface; não classificada como teste ponta a ponta em navegador.",
+      "existing_functionality": true,
+      "new_implementation": "Nenhuma funcionalidade nova foi alegada; comportamento existente foi exercitado.",
+      "coverage": {
+        "api_or_service": "Excluir linhas informativas antes de salvar e preservar coordenadas e metadados da fonte.",
+        "interface_in_synthetic_dom": "Navegação da fonte e cabeçalhos conferida por helpers reais.",
+        "browser_end_to_end_by_this_agent": false,
+        "limits": "Qualidade visual e conferência humana do conteúdo original ficam com o coordenador."
+      }
+    },
+    {
+      "number": 4,
+      "function": "Inventário — Mapeamento e seleção de linhas",
+      "test_sources": [
+        "tests/test_document_row_selection_ui105.py",
+        "tests/test_inventory_mapping_restore_ui113.js",
+        "tests/test_inventory_source_headers_ui116.js"
+      ],
+      "result": "Mantém índices originais, zeros à esquerda, quantidade desconhecida distinta de zero e rascunho conferido.",
+      "validation": "Cobertura local por API/serviço e/ou funções reais de interface; não classificada como teste ponta a ponta em navegador.",
+      "existing_functionality": true,
+      "new_implementation": "Nenhuma funcionalidade nova foi alegada; comportamento existente foi exercitado.",
+      "coverage": {
+        "api_or_service": "Linhas escolhidas mantêm números originais; zero e desconhecido continuam distintos; seleção alterada não reutiliza recibo.",
+        "interface_in_synthetic_dom": "Eventos sintéticos de escolha/restauração de mapeamento, filtro e linhas.",
+        "browser_end_to_end_by_this_agent": false,
+        "limits": "Não representa exercício completo do formulário no navegador real."
+      }
+    },
+    {
+      "number": 5,
+      "function": "Inventário — Comparação de duplicados",
+      "test_sources": [
+        "tests/test_document_review_ui104.py",
+        "tests/test_inventory_overlap_ui115.js",
+        "tests/test_ui128_docs_overlap_scope.js"
+      ],
+      "result": "Duplicata por linha de origem já importada bloqueia gravação. Comparador visual consultivo agrupa SN/ativo somente entre abas distintas; título e ajuda deixam explícito que zero grupos não descarta repetições na mesma aba.",
+      "validation": "Cobertura local por API/serviço e/ou funções reais de interface; não classificada como teste ponta a ponta em navegador.",
+      "existing_functionality": true,
+      "new_implementation": "Correção de apresentação/comportamento descrita em production_changes.",
+      "coverage": {
+        "api_or_service": "Conflitos de fonte já importada bloqueiam lote; números de série iguais em linhas comprovadamente distintas não são deduplicados pelo servidor.",
+        "interface_in_synthetic_dom": "Comparador consultivo de SN/referência de ativo ENTRE abas, com preservação de linhas; novo teste reproduz SN repetido na mesma aba.",
+        "browser_end_to_end_by_this_agent": false,
+        "limits": "O comparador não detecta repetições dentro da mesma aba. Nenhuma união/exclusão automática foi implementada."
+      }
+    },
+    {
+      "number": 6,
+      "function": "Inventário — Estoque mínimo",
+      "test_sources": [
+        "tests/test_ui128_docs_low_stock.py",
+        "tests/test_ui128_docs_low_stock_locale.js"
+      ],
+      "result": "Limite 2: desconhecido permanece desconhecido; 0/1 alertam; 2/3 não. Configurar/desativar alerta não muda quantidade. Prefixos traduzidos preservam notas/nomes.",
+      "validation": "Cobertura local por API/serviço e/ou funções reais de interface; não classificada como teste ponta a ponta em navegador.",
+      "existing_functionality": true,
+      "new_implementation": "Correção de apresentação/comportamento descrita em production_changes.",
+      "coverage": {
+        "api_or_service": "Salvar perfil, alterar quantidade por operação normal, verificar estados desconhecido/baixo/normal, rejeitar limite negativo e desativar sem mudar item.",
+        "interface_in_synthetic_dom": "Formulário real executado em ambiente sintético PT/EN; nomes, notas, payload e contador preservados.",
+        "browser_end_to_end_by_this_agent": false,
+        "limits": "Sem conferência visual móvel desse formulário pelo agente."
+      }
+    },
+    {
+      "number": 7,
+      "function": "Editores — Rotinas de manutenção",
+      "test_sources": [
+        "tests/browser_templates/test_templates.py",
+        "tests/test_ui128_docs_temp_packages.py"
+      ],
+      "result": "Importar cria rascunho; publicar/reordenar/revisar mantém registros concluídos e ordens existentes ligados à revisão gravada.",
+      "validation": "Cobertura local por API/serviço e/ou funções reais de interface; não classificada como teste ponta a ponta em navegador.",
+      "existing_functionality": true,
+      "new_implementation": "Nenhuma funcionalidade nova foi alegada; comportamento existente foi exercitado.",
+      "coverage": {
+        "api_or_service": "Criar rascunho, publicar e revisar rotina; ordens e registros concluídos preservam revisão anterior; importação nativa verificada.",
+        "interface_in_synthetic_dom": "Regressões de cancelamento existentes executadas; nenhuma edição visual nova do designer.",
+        "browser_end_to_end_by_this_agent": false,
+        "limits": "Editor completo não foi usado pelo agente em navegador real."
+      }
+    },
+    {
+      "number": 8,
+      "function": "Editores — Estruturas de inventário",
+      "test_sources": [
+        "tests/ui45_review/test_builder_baseline.py::test_permissioned_non_admin_can_create_checklist_and_inventory_structure",
+        "tests/ui45_review/test_builder_baseline.py::test_toolbox_and_inventory_browser_imports_create_clean_structures",
+        "tests/ui45_review/test_builder_baseline.py::test_import_routes_reject_wrong_permission_bad_hub_and_readonly_review_receipt",
+        "tests/test_document_relationships_ui107.py"
+      ],
+      "result": "Cria estrutura vazia por usuário autorizado, importa estrutura separada, nega autorização/hub incorretos e mantém relações válidas; fluxos visuais não declarados concluídos.",
+      "validation": "Cobertura local por API/serviço e/ou funções reais de interface; não classificada como teste ponta a ponta em navegador.",
+      "existing_functionality": true,
+      "new_implementation": "Nenhuma funcionalidade nova foi alegada; comportamento existente foi exercitado.",
+      "coverage": {
+        "api_or_service": "Criação de estrutura por não administrador com permissão, importação de estrutura vazia e rejeição de permissão/hub incorretos.",
+        "interface_in_synthetic_dom": "Exercício adicional de relações em propostas de importação; não equivale a editor completo de estrutura.",
+        "browser_end_to_end_by_this_agent": false,
+        "limits": "Roteiro visual completo de criação e edição de locais ainda depende do coordenador."
+      }
+    },
+    {
+      "number": 9,
+      "function": "Editores — Importação avançada",
+      "test_sources": [
+        "tests/test_builder_log_ui101.py",
+        "tests/test_ui128_docs_temp_packages.py",
+        "tests/test_ui128_docs_import_language.js"
+      ],
+      "result": "Corrigido arquivo temporário reaberto no Windows; arquivos são removidos em sucesso/erro. Português inicial em pt-BR; idioma explícito preservado e cancelar troca mantém proposta. Ajuda .ajlogs contextual.",
+      "validation": "Cobertura local por API/serviço e/ou funções reais de interface; não classificada como teste ponta a ponta em navegador.",
+      "existing_functionality": true,
+      "new_implementation": "Correção de apresentação/comportamento descrita em production_changes.",
+      "coverage": {
+        "api_or_service": "Revisão e gravação idempotente de pacotes; parser reabre arquivo fechado; diretório temporário removido em sucesso/erro.",
+        "interface_in_synthetic_dom": "Idioma inicial, escolha explícita, cancelamento e ajuda contextual executados no formulário real com DOM sintético.",
+        "browser_end_to_end_by_this_agent": false,
+        "limits": "OCR PNG/PDF não validado por falta de Tesseract local; transferência integral .ajproject não é fornecida pelo importador web."
+      }
+    },
+    {
+      "number": 10,
+      "function": "Editores — Interpretação e mapeamento",
+      "test_sources": [
+        "tests/test_document_recognition_ui106.py",
+        "tests/test_document_interpretation_ui106.js"
+      ],
+      "result": "Rótulos portugueses e acentos preservados; coordenadas esparsas permanecem originais; evidência passiva não altera conteúdo conferido.",
+      "validation": "Cobertura local por API/serviço e/ou funções reais de interface; não classificada como teste ponta a ponta em navegador.",
+      "existing_functionality": true,
+      "new_implementation": "Nenhuma funcionalidade nova foi alegada; comportamento existente foi exercitado.",
+      "coverage": {
+        "api_or_service": "Reconhecimento de rótulos portugueses, coordenadas esparsas e separação de evidência passiva versus correção efetiva.",
+        "interface_in_synthetic_dom": "Mapeamento e painéis de interpretação executados com fontes fictícias e preservação dos trechos originais.",
+        "browser_end_to_end_by_this_agent": false,
+        "limits": "Não certifica todos os formatos ou digitalizações possíveis."
+      }
+    },
+    {
+      "number": 11,
+      "function": "Editores — Conferência de fontes",
+      "test_sources": [
+        "tests/test_inventory_review_boundary_ui111.py",
+        "tests/test_document_review_ui104.js"
+      ],
+      "result": "Navegar/inspecionar é somente leitura; assinatura da proposta inclui seleção original completa; alteração material exige conferência nova.",
+      "validation": "Cobertura local por API/serviço e/ou funções reais de interface; não classificada como teste ponta a ponta em navegador.",
+      "existing_functionality": true,
+      "new_implementation": "Nenhuma funcionalidade nova foi alegada; comportamento existente foi exercitado.",
+      "coverage": {
+        "api_or_service": "Assinatura exige proposta exata, seleção original completa e nova revisão após alteração material.",
+        "interface_in_synthetic_dom": "Inspecionar linhas/abas/grupos preserva revisão, confirmação e rascunho nos testes de eventos.",
+        "browser_end_to_end_by_this_agent": false,
+        "limits": "Conferência visual real segue separada."
+      }
+    },
+    {
+      "number": 12,
+      "function": "Originais — Baixar original",
+      "test_sources": [
+        "tests/ui61_originals/test_workflow.py",
+        "tests/test_ui127_documents_agent.js"
+      ],
+      "result": "Download/revisão preserva bytes exatos; acesso exige projeto e sessão corretos; voltar da visualização mantém contexto/conta.",
+      "validation": "Cobertura local por API/serviço e/ou funções reais de interface; não classificada como teste ponta a ponta em navegador.",
+      "existing_functionality": true,
+      "new_implementation": "Nenhuma funcionalidade nova foi alegada; comportamento existente foi exercitado.",
+      "coverage": {
+        "api_or_service": "Upload/revisão e download com bytes exatos; metadados/leitura com escopo; links para revisões originais.",
+        "interface_in_synthetic_dom": "Regressão de voltar/fechar/cancelar e navegação de biblioteca executada em DOM sintético.",
+        "browser_end_to_end_by_this_agent": false,
+        "limits": "Download pelo navegador real e anexos privados do perfil RH dependem da validação integrada; não foram ampliadas permissões."
+      }
+    },
+    {
+      "number": 13,
+      "function": "Registros — Pendências e acompanhamento",
+      "test_sources": [
+        "tests/ui49_logs/test_followup.py",
+        "tests/ui49_logs/test_retained_logs.py",
+        "tests/test_ui127_quality_agent_logs.js"
+      ],
+      "result": "Responsável limitado ao acompanhamento; motivo/histórico mantidos; permissão revogada bloqueia tentativa antiga; erro de auditoria desfaz estado/notificação/recibo.",
+      "validation": "Cobertura local por API/serviço e/ou funções reais de interface; não classificada como teste ponta a ponta em navegador.",
+      "existing_functionality": true,
+      "new_implementation": "Nenhuma funcionalidade nova foi alegada; comportamento existente foi exercitado.",
+      "coverage": {
+        "api_or_service": "Atribuir/acompanhar/resolver/reabrir, preservar observação/autor, exigir motivo, bloquear revogação e desfazer erro de auditoria.",
+        "interface_in_synthetic_dom": "Regressões dos fluxos de registros executadas em ambiente sintético.",
+        "browser_end_to_end_by_this_agent": false,
+        "limits": "Nenhum usuário ou registro da produção foi alterado pelo agente."
+      }
+    },
+    {
+      "number": 14,
+      "function": "Registros — Referência original",
+      "test_sources": [
+        "tests/ui49_logs/test_retained_logs.py::test_references_explicit_release_and_revocation",
+        "tests/ui61_originals/test_workflow.py"
+      ],
+      "result": "Liberação explícita e revogação respeitadas; links históricos conservam revisão; referência arquivada/adulterada não vira origem nova.",
+      "validation": "Cobertura local por API/serviço e/ou funções reais de interface; não classificada como teste ponta a ponta em navegador.",
+      "existing_functionality": true,
+      "new_implementation": "Nenhuma funcionalidade nova foi alegada; comportamento existente foi exercitado.",
+      "coverage": {
+        "api_or_service": "Liberação e revogação explícitas de referência; links históricos preservam revisão; novas referências inválidas são recusadas.",
+        "interface_in_synthetic_dom": "Regressões de navegação de documentos; nenhuma interface nova de vínculos foi criada.",
+        "browser_end_to_end_by_this_agent": false,
+        "limits": "Percurso item→pasta→perfil no navegador integrado pertence ao coordenador/RH."
+      }
+    },
+    {
+      "number": 15,
+      "function": "Admin — Editor de livros",
+      "test_sources": [
+        "tests/browser_logs/test_designer.py"
+      ],
+      "result": "Cria somente estrutura vazia; IDs, unidades e ordem preservados; consulta não revela histórico; pacote exportado pode ser reimportado.",
+      "validation": "Cobertura local por API/serviço e/ou funções reais de interface; não classificada como teste ponta a ponta em navegador.",
+      "existing_functionality": true,
+      "new_implementation": "Nenhuma funcionalidade nova foi alegada; comportamento existente foi exercitado.",
+      "coverage": {
+        "api_or_service": "Criar livro vazio com definições, repetir sem duplicar, preservar IDs/unidades/ordem e exportar/reimportar pacote nativo.",
+        "interface_in_synthetic_dom": null,
+        "browser_end_to_end_by_this_agent": false,
+        "limits": "Arrastar/reordenar e preencher editor real no Chrome não executados por este agente."
+      }
+    },
+    {
+      "number": 16,
+      "function": "Admin — Gestão de registros",
+      "test_sources": [
+        "tests/record_management/test_records.py",
+        "tests/record_management/test_safety.py"
+      ],
+      "result": "Arquivo/restauração preserva respostas/bytes; encerrado não é desbloqueado; filtro/busca não escreve; relatório privado permanece restrito ao autor mesmo para admin.",
+      "validation": "Cobertura local por API/serviço e/ou funções reais de interface; não classificada como teste ponta a ponta em navegador.",
+      "existing_functionality": true,
+      "new_implementation": "Nenhuma funcionalidade nova foi alegada; comportamento existente foi exercitado.",
+      "coverage": {
+        "api_or_service": "Arquivar/restaurar sem apagar respostas/bytes, manter registro finalizado bloqueado, busca sem escrita e privacidade de passagem de serviço.",
+        "interface_in_synthetic_dom": null,
+        "browser_end_to_end_by_this_agent": false,
+        "limits": "Não cobre exclusão de dados de produção; interface administrativa real depende da conferência do coordenador."
+      }
+    },
+    {
+      "number": 17,
+      "function": "Admin — Importações e exemplos",
+      "test_sources": [
+        "tests/record_management/test_imports.py",
+        "tests/test_builder_log_ui101.py",
+        "tests/test_ui128_docs_import_centre_boundary.js"
+      ],
+      "result": "Página orientativa de oito caminhos e limites de importação; acesso administrativo e links corretos testados. Não é um importador de projetos completos nem gerador de exemplos.",
+      "validation": "Cobertura local por API/serviço e/ou funções reais de interface; não classificada como teste ponta a ponta em navegador.",
+      "existing_functionality": true,
+      "new_implementation": "Nenhuma funcionalidade nova foi alegada; comportamento existente foi exercitado.",
+      "coverage": {
+        "api_or_service": "Importação de rotina e validações de pacote/OOXML testadas separadamente; a página de orientação não faz essas importações sozinha.",
+        "interface_in_synthetic_dom": "Página real executada: oito orientações, link ao editor e guia, bloqueio sem admin/para vessel_only, sessão imutável e ausência de API/escrita.",
+        "browser_end_to_end_by_this_agent": false,
+        "limits": "É uma página informativa. Não implementa criação automática de exemplos nem restauração de workspace completo no navegador."
+      }
+    },
+    {
+      "number": 18,
+      "function": "Admin — Identidade de relatórios",
+      "test_sources": [
+        "tests/company_branding/test_branding.py"
+      ],
+      "result": "Somente admin altera identidade; prévia/importação são somente leitura; PDF mantém snapshot e empresa gravada; fluxo da tarefa inalterado.",
+      "validation": "Cobertura local por API/serviço e/ou funções reais de interface; não classificada como teste ponta a ponta em navegador.",
+      "existing_functionality": true,
+      "new_implementation": "Nenhuma funcionalidade nova foi alegada; comportamento existente foi exercitado.",
+      "coverage": {
+        "api_or_service": "Alterar perfil com auditoria/repetição/conflito, negar não admin, prévia somente leitura e PDF preservando snapshot/empresa gravada.",
+        "interface_in_synthetic_dom": null,
+        "browser_end_to_end_by_this_agent": false,
+        "limits": "Aparência do PDF e percurso completo do editor de identidade precisam de inspeção visual integrada."
+      }
+    }
+  ],
+  "production_changes": [
+    {
+      "file": "app/builder_hub.py",
+      "change": "Dois trechos de parser: fechar arquivo temporário antes de reabertura pelo parser e remover diretório em sucesso/erro; sem alterar limites, validações ou política de extração."
+    },
+    {
+      "file": "app/static/assets.js",
+      "change": "Sete rótulos dinâmicos passam pelo tradutor; nomes, notas, IDs, limites, quantidade e payload preservados. Lista de alertas também traduz somente os dois estados internos de localização."
+    },
+    {
+      "file": "app/static/setup_builders.js",
+      "change": "Português inicial somente em pt-BR, preservação de idioma explícito e proposta ao cancelar troca; ajuda de .ajlogs progressiva conforme arquivo selecionado."
+    },
+    {
+      "file": "app/static/document_import.js",
+      "change": "Explicitar no título, ajuda e estado vazio que contagem de SN/ativo repetidos compara somente abas diferentes. Nenhuma linha é unida, removida ou alterada."
+    },
+    {
+      "file": "app/static/fieldwork.js",
+      "change": "Somente três rótulos do menu Mais ferramentas passam pelo tradutor. IDs, permissões e handlers preservados. Localização: traduz apenas os estados internos Unassigned/In use na tabela, detalhe, inspector, filtro e prévia; valores armazenados/enviados e locais personalizados preservados."
+    },
+    {
+      "file": "app/static/verification.js",
+      "change": "Somente rótulo de linhas selecionadas e contagem etiquetas/páginas passam pelo template traduzível; três mensagens estáticas recebem tradução. Seleção, contagem, geração e permissões não alteradas."
+    },
+    {
+      "file": "installer/native/launch.ps1.in",
+      "change": "Somente referências de versão1.34.19 substituídas por1.34.28. Sem alteração de lógica de instalação, compilação ou execução de instalador."
+    },
+    {
+      "file": "installer/native/build_setup.py",
+      "change": "Somente referências de versão1.34.19 substituídas por1.34.28. Sem alteração de lógica de instalação, compilação ou execução de instalador."
+    },
+    {
+      "file": "installer/native/setup.manifest",
+      "change": "Somente referências de versão1.34.19 substituídas por1.34.28. Sem alteração de lógica de instalação, compilação ou execução de instalador."
+    },
+    {
+      "file": "installer/native/README.md",
+      "change": "Somente referências de versão1.34.19 substituídas por1.34.28. Sem alteração de lógica de instalação, compilação ou execução de instalador."
+    }
+  ],
+  "test_files_added": [
+    "tests/test_ui128_docs_temp_packages.py",
+    "tests/test_ui128_docs_low_stock.py",
+    "tests/test_ui128_docs_low_stock_locale.js",
+    "tests/test_ui128_docs_import_language.js",
+    "tests/test_ui128_docs_import_language.py",
+    "tests/test_ui128_docs_overlap_scope.js",
+    "tests/test_ui128_docs_import_centre_boundary.js",
+    "tests/test_ui128_docs_qr_locale.js",
+    "tests/test_ui128_docs_location_locale.js"
+  ],
+  "translations": "work/ui128-docs-translations.json",
+  "test_runs": [
+    {
+      "name": "Principal: 62 seletores parametrizados",
+      "passed": 106,
+      "failed": 0,
+      "seconds": 601.32,
+      "evidence": "work/ui128-docs-tests/pytest.xml"
+    },
+    {
+      "name": "Pacotes nativos + arquivo fechado/limpeza",
+      "passed": 54,
+      "failed": 0,
+      "seconds": 137.92,
+      "evidence": "work/ui128-docs-package-tests/pytest.xml"
+    },
+    {
+      "name": "Estoque mínimo, CommonJS compartilhado e OCR real",
+      "passed": 2,
+      "failed": 2,
+      "seconds": 27.67,
+      "evidence": "work/ui128-docs-extra-tests/pytest.xml",
+      "failures": "Somente OCR real PNG/PDF sem Tesseract local; serviço recusa extração com 422."
+    },
+    {
+      "name": "Idioma na API",
+      "passed": 4,
+      "failed": 0,
+      "seconds": 27.64,
+      "evidence": "work/ui128-docs-language-tests/pytest.xml"
+    },
+    {
+      "name": "22 suítes JavaScript existentes",
+      "passed_suites": 22,
+      "failed_suites": 0,
+      "evidence": "work/ui128-docs-js-results.json"
+    },
+    {
+      "name": "Novos testes JavaScript + regressões após ajustes",
+      "passed_suites": 5,
+      "failed_suites": 0,
+      "new_checks": 93,
+      "evidence": "work/ui128-docs-new-js-results.json",
+      "note": "3 suítes existentes repetidas; 2 suítes novas. Total único JavaScript: 24 suítes."
+    },
+    {
+      "name": "Estruturas de inventário: criação/importação/permissões",
+      "passed": 3,
+      "failed": 0,
+      "seconds": 22.52,
+      "evidence": "work/ui128-docs-boundary-tests/pytest.xml"
+    },
+    {
+      "name": "Esclarecimento de comparação entre abas e página de orientação",
+      "passed_suites": 2,
+      "failed_suites": 0,
+      "checks": 50,
+      "evidence": [
+        "work/ui128-docs-overlap-scope-result.json",
+        "work/ui128-docs-scope-audit-js-results.json"
+      ],
+      "note": "O teste de comparação PT/EN usa locale_pt_br.js e i18n_pt_br.js reais, após integração das 3 traduções pelo coordenador. Quatro suítes anteriores também reexecutadas sem falhas."
+    },
+    {
+      "name": "Etiquetas QR e menu de inventário em PT/EN com dicionário real",
+      "passed_suites": 1,
+      "failed_suites": 0,
+      "checks": 54,
+      "evidence": "work/ui128-docs-qr-locale-result.json",
+      "note": "Contagens, seleção, arquivados, nomes, payload e permissões preservados."
+    },
+    {
+      "name": "Localização interna PT/EN e regressões QR/estoque",
+      "checks": 81,
+      "passed_suites": 3,
+      "failed_suites": 0,
+      "evidence": "work/ui128-docs-location-result.json",
+      "note": "Uma suíte nova; QR54 e estoque30 repetidas."
+    }
+  ],
+  "failure_triage": {
+    "total_assigned_historical_failures": 55,
+    "evidence": "work/ui128-docs-failure-triage.json",
+    "categories": {
+      "test_harness_collection": 2,
+      "shared_product_defect_fixed_by_coordinator": 1,
+      "environment_dependency_unavailable": 2,
+      "obsolete_release_baseline_contract": 24,
+      "release_artifact_requires_final_revalidation": 3,
+      "obsolete_help_contract": 3,
+      "product_defect_fixed": 18,
+      "obsolete_css_contract": 2
+    }
+  },
+  "fixtures": {
+    "directory": "work/ui128-browser-fixtures",
+    "files": [
+      "inventario-ficticio-ui128.xlsx",
+      "rotina-ficticia-ui128.ajcheck",
+      "livro-ficticio-ui128.ajlogs"
+    ],
+    "verification": "Pacotes .ajcheck/.ajlogs abertos pelo parser real; manifest.json contém bytes/SHA256. Todos fictícios."
+  },
+  "preservation": [
+    "Nenhum acesso a produção, banco ativo ou envio de mensagens.",
+    "Fonte original, permissões, nomes/contatos, IDs, rascunhos e dados da empresa não alterados.",
+    "Regressões UI127: 127 verificações de navegação/cancelamento/documentos e 59 de seletores de pessoas passaram.",
+    "Nenhum contato WhatsApp/Teams foi inventado; cadastro/atalho não existente continua fora do escopo."
+  ],
+  "remaining": [
+    "Coordenador selar hashes/manifest/precache da versão final; dicionário integrado e comparação PT/EN validada.",
+    "Coordenador validar visualmente o mesmo código no Chrome e a versão publicada.",
+    "OCR real depende de Tesseract e idiomas instalados no servidor; PNG/PDF não aprovados neste ambiente local.",
+    "Visibilidade de anexos privados pelo perfil de RH é responsabilidade da suíte integrada de RH; não estender permissões da biblioteca de originais."
+  ],
+  "summary": {
+    "python_passed": 169,
+    "python_failed": 2,
+    "failed_reason": "OCR real PNG/PDF sem Tesseract local",
+    "unique_javascript_suites_passed": 28
+  },
+  "scope_audit": "As 18 funções têm evidência específica, com API/serviço e interface sintética identificados individualmente. Nenhuma é declarada ponta a ponta em Chrome por este agente. Importações e exemplos é orientação, e comparação de identificadores só considera abas diferentes.",
+  "external_browser_evidence": {
+    "source": "Mensagem do coordenador após sua própria inspeção no Chrome local 8780",
+    "reported": "Importou 3 itens excluindo Total, preservou números de série repetidos e códigos 00021/00022; abriu inventário salvo.",
+    "not_yet_reported": "Persistência após recarregar, celular e QR ainda estavam pendentes nessa mensagem."
+  },
+  "independent_review": {
+    "service_worker": "work/ui128-docs-sw-independent-review.json",
+    "found_real_defects": 0,
+    "checks_passed": 201,
+    "locales": [
+      "pt-BR",
+      "en",
+      "default"
+    ],
+    "release_requirement": "Selar CACHE e hashes da versão final."
+  },
+  "additional_diagnostics": {
+    "cohort": "work/ui128-cohort-triage-docs.json",
+    "commonjs_retest": "work/ui128-docs-ui45-retest/pytest.xml",
+    "native_probe": "work/ui128-docs-native-probe.json",
+    "native_checks_passed": 7,
+    "native_limits": "Nenhum instalador compilado/executado; teste histórico tem OriginalFilename antigo e ícones PWA ainda dependem do selo final."
+  }
+}

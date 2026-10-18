@@ -1,3 +1,27 @@
+# UI128 — Revisão integrada de RH, Documentos e Operações
+
+Wavelink **1.34.28**, preparado sobre `ebd92c43ec7c92431a1def49137e3ff1fe36bf2d`. Integra correções de navegação e cancelamento, permissões e mensagens em português, importações, inventário, etiquetas QR e evidências de manutenção. Preserva dados, usuários, permissões, rascunhos, identificadores, idiomas e o serviço existente. O usuário temporário `teste-rh-ui121-2` permanece.
+
+**Preparado, integrado e testado localmente; publicação ainda será registrada pelo coordenador.** O acesso automatizado autenticado à Corcovado continua bloqueado pelo navegador. Esta entrega não afirma validação funcional completa em produção.
+
+- [Guia integrado, capturas antes/depois e limites](docs/UI128_GUIA.html)
+- [Validação e cobertura individual das 54 funções](validation/ui128-validation.json)
+- [Matriz integrada das 54 funções](docs/UI128_COVERAGE.json)
+- [Diagnóstico das falhas históricas](validation/ui128-triage-unresolved.json)
+- [Backup verificado](validation/ui128-backup-verificado.json)
+
+Foram revisadas **54 funções: 16 de RH/acessos/ajuda, 18 de Documentos/Inventário e 20 de Operações**. Há evidência individual por API/serviço e interface; isso não equivale a 54 testes completos no Chrome. A integração final informa **40 testes Python focados, 47 suítes JavaScript e 108 arquivos com sintaxe conferida**. A bateria histórica permanece **não verde: 244 aprovados e 381 falhas em 625 casos**, todos diagnosticados; classificar uma falha não a transforma em aprovação.
+
+No Chrome local, foram conferidos cancelamento com contexto e filtro preservados, recusa de descarte, Fechar/Voltar em registro de RH no computador e celular, calendário móvel, importação de 3 linhas mantendo códigos com zeros e números de série repetidos, e etiquetas QR em português. Nenhuma mensagem foi enviada a terceiros e nenhum registro ativo de produção foi alterado.
+
+Limites: OCR local sem Tesseract; instalador Windows não construído; cópia histórica UI96 ausente; restrições de links simbólicos do Windows; ausência de módulo de chamados de TI e de aceite formal de atribuição; limpeza antiga de registros UI121 ainda pendente.
+
+Reconstrução completa em pasta nova: `python deploy/materialize_runtime.py ./runtime-ui128`. Foram conferidos **2.306 recursos e 232 arquivos de alterações**, com SHA-256 do manifesto `d3e7980928e38b6d3837035865c8468d67e9c0c777e30eb1fcf0d5d942080115`. Não importar dados fictícios de teste em produção. Para problema somente de código, reverter o deployment no mesmo serviço; restauração de dados exige procedimento separado.
+
+As entregas abaixo são históricas e preservam o estado registrado na época. A seção UI128 e seus relatórios indicam o estado atual desta preparação.
+
+---
+
 # UI127 — Auditoria de RH e Operações
 
 Wavelink **1.34.27**, sobre `736c9c9c82e9b0a0f93f41d59d063c1ade13da27`. Corrige viagens e foco no calendário, navegação, listas de verificação, originais, inventário e validação em português. A revisão integrada corrige Fechar/Voltar/Cancelar sem encerrar a sessão, preserva rascunhos e filtros, melhora originais, seletores de pessoas, DDS e contato de suporte. Preserva registros, permissões, idiomas e usuário temporário.

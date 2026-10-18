@@ -1,0 +1,172 @@
+{
+  "agent": "rh_revisao",
+  "phase": "UI128",
+  "source": "work/runtime-ui128",
+  "status": "sources_frozen_for_coordinator_integration",
+  "production_touched": false,
+  "email_or_third_party_messages_sent": false,
+  "backend_or_schema_changed": false,
+  "temporary_production_account": "preserved; no production access by this agent",
+  "source_files_changed": [
+    "app/static/browser_admin.js",
+    "app/static/account_security_ui83.js",
+    "app/static/membership_workspace.js",
+    "app/static/membership_entry.js",
+    "app/static/password_recovery.js",
+    "app/static/help_workspace.js",
+    "app/static/install.js",
+    "app/static/help.html",
+    "app/static/pt-BR/help.html",
+    "app/static/pt-BR/install.html",
+    "app/static/help_topics/companybranding.html",
+    "app/static/pt-BR/help_topics/companybranding.html",
+    "app/static/help_topics/users.html",
+    "app/static/pt-BR/help_topics/users.html",
+    "app/static/help_catalogue.json",
+    "app/static/pt-BR/help_catalogue.json",
+    "app/static/help_topics/certificates.html",
+    "app/static/pt-BR/help_topics/certificates.html"
+  ],
+  "shared_translations": "work/ui128-rh-translations.json integrated by coordinator into locale_pt_br.js; tests use final dictionary without external fallback",
+  "tests_added": [
+    "tests/test_ui128_rh_agent_ui.cjs",
+    "tests/test_ui128_rh_agent_entry_help.cjs",
+    "tests/test_ui128_rh_agent_workspace_help.cjs",
+    "tests/test_ui128_rh_agent_membership.cjs",
+    "tests/test_ui128_rh_agent_install.cjs"
+  ],
+  "validation": {
+    "node": {
+      "passed_scenarios": 54,
+      "failed": 0,
+      "evidence": "work/ui128-rh-node-results.txt",
+      "method": "actual shipped functions executed in Node VM with isolated DOM/transaction/API adapters; not a substitute for browser or PWA device testing"
+    },
+    "javascript_syntax": "7 changed JavaScript files compiled successfully with vm.Script",
+    "python": {
+      "unique_cases": 223,
+      "passed": 221,
+      "failed_historical_contract": 1,
+      "skipped_missing_historical_fixture": 1,
+      "evidence": [
+        "work/ui128-rh-agent-tests-original221.xml",
+        "work/ui128-rh-agent-tests-utf8.xml",
+        "work/ui128-rh-agent-tests.xml",
+        "work/ui128-rh-agent-help24.xml"
+      ],
+      "method": "real hosted C01 APIs and temporary SQLite fixtures; fake email transports; fresh isolated directories"
+    },
+    "python_harness": "TestClient loopback required approved escalated shell because Windows sandbox blocks asyncio socketpair. platform.node override avoids WMI. Reruns use Python -X utf8 because cp1252 read_text failed on valid UTF-8 sources.",
+    "help_outline": "All 77 English and 77 Portuguese topic pages checked: every outline title matches its section ID/title after repairs. Existing catalogue/outline contract and current Help suite:24 passed. Certificate articles also regained common help-article styling; extra existing catalogue contract passed.",
+    "browser_evidence_received_from_coordinator": [
+      "Cancel unchanged in Admin preserves Ana search filter, selected person and current session; Edit reopens.",
+      "Cancel changed shows native warning; user clicked Cancel and altered text plus session remained.",
+      "Discard changed using the native dialog was not visually confirmed. Accept/reject paths are covered in VM; do not report browser acceptance of discard."
+    ],
+    "historical_failure": "tests/ui83_account_security/test_account_security.py::test_ui83_static_contract_is_single_owned expects the frozen cache name1.34.19-ui83; current cache is newer. Security behavior tests pass; source was not downgraded.",
+    "historical_skip": "tests/test_password_recovery_ui97.py::test_actual_ui96_startup_upgrade_preserves_existing_accounts_and_mfa requires the exact UI96 runtime in WAVELINK_UI96_TEST_SOURCE; that fixture was not available. Current password reset/MFA/account preservation checks passed."
+  },
+  "functions": [
+    {
+      "name": "Início: troca de empresa",
+      "result": "validated locally; unchanged",
+      "evidence": "workspace_help.cjs executes switchProjectWorkspace with actual function and isolated transaction adapter: fresh and existing target workspace; previous queue/form draft preserved; target queue remains separate; both cached auth cleared only on explicit switch; stale lease and wrong saved hub reject without mutation.",
+      "limit": "No production company switch; browser IndexedDB failure/device behavior requires coordinator validation."
+    },
+    {
+      "name": "Perfil: conta e acesso",
+      "result": "security dialogs corrected and locally validated",
+      "changes": "Cancel/close use formnovalidate; active requests block closure; focus returns to opener; delayed disconnected dialogs cannot open sensitive followups; dates follow deployment locale.",
+      "evidence": "13 admin/MFA VM scenarios plus account security API suite: MFA attempts/expiry/recovery one-use/session ownership/revocation and partial-schema protection pass.",
+      "limit": "Actual authenticator enrollment and credential changes deliberately not performed on production."
+    },
+    {
+      "name": "RH: necessidades e cobertura",
+      "result": "validated through real isolated HTTP; no backend change",
+      "evidence": "test_hr_ui120 coverage requires a saved staffing need, confirmed linked people and deduplication; invalid links and permission limits rejected. Calendar planned periods do not create timesheets; missing assignments do not assert availability."
+    },
+    {
+      "name": "Acessos: pendentes",
+      "result": "validated through isolated HTTP and current UI handlers",
+      "evidence": "Membership tests show pending users remain disabled/status-only, no normal token, no role-default bypass; reviewer home queue is personal to permitted scope. No new access emails sent."
+    },
+    {
+      "name": "Acessos: revisão de solicitação",
+      "result": "corrected and validated",
+      "changes": "Explicit Cancel editing, one modal-close owner, session/route recheck before and after confirmation; compare current control values/checkboxes against initial snapshot so restoring fields removes warning.",
+      "evidence": "7 form-handler scenarios: clean close, reject/accept discard, restored field, changed permission value, account change, busy request and uncertain receipt. Membership API tests cover self/admin escalation, stale/concurrent approval and rollback."
+    },
+    {
+      "name": "Acessos: entrada por convite",
+      "result": "dynamic Portuguese wording corrected and validated",
+      "changes": "Headings, verification notices, approval labels and retry states translated at authored boundaries; names/emails/role names remain exact. Exit labelled Sair da consulta de acesso and only ends isolated status session.",
+      "evidence": "Entry VM verifies proof fragment removed from address, translated headings/notices, exact user content, current status and logout only through membership-entry endpoints with credentials omitted. Backend tests cover wrong mailbox/company, expiry, rates, replays, concurrency and no implicit activation."
+    },
+    {
+      "name": "Acessos: recuperação de senha",
+      "result": "dynamic error/success text corrected and validated",
+      "changes": "Recovery API messages pass through authored translator; missing page titles added to final dictionary.",
+      "evidence": "VM validates min8 fields, password mismatch without request, invalid/expired code message, retry/success and separate sign-in. Real isolated reset tests confirm session revocation, identity/permissions/MFA retention, generic unknown-account response, rate/attempt limits, idempotency and fake mail only."
+    },
+    {
+      "name": "Administração: usuários",
+      "result": "corrected and validated",
+      "changes": "Search/state filters survive refresh and cancel; form cancellation warns on actual differences, including checkbox changes, not just input events.",
+      "evidence": "VM retains query Ana, active filter and auth token; existing HTTP tests cover named-admin/exact-company boundaries, create and replay, sensitive validation and atomic rollback."
+    },
+    {
+      "name": "Administração: detalhe da conta",
+      "result": "corrected and validated",
+      "changes": "Cancel editing returns to selected detail instead of empty selection; session stays connected. Uncertain save warning preserves exact retry and stale-account close is refused.",
+      "evidence": "VM clean/modified/uncertain/busy/stale-account paths; backend account edit preserves memberships, revisions detect native edits and admin self-disable/demotion/reset are rejected."
+    },
+    {
+      "name": "Administração: departamentos",
+      "result": "validated; shares corrected form behavior",
+      "evidence": "Real HTTP test_department_members_heads_rename_alias_active_history passes: rename preserves prior references/history, active-state rules respected. Admin cancel/filter behavior applies to department view."
+    },
+    {
+      "name": "Administração: membros e responsáveis",
+      "result": "validated; permission semantics unchanged",
+      "evidence": "Head must be enabled member; stale department changes rejected. Membership tests verify department removal/readd cannot revive grants, independent admin grants persist, scoped delegation cannot self-escalate; checkbox fingerprint catches actual access changes."
+    },
+    {
+      "name": "Ajuda contextual",
+      "result": "validated without operational writes",
+      "evidence": "Actual help_links functions recognize only same-origin Help/install routes, reject external/javascript/ordinary hashes, open with _blank and noopener noreferrer, and leave originating draft/session unchanged in isolated adapter."
+    },
+    {
+      "name": "Ajuda: tópicos",
+      "result": "corrected and validated",
+      "changes": "Portuguese index descriptions/entry points and count77; remove misleading historical runtime footer. Search counts/states localized. Align branding heading/catalogue; users section links restored (8 EN and12 PT) while retaining all8 older bookmark IDs.",
+      "evidence": "Help VM covers accent-insensitive search, full text, group filter/clear, duplicate catalogue rejection and EN/PT selection;154 outlines checked and24 existing tests pass."
+    },
+    {
+      "name": "Ajuda: instalação",
+      "result": "corrected and locally validated",
+      "changes": "Remove fixed version1.34.19 and incorrect shared-PC claim; Portuguese static/dynamic guidance; close restores keyboard focus; preserve actual browser installation choice and manual fallback.",
+      "evidence": "7 VM scenarios on real installer and final dictionary: secure/manual context, HTTP limitation, offered prompt and dismissal, already-installed state, close/focus and English deployment. No actual device installation performed."
+    },
+    {
+      "name": "Ajuda: falhas de acesso",
+      "result": "validated locally",
+      "evidence": "Isolated API suites reject wrong company, denied/revoked session, pending account, invalid invitation and reset attempts. User-facing entry/recovery errors translated; current support guide instructs preserving local work and avoiding site-data deletion.",
+      "limit": "No deliberate production lockout or real mail failure induced."
+    },
+    {
+      "name": "Ajuda: estados de conexão",
+      "result": "corrected and validated locally",
+      "changes": "Help search explains title-only mode and retry; recreate aborted controller after pagehide so retry after browser restoration can load full text.",
+      "evidence": "VM verifies failed fetch, title fallback, retry with fresh signal and repeat pagehide. Admin/membership uncertain-outcome tests preserve operation identity. Service-worker network fallbacks remain coordinator-owned and were reported for locale-aware correction.",
+      "limit": "Actual mobile offline/PWA conditions are not proved by DOM adapters."
+    }
+  ],
+  "remaining_for_coordinator": [
+    "Integrate final owned files and locale map, recalculate all changed asset/cache URLs including Help catalogues and public HTML.",
+    "Run integrated final snapshot checks and browser flows; publication/Render/commit-served validation belongs to coordinator.",
+    "Keep distinction between parent-confirmed browser cancellation refusal and VM-only acceptance of discard.",
+    "Full 77-topic procedure-library/native/PDF factual revision is not claimed by this patch; current Help index preserves that documented limitation."
+  ],
+  "pending_source_edits": [],
+  "cohort_triage": "work/ui128-cohort-triage-rh.json"
+}
