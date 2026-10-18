@@ -1,3 +1,20 @@
+# UI124 — Aparência unificada de RH e Operações
+
+Wavelink **1.34.24**, sobre a UI123 `85d79a84b1c9c3393a2a1f8bae720af704dbfa76`.
+Reorganiza navegação, cabeçalho, cartões, tabelas, perfis e formulário do colaborador; corrige alternância móvel e foco; amplia rótulos em português sem traduzir dados dos usuários.
+
+- [Guia visual e comparações reais antes/depois](docs/UI124_GUIA_VISUAL.html)
+- [Validação local e limites](validation/ui124-validation.json)
+- [Proveniência dos recursos](docs/UI124_SOURCE_PROVENANCE.json)
+
+73 verificações automatizadas aprovadas; jornadas locais no Chrome com quatro perfis e dados fictícios. Os testes locais não comprovam a interface de produção, que permanece bloqueada pela ferramenta do navegador. Publicação é registrada separadamente.
+
+Reconstrução completa: `python deploy/materialize_runtime.py ./runtime-ui124` (diretório novo).
+Não copiar dados de teste para produção. Mesmas permissões, dados, idiomas e marca preservados.
+Os documentos abaixo são entregas históricas e mantêm seus estados originais.
+
+---
+
 # UI123 — Navegação, escalas e acompanhamento do trabalho
 
 Wavelink **1.34.23**, preparado sobre o commit UI122 `28e0dcff4e79c5720aaa322d4bf70170f6ce9653`. Melhora a consulta de equipes, o retorno ao calendário e aos registros, o envio de solicitações e o uso no celular. Preserva dados, permissões, anexos, rascunhos, identidade e idiomas configurados.
