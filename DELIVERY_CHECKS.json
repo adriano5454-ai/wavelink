@@ -1,112 +1,225 @@
 {
-  "release": "UI127",
-  "version": "1.34.27",
-  "base_commit": "736c9c9c82e9b0a0f93f41d59d063c1ade13da27",
+  "release": "UI128",
+  "version": "1.34.28",
+  "base_commit": "ebd92c43ec7c92431a1def49137e3ff1fe36bf2d",
+  "status": "preparado_integrado_testado_localmente",
   "runtime": {
-    "manifest_sha256": "6a8028af00822df91337dd385a6990128acce1a09ab7c81829600f4fcfab41bb",
-    "resources": 2288,
-    "overlay_resources": 81,
+    "path": "work/ui128-replay-final-r2",
+    "manifest_sha256": "760e140a1fc88da138b1295b14fcfddc1445b20642ebf43c26b0fc16ef494da8",
+    "resources": 2307,
+    "overlay_resources": 235,
     "full_chain_reconstructed": true,
-    "reconstruction_note": "Cadeia completa reconstruída em pasta nova; todos os 2.288 recursos conferidos por SHA-256 sem divergências."
-  },
-  "javascript": {
-    "standalone_suites": 34,
-    "passed_suites": 34,
-    "new_audit_assertions": 163,
-    "agent_assertions": 349,
-    "syntax_files": 108,
-    "failures": 0,
-    "results": "validation/ui127-r3-final-tests.json"
+    "reported_by": "coordenador"
   },
   "focused_python": {
-    "passed": 9,
-    "warnings": 5,
-    "notes": "Seven report tests and two release integrity checks. Windows WMI fault during JUnit hostname lookup avoided by platform.node override in test harness only; application unmodified."
+    "passed": 40,
+    "failed": 0,
+    "evidence": "validation/ui128-r2-tests.xml",
+    "runtime_manifest_sha256": "760e140a1fc88da138b1295b14fcfddc1445b20642ebf43c26b0fc16ef494da8"
+  },
+  "javascript": {
+    "passed_suites": 47,
+    "failed_suites": 0,
+    "syntax_files": 108,
+    "location_checks": 81,
+    "evidence": "validation/ui128-r2-js-tests.json"
   },
   "historical_python": {
-    "cases": 4121,
-    "passed": 3586,
-    "failures": 426,
-    "errors": 85,
-    "skipped": 24,
+    "cases": 625,
+    "passed": 244,
+    "failed": 381,
     "result": "NOT_GREEN",
-    "baseline_failures_reproduced": 226,
-    "baseline_comparison_scope": "229 fast no-fixture cases; three differences: two fixed by final manifest freeze and now pass; one intentional static-cache fingerprint contract change. Remaining cases not fully classified.",
-    "limitations": [
-      "Legacy 1.34.19/UI92 text/hash contracts",
-      "Windows tempfile/symlink/long-environment limitations",
-      "Missing fixtures and collection errors",
-      "Remaining failures require individual triage; not all declared pre-existing"
-    ]
+    "diagnosed_failed_cases": 381,
+    "unexplained_diagnostics": 0,
+    "diagnosis_is_not_pass": true,
+    "evidence": "ui128-triage-unresolved.json"
   },
   "browser": {
-    "environment": "Connected Chrome, isolated fictional server on loopback; no real company records or third-party messages.",
-    "accounts": 6,
-    "roles": [
-      "employee",
-      "HR manager",
-      "document reviewer",
-      "operational reviewer",
-      "administrator"
-    ],
-    "coverage_file": "docs/UI127_COVERAGE.json",
-    "areas": 21,
-    "views": 193,
-    "views_with_detailed_evidence": 139,
-    "all_views_concluded": false,
-    "frontend_current_backend_version_during_browser_test": "1.34.26 backend process with current UI127 static files; modified backend exports separately tested with current source.",
-    "additional_limits": [
-      "Permissão salva do Chrome nega acesso automatizado à origem de produção.",
-      "Controle intermitente: abas locais e GitHub tiveram timeouts; criar outra aba recuperou parte do acesso, sem comprovar causa no aplicativo.",
-      "Não houve conclusão das variantes ainda sem evidência detalhada.",
-      "Recusa de confirmação nativa de cancelar edição do RH não certificada visualmente devido a timeout; handlers de recusa/descarte passaram em testes de componente."
+    "browser": "Chrome conectado",
+    "environment": "Servidor local isolado 8781, dados fictícios; sem mensagens a terceiros.",
+    "flows": [
+      {
+        "fluxo": "Administração: cancelar edição",
+        "resultado": "Sem alteração ou após restaurar os valores originais, cancelar preservou o filtro Ana, a pessoa selecionada e a sessão."
+      },
+      {
+        "fluxo": "Administração: alteração não salva",
+        "resultado": "O aviso apareceu; recusar o descarte manteve o texto alterado e a conta conectada."
+      },
+      {
+        "fluxo": "RH: Ver registro",
+        "resultado": "Fechar e Voltar do navegador preservaram a sessão no computador e com largura de 390 px."
+      },
+      {
+        "fluxo": "Calendário e escalas",
+        "resultado": "Calendário legível no celular, sem transbordamento horizontal no cenário verificado."
+      },
+      {
+        "fluxo": "Importação de inventário",
+        "resultado": "Planilha importada com 3 linhas após excluir Total; códigos PN com zeros à esquerda e números de série repetidos foram preservados."
+      },
+      {
+        "fluxo": "Etiquetas QR",
+        "resultado": "Mensagens em português e contagens de itens/páginas conferidas; geração não significa verificar ou movimentar estoque."
+      }
     ]
   },
   "boundaries": {
-    "production_records_modified": false,
-    "database_schema_changed": false,
-    "auth_rules_changed": false,
-    "temporary_production_user_preserved": "teste-rh-ui121-2",
-    "production_authenticated_ui_tested": false,
-    "production_ui_blocker": "Saved origin permission denied; no bypass attempted.",
-    "other_deployment_languages_preserved": true
+    "active_production_records_modified": false,
+    "database_reset": false,
+    "service_recreated": false,
+    "temporary_user": "teste-rh-ui121-2",
+    "temporary_user_preserved": true,
+    "other_languages_preserved": true,
+    "third_party_messages_sent": false,
+    "nota": "Esta entrega de código não executou limpeza ou migração de dados. Dados, permissões, rascunhos, IDs, auditoria e marca Wavelink/AJ Offshore Solutions preservados."
   },
   "backup": {
-    "path": "/var/data/wavelink-release-backups/20261018T141753Z-before-ui127",
+    "path": "/var/data/wavelink-release-backups/20261018T185445Z-before-ui128",
     "method": "SQLite online backup API plus stable configuration copy",
     "owner_uid": 10001,
     "database_integrity": "ok",
     "foreign_key_violations": 0,
     "verified_archive": true,
     "files": 7,
-    "database_sha256": "961664372613e32366138dbf660086c36158f68605c025dcfb4bafcce3edc67f",
-    "archive_sha256": "a41280c794bd137cb6c6bb45aee92bcb6cfb531b031b58a98c25405e38ecdcb0",
-    "source_commit": "736c9c9c82e9b0a0f93f41d59d063c1ade13da27",
-    "source_deployment": "dep-dba9sqdg1s2s73b3sihg",
+    "database_sha256": "77e0a82aced0fbf410b1c3f8e35c2a0b5d525df6fd1f7b9eb84737c798341986",
+    "archive_sha256": "79ca22554c7367ebd5c05538f3fc28a5ba462e680f801c0e438ebc1a97b6b442",
+    "source_commit": "ebd92c43ec7c92431a1def49137e3ff1fe36bf2d",
+    "source_deployment": "dep-dbafrs67bikc73ejrdh0",
     "active_records_modified": false,
     "writers_stopped": false
   },
   "rollback": {
-    "deployment": "dep-dbaf5rvlk1mc73cptaf0",
-    "commit": "00498e799308de486da8353d5b112c765e64818b",
-    "instruction": "Rollback code on the same Render service. Do not restore company data for a code-only issue; any data restoration must be separately planned with stopped writers."
+    "code_commit": "ebd92c43ec7c92431a1def49137e3ff1fe36bf2d",
+    "deployment": "dep-dbafrs67bikc73ejrdh0",
+    "service_id": "srv-das4ujojo6nc73a7u53g",
+    "data_restore_automatic": false,
+    "instruction": "Para problema somente de código, reverter o deployment no mesmo serviço. Não restaurar dados automaticamente. Restauração de dados exige plano separado, validação do backup e processos escritores efetivamente parados."
   },
-  "revision": "UI127 R3 — navegação e revisão integrada",
-  "publication_base": "00498e799308de486da8353d5b112c765e64818b",
-  "agent_hr_python": {
-    "selected": 20,
-    "passed": 0,
-    "status": "blocked_during_fictional_fixture_setup",
-    "note": "Duas tentativas interrompidas; não contabilizadas como sucesso."
+  "publication": {
+    "status": "pendente_de_registro_pelo_coordenador",
+    "commit": null,
+    "deployment": null,
+    "authenticated_production_ui_validated": false,
+    "url": "https://corcovado.mywavelink.com",
+    "preparation_branch": "ui128-revisao-final",
+    "preparation_branch_created": true
   },
-  "coordination": {
-    "agents": [
-      "RH",
-      "Documentos e pessoas",
-      "Qualidade e suporte"
-    ],
-    "integration_owner": "coordinator",
-    "separate_publications": false,
-    "ticket_module": "Nenhum módulo de chamados de TI existente; contato externo revisado, fila/histórico de TI não implementados."
-  }
+  "validation": "validation/ui128-validation.json",
+  "guide": "docs/UI128_GUIA.html",
+  "historical_delivery_checks": [
+    {
+      "release": "UI127",
+      "version": "1.34.27",
+      "base_commit": "736c9c9c82e9b0a0f93f41d59d063c1ade13da27",
+      "runtime": {
+        "manifest_sha256": "6a8028af00822df91337dd385a6990128acce1a09ab7c81829600f4fcfab41bb",
+        "resources": 2288,
+        "overlay_resources": 81,
+        "full_chain_reconstructed": true,
+        "reconstruction_note": "Cadeia completa reconstruída em pasta nova; todos os 2.288 recursos conferidos por SHA-256 sem divergências."
+      },
+      "javascript": {
+        "standalone_suites": 34,
+        "passed_suites": 34,
+        "new_audit_assertions": 163,
+        "agent_assertions": 349,
+        "syntax_files": 108,
+        "failures": 0,
+        "results": "validation/ui127-r3-final-tests.json"
+      },
+      "focused_python": {
+        "passed": 9,
+        "warnings": 5,
+        "notes": "Seven report tests and two release integrity checks. Windows WMI fault during JUnit hostname lookup avoided by platform.node override in test harness only; application unmodified."
+      },
+      "historical_python": {
+        "cases": 4121,
+        "passed": 3586,
+        "failures": 426,
+        "errors": 85,
+        "skipped": 24,
+        "result": "NOT_GREEN",
+        "baseline_failures_reproduced": 226,
+        "baseline_comparison_scope": "229 fast no-fixture cases; three differences: two fixed by final manifest freeze and now pass; one intentional static-cache fingerprint contract change. Remaining cases not fully classified.",
+        "limitations": [
+          "Legacy 1.34.19/UI92 text/hash contracts",
+          "Windows tempfile/symlink/long-environment limitations",
+          "Missing fixtures and collection errors",
+          "Remaining failures require individual triage; not all declared pre-existing"
+        ]
+      },
+      "browser": {
+        "environment": "Connected Chrome, isolated fictional server on loopback; no real company records or third-party messages.",
+        "accounts": 6,
+        "roles": [
+          "employee",
+          "HR manager",
+          "document reviewer",
+          "operational reviewer",
+          "administrator"
+        ],
+        "coverage_file": "docs/UI127_COVERAGE.json",
+        "areas": 21,
+        "views": 193,
+        "views_with_detailed_evidence": 139,
+        "all_views_concluded": false,
+        "frontend_current_backend_version_during_browser_test": "1.34.26 backend process with current UI127 static files; modified backend exports separately tested with current source.",
+        "additional_limits": [
+          "Permissão salva do Chrome nega acesso automatizado à origem de produção.",
+          "Controle intermitente: abas locais e GitHub tiveram timeouts; criar outra aba recuperou parte do acesso, sem comprovar causa no aplicativo.",
+          "Não houve conclusão das variantes ainda sem evidência detalhada.",
+          "Recusa de confirmação nativa de cancelar edição do RH não certificada visualmente devido a timeout; handlers de recusa/descarte passaram em testes de componente."
+        ]
+      },
+      "boundaries": {
+        "production_records_modified": false,
+        "database_schema_changed": false,
+        "auth_rules_changed": false,
+        "temporary_production_user_preserved": "teste-rh-ui121-2",
+        "production_authenticated_ui_tested": false,
+        "production_ui_blocker": "Saved origin permission denied; no bypass attempted.",
+        "other_deployment_languages_preserved": true
+      },
+      "backup": {
+        "path": "/var/data/wavelink-release-backups/20261018T141753Z-before-ui127",
+        "method": "SQLite online backup API plus stable configuration copy",
+        "owner_uid": 10001,
+        "database_integrity": "ok",
+        "foreign_key_violations": 0,
+        "verified_archive": true,
+        "files": 7,
+        "database_sha256": "961664372613e32366138dbf660086c36158f68605c025dcfb4bafcce3edc67f",
+        "archive_sha256": "a41280c794bd137cb6c6bb45aee92bcb6cfb531b031b58a98c25405e38ecdcb0",
+        "source_commit": "736c9c9c82e9b0a0f93f41d59d063c1ade13da27",
+        "source_deployment": "dep-dba9sqdg1s2s73b3sihg",
+        "active_records_modified": false,
+        "writers_stopped": false
+      },
+      "rollback": {
+        "deployment": "dep-dbaf5rvlk1mc73cptaf0",
+        "commit": "00498e799308de486da8353d5b112c765e64818b",
+        "instruction": "Rollback code on the same Render service. Do not restore company data for a code-only issue; any data restoration must be separately planned with stopped writers."
+      },
+      "revision": "UI127 R3 — navegação e revisão integrada",
+      "publication_base": "00498e799308de486da8353d5b112c765e64818b",
+      "agent_hr_python": {
+        "selected": 20,
+        "passed": 0,
+        "status": "blocked_during_fictional_fixture_setup",
+        "note": "Duas tentativas interrompidas; não contabilizadas como sucesso."
+      },
+      "coordination": {
+        "agents": [
+          "RH",
+          "Documentos e pessoas",
+          "Qualidade e suporte"
+        ],
+        "integration_owner": "coordinator",
+        "separate_publications": false,
+        "ticket_module": "Nenhum módulo de chamados de TI existente; contato externo revisado, fila/histórico de TI não implementados."
+      }
+    }
+  ],
+  "coverage": "docs/UI128_COVERAGE.json"
 }
