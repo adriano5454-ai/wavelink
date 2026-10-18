@@ -1,0 +1,141 @@
+{
+  "area": "Documentos e pessoas",
+  "status": "implementado e testado isoladamente; aguarda validação integrada no navegador",
+  "base": "00498e799308de486da8353d5b112c765e64818b",
+  "changed_files": [
+    {
+      "file": "app/static/original_library.js",
+      "syntax": "passed",
+      "sha256": "6504b3ab1f0bcf7eba1faf24e4b4415d1427af66f151c9aeef40f906ef625d3a"
+    },
+    {
+      "file": "app/static/original_upload.js",
+      "syntax": "passed",
+      "sha256": "1229cb1d08961b32a5b1a57b27d7d26abd00aa6adcd4f81830a302fe79f56b2c"
+    },
+    {
+      "file": "app/static/task_create.js",
+      "syntax": "passed",
+      "sha256": "ad3b029cdf5331293a8e4da278f7515f467df9c1106e1dfee55e5548b0bea30b"
+    },
+    {
+      "file": "app/static/task_workspace.js",
+      "syntax": "passed",
+      "sha256": "da78afe7f950f59d4bc5517ff16736a643f908bc4e4ec43ef8efafa40ab7f6ce"
+    },
+    {
+      "file": "app/static/report_forms.js",
+      "syntax": "passed",
+      "sha256": "1552a55856315ce6f7de17ccc0730637f0bbfdd2116e7478a77341749f8f0989"
+    }
+  ],
+  "new_tests": [
+    "tests/test_ui127_documents_agent.js",
+    "tests/test_ui127_documents_agent_people.js"
+  ],
+  "translations": "work/ui127-documents-agent-translations.json",
+  "changes": [
+    {
+      "area": "Documentos originais",
+      "findings": [
+        "Cancelar proposta de pasta e arquivamento descartava edições sem aviso.",
+        "O envio ignorava revisão, notas e destino na detecção de alterações; dados iniciais de uma revisão produziam aviso sem edição.",
+        "Detalhes/histórico não tinham uma etapa própria para Voltar do navegador.",
+        "Tipo e situação dos vínculos controlados pelo servidor apareciam em inglês."
+      ],
+      "implemented": [
+        "Confirmar descarte apenas quando dados realmente mudaram; manter tentativa de gravação incerta até confirmação explícita.",
+        "Cancelar edição / Voltar para a lista / Voltar para a edição com ações separadas.",
+        "Histórico local do navegador para detalhe e histórico de pastas, com lista, pesquisa, pasta, seleção e posição preservadas; retorno de foco ao cartão visível.",
+        "Detecção de alterações do envio cobre título, código, revisão, notas, pasta e justificativa, mais arquivo e operação; nenhum salvamento ou logout é disparado por navegação.",
+        "Traduzir os rótulos controlados de uso do documento sem alterar título, arquivo, IDs, versões ou conteúdo do usuário."
+      ]
+    },
+    {
+      "area": "Pessoas nas tarefas e relatos",
+      "findings": [
+        "Busca sem acento não encontrava nomes brasileiros acentuados, embora o RH já usasse normalização.",
+        "Campos de busca não indicavam os resultados e contadores relacionados para tecnologia assistiva.",
+        "Nome interno de responsável retido podia ser mostrado em inglês.",
+        "Responsável sem login aparecia com undefined no seletor de relatos."
+      ],
+      "implemented": [
+        "Busca usa WavelinkUX.fold existente, com fallback equivalente, preservando IDs e seleções ocultas.",
+        "aria-controls e aria-describedby ligam busca a resultados e contadores.",
+        "Login ou ID identifica pessoas com nomes iguais; o seletor de relatos usa ID quando login está ausente.",
+        "Rótulos internos de responsável, departamento, tipo e seleção retidos passam pela tradução existente sem traduzir nomes do usuário."
+      ]
+    }
+  ],
+  "tests": [
+    {
+      "file": "tests/test_ui127_documents_agent.js",
+      "status": "passed",
+      "stdout": "{\"suite\":\"ui127-documents-navigation-agent\",\"checks\":127,\"passed\":true}"
+    },
+    {
+      "file": "tests/test_ui127_documents_agent_people.js",
+      "status": "passed",
+      "stdout": "{\"suite\":\"ui127-people-selectors-agent\",\"checks\":59,\"passed\":true}"
+    },
+    {
+      "file": "tests/test_audit_ui127.js",
+      "status": "passed",
+      "stdout": "163 UI127 assertions passed"
+    }
+  ],
+  "documents_permissions_review": [
+    "Original library keeps API-authoritative originals.view and per-session checks before reads/actions.",
+    "Original revisions remain exact IDs and hashes; folders are organization, not a permission boundary.",
+    "HR private attachments remain fetched through /api/hr/{kind}/{record}/files/{file}; no private file copied to company original library.",
+    "Published record dependencies stay scoped by backend module/builder permissions; no access grants or API changes."
+  ],
+  "people_inventory": [
+    {
+      "files": [
+        "task_create.js",
+        "task_workspace.js",
+        "report_forms.js"
+      ],
+      "status": "corrected and isolated behavior tests passed"
+    },
+    {
+      "files": [
+        "maintenance_ui.js",
+        "handover_continue.js",
+        "handover_workspace.js",
+        "simple_handovers.js",
+        "toolbox_form.js"
+      ],
+      "status": "read-only inventory; same accent-search pattern exists in some; coordinator owns integration"
+    },
+    {
+      "files": [
+        "recognition_workspace.js"
+      ],
+      "status": "read-only; public profiles hide private email; HR profile link is permission-controlled"
+    },
+    {
+      "files": [
+        "support.js"
+      ],
+      "status": "only existing mailto shortcut found; support mailto is not a person contact directory; hardcoded UI version1.34.19 remains for coordinator review"
+    }
+  ],
+  "not_added": [
+    "No WhatsApp or Teams person shortcuts exist in the current static code; no trusted public person-contact schema was found. No contacts were invented and no messages were sent."
+  ],
+  "integration_checks_pending": [
+    "In Chrome, search Original Files, open Details, use browser Back then Forward and Back to list; verify query, folder, visible row/focus and session.",
+    "Edit folder/lifecycle reason, cancel and decline confirmation then accept; verify only proposal disappears.",
+    "Upload form: change only notes/revision/destination and test cancel guard; opening an existing revision without changing it must not warn.",
+    "Verify desktop/mobile native Back when dialogs owned by AJDialogSystem coexist with the original-library route; local library listener only handles its same-hash owner marker.",
+    "Validate people filtering with João/Joao and two same-name people; selected IDs must survive filters.",
+    "Source/backend permission behavior inspected but no new production or cross-role live claim."
+  ],
+  "constraints": [
+    "No backend, data files, service, disk, user, permissions, deployment, overlay or production was modified.",
+    "No browser operation or third-party communication was performed by this agent.",
+    "Only five assigned static files and two new tests edited; translation/report files are in work."
+  ]
+}

@@ -32,7 +32,7 @@ def freeze(parent: Path, target: Path):
                 names.add(p.relative_to(target).as_posix())
     metadata = dict(format='wavelink-runtime-overlay-1',date='2026-10-18',patch_id=VARIANT,
                     parent_patch_id=baseline.get('variant'),parent_manifest_sha256=PARENT,
-                    scope='Contextual PT-BR audit, HR calendar travel and focus, fleet transition dialog, native validation and report presentation; source content, authorization, identifiers and persisted records retained.',
+                    scope='Integrated PT-BR audit; session-safe close/back/cancel navigation, retained drafts and filters, document history, accessible people selectors, HR calendar, support and report presentation; authorization and persisted records retained.',
                     boundaries=dict(database_reset=False,browser_storage_clear=False,
                                     operational_writers_changed=False,live_deployment=False))
     (target/'UI_PATCH.json').write_text(json.dumps(metadata,indent=2)+'\n',encoding='utf-8',newline='\n')

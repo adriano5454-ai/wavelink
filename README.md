@@ -1,13 +1,13 @@
 # UI127 — Auditoria de RH e Operações
 
-Wavelink **1.34.27**, sobre `736c9c9c82e9b0a0f93f41d59d063c1ade13da27`. Corrige viagens e foco no calendário, navegação, listas de verificação, originais, inventário e validação em português. A revisão complementar corrige também contadores de rascunhos e detalhes de conferência de estoque. Preserva registros, permissões, idiomas e usuário temporário.
+Wavelink **1.34.27**, sobre `736c9c9c82e9b0a0f93f41d59d063c1ade13da27`. Corrige viagens e foco no calendário, navegação, listas de verificação, originais, inventário e validação em português. A revisão integrada corrige Fechar/Voltar/Cancelar sem encerrar a sessão, preserva rascunhos e filtros, melhora originais, seletores de pessoas, DDS e contato de suporte. Preserva registros, permissões, idiomas e usuário temporário.
 
 - [Cobertura por área, testes, capturas e limites](docs/UI127_GUIA.html)
 - [193 telas/funções inventariadas](docs/UI127_COVERAGE.json)
 - [Validação e falhas ainda abertas](validation/ui127-validation.json)
 - [Proveniência](docs/UI127_SOURCE_PROVENANCE.json)
 
-**Auditoria integral parcial:** 130 itens com evidência detalhada (não equivale a aprovação integral); demais fluxos pendentes e produção autenticada bloqueada. Bateria histórica completa não verde. 27 suítes JavaScript e nove testes Python focados passaram; reconstrução de 2.281 recursos verificada. Reconstruir em pasta nova: `python deploy/materialize_runtime.py ./runtime-ui127`. Não importar cenários fictícios em produção. Documentação anterior preservada abaixo.
+**Auditoria integral parcial:** 139 itens com evidência detalhada (não equivale a aprovação integral); demais fluxos pendentes e produção autenticada bloqueada. Bateria histórica completa não verde. 34 suítes JavaScript e nove testes Python focados passaram; reconstrução de 2.288 recursos verificada. Reconstruir em pasta nova: `python deploy/materialize_runtime.py ./runtime-ui127`. Não importar cenários fictícios em produção. Documentação anterior preservada abaixo.
 
 # UI126 — Importações e conferência de originais em português
 

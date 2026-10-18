@@ -1,0 +1,222 @@
+{
+  "release": "UI127 integrated follow-up",
+  "role": "Independent quality and existing IT-request discovery",
+  "scope": {
+    "product_files_owned": [
+      "app/static/logs.js",
+      "app/static/logs_workspace.js",
+      "app/static/support.js",
+      "app/static/contact.html",
+      "app/static/pt-BR/contact.html"
+    ],
+    "test_files": [
+      "tests/test_ui127_quality_agent_logs.js",
+      "tests/test_ui127_quality_agent_dialog.js",
+      "tests/test_ui127_quality_agent_drafts.js",
+      "tests/test_ui127_quality_agent_support.js"
+    ],
+    "audit": "Static survey of session termination and close/back/cancel paths in all static JavaScript/HTML; focused executable component tests; no browser or production access",
+    "javascript_files_present": 108,
+    "html_files_present": 10
+  },
+  "implementation": [
+    {
+      "area": "Log entry viewer",
+      "changes": [
+        "Close record label through shared modal options",
+        "Back to list closes only the visual overlay and retains the same list DOM, hash and filters",
+        "History has Back to record, preserving requested book and record identity"
+      ]
+    },
+    {
+      "area": "Log editor",
+      "changes": [
+        "Header close and Escape wait for local draft persistence",
+        "Close blocked while remote save is pending",
+        "Explicit Cancel editing retains existing confirmation and deletes only that editor draft",
+        "Failed local save leaves editor open",
+        "Shared managed-close marker prevents duplicate confirmation"
+      ]
+    },
+    {
+      "area": "Void/follow-up",
+      "changes": [
+        "Explicit Cancel editing actions",
+        "Unsaved void reason requires confirmation before discard",
+        "Void request disables controls and blocks close until outcome",
+        "Existing follow-up permission guard and uncertain-outcome handling preserved"
+      ]
+    },
+    {
+      "area": "External support contact",
+      "changes": [
+        "Separate complete Portuguese and English contact pages",
+        "Clear Open email app wording with accessible explanation that no internal IT ticket is created and no message is automatically sent",
+        "Displayed version and suggested mail subject derive from validated public /api/info version, not a hardcoded release",
+        "Only one GET request without credentials; no account data or document is included",
+        "Clipboard copy and fallback messages follow deployment language"
+      ],
+      "browser_test": "Not performed by this agent"
+    }
+  ],
+  "tests": [
+    {
+      "file": "tests/test_ui127_quality_agent_logs.js",
+      "suite": "UI127 independent log navigation quality",
+      "checks": 52,
+      "result": "passed",
+      "stderr": ""
+    },
+    {
+      "file": "tests/test_ui127_quality_agent_dialog.js",
+      "suite": "UI127 independent shared dialog history",
+      "checks": 35,
+      "result": "passed",
+      "stderr": ""
+    },
+    {
+      "file": "tests/test_ui127_quality_agent_drafts.js",
+      "suite": "UI127 independent DDS draft compatibility",
+      "checks": 10,
+      "result": "passed",
+      "stderr": ""
+    },
+    {
+      "file": "tests/test_ui127_quality_agent_support.js",
+      "suite": "UI127 contact locale and public version",
+      "checks": 55,
+      "result": "passed",
+      "stderr": ""
+    }
+  ],
+  "checks": 152,
+  "findings": [
+    {
+      "id": "Q1",
+      "priority": "high",
+      "area": "Generic modal",
+      "status": "fixed_by_coordinator_and_component_tested",
+      "evidence": "Every app.js modal previously injected Sign out that invoked sessionExit.request; coordinator removed injection."
+    },
+    {
+      "id": "Q2",
+      "priority": "high",
+      "area": "Log editor close during persistence",
+      "status": "fixed_component_tested",
+      "evidence": "Old logs editor header/Escape could close during local or remote save; owner checks then invalidated response. New protectClose serializes close and keeps form if local persistence fails."
+    },
+    {
+      "id": "Q3",
+      "priority": "medium",
+      "area": "Stacked dialogs and browser Back",
+      "status": "fixed_by_coordinator_and_component_tested",
+      "evidence": "History handler initially targeted tracked lower editor even if account panel was above it. Coordinator added all-open-dialog stack; regression test proves only visible panel closes."
+    },
+    {
+      "id": "Q4",
+      "priority": "medium",
+      "area": "DDS local draft compatibility",
+      "status": "fixed_by_coordinator_and_component_tested",
+      "evidence": "New form kind is stable Toolbox talk; legacy Portuguese Diálogo de segurança draft still classified/resumed without changing stored data."
+    },
+    {
+      "id": "Q5",
+      "priority": "scope",
+      "area": "IT requests",
+      "status": "not_present",
+      "evidence": "No dedicated helpdesk, support-ticket entity or IT-request API/queue/history found. Existing support.js/contact.html only prepare mailto; general tasks and operational fault reports must not be mislabeled IT tickets."
+    },
+    {
+      "id": "Q6",
+      "priority": "medium",
+      "area": "Support contact text",
+      "status": "fixed_component_tested",
+      "evidence": "support.js now builds localized draft message and queries current public version; both contact HTML pages replaced stale release labeling with version status.55 checks passed; no email was sent."
+    }
+  ],
+  "limits": [
+    "Tests use actual JavaScript with a deterministic DOM/history harness; desktop/mobile browser navigation still requires coordinator integrated validation.",
+    "No production URL, data, database, account, permission, server process or repository publication was changed by this agent.",
+    "No message or email was sent.",
+    "No assertion that all application functions were exercised; independent coverage is explicit and focused."
+  ],
+  "references": {
+    "logs.js": [
+      {
+        "line": 138,
+        "summary": "async function viewEntry(id,bookOverride=null){"
+      },
+      {
+        "line": 144,
+        "summary": "$('#log-back-list').onclick=()=>window.AJDialogSystem?AJDialogSystem.close(dlg):dlg.close();"
+      },
+      {
+        "line": 149,
+        "summary": "modal(__wl118.t('Void log entry'),__wl118.markup('<p>This marks the entry void. It does not erase its evidence or audit history.</p><form id=\"log-void-form\"><la"
+      },
+      {
+        "line": 150,
+        "summary": "const voidOwner=readContext(),voidForm=$('#log-void-form'),voidButton=$('#log-void-confirm'),voidReason=$('#log-void-reason');let voidSaving=false;"
+      },
+      {
+        "line": 195,
+        "summary": "const keepAndClose=async(force=false)=>{try{if(force||changed||previous)await saveLocal();if(ownsRead(owner)){dlg.close();if(force||changed||previous)toast(__wl"
+      },
+      {
+        "line": 196,
+        "summary": "AJLogLayout.protectClose(dlg,form,{busy:()=>saving||submitting,close:()=>keepAndClose(),blocked:()=>toast(__wl118.t('Wait for the current save to finish.'))});"
+      },
+      {
+        "line": 197,
+        "summary": "$('#log-keep').onclick=()=>keepAndClose(true);"
+      },
+      {
+        "line": 244,
+        "summary": "function followUp(b,s,r){"
+      },
+      {
+        "line": 249,
+        "summary": "const closeButton=dlg.querySelector('[data-close]');"
+      }
+    ],
+    "logs_workspace.js": [
+      {
+        "line": 24,
+        "summary": "function protectClose(dialog,form,{busy=()=>false,close,blocked=()=>{}}={}){"
+      }
+    ],
+    "dialog_system_ui81.js": [
+      {
+        "line": 16,
+        "summary": "function trackHistory(dialog){"
+      },
+      {
+        "line": 29,
+        "summary": "global.addEventListener?.('popstate',event=>{"
+      }
+    ],
+    "toolbox_form.js": [
+      {
+        "line": 75,
+        "summary": "f=F().form(record?__wl118.t(\"Conduct / update briefing\"):__wl118.t(\"New toolbox briefing\"),'Toolbox talk',{template,record},html,(fd)=>{"
+      }
+    ],
+    "fieldwork.js": []
+  },
+  "required_translations": {
+    "Back to list": "Voltar para a lista",
+    "Back to record": "Voltar para o registro",
+    "Cancel editing": "Cancelar edição",
+    "Close record": "Fechar registro",
+    "Close window": "Fechar janela",
+    "Full table": "Tabela completa",
+    "Discard the unsaved reason? This record will not be voided.": "Descartar a justificativa não salva? O registro não será anulado."
+  },
+  "source_sha256": {
+    "app/static/logs.js": "1b46612da0d69bc5e3ceb9c1c74fd25606c6ade8169cda13eab5683da0522201",
+    "app/static/logs_workspace.js": "35fe97a40961ee18ad7ad6ceb72ccf0c68be757f2ab03cf91dab3366178cb61e",
+    "app/static/support.js": "5ce5b0ae31106fd723c48a9b3b0dbf7d4a1aa9a66b0bb1d798723d2c5d2eb5b4",
+    "app/static/contact.html": "1e8b3a65c322e13a174515be39cd4f8567eff75459da5eb33fbd5978f41f108f",
+    "app/static/pt-BR/contact.html": "45c02ac3e50479f8c98dd3b7bda7a09352b15f2728ff07f2f08c3fc375f9f91f"
+  }
+}

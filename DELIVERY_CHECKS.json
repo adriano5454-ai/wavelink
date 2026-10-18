@@ -3,20 +3,20 @@
   "version": "1.34.27",
   "base_commit": "736c9c9c82e9b0a0f93f41d59d063c1ade13da27",
   "runtime": {
-    "manifest_sha256": "0a33169d87dbcfe486551c44378b0b6bc6c9385241fdf67f6f1215fd1f519e58",
-    "resources": 2281,
-    "overlay_resources": 65,
+    "manifest_sha256": "6a8028af00822df91337dd385a6990128acce1a09ab7c81829600f4fcfab41bb",
+    "resources": 2288,
+    "overlay_resources": 81,
     "full_chain_reconstructed": true,
-    "reconstruction_note": "Cadeia completa reconstruída em pasta nova; limite de 180 s interrompeu após UI126 verificada, UI127 aplicada em seguida; 2.281 hashes conferidos sem divergências."
+    "reconstruction_note": "Cadeia completa reconstruída em pasta nova; todos os 2.288 recursos conferidos por SHA-256 sem divergências."
   },
   "javascript": {
-    "standalone_suites": 20,
-    "passed_suites": 20,
-    "new_assertions": 153,
-    "inherited_cjs_suites": 7,
-    "inherited_cjs_assertions": 93,
+    "standalone_suites": 34,
+    "passed_suites": 34,
+    "new_audit_assertions": 163,
+    "agent_assertions": 349,
     "syntax_files": 108,
-    "failures": 0
+    "failures": 0,
+    "results": "validation/ui127-r3-final-tests.json"
   },
   "focused_python": {
     "passed": 9,
@@ -52,13 +52,14 @@
     "coverage_file": "docs/UI127_COVERAGE.json",
     "areas": 21,
     "views": 193,
-    "views_with_detailed_evidence": 130,
+    "views_with_detailed_evidence": 139,
     "all_views_concluded": false,
     "frontend_current_backend_version_during_browser_test": "1.34.26 backend process with current UI127 static files; modified backend exports separately tested with current source.",
     "additional_limits": [
       "Permissão salva do Chrome nega acesso automatizado à origem de produção.",
       "Controle intermitente: abas locais e GitHub tiveram timeouts; criar outra aba recuperou parte do acesso, sem comprovar causa no aplicativo.",
-      "Não houve conclusão das variantes ainda sem evidência detalhada."
+      "Não houve conclusão das variantes ainda sem evidência detalhada.",
+      "Recusa de confirmação nativa de cancelar edição do RH não certificada visualmente devido a timeout; handlers de recusa/descarte passaram em testes de componente."
     ]
   },
   "boundaries": {
@@ -86,10 +87,26 @@
     "writers_stopped": false
   },
   "rollback": {
-    "deployment": "dep-dba9sqdg1s2s73b3sihg",
-    "commit": "736c9c9c82e9b0a0f93f41d59d063c1ade13da27",
+    "deployment": "dep-dbaf5rvlk1mc73cptaf0",
+    "commit": "00498e799308de486da8353d5b112c765e64818b",
     "instruction": "Rollback code on the same Render service. Do not restore company data for a code-only issue; any data restoration must be separately planned with stopped writers."
   },
-  "revision": "UI127 complementar",
-  "publication_base": "24073d1ea2d6b593cdcabfe82182e66028bb1f4f"
+  "revision": "UI127 R3 — navegação e revisão integrada",
+  "publication_base": "00498e799308de486da8353d5b112c765e64818b",
+  "agent_hr_python": {
+    "selected": 20,
+    "passed": 0,
+    "status": "blocked_during_fictional_fixture_setup",
+    "note": "Duas tentativas interrompidas; não contabilizadas como sucesso."
+  },
+  "coordination": {
+    "agents": [
+      "RH",
+      "Documentos e pessoas",
+      "Qualidade e suporte"
+    ],
+    "integration_owner": "coordinator",
+    "separate_publications": false,
+    "ticket_module": "Nenhum módulo de chamados de TI existente; contato externo revisado, fila/histórico de TI não implementados."
+  }
 }
