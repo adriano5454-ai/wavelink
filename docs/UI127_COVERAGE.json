@@ -1,0 +1,1790 @@
+{
+  "release": "UI127",
+  "baseline": "736c9c9c82e9b0a0f93f41d59d063c1ade13da27",
+  "production_ui": {
+    "status": "bloqueada",
+    "reason": "Chrome saved origin permission denies https://corcovado.mywavelink.com; 2026-10-18 current session"
+  },
+  "areas": [
+    {
+      "id": "inicio",
+      "title": "Início e navegação",
+      "source": "personal_home.js",
+      "views": [
+        {
+          "name": "Visão geral",
+          "status": "parcial",
+          "evidence": [
+            "Chrome conectado, ambiente fictício isolado: Destinatário fictício: painel passou de 1 para 0 pendências após confirmar leitura da revisão exata; visão de trabalho separada do reconhecimento."
+          ],
+          "issues": []
+        },
+        {
+          "name": "Meu trabalho",
+          "status": "parcial",
+          "evidence": [
+            "Chrome conectado, ambiente fictício isolado: Destinatário fictício: painel passou de 1 para 0 pendências após confirmar leitura da revisão exata; visão de trabalho separada do reconhecimento."
+          ],
+          "issues": []
+        },
+        {
+          "name": "Exige minha ação",
+          "status": "parcial",
+          "evidence": [
+            "Chrome conectado, ambiente fictício isolado: Destinatário fictício: painel passou de 1 para 0 pendências após confirmar leitura da revisão exata; visão de trabalho separada do reconhecimento."
+          ],
+          "issues": []
+        },
+        {
+          "name": "Passagens salvas",
+          "status": "parcial",
+          "evidence": [
+            "Chrome conectado, ambiente fictício isolado: Destinatário fictício: painel passou de 1 para 0 pendências após confirmar leitura da revisão exata; visão de trabalho separada do reconhecimento."
+          ],
+          "issues": []
+        },
+        {
+          "name": "Minha atividade",
+          "status": "parcial",
+          "evidence": [
+            "Chrome conectado, ambiente fictício isolado: Destinatário fictício: painel passou de 1 para 0 pendências após confirmar leitura da revisão exata; visão de trabalho separada do reconhecimento."
+          ],
+          "issues": []
+        },
+        {
+          "name": "Busca global",
+          "status": "pendente",
+          "evidence": [],
+          "issues": []
+        },
+        {
+          "name": "Central de ações",
+          "status": "pendente",
+          "evidence": [],
+          "issues": []
+        },
+        {
+          "name": "Menu da conta",
+          "status": "parcial",
+          "evidence": [
+            "Chrome local, saída conclui e preserva registros; entrada existente de colaboradora e supervisor fictícios; menus refletem permissões."
+          ],
+          "issues": []
+        },
+        {
+          "name": "Conexão e salvamentos",
+          "status": "pendente",
+          "evidence": [],
+          "issues": []
+        },
+        {
+          "name": "Troca de empresa",
+          "status": "pendente",
+          "evidence": [],
+          "issues": []
+        },
+        {
+          "name": "Áreas de trabalho",
+          "status": "pendente",
+          "evidence": [],
+          "issues": []
+        }
+      ],
+      "entry_review": {
+        "status": "parcial",
+        "method": "Chrome, dados fictícios, administrador",
+        "evidence": "work/ui127-browser/",
+        "checked": [
+          "abertura",
+          "títulos e ações iniciais",
+          "estado vazio ou registros existentes"
+        ],
+        "remaining": "Formulários, variantes de perfil e fluxos detalhados conforme cada área."
+      }
+    },
+    {
+      "id": "perfil",
+      "title": "Perfil e equipe",
+      "source": "recognition_workspace.js",
+      "views": [
+        {
+          "name": "Meu perfil",
+          "status": "parcial",
+          "evidence": [
+            "Chrome conectado, ambiente fictício isolado: Biografia e distintivo salvos e reabertos; busca e perfil de outra pessoa; histórico de contribuições localizado."
+          ],
+          "issues": []
+        },
+        {
+          "name": "Conta e acesso",
+          "status": "pendente",
+          "evidence": [],
+          "issues": []
+        },
+        {
+          "name": "Distintivos e progresso",
+          "status": "parcial",
+          "evidence": [
+            "Chrome conectado, ambiente fictício isolado: Biografia e distintivo salvos e reabertos; busca e perfil de outra pessoa; histórico de contribuições localizado."
+          ],
+          "issues": []
+        },
+        {
+          "name": "Histórico de contribuições",
+          "status": "parcial",
+          "evidence": [
+            "Chrome conectado, ambiente fictício isolado: Biografia e distintivo salvos e reabertos; busca e perfil de outra pessoa; histórico de contribuições localizado."
+          ],
+          "issues": []
+        },
+        {
+          "name": "Equipe",
+          "status": "parcial",
+          "evidence": [
+            "Chrome conectado, ambiente fictício isolado: Biografia e distintivo salvos e reabertos; busca e perfil de outra pessoa; histórico de contribuições localizado."
+          ],
+          "issues": []
+        },
+        {
+          "name": "Perfil de outra pessoa",
+          "status": "parcial",
+          "evidence": [
+            "Chrome conectado, ambiente fictício isolado: Biografia e distintivo salvos e reabertos; busca e perfil de outra pessoa; histórico de contribuições localizado."
+          ],
+          "issues": []
+        },
+        {
+          "name": "Preferências de alertas",
+          "status": "pendente",
+          "evidence": [],
+          "issues": []
+        }
+      ],
+      "entry_review": {
+        "status": "parcial",
+        "method": "Chrome, dados fictícios, administrador",
+        "evidence": "work/ui127-browser/",
+        "checked": [
+          "abertura",
+          "títulos e ações iniciais",
+          "estado vazio ou registros existentes"
+        ],
+        "remaining": "Formulários, variantes de perfil e fluxos detalhados conforme cada área."
+      }
+    },
+    {
+      "id": "rh",
+      "title": "Recursos Humanos",
+      "source": "hr_workspace.js",
+      "views": [
+        {
+          "name": "Visão geral",
+          "status": "parcial",
+          "evidence": [
+            "Chrome local: consulta e interações documentadas em work/ui127-browser"
+          ],
+          "issues": []
+        },
+        {
+          "name": "Calendário mensal",
+          "status": "parcial",
+          "evidence": [
+            "Chrome local: consulta e interações documentadas em work/ui127-browser"
+          ],
+          "issues": []
+        },
+        {
+          "name": "Agenda",
+          "status": "parcial",
+          "evidence": [
+            "Chrome local: consulta e interações documentadas em work/ui127-browser"
+          ],
+          "issues": []
+        },
+        {
+          "name": "Equipe por período",
+          "status": "parcial",
+          "evidence": [
+            "Chrome local: consulta e interações documentadas em work/ui127-browser"
+          ],
+          "issues": []
+        },
+        {
+          "name": "Necessidades e cobertura",
+          "status": "pendente",
+          "evidence": [],
+          "issues": []
+        },
+        {
+          "name": "Filtros de período/equipe",
+          "status": "parcial",
+          "evidence": [
+            "Chrome local: consulta e interações documentadas em work/ui127-browser"
+          ],
+          "issues": []
+        },
+        {
+          "name": "Colaboradores",
+          "status": "parcial",
+          "evidence": [
+            "Chrome conectado, ambiente fictício isolado: Gestora: busca Ana, cargo/observações e filtros persistidos. Documento PNG fictício conferido, vencimento 20/10, retorno à fila preservado. Escala em terra 20–22/10; viagens no calendário mensal/agenda/equipe, teclado e 390px. Horas devolvidas, corrigidas para 15,75 h, reenviadas e aprovadas por outra conta; despesa 48,90 rejeitada com motivo. Quatro relatórios consultados, CSV documental conferido."
+          ],
+          "issues": []
+        },
+        {
+          "name": "Perfil do colaborador",
+          "status": "parcial",
+          "evidence": [
+            "Chrome conectado, ambiente fictício isolado: Gestora: busca Ana, cargo/observações e filtros persistidos. Documento PNG fictício conferido, vencimento 20/10, retorno à fila preservado. Escala em terra 20–22/10; viagens no calendário mensal/agenda/equipe, teclado e 390px. Horas devolvidas, corrigidas para 15,75 h, reenviadas e aprovadas por outra conta; despesa 48,90 rejeitada com motivo. Quatro relatórios consultados, CSV documental conferido."
+          ],
+          "issues": []
+        },
+        {
+          "name": "Editar cadastro",
+          "status": "parcial",
+          "evidence": [
+            "Chrome conectado, ambiente fictício isolado: Gestora: busca Ana, cargo/observações e filtros persistidos. Documento PNG fictício conferido, vencimento 20/10, retorno à fila preservado. Escala em terra 20–22/10; viagens no calendário mensal/agenda/equipe, teclado e 390px. Horas devolvidas, corrigidas para 15,75 h, reenviadas e aprovadas por outra conta; despesa 48,90 rejeitada com motivo. Quatro relatórios consultados, CSV documental conferido."
+          ],
+          "issues": []
+        },
+        {
+          "name": "Documentos pessoais",
+          "status": "parcial",
+          "evidence": [
+            "Chrome conectado, ambiente fictício isolado: Gestora: busca Ana, cargo/observações e filtros persistidos. Documento PNG fictício conferido, vencimento 20/10, retorno à fila preservado. Escala em terra 20–22/10; viagens no calendário mensal/agenda/equipe, teclado e 390px. Horas devolvidas, corrigidas para 15,75 h, reenviadas e aprovadas por outra conta; despesa 48,90 rejeitada com motivo. Quatro relatórios consultados, CSV documental conferido."
+          ],
+          "issues": []
+        },
+        {
+          "name": "Cadastrar documento",
+          "status": "parcial",
+          "evidence": [
+            "Chrome conectado, ambiente fictício isolado: Gestora: busca Ana, cargo/observações e filtros persistidos. Documento PNG fictício conferido, vencimento 20/10, retorno à fila preservado. Escala em terra 20–22/10; viagens no calendário mensal/agenda/equipe, teclado e 390px. Horas devolvidas, corrigidas para 15,75 h, reenviadas e aprovadas por outra conta; despesa 48,90 rejeitada com motivo. Quatro relatórios consultados, CSV documental conferido."
+          ],
+          "issues": []
+        },
+        {
+          "name": "Anexos privados",
+          "status": "parcial",
+          "evidence": [
+            "Chrome conectado, ambiente fictício isolado: Gestora: busca Ana, cargo/observações e filtros persistidos. Documento PNG fictício conferido, vencimento 20/10, retorno à fila preservado. Escala em terra 20–22/10; viagens no calendário mensal/agenda/equipe, teclado e 390px. Horas devolvidas, corrigidas para 15,75 h, reenviadas e aprovadas por outra conta; despesa 48,90 rejeitada com motivo. Quatro relatórios consultados, CSV documental conferido."
+          ],
+          "issues": []
+        },
+        {
+          "name": "Conferência documental",
+          "status": "parcial",
+          "evidence": [
+            "Chrome conectado, ambiente fictício isolado: Gestora: busca Ana, cargo/observações e filtros persistidos. Documento PNG fictício conferido, vencimento 20/10, retorno à fila preservado. Escala em terra 20–22/10; viagens no calendário mensal/agenda/equipe, teclado e 390px. Horas devolvidas, corrigidas para 15,75 h, reenviadas e aprovadas por outra conta; despesa 48,90 rejeitada com motivo. Quatro relatórios consultados, CSV documental conferido."
+          ],
+          "issues": []
+        },
+        {
+          "name": "Escalas e viagens",
+          "status": "parcial",
+          "evidence": [
+            "Chrome conectado, ambiente fictício isolado: Gestora: busca Ana, cargo/observações e filtros persistidos. Documento PNG fictício conferido, vencimento 20/10, retorno à fila preservado. Escala em terra 20–22/10; viagens no calendário mensal/agenda/equipe, teclado e 390px. Horas devolvidas, corrigidas para 15,75 h, reenviadas e aprovadas por outra conta; despesa 48,90 rejeitada com motivo. Quatro relatórios consultados, CSV documental conferido."
+          ],
+          "issues": []
+        },
+        {
+          "name": "Cadastrar escala",
+          "status": "parcial",
+          "evidence": [
+            "Chrome conectado, ambiente fictício isolado: Gestora: busca Ana, cargo/observações e filtros persistidos. Documento PNG fictício conferido, vencimento 20/10, retorno à fila preservado. Escala em terra 20–22/10; viagens no calendário mensal/agenda/equipe, teclado e 390px. Horas devolvidas, corrigidas para 15,75 h, reenviadas e aprovadas por outra conta; despesa 48,90 rejeitada com motivo. Quatro relatórios consultados, CSV documental conferido."
+          ],
+          "issues": []
+        },
+        {
+          "name": "Cadastrar viagem",
+          "status": "parcial",
+          "evidence": [
+            "Chrome conectado, ambiente fictício isolado: Gestora: busca Ana, cargo/observações e filtros persistidos. Documento PNG fictício conferido, vencimento 20/10, retorno à fila preservado. Escala em terra 20–22/10; viagens no calendário mensal/agenda/equipe, teclado e 390px. Horas devolvidas, corrigidas para 15,75 h, reenviadas e aprovadas por outra conta; despesa 48,90 rejeitada com motivo. Quatro relatórios consultados, CSV documental conferido."
+          ],
+          "issues": []
+        },
+        {
+          "name": "Apontamento de horas",
+          "status": "parcial",
+          "evidence": [
+            "Chrome local, colaboradora fictícia: motivo visível; editar segundo dia (8,25 h), total 15,75 h; guardar/retomar mantém valores; salvar persiste após recarregar; envio confirmado em etapa separada; estado Enviado para análise sem botão de edição."
+          ],
+          "issues": []
+        },
+        {
+          "name": "Despesas",
+          "status": "parcial",
+          "evidence": [
+            "Chrome local, colaboradora fictícia: despesa rejeitada mostra motivo, BRL 48,90 e não oferece edição/reenvio; nenhum pagamento ou e-mail."
+          ],
+          "issues": []
+        },
+        {
+          "name": "Conferências e aprovações",
+          "status": "parcial",
+          "evidence": [
+            "Chrome conectado, ambiente fictício isolado: Gestora: busca Ana, cargo/observações e filtros persistidos. Documento PNG fictício conferido, vencimento 20/10, retorno à fila preservado. Escala em terra 20–22/10; viagens no calendário mensal/agenda/equipe, teclado e 390px. Horas devolvidas, corrigidas para 15,75 h, reenviadas e aprovadas por outra conta; despesa 48,90 rejeitada com motivo. Quatro relatórios consultados, CSV documental conferido."
+          ],
+          "issues": []
+        },
+        {
+          "name": "Devolução com justificativa",
+          "status": "parcial",
+          "evidence": [
+            "Chrome local: consulta e interações documentadas em work/ui127-browser",
+            "Chrome local, colaboradora fictícia: motivo visível; editar segundo dia (8,25 h), total 15,75 h; guardar/retomar mantém valores; salvar persiste após recarregar; envio confirmado em etapa separada; estado Enviado para análise sem botão de edição."
+          ],
+          "issues": []
+        },
+        {
+          "name": "Rejeição com justificativa",
+          "status": "parcial",
+          "evidence": [
+            "Chrome local: consulta e interações documentadas em work/ui127-browser",
+            "Chrome local, colaboradora fictícia: despesa rejeitada mostra motivo, BRL 48,90 e não oferece edição/reenvio; nenhum pagamento ou e-mail."
+          ],
+          "issues": []
+        },
+        {
+          "name": "Reenvio após correção",
+          "status": "parcial",
+          "evidence": [
+            "Chrome local, colaboradora fictícia: motivo visível; editar segundo dia (8,25 h), total 15,75 h; guardar/retomar mantém valores; salvar persiste após recarregar; envio confirmado em etapa separada; estado Enviado para análise sem botão de edição."
+          ],
+          "issues": []
+        },
+        {
+          "name": "Relatórios e exportação",
+          "status": "parcial",
+          "evidence": [
+            "Chrome conectado, ambiente fictício isolado: Gestora: busca Ana, cargo/observações e filtros persistidos. Documento PNG fictício conferido, vencimento 20/10, retorno à fila preservado. Escala em terra 20–22/10; viagens no calendário mensal/agenda/equipe, teclado e 390px. Horas devolvidas, corrigidas para 15,75 h, reenviadas e aprovadas por outra conta; despesa 48,90 rejeitada com motivo. Quatro relatórios consultados, CSV documental conferido."
+          ],
+          "issues": []
+        },
+        {
+          "name": "Histórico e recibo de salvamento",
+          "status": "parcial",
+          "evidence": [
+            "Chrome local: consulta e interações documentadas em work/ui127-browser",
+            "Chrome local, colaboradora fictícia: motivo visível; editar segundo dia (8,25 h), total 15,75 h; guardar/retomar mantém valores; salvar persiste após recarregar; envio confirmado em etapa separada; estado Enviado para análise sem botão de edição."
+          ],
+          "issues": []
+        }
+      ],
+      "entry_review": {
+        "status": "parcial",
+        "method": "Chrome, dados fictícios, administrador",
+        "evidence": "work/ui127-browser/",
+        "checked": [
+          "abertura",
+          "títulos e ações iniciais",
+          "estado vazio ou registros existentes"
+        ],
+        "remaining": "Formulários, variantes de perfil e fluxos detalhados conforme cada área."
+      }
+    },
+    {
+      "id": "tarefas",
+      "title": "Tarefas",
+      "source": "operations.js",
+      "views": [
+        {
+          "name": "Lista e filtros",
+          "status": "parcial",
+          "evidence": [
+            "Chrome conectado, ambiente fictício isolado: Criar → supervisor executa → envia v3 → administrador distinto revisa/conclui v4. PDF baixado, sem inspeção visual completa."
+          ],
+          "issues": []
+        },
+        {
+          "name": "Nova tarefa",
+          "status": "parcial",
+          "evidence": [
+            "Chrome conectado, ambiente fictício isolado: Criar → supervisor executa → envia v3 → administrador distinto revisa/conclui v4. PDF baixado, sem inspeção visual completa."
+          ],
+          "issues": []
+        },
+        {
+          "name": "Detalhe e instruções",
+          "status": "parcial",
+          "evidence": [
+            "Chrome conectado, ambiente fictício isolado: Criar → supervisor executa → envia v3 → administrador distinto revisa/conclui v4. PDF baixado, sem inspeção visual completa."
+          ],
+          "issues": []
+        },
+        {
+          "name": "Assumir/confirmar atribuição",
+          "status": "pendente",
+          "evidence": [],
+          "issues": []
+        },
+        {
+          "name": "Execução e evidências",
+          "status": "parcial",
+          "evidence": [
+            "Chrome conectado, ambiente fictício isolado: Criar → supervisor executa → envia v3 → administrador distinto revisa/conclui v4. PDF baixado, sem inspeção visual completa."
+          ],
+          "issues": []
+        },
+        {
+          "name": "Revisão",
+          "status": "parcial",
+          "evidence": [
+            "Chrome conectado, ambiente fictício isolado: Criar → supervisor executa → envia v3 → administrador distinto revisa/conclui v4. PDF baixado, sem inspeção visual completa."
+          ],
+          "issues": []
+        },
+        {
+          "name": "Adiar e reatribuir",
+          "status": "pendente",
+          "evidence": [],
+          "issues": []
+        },
+        {
+          "name": "Histórico",
+          "status": "parcial",
+          "evidence": [
+            "Chrome conectado, ambiente fictício isolado: Criar → supervisor executa → envia v3 → administrador distinto revisa/conclui v4. PDF baixado, sem inspeção visual completa."
+          ],
+          "issues": []
+        },
+        {
+          "name": "Rascunhos",
+          "status": "parcial",
+          "evidence": [
+            "Chrome conectado, ambiente fictício isolado: Criar → supervisor executa → envia v3 → administrador distinto revisa/conclui v4. PDF baixado, sem inspeção visual completa."
+          ],
+          "issues": []
+        }
+      ],
+      "entry_review": {
+        "status": "parcial",
+        "method": "Chrome, dados fictícios, administrador",
+        "evidence": "work/ui127-browser/",
+        "checked": [
+          "abertura",
+          "títulos e ações iniciais",
+          "estado vazio ou registros existentes"
+        ],
+        "remaining": "Formulários, variantes de perfil e fluxos detalhados conforme cada área."
+      }
+    },
+    {
+      "id": "listas",
+      "title": "Listas de verificação",
+      "source": "checklist_workspace.js",
+      "views": [
+        {
+          "name": "Lista e filtros",
+          "status": "pendente",
+          "evidence": [],
+          "issues": []
+        },
+        {
+          "name": "Nova lista",
+          "status": "pendente",
+          "evidence": [],
+          "issues": []
+        },
+        {
+          "name": "Etapas antes/depois",
+          "status": "pendente",
+          "evidence": [],
+          "issues": []
+        },
+        {
+          "name": "Campos e leituras",
+          "status": "pendente",
+          "evidence": [],
+          "issues": []
+        },
+        {
+          "name": "Evidências",
+          "status": "pendente",
+          "evidence": [],
+          "issues": []
+        },
+        {
+          "name": "Participantes e assinaturas",
+          "status": "pendente",
+          "evidence": [],
+          "issues": []
+        },
+        {
+          "name": "Revisão",
+          "status": "pendente",
+          "evidence": [],
+          "issues": []
+        },
+        {
+          "name": "Exportação",
+          "status": "pendente",
+          "evidence": [],
+          "issues": []
+        },
+        {
+          "name": "Rascunhos",
+          "status": "pendente",
+          "evidence": [],
+          "issues": []
+        }
+      ],
+      "entry_review": {
+        "status": "parcial",
+        "method": "Chrome, dados fictícios, administrador",
+        "evidence": "work/ui127-browser/",
+        "checked": [
+          "abertura",
+          "títulos e ações iniciais",
+          "estado vazio ou registros existentes"
+        ],
+        "remaining": "Formulários, variantes de perfil e fluxos detalhados conforme cada área."
+      }
+    },
+    {
+      "id": "registros",
+      "title": "Registros operacionais",
+      "source": "logs.js",
+      "views": [
+        {
+          "name": "Livros e seções",
+          "status": "parcial",
+          "evidence": [
+            "Chrome conectado, ambiente fictício isolado: Livro configurado; rascunho fechado/retomado; registro v1; correção sem motivo bloqueada, v2 salva/reaberta. CSV baixado identificou moldura em inglês; CSV/XLSX/PDF corrigidos com sete testes Python. Visual do novo PDF/XLSX e anulação pendentes."
+          ],
+          "issues": []
+        },
+        {
+          "name": "Pesquisa e filtros",
+          "status": "pendente",
+          "evidence": [],
+          "issues": []
+        },
+        {
+          "name": "Novo registro",
+          "status": "parcial",
+          "evidence": [
+            "Chrome conectado, ambiente fictício isolado: Livro configurado; rascunho fechado/retomado; registro v1; correção sem motivo bloqueada, v2 salva/reaberta. CSV baixado identificou moldura em inglês; CSV/XLSX/PDF corrigidos com sete testes Python. Visual do novo PDF/XLSX e anulação pendentes."
+          ],
+          "issues": []
+        },
+        {
+          "name": "Detalhe e edição",
+          "status": "parcial",
+          "evidence": [
+            "Chrome conectado, ambiente fictício isolado: Livro configurado; rascunho fechado/retomado; registro v1; correção sem motivo bloqueada, v2 salva/reaberta. CSV baixado identificou moldura em inglês; CSV/XLSX/PDF corrigidos com sete testes Python. Visual do novo PDF/XLSX e anulação pendentes."
+          ],
+          "issues": []
+        },
+        {
+          "name": "Correção/anulação",
+          "status": "parcial",
+          "evidence": [
+            "Chrome conectado, ambiente fictício isolado: Livro configurado; rascunho fechado/retomado; registro v1; correção sem motivo bloqueada, v2 salva/reaberta. CSV baixado identificou moldura em inglês; CSV/XLSX/PDF corrigidos com sete testes Python. Visual do novo PDF/XLSX e anulação pendentes."
+          ],
+          "issues": []
+        },
+        {
+          "name": "Pendências e acompanhamento",
+          "status": "pendente",
+          "evidence": [],
+          "issues": []
+        },
+        {
+          "name": "Referência original",
+          "status": "pendente",
+          "evidence": [],
+          "issues": []
+        },
+        {
+          "name": "Exportação",
+          "status": "parcial",
+          "evidence": [
+            "Chrome conectado, ambiente fictício isolado: Livro configurado; rascunho fechado/retomado; registro v1; correção sem motivo bloqueada, v2 salva/reaberta. CSV baixado identificou moldura em inglês; CSV/XLSX/PDF corrigidos com sete testes Python. Visual do novo PDF/XLSX e anulação pendentes."
+          ],
+          "issues": []
+        }
+      ],
+      "entry_review": {
+        "status": "parcial",
+        "method": "Chrome, dados fictícios, administrador",
+        "evidence": "work/ui127-browser/",
+        "checked": [
+          "abertura",
+          "títulos e ações iniciais",
+          "estado vazio ou registros existentes"
+        ],
+        "remaining": "Formulários, variantes de perfil e fluxos detalhados conforme cada área."
+      }
+    },
+    {
+      "id": "turnos",
+      "title": "Passagens de turno",
+      "source": "handovers.js",
+      "views": [
+        {
+          "name": "Quadro",
+          "status": "parcial",
+          "evidence": [
+            "Chrome conectado, ambiente fictício isolado: Falta de outro destinatário bloqueia; rascunho privado salvo/retomado; publicação r1; destinatário distinto confirma; ciência persiste ao recarregar e painel de ações passa de 1 para 0. Sem e-mail."
+          ],
+          "issues": []
+        },
+        {
+          "name": "Meu turno",
+          "status": "pendente",
+          "evidence": [],
+          "issues": []
+        },
+        {
+          "name": "Escala de turnos",
+          "status": "pendente",
+          "evidence": [],
+          "issues": []
+        },
+        {
+          "name": "Nova passagem",
+          "status": "parcial",
+          "evidence": [
+            "Chrome conectado, ambiente fictício isolado: Falta de outro destinatário bloqueia; rascunho privado salvo/retomado; publicação r1; destinatário distinto confirma; ciência persiste ao recarregar e painel de ações passa de 1 para 0. Sem e-mail."
+          ],
+          "issues": []
+        },
+        {
+          "name": "Editor e notas",
+          "status": "parcial",
+          "evidence": [
+            "Chrome conectado, ambiente fictício isolado: Falta de outro destinatário bloqueia; rascunho privado salvo/retomado; publicação r1; destinatário distinto confirma; ciência persiste ao recarregar e painel de ações passa de 1 para 0. Sem e-mail."
+          ],
+          "issues": []
+        },
+        {
+          "name": "Preparação de fontes",
+          "status": "pendente",
+          "evidence": [],
+          "issues": []
+        },
+        {
+          "name": "Destinatários",
+          "status": "parcial",
+          "evidence": [
+            "Chrome conectado, ambiente fictício isolado: Falta de outro destinatário bloqueia; rascunho privado salvo/retomado; publicação r1; destinatário distinto confirma; ciência persiste ao recarregar e painel de ações passa de 1 para 0. Sem e-mail."
+          ],
+          "issues": []
+        },
+        {
+          "name": "Conferência/publicação",
+          "status": "parcial",
+          "evidence": [
+            "Chrome conectado, ambiente fictício isolado: Falta de outro destinatário bloqueia; rascunho privado salvo/retomado; publicação r1; destinatário distinto confirma; ciência persiste ao recarregar e painel de ações passa de 1 para 0. Sem e-mail."
+          ],
+          "issues": []
+        },
+        {
+          "name": "Recebimento/ciência",
+          "status": "parcial",
+          "evidence": [
+            "Chrome conectado, ambiente fictício isolado: Falta de outro destinatário bloqueia; rascunho privado salvo/retomado; publicação r1; destinatário distinto confirma; ciência persiste ao recarregar e painel de ações passa de 1 para 0. Sem e-mail."
+          ],
+          "issues": []
+        },
+        {
+          "name": "Histórico",
+          "status": "pendente",
+          "evidence": [],
+          "issues": []
+        },
+        {
+          "name": "Anexos",
+          "status": "pendente",
+          "evidence": [],
+          "issues": []
+        },
+        {
+          "name": "Relatórios",
+          "status": "pendente",
+          "evidence": [],
+          "issues": []
+        }
+      ],
+      "entry_review": {
+        "status": "parcial",
+        "method": "Chrome, dados fictícios, administrador",
+        "evidence": "work/ui127-browser/",
+        "checked": [
+          "abertura",
+          "títulos e ações iniciais",
+          "estado vazio ou registros existentes"
+        ],
+        "remaining": "Formulários, variantes de perfil e fluxos detalhados conforme cada área."
+      }
+    },
+    {
+      "id": "calendario",
+      "title": "Calendário operacional",
+      "source": "project_calendar.js",
+      "views": [
+        {
+          "name": "Calendário",
+          "status": "pendente",
+          "evidence": [],
+          "issues": []
+        },
+        {
+          "name": "Lista de datas",
+          "status": "pendente",
+          "evidence": [],
+          "issues": []
+        },
+        {
+          "name": "Filtros de origem",
+          "status": "pendente",
+          "evidence": [],
+          "issues": []
+        },
+        {
+          "name": "Abrir registro vinculado",
+          "status": "pendente",
+          "evidence": [],
+          "issues": []
+        }
+      ],
+      "entry_review": {
+        "status": "parcial",
+        "method": "Chrome, dados fictícios, administrador",
+        "evidence": "work/ui127-browser/",
+        "checked": [
+          "abertura",
+          "títulos e ações iniciais",
+          "estado vazio ou registros existentes"
+        ],
+        "remaining": "Formulários, variantes de perfil e fluxos detalhados conforme cada área."
+      }
+    },
+    {
+      "id": "inventario",
+      "title": "Inventário e ativos",
+      "source": "fieldwork.js",
+      "views": [
+        {
+          "name": "Inventários",
+          "status": "pendente",
+          "evidence": [],
+          "issues": []
+        },
+        {
+          "name": "Itens e caixas",
+          "status": "pendente",
+          "evidence": [],
+          "issues": []
+        },
+        {
+          "name": "Pesquisar/filtrar",
+          "status": "pendente",
+          "evidence": [],
+          "issues": []
+        },
+        {
+          "name": "Novo item",
+          "status": "pendente",
+          "evidence": [],
+          "issues": []
+        },
+        {
+          "name": "Editar item",
+          "status": "pendente",
+          "evidence": [],
+          "issues": []
+        },
+        {
+          "name": "Mover/organizar",
+          "status": "pendente",
+          "evidence": [],
+          "issues": []
+        },
+        {
+          "name": "Perfil do ativo",
+          "status": "parcial",
+          "evidence": [
+            "Chrome conectado, ambiente fictício isolado: Equipamento consultado em inventário/frota; alocação/remessa refletidas no histórico com seis eventos."
+          ],
+          "issues": []
+        },
+        {
+          "name": "Histórico e vínculos",
+          "status": "parcial",
+          "evidence": [
+            "Chrome conectado, ambiente fictício isolado: Equipamento consultado em inventário/frota; alocação/remessa refletidas no histórico com seis eventos."
+          ],
+          "issues": []
+        },
+        {
+          "name": "Etiquetas QR",
+          "status": "pendente",
+          "evidence": [],
+          "issues": []
+        },
+        {
+          "name": "Contagem/verificação",
+          "status": "pendente",
+          "evidence": [],
+          "issues": []
+        },
+        {
+          "name": "Importar planilha",
+          "status": "pendente",
+          "evidence": [],
+          "issues": []
+        },
+        {
+          "name": "Conferir fontes",
+          "status": "pendente",
+          "evidence": [],
+          "issues": []
+        },
+        {
+          "name": "Mapeamento e seleção de linhas",
+          "status": "pendente",
+          "evidence": [],
+          "issues": []
+        },
+        {
+          "name": "Comparação de duplicados",
+          "status": "pendente",
+          "evidence": [],
+          "issues": []
+        },
+        {
+          "name": "Estoque mínimo",
+          "status": "pendente",
+          "evidence": [],
+          "issues": []
+        }
+      ],
+      "entry_review": {
+        "status": "parcial",
+        "method": "Chrome, dados fictícios, administrador",
+        "evidence": "work/ui127-browser/",
+        "checked": [
+          "abertura",
+          "títulos e ações iniciais",
+          "estado vazio ou registros existentes"
+        ],
+        "remaining": "Formulários, variantes de perfil e fluxos detalhados conforme cada área."
+      }
+    },
+    {
+      "id": "manutencao",
+      "title": "Manutenção",
+      "source": "operations.js",
+      "views": [
+        {
+          "name": "Ordens de serviço",
+          "status": "parcial",
+          "evidence": [
+            "Chrome conectado, ambiente fictício isolado: Execução concluída; recorrência de duas semanas retomada do rascunho; rotina/data obrigatórias; edição invalida confirmação; cancelamento com motivo mantém execução vinculada."
+          ],
+          "issues": []
+        },
+        {
+          "name": "Criar ordem",
+          "status": "parcial",
+          "evidence": [
+            "Chrome conectado, ambiente fictício isolado: Execução concluída; recorrência de duas semanas retomada do rascunho; rotina/data obrigatórias; edição invalida confirmação; cancelamento com motivo mantém execução vinculada."
+          ],
+          "issues": []
+        },
+        {
+          "name": "Rotinas",
+          "status": "parcial",
+          "evidence": [
+            "Chrome conectado, ambiente fictício isolado: Execução concluída; recorrência de duas semanas retomada do rascunho; rotina/data obrigatórias; edição invalida confirmação; cancelamento com motivo mantém execução vinculada."
+          ],
+          "issues": []
+        },
+        {
+          "name": "Executar etapas",
+          "status": "parcial",
+          "evidence": [
+            "Chrome conectado, ambiente fictício isolado: Execução concluída; recorrência de duas semanas retomada do rascunho; rotina/data obrigatórias; edição invalida confirmação; cancelamento com motivo mantém execução vinculada."
+          ],
+          "issues": []
+        },
+        {
+          "name": "Leituras e anexos",
+          "status": "pendente",
+          "evidence": [],
+          "issues": []
+        },
+        {
+          "name": "Ciclo e recorrência",
+          "status": "parcial",
+          "evidence": [
+            "Chrome conectado, ambiente fictício isolado: Execução concluída; recorrência de duas semanas retomada do rascunho; rotina/data obrigatórias; edição invalida confirmação; cancelamento com motivo mantém execução vinculada."
+          ],
+          "issues": []
+        },
+        {
+          "name": "Pendências",
+          "status": "pendente",
+          "evidence": [],
+          "issues": []
+        },
+        {
+          "name": "Revisar/encerrar",
+          "status": "parcial",
+          "evidence": [
+            "Chrome conectado, ambiente fictício isolado: Execução concluída; recorrência de duas semanas retomada do rascunho; rotina/data obrigatórias; edição invalida confirmação; cancelamento com motivo mantém execução vinculada."
+          ],
+          "issues": []
+        },
+        {
+          "name": "Histórico",
+          "status": "parcial",
+          "evidence": [
+            "Chrome conectado, ambiente fictício isolado: Execução concluída; recorrência de duas semanas retomada do rascunho; rotina/data obrigatórias; edição invalida confirmação; cancelamento com motivo mantém execução vinculada."
+          ],
+          "issues": []
+        }
+      ],
+      "entry_review": {
+        "status": "parcial",
+        "method": "Chrome, dados fictícios, administrador",
+        "evidence": "work/ui127-browser/",
+        "checked": [
+          "abertura",
+          "títulos e ações iniciais",
+          "estado vazio ou registros existentes"
+        ],
+        "remaining": "Formulários, variantes de perfil e fluxos detalhados conforme cada área."
+      }
+    },
+    {
+      "id": "certificados",
+      "title": "Certificados do inventário",
+      "source": "assets.js",
+      "views": [
+        {
+          "name": "Cadastro",
+          "status": "parcial",
+          "evidence": [
+            "Chrome conectado, ambiente fictício isolado: Data obrigatória bloqueia; rascunho retomado; ativação exige motivo; PDF fictício; renovação ativa até 2027, anterior substituído com anexo preservado. Histórico consultado; exportação pendente."
+          ],
+          "issues": []
+        },
+        {
+          "name": "Filtros e vencimentos",
+          "status": "parcial",
+          "evidence": [
+            "Chrome conectado, ambiente fictício isolado: Data obrigatória bloqueia; rascunho retomado; ativação exige motivo; PDF fictício; renovação ativa até 2027, anterior substituído com anexo preservado. Histórico consultado; exportação pendente."
+          ],
+          "issues": []
+        },
+        {
+          "name": "Novo certificado",
+          "status": "parcial",
+          "evidence": [
+            "Chrome conectado, ambiente fictício isolado: Data obrigatória bloqueia; rascunho retomado; ativação exige motivo; PDF fictício; renovação ativa até 2027, anterior substituído com anexo preservado. Histórico consultado; exportação pendente."
+          ],
+          "issues": []
+        },
+        {
+          "name": "Editar/renovar",
+          "status": "parcial",
+          "evidence": [
+            "Chrome conectado, ambiente fictício isolado: Data obrigatória bloqueia; rascunho retomado; ativação exige motivo; PDF fictício; renovação ativa até 2027, anterior substituído com anexo preservado. Histórico consultado; exportação pendente."
+          ],
+          "issues": []
+        },
+        {
+          "name": "Anexos",
+          "status": "parcial",
+          "evidence": [
+            "Chrome conectado, ambiente fictício isolado: Data obrigatória bloqueia; rascunho retomado; ativação exige motivo; PDF fictício; renovação ativa até 2027, anterior substituído com anexo preservado. Histórico consultado; exportação pendente."
+          ],
+          "issues": []
+        },
+        {
+          "name": "Vínculo com equipamento",
+          "status": "parcial",
+          "evidence": [
+            "Chrome conectado, ambiente fictício isolado: Data obrigatória bloqueia; rascunho retomado; ativação exige motivo; PDF fictício; renovação ativa até 2027, anterior substituído com anexo preservado. Histórico consultado; exportação pendente."
+          ],
+          "issues": []
+        },
+        {
+          "name": "Histórico/exportação",
+          "status": "parcial",
+          "evidence": [
+            "Chrome conectado, ambiente fictício isolado: Data obrigatória bloqueia; rascunho retomado; ativação exige motivo; PDF fictício; renovação ativa até 2027, anterior substituído com anexo preservado. Histórico consultado; exportação pendente."
+          ],
+          "issues": []
+        }
+      ],
+      "entry_review": {
+        "status": "parcial",
+        "method": "Chrome, dados fictícios, administrador",
+        "evidence": "work/ui127-browser/",
+        "checked": [
+          "abertura",
+          "títulos e ações iniciais",
+          "estado vazio ou registros existentes"
+        ],
+        "remaining": "Formulários, variantes de perfil e fluxos detalhados conforme cada área."
+      }
+    },
+    {
+      "id": "frota",
+      "title": "Frota e embarcações",
+      "source": "fleet.js",
+      "views": [
+        {
+          "name": "Embarcações e bases",
+          "status": "parcial",
+          "evidence": [
+            "Chrome conectado, ambiente fictício isolado: Dois locais cadastrados/editados; equipamento alocado, despacho/recebimento/colocação no destino. Corrigido diálogo preso em Salvando após sucesso."
+          ],
+          "issues": []
+        },
+        {
+          "name": "Ativos",
+          "status": "parcial",
+          "evidence": [
+            "Chrome conectado, ambiente fictício isolado: Dois locais cadastrados/editados; equipamento alocado, despacho/recebimento/colocação no destino. Corrigido diálogo preso em Salvando após sucesso."
+          ],
+          "issues": []
+        },
+        {
+          "name": "Detalhe do ativo",
+          "status": "parcial",
+          "evidence": [
+            "Chrome conectado, ambiente fictício isolado: Dois locais cadastrados/editados; equipamento alocado, despacho/recebimento/colocação no destino. Corrigido diálogo preso em Salvando após sucesso."
+          ],
+          "issues": []
+        },
+        {
+          "name": "Jornada/custódia",
+          "status": "parcial",
+          "evidence": [
+            "Chrome conectado, ambiente fictício isolado: Dois locais cadastrados/editados; equipamento alocado, despacho/recebimento/colocação no destino. Corrigido diálogo preso em Salvando após sucesso."
+          ],
+          "issues": []
+        },
+        {
+          "name": "Livros da embarcação",
+          "status": "pendente",
+          "evidence": [],
+          "issues": []
+        },
+        {
+          "name": "Registros/pendências",
+          "status": "pendente",
+          "evidence": [],
+          "issues": []
+        },
+        {
+          "name": "Configuração de locais",
+          "status": "parcial",
+          "evidence": [
+            "Chrome conectado, ambiente fictício isolado: Dois locais cadastrados/editados; equipamento alocado, despacho/recebimento/colocação no destino. Corrigido diálogo preso em Salvando após sucesso."
+          ],
+          "issues": []
+        },
+        {
+          "name": "Permissões por local",
+          "status": "pendente",
+          "evidence": [],
+          "issues": []
+        }
+      ],
+      "entry_review": {
+        "status": "parcial",
+        "method": "Chrome, dados fictícios, administrador",
+        "evidence": "work/ui127-browser/",
+        "checked": [
+          "abertura",
+          "títulos e ações iniciais",
+          "estado vazio ou registros existentes"
+        ],
+        "remaining": "Formulários, variantes de perfil e fluxos detalhados conforme cada área."
+      }
+    },
+    {
+      "id": "remessas",
+      "title": "Remessas e recebimento",
+      "source": "fleet.js",
+      "views": [
+        {
+          "name": "Lista de remessas",
+          "status": "parcial",
+          "evidence": [
+            "Chrome conectado, ambiente fictício isolado: Manifesto v1–v6: rascunho, preparação, despacho, recebimento, colocação e encerramento; zero itens pendentes após recarregar. Filtros canônicos preservados em testes."
+          ],
+          "issues": []
+        },
+        {
+          "name": "Criar manifesto",
+          "status": "parcial",
+          "evidence": [
+            "Chrome conectado, ambiente fictício isolado: Manifesto v1–v6: rascunho, preparação, despacho, recebimento, colocação e encerramento; zero itens pendentes após recarregar. Filtros canônicos preservados em testes."
+          ],
+          "issues": []
+        },
+        {
+          "name": "Separar itens",
+          "status": "parcial",
+          "evidence": [
+            "Chrome conectado, ambiente fictício isolado: Manifesto v1–v6: rascunho, preparação, despacho, recebimento, colocação e encerramento; zero itens pendentes após recarregar. Filtros canônicos preservados em testes."
+          ],
+          "issues": []
+        },
+        {
+          "name": "Conferir/despachar",
+          "status": "parcial",
+          "evidence": [
+            "Chrome conectado, ambiente fictício isolado: Manifesto v1–v6: rascunho, preparação, despacho, recebimento, colocação e encerramento; zero itens pendentes após recarregar. Filtros canônicos preservados em testes."
+          ],
+          "issues": []
+        },
+        {
+          "name": "Receber",
+          "status": "parcial",
+          "evidence": [
+            "Chrome conectado, ambiente fictício isolado: Manifesto v1–v6: rascunho, preparação, despacho, recebimento, colocação e encerramento; zero itens pendentes após recarregar. Filtros canônicos preservados em testes."
+          ],
+          "issues": []
+        },
+        {
+          "name": "Divergências",
+          "status": "pendente",
+          "evidence": [],
+          "issues": []
+        },
+        {
+          "name": "Acomodação no destino",
+          "status": "parcial",
+          "evidence": [
+            "Chrome conectado, ambiente fictício isolado: Manifesto v1–v6: rascunho, preparação, despacho, recebimento, colocação e encerramento; zero itens pendentes após recarregar. Filtros canônicos preservados em testes."
+          ],
+          "issues": []
+        },
+        {
+          "name": "Histórico",
+          "status": "parcial",
+          "evidence": [
+            "Chrome conectado, ambiente fictício isolado: Manifesto v1–v6: rascunho, preparação, despacho, recebimento, colocação e encerramento; zero itens pendentes após recarregar. Filtros canônicos preservados em testes."
+          ],
+          "issues": []
+        }
+      ]
+    },
+    {
+      "id": "falhas",
+      "title": "Relatórios de falha",
+      "source": "fault_reports.js",
+      "views": [
+        {
+          "name": "Lista/filtros",
+          "status": "parcial",
+          "evidence": [
+            "Chrome conectado, ambiente fictício isolado: FR000001 criado, atribuído ao próprio administrador, prazo 22/10. Cancelar sem motivo bloqueado; motivo/confirmar v3 persistiu, filtro Cancelado retorna um registro. Revisão independente pendente."
+          ],
+          "issues": []
+        },
+        {
+          "name": "Criar relato",
+          "status": "parcial",
+          "evidence": [
+            "Chrome conectado, ambiente fictício isolado: FR000001 criado, atribuído ao próprio administrador, prazo 22/10. Cancelar sem motivo bloqueado; motivo/confirmar v3 persistiu, filtro Cancelado retorna um registro. Revisão independente pendente."
+          ],
+          "issues": []
+        },
+        {
+          "name": "Detalhe",
+          "status": "parcial",
+          "evidence": [
+            "Chrome conectado, ambiente fictício isolado: FR000001 criado, atribuído ao próprio administrador, prazo 22/10. Cancelar sem motivo bloqueado; motivo/confirmar v3 persistiu, filtro Cancelado retorna um registro. Revisão independente pendente."
+          ],
+          "issues": []
+        },
+        {
+          "name": "Atribuir ação",
+          "status": "parcial",
+          "evidence": [
+            "Chrome conectado, ambiente fictício isolado: FR000001 criado, atribuído ao próprio administrador, prazo 22/10. Cancelar sem motivo bloqueado; motivo/confirmar v3 persistiu, filtro Cancelado retorna um registro. Revisão independente pendente."
+          ],
+          "issues": []
+        },
+        {
+          "name": "Atualizar resolução",
+          "status": "parcial",
+          "evidence": [
+            "Chrome conectado, ambiente fictício isolado: FR000001 criado, atribuído ao próprio administrador, prazo 22/10. Cancelar sem motivo bloqueado; motivo/confirmar v3 persistiu, filtro Cancelado retorna um registro. Revisão independente pendente."
+          ],
+          "issues": []
+        },
+        {
+          "name": "Revisar/encerrar",
+          "status": "pendente",
+          "evidence": [],
+          "issues": []
+        },
+        {
+          "name": "Histórico",
+          "status": "parcial",
+          "evidence": [
+            "Chrome conectado, ambiente fictício isolado: FR000001 criado, atribuído ao próprio administrador, prazo 22/10. Cancelar sem motivo bloqueado; motivo/confirmar v3 persistiu, filtro Cancelado retorna um registro. Revisão independente pendente."
+          ],
+          "issues": []
+        }
+      ],
+      "entry_review": {
+        "status": "parcial",
+        "method": "Chrome, dados fictícios, administrador",
+        "evidence": "work/ui127-browser/",
+        "checked": [
+          "abertura",
+          "títulos e ações iniciais",
+          "estado vazio ou registros existentes"
+        ],
+        "remaining": "Formulários, variantes de perfil e fluxos detalhados conforme cada área."
+      }
+    },
+    {
+      "id": "seguranca",
+      "title": "Segurança e qualidade",
+      "source": "qshe_reports.js",
+      "views": [
+        {
+          "name": "Lista/filtros",
+          "status": "parcial",
+          "evidence": [
+            "Chrome conectado, ambiente fictício isolado: QH000001 criado e atribuído à própria conta; justificativa obrigatória; editar limpa confirmação; encerramento persiste e filtro retorna um. Reabertura e revisão independente pendentes."
+          ],
+          "issues": []
+        },
+        {
+          "name": "Nova ocorrência",
+          "status": "parcial",
+          "evidence": [
+            "Chrome conectado, ambiente fictício isolado: QH000001 criado e atribuído à própria conta; justificativa obrigatória; editar limpa confirmação; encerramento persiste e filtro retorna um. Reabertura e revisão independente pendentes."
+          ],
+          "issues": []
+        },
+        {
+          "name": "Detalhe",
+          "status": "parcial",
+          "evidence": [
+            "Chrome conectado, ambiente fictício isolado: QH000001 criado e atribuído à própria conta; justificativa obrigatória; editar limpa confirmação; encerramento persiste e filtro retorna um. Reabertura e revisão independente pendentes."
+          ],
+          "issues": []
+        },
+        {
+          "name": "Vincular tarefa/registro",
+          "status": "pendente",
+          "evidence": [],
+          "issues": []
+        },
+        {
+          "name": "Revisar ação",
+          "status": "parcial",
+          "evidence": [
+            "Chrome conectado, ambiente fictício isolado: QH000001 criado e atribuído à própria conta; justificativa obrigatória; editar limpa confirmação; encerramento persiste e filtro retorna um. Reabertura e revisão independente pendentes."
+          ],
+          "issues": []
+        },
+        {
+          "name": "Encerrar/reabrir",
+          "status": "parcial",
+          "evidence": [
+            "Chrome conectado, ambiente fictício isolado: QH000001 criado e atribuído à própria conta; justificativa obrigatória; editar limpa confirmação; encerramento persiste e filtro retorna um. Reabertura e revisão independente pendentes."
+          ],
+          "issues": []
+        },
+        {
+          "name": "Histórico",
+          "status": "parcial",
+          "evidence": [
+            "Chrome conectado, ambiente fictício isolado: QH000001 criado e atribuído à própria conta; justificativa obrigatória; editar limpa confirmação; encerramento persiste e filtro retorna um. Reabertura e revisão independente pendentes."
+          ],
+          "issues": []
+        }
+      ],
+      "entry_review": {
+        "status": "parcial",
+        "method": "Chrome, dados fictícios, administrador",
+        "evidence": "work/ui127-browser/",
+        "checked": [
+          "abertura",
+          "títulos e ações iniciais",
+          "estado vazio ou registros existentes"
+        ],
+        "remaining": "Formulários, variantes de perfil e fluxos detalhados conforme cada área."
+      }
+    },
+    {
+      "id": "dds",
+      "title": "Diálogos de segurança",
+      "source": "fieldwork.js",
+      "views": [
+        {
+          "name": "Lista",
+          "status": "pendente",
+          "evidence": [],
+          "issues": []
+        },
+        {
+          "name": "Novo diálogo",
+          "status": "pendente",
+          "evidence": [],
+          "issues": []
+        },
+        {
+          "name": "Formulário",
+          "status": "pendente",
+          "evidence": [],
+          "issues": []
+        },
+        {
+          "name": "Participantes",
+          "status": "pendente",
+          "evidence": [],
+          "issues": []
+        },
+        {
+          "name": "Ciência/assinaturas",
+          "status": "pendente",
+          "evidence": [],
+          "issues": []
+        },
+        {
+          "name": "Relatório",
+          "status": "pendente",
+          "evidence": [],
+          "issues": []
+        }
+      ],
+      "entry_review": {
+        "status": "parcial",
+        "method": "Chrome, dados fictícios, administrador",
+        "evidence": "work/ui127-browser/",
+        "checked": [
+          "abertura",
+          "títulos e ações iniciais",
+          "estado vazio ou registros existentes"
+        ],
+        "remaining": "Formulários, variantes de perfil e fluxos detalhados conforme cada área."
+      }
+    },
+    {
+      "id": "originais",
+      "title": "Arquivos originais",
+      "source": "original_library.js",
+      "views": [
+        {
+          "name": "Biblioteca",
+          "status": "pendente",
+          "evidence": [],
+          "issues": []
+        },
+        {
+          "name": "Pesquisa/filtros",
+          "status": "pendente",
+          "evidence": [],
+          "issues": []
+        },
+        {
+          "name": "Pastas",
+          "status": "pendente",
+          "evidence": [],
+          "issues": []
+        },
+        {
+          "name": "Arquivo e revisões",
+          "status": "pendente",
+          "evidence": [],
+          "issues": []
+        },
+        {
+          "name": "Enviar arquivo",
+          "status": "pendente",
+          "evidence": [],
+          "issues": []
+        },
+        {
+          "name": "Nova revisão",
+          "status": "pendente",
+          "evidence": [],
+          "issues": []
+        },
+        {
+          "name": "Baixar original",
+          "status": "pendente",
+          "evidence": [],
+          "issues": []
+        }
+      ],
+      "entry_review": {
+        "status": "parcial",
+        "method": "Chrome, dados fictícios, administrador",
+        "evidence": "work/ui127-browser/",
+        "checked": [
+          "abertura",
+          "títulos e ações iniciais",
+          "estado vazio ou registros existentes"
+        ],
+        "remaining": "Formulários, variantes de perfil e fluxos detalhados conforme cada área."
+      }
+    },
+    {
+      "id": "editores",
+      "title": "Configuração e editores",
+      "source": "setup_builders.js",
+      "views": [
+        {
+          "name": "Catálogo",
+          "status": "pendente",
+          "evidence": [],
+          "issues": []
+        },
+        {
+          "name": "Listas de verificação",
+          "status": "pendente",
+          "evidence": [],
+          "issues": []
+        },
+        {
+          "name": "Rotinas de manutenção",
+          "status": "pendente",
+          "evidence": [],
+          "issues": []
+        },
+        {
+          "name": "Diálogos de segurança",
+          "status": "pendente",
+          "evidence": [],
+          "issues": []
+        },
+        {
+          "name": "Livros de registro",
+          "status": "parcial",
+          "evidence": [
+            "Chrome conectado, ambiente fictício isolado: Editor completo de livro fictício: confirmação obrigatória antes de salvar; estrutura criada e usada em registro."
+          ],
+          "issues": []
+        },
+        {
+          "name": "Estruturas de inventário",
+          "status": "pendente",
+          "evidence": [],
+          "issues": []
+        },
+        {
+          "name": "Importação avançada",
+          "status": "pendente",
+          "evidence": [],
+          "issues": []
+        },
+        {
+          "name": "Interpretação/mapeamento",
+          "status": "pendente",
+          "evidence": [],
+          "issues": []
+        },
+        {
+          "name": "Conferência de fontes",
+          "status": "pendente",
+          "evidence": [],
+          "issues": []
+        },
+        {
+          "name": "Publicação de definição",
+          "status": "parcial",
+          "evidence": [
+            "Chrome conectado, ambiente fictício isolado: Editor completo de livro fictício: confirmação obrigatória antes de salvar; estrutura criada e usada em registro."
+          ],
+          "issues": []
+        }
+      ],
+      "entry_review": {
+        "status": "parcial",
+        "method": "Chrome, dados fictícios, administrador",
+        "evidence": "work/ui127-browser/",
+        "checked": [
+          "abertura",
+          "títulos e ações iniciais",
+          "estado vazio ou registros existentes"
+        ],
+        "remaining": "Formulários, variantes de perfil e fluxos detalhados conforme cada área."
+      }
+    },
+    {
+      "id": "acessos",
+      "title": "Convites e acesso",
+      "source": "membership_workspace.js",
+      "views": [
+        {
+          "name": "Pendentes",
+          "status": "pendente",
+          "evidence": [],
+          "issues": []
+        },
+        {
+          "name": "Convites",
+          "status": "parcial",
+          "evidence": [
+            "Chrome conectado, ambiente fictício isolado: Abas consultadas com administrador fictício; textos/descrições localizados; nenhum convite enviado."
+          ],
+          "issues": []
+        },
+        {
+          "name": "Membros",
+          "status": "parcial",
+          "evidence": [
+            "Chrome conectado, ambiente fictício isolado: Abas consultadas com administrador fictício; textos/descrições localizados; nenhum convite enviado."
+          ],
+          "issues": []
+        },
+        {
+          "name": "Revisão de solicitação",
+          "status": "pendente",
+          "evidence": [],
+          "issues": []
+        },
+        {
+          "name": "Delegação",
+          "status": "parcial",
+          "evidence": [
+            "Chrome conectado, ambiente fictício isolado: Abas consultadas com administrador fictício; textos/descrições localizados; nenhum convite enviado."
+          ],
+          "issues": []
+        },
+        {
+          "name": "Entrada por convite",
+          "status": "pendente",
+          "evidence": [],
+          "issues": []
+        },
+        {
+          "name": "Recuperação de senha",
+          "status": "pendente",
+          "evidence": [],
+          "issues": []
+        }
+      ],
+      "entry_review": {
+        "status": "parcial",
+        "method": "Chrome, dados fictícios, administrador",
+        "evidence": "work/ui127-browser/",
+        "checked": [
+          "abertura",
+          "títulos e ações iniciais",
+          "estado vazio ou registros existentes"
+        ],
+        "remaining": "Formulários, variantes de perfil e fluxos detalhados conforme cada área."
+      }
+    },
+    {
+      "id": "admin",
+      "title": "Administração",
+      "source": "browser_admin.js",
+      "views": [
+        {
+          "name": "Central",
+          "status": "parcial",
+          "evidence": [
+            "Chrome conectado, ambiente fictício isolado: Abertura e rótulos revisados; seis contas fictícias com acessos distintos usadas nas jornadas, sem mudar permissões reais."
+          ],
+          "issues": []
+        },
+        {
+          "name": "Usuários",
+          "status": "pendente",
+          "evidence": [],
+          "issues": []
+        },
+        {
+          "name": "Detalhe da conta",
+          "status": "pendente",
+          "evidence": [],
+          "issues": []
+        },
+        {
+          "name": "Permissões",
+          "status": "parcial",
+          "evidence": [
+            "Chrome conectado, ambiente fictício isolado: Abertura e rótulos revisados; seis contas fictícias com acessos distintos usadas nas jornadas, sem mudar permissões reais."
+          ],
+          "issues": []
+        },
+        {
+          "name": "Acesso efetivo",
+          "status": "parcial",
+          "evidence": [
+            "Chrome conectado, ambiente fictício isolado: Abertura e rótulos revisados; seis contas fictícias com acessos distintos usadas nas jornadas, sem mudar permissões reais."
+          ],
+          "issues": []
+        },
+        {
+          "name": "Departamentos",
+          "status": "pendente",
+          "evidence": [],
+          "issues": []
+        },
+        {
+          "name": "Membros e responsáveis",
+          "status": "pendente",
+          "evidence": [],
+          "issues": []
+        },
+        {
+          "name": "Modelos e rotinas",
+          "status": "pendente",
+          "evidence": [],
+          "issues": []
+        },
+        {
+          "name": "Editor de livros",
+          "status": "pendente",
+          "evidence": [],
+          "issues": []
+        },
+        {
+          "name": "Gestão de registros",
+          "status": "pendente",
+          "evidence": [],
+          "issues": []
+        },
+        {
+          "name": "Importações/exemplos",
+          "status": "pendente",
+          "evidence": [],
+          "issues": []
+        },
+        {
+          "name": "Identidade de relatórios",
+          "status": "pendente",
+          "evidence": [],
+          "issues": []
+        },
+        {
+          "name": "Configuração da frota",
+          "status": "pendente",
+          "evidence": [],
+          "issues": []
+        }
+      ],
+      "entry_review": {
+        "status": "parcial",
+        "method": "Chrome, dados fictícios, administrador",
+        "evidence": "work/ui127-browser/",
+        "checked": [
+          "abertura",
+          "títulos e ações iniciais",
+          "estado vazio ou registros existentes"
+        ],
+        "remaining": "Formulários, variantes de perfil e fluxos detalhados conforme cada área."
+      }
+    },
+    {
+      "id": "ajuda",
+      "title": "Ajuda e instalação",
+      "source": "help_workspace.js",
+      "views": [
+        {
+          "name": "Ajuda contextual",
+          "status": "pendente",
+          "evidence": [],
+          "issues": []
+        },
+        {
+          "name": "Tópicos",
+          "status": "pendente",
+          "evidence": [],
+          "issues": []
+        },
+        {
+          "name": "Instalação",
+          "status": "pendente",
+          "evidence": [],
+          "issues": []
+        },
+        {
+          "name": "Falhas de acesso",
+          "status": "pendente",
+          "evidence": [],
+          "issues": []
+        },
+        {
+          "name": "Estados de conexão",
+          "status": "pendente",
+          "evidence": [],
+          "issues": []
+        }
+      ]
+    }
+  ],
+  "findings": [
+    {
+      "id": "UI127-01",
+      "area": "rh",
+      "problem": "Viagens ausentes da linha do tempo e da tabela da equipe.",
+      "fix": "Projeção compartilhada de escalas e viagens autorizadas; sem presumir retorno ou presença.",
+      "status": "implementado e testado isoladamente",
+      "evidence": [
+        "26 verificações JavaScript",
+        "Chrome: viagem aberta pela faixa correta, filtro mantido",
+        "390 px: cartões sem transbordamento da página"
+      ]
+    },
+    {
+      "id": "UI127-02",
+      "area": "rh",
+      "problem": "Foco perdido ao trocar modo da programação devido à referência de um elemento removido.",
+      "fix": "Restaurar o foco no botão da tela atual.",
+      "status": "implementado e testado por teclado no Chrome local"
+    },
+    {
+      "id": "UI127-03",
+      "area": "rh",
+      "problem": "Histórico e detalhes mostram horários ISO com Z.",
+      "fix": "Data e hora em pt-BR com UTC explícito, mantendo os valores persistidos.",
+      "status": "implementado e testado isoladamente"
+    },
+    {
+      "id": "UI127-04",
+      "area": "acessos",
+      "problem": "Abas, formulários, instruções e confirmações em inglês.",
+      "fix": "Traduções de interface e estados; conteúdo cadastrado preservado.",
+      "status": "implementado; consultas verificadas, formulários em revisão"
+    },
+    {
+      "id": "UI127-05",
+      "area": "frota",
+      "problem": "Títulos e instruções de logística em inglês.",
+      "fix": "Vocabulário de embarcações, despacho, recebimento e alocação.",
+      "status": "implementado; validação em andamento"
+    },
+    {
+      "id": "UI127-06",
+      "area": "inicio",
+      "problem": "Avisos de troca de empresa em inglês e nome de confirmação divergente.",
+      "fix": "Avisos em português e nome da identidade da empresa disponível.",
+      "status": "implementado; teste de regressão passou"
+    },
+    {
+      "id": "UI127-07",
+      "area": "frota",
+      "problem": "Cadastro confirmado permanecia aberto porque o indicador de salvamento bloqueava seu fechamento.",
+      "fix": "Encerrar o indicador ocupado após a resposta confirmada e antes de fechar o formulário.",
+      "status": "implementado e testado: edição confirma e fecha, sem repetição da escrita"
+    }
+  ],
+  "production": {
+    "status": "bloqueada",
+    "reason": "Permissão salva do navegador recusou corcovado.mywavelink.com; não contornada.",
+    "records_modified": false,
+    "test_user_preserved": "teste-rh-ui121-2"
+  },
+  "updated_at": "2026-10-18T14:32:09.870Z"
+}

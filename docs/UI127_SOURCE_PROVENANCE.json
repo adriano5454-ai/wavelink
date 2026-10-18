@@ -1,0 +1,289 @@
+{
+  "format": "wavelink-runtime-overlay-1",
+  "date": "2026-10-18",
+  "patch_id": "workspace-ui127-audit-2026-10-18",
+  "parent_patch_id": "workspace-ui126-import-review-2026-10-18",
+  "parent_manifest_sha256": "da29d95b1a809b0760a1d2bc92e67bc8f9f32aa55ce2788dc7084c2ccb5d0843",
+  "scope": "Contextual PT-BR audit, HR calendar travel and focus, fleet transition dialog, native validation and report presentation; source content, authorization, identifiers and persisted records retained.",
+  "boundaries": {
+    "database_reset": false,
+    "browser_storage_clear": false,
+    "operational_writers_changed": false,
+    "live_deployment": false
+  },
+  "runtime_manifest_sha256": "e0355e75841d7c1e102cb05526876f125d229fd9f7e755af01e7534efbdde446",
+  "runtime_resources": 2281,
+  "overlay_resources": 54,
+  "files": [
+    {
+      "path": "UI_PATCH.json",
+      "before_sha256": "d13f28b2dba0144cf6164e1a6f4fec2e6a68b9ed294564cf1d2bf310d5cfba6f",
+      "after_sha256": "bd0fc65ee43869ee3ba166f268c724fe03e6d336883321f572800a81d18bafb6"
+    },
+    {
+      "path": "app/__init__.py",
+      "before_sha256": "9edf4630146e120071130bfcaee8979bd9758267091409ada05286c7fbab1996",
+      "after_sha256": "7c08520284ac4d7d7e6f48a74fbbc807a46e1f9aeca5608214eae10c3d9f3854"
+    },
+    {
+      "path": "app/log_exports.py",
+      "before_sha256": "a8dc850351a32d31e4abd553e51a23db0ce236c5362aa6a0f08098a69fc5e79a",
+      "after_sha256": "d244db2e4aaadae92570239ec8f227574e02b769e9a2133819f32cc822669e13"
+    },
+    {
+      "path": "app/log_journal_export.py",
+      "before_sha256": "40608959663e186658dbfda1f1419b01b50f2745a03d11ae6a37038c7f679727",
+      "after_sha256": "8ae7720378a770d42c733b3b98ae70b9626230577779c8df6439f092aa189898"
+    },
+    {
+      "path": "app/report_localization.py",
+      "before_sha256": "3ab7c1f3235e14a6a0949d1e1a9ee4fe578eb89c5c84713f16c1b0e47a7f953c",
+      "after_sha256": "c226852c772d7e8ccecf3e1ea53de09ede5da334c8052cea7433959519408116"
+    },
+    {
+      "path": "app/static/app.js",
+      "before_sha256": "f14749e459ab1092e7356b8d86dc0c496fe6d75a36342bc38c19aa74af715882",
+      "after_sha256": "eb8c5d8167755dc44d2a79f8171832a11609a5d1e088b27bf4a1953574eba46f"
+    },
+    {
+      "path": "app/static/browser_logs.js",
+      "before_sha256": "b5148ec88571c12583869c1fa39160db8a62cb3b40ac76abc5cd64f0397cbfb3",
+      "after_sha256": "c906a7361b65ab7d258f42b055d1aa897a18af55411d452bed0f02d98d7db2ff"
+    },
+    {
+      "path": "app/static/certificate_form.js",
+      "before_sha256": "31c07998f89544d630c1b74f4870bff9db4d203b944d051fb1becb872ab38be8",
+      "after_sha256": "3c7bb345d23dadbd5c2308cbee67e95fc068d3d1aa4a711b5b54633675c6e4b6"
+    },
+    {
+      "path": "app/static/certificate_workspace.js",
+      "before_sha256": "c94111e27d02c792427bcad2ccc5f2d295ae0d7f4b6e2b0d2e61ff1724bf87a5",
+      "after_sha256": "f443062e246ddf2ede69d7e3bcbf4db46e73b90a58f51a48718ae5a287435498"
+    },
+    {
+      "path": "app/static/dialog_system_ui81.js",
+      "before_sha256": "46dd03bec2bb03e056186f6646fc8b0d787d85e20ba26ced5865273e9bd95852",
+      "after_sha256": "2fa594cca5620517a789a8b37e0848c8b31a4196af0fdaf99c9ff859ca02ddd8"
+    },
+    {
+      "path": "app/static/document_participation.js",
+      "before_sha256": "cb8923b8845e971f53a42e6257cd031b33fd78ed26c041f61f61045bc544709c",
+      "after_sha256": "292919e3af59924e9cb646365e71f2faf11dd2f5e13398ec6070cb77aabfccc9"
+    },
+    {
+      "path": "app/static/experience_ui123.css",
+      "before_sha256": "c8c39e0ac1d1565786a9cd4602addfb3635a9a94104f781d7d698cfe1fb506b5",
+      "after_sha256": "c6a2767387e1d0645c07897613a85c2de0de6393c6290aacff48d6a5911ec182"
+    },
+    {
+      "path": "app/static/fault_reports.js",
+      "before_sha256": "50d7764cc19046a71ddd5c1e3768643f2f9d073a39ee9451d74348f502ed7eaa",
+      "after_sha256": "951f01a101ea8cf0820c80ed78cb0b75e2a62d65a968a799104d5a0952a3204d"
+    },
+    {
+      "path": "app/static/fieldwork.js",
+      "before_sha256": "abf70d49119211fbf8b113630619792922f5153eb095430dfd40bfe28e3c1119",
+      "after_sha256": "c3f79760f5e458de212a473d62162f9712cd6fb9d9dbc194af744b48dd520d1c"
+    },
+    {
+      "path": "app/static/fleet.html",
+      "before_sha256": "130c9a9139314ae998d3200cc24de6d6c2dd56885f3177d28e22f06ad401af86",
+      "after_sha256": "55b0915f116cea34c9cf2df2012e5045a7b9686d86c238ea55e3d7881a941f4f"
+    },
+    {
+      "path": "app/static/fleet.js",
+      "before_sha256": "a8a78773dcc795c29ee987d0550d842f3019d698d3a04d75b07888ebb41b1fbd",
+      "after_sha256": "e624d80caf3a5db5b460975ad751c243bdbd350c47bce569d6d36242d110a70a"
+    },
+    {
+      "path": "app/static/general_tasks.js",
+      "before_sha256": "28017d13647565aa1f3fc10e23fd61bd388d709905dcb0a49d1dda0f25f966d3",
+      "after_sha256": "76d4fef8f5c3f81d09b636fec45847b21da2c3dcaa2258161e51246818f7c05b"
+    },
+    {
+      "path": "app/static/handover_attachments.js",
+      "before_sha256": "5a5b7897f58551921c716e4023744eb777b6867e19a547ed5d2b53ccf26b48af",
+      "after_sha256": "c31a8e7e7af7fddefca506a2c10f4875952d8e83af35b1ae1aee74861c5b5c39"
+    },
+    {
+      "path": "app/static/handover_continue.js",
+      "before_sha256": "23ac86d098ad045964803ba546b625a33b23a40f0ddee7938f127d8e0147eeb8",
+      "after_sha256": "b805b873f0df4d9b1ba014ea4107e90a4cd3b7d16cb9843d15607c3e258ae397"
+    },
+    {
+      "path": "app/static/handover_incoming.js",
+      "before_sha256": "8bc9c7a83d5d5b8dd70247f054f94e27205324d81cae2821dd37c17f68d8fc4a",
+      "after_sha256": "5326a64da9ff67eb90885cab21ffe77e15f4d80af136e13020fe9178113f147b"
+    },
+    {
+      "path": "app/static/handover_review.js",
+      "before_sha256": "799610f98127fc49016c2e9541e48543c5b4e205d52cfaeece03a28e78c2fe0c",
+      "after_sha256": "1ed1459e1da299827f138970c4299a8a0d3e643886db508685c52c2569d590c2"
+    },
+    {
+      "path": "app/static/handover_workspace.js",
+      "before_sha256": "9c0955dd0463d8b1dbc3a34b270e04159ff6cea4288c9e8ede5475e385688a21",
+      "after_sha256": "2e8744d262ab532eb86178d77953d4e379ae9dcce3fc19bd9a3a12431c5a4227"
+    },
+    {
+      "path": "app/static/handovers.js",
+      "before_sha256": "03d8887865dcab1920345003cccd963563efd33d75eae803c159ba327749b21c",
+      "after_sha256": "8eb54e5b459899bb1e131dd960c37fb6e135973cd7fd460c8f7371bc9924b668"
+    },
+    {
+      "path": "app/static/hr_planning_ui121.js",
+      "before_sha256": "588e0eb26610b30d2cc4f47d3477d0d1403e61d64012e723a96ecaf9db313147",
+      "after_sha256": "d441dee388b0fdf8d146eecd9affde83df38ad0f8d8419d09cefa937c0ee684f"
+    },
+    {
+      "path": "app/static/hr_workspace.js",
+      "before_sha256": "ff6a3f1b70bc00b67af0b8d542621af9edb05a9d52609b7982757c9ab0436603",
+      "after_sha256": "5883c4e6869a8ea2c0494d8ad833a0e6e927f7e4d116c8ffa375ae5a8405754b"
+    },
+    {
+      "path": "app/static/index.html",
+      "before_sha256": "634fb5c15714849e742566d4743128b540272acf5f43e7a3e0985f5a2162c8a9",
+      "after_sha256": "cbd59989b6abfe9734016e7c5e78132464d031db12fb42e7836d95fbfdbb6a08"
+    },
+    {
+      "path": "app/static/interface_components.js",
+      "before_sha256": "a127a902aee092b1d76ad9e0be98850b1d74645053eba1a00691faeff08ceb4e",
+      "after_sha256": "4e7cf253bd719337a2a44ee0e618b84ee644946e3d6d77ad13f0229c61ee16e7"
+    },
+    {
+      "path": "app/static/locale_pt_br.js",
+      "before_sha256": "c51bcc6a5d92a957788f1a6c32316ab0d3332d317d644971faae80f53d2eab5a",
+      "after_sha256": "d9aa23a9b1226dfb0eee8ea6c61b24cbfe40597de33aa8d558a641a60df9b52f"
+    },
+    {
+      "path": "app/static/logistics_workflow.js",
+      "before_sha256": "97873390a509698f82133604eb156daf116f5583399d0094e557564ce2c00731",
+      "after_sha256": "3fa6dee1f08e11075cc6a3a404165e2272c7eba185e7e0ad828f0f03e9477ce0"
+    },
+    {
+      "path": "app/static/logs.js",
+      "before_sha256": "dbadc7ea0b33c6968d49b017f04dcacf9eb6d9a4fbc7c7d789cd6e9c057897b3",
+      "after_sha256": "2a950eeccdb9cb1f76330fd66798e98e8b2b4c81789c9de7ccc935925528708f"
+    },
+    {
+      "path": "app/static/logs_workspace.js",
+      "before_sha256": "48cf61a62b86a1037d440d9f34e690a8d1eb2ac464b148c3acb5141f82f31284",
+      "after_sha256": "7993d5a53204ebbed7b5448cb2bc14a9aba93400f130759b1468ab1053c312f0"
+    },
+    {
+      "path": "app/static/maintenance_forms.js",
+      "before_sha256": "a7af94fde2f0a6796e9d42a429558316bb443e82b08548f9c0d1955f3e66174a",
+      "after_sha256": "4efe6c1ec1d1be87de2f7133583570ab87f76479917578f707d83c087383c47a"
+    },
+    {
+      "path": "app/static/maintenance_management.js",
+      "before_sha256": "c05dc7b0e453e0b376b186cd7f54d2a2d8a0983bd061a6958dcd10286ff129d7",
+      "after_sha256": "b183dada3d3eec3c3dd5f215901a92b021d26d7c404a84f6abedd651682ca5d9"
+    },
+    {
+      "path": "app/static/maintenance_ui.js",
+      "before_sha256": "5a0cc2c91f6ff1beb6e9c9ae12125b1a9c0f310382f4dffc4a15698adc16a2c5",
+      "after_sha256": "e325f4e743e39976a3cc5ff80062a35a43bdfff0570593bdcb5c210ad8799b39"
+    },
+    {
+      "path": "app/static/maintenance_workspace.js",
+      "before_sha256": "11165f8428a0d4ab6049d08e802c6b59a3de2ebdfa895b19edc465a2084fa890",
+      "after_sha256": "54a52b0d99437854e95864d2d7b8136e9dc3aa5396bcfb1e5fc7357b5d89fce3"
+    },
+    {
+      "path": "app/static/manifest_ui.js",
+      "before_sha256": "cfaca8d97e91cc93970b0c85aa3ab2a4140bbe0230cfdf9e43eb3b29b4528055",
+      "after_sha256": "bead52b22986504449d913374e34b91e97b1a19d5b5f51761f8657946669572b"
+    },
+    {
+      "path": "app/static/membership_workspace.js",
+      "before_sha256": "86683c2d2f0bff9312218695b285ffb8e72a884e6a0b2197d1d8db29971d58a4",
+      "after_sha256": "e8ec61b47e99e0fe0099dba497bb5e2cbce6c3dc9aac433511c39a4765635e9a"
+    },
+    {
+      "path": "app/static/operations.js",
+      "before_sha256": "72b5172e8066aee0157f4f69652f75b84b8e3b39e9c53e280720e332d520917d",
+      "after_sha256": "8c412e911835a3ef4f85b994b04fe26bfc330a37c7d04ea75bc16e263e755e6f"
+    },
+    {
+      "path": "app/static/personal_home.js",
+      "before_sha256": "6ef08d16a17a5a267d8244277c3fec76aacd5f69e2357c267372889fb8229c78",
+      "after_sha256": "75003856a0170a525fbb9f8301984b8f18a0af0d5c63c23a05d4ab6af4f692f0"
+    },
+    {
+      "path": "app/static/preparation_ui.js",
+      "before_sha256": "e1db4a49c8b58d38e8a0466aa2868a8bd7e1c5e55f6d68992e637c654af2888e",
+      "after_sha256": "5dce9375e0fcbb85d1cfa5a4a79ede1e9a731c9658df9f80926eba5ab0b1a967"
+    },
+    {
+      "path": "app/static/pt-BR/fleet.html",
+      "before_sha256": "a45bf55fc341d40fbba2c953011aa8b1454570f530c4c126c7725e2ec75c6bb0",
+      "after_sha256": "8f562bfe779051097ba868c6046f58afe74f36b02c5c40b2e42bd4e45a1b3ab4"
+    },
+    {
+      "path": "app/static/pt-BR/index.html",
+      "before_sha256": "c5ffcd6f4094668a1d790049d3be0dd44aaf9699308a448625636dbc00041f88",
+      "after_sha256": "cd23c6929239354872a4b8054c568b85dfdf92a7777e36b4ed23370ad2da6ab2"
+    },
+    {
+      "path": "app/static/qshe_reports.js",
+      "before_sha256": "264aaf018f70dd2b36f57aebab1685598714ea21ed0c71b50d0d1575ede12007",
+      "after_sha256": "15a59bde9222ad1c04b33df518c5967de8308dea055993f2ea42a70000e1299b"
+    },
+    {
+      "path": "app/static/recognition_workspace.js",
+      "before_sha256": "52c918c34a0d214d95538a8b2f37aac1fca07ac579958172199ad14d9b16b1bd",
+      "after_sha256": "cf8384e0d50d005da2151cae3f9a24a4fc0413127ba7e634f83fd94d3a31d1ed"
+    },
+    {
+      "path": "app/static/report_forms.js",
+      "before_sha256": "68d0d8141dda32553c18b2fd2dc206f627cf62960b2aad8854ec50881e9683d1",
+      "after_sha256": "5e05fe81c60131acce3f80d9cc4e56234be762f52d8f66e14baa42ded29b5128"
+    },
+    {
+      "path": "app/static/shift_workspace.js",
+      "before_sha256": "c540eda5febbb09c2a2915ee427300e4a75ae1c93d238926fd89b11f8cb3f9e8",
+      "after_sha256": "d3e1a511f36b6fea748a3dcc046cfdbf93eb80598a3fde2383d4c0008cef3a96"
+    },
+    {
+      "path": "app/static/simple_handovers.js",
+      "before_sha256": "15a825309601dd91c303500d1ce0245f907299c37f7d372a116b9bde7afdff43",
+      "after_sha256": "b118b45f88cf9087ced94552160052cca5ed4c630d32b40611b5a7b2990ce5cb"
+    },
+    {
+      "path": "app/static/sw.js",
+      "before_sha256": "2107dc05d39d03859e3ce47c98110bc38d0e2331b3bf58687533f778555b3dc7",
+      "after_sha256": "0565dc40c838642b9b864e895ed28c53e53df366d99ba8fd004ed697513fa6d2"
+    },
+    {
+      "path": "app/static/task_checklists.js",
+      "before_sha256": "e874bfbb817564d1b6261403adae49a8a007fac6dd437094566d97a4b60d6b30",
+      "after_sha256": "719441996871efdc55f4c3a77afc1030e57c106133c8929f547ecb9ec4fba793"
+    },
+    {
+      "path": "app/static/task_workspace.js",
+      "before_sha256": "47aafd5ba8f282bb29fb8c89ead408ae24b97725f4c95b0e924318fab00a162c",
+      "after_sha256": "03e7f6e0b1045160a62e7d969d3016acdd7f23d1f44c3cf8fac5a38192989b0a"
+    },
+    {
+      "path": "app/static/workspace_continuity.js",
+      "before_sha256": "eb78e666b7c52f8015712dcd0a02b7e0a00ce9048c4795eb0d1c49466639308a",
+      "after_sha256": "72aba28f59d6cfe02d3109b4872f4e7b61c5e5c7b0f6e5f83a75c3d74af6c45a"
+    },
+    {
+      "path": "app/static/workspace_ux_ui121.js",
+      "before_sha256": "875971f227e5d67b2985ac1dedde87316edcbce18f49a271d89aed58d129b96d",
+      "after_sha256": "87f6b4209f490eb624d90a5c4f4c4db16e315658cc0c394cef62619a4c02c9c2"
+    },
+    {
+      "path": "tests/test_audit_ui127.js",
+      "before_sha256": null,
+      "after_sha256": "81d5841eab1c29cab30b0ebb2a7b5fa047938359efdd9d9c631f3dda9c940f59"
+    },
+    {
+      "path": "tests/test_report_table_locale_ui127.py",
+      "before_sha256": null,
+      "after_sha256": "0fe0ed4fc13ac42903cf273881f4c055e023941efdd6725488398722e02006b1"
+    }
+  ]
+}

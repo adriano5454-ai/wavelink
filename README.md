@@ -1,3 +1,14 @@
+# UI127 — Auditoria de RH e Operações
+
+Wavelink **1.34.27**, sobre `736c9c9c82e9b0a0f93f41d59d063c1ade13da27`. Corrige viagens e foco no calendário, contexto de navegação, diálogo de frota, validação e apresentação em português. Preserva registros, permissões, idiomas e usuário temporário.
+
+- [Cobertura por área, testes, capturas e limites](docs/UI127_GUIA.html)
+- [193 telas/funções inventariadas](docs/UI127_COVERAGE.json)
+- [Validação e falhas ainda abertas](validation/ui127-validation.json)
+- [Proveniência](docs/UI127_SOURCE_PROVENANCE.json)
+
+**Auditoria integral parcial:** 100 itens com evidência detalhada; demais fluxos pendentes e produção autenticada bloqueada. Bateria histórica completa não verde. 27 suítes JavaScript e nove testes Python focados passaram; reconstrução de 2.281 recursos verificada. Reconstruir em pasta nova: `python deploy/materialize_runtime.py ./runtime-ui127`. Não importar cenários fictícios em produção. Documentação anterior preservada abaixo.
+
 # UI126 — Importações e conferência de originais em português
 
 Wavelink **1.34.26**, sobre `d6bc5959c4eb8aa44c238dbc0c1cc53fef88c70f`.
