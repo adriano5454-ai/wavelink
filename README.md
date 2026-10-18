@@ -1,3 +1,18 @@
+# UI123 — Navegação, escalas e acompanhamento do trabalho
+
+Wavelink **1.34.23**, preparado sobre o commit UI122 `28e0dcff4e79c5720aaa322d4bf70170f6ce9653`. Melhora a consulta de equipes, o retorno ao calendário e aos registros, o envio de solicitações e o uso no celular. Preserva dados, permissões, anexos, rascunhos, identidade e idiomas configurados.
+
+- [Guia visual, comparações, glossário e fontes oficiais](docs/UI123_GUIA_VISUAL.html)
+- [Validação local e limites](validation/ui123-validation.json)
+- [Proveniência dos recursos](docs/UI123_SOURCE_PROVENANCE.json)
+
+**153 verificações automatizadas passaram** e as jornadas foram exercitadas no Chrome com dados fictícios. Os resultados locais não comprovam comportamento em produção; consulte o deployment ativo no Render. A UI122 foi confirmada publicada antes desta revisão. Os documentos abaixo registram entregas anteriores e podem conter seus estados históricos.
+
+Reconstrução completa em diretório novo: `python deploy/materialize_runtime.py ./runtime-ui123`.
+Teste dos novos filtros: `node runtime-ui123/tests/test_ux_ui123.cjs`.
+
+---
+
 # UI122 — Permissões em português brasileiro
 
 Wavelink **1.34.22**, preparado sobre o commit d103ed68a7cd1849405d5e3f05a8a14c5290d553 (UI121). Corrige 79 rótulos e 18 grupos do editor de permissões, os avisos de escopo e os títulos de conta. Os identificadores, valores de autorização, nomes de pessoas e registros salvos são preservados; outros deployments continuam no idioma configurado.

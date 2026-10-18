@@ -1,32 +1,45 @@
 {
-  "release": "UI122",
-  "version": "1.34.22",
-  "base_commit": "d103ed68a7cd1849405d5e3f05a8a14c5290d553",
-  "status": "local_checks_and_full_reconstruction_passed_not_published",
-  "production_deployed": false,
-  "github_changed": false,
-  "tests": {
-    "permissions": 12,
-    "permission_labels": 79,
-    "permission_groups": 18,
-    "locale_regressions": 15,
-    "ui121_regressions": 15
+  "release": "UI123",
+  "version": "1.34.23",
+  "base_commit": "28e0dcff4e79c5720aaa322d4bf70170f6ce9653",
+  "status": "local_validation_complete_publication_record_separate",
+  "automated_tests": {
+    "python_hr": 92,
+    "ui123_behavior": 18,
+    "ui121_calendar_navigation_reports": 15,
+    "ui122_permissions": 12,
+    "ui120_form_serialization": 16,
+    "total": 153,
+    "result": "passed"
   },
-  "production_browser_blocker": "Saved site permission currently denies corcovado.mywavelink.com; user is reviewing Computer Use > Chrome > Manage.",
-  "runtime_manifest_sha256": "974b21cf4267564f46bc504908daed03365fdbd221c1747321f3a4688820a3ae",
-  "boundaries": {
-    "permission_keys_changed": false,
-    "permission_rules_changed": false,
-    "passwords_changed": false,
-    "stored_data_translated": false,
-    "other_deployments_language_changed": false
-  },
+  "browser_test_environment": "isolated localhost, fictional data, no email transport",
+  "browser_journeys_passed": [
+    "HR search/conflict/empty filters",
+    "Profile, private document and attachment, expiration, return context",
+    "Employee own records, returned hours edit, draft resume, save and resubmit",
+    "Justification required, return and reject; independent reviewer approval",
+    "Maintenance draft resume, step save, return from HR to same work order",
+    "Equipment search",
+    "Administrator permission labels; cancel without permission changes",
+    "390px header and section selector, keyboard and dialog focus restoration"
+  ],
   "build": {
-    "status": "passed",
-    "method": "Full materialization of the bundled source and UI93–UI122 overlays; all resource hashes verified by materialize_runtime.py",
-    "resources": 2269,
-    "manifest_sha256": "974b21cf4267564f46bc504908daed03365fdbd221c1747321f3a4688820a3ae",
-    "changed_resources_match_tested_runtime": true
+    "resources": 2272,
+    "manifest_sha256": "cb3b238adf5067424111af50609d73ffd197efe503380aa60e96378c0f578a2e",
+    "full_reconstruction_verified": true
   },
-  "production_data_changed_by_code_patch": false
+  "boundaries": {
+    "authorization_rules_changed": false,
+    "database_schema_changed": false,
+    "production_data_modified": false,
+    "live_interface_tested": false,
+    "production_browser_blocker": "Browser security gate denies the Corcovado origin despite user authorization. Not bypassed.",
+    "other_deployments_locale_preserved": true
+  },
+  "pending": [
+    "Authenticated UI validation on Corcovado",
+    "Older production return/reject tests and their cleanup; keep the temporary test user",
+    "User research with real HR professionals and high-volume physical-device testing"
+  ],
+  "rollback": "Redeploy UI122 28e0dcff4e79c5720aaa322d4bf70170f6ce9653 on the existing service. Do not restore data for a visual-only rollback."
 }
