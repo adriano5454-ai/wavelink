@@ -1,0 +1,26 @@
+[
+  {
+    "part": 1,
+    "exit": 1,
+    "tests": 1245,
+    "failed": 161,
+    "errors": 18,
+    "skipped": 8
+  },
+  {
+    "part": 2,
+    "exit": 1,
+    "tests": 1318,
+    "failed": 125,
+    "errors": 7,
+    "skipped": 12
+  },
+  {
+    "part": 3,
+    "exit": 1,
+    "tests": 1558,
+    "failed": 140,
+    "errors": 60,
+    "skipped": 4
+  }
+]

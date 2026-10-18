@@ -1,0 +1,37 @@
+[
+  {
+    "file": "test_admin_permissions_locale_ui122.cjs",
+    "pass": true,
+    "stdout": "{\n  \"passed\": 12,\n  \"permission_labels\": 79,\n  \"groups\": 18,\n  \"checks\": [\n    \"Portuguese headings and all permission labels\",\n    \"Company title translated without changing employee text\",\n    \"Scope and safety explanations in Portuguese\",\n    \"Expense review remains distinct from reimbursement payment\",\n    \"Original permission identifiers and selected values preserved\",\n    \"English deployment retains English content\",\n    \"Non-Brazilian locale retains English\",\n    \"Opening the editor never saves or changes authorization\",\n    \"Full-database backup still requires separate confirmation\",\n    \"Save without reason and review confirmation remains blocked\",\n    \"Confirmed save sends identical capability keys and values\",\n    \"Translation dictionary never localizes user-provided data in templates\"\n  ]\n}\n"
+  },
+  {
+    "file": "test_hr_forms_ui120.cjs",
+    "pass": true,
+    "stdout": "UI120: 16 behavioral form serialization checks passed.\n"
+  },
+  {
+    "file": "test_ui121_experience.cjs",
+    "pass": true,
+    "stdout": "PASS inclusive periods and leap dates\nPASS reject impossible, reversed and excessive periods\nPASS same-day changes stack without erasing conflicts\nPASS clipping preserves original periods and continuation\nPASS cancelled and outside-period assignments excluded\nPASS titles and attributes escape user-provided content\nPASS status and full period available without colour\nPASS no schedule never implies availability\nPASS restricted scope has an explicit explanation\nPASS Portuguese labels and English deployment remain distinct\nPASS interpolated employee text is never translated\nPASS accent-insensitive people search\nPASS navigation resumes exact route and resets on identity change\nPASS timeline uses CSP-compatible numeric layout without inline style markup\nPASS report columns describe each process without conflating amounts and hours\n15 UI121 behaviour checks passed\n"
+  },
+  {
+    "file": "test_ui124_action_labels.cjs",
+    "pass": true,
+    "stdout": "PASS expiry notification is labelled in Brazilian Portuguese\nPASS employee names remain verbatim\nPASS only the generated final suffix is changed\nPASS ordinary detail text is never translated\nPASS unknown event kinds retain their original data\nPASS English deployments retain original notifications\nPASS known action controls are translated independently of record titles\n7 UI124 notification label checks passed\n"
+  },
+  {
+    "file": "test_ui124_navigation.cjs",
+    "pass": true,
+    "stdout": "PASS focused mobile section selector allows repeated navigation\nPASS existing people search still allows interaction\nPASS open dialog still blocks navigation\nPASS field outside HR never bypasses busy state\nPASS a different editing control still blocks navigation\n5 UI124 navigation regression checks passed\n"
+  },
+  {
+    "file": "test_ui125_language_and_decisions.cjs",
+    "pass": true,
+    "stdout": "PASS known status codes display as nouns, without changing the input\nPASS unknown values and record names are preserved\nPASS English deployment preserves authored navigation and actions\nPASS Portuguese dynamic counts preserve record values\nPASS API names, keys and attributes remain technical\nPASS review requires explicit decision\nPASS document and hours decision vocabularies cannot be interchanged\nPASS documents requires a reason for both return and rejection\nPASS documents retains reason, version and wire enum\nPASS expenses requires a reason for both return and rejection\nPASS expenses retains reason, version and wire enum\nPASS timesheets requires a reason for both return and rejection\nPASS timesheets retains reason, version and wire enum\nPASS expense approval action and receipt do not record payment\nPASS hours approval does not claim payroll calculation\nPASS attachment and document review remain different\nPASS save draft and send for approval are distinct\nPASS Portuguese localization cannot suppress DELETE action receipts\nPASS review form displays and escapes document evidence without rewriting user text\nPASS task guidance renders a real action without leaking source-code labels\n20 UI125 behavior checks passed\n"
+  },
+  {
+    "file": "test_ux_ui123.cjs",
+    "pass": true,
+    "stdout": "PASS name search ignores accents and case\nPASS search includes vessel and project\nPASS department search uses only authorised departments\nPASS conflicts come from server warnings\nPASS declared availability excludes missing or restricted schedules\nPASS no schedule excludes restricted and travelling people\nPASS cancelled assignments do not count as working\nPASS travel search is connected to the employee\nPASS search narrows events and records together\nPASS projection never changes server response or staffing coverage\nPASS empty result does not fall back to full team\nPASS unknown schedule is explicit in summary\nPASS empty query has a real zero\nPASS filter query is escaped, including attribute injection\nPASS English deployment keeps English interface\nPASS Portuguese login tools are translated\nPASS timeline labels distinguish planned and confirmed without colour\nPASS agenda retains people with no schedule and states the limit\n18 UI123 behaviour checks passed\n"
+  }
+]
