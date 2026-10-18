@@ -1,3 +1,17 @@
+# UI122 — Permissões em português brasileiro
+
+Wavelink **1.34.22**, preparado sobre o commit d103ed68a7cd1849405d5e3f05a8a14c5290d553 (UI121). Corrige 79 rótulos e 18 grupos do editor de permissões, os avisos de escopo e os títulos de conta. Os identificadores, valores de autorização, nomes de pessoas e registros salvos são preservados; outros deployments continuam no idioma configurado.
+
+**Ainda não publicado.** Verificações locais e publicação em produção são etapas distintas.
+
+- [Escopo e validação](docs/UI122_PERMISSOES_PT_BR.md)
+- [Proveniência dos arquivos](docs/UI122_SOURCE_PROVENANCE.json)
+- [Verificações locais](validation/ui122-permissions.json)
+
+Fonte completa: `python deploy/materialize_runtime.py ./runtime-ui122` (diretório novo).
+
+---
+
 # UI121 — RH e Operações com navegação mais clara
 
 Wavelink **1.34.21**, preparado e testado localmente sobre main c435332618811aa29ac59e856a5ed922513f4e5e. Inclui UI120. Publicação autorizada para o serviço existente da Corcovado. Os relatórios incluídos registram a validação local; a validação do deployment deve ser conferida separadamente.

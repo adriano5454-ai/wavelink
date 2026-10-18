@@ -1,97 +1,32 @@
 {
-  "release": "UI121",
-  "version": "1.34.21",
-  "base_commit": "c435332618811aa29ac59e856a5ed922513f4e5e",
-  "base_rechecked_utc": "2026-10-17T21:45:00Z",
-  "status": "implemented_and_locally_tested",
+  "release": "UI122",
+  "version": "1.34.22",
+  "base_commit": "d103ed68a7cd1849405d5e3f05a8a14c5290d553",
+  "status": "local_checks_and_full_reconstruction_passed_not_published",
   "production_deployed": false,
-  "production_data_changed": false,
   "github_changed": false,
-  "external_messages_sent": false,
-  "python": {
-    "selected_unique_checks_passed": 194,
-    "evidence": [
-      "validation/ui121-regression.xml",
-      "validation/ui121-followup.xml",
-      "validation/ui121-locale-final.xml"
-    ],
-    "note": "190 selected checks: 188 first-run passes and two pt-BR fixture expectations corrected to explicitly select the locale; all 13 UI120 checks passed on follow-up. Four new locale checks passed in the final follow-up. Aggregated unique results, not a single all-green full-suite run."
+  "tests": {
+    "permissions": 12,
+    "permission_labels": 79,
+    "permission_groups": 18,
+    "locale_regressions": 15,
+    "ui121_regressions": 15
   },
-  "javascript": {
-    "behavior_checks_passed": 31,
-    "files": [
-      "tests/test_ui121_experience.cjs",
-      "tests/test_hr_forms_ui120.cjs"
-    ],
-    "coverage": [
-      "inclusive dates and overlap lanes",
-      "escaping and text status",
-      "CSP-compatible numeric timeline layout",
-      "process-specific CSV columns and formula protection",
-      "source-only locale isolation",
-      "navigation session isolation",
-      "draft serialization, selected employee, decimal hours and independent reviews"
-    ]
+  "production_browser_blocker": "Saved site permission currently denies corcovado.mywavelink.com; user is reviewing Computer Use > Chrome > Manage.",
+  "runtime_manifest_sha256": "974b21cf4267564f46bc504908daed03365fdbd221c1747321f3a4688820a3ae",
+  "boundaries": {
+    "permission_keys_changed": false,
+    "permission_rules_changed": false,
+    "passwords_changed": false,
+    "stored_data_translated": false,
+    "other_deployments_language_changed": false
   },
-  "browser": {
-    "browser": "Connected Chrome",
-    "environment": "Local isolated fictional company",
-    "roles": [
-      "employee",
-      "HR manager",
-      "operational supervisor",
-      "administrator"
-    ],
-    "tested": [
-      "Employee created and submitted an 8-hour entry; HR approved the same entry, version 3",
-      "HR scheduled Bruno onshore for 4–5 January 2027; saved person and dates verified",
-      "Administrator entered invalid future employment date; Portuguese error retained fields; close/resume and corrected save verified",
-      "Supervisor saved maintenance step as complete; order revision 2 and 1/1 progress verified, order remained open",
-      "Maintenance search and selected record preserved on return from HR",
-      "Calendar timeline, assignment list and roster inspected with planned and confirmed assignments, overlap, crew changes and expiry",
-      "Employee access showed own records; server tests verified private attachments, direct routes and independent review restrictions",
-      "CSV exported in Chrome; downloaded file contents matched visible three assignment records and process-specific columns",
-      "390x844 mobile layout: 375px rendered width equals scroll width, no horizontal page overflow; visible keyboard focus checked"
-    ],
-    "data": "Fictional records only; no real employee records copied"
-  },
-  "limits": [
-    "No deployment of UI120/UI121 to production or Render container build performed",
-    "No large-volume performance benchmark or formal WCAG certification",
-    "English isolation verified in automated frontend/backend tests; English browser journey was not repeated",
-    "No real notification e-mails sent in this UX work",
-    "Legacy Operations screens outside the selected journeys may still need terminology and accessibility review",
-    "No payroll, regulated time clock, payment, travel booking or external document validation added"
-  ],
-  "runtime_manifest_sha256": "06a5e6b85ca3b1e925976405f2f6ea473578501f002d358f155241db7ef81584",
   "build": {
-    "final_manifest_sha256": "06a5e6b85ca3b1e925976405f2f6ea473578501f002d358f155241db7ef81584",
-    "final_resources": 2268,
-    "all_final_resources_verified": true,
-    "full_chain_reconstructed": true,
-    "final_overlay_replayed": true,
-    "tampered_parent_refused_without_writes": true,
-    "repeated_apply_refused": true,
-    "original_media_resources_unchanged": 275,
-    "python_unique_checks_passed": 194,
-    "javascript_behavior_checks_passed": 31,
-    "new_asset_bytes": {
-      "workspace_ux_ui121.js": 3600,
-      "hr_planning_ui121.js": 8989,
-      "hr_locale_ui121.js": 20001,
-      "experience_ui121.css": 20096
-    },
-    "new_asset_gzip_estimate_bytes": {
-      "workspace_ux_ui121.js": 1745,
-      "hr_planning_ui121.js": 3625,
-      "hr_locale_ui121.js": 7516,
-      "experience_ui121.css": 4386
-    },
-    "contrast_samples": {
-      "main_text_on_white": 12.4,
-      "muted_text_on_white": 6.14,
-      "white_on_primary": 6.15,
-      "focus_on_white": 4.02
-    }
-  }
+    "status": "passed",
+    "method": "Full materialization of the bundled source and UI93–UI122 overlays; all resource hashes verified by materialize_runtime.py",
+    "resources": 2269,
+    "manifest_sha256": "974b21cf4267564f46bc504908daed03365fdbd221c1747321f3a4688820a3ae",
+    "changed_resources_match_tested_runtime": true
+  },
+  "production_data_changed_by_code_patch": false
 }

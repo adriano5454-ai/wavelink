@@ -1,0 +1,47 @@
+{
+  "at": "2026-10-17",
+  "base_commit": "d103ed68a7cd1849405d5e3f05a8a14c5290d553",
+  "new_tests": {
+    "passed": 12,
+    "permission_labels": 79,
+    "groups": 18,
+    "checks": [
+      "Portuguese headings and all permission labels",
+      "Company title translated without changing employee text",
+      "Scope and safety explanations in Portuguese",
+      "Expense review remains distinct from reimbursement payment",
+      "Original permission identifiers and selected values preserved",
+      "English deployment retains English content",
+      "Non-Brazilian locale retains English",
+      "Opening the editor never saves or changes authorization",
+      "Full-database backup still requires separate confirmation",
+      "Save without reason and review confirmation remains blocked",
+      "Confirmed save sends identical capability keys and values",
+      "Translation dictionary never localizes user-provided data in templates"
+    ]
+  },
+  "regressions": [
+    {
+      "script": "test_locale_ui118.cjs",
+      "status": 0,
+      "stdout": "{\"checks\":15,\"passed\":15}\n",
+      "stderr": ""
+    },
+    {
+      "script": "test_ui121_experience.cjs",
+      "status": 0,
+      "stdout": "PASS inclusive periods and leap dates\nPASS reject impossible, reversed and excessive periods\nPASS same-day changes stack without erasing conflicts\nPASS clipping preserves original periods and continuation\nPASS cancelled and outside-period assignments excluded\nPASS titles and attributes escape user-provided content\nPASS status and full period available without colour\nPASS no schedule never implies availability\nPASS restricted scope has an explicit explanation\nPASS Portuguese labels and English deployment remain distinct\nPASS interpolated employee text is never translated\nPASS accent-insensitive people search\nPASS navigation resumes exact route and resets on identity change\nPASS timeline uses CSP-compatible numeric layout without inline style markup\nPASS report columns describe each process without conflating amounts and hours\n15 UI121 behaviour checks passed\n",
+      "stderr": ""
+    }
+  ],
+  "before_fix_failed": true,
+  "production_deployed": false,
+  "production_browser_verification": "blocked by saved browser permission",
+  "build": {
+    "status": "passed",
+    "method": "Full materialization of the bundled source and UI93–UI122 overlays; all resource hashes verified by materialize_runtime.py",
+    "resources": 2269,
+    "manifest_sha256": "974b21cf4267564f46bc504908daed03365fdbd221c1747321f3a4688820a3ae",
+    "changed_resources_match_tested_runtime": true
+  }
+}

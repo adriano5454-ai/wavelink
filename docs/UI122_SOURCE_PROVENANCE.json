@@ -1,0 +1,44 @@
+{
+  "format": "wavelink-runtime-overlay-1",
+  "date": "2026-10-17",
+  "patch_id": "workspace-ui122-permissions-pt-br-2026-10-17",
+  "parent_patch_id": "workspace-ui121-rh-operations-experience-2026-10-17",
+  "parent_manifest_sha256": "06a5e6b85ca3b1e925976405f2f6ea473578501f002d358f155241db7ef81584",
+  "scope": "Portuguese permission labels and scope explanations; source-only locale isolation; identifiers, capability values, authorization rules and saved data unchanged.",
+  "boundaries": {
+    "database_reset": false,
+    "browser_storage_clear": false,
+    "operational_writers_changed": false,
+    "live_deployment": false
+  },
+  "runtime_manifest_sha256": "974b21cf4267564f46bc504908daed03365fdbd221c1747321f3a4688820a3ae",
+  "runtime_resources": 2269,
+  "overlay_resources": 5,
+  "files": [
+    {
+      "path": "UI_PATCH.json",
+      "before_sha256": "382a1598b1cb0e0eb48d3786b1cf3a14f3dc1f9976463b3983e1ae9406af23ea",
+      "after_sha256": "5d77908ebfe8d5a819dd4ed81b9035779cde4a7b864ce07458167278df10af51"
+    },
+    {
+      "path": "app/__init__.py",
+      "before_sha256": "a586a9007c1ef1254367c10e510b311127a3d0f3b3026eb7271bc48949390a4f",
+      "after_sha256": "c7ead8e4f99f2bc2f5a3558acad8cdd4ac0d10c744b0f18340f5bb7eb8e8046e"
+    },
+    {
+      "path": "app/static/browser_admin.js",
+      "before_sha256": "7129d0824d0b41cdcccc30e741f8ed6169d8ae8a48ac20a22630982f719b3350",
+      "after_sha256": "662e99109df8de7b1d1e1c3aaaa5d5be9e79e9afee6b9ec4fe956c97d4b44884"
+    },
+    {
+      "path": "app/static/locale_pt_br.js",
+      "before_sha256": "2add84302531e0fcfa7bddc2569553c6a926f9faab3673a9b62bde991745e654",
+      "after_sha256": "f0824e213422b21b2fdb9a4ba800a19c7d6661ea68abf8105ed961592209a6a5"
+    },
+    {
+      "path": "tests/test_admin_permissions_locale_ui122.cjs",
+      "before_sha256": null,
+      "after_sha256": "945c120bd35a92fffe40f88b5cf644c5e91991a52841b75eedc0df9cafb2be19"
+    }
+  ]
+}
