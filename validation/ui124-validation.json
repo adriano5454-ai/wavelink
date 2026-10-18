@@ -1,0 +1,51 @@
+{
+  "release": "UI124",
+  "version": "1.34.24",
+  "base_commit": "85d79a84b1c9c3393a2a1f8bae720af704dbfa76",
+  "status": "local_validation_complete_publication_receipt_separate",
+  "automated_tests": {
+    "ui120_forms": 16,
+    "ui121_experience": 15,
+    "ui122_permissions": 12,
+    "ui123_behaviour": 18,
+    "ui124_mobile_navigation": 5,
+    "ui124_notifications": 7,
+    "total": 73,
+    "result": "passed"
+  },
+  "build": {
+    "resources": 2275,
+    "manifest_sha256": "28093e9e3b72e5d7d3e33ea7f0d78487ef2051a0a42292343122c043dd5d2f6c",
+    "full_reconstruction_verified": true
+  },
+  "browser_environment": "Chrome on isolated localhost; fictional data, no email transport",
+  "browser_roles": [
+    "employee own HR documents; other people and administrator actions not exposed",
+    "HR manager: people, profile editor, authorized review queue, reports",
+    "operational reviewer: assigned task and maintenance links; HR return to the same work order",
+    "administrator: home, calendars/timeline, employee and personal profiles, inventory, maintenance, workspaces and account controls"
+  ],
+  "browser_journeys": [
+    "Employee profile edit, retain unsaved form, resume and save; saved value verified",
+    "Repeated mobile section selection from calendar to people; regression fixed",
+    "Close employee dialog returns keyboard focus to Edit profile",
+    "Notification opens the correct maintenance order",
+    "Search inventory item; mobile table labels in Portuguese",
+    "390px header, HR calendar, employee form and inventory; no document-wide horizontal overflow in checked views",
+    "No browser console errors in the checked session"
+  ],
+  "boundaries": {
+    "production_records_modified": false,
+    "permission_rules_changed": false,
+    "database_schema_changed": false,
+    "new_external_font_or_bitmap": false,
+    "other_deployments_locale_preserved": true,
+    "live_authenticated_ui_tested": false
+  },
+  "pending": [
+    "Authenticated live UI validation: browser security gate still denies Corcovado. Not bypassed.",
+    "Older production return/reject tests and their test-record cleanup remain pending; retain teste-rh-ui121-2.",
+    "Physical mobile devices, assistive-technology audit, large datasets and usability sessions with real HR staff."
+  ],
+  "rollback": "Redeploy 85d79a84b1c9c3393a2a1f8bae720af704dbfa76 on the same service and disk. Database restore is not required for this visual-only change."
+}

@@ -1,0 +1,19 @@
+{
+  "passed": 12,
+  "permission_labels": 79,
+  "groups": 18,
+  "checks": [
+    "Portuguese headings and all permission labels",
+    "Company title translated without changing employee text",
+    "Scope and safety explanations in Portuguese",
+    "Expense review remains distinct from reimbursement payment",
+    "Original permission identifiers and selected values preserved",
+    "English deployment retains English content",
+    "Non-Brazilian locale retains English",
+    "Opening the editor never saves or changes authorization",
+    "Full-database backup still requires separate confirmation",
+    "Save without reason and review confirmation remains blocked",
+    "Confirmed save sends identical capability keys and values",
+    "Translation dictionary never localizes user-provided data in templates"
+  ]
+}
