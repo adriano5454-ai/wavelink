@@ -1,0 +1,84 @@
+{
+  "format": "wavelink-runtime-overlay-1",
+  "date": "2026-10-17",
+  "patch_id": "workspace-ui124-shared-visual-system-2026-10-17",
+  "parent_patch_id": "workspace-ui123-navigation-staffing-2026-10-17",
+  "parent_manifest_sha256": "cb3b238adf5067424111af50609d73ffd197efe503380aa60e96378c0f578a2e",
+  "scope": "Shared visual system across Home, HR, Operations, profiles, controls and navigation; compact employee form and inventory hierarchy; authorization rules, locales and saved data preserved.",
+  "boundaries": {
+    "database_reset": false,
+    "browser_storage_clear": false,
+    "operational_writers_changed": false,
+    "live_deployment": false
+  },
+  "runtime_manifest_sha256": "28093e9e3b72e5d7d3e33ea7f0d78487ef2051a0a42292343122c043dd5d2f6c",
+  "runtime_resources": 2275,
+  "overlay_resources": 13,
+  "files": [
+    {
+      "path": "UI_PATCH.json",
+      "before_sha256": "e0fa8f87632c49a7a4bc5f24bdaeaac3f92669c49bbc964e3b19f1d712d146ad",
+      "after_sha256": "46b84dcf27a2b19da5efa81dc78ed9a0aa31c0dd102032f132e6be13a6b73999"
+    },
+    {
+      "path": "app/__init__.py",
+      "before_sha256": "96a0a8a9119be32b439fd2ee1fc03e96afa52fb2c674a8aaeb85bd59593e6f0c",
+      "after_sha256": "1de7c1782c6e37e5ec4266e75e2fcc9690243fcecd9b33d91a42d3a612cac370"
+    },
+    {
+      "path": "app/static/action_center_ui82.js",
+      "before_sha256": "891e115220a9a14aef1582566fabdbe0d397f8b25697c726ed6889bc4238c072",
+      "after_sha256": "71ed6d9077cd241e2d672f395a0feb1b2f67ed0185384e17de2b51d38ad8ec8c"
+    },
+    {
+      "path": "app/static/app.js",
+      "before_sha256": "c6c4c65ea51c05adf571f7c52db4befa8a175a960a0bed2f4faf5f8a4563d97e",
+      "after_sha256": "9e4011e5c207b7be19a403c54144803edd1b98d41f371cc5e09d348f2a5186ee"
+    },
+    {
+      "path": "app/static/fieldwork.js",
+      "before_sha256": "154861d478bf4b4cd1469e8d269338b505228db6f54128b21d82c60efa26a41d",
+      "after_sha256": "4256488f64e8a13100b6dc84a1c01222c1c377c63110e931971b42e429894ce5"
+    },
+    {
+      "path": "app/static/hr_workspace.js",
+      "before_sha256": "d0210f5d3c82b3648f78ed3f6bcbf6816fe26d60e348909dc7aaddc757a821a1",
+      "after_sha256": "8e029d71bc854e7db986c3caad4cbec16f01209fb4aa0a89e94d7ab4036c1246"
+    },
+    {
+      "path": "app/static/index.html",
+      "before_sha256": "1726a750cee518d35c9979da8818b7515e47b75258dd78420807abd78c3c43c5",
+      "after_sha256": "1aa62c64eddcfb938451791dc80635bb58cd5a23f6d91bee5a503812bac2fad5"
+    },
+    {
+      "path": "app/static/locale_pt_br.js",
+      "before_sha256": "9b35baf919737951a3786d5db63ed4309bc0bd94aaf562e267a839efeec87763",
+      "after_sha256": "4c91a95395f3fa2fc1ced58924df8f17d5720a0ec63218e802d87ccc18254fac"
+    },
+    {
+      "path": "app/static/personal_home.js",
+      "before_sha256": "b2c981cd8e6878887996c98924de57e387e26e26122e723d32557d3066d8ace4",
+      "after_sha256": "29a178cdd2e5ede9292bfd3c999339ec8534d3ba82bb0bd5a45249fe18aa521f"
+    },
+    {
+      "path": "app/static/pt-BR/index.html",
+      "before_sha256": "5bd95a20ed8997c524d75eec3f9b547abbab7fb3ccc5a0643baf0ace241e88f7",
+      "after_sha256": "74ea52a7153bd6f6b16263b8b04dd4a05b91ac6011070f6a4525876642140cab"
+    },
+    {
+      "path": "app/static/visual_ui124.css",
+      "before_sha256": null,
+      "after_sha256": "f2b865a6385cf3d3f3874a47bf2f21b74f85fba29c0a86943b5384030c3f9469"
+    },
+    {
+      "path": "tests/test_ui124_action_labels.cjs",
+      "before_sha256": null,
+      "after_sha256": "3671da2f4fdfc9a14c21696ef940b669fec9429bb69a27939c66039883d16f9e"
+    },
+    {
+      "path": "tests/test_ui124_navigation.cjs",
+      "before_sha256": null,
+      "after_sha256": "9f147edfbbe7bfb82301b148d0c48bec16257cfd7d8bc14e0e685248ffcb66a2"
+    }
+  ]
+}
