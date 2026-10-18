@@ -1,3 +1,21 @@
+# UI125 — Português e decisões claras
+
+Wavelink **1.34.25**, sobre `19d16b367143ec6e8d81b4bb5a8d98c4df2168e2`.
+
+Amplia vocabulário brasileiro e distingue salvar, enviar, conferir e aprovar. O formulário de conferência documental mostra metadados e anexos privados junto da decisão. Mantém a UI124, os dados, permissões e idiomas das demais empresas.
+
+- [Guia, capturas, glossário, fontes e pendências](docs/UI125_GUIA.html)
+- [162 verificações automatizadas e jornadas locais](validation/ui125-validation.json)
+- [Proveniência do runtime](docs/UI125_SOURCE_PROVENANCE.json)
+
+A validação autenticada na Corcovado está bloqueada pela ferramenta do navegador. A cobertura de inglês em caminhos avançados ainda não é integral. Publicação e integridade do código são comprovadas separadamente; não substituem testes funcionais ao vivo.
+
+Reconstrução: `python deploy/materialize_runtime.py ./runtime-ui125` em uma pasta nova. Não importar o cenário fictício em produção.
+
+As entregas abaixo são históricas.
+
+---
+
 # UI124 — Aparência unificada de RH e Operações
 
 Wavelink **1.34.24**, sobre a UI123 `85d79a84b1c9c3393a2a1f8bae720af704dbfa76`.

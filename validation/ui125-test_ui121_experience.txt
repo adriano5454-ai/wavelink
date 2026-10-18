@@ -1,0 +1,16 @@
+PASS inclusive periods and leap dates
+PASS reject impossible, reversed and excessive periods
+PASS same-day changes stack without erasing conflicts
+PASS clipping preserves original periods and continuation
+PASS cancelled and outside-period assignments excluded
+PASS titles and attributes escape user-provided content
+PASS status and full period available without colour
+PASS no schedule never implies availability
+PASS restricted scope has an explicit explanation
+PASS Portuguese labels and English deployment remain distinct
+PASS interpolated employee text is never translated
+PASS accent-insensitive people search
+PASS navigation resumes exact route and resets on identity change
+PASS timeline uses CSP-compatible numeric layout without inline style markup
+PASS report columns describe each process without conflating amounts and hours
+15 UI121 behaviour checks passed

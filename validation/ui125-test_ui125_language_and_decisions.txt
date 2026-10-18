@@ -1,0 +1,21 @@
+PASS known status codes display as nouns, without changing the input
+PASS unknown values and record names are preserved
+PASS English deployment preserves authored navigation and actions
+PASS Portuguese dynamic counts preserve record values
+PASS API names, keys and attributes remain technical
+PASS review requires explicit decision
+PASS document and hours decision vocabularies cannot be interchanged
+PASS documents requires a reason for both return and rejection
+PASS documents retains reason, version and wire enum
+PASS expenses requires a reason for both return and rejection
+PASS expenses retains reason, version and wire enum
+PASS timesheets requires a reason for both return and rejection
+PASS timesheets retains reason, version and wire enum
+PASS expense approval action and receipt do not record payment
+PASS hours approval does not claim payroll calculation
+PASS attachment and document review remain different
+PASS save draft and send for approval are distinct
+PASS Portuguese localization cannot suppress DELETE action receipts
+PASS review form displays and escapes document evidence without rewriting user text
+PASS task guidance renders a real action without leaking source-code labels
+20 UI125 behavior checks passed
