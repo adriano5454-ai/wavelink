@@ -53,14 +53,18 @@
         },
         {
           "name": "Busca global",
-          "status": "pendente",
-          "evidence": [],
+          "status": "parcial",
+          "evidence": [
+            "Chrome conectado, ambiente fictício: Pesquisa UI127 com supervisor fictício retornou três registros autorizados; abertura da passagem publicada confirmada; orientação de privacidade localizada."
+          ],
           "issues": []
         },
         {
           "name": "Central de ações",
-          "status": "pendente",
-          "evidence": [],
+          "status": "parcial",
+          "evidence": [
+            "Chrome conectado, ambiente fictício: Estado vazio e filtros de situação conferidos. Rótulos em português distinguidos de verbos de ação."
+          ],
           "issues": []
         },
         {
@@ -73,8 +77,10 @@
         },
         {
           "name": "Conexão e salvamentos",
-          "status": "pendente",
-          "evidence": [],
+          "status": "parcial",
+          "evidence": [
+            "Chrome fictício: consulta atualiza horário, estado conectado, contagens zero e comprovantes do salvamento de preferências/ciência. Avisos distinguem conexão de salvamento. Não foi simulada perda de rede."
+          ],
           "issues": []
         },
         {
@@ -85,8 +91,10 @@
         },
         {
           "name": "Áreas de trabalho",
-          "status": "pendente",
-          "evidence": [],
+          "status": "parcial",
+          "evidence": [
+            "Chrome conectado, ambiente fictício: Busca com resultado, resultado vazio, restaurar áreas e abrir destino testados; textos dinâmicos corrigidos em PT-BR."
+          ],
           "issues": []
         }
       ],
@@ -155,8 +163,10 @@
         },
         {
           "name": "Preferências de alertas",
-          "status": "pendente",
-          "evidence": [],
+          "status": "parcial",
+          "evidence": [
+            "Chrome conectado, ambiente fictício: Horário de silêncio e America/Bahia salvos; confirmação visível e valores preservados após recarregar; nenhum e-mail enviado."
+          ],
           "issues": []
         }
       ],
@@ -476,56 +486,75 @@
       "views": [
         {
           "name": "Lista e filtros",
-          "status": "pendente",
-          "evidence": [],
+          "status": "parcial",
+          "evidence": [
+            "Chrome isolado: modelo revisionado fictício, criação com local obrigatório, leitura 0–10 e rascunho 5 preservados após recarregar, anexo salvo/conferido, etapa antes concluída após prontidão explícita, edição bloqueada. Etapa depois bloqueou Não se aplica sem motivo e aceitou justificativa. Dados reais não usados."
+          ],
           "issues": []
         },
         {
           "name": "Nova lista",
-          "status": "pendente",
-          "evidence": [],
+          "status": "parcial",
+          "evidence": [
+            "Chrome isolado: modelo revisionado fictício, criação com local obrigatório, leitura 0–10 e rascunho 5 preservados após recarregar, anexo salvo/conferido, etapa antes concluída após prontidão explícita, edição bloqueada. Etapa depois bloqueou Não se aplica sem motivo e aceitou justificativa. Dados reais não usados."
+          ],
           "issues": []
         },
         {
           "name": "Etapas antes/depois",
-          "status": "pendente",
-          "evidence": [],
+          "status": "parcial",
+          "evidence": [
+            "Chrome isolado: modelo revisionado fictício, criação com local obrigatório, leitura 0–10 e rascunho 5 preservados após recarregar, anexo salvo/conferido, etapa antes concluída após prontidão explícita, edição bloqueada. Etapa depois bloqueou Não se aplica sem motivo e aceitou justificativa. Dados reais não usados."
+          ],
           "issues": []
         },
         {
           "name": "Campos e leituras",
-          "status": "pendente",
-          "evidence": [],
+          "status": "parcial",
+          "evidence": [
+            "Chrome isolado: modelo revisionado fictício, criação com local obrigatório, leitura 0–10 e rascunho 5 preservados após recarregar, anexo salvo/conferido, etapa antes concluída após prontidão explícita, edição bloqueada. Etapa depois bloqueou Não se aplica sem motivo e aceitou justificativa. Dados reais não usados."
+          ],
           "issues": []
         },
         {
           "name": "Evidências",
-          "status": "pendente",
-          "evidence": [],
+          "status": "parcial",
+          "evidence": [
+            "Chrome isolado: modelo revisionado fictício, criação com local obrigatório, leitura 0–10 e rascunho 5 preservados após recarregar, anexo salvo/conferido, etapa antes concluída após prontidão explícita, edição bloqueada. Etapa depois bloqueou Não se aplica sem motivo e aceitou justificativa. Dados reais não usados."
+          ],
           "issues": []
         },
         {
           "name": "Participantes e assinaturas",
-          "status": "pendente",
-          "evidence": [],
+          "status": "parcial",
+          "evidence": [
+            "Chrome isolado: prontidão explicitamente confirmada, revisão da justificativa e conclusão das duas etapas com bloqueio de edição. Exportação abriu seleção de etapas e botões JSON/PDF; clique em PDF fez a conexão Chrome expirar antes de comprovar download. Assinaturas por outra pessoa e conteúdo do PDF não verificados nesta passagem."
+          ],
           "issues": []
         },
         {
           "name": "Revisão",
-          "status": "pendente",
-          "evidence": [],
+          "status": "parcial",
+          "evidence": [
+            "Chrome isolado: modelo revisionado fictício, criação com local obrigatório, leitura 0–10 e rascunho 5 preservados após recarregar, anexo salvo/conferido, etapa antes concluída após prontidão explícita, edição bloqueada. Etapa depois bloqueou Não se aplica sem motivo e aceitou justificativa. Dados reais não usados."
+          ],
           "issues": []
         },
         {
           "name": "Exportação",
-          "status": "pendente",
-          "evidence": [],
+          "status": "parcial",
+          "evidence": [
+            "Chrome isolado: prontidão explicitamente confirmada, revisão da justificativa e conclusão das duas etapas com bloqueio de edição. Exportação abriu seleção de etapas e botões JSON/PDF; clique em PDF fez a conexão Chrome expirar antes de comprovar download. Assinaturas por outra pessoa e conteúdo do PDF não verificados nesta passagem.",
+            "Após recuperar a conexão em uma nova aba, o botão Baixar PDF concluiu e mostrou PDF exportado. O conteúdo e layout do arquivo baixado não foram inspecionados; acesso à página interna de downloads bloqueado pela política do navegador. Não foi contornado."
+          ],
           "issues": []
         },
         {
           "name": "Rascunhos",
-          "status": "pendente",
-          "evidence": [],
+          "status": "parcial",
+          "evidence": [
+            "Chrome isolado: modelo revisionado fictício, criação com local obrigatório, leitura 0–10 e rascunho 5 preservados após recarregar, anexo salvo/conferido, etapa antes concluída após prontidão explícita, edição bloqueada. Etapa depois bloqueou Não se aplica sem motivo e aceitou justificativa. Dados reais não usados."
+          ],
           "issues": []
         }
       ],
@@ -768,38 +797,54 @@
       "views": [
         {
           "name": "Inventários",
-          "status": "pendente",
-          "evidence": [],
+          "status": "parcial",
+          "evidence": [
+            "Chrome isolado: catálogo distingue registros de quantidade; cadastro de ferramenta com quantidade 3 e caixa com quantidade 1, validação do nome obrigatório, rascunho mantido/reaberto e conteúdo preservado. Corrigido contador de rascunhos que permanecia em 1 após envio; segundo cadastro confirmou 0 sem recarregar. Edição completa ainda pendente."
+          ],
           "issues": []
         },
         {
           "name": "Itens e caixas",
-          "status": "pendente",
-          "evidence": [],
+          "status": "parcial",
+          "evidence": [
+            "Chrome isolado: catálogo distingue registros de quantidade; cadastro de ferramenta com quantidade 3 e caixa com quantidade 1, validação do nome obrigatório, rascunho mantido/reaberto e conteúdo preservado. Corrigido contador de rascunhos que permanecia em 1 após envio; segundo cadastro confirmou 0 sem recarregar. Edição completa ainda pendente."
+          ],
           "issues": []
         },
         {
           "name": "Pesquisar/filtrar",
-          "status": "pendente",
-          "evidence": [],
+          "status": "parcial",
+          "evidence": [
+            "Busca de itens e filtros inventariados na tela; busca por conteúdo de caixa identificada e traduzida. Pesquisa com zero e retorno ainda não exercitada nesta passagem; testes existentes de busca/navegação passaram no ambiente isolado.",
+            "Chrome, dados fictícios: conferência de 3 itens; encerramento incompleto bloqueado; divergência sem justificativa recusada, rascunho preservado; 2 unidades contadas contra 3 previstas; busca por ativo encontra resultado já conferido; encerramento exige aceitar pendência e não altera estoque.",
+            "Chrome após correção: campo de destino vazio bloqueou avanço com “Selecione uma opção.”; busca por código patrimonial encontrou item dentro da caixa. Nenhuma movimentação adicional foi enviada."
+          ],
           "issues": []
         },
         {
           "name": "Novo item",
-          "status": "pendente",
-          "evidence": [],
+          "status": "parcial",
+          "evidence": [
+            "Chrome isolado: catálogo distingue registros de quantidade; cadastro de ferramenta com quantidade 3 e caixa com quantidade 1, validação do nome obrigatório, rascunho mantido/reaberto e conteúdo preservado. Corrigido contador de rascunhos que permanecia em 1 após envio; segundo cadastro confirmou 0 sem recarregar. Edição completa ainda pendente."
+          ],
           "issues": []
         },
         {
           "name": "Editar item",
-          "status": "pendente",
-          "evidence": [],
+          "status": "parcial",
+          "evidence": [
+            "Chrome isolado: catálogo distingue registros de quantidade; cadastro de ferramenta com quantidade 3 e caixa com quantidade 1, validação do nome obrigatório, rascunho mantido/reaberto e conteúdo preservado. Corrigido contador de rascunhos que permanecia em 1 após envio; segundo cadastro confirmou 0 sem recarregar. Edição completa ainda pendente.",
+            "Edição da unidade de unidade para unidades concluída; reabertura após recarregar preservou quantidade 3, referência TESTE-UI127-ITEM e local. Detalhes exibem Sim/Não e rótulos em português com capitalização natural."
+          ],
           "issues": []
         },
         {
           "name": "Mover/organizar",
-          "status": "pendente",
-          "evidence": [],
+          "status": "parcial",
+          "evidence": [
+            "Movimentação fictícia exigiu destino e motivo; voltar e editar justificativa retirou a confirmação anterior. Após confirmar, ferramenta apareceu dentro da caixa com 3 unidades, referência preservada e rascunhos 0. Navegação da caixa mantém o caminho e contagens de conteúdo.",
+            "Chrome após correção: campo de destino vazio bloqueou avanço com “Selecione uma opção.”; busca por código patrimonial encontrou item dentro da caixa. Nenhuma movimentação adicional foi enviada."
+          ],
           "issues": []
         },
         {
@@ -826,8 +871,10 @@
         },
         {
           "name": "Contagem/verificação",
-          "status": "pendente",
-          "evidence": [],
+          "status": "parcial",
+          "evidence": [
+            "Chrome, dados fictícios: conferência de 3 itens; encerramento incompleto bloqueado; divergência sem justificativa recusada, rascunho preservado; 2 unidades contadas contra 3 previstas; busca por ativo encontra resultado já conferido; encerramento exige aceitar pendência e não altera estoque."
+          ],
           "issues": []
         },
         {
@@ -1383,38 +1430,51 @@
       "views": [
         {
           "name": "Biblioteca",
-          "status": "pendente",
-          "evidence": [],
+          "status": "parcial",
+          "evidence": [
+            "Chrome isolado: pasta com nome obrigatório, original fictício revisionado salvo com recibo e SHA-256; formato de imagem incompatível com extensão recusado com mensagem em português, reenvio de JPEG correto aceito. Revisão 01 abriu com histórico e identificador imutável. Nenhum arquivo real enviado."
+          ],
           "issues": []
         },
         {
           "name": "Pesquisa/filtros",
-          "status": "pendente",
-          "evidence": [],
+          "status": "parcial",
+          "evidence": [
+            "Após recarregar, revisão 01 e 02 preservadas em suas pastas, busca por código encontrou ambas, consulta inexistente exibiu zero resultados com orientação. Pasta raiz traduzida apenas na apresentação; nomes de arquivos/pastas conservados. Captura UI127-originais-depois.jpg."
+          ],
           "issues": []
         },
         {
           "name": "Pastas",
-          "status": "pendente",
-          "evidence": [],
+          "status": "parcial",
+          "evidence": [
+            "Chrome isolado: pasta com nome obrigatório, original fictício revisionado salvo com recibo e SHA-256; formato de imagem incompatível com extensão recusado com mensagem em português, reenvio de JPEG correto aceito. Revisão 01 abriu com histórico e identificador imutável. Nenhum arquivo real enviado."
+          ],
           "issues": []
         },
         {
           "name": "Arquivo e revisões",
-          "status": "pendente",
-          "evidence": [],
+          "status": "parcial",
+          "evidence": [
+            "Chrome isolado: pasta com nome obrigatório, original fictício revisionado salvo com recibo e SHA-256; formato de imagem incompatível com extensão recusado com mensagem em português, reenvio de JPEG correto aceito. Revisão 01 abriu com histórico e identificador imutável. Nenhum arquivo real enviado.",
+            "Após recarregar, revisão 01 e 02 preservadas em suas pastas, busca por código encontrou ambas, consulta inexistente exibiu zero resultados com orientação. Pasta raiz traduzida apenas na apresentação; nomes de arquivos/pastas conservados. Captura UI127-originais-depois.jpg."
+          ],
           "issues": []
         },
         {
           "name": "Enviar arquivo",
-          "status": "pendente",
-          "evidence": [],
+          "status": "parcial",
+          "evidence": [
+            "Chrome isolado: pasta com nome obrigatório, original fictício revisionado salvo com recibo e SHA-256; formato de imagem incompatível com extensão recusado com mensagem em português, reenvio de JPEG correto aceito. Revisão 01 abriu com histórico e identificador imutável. Nenhum arquivo real enviado."
+          ],
           "issues": []
         },
         {
           "name": "Nova revisão",
-          "status": "pendente",
-          "evidence": [],
+          "status": "parcial",
+          "evidence": [
+            "Chrome isolado: revisão 02 exigiu campo obrigatório e foi salva com novo ID 4dfc7b7b-2814-4aec-872f-0dfb36d8deb2, conservando a revisão 01. Comprovantes exibiram mesmo SHA-256 do arquivo fictício reenviado; nenhum conteúdo original foi substituído."
+          ],
           "issues": []
         },
         {
@@ -1443,14 +1503,18 @@
       "views": [
         {
           "name": "Catálogo",
-          "status": "pendente",
-          "evidence": [],
+          "status": "parcial",
+          "evidence": [
+            "Chrome fictício: cadastro de modelo com duas etapas, seção e leitura numérica obrigatória; salvamento, conferência, bloqueio sem motivo/confirmação, publicação da revisão 1 e reabertura. Textos residuais identificados e corrigidos; fontes e variantes ainda em revisão."
+          ],
           "issues": []
         },
         {
           "name": "Listas de verificação",
-          "status": "pendente",
-          "evidence": [],
+          "status": "parcial",
+          "evidence": [
+            "Chrome fictício: cadastro de modelo com duas etapas, seção e leitura numérica obrigatória; salvamento, conferência, bloqueio sem motivo/confirmação, publicação da revisão 1 e reabertura. Textos residuais identificados e corrigidos; fontes e variantes ainda em revisão."
+          ],
           "issues": []
         },
         {
@@ -1639,8 +1703,10 @@
         },
         {
           "name": "Modelos e rotinas",
-          "status": "pendente",
-          "evidence": [],
+          "status": "parcial",
+          "evidence": [
+            "Mesmo fluxo do editor: rascunho separado da publicação, revisão atual e rascunho anterior preservado. Nenhum registro de produção tocado."
+          ],
           "issues": []
         },
         {
@@ -1778,6 +1844,48 @@
       "problem": "Cadastro confirmado permanecia aberto porque o indicador de salvamento bloqueava seu fechamento.",
       "fix": "Encerrar o indicador ocupado após a resposta confirmada e antes de fechar o formulário.",
       "status": "implementado e testado: edição confirma e fecha, sem repetição da escrita"
+    },
+    {
+      "id": "UI127-R2-1",
+      "area": "inicio",
+      "problem": "Busca de áreas e central de ações exibiam mensagens e estados em inglês.",
+      "fix": "Tradução contextual, estados vazios e contagens coerentes.",
+      "status": "Implementado e exercitado no Chrome isolado."
+    },
+    {
+      "id": "UI127-R2-2",
+      "area": "listas",
+      "problem": "Validações, revisão e prontidão misturavam inglês e termos genéricos.",
+      "fix": "Rótulos, mensagens, limites, Não se aplica, prontidão e finalização distintos; título de modelo obrigatório.",
+      "status": "Modelo publicado, duas etapas concluídas com leitura/evidência e justificativa; bloqueios e persistência testados no Chrome isolado."
+    },
+    {
+      "id": "UI127-R2-3",
+      "area": "originais",
+      "problem": "Envio e detalhes de originais continham inglês e número decimal sem padrão brasileiro.",
+      "fix": "Mensagens, caminho raiz e tamanho localizado; preservação de nomes, códigos, revisões e bytes originais.",
+      "status": "Dois envios e duas revisões distintos, bloqueio MIME e campo obrigatório testados; download do original pendente."
+    },
+    {
+      "id": "UI127-R2-4",
+      "area": "inventario",
+      "problem": "Contador de rascunhos ficava desatualizado após salvar.",
+      "fix": "Atualização pelo módulo corrente após fechar e salvar; outros rascunhos preservados.",
+      "status": "Testes automatizados e cadastro de caixa no Chrome confirmaram contador zero sem recarregar."
+    },
+    {
+      "id": "UI127-R2-5",
+      "area": "inventario",
+      "problem": "Destino obrigatório exibia erro nativo em inglês no formulário guiado.",
+      "fix": "Reutilização da validação localizada sem alterar regras ou mensagens específicas.",
+      "status": "Avanço sem destino recusado com “Selecione uma opção.” no Chrome."
+    },
+    {
+      "id": "UI127-R2-6",
+      "area": "inventario",
+      "problem": "Busca, resultado salvo, encerramento e leitor QR tinham textos em inglês.",
+      "fix": "Tradução apenas dos rótulos próprios; estados internos, IDs, quantidades e nomes mantidos.",
+      "status": "Conferência de três itens concluída, divergência justificada preservada, pesquisa e consulta após atualização testadas. Câmera/QR físico pendentes."
     }
   ],
   "production": {
@@ -1786,5 +1894,12 @@
     "records_modified": false,
     "test_user_preserved": "teste-rh-ui121-2"
   },
-  "updated_at": "2026-10-18T14:32:09.870Z"
+  "updated_at": "2026-10-18T16:13:10.898Z",
+  "revision": "UI127 complementar",
+  "publication_base": "24073d1ea2d6b593cdcabfe82182e66028bb1f4f",
+  "browser_limits": [
+    "Permissão salva do Chrome nega acesso automatizado à origem de produção.",
+    "Controle intermitente: abas locais e GitHub tiveram timeouts; criar outra aba recuperou parte do acesso, sem comprovar causa no aplicativo.",
+    "Não houve conclusão das variantes ainda sem evidência detalhada."
+  ]
 }
