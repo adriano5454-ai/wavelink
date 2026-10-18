@@ -1,0 +1,55 @@
+{
+  "area": "RH — navegação, cancelamento, documentos privados e preservação de contexto",
+  "status": "Implementado em integração; validação de navegador e publicação a cargo do coordenador",
+  "changed_files": [
+    "work/runtime-ui127/app/static/hr_workspace.js",
+    "work/runtime-ui127/tests/test_ui127_rh_agent_navigation.cjs"
+  ],
+  "findings": [
+    "Os arquivos hr*.js não contêm logout nem remoção de credenciais; a ambiguidade de Sair vem do diálogo compartilhado tratado pelo coordenador.",
+    "O detalhe de RH repetia Consultar registro dentro do próprio registro, com um manipulador que não executava essa ação.",
+    "Os formulários não ofereciam Cancelar edição explicitamente; Fechar mantinha rascunho e o descarte exigia voltar à área principal.",
+    "Fechar a visualização privada de um anexo removia o botão que tinha foco sem devolvê-lo ao controle de origem."
+  ],
+  "implemented": [
+    "Fechar registro no detalhe fecha somente o diálogo e não altera a consulta, filtros, página nem sessão.",
+    "Detalhe usa modal(..., undefined, {closeLabel: 'Close record'}) e não repete Consultar registro dentro dele.",
+    "Fechar janela e manter rascunho conserva os dados ainda não enviados. O cabeçalho possui rótulo e nome acessível explícitos.",
+    "Cancelar edição ou Cancelar ação descarta somente o formulário após confirmação se há alterações, solicitação enviada ou resultado incerto.",
+    "A confirmação é revalidada contra conta, sessão, rota, formulário e requisição em andamento antes de executar o descarte.",
+    "Formulário marca wlManagedClose=true, usa o listener cancel existente e não duplica o aviso genérico do coordenador.",
+    "Fechar a visualização privada devolve o foco ao botão de origem; fechamento do diálogo continua revogando o URL temporário."
+  ],
+  "tests_passed": [
+    {
+      "command": "node tests/test_ui127_rh_agent_navigation.cjs",
+      "result": "11 cenários isolados dos manipuladores reais, com adaptador DOM: fechamento com rascunho; cancelamento limpo; recusar e aceitar descarte; solicitação incerta; bloqueio enquanto salvando; troca de conta durante confirmação; detalhe com fechamento; prévia PDF privada; descarte de prévia ao fechar diálogo. Sessão e contexto mantidos; zero chamadas de escrita."
+    },
+    {
+      "command": "node tests/test_hr_forms_ui120.cjs",
+      "result": "16 verificações existentes de serialização, revisão com justificativa, horas, valor de despesa, escala, necessidade e CSV aprovadas."
+    },
+    {
+      "command": "node --check app/static/hr_workspace.js",
+      "result": "Sintaxe válida."
+    }
+  ],
+  "python_regression": {
+    "runner": "work/run_ui127_rh_agent.py",
+    "status": "Bloqueada no harness local: duas execuções pararam na preparação da primeira empresa fictícia, antes do primeiro resultado. A reexecução com faulthandler também não forneceu diagnóstico adicional. Ambas interrompidas; nenhum desses 20 testes contabilizado como aprovado.",
+    "selected": 20,
+    "scope": "Privacidade, documentos/conferência, escala/cobertura, horas/despesas, revisão independente e e-mail desligado por padrão.",
+    "production_access": false
+  },
+  "integration_dependencies": [
+    "Coordenador integrar work/ui127-rh-agent-translations.json ao catálogo compartilhado.",
+    "Modal compartilhado deve aceitar options no quarto argumento, respeitar wlManagedClose e tratar close() direto em sua limpeza do marcador de histórico.",
+    "Executar versão integrada em Chrome: abrir documento/horas/despesa, fechar detalhe, retornar à consulta, cancelar formulário alterado, teclado/Escape e Voltar nativo, inclusive tela pequena."
+  ],
+  "limits": [
+    "Não usei navegador, conta real, rede ou produção.",
+    "Teste isolado não equivale a validação da autenticação real em Chrome nem certifica o comportamento nativo do histórico.",
+    "Nenhum arquivo compartilhado, overlay, banco, configuração de serviço ou usuário foi alterado.",
+    "O CSS existente oferece quebra de linha e botões com alvo mínimo de 44 pixels no rodapé; sua apresentação com três ações ainda deve ser inspecionada no navegador."
+  ]
+}
