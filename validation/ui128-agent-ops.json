@@ -1,0 +1,807 @@
+{
+  "phase": "UI128",
+  "base_commit": "ebd92c43ec7c92431a1def49137e3ff1fe36bf2d",
+  "runtime": "work/runtime-ui128",
+  "agent": "qualidade_ti",
+  "status": "implemented_and_locally_verified_ready_for_coordinator",
+  "functions": [
+    {
+      "id": "tasks-accept",
+      "area": "Tarefas",
+      "function": "Assumir / confirmar atribuição",
+      "contract": "Não há ação distinta de aceite. A gestão atribui responsáveis; abrir a tarefa pode marcar o alerta como lido sem assumir, iniciar ou concluir o trabalho.",
+      "test_nodes": [
+        "tests.general_tasks.test_tasks::test_private_list_detail_history_report_and_alerts"
+      ],
+      "ui_steps": "Abrir uma tarefa atribuída ao usuário fictício, conferir o aviso como lido e confirmar que responsável/situação/notas permanecem iguais.",
+      "limitation": "Não apresentar marcação de alerta como aceite formal. Novo fluxo de aceite não foi criado.",
+      "backend_test_status": "existing_alert_contract_passed_no_distinct_acceptance_action",
+      "browser_tested_by_this_agent": false,
+      "test_execution_evidence": [
+        {
+          "node": "tests.general_tasks.test_tasks::test_private_list_detail_history_report_and_alerts",
+          "suites": [
+            "tasks_faults-local"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "tasks-defer",
+      "area": "Tarefas",
+      "function": "Adiar / reatribuir",
+      "contract": "Pausa e reatribuição exigem autoridade atual, motivo quando aplicável e versão exata; trabalho salvo e auditoria são mantidos.",
+      "test_nodes": [
+        "tests.task_postponement.test_postponement::test_pause_and_resume_keep_exact_saved_work",
+        "tests.general_tasks.test_tasks::test_reassign_removes_old_access_changes_due_priority_not_evidence"
+      ],
+      "ui_steps": "Salvar trabalho fictício, adiar com motivo, retomar e reatribuir; reabrir e comparar notas/versão/acesso do responsável anterior.",
+      "backend_test_status": "passed",
+      "browser_tested_by_this_agent": false,
+      "test_execution_evidence": [
+        {
+          "node": "tests.task_postponement.test_postponement::test_pause_and_resume_keep_exact_saved_work",
+          "suites": [
+            "tasks_faults-local"
+          ]
+        },
+        {
+          "node": "tests.general_tasks.test_tasks::test_reassign_removes_old_access_changes_due_priority_not_evidence",
+          "suites": [
+            "tasks_faults-local"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "handover-my",
+      "area": "Passagens de turno",
+      "function": "Meu turno",
+      "contract": "Rascunho privado é do autor; reabrir mantém conteúdo e período, sem publicação automática ou acesso por outro administrador.",
+      "test_nodes": [
+        "tests.ui50_handovers.test_workflow::test_full_hitch_save_edit_context_resume_and_privacy",
+        "tests.daily_handovers.test_daily::test_private_context_not_in_colleague_list_autocomplete_or_admin_override"
+      ],
+      "ui_steps": "Criar rascunho fictício, digitar nota, salvar, fechar e reabrir; confirmar privacidade em outra conta fictícia.",
+      "backend_test_status": "passed",
+      "browser_tested_by_this_agent": false,
+      "test_execution_evidence": [
+        {
+          "node": "tests.ui50_handovers.test_workflow::test_full_hitch_save_edit_context_resume_and_privacy",
+          "suites": [
+            "handovers-local"
+          ]
+        },
+        {
+          "node": "tests.daily_handovers.test_daily::test_private_context_not_in_colleague_list_autocomplete_or_admin_override",
+          "suites": [
+            "handovers-local"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "handover-schedule",
+      "area": "Passagens de turno",
+      "function": "Escala de turnos",
+      "contract": "Ciclos, data operacional e turnos atravessando meia-noite preservam a data e exigem escolha explícita do próximo dia.",
+      "test_nodes": [
+        "tests.daily_handovers.test_daily::test_full_24_hour_two_authors_preserve_first_publication_and_ack",
+        "tests.daily_handovers.test_daily::test_next_operational_day_is_explicit_no_fabricated_intervening_days"
+      ],
+      "ui_steps": "Abrir configuração fictícia de dois turnos de 12h e conferir horários, integrantes e próximo dia sem gerar dias intermediários.",
+      "backend_test_status": "passed",
+      "browser_tested_by_this_agent": false,
+      "test_execution_evidence": [
+        {
+          "node": "tests.daily_handovers.test_daily::test_full_24_hour_two_authors_preserve_first_publication_and_ack",
+          "suites": [
+            "handovers-local"
+          ]
+        },
+        {
+          "node": "tests.daily_handovers.test_daily::test_next_operational_day_is_explicit_no_fabricated_intervening_days",
+          "suites": [
+            "handovers-local"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "handover-source",
+      "area": "Passagens de turno",
+      "function": "Preparação de fontes",
+      "contract": "Copiar apenas seções selecionadas de publicações acessíveis cria novo rascunho privado; não copia assinaturas, anexos ou ciência.",
+      "test_nodes": [
+        "tests.handover_continuity.test_continuity::test_prepare_is_fresh_private_identity_no_signature_publication_or_source_mutation",
+        "tests.handover_continuity.test_continuity::test_multi_source_selected_sections_order_and_exact_text_no_truncation"
+      ],
+      "js": "tests/ui28_preparation/shape_checks.js",
+      "ui_steps": "Selecionar duas publicações fictícias e seções distintas, conferir proposta e criar rascunho; reabrir fonte e destino para comparar o que foi preservado.",
+      "backend_test_status": "passed",
+      "browser_tested_by_this_agent": false,
+      "test_execution_evidence": [
+        {
+          "node": "tests.handover_continuity.test_continuity::test_prepare_is_fresh_private_identity_no_signature_publication_or_source_mutation",
+          "suites": [
+            "handovers-local"
+          ]
+        },
+        {
+          "node": "tests.handover_continuity.test_continuity::test_multi_source_selected_sections_order_and_exact_text_no_truncation",
+          "suites": [
+            "handovers-local"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "handover-history",
+      "area": "Passagens de turno",
+      "function": "Histórico",
+      "contract": "Histórico e comparação consultam revisões exatas e nunca registram ciência; permissões atual e histórica são verificadas.",
+      "test_nodes": [
+        "tests.handovers.test_handovers::test_reading_history_and_export_never_acknowledge",
+        "tests.handovers.test_handovers::test_current_and_historical_audiences_both_enforced"
+      ],
+      "js": "tests/ui26_history/shape_checks.js",
+      "ui_steps": "Comparar duas revisões de publicação fictícia; conferir Texto incluído/removido e ausência de nova ciência.",
+      "backend_test_status": "passed",
+      "browser_tested_by_this_agent": false,
+      "test_execution_evidence": [
+        {
+          "node": "tests.handovers.test_handovers::test_reading_history_and_export_never_acknowledge",
+          "suites": [
+            "handovers-local"
+          ]
+        },
+        {
+          "node": "tests.handovers.test_handovers::test_current_and_historical_audiences_both_enforced",
+          "suites": [
+            "handovers-local"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "handover-files",
+      "area": "Passagens de turno",
+      "function": "Anexos",
+      "contract": "Arquivo fica ligado à publicação/revisão exata; correção e cliente antigo preservam referências salvas; acesso é revalidado.",
+      "test_nodes": [
+        "tests.ui50_handovers.test_workflow::test_full_hitch_open_is_readonly_and_finish_atomic_no_fake_reason",
+        "tests.ui50_handovers.test_workflow::test_full_hitch_issued_correction_keeps_publication_files_and_needs_review",
+        "tests.ui50_handovers.test_workflow::test_full_hitch_omitted_file_references_from_old_clients_preserve_saved_files"
+      ],
+      "js": "tests/ui33_usability/frontend_checks.js",
+      "ui_steps": "Anexar imagem fictícia ao rascunho, publicar, abrir na conta destinatária e conferir acesso à revisão correta; nova revisão mantém a antiga.",
+      "backend_test_status": "passed",
+      "browser_tested_by_this_agent": false,
+      "test_execution_evidence": [
+        {
+          "node": "tests.ui50_handovers.test_workflow::test_full_hitch_open_is_readonly_and_finish_atomic_no_fake_reason",
+          "suites": [
+            "handovers-local"
+          ]
+        },
+        {
+          "node": "tests.ui50_handovers.test_workflow::test_full_hitch_issued_correction_keeps_publication_files_and_needs_review",
+          "suites": [
+            "handovers-local"
+          ]
+        },
+        {
+          "node": "tests.ui50_handovers.test_workflow::test_full_hitch_omitted_file_references_from_old_clients_preserve_saved_files",
+          "suites": [
+            "handovers-local"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "handover-reports",
+      "area": "Passagens de turno",
+      "function": "Relatórios",
+      "contract": "PDF contém publicação salva; rascunho privado não é exposto; leitura/exportação não registra ciência.",
+      "test_nodes": [
+        "tests.handovers.test_handovers::test_pdf_published_only_markup_safe_long_text_and_export_recheck",
+        "tests.daily_handovers.test_daily::test_midnight_period_does_not_move_operational_date_and_pdf_metadata_is_published",
+        "tests.test_ui128_ops_agent::test_handover_current_pdf_and_participation_keep_reader_own_scope"
+      ],
+      "ui_steps": "Exportar PDF de publicação fictícia e conferir autor, data, período, revisão e ausência de rascunho privado.",
+      "backend_test_status": "passed",
+      "browser_tested_by_this_agent": false,
+      "test_execution_evidence": [
+        {
+          "node": "tests.handovers.test_handovers::test_pdf_published_only_markup_safe_long_text_and_export_recheck",
+          "suites": [
+            "handovers-local"
+          ]
+        },
+        {
+          "node": "tests.daily_handovers.test_daily::test_midnight_period_does_not_move_operational_date_and_pdf_metadata_is_published",
+          "suites": [
+            "handovers-local"
+          ]
+        },
+        {
+          "node": "tests.test_ui128_ops_agent::test_handover_current_pdf_and_participation_keep_reader_own_scope",
+          "suites": [
+            "current_report-local"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "maintenance-evidence",
+      "area": "Manutenção",
+      "function": "Leituras e anexos",
+      "contract": "Resultado e foto persistem na revisão; corrigir resultado aprovado requer justificativa e reinicia aprovação. Visualização não aprova nada.",
+      "test_nodes": [
+        "tests.ui36_maintenance.test_maintenance_routine::test_required_photo_and_repeat_save_preserves_reference_and_bytes",
+        "tests.ui36_maintenance.test_maintenance_routine::test_approved_correction_requires_explanation_and_resets_approval",
+        "tests.ui36_maintenance.test_maintenance_routine::test_stale_step_version_preserves_newer_work"
+      ],
+      "js": "tests/test_ui128_ops_agent_ui.js",
+      "ui_steps": "Abrir evidências da ordem fictícia, aba Fotografias, ampliar e usar Voltar: deve fechar só a foto. Atualizar deve consultar novamente; falha não mostra leitura velha como atual.",
+      "backend_test_status": "passed",
+      "browser_tested_by_this_agent": false,
+      "test_execution_evidence": [
+        {
+          "node": "tests.ui36_maintenance.test_maintenance_routine::test_required_photo_and_repeat_save_preserves_reference_and_bytes",
+          "suites": [
+            "field_focused-local"
+          ]
+        },
+        {
+          "node": "tests.ui36_maintenance.test_maintenance_routine::test_approved_correction_requires_explanation_and_resets_approval",
+          "suites": [
+            "field_focused-local"
+          ]
+        },
+        {
+          "node": "tests.ui36_maintenance.test_maintenance_routine::test_stale_step_version_preserves_newer_work",
+          "suites": [
+            "field_focused-local"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "maintenance-pending",
+      "area": "Manutenção",
+      "function": "Pendências",
+      "contract": "Ciclo bloqueado aparece como pendência, sem gerar conclusão ou sucessor automaticamente; usuário sem leitura não vê título.",
+      "test_nodes": [
+        "tests.maintenance_cycles.test_cycles::test_blocked_work_appears_in_attention_and_asset_without_read_side_effects",
+        "tests.maintenance_cycles.test_cycles::test_no_maintenance_view_means_no_cycle_or_blocked_title_disclosure",
+        "tests.maintenance_cycles.test_cycles::test_report_records_cycle_and_links_without_duplicate_results"
+      ],
+      "ui_steps": "Abrir ordem fictícia com ciclo bloqueado, consultar pendência e motivo, conferir que nenhuma conclusão nova foi criada.",
+      "backend_test_status": "passed",
+      "browser_tested_by_this_agent": false,
+      "test_execution_evidence": [
+        {
+          "node": "tests.maintenance_cycles.test_cycles::test_blocked_work_appears_in_attention_and_asset_without_read_side_effects",
+          "suites": [
+            "field_focused-local"
+          ]
+        },
+        {
+          "node": "tests.maintenance_cycles.test_cycles::test_no_maintenance_view_means_no_cycle_or_blocked_title_disclosure",
+          "suites": [
+            "field_focused-local"
+          ]
+        },
+        {
+          "node": "tests.maintenance_cycles.test_cycles::test_report_records_cycle_and_links_without_duplicate_results",
+          "suites": [
+            "field_focused-local"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "fleet-books",
+      "area": "Frota",
+      "function": "Livros da embarcação",
+      "contract": "Livro vinculado mantém sua embarcação e registros; outra embarcação é inacessível; retirar vínculo retira acesso, não exclui dados.",
+      "test_nodes": [
+        "tests.test_ui128_ops_agent::test_fleet_books_issue_lifecycle_scope_and_revocation"
+      ],
+      "ui_steps": "Na conta fictícia com escopo de embarcação, abrir livro, filtrar registros e conferir que livro de outro local não aparece.",
+      "backend_test_status": "passed",
+      "browser_tested_by_this_agent": false,
+      "test_execution_evidence": [
+        {
+          "node": "tests.test_ui128_ops_agent::test_fleet_books_issue_lifecycle_scope_and_revocation",
+          "suites": [
+            "fleet_specific-local"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "fleet-issues",
+      "area": "Frota",
+      "function": "Registros e pendências",
+      "contract": "Criar registro, ler aviso, corrigir e resolver são ações distintas. A correção conserva histórico e exige versão atual.",
+      "test_nodes": [
+        "tests.test_ui128_ops_agent::test_fleet_books_issue_lifecycle_scope_and_revocation"
+      ],
+      "ui_steps": "Criar pendência fictícia atribuída, marcar aviso como lido (continua pendente), resolver com justificativa e conferir histórico e lista.",
+      "backend_test_status": "passed",
+      "browser_tested_by_this_agent": false,
+      "test_execution_evidence": [
+        {
+          "node": "tests.test_ui128_ops_agent::test_fleet_books_issue_lifecycle_scope_and_revocation",
+          "suites": [
+            "fleet_specific-local"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "fleet-permissions",
+      "area": "Frota",
+      "function": "Permissões por local",
+      "contract": "Permissão logística não concede leitura dos livros. Direitos dos livros são explícitos, por local, e alterações revogam sessões antigas.",
+      "test_nodes": [
+        "tests.test_ui128_ops_agent::test_fleet_books_issue_lifecycle_scope_and_revocation",
+        "tests.ui62_workspace.test_access::test_additive_does_not_grant_project_modules_or_log_rights",
+        "tests.ui62_workspace.test_access::test_additive_cannot_self_escalate_or_replay_revoked_action"
+      ],
+      "ui_steps": "Conferir visualizador e colaborador fictícios: leitura permitida, criação negada ao visualizador e acesso a outro local negado.",
+      "backend_test_status": "passed",
+      "browser_tested_by_this_agent": false,
+      "test_execution_evidence": [
+        {
+          "node": "tests.test_ui128_ops_agent::test_fleet_books_issue_lifecycle_scope_and_revocation",
+          "suites": [
+            "fleet_specific-local"
+          ]
+        },
+        {
+          "node": "tests.ui62_workspace.test_access::test_additive_does_not_grant_project_modules_or_log_rights",
+          "suites": [
+            "field_focused-local"
+          ]
+        },
+        {
+          "node": "tests.ui62_workspace.test_access::test_additive_cannot_self_escalate_or_replay_revoked_action",
+          "suites": [
+            "field_focused-local"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "shipment-exceptions",
+      "area": "Remessas",
+      "function": "Divergências",
+      "contract": "Recebimento parcial e item faltante continuam pendentes; avaria não libera quarentena; anexos não atravessam remessas.",
+      "test_nodes": [
+        "tests.ui62_workspace.test_journey::test_group_partial_receipt_and_missing_exception_remain_outstanding",
+        "tests.ui62_workspace.test_journey::test_damaged_placement_does_not_release_quarantine",
+        "tests.ui62_workspace.test_journey::test_attachment_hash_and_cross_manifest_isolation"
+      ],
+      "ui_steps": "Em remessa fictícia, conferir recebimento parcial com item faltante e avaria; reabrir e verificar pendência/quarentena e anexos corretos.",
+      "backend_test_status": "passed",
+      "browser_tested_by_this_agent": false,
+      "test_execution_evidence": [
+        {
+          "node": "tests.ui62_workspace.test_journey::test_group_partial_receipt_and_missing_exception_remain_outstanding",
+          "suites": [
+            "field_focused-local"
+          ]
+        },
+        {
+          "node": "tests.ui62_workspace.test_journey::test_damaged_placement_does_not_release_quarantine",
+          "suites": [
+            "field_focused-local"
+          ]
+        },
+        {
+          "node": "tests.ui62_workspace.test_journey::test_attachment_hash_and_cross_manifest_isolation",
+          "suites": [
+            "field_focused-local"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "fault-review",
+      "area": "Falhas",
+      "function": "Revisar e encerrar",
+      "contract": "Revisão é explícita; devolução exige nova resolução; encerrar não resolve automaticamente tarefas privadas vinculadas.",
+      "test_nodes": [
+        "tests.fault_reports.test_faults::test_full_fault_lifecycle_preserves_operational_tables",
+        "tests.fault_reports.test_faults::test_review_return_requires_new_resolution_and_owner_only",
+        "tests.fault_reports.test_faults::test_same_person_review_explicit_not_independent"
+      ],
+      "ui_steps": "Salvar falha fictícia, encaminhar solução, devolver com motivo, corrigir e encerrar com conta revisora autorizada; conferir histórico.",
+      "backend_test_status": "passed",
+      "browser_tested_by_this_agent": false,
+      "test_execution_evidence": [
+        {
+          "node": "tests.fault_reports.test_faults::test_full_fault_lifecycle_preserves_operational_tables",
+          "suites": [
+            "tasks_faults-local"
+          ]
+        },
+        {
+          "node": "tests.fault_reports.test_faults::test_review_return_requires_new_resolution_and_owner_only",
+          "suites": [
+            "tasks_faults-local"
+          ]
+        },
+        {
+          "node": "tests.fault_reports.test_faults::test_same_person_review_explicit_not_independent",
+          "suites": [
+            "tasks_faults-local"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "safety-link",
+      "area": "Segurança",
+      "function": "Vincular tarefa / registro",
+      "contract": "Vínculo não concede acesso ao objeto privado nem encerra a ocorrência; revogar acesso oculta os dados do objeto vinculado.",
+      "test_nodes": [
+        "tests.qshe.test_qshe::test_private_task_links_never_grant_access_or_close_qshe",
+        "tests.qshe.test_qshe::test_asset_link_redacted_in_all_paths_after_source_revocation",
+        "tests.qshe.test_qshe::test_full_qshe_lifecycle_preserves_operational_tables"
+      ],
+      "ui_steps": "Vincular tarefa fictícia a ocorrência de segurança, trocar para conta sem acesso à tarefa e conferir que o vínculo não revela dados.",
+      "backend_test_status": "passed",
+      "browser_tested_by_this_agent": false,
+      "test_execution_evidence": [
+        {
+          "node": "tests.qshe.test_qshe::test_private_task_links_never_grant_access_or_close_qshe",
+          "suites": [
+            "tasks_faults-local"
+          ]
+        },
+        {
+          "node": "tests.qshe.test_qshe::test_asset_link_redacted_in_all_paths_after_source_revocation",
+          "suites": [
+            "tasks_faults-local"
+          ]
+        },
+        {
+          "node": "tests.qshe.test_qshe::test_full_qshe_lifecycle_preserves_operational_tables",
+          "suites": [
+            "tasks_faults-local"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "dds-people",
+      "area": "DDS",
+      "function": "Participantes",
+      "contract": "Mudar lista de participantes não assina por ninguém; ciência depende da identidade e ação pessoal.",
+      "test_nodes": [
+        "tests.ui39_toolbox.test_briefing::test_ticks_answers_and_roster_change_without_any_automatic_sign"
+      ],
+      "ui_steps": "Alterar participantes de DDS fictício ainda não assinado, salvar e conferir ausência de assinatura criada automaticamente.",
+      "backend_test_status": "passed",
+      "browser_tested_by_this_agent": false,
+      "test_execution_evidence": [
+        {
+          "node": "tests.ui39_toolbox.test_briefing::test_ticks_answers_and_roster_change_without_any_automatic_sign",
+          "suites": [
+            "field_focused-local"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "dds-signatures",
+      "area": "DDS",
+      "function": "Ciência e assinaturas",
+      "contract": "Ciência identifica pessoa e texto exato; corrigir documento já assinado exige motivo, conserva evidência anterior e invalida ciência da nova revisão.",
+      "test_nodes": [
+        "tests.ui34_invites.test_invites::test_complete_group_flow_identity_exact_wording_and_atomic_sign",
+        "tests.ui34_invites.test_invites::test_retained_evidence_after_document_closure_and_restart",
+        "tests.ui39_toolbox.test_briefing::test_signed_correction_needs_reason_even_after_current_signatures_cleared"
+      ],
+      "ui_steps": "Usar somente identidades fictícias no ambiente isolado; conferir ciência, correção e evidência anterior. Não enviar convites externos nem assinar por pessoa real.",
+      "backend_test_status": "passed",
+      "browser_tested_by_this_agent": false,
+      "test_execution_evidence": [
+        {
+          "node": "tests.ui34_invites.test_invites::test_complete_group_flow_identity_exact_wording_and_atomic_sign",
+          "suites": [
+            "field_focused-local"
+          ]
+        },
+        {
+          "node": "tests.ui34_invites.test_invites::test_retained_evidence_after_document_closure_and_restart",
+          "suites": [
+            "field_focused-local"
+          ]
+        },
+        {
+          "node": "tests.ui39_toolbox.test_briefing::test_signed_correction_needs_reason_even_after_current_signatures_cleared",
+          "suites": [
+            "field_focused-local"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "dds-report",
+      "area": "DDS",
+      "function": "Relatório",
+      "contract": "PDF usa evidência salva e identifica corretamente visitante autodeclarado, sem afirmar verificação de identidade inexistente.",
+      "test_nodes": [
+        "tests.ui34_invites.test_invites::test_toolbox_pdf_truthfully_labels_self_declared_guest"
+      ],
+      "ui_steps": "Exportar DDS fictício assinado e conferir participantes, revisão e classificação da assinatura no PDF.",
+      "backend_test_status": "passed",
+      "browser_tested_by_this_agent": false,
+      "test_execution_evidence": [
+        {
+          "node": "tests.ui34_invites.test_invites::test_toolbox_pdf_truthfully_labels_self_declared_guest",
+          "suites": [
+            "field_focused-local"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "fleet-admin",
+      "area": "Administração",
+      "function": "Configuração da frota",
+      "contract": "Criação/alteração de local e concessão de escopo pertencem ao administrador; atribuir papel logístico não cria acesso administrativo.",
+      "test_nodes": [
+        "tests.test_ui128_ops_agent::test_fleet_books_issue_lifecycle_scope_and_revocation",
+        "tests.ui62_workspace.test_journey::test_nonadmins_cannot_create_sites_or_change_user_scope"
+      ],
+      "ui_steps": "Abrir configuração fictícia de frota com admin e comparar com conta restrita, que não pode criar locais nem alterar acessos.",
+      "backend_test_status": "passed",
+      "browser_tested_by_this_agent": false,
+      "test_execution_evidence": [
+        {
+          "node": "tests.test_ui128_ops_agent::test_fleet_books_issue_lifecycle_scope_and_revocation",
+          "suites": [
+            "fleet_specific-local"
+          ]
+        },
+        {
+          "node": "tests.ui62_workspace.test_journey::test_nonadmins_cannot_create_sites_or_change_user_scope",
+          "suites": [
+            "field_focused-local"
+          ]
+        }
+      ]
+    }
+  ],
+  "changed_files": [
+    "app/static/handover_preparation.js",
+    "app/static/simple_handovers.js",
+    "app/static/maintenance_evidence.js",
+    "app/static/handover_history.js",
+    "app/static/handover_attachments.js",
+    "app/static/handover_continue.js",
+    "app/static/handover_notes.js",
+    "app/static/handovers.js",
+    "app/static/handover_draft_review.js",
+    "app/static/handover_review.js",
+    "app/static/handover_workspace.js"
+  ],
+  "new_tests": [
+    "tests/test_ui128_ops_agent.py",
+    "tests/test_ui128_ops_agent_ui.js"
+  ],
+  "backend_changes": [],
+  "translations": {
+    "file": "work/ui128-ops-translations.json",
+    "count": 139,
+    "scope": "authored UI only; saved notes, captions and labels remain literal",
+    "integrated": true
+  },
+  "javascript": [
+    {
+      "file": "tests/ui22_review/shape_checks.js",
+      "checks": 28,
+      "errors": [],
+      "failures": 0,
+      "result": "passed"
+    },
+    {
+      "file": "tests/ui24_draft/shape_checks.js",
+      "checks": 32,
+      "errors": [],
+      "failures": 0,
+      "result": "passed"
+    },
+    {
+      "file": "tests/ui28_preparation/shape_checks.js",
+      "checks": 45,
+      "errors": [],
+      "failures": 0,
+      "result": "passed"
+    },
+    {
+      "file": "tests/ui29_simple/frontend_checks.js",
+      "checks": 10,
+      "errors": [],
+      "failures": 0,
+      "result": "passed"
+    },
+    {
+      "file": "tests/ui32_simple_board/frontend_checks.js",
+      "checks": 29,
+      "errors": [],
+      "failures": 0,
+      "result": "passed"
+    },
+    {
+      "file": "tests/ui33_usability/frontend_checks.js",
+      "checks": 9,
+      "errors": [],
+      "failures": 0,
+      "result": "passed"
+    },
+    {
+      "file": "tests/test_ui128_ops_agent_ui.js",
+      "checks": 60,
+      "errors": [],
+      "failures": 0,
+      "result": "passed"
+    },
+    {
+      "file": "tests/ui23_notes/shape_checks.js",
+      "checks": 35,
+      "errors": [],
+      "failures": 0,
+      "result": "passed"
+    },
+    {
+      "file": "tests/ui26_history/shape_checks.js",
+      "checks": 41,
+      "errors": [],
+      "failures": 0,
+      "result": "passed"
+    }
+  ],
+  "python_completed": [
+    {
+      "suite": "current_report-local",
+      "passed": 1,
+      "failed": 0,
+      "errors": 0,
+      "skipped": 0,
+      "source": "work/ui128-ops-tests/current_report-local.xml"
+    },
+    {
+      "suite": "field_focused-local",
+      "passed": 37,
+      "failed": 0,
+      "errors": 0,
+      "skipped": 0,
+      "source": "work/ui128-ops-tests/field_focused-local.xml"
+    },
+    {
+      "suite": "fleet_specific-local",
+      "passed": 1,
+      "failed": 0,
+      "errors": 0,
+      "skipped": 0,
+      "source": "work/ui128-ops-tests/fleet_specific-local.xml"
+    },
+    {
+      "suite": "handovers-local",
+      "passed": 178,
+      "failed": 0,
+      "errors": 2,
+      "skipped": 0,
+      "source": "work/ui128-ops-tests/handovers-local.xml",
+      "error_cases": 1,
+      "error_kind": "Windows autogenerated parameter ID exceeded environment limit in setup and teardown; same unchanged payload passed oversize_retest-local"
+    },
+    {
+      "suite": "oversize_retest-local",
+      "passed": 7,
+      "failed": 0,
+      "errors": 0,
+      "skipped": 0,
+      "source": "work/ui128-ops-tests/oversize_retest-local.xml"
+    },
+    {
+      "suite": "tasks_faults-local",
+      "passed": 182,
+      "failed": 0,
+      "errors": 0,
+      "skipped": 0,
+      "source": "work/ui128-ops-tests/tasks_faults-local.xml"
+    }
+  ],
+  "python_in_progress": [],
+  "findings": [
+    {
+      "id": "OPS-01",
+      "type": "real_defect",
+      "status": "fixed",
+      "detail": "UI118 localization prefix used window unconditionally in eight modules that explicitly export CommonJS. Guarded window and executed shape/model tests."
+    },
+    {
+      "id": "OPS-02",
+      "type": "real_ui_defect",
+      "status": "fixed",
+      "detail": "Maintenance evidence and handover state/error strings bypassed localization. Added authored string/template calls; no translation of stored data."
+    },
+    {
+      "id": "OPS-03",
+      "type": "navigation_defect",
+      "status": "fixed",
+      "detail": "Maintenance photo zoom bypassed shared dialog history. Registered with AJDialogSystem; independent test demonstrates Back closes photograph only and preserves parent/session/filter/draft."
+    },
+    {
+      "id": "OPS-04",
+      "type": "scope_mismatch",
+      "status": "documented",
+      "detail": "Tasks have no explicit accept-assignment workflow. Opening may acknowledge an alert only. No new workflow invented."
+    },
+    {
+      "id": "OPS-05",
+      "type": "historical_test_contract",
+      "status": "current_behavior_verified",
+      "detail": "Legacy PDF test required obsolete heading. Current-model test proves reader scope is own-only, author can see both fictional signers, and exporting does not add acknowledgements."
+    }
+  ],
+  "test_environment": [
+    {
+      "issue": "TestClient socketpair blocked in sandbox",
+      "resolution": "Ran fictional local suites with approved escalation; no external network/production."
+    },
+    {
+      "issue": "pytest module absent in bundled Python",
+      "resolution": "Used existing work/policy-test-deps; no installation."
+    },
+    {
+      "issue": "Windows PYTEST_CURRENT_TEST size limit before large-payload test",
+      "resolution": "Retested same payloads with compact node IDs: 7 passed."
+    },
+    {
+      "issue": "Old DDS report test writes /mnt/data",
+      "resolution": "Stopped broad field_ops; rerunning selected scenarios with report output redirected inside work, without changing product rules or original tests."
+    },
+    {
+      "issue": "Three initial sandbox runs remained blocked",
+      "resolution": "Identified exact run.py command lines for PIDs 17532, 28092 and 34140 and stopped only those test processes after the authorized local runs completed. No app server was stopped."
+    }
+  ],
+  "prior_failure_audit": "work/ui128-ops-tests/ui127-failure-triage.json",
+  "production_access": false,
+  "external_messages": false,
+  "remaining": [
+    "Parent controls Chrome: merge its actual UI evidence rather than claiming browser coverage from these API/VM tests.",
+    "Final packaging, fingerprints, manifest, commit and publication are coordinator responsibilities.",
+    "Tasks has no distinct acceptance workflow; existing alert acknowledgement is verified and must not be presented as acceptance.",
+    "Two historical contracts about old helper load order and help catalogue remain version-specific assertions; retain current navigation verification.",
+    "TI module does not exist and was not created."
+  ],
+  "source_sha256": {
+    "app/static/handover_preparation.js": "ae319d57767258a9ea63659561ab5097009b6b1a6bfb4e416247b4e734ae0817",
+    "app/static/simple_handovers.js": "d161763bafdb79a0fa8bebb6c6e1954a5d4b33c00e276b17b5bfca1b4573cf10",
+    "app/static/maintenance_evidence.js": "7553ebe6097c7539dc567cb0dc3183a54ffbc9ca84dc2d33931e54c81e9e02e9",
+    "app/static/handover_history.js": "efd9c8a8fcd378a2297b62f073e83d3aeb7e4fcfa34496470f9ea4d12b3052ca",
+    "app/static/handover_attachments.js": "9f854c87794ff296eee03444f80da8ffb85de98cc0ad0f51d72695aa643efba6",
+    "app/static/handover_continue.js": "697cf517704029234a1a2ef6caea86b9d640550edbb73c5a3ffa3720a2ad951f",
+    "app/static/handover_notes.js": "94e3591c9a494d96fdc6e472c83b98aaa6fee48191b8f9ebdbac028d708012b0",
+    "app/static/handovers.js": "8a663ba6097c270c240e4564250db042e140f3d9976cdc344e533509c52e2c1e",
+    "app/static/handover_draft_review.js": "cfda2294656578ee9dc18cf11601cc3fccd366869bb26f3b96186dda301d3aa3",
+    "app/static/handover_review.js": "f2d9c281c4accd3eed797d61f665ff069b6617c214208329c8fd9c83cac7dfbc",
+    "app/static/handover_workspace.js": "6c403e9484721a5d1c7058ab186543169f4c846a21d9663cb49fd2fa59d2f9a3",
+    "tests/test_ui128_ops_agent.py": "712aebc439bef82db7d308006d9f270f94ae93ed602d8871d08ad086bf752d45",
+    "tests/test_ui128_ops_agent_ui.js": "3abbc8f90fa1e22ef7ee714c296622918236e1799183867f9cf74399618fa422"
+  },
+  "successful_python_executions": 406,
+  "javascript_checks": 289,
+  "completed_at": "2026-10-18T18:44:20.843Z",
+  "original_sandbox_runs": "Stopped after verified replacement runs; not counted as passing or product failures."
+}

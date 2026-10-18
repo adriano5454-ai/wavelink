@@ -1,0 +1,380 @@
+{
+  "schema": "wavelink-ui128-final-independent-review-1",
+  "reviewer": "qualidade_ti",
+  "reviewed_at": "2026-10-18T19:13:04.110Z",
+  "verdict": "PASS_FOR_RECONSTRUCTED_WEB_RUNTIME_AND_PACKAGE_VALIDATION",
+  "runtime_path": "work/ui128-replay-final-r2",
+  "repository_path": "work/wavelink-ui128",
+  "effective_application_version": "1.34.28",
+  "expected_manifest_sha256": "760e140a1fc88da138b1295b14fcfddc1445b20642ebf43c26b0fc16ef494da8",
+  "reconstruction_log": "work/ui128-reconstruction-r2.log",
+  "checks": {
+    "runtime_verifier": {
+      "present": true,
+      "version": "1.34.19",
+      "matches": true,
+      "mismatches": [],
+      "fingerprint": "760e140a1fc88da1"
+    },
+    "manifest_sha256": "760e140a1fc88da138b1295b14fcfddc1445b20642ebf43c26b0fc16ef494da8",
+    "resources": 2307,
+    "variant": "workspace-ui128-audit-2026-10-18",
+    "manifest_version": "1.34.19",
+    "app_version_source": "\"\"\"Wavelink local hub (legacy data identities retained).\"\"\"\n__version__ = \"1.34.28\"",
+    "provenance_count": 235,
+    "overlay_count": 235,
+    "overlay_mismatches": [],
+    "parent_manifest": "6a8028af00822df91337dd385a6990128acce1a09ab7c81829600f4fcfab41bb",
+    "target_manifest": "760e140a1fc88da138b1295b14fcfddc1445b20642ebf43c26b0fc16ef494da8",
+    "expected_manifest": "760e140a1fc88da138b1295b14fcfddc1445b20642ebf43c26b0fc16ef494da8",
+    "materialize_stages": [
+      93,
+      94,
+      95,
+      96,
+      97,
+      99,
+      100,
+      101,
+      102,
+      103,
+      104,
+      105,
+      106,
+      107,
+      108,
+      109,
+      110,
+      111,
+      112,
+      113,
+      114,
+      115,
+      116,
+      117,
+      118,
+      119,
+      120,
+      121,
+      122,
+      123,
+      124,
+      125,
+      126,
+      127,
+      128
+    ],
+    "docker_run_stages": [
+      93,
+      94,
+      95,
+      96,
+      97,
+      99,
+      100,
+      101,
+      102,
+      103,
+      104,
+      105,
+      106,
+      107,
+      108,
+      109,
+      110,
+      111,
+      112,
+      113,
+      114,
+      115,
+      116,
+      117,
+      118,
+      119,
+      120,
+      121,
+      122,
+      123,
+      124,
+      125,
+      126,
+      127,
+      128
+    ],
+    "docker_copy_stages": [
+      93,
+      94,
+      95,
+      96,
+      97,
+      99,
+      100,
+      101,
+      102,
+      103,
+      104,
+      105,
+      106,
+      107,
+      108,
+      109,
+      110,
+      111,
+      112,
+      113,
+      114,
+      115,
+      116,
+      117,
+      118,
+      119,
+      120,
+      121,
+      122,
+      123,
+      124,
+      125,
+      126,
+      127,
+      128
+    ],
+    "chain_matches": true,
+    "missing_chain_files": [],
+    "source_parts_metadata": {
+      "format": "wavelink-source-parts-1",
+      "archive_sha256": "8c1b6a8d731d01b05a1290d3a1dd1a544054147aac9048ca345af7983613cd9e",
+      "parts": [
+        {
+          "name": "source.part001",
+          "bytes": 8388608,
+          "sha256": "b568934581bc6ae06da601368352788083b95d1c77cad15f00b15df5e0ddc018"
+        },
+        {
+          "name": "source.part002",
+          "bytes": 8388608,
+          "sha256": "3594229b220ce2f7b39ed87ccab17d6b0c2c5583a18e6960cddd8725fb1db76b"
+        },
+        {
+          "name": "source.part003",
+          "bytes": 8388608,
+          "sha256": "b51ac5da6100f5cf372683130318ad38a438cd958b1821cf6c2d6fdb486d84ad"
+        },
+        {
+          "name": "source.part004",
+          "bytes": 8388608,
+          "sha256": "458d0b06b36d08c940289f4229040fac81d0dbe55b75707636541502aa702a4f"
+        },
+        {
+          "name": "source.part005",
+          "bytes": 5952982,
+          "sha256": "99a008607d60003ce74dba0a8101d1638938af4c99433ff5f72f8735a5350018"
+        }
+      ]
+    }
+  },
+  "source_parts_verification": {
+    "parts": [
+      {
+        "name": "source.part001",
+        "bytes": 8388608,
+        "matches": true
+      },
+      {
+        "name": "source.part002",
+        "bytes": 8388608,
+        "matches": true
+      },
+      {
+        "name": "source.part003",
+        "bytes": 8388608,
+        "matches": true
+      },
+      {
+        "name": "source.part004",
+        "bytes": 8388608,
+        "matches": true
+      },
+      {
+        "name": "source.part005",
+        "bytes": 5952982,
+        "matches": true
+      }
+    ],
+    "joined_archive_sha256": "8c1b6a8d731d01b05a1290d3a1dd1a544054147aac9048ca345af7983613cd9e",
+    "matches": true
+  },
+  "cache_review": {
+    "cache": "pxgeo-dive-check-shell-1.34.28-ui128-20261018",
+    "assets": 274,
+    "pages": [
+      {
+        "page": "app/static/index.html",
+        "references": 133,
+        "uncached": [
+          "/static/workspace-locale.js"
+        ],
+        "duplicates": []
+      },
+      {
+        "page": "app/static/pt-BR/index.html",
+        "references": 133,
+        "uncached": [
+          "/static/workspace-locale.js"
+        ],
+        "duplicates": []
+      },
+      {
+        "page": "app/static/fleet.html",
+        "references": 22,
+        "uncached": [
+          "/static/workspace-locale.js"
+        ],
+        "duplicates": []
+      },
+      {
+        "page": "app/static/pt-BR/fleet.html",
+        "references": 22,
+        "uncached": [
+          "/static/workspace-locale.js"
+        ],
+        "duplicates": []
+      }
+    ],
+    "intentional_uncached_resource": "/static/workspace-locale.js",
+    "explanation": "Deployment locale is returned dynamically and explicitly excluded from service-worker caching; no duplicate JS/CSS references in EN/PT index or fleet pages."
+  },
+  "preserved_deployment_files": [
+    {
+      "file": "deploy/company_entrypoint.py",
+      "sha256": "46de424f2ceecd62049389d829fe4adfbc187ef1e19fe843675b6b6a51bb81a2",
+      "unchanged_from_ui127": true
+    },
+    {
+      "file": "deploy/company_provision.py",
+      "sha256": "9f4f9912c47721eee983a504ed3c9cbe4617322db9c3168a900f1f4841a3bf82",
+      "unchanged_from_ui127": true
+    },
+    {
+      "file": "deploy/company_runtime.py",
+      "sha256": "8d5b69698df46894871b0ffe262d8a0a0ae11cb7b262e8dd91c961e9f056e062",
+      "unchanged_from_ui127": true
+    },
+    {
+      "file": "deploy/company_nginx.py",
+      "sha256": "a08326ca59ede8054be165959e1f677fa775285f23cf161befa45bd3e144a370",
+      "unchanged_from_ui127": true
+    },
+    {
+      "file": "deploy/entrypoint.py",
+      "sha256": "f754d4db367983a75473f1d525183b618a25c265837a317df66ffabaf8f4c1e2",
+      "unchanged_from_ui127": true
+    },
+    {
+      "file": "requirements.lock",
+      "sha256": "6c510bc4ac5a9d348dc4c029985a6327304e6ee68af0315f433bd6ef4c3642a2",
+      "unchanged_from_ui127": true
+    },
+    {
+      "file": ".dockerignore",
+      "sha256": "01c6cc82ad619f30b55e80a4436b2251bf7267bdf76df9b3b5758041f44c476a",
+      "unchanged_from_ui127": true
+    },
+    {
+      "file": "deploy/company_identities.json",
+      "sha256": "50815e666973dcc368dcb548f1650f7336f360801004f2ed6a389eeec83c2f03",
+      "unchanged_from_ui127": true
+    }
+  ],
+  "preservation_review": {
+    "mode": "read_only_source_review",
+    "company_mode_route": "deploy.entrypoint.run -> run_company -> prepare_company",
+    "existing_disk": "Existing exact company marker is verified; ID/name mismatch, pending rename, unknown nonempty storage and wrong deployment mode fail closed. Existing active account lifecycle is retained.",
+    "fresh_initialization": "Creation requires empty storage plus explicit YES_FIRST_DEPLOY_ONLY; fictional initialization is refused in COMPANY mode.",
+    "data_writes_from_this_review": false,
+    "production_access": false
+  },
+  "focused_tests": {
+    "native_payload": {
+      "passed": 14,
+      "failed": 0,
+      "source_tree": "work/ui128-replay-final-r2",
+      "xml": "work/ui128-native-validation-tests.xml",
+      "coverage": [
+        "Effective 1.34.28 version with original 1.34.19 provenance manifest",
+        "All manifest hashes including unrelated resources remain required",
+        "Tampered bytes rejected before preparation",
+        "Missing, duplicate or nonliteral version rejected",
+        "Unsafe ZIP root/traversal/separators/duplicate/symlink members rejected",
+        "Version parsing does not execute payload Python",
+        "build() and install() invoke validation before any preparation"
+      ]
+    },
+    "operations": {
+      "suite": "UI128 operations evidence read/refresh/photo/back/session, actual locale PT and EN",
+      "checks": 60,
+      "result": "passed"
+    },
+    "full_native_payload": {
+      "native_validation": {
+        "version": "1.34.28",
+        "manifest_version": "1.34.19",
+        "files": 2307
+      },
+      "installation_source_validation": {
+        "present": true,
+        "version": "1.34.19",
+        "matches": true,
+        "mismatches": [],
+        "fingerprint": "760e140a1fc88da1"
+      },
+      "payload_sha256": "d3dd68c716185e48b6360edf76bba89ca2599e10b36d62c87c13824b5435de7e",
+      "payload_bytes": 76683253,
+      "source_manifest_sha256": "760e140a1fc88da138b1295b14fcfddc1445b20642ebf43c26b0fc16ef494da8",
+      "compiled": false,
+      "installed": false
+    },
+    "native_executable_compiled": false,
+    "native_installation_performed": false
+  },
+  "last_corrections": {
+    "reason": "Final review found the updated native packager/installer compared the original base manifest version to the effective application version, which would reject UI128.",
+    "files": [
+      "installer/native/build_setup.py",
+      "installer/install_windows.py",
+      "installer/bootstrap.ps1",
+      "tests/test_ui128_quality_agent_native_payload.py"
+    ],
+    "result": "Version consumers now read the hash-covered application literal, retain verification of every manifest resource, and agree on 1.34.28. Tested over the final 2307-file payload without building or installing an executable.",
+    "delta_from_prior_d3e_manifest": [
+      "installer/bootstrap.ps1",
+      "installer/install_windows.py",
+      "installer/native/build_setup.py",
+      "tests/test_ui128_docs_low_stock.py",
+      "tests/test_ui128_quality_agent_native_payload.py"
+    ],
+    "low_stock_test_delta_review": "Only generated_at is excluded from response business-data equality; an advancing synthetic read clock proves a one-second difference while every other field remains equal."
+  },
+  "historical_cohort": {
+    "cases": 625,
+    "passed": 244,
+    "failed": 381,
+    "diagnosed_failed_cases": 381,
+    "unexplained_diagnostics": 0,
+    "result": "NOT_GREEN",
+    "diagnosis_is_not_test_pass": true,
+    "diagnostic_evidence": "work/ui128-triage-unresolved.json"
+  },
+  "delivery_metadata": {
+    "readme_current": "UI128 / 1.34.28",
+    "delivery_checks_current": "UI128 / 1.34.28",
+    "deployment_files_manifest": "Final regeneration and ZIP contents remain coordinator-owned after report/docs integration; not asserted by this runtime review."
+  },
+  "limitations": [
+    "No Docker image was built or started by this agent; source-copy/apply parity and complete runtime materialization were verified.",
+    "No authenticated production browser operation or production data inspection was performed by this agent.",
+    "No native Windows executable was compiled, launched or installed. Validation does not prove the complete Windows installation lifecycle.",
+    "The 381 failures in the historical cohort remain failures with specific diagnoses; focused passing tests are reported separately.",
+    "Publication commit, deployment status and live behavior require coordinator validation."
+  ],
+  "unresolved_release_blockers_found": []
+}

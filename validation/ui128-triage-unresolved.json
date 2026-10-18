@@ -1,0 +1,1064 @@
+{
+  "schema": 1,
+  "created_utc": "2026-10-18T19:01:11.989Z",
+  "purpose": "Fechar diagnósticos genéricos da coorte UI128, sem modificar produto, testes ou dados.",
+  "sources": [
+    "work/ui128-cohort-triage-docs.json",
+    "work/ui128-cohort-triage-ops.json",
+    "work/ui128-cohort-triage-rh.json",
+    "work/ui128-cohort-triage-root.json",
+    "work/ui128-triage-tests.xml"
+  ],
+  "coverage": {
+    "original_failed_cases": 381,
+    "docs_generic_cases": 41,
+    "static_or_behavior_generic": 16,
+    "documentation_generic": 25,
+    "already_specific_in_ops_or_rh": 39,
+    "newly_diagnosed_here": 2,
+    "unresolved_diagnostics": 0,
+    "not_claimed": "Classificar uma falha não a transforma em teste aprovado, não afirma cobertura de todas as instruções históricas e não substitui testes finais de interface."
+  },
+  "unresolved": [],
+  "empty_list_justification": "Todos os41 casos genéricos agora têm causa específica e evidência. Dois não tinham correspondência por ID nos relatórios anteriores: UI46 repete a antiga propriedade da Home já examinada em UI42; UI48 usa uma comparação de fonte que não aceita o tradutor em torno do mesmo rótulo. Os demais39 foram cruzados com Ops/RH e os25 de ajuda receberam causas específicas de título, índice, escopo ou carimbo de versão. O caso real de integridade71, embora fora dos41, também foi rechecado com o verificador efetivo no replay final.",
+  "resolved_generic_cases": [
+    {
+      "cohort_case_id": 9,
+      "test": "tests.ui27_recipients.test_recipients::test_help_matches_source_and_index[handovers]",
+      "original_generic_category": "documentation_or_help_contract_requires_review",
+      "original_failed_assertion": "assert phrase.casefold() in t.casefold()",
+      "classification": "section_heading_changed",
+      "reason": "O título literal Recipients & acknowledgements foi substituído por Recipient evidence e pela separação dos destinatários/ciência. O texto atual distingue destinatários atuais, nomes da ciência salva e ausência de prova de entrega/leitura; o assert antigo para no título.",
+      "evidence": [
+        {
+          "file": "app/static/help_topics/handovercontinuity.html",
+          "line": 27,
+          "observed": "Recipient evidence; deduplicated named/department people; saved names/times; counts are not delivery, reading or attendance proof."
+        }
+      ],
+      "cross_references": [
+        "work/ui128-cohort-triage-ops.json",
+        "work/ui128-cohort-triage-rh.json"
+      ],
+      "diagnosis": "resolved",
+      "original_test_result": "failed; not converted to pass"
+    },
+    {
+      "cohort_case_id": 10,
+      "test": "tests.ui27_recipients.test_recipients::test_help_matches_source_and_index[handovercontinuity]",
+      "original_generic_category": "documentation_or_help_contract_requires_review",
+      "original_failed_assertion": "assert phrase.casefold() in t.casefold()",
+      "classification": "section_heading_changed",
+      "reason": "O título literal Recipients & acknowledgements foi substituído por Recipient evidence e pela separação dos destinatários/ciência. O texto atual distingue destinatários atuais, nomes da ciência salva e ausência de prova de entrega/leitura; o assert antigo para no título.",
+      "evidence": [
+        {
+          "file": "app/static/help_topics/handovercontinuity.html",
+          "line": 27,
+          "observed": "Recipient evidence; deduplicated named/department people; saved names/times; counts are not delivery, reading or attendance proof."
+        }
+      ],
+      "cross_references": [
+        "work/ui128-cohort-triage-ops.json",
+        "work/ui128-cohort-triage-rh.json"
+      ],
+      "diagnosis": "resolved",
+      "original_test_result": "failed; not converted to pass"
+    },
+    {
+      "cohort_case_id": 12,
+      "test": "tests.ui46_home.test_home_assets::test_home_keeps_attention_and_unsaved_scope",
+      "original_generic_category": "static_or_behavior_contract_requires_review",
+      "original_failed_assertion": "for x in ['home-attention','home-saved-work','home-review-unsent','H.localWork()','H.localText(w)','H.reviewLocal','H.reviewLogWindows']:assert x in t",
+      "classification": "component_moved_same_as_ui42",
+      "reason": "Mesmo assert do caso266/UI42. O diretório home_workspace corresponde a Workspaces; a Home pessoal agora possui ph-local e as ações pessoais. O aviso usa H.localText(H.localWork()) e o botão chama H.reviewLocal. Ausência do antigo ID home-attention no diretório não é perda do aviso.",
+      "evidence": [
+        {
+          "file": "app/static/personal_home.js",
+          "line": 58,
+          "observed": "ph-local recebe o estado de trabalho local e ph-continue-local chama H.reviewLocal."
+        },
+        {
+          "file": "app/static/experience_shell.js",
+          "line": 56,
+          "observed": "Menu da conta mantém data-unsaved-work."
+        }
+      ],
+      "cross_references": [],
+      "diagnosis": "resolved",
+      "original_test_result": "failed; not converted to pass"
+    },
+    {
+      "cohort_case_id": 15,
+      "test": "tests.ui46_home.test_home_assets::test_home_help_preserves_choices_and_does_not_claim_record_search",
+      "original_generic_category": "documentation_or_help_contract_requires_review",
+      "original_failed_assertion": "assert phrase in text",
+      "classification": "home_directory_split",
+      "reason": "A ajuda da Home pessoal não lista mais Verify inventory. A própria página explica The directory is now Workspaces; os atalhos de verificação/criação continuam no catálogo da área Workspaces.",
+      "evidence": [
+        {
+          "file": "app/static/help_topics/dashboard.html",
+          "observed": "The directory is now Workspaces; all permitted cards, groups, activity search and Create/Import/Open shortcuts retained."
+        },
+        {
+          "file": "app/static/workspace_catalogue.js",
+          "line": 40,
+          "observed": "inventory action Verify inventory exige inventory.view/tasks.view/tasks.manage."
+        }
+      ],
+      "cross_references": [
+        "work/ui128-cohort-triage-rh.json"
+      ],
+      "diagnosis": "resolved",
+      "original_test_result": "failed; not converted to pass"
+    },
+    {
+      "cohort_case_id": 24,
+      "test": "tests.ui28_preparation.test_preparation::test_help_preparation_and_index[handovers]",
+      "original_generic_category": "documentation_or_help_contract_requires_review",
+      "original_failed_assertion": "for v in ['Sources & title','Sections & order','Review & create','Read exact publication','historical wording','not selected automatically']:assert v.lower() in text.lower()",
+      "classification": "preparation_copy_changed",
+      "reason": "A ajuda foi organizada em Prepare from previous e Next shift and deliberate irregular periods. A regra equivalente à frase não selecionado automaticamente é No sections are selected for copying automatically. A falha é literal; não há seleção automática implícita nessa instrução.",
+      "evidence": [
+        {
+          "file": "app/static/help_topics/handovercontinuity.html",
+          "line": 24,
+          "observed": "No sections are selected for copying automatically; exact source/current revision, audience, duplicate and no-fork checks remain."
+        },
+        {
+          "file": "app/static/help_topics/handovers.html",
+          "observed": "Carry selected previous notes (optional); nothing is selected automatically."
+        }
+      ],
+      "cross_references": [
+        "work/ui128-cohort-triage-ops.json",
+        "work/ui128-cohort-triage-rh.json"
+      ],
+      "diagnosis": "resolved",
+      "original_test_result": "failed; not converted to pass"
+    },
+    {
+      "cohort_case_id": 25,
+      "test": "tests.ui28_preparation.test_preparation::test_help_preparation_and_index[handovercontinuity]",
+      "original_generic_category": "documentation_or_help_contract_requires_review",
+      "original_failed_assertion": "for v in ['Sources & title','Sections & order','Review & create','Read exact publication','historical wording','not selected automatically']:assert v.lower() in text.lower()",
+      "classification": "preparation_copy_changed",
+      "reason": "A ajuda foi organizada em Prepare from previous e Next shift and deliberate irregular periods. A regra equivalente à frase não selecionado automaticamente é No sections are selected for copying automatically. A falha é literal; não há seleção automática implícita nessa instrução.",
+      "evidence": [
+        {
+          "file": "app/static/help_topics/handovercontinuity.html",
+          "line": 24,
+          "observed": "No sections are selected for copying automatically; exact source/current revision, audience, duplicate and no-fork checks remain."
+        },
+        {
+          "file": "app/static/help_topics/handovers.html",
+          "observed": "Carry selected previous notes (optional); nothing is selected automatically."
+        }
+      ],
+      "cross_references": [
+        "work/ui128-cohort-triage-ops.json",
+        "work/ui128-cohort-triage-rh.json"
+      ],
+      "diagnosis": "resolved",
+      "original_test_result": "failed; not converted to pass"
+    },
+    {
+      "cohort_case_id": 34,
+      "test": "tests.ui87_visual_reconciliation.test_visual_reconciliation::test_workspace_cards_use_the_same_icon_grammar",
+      "original_generic_category": "static_or_behavior_contract_requires_review",
+      "original_failed_assertion": "assert \"'maintenance':'<path d=\\\"M14.8 6.2\" in source",
+      "classification": "syntax_only_i18n",
+      "reason": "A mesma geometria SVG existe, mas o teste exige a string imediatamente após a chave; UI118 a envolve com __wl118.markup().",
+      "evidence": [
+        {
+          "file": "app/static/home_workspace.js",
+          "line": 8,
+          "observed": "'maintenance':__wl118.markup('<path d=\"M14.8 6.2..."
+        }
+      ],
+      "cross_references": [
+        "work/ui128-cohort-triage-ops.json"
+      ],
+      "diagnosis": "resolved",
+      "original_test_result": "failed; not converted to pass"
+    },
+    {
+      "cohort_case_id": 74,
+      "test": "tests.workspace_continuity.test_continuity::test_all_main_fleet_shortcuts_stay_in_workspace",
+      "original_generic_category": "static_or_behavior_contract_requires_review",
+      "original_failed_assertion": "assert 'data-open-fleet' in text,name",
+      "classification": "navigation_refactor",
+      "reason": "O card administrativo agora usa a rota interna #admin/fleet; não precisa de atributo data-open-fleet no próprio browser_admin.js. O controlador de continuidade trata a rota administrativa.",
+      "evidence": [
+        {
+          "file": "app/static/browser_admin.js",
+          "line": 35,
+          "observed": "hubCard('#admin/fleet',...)"
+        },
+        {
+          "file": "app/static/workspace_continuity.js",
+          "line": 40,
+          "observed": "#admin/fleet mapeia setup; linha43 usa /fleet?embedded=1 mantendo o frame na aplicação"
+        }
+      ],
+      "cross_references": [
+        "work/ui128-cohort-triage-ops.json"
+      ],
+      "diagnosis": "resolved",
+      "original_test_result": "failed; not converted to pass"
+    },
+    {
+      "cohort_case_id": 80,
+      "test": "tests.ui64_membership.test_contract::test_personal_home_and_workspaces_remain_separate",
+      "original_generic_category": "static_or_behavior_contract_requires_review",
+      "original_failed_assertion": "assert 'membership' in p and 'nav-members' in (S/'nav_shell.js').read_text() and 'members.review' in (S/'app.js').read_text()",
+      "classification": "membership_navigation_moved_to_static_shell",
+      "reason": "A primeira expressão membership está presente na Home; nav-members mudou de nav_shell.js para o HTML estático. O controle de autorização segue em app.js; o teste exige o dono antigo do elemento.",
+      "evidence": [
+        {
+          "file": "app/static/personal_home.js",
+          "line": 72,
+          "observed": "membership: Access requests nas ações pessoais."
+        },
+        {
+          "file": "app/static/index.html",
+          "line": 209,
+          "observed": "nav-members href=#access-requests data-workspace=members."
+        },
+        {
+          "file": "app/static/app.js",
+          "line": 414,
+          "observed": "Visibilidade exige user_id e members.invite/review/manage."
+        }
+      ],
+      "cross_references": [
+        "work/ui128-cohort-triage-rh.json"
+      ],
+      "diagnosis": "resolved",
+      "original_test_result": "failed; not converted to pass"
+    },
+    {
+      "cohort_case_id": 84,
+      "test": "tests.ui29_simple.test_contract::test_advanced_tools_and_old_writers_retained",
+      "original_generic_category": "static_or_behavior_contract_requires_review",
+      "original_failed_assertion": "s=(ROOT/'app/static/handovers.js').read_text();assert 'id=\"ho-more\"' in s and 'More handover tools' in s",
+      "classification": "copy_changed_semantics_retained",
+      "reason": "id=ho-more permanece e seus eventos continuam vinculados. Apenas More handover tools foi renomeado para All saved handovers & advanced tools.",
+      "evidence": [
+        {
+          "file": "app/static/handovers.js",
+          "line": 29,
+          "observed": "<details id=\"ho-more\"...><summary>All saved handovers & advanced tools</summary>"
+        },
+        {
+          "file": "app/static/handovers.js",
+          "line": 34,
+          "observed": "el('ho-more').ontoggle=...mountDaily();paintRows()"
+        }
+      ],
+      "cross_references": [
+        "work/ui128-cohort-triage-ops.json"
+      ],
+      "diagnosis": "resolved",
+      "original_test_result": "failed; not converted to pass"
+    },
+    {
+      "cohort_case_id": 88,
+      "test": "tests.browser_toolbox.test_release::test_live_help_links_and_online_only_authoring",
+      "original_generic_category": "documentation_or_help_contract_requires_review",
+      "original_failed_assertion": "s=BeautifulSoup((ROOT/rel).read_text(),'html.parser');c=s.select('[data-topic=\"browsertoolbox\"]');assert len(c)==1",
+      "classification": "help_index_selector_changed",
+      "reason": "O seletor data-topic esperava o corpo inteiro dentro de help.html. Conferência atual: esse atributo não existe no índice, o link /help/topics/browsertoolbox existe e o artigo separado integra o catálogo verificado. Não é arquivo de ajuda ausente.",
+      "evidence": [
+        {
+          "file": "app/static/help.html",
+          "observed": "data-topic=\"browsertoolbox\"=false; /help/topics/browsertoolbox=true."
+        },
+        {
+          "file": "app/static/help_topics/browsertoolbox.html",
+          "observed": "Artigo separado presente; catálogo/título/sumário verificados."
+        }
+      ],
+      "cross_references": [
+        "work/ui128-cohort-triage-ops.json",
+        "work/ui128-cohort-triage-rh.json"
+      ],
+      "diagnosis": "resolved",
+      "original_test_result": "failed; not converted to pass"
+    },
+    {
+      "cohort_case_id": 93,
+      "test": "tests.task_workflow.test_release::test_help_guide_and_checkpoint_are_current",
+      "original_generic_category": "documentation_or_help_contract_requires_review",
+      "original_failed_assertion": "text=(R/rel).read_text();assert all(x in text for x in ['Follow the next action','Find a step without changing the work','Clear filters','1.34.10'])",
+      "classification": "help_index_is_no_longer_inline_guide",
+      "reason": "Localizei exatamente o primeiro arquivo que falha: START_HERE.html ainda contém todas as frases exigidas; o próximo app/static/help.html é índice e não contém as frases. Os artigos locais históricos docs/user/topics/generaltasks.html também retêm as frases; o artigo servido foi atualizado. O teste exige sincronismo literal entre guia histórico/índice/artigo, não comportamento da tarefa.",
+      "evidence": [
+        {
+          "file": "tests/task_workflow/test_release.py",
+          "observed": "Iteração START_HERE → app/static/help.html → docs/user/topics/generaltasks.html → artigo servido."
+        },
+        {
+          "file": "tests/task_scratch/test_release.py",
+          "observed": "Mesma ordem; all(...) falha no índice sem conteúdo embutido."
+        },
+        {
+          "file": "app/static/help.html",
+          "observed": "Mantém link /help/topics/generaltasks; artigo separado."
+        }
+      ],
+      "cross_references": [
+        "work/ui128-cohort-triage-ops.json",
+        "work/ui128-cohort-triage-rh.json"
+      ],
+      "diagnosis": "resolved",
+      "original_test_result": "failed; not converted to pass"
+    },
+    {
+      "cohort_case_id": 130,
+      "test": "tests.ui41_usability.test_local_work::test_choice_and_help_contracts",
+      "original_generic_category": "documentation_or_help_contract_requires_review",
+      "original_failed_assertion": "h=(ROOT/'app/static/handovers.js').read_text();assert \"button('ho-new','Create handover','')\" in h and 'My assigned shift' in h and 'Full-hitch handover' in h",
+      "classification": "localization_wrapper_not_behavior_change",
+      "reason": "Falha na comparação button(ho-new,Create handover) sem tradutor. O botão atual usa __wl118.t(Create handover); as escolhas de turno próprio e full-hitch continuam no mesmo fluxo.",
+      "evidence": [
+        {
+          "file": "app/static/handovers.js",
+          "line": 29,
+          "observed": "button('ho-new',__wl118.t('Create handover'),'')"
+        }
+      ],
+      "cross_references": [
+        "work/ui128-cohort-triage-rh.json"
+      ],
+      "diagnosis": "resolved",
+      "original_test_result": "failed; not converted to pass"
+    },
+    {
+      "cohort_case_id": 133,
+      "test": "tests.browser_templates.test_release::test_new_pdf_help_and_online_limitations",
+      "original_generic_category": "documentation_or_help_contract_requires_review",
+      "original_failed_assertion": "h=BeautifulSoup(p.read_text(),'html.parser');chap=h.select('[data-topic=\"browsertemplates\"]');assert len(chap)==1",
+      "classification": "help_index_selector_changed",
+      "reason": "O seletor data-topic esperava o corpo inteiro dentro de help.html. Conferência atual: esse atributo não existe no índice, o link /help/topics/browsertemplates existe e o artigo separado integra o catálogo verificado. Não é arquivo de ajuda ausente.",
+      "evidence": [
+        {
+          "file": "app/static/help.html",
+          "observed": "data-topic=\"browsertemplates\"=false; /help/topics/browsertemplates=true."
+        },
+        {
+          "file": "app/static/help_topics/browsertemplates.html",
+          "observed": "Artigo separado presente; catálogo/título/sumário verificados."
+        }
+      ],
+      "cross_references": [
+        "work/ui128-cohort-triage-rh.json"
+      ],
+      "diagnosis": "resolved",
+      "original_test_result": "failed; not converted to pass"
+    },
+    {
+      "cohort_case_id": 145,
+      "test": "tests.ui26_history.test_history::test_help_exact_comparison_boundaries[handovers]",
+      "original_generic_category": "documentation_or_help_contract_requires_review",
+      "original_failed_assertion": "assert fragment.casefold() in text.casefold()",
+      "classification": "history_section_heading_changed",
+      "reason": "Publication history & comparison agora aparece como Published revisions and incoming acknowledgement; o procedimento atual explica comparar revisões escolhidas, não rascunhos privados alheios, e não registrar ciência ao ler/comparar.",
+      "evidence": [
+        {
+          "file": "app/static/help_topics/handovercontinuity.html",
+          "line": 25,
+          "observed": "Revision history compares chosen earlier/later publications; two reads are not atomic; reading/comparing does not acknowledge."
+        }
+      ],
+      "cross_references": [
+        "work/ui128-cohort-triage-ops.json",
+        "work/ui128-cohort-triage-rh.json"
+      ],
+      "diagnosis": "resolved",
+      "original_test_result": "failed; not converted to pass"
+    },
+    {
+      "cohort_case_id": 146,
+      "test": "tests.ui26_history.test_history::test_help_exact_comparison_boundaries[handovercontinuity]",
+      "original_generic_category": "documentation_or_help_contract_requires_review",
+      "original_failed_assertion": "assert fragment.casefold() in text.casefold()",
+      "classification": "history_section_heading_changed",
+      "reason": "Publication history & comparison agora aparece como Published revisions and incoming acknowledgement; o procedimento atual explica comparar revisões escolhidas, não rascunhos privados alheios, e não registrar ciência ao ler/comparar.",
+      "evidence": [
+        {
+          "file": "app/static/help_topics/handovercontinuity.html",
+          "line": 25,
+          "observed": "Revision history compares chosen earlier/later publications; two reads are not atomic; reading/comparing does not acknowledge."
+        }
+      ],
+      "cross_references": [
+        "work/ui128-cohort-triage-ops.json",
+        "work/ui128-cohort-triage-rh.json"
+      ],
+      "diagnosis": "resolved",
+      "original_test_result": "failed; not converted to pass"
+    },
+    {
+      "cohort_case_id": 157,
+      "test": "tests.ui48_checklists.test_contracts::test_finish_summary_uses_actual_item_approval_state",
+      "original_generic_category": "static_or_behavior_contract_requires_review",
+      "original_failed_assertion": "assert \"['review','Finish & devices']\" in text and 'data-cs-tab=\"${k}\"' in text",
+      "classification": "localization_wrapper_not_behavior_change",
+      "reason": "Os dois primeiros asserts funcionais desse teste passaram na coorte; a falha final é a string literal da aba. A fonte atual mantém review com __wl118.t(Finish & devices), data-cs-tab e binding. O cálculo continua filtrando ctx.items(saved) por ctx.approval(i,saved.items[p][i.id]).",
+      "evidence": [
+        {
+          "file": "app/static/checklist_stage.js",
+          "line": 34,
+          "observed": "['review',__wl118.t('Finish & devices')] → data-cs-tab"
+        },
+        {
+          "file": "app/static/checklist_stage.js",
+          "line": 38,
+          "observed": "Conta aprovações obrigatórias atuais não aprovadas nos itens salvos."
+        },
+        {
+          "file": "app/static/checklist_stage.js",
+          "line": 40,
+          "observed": "The hub checks the whole stage again."
+        }
+      ],
+      "cross_references": [],
+      "diagnosis": "resolved",
+      "original_test_result": "failed; not converted to pass"
+    },
+    {
+      "cohort_case_id": 158,
+      "test": "tests.ui48_checklists.test_contracts::test_source_help_and_catalogue_are_truthful",
+      "original_generic_category": "documentation_or_help_contract_requires_review",
+      "original_failed_assertion": "assert 'keeps displayed work rows' in home and 'Denied access' in home",
+      "classification": "equivalent_stability_help_wording",
+      "reason": "Falhou em duas frases literais antigas. O artigo atual tem a regra equivalente: linhas inalteradas mantêm nós/posição; falhas temporárias rotulam a última vista e bloqueiam abertura; negação definitiva ou troca de conta limpam informação protegida sem apagar trabalho local alheio.",
+      "evidence": [
+        {
+          "file": "app/static/help_topics/dashboard.html",
+          "observed": "Unchanged rows retain their nodes and position. Temporary failures label the last view and block stale opening. Definitive denial or a changed account clears protected personal information."
+        }
+      ],
+      "cross_references": [
+        "work/ui128-cohort-triage-rh.json"
+      ],
+      "diagnosis": "resolved",
+      "original_test_result": "failed; not converted to pass"
+    },
+    {
+      "cohort_case_id": 160,
+      "test": "tests.ui24_draft.test_draft_review::test_help_explains_snapshot_comparison_not_autosave[handovers]",
+      "original_generic_category": "documentation_or_help_contract_requires_review",
+      "original_failed_assertion": "assert 'Draft when opened' in text and 'Proposed on this device' in text",
+      "classification": "advanced_review_labels_not_current_help_headings",
+      "reason": "A ajuda atual não contém os rótulos antigos Draft when opened/Proposed on this device. Os artigos foram reescritos em torno do editor simples e da correção após publicação, explicitando memória local, salvamento deliberado e preservação de revisões. Isso explica a falha de documentação; não afirma que cada detalhe editorial de comparação avançada foi revalidado ao vivo.",
+      "evidence": [
+        {
+          "file": "app/static/help_topics/handovercontinuity.html",
+          "line": 26,
+          "observed": "Corrections after issue: ordinary notes can be saved; reissue uses separate saved-draft publication review and explicit summary."
+        },
+        {
+          "file": "app/static/help_topics/handovercontinuity.html",
+          "line": 28,
+          "observed": "Unsent notes/reasons/source choices memory-only until explicit save; not offline autosave."
+        }
+      ],
+      "cross_references": [
+        "work/ui128-cohort-triage-ops.json",
+        "work/ui128-cohort-triage-rh.json"
+      ],
+      "diagnosis": "resolved",
+      "original_test_result": "failed; not converted to pass"
+    },
+    {
+      "cohort_case_id": 161,
+      "test": "tests.ui24_draft.test_draft_review::test_help_explains_snapshot_comparison_not_autosave[handovercontinuity]",
+      "original_generic_category": "documentation_or_help_contract_requires_review",
+      "original_failed_assertion": "assert 'Draft when opened' in text and 'Proposed on this device' in text",
+      "classification": "advanced_review_labels_not_current_help_headings",
+      "reason": "A ajuda atual não contém os rótulos antigos Draft when opened/Proposed on this device. Os artigos foram reescritos em torno do editor simples e da correção após publicação, explicitando memória local, salvamento deliberado e preservação de revisões. Isso explica a falha de documentação; não afirma que cada detalhe editorial de comparação avançada foi revalidado ao vivo.",
+      "evidence": [
+        {
+          "file": "app/static/help_topics/handovercontinuity.html",
+          "line": 26,
+          "observed": "Corrections after issue: ordinary notes can be saved; reissue uses separate saved-draft publication review and explicit summary."
+        },
+        {
+          "file": "app/static/help_topics/handovercontinuity.html",
+          "line": 28,
+          "observed": "Unsent notes/reasons/source choices memory-only until explicit save; not offline autosave."
+        }
+      ],
+      "cross_references": [
+        "work/ui128-cohort-triage-ops.json",
+        "work/ui128-cohort-triage-rh.json"
+      ],
+      "diagnosis": "resolved",
+      "original_test_result": "failed; not converted to pass"
+    },
+    {
+      "cohort_case_id": 169,
+      "test": "tests.ui86_visual_branding.test_visual_branding::test_ui86_home_and_profile_do_not_repeat_deployment_company_branding",
+      "original_generic_category": "static_or_behavior_contract_requires_review",
+      "original_failed_assertion": "assert \"People · Operations · A safer tomorrow\" in home",
+      "classification": "home_presentation_evolved",
+      "reason": "O slogan literal UI86 foi removido na Home pessoal posterior; isso não é um teste de dados nem autorização.",
+      "evidence": [
+        {
+          "file": "app/static/personal_home.js",
+          "line": 40,
+          "observed": "My operational overview usa dados de /api/home/personal e /api/home/activity, sem slogan antigo."
+        }
+      ],
+      "cross_references": [
+        "work/ui128-cohort-triage-ops.json"
+      ],
+      "diagnosis": "resolved",
+      "original_test_result": "failed; not converted to pass"
+    },
+    {
+      "cohort_case_id": 170,
+      "test": "tests.ui86_visual_branding.test_visual_branding::test_ui86_deployment_identity_is_owned_by_the_fixed_top_left_brand_only",
+      "original_generic_category": "static_or_behavior_contract_requires_review",
+      "original_failed_assertion": "assert \"brand.append(node)\" in js",
+      "classification": "home_presentation_evolved",
+      "reason": "UI86 esperava inserir identidade da empresa no topo; o contrato seguinte UI87 explicitamente moveu essa identidade para a navegação e remove lockups antigos.",
+      "evidence": [
+        {
+          "file": "app/static/deployment_branding.js",
+          "line": 1,
+          "observed": "UI87: deployment company identity belongs to the company context in the navigation drawer."
+        },
+        {
+          "file": "app/static/deployment_branding.js",
+          "line": 21,
+          "observed": "The sidebar/drawer is the single persistent company label."
+        }
+      ],
+      "cross_references": [
+        "work/ui128-cohort-triage-ops.json"
+      ],
+      "diagnosis": "resolved",
+      "original_test_result": "failed; not converted to pass"
+    },
+    {
+      "cohort_case_id": 175,
+      "test": "tests.ui79_native_equipment.test_native_equipment::test_certificate_register_is_data_grounded_and_stable",
+      "original_generic_category": "static_or_behavior_contract_requires_review",
+      "original_failed_assertion": "assert \"if(sig===last)\" in js",
+      "classification": "guard_extended",
+      "reason": "O teste exige if(sig===last), mas o guard passou a exigir também que o workspace permaneça carregado; evita abandonar uma tela vazia por assinatura de dados igual.",
+      "evidence": [
+        {
+          "file": "app/static/certificate_workspace.js",
+          "line": 61,
+          "observed": "if(sig===last&&document.getElementById('certificate-workspace')?.dataset.certificateLoaded==='true'){...return;}"
+        }
+      ],
+      "cross_references": [
+        "work/ui128-cohort-triage-ops.json"
+      ],
+      "diagnosis": "resolved",
+      "original_test_result": "failed; not converted to pass"
+    },
+    {
+      "cohort_case_id": 180,
+      "test": "tests.ui72_native_workspaces.test_native_workspaces::test_administration_is_a_real_route_rendered_inside_app",
+      "original_generic_category": "static_or_behavior_contract_requires_review",
+      "original_failed_assertion": "assert 'class=\"admin-hub-hero\"' in source",
+      "classification": "class_attribute_extended",
+      "reason": "O elemento ainda existe mas recebeu mais classes: admin-hub-hero wl-page-heading. O teste procura atributo class exato de uma só classe.",
+      "evidence": [
+        {
+          "file": "app/static/browser_admin.js",
+          "line": 32,
+          "observed": "<header class=\"admin-hub-hero wl-page-heading\">"
+        }
+      ],
+      "cross_references": [
+        "work/ui128-cohort-triage-ops.json"
+      ],
+      "diagnosis": "resolved",
+      "original_test_result": "failed; not converted to pass"
+    },
+    {
+      "cohort_case_id": 200,
+      "test": "tests.ui84_company_workspace.test_company_workspace::test_home_cover_uses_only_validated_local_company_logo_url",
+      "original_generic_category": "static_or_behavior_contract_requires_review",
+      "original_failed_assertion": "assert 'ph-company-cover' in home",
+      "classification": "home_presentation_evolved",
+      "reason": "O antigo ph-company-cover foi retirado no modelo posterior de empresa apenas na navegação; não é evidência de logo externo aceito.",
+      "evidence": [
+        {
+          "file": "app/static/deployment_branding.js",
+          "line": 21,
+          "observed": "company logo/name intentionally not inserted into top bar or route covers"
+        }
+      ],
+      "cross_references": [
+        "work/ui128-cohort-triage-ops.json",
+        "work/ui128-cohort-triage-rh.json"
+      ],
+      "diagnosis": "resolved",
+      "original_test_result": "failed; not converted to pass"
+    },
+    {
+      "cohort_case_id": 203,
+      "test": "tests.ui68_home_profile.test_home_profile::test_home_is_personal_first_and_uses_saved_server_counts_not_fictional_statistics",
+      "original_generic_category": "static_or_behavior_contract_requires_review",
+      "original_failed_assertion": "assert \"Opening a record is not signing, approving or completing it\" in ui",
+      "classification": "copy_changed_semantics_retained",
+      "reason": "Falhou apenas na frase literal Opening a record...; o teste já passou pelas APIs/counts. Home continua lendo fontes e a ajuda descreve que leitura não é assinatura/aprovação/conclusão.",
+      "evidence": [
+        {
+          "file": "app/static/personal_home.js",
+          "line": 121,
+          "observed": "GET /api/home/personal? ou /api/home/activity?"
+        },
+        {
+          "file": "app/static/help_topics/dashboard.html",
+          "observed": "Reading is not signing, approval or completion."
+        }
+      ],
+      "cross_references": [
+        "work/ui128-cohort-triage-ops.json",
+        "work/ui128-cohort-triage-rh.json"
+      ],
+      "diagnosis": "resolved",
+      "original_test_result": "failed; not converted to pass"
+    },
+    {
+      "cohort_case_id": 207,
+      "test": "tests.ui62_workspace.test_contract::test_admin_and_branding_helpers_load_before_initial_render",
+      "original_generic_category": "documentation_or_help_contract_requires_review",
+      "original_failed_assertion": "assert t.index('admin_navigation.js')<t.index('/static/app.js')",
+      "classification": "navigation_refactor",
+      "reason": "admin_navigation.js foi substituído por shell estático/index e browser_admin.js; a busca pela dependência retirada falha antes de avaliar a rota.",
+      "evidence": [
+        {
+          "file": "app/static/index.html",
+          "observed": "links administrativos estáticos e browser_admin.js carregado antes app.js"
+        },
+        {
+          "file": "app/static/browser_admin.js",
+          "line": 52,
+          "observed": "adminHome(hash) renderiza admin-workspace"
+        }
+      ],
+      "cross_references": [
+        "work/ui128-cohort-triage-ops.json",
+        "work/ui128-cohort-triage-rh.json"
+      ],
+      "diagnosis": "resolved",
+      "original_test_result": "failed; not converted to pass"
+    },
+    {
+      "cohort_case_id": 237,
+      "test": "tests.fault_tasks.test_release::test_current_guide_help_and_examples_are_linked_without_live_training_credentials",
+      "original_generic_category": "documentation_or_help_contract_requires_review",
+      "original_failed_assertion": "for s in (local,served):assert 'Create corrective' in s.get_text() and '1.34.10' in s.get_text()",
+      "classification": "release_stamp_not_current_procedure",
+      "reason": "Ambas as versões local/servida contêm Create corrective. Só o guia histórico mantém 1.34.10; o artigo servido não. A conjunção falha por carimbo de versão, sem perda do procedimento de tarefa corretiva.",
+      "evidence": [
+        {
+          "file": "docs/user/topics/faults.html",
+          "observed": "Create corrective=true; 1.34.10=true."
+        },
+        {
+          "file": "app/static/help_topics/faults.html",
+          "observed": "Create corrective=true; 1.34.10=false; tarefa ligada continua separada da conclusão da falha."
+        }
+      ],
+      "cross_references": [
+        "work/ui128-cohort-triage-ops.json",
+        "work/ui128-cohort-triage-rh.json"
+      ],
+      "diagnosis": "resolved",
+      "original_test_result": "failed; not converted to pass"
+    },
+    {
+      "cohort_case_id": 240,
+      "test": "tests.browser_admin.test_release_contract::test_guides_and_local_references",
+      "original_generic_category": "documentation_or_help_contract_requires_review",
+      "original_failed_assertion": "assert (ROOT/'app/static/help.html').read_text().count('data-topic=\"browseradmin\"')==1",
+      "classification": "help_index_selector_changed",
+      "reason": "O seletor data-topic esperava o corpo inteiro dentro de help.html. Conferência atual: esse atributo não existe no índice, o link /help/topics/browseradmin existe e o artigo separado integra o catálogo verificado. Não é arquivo de ajuda ausente.",
+      "evidence": [
+        {
+          "file": "app/static/help.html",
+          "observed": "data-topic=\"browseradmin\"=false; /help/topics/browseradmin=true."
+        },
+        {
+          "file": "app/static/help_topics/browseradmin.html",
+          "observed": "Artigo separado presente; catálogo/título/sumário verificados."
+        }
+      ],
+      "cross_references": [
+        "work/ui128-cohort-triage-rh.json"
+      ],
+      "diagnosis": "resolved",
+      "original_test_result": "failed; not converted to pass"
+    },
+    {
+      "cohort_case_id": 264,
+      "test": "tests.saved_manifests.test_release::test_cleanup_and_native_guard_keep_confirmations_distinct",
+      "original_generic_category": "static_or_behavior_contract_requires_review",
+      "original_failed_assertion": "s=(R/'app/static/fleet.js').read_text();assert \"window.AJLogisticsUI?.dispose?.($('modal-form'));dia.close()\" in s",
+      "classification": "guard_extended",
+      "reason": "A limpeza ainda chama dispose, agora seguida de resets de estado e encerramento via AJDialogSystem para preservar histórico/foco; o teste exige dispose e dia.close adjacentes.",
+      "evidence": [
+        {
+          "file": "app/static/fleet.js",
+          "line": 102,
+          "observed": "modalSaving guard; confirm dirty; dispose; modalEpoch++; setDirty(false); AJDialogSystem.close(dia) ou dia.close()"
+        }
+      ],
+      "cross_references": [
+        "work/ui128-cohort-triage-ops.json"
+      ],
+      "diagnosis": "resolved",
+      "original_test_result": "failed; not converted to pass"
+    },
+    {
+      "cohort_case_id": 266,
+      "test": "tests.ui42_workspace.test_catalogue::test_home_keeps_attention_and_unsaved_scope",
+      "original_generic_category": "static_or_behavior_contract_requires_review",
+      "original_failed_assertion": "for x in ['home-attention','home-saved-work','home-review-unsent','H.localWork()','H.localText(w)','H.reviewLocal','H.reviewLogWindows']:assert x in t",
+      "classification": "home_presentation_evolved",
+      "reason": "home_workspace virou diretório Workspaces, enquanto Home pessoal assumiu ações e avisos. IDs home-attention/home-saved-work antigos não estão no diretório; o aviso atual ph-local usa H.localWork e H.reviewLocal.",
+      "evidence": [
+        {
+          "file": "app/static/personal_home.js",
+          "line": 58,
+          "observed": "H.localText(H.localWork()) → ph-local → botão H.reviewLocal()"
+        },
+        {
+          "file": "app/static/experience_shell.js",
+          "line": 56,
+          "observed": "data-unsaved-work mantém acesso pelo menu da conta"
+        }
+      ],
+      "cross_references": [
+        "work/ui128-cohort-triage-ops.json"
+      ],
+      "diagnosis": "resolved",
+      "original_test_result": "failed; not converted to pass"
+    },
+    {
+      "cohort_case_id": 269,
+      "test": "tests.ui42_workspace.test_catalogue::test_home_help_preserves_choices_and_does_not_claim_record_search",
+      "original_generic_category": "documentation_or_help_contract_requires_review",
+      "original_failed_assertion": "assert phrase in text",
+      "classification": "home_directory_split",
+      "reason": "A ajuda da Home pessoal não lista mais Verify inventory. A própria página explica The directory is now Workspaces; os atalhos de verificação/criação continuam no catálogo da área Workspaces.",
+      "evidence": [
+        {
+          "file": "app/static/help_topics/dashboard.html",
+          "observed": "The directory is now Workspaces; all permitted cards, groups, activity search and Create/Import/Open shortcuts retained."
+        },
+        {
+          "file": "app/static/workspace_catalogue.js",
+          "line": 40,
+          "observed": "inventory action Verify inventory exige inventory.view/tasks.view/tasks.manage."
+        }
+      ],
+      "cross_references": [
+        "work/ui128-cohort-triage-ops.json",
+        "work/ui128-cohort-triage-rh.json"
+      ],
+      "diagnosis": "resolved",
+      "original_test_result": "failed; not converted to pass"
+    },
+    {
+      "cohort_case_id": 271,
+      "test": "tests.ui25_incoming.test_incoming::test_incoming_help_has_explicit_non_autosign_boundaries[handovers]",
+      "original_generic_category": "documentation_or_help_contract_requires_review",
+      "original_failed_assertion": "assert fragment.casefold() in t.casefold()",
+      "classification": "incoming_filter_copy_changed",
+      "reason": "O literal Not acknowledged by you não consta mais como título/estado da ajuda. A seção atual usa Pending/acknowledged e explica que se referem à ciência da própria conta, não leitura ou presença, mantendo a ação pessoal separada.",
+      "evidence": [
+        {
+          "file": "app/static/help_topics/handovercontinuity.html",
+          "line": 25,
+          "observed": "Pending/acknowledged filters describe your account's saved acknowledgement; reading/comparing/finishing outgoing does not record it."
+        }
+      ],
+      "cross_references": [
+        "work/ui128-cohort-triage-ops.json",
+        "work/ui128-cohort-triage-rh.json"
+      ],
+      "diagnosis": "resolved",
+      "original_test_result": "failed; not converted to pass"
+    },
+    {
+      "cohort_case_id": 272,
+      "test": "tests.ui25_incoming.test_incoming::test_incoming_help_has_explicit_non_autosign_boundaries[handovercontinuity]",
+      "original_generic_category": "documentation_or_help_contract_requires_review",
+      "original_failed_assertion": "assert fragment.casefold() in t.casefold()",
+      "classification": "incoming_filter_copy_changed",
+      "reason": "O literal Not acknowledged by you não consta mais como título/estado da ajuda. A seção atual usa Pending/acknowledged e explica que se referem à ciência da própria conta, não leitura ou presença, mantendo a ação pessoal separada.",
+      "evidence": [
+        {
+          "file": "app/static/help_topics/handovercontinuity.html",
+          "line": 25,
+          "observed": "Pending/acknowledged filters describe your account's saved acknowledgement; reading/comparing/finishing outgoing does not record it."
+        }
+      ],
+      "cross_references": [
+        "work/ui128-cohort-triage-ops.json",
+        "work/ui128-cohort-triage-rh.json"
+      ],
+      "diagnosis": "resolved",
+      "original_test_result": "failed; not converted to pass"
+    },
+    {
+      "cohort_case_id": 276,
+      "test": "tests.ui67_experience.test_experience::test_profile_and_team_are_first_class_sidebar_destinations",
+      "original_generic_category": "static_or_behavior_contract_requires_review",
+      "original_failed_assertion": "assert \"team.href='#team'\" in nav",
+      "classification": "navigation_refactor",
+      "reason": "Links de perfil/equipe passaram do construtor JS para o HTML estático; as rotas continuam.",
+      "evidence": [
+        {
+          "file": "app/static/index.html",
+          "line": 186,
+          "observed": "href=\"#profile\" e href=\"#team\" data-workspace correspondentes"
+        },
+        {
+          "file": "app/static/app.js",
+          "line": 412,
+          "observed": "hash.startsWith('#profile')?'profile':hash==='#team'?'team'"
+        }
+      ],
+      "cross_references": [
+        "work/ui128-cohort-triage-ops.json"
+      ],
+      "diagnosis": "resolved",
+      "original_test_result": "failed; not converted to pass"
+    },
+    {
+      "cohort_case_id": 277,
+      "test": "tests.ui67_experience.test_experience::test_account_surface_is_compact_and_full_tools_remain_reachable",
+      "original_generic_category": "static_or_behavior_contract_requires_review",
+      "original_failed_assertion": "assert \"My profile\" in shell",
+      "classification": "navigation_refactor",
+      "reason": "O menu da conta é HTML estático em index; experience_shell vincula os elementos por ID. O teste procura texto e criação panel.innerHTML retirados.",
+      "evidence": [
+        {
+          "file": "app/static/index.html",
+          "line": 165,
+          "observed": "My profile, Account & security e Sair da conta no menu próprio"
+        },
+        {
+          "file": "app/static/experience_shell.js",
+          "line": 43,
+          "observed": "panel=document.getElementById('wl-account-menu')"
+        }
+      ],
+      "cross_references": [
+        "work/ui128-cohort-triage-ops.json"
+      ],
+      "diagnosis": "resolved",
+      "original_test_result": "failed; not converted to pass"
+    },
+    {
+      "cohort_case_id": 296,
+      "test": "tests.ui63_personal.test_contract::test_admin_and_branding_helpers_load_before_initial_render",
+      "original_generic_category": "documentation_or_help_contract_requires_review",
+      "original_failed_assertion": "assert t.index('admin_navigation.js')<t.index('/static/app.js')",
+      "classification": "navigation_refactor",
+      "reason": "admin_navigation.js foi substituído por shell estático/index e browser_admin.js; a busca pela dependência retirada falha antes de avaliar a rota.",
+      "evidence": [
+        {
+          "file": "app/static/index.html",
+          "observed": "links administrativos estáticos e browser_admin.js carregado antes app.js"
+        },
+        {
+          "file": "app/static/browser_admin.js",
+          "line": 52,
+          "observed": "adminHome(hash) renderiza admin-workspace"
+        }
+      ],
+      "cross_references": [
+        "work/ui128-cohort-triage-ops.json",
+        "work/ui128-cohort-triage-rh.json"
+      ],
+      "diagnosis": "resolved",
+      "original_test_result": "failed; not converted to pass"
+    },
+    {
+      "cohort_case_id": 319,
+      "test": "tests.handover_continuity.test_release::test_guide_links_source_alias_and_new_help",
+      "original_generic_category": "documentation_or_help_contract_requires_review",
+      "original_failed_assertion": "soup=BeautifulSoup((ROOT/rel).read_text(),'html.parser');node=soup.select('[data-topic=\"handovercontinuity\"]');assert len(node)==1,rel",
+      "classification": "help_index_selector_changed",
+      "reason": "O seletor data-topic esperava o corpo inteiro dentro de help.html. Conferência atual: esse atributo não existe no índice, o link /help/topics/handovercontinuity existe e o artigo separado integra o catálogo verificado. Não é arquivo de ajuda ausente.",
+      "evidence": [
+        {
+          "file": "app/static/help.html",
+          "observed": "data-topic=\"handovercontinuity\"=false; /help/topics/handovercontinuity=true."
+        },
+        {
+          "file": "app/static/help_topics/handovercontinuity.html",
+          "observed": "Artigo separado presente; catálogo/título/sumário verificados."
+        }
+      ],
+      "cross_references": [
+        "work/ui128-cohort-triage-ops.json",
+        "work/ui128-cohort-triage-rh.json"
+      ],
+      "diagnosis": "resolved",
+      "original_test_result": "failed; not converted to pass"
+    },
+    {
+      "cohort_case_id": 367,
+      "test": "tests.ui49_logs.test_contracts::test_help_catalogue_matches_all_topics_and_limits_are_explicit",
+      "original_generic_category": "documentation_or_help_contract_requires_review",
+      "original_failed_assertion": "assert t['text']==' '.join(a.get_text(' ',strip=True).split()),t['id']",
+      "classification": "current_help_article_class_fixed_and_retested",
+      "reason": "Este foi defeito atual, não contrato histórico: artigo certificates não tinha a classe help-article esperada pelo leitor/contrato. RH adicionou apenas a classe em EN/PT e reexecutou este teste: 1 passed.",
+      "evidence": [
+        {
+          "file": "app/static/help_topics/certificates.html",
+          "observed": "article.help-article presente após correção."
+        },
+        {
+          "file": "work/ui128-rh-agent-tests.xml",
+          "observed": "Teste UI49 correspondente passou segundo relatório RH."
+        }
+      ],
+      "cross_references": [
+        "work/ui128-cohort-triage-rh.json"
+      ],
+      "diagnosis": "resolved",
+      "original_test_result": "failed; not converted to pass"
+    },
+    {
+      "cohort_case_id": 370,
+      "test": "tests.task_scratch.test_release::test_help_guide_and_current_state",
+      "original_generic_category": "documentation_or_help_contract_requires_review",
+      "original_failed_assertion": "t=(R/rel).read_text();assert all(x in t for x in ['Author readings in the task draft','Edit steps &amp; add readings','Required for Done','1.34.10'])",
+      "classification": "help_index_is_no_longer_inline_guide",
+      "reason": "Localizei exatamente o primeiro arquivo que falha: START_HERE.html ainda contém todas as frases exigidas; o próximo app/static/help.html é índice e não contém as frases. Os artigos locais históricos docs/user/topics/generaltasks.html também retêm as frases; o artigo servido foi atualizado. O teste exige sincronismo literal entre guia histórico/índice/artigo, não comportamento da tarefa.",
+      "evidence": [
+        {
+          "file": "tests/task_workflow/test_release.py",
+          "observed": "Iteração START_HERE → app/static/help.html → docs/user/topics/generaltasks.html → artigo servido."
+        },
+        {
+          "file": "tests/task_scratch/test_release.py",
+          "observed": "Mesma ordem; all(...) falha no índice sem conteúdo embutido."
+        },
+        {
+          "file": "app/static/help.html",
+          "observed": "Mantém link /help/topics/generaltasks; artigo separado."
+        }
+      ],
+      "cross_references": [
+        "work/ui128-cohort-triage-ops.json",
+        "work/ui128-cohort-triage-rh.json"
+      ],
+      "diagnosis": "resolved",
+      "original_test_result": "failed; not converted to pass"
+    },
+    {
+      "cohort_case_id": 373,
+      "test": "tests.daily_handovers.test_release::test_current_daily_help_and_guide_are_explicit_not_automatic",
+      "original_generic_category": "documentation_or_help_contract_requires_review",
+      "original_failed_assertion": "node=BeautifulSoup((R/rel).read_text(),'html.parser').select_one('[data-topic=\"handovers\"]');assert node",
+      "classification": "help_index_selector_changed",
+      "reason": "O seletor data-topic esperava o corpo inteiro dentro de help.html. Conferência atual: esse atributo não existe no índice, o link /help/topics/handovers existe e o artigo separado integra o catálogo verificado. Não é arquivo de ajuda ausente.",
+      "evidence": [
+        {
+          "file": "app/static/help.html",
+          "observed": "data-topic=\"handovers\"=false; /help/topics/handovers=true."
+        },
+        {
+          "file": "app/static/help_topics/handovers.html",
+          "observed": "Artigo separado presente; catálogo/título/sumário verificados."
+        }
+      ],
+      "cross_references": [
+        "work/ui128-cohort-triage-ops.json",
+        "work/ui128-cohort-triage-rh.json"
+      ],
+      "diagnosis": "resolved",
+      "original_test_result": "failed; not converted to pass"
+    }
+  ],
+  "additional_actual_verification": {
+    "test": "tests.browser_logs.test_release::test_actual_runtime_release_verifier_accepts_source",
+    "cohort_case_id": 71,
+    "path": "work/ui128-replay-verified-final",
+    "method": "Executado app.runtime_info.verify_release_files(root, required=True) com Python -B, somente leitura.",
+    "result": {
+      "present": true,
+      "version": "1.34.19",
+      "matches": true,
+      "mismatches": [],
+      "fingerprint": "79a9033f7293116f"
+    },
+    "manifest_sha256": "79a9033f7293116f95db3747901b47bb15cf80a320812b29f4255d6426fc3610",
+    "listed_resources": 2305,
+    "status": "passed_on_this_frozen_snapshot",
+    "limitation": "O coordenador informou uma alteração posterior do rótulo Unassigned. Repetir integridade após o novo congelamento; esse snapshot não comprova bytes ainda não recongelados."
+  },
+  "documentary_checks": {
+    "exact_first_failure_for_task_guides": {
+      "tests": [
+        93,
+        370
+      ],
+      "first_file": "START_HERE.html",
+      "first_file_result": "Todas as frases exigidas presentes.",
+      "next_file": "app/static/help.html",
+      "next_file_result": "Não contém as frases porque é índice com artigos separados.",
+      "historical_article": "docs/user/topics/generaltasks.html mantém as frases.",
+      "served_article": "app/static/help_topics/generaltasks.html foi reescrito; não é um espelho literal do histórico."
+    },
+    "fault_guidance": {
+      "case": 237,
+      "historical": {
+        "create_corrective": true,
+        "release_1_34_10": true
+      },
+      "served": {
+        "create_corrective": true,
+        "release_1_34_10": false
+      }
+    },
+    "certificate_article": {
+      "case": 367,
+      "english_tag": "<article class=\"help-article\">",
+      "portuguese_tag": "<article class=\"help-article\">",
+      "retest_xml": "work/ui128-rh-agent-tests.xml",
+      "retest_result": "1 test, 0 errors, 0 failures; o caso UI49 exato consta no XML."
+    }
+  },
+  "known_limits_not_unexplained_failures": [
+    {
+      "scope": "Instalador nativo Windows",
+      "detail": "Launcher e build template herdados1.34.19; esta entrega é web. Nenhum executávelWindowsUI128 foi certificado nesta análise."
+    },
+    {
+      "scope": "OCR local",
+      "detail": "Casos5/6 têm causa ambiental confirmada pelo agenteDocumentos: Tesseract ausente. Não declarar OCR de imagem/PDF executado com sucesso nesse ambiente."
+    },
+    {
+      "scope": "Symlink Windows",
+      "detail": "WinError1314 na criação da fixture antes da lógica do produto; precisa ambiente com privilégio apropriado para avaliar esse caso."
+    },
+    {
+      "scope": "Testes integrados finais",
+      "detail": "Root executa suítes finais e publicação. Esta análise é diagnóstico; não faz novas afirmações sobre navegação ao vivo ou produção."
+    },
+    {
+      "scope": "Ajuda histórica e atual",
+      "detail": "As diferenças de rótulos e conteúdo estão explicadas, mas equivalência editorial completa entre guias históricos, PDF nativo e interface hospedada não é afirmada."
+    }
+  ],
+  "changes_made": [
+    "Somente work/ui128-triage-unresolved.json criado nesta fase."
+  ]
+}
