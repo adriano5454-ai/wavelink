@@ -71,7 +71,8 @@
           "name": "Menu da conta",
           "status": "parcial",
           "evidence": [
-            "Chrome local, saída conclui e preserva registros; entrada existente de colaboradora e supervisor fictícios; menus refletem permissões."
+            "Chrome local, saída conclui e preserva registros; entrada existente de colaboradora e supervisor fictícios; menus refletem permissões.",
+            "Chrome isolado: Sair da conta aparece apenas no menu de conta; janelas de registro oferecem Fechar registro, sem comando de logout. Navegação seguida de reload manteve a conta conectada."
           ],
           "issues": []
         },
@@ -293,7 +294,8 @@
           "name": "Escalas e viagens",
           "status": "parcial",
           "evidence": [
-            "Chrome conectado, ambiente fictício isolado: Gestora: busca Ana, cargo/observações e filtros persistidos. Documento PNG fictício conferido, vencimento 20/10, retorno à fila preservado. Escala em terra 20–22/10; viagens no calendário mensal/agenda/equipe, teclado e 390px. Horas devolvidas, corrigidas para 15,75 h, reenviadas e aprovadas por outra conta; despesa 48,90 rejeitada com motivo. Quatro relatórios consultados, CSV documental conferido."
+            "Chrome conectado, ambiente fictício isolado: Gestora: busca Ana, cargo/observações e filtros persistidos. Documento PNG fictício conferido, vencimento 20/10, retorno à fila preservado. Escala em terra 20–22/10; viagens no calendário mensal/agenda/equipe, teclado e 390px. Horas devolvidas, corrigidas para 15,75 h, reenviadas e aprovadas por outra conta; despesa 48,90 rejeitada com motivo. Quatro relatórios consultados, CSV documental conferido.",
+            "Chrome isolado: fechar formulário editado manteve rascunho; retomar restaurou Observações; Voltar do navegador voltou ao RH com rascunho disponível e mesma conta. Descarte/recusa comprovados nos handlers automatizados; recusa nativa não certificada por timeout do Chrome."
           ],
           "issues": []
         },
@@ -301,7 +303,8 @@
           "name": "Cadastrar escala",
           "status": "parcial",
           "evidence": [
-            "Chrome conectado, ambiente fictício isolado: Gestora: busca Ana, cargo/observações e filtros persistidos. Documento PNG fictício conferido, vencimento 20/10, retorno à fila preservado. Escala em terra 20–22/10; viagens no calendário mensal/agenda/equipe, teclado e 390px. Horas devolvidas, corrigidas para 15,75 h, reenviadas e aprovadas por outra conta; despesa 48,90 rejeitada com motivo. Quatro relatórios consultados, CSV documental conferido."
+            "Chrome conectado, ambiente fictício isolado: Gestora: busca Ana, cargo/observações e filtros persistidos. Documento PNG fictício conferido, vencimento 20/10, retorno à fila preservado. Escala em terra 20–22/10; viagens no calendário mensal/agenda/equipe, teclado e 390px. Horas devolvidas, corrigidas para 15,75 h, reenviadas e aprovadas por outra conta; despesa 48,90 rejeitada com motivo. Quatro relatórios consultados, CSV documental conferido.",
+            "Chrome isolado: fechar formulário editado manteve rascunho; retomar restaurou Observações; Voltar do navegador voltou ao RH com rascunho disponível e mesma conta. Descarte/recusa comprovados nos handlers automatizados; recusa nativa não certificada por timeout do Chrome."
           ],
           "issues": []
         },
@@ -585,8 +588,11 @@
         },
         {
           "name": "Pesquisa e filtros",
-          "status": "pendente",
-          "evidence": [],
+          "status": "parcial",
+          "evidence": [
+            "Chrome integrado R3: pesquisa UI127 preservada após Fechar registro, histórico, Voltar para registro e Voltar nativo; tabela permaneceu no mesmo livro e revisão 2, conta Administrador de testes conectada. Modal sem Sair; Fechar registro específico.",
+            "Chrome isolado: Ver registro → Fechar registro, Voltar para a lista, Histórico → Voltar ao registro e Voltar do navegador preservaram login e filtro UI127; repetido a 390×844."
+          ],
           "issues": []
         },
         {
@@ -601,7 +607,8 @@
           "name": "Detalhe e edição",
           "status": "parcial",
           "evidence": [
-            "Chrome conectado, ambiente fictício isolado: Livro configurado; rascunho fechado/retomado; registro v1; correção sem motivo bloqueada, v2 salva/reaberta. CSV baixado identificou moldura em inglês; CSV/XLSX/PDF corrigidos com sete testes Python. Visual do novo PDF/XLSX e anulação pendentes."
+            "Chrome conectado, ambiente fictício isolado: Livro configurado; rascunho fechado/retomado; registro v1; correção sem motivo bloqueada, v2 salva/reaberta. CSV baixado identificou moldura em inglês; CSV/XLSX/PDF corrigidos com sete testes Python. Visual do novo PDF/XLSX e anulação pendentes.",
+            "Chrome isolado: Ver registro → Fechar registro, Voltar para a lista, Histórico → Voltar ao registro e Voltar do navegador preservaram login e filtro UI127; repetido a 390×844."
           ],
           "issues": []
         },
@@ -609,7 +616,8 @@
           "name": "Correção/anulação",
           "status": "parcial",
           "evidence": [
-            "Chrome conectado, ambiente fictício isolado: Livro configurado; rascunho fechado/retomado; registro v1; correção sem motivo bloqueada, v2 salva/reaberta. CSV baixado identificou moldura em inglês; CSV/XLSX/PDF corrigidos com sete testes Python. Visual do novo PDF/XLSX e anulação pendentes."
+            "Chrome conectado, ambiente fictício isolado: Livro configurado; rascunho fechado/retomado; registro v1; correção sem motivo bloqueada, v2 salva/reaberta. CSV baixado identificou moldura em inglês; CSV/XLSX/PDF corrigidos com sete testes Python. Visual do novo PDF/XLSX e anulação pendentes.",
+            "Chrome isolado: Ver registro → Fechar registro, Voltar para a lista, Histórico → Voltar ao registro e Voltar do navegador preservaram login e filtro UI127; repetido a 390×844."
           ],
           "issues": []
         },
@@ -755,26 +763,34 @@
       "views": [
         {
           "name": "Calendário",
-          "status": "pendente",
-          "evidence": [],
+          "status": "parcial",
+          "evidence": [
+            "Chrome, ambiente fictício: mês e agenda; pesquisa reduziu a uma tarefa; abrir detalhe v4 concluído e voltar preservou texto, categorias e visualização. Limpar categorias exibiu orientação; redefinir restaurou duas datas; selecionar 19/10 mostrou apenas a tarefa às 12:00 UTC. Ajuda distinguiu prazo de conclusão. Dois sufixos em inglês e concordância da contagem corrigidos na R3."
+          ],
           "issues": []
         },
         {
           "name": "Lista de datas",
-          "status": "pendente",
-          "evidence": [],
+          "status": "parcial",
+          "evidence": [
+            "Chrome, ambiente fictício: mês e agenda; pesquisa reduziu a uma tarefa; abrir detalhe v4 concluído e voltar preservou texto, categorias e visualização. Limpar categorias exibiu orientação; redefinir restaurou duas datas; selecionar 19/10 mostrou apenas a tarefa às 12:00 UTC. Ajuda distinguiu prazo de conclusão. Dois sufixos em inglês e concordância da contagem corrigidos na R3."
+          ],
           "issues": []
         },
         {
           "name": "Filtros de origem",
-          "status": "pendente",
-          "evidence": [],
+          "status": "parcial",
+          "evidence": [
+            "Chrome, ambiente fictício: mês e agenda; pesquisa reduziu a uma tarefa; abrir detalhe v4 concluído e voltar preservou texto, categorias e visualização. Limpar categorias exibiu orientação; redefinir restaurou duas datas; selecionar 19/10 mostrou apenas a tarefa às 12:00 UTC. Ajuda distinguiu prazo de conclusão. Dois sufixos em inglês e concordância da contagem corrigidos na R3."
+          ],
           "issues": []
         },
         {
           "name": "Abrir registro vinculado",
-          "status": "pendente",
-          "evidence": [],
+          "status": "parcial",
+          "evidence": [
+            "Chrome, ambiente fictício: mês e agenda; pesquisa reduziu a uma tarefa; abrir detalhe v4 concluído e voltar preservou texto, categorias e visualização. Limpar categorias exibiu orientação; redefinir restaurou duas datas; selecionar 19/10 mostrou apenas a tarefa às 12:00 UTC. Ajuda distinguiu prazo de conclusão. Dois sufixos em inglês e concordância da contagem corrigidos na R3."
+          ],
           "issues": []
         }
       ],
@@ -1376,20 +1392,26 @@
       "views": [
         {
           "name": "Lista",
-          "status": "pendente",
-          "evidence": [],
+          "status": "parcial",
+          "evidence": [
+            "Chrome isolado: formulário DDS em português, tipo interno canônico preservado, rascunho legado recuperado; Voltar mantém dados e autenticação. Não foi publicado registro operacional DDS neste cenário."
+          ],
           "issues": []
         },
         {
           "name": "Novo diálogo",
-          "status": "pendente",
-          "evidence": [],
+          "status": "parcial",
+          "evidence": [
+            "Chrome isolado: formulário DDS em português, tipo interno canônico preservado, rascunho legado recuperado; Voltar mantém dados e autenticação. Não foi publicado registro operacional DDS neste cenário."
+          ],
           "issues": []
         },
         {
           "name": "Formulário",
-          "status": "pendente",
-          "evidence": [],
+          "status": "parcial",
+          "evidence": [
+            "Chrome isolado: formulário DDS em português, tipo interno canônico preservado, rascunho legado recuperado; Voltar mantém dados e autenticação. Não foi publicado registro operacional DDS neste cenário."
+          ],
           "issues": []
         },
         {
@@ -1432,7 +1454,8 @@
           "name": "Biblioteca",
           "status": "parcial",
           "evidence": [
-            "Chrome isolado: pasta com nome obrigatório, original fictício revisionado salvo com recibo e SHA-256; formato de imagem incompatível com extensão recusado com mensagem em português, reenvio de JPEG correto aceito. Revisão 01 abriu com histórico e identificador imutável. Nenhum arquivo real enviado."
+            "Chrome isolado: pasta com nome obrigatório, original fictício revisionado salvo com recibo e SHA-256; formato de imagem incompatível com extensão recusado com mensagem em português, reenvio de JPEG correto aceito. Revisão 01 abriu com histórico e identificador imutável. Nenhum arquivo real enviado.",
+            "Chrome isolado: pesquisa UI127 e seleção da revisão02 preservadas após detalhe → Voltar navegador; Avançar reabriu a mesma revisão; Voltar para a lista também preservou contexto."
           ],
           "issues": []
         },
@@ -1440,7 +1463,8 @@
           "name": "Pesquisa/filtros",
           "status": "parcial",
           "evidence": [
-            "Após recarregar, revisão 01 e 02 preservadas em suas pastas, busca por código encontrou ambas, consulta inexistente exibiu zero resultados com orientação. Pasta raiz traduzida apenas na apresentação; nomes de arquivos/pastas conservados. Captura UI127-originais-depois.jpg."
+            "Após recarregar, revisão 01 e 02 preservadas em suas pastas, busca por código encontrou ambas, consulta inexistente exibiu zero resultados com orientação. Pasta raiz traduzida apenas na apresentação; nomes de arquivos/pastas conservados. Captura UI127-originais-depois.jpg.",
+            "Chrome isolado: pesquisa UI127 e seleção da revisão02 preservadas após detalhe → Voltar navegador; Avançar reabriu a mesma revisão; Voltar para a lista também preservou contexto."
           ],
           "issues": []
         },
@@ -1457,7 +1481,8 @@
           "status": "parcial",
           "evidence": [
             "Chrome isolado: pasta com nome obrigatório, original fictício revisionado salvo com recibo e SHA-256; formato de imagem incompatível com extensão recusado com mensagem em português, reenvio de JPEG correto aceito. Revisão 01 abriu com histórico e identificador imutável. Nenhum arquivo real enviado.",
-            "Após recarregar, revisão 01 e 02 preservadas em suas pastas, busca por código encontrou ambas, consulta inexistente exibiu zero resultados com orientação. Pasta raiz traduzida apenas na apresentação; nomes de arquivos/pastas conservados. Captura UI127-originais-depois.jpg."
+            "Após recarregar, revisão 01 e 02 preservadas em suas pastas, busca por código encontrou ambas, consulta inexistente exibiu zero resultados com orientação. Pasta raiz traduzida apenas na apresentação; nomes de arquivos/pastas conservados. Captura UI127-originais-depois.jpg.",
+            "Chrome isolado: pesquisa UI127 e seleção da revisão02 preservadas após detalhe → Voltar navegador; Avançar reabriu a mesma revisão; Voltar para a lista também preservou contexto."
           ],
           "issues": []
         },
@@ -1525,8 +1550,10 @@
         },
         {
           "name": "Diálogos de segurança",
-          "status": "pendente",
-          "evidence": [],
+          "status": "parcial",
+          "evidence": [
+            "Chrome, ambiente fictício: vazio bloqueado; detalhes, tópico e pergunta preenchidos; rascunho salvo sem publicar; conferência separada; publicação sem justificativa bloqueada; justificativa e aceite publicaram revisão 1 preservando o conteúdo. Textos do editor, prévia e confirmações localizados na R3."
+          ],
           "issues": []
         },
         {

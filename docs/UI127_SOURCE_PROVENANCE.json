@@ -4,21 +4,21 @@
   "patch_id": "workspace-ui127-audit-2026-10-18",
   "parent_patch_id": "workspace-ui126-import-review-2026-10-18",
   "parent_manifest_sha256": "da29d95b1a809b0760a1d2bc92e67bc8f9f32aa55ce2788dc7084c2ccb5d0843",
-  "scope": "Contextual PT-BR audit, HR calendar travel and focus, fleet transition dialog, native validation and report presentation; source content, authorization, identifiers and persisted records retained.",
+  "scope": "Integrated PT-BR audit; session-safe close/back/cancel navigation, retained drafts and filters, document history, accessible people selectors, HR calendar, support and report presentation; authorization and persisted records retained.",
   "boundaries": {
     "database_reset": false,
     "browser_storage_clear": false,
     "operational_writers_changed": false,
     "live_deployment": false
   },
-  "runtime_manifest_sha256": "0a33169d87dbcfe486551c44378b0b6bc6c9385241fdf67f6f1215fd1f519e58",
-  "runtime_resources": 2281,
-  "overlay_resources": 65,
+  "runtime_manifest_sha256": "6a8028af00822df91337dd385a6990128acce1a09ab7c81829600f4fcfab41bb",
+  "runtime_resources": 2288,
+  "overlay_resources": 81,
   "files": [
     {
       "path": "UI_PATCH.json",
       "before_sha256": "d13f28b2dba0144cf6164e1a6f4fec2e6a68b9ed294564cf1d2bf310d5cfba6f",
-      "after_sha256": "bd0fc65ee43869ee3ba166f268c724fe03e6d336883321f572800a81d18bafb6"
+      "after_sha256": "39a47b1f8ee61e6fe3a5bf2a67250042d849068a0d7737e8977d5878aec19e0f"
     },
     {
       "path": "app/__init__.py",
@@ -48,7 +48,7 @@
     {
       "path": "app/static/app.js",
       "before_sha256": "f14749e459ab1092e7356b8d86dc0c496fe6d75a36342bc38c19aa74af715882",
-      "after_sha256": "8dabe3dda3f46cd45d73b45e95b5112df11e85e02e850d8e5d07efed90e64b91"
+      "after_sha256": "3fd898cb9830b8bc01ceecab131f2a8474a2a8acca775f06d0da2cfc73296e46"
     },
     {
       "path": "app/static/browser_logs.js",
@@ -58,7 +58,12 @@
     {
       "path": "app/static/browser_templates.js",
       "before_sha256": "6e1ac1db1a7f8487950c3eb56327f5394bc2a28780a0887e5abf7026572cfe81",
-      "after_sha256": "ba3b45ba370e97685f9ec117e61663a69c7735544480b19aea2d03c720732336"
+      "after_sha256": "da17826aff60ef4b327a346759b13993bb2c78486e601289a31c4b39f46b74ae"
+    },
+    {
+      "path": "app/static/browser_toolbox.js",
+      "before_sha256": "63792b465f3934a652c4f32ba3c29d80021a497cd73bf5bd935eff6d1ed08d23",
+      "after_sha256": "eec09aecb581bde55f1dbb6007800c94ffb3d745a831ffe33e47793c1b74fefd"
     },
     {
       "path": "app/static/certificate_form.js",
@@ -86,9 +91,14 @@
       "after_sha256": "34563beeeb7c70f22ab52d77e41d7483aa1f1749688ea500c9ec0ab663961f52"
     },
     {
+      "path": "app/static/contact.html",
+      "before_sha256": "3d8bb427a2cd93f735a929d40b8cc2da9f0ba2ea621c1bd8a79c5dd951c6074e",
+      "after_sha256": "1e8b3a65c322e13a174515be39cd4f8567eff75459da5eb33fbd5978f41f108f"
+    },
+    {
       "path": "app/static/dialog_system_ui81.js",
       "before_sha256": "46dd03bec2bb03e056186f6646fc8b0d787d85e20ba26ced5865273e9bd95852",
-      "after_sha256": "2fa594cca5620517a789a8b37e0848c8b31a4196af0fdaf99c9ff859ca02ddd8"
+      "after_sha256": "5db631e40f3eaee046be2b7951457177917cd3faa1d39b5846402772cf3050a7"
     },
     {
       "path": "app/static/document_participation.js",
@@ -108,12 +118,12 @@
     {
       "path": "app/static/fieldwork.js",
       "before_sha256": "abf70d49119211fbf8b113630619792922f5153eb095430dfd40bfe28e3c1119",
-      "after_sha256": "eccf7bcf6ffc7c8535e7bffe8db1fb413a6b649a08d1dc79cf20f5817180c62e"
+      "after_sha256": "8444a46f8e93158e0ecda8c536bf68c84f63bb52c21598f29224e331df651882"
     },
     {
       "path": "app/static/fleet.html",
       "before_sha256": "130c9a9139314ae998d3200cc24de6d6c2dd56885f3177d28e22f06ad401af86",
-      "after_sha256": "67d73a9c9515f7debfb30b2636835a1655277f83953990607226037d7e39fe54"
+      "after_sha256": "38ead3ddc5ed468ba5b1786271e95df3797dcd01114766121f9659eb95b2bdaa"
     },
     {
       "path": "app/static/fleet.js",
@@ -168,17 +178,17 @@
     {
       "path": "app/static/hr_workspace.js",
       "before_sha256": "ff6a3f1b70bc00b67af0b8d542621af9edb05a9d52609b7982757c9ab0436603",
-      "after_sha256": "5883c4e6869a8ea2c0494d8ad833a0e6e927f7e4d116c8ffa375ae5a8405754b"
+      "after_sha256": "2834780591d5225209c5a3880bbcf093f20c18d00dcd4855d107af9afd32b90a"
     },
     {
       "path": "app/static/index.html",
       "before_sha256": "634fb5c15714849e742566d4743128b540272acf5f43e7a3e0985f5a2162c8a9",
-      "after_sha256": "e84d06dd71de34767ff9b6d990a68b6472e566a4bd92910ecb1390631b58a830"
+      "after_sha256": "94b98abd9afe18e710aa745456eef57ff2abecdf19494fa93cdc1f8174df8706"
     },
     {
       "path": "app/static/interface_components.js",
       "before_sha256": "a127a902aee092b1d76ad9e0be98850b1d74645053eba1a00691faeff08ceb4e",
-      "after_sha256": "7d0ce6c924d81adfa8f1f78ad0f168147b7e79d7a745c733cc8b884268eaaf9f"
+      "after_sha256": "1557e16d4dab644f0add401b8291e4b8da8bbc65737cbbf2deb40db2ef48d767"
     },
     {
       "path": "app/static/inventory_workspace.js",
@@ -188,7 +198,7 @@
     {
       "path": "app/static/locale_pt_br.js",
       "before_sha256": "c51bcc6a5d92a957788f1a6c32316ab0d3332d317d644971faae80f53d2eab5a",
-      "after_sha256": "93ab9577d8f4f732cbe950265fbe815862e316a7e1745ea949f243f89f55aef8"
+      "after_sha256": "739f65a8971e9ad93558969a05fe6c6e047d1e19d9d35fc51dbc07fad4317a34"
     },
     {
       "path": "app/static/logistics_workflow.js",
@@ -198,12 +208,12 @@
     {
       "path": "app/static/logs.js",
       "before_sha256": "dbadc7ea0b33c6968d49b017f04dcacf9eb6d9a4fbc7c7d789cd6e9c057897b3",
-      "after_sha256": "2a950eeccdb9cb1f76330fd66798e98e8b2b4c81789c9de7ccc935925528708f"
+      "after_sha256": "1b46612da0d69bc5e3ceb9c1c74fd25606c6ade8169cda13eab5683da0522201"
     },
     {
       "path": "app/static/logs_workspace.js",
       "before_sha256": "48cf61a62b86a1037d440d9f34e690a8d1eb2ac464b148c3acb5141f82f31284",
-      "after_sha256": "7993d5a53204ebbed7b5448cb2bc14a9aba93400f130759b1468ab1053c312f0"
+      "after_sha256": "35fe97a40961ee18ad7ad6ceb72ccf0c68be757f2ab03cf91dab3366178cb61e"
     },
     {
       "path": "app/static/maintenance_forms.js",
@@ -243,12 +253,12 @@
     {
       "path": "app/static/original_library.js",
       "before_sha256": "028d2cc79a53c604d1c1f51d11a0aaba6eb31f420d98b6354380e129d39fae8a",
-      "after_sha256": "5bf511318355b3a6c74712885b05aba7c279e80634e9f6ae0dbdfa1329bb788a"
+      "after_sha256": "6504b3ab1f0bcf7eba1faf24e4b4415d1427af66f151c9aeef40f906ef625d3a"
     },
     {
       "path": "app/static/original_upload.js",
       "before_sha256": "b0990cfafe8bcb311530bbd4a6b2571dc244a3556689d637dd43625297bf318c",
-      "after_sha256": "9e6e4deaa1a83be226f726cb1066e62b92c9f9dd7b9270ca1708a7f7ce5bb1df"
+      "after_sha256": "1229cb1d08961b32a5b1a57b27d7d26abd00aa6adcd4f81830a302fe79f56b2c"
     },
     {
       "path": "app/static/personal_home.js",
@@ -261,14 +271,24 @@
       "after_sha256": "5dce9375e0fcbb85d1cfa5a4a79ede1e9a731c9658df9f80926eba5ab0b1a967"
     },
     {
+      "path": "app/static/project_calendar.js",
+      "before_sha256": "97a642ebe16707f7614f0b55a5867772ac17f5357aa3dc1b4eedcf2e62a28c0d",
+      "after_sha256": "6b80ffd208a1d899c40df1592470489e8ba1105fe118ccc3ac9c94f99537c656"
+    },
+    {
+      "path": "app/static/pt-BR/contact.html",
+      "before_sha256": "302d07bfa02295fa8eddf4c9078a161aee2fa2594ef83096190c3baf87d6035e",
+      "after_sha256": "45c02ac3e50479f8c98dd3b7bda7a09352b15f2728ff07f2f08c3fc375f9f91f"
+    },
+    {
       "path": "app/static/pt-BR/fleet.html",
       "before_sha256": "a45bf55fc341d40fbba2c953011aa8b1454570f530c4c126c7725e2ec75c6bb0",
-      "after_sha256": "1df506947e412aabc5f02681bb1c3dd7e014100de61df3f6027d0ce6c3c0b133"
+      "after_sha256": "b834cdc5072e392cc03e754d4cdce659ed53ccfe34cf4983de94852bbb8a865d"
     },
     {
       "path": "app/static/pt-BR/index.html",
       "before_sha256": "c5ffcd6f4094668a1d790049d3be0dd44aaf9699308a448625636dbc00041f88",
-      "after_sha256": "58d17b236435f464f9843349f8e7e9c7dd86893983a22f549230919b1e5be470"
+      "after_sha256": "b86af76eae6fde62b96df64f5e18cea9e2db20c9dc96a1bfa9b65da9fd172ddc"
     },
     {
       "path": "app/static/qshe_reports.js",
@@ -283,7 +303,7 @@
     {
       "path": "app/static/report_forms.js",
       "before_sha256": "68d0d8141dda32553c18b2fd2dc206f627cf62960b2aad8854ec50881e9683d1",
-      "after_sha256": "5e05fe81c60131acce3f80d9cc4e56234be762f52d8f66e14baa42ded29b5128"
+      "after_sha256": "1552a55856315ce6f7de17ccc0730637f0bbfdd2116e7478a77341749f8f0989"
     },
     {
       "path": "app/static/shift_workspace.js",
@@ -296,9 +316,14 @@
       "after_sha256": "b118b45f88cf9087ced94552160052cca5ed4c630d32b40611b5a7b2990ce5cb"
     },
     {
+      "path": "app/static/support.js",
+      "before_sha256": "0142bc21439ed07e37cdc518d98ac518f94291c10192d414c1068be289d5ee9d",
+      "after_sha256": "5ce5b0ae31106fd723c48a9b3b0dbf7d4a1aa9a66b0bb1d798723d2c5d2eb5b4"
+    },
+    {
       "path": "app/static/sw.js",
       "before_sha256": "2107dc05d39d03859e3ce47c98110bc38d0e2331b3bf58687533f778555b3dc7",
-      "after_sha256": "f2b698d86fe749d2db196cc877cccd239a9f7d3dc3a519c168a13770f8228a34"
+      "after_sha256": "daf8b6bc777584bc4f071a64631d8994efbf82d550bd149e81e9df106c736b93"
     },
     {
       "path": "app/static/task_checklists.js",
@@ -306,9 +331,19 @@
       "after_sha256": "719441996871efdc55f4c3a77afc1030e57c106133c8929f547ecb9ec4fba793"
     },
     {
+      "path": "app/static/task_create.js",
+      "before_sha256": "7edae5cb61b2c6d53556194ac65c4c46f70ba65a16c80a03eec2ce9cd9decbfb",
+      "after_sha256": "ad3b029cdf5331293a8e4da278f7515f467df9c1106e1dfee55e5548b0bea30b"
+    },
+    {
       "path": "app/static/task_workspace.js",
       "before_sha256": "47aafd5ba8f282bb29fb8c89ead408ae24b97725f4c95b0e924318fab00a162c",
-      "after_sha256": "03e7f6e0b1045160a62e7d969d3016acdd7f23d1f44c3cf8fac5a38192989b0a"
+      "after_sha256": "da78afe7f950f59d4bc5517ff16736a643f908bc4e4ec43ef8efafa40ab7f6ce"
+    },
+    {
+      "path": "app/static/toolbox_form.js",
+      "before_sha256": "d9278004bc39f2665bf03312403dfb44383b53b3c0d57362861c6ebebb6be5ce",
+      "after_sha256": "ea7ff126151e43a9ccdeff1caf610c8fd28d8d694c6f44f2dc7143f704961422"
     },
     {
       "path": "app/static/verification.js",
@@ -319,6 +354,11 @@
       "path": "app/static/visual_ui124.css",
       "before_sha256": "f2b865a6385cf3d3f3874a47bf2f21b74f85fba29c0a86943b5384030c3f9469",
       "after_sha256": "3f393fc48d4ab31072066b077cba8dbf8e32f9e453ceb5dbedc514fb4ed7bc6d"
+    },
+    {
+      "path": "app/static/workflow_foundation_ui81.css",
+      "before_sha256": "94cb6c4473b5f04bc5d7d8e349398a9b9604ad539641cc3b86fb1fd21112ba9a",
+      "after_sha256": "027413e849804bc15de0ce0a8c0e22b3d005b503c63198fe1bff8aa9429a2e1b"
     },
     {
       "path": "app/static/workspace_continuity.js",
@@ -333,12 +373,52 @@
     {
       "path": "tests/test_audit_ui127.js",
       "before_sha256": null,
-      "after_sha256": "f377d3419d64e56507718399e35e5e27bc56729e7aa54079290ddef82d125523"
+      "after_sha256": "5a063c9b506a453fd33864b038b185ff90b7a0cd7aa7bc3cd0c7f0ef700e70d8"
     },
     {
       "path": "tests/test_report_table_locale_ui127.py",
       "before_sha256": null,
       "after_sha256": "0fe0ed4fc13ac42903cf273881f4c055e023941efdd6725488398722e02006b1"
+    },
+    {
+      "path": "tests/test_toolbox_read_ui108.js",
+      "before_sha256": "b6602fe82f15177473807d8e63b61e36a7808c89bd18fc36d53cc291650c94a4",
+      "after_sha256": "49bc547864e4532f8364642b866b039ba6e8345af5fe37371ed8da816c62cf59"
+    },
+    {
+      "path": "tests/test_ui127_documents_agent.js",
+      "before_sha256": null,
+      "after_sha256": "a23bd49434094735218814d6c5be0bbe3d0f9ed917055f96226d6b9dfb1396e0"
+    },
+    {
+      "path": "tests/test_ui127_documents_agent_people.js",
+      "before_sha256": null,
+      "after_sha256": "2ecbdfc8fd15df96737c2ff5a5aff40562c715a037ef7d7ddacc83c82abd6e59"
+    },
+    {
+      "path": "tests/test_ui127_quality_agent_dialog.js",
+      "before_sha256": null,
+      "after_sha256": "025617304693892a3e823f430cb44fbc6acb06acee6722bf7a6e452b896253e6"
+    },
+    {
+      "path": "tests/test_ui127_quality_agent_drafts.js",
+      "before_sha256": null,
+      "after_sha256": "7334fb366aac83ac9798677249b03bbe879887518d9ade30da882ed58d66f7c5"
+    },
+    {
+      "path": "tests/test_ui127_quality_agent_logs.js",
+      "before_sha256": null,
+      "after_sha256": "c7453be2464efd878eae543e7df619c445c0eef0375bba44f15f4f0ba7eb5087"
+    },
+    {
+      "path": "tests/test_ui127_quality_agent_support.js",
+      "before_sha256": null,
+      "after_sha256": "4bd5fce9253559328d96a807aa00a19a0d0765807372e6b2954554d1c3819ecd"
+    },
+    {
+      "path": "tests/test_ui127_rh_agent_navigation.cjs",
+      "before_sha256": null,
+      "after_sha256": "cc7a5f786c09bb756c34ed3528a6f29f29f3dfeb3a628a8d0fd45aa12fbd7341"
     }
   ]
 }
