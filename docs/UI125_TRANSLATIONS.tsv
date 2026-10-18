@@ -1,0 +1,1457 @@
+What would you like to do?	Que trabalho deseja atribuir?
+General task	Tarefa operacional
+General work	Trabalho operacional
+Maintenance activity	Atividade de manutenção
+Certificate check	Conferência de certificado de equipamento
+Inventory verification	Conferência de inventário
+Verify inventory	Conferir itens do inventário
+Verification	Conferência
+Assign work, with an optional checklist or linked record.	Defina o trabalho, os responsáveis e o prazo. Você pode incluir uma lista de verificação ou vincular um registro.
+Assign people to verify items, boxes, locations or an inventory list.	Atribua a conferência física dos itens e registre quantidades, faltas e divergências.
+Assign a maintenance-related task; completing it does not approve a work order.	Atribua uma atividade relacionada à manutenção. Sua conclusão não aprova nem encerra a ordem de serviço.
+Ask someone to check a certificate and record the findings.	Peça a conferência de um certificado de equipamento e o registro do parecer. Isso não renova o certificado.
+Choose the type of task. The selected form opens next; nothing is created yet.	Escolha o processo. Em seguida, informe o trabalho e os responsáveis. A tarefa será criada somente ao salvar.
+Inventory viewing access is required.	É necessário ter acesso de consulta ao inventário.
+Opening the selected task form…	Abrindo o formulário da tarefa…
+Task title *	Título da tarefa *
+Instructions and expected outcome *	Trabalho solicitado e resultado esperado *
+Due date / time (UTC), optional	Prazo em UTC (data e hora, opcional)
+Due date / time (UTC)	Prazo em UTC (data e hora)
+Optional linked record	Registro vinculado (opcional)
+Find a saved record	Pesquisar registro salvo
+Choose the exact saved record	Selecione o registro que será vinculado
+Create task	Criar tarefa
+New operational task	Nova tarefa operacional
+Task type	Tipo de tarefa
+No linked record — standalone task	Sem vínculo — tarefa independente
+Linked record type	Tipo de registro vinculado
+Asset / inventory record	Equipamento / item do inventário
+Maintenance work order	Ordem de serviço de manutenção
+Certificate revision	Revisão do certificado de equipamento
+Enter a clear task title.	Informe um título que identifique o trabalho solicitado.
+Enter the instructions and expected outcome.	Descreva o trabalho e o resultado esperado.
+Choose at least one eligible assignee.	Selecione pelo menos uma pessoa com acesso para executar a tarefa.
+Select a saved record or choose No linked record.	Selecione um registro salvo ou a opção Sem vínculo.
+Select an exact saved record or choose No linked record.	Selecione o registro exato ou a opção Sem vínculo.
+Refresh the linked records or deliberately choose No linked record before creating the task.	Atualize a lista de registros ou escolha Sem vínculo antes de criar a tarefa.
+Loading permitted records…	Carregando os registros que você pode acessar…
+Showing 100 records. Refine the search to find another.	Mostrando 100 registros. Refine a busca para encontrar outro.
+First 100 shown; refine this search.	Mostrando os primeiros 100 registros. Refine a busca.
+permitted records.	registros permitidos.
+The selected identity and version are retained even outside these results.	O registro e a versão selecionados são mantidos mesmo fora dos resultados da busca.
+Nothing is selected automatically.	Nenhum registro é selecionado automaticamente.
+The selected record has changed. Its old version is retained until you deliberately use the current saved version.	O registro selecionado mudou. A versão anterior será mantida até você escolher usar a versão atual.
+The linked-record list is incomplete. Retry the search.	A lista de registros vinculáveis está incompleta. Repita a busca.
+The saved link cannot be read. Keep this draft and its recovery copy.	Não foi possível ler o vínculo salvo. Preserve o rascunho e a cópia de recuperação.
+The saved link is incomplete. Keep this draft and its recovery copy.	O vínculo salvo está incompleto. Preserve o rascunho e a cópia de recuperação.
+Sign in to the original company workspace and account before resuming this draft.	Entre na empresa e na conta de origem para retomar este rascunho.
+Sign in to the original company workspace and account.	Entre na empresa e na conta de origem.
+The account or working view changed. Preserve this draft and reopen it in its original company workspace and account.	A conta ou a tela de trabalho mudou. Preserve o rascunho e reabra-o na empresa e na conta de origem.
+A company administrator or designated department head with Tasks management must create an assignment.	A tarefa deve ser criada por um administrador ou chefe do departamento autorizado a gerenciar tarefas.
+A company administrator or designated department head must create this task.	Esta tarefa deve ser criada por um administrador ou chefe do departamento autorizado.
+selected ·	selecionadas ·
+people shown	pessoas exibidas
+Retained assignee	Responsável mantido no rascunho
+Retained department ·	Departamento mantido ·
+Retained link type ·	Tipo de vínculo mantido ·
+Retained selection ·	Seleção mantida ·
+saved version	versão salva
+NEW TASK	NOVA TAREFA
+Work to assign	Trabalho a atribuir
+Task audience	Responsáveis e acesso à tarefa
+Who will do this?	Quem executará o trabalho?
+Name, login or account ID	Nome, identificação de acesso ou ID da conta
+Assigned people — choose at least one	Responsáveis — selecione pelo menos uma pessoa
+Retained from this draft; not currently eligible. Remove deliberately or ask an administrator.	Mantido neste rascunho, mas sem acesso elegível no momento. Revise a seleção ou consulte o administrador.
+No eligible assignees available.	Nenhuma pessoa com acesso para executar esta tarefa.
+No people match this search. Selected people outside the results stay selected.	Nenhuma pessoa corresponde à busca. Pessoas já selecionadas fora dos resultados continuam selecionadas.
+Private to selected assignees, designated heads of this responsible department and company administrators. Department members are not automatically assigned.	Acesso restrito aos responsáveis selecionados, chefias autorizadas do departamento e administradores. Os demais integrantes do departamento não são atribuídos automaticamente.
+Search / refresh records	Pesquisar ou atualizar registros
+Use its current saved version	Usar a versão atual do registro
+A link does not grant access to its source or copy its readings, approvals or files. The saved version is checked again when creating the task.	O vínculo não concede acesso ao registro de origem nem copia resultados, aprovações ou arquivos. A versão é conferida novamente ao criar a tarefa.
+Contribution points are frozen when this task is created. They recognise eligible documented contributors only after reviewed completion; they do not affect priority, approval or authority.	Os pontos são definidos ao criar a tarefa e reconhecem contribuições registradas após a conclusão revisada. Não alteram prioridade, aprovação ou autoridade.
+Create assigns work; it does not complete maintenance, renew a certificate, verify stock or authorise equipment use.	Criar a tarefa atribui trabalho. Não encerra manutenção, renova certificado, confere estoque nem autoriza o uso de equipamento.
+Inventory verification instead	Precisa conferir itens do inventário?
+Use the separate fixed-scope inventory check workflow. Keep this draft before switching.	Use a conferência de inventário para definir os itens e registrar os resultados da contagem. Guarde este rascunho antes de mudar.
+Keep draft & open inventory verification	Guardar rascunho e abrir conferência de inventário
+What to verify	Quais itens serão conferidos?
+Who will verify it	Quem fará a conferência?
+Scope preview	Itens incluídos na conferência
+Items to include	Seleção de itens
+Section / box	Localização / caixa
+Box contents	Inclusão do conteúdo das caixas
+Select individual items	Selecionar itens individualmente
+Verify all active inventory	Conferir todos os itens ativos do inventário
+Verify a location section	Conferir itens de uma localização
+Verify a department section	Conferir itens de um departamento
+Verify an original source tab	Conferir itens de uma aba de origem
+Verify one box	Conferir uma caixa
+Selected boxes and all their contents	Caixas selecionadas e todo o seu conteúdo
+Selected boxes only — not the contents	Somente as caixas selecionadas, sem o conteúdo
+Find scoped items	Pesquisar nos itens da conferência
+Item, box, serial, PN or location	Item, caixa, número de série, código da peça ou localização
+Select all shown	Selecionar todos os itens exibidos
+Clear item selection	Limpar seleção de itens
+Items in this task	Itens desta tarefa
+Refresh scope preview	Atualizar lista de itens da conferência
+New inventory verification	Nova conferência de inventário
+Verify each scoped record and record what you actually find.	Confira cada item da lista e registre o que encontrou fisicamente, incluindo faltas e divergências.
+Send for review	Enviar resultados para revisão
+All remaining items need a current result before submission.	Registre um resultado atual para cada item pendente antes de enviar para revisão.
+Review the recorded outcomes before submitting.	Confira os resultados registrados antes de enviá-los para revisão.
+People & due date	Responsáveis e prazo
+Cancel unfinished task	Cancelar tarefa não concluída
+Find a scoped item	Pesquisar item desta conferência
+Search includes saved results.	A busca inclui os resultados salvos.
+Selected result filter narrows this search.	O filtro de resultado selecionado limita esta busca.
+Search and viewing do not record a check.	Pesquisar ou abrir um item não registra uma conferência.
+Record every scoped item before submitting.	Registre o resultado de todos os itens antes de enviar.
+Counted quantity; blank when unknown	Quantidade contada; deixe em branco se não souber
+Notes (explain missing items or discrepancies)	Observações (explique faltas ou divergências)
+Reason for replacing another person’s, submitted or moved result *	Justificativa para substituir resultado de outra pessoa, já enviado ou com movimentação *
+Explanation for moving or replacing the saved result	Justificativa da movimentação ou alteração do resultado
+Review findings *	Parecer da revisão *
+Cancellation reason *	Justificativa do cancelamento *
+Submission note (optional)	Observação para a revisão (opcional)
+Explanation for changing people or lowering priority	Justificativa para alterar responsáveis ou reduzir a prioridade
+Changed assignees affect private access; reduced priority changes the follow-up. Explain the change.	Alterar responsáveis muda quem acessa a tarefa; reduzir a prioridade muda seu acompanhamento. Justifique a alteração.
+Date-only updates and unchanged / increased priority need no generic reason. Your account and changes are recorded automatically.	Alterações apenas de prazo ou aumento de prioridade não exigem justificativa. Sua conta e as alterações são registradas automaticamente.
+The account or view changed. Preserve this draft.	A conta ou a tela mudou. Preserve este rascunho.
+Choose at least one active scoped item.	Selecione pelo menos um item ativo para a conferência.
+Create an inventory with items before assigning verification.	Cadastre um inventário com itens antes de atribuir uma conferência.
+Select up to 500 individual records, or use a section scope.	Selecione até 500 itens ou escolha uma localização, departamento ou caixa.
+This draft inventory is no longer available. Keep its recovery copy; no other inventory was substituted.	O inventário deste rascunho não está mais disponível. Preserve a cópia de recuperação; nenhum outro inventário foi selecionado.
+A permitted administrator or designated department head with inventory viewing access must create verification.	A conferência deve ser criada por um administrador ou chefe de departamento autorizado que possa consultar o inventário.
+Saved verification result	Resultado salvo da conferência de inventário
+Unknown / not recorded	Desconhecida / não informada
+Correct result	Corrigir resultado da conferência
+Open latest item for recheck	Abrir versão atual e conferir novamente
+Loading current item…	Carregando a versão atual do item…
+This verification is now read-only. The saved result was not changed.	Esta conferência agora permite apenas consulta. O resultado salvo não foi alterado.
+The account or verification view changed. Open the saved result again.	A conta ou a conferência aberta mudou. Abra novamente o resultado salvo.
+The current item response did not match this verification. Refresh it before correcting a result.	A resposta do item não corresponde a esta conferência. Atualize-a antes de corrigir o resultado.
+Back to verification	Voltar à conferência de inventário
+Viewing this result does not record another check or change stock.	Consultar este resultado não registra outra conferência nem altera o estoque.
+This item has no saved result in this verification.	Este item ainda não tem resultado salvo nesta conferência.
+This earlier result is no longer current. Review the latest item and record a new result before it counts toward completion.	O resultado anterior está desatualizado. Confira a versão atual do item e registre um novo resultado para concluir a conferência.
+This saved result covers the box record. Its contents require separate results.	Este resultado se refere à caixa. Cada item do conteúdo precisa de um resultado próprio.
+Scan an item for this verification	Localizar item desta conferência pelo QR
+QR link or complete asset ID	Link do QR ou ID completo do equipamento
+Found at	Local onde o item foi encontrado
+New location / area	Nova localização / área
+Destination box	Caixa de destino
+Why update the location? *	Justificativa para atualizar a localização *
+Save move & verification	Salvar movimentação e resultado da conferência
+Reload the movement choices before saving.	Atualize as opções de movimentação antes de salvar.
+Choose the destination box.	Selecione a caixa de destino.
+Enter the reason for recording a new location.	Informe por que a localização será alterada.
+A missing item cannot be moved to where found. Record a discrepancy or leave the location unchanged.	Um item não encontrado não pode ser movimentado. Registre uma divergência ou mantenha a localização.
+Save cancelled; your draft is still available.	Salvamento cancelado. O rascunho continua disponível.
+Choose a label selection.	Selecione os itens para gerar as etiquetas.
+Print inventory QR labels	Gerar etiquetas QR dos itens do inventário
+Items to label	Itens para etiquetar
+Label layout	Formato da etiqueta
+No serial/asset reference	Sem número de série ou referência do equipamento
+Choose the section	Selecione a localização ou o grupo
+QR label PDF ready. No stock or verification was changed.	PDF das etiquetas QR pronto. O estoque e os resultados de conferência não foram alterados.
+Reassign / due date	Alterar responsáveis e prazo
+Update postponement	Atualizar adiamento
+Resume work	Retomar trabalho
+Reopen task	Reabrir tarefa
+Export task PDF	Baixar relatório da tarefa em PDF
+Update work notes	Atualizar registro do trabalho realizado
+Record work notes	Registrar trabalho realizado
+Review saved submission	Revisar resultados enviados
+Work performed and findings *	Trabalho realizado, resultados e pendências *
+Comment *	Comentário *
+No saved findings	Nenhum resultado do trabalho foi salvo
+Review on (UTC, optional)	Reavaliar em (data em UTC, opcional)
+Review note *	Parecer da revisão *
+Postponement reason *	Justificativa do adiamento *
+Resume reason *	Justificativa da retomada *
+Reopening reason *	Justificativa da reabertura *
+Record work performed	Registrar trabalho realizado
+Add task comment	Adicionar comentário à tarefa
+Submit saved work for review	Enviar resultados salvos para revisão
+Review submitted task	Revisar resultados da tarefa
+Choose a decision…	Selecione o resultado da revisão…
+Complete reviewed task	Concluir tarefa após revisão
+I reviewed the saved task and confirm this action.	Revisei os resultados salvos e confirmo esta ação.
+Save progress & close	Salvar trabalho realizado e fechar
+Save progress	Salvar trabalho realizado
+Open review	Abrir revisão dos resultados
+No checklist attached	Sem lista de verificação vinculada
+Not saved yet	Ainda não salvo
+Review completed	Revisão concluída
+Task review completed	Revisão da tarefa concluída
+Task cancelled	Tarefa cancelada
+Task postponed - saved work retained	Tarefa adiada — trabalho salvo preservado
+Review the saved submission	Revise os resultados enviados
+Waiting for assigned work	Aguardando execução pelos responsáveis
+Continue the checklist	Continuar lista de verificação
+Record work findings	Registre o trabalho realizado
+Ready to prepare submission	Resultados prontos para envio à revisão
+Refresh the task	Atualizar situação da tarefa
+Next action	Próximo passo
+Task workflow	Etapas da tarefa
+1. Checklist	1. Lista de verificação
+2. Work findings	2. Trabalho realizado
+3. Submit & review	3. Envio e revisão
+Save progress and every checklist result before submitting.	Salve o trabalho realizado e os resultados de cada item antes de enviar para revisão.
+Find a checklist step	Pesquisar item da lista de verificação
+Step, section or saved note	Item, seção ou observação salva
+Show checklist steps	Mostrar itens da lista
+Issues / not applicable	Problemas / não se aplica
+No steps match these filters. Clear the filters to see the full checklist; hidden steps still count toward submission.	Nenhum item corresponde aos filtros. Limpe-os para ver a lista completa. Itens ocultos continuam necessários para o envio.
+How would you like to add the steps?	Como deseja incluir os itens da lista?
+Checklist title	Título da lista de verificação
+Steps — one per line; use # for a section heading	Itens — um por linha; use # antes do título de uma seção
+Find a published checklist	Pesquisar lista de verificação publicada
+Choose a template	Selecione um modelo
+Use a section heading of 1–160 characters.	O título da seção deve ter de 1 a 160 caracteres.
+Each step needs 1–2,000 characters.	Cada item deve ter de 1 a 2.000 caracteres.
+Keep up to 200 steps.	Use no máximo 200 itens.
+Choose and review a published checklist template.	Selecione e revise um modelo publicado de lista de verificação.
+Finish loading and reviewing the checklist template before continuing.	Aguarde o carregamento e revise o modelo antes de continuar.
+Add at least one checklist step or choose No checklist.	Adicione pelo menos um item ou escolha Sem lista de verificação.
+Enter a checklist title.	Informe o título da lista de verificação.
+Review the selected template and confirm sharing its task-owned copy.	Revise o modelo e confirme que a cópia poderá ser lida por quem tem acesso à tarefa.
+Your task checklist	Lista de verificação da tarefa
+Loading published templates…	Carregando modelos publicados…
+Review the copied steps below. Confirm sharing them with this task’s readers.	Revise os itens copiados abaixo e confirme o compartilhamento com quem tem acesso à tarefa.
+Update result	Atualizar resultado
+No acceptance limits were specified for this reading.	Nenhum limite de aceitação foi informado para esta medição.
+Step note — required for Issue / Not applicable	Observação — obrigatória para Problema ou Não se aplica
+Change note	Observação sobre a alteração
+Reason for resetting or correcting another person’s result *	Justificativa para limpar ou corrigir o resultado de outra pessoa *
+Retained change note (optional)	Observação anterior sobre a alteração (opcional)
+Save step result	Salvar resultado do item
+Choose a template or build a checklist to add.	Selecione um modelo ou monte uma lista de verificação para incluir.
+Task history	Histórico da tarefa
+Recorded account	Conta responsável pelo registro
+People, department & due date	Responsáveis, departamento e prazo
+View saved definitions	Consultar modelos salvos
+View saved logbooks	Consultar livros de registro salvos
+View saved inventories	Consultar inventários salvos
+Other setup tools	Outras ferramentas de configuração
+Back to builders	Voltar à configuração e aos editores
+Open inventory	Abrir inventário
+Open logbook design	Abrir modelo do livro de registro
+Open saved draft	Abrir rascunho salvo
+Add items to inventory	Adicionar itens ao inventário
+Create empty logbook	Criar livro de registro vazio
+Save unpublished draft	Salvar rascunho sem publicar
+Enter an inventory name.	Informe o nome do inventário.
+The save response could not be verified.	Não foi possível confirmar o resultado do salvamento.
+Ready to import as a new definition. Nothing has been saved yet.	Pronto para importar como novo modelo. Nada foi salvo ainda.
+Checking the selected file. Nothing is being imported yet…	Conferindo o arquivo selecionado. A importação ainda não começou…
+The file preview did not match this selection. Check the file again.	A prévia não corresponde ao arquivo selecionado. Confira o arquivo novamente.
+Check the edited draft or same file again before importing.	Confira novamente o rascunho ou o mesmo arquivo antes de importar.
+Correct the fields and try again.	Corrija os campos e tente novamente.
+Ask your company administrator to review your access.	Peça ao administrador da empresa que revise seu acesso.
+Maintenance access unavailable	Acesso à manutenção indisponível
+Maintenance unavailable	Manutenção indisponível
+Stored local forms	Rascunhos neste dispositivo
+Saved local forms	Rascunhos neste dispositivo
+Cannot open this workspace	Não foi possível abrir esta área de trabalho
+Repeat this order	Programar próxima ordem de serviço
+Repeat every (whole number)	Repetir a cada (número inteiro)
+Interval unit	Unidade do intervalo
+Scheduling basis	Base para calcular a próxima data
+Needs review	Precisa de revisão
+Cycle settings	Configuração da recorrência
+Review pending follow-up	Revisar próxima ordem pendente
+Stop pending follow-up	Cancelar geração da próxima ordem
+This order due date / time (UTC)	Prazo desta ordem (data e hora em UTC)
+Reason for changing the cycle *	Justificativa da alteração da recorrência *
+Review note (required when requesting changes)	Parecer da revisão (obrigatório ao solicitar correções)
+Reason for stopping the follow-up *	Justificativa para cancelar a próxima ordem *
+Published routine	Rotina de manutenção publicada
+Work order title *	Título da ordem de serviço *
+Work order reference (optional)	Referência da ordem de serviço (opcional)
+Equipment / asset description *	Descrição do equipamento *
+Work-order instructions	Instruções da ordem de serviço
+Complete work order	Concluir ordem de serviço
+Cancel work order	Cancelar ordem de serviço
+Review maintenance step	Revisar resultado da etapa de manutenção
+Decision	Decisão da revisão
+Review decision saved.	Decisão da revisão salva.
+Completion note *	Parecer de conclusão *
+No work note	Nenhuma observação sobre o trabalho
+Saved readings & evidence	Medições e evidências salvas
+This saved step is no longer available. Refresh the work order.	Esta etapa salva não está mais disponível. Atualize a ordem de serviço.
+This account is not currently assigned to review the saved result.	Esta conta não está autorizada a revisar o resultado salvo no momento.
+Not enabled	Não habilitado
+This session	Esta sessão
+Another session	Outra sessão
+Sign out this session	Encerrar esta sessão
+Revoke	Revogar sessão
+Current six-digit code	Código atual de seis dígitos
+I saved them — sign in again	Guardei os códigos — entrar novamente
+I saved them	Guardei os códigos
+Authenticator or recovery code	Código do autenticador ou de recuperação
+Save your recovery codes	Guarde seus códigos de recuperação
+Builder navigation	Navegação dos editores
+Administration sections	Seções da administração
+Builder sections	Seções dos editores
+Document type	Tipo de documento
+Seaman's book	Caderneta marítima / CIR
+HSE / QSHE	Segurança, saúde, meio ambiente e qualidade
+Saved to the project.	Registro salvo na empresa.
+Draft saved on this device. Use {0} to submit it.	Rascunho salvo neste dispositivo. Use {0} para enviá-lo ao servidor.
+Local saving could not be confirmed. Preserve this form and export recovery information.	Não foi possível confirmar o salvamento local. Preserve o formulário e exporte a cópia de recuperação.
+Save outcome uncertain. Check the saved record; this draft is retained.	Não foi possível confirmar o salvamento. Confira o registro no servidor; o rascunho foi preservado.
+Draft retained.	Rascunho preservado.
+Review queue	Conferências e aprovações
+Review recorded hours	Analisar apontamento de horas
+Review reimbursement claim	Analisar pedido de reembolso
+Choose the review outcome	Selecione o resultado da análise
+Choose the review outcome before saving.	Selecione o resultado da análise antes de salvar.
+Review comment (required when returning or rejecting)	Justificativa (obrigatória para devolver ou rejeitar)
+Confirm document review	Registrar documento como conferido
+Return document for correction	Devolver documento para correção
+Reject document	Rejeitar documento
+Save document review	Salvar conferência documental
+Approve recorded hours	Aprovar apontamento de horas
+Approve reimbursement	Aprovar reembolso
+Return submission for correction	Devolver solicitação para correção
+Reject submission	Rejeitar solicitação
+Send hours for approval	Enviar apontamento para aprovação
+Submit expense for review	Apresentar despesa para análise
+Save draft without submitting	Salvar rascunho sem enviar
+Document marked as reviewed.	Documento registrado como conferido.
+Document returned for correction.	Documento devolvido para correção.
+Document rejected with the recorded reason.	Documento rejeitado com a justificativa registrada.
+Document review saved.	Conferência documental salva.
+Recorded hours approved. Payroll was not calculated.	Apontamento de horas aprovado. A folha de pagamento não foi calculada.
+Reimbursement approved. Payment was not recorded.	Reembolso aprovado. Nenhum pagamento foi registrado.
+Submission returned for correction.	Solicitação devolvida para correção.
+Submission rejected with the recorded reason.	Solicitação rejeitada com a justificativa registrada.
+Submission sent for review.	Solicitação enviada para análise.
+Attachment saved. Document review is a separate action.	Anexo salvo. A conferência do documento é uma ação separada.
+Draft saved. Send it for review when ready.	Rascunho salvo. Envie para análise quando estiver pronto.
+HR record saved.	Registro de RH salvo.
+Completing this task does not complete a maintenance order, renew a certificate, verify stock or authorise equipment use.	Concluir esta tarefa não encerra uma ordem de serviço, renova certificado, confere estoque nem autoriza uso de equipamento.
+Use the existing scoped inventory checks and review.	Confira os itens definidos para esta tarefa e envie os resultados para revisão.
+The reviewed record is retained. Completion does not change linked records or authorise equipment use.	O registro revisado fica preservado. A conclusão não altera registros vinculados nem autoriza o uso de equipamento.
+Saved work remains in History. Cancellation is not completion of the work.	O trabalho salvo permanece no histórico. Cancelar não significa concluir o trabalho.
+An authorised task manager must resume work. Checklist results, findings and the original due date are retained; the review date does not resume the task automatically.	Um responsável autorizado precisa retomar a tarefa. Resultados e prazo original são preservados; a data de reavaliação não retoma o trabalho automaticamente.
+Read the saved findings and checklist results before making a review decision.	Leia o trabalho realizado e os resultados da lista antes de registrar a decisão da revisão.
+The saved work has been submitted. A designated reviewer must return it before it can be changed.	O trabalho salvo foi enviado. Um revisor autorizado precisa devolvê-lo antes de qualquer correção.
+Only an assigned performer can save findings and checklist results. This account can inspect the saved record.	Somente os responsáveis atribuídos podem registrar a execução. Esta conta pode consultar os resultados salvos.
+Save the actual work performed, findings and outstanding limitations before submitting.	Registre o trabalho realizado, os resultados e as pendências antes de enviar para revisão.
+The required checklist results and work notes are saved. Review and confirm the submission separately.	Os resultados obrigatórios e o trabalho realizado estão salvos. Confira-os e envie para revisão quando estiver pronto.
+The saved status is not recognised by this view. Refresh before taking action.	A situação salva não foi reconhecida por esta tela. Atualize antes de realizar uma ação.
+{0} of {1} steps have no recorded result. Opening a step does not mark it Done.	{0} de {1} itens estão sem resultado. Abrir um item não o marca como concluído.
+{0} results recorded	{0} resultados registrados
+{0} / {1} results recorded	{0} / {1} resultados registrados
+{0} issue / not-applicable result(s) remain recorded; reviewer acceptance does not turn them into Done.	{0} resultado(s) com problema ou não aplicável permanecem registrados. A aceitação do revisor não os transforma em itens concluídos.
+{0} issue / not-applicable result(s) remain recorded; completion requires explicit reviewer acceptance.	{0} resultado(s) com problema ou não aplicável permanecem registrados. A conclusão exige aceitação explícita do revisor.
+{0} of {1} steps shown. Filters do not change saved results or submission requirements.	{0} de {1} itens exibidos. Os filtros não alteram resultados salvos nem requisitos para envio.
+{0} shown · {1} available in this access scope	{0} exibidas · {1} tarefas disponíveis para sua conta
+{0} selected · {1} shown. Hidden selections are kept.	{0} selecionadas · {1} exibidas. Seleções fora da busca são mantidas.
+Awaiting your review	Aguardando sua revisão
+Department reviews	Revisões do departamento
+Who will do this? Choose at least one	Quem executará o trabalho? Selecione pelo menos uma pessoa
+The value is frozen at creation. Eligible named contributors receive it once after reviewed completion; Missing and Discrepancy results are recognised equally.	Os pontos são definidos ao criar a tarefa e concedidos aos participantes elegíveis após a conclusão revisada. Faltas e divergências também são resultados válidos de conferência.
+Refreshing or changing scope is deliberate; a retained preview is not silently expanded. The scope is fixed when created. Checking a box never checks its contents automatically.	Revise os itens antes de criar a tarefa: a lista será fixada na criação. Atualizar a prévia é uma ação explícita. Conferir uma caixa não confere automaticamente seu conteúdo.
+Selected assignees, designated heads of the responsible department and company administrators. General department membership is not assignment.	Somente os responsáveis selecionados, chefias autorizadas do departamento e administradores. Pertencer ao departamento não atribui a tarefa automaticamente.
+Who can see this task?	Quem pode acessar esta tarefa?
+Hub-saved work notes	Trabalho realizado salvo no servidor
+You submitted this work. Your review will be recorded as a same-person review, not independent approval.	Você enviou este trabalho. A revisão será identificada como realizada pela mesma pessoa, sem aprovação independente.
+Your name, time and saved changes are recorded automatically.	Seu nome, a data e as alterações salvas são registrados automaticamente.
+Record actual work, findings and outstanding limitations. This saves a work note; it does not submit for review.	Descreva o trabalho realizado, os resultados e as pendências. Salvar este registro ainda não o envia para revisão.
+Visible to current task readers. Saved comments cannot be edited or deleted; add a correction as a new comment.	Visível para quem tem acesso à tarefa. Comentários salvos não podem ser editados ou excluídos; registre uma correção em novo comentário.
+Saved checklist results, findings, comments, people and the due date are retained. Review dates do not resume work automatically. Save any other open forms before this action; stale forms will require review. Reassignment and due-date changes remain separate actions.	Resultados, comentários, responsáveis e prazo são preservados. A data de reavaliação não retoma o trabalho automaticamente. Salve os formulários abertos antes desta ação. Responsáveis e prazo são alterados separadamente.
+Earlier evidence stays in history. Fresh work notes, checklist results (when present) and another review are required.	As evidências anteriores ficam no histórico. A reabertura exige novos registros de execução e resultados, quando houver lista, seguidos de outra revisão.
+Saved changes and decisions. Viewing is not signing or completion.	Alterações e decisões salvas. Consultar o histórico não assina nem conclui o trabalho.
+Saved before / after	Dados salvos antes e depois
+Choose a decision	Selecione uma decisão
+Save change	Salvar alteração
+Save review decision	Salvar decisão da revisão
+Same-person review (not independent approval).	Revisão pela mesma pessoa (sem aprovação independente).
+Private task	Tarefa de acesso restrito
+Retained reference; no longer in the eligible list. Remove deliberately or ask an administrator.	Referência mantida, mas fora da lista de pessoas elegíveis. Revise a seleção ou consulte o administrador.
+Checklist for this task	Lista de verificação desta tarefa
+The task is the job. Its checklist contains the steps. The chosen definition is fixed when the task is saved.	A tarefa define o trabalho. A lista detalha os itens a executar e fica fixada quando a tarefa é criada.
+No checklist	Sem lista de verificação
+Use an existing template	Usar modelo existente
+Build from scratch	Montar nova lista
+No checklist. The task can still have instructions, work notes and review.	Sem lista de verificação. A tarefa ainda pode ter instruções, registro do trabalho e revisão.
+Search / refresh templates	Pesquisar ou atualizar modelos
+Choose a published template	Selecione um modelo publicado
+I reviewed this template’s steps for this task and may share this copy with the task’s readers.	Revisei os itens do modelo para esta tarefa e autorizo o compartilhamento da cópia com quem tem acesso à tarefa.
+Templates requiring item approvals, photo evidence, reference pictures, linked source documents or conditional winch checks stay in their original Checklist workspace. Their rules are not removed.	Modelos com aprovações por item, fotos obrigatórias, imagens de referência, documentos vinculados ou regras condicionais de guincho devem ser usados na área Listas de verificação. Essas regras não são removidas.
+This is a task-owned checklist, not a standalone Checklist record. It does not copy answers, signatures, stage finalisation or approvals. Copied wording is shared with this task’s authorised readers.	Esta lista pertence à tarefa. Não copia respostas, assinaturas ou aprovações de outros registros. O conteúdo fica acessível a quem pode consultar a tarefa.
+Issue / outstanding	Problema / pendência
+Required for Done	Obrigatório para concluir
+Edit steps & add readings	Editar itens e incluir medições
+Start with one step per line, or open the step editor directly. Add text or numeric readings, units and optional guidance. Numeric readings need your explicit lower and upper limits.	Escreva um item por linha ou abra o editor. Você pode incluir medições, unidades e orientações. Para medições numéricas, informe os limites mínimo e máximo previstos no procedimento.
+Editing this task’s draft only. Steps and readings become fixed when the task is saved. Numeric limits are author-supplied, not equipment recommendations.	Você está editando apenas o rascunho desta tarefa. Itens e medições ficam fixados ao salvar. Os limites são informados pelo autor conforme o procedimento.
+Checklist steps · {0} / 200	Itens da lista · {0} / 200
+Select a step to edit	Selecione um item para editar
+Add step	Adicionar item
+Move up	Mover para cima
+Move down	Mover para baixo
+Remove step	Remover item
+No steps yet. Add a step to continue.	Nenhum item ainda. Adicione um para continuar.
+Step {0} of {1}	Item {0} de {1}
+Step wording *	Descrição do item *
+Section *	Seção *
+Guidance (optional)	Orientação (opcional)
+Readings · {0} / 12	Medições · {0} / 12
+A required reading is needed for Done. A missing or out-of-limit reading must be explained as an Issue; Not applicable also requires a note.	Para concluir, preencha as medições obrigatórias. Medições ausentes ou fora do limite exigem resultado Problema e justificativa. Não se aplica também exige justificativa.
+Add text reading	Adicionar registro de texto
+Add numeric reading	Adicionar medição numérica
+Numeric	Numérica
+Reading label *	Nome da medição *
+Unit (optional)	Unidade (opcional)
+Lower limit *	Limite mínimo *
+Upper limit *	Limite máximo *
+Both limits are inclusive. Enter values from your approved procedure; the app does not establish safe operating limits.	Os dois limites são inclusivos. Use os valores do procedimento aprovado; o aplicativo não define limites seguros de operação.
+Remove reading {0}	Remover medição {0}
+{0}. {1} reading	{0}. Medição {1}
+{0} steps	{0} itens
+Published revision {0}	Revisão publicada {0}
+Task-owned copy, not a live template link.	Cópia própria da tarefa; alterações posteriores no modelo não mudam esta lista.
+{0} issues	{0} problemas
+{0} not applicable	{0} não aplicáveis
+Cycle {0}	Ciclo {0}
+Copied published revision {0}. Later template changes do not edit this task.	Cópia da revisão publicada {0}. Alterações posteriores no modelo não mudam esta tarefa.
+Task checklist	Lista de verificação da tarefa
+No checklist attached. Add one before work starts.	Sem lista de verificação. Você pode adicioná-la antes de iniciar o trabalho.
+Add checklist	Adicionar lista de verificação
+Step {0} of {1} · Save this result explicitly	Item {0} de {1} · Salve o resultado para registrá-lo
+The saved template preview cannot be read. Preserve your draft and choose the template again.	Não foi possível ler a prévia salva. Preserve o rascunho e selecione novamente o modelo.
+This saved checklist step is unavailable. Preserve the draft.	Este item da lista não está disponível. Preserve o rascunho.
+The account or working view changed. Preserve this draft and reopen it.	A conta ou a tela mudou. Preserve o rascunho e reabra-o na conta de origem.
+Remove this draft step and all its readings? This does not change any saved task.	Remover este item do rascunho e suas medições? As tarefas já salvas não serão alteradas.
+Remove this reading from the draft step?	Remover esta medição do item em edição?
+This structured draft cannot be displayed. Preserve it; do not replace it with a blank checklist.	Não foi possível exibir este rascunho. Preserve-o e não o substitua por uma lista vazia.
+The structured checklist draft cannot be read. Preserve it before editing.	Não foi possível ler o rascunho da lista. Preserve-o antes de editar.
+The account or company workspace changed. Preserve this draft before continuing.	A conta ou a empresa mudou. Preserve o rascunho antes de continuar.
+Choose Build from scratch.	Escolha Montar nova lista.
+Enter 1–200 task checklist steps.	Inclua de 1 a 200 itens na lista da tarefa.
+Keep the authored checklist within 40,000 text characters.	Use no máximo 40.000 caracteres na lista de verificação.
+All tasks	Todas as tarefas
+Task sections	Seções da tarefa
+Work & review	Execução e revisão
+Linked records	Registros vinculados
+Manage task	Gerenciar tarefa
+Work performed & findings	Trabalho realizado e resultados
+No saved work notes yet. An assigned person records the actual work before submitting.	Nenhum registro de execução foi salvo. Um responsável atribuído precisa registrar o trabalho antes do envio.
+Task notes are not maintenance readings or approvals. Source attachments remain in their original workspace.	As observações da tarefa não substituem medições ou aprovações de manutenção. Os anexos de origem permanecem na área correspondente.
+Saving findings, saving checklist results, submitting and reviewing remain separate actions. Hidden or filtered checklist steps still count toward submission.	Salvar a execução, registrar resultados dos itens, enviar e revisar são ações separadas. Itens ocultos pelos filtros continuam necessários para o envio.
+Follow the task instructions and save work findings. A checklist or inventory item is not required for a general task.	Siga as instruções e registre o trabalho realizado. Uma tarefa operacional pode existir sem lista de verificação ou vínculo com o inventário.
+No comments yet. Comments do not submit or complete the task.	Ainda não há comentários. Comentar não envia nem conclui a tarefa.
+Related fault reports	Relatórios de falha relacionados
+Separate private reports currently available to your account. Task completion does not close them.	Relatórios com acesso restrito disponíveis para sua conta. Concluir a tarefa não encerra esses relatórios.
+Assignment & status controls	Responsáveis e situação da tarefa
+These actions change the assignment, not the recorded outcome of the work. Postpone / resume retains saved results. Cancel / reopen requires fresh current findings and checklist results while retaining history.	Use estas ações para alterar a atribuição ou a situação da tarefa. Adiar e retomar preservam os resultados. Após cancelamento e reabertura, registre novos resultados; os anteriores ficam no histórico.
+Scheduling retains saved-version checks. Changes to people, reduced priority and lifecycle actions need their applicable explanation. An optional postponement review date does not automatically resume the work.	Alterações de responsáveis, redução de prioridade e mudanças de situação exigem a justificativa correspondente. A data de reavaliação de um adiamento não retoma o trabalho automaticamente.
+{0} · {1} steps	{0} · {1} itens
+{0} / {1} verified · {2} remaining	{0} / {1} itens conferidos · {2} pendentes
+{0} / {1} checklist results · {2} exceptions	{0} / {1} resultados da lista · {2} exceções
+Save assignment	Salvar responsáveis e prazo
+Review the task before creating it.	Revise a tarefa antes de criá-la.
+Review and confirm the separate Task audience.	Revise e confirme quem terá acesso à tarefa.
+Finish or close the open Task form before changing section.	Conclua ou feche o formulário aberto antes de mudar de seção.
+The task selection or open form changed.	A seleção de tarefa ou o formulário aberto mudou.
+The selected task is no longer available. Refresh Tasks to check current access.	A tarefa selecionada não está mais disponível. Atualize a lista para conferir seu acesso atual.
+The saved reference changed. Select the record again to review its current version.	A referência salva mudou. Selecione novamente o registro para conferir a versão atual.
+This saved form does not match the current task type. Preserve the recovery copy.	Este formulário salvo não corresponde ao tipo atual da tarefa. Preserve a cópia de recuperação.
+The selected template changed or became incompatible. Choose its current revision again; the previous preview has not been replaced.	O modelo mudou ou deixou de ser compatível. Selecione novamente a revisão atual. A prévia anterior foi preservada.
+No caption	Sem legenda
+Submitted by	Enviado por
+Source worksheet	Planilha de origem
+Visitor / self-declared	Visitante / identificação declarada
+Named account	Conta identificada
+Participants & signatures	Participantes e assinaturas
+Guest / facilitator-recorded	Convidado / registro pelo responsável
+Reviewed by a different named account.	Revisado por outra conta identificada.
+Voided	Anulado
+Imported	Importado
+Not recorded.	Não informado.
+Discussion prompt	Tema da discussão
+Understanding question	Pergunta de compreensão
+Find a checklist	Pesquisar lista de verificação
+Checklist status	Situação das listas de verificação
+Selected checklist summary	Resumo da lista selecionada
+Company calendar	Calendário operacional da empresa
+Calendar overview	Resumo do calendário
+Calendar view	Visualização do calendário
+Previous month	Mês anterior
+Next month	Próximo mês
+Date only	Somente data
+Past date	Data passada
+Future date	Data futura
+Source status:	Situação do registro de origem:
+Certificate status:	Situação do certificado:
+Asset dates	Datas dos equipamentos
+Log events	Eventos dos registros operacionais
+Manifest dates	Datas dos manifestos de carga
+Original due date (work postponed)	Prazo original (trabalho adiado)
+Postponement review - manual action; no automatic resume	Reavaliar adiamento — a retomada exige ação do responsável
+Renewal target	Renovação prevista
+Recorded date	Data registrada
+Planned departure	Saída prevista
+Planned arrival	Chegada prevista
+Briefing	Diálogo de segurança
+Offloaded	Desembarcado
+Event	Evento
+Filters · {0} categories	Filtros · {0} categorias
+search active	busca ativa
+one day	um dia
+{0} shown	{0} eventos exibidos
+{0} more	mais {0}
+Checked {0} UTC	Consulta atualizada em {0} UTC
+Choose a valid month.	Selecione um mês válido.
+This calendar action belongs to an earlier view. Return to Calendar and try again.	Esta ação pertence a uma consulta anterior. Volte ao calendário e tente novamente.
+This calendar category is not recognised.	Esta categoria do calendário não foi reconhecida.
+The calendar response is incomplete. Refresh; no missing count is assumed to be zero.	A resposta do calendário está incompleta. Atualize a consulta. Dados ausentes não serão tratados como zero.
+The calendar returned an inconsistent event. Refresh before opening it.	O calendário retornou um evento inconsistente. Atualize antes de abri-lo.
+Calendar access unavailable. Your local drafts have not been removed.	Acesso ao calendário indisponível. Seus rascunhos locais foram preservados.
+Dates not available yet. Use Refresh to check.	Datas ainda não disponíveis. Use Atualizar para consultar.
+Choose a category in Filters to show its saved dates.	Selecione uma categoria em Filtros para consultar as datas registradas.
+No returned events match these filters. Reset filters or choose another day.	Nenhum evento corresponde aos filtros. Limpe os filtros ou escolha outro dia.
+Refresh the current saved dates before opening this record. Any open work is kept.	Atualize as datas antes de abrir este registro. O trabalho aberto será preservado.
+Opening the saved checklist…	Abrindo a lista de verificação salva…
+This checklist is unavailable. Refresh the calendar.	Esta lista de verificação está indisponível. Atualize o calendário.
+Refresh saved dates	Atualizar datas registradas
+Calendar access is not enabled for this account.	Esta conta não tem acesso ao calendário.
+Calendar access unavailable.	Acesso ao calendário indisponível.
+Last saved view · refresh failed.	Última consulta mantida · falha ao atualizar.
+Calendar unavailable.	Calendário indisponível.
+Calendar check interrupted by another dialog. Close it and Refresh.	Outra janela interrompeu a consulta do calendário. Feche-a e use Atualizar.
+Only the first {0} of {1} permitted matching events were returned. Search and day counts cover those returned entries, not the complete month. Narrow the categories or use the source workspace.	Foram retornados os primeiros {0} de {1} eventos permitidos. A busca e as contagens abrangem esses eventos, não o mês inteiro. Reduza as categorias ou consulte a área de origem.
+incomplete month	consulta parcial do mês
+Position, line & additional details	Posição, linha e detalhes adicionais
+Acquisition files & storage	Arquivos de aquisição e armazenamento
+Saved log entries; scroll to read more	Registros operacionais salvos; role para consultar mais
+View entry	Consultar lançamento
+No entries match these filters.	Nenhum lançamento corresponde aos filtros.
+Loading this company workspace’s saved logs.	Carregando os registros operacionais salvos nesta empresa.
+The server returned an invalid personal view.	O servidor retornou uma visão pessoal inválida. Atualize a consulta.
+No recorded contributions on this page	Nenhuma contribuição registrada nesta página
+Try All dates or another activity type. Older or imported events without a reliable account ID are not inferred.	Selecione Todas as datas ou outro tipo de atividade. Eventos antigos ou importados sem identificação confiável da conta não são atribuídos automaticamente.
+Older activity	Atividades anteriores
+Recent activity refreshes while this workspace is visible.	A atividade recente é atualizada enquanto esta área está aberta.
+No accounts have recently reported from the main workspace.	Nenhuma conta informou atividade recente nesta área de trabalho.
+Activity is unavailable. Your work and saved notes are unaffected.	A atividade recente está indisponível. Seu trabalho e suas observações salvas foram preservados.
+Activity unavailable	Atividade recente indisponível
+Invalid activity snapshot	Não foi possível confirmar a consulta de atividade recente
+Invalid activity account	A conta da atividade recente não foi reconhecida
+Save or close the HSE / QSHE form first.	Salve ou feche primeiro o formulário de segurança e qualidade.
+Hub confirmed the saved HSE / QSHE report.	O servidor confirmou o salvamento do relatório de segurança e qualidade.
+Finish or close the open record-management form first.	Conclua ou feche primeiro o formulário de gerenciamento de registros.
+Press Search / refresh to load this record type.	Use Pesquisar / atualizar para carregar este tipo de registro.
+Press Search / refresh to load this view.	Use Pesquisar / atualizar para carregar esta consulta.
+No matching saved records.	Nenhum registro salvo corresponde à busca.
+Saved company workspace record	Registro salvo da empresa
+List unavailable.	Lista indisponível.
+The server may already have saved this action. Closing does not undo it. Close and refresh the saved state?	O servidor pode já ter salvo esta ação. Fechar não a desfaz. Deseja fechar e atualizar a situação salva?
+Discard this unsaved confirmation form? The saved record is not changed.	Descartar este formulário de confirmação ainda não enviado? O registro salvo não será alterado.
+Enter a reason, type the exact name and confirm the review.	Informe a justificativa, digite o nome exato e confirme que revisou a alteração.
+Waiting for server confirmation…	Aguardando confirmação do servidor…
+Unexpected receipt. Inspect the saved record.	A confirmação recebida não corresponde ao esperado. Confira o registro salvo.
+Server confirmed the change. History is retained.	O servidor confirmou a alteração. O histórico foi preservado.
+Confirm change	Confirmar alteração do registro
+Finish or close the record-management form before leaving.	Conclua ou feche o formulário de gerenciamento de registros antes de sair.
+Finish or close the record-management form first.	Conclua ou feche primeiro o formulário de gerenciamento de registros.
+Restore retained report	Restaurar relatório arquivado
+Archive retained report	Arquivar relatório
+Title (required)	Título (obrigatório)
+Vessel / site / area (label only)	Embarcação / local / área (identificação)
+Observed event / condition (required)	Evento ou condição observada (obrigatório)
+Observed fault (required)	Falha observada (obrigatório)
+Observed date	Data da observação
+Reported priority	Prioridade informada
+Target date (optional)	Prazo previsto (opcional)
+Progress / findings (required)	Andamento e resultados (obrigatório)
+Corrective work / proposed resolution (required)	Trabalho corretivo / solução proposta (obrigatório)
+Verification performed and remaining limitations (required)	Conferência realizada e limitações restantes (obrigatório)
+Choose the review decision	Selecione a decisão da revisão
+Select a decision	Selecione uma decisão
+Close after review	Encerrar após revisão
+Return for further work	Devolver para complementar o trabalho
+Review date (optional; does not resume automatically)	Data para reavaliar (opcional; não retoma automaticamente)
+NEW REPORT	NOVO RELATÓRIO
+Private to the reporter, assigned owner, authorised department heads and company administrators.	Acesso restrito ao autor, responsável atribuído, chefias autorizadas e administradores da empresa.
+The last outcome is uncertain. Retry the unchanged request or close and inspect the saved report.	O resultado do último envio é incerto. Repita o mesmo envio ou feche e confira o relatório salvo.
+Close & check saved report	Fechar e conferir relatório salvo
+Existing explanation (optional; kept from this form)	Justificativa anterior (opcional; mantida neste formulário)
+search keeps the selected owner	a busca mantém o responsável selecionado
+Retained owner unavailable in this directory. Select a current eligible person or explicitly choose Unassigned; the server checks again.	O responsável mantido não está disponível nesta lista. Selecione uma pessoa elegível ou Sem responsável. O servidor conferirá novamente.
+No person assigned.	Nenhuma pessoa atribuída.
+No source selected. Choosing no link does not delete the source record.	Nenhuma origem selecionada. Escolher Sem vínculo não exclui o registro de origem.
+Search this text to see current accessible records.	Pesquise este texto para consultar os registros disponíveis à sua conta.
+Checking source access…	Verificando acesso ao registro de origem…
+Request changes	Solicitar correções
+Complete reviewed work order	Concluir ordem de serviço revisada
+Cancel unfinished work order	Cancelar ordem de serviço não concluída
+This cycle will create one next order with empty results, or save a pending follow-up needing review when its requirements have changed.	A recorrência criará a próxima ordem sem resultados preenchidos. Se os requisitos mudarem, a próxima ordem ficará pendente de revisão.
+Cancellation does not generate a next order.	O cancelamento não gera uma próxima ordem.
+This is a one-off order; no next order will be generated.	Esta ordem é avulsa. Nenhuma próxima ordem será gerada.
+This item is not in the accessible task scope. Preserve your recovery file.	Este item não faz parte da tarefa disponível à sua conta. Preserve a cópia de recuperação.
+The saved maintenance step is not available. Keep the recovery file.	A etapa de manutenção salva não está disponível. Preserve a cópia de recuperação.
+Refresh the saved library before opening or changing a record.	Atualize a biblioteca antes de abrir ou alterar um registro.
+The account, session or company workspace changed. Return to Original Files before continuing.	A conta, sessão ou empresa mudou. Volte a Arquivos originais antes de continuar.
+The saved library response is incomplete. No folder action is available.	A resposta da biblioteca está incompleta. As alterações de pasta estão indisponíveis.
+The save response could not be matched to this operation.	Não foi possível relacionar a confirmação recebida a esta operação.
+Folder organisation saved. Original files and their links are unchanged.	Organização das pastas salva. Os arquivos originais e seus vínculos foram preservados.
+The source details response is incomplete.	A resposta com os detalhes da origem está incompleta.
+The source-change receipt did not match.	A confirmação não corresponde à alteração solicitada na origem.
+The company workspace, account, session or Original Files page changed. Return to it before uploading.	A empresa, conta, sessão ou página de Arquivos originais mudou. Volte à página antes de enviar o arquivo.
+The upload context is incomplete. Nothing can be uploaded.	Faltam informações para o envio. Nenhum arquivo pode ser enviado.
+The selected original revision is unavailable or archived. Cancel and choose an active revision.	A revisão original selecionada está indisponível ou arquivada. Cancele e escolha uma revisão ativa.
+The saved receipt does not match this exact upload. Check the saved outcome before another action.	A confirmação não corresponde a este envio. Confira o resultado salvo antes de realizar outra ação.
+Choose a file, title, destination and required source revision first.	Selecione o arquivo e informe título, destino e revisão de origem, quando exigida.
+The upload description is too large. Reduce the text.	A descrição do envio é muito longa. Reduza o texto.
+Connection interrupted. Reconnect and retry.	Conexão interrompida. Reconecte e tente novamente.
+The service did not confirm an outcome. Reconnect and retry.	O serviço não confirmou o resultado. Reconecte e tente novamente.
+This recovery request is unavailable.	Esta solicitação de recuperação está indisponível.
+Requesting code…	Solicitando código…
+Send reset code	Enviar código de recuperação
+Resetting password…	Redefinindo senha…
+No reset receipt received.	A confirmação da redefinição não foi recebida.
+Search includes nested contents	A busca inclui o conteúdo das caixas internas
+Origin equipment	Equipamentos na origem
+Packing selection	Itens selecionados para a carga
+All origin stock	Todo o estoque na origem
+No matches / no direct contents. Clear search or go Up.	Nenhum resultado ou conteúdo direto. Limpe a busca ou volte à pasta anterior.
+Included with selected box:	Incluído com a caixa selecionada:
+Open box	Abrir caixa
+from packing	da seleção de carga
+Some selected records are unavailable. Review the origin and packing selection.	Alguns itens selecionados estão indisponíveis. Revise a origem e a seleção de carga.
+Select at least one item or box.	Selecione pelo menos um item ou uma caixa.
+This checklist has no recognised saved stages. Open Checklists to inspect it.	As etapas salvas desta lista não foram reconhecidas. Abra Listas de verificação para consultá-la.
+A calendar source identity is invalid. Refresh the saved dates.	A identificação de uma origem do calendário é inválida. Atualize as datas.
+A checklist calendar link has no valid saved stage. Refresh after the application update.	O vínculo do calendário não contém uma etapa válida da lista de verificação. Atualize após a atualização do aplicativo.
+Add an authenticator app so a stolen password alone cannot open this company workspace.	Configure um aplicativo autenticador para exigir um segundo fator ao entrar nesta empresa.
+Started	Iniciada em
+Started before session details were recorded	Iniciada antes do registro dos detalhes da sessão
+Save the open form or use Keep draft & close before switching to Fleet.	Salve o formulário aberto ou use Manter rascunho e fechar antes de abrir Frota e embarcações.
+Resolve the saved-work warning before switching workspaces.	Resolva o aviso sobre trabalho salvo antes de mudar de área.
+Save or close the HR form before changing your password.	Salve ou feche o formulário do RH antes de alterar sua senha.
+Save or close the Fleet form before changing your password.	Salve ou feche o formulário de Frota e embarcações antes de alterar sua senha.
+The open Fleet form belongs to a different account. Sign in with its original account, then save or close the form. It has not been submitted.	O formulário de Frota e embarcações pertence a outra conta. Entre na conta de origem para salvá-lo ou fechá-lo. Ele ainda não foi enviado.
+Stored local work belongs to another account. Sign in with that account to continue it or use Manage unsaved work. No drafts were discarded.	O trabalho local pertence a outra conta. Entre nela para continuar ou use Gerenciar trabalho não salvo. Nenhum rascunho foi descartado.
+Keep or close the current form and wait for active saves before managing unsaved work. Nothing was discarded.	Guarde ou feche o formulário e aguarde os salvamentos antes de gerenciar o trabalho não salvo. Nada foi descartado.
+Keep or close the current form and wait for active saves before reviewing other tabs.	Guarde ou feche o formulário e aguarde os salvamentos antes de consultar outras abas.
+Sign in with the original account to find its saved tabs and drafts.	Entre na conta de origem para encontrar as abas e os rascunhos salvos.
+This tab	Esta aba
+Original workspace	Área de trabalho de origem
+Saved tab	Aba salva
+Recently active	Atividade recente
+Ready to reopen	Pronto para reabrir
+Work is busy or the account changed. No entries were discarded.	Há uma operação em andamento ou a conta mudou. Nenhum registro foi descartado.
+The workspace changed before discard. No entries were removed.	A área de trabalho mudou antes do descarte. Nenhum registro foi removido.
+Another tab owns this workspace. Reopen safely before discarding.	Outra aba está usando esta área de trabalho. Reabra com segurança antes de descartar.
+Saved account or company workspace changed. Refresh before discarding.	A conta ou a empresa salva mudou. Atualize antes de descartar.
+Edit record details	Editar dados do registro
+Start a new checklist	Iniciar nova lista de verificação
+No published checklist types are available. Existing records can still be opened from Home.	Nenhum tipo de lista de verificação publicado está disponível. Os registros existentes continuam acessíveis pelo Início.
+Record number / reference (optional)	Número / referência do registro (opcional)
+Save details	Salvar dados do registro
+Create record & open	Criar e abrir registro
+Cannot save this draft. Export local work and check storage.	Não foi possível salvar o rascunho. Exporte o trabalho local e confira o armazenamento do dispositivo.
+FIXED CHECKLIST	LISTA COM ITENS FIXOS
+Enable for this record	Permitir edição de itens neste registro
+Remove unused live item	Remover item ainda sem resultado
+Edit unused live item	Editar item ainda sem resultado
+Add live checklist item	Adicionar item à lista em andamento
+The removed definition stays in history.	A definição removida permanece no histórico.
+New items start Pending. Existing recorded answers are not rewritten.	Novos itens começam como pendentes. Resultados já registrados são preservados.
+Existing reading fields are kept.	Os campos de medição existentes são mantidos.
+Remove from this record	Remover deste registro
+Save to live checklist	Salvar item na lista em andamento
+Manage unused live items	Gerenciar itens ainda sem resultado
+Checklist change history	Histórico de alterações da lista
+Ask the administrator for the reason.	Consulte o administrador para saber o motivo.
+Original document size did not match. Request a verified copy from the administrator.	O tamanho do documento original não corresponde ao registro. Solicite uma cópia conferida ao administrador.
+Original file integrity check failed. No file was downloaded.	A conferência de integridade do arquivo falhou. Nenhum arquivo foi baixado.
+Company workspace or account changed before download.	A empresa ou a conta mudou antes do download.
+Original saved/opened using your device’s download options.	O original foi encaminhado às opções de download do dispositivo.
+Record details	Dados do registro
+Save or discard local drafts before editing dive details.	Salve ou descarte os rascunhos locais antes de editar os dados do serviço.
+Previous company workspace	Empresa anterior
+Wait for the current request to finish before switching.	Aguarde a conclusão da solicitação atual antes de mudar.
+A different hub is using this address	Outro servidor está usando este endereço
+Local storage needs attention	O armazenamento local precisa de atenção
+Retained local draft — not yet saved to the hub.	Rascunho local preservado — ainda não salvo no servidor.
+No new result saved. Closing keeps edited local work; saving the check queues it for the hub.	Nenhum novo resultado foi salvo. Fechar preserva o rascunho local; salvar a conferência a coloca na fila de envio ao servidor.
+Saving local draft…	Salvando rascunho no dispositivo…
+Local draft saved on this device — not yet queued or confirmed by the hub.	Rascunho salvo no dispositivo — ainda não enviado nem confirmado pelo servidor.
+Local draft storage failed. Keep this form open and preserve your work; do not clear browser storage.	Falha ao salvar o rascunho no dispositivo. Mantenha o formulário aberto e preserve o trabalho. Não limpe o armazenamento do navegador.
+The local draft was not confirmed saved. Preserve your work.	Não foi possível confirmar o salvamento do rascunho local. Preserve o trabalho.
+Wait for photo preparation or the current local save to finish.	Aguarde a preparação da foto ou a conclusão do salvamento local.
+Wait for photo preparation or the current local save to finish before closing.	Aguarde a preparação da foto ou a conclusão do salvamento local antes de fechar.
+Check saved on this device. The save-status strip shows whether the hub has confirmed it.	Resultado salvo no dispositivo. A faixa Conexão e salvamentos informa se o servidor confirmou o recebimento.
+Sign in again to synchronise saved work.	Entre novamente para sincronizar o trabalho salvo.
+No note	Sem observação
+Resolve a change	Resolver divergência entre alterações
+Another device changed this check.	Outro dispositivo alterou este resultado.
+This item was removed. Export your local copy for review.	Este item foi removido. Exporte a cópia local para conferência.
+This stage is now finalised. Export your local entry for review.	Esta etapa foi finalizada. Exporte o registro local para conferência.
+Reconnect to the hub before resuming a ready stage.	Reconecte ao servidor antes de retomar uma etapa marcada como pronta.
+Editing resumed.	Edição retomada.
+Save drafts and sync changes before leaving this checklist.	Salve os rascunhos e sincronize as alterações antes de sair desta lista.
+Save local drafts and sync all changes for this dive before exporting.	Salve os rascunhos locais e sincronize as alterações deste serviço antes de exportar.
+Reopen safely	Reabrir preservando o trabalho salvo
+Your name	Seu nome
+Workspace menu	Menu da área de trabalho
+Back to calendar	Voltar ao calendário
+Open saved entry	Abrir registro salvo
+Back to previous asset	Voltar ao equipamento anterior
+Loading saved movement history…	Carregando o histórico de movimentações…
+Refresh movement history	Atualizar histórico de movimentações
+Retry movement history	Tentar carregar o histórico novamente
+Asset notes	Observações do equipamento
+Responsible person / department (optional)	Responsável / departamento (opcional)
+Alert below this quantity	Alertar abaixo desta quantidade
+Asset notes and low-stock settings	Observações do equipamento e alerta de estoque baixo
+Review and confirm the asset settings.	Confira as observações e o limite do alerta antes de salvar.
+Save settings	Salvar configurações
+Enter the alert threshold, or turn off the low-stock alert.	Informe a quantidade mínima ou desative o alerta de estoque baixo.
+Saving settings does not change item quantity, move stock or assign a Task.	Salvar estas configurações não altera quantidades, não movimenta o estoque e não atribui tarefas.
+Print asset QR labels	Imprimir etiquetas QR dos equipamentos
+A4 sheet — 8 labels per page	Folha A4 — 8 etiquetas por página
+70 × 40 mm — one label per page	70 × 40 mm — uma etiqueta por página
+Label PDF generated.	PDF de etiquetas gerado.
+Add asset photograph	Adicionar foto do equipamento
+Attach certificate document or photograph	Anexar documento ou foto do certificado
+A resized, metadata-stripped copy is stored. Your source photograph is unchanged.	O sistema armazena uma cópia redimensionada e sem metadados. A foto original permanece intacta.
+The selected PDF, DOCX, Excel file or image is stored unchanged. The application does not run macros or verify the issuer. Review it for confidential information before sharing it with certificate viewers.	O PDF, DOCX, arquivo Excel ou imagem é armazenado sem alterações. O aplicativo não executa macros nem verifica o emissor. Confira se há informações confidenciais antes de disponibilizá-lo a quem consulta os certificados.
+Choose file (up to 20 MB)	Selecionar arquivo (até 20 MB)
+Caption / file note	Legenda / observação sobre o arquivo
+Could not read file.	Não foi possível ler o arquivo.
+Attachment saved.	Anexo salvo.
+Certificate editing access is required.	É necessário ter permissão para editar certificados de equipamentos.
+Open the current non-archived certificate revision to edit it.	Abra a revisão atual e não arquivada do certificado para editá-la.
+Edit certificate record	Editar cadastro do certificado
+Quantity unknown	Quantidade não informada
+Publish a maintenance routine before creating a linked work order.	Publique uma rotina de manutenção antes de criar uma ordem de serviço vinculada.
+Maintenance for	Manutenção de
+Work-order reference (optional)	Referência da ordem de serviço (opcional)
+Open an asset label	Abrir equipamento pela etiqueta
+Paste the QR link or item ID	Cole o link do QR ou o identificador do item
+Use an AJ asset label link or a complete item ID.	Use o link de uma etiqueta AJ ou o identificador completo do item.
+Serial not recorded	Número de série não informado
+No profile notes recorded.	Não há observações cadastradas para este equipamento.
+Event time not recorded	Horário do evento não informado
+Your work is unavailable. This does not mean there is no outstanding work. Use the workspaces below or retry.	Não foi possível consultar suas atividades. Isso não significa ausência de pendências. Abra uma das áreas abaixo ou tente novamente.
+Checking your saved work…	Consultando suas atividades salvas…
+Retry overview	Tentar carregar a visão geral novamente
+Finish or keep the open form before refreshing Home.	Conclua ou guarde o formulário aberto antes de atualizar o início.
+Finish or keep the open form before opening another record.	Conclua ou guarde o formulário aberto antes de abrir outro registro.
+Home reading was interrupted. Retry the overview.	A consulta foi interrompida. Tente carregar a visão geral novamente.
+Full database backup	Backup completo do banco de dados
+Download full database backup	Baixar backup completo do banco de dados
+The backup review could not be verified. Reload this application before trying again.	Não foi possível confirmar a revisão do backup. Recarregue o aplicativo antes de tentar novamente.
+Preparing the sensitive copy. Current permissions will be checked again.	Preparando a cópia com dados restritos. Suas permissões serão conferidas novamente.
+Download requested. Check your browser and the saved file; this message does not verify that a file was saved to disk.	Download solicitado. Confira o navegador e o arquivo salvo; esta mensagem não confirma que o arquivo foi gravado no computador.
+The backup download was not confirmed. Nothing was restored or deleted.	O download do backup não foi confirmado. Nenhum dado foi restaurado ou excluído.
+New logbook	Novo livro de registros
+Find a logbook	Buscar livro de registros
+Refresh list	Atualizar lista
+No purpose recorded.	Finalidade não informada.
+Dropdown	Lista de opções
+No unit	Sem unidade
+Cancel design	Cancelar elaboração
+Create reviewed logbook	Criar livro com a estrutura conferida
+Logbook name *	Nome do livro de registros *
+Enter a logbook name before continuing.	Informe o nome do livro de registros antes de continuar.
+Checking this exact structure with the hub…	Conferindo esta estrutura com o servidor…
+Selected section	Seção selecionada
+Add custom	Adicionar seção personalizada
+Add standard section	Adicionar seção padrão
+Choose a standard section	Selecionar seção padrão
+Use no more than 25 sections.	Use no máximo 25 seções.
+Remove this section and its fields from this unsaved design?	Remover esta seção e seus campos da estrutura ainda não salva?
+Section name *	Nome da seção *
+Unnamed section	Seção sem nome
+Selected field	Campo selecionado
+Unnamed field	Campo sem nome
+Add field	Adicionar campo
+Remove field	Remover campo
+Use no more than 40 fields per section.	Use no máximo 40 campos por seção.
+Remove this field from the unsaved design?	Remover este campo da estrutura ainda não salva?
+Field label *	Nome do campo *
+Entry type	Tipo de preenchimento
+Unit / label	Unidade / indicação
+Review the structure and tick the confirmation before creating it.	Confira a estrutura e marque a confirmação antes de criar o livro.
+Waiting for the hub to confirm creation…	Aguardando o servidor confirmar a criação…
+Back to designer library	Voltar à biblioteca de modelos
+Find title, code or system	Buscar por título, código ou sistema
+Definition type	Tipo de modelo
+Toolbox talk forms	Formulários de diálogo de segurança
+All saved definitions	Todos os modelos salvos
+Has saved draft	Com rascunho salvo
+New maintenance routine	Nova rotina de manutenção
+New toolbox form	Novo formulário de diálogo de segurança
+Toolbox form	Formulário de diálogo de segurança
+Unpublished	Não publicado
+SAVED HUB DRAFT	RASCUNHO SALVO NO SERVIDOR
+CURRENT PUBLISHED HEAD	REVISÃO PUBLICADA ATUAL
+Edit saved draft	Editar rascunho salvo
+Start revision from published	Iniciar revisão a partir da versão publicada
+View current published head	Consultar revisão publicada atual
+View saved draft	Consultar rascunho salvo
+Review saved draft for publication	Conferir rascunho salvo para publicação
+Restore definition	Restaurar modelo
+Archive definition	Arquivar modelo
+Create draft & add checks	Criar rascunho e adicionar verificações
+Create draft &amp; add checks	Criar rascunho e adicionar verificações
+Close editor	Fechar editor
+Discard changes kept only in this tab? Saved hub drafts remain.	Descartar as alterações guardadas somente nesta aba? Os rascunhos salvos no servidor serão mantidos.
+Create checklist	Criar lista de verificação
+Create maintenance routine	Criar rotina de manutenção
+Workflow	Fluxo de trabalho
+Two stages	Duas etapas
+First stage label	Nome da primeira etapa
+HUB DRAFT	RASCUNHO NO SERVIDOR
+FROM PUBLISHED HEAD	A PARTIR DA REVISÃO PUBLICADA
+Changes only in this tab — not yet saved to the hub.	Alterações somente nesta aba — ainda não salvas no servidor.
+No changes in this tab yet. Save a hub draft before publication.	Nenhuma alteração nesta aba. Salve um rascunho no servidor antes da publicação.
+Find a title, revision or filename	Buscar por título, revisão ou nome do arquivo
+Find original source revisions	Buscar revisões dos arquivos originais
+At most 12 source revisions can be linked.	É possível vincular até 12 revisões de arquivos originais.
+Reading available source revisions…	Consultando revisões disponíveis dos arquivos originais…
+Add section	Adicionar seção
+Move section up	Mover seção para cima
+Move section down	Mover seção para baixo
+Remove section	Remover seção
+Selected check	Verificação selecionada
+Add check	Adicionar verificação
+Move check up	Mover verificação para cima
+Move check down	Mover verificação para baixo
+Remove check	Remover verificação
+Short heading	Título curto
+Section number	Número da seção
+Maximum 40 sections.	Limite de 40 seções.
+Keep at least one section.	Mantenha pelo menos uma seção.
+Remove this section and its checks from the proposed definition? Saved operational records are unchanged.	Remover esta seção e suas verificações do modelo proposto? Os registros operacionais salvos serão preservados.
+Maximum 1000 checks.	Limite de 1.000 verificações.
+Check number	Número da verificação
+Grouping label	Nome do grupo
+Move to section	Mover para seção
+Eligible reviewer requirement	Requisito para o responsável pela revisão
+Responsible role / explanation	Função responsável / orientação
+Add reading	Adicionar medição
+Maximum 12 readings per check.	Limite de 12 medições por verificação.
+Reading label	Nome da medição
+Value type	Tipo de valor
+Choice / Yes–No	Opções / Sim ou Não
+Remove reading	Remover medição
+Unspecified	Não especificado
+No document code	Sem código do documento
+None recorded	Nenhum registro
+[Description required]	[Descrição obrigatória]
+[Reading label required]	[Nome da medição obrigatório]
+Reload saved definition	Recarregar modelo salvo
+Save hub draft	Salvar rascunho no servidor
+Publish reviewed revision	Publicar revisão conferida
+Waiting for a hub-confirmed response…	Aguardando a confirmação do servidor…
+Hub confirmed publication for new work.	O servidor confirmou a publicação. A revisão está disponível para novos trabalhos.
+Hub confirmed the draft save. It is not publication.	O servidor confirmou o rascunho salvo. Ele ainda não foi publicado.
+Hub confirmed the definition state change.	O servidor confirmou a alteração da situação do modelo.
+Save or close the definition editor before leaving this workspace.	Salve ou feche o editor de modelos antes de sair desta área.
+Save or close the definition editor before changing workspace.	Salve ou feche o editor de modelos antes de trocar de área.
+Unsaved wording kept only in this tab.	Texto ainda não salvo, guardado somente nesta aba.
+[Group required]	[Grupo obrigatório]
+[Prompt required]	[Orientação obrigatória]
+[Question required]	[Pergunta obrigatória]
+[Declaration required]	[Declaração obrigatória]
+UNPUBLISHED HUB DRAFT	RASCUNHO NO SERVIDOR, AINDA NÃO PUBLICADO
+Propose revision	Propor revisão
+Edit unpublished draft	Editar rascunho não publicado
+Review saved form for publication	Conferir formulário salvo para publicação
+Restore form	Restaurar formulário
+Archive form	Arquivar formulário
+LIFECYCLE	SITUAÇÃO DO MODELO
+NEW UNPUBLISHED FORM	NOVO FORMULÁRIO, AINDA NÃO PUBLICADO
+PROPOSED REVISION — IN THIS TAB	REVISÃO PROPOSTA — SOMENTE NESTA ABA
+EXACT SAVED HUB DRAFT	VERSÃO EXATA DO RASCUNHO SALVO NO SERVIDOR
+EDIT UNPUBLISHED DRAFT	EDITAR RASCUNHO NÃO PUBLICADO
+Create toolbox-talk form	Criar formulário de diálogo de segurança
+Propose a form revision	Propor revisão do formulário
+Review saved form	Conferir formulário salvo
+Edit unpublished form	Editar formulário não publicado
+Archive prevents future selection. It does not delete talks or evidence. Restoring an unpublished form does not publish it.	Arquivar impede o uso em novos diálogos, preservando os registros e as evidências. Restaurar um formulário não publicado não o publica.
+Save unpublished hub draft	Salvar rascunho no servidor, sem publicar
+Form title	Título do formulário
+EXACT SAVED FORM	VERSÃO EXATA DO FORMULÁRIO SALVO
+FULL IN-MEMORY PREVIEW	PRÉVIA COMPLETA, AINDA NÃO SALVA
+[Title required]	[Título obrigatório]
+Review this complete form with the hub	Conferir o formulário completo com o servidor
+discussion prompts	orientações para a discussão
+understanding questions	perguntas de compreensão
+Remove selected	Remover selecionado
+Discussion group	Grupo de discussão
+A tick in a briefing records discussion, not task completion.	Uma marcação no diálogo registra que o assunto foi discutido; não registra a conclusão de uma tarefa.
+Questions use Yes / No in the recorded briefing. No answer is preselected here.	As perguntas usam Sim ou Não no registro do diálogo. Nenhuma resposta vem selecionada.
+Any assigned group member	Qualquer integrante do grupo designado
+Named person	Pessoa indicada
+Attach at least one photo before Complete or N/A.	Anexe pelo menos uma foto antes de marcar Concluído ou Não se aplica.
+Attach photographs to support this check when useful.	Anexe fotos quando ajudarem a comprovar o resultado desta verificação.
+Choose a PNG or JPEG under 20 MB. Export other formats as JPEG first.	Selecione uma imagem PNG ou JPEG com menos de 20 MB. Converta outros formatos para JPEG antes de anexar.
+This photograph could not be opened. Use a valid PNG or JPEG.	Não foi possível abrir esta foto. Use um arquivo PNG ou JPEG válido.
+Choose a photo under 24 megapixels or reduce its size first.	Selecione uma foto com menos de 24 megapixels ou reduza seu tamanho.
+Image resizing is unavailable on this browser.	Este navegador não permite redimensionar imagens.
+This detailed photo is too large. Crop it or use a smaller image.	Esta foto é muito grande. Recorte-a ou use uma imagem menor.
+The saved evidence photo could not be read.	Não foi possível ler a foto de evidência salva.
+Local draft — not yet submitted to the hub.	Rascunho local — ainda não enviado ao servidor.
+New local photo — not yet submitted	Nova foto local — ainda não enviada
+Remove this unsent photo from the draft?	Remover esta foto ainda não enviada do rascunho?
+Attach up to five photos per item, per stage.	Anexe até cinco fotos por item em cada etapa.
+Photos saved in your local draft. Save the check to queue submission.	Fotos guardadas no rascunho local. Salve o resultado da verificação para colocá-lo na fila de envio.
+Local photo — awaiting submission	Foto local — aguardando envio
+Evidence loaded. Review each photo before deciding.	Evidências carregadas. Confira cada foto antes de decidir.
+Evidence could not be loaded. Reconnect and reopen this review. Approval is blocked until the photos can be viewed.	Não foi possível carregar as evidências. Reconecte e reabra esta revisão. A aprovação fica bloqueada até ser possível consultar as fotos.
+Loaded from hub	Carregado do servidor
+Asset photograph	Foto do equipamento
+Photograph unavailable. Check your connection and Refresh.	Foto indisponível. Confira a conexão e atualize.
+Photographs requested — refresh record to reload	Fotos solicitadas — atualize o registro para recarregá-las
+Loading asset label…	Carregando etiqueta do equipamento…
+Link copied.	Link copiado.
+Select and copy this link	Selecione e copie este link
+Checklist updated. Review the affected stage and mark devices ready again when finished.	Lista atualizada. Confira a etapa afetada e marque os dispositivos como prontos novamente ao terminar.
+This checklist is deleted. Ask the administrator to restore it.	Esta lista foi excluída. Solicite a restauração ao administrador.
+Only the record creator, supervisors and administrators can manage its live items.	Somente o criador do registro, supervisores e administradores podem editar seus itens durante o uso.
+This record is finalised. Its structure is locked.	Este registro foi finalizado. Sua estrutura está bloqueada para edição.
+Connect to the hub to change checklist items. Ordinary check answers can still be saved offline.	Conecte ao servidor para alterar os itens da lista. As respostas das verificações ainda podem ser salvas sem conexão.
+Save drafts and sync or review local work for this record before changing its structure.	Salve os rascunhos e sincronize ou confira o trabalho local deste registro antes de alterar a estrutura.
+WAVELINK / ACCOUNT	WAVELINK / CONTA
+YOUR ACCOUNT	SUA CONTA
+Your open editor stays behind this panel.	O editor aberto permanece atrás deste painel.
+Keep working	Continuar trabalhando
+Signing out…	Saindo da conta…
+Sign out?	Sair da conta?
+Stay signed in	Permanecer conectado
+Saved company records are not deleted. This does not discard all drafts or finish your shift.	Os registros salvos da empresa são preservados. Sair da conta não descarta todos os rascunhos nem encerra seu turno.
+The account changed. No replacement session was signed out.	A conta mudou. A nova sessão permaneceu conectada.
+{0} stored local entr{1} will stay on this device.	Registros locais que serão mantidos neste dispositivo: {0}.
+Sign back in with this account to continue or discard them. They are not being submitted now.	Entre novamente com esta conta para retomar ou descartar esses registros. Eles não serão enviados agora.
+An editor is open.	Há um editor aberto.
+Anything not already saved on this device or the hub will be lost when you sign out. Stay signed in to save it first.	O que ainda não foi salvo neste dispositivo ou no servidor será perdido ao sair. Permaneça conectado para salvar primeiro.
+Some earlier save outcomes are uncertain. They may already be on the hub. Their receipts stay; signing out cannot cancel those requests.	Alguns salvamentos anteriores estão sem confirmação e podem já ter sido recebidos pelo servidor. Os comprovantes ficam guardados; sair da conta não cancela essas solicitações.
+No stored local drafts need attention.	Nenhum rascunho local salvo precisa de atenção.
+Waiting for the current save or file preparation to finish. No new writes will start from this tab.	Aguardando o salvamento ou a preparação do arquivo. Nenhum novo salvamento será iniciado por esta aba.
+Keep stored drafts & sign out	Manter rascunhos salvos e sair
+Saving sign-out and ending this session…	Registrando a saída e encerrando esta sessão…
+Sign-out could not be saved. Your local work was not discarded.	Não foi possível registrar a saída. Seu trabalho local foi preservado.
+Retry sign out	Tentar sair novamente
+Sign-out is being reviewed. No new request was sent; your saved draft was not discarded.	A saída da conta está em confirmação. Nenhuma nova solicitação foi enviada; seu rascunho salvo foi preservado.
+The saved account changed. No local sign-out was applied.	A conta salva mudou. A sessão local permaneceu conectada.
+Manage {0} unsaved local work {1}	Gerenciar registros locais ainda não salvos: {0}
+HSE / QSHE	Segurança e qualidade
+{0} local {1} waiting. Sign in with the same {2} to continue.	Há {0} registro(s) local(is) aguardando. Entre com a mesma conta para continuar.
+Enter a reason before returning or rejecting this submission.	Informe a justificativa antes de devolver ou rejeitar esta solicitação.
+Save history is unreadable. No local work can be discarded.	Não foi possível ler o histórico de salvamentos. Nenhum trabalho local pode ser descartado.
+Save outcome not settled. Check Connection & saves before discarding this local copy.	Salvamento sem confirmação. Confira Conexão e salvamentos antes de descartar esta cópia local.
+Operation draft	Rascunho de atividade
+Operation	Atividade
+Date not recorded	Data não informada
+Time not recorded	Horário não informado
+Older checklist draft	Rascunho antigo de lista de verificação
+Ownership is not recorded in this older draft. Reopen it with its original account before removing it.	Este rascunho antigo não informa a conta proprietária. Reabra-o com a conta original antes de removê-lo.
+Ownership unavailable; not eligible for batch discard.	Conta proprietária desconhecida; não pode ser descartado em conjunto.
+Delivery state is not recorded. Sync or review this entry first; it may already exist on the hub.	Situação do envio não registrada. Sincronize ou confira este registro primeiro; ele já pode estar no servidor.
+Older queued entry	Registro antigo na fila
+Queued result · conflict; discarding keeps the hub result	Resultado na fila · há divergência; descartar preserva o resultado do servidor
+Queued result · local copy only	Resultado na fila · somente cópia local
+Older new-checklist draft	Rascunho antigo de criação de lista
+Unfinished creation form	Formulário de criação não concluído
+Ownership is not recorded. Reopen and keep with its original account first.	Conta proprietária não registrada. Reabra e guarde o formulário com a conta original primeiro.
+Duplicate local identity; export recovery information instead of batch removal.	Identificador local duplicado; exporte uma cópia de recuperação antes de avaliar a remoção.
+Select at least one local entry.	Selecione pelo menos um registro local.
+Selected work changed, is protected, or belongs to another account. Refresh and select it again.	O trabalho selecionado mudou, está protegido ou pertence a outra conta. Atualize e selecione novamente.
+Queued entry changed. Refresh the local-work list.	O registro na fila mudou. Atualize a lista de trabalho local.
+Operation form	Formulário de atividade
+Log draft	Rascunho de registro operacional
+Checklist draft	Rascunho de lista de verificação
+Queued result	Resultado na fila de envio
+The signed-in account changed. Close and reopen Manage unsaved work. No discard was submitted by this view.	A conta conectada mudou. Feche e reabra Gerenciar trabalho não salvo. Esta tela não enviou nenhum descarte.
+Local entries for	Registros locais de
+your account on this browser	sua conta neste navegador
+. Discarding never deletes saved company records.	. Descartar não exclui registros salvos da empresa.
+Scope, protected work & recovery	Abrangência, trabalho protegido e recuperação
+In-tab-only forms and separate log windows are not included. Keep or close the current form first. Other accounts, saved signatures, published files and save receipts stay untouched. Unsettled saves remain protected. A recovery export can contain other accounts’ retained workspace data; keep it secure. It is not a full company backup.	Formulários guardados somente na aba e janelas separadas de registros não estão incluídos. Guarde ou feche o formulário atual primeiro. Outras contas, assinaturas salvas, arquivos publicados e comprovantes de salvamento são preservados. Salvamentos sem confirmação ficam protegidos. A cópia de recuperação pode conter dados locais guardados de outras contas; mantenha-a protegida. Ela não é um backup completo da empresa.
+Export recovery copy	Exportar cópia de recuperação
+Separate log windows	Janelas separadas de registros
+Select all eligible ({0})	Selecionar os que podem ser descartados ({0})
+A save was attempted. Discarding this local copy does not undo any hub save.	Houve uma tentativa de salvamento. Descartar esta cópia local não desfaz um salvamento no servidor.
+No saved local entries for this account.	Nenhum registro local salvo para esta conta.
+{0} selected · {1} protected	Selecionados: {0} · Protegidos: {1}
+Discard all eligible…	Descartar todos os permitidos…
+Discard selected…	Descartar selecionados…
+Discard {0} local {1}?	Descartar os registros locais selecionados ({0})?
+Discard {0} local {1}	Descartar registros locais ({0})
+This cannot be undone here. Any photos/files held only in these entries will also be removed. Saved hub records and save receipts stay unchanged.	Esta ação não pode ser desfeita aqui. Fotos e arquivos guardados somente nestes registros também serão removidos. Registros e comprovantes salvos no servidor serão preservados.
+This local-work view is no longer current. Close and reopen it without clearing storage.	Esta consulta de trabalho local está desatualizada. Feche e reabra a tela sem limpar o armazenamento.
+Discarding the selected local entries…	Descartando os registros locais selecionados…
+{0} local entries discarded. Saved hub records were not changed.	Registros locais descartados: {0}. Os registros salvos no servidor foram preservados.
+Keep or close the current form and wait for active saves before managing local work. Nothing was discarded.	Guarde ou feche o formulário atual e aguarde os salvamentos em andamento antes de gerenciar o trabalho local. Nada foi descartado.
+Save without submitting	Salvar sem enviar para análise
+Changes saved without submitting. Send for review when ready.	Alterações salvas sem envio. Envie para análise quando estiver pronto.
+{0} operation form(s)	Formulários de atividades: {0}
+Last action confirmed by server	Última ação confirmada pelo servidor
+Not recorded in this tab	Não registrado nesta aba
+Different company workspace at this address	Outra empresa está disponível neste endereço
+Fleet forms need an explicit online save. They are not queued offline.	Os formulários de frota precisam ser salvos com conexão. Eles não entram na fila de envio sem conexão.
+Saving local workspace… Wait for confirmation before closing.	Salvando o trabalho local… Aguarde a confirmação antes de fechar.
+Local saving could not be confirmed. Preserve your work and export recovery information.	Não foi possível confirmar o salvamento local. Preserve seu trabalho e exporte uma cópia de recuperação.
+Local work belongs to the previous company workspace. It has not been submitted here.	O trabalho local pertence à empresa anterior e não foi enviado para esta empresa.
+Connection unavailable. Reconnect to sign in. Existing local work is retained.	Conexão indisponível. Reconecte para entrar. O trabalho local foi preservado.
+{0} checklist change(s) queued	Alterações de listas na fila de envio: {0}
+ · {0} draft form(s) need Save.	 · Formulários que precisam ser salvos: {0}.
+{0} checklist conflict(s) need review. Local work is retained.	Divergências em listas que precisam de análise: {0}. O trabalho local foi preservado.
+Waiting for the server to confirm {0} action(s)…	Aguardando o servidor confirmar as ações: {0}…
+Save outcome uncertain · {0} action(s) need review before a different submission.	Resultado incerto · Ações que precisam ser conferidas antes de outro envio: {0}.
+Checklist item drafts / conflicts	Rascunhos / divergências em itens de listas
+Log drafts	Rascunhos de registros operacionais
+Operation drafts	Rascunhos de atividades
+New checklist draft	Rascunho de nova lista
+Unfinished new checklist	Nova lista ainda não concluída
+WAVELINK / THIS DEVICE	WAVELINK / ESTE DISPOSITIVO
+Close connection and saves	Fechar conexão e salvamentos
+Last connection check in this tab:	Última consulta da conexão nesta aba:
+Not yet confirmed	Ainda não confirmado
+A reachable server does not confirm that a particular save succeeded. Check the action receipt when a result is uncertain.	Conseguir acessar o servidor não comprova um salvamento específico. Quando houver dúvida, confira o comprovante da ação.
+Check connection	Consultar conexão
+Uncertain save results	Salvamentos sem resultado confirmado
+The server may have saved these actions before the response was lost. Opening a page, checking the connection or seeing another successful save does not resolve them.	O servidor pode ter salvo estas ações antes de a resposta se perder. Abrir uma página, consultar a conexão ou ver outro salvamento concluído não resolve essa dúvida.
+Attempt:	Tentativa:
+No replay-safe operation ID recorded. Check the record before retrying.	Não há identificador registrado para repetir a ação com segurança. Confira o registro antes de tentar novamente.
+Open saved workspace	Abrir área de trabalho salva
+I checked this result…	Já conferi este resultado…
+Work in this tab	Trabalho nesta aba
+Queued checklist changes	Alterações de listas na fila de envio
+Checklist conflicts (included above)	Divergências nas listas (incluídas acima)
+Checklist item drafts	Rascunhos dos itens de listas
+In-progress operation forms	Formulários de atividades em andamento
+Only already-queued checklist changes retry automatically. Draft forms require review and an explicit Save. Evidence photos follow their own check or form; local photos are not hub evidence until submission is confirmed.	Somente alterações de listas já na fila são reenviadas automaticamente. Formulários em rascunho exigem conferência e salvamento explícito. As fotos acompanham sua verificação ou formulário; uma foto local só fica registrada no servidor após a confirmação do envio.
+Sync queued checklist changes	Sincronizar alterações de listas na fila
+Other-account drafts also remain on this browser. Their content is not shown here; sign in with their original account.	Rascunhos de outras contas também permanecem neste navegador. O conteúdo não é exibido aqui; entre com a conta proprietária.
+Export this account’s save receipts	Exportar comprovantes de salvamento desta conta
+Export device recovery copy	Exportar cópia de recuperação do dispositivo
+Do not clear browser site data or change the hub address with work to recover. Hub backups do not include device-only drafts. Counts cover this tab. Other tabs and separate log windows retain their own saved drafts.	Não limpe os dados do site nem troque o endereço do servidor enquanto houver trabalho a recuperar. Backups do servidor não incluem rascunhos guardados somente no dispositivo. As contagens abrangem esta aba. Outras abas e janelas de registros mantêm seus próprios rascunhos.
+Waiting for confirmation	Aguardando confirmação
+Do not repeat the active action or close this tab until its result is known.	Não repita a ação em andamento nem feche esta aba até conhecer o resultado.
+Recent action receipts for this account	Comprovantes recentes de ações desta conta
+These are local request observations, not an audit log, evidence of physical work, or operational authorisation. “Reviewed” does not mean saved. Times use this device’s clock.	Estes comprovantes registram respostas observadas pelo dispositivo. Não substituem auditoria, evidência de execução ou autorização operacional. “Conferido pelo usuário” não comprova salvamento. Os horários usam o relógio deste dispositivo.
+Hub response confirmed	Resposta do servidor confirmada
+Reviewed by user — save not verified	Conferido pelo usuário — salvamento não comprovado
+Hub rejected request	Solicitação recusada pelo servidor
+Connection and save-status help	Ajuda sobre conexão e salvamentos
+Have you checked the saved records and preserved any local draft evidence? Clear this warning only after that review. This does not confirm a save, retry an action, or change a hub record.	Você conferiu os registros salvos e preservou as evidências dos rascunhos locais? Remova este aviso somente após essa conferência. Isso não confirma salvamento, não repete a ação e não altera registros do servidor.
+No due date recorded	Sem prazo informado
+Submit saved work for review	Enviar trabalho salvo para análise
+Review submitted task	Analisar tarefa enviada
+Send for review	Enviar para análise
+Hub-saved checklist	Lista de verificação salva no servidor
+Standalone task. No inventory item is required.	Tarefa independente. Não é obrigatório vincular um item do inventário.
+I reviewed the saved task and confirm this action.	Conferi os resultados salvos da tarefa e confirmo esta ação.
+Saves this step only. It does not submit the task, complete the work order or approve equipment use. A reset to Not recorded requires readings to be empty and retains earlier results in History.	Salva somente o resultado deste item. Não envia a tarefa para análise, conclui a ordem de serviço nem autoriza o uso do equipamento. Para voltar a Não informado, apague as leituras deste formulário; os resultados anteriores permanecem no histórico.
+{0} priority	Prioridade: {0}
+{0} / {1} results recorded	{0} / {1} resultados registrados
+No enabled users with Tasks view and perform access.	Nenhum usuário ativo tem permissão para consultar e executar tarefas.
+Assigned people *	Responsáveis pela execução *
+{0}. Task assignment does not grant access to the linked record.	{0}. A atribuição da tarefa não concede acesso ao registro vinculado.
+Source revision:	Versão da origem:
+Linked version	Versão vinculada
+The linked record has changed since this task was created. Review the current record separately; the task still references its original saved version.	O registro vinculado foi alterado desde a criação desta tarefa. Consulte a versão atual na área de origem; a tarefa mantém a referência à versão original.
+Open record →	Abrir registro →
+Create corrective Task	Criar tarefa de correção
+Fault revision	Versão do relatório de falha
+Private fault wording is not copied automatically. Only wording you deliberately put in this Task will be shared with its readers.	O conteúdo restrito da falha não é copiado automaticamente. Somente o texto que você incluir nesta tarefa ficará visível às pessoas com acesso a ela.
+Copy observed fault wording…	Copiar descrição da falha observada…
+Contribution points are frozen at creation and awarded only from verified completion. They do not affect priority, approval or authority.	Os pontos de contribuição são definidos na criação e concedidos somente após a conclusão conferida. Não alteram a prioridade, as aprovações nem as permissões.
+Write the work to be done. Technical limits and procedures are not generated by Wavelink.	Descreva o trabalho a realizar. O Wavelink não define procedimentos nem limites técnicos.
+Only these assignees, designated heads of the responsible department and company administrators may open the task. A department membership alone does not make someone a reviewer.	A tarefa pode ser consultada pelos responsáveis atribuídos, pelos gestores designados do departamento responsável e pelos administradores da empresa. Pertencer ao departamento não concede, por si só, permissão para revisar.
+A link does not grant the assignee permission to open its source. No readings, approvals or certificate evidence are copied.	O vínculo não concede acesso ao registro de origem. Leituras, aprovações e evidências de certificados não são copiadas.
+Type / priority	Tipo / prioridade
+{0} per eligible contributor after verified completion	{0} por participante elegível após a conclusão conferida
+Review on (UTC)	Data de reavaliação (UTC)
+Paused by	Adiado por
+Previous work status	Situação anterior do trabalho
+Saved findings and checklist results are retained. Discussion and deliberate reassignment remain available; work results and submission are locked until an authorised manager resumes this task. The original due date is unchanged. A review date is not a reminder or automatic restart.	Os resultados e as observações salvos são preservados. É possível comentar e alterar os responsáveis, mas registrar novos resultados e enviar para análise exige que um gestor autorizado retome a tarefa. O prazo original permanece. A data de reavaliação não cria lembrete nem retoma o trabalho automaticamente.
+Saved revision {0} · Section changes do not save work	Versão salva {0} · Trocar de seção não salva alterações
+Review note:	Justificativa da análise:
+Reopened: {0}. Save fresh findings and checklist results before resubmitting; earlier evidence remains in History.	Reaberta: {0}. Registre novamente o trabalho e os resultados dos itens antes de reenviar. As evidências anteriores permanecem no histórico.
+Your accessible linked tasks	Tarefas vinculadas que você pode consultar
+Separate assignments; completing one does not change this record.	São atividades independentes. Concluir uma tarefa não altera este registro.
+I reviewed this checklist and confirm adding its fixed steps to this task.	Conferi esta lista e confirmo incluir seus itens nesta tarefa. A definição será mantida como está.
+{0} step(s) remain unrecorded. Record every result before submitting.	Itens sem resultado registrado: {0}. Registre todos os resultados antes de enviar.
+I reviewed the {0} Issue / outstanding and {1} Not applicable result(s) and accept them for completion of this task only. Their recorded status is not changed.	Conferi os {0} resultados com problema ou pendência e os {1} marcados como Não se aplica. Aceito concluir somente esta tarefa com esses resultados, que permanecem registrados sem alteração.
+Add checklist to task	Adicionar lista de verificação à tarefa
+Previous:	Anterior:
+Group:	Grupo:
+Responsibility:	Responsabilidade:
+Source reference:	Referência da fonte:
+Listed tools:	Ferramentas indicadas:
+Minimum	Mínimo
+Maximum	Máximo
+ · Required for Done	 · Obrigatório para registrar Concluído
+ — required for Done	 — obrigatório para registrar Concluído
+Search steps	Pesquisar itens da rotina
+No matching steps	Nenhum item corresponde à pesquisa
+Show orders	Mostrar ordens de serviço
+Sort orders	Ordenar ordens de serviço
+Assignment	Responsável pela execução
+Use Create routine, Import routine or View routines above. Unpublished definitions are not work orders.	Use Criar rotina, Importar rotina ou Consultar rotinas. Uma rotina ainda não publicada não é uma ordem de serviço.
+A person with Maintenance Builder permission can prepare and publish reusable routines.	Uma pessoa com permissão para editar rotinas de manutenção pode preparar e publicar procedimentos reutilizáveis.
+A routine defines the procedure; a work order holds one frozen revision and its saved results. Later publication does not rewrite the order.	A rotina define o procedimento. Cada ordem de serviço mantém uma versão fixa da rotina e seus resultados. Publicar outra versão não altera a ordem existente.
+Maintenance view is company-wide for permitted accounts. Assignment limits who may record steps; it is not a private Task. “Assigned to me” includes named assignments only. Open-to-team work is under “No named assignees”.	As contas autorizadas consultam as ordens de manutenção da empresa. A atribuição define quem pode registrar resultados. “Atribuídas a mim” mostra somente atribuições nominais; atividades abertas à equipe aparecem em “Sem responsável definido”.
+Completion needs its own review. It does not release quarantine, change stock or authorise equipment use.	Concluir a ordem exige uma revisão específica. A conclusão não libera quarentena, altera estoque nem autoriza o uso de equipamento.
+Routine Rev	Versão da rotina
+Saved order Rev	Versão salva da ordem
+Pending due (UTC):	Prazo aguardando confirmação (UTC):
+Order ID:	Identificador da ordem:
+{0} / {1} Complete or N/A	{0} / {1} concluídos ou não aplicáveis
+{0} Complete · {1} N/A · {2} total steps	{0} concluídos · {1} não aplicáveis · {2} itens no total
+No accessible linked Tasks were returned for this work order.	Nenhuma tarefa vinculada a esta ordem está disponível para sua conta.
+Hidden steps still count toward completion. Clear the search or choose another section.	Os itens ocultos continuam necessários para a conclusão. Limpe a pesquisa ou selecione outra seção.
+{0} saved steps are unfinished · {1} checked steps have outstanding item approval.	{0} itens ainda não concluídos · {1} itens conferidos aguardam aprovação específica.
+Completion is a separate confirmed action. These counts do not validate required readings, photographs or current permissions. No action releases equipment, quarantine or stock.	A conclusão exige confirmação separada. Estas contagens não validam leituras obrigatórias, fotos nem permissões atuais. Não há liberação de equipamento, quarentena ou estoque.
+Assigned	Atribuído
+Review the frozen routine and its references before performing the work. Later publication does not rewrite this order.	Confira a versão da rotina e suas referências antes de executar o trabalho. Publicações posteriores não alteram esta ordem.
+Only Tasks accessible to this account are shown. Task completion and maintenance completion remain separate.	Somente as tarefas disponíveis para sua conta são exibidas. Concluir uma tarefa e concluir a manutenção são ações separadas.
+The value is frozen when this verification starts. Eligible named contributors receive it once after deliberate closure; Missing and Discrepancy outcomes are recognised equally.	O valor é definido no início da conferência. Participantes elegíveis recebem os pontos uma única vez após o encerramento confirmado. Itens não encontrados e divergências recebem o mesmo reconhecimento.
+{0} · Collaborative stock work. Private assignments remain under Tasks.	{0} · Conferência colaborativa do estoque. Atribuições restritas permanecem em Tarefas.
+The exact reviewed item list is frozen at creation. Every box and item starts unrecorded; checking a box never checks its contents.	A relação de itens conferida na criação fica fixa. Cada caixa e item começa sem resultado. Conferir uma caixa não confere automaticamente seu conteúdo.
+{0} records in this verification	{0} registros nesta conferência
+Show exact scope ({0})	Mostrar os itens incluídos ({0})
+Recorded includes Found, Missing and Discrepancy. Closing freezes evidence; it does not resolve discrepancies, adjust stock or release equipment. The original scope remains fixed. A box's contents need separate results. Inventory ownership is not a private audience.	Registrados inclui itens encontrados, não encontrados e com divergência. O encerramento preserva as evidências, mas não resolve divergências, ajusta estoque nem libera equipamento. A relação original permanece fixa. O conteúdo de cada caixa exige resultados próprios. A responsabilidade pelo inventário não restringe sua visualização.
+Part number (PN):	Código da peça (PN):
+Item ID:	Identificador do item:
+Counted:	Quantidade contada:
+{0} unresolved Missing / Discrepancy result(s)	{0} resultados de item não encontrado ou divergência ainda sem resolução
+Record or recheck every scoped item before closing. Cancelling incomplete work remains a separate action.	Registre ou confira novamente todos os itens incluídos antes de encerrar. Cancelar uma conferência incompleta é uma ação separada.
+I accept closing with these {0} recorded outcomes still unresolved.	Aceito encerrar com estes {0} resultados registrados ainda sem resolução.
+{0} / {1} recorded · {2} remaining · {3} need recheck.	{0} / {1} registrados · {2} pendentes · {3} exigem nova conferência.
+Closing retains the results and their author/history. It never changes stock quantities or makes Missing items Found.	O encerramento preserva resultados, autores e histórico. Não altera quantidades de estoque nem transforma itens não encontrados em encontrados.
+Open current low-stock alerts	Consultar alertas atuais de estoque baixo
+Find a title or source in this month	Pesquisar título ou origem neste mês
+All available categories	Todas as categorias disponíveis
+Clear categories	Limpar categorias
+Search filters the dates returned for this month, not the whole company workspace. Event times are UTC; date-only records are not shifted to your device time.	A pesquisa considera os registros deste mês. Os horários são exibidos em UTC; datas sem horário permanecem como registradas, sem conversão para o fuso do dispositivo.
+Whole month	Mês inteiro
+This is a linked view, not an appointment scheduler. Recorded briefings, checklists, movements and log events can be history; due dates and planned arrivals are not proof of completion. A source's status is not a separate assessment of this event.	O calendário reúne informações dos registros de origem. Diálogos, listas, movimentações e lançamentos podem representar fatos passados. Prazos e chegadas previstas não comprovam conclusão. A situação exibida pertence ao registro de origem.
+Change a date in its source record. Calendar does not reschedule work, resume postponed Tasks, send reminders or mark anything complete.	Altere as datas no registro de origem. O calendário não reagenda trabalhos, retoma tarefas adiadas, envia lembretes nem registra conclusões.
+Checking saved work…	Consultando trabalho salvo…
+Inventory / maintenance / other operation forms	Formulários de inventário, manutenção e outras atividades
+Fleet receipt, placement, manifest and log actions need a hub response. Unsubmitted Fleet forms are not saved as offline drafts. A saved request receipt contains metadata, not a recoverable form. Fleet receipts last for this tab session; closing the tab or session can remove them. Keep uncertain forms open and export receipts before leaving.	As ações de recebimento, destinação, manifesto e registros da Frota exigem resposta do servidor. Formulários ainda não enviados não viram rascunhos para uso sem conexão. O comprovante da solicitação contém dados da ação, mas não recupera o formulário. Os comprovantes da Frota duram esta sessão da aba; mantenha formulários com resultado incerto abertos e exporte os comprovantes antes de sair.
+A password and a second factor are required for new sessions.	Novas sessões exigem senha e um segundo fator de autenticação.
+unused recovery codes remain.	códigos de recuperação ainda disponíveis.
+Device reference:	Referência do dispositivo:
+Email sign-in is limited to the exact verified mailbox in this already-selected company service. It does not route users between companies by domain.	O acesso por e-mail usa o endereço exato verificado nesta empresa. O domínio do e-mail não direciona o usuário para outra empresa.
+Email recovery is not configured for this workspace. Ask your company administrator to reset your password.	A recuperação por e-mail não está configurada nesta empresa. Solicite a redefinição ao administrador.
+Company email or User ID	E-mail verificado ou nome de usuário
+Use your existing account details. Alert-only email addresses cannot reset a password. If you do not have a verified company email, contact your administrator.	Use os dados da sua conta. E-mails cadastrados apenas para alertas não permitem redefinir a senha. Se você não tem e-mail verificado, procure o administrador.
+Email code	Código recebido por e-mail
+Confirm new password	Confirme a nova senha
+Request a new code	Solicitar novo código
+Didn’t receive a code? Check spam. Requests to unknown accounts or accounts without a verified company email do not send email.	Não recebeu o código? Confira a pasta de spam. Contas não encontradas ou sem e-mail verificado não recebem mensagens de recuperação.
+Password reset complete	Senha redefinida
+Your existing sessions have ended. Two-step verification still applies if enabled.	As sessões anteriores foram encerradas. A verificação em duas etapas continua obrigatória se estiver ativada.
+Date range	Período
+MY SHIFT	MEU TURNO
+Unavailable: {0}. The displayed counts may be incomplete; this is not an all-clear.	Indisponível: {0}. As contagens podem estar incompletas; isso não confirma a ausência de pendências.
+Older activity needs another page scan. Use Older activity to continue; an empty page is not proof there are no earlier accessible actions.	Use Atividades anteriores para consultar mais registros. Uma página vazia não comprova a ausência de outras ações anteriores disponíveis para sua conta.
+History covers supported Task, Maintenance, Checklist, Handover, Log, Toolbox, Inventory, Certificate, Fault and HSE/QSHE actions. It is not a complete security audit. Older, native or imported events without supported account attribution are omitted. Source titles and access reflect the current record; handover revisions stay exact.	O histórico reúne ações compatíveis de tarefas, manutenção, listas, passagens de turno, registros operacionais, diálogos de segurança, inventário, certificados, falhas e segurança e qualidade. Não é uma auditoria completa. Eventos antigos, nativos ou importados sem autoria reconhecida podem não aparecer. Títulos e acesso refletem o registro atual; as versões de passagens de turno são preservadas.
+Access denied.	Acesso negado.
+Current company	Empresa atual
+Save or close this form before navigating.	Salve ou feche este formulário antes de sair desta página.
+Close without saving these changes?	Fechar sem salvar estas alterações?
+Check current access	Conferir acesso atual
+Refresh current view	Atualizar esta tela
+Fleet sections	Seções da Frota
+Add vessel / base	Cadastrar embarcação ou base
+Edit vessel / base	Editar embarcação ou base
+Organisation not recorded	Organização não informada
+Code / vessel identifier	Código ou identificação da embarcação
+Organisation	Organização
+Contact details	Dados de contato
+Availability	Disponibilidade
+A company administrator is required.	Esta ação exige um administrador da empresa.
+Allocate existing stock	Definir localização de itens existentes
+Allocate existing equipment	Definir localização de equipamentos existentes
+Vessel / base	Embarcação ou base
+Choose site	Selecione a embarcação ou base
+Find an item	Pesquisar item
+Select up to 500 records. Filter to a smaller group.	Selecione até 500 registros. Use os filtros para reduzir a seleção.
+All permitted sites and transit	Todas as embarcações, bases e movimentações permitidas
+Custody state	Situação de custódia
+All states	Todas as situações
+Quarantined	Em quarentena
+Unallocated	Sem localização definida
+Search name / serial / PN / reference	Pesquisar nome, número de série, código da peça ou referência
+Top-level record	Registro principal
+No recorded site	Embarcação ou base não informada
+Record quarantine release	Registrar liberação de quarentena
+Container / box	Contêiner ou caixa
+Equipment / stock	Equipamento ou estoque
+Record authorised quarantine release	Registrar liberação autorizada de quarentena
+New manifest	Novo manifesto de transporte
+Search shipments	Pesquisar remessas
+Shipment stage	Etapa da remessa
+From site	Local de origem
+All origins	Todas as origens
+To site	Local de destino
+All destinations	Todos os destinos
+Sort shipments	Ordenar remessas
+Saved order	Ordem registrada
+Manifest number A–Z	Número do manifesto A–Z
+Planned arrival (earliest)	Chegada prevista mais próxima
+‹ Back to shipments	‹ Voltar para remessas
+Not planned	Não planejado
+Selection cleared: that shipment is not in these results. No saved record changed.	Seleção removida: a remessa não está nestes resultados. Nenhum registro salvo foi alterado.
+An earlier route filter is no longer available in this accessible shipment list. It has been cleared.	Um filtro de rota anterior deixou de estar disponível nesta lista e foi removido.
+No matching shipments	Nenhuma remessa corresponde aos filtros
+No saved shipments yet	Nenhuma remessa cadastrada
+Clear filters to return to all accessible shipments.	Limpe os filtros para consultar todas as remessas disponíveis para sua conta.
+Create a draft when you have equipment to send. A draft does not record dispatch.	Crie um rascunho quando houver equipamentos a enviar. O rascunho não registra a saída física.
+Choose different origin and destination sites.	Selecione locais diferentes para origem e destino.
+Changing the origin clears this draft’s packing selection. Continue?	Alterar a origem remove a seleção de volumes deste rascunho. Continuar?
+Origin change not confirmed. The earlier packing selection is retained.	A alteração da origem não foi confirmada. A seleção anterior de volumes foi preservada.
+Enter the manifest number and title.	Informe o número e o título do manifesto.
+Planned arrival precedes departure.	A chegada prevista é anterior à saída.
+Origin	Origem
+Select origin	Selecione a origem
+Select destination	Selecione o destino
+Manifest number *	Número do manifesto *
+Title / shipment purpose *	Título ou finalidade da remessa *
+Planned departure — UTC	Saída prevista — UTC
+Planned arrival — UTC	Chegada prevista — UTC
+Confirm the reviewed route and box contents.	Confirme a rota e o conteúdo dos volumes conferidos.
+Review & mark Ready	Conferir e marcar como pronto para envio
+Edit transport details	Editar dados do transporte
+Confirm actual dispatch	Registrar saída física
+Receive selected groups	Registrar recebimento dos volumes selecionados
+Record physical return	Registrar devolução física
+Record missing / exception	Registrar falta ou ocorrência
+Close reviewed manifest	Encerrar manifesto conferido
+Cancel before dispatch	Cancelar antes da saída
+All manifests	Todos os manifestos
+Refresh saved record	Atualizar registro salvo
+Export manifest PDF	Exportar manifesto em PDF
+Not dispatched	Ainda não enviado
+Attach supporting file	Anexar comprovante
+Load change history	Consultar histórico de alterações
+Selection cleared after checking the current saved shipment. Choose the exact groups again before receipt or return.	A seleção foi removida após consultar a remessa atual. Selecione novamente os volumes antes de registrar o recebimento ou a devolução.
+Unsupported shipment review action.	Esta ação de revisão da remessa não está disponível.
+CANCEL UNDISPATCHED SHIPMENT	CANCELAR REMESSA AINDA NÃO ENVIADA
+CLOSE SHIPMENT RECORD	ENCERRAR REGISTRO DA REMESSA
+RECORD PHYSICAL DEPARTURE	REGISTRAR SAÍDA FÍSICA
+Actual departure — UTC	Saída realizada — UTC
+Type the exact manifest number:	Digite o número exato do manifesto:
+Review and confirm the selected action.	Confira e confirme a ação selecionada.
+Type the exact manifest number to confirm.	Digite o número exato do manifesto para confirmar.
+Enter a reason or review note.	Informe a justificativa ou observação da conferência.
+Place the remaining received equipment before closing this shipment.	Registre a localização final dos equipamentos recebidos antes de encerrar esta remessa.
+Review the action and type the exact manifest number.	Confira a ação e digite o número exato do manifesto.
+Select at least one outstanding root item or box group in the table first.	Selecione primeiro pelo menos um item principal ou volume pendente na tabela.
+Condition	Condição
+Received in recorded condition	Recebido na condição registrada
+Damaged — hold in quarantine	Danificado — manter em quarentena
+Receipt and placement	Recebimento e localização final
+Receive into holding — place later	Receber em área temporária e definir localização depois
+Receive directly at final inventory location	Receber diretamente na localização final do inventário
+Actual receiving / holding location	Local de recebimento ou guarda temporária
+Actual event time — UTC	Data e hora da ocorrência — UTC
+Type the exact manifest number	Digite o número exato do manifesto
+Record physical receipt	Registrar recebimento físico
+Recorded condition	Condição registrada
+Receive into	Receber em
+Holding area — place later	Área temporária — definir localização depois
+Final inventory location — direct receipt	Localização final no inventário — recebimento direto
+Actual holding area *	Área de guarda temporária *
+These same records stay on Receiving & placement until their final location or box is recorded.	Estes registros permanecem em Recebimento e localização até informar a localização final ou a caixa de destino.
+Receipt records this as the final location, without a later placement step for these groups.	O recebimento registra esta localização como definitiva para estes volumes.
+This return records equipment back at the manifest origin.	Esta devolução registra o retorno dos equipamentos à origem do manifesto.
+Neither choice releases quarantine or approves equipment.	Nenhuma opção libera quarentena nem autoriza o uso do equipamento.
+Actual final inventory location *	Localização final no inventário *
+Edit saved draft transport	Editar transporte do rascunho salvo
+Shipment purpose *	Finalidade da remessa *
+Review and confirm the transport changes.	Confira e confirme as alterações do transporte.
+Enter a change reason.	Informe o motivo da alteração.
+Enter the manifest number and shipment purpose.	Informe o número do manifesto e a finalidade da remessa.
+Review saved shipment before Ready	Conferir a remessa antes de marcar como pronta
+Review the saved shipment and confirm readiness.	Confira a remessa salva e confirme que está pronta para envio.
+Enter a readiness review note.	Registre a observação da conferência de prontidão.
+Attach manifest / packing document	Anexar manifesto ou relação de volumes
+The file could not be read.	Não foi possível ler o arquivo.
+From — UTC date	De — data em UTC
+To — UTC date	Até — data em UTC
+Include	Incluir
+Shipment dates	Datas das remessas
+Log entry events	Ocorrências dos registros operacionais
+Shipments and log events	Remessas e ocorrências operacionais
+Show dates	Mostrar datas
+Manage vessel logbooks	Gerenciar livros de registro da embarcação
+Assigned log issues	Pendências atribuídas nos registros
+All authorised sites	Todas as embarcações e bases autorizadas
+This logbook has not been enabled for vessel access. Open its company workspace or ask the administrator.	Este livro não está disponível no acesso da embarcação. Abra a área da empresa ou procure o administrador.
+References	Referências
+UTC from	UTC a partir de
+UTC to	UTC até
+Unconfirmed	Não confirmado
+No confirmed UTC	Horário UTC não confirmado
+Saved entries · newest first	Lançamentos salvos · mais recentes primeiro
+New saved entries are available. Your current view has not moved.	Há novos lançamentos salvos. Sua posição atual na consulta foi mantida.
+Return to normal view	Voltar à visualização normal
+Event time unconfirmed	Horário da ocorrência não confirmado
+Void this log entry	Anular este lançamento
+Entry correction history	Histórico de correções do lançamento
+Event time — UTC	Data e hora da ocorrência — UTC
+Select…	Selecione…
+Correct saved log entry	Corrigir lançamento salvo
+Export vessel log report	Exportar relatório de registros da embarcação
+File format	Formato do arquivo
+Excel workbook	Planilha Excel
+Landscape PDF table	Tabela em PDF na horizontal
+Released reference pages	Páginas de referência liberadas
+Show more cells	Mostrar mais células
+New alert	Novo alerta
+Seen	Visualizado
+Only a company administrator can manage vessel logbooks.	Somente um administrador da empresa pode gerenciar os livros da embarcação.
+User log permissions	Permissões do usuário para registros operacionais
+Not linked	Não vinculado
+Company only	Somente na empresa
+Link whole logbook to vessel	Vincular o livro completo à embarcação
+Vessel-user availability	Disponibilidade para usuários da embarcação
+Enable access	Habilitar acesso
+Withdraw access	Revogar acesso
+Only a company administrator can manage permissions.	Somente um administrador da empresa pode gerenciar permissões.
+Read only	Somente leitura
+Contributor	Participante com permissão de registro
+Log coordinator	Coordenador de registros
+Search received equipment	Pesquisar equipamentos recebidos
+Receiving site	Local de recebimento
+All receiving sites	Todos os locais de recebimento
+All conditions	Todas as condições
+Other conditions	Outras condições
+‹ Back to received groups	‹ Voltar para volumes recebidos
+Quarantine remains in effect after placement. This action does not release equipment.	A quarentena continua após definir a localização. Esta ação não libera o equipamento.
+Choose the final location or an eligible box at this same site.	Selecione a localização final ou uma caixa disponível neste mesmo local.
+Place received group →	Definir localização do volume recebido →
+Selection cleared because that group is no longer in these results. No placement was made.	A seleção foi removida porque o volume não está mais nestes resultados. Nenhuma localização foi registrada.
+No holding area recorded	Área temporária não informada
+No matching received groups	Nenhum volume recebido corresponde aos filtros
+Nothing awaiting placement	Nenhum volume aguarda localização final
+Clear filters to restore the receiving list.	Limpe os filtros para consultar a lista de recebimentos.
+Received groups that still need a final location will appear here.	Os volumes recebidos que ainda precisam de localização final aparecem aqui.
+The received equipment or its custody changed. Refresh the receiving list.	O equipamento recebido ou sua custódia mudou. Atualize a lista de recebimentos.
+Place received equipment	Definir localização do equipamento recebido
+Final destination type	Tipo de destino final
+Location / area	Localização ou área
+Existing box at this site	Caixa existente neste local
+Final location / area	Localização ou área final
+Actual placement time — UTC	Data e hora da destinação física — UTC
+Choose an existing destination box.	Selecione uma caixa de destino existente.
+Sign in to the main workspace first.	Entre primeiro na área principal da empresa.
+The account changed.	A conta foi alterada.
+Session restored. Review your form and save deliberately. Nothing was submitted automatically.	Sessão restabelecida. Confira o formulário e salve quando estiver pronto. Nada foi enviado automaticamente.
+Manual / irregular daily period	Período diário manual ou irregular
+Search your visible handovers	Pesquisar passagens de turno disponíveis
+Shift setup unavailable. Use Refresh to retry.	A configuração de turnos está indisponível. Use Atualizar para tentar novamente.
+Handovers unavailable. Use Refresh to try again.	As passagens de turno estão indisponíveis. Use Atualizar para tentar novamente.
+Open people & shifts	Abrir pessoas e turnos
+Shift setup saved. Existing handovers were not changed.	Configuração de turnos salva. As passagens de turno existentes foram preservadas.
+Handover finished and shared. No incoming acknowledgement or task completion was recorded.	Passagem de turno finalizada e compartilhada. Não houve confirmação de leitura pelo próximo turno nem conclusão de tarefas.
+Private notes saved. Your handover remains in progress.	Anotações privadas salvas. Sua passagem de turno continua em andamento.
+Back to Handovers	Voltar para passagens de turno
+People & shifts saved. Continue your own handover.	Pessoas e turnos salvos. Continue sua passagem de turno.
+YOUR PRIVATE DRAFT	SEU RASCUNHO PRIVADO
+Your handover	Sua passagem de turno
+Period not set	Período não informado
+Time basis not set	Referência de horário não informada
+You acknowledged this published revision.	Você confirmou a leitura desta versão publicada.
+No personal acknowledgement recorded for you.	Você ainda não confirmou a leitura desta versão.
+None selected	Nenhum selecionado
+Retry this saved record	Consultar este registro novamente
+Reload saved record	Recarregar registro salvo
+YOUR PRIVATE HUB DRAFT	SEU RASCUNHO PRIVADO NO SERVIDOR
+DISCARDED PRIVATE DRAFT	RASCUNHO PRIVADO DESCARTADO
+It has not been published.	Ainda não foi publicado.
+Read the complete saved revision before personally acknowledging it.	Leia a versão salva completa antes de confirmar sua leitura.
+Its contents were explicitly discarded; its audit identity remains.	O conteúdo foi descartado expressamente; sua identificação de auditoria foi mantida.
+Edit my notes	Editar minhas anotações
+Advanced draft editor	Editor avançado de rascunho
+Discard private draft	Descartar rascunho privado
+Start private revision	Iniciar revisão privada
+Restore handover	Restaurar passagem de turno
+Archive handover	Arquivar passagem de turno
+View published revision	Consultar versão publicada
+Revision history	Histórico de versões
+Prepare a new handover from this	Preparar nova passagem com base nesta
+Current recipients	Destinatários atuais
+Refresh participants	Atualizar participantes
+Export displayed published PDF	Exportar em PDF a versão publicada exibida
+Authors do not sign as incoming recipients.	O autor não confirma a leitura como integrante do próximo turno.
+Not recorded for your account.	Não registrado para sua conta.
+Read & personally acknowledge this revision	Ler e confirmar pessoalmente esta versão
+The saved revision changed. Reload the exact handover.	A versão salva mudou. Recarregue esta passagem de turno.
+Retry history	Consultar histórico novamente
+This history view is no longer active.	Esta consulta do histórico não está mais ativa.
+Preparing the saved, permitted published revision…	Preparando a versão publicada disponível para sua conta…
+A PDF was not returned.	O servidor não retornou um PDF.
+Download requested. Check the saved PDF. Exporting does not acknowledge this handover.	Download solicitado. Confira o PDF salvo. Exportar não confirma a leitura da passagem de turno.
+Retry this publication	Consultar esta publicação novamente
+Hide recipients	Ocultar destinatários
+New handover title	Título da nova passagem de turno
+Search published source titles, authors or periods	Pesquisar títulos publicados, autores ou períodos
+Search / refresh	Pesquisar ou atualizar
+Previous page	Página anterior
+Next page	Próxima página
+Review exact prepared wording	Conferir o texto preparado
+Choose sections	Selecionar seções
+Create reviewed private draft	Criar rascunho privado após conferência
+Close without another save	Fechar sem salvar novamente
+Review selected wording	Conferir texto selecionado
+Waiting for the hub…	Aguardando o servidor…
+Enter a new title and select at least one source publication first.	Informe um novo título e selecione pelo menos uma publicação de origem.
+Review is required before a private draft can be created.	Confira o conteúdo antes de criar o rascunho privado.
+Select source	Selecionar origem
+Read exact publication	Ler esta versão da publicação
+Move earlier	Mover para antes
+Move later	Mover para depois
+Remove source	Remover origem
+Refresh exact publication	Atualizar esta publicação
+Hide source	Ocultar origem
+The saved publication state is invalid.	A situação da publicação salva é inválida.
+Checking the selected publications and their exact saved wording…	Conferindo as publicações selecionadas e seus textos salvos…
+Review complete. No draft was created. Read the exact wording, give a reason and confirm separately.	Conferência concluída. Nenhum rascunho foi criado. Leia o texto, informe a justificativa e confirme a criação separadamente.
+Review the prepared wording, enter a reason and explicitly confirm the private copy.	Confira o texto preparado, informe a justificativa e confirme a cópia privada.
+Waiting for the hub to confirm the new private draft…	Aguardando o servidor confirmar o novo rascunho privado…
+PRIVATE DRAFT	RASCUNHO PRIVADO
+EXPLICIT REVIEW	CONFERÊNCIA EXPLÍCITA
+Handover title	Título da passagem de turno
+Location / vessel label (not an access rule)	Local ou embarcação (não define permissões de acesso)
+Time basis (enter UTC or the stated local basis)	Referência de horário (informe UTC ou o fuso local utilizado)
+Back to writing	Voltar para edição
+Private draft saved on the hub. It has not been published.	Rascunho privado salvo no servidor. Ainda não foi publicado.
+Hub confirmed the handover change.	O servidor confirmou a alteração da passagem de turno.
+Operational date	Data operacional
+Previous day	Dia anterior
+Next day	Próximo dia
+Start not set	Início não informado
+End not set	Término não informado
+We’ll send a code to the verified company email attached to your account.	Enviaremos um código para o e-mail verificado da sua conta.
+Enter the eight-digit code, then choose a new password. The code expires in 10 minutes.	Informe o código de oito dígitos e escolha uma nova senha. O código vence em 10 minutos.
+Use at least six different characters in your password.	Use pelo menos seis caracteres diferentes na senha.
+Sign in with your new password to return to your workspace.	Entre com a nova senha para voltar à área da empresa.
+Retry same request	Repetir a mesma solicitação
+Reconnect to your company workspace to reset your password.	Restabeleça a conexão com a empresa para redefinir sua senha.
+Recovery is currently unavailable. Reconnect and reload this page, or contact your administrator.	A recuperação está indisponível. Restabeleça a conexão e atualize a página ou procure o administrador.
+password confirmation	confirmação da senha
+Wait {0} seconds before requesting another code.	Aguarde {0} segundos antes de solicitar outro código.
+Reset outcome not confirmed. Retry the same request to check whether it was saved.	A redefinição não foi confirmada. Repita a mesma solicitação para consultar se foi salva.
+General task	Tarefa operacional
+General task work	Registro de execução da tarefa
+General task decision	Análise da tarefa
+General task comment	Comentário da tarefa
+Task checklist result	Resultado de item da lista da tarefa
+Task checklist attachment	Inclusão de lista na tarefa
+Date not recorded	Data não informada
