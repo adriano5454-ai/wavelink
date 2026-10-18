@@ -1,0 +1,28 @@
+{
+  "consultado_em": "2026-10-18",
+  "aplicacao": "Decisões de interface e terminologia; não são regras trabalhistas nem cálculos de folha.",
+  "fontes": [
+    {
+      "titulo": "TOTVS Ahgora — Timesheet FAQ",
+      "url": "https://centraldeatendimento.totvs.com/hc/pt-br/articles/33403298230295-TOTVS-RH-Ponto-Eletronico-Linha-Ahgora-Timesheet-FAQ",
+      "observacao": "O produto usa apontamento de horas e registro de atividades, com reaproveitamento de informações e edição individual.",
+      "adotado": "Preenchimento em conjunto dos dias selecionados e correção por linha, com horas efetivamente realizadas."
+    },
+    {
+      "titulo": "Microsoft Project Operations — Visão geral de aprovações (pt-BR)",
+      "url": "https://learn.microsoft.com/pt-br/dynamics365/project-operations/approvals/approvals-overview",
+      "observacao": "Documenta uma grade semanal de aprovações e a designação de aprovadores por projeto.",
+      "adotado": "Semana legível com total e situação por projeto; responsáveis explicitamente designados. No Wavelink, devolução e rejeição continuam distintas e não há reflexo financeiro automático."
+    }
+  ],
+  "glossario": {
+    "Apontamento semanal": "Registro das horas efetivamente realizadas nos sete dias da semana.",
+    "Projeto": "Vínculo das horas com o trabalho e seus responsáveis pela aprovação.",
+    "Responsável pela aprovação": "Conta ativa designada para analisar apontamentos daquele projeto.",
+    "Rascunho": "Dados guardados para conferência do autor, ainda sem envio para análise.",
+    "Enviado": "Horas apresentadas ao responsável; não significa aprovação.",
+    "Devolvido para correção": "Autor pode ajustar e reenviar; exige justificativa de quem devolveu.",
+    "Rejeitado": "Decisão final com justificativa; não libera edição.",
+    "Horas decimais": "7,5 h corresponde a 7 h 30 min; não usar 7,30 para representar sete horas e meia."
+  }
+}

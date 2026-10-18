@@ -1,0 +1,15 @@
+{
+  "assets": {
+    "app.js": "1.34.29-561cb15aeca4",
+    "hr_weekly_timesheets.css": "1.34.29-52f26aba555b",
+    "hr_weekly_timesheets.js": "1.34.29-b65d0cce3ce6",
+    "hr_workspace.js": "1.34.29-11352f239716",
+    "locale_pt_br.js": "1.34.29-528fa9b216f0",
+    "save_status.js": "1.34.29-6c213a9ffc36"
+  },
+  "updated": [
+    "app/static/index.html",
+    "app/static/sw.js",
+    "app/static/pt-BR/index.html"
+  ]
+}

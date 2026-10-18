@@ -1,0 +1,22 @@
+{
+  "attempts": [
+    {
+      "attempt": "initial_collection",
+      "status": "runner_setup_error",
+      "reason": "Fixture module test_company_c01 missing from runner sys.path; corrected path without product edits."
+    },
+    {
+      "attempt": "combined_replay",
+      "status": "aborted_native_python_windows_exception",
+      "reason": "Windows fatal exception: access violation while TestClient submitted a timesheet. No application assertion failure or complete JUnit report was produced.",
+      "location": "tests/test_ui129_weekly_security.py::test_only_editable_states_can_be_saved_by_the_owner",
+      "action": "Retry each test file in a separate process on final R3; no repeating traceback timer. Product remains unchanged."
+    }
+  ],
+  "final_result": {
+    "status": "passed_in_separate_processes",
+    "passed": 51,
+    "native_exception_reproduced": false,
+    "note": "A tentativa combinada incompleta não é contabilizada como aprovação. A causa da exceção nativa Windows não foi provada; nenhuma alteração de produto foi feita para contorná-la. Os três arquivos foram executados integralmente em processos separados."
+  }
+}

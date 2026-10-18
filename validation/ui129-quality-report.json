@@ -1,0 +1,131 @@
+{
+  "phase": "UI129",
+  "status": "passed_with_no_unresolved_findings",
+  "scope": "Independent fictional-data API and persistence verification of weekly timesheets and project approval boundaries",
+  "runtime": "work/runtime-ui129",
+  "owned_files": [
+    "tests/test_ui129_weekly_security.py"
+  ],
+  "source_sha256": {
+    "app/hr.py": "1fdf1f0d11b28eb8dc0bb27eaf7eec6764d1f4201078f49a1f32c5a5abaa5432",
+    "app/hr_api.py": "d634039db5d99fe89a5290e017a5caef74202d3e857c4a677cd533737bf9eae9",
+    "app/hr_timesheet_projects.py": "250f641bbded7266e054e5a39da6c55e4414a6247545f8b5bca1b7cb989e21bb",
+    "app/project_modules.py": "0705bd64fa1bd20e021b3c0017fccf75c508d0064bd4dbfd30515f9bb597ef03",
+    "app/export_policy.py": "728775074a388582b540b0a913029f14ed36e5b0af7e4d6718af2ea106821dd7",
+    "app/store.py": "9f27daaff8b75f0e5a82cf6a4e4759a7e656a524546c57ddbef6d0b426c18106",
+    "tests/test_ui129_weekly_security.py": "7a3a51f9be21f206cce41d5259d666b335e875635970824410ecdfc8ec6a211e",
+    "app/project_transfer.py": "79d094bd7c77f960625fd9217960a3a3522866e8e452b4df886fbb7237598d80",
+    "app/action_center.py": "330cade0bd644f2c78022ad51b12755d9532e4e208cafb4af5e1a8c91a6d7f8e"
+  },
+  "completed_runs": [
+    {
+      "xml": "work/ui129-quality-tests.xml",
+      "passed": 26,
+      "failed": 0,
+      "seconds": 263.95,
+      "source_note": "Initial 26-case pass before final input-validation polish; no functional failures."
+    },
+    {
+      "xml": "work/ui129-quality-backup-tests.xml",
+      "passed": 7,
+      "failed": 0,
+      "seconds": 74.6,
+      "source_note": "Seven extra HR2/archive/concurrency/reason cases on final backend candidate."
+    }
+  ],
+  "verified_scenarios": [
+    "Admin-only project configuration and no implicit general-HR grants",
+    "Two projects on the same day, exactly 24 hours allowed and >24 rejected",
+    "Legacy records preserved; legacy/new weekly edits share daily cap when intersecting",
+    "Batch validation and transaction rollback across all HR tables",
+    "Optimistic versions and immutable submitted/approved/rejected records",
+    "Empty existing draft can move hours to another project atomically",
+    "Same operation replay returns currently authorized current week; changed payload and cross-user replay rejected",
+    "Project approver sees only submitted/approved/rejected assigned project records, including count/limit, queues and pending actions",
+    "Private draft and returned edit history omitted from scoped reviewer snapshots",
+    "Admin/global read permission does not imply designated approval; self-review denied",
+    "Removed designation, disabled project/account and removed hr.view_own take effect immediately on reads, history, queue and receipt replay",
+    "Approved project remains unchanged when another project is returned and corrected",
+    "Return and reject require nonblank justification",
+    "Exact company header and named bearer session required for writes",
+    "Concurrent 16-hour saves cannot both commit for the same day",
+    "First valid project changes HR1 to HR2 atomically; invalid first project leaves HR1; incomplete HR2 rejected without repair or deletion",
+    "Complete and HR-only archives restore configuration, designations, timesheets, history and receipts with integrity_check=ok and fresh login authorization",
+    "Operational-only archive physically excludes project/approval/hour markers and resets to empty HR1; source HR snapshot unchanged",
+    "Omitted weekly record notes preserve saved content; explicit empty notes clears the current value"
+  ],
+  "unresolved_findings": [],
+  "limitations": [
+    "No live company data or production service used",
+    "No browser/UI or mobile claims from this suite",
+    "No emails or external messages sent",
+    "Full application integration/publication remains coordinator responsibility"
+  ],
+  "changes_during_final_replay": [
+    {
+      "file": "app/hr.py",
+      "change": "pending_actions adds kind and timesheet_project_id for routing; authorization/filter/persistence unchanged",
+      "validation": "Affected five-case subset passed after change; additionally asserts new routing metadata."
+    },
+    {
+      "file": "app/hr_timesheet_projects.py",
+      "change": "Omitted weekly record notes now retain before.notes instead of clearing them",
+      "validation": "Independent new case passed after change: persisted omission retains notes, explicit empty clears."
+    }
+  ],
+  "unique_expanded_security_cases": 34,
+  "final_evidence": [
+    {
+      "xml": "work/ui129-quality-final-tests.xml",
+      "passed": 33,
+      "failed": 0,
+      "errors": 0,
+      "skipped": 0,
+      "seconds": 284.71,
+      "scope": "Complete independent suite before two narrow late changes below",
+      "loaded_sources_sha256": {
+        "app/hr.py": "c6347ecaa05afac1b86286edcdbeab5789bdc60b45fa96eb863e53d36f0ab369",
+        "app/hr_api.py": "d634039db5d99fe89a5290e017a5caef74202d3e857c4a677cd533737bf9eae9",
+        "app/hr_timesheet_projects.py": "92844110a751276cf46c7da9c0146243c89d2810877a02747462b4ed51430400",
+        "app/project_modules.py": "0705bd64fa1bd20e021b3c0017fccf75c508d0064bd4dbfd30515f9bb597ef03",
+        "app/export_policy.py": "728775074a388582b540b0a913029f14ed36e5b0af7e4d6718af2ea106821dd7",
+        "app/store.py": "9f27daaff8b75f0e5a82cf6a4e4759a7e656a524546c57ddbef6d0b426c18106",
+        "tests/test_ui129_weekly_security.py": "efcfbe67c9f19329399328a45ad80a08dcb4c6fbb0b2287fbcf9246936ab07b1"
+      }
+    },
+    {
+      "xml": "work/ui129-quality-routing-tests.xml",
+      "passed": 5,
+      "failed": 0,
+      "seconds": 47.45,
+      "scope": "Repeated all affected scoped access, queue, pending actions and revocation cases after pending_actions gained kind/project routing metadata",
+      "tested_hr_sha256": "1fdf1f0d11b28eb8dc0bb27eaf7eec6764d1f4201078f49a1f32c5a5abaa5432"
+    },
+    {
+      "xml": "work/ui129-quality-notes-tests.xml",
+      "passed": 1,
+      "failed": 0,
+      "seconds": 9.07,
+      "scope": "Independent added regression for omitted weekly notes preserving existing content and explicit empty string clearing only current content",
+      "tested_projects_sha256": "250f641bbded7266e054e5a39da6c55e4414a6247545f8b5bca1b7cb989e21bb"
+    }
+  ],
+  "backup_evidence": {
+    "complete": "Original HR tables, project designation, records, history and operation receipts equal after import; integrity_check ok; previous sessions absent; freshly logged-in assigned reviewer allowed and outsider refused.",
+    "hr_only": "Same HR state and access verification as complete import.",
+    "operational_only": "All HR tables except empty HR1 marker have zero rows; project UUID and private hours marker absent from SQLite bytes; source company snapshot unchanged.",
+    "format_guard": "First valid project commits HR2; invalid first project leaves HR1; HR2 with missing project table fails before any recreation/pruning.",
+    "unrelated_user_identity": "Operational exports retain core account identity as intended; project designation table and all private HR audit/receipts are removed."
+  },
+  "execution_environment": {
+    "python": "Bundled Python 3.13, UTF-8; pytest dependency path work/policy-test-deps",
+    "network": "Only TestClient loopback; no production or external service calls",
+    "sandbox_note": "Initial sandbox TestClient stall was interrupted; authorized local-test escalation allowed completion.",
+    "fixture": "Fresh isolated seven-account fictional company per test; SQLite files under work/ui129-quality-*-temp"
+  },
+  "independent_product_edits": [],
+  "coordinator_follow_up": [
+    "Combine with frontend/browser, integrated regression and deployment evidence.",
+    "Keep backup restore version at UI129 or newer once HR2 project data exists."
+  ]
+}

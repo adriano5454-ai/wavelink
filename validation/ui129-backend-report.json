@@ -1,0 +1,85 @@
+{
+  "phase": "UI129",
+  "agent": "rh_revisao",
+  "status": "backend_frozen_pending_coordinator_final_integration",
+  "production_accessed": false,
+  "external_messages_sent": false,
+  "files_changed": [
+    "app/hr.py",
+    "app/hr_api.py",
+    "app/hr_timesheet_projects.py",
+    "tests/test_ui129_weekly_backend.py",
+    "tests/test_ui129_action_scope.py"
+  ],
+  "sha256": {
+    "app/hr.py": "1fdf1f0d11b28eb8dc0bb27eaf7eec6764d1f4201078f49a1f32c5a5abaa5432",
+    "app/hr_api.py": "d634039db5d99fe89a5290e017a5caef74202d3e857c4a677cd533737bf9eae9",
+    "app/hr_timesheet_projects.py": "250f641bbded7266e054e5a39da6c55e4414a6247545f8b5bca1b7cb989e21bb",
+    "tests/test_ui129_weekly_backend.py": "13ae2bb4d6e400dd2f38cfdbdacaa4413c1e44968613fd8fb7a95a7692cf2526",
+    "tests/test_ui129_action_scope.py": "fb06024ba1a437a621759050dcfea2a26eeaf674de9e82559e48917b827f2251"
+  },
+  "contract": "work/ui129-api-contract.json",
+  "implemented": [
+    "Internal timesheet project catalogue with administrator-only configuration, duplicate casefold-name guard, versions, audit and operation receipts; no permission grants.",
+    "Atomic save_timesheet_week over changed projects under BEGIN IMMEDIATE, immutable user/week/project identity, exact record versions and idempotent current-result replay.",
+    "Monday-Sunday local dates, optional location, explicit activity enum and decimal0..24 hours, including explicit zero; no inferred work schedule/payroll/payment.",
+    "One record per user/week/project. Empty existing project becomes empty draft with original ID/history. Submitted/approved/rejected evidence remains locked.",
+    "Daily aggregate includes untouched projects and overlapping legacy records. Legacy edits cannot bypass an existing weekly total; legacy-only behaviour remains compatible.",
+    "Designated independent reviewer with hr.view_own can access only submitted/approved/rejected timesheets of assigned active projects; no global people/document/expense grant. Draft/returned records and private historical snapshots are hidden.",
+    "Current designation required for every project approval, including administrators/global HR reviewers; one designated independent approver suffices. Submission requires active independent approver.",
+    "Read/list/overview/queue/history/pending actions re-evaluate current scope. Filter counts before pagination; historical private draft/returned snapshots redacted for scoped project reviewer.",
+    "First project configuration atomically activates wavelink-hr-2; prior companies stay format1. Format2 requires existing project table and prevents unsafe UI128 downgrade.",
+    "New authored validations use existing HR locale context with full Portuguese/English phrases; global locale dictionary unchanged.",
+    "pending_actions supplies kind and project ID for scoped review links. Coordinator ActionCentre revision revalidation tested against concurrent revocation and ABA; no stale private title returned.",
+    "Editing only dated entries preserves omitted optional record notes; explicit clearing remains possible and audited."
+  ],
+  "tests": {
+    "initial": {
+      "passed": 12,
+      "failed": 0,
+      "seconds": 153.56,
+      "evidence": "work/ui129-backend-initial12.xml",
+      "note": "Initial backend candidate before explicit-zero/formats/validation final refinements."
+    },
+    "final_targeted": {
+      "passed_observed": 4,
+      "failed_observed": 0,
+      "cases": [
+        "test_explicit_zero_hours_preserves_legacy_semantics_without_inference",
+        "test_format2_requires_existing_project_table_and_format1_is_not_promoted_on_read",
+        "test_project_config_audit_unique_names_and_current_retry",
+        "test_new_messages_follow_hr_context_and_reads_are_private"
+      ],
+      "evidence": "functions exec/write_stdin console for session80864",
+      "note": "All four passed before process interrupted at first redundant UI117 fixture per coordinator request. No completed92-case result or final XML is claimed."
+    },
+    "shared_regression": "Coordinator runs121 HR UI117/UI120/backup/integration cases; do not double count this agent’s interrupted duplicate run.",
+    "independent_security": "qualidade_ti owns test_ui129_weekly_security.py; current results belong to that report.",
+    "browser": "Not operated by this agent; coordinator validates integrated UI and publication.",
+    "action_scope": {
+      "passed": 2,
+      "failed": 0,
+      "seconds": 28.16,
+      "evidence": "work/ui129-action-scope-tests.xml",
+      "proof": "Real HTTP ActionCentre: linked timesheet targets #hr/reviews; revocation and revoke/regrant ABA during pending_actions return409 with no private project title/record ID."
+    },
+    "notes_preservation": {
+      "passed": 1,
+      "failed": 0,
+      "seconds": 13.86,
+      "evidence": "work/ui129-notes-preservation.xml",
+      "test": "tests/test_ui129_weekly_backend.py::test_editing_days_preserves_omitted_record_notes_but_accepts_explicit_clear",
+      "proof": "Omitting optional record notes preserves earlier text; explicit empty string clears only current value; old text retained in audit, record ID unchanged."
+    }
+  },
+  "dependencies": [
+    "Coordinator owns app/project_modules.py format1/2 and transfer classification.",
+    "Frontend owner integrates hr_weekly_timesheets and directory/can_* flags.",
+    "Coordinator must restart server8782 to import final backend before final UI proof."
+  ],
+  "remaining": [
+    "Independent QA final suite and coordinator shared-regression result; no owned production source edit pending.",
+    "Coordinator final integrated browser/production validation and commit/deployment."
+  ],
+  "reversal": "Before feature use, no HR format promotion. After first project configuration, code-only rollback toUI128 is intentionally blocked; restore a verified compatible database snapshot as part of coordinated rollback."
+}

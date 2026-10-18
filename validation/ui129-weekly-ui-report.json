@@ -1,0 +1,105 @@
+{
+  "phase": "UI129",
+  "area": "Interface de apontamento semanal e projetos",
+  "status": "implementado e testado localmente; integração e publicação sob coordenação",
+  "files": [
+    "app/static/hr_weekly_timesheets.js",
+    "app/static/hr_weekly_timesheets.css",
+    "app/static/hr_workspace.js",
+    "tests/test_ui129_weekly_ui.cjs",
+    "app/static/save_status.js",
+    "app/static/locale_pt_br.js",
+    "tests/test_ui129_save_status_locale.cjs",
+    "tests/test_ui121_experience.cjs"
+  ],
+  "api_contract": "work/ui129-api-contract.json",
+  "implemented": [
+    "Tabela de segunda a domingo sem jornada, projeto ou atividade presumidos; local opcional e atividade obrigatória.",
+    "Preenchimento em lote apenas dos campos e linhas selecionados; troca individual de projeto e mais de um projeto no mesmo dia.",
+    "Totais decimais exatos por dia e semana incluindo registros antigos; bloqueio de duplicidade projeto/dia e mais de 24 horas por dia.",
+    "Salvar semana usa uma operação atômica e envia somente projetos alterados, com IDs e versões existentes preservados; envio para aprovação é individual.",
+    "Projetos e aprovadores configuráveis somente pelo administrador, com busca de contas elegíveis e preservação da seleção ao filtrar.",
+    "Consulta, cards e evidência de aprovação identificam o projeto e usam terminologia consistente de atividades.",
+    "Botões de editar, enviar e revisar respeitam can_edit/can_submit/can_review devolvidos pelo servidor; designação não depende de acesso geral a RH.",
+    "Rota #hr/reviews abre a fila mantendo o contexto do próprio usuário; não abre o perfil do autor do apontamento.",
+    "Apontamentos antigos sem projeto mantêm seu editor de até 31 dias, sem conversão automática.",
+    "Rascunho retido, confirmação ao descartar ou mudar de semana, proteção contra troca de sessão e repetição da mesma operação em resposta incerta.",
+    "Interface em português brasileiro e inglês, campos rotulados, foco visível, tabela adaptada a tela pequena e estados por texto."
+  ],
+  "tests": {
+    "new_suite": {
+      "file": "tests/test_ui129_weekly_ui.cjs",
+      "passed_assertions": 145,
+      "method": "Modelos reais, renderização, eventos reais do componente em adaptador DOM isolado e orquestração real do RH em VM; sem banco ou produção"
+    },
+    "existing_suites": [
+      {
+        "file": "tests/test_hr_forms_ui120.cjs",
+        "checks": 16
+      },
+      {
+        "file": "tests/test_ui127_rh_agent_navigation.cjs",
+        "checks": 11
+      },
+      {
+        "file": "tests/test_ui128_rh_agent_ui.cjs",
+        "checks": 13
+      },
+      {
+        "file": "tests/test_ui124_navigation.cjs",
+        "checks": 5
+      },
+      {
+        "file": "tests/test_ui124_action_labels.cjs",
+        "checks": 7
+      },
+      {
+        "file": "tests/test_ux_ui123.cjs",
+        "checks": 18
+      },
+      {
+        "file": "tests/test_ui121_experience.cjs",
+        "checks": 15,
+        "note": "Contexto VM do relatório atualizado com wtext e coluna Projeto; expectativa antiga ajustada sem mudar o produto."
+      }
+    ],
+    "syntax": [
+      "app/static/hr_weekly_timesheets.js",
+      "app/static/hr_workspace.js",
+      "app/static/save_status.js",
+      "app/static/locale_pt_br.js"
+    ],
+    "connection_locale": {
+      "file": "tests/test_ui129_save_status_locale.cjs",
+      "passed_assertions": 62,
+      "method": "Tradutor e dicionário reais em VM, GET e POST fictícios, AbortError, HTTP 503/422, resposta confirmada e retry exato; texto desconhecido do servidor preservado."
+    },
+    "save_journal_regression": {
+      "file": "tests/save_status/journal_scenarios.js",
+      "passed_scenarios": 34
+    }
+  },
+  "coordination": {
+    "backend": "rh_revisao: endpoints semana/projeto, flags de diretório e capacidades por registro",
+    "parent": "Scripts, CSS, cache, versão, ajuda users#hr-weekly-timesheets, action_center.py, revisão Chrome e publicação"
+  },
+  "limits": [
+    "Testes do subagente usam adaptador DOM; não substituem a validação de layout e fluxos no Chrome feita pelo coordenador.",
+    "Sem modificação de dados, usuários, infraestrutura, envio de mensagens ou publicação por este subagente.",
+    "Segurança e atomicidade finais são impostas pelo backend e verificadas pelas outras frentes."
+  ],
+  "chrome_followup_fixes": [
+    "Instrução explicita salvar a semana de uma vez e enviar as horas de cada projeto para aprovação.",
+    "Totais de registros antigos exibem vírgula em PT-BR e ponto em inglês, preservando os valores de origem.",
+    "Janela semanal ampliada até 1200 px, respeitando a viewport; cabeçalho, ajuda, período e controles compactados para mostrar mais dias.",
+    "Ação Outro projeto movida à célula Detalhes com identificação acessível por data; eliminadas linhas extras de ação, sem remover recursos.",
+    "No celular, preservados cartões, alvos de toque de 44 px e campos com fonte de 16 px.",
+    "Quatro avisos autorais de conexão/salvamento e o separador de resposta do servidor localizados em PT-BR; sem alterar classificação do erro, resultado incerto, recibos ou tentativas.",
+    "Após devolver horas por projeto, o recibo confirma a devolução sem oferecer consulta que daria 404 ao aprovador restrito. Autor e RH com acesso global continuam com o link; ACL do backend intacta.",
+    "Buscar aprovador pelo nome funciona como filtro da interface: eventos de busca não alteram o rascunho nem provocam confirmação ao cancelar. Nome e seleção de aprovadores continuam provocando confirmação quando alterados. Testado com renderForm e eventos reais do formulário."
+  ],
+  "coordinator_visual_evidence": {
+    "confirmed": "O coordenador confirmou no Chrome a largura de 1200 px: quatro dias aparecem mesmo com dois projetos na segunda-feira, sem truncar campos.",
+    "screenshot": "outputs/UI129-semana-preenchida.png"
+  }
+}
