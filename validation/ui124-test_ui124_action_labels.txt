@@ -1,0 +1,8 @@
+PASS expiry notification is labelled in Brazilian Portuguese
+PASS employee names remain verbatim
+PASS only the generated final suffix is changed
+PASS ordinary detail text is never translated
+PASS unknown event kinds retain their original data
+PASS English deployments retain original notifications
+PASS known action controls are translated independently of record titles
+7 UI124 notification label checks passed

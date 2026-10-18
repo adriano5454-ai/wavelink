@@ -1,0 +1,19 @@
+PASS name search ignores accents and case
+PASS search includes vessel and project
+PASS department search uses only authorised departments
+PASS conflicts come from server warnings
+PASS declared availability excludes missing or restricted schedules
+PASS no schedule excludes restricted and travelling people
+PASS cancelled assignments do not count as working
+PASS travel search is connected to the employee
+PASS search narrows events and records together
+PASS projection never changes server response or staffing coverage
+PASS empty result does not fall back to full team
+PASS unknown schedule is explicit in summary
+PASS empty query has a real zero
+PASS filter query is escaped, including attribute injection
+PASS English deployment keeps English interface
+PASS Portuguese login tools are translated
+PASS timeline labels distinguish planned and confirmed without colour
+PASS agenda retains people with no schedule and states the limit
+18 UI123 behaviour checks passed

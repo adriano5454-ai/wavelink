@@ -1,0 +1,6 @@
+PASS focused mobile section selector allows repeated navigation
+PASS existing people search still allows interaction
+PASS open dialog still blocks navigation
+PASS field outside HR never bypasses busy state
+PASS a different editing control still blocks navigation
+5 UI124 navigation regression checks passed
