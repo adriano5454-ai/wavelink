@@ -10,7 +10,7 @@ WORKDIR /opt/wavelink
 COPY requirements.lock ./requirements.lock
 RUN python -m pip install --no-cache-dir -r requirements.lock
 COPY vendor/source.part* vendor/source_parts.json ./vendor/
-COPY deploy/extract_source.py deploy/apply_ui93.py deploy/apply_ui94.py deploy/apply_ui95.py deploy/apply_ui96.py deploy/apply_ui97.py deploy/apply_ui99.py deploy/apply_ui100.py deploy/apply_ui101.py deploy/apply_ui102.py deploy/apply_ui103.py deploy/apply_ui104.py deploy/apply_ui105.py deploy/apply_ui106.py deploy/apply_ui107.py deploy/apply_ui108.py deploy/apply_ui109.py deploy/apply_ui110.py deploy/apply_ui111.py deploy/apply_ui112.py deploy/apply_ui113.py deploy/apply_ui114.py deploy/apply_ui115.py deploy/apply_ui116.py deploy/apply_ui117.py deploy/apply_ui118.py deploy/apply_ui119.py deploy/apply_ui120.py deploy/apply_ui121.py deploy/apply_ui122.py deploy/apply_ui123.py deploy/apply_ui124.py deploy/apply_ui125.py ./
+COPY deploy/extract_source.py deploy/apply_ui93.py deploy/apply_ui94.py deploy/apply_ui95.py deploy/apply_ui96.py deploy/apply_ui97.py deploy/apply_ui99.py deploy/apply_ui100.py deploy/apply_ui101.py deploy/apply_ui102.py deploy/apply_ui103.py deploy/apply_ui104.py deploy/apply_ui105.py deploy/apply_ui106.py deploy/apply_ui107.py deploy/apply_ui108.py deploy/apply_ui109.py deploy/apply_ui110.py deploy/apply_ui111.py deploy/apply_ui112.py deploy/apply_ui113.py deploy/apply_ui114.py deploy/apply_ui115.py deploy/apply_ui116.py deploy/apply_ui117.py deploy/apply_ui118.py deploy/apply_ui119.py deploy/apply_ui120.py deploy/apply_ui121.py deploy/apply_ui122.py deploy/apply_ui123.py deploy/apply_ui124.py deploy/apply_ui125.py deploy/apply_ui126.py ./
 RUN python extract_source.py vendor/source_parts.json /opt/wavelink/app \
     && python apply_ui93.py /opt/wavelink/app \
     && python apply_ui94.py /opt/wavelink/app \
@@ -44,7 +44,8 @@ RUN python extract_source.py vendor/source_parts.json /opt/wavelink/app \
     && python apply_ui123.py /opt/wavelink/app \
     && python apply_ui124.py /opt/wavelink/app \
     && python apply_ui125.py /opt/wavelink/app \
-    && rm vendor/source.part* vendor/source_parts.json extract_source.py apply_ui93.py apply_ui94.py apply_ui95.py apply_ui96.py apply_ui97.py apply_ui99.py apply_ui100.py apply_ui101.py apply_ui102.py apply_ui103.py apply_ui104.py apply_ui105.py apply_ui106.py apply_ui107.py apply_ui108.py apply_ui109.py apply_ui110.py apply_ui111.py apply_ui112.py apply_ui113.py apply_ui114.py apply_ui115.py apply_ui116.py apply_ui117.py apply_ui118.py apply_ui119.py apply_ui120.py apply_ui121.py apply_ui122.py apply_ui123.py apply_ui124.py apply_ui125.py
+    && python apply_ui126.py /opt/wavelink/app \
+    && rm vendor/source.part* vendor/source_parts.json extract_source.py apply_ui93.py apply_ui94.py apply_ui95.py apply_ui96.py apply_ui97.py apply_ui99.py apply_ui100.py apply_ui101.py apply_ui102.py apply_ui103.py apply_ui104.py apply_ui105.py apply_ui106.py apply_ui107.py apply_ui108.py apply_ui109.py apply_ui110.py apply_ui111.py apply_ui112.py apply_ui113.py apply_ui114.py apply_ui115.py apply_ui116.py apply_ui117.py apply_ui118.py apply_ui119.py apply_ui120.py apply_ui121.py apply_ui122.py apply_ui123.py apply_ui124.py apply_ui125.py apply_ui126.py
 COPY vendor/FICTIONAL_DEMO.ajproject ./vendor/FICTIONAL_DEMO.ajproject
 COPY deploy ./deploy
 COPY ops ./ops

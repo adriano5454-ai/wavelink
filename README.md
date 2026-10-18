@@ -1,3 +1,19 @@
+# UI126 — Importações e conferência de originais em português
+
+Wavelink **1.34.26**, sobre `d6bc5959c4eb8aa44c238dbc0c1cc53fef88c70f`.
+
+Conclui textos de importações avançadas, comparação com o original, biblioteca e erros. Mantém conteúdo dos documentos, evidências, identificadores, permissões, dados e idiomas das demais empresas.
+
+- [Guia, capturas e limites da validação](docs/UI126_GUIA.html)
+- [Resultados dos testes](validation/ui126-validation.json)
+- [Proveniência do runtime](docs/UI126_SOURCE_PROVENANCE.json)
+
+Reconstrução: `python deploy/materialize_runtime.py ./runtime-ui126` em uma pasta nova. O cenário fictício de teste não deve ser importado em produção. Validação autenticada na Corcovado permanece bloqueada pela ferramenta do navegador; publicação e integridade de código são verificadas separadamente.
+
+As entregas abaixo são históricas.
+
+---
+
 # UI125 — Português e decisões claras
 
 Wavelink **1.34.25**, sobre `19d16b367143ec6e8d81b4bb5a8d98c4df2168e2`.
