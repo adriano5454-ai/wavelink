@@ -1,0 +1,114 @@
+{
+  "format": "wavelink-runtime-overlay-1",
+  "date": "2026-10-17",
+  "patch_id": "workspace-ui123-navigation-staffing-2026-10-17",
+  "parent_patch_id": "workspace-ui122-permissions-pt-br-2026-10-17",
+  "parent_manifest_sha256": "974b21cf4267564f46bc504908daed03365fdbd221c1747321f3a4688820a3ae",
+  "scope": "HR navigation, staffing filters, profile context and responsive shared header; source-only locale isolation; authorization rules and saved data unchanged.",
+  "boundaries": {
+    "database_reset": false,
+    "browser_storage_clear": false,
+    "operational_writers_changed": false,
+    "live_deployment": false
+  },
+  "runtime_manifest_sha256": "cb3b238adf5067424111af50609d73ffd197efe503380aa60e96378c0f578a2e",
+  "runtime_resources": 2272,
+  "overlay_resources": 19,
+  "files": [
+    {
+      "path": "UI_PATCH.json",
+      "before_sha256": "5d77908ebfe8d5a819dd4ed81b9035779cde4a7b864ce07458167278df10af51",
+      "after_sha256": "e0fa8f87632c49a7a4bc5f24bdaeaac3f92669c49bbc964e3b19f1d712d146ad"
+    },
+    {
+      "path": "app/__init__.py",
+      "before_sha256": "c7ead8e4f99f2bc2f5a3558acad8cdd4ac0d10c744b0f18340f5bb7eb8e8046e",
+      "after_sha256": "96a0a8a9119be32b439fd2ee1fc03e96afa52fb2c674a8aaeb85bd59593e6f0c"
+    },
+    {
+      "path": "app/static/app.js",
+      "before_sha256": "402c2b6d4d1307534b62a2ab29d3028c02506439945a38a85a0611f2e2a978f5",
+      "after_sha256": "c6c4c65ea51c05adf571f7c52db4befa8a175a960a0bed2f4faf5f8a4563d97e"
+    },
+    {
+      "path": "app/static/experience_shell.js",
+      "before_sha256": "590ae83a3591f79ba6ea6432b4f760de91cbf76e355f881df0940e8dcc80ad05",
+      "after_sha256": "083512d38547437beaa148f03b41e64d50a70ff9bb76952201f1cc56d63d53a0"
+    },
+    {
+      "path": "app/static/experience_ui123.css",
+      "before_sha256": null,
+      "after_sha256": "c8c39e0ac1d1565786a9cd4602addfb3635a9a94104f781d7d698cfe1fb506b5"
+    },
+    {
+      "path": "app/static/fieldwork.js",
+      "before_sha256": "821efcbd0560e66632bf80780233b7ab011abe0c5b85e3222bc3e67fe9fe9197",
+      "after_sha256": "154861d478bf4b4cd1469e8d269338b505228db6f54128b21d82c60efa26a41d"
+    },
+    {
+      "path": "app/static/help_links.js",
+      "before_sha256": "43ab42d5709fb537d3f88928385ff69590888d7be4df17fd5c8f990a213edd2b",
+      "after_sha256": "ae0b65993e24faeb0747c74decb99eda3c010dc59caa028e7b5068f09192d6a2"
+    },
+    {
+      "path": "app/static/hr_insights_ui123.js",
+      "before_sha256": null,
+      "after_sha256": "8b028c22059a7d68dd10ae66c6e1bb0c4e2c5bb35facfc570f7f2bacca2f8958"
+    },
+    {
+      "path": "app/static/hr_planning_ui121.js",
+      "before_sha256": "db8e1cac8479447aadca21cbbb286d47c912136a84825b30a4ebf200895348fa",
+      "after_sha256": "588e0eb26610b30d2cc4f47d3477d0d1403e61d64012e723a96ecaf9db313147"
+    },
+    {
+      "path": "app/static/hr_workspace.js",
+      "before_sha256": "970b98854f228bf1acf7071790f21846b1b6cf7677cb962542cc49fa03a2f3a1",
+      "after_sha256": "d0210f5d3c82b3648f78ed3f6bcbf6816fe26d60e348909dc7aaddc757a821a1"
+    },
+    {
+      "path": "app/static/index.html",
+      "before_sha256": "d6ec5788d8daa5080def31bfab26039d82f3c7bd4c8cf5f4a1806e25c6bc2db5",
+      "after_sha256": "1726a750cee518d35c9979da8818b7515e47b75258dd78420807abd78c3c43c5"
+    },
+    {
+      "path": "app/static/locale_pt_br.js",
+      "before_sha256": "f0824e213422b21b2fdb9a4ba800a19c7d6661ea68abf8105ed961592209a6a5",
+      "after_sha256": "9b35baf919737951a3786d5db63ed4309bc0bd94aaf562e267a839efeec87763"
+    },
+    {
+      "path": "app/static/maintenance_forms.js",
+      "before_sha256": "4593f6f8953f637d0529f6172ba8d33a01385c8656d4c450a1eba1542d9d3a17",
+      "after_sha256": "a7af94fde2f0a6796e9d42a429558316bb443e82b08548f9c0d1955f3e66174a"
+    },
+    {
+      "path": "app/static/maintenance_workspace.js",
+      "before_sha256": "dc053c850c211811032c042ed5e9a9b664e8450673dd32a95ca4ce5d5c354ac4",
+      "after_sha256": "d2009e890e3f15709efe460d1bec65313731b64e80b0f2c683ac4288ab6c73e0"
+    },
+    {
+      "path": "app/static/nav_shell.js",
+      "before_sha256": "bf94a0919ce1f7716158fd5e41e11ea99d72746d2bb8c42a14446ea1895d39f4",
+      "after_sha256": "97445800fba033b717c94c18a3d5d636b0a156015af7523563367b5b673cd1bd"
+    },
+    {
+      "path": "app/static/operations.js",
+      "before_sha256": "3b8164a7fb6aa8406c9865e03bdaf20e3ba7830a9d9ec31c975a810f03e1c4dd",
+      "after_sha256": "095c37d22676b15d53abf05e15da83b99d7ae9d8d573415d305b03fad11069ea"
+    },
+    {
+      "path": "app/static/pt-BR/index.html",
+      "before_sha256": "12b637efc1d8639626a3f8fe1a35fb4bd00441303a1b7a3c298c6e0bb0d6dfa6",
+      "after_sha256": "5bd95a20ed8997c524d75eec3f9b547abbab7fb3ccc5a0643baf0ace241e88f7"
+    },
+    {
+      "path": "app/static/save_status_ui.js",
+      "before_sha256": "3d139081627ea237a6fd6b05de7e45d9ebd562cf535e796e592083a2bcc20ef4",
+      "after_sha256": "422a9891610d84a5f18c3f17a95ee4fc0c6c427d7b6205acea1dc7b66c6ac936"
+    },
+    {
+      "path": "tests/test_ux_ui123.cjs",
+      "before_sha256": null,
+      "after_sha256": "5ce294979cd8241a1d022d083d9f1e2f0103803b47ee95bd0b7424e3a6df3063"
+    }
+  ]
+}
