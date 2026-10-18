@@ -1,0 +1,15 @@
+{
+  "initial": {
+    "backups": "19 passed and 4 environment failures due to inaccessible Windows sandbox temporary path; runner moved tempfile into workspace; all23 passed on repeat.",
+    "three_hr_processes": "No output; verified process IDs and stopped only those locally spawned tests. Repeated using approved local execution.",
+    "final_security_concurrent": "Interrupted by Windows native Python access violation; no completed result and not counted as pass.",
+    "security_separate_repeat": "passed34/34 in292.44 seconds; exact final application Python code, no product workaround"
+  },
+  "product_change_for_environment": false,
+  "final": {
+    "python_cases": 153,
+    "javascript_suites": 53,
+    "all_completed_final_runs_passed": true,
+    "native_failure_root_cause_proven": false
+  }
+}

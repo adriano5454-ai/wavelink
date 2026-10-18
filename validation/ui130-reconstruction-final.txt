@@ -1,0 +1,41 @@
+Verified upstream 1.34.19: 1605 tracked files.
+Applied Workspace UI91: Team and Logs route-cover parity plus reliable Certificate route activation; UI90 navigation and all operational boundaries preserved.
+Applied Workspace UI92: consistent covers, nested folders, certificate inspector and quieter hosted status; company settings and recovery safeguards preserved.
+Applied Workspace UI93: optional email alerts, personal verification and aligned account settings; existing records and permissions retained.
+Applied Workspace UI94: quiet header and account menu anchored to its button; approved art and UI93 email settings retained.
+Applied Workspace UI95: document/worksheet imports, reliable Toolbox navigation and duplicate sidebar cleanup; UI93 email and UI94 header retained.
+Applied Workspace UI96: clear responsive sign-in, verification and setup; existing accounts, recovery, email and document imports retained.
+Applied Workspace UI97: email password recovery; MFA, permissions and saved work retained.
+Applied Workspace UI99: independent browser tabs and saved draft recovery; UI98 gateway and email recovery retained.
+Applied Workspace UI100: structured document import and answer fields; prior tabs, recovery and access retained.
+Applied Workspace UI101: workbook roles and native logbook designs; prior imports, tabs, recovery and access retained.
+Applied Workspace UI102: shipping workbook and inventory-check search; prior imports, tabs, recovery and access retained.
+Applied Workspace UI103: combined inventory imports and native part numbers; prior data, counts, tabs and recovery retained.
+Applied Workspace UI104: guided import review and explicit source conflicts; prior inventory, counts, permissions and recovery retained.
+Applied Workspace UI105: deliberate inventory row selection; full source rows, existing records, permissions and recovery retained.
+Applied Workspace UI106: located document recognition review; source rows, inventory, permissions and recovery retained.
+Applied Workspace UI107: explicit inventory relationship review; source rows, item identities, permissions and recovery retained.
+Applied Workspace UI108: document table structure review; source evidence, explicit choices, item identities, permissions and recovery retained.
+Applied Workspace UI109: reusable log and item review; source evidence, explicit choices, item identities, permissions and recovery retained.
+Applied Workspace UI110: compact Tasks and Maintenance browsing; saved work and existing actions retained.
+Applied Workspace UI111: protected inventory corrections and retained worksheet review; saved work and exact retry requests retained.
+Applied Workspace UI112: clearer inventory review navigation and source-column mapping; rows, signed review and retry requests retained.
+Applied Workspace UI113: restore applied mapping choices while retaining corrected rows; pending choices explained and fresh review required.
+Applied Workspace UI114: worksheet mapping attention and view-only filtering; drafts, mappings, signed review and retry requests retained.
+Applied Workspace UI115: possible worksheet overlap with view-only item/source inspection; rows, signed checks and unchanged retries retained.
+Applied Workspace UI116: source header review and view-only inspection; original rows, applied mapping and signed retries retained.
+Applied Workspace UI117: private HR documents, travel and crew assignments, timesheets and expenses; inventory certificates remain separate.
+Applied Workspace UI118: Corcovado Portuguese and private HR; company data retained.
+Applied Workspace UI119: Corcovado password minimum eight; HR and company data retained.
+Applied Workspace UI120: Brazilian Portuguese RH workspace; company data retained.
+Applied Workspace UI121: Brazilian Portuguese RH workspace; company data retained.
+Applied Workspace UI122: Brazilian Portuguese RH workspace; company data retained.
+Applied Workspace UI123: Brazilian Portuguese RH workspace; company data retained.
+Applied Workspace UI124: Brazilian Portuguese RH workspace; company data retained.
+Applied Workspace UI125: Brazilian Portuguese RH workspace; company data retained.
+Applied Workspace UI126: Brazilian Portuguese RH workspace; company data retained.
+Applied Workspace UI127: Brazilian Portuguese RH workspace; company data retained.
+Applied Workspace UI128: Brazilian Portuguese RH workspace; company data retained.
+Applied Workspace UI129: weekly project timesheets; company data retained.
+Applied Workspace UI130: IT requests, documents and people; company data retained.
+{"variant": "workspace-ui130-it-documents-people-2026-10-18", "resources": 2330, "manifest_sha256": "4a815e6be23196cbaf5097fa449998178f63b6a832e96a073e21c42403797835"}

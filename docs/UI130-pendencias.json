@@ -1,0 +1,138 @@
+{
+  "versao": "UI130",
+  "escopo": "Quadro documental de implementação e pendências. Esta rodada foi local, sem Chrome, produção ou mensagens externas.",
+  "base_atual": "45f07468056e1240e7df9d51a9d53ce9c815a657 (UI129/main)",
+  "fontes": [
+    "work/ui127-user-request.txt",
+    "work/ui128-coverage-integrated.json",
+    "work/ui130-documents-people-report.json",
+    "work/ui130-it-backend-report.json",
+    "work/ui130-it-ui-report.json",
+    "work/ui130-integration-independent-review.json",
+    "work/ui130-release-js-tests.json",
+    "work/ui130-integration-tests.xml",
+    "work/ui130-regression-actions-final.xml",
+    "work/ui130-regression-backups-final.xml",
+    "work/ui130-regression-security-final.xml",
+    "work/ui130-regression-weekly-final.xml"
+  ],
+  "regra_de_cobertura": {
+    "inventario_anterior": 193,
+    "vistas_com_evidencia_anterior": 139,
+    "funcoes_ui128_revisadas_com_limites": 54,
+    "conclusao_integral_das_54": false,
+    "nota": "As 54 receberam evidência específica com limites, não 54 jornadas visuais completas. As outras 139 também não se tornam concluídas apenas por terem alguma evidência. A UI130 corrige pontos concretos e adiciona TI; não encerra a revisão completa aba por aba.",
+    "prova_local": "Testes HTTP, funções reais e DOM isolado comprovam contratos e comportamentos no escopo testado. Não comprovam aparência, teclado/leitor de tela ou funcionamento no navegador publicado."
+  },
+  "correcoes_desta_ui130": [
+    {
+      "area": "Documentos originais",
+      "situacao": "implementado_e_testado_localmente",
+      "entrega": "Caminho clicável da revisão à raiz/pasta/subpasta, usando IDs reais; busca sem acentos, sem reescrever originais.",
+      "limite": "É navegação dentro da biblioteca. Não cria vínculo universal de todo documento a qualquer item ou perfil.",
+      "evidencia": "ui130-documents-people-report.json; testes JS e HTTP de originais/permissões."
+    },
+    {
+      "area": "Pessoas e perfil",
+      "situacao": "implementado_e_testado_localmente",
+      "entrega": "Paginação além de 60 pessoas, busca sem acentos/ID público, homônimos identificáveis, contexto preservado e respostas antigas descartadas. Cancelar edição do perfil exige confirmação para mudanças reais.",
+      "limite": "Não expõe login privado, e-mail de recuperação nem dados pessoais do RH.",
+      "evidencia": "89 verificações JS novas e 3 testes HTTP com 65 colegas fictícios; 64 contas elegíveis distribuídas em 60+4."
+    },
+    {
+      "area": "Solicitações de TI",
+      "situacao": "implementado_e_testado_localmente",
+      "entrega": "Novo módulo: abrir chamado, triagem/responsável, prioridade, fila, comentários, justificativas, resolução/encerramento/reabertura, histórico paginado, rascunhos e repetição segura.",
+      "limite": "Não inclui anexos, e-mail, integração externa, SLA ou recuperação persistente/offline de rascunhos. Não é apresentado como implementação dessas funções.",
+      "evidencia": "21 casos backend incluindo fixture HTTP real; 266 verificações de interface, com 11 mutações reais reaplicadas nos handlers DOM. A lacuna de módulo inexistente registrada na UI128 foi atendida localmente."
+    },
+    {
+      "area": "Permissões e integração TI",
+      "situacao": "implementado_e_testado_localmente",
+      "entrega": "Acesso próprio/fila separados; atribuição não concede direitos; proteção da exportação de dados privados; bloqueio de delegação departamental de gestão global de TI.",
+      "limite": "Nada foi concedido a contas reais. Testes de exportação e autorização usam dados fictícios.",
+      "evidencia": "Revisão independente, 2 testes de delegação e 10 de integração, novamente executados na versão final. Identidade, resposta antiga e histórico corrigidos."
+    }
+  ],
+  "regressao_herdada_verificada": [
+    {
+      "area": "Documentos, perfis e seleção de pessoas",
+      "situacao": "regressao_local_verificada",
+      "evidencia": "43 testes Python e 186 verificações JS herdadas passaram: revisões/bytes exatos, vínculos existentes, privacidade, revogação, seleção e retorno à lista.",
+      "limite": "Não constitui novo teste visual de todos os anexos por item/perfil."
+    },
+    {
+      "area": "RH, horas semanais, sessão, ações e backups",
+      "situacao": "regressao_local_verificada_no_escopo_das_suites",
+      "evidencia": "Resultados finais: 15 testes semanais, 34 de segurança, 23 de backups e 2 de ações; todos sem falhas nos respectivos XML.",
+      "limite": "UI129 é base herdada. Passar esses testes não significa que cada tela do RH foi percorrida por colaborador, gestor e administrador nesta rodada."
+    },
+    {
+      "area": "Interface integrada e idioma",
+      "situacao": "regressao_local_verificada_no_escopo_das_suites",
+      "evidencia": "53 suítes JS passaram; 110 arquivos passaram na verificação de sintaxe. Incluem cenários anteriores de navegação, formulários, importações, português/inglês e preservação da sessão.",
+      "limite": "A contagem é de suítes técnicas, não de telas visualmente aprovadas. Não substitui a execução integral da coorte histórica nem elimina seus limites antigos."
+    }
+  ],
+  "ainda_nao_implementado": [
+    {
+      "prioridade": 1,
+      "area": "Contatos profissionais",
+      "item": "Atalhos WhatsApp, e-mail e Teams vinculados à pessoa correta.",
+      "falta": "Cadastrar contatos profissionais em campos próprios, com visibilidade explícita e controles de acesso; só então gerar atalhos e tratar ausência/dados inválidos.",
+      "preservacao": "Não reutilizar e-mail de recuperação, telefone privado ou cadastro de RH por inferência."
+    },
+    {
+      "prioridade": 1,
+      "area": "Documentos por item, perfil e pasta",
+      "item": "Percurso universal entre item/colaborador, documento e sua pasta/subpasta.",
+      "falta": "Definir vínculos explícitos compatíveis com revisão exata, permissões e categorias; fornecer navegação de ida/volta sem copiar anexos privados para a biblioteca operacional.",
+      "ja_existe": "Vínculos e downloads de fontes de checklists/manutenção e documentos privados do RH permanecem nos seus módulos. A UI130 melhora a navegação das pastas dentro da biblioteca."
+    },
+    {
+      "prioridade": 2,
+      "area": "Tarefas",
+      "item": "Aceite formal de atribuição separado de ciência do alerta.",
+      "falta": "Continua sem etapa específica. Só atribuição e ciência existentes foram verificadas; ciência não significa aceitar ou iniciar a tarefa.",
+      "origem": "Limite explícito da matriz UI128; não foi implementado na UI130."
+    }
+  ],
+  "validacao_de_navegador_e_producao_pendente": [
+    {
+      "prioridade": 1,
+      "area": "Revisão visual completa, aba por aba",
+      "falta": "Completar a matriz das 193 vistas por perfil e pelos estados condicionais: formulários, menus, erros, vazios, carregamento, aprovação, histórico e retorno. Conferir português, hierarquia, contrastes, ícones, tabelas, calendários e gráficos com dados reais autorizados ou fictícios representativos.",
+      "aceite": "Evidência da mesma versão integrada para cada vista/fluxo, com capturas representativas e resultado específico. Os previews HTML da UI130 são material preparado, não screenshots nem aprovação visual."
+    },
+    {
+      "prioridade": 1,
+      "area": "Desktop, celular e acessibilidade",
+      "falta": "Validar em navegador real as novas pastas, paginação/perfis e chamados; testar foco/teclado/leitor de tela, larguras pequenas, Voltar nativo e manutenção da sessão ao fechar/cancelar/voltar.",
+      "aceite": "Execução real nos perfis colaborador, RH, supervisor e administrador; não converter testes de CSS/DOM em confirmação visual."
+    },
+    {
+      "prioridade": 1,
+      "area": "Publicação e site Corcovado",
+      "falta": "UI130 ainda não foi publicada nesta fase local. Em uma publicação posterior, confirmar commit GitHub, deployment ativo, versão efetivamente servida e jornadas autenticadas do site.",
+      "aceite": "Preservar serviço/disco/dados/admin e usuário temporário; não afirmar validação em produção com base em HTTP local. Estado dos antigos testes UI121 deve ser reconferido antes de qualquer limpeza."
+    },
+    {
+      "prioridade": 2,
+      "area": "Dependências e dispositivos",
+      "falta": "OCR real em ambiente com Tesseract, leitura física/impressão QR, instalação/PWA e condições reais offline continuam exigindo evidência específica; não foram executados na UI130.",
+      "origem": "Limites materiais herdados da matriz UI128, não eliminados pelos testes locais desta rodada."
+    }
+  ],
+  "resumo_para_relatorio": "UI130 implementa e testa localmente o módulo de TI e melhorias concretas em documentos e pessoas. Permanecem abertos os contatos profissionais com visibilidade própria, o percurso universal de documentos por item/perfil/pastas e a revisão visual completa por tela/perfil. Nenhum teste DOM foi tratado como validação visual ou de produção.",
+  "alteracoes_de_produto_nesta_consolidacao": 0,
+  "validacao_final_integrada": {
+    "python_tests": 153,
+    "javascript_suites": 53,
+    "javascript_syntax_files": 110,
+    "python_syntax_files": 228,
+    "same_runtime_manifest": "4a815e6be23196cbaf5097fa449998178f63b6a832e96a073e21c42403797835",
+    "all_passed": true,
+    "browser": false,
+    "production": false
+  }
+}

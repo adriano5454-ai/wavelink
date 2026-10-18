@@ -1,0 +1,10 @@
+{
+  "before_manifest": "ea33ebb90f8eb60ab6988bef182a15493506d300fa54ec7460b60329ddd0ed8b",
+  "final_manifest": "4a815e6be23196cbaf5097fa449998178f63b6a832e96a073e21c42403797835",
+  "changed_resources": [
+    "app/static/help_topics/itrequests.html",
+    "app/static/pt-BR/help_topics/itrequests.html"
+  ],
+  "all_python_javascript_css_and_tests_unchanged": true,
+  "reason": "Only two help pages changed after code freeze: button label aligned and acronym explained. All tested application code and test fixtures remain byte-identical."
+}

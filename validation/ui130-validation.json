@@ -1,0 +1,84 @@
+{
+  "release": "UI130",
+  "version": "1.34.30",
+  "status": "integrado_testado_localmente_nao_publicado",
+  "base_commit": "45f07468056e1240e7df9d51a9d53ce9c815a657",
+  "final_commit": null,
+  "deployment": null,
+  "runtime": {
+    "status": "passed",
+    "version": "1.34.30",
+    "runtime_manifest_sha256": "4a815e6be23196cbaf5097fa449998178f63b6a832e96a073e21c42403797835",
+    "resources": 2330,
+    "all_reconstructed_files_identical": true,
+    "python_syntax_files": 228,
+    "cache_assets": 11,
+    "html_shells": 2,
+    "base_repository_files_preserved": 665,
+    "production_access": false
+  },
+  "python": {
+    "passed": 153,
+    "groups": [
+      {
+        "tests": 36,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "group": "it-integration",
+        "evidence": "validation/ui130-final-it-integration.xml"
+      },
+      {
+        "tests": 66,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "group": "documents-backups",
+        "evidence": "validation/ui130-final-documents-backups.xml"
+      },
+      {
+        "tests": 17,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "group": "hr-weekly",
+        "evidence": "validation/ui130-final-hr-weekly.xml"
+      },
+      {
+        "tests": 34,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "group": "hr-security",
+        "evidence": "validation/ui130-final-hr-security.xml"
+      }
+    ]
+  },
+  "javascript": {
+    "passed_suites": 53,
+    "syntax_files": 110,
+    "it_component_assertions": 266
+  },
+  "preservation": {
+    "production_access": false,
+    "production_data_changed": false,
+    "existing_users_changed": false,
+    "temporary_user_retained": true,
+    "outbound_messages": false,
+    "code_base_files_verified": 665,
+    "database_reset": false,
+    "new_private_it_tables": true,
+    "permissions_not_rewritten": true
+  },
+  "publication": {
+    "performed": false,
+    "reason": "Pedido atual de trabalho interno sem Chrome."
+  },
+  "limits": [
+    "Sem navegador real, novas capturas de tela, leitor de tela ou aparelho móvel.",
+    "Prévias com markup/CSS reais e dados fictícios não comprovam aparência no site.",
+    "Não foi repetida toda a bateria histórica.",
+    "Contatos profissionais, percurso universal de documentos e aceite formal de tarefas continuam pendentes.",
+    "TI não inclui anexos, notificações externas, SLA ou rascunho persistente/offline."
+  ]
+}

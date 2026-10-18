@@ -1,0 +1,95 @@
+{
+  "release": "UI130",
+  "area": "Solicitações de TI — backend",
+  "status": "Implementado e testado localmente; sem publicação.",
+  "base_commit": "45f07468056e1240e7df9d51a9d53ce9c815a657",
+  "files": [
+    {
+      "path": "app/it_requests.py",
+      "sha256": "67f06679674ccf7d31938772b9e66d00e7be05d62d1514a1baf76deb7291b961"
+    },
+    {
+      "path": "app/it_requests_api.py",
+      "sha256": "9c198f0dfb2ed02bd347c206b247c82c1c3faa8816e5592646629f6f638bf3d9"
+    },
+    {
+      "path": "tests/test_it_requests_ui130.py",
+      "sha256": "6652e29da60d964344c30d0e3c735240055e4bc9fe9037535f3fbd15fe86ee50"
+    }
+  ],
+  "contract": "work/ui130-it-api-contract.json",
+  "api_fixture": "work/ui130-it-api-fixture.json",
+  "messages": "work/ui130-it-messages.json",
+  "tests": {
+    "final_backend": {
+      "passed": 20,
+      "failed": 0,
+      "seconds": 116.88,
+      "evidence": "work/ui130-it-backend-tests.xml"
+    },
+    "actual_api_fixture": {
+      "passed": 1,
+      "failed": 0,
+      "seconds": 7.77,
+      "deselected": 20,
+      "evidence": "work/ui130-it-fixture-tests.xml"
+    },
+    "unique_cases_passed": 21,
+    "initial_run": {
+      "passed": 15,
+      "failed": 3,
+      "diagnosis": "Expectativas da fixture ajustadas: alterações de permissão invalidam sessão com401, e capacidades do administrador diferem das do solicitante. Após reautenticar, revogação é conferida novamente; comparação de persistência usa o mesmo solicitante. Nenhuma dessas três falhas exigiu alterar as regras de produto."
+    }
+  },
+  "implemented": [
+    "Abertura própria com assunto, descrição e prioridade; fila autorizada e busca sem acentos, com totais filtrados antes da paginação.",
+    "Responsável somente entre contas ativas, aprovadas e com it.manage/it.view_own, ou administradores elegíveis. Nenhuma permissão concedida automaticamente.",
+    "Estados aberto, em atendimento, aguardando solicitante, resolvido, encerrado e cancelado. Aguardar solicitante/resolver/cancelar/reabrir exigem justificativa. Resposta não muda situação silenciosamente.",
+    "Histórico persistente com autor, data UTC, comentário e snapshots; paginação. Sem edição destrutiva de comentários, anexos, e-mail ou exclusão definitiva.",
+    "Solicitante vê só os próprios; gestor vê fila. Leitura/detalhe/histórico/retry revalidam sessão e acesso atual. A designação não supera revogação.",
+    "SQLite com transação imediata, versão otimista, op_id vinculado a ator/conteúdo; replay retorna situação atual autorizada, sem duplicar histórico.",
+    "HTTP com conta nomeada, empresa exata, cabeçalhos não duplicados, JSON estrito/limitado a24KiB e respostas privadas no-store.",
+    "PT-BR por ambiente Corcovado e inglês nos demais; textos do usuário não são traduzidos."
+  ],
+  "evidence_scenarios": [
+    "Jornada completa: criar→atribuir→em atendimento→aguardar solicitante→resposta→retomar→resolver→encerrar→reabrir; histórico e resolução anterior preservados.",
+    "Bloqueio de enumeração/detalhe/histórico de outra pessoa; contagens e candidatos não vazam para o solicitante.",
+    "Justificativas obrigatórias e estados terminais; cancelamento não exclui dados.",
+    "Revogação de gestão e it.view_own, conta desativada, sessão antiga, convidado e acesso restrito de embarcação.",
+    "Responsável inexistente, sem acesso ou desativado rejeitado; conta explícita antiga não recebe chave nova.",
+    "Idempotência, op_id de outra conta/conteúdo, versão obsoleta, escrita concorrente e falha simulada após gravação com rollback.",
+    "Reconstrução do serviço lê os dados persistidos; esquema incompleto/versão desconhecida recusa abertura.",
+    "JSON duplicado, MIME errado, corpo excessivo, empresa incorreta, falta de autenticação e campos inválidos.",
+    "Busca conexao/configuracao/estacao encontra texto com acentos sem modificar o conteúdo."
+  ],
+  "storage": {
+    "format": "wavelink-it-requests-1",
+    "tables": [
+      "it_request_meta",
+      "it_request_records",
+      "it_request_history",
+      "it_request_operations"
+    ],
+    "sensitive": true,
+    "emails_sent": 0
+  },
+  "integration": {
+    "coordinator_owned": [
+      "access.py: it.view_own, it.manage e dependência; defaults manage false foraadmin; políticas explícitas antigas permanecem restritas.",
+      "store.py: store.it_requests=ITRequests(self); server.py: it_requests_api.attach e route_key.",
+      "project_modules/export_policy: incluir no backup completo autorizado, excluir conjunto TI em exportações operacionais/sem TI e validar snapshot coerente.",
+      "Navegação, textos globais e UI."
+    ],
+    "frontend_owner": "rh_revisao",
+    "frontend_contract_check": "Fixture API real fornecida para checar user_id nas identidades, histórico e capabilities; aprovação DOM integrada fica com o agente frontend/root."
+  },
+  "remaining": [
+    "Sem teste de navegador nesta fase, conforme escopo.",
+    "Ainda precisa da integração final e testes da interface sobre a mesma fonte congelada pelo coordenador.",
+    "Sem deployment e sem validação de produção; não houve acesso ao domínio Corcovado."
+  ],
+  "production_accessed": false,
+  "production_data_changed": false,
+  "existing_accounts_changed": false,
+  "third_party_messages_sent": false
+}

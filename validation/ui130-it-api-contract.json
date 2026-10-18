@@ -1,0 +1,194 @@
+{
+  "module": "ITRequests",
+  "store": "store.it_requests",
+  "permission": {
+    "own": "it.view_own",
+    "manage": "it.manage",
+    "assignee": "eligible active approved admin or it.manage + it.view_own; never grants account rights"
+  },
+  "format": {
+    "table": "it_request_meta",
+    "columns": [
+      "key",
+      "value"
+    ],
+    "row": [
+      "format",
+      "wavelink-it-requests-1"
+    ]
+  },
+  "states": [
+    "open",
+    "in_progress",
+    "awaiting_requester",
+    "resolved",
+    "closed",
+    "cancelled"
+  ],
+  "priorities": [
+    "low",
+    "normal",
+    "high",
+    "urgent"
+  ],
+  "actions": {
+    "create": {
+      "title": "string 1..180",
+      "description": "string 1..6000",
+      "priority": "enum"
+    },
+    "triage": {
+      "id": "UUID",
+      "version": "positive integer",
+      "priority": "enum",
+      "assignee_id": "UUID or empty string to unassign"
+    },
+    "comment": {
+      "id": "UUID",
+      "version": "positive integer",
+      "text": "string 1..4000"
+    },
+    "transition": {
+      "id": "UUID",
+      "version": "positive integer",
+      "status": "enum",
+      "comment": "string max4000; required for awaiting_requester,resolved,cancelled,open(reopen)"
+    }
+  },
+  "request_example": {
+    "id": "11111111-1111-4111-8111-111111111111",
+    "version": 1,
+    "title": "Acesso ao sistema",
+    "description": "Descrição fornecida pelo solicitante",
+    "priority": "normal",
+    "status": "open",
+    "requester_id": "22222222-2222-4222-8222-222222222222",
+    "requester": {
+      "user_id": "22222222-2222-4222-8222-222222222222",
+      "name": "Pessoa fictícia"
+    },
+    "assignee_id": "",
+    "assignee": null,
+    "created_at": "2026-10-18T21:00:00Z",
+    "updated_at": "2026-10-18T21:00:00Z",
+    "created_by": {
+      "user_id": "22222222-2222-4222-8222-222222222222",
+      "name": "Pessoa fictícia"
+    },
+    "updated_by": {
+      "user_id": "22222222-2222-4222-8222-222222222222",
+      "name": "Pessoa fictícia"
+    },
+    "resolution": "",
+    "resolved_at": "",
+    "resolved_by": null,
+    "closed_at": "",
+    "cancelled_at": "",
+    "can_comment": true,
+    "can_triage": false,
+    "allowed_transitions": [
+      "cancelled"
+    ],
+    "assignee_active": false
+  },
+  "workspace": {
+    "endpoint": "/api/it/workspace?view=mine|queue&query=&status=&priority=&offset=0&limit=50",
+    "response": {
+      "requests": "array of request",
+      "total": 1,
+      "counts": {
+        "open": 1,
+        "in_progress": 0,
+        "awaiting_requester": 0,
+        "resolved": 0,
+        "closed": 0,
+        "cancelled": 0
+      },
+      "status_counts": "same as counts",
+      "offset": 0,
+      "limit": 50,
+      "has_more": false,
+      "view": "mine",
+      "can_manage": false,
+      "assignees": [],
+      "current_user": {
+        "user_id": "UUID",
+        "name": "Name"
+      },
+      "counts_scope": "current_view_and_filters"
+    },
+    "notes": "Counts apply to current view and all active filters before pagination. assignees are [{user_id,name}] and only supplied to managers. Search ignores accents and case; stored text is unchanged."
+  },
+  "detail": {
+    "endpoint": "/api/it/requests/{id}",
+    "response": {
+      "request": "request object",
+      "history": [
+        {
+          "seq": 1,
+          "at": "UTC ISO timestamp",
+          "actor": {
+            "user_id": "UUID",
+            "name": "Name"
+          },
+          "action": "create|triage|comment|transition",
+          "comment": "text",
+          "before": {},
+          "after": "stored request snapshot (no capabilities)"
+        }
+      ],
+      "history_total": 1,
+      "history_has_more": false
+    },
+    "history_order": "newest first; initial100; paginate /api/it/requests/{id}/history?offset=100&limit=100 → {items,total,offset,limit,has_more}"
+  },
+  "mutation_response": "same detail response; no redirects; op_id UUID; current version required; replay returns current authorised request without another write",
+  "transitions": {
+    "manager": {
+      "open": [
+        "in_progress",
+        "awaiting_requester",
+        "resolved",
+        "cancelled"
+      ],
+      "in_progress": [
+        "awaiting_requester",
+        "resolved",
+        "cancelled"
+      ],
+      "awaiting_requester": [
+        "in_progress",
+        "resolved",
+        "cancelled"
+      ],
+      "resolved": [
+        "closed"
+      ],
+      "closed": [],
+      "cancelled": []
+    },
+    "requester_extra": {
+      "open": [
+        "cancelled"
+      ],
+      "awaiting_requester": [
+        "cancelled"
+      ],
+      "resolved": [
+        "closed",
+        "open"
+      ],
+      "closed": [
+        "open"
+      ],
+      "cancelled": []
+    }
+  },
+  "notes": [
+    "All comments visible to requester and authorised IT staff. No internal-only comments, email, attachments or hard delete.",
+    "Reply does not silently change status; responsible staff explicitly resumes service.",
+    "A resolved/closed request can be reopened by its requester only, with reason; prior resolution remains in history.",
+    "Cancelled is terminal. Ownership cannot be transferred.",
+    "Text is plain authored/user input; frontend must escape it."
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "scope": "Revisão independente, somente leitura; fontes TI não editadas",
+  "findings": [
+    {
+      "severity": "high",
+      "issue": "Contrato de identidade user_id no backend versus id no frontend",
+      "evidence": "identity() retorna user_id; person() exigia id, recusando respostas reais.",
+      "reported_to": [
+        "root",
+        "qualidade_ti"
+      ],
+      "status": "Corrigido pelo responsável; fonte final usa user_id validado por UUID e requester_id para comparar autoria"
+    },
+    {
+      "severity": "high",
+      "issue": "Resposta antiga atribuída a data antes de validar sessão/rota",
+      "evidence": "Na fonte atual corrigida, execução isolada de open() com promise atrasada e c.same() false deixa data=null, sem contaminar a sessão seguinte.",
+      "reproduced": false,
+      "status": "Correção confirmada por teste independente da função real"
+    },
+    {
+      "severity": "medium",
+      "issue": "Histórico anterior ao limite de 100 eventos sem controle de paginação na interface",
+      "evidence": "historyMarkup agora apresenta it-more-history quando há eventos além da primeira página.",
+      "status": "Correção presente na fonte atual: botão Carregar histórico anterior e history_has_more; testes completos ficam com responsável TI"
+    }
+  ]
+}

@@ -1,0 +1,30 @@
+{
+  "sources": [
+    {
+      "title": "Atlassian — Prioridades no Jira Service Management",
+      "url": "https://support.atlassian.com/jira-service-management-cloud/docs/what-are-priority-levels-in-jira-service-management/",
+      "use": "Prioridade como importância relativa; sem inventar prazo de SLA."
+    },
+    {
+      "title": "Zendesk — Glossário em português",
+      "url": "https://support.zendesk.com/hc/pt-br/articles/4408883411354-Gloss%C3%A1rio-Zendesk",
+      "use": "Vocabulário de atendimento, solicitante e situações."
+    },
+    {
+      "title": "Zendesk — Resolvido e Fechado",
+      "url": "https://support.zendesk.com/hc/pt-br/articles/4408887712154-Qual-%C3%A9-a-diferen%C3%A7a-entre-um-ticket-Resolvido-e-um-Fechado",
+      "use": "Distinguir solução registrada de encerramento; as regras do Wavelink foram definidas para este produto."
+    },
+    {
+      "title": "Zendesk — Visualizações de tickets",
+      "url": "https://support.zendesk.com/hc/pt-br/articles/4408829483930-Acesso-%C3%A0s-suas-visualiza%C3%A7%C3%B5es-de-tickets",
+      "use": "Consultas próprias e fila autorizada, com filtros e totais explicados."
+    },
+    {
+      "title": "Atlassian — Solicitação de serviço",
+      "url": "https://learning.atlassian.com/learning/course/explore-advanced-jira-service-management-capabilities-as-an-agent/lesson/jira-service-request",
+      "use": "Situação explícita para aguardar informações do solicitante."
+    }
+  ],
+  "scope": "Documentação oficial consultada sem Chrome; padrões adaptados ao Wavelink."
+}

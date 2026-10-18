@@ -1,0 +1,22 @@
+{
+  "commit": "45f07468056e1240e7df9d51a9d53ce9c815a657",
+  "base": [
+    {
+      "path": "README.md",
+      "remote_sha": "295fec1382311643b7e5b8113d1ad2d882a455da",
+      "git_blob_sha": "295fec1382311643b7e5b8113d1ad2d882a455da"
+    },
+    {
+      "path": "DEPLOYMENT_FILES.json",
+      "remote_sha": "dbaf70ca9eff682ede050c37ea2e32a093d194b4",
+      "git_blob_sha": "dbaf70ca9eff682ede050c37ea2e32a093d194b4"
+    },
+    {
+      "path": "Dockerfile",
+      "remote_sha": "446eb1dad423843934f2c8be9b0809754098a68a",
+      "git_blob_sha": "446eb1dad423843934f2c8be9b0809754098a68a"
+    }
+  ],
+  "files": 665,
+  "mismatches": []
+}

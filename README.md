@@ -1,179 +1,27 @@
-# UI129 — Apontamento semanal e aprovação por projeto
+# Wavelink — UI130 local integrada
 
-Wavelink **1.34.29**, preparado sobre o commit `ed02ac6bc42b882a6397494698b70691768dbb92` (UI128). A interface permite preencher de segunda a domingo, distribuir as horas entre projetos, salvar os projetos alterados de uma vez e enviar cada projeto para aprovação. Preserva os registros antigos, a identidade Corcovado, os demais idiomas, os dados existentes e o usuário temporário `teste-rh-ui121-2`.
+Versão **1.34.30**, baseada no commit 45f07468056e1240e7df9d51a9d53ce9c815a657 (UI129). **Integrada e testada localmente; não publicada.** Não há commit ou deployment UI130.
 
-**Preparado, integrado e testado localmente; ainda não publicado. Produção permanece UI128 (1.34.28).** O coordenador controla o backup, a publicação no serviço existente e a conferência do deployment.
+- TI: chamados próprios, fila autorizada, prioridade, responsável, comentários, justificativas, resolução, encerramento, reabertura e histórico.
+- Pessoas: paginação, busca sem acentos e preservação de contexto.
+- Documentos originais: caminho clicável por pastas/subpastas.
+- Perfil: cancelar edição avisa antes de descartar mudanças.
+- Permissões e cópias seletivas protegem dados privados de TI. Avisos de backup em português para Corcovado; inglês preservado nas outras instalações.
 
-- [Guia de uso, permissões, glossário, fontes e reversão](docs/UI129_GUIA.html)
-- [Validação final e seus limites](validation/ui129-validation.json)
-- [Revisão independente de segurança e backup](validation/ui129-quality-report.json)
-- [Proveniência dos arquivos](docs/UI129_SOURCE_PROVENANCE.json)
+Passaram 153 testes Python, 53 suítes JavaScript, 110 verificações de sintaxe JavaScript e 228 de sintaxe Python. A reconstrução completa reproduziu os 2330 recursos do manifesto 4a815e6be23196cbaf5097fa449998178f63b6a832e96a073e21c42403797835.
 
-O administrador cadastra os projetos e designa os responsáveis. Uma aprovação por um responsável designado e diferente do autor é suficiente. Essa designação dá acesso somente aos apontamentos enviados, aprovados ou rejeitados dos projetos atribuídos; não libera documentos, despesas ou o RH inteiro. Mesmo administradores precisam da designação para aprovar horas de um projeto. Devolver exige justificativa e permite corrigir; rejeitar é uma decisão final.
+[Relatório e prévias](docs/UI130_GUIA.html) · [Validação](validation/ui130-validation.json) · [Pendências](validation/ui130-pendencias-consolidadas.json)
 
-As horas são efetivamente apontadas pelo usuário: não são inferidas da escala nem geram folha de pagamento. A soma diária considera os projetos e os registros antigos sobrepostos e não pode ultrapassar 24 horas. Salvar a semana não significa enviá-la ou aprová-la.
+## Código completo
 
-Backup pré-publicação verificado pelo coordenador: [comprovante de integridade](validation/ui129-backup-receipt.json). Cópia consistente do SQLite, sem restauração e sem alteração dos registros ativos.
+Mantida a estrutura existente: fonte-base verificada em vendor/ e cadeia de alterações em deploy/. Para materializar todo o código em pasta nova: python deploy/materialize_runtime.py CAMINHO_NOVO. Isso não abre dados da empresa. O Dockerfile acrescenta UI130 à mesma cadeia; a imagem Linux não foi construída nesta rodada.
 
-**Compatibilidade de dados:** a primeira gravação válida de projeto ativa o formato `wavelink-hr-2`. A partir desse momento, não fazer rollback isolado para UI128, que recusa o novo formato para proteger as aprovações. Preferir correção adiante; restaurar backup anterior exige escritores parados e conciliação das alterações posteriores. A mera abertura da tela não promove HR1.
+## Preservação e reversão
 
-Reconstrução em uma pasta nova: `python deploy/materialize_runtime.py ./runtime-ui129`. O manifesto final registra **2.315 recursos**, com **200 arquivos no overlay**, SHA-256 `fa74c025978b5cd3b4594908a229eb2c2067fa9a92d26ee922f6cbc8f4bf9033`. A reconstrução e todos os hashes foram verificados. Passaram 51 testes Python focados (15 de backend, 34 de segurança e 2 da central de ações), 49 suítes JavaScript e 109 verificações de sintaxe. O formulário semanal inclui 145 verificações. Os 122 testes de regressão anterior de RH também passaram, sem alegar que toda a bateria histórica está verde. Nenhum cenário fictício deve ser importado na empresa ativa.
+Nenhum serviço, domínio, disco, banco, conta real, senha ou registro foi alterado. Admin e usuário temporário preservados. Nenhuma mensagem a terceiros. Permissões explícitas existentes não recebem novos direitos automaticamente; gestão global de TI não pode ser delegada por departamento.
 
-A branch contém somente preparação parcial (`f2f5addbb43e9e98170119e7216cef4bfe1c71e2` e `98b24f2010193cf229c906e8be3510d5f2e40283`, da Dockerfile); o overlay posterior ao último ajuste do filtro precisa ser enviado. O Chrome bloqueou o controle após um aviso nativo. A aprovação e devolução por projeto foram verificadas no Chrome local; o último ajuste do filtro foi verificado no teste de formulário, sem nova prova visual. A publicação e a validação autenticada da versão final na Corcovado estão pendentes.
+A base UI129 foi preservada separadamente. Antes de futura publicação: conferir novamente a versão remota, fazer backup verificado dos dados, publicar no serviço existente e validar a versão servida. Depois de criar chamados reais, reversão deve preservar as novas tabelas, históricos e acessos. Não reinicializar ou restaurar backup antigo sobre gravações novas. Nenhuma reversão foi executada.
 
-As seções abaixo são registros históricos; seus estados de publicação, contagens e limitações pertencem à versão indicada.
+## Limites
 
----
-
-# UI128 — Revisão integrada de RH, Documentos e Operações
-
-Wavelink **1.34.28**, preparado sobre `ebd92c43ec7c92431a1def49137e3ff1fe36bf2d`. Integra correções de navegação e cancelamento, permissões e mensagens em português, importações, inventário, etiquetas QR e evidências de manutenção. Preserva dados, usuários, permissões, rascunhos, identificadores, idiomas e o serviço existente. O usuário temporário `teste-rh-ui121-2` permanece.
-
-**Preparado, integrado e testado localmente; publicação ainda será registrada pelo coordenador.** O acesso automatizado autenticado à Corcovado continua bloqueado pelo navegador. Esta entrega não afirma validação funcional completa em produção.
-
-- [Guia integrado, capturas antes/depois e limites](docs/UI128_GUIA.html)
-- [Validação e cobertura individual das 54 funções](validation/ui128-validation.json)
-- [Matriz integrada das 54 funções](docs/UI128_COVERAGE.json)
-- [Diagnóstico das falhas históricas](validation/ui128-triage-unresolved.json)
-- [Backup verificado](validation/ui128-backup-verificado.json)
-
-Foram revisadas **54 funções: 16 de RH/acessos/ajuda, 18 de Documentos/Inventário e 20 de Operações**. Há evidência individual por API/serviço e interface; isso não equivale a 54 testes completos no Chrome. A integração final informa **40 testes Python focados, 47 suítes JavaScript e 108 arquivos com sintaxe conferida**. A bateria histórica permanece **não verde: 244 aprovados e 381 falhas em 625 casos**, todos diagnosticados; classificar uma falha não a transforma em aprovação.
-
-No Chrome local, foram conferidos cancelamento com contexto e filtro preservados, recusa de descarte, Fechar/Voltar em registro de RH no computador e celular, calendário móvel, importação de 3 linhas mantendo códigos com zeros e números de série repetidos, e etiquetas QR em português. Nenhuma mensagem foi enviada a terceiros e nenhum registro ativo de produção foi alterado.
-
-Limites: OCR local sem Tesseract; instalador Windows não construído; cópia histórica UI96 ausente; restrições de links simbólicos do Windows; ausência de módulo de chamados de TI e de aceite formal de atribuição; limpeza antiga de registros UI121 ainda pendente.
-
-Reconstrução completa em pasta nova: `python deploy/materialize_runtime.py ./runtime-ui128`. Foram conferidos **2.306 recursos e 232 arquivos de alterações**, com SHA-256 do manifesto `d3e7980928e38b6d3837035865c8468d67e9c0c777e30eb1fcf0d5d942080115`. Não importar dados fictícios de teste em produção. Para problema somente de código, reverter o deployment no mesmo serviço; restauração de dados exige procedimento separado.
-
-As entregas abaixo são históricas e preservam o estado registrado na época. A seção UI128 e seus relatórios indicam o estado atual desta preparação.
-
----
-
-# UI127 — Auditoria de RH e Operações
-
-Wavelink **1.34.27**, sobre `736c9c9c82e9b0a0f93f41d59d063c1ade13da27`. Corrige viagens e foco no calendário, navegação, listas de verificação, originais, inventário e validação em português. A revisão integrada corrige Fechar/Voltar/Cancelar sem encerrar a sessão, preserva rascunhos e filtros, melhora originais, seletores de pessoas, DDS e contato de suporte. Preserva registros, permissões, idiomas e usuário temporário.
-
-- [Cobertura por área, testes, capturas e limites](docs/UI127_GUIA.html)
-- [193 telas/funções inventariadas](docs/UI127_COVERAGE.json)
-- [Validação e falhas ainda abertas](validation/ui127-validation.json)
-- [Proveniência](docs/UI127_SOURCE_PROVENANCE.json)
-
-**Auditoria integral parcial:** 139 itens com evidência detalhada (não equivale a aprovação integral); demais fluxos pendentes e produção autenticada bloqueada. Bateria histórica completa não verde. 34 suítes JavaScript e nove testes Python focados passaram; reconstrução de 2.288 recursos verificada. Reconstruir em pasta nova: `python deploy/materialize_runtime.py ./runtime-ui127`. Não importar cenários fictícios em produção. Documentação anterior preservada abaixo.
-
-# UI126 — Importações e conferência de originais em português
-
-Wavelink **1.34.26**, sobre `d6bc5959c4eb8aa44c238dbc0c1cc53fef88c70f`.
-
-Conclui textos de importações avançadas, comparação com o original, biblioteca e erros. Mantém conteúdo dos documentos, evidências, identificadores, permissões, dados e idiomas das demais empresas.
-
-- [Guia, capturas e limites da validação](docs/UI126_GUIA.html)
-- [Resultados dos testes](validation/ui126-validation.json)
-- [Proveniência do runtime](docs/UI126_SOURCE_PROVENANCE.json)
-
-Reconstrução: `python deploy/materialize_runtime.py ./runtime-ui126` em uma pasta nova. O cenário fictício de teste não deve ser importado em produção. Validação autenticada na Corcovado permanece bloqueada pela ferramenta do navegador; publicação e integridade de código são verificadas separadamente.
-
-As entregas abaixo são históricas.
-
----
-
-# UI125 — Português e decisões claras
-
-Wavelink **1.34.25**, sobre `19d16b367143ec6e8d81b4bb5a8d98c4df2168e2`.
-
-Amplia vocabulário brasileiro e distingue salvar, enviar, conferir e aprovar. O formulário de conferência documental mostra metadados e anexos privados junto da decisão. Mantém a UI124, os dados, permissões e idiomas das demais empresas.
-
-- [Guia, capturas, glossário, fontes e pendências](docs/UI125_GUIA.html)
-- [162 verificações automatizadas e jornadas locais](validation/ui125-validation.json)
-- [Proveniência do runtime](docs/UI125_SOURCE_PROVENANCE.json)
-
-A validação autenticada na Corcovado está bloqueada pela ferramenta do navegador. A cobertura de inglês em caminhos avançados ainda não é integral. Publicação e integridade do código são comprovadas separadamente; não substituem testes funcionais ao vivo.
-
-Reconstrução: `python deploy/materialize_runtime.py ./runtime-ui125` em uma pasta nova. Não importar o cenário fictício em produção.
-
-As entregas abaixo são históricas.
-
----
-
-# UI124 — Aparência unificada de RH e Operações
-
-Wavelink **1.34.24**, sobre a UI123 `85d79a84b1c9c3393a2a1f8bae720af704dbfa76`.
-Reorganiza navegação, cabeçalho, cartões, tabelas, perfis e formulário do colaborador; corrige alternância móvel e foco; amplia rótulos em português sem traduzir dados dos usuários.
-
-- [Guia visual e comparações reais antes/depois](docs/UI124_GUIA_VISUAL.html)
-- [Validação local e limites](validation/ui124-validation.json)
-- [Proveniência dos recursos](docs/UI124_SOURCE_PROVENANCE.json)
-
-73 verificações automatizadas aprovadas; jornadas locais no Chrome com quatro perfis e dados fictícios. Os testes locais não comprovam a interface de produção, que permanece bloqueada pela ferramenta do navegador. Publicação é registrada separadamente.
-
-Reconstrução completa: `python deploy/materialize_runtime.py ./runtime-ui124` (diretório novo).
-Não copiar dados de teste para produção. Mesmas permissões, dados, idiomas e marca preservados.
-Os documentos abaixo são entregas históricas e mantêm seus estados originais.
-
----
-
-# UI123 — Navegação, escalas e acompanhamento do trabalho
-
-Wavelink **1.34.23**, preparado sobre o commit UI122 `28e0dcff4e79c5720aaa322d4bf70170f6ce9653`. Melhora a consulta de equipes, o retorno ao calendário e aos registros, o envio de solicitações e o uso no celular. Preserva dados, permissões, anexos, rascunhos, identidade e idiomas configurados.
-
-- [Guia visual, comparações, glossário e fontes oficiais](docs/UI123_GUIA_VISUAL.html)
-- [Validação local e limites](validation/ui123-validation.json)
-- [Proveniência dos recursos](docs/UI123_SOURCE_PROVENANCE.json)
-
-**153 verificações automatizadas passaram** e as jornadas foram exercitadas no Chrome com dados fictícios. Os resultados locais não comprovam comportamento em produção; consulte o deployment ativo no Render. A UI122 foi confirmada publicada antes desta revisão. Os documentos abaixo registram entregas anteriores e podem conter seus estados históricos.
-
-Reconstrução completa em diretório novo: `python deploy/materialize_runtime.py ./runtime-ui123`.
-Teste dos novos filtros: `node runtime-ui123/tests/test_ux_ui123.cjs`.
-
----
-
-# UI122 — Permissões em português brasileiro
-
-Wavelink **1.34.22**, preparado sobre o commit d103ed68a7cd1849405d5e3f05a8a14c5290d553 (UI121). Corrige 79 rótulos e 18 grupos do editor de permissões, os avisos de escopo e os títulos de conta. Os identificadores, valores de autorização, nomes de pessoas e registros salvos são preservados; outros deployments continuam no idioma configurado.
-
-**Ainda não publicado.** Verificações locais e publicação em produção são etapas distintas.
-
-- [Escopo e validação](docs/UI122_PERMISSOES_PT_BR.md)
-- [Proveniência dos arquivos](docs/UI122_SOURCE_PROVENANCE.json)
-- [Verificações locais](validation/ui122-permissions.json)
-
-Fonte completa: `python deploy/materialize_runtime.py ./runtime-ui122` (diretório novo).
-
----
-
-# UI121 — RH e Operações com navegação mais clara
-
-Wavelink **1.34.21**, preparado e testado localmente sobre main c435332618811aa29ac59e856a5ed922513f4e5e. Inclui UI120. Publicação autorizada para o serviço existente da Corcovado. Os relatórios incluídos registram a validação local; a validação do deployment deve ser conferida separadamente.
-
-- [Guia visual, comparações, glossário e fontes](docs/UI121_GUIA_VISUAL.html)
-- [Instalação, permissões e reversão](docs/UI121_INSTALACAO.md)
-- [Validação](docs/UI121_VALIDACAO.json)
-- [Proveniência](docs/UI121_SOURCE_PROVENANCE.json)
-
-Fonte completa: python deploy/materialize_runtime.py ./runtime-ui121 (diretório novo). Documentação abaixo preservada como histórico da versão indicada.
-
----
-
-# UI120 — Recursos Humanos em português brasileiro
-
-Versão preparada **1.34.20**, baseada em `c435332618811aa29ac59e856a5ed922513f4e5e` (UI119, com UI118). Esta entrega não foi publicada.
-
-- [Instalação, permissões e reversão](docs/UI120_INSTALACAO.md)
-- [Glossário e fontes brasileiras](docs/UI120_GLOSSARIO_FONTES.md)
-- [Validação executada](docs/UI120_VALIDACAO.json)
-- [Proveniência](docs/UI120_SOURCE_PROVENANCE.json)
-
-Fonte completa: `python deploy/materialize_runtime.py ./runtime-ui120` (diretório novo). O pacote inclui todo o repositório, a fonte em vendor e todas as atualizações.
-
----
-
-## Documentação anterior preservada
-
-# Wavelink — UI118
-
-Corcovado em português, com a frente privada de Recursos Humanos da UI117 integrada. Core 1.34.19. Interface, 77 tópicos de ajuda, manual PDF, relatórios e mensagens do sistema em português quando o serviço está configurado como COMPANY e COMPANY_ID=corcovado. Demo e outras empresas mantêm o inglês.
-
-O módulo **Recursos Humanos** fica na navegação principal; o perfil oferece acesso aos próprios registros privados. Inclui documentos/certificados pessoais, viagens/escalas, folhas de horas, despesas e revisão independente. Certificados de equipamentos continuam no Inventário. Permissões existentes não são ampliadas automaticamente.
-
-Leia [o escopo e os limites](docs/WORKSPACE_UI118.md), [as verificações](docs/UI118_REVIEW_REPORT.json) e [o ponto de continuação](docs/CONTINUATION_CHECKPOINT.md). Docker reconstrói a fonte fixada e aplica os overlays até UI118. Preserve dados, configurações privadas e ambiente.
-
-A [transição Sulmara → Corcovado](docs/CORCOVADO_TRANSITION.md) permanece uma operação separada, no disco existente. Este pacote não executa migração, DNS ou publicação. Código preparado e testado localmente; publicação ainda pendente.
+Sem Chrome, produção, capturas novas ou validação visual móvel. Testes DOM/API não substituem essas verificações. Contatos profissionais com visibilidade própria, percurso universal de documentos por item/perfil/pasta e aceite formal de tarefas continuam pendentes. A revisão integral das 193 vistas não está concluída. Relatórios anteriores são históricos e não representam o status da UI130.

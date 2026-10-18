@@ -1,0 +1,92 @@
+{
+  "reviewed_at": "2026-10-18T22:01:42.232Z",
+  "scope": "Independent local integration review; no production, browser or external messages. Shared product files were read only. One separately authorized membership-policy fix and its new focused test were made.",
+  "baseline": "UI129 / main 45f07468056e1240e7df9d51a9d53ce9c815a657",
+  "runtime": "work/runtime-ui130",
+  "status": "No unresolved blocking issue identified in the reviewed current integration.",
+  "files": {
+    "app/access.py": "83c0515c5e6dc68a32a5c364b008b8c96c809afb22aa1efc023760c32f8ed8f7",
+    "app/project_modules.py": "fdb2ccc991554910ac57bea2a2a230ab15a57ab8e9b56033ee3bf971b70e28cf",
+    "app/export_policy.py": "bd9f79133596f0f6996f1ba9d68b19ed4f687f143b31f2d8ddbf8ae6011e12f6",
+    "app/static/app.js": "fa4e7e450c6c1ec3c546ecdec5d28f892c0ac9bd411ed498fb3a43fae4cdb659",
+    "app/server.py": "389c866dcdc0a53c876e04474af7fd76bd606fe1aef261e5cfbb5986e713a408",
+    "app/store.py": "a0a03e7e44f613a174e930af09a4a4440e51504adfee14d883a1efa18e43229e",
+    "app/membership_policy.py": "1e71093231834e534bc7b65dd84cd0929d77d464dd6c772bf06a605be327797d"
+  },
+  "findings": [
+    {
+      "id": "IT-DELEGATION-GLOBAL",
+      "severity": "blocking security boundary before correction",
+      "status": "fixed and executed",
+      "file": "app/membership_policy.py",
+      "line": 320,
+      "cause": "it.manage was absent from nondelegable(), so a department-scoped access coordinator could receive an allowance and delegate company-wide IT queue access.",
+      "change": "Added it.manage to nondelegable. Did not change existing stored permissions, grants or user records.",
+      "proof": "tests/test_ui130_it_delegation.py: 2 passed. Real API rejects proposal with 403 without receipts/policy/delegation changes; valid preexisting grant does not expand queue access. Counterfactual removing the new set entry proves the same fixture would grant access before correction."
+    }
+  ],
+  "checks": [
+    {
+      "area": "Permission preservation",
+      "result": "PASS by inspection and existing executed backend tests",
+      "evidence": "access.py:56-85 preserves explicit old policies with missing keys=false; it.manage=false for non-admin defaults. it.manage depends on it.view_own. A role without saved policy receives only own-request access. Current account and credential-version validation still run."
+    },
+    {
+      "area": "Private API routing",
+      "result": "PASS",
+      "evidence": "server.py:323-330 retains session/fleet/capability gates. attach_it_requests uses same actor dependency; IT API checks exact single hub/auth headers and current row ACL. Direct route navigation and unknown UUID do not replace server authorization."
+    },
+    {
+      "area": "Full backup privacy",
+      "result": "PASS by source inspection; root independently ran integration privacy tests",
+      "evidence": "export_policy.py:has_it treats records/history/operations and unknown it_request_* rows as private, including retained evidence. require_backup checks the copied database and current source; server.py calls again immediately before returning bytes. Empty public marker alone does not expand or revoke existing roles."
+    },
+    {
+      "area": "Selective snapshots",
+      "result": "PASS by source inspection; root independently ran copy test",
+      "evidence": "project_modules.py:51-59,149,225-232,293-295,320-322,359 maps all four tables to it, excludes it from default sensitive selection, validates complete schema/format before mutation, erases omitted rows only in disposable copy, reinstates empty marker and VACUUMs. IT has no dependency bringing it into ordinary operational selection. Accounts/core permissions retained under existing administrator-only export."
+    },
+    {
+      "area": "Additive storage integration",
+      "result": "PASS",
+      "evidence": "store.py:109-110 constructs ITRequests after HR; no data reset. Existing SQLite full backup includes new tables and does not clear IT history/receipts. Fresh/reopen persistence exercised by backend suite."
+    },
+    {
+      "area": "Session/navigation wiring",
+      "result": "PASS by inspection; browser not run",
+      "evidence": "app.js passes session/account/capability callbacks to AJIT; adds hasForm/exitBusy to account change, local work, fleet and sign-out guards; route calls guardRoute; render calls syncSession. EN and pt-BR index load it_workspace.js before app.js. No new logout hook on record actions."
+    }
+  ],
+  "executed_evidence": [
+    {
+      "path": "work/ui130-it-backend-tests.xml",
+      "result": "20 passed (backend suite before the additional fixture test)"
+    },
+    {
+      "path": "work/ui130-it-fixture-tests.xml",
+      "result": "1 passed, 20 deselected (actual HTTP contract fixture)"
+    },
+    {
+      "path": "work/ui130-it-delegation-tests.xml",
+      "result": "2 passed in 15.50s"
+    },
+    {
+      "path": "work/ui130-it-api-fixture.json",
+      "result": "11 sequential actual HTTP mutations; final version11/cancelled, history11. Every mutation followed by same-actor GET exact equality. No simulated API shapes.",
+      "sha256": "ba8add5bfeab15621003c346b0288027330f0dea748325e950c58e55fda94eb5"
+    }
+  ],
+  "nonblocking_notes": [
+    {
+      "file": "app/project_modules.py",
+      "line": 367,
+      "note": "The transfer README explicitly describes HR but still lacks the new private IT module. MODULES describes its sensitivity and backup warning does, so this is explanatory documentation rather than a data leak. Recommend adding TI content, UI130 minimum version and administrator-only, non-recipient-filtered copy wording."
+    }
+  ],
+  "limits": [
+    "No production data or production login used.",
+    "No native Chrome/mobile visual validation in this review.",
+    "Other agents own full UI and regression execution; those results are not claimed as independently executed here.",
+    "Source hashes record the reviewed snapshot; parent may continue localization/documentation without changing these security conclusions."
+  ]
+}

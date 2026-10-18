@@ -1,0 +1,43 @@
+{
+  "scope": "Direct bilingual authored errors; no global dictionary mutation. Locale from localization.company_locale.",
+  "messages_en_pt": {
+    "Complete the required field.": "Preencha o campo obrigatório.",
+    "Review the IT request fields.": "Revise os campos da solicitação de TI.",
+    "Choose a valid option.": "Escolha uma opção válida.",
+    "IT request storage is incomplete. Preserve the database and restore a compatible backup.": "O conjunto de dados de TI está incompleto. Preserve o banco e restaure um backup compatível.",
+    "This IT database requires its compatible Wavelink version.": "Este banco de TI exige sua versão compatível do Wavelink.",
+    "Sign in with your approved company account.": "Entre com sua conta aprovada da empresa.",
+    "Your account changed. Sign in again; retain your unsent text.": "Sua conta mudou. Entre novamente; o texto não enviado deve ser preservado.",
+    "Your current access does not allow IT requests.": "Seu acesso atual não permite solicitações de TI.",
+    "Your account cannot access its IT requests.": "Sua conta não possui acesso às próprias solicitações de TI.",
+    "This request is unavailable to your account.": "Esta solicitação não está disponível para sua conta.",
+    "Use a valid page with up to 100 requests.": "Use uma página válida com até 100 solicitações.",
+    "Unknown IT action.": "Ação de TI desconhecida.",
+    "The request exceeds the size limit.": "A solicitação excede o limite de tamanho.",
+    "The support queue requires IT management permission.": "A fila de atendimento exige permissão de gestão de TI.",
+    "Your IT management permission changed.": "Sua permissão de gestão de TI mudou.",
+    "Supply the current request version.": "Informe a versão atual da solicitação.",
+    "This action belongs to the requester.": "Esta ação pertence ao solicitante.",
+    "This reference was already used for another action.": "Esta referência já foi usada para outra ação.",
+    "The request changed in another window. Refresh before saving.": "A solicitação mudou em outra janela. Atualize antes de salvar.",
+    "Only authorised support staff can triage requests.": "Somente a equipe autorizada pode fazer a triagem.",
+    "Closed or cancelled requests cannot be triaged.": "A solicitação encerrada ou cancelada não permite triagem.",
+    "Choose an active assignee with IT management permission.": "Escolha um responsável ativo com permissão de gestão de TI.",
+    "Closed or cancelled requests cannot receive new comments.": "A solicitação encerrada ou cancelada não recebe novos comentários.",
+    "This status change is not allowed for your account.": "Esta mudança de situação não é permitida para sua conta.",
+    "Confirm this company before accessing IT requests.": "Confirme esta empresa antes de acessar solicitações de TI.",
+    "Use one authenticated company session.": "Use uma única sessão autenticada da empresa.",
+    "Submit the IT action as JSON.": "Envie a ação de TI em JSON.",
+    "The request exceeds the 24 KiB limit.": "A solicitação excede o limite de 24 KiB.",
+    "Review the IT action fields.": "Revise os campos da ação de TI."
+  },
+  "dynamic": [
+    {
+      "file": "it_requests.py",
+      "line": 38,
+      "pt": "f'Use texto válido com até {limit} caracteres.'",
+      "en": "f'Use valid text up to {limit} characters.'"
+    }
+  ],
+  "shared_helpers": "UUID validation uses fieldwork_common.ident, which already has the shared error translation."
+}

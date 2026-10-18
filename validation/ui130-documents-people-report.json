@@ -1,0 +1,134 @@
+{
+  "version": "UI130",
+  "base": "UI129/main 45f0746",
+  "scope": "Documentos originais e pessoas; implementação e testes somente locais, sem navegador, produção, envio de mensagens ou publicação.",
+  "agents_instructions": "Nenhum AGENTS.md encontrado no workspace, work, runtime, app ou static.",
+  "files_changed": [
+    "app/static/original_library.js",
+    "app/static/original_library.css",
+    "app/recognition.py",
+    "app/recognition_api.py",
+    "app/static/recognition_workspace.js",
+    "app/static/recognition_workspace.css",
+    "tests/test_ui130_documents_people.cjs",
+    "tests/test_ui130_people_directory.py"
+  ],
+  "implemented": [
+    {
+      "area": "Documentos originais",
+      "problem": "O caminho do original era apenas texto; não havia percurso direto do detalhe à sua pasta/subpasta.",
+      "change": "Caminho navegável por IDs oficiais dos pais, com acesso à raiz e a cada pasta; nomes contendo barras não inventam hierarquia. Abre a pasta da revisão sem alteração de bytes/IDs/permissões. Uma revisão arquivada continua visível ao abrir sua pasta.",
+      "tested": "Execução das funções reais de caminho, clique, filtro, sessão, estado ocupado e resposta desatualizada. Retorno normal à lista preserva filtros e contexto pelo fluxo UI127 já testado."
+    },
+    {
+      "area": "Busca de documentos",
+      "problem": "Busca literal não encontrava Certificação ao digitar certificacao.",
+      "change": "Normalização de acentos apenas durante comparação; títulos, nomes de arquivos, códigos e dados originais não são reescritos.",
+      "tested": "Nomes e arquivos com acentos, busca global, filtro direto da pasta, revisões arquivadas, snapshot dos dados fictícios idêntico."
+    },
+    {
+      "area": "Pessoas",
+      "problem": "Diretório retornava no máximo 60 pessoas, sem paginação; busca ignorava nomes equivalentes sem acentos e homônimos eram visualmente ambíguos.",
+      "change": "Paginação com ordenação estável, total real e autorização antes do recorte. Busca de nome sem acentos e pelo identificador público de perfil já disponível; cada pessoa mostra esse identificador, sem divulgar login ou contato privado.",
+      "tested": "65 contas de colegas fictícios mais administrador: 64 contas elegíveis, páginas 60+4, sem perdas/repetições; duas pessoas chamadas José da Conceição mantêm IDs distintos."
+    },
+    {
+      "area": "Contexto, erro e sessão",
+      "change": "Termo, página e período são mantidos em memória ao voltar do perfil. Mudança de sessão limpa esse contexto. Respostas atrasadas e erros antigos não substituem busca recente nem aparecem após saída da página. Erros permitem repetir a busca sem perder o termo.",
+      "tested": "Promises controladas, troca de termo enquanto resposta anterior aguarda, erro tardio, repetição, remount de Pessoas, conta alterada e página desconectada."
+    },
+    {
+      "area": "Cancelar edição do perfil",
+      "problem": "Cancelar restaurava a consulta imediatamente e podia descartar biografia, foto ou emblema alterados sem aviso.",
+      "change": "Cancelar edição confere alterações reais e solicita confirmação. Recusar conserva valores e sessão; aceitar retorna à consulta e ao botão Editar perfil. Não permite cancelar enquanto o envio está ativo.",
+      "tested": "Funções reais com biografia, foto selecionada, remoção de foto e emblema: ambas as respostas à confirmação, estado inalterado ao recusar e preservação da autenticação."
+    }
+  ],
+  "tests": {
+    "new_js": {
+      "file": "tests/test_ui130_documents_people.cjs",
+      "checks": 89,
+      "result": "PASS",
+      "includes": [
+        "Navegação de pastas com IDs",
+        "Busca de acentos",
+        "Paginação e retorno ao diretório",
+        "Respostas assíncronas fora de ordem",
+        "Português e inglês com dicionário/adaptador reais",
+        "Cancelar edição do perfil: confirmar/recusar, mudanças reais e envio ativo"
+      ]
+    },
+    "new_http": {
+      "file": "tests/test_ui130_people_directory.py",
+      "tests": 3,
+      "result": "PASS",
+      "elapsed_seconds": 3.64,
+      "includes": [
+        "65 pessoas fictícias + administrador; 64 elegíveis, páginas 60+4",
+        "Autorização antes de paginar e ausência de dados privados",
+        "Busca sem acentos e identidade de homônimos",
+        "Conta desativada, associação não aprovada, empresa errada e parâmetros inválidos",
+        "Snapshot SQLite completo antes/depois das consultas igual"
+      ]
+    },
+    "existing_js": [
+      {
+        "file": "tests/test_ui127_documents_agent.js",
+        "checks": 127,
+        "result": "PASS"
+      },
+      {
+        "file": "tests/test_ui127_documents_agent_people.js",
+        "checks": 59,
+        "result": "PASS"
+      }
+    ],
+    "existing_python": {
+      "files": [
+        "tests/ui61_originals/test_workflow.py",
+        "tests/ui66_recognition/test_recognition.py"
+      ],
+      "tests": 43,
+      "result": "PASS",
+      "elapsed_seconds": 173.64,
+      "includes": [
+        "Links exatos de originais nas rotinas/checklists",
+        "Revisões e históricos preservados",
+        "Permissões independentes e revogação",
+        "Downloads com bytes originais",
+        "Perfis privados e totais restritos",
+        "Backup/transferência de reconhecimento"
+      ]
+    },
+    "syntax": [
+      "original_library.js PASS",
+      "recognition_workspace.js PASS"
+    ],
+    "environment": "Python 3.12.14 / Node local. TestClient precisou execução local fora do sandbox porque loopback Windows é bloqueado; somente bancos temporários fictícios."
+  },
+  "audit": {
+    "item_and_record_documents": "Regressões reais de vínculos exatos, publicação, revisão antiga, download e permissões passaram. Nesta rodada não foi criado novo vínculo genérico de documento com qualquer item.",
+    "profile_documents": "Anexos privados do RH permanecem no RH e sob suas permissões. Não foram copiados para a biblioteca pública de originais. Nova aba universal de documentos no perfil não foi implementada.",
+    "folders": "Pastas/subpastas organizacionais continuam sem transformar pasta em fronteira de autorização. Caminho navega por parent_id real.",
+    "people_selectors": "Seletores existentes de tarefas e responsável por relato mantêm busca, IDs e seleção; 59 verificações herdadas passaram.",
+    "contacts": "Não há campo de contato profissional público/autorizado confiável nos perfis atuais. Não foram criados atalhos WhatsApp/e-mail/Teams usando e-mail de recuperação ou dados privados do RH."
+  },
+  "remaining": [
+    {
+      "item": "Contatos profissionais WhatsApp/e-mail/Teams",
+      "status": "Não implementado: exige cadastro e visibilidade explícitos. Não inferir de dados privados."
+    },
+    {
+      "item": "Novo percurso universal item/perfil→biblioteca",
+      "status": "Não implementado nesta rodada. Vínculos existentes e downloads exatos foram testados; melhorias aplicadas dentro da biblioteca."
+    },
+    {
+      "item": "Validação visual e teclado em navegador real",
+      "status": "Não executada: pedido atual exige continuar local sem Chrome. Testes DOM/VM e HTTP não equivalem a E2E visual."
+    }
+  ],
+  "translations": "work/ui130-documents-people-translations.json (12 chaves; primeira integração de 11 verificada em PT/EN; nova confirmação de cancelamento enviada ao coordenador)",
+  "independent_it_review": "work/ui130-ti-independent-review.json: três achados comunicados, fontes atuais corrigidas pelo responsável; confirmação independente de rejeição da resposta de sessão antiga.",
+  "production": "Nenhum dado real, usuário temporário, serviço ou domínio foi alterado.",
+  "status": "Implementado e testado localmente. Pronto para integração; publicação e E2E de navegador não executados."
+}

@@ -1,0 +1,13 @@
+{
+  "base_commit": "45f07468056e1240e7df9d51a9d53ce9c815a657",
+  "baseline_files": 665,
+  "missing": [],
+  "changed_existing": [
+    "DELIVERY_CHECKS.json",
+    "deploy/materialize_runtime.py",
+    "Dockerfile",
+    "README.md"
+  ],
+  "existing_overlays_preserved": true,
+  "production_data_in_package": false
+}

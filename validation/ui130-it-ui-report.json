@@ -1,0 +1,75 @@
+{
+  "area": "Solicitações de TI — interface UI130",
+  "status": "implementado_testado_localmente_fonte_congelada",
+  "runtime": "work/runtime-ui130",
+  "files": [
+    "app/static/it_workspace.js",
+    "app/static/it_workspace.css",
+    "tests/test_ui130_it_ui.cjs",
+    "tests/fixtures/ui130_it_api_fixture.json"
+  ],
+  "product_sha256": {
+    "app/static/it_workspace.js": "fd7c2cc97a0c753e1d303d3a7705aede8254eddd47f64c14e471e9ce42f75b4a",
+    "app/static/it_workspace.css": "5ad9f065124a1e94cc3a5a27f6185b7281a2bbe0a9b3fb221d48a09cbcb7fb11"
+  },
+  "test_sha256": {
+    "tests/test_ui130_it_ui.cjs": "06622733aad4074785a86edc4904438e7c3ed2ea5589f5d038ad6f41861691fd",
+    "tests/fixtures/ui130_it_api_fixture.json": "ba8add5bfeab15621003c346b0288027330f0dea748325e950c58e55fda94eb5"
+  },
+  "implemented": [
+    "Meus chamados e Fila de atendimento restrita aos gestores, pesquisa, filtros de situação/prioridade, paginação e quantidades vindas do servidor para a consulta atual.",
+    "Abertura de chamado com assunto, descrição e prioridade; nenhuma categoria, anexo, mensagem externa ou campo burocrático adicional.",
+    "Detalhe com solicitante, responsável, datas UTC identificadas, situação, prioridade, resolução, histórico e comentários paginados. Textos de autoria são escapados.",
+    "Atribuição de responsável elegível, comentário e transições conforme capacidades da resposta. A atribuição não concede permissões à conta.",
+    "Resolvido significa resolução registrada; Encerrado significa fim do atendimento. Solicitante pode reabrir com motivo. Cancelado permanece terminal com histórico disponível.",
+    "Aguardar solicitante, resolver, reabrir e cancelar exigem justificativa. Comentário não altera a situação automaticamente.",
+    "Voltar para a lista conserva filtros. Fechar janela mantém o rascunho na aba e a sessão; Cancelar edição pede confirmação somente quando há diferenças reais de conteúdo.",
+    "Rascunhos ficam apenas na memória, separados por empresa/conta; mudança de sessão remove dados exibidos da conta anterior. Não são gravados em localStorage nem enviados automaticamente.",
+    "Confirmação de salvamento depende de resposta conferida do servidor. Conflito preserva texto. Falha de rede, resposta inválida, HTTP503/5xx/408 ou resultado incerto mantém o corpo e op_id para repetição idempotente.",
+    "Responsável anteriormente atribuído e agora não habilitado continua explícito no formulário; alteração de prioridade não o remove silenciosamente.",
+    "Português brasileiro para Corcovado e inglês para outras instalações; rótulos textuais de situação, foco visível, campos associados, botões de44px, formulário móvel16px e tabela adaptável para cartões.",
+    "Link de ajuda /help/topics/itrequests; nenhuma ação de fechar, cancelar ou voltar chama logout."
+  ],
+  "integration": {
+    "global": "window.AJIT",
+    "hooks": ["init", "handles", "open", "syncSession", "hasForm", "exitBusy", "guardRoute"],
+    "routes": ["#it", "#it/requests/{UUID}"],
+    "api_contract": "work/ui130-it-api-contract.json",
+    "backend_owner": "qualidade_ti",
+    "shared_integration_owner": "root",
+    "permissions": ["it.view_own", "it.manage"],
+    "identity_shape": "{user_id,name}; não {id,name}",
+    "limits": {"title":180,"description":6000,"comment":4000},
+    "dependencies": "Root integra AJIT no shell, navegação, sessão, permissões, assets e ajuda; backend aplica a autorização real. Nenhum arquivo compartilhado foi editado por este agente."
+  },
+  "validation": {
+    "command": "node work/runtime-ui130/tests/test_ui130_it_ui.cjs",
+    "result": "PASS",
+    "assertions":266,
+    "syntax_command": "node --check work/runtime-ui130/app/static/it_workspace.js",
+    "syntax_result":"PASS",
+    "method": "Componente e handlers de eventos reais executados em adaptador DOM isolado Node. Fixture portátil veio de requisições HTTP reais feitas pelo QA em uma empresa local fictícia; o frontend não inventou formatos de resposta.",
+    "crosslayer": {
+      "operations":11,
+      "method":"Cada etapa usa before_detail, before_workspace, before_detail_workspace, request_body e response capturados da API real. Executa clique/submit reais, compara o payload exato, verifica versão, situação, recibo, preservação de sessão e retorno à lista.",
+      "sequence":["abrir","atribuir responsável/prioridade","comentário do gestor","iniciar atendimento","aguardar solicitante","comentário do solicitante sem transição","retomar atendimento","registrar resolução","encerrar","reabrir","cancelar"],
+      "source":"work/ui130-it-api-fixture.json",
+      "capture_script":"work/capture_ui130_it_api_flow.py"
+    },
+    "additional_cases":["filtros e volta à lista","dirty semântico e restauração de valor original","recusa/aceite de descarte","fechar e retomar","isolamento de rascunho por conta","resposta antiga após troca de conta","permissão perdida antes do envio","409 preservando texto","resposta de sucesso malformada sem falsa confirmação","repetição com corpo/op_id idênticos","503 mantendo operação após fechar/retomar","histórico paginado sem duplicação","seleção de responsável desabilitado sem remoção silenciosa","limites e motivos obrigatórios","escape de HTML em assunto/descrição/histórico","português/inglês","regras estáticas CSS de celular/foco/textos"]
+  },
+  "previews": {
+    "list":"work/ui130-it-preview-list.html",
+    "detail":"work/ui130-it-preview-detail.html",
+    "method":"HTML produzido pelo próprio AJIT com o CSS real e dados fictícios da API; não são screenshots nem validação visual por navegador.",
+    "regeneration":"Defina UI130_PREVIEW_DIR=work e execute o mesmo teste Node."
+  },
+  "limits": [
+    "Não foi usado Chrome, navegador sem interface, aparelho móvel ou produção. Renderização visual, leitor de tela, teclado real e navegação nativa do navegador continuam pendentes de validação integrada pelo coordenador.",
+    "Teste DOM comprova handlers, contratos e estado; não comprova dimensões visuais reais ou comportamento de um navegador.",
+    "Rascunhos são temporários da aba; fechar/recarregar a aba tem aviso de saída, mas não oferece recuperação persistente/offline.",
+    "Nenhum dado de produção, credencial, usuário temporário, projeto/aprovador ou infraestrutura foi alterado. Nenhuma mensagem foi enviada.",
+    "Este relatório não declara publicação no GitHub/Render ou funcionamento confirmado em produção."
+  ],
+  "pending_source_edits":false
+}
