@@ -1,0 +1,132 @@
+{
+  "version": "UI138",
+  "generated_at": "2026-10-19T11:22:44.062Z",
+  "environment": "Local fictional HTTP+SQLite and deterministic actual-handler DOM; no browser or production",
+  "rows": [
+    {
+      "screen": "Configuração de repetição e adiamento",
+      "status": "tested_http_and_dom",
+      "evidence": [
+        "test_http_postpone_and_stop_repeating_preserve_work_reason_and_version",
+        "test_ui138_maintenance_ui.cjs"
+      ],
+      "result": "Limites por unidade, motivo obrigatório, prazo/âncora, restauração e versão original preservados; alterar depois da conferência exige nova revisão."
+    },
+    {
+      "screen": "Sucessora em ciclo fixo",
+      "status": "tested_http",
+      "evidence": [
+        "test_http_fixed_cycle_successor_identity_month_anchor_and_retry"
+      ],
+      "result": "Jan31→Feb28→Mar31 sem deriva de âncora, ID determinístico, vínculo à predecessora e resultados vazios na sucessora."
+    },
+    {
+      "screen": "Sucessora a partir da conclusão",
+      "status": "tested_http",
+      "evidence": [
+        "test_http_successor_failure_rolls_back_completion_and_completion_basis_is_saved_time"
+      ],
+      "result": "A conclusão salva, e não um relógio de prévia, define a próxima data; criação falha reverte a transação inteira."
+    },
+    {
+      "screen": "Rotina alterada e liberação da próxima ordem",
+      "status": "tested_http_and_dom",
+      "evidence": [
+        "test_http_changed_routine_blocked_then_current_review_releases_once",
+        "test_ui138_maintenance_ui.cjs"
+      ],
+      "result": "Revisão atual explícita; responsável indisponível não é descartado silenciosamente; liberação exata e sem duplicação."
+    },
+    {
+      "screen": "Interromper próxima ordem",
+      "status": "tested_http_and_dom",
+      "evidence": [
+        "test_http_stop_pending_and_cancel_order_are_distinct_preserving_history",
+        "test_ui138_maintenance_ui.cjs"
+      ],
+      "result": "Motivo, ordem predecessora e estado de interrupção persistidos; resultados já concluídos e histórico preservados."
+    },
+    {
+      "screen": "Cancelar ordem atual",
+      "status": "tested_http_and_dom",
+      "evidence": [
+        "test_http_stop_pending_and_cancel_order_are_distinct_preserving_history",
+        "test_ui138_maintenance_ui.cjs"
+      ],
+      "result": "Motivo e confirmação exigidos; dados salvos preservados; não cria sucessora nem permite conclusão posterior."
+    },
+    {
+      "screen": "Desativar repetição",
+      "status": "tested_http_and_dom",
+      "evidence": [
+        "test_http_postpone_and_stop_repeating_preserve_work_reason_and_version",
+        "test_ui138_maintenance_ui.cjs"
+      ],
+      "result": "A ordem atual permanece aberta; desativar repetição não executa cancelamento; conclusão futura sem sucessora."
+    },
+    {
+      "screen": "Permissões, revogação e concorrência",
+      "status": "tested_http",
+      "evidence": [
+        "test_http_fixed_cycle_successor_identity_month_anchor_and_retry",
+        "test_http_cycle_acl_revoked_retry_and_disabled_assignment_do_not_grant_access",
+        "test_http_successor_failure_rolls_back_completion_and_completion_basis_is_saved_time"
+      ],
+      "result": "ACL revalidada em retry, designação sem novas permissões, conflitos409 e rollback verificáveis."
+    },
+    {
+      "screen": "Rascunhos e troca de contexto no formulário",
+      "status": "tested_dom",
+      "evidence": [
+        "test_ui138_maintenance_ui.cjs",
+        "test_ui136_work_flows.cjs",
+        "test_ui132_task_acceptance_persist.cjs"
+      ],
+      "result": "Restauração com motivo/versão, resposta tardia após troca de conta ignorada e evento close antigo não limpa formulário novo."
+    },
+    {
+      "screen": "Logística: destino por ID, pesquisa e indisponibilidade",
+      "status": "independently_tested_dom",
+      "evidence": [
+        "test_ui138_logistics.cjs",
+        "test_ui138_logistics_independent.cjs"
+      ],
+      "result": "Busca não altera campo; IDs diferentes com mesmo nome não se confundem; opções revogadas/retiradas não podem ser selecionadas."
+    },
+    {
+      "screen": "Cabeçalhos de logística",
+      "status": "source_reviewed",
+      "evidence": [
+        "work/ui138-maintenance-independent-review.json"
+      ],
+      "result": "Tradução e apresentação revisadas, sem alteração de API, gravação ou concessão. Sem prova visual de navegador."
+    },
+    {
+      "screen": "Criação, execução e revisão de etapas de manutenção",
+      "status": "existing_dom_regression_retested_http_not_rerun_in_this_agent_round",
+      "evidence": [
+        "test_ui137_maintenance_ui.cjs"
+      ],
+      "result": "88 verificações DOM de regressão passaram; jornada HTTP completa UI137 não foi repetida por este agente nesta rodada."
+    },
+    {
+      "screen": "Produção, navegador real e celular",
+      "status": "not_tested",
+      "evidence": [],
+      "result": "Prévia HTML inerte apenas; nenhuma alegação de execução real na Corcovado."
+    }
+  ],
+  "test_summary": {
+    "unique_http_cases_passed": 6,
+    "maintenance_dom_checks": 108,
+    "regression_dom_checks": 351,
+    "independent_logistics_checks": 74,
+    "final_single_cohort": "Root executes final reconstructed build; not claimed here"
+  },
+  "limits": [
+    "No real browser, native constraint engine, mobile device, visual rendering or screen-reader test in this local-only round.",
+    "No Corcovado production execution or modifications to live records, users, infrastructure or deployed version.",
+    "The optional aggregate real-API JSON fixture export was not enabled by the coordinator in preflight; HTTP assertions and JUnit evidence are the transport proof.",
+    "Final whole-build tests, reconstructed ZIP and publication status are coordinated separately by root."
+  ]
+}

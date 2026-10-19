@@ -1,0 +1,21 @@
+{
+  "kind": "inert-local-DOM-preview",
+  "items": [
+    {
+      "file": "leitura.html",
+      "title": "UI138 · Leitura e ciência",
+      "bytes": 7496,
+      "source": "app/static/document_join.js + document_join.css",
+      "fictional": true,
+      "browserValidated": false
+    },
+    {
+      "file": "resultado-incerto.html",
+      "title": "UI138 · Resultado incerto",
+      "bytes": 5919,
+      "source": "app/static/document_join.js + document_join.css",
+      "fictional": true,
+      "browserValidated": false
+    }
+  ]
+}

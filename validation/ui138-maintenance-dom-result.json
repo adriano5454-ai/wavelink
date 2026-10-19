@@ -1,0 +1,7 @@
+{
+  "passed": true,
+  "command": "node tests/test_ui138_maintenance_ui.cjs",
+  "stdout": "UI138 maintenance: 108 checks passed; actual handlers, fictional responses, no browser.\n",
+  "stderr": "",
+  "browser": false
+}

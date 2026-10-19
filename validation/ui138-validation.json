@@ -1,0 +1,143 @@
+{
+  "release": "UI138",
+  "version": "1.34.38",
+  "status": "integrado_testado_localmente_nao_publicado",
+  "base_commit": "39afca26a8410581c17768ce712126597391563b",
+  "final_commit": null,
+  "deployment": null,
+  "runtime": {
+    "status": "passed",
+    "version": "1.34.38",
+    "runtime_manifest_sha256": "1fb72d87824226d3c0c190d4c0cb10844e1e28969dda28ba7e510a642488a72d",
+    "resources": 2441,
+    "all_reconstructed_files_identical": true,
+    "python_syntax_files": 234,
+    "cache_assets": 15,
+    "html_shells": 4,
+    "base_repository_files_preserved": 1577,
+    "production_access": false
+  },
+  "python": {
+    "unique_passed": 66,
+    "runs": [
+      {
+        "group": "Perfil: salvamento incerto e projeção privada",
+        "xml": "ui138-regression-profile-recovery.xml",
+        "passed": 1
+      },
+      {
+        "group": "Entrada documental pública: acesso limitado e recibo",
+        "xml": "ui138-regression-public-document-entry.xml",
+        "passed": 3
+      },
+      {
+        "group": "Manutenção: recorrência, adiamento e cancelamento",
+        "xml": "ui138-regression-maintenance-cycles.xml",
+        "passed": 6
+      },
+      {
+        "group": "Cadastro de colaborador — regressão",
+        "xml": "ui138-regression-rh-profile.xml",
+        "passed": 1
+      },
+      {
+        "group": "Conferência documental de RH — regressão",
+        "xml": "ui138-regression-documents.xml",
+        "passed": 4
+      },
+      {
+        "group": "Manutenção: execução e revisão — regressão",
+        "xml": "ui138-regression-maintenance.xml",
+        "passed": 5
+      },
+      {
+        "group": "Preservação de ordens e revisão por módulo",
+        "xml": "ui138-regression-maintenance-regression.xml",
+        "passed": 5
+      },
+      {
+        "group": "Publicação de rotinas — regressão",
+        "xml": "ui138-regression-publication.xml",
+        "passed": 6
+      },
+      {
+        "group": "TI: jornada isolada 1",
+        "xml": "ui138-regression-it-journeys-1.xml",
+        "passed": 1
+      },
+      {
+        "group": "TI: jornada isolada 2",
+        "xml": "ui138-regression-it-journeys-2.xml",
+        "passed": 1
+      },
+      {
+        "group": "TI: jornada isolada 3",
+        "xml": "ui138-regression-it-journeys-3.xml",
+        "passed": 1
+      },
+      {
+        "group": "TI: jornada isolada 4",
+        "xml": "ui138-regression-it-journeys-4.xml",
+        "passed": 1
+      },
+      {
+        "group": "TI: jornada isolada 5",
+        "xml": "ui138-regression-it-journeys-5.xml",
+        "passed": 1
+      },
+      {
+        "group": "TI: preservação isolada 1",
+        "xml": "ui138-regression-it-preservation-1.xml",
+        "passed": 2
+      },
+      {
+        "group": "TI: preservação isolada 2",
+        "xml": "ui138-regression-it-preservation-2.xml",
+        "passed": 2
+      },
+      {
+        "group": "Convites e privacidade documental",
+        "xml": "ui138-regression-invites.xml",
+        "passed": 7
+      },
+      {
+        "group": "Participação, histórico e relatórios",
+        "xml": "ui138-regression-participation.xml",
+        "passed": 5
+      },
+      {
+        "group": "Preservação e integração entre módulos",
+        "xml": "ui138-regression-preservation.xml",
+        "passed": 8
+      },
+      {
+        "group": "Ajuda e permissões",
+        "xml": "ui138-regression-help.xml",
+        "passed": 6
+      }
+    ]
+  },
+  "javascript": {
+    "passed_suites": 106,
+    "syntax_files": 114
+  },
+  "preservation": {
+    "production_access": false,
+    "production_data_changed": false,
+    "existing_users_changed": false,
+    "temporary_user_changed": false,
+    "outbound_messages": false,
+    "database_reset": false,
+    "schema_changed": false,
+    "writer_contracts_changed": false,
+    "approval_target_validation_corrected_in_ui137": true,
+    "ui137_local_base_retained": true
+  },
+  "limits": [
+    "Sem Chrome, navegador automatizado, captura de tela, leitor de tela ou aparelho real nesta rodada.",
+    "Prévias HTML usam componentes reais, estilos existentes e dados fictícios; não são screenshots nem comprovam renderização em navegador.",
+    "Nenhum e-mail real foi enviado. Contas, documentos e registros operacionais dos testes são fictícios e locais.",
+    "A jornada com os usuários reais da Corcovado continua sem nova validação em produção.",
+    "A matriz identifica o recorte desta rodada e a cobertura anterior. Não se afirma que todas as telas históricas foram validadas."
+  ]
+}

@@ -1,0 +1,97 @@
+[
+  {
+    "group": "profile-recovery",
+    "xml": "ui138-regression-profile-recovery.xml",
+    "exit_code": 0
+  },
+  {
+    "group": "public-document-entry",
+    "xml": "ui138-regression-public-document-entry.xml",
+    "exit_code": 0
+  },
+  {
+    "group": "maintenance-cycles",
+    "xml": "ui138-regression-maintenance-cycles.xml",
+    "exit_code": 0
+  },
+  {
+    "group": "rh-profile",
+    "xml": "ui138-regression-rh-profile.xml",
+    "exit_code": 0
+  },
+  {
+    "group": "documents",
+    "xml": "ui138-regression-documents.xml",
+    "exit_code": 0
+  },
+  {
+    "group": "maintenance",
+    "xml": "ui138-regression-maintenance.xml",
+    "exit_code": 0
+  },
+  {
+    "group": "maintenance-regression",
+    "xml": "ui138-regression-maintenance-regression.xml",
+    "exit_code": 0
+  },
+  {
+    "group": "publication",
+    "xml": "ui138-regression-publication.xml",
+    "exit_code": 0
+  },
+  {
+    "group": "it-journeys-1",
+    "xml": "ui138-regression-it-journeys-1.xml",
+    "exit_code": 0
+  },
+  {
+    "group": "it-journeys-2",
+    "xml": "ui138-regression-it-journeys-2.xml",
+    "exit_code": 0
+  },
+  {
+    "group": "it-journeys-3",
+    "xml": "ui138-regression-it-journeys-3.xml",
+    "exit_code": 0
+  },
+  {
+    "group": "it-journeys-4",
+    "xml": "ui138-regression-it-journeys-4.xml",
+    "exit_code": 0
+  },
+  {
+    "group": "it-journeys-5",
+    "xml": "ui138-regression-it-journeys-5.xml",
+    "exit_code": 0
+  },
+  {
+    "group": "it-preservation-1",
+    "xml": "ui138-regression-it-preservation-1.xml",
+    "exit_code": 0
+  },
+  {
+    "group": "it-preservation-2",
+    "xml": "ui138-regression-it-preservation-2.xml",
+    "exit_code": 0
+  },
+  {
+    "group": "invites",
+    "xml": "ui138-regression-invites.xml",
+    "exit_code": 0
+  },
+  {
+    "group": "participation",
+    "xml": "ui138-regression-participation.xml",
+    "exit_code": 0
+  },
+  {
+    "group": "preservation",
+    "xml": "ui138-regression-preservation.xml",
+    "exit_code": 0
+  },
+  {
+    "group": "help",
+    "xml": "ui138-regression-help.xml",
+    "exit_code": 0
+  }
+]

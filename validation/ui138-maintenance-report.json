@@ -1,0 +1,150 @@
+{
+  "version": "UI138",
+  "generated_at": "2026-10-19T11:22:44.060Z",
+  "status": "implemented_and_locally_tested_not_published",
+  "scope": "Maintenance recurrence, postponement, pending successor release/stop, order cancellation; independent logistics review.",
+  "runtime": "work/runtime-ui138",
+  "product_files_changed": [
+    "app/static/maintenance_ui.js",
+    "app/static/maintenance_forms.js",
+    "app/static/maintenance_management.js"
+  ],
+  "test_files": [
+    "tests/test_ui138_maintenance_http.py",
+    "tests/test_ui138_maintenance_ui.cjs",
+    "tests/test_ui138_logistics_independent.cjs"
+  ],
+  "sha256": {
+    "app/static/maintenance_ui.js": "5e03c05bdca0b0981dd329991200dfe0ed852764c3e0bcee6aa1c69d54ce02f5",
+    "app/static/maintenance_forms.js": "328c86be310b60c602076390ba185baa52c185ca22b9abc2454822c9657109b8",
+    "app/static/maintenance_management.js": "2102a792a14d4265abfe1f83ffe1456f84d25db80d0b8a08c33cbab76feefc95",
+    "tests/test_ui138_maintenance_http.py": "058154083d0591a046dc30ea091b578ba6ad5e48b8a7a2a6499add36d6d6bf79",
+    "tests/test_ui138_maintenance_ui.cjs": "6f57ab54d9cdde1b7c0633ef5dd3b976ab4ccd41ec1ade161483fe177d59d1a5",
+    "tests/test_ui138_logistics_independent.cjs": "15ea35553ea8b03d26d881cd0f71ec7db727af8194348259be888fbc609783b6"
+  },
+  "changes": [
+    {
+      "problem": "The UI allowed a generic interval up to 3650 although the server applies unit-specific limits.",
+      "implementation": "One shared validator and accessible changing limit hint apply days≤3650, weeks≤520, months≤120 in creation and cycle forms; payload/API unchanged.",
+      "files": [
+        "maintenance_ui.js",
+        "maintenance_forms.js",
+        "maintenance_management.js"
+      ]
+    },
+    {
+      "problem": "A queued close event from a previous management dialog could clear the current form controller and presentation after immediate reopening.",
+      "implementation": "Cleanup checks whether its own form is still the active connected form before removing its guard; only removes shared dialog styling when no management form remains.",
+      "files": [
+        "maintenance_management.js"
+      ]
+    },
+    {
+      "problem": "Postponement could be confused with stopping/cancelling and its final step label used an unrelated shared translation.",
+      "implementation": "Specific postponement help explains preservation of saved work and new anchor; specific final step says Conferir programação da manutenção; existing stop-next-order and cancel-current-order actions remain distinct.",
+      "files": [
+        "maintenance_management.js"
+      ]
+    },
+    {
+      "problem": "Stopped pending successor status was not expressed explicitly alongside blocked/created states.",
+      "implementation": "Explicit pending follow-up stopped label, visible as text and translated into Portuguese.",
+      "files": [
+        "maintenance_management.js"
+      ]
+    }
+  ],
+  "backend_changed": false,
+  "api_schema_or_permissions_changed": false,
+  "translation_map": "work/ui138-maintenance-translations.json",
+  "translation_entries": 5,
+  "tests": {
+    "http": {
+      "passed": true,
+      "unique_cases": 6,
+      "source": "tests/test_ui138_maintenance_http.py",
+      "cases": [
+        "test_http_fixed_cycle_successor_identity_month_anchor_and_retry",
+        "test_http_postpone_and_stop_repeating_preserve_work_reason_and_version",
+        "test_http_changed_routine_blocked_then_current_review_releases_once",
+        "test_http_stop_pending_and_cancel_order_are_distinct_preserving_history",
+        "test_http_cycle_acl_revoked_retry_and_disabled_assignment_do_not_grant_access",
+        "test_http_successor_failure_rolls_back_completion_and_completion_basis_is_saved_time"
+      ],
+      "evidence": "work/ui138-preflight-http.xml",
+      "executed_by": "root coordinator in isolated fictional TestClient/SQLite fixtures",
+      "cohort_note": "All six maintenance cases passed. This preflight XML also contains three unrelated area cases and one unrelated failure; it is not an all-green full-release receipt.",
+      "smtp": "SMTP and SMTP_SSL explicitly blocked and unused"
+    },
+    "dom": {
+      "passed": true,
+      "checks": 108,
+      "locales": [
+        "pt-BR",
+        "en"
+      ],
+      "source": "tests/test_ui138_maintenance_ui.cjs",
+      "evidence": "work/ui138-maintenance-dom-result.json",
+      "last_run": "After specific maintenance-schedule translation was integrated"
+    },
+    "regressions": {
+      "passed": true,
+      "total_checks": 351,
+      "evidence": "work/ui138-maintenance-regression-results.json",
+      "suites": [
+        {
+          "name": "test_ui137_maintenance_ui.cjs",
+          "checks": 88
+        },
+        {
+          "name": "test_ui136_work_flows.cjs",
+          "checks": 232
+        },
+        {
+          "name": "test_ui132_task_acceptance_persist.cjs",
+          "checks": 31
+        }
+      ]
+    },
+    "independent_logistics": {
+      "passed": true,
+      "review": "work/ui138-maintenance-independent-review.json",
+      "root_suite_checks": 52,
+      "additional_independent_checks": 22
+    },
+    "final_integrated_cohort": "Pending coordinator run on final frozen reconstructed build"
+  },
+  "preservation": [
+    "No migrations, server code, ACL or password/session policy changed.",
+    "HTTP tests check existing order ID, source revision, saved check results, reasons, author/timestamps and historical event retention.",
+    "Duplicate receipt replay creates no duplicate successor or audit event; stale versions conflict.",
+    "Revoked permission rejects receipt retry; assignment does not grant management permission.",
+    "Unexpected successor creation failure rolls back completion, audit, receipt and newly created order together.",
+    "Old completed work remains unchanged when the next pending order is stopped; cancelling an open order preserves existing saved work.",
+    "Actual completion and fixed-date monthly anchors tested separately."
+  ],
+  "preview": {
+    "path": "work/ui138-maintenance-preview.html",
+    "validation": "work/ui138-maintenance-preview-validation.json",
+    "states": [
+      "schedule",
+      "release",
+      "stop",
+      "cancel"
+    ],
+    "source": "Actual components rendered by the local DOM test using fictional values; iframe-per-form isolation.",
+    "artifact_adjustment": "The DOM adapter serializer omits a programmatically assigned element.id. The preview explicitly reflects maintenance-repeat-limit on its generated hint so aria-describedby matches actual browser DOM semantics. No product source was changed for this artifact.",
+    "inert": true,
+    "external_resources": 0,
+    "browser_screenshot": false
+  },
+  "pending": [
+    "No real browser, native constraint engine, mobile device, visual rendering or screen-reader test in this local-only round.",
+    "No Corcovado production execution or modifications to live records, users, infrastructure or deployed version.",
+    "The optional aggregate real-API JSON fixture export was not enabled by the coordinator in preflight; HTTP assertions and JUnit evidence are the transport proof.",
+    "Final whole-build tests, reconstructed ZIP and publication status are coordinated separately by root."
+  ],
+  "new_known_product_blockers": [],
+  "no_external_messages": true,
+  "no_production_access": true
+}

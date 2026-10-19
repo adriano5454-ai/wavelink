@@ -1,0 +1,49 @@
+{
+  "passed": true,
+  "method": "Static HTML parsing per document; no browser",
+  "documents": [
+    {
+      "document": "preview",
+      "unique_ids": 0,
+      "duplicate_ids": [],
+      "controls_disabled": 0,
+      "links_verified": 0,
+      "reference_targets_verified": 0
+    },
+    {
+      "document": "srcdoc-1",
+      "unique_ids": 5,
+      "duplicate_ids": [],
+      "controls_disabled": 10,
+      "links_verified": 0,
+      "reference_targets_verified": 1
+    },
+    {
+      "document": "srcdoc-2",
+      "unique_ids": 4,
+      "duplicate_ids": [],
+      "controls_disabled": 9,
+      "links_verified": 0,
+      "reference_targets_verified": 0
+    },
+    {
+      "document": "srcdoc-3",
+      "unique_ids": 4,
+      "duplicate_ids": [],
+      "controls_disabled": 5,
+      "links_verified": 0,
+      "reference_targets_verified": 0
+    },
+    {
+      "document": "srcdoc-4",
+      "unique_ids": 4,
+      "duplicate_ids": [],
+      "controls_disabled": 5,
+      "links_verified": 0,
+      "reference_targets_verified": 0
+    }
+  ],
+  "iframes_sandboxed": true,
+  "external_resources": 0,
+  "sha256": "1a9be347270f845318b313ad2ba90303c9d5224eb07ae8633b68f70cf838538a"
+}

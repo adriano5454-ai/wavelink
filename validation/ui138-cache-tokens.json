@@ -1,0 +1,20 @@
+{
+  "assets": {
+    "app.js": "1.34.38-b57b695f2101",
+    "document_join.css": "1.34.38-b5b2caf044a1",
+    "document_join.js": "1.34.38-2b383625df7e",
+    "email_alerts_ui93.js": "1.34.38-e3d840de19d6",
+    "help_catalogue.json": "1.34.38-449db3bb692d",
+    "help_workspace.js": "1.34.38-4071cfde28b2",
+    "locale_pt_br.js": "1.34.38-510a7c3d061d",
+    "logistics_experience.js": "1.34.38-60908e960cf0",
+    "logistics_workflow.css": "1.34.38-219b4ead43ee",
+    "logistics_workflow.js": "1.34.38-38bd46525473",
+    "maintenance_forms.js": "1.34.38-328c86be310b",
+    "maintenance_management.js": "1.34.38-2102a792a14d",
+    "maintenance_ui.js": "1.34.38-5e03c05bdca0",
+    "recognition_workspace.css": "1.34.38-b29a28a5f6fa",
+    "recognition_workspace.js": "1.34.38-9001b4c36117"
+  },
+  "updated": []
+}

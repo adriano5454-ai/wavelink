@@ -1,0 +1,37 @@
+{
+  "release": "UI138",
+  "representative_previews": 7,
+  "items": [
+    {
+      "title": "Perfil, equipe e recuperação do salvamento",
+      "file": "perfis/perfil-equipe.html"
+    },
+    {
+      "title": "Preferências de alertas",
+      "file": "perfis/alertas.html"
+    },
+    {
+      "title": "Entrada documental: leitura e identidade",
+      "file": "documentos/leitura.html"
+    },
+    {
+      "title": "Entrada documental: resultado incerto",
+      "file": "documentos/resultado-incerto.html"
+    },
+    {
+      "title": "Manutenção: recorrência, adiamento e cancelamento",
+      "file": "manutencao/recorrencia.html"
+    },
+    {
+      "title": "Destino da movimentação antes — UI137",
+      "file": "logistica/ui137-destino.html"
+    },
+    {
+      "title": "Destino da movimentação depois — UI138",
+      "file": "logistica/ui138-destino.html"
+    }
+  ],
+  "browser": false,
+  "screenshots": false,
+  "data": "fictional"
+}

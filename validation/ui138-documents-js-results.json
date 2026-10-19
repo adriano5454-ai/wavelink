@@ -1,0 +1,29 @@
+[
+  {
+    "suite": "test_ui138_documents_join.cjs",
+    "pass": true,
+    "output": "{\"suite\":\"UI138 public document invitation: local real handlers\",\"checks\":137,\"locales\":[\"en\",\"pt-BR\"],\"browser\":false,\"network\":false}\n"
+  },
+  {
+    "suite": "test_ui137_documents_invites.cjs",
+    "pass": true,
+    "output": "UI137 document invitations: 128 checks passed\n"
+  },
+  {
+    "suite": "test_ui137_documents_participation.cjs",
+    "pass": true,
+    "output": "UI137 document participation: 64 checks passed\n"
+  },
+  {
+    "syntax": "app/static/document_join.js",
+    "pass": true
+  },
+  {
+    "syntax": "tests/test_ui138_documents_dom.cjs",
+    "pass": true
+  },
+  {
+    "syntax": "tests/test_ui138_documents_join.cjs",
+    "pass": true
+  }
+]

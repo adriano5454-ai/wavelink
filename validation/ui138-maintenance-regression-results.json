@@ -1,0 +1,20 @@
+[
+  {
+    "file": "test_ui137_maintenance_ui.cjs",
+    "status": 0,
+    "stdout": "UI137 maintenance UI: 88 checks passed (actual handlers; no browser/layout).\n",
+    "stderr": ""
+  },
+  {
+    "file": "test_ui136_work_flows.cjs",
+    "status": 0,
+    "stdout": "UI136 work flows: 232 checks passed (real Task/Maintenance handlers, fictional DOM/API; no browser).\n",
+    "stderr": ""
+  },
+  {
+    "file": "test_ui132_task_acceptance_persist.cjs",
+    "status": 0,
+    "stdout": "UI132 shared-form persistence: 31 checks passed (actual form function; session swap during real await persist, no browser).\n",
+    "stderr": ""
+  }
+]

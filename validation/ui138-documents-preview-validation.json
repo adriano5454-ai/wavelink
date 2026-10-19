@@ -1,0 +1,26 @@
+[
+  {
+    "file": "index.html",
+    "scriptTags": 0,
+    "duplicateIds": [],
+    "missingLinks": [],
+    "links": 2,
+    "externalLinks": 0
+  },
+  {
+    "file": "leitura.html",
+    "scriptTags": 0,
+    "duplicateIds": [],
+    "missingLinks": [],
+    "links": 2,
+    "externalLinks": 0
+  },
+  {
+    "file": "resultado-incerto.html",
+    "scriptTags": 0,
+    "duplicateIds": [],
+    "missingLinks": [],
+    "links": 2,
+    "externalLinks": 0
+  }
+]

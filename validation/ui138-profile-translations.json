@@ -1,0 +1,10 @@
+{
+  "UNLOCKED": "DESBLOQUEADO",
+  "Unlocks at {0} points": "Disponível a partir de {0} pontos",
+  "Retry contribution history": "Tentar carregar o histórico novamente",
+  "Clear selected image": "Remover imagem selecionada",
+  "Selected image: {0}": "Imagem selecionada: {0}",
+  "Reload confirmed profile": "Recarregar perfil confirmado",
+  "A profile save may already have reached the server. Reload the confirmed profile and discard this local form?": "Uma gravação do perfil pode já ter chegado ao servidor. Recarregar o perfil confirmado e descartar este formulário local?",
+  "Your unsaved profile edits were restored for this account.": "As alterações não salvas do perfil foram recuperadas para esta conta."
+}

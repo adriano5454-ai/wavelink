@@ -1,0 +1,38 @@
+{
+  "release": "UI138",
+  "kind": "actual_component_html_not_screenshots",
+  "pages": [
+    {
+      "page": "perfil-equipe.html",
+      "title": "Perfil, equipe e resultado da gravação",
+      "source": "ui138-profile-markup.html",
+      "source_sha256": "7e8227884c19dc00e774428330e0bee0c0a50fa3b702d6e7c3ff46e3640c3c76"
+    },
+    {
+      "page": "alertas.html",
+      "title": "Preferências de alertas por e-mail",
+      "source": "ui138-profile-alerts-markup.html",
+      "source_sha256": "05f4e1d6614adda71e89d0f6d5aee49760251345b2e2109ddc9cc20016aa7972"
+    }
+  ],
+  "local_url_checks": 101,
+  "broken_urls": 0,
+  "browser": false,
+  "production": false,
+  "fictional": true,
+  "assets": [
+    "assets/badges/silver-sonar.webp",
+    "assets/badges/starter-compass.webp",
+    "assets/ui68-home-scene.svg",
+    "assets/wavelink-approved-offshore-profile-ui87.webp",
+    "assets/wavelink-approved-offshore-ui87.webp",
+    "assets/wavelink-home-cover-ui86.svg",
+    "assets/wavelink-profile-cover-ui86.svg"
+  ],
+  "styles": "Actual shell CSS order; links and controls inactivated in the external copy",
+  "limits": [
+    "No layout engine or screen-reader audit",
+    "No actual email delivery",
+    "No production data or account used"
+  ]
+}

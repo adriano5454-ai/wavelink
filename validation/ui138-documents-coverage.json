@@ -1,0 +1,94 @@
+{
+  "release": "UI138",
+  "area": "Página pública /sign/ — leitura e ciência de documento",
+  "method": "Controlador real em adaptador DOM local, PT-BR/EN, transporte fictício. HTTP real com SQLite temporário executado pelo coordenador. Sem navegador ou produção.",
+  "screens": [
+    {
+      "screen": "Convite — primeiro acesso, conta conectada e visitante",
+      "status": "Implementado e testado por DOM local",
+      "changes": [
+        "Recuperação explícita de falha de conexão, sem repetição automática de entrada.",
+        "Título, textos estáticos e instruções em PT-BR; foco no título após mudança de tela.",
+        "Respostas atrasadas de abertura deixam de repintar acesso encerrado."
+      ],
+      "tested": [
+        "Remoção do código do fragmento sem colocar segredo na URL da requisição.",
+        "Leitura da conta salva apenas por transação readonly; conta de outra empresa não é usada.",
+        "Resposta perdida na entrada repete o mesmo grant e a mesma identidade, sem duplicar a solicitação.",
+        "Erro definitivo de convite não oferece repetição automática."
+      ],
+      "limits": [
+        "Login com senha real, QR e câmera não foram usados.",
+        "Comportamento de autofill e anúncio do leitor de tela depende de navegador."
+      ]
+    },
+    {
+      "screen": "Documento fixado à revisão e anexos autorizados",
+      "status": "Implementado e testado por DOM; arquivo exato coberto no HTTP preflight",
+      "changes": [
+        "Resposta precisa manter empresa, grant, identidade, hash e revisão aceitos na entrada.",
+        "Exibe zero salvo corretamente; conteúdo e nomes salvos permanecem literais.",
+        "Download atrasado é descartado após expiração ou mudança para resultado incerto."
+      ],
+      "tested": [
+        "Resposta com empresa, hash, revisão ou identidade divergente não exibe documento nem ação de ciência.",
+        "Conteúdo salvo com HTML permanece texto escapado.",
+        "Leitura falhada permite repetir sem sobrepor chamadas.",
+        "Download ainda pendente não começa após terminar o acesso ou ficar incerto."
+      ],
+      "limits": [
+        "Adaptador DOM não comprova layout, rolagem, salvamento nativo de arquivos ou interação touch."
+      ]
+    },
+    {
+      "screen": "Registrar ciência, desenho opcional e comprovante",
+      "status": "Implementado e testado por DOM; replay após acesso encerrado comprovado por HTTP preflight",
+      "changes": [
+        "Ação Registrar ciência e encerrar distinta de Encerrar sem registrar ciência.",
+        "Desenho opcional tem descrição acessível e alternativa sem desenho.",
+        "Comprovante deve corresponder ao ID, hash, revisão e tipo de identidade do documento admitido."
+      ],
+      "tested": [
+        "Registro sem desenho envia mark vazio e confirmação explícita.",
+        "Não trata comprovante de outro registro como sucesso.",
+        "Normalização não traduz declaração, autores ou conteúdo já salvo.",
+        "Não grava sessões, rascunhos ou armazenamento da aplicação."
+      ],
+      "limits": [
+        "A aplicação registra ciência pessoal; não comprova presença física nem autentica a identidade declarada de visitante.",
+        "Desenho por ponteiro e teclado nativo precisam de validação em navegador."
+      ]
+    },
+    {
+      "screen": "Resposta incerta, expiração, Voltar/reabrir e encerramento",
+      "status": "Implementado e testado com promessas e eventos locais controlados",
+      "changes": [
+        "Esconde documento após resultado incerto e preserva a solicitação exata para repetir/consultar.",
+        "Avisa antes de perder a solicitação que existe apenas em memória.",
+        "Evento de saída invalida callbacks; reabertura persistida não restaura acesso.",
+        "Link Abrir o Wavelink aparece após encerramento e não executa logout."
+      ],
+      "tested": [
+        "Mesmos op_id, hash, desenho e confirmação no retry, sem envio automático.",
+        "Comprovante de assinatura concluída continua recuperável após expiração/revogação.",
+        "Resposta tardia de outcome ou abertura não reabre a tela encerrada.",
+        "Encerrar sem ciência revoga apenas o grant temporário."
+      ],
+      "limits": [
+        "Eventos pagehide/pageshow/beforeunload foram simulados; não equivalem à prova do botão Voltar nem do BFCache em dispositivo real.",
+        "Se a aba for fechada ou atualizada, a solicitação em memória pode se perder; o responsável ainda pode conferir assinaturas salvas."
+      ]
+    }
+  ],
+  "pending": [
+    "Teste manual de teclado, foco visual, leitor de tela, telas pequenas e desenho por toque.",
+    "Validação real do download e ciclos nativos de Voltar/BFCache.",
+    "Nenhuma alteração publicada ou validação autenticada na Corcovado nesta rodada."
+  ],
+  "integration_http": {
+    "passed": 3,
+    "failed": 0,
+    "evidence": "work/ui138-regression-public-document-entry.xml",
+    "browser": false
+  }
+}

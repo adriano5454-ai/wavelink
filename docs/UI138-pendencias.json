@@ -1,0 +1,47 @@
+{
+  "release": "UI138",
+  "implemented_local": [
+    {
+      "area": "Perfis e equipe",
+      "change": "Recuperação de salvamento após perda da resposta, busca de pessoas e identificação de estados de perfil, histórico e alertas.",
+      "tested": "Handlers em adaptador DOM e jornada HTTP com dados fictícios; detalhes por vista na matriz."
+    },
+    {
+      "area": "Participação documental",
+      "change": "Entrada por convite com controle de respostas atrasadas, expiração/revogação e recuperação do recibo de uma operação incerta.",
+      "tested": "Handlers locais e HTTP em banco fictício; sem assinatura real, câmera ou mensagem."
+    },
+    {
+      "area": "Manutenção",
+      "change": "Intervalos por dia, semana ou mês com os mesmos limites do servidor, explicação das ações sobre a recorrência e proteção ao fechar/reabrir janelas.",
+      "tested": "Ciclos e sucessoras, adiamento, interrupção, cancelamento, liberação, permissões e repetição por HTTP local; formulários em DOM."
+    },
+    {
+      "area": "Logística",
+      "change": "Pesquisar preserva o destino escolhido, que permanece visível e identificado em texto. Opções bloqueadas e navegação por teclado respeitam o campo original. Cabeçalhos em PT-BR.",
+      "tested": "52 verificações locais em português/inglês; cabeçalhos revistos por código. Comparação antes/depois do componente."
+    }
+  ],
+  "pending": [
+    {
+      "area": "Visual e dispositivos",
+      "item": "Inspeção de pixels, contraste combinado, teclado/leitor de tela, celular e Voltar do navegador continuam pendentes, pois esta rodada é sem navegador."
+    },
+    {
+      "area": "Integrações nativas",
+      "item": "Câmera, assinatura por toque, seleção nativa de arquivos, download e abertura de documentos nos aplicativos do usuário não foram testados."
+    },
+    {
+      "area": "Produção",
+      "item": "A UI138 permanece local nesta entrega. A UI137 já consta no GitHub, mas seu deployment não foi consultado. Não houve novo commit nem deployment nesta rodada; as contas reais da Corcovado não foram usadas."
+    },
+    {
+      "area": "Cobertura restante",
+      "item": "A revisão é identificada por vista e método na matriz. Ela não comprova todas as telas históricas: remessas completas, custódia de frota e outras jornadas ainda precisam de rodada específica."
+    },
+    {
+      "area": "Preservação",
+      "item": "Registros antigos de testes e o usuário temporário da produção não foram consultados nem removidos. O pacote não executa limpeza ou redefinição de dados."
+    }
+  ]
+}

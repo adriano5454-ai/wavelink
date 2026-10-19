@@ -1,0 +1,159 @@
+{
+  "release": "UI138",
+  "state": "implementado e testado localmente; fontes congeladas para integração do coordenador",
+  "production_touched": false,
+  "browser_used": false,
+  "external_messages_sent": false,
+  "backend_changed": false,
+  "files": [
+    {
+      "path": "app/static/recognition_workspace.js",
+      "sha256": "9001b4c36117419a60671e8efb611e02fe4beea1165c381a29bf133a36bc5d06"
+    },
+    {
+      "path": "app/static/recognition_workspace.css",
+      "sha256": "b29a28a5f6fafc2b44c3a49cd9a02819c00737d811cdb5c88de598a9a344771f"
+    },
+    {
+      "path": "app/static/email_alerts_ui93.js",
+      "sha256": "e3d840de19d6d25d591be753f90571b6cebf439394598230441a99388388b031"
+    },
+    {
+      "path": "tests/test_ui138_profile_flows.cjs",
+      "sha256": "a08da2d6bcc78be834f208c59902b2b90c050e59ff7ce27414d64d87e3b1d351"
+    },
+    {
+      "path": "tests/test_ui138_profile_alerts.cjs",
+      "sha256": "26924aab2e02bce779f24b3ba46be01576503353660d220eb29bb34bcc8241aa"
+    },
+    {
+      "path": "tests/test_ui138_profile_visual.cjs",
+      "sha256": "997c512b88148ecb180622532cb919ca5d52d00bbc3e869eebfa8162f73f279e"
+    },
+    {
+      "path": "tests/test_ui138_profile_http.py",
+      "sha256": "2072efeb994e8a27bb5f946fccc9932fe02a9c74383ab0b3ab737935c827b389"
+    },
+    {
+      "path": "tests/test_ui131_profile_save_session.cjs",
+      "sha256": "0dc7f8450f3af7ff827dbfb496065601196cf8df0825463a644cf7555ff60c0f"
+    },
+    {
+      "path": "tests/test_ui130_documents_people.cjs",
+      "sha256": "07219d5607187b4a8ae3320fbe71c323bb98672122c5b67ca56cbaa1514b93a2"
+    }
+  ],
+  "confirmed_results": {
+    "new_node_checks": 176,
+    "new_node_suites": [
+      {
+        "file": "test_ui138_profile_flows.cjs",
+        "checks": 124
+      },
+      {
+        "file": "test_ui138_profile_alerts.cjs",
+        "checks": 38
+      },
+      {
+        "file": "test_ui138_profile_visual.cjs",
+        "checks": 14
+      }
+    ],
+    "regression_checks": 302,
+    "regression_suites": [
+      {
+        "file": "test_ui135_account_profiles.cjs",
+        "checks": 45
+      },
+      {
+        "file": "test_ui131_profile_navigation.cjs",
+        "checks": 38
+      },
+      {
+        "file": "test_ui135_account_flows.cjs",
+        "checks": 94
+      },
+      {
+        "file": "test_ui131_profile_save_session.cjs",
+        "checks": 32
+      },
+      {
+        "file": "test_ui130_documents_people.cjs",
+        "checks": 93
+      }
+    ],
+    "http": {
+      "file": "test_ui138_profile_http.py",
+      "preflight_passed": 1,
+      "seconds": 37.6,
+      "executed_by": "coordenador",
+      "final_integrated_status": "coordenador executará no lote final",
+      "fixture_output": "somente se UI138_PROFILE_FIXTURE for configurada pelo runner; não foi usada para fabricar os testes Node"
+    }
+  },
+  "contrast": {
+    "scope": "Cores declaradas da regra CSS; não é análise de pixels ou auditoria WCAG completa.",
+    "badge_text_on_white": 5.647109627930285,
+    "error_text": 9.600737530905468,
+    "focus_on_white": 4.942455527010191
+  },
+  "changes": [
+    [
+      "Mesmo op_id/corpo ao repetir gravação sem confirmação; validação de recibo, conflito e conta.",
+      "Formulário bloqueado enquanto o resultado é incerto; recarregar exige confirmação explícita.",
+      "Rascunho e imagem selecionada mantidos em memória por empresa/usuário após troca de sessão; sem armazenamento persistente no navegador.",
+      "Cancelar, navegação de seções, foco, arquivo acima de 500 KB e resposta tardia cobertos."
+    ],
+    [
+      "Condição UNLOCKED, próximo nível e limite em pontos traduzidos com o dicionário real.",
+      "Texto dos grupos bloqueados mantém opacidade integral; somente a arte original é atenuada.",
+      "Picker estreito não exige coluna mínima de 190 px; controles mantêm foco visível e ação textual."
+    ],
+    [
+      "Carregamento com aria-busy; erro com role=alert; botão de tentar novamente sem reabrir o perfil inteiro.",
+      "Resposta antiga de outra conta não é exibida; histórico pessoal não aparece no perfil de outra pessoa.",
+      "Limite de 80 entradas permanece explicitado."
+    ],
+    [
+      "Consulta nova remove imediatamente os resultados antigos; atraso de rede não repõe a pesquisa anterior.",
+      "Consulta vazia e erro conservam texto de busca; há ação de tentar novamente.",
+      "Período e reações passaram regressão, inclusive resposta tardia e operação incerta."
+    ],
+    [
+      "Diálogo de verificação e botão de fechar têm rótulos localizados claros, e o foco retorna ao acionador.",
+      "Alteração restaurada ao valor original não fica suja; resultado incompleto conserva a operação; descarte recusado mantém o formulário.",
+      "Serviço desligado, ausência de e-mail verificado e leitura tardia de outra conta são cobertos."
+    ]
+  ],
+  "historical_test_adaptation": "UI131 extraía só um fragmento do callback, sem o novo estado de recibo. Agora carrega o módulo completo, preservando casos de mudança de sessão, pessoa, rota, formulário desconectado, resposta POST tardia e gravação bem-sucedida. Aprovado pelo coordenador.",
+  "privacy": "Nenhum novo dado é solicitado à API. Contatos/documentos mantêm suas próprias permissões. Rascunhos ficam apenas em memória e são associados a empresa e usuário; recarregar o navegador pode descartá-los. Conta e usuário temporário de produção não foram acessados.",
+  "translations": "work/ui138-profile-translations.json (8 chaves) integradas pelo coordenador nos catálogos reais.",
+  "previews": {
+    "directory": "work/ui138-profile-previews",
+    "pages": [
+      "index.html",
+      "perfil-equipe.html",
+      "alertas.html"
+    ],
+    "capture": "work/capture_ui138_profile_previews.cjs",
+    "generator": "work/generate_ui138_profile_previews.py",
+    "markup_functions": [
+      "openProfile",
+      "editProfile submit/lock após503fictício",
+      "openTeam/mountPeopleDirectory",
+      "AJEmailAlerts.mount"
+    ],
+    "manifest": "work/ui138-profile-preview-manifest.json",
+    "kind": "HTML real de adaptador DOM, não screenshot. Moldura externa e controles desativados para leitura portátil."
+  },
+  "limitations": [
+    "Sem navegador, celular real, leitor de tela, zoom ou avaliação visual de pixels.",
+    "Não houve deployment nem teste na Corcovado.",
+    "Reações, catálogo e contagem de contribuições foram exercitados com respostas fictícias; integração HTTP nova cobre perfil e projeção pública.",
+    "Fluxos de SMTP/MFA/senha reais não foram executados; nenhuma mensagem enviada.",
+    "Documentos e contatos no perfil foram validados no nível de montagem/identidade, não suas rotas internas nesta frente.",
+    "Dados, IDs, permissões e políticas de pontuação não foram alterados."
+  ],
+  "coverage": "work/ui138-profile-coverage.json",
+  "additional_historical_fixture_adaptation": "UI130 extrai helpers de cancelamento e diretório. A fixture agora fornece profileEditor:null e keepProfileEditor sem efeito para o cenário sem editor. Todos os casos anteriores foram mantidos, com quatro verificações novas de imagem restaurada em memória. Produto não alterado. 93 verificações passaram."
+}

@@ -1,0 +1,110 @@
+{
+  "release": "UI138",
+  "status": "Produto e testes congelados para integração; verificado localmente; HTTP final aguardado",
+  "base": "UI137 verificada em work/runtime-ui138",
+  "product_files": {
+    "app/static/document_join.js": "2b383625df7e114cfec18ca41da71accd26c40a25c5e032acad372692c9d03b3",
+    "app/static/document_join.html": "07911514dcf4cea64a8edd55a700b04a99df5bc4da85326aa92577a7e70575ba",
+    "app/static/document_join.css": "b5b2caf044a11c5ad61ce2e76cdae2597f1b4b23d77c552a226884397de32f1e"
+  },
+  "test_files": [
+    "tests/test_ui138_documents_dom.cjs",
+    "tests/test_ui138_documents_join.cjs",
+    "tests/test_ui138_documents_http.py"
+  ],
+  "harness_exclude": [
+    "tests/test_ui138_documents_dom.cjs"
+  ],
+  "tests": {
+    "javascript": {
+      "suites": [
+        {
+          "file": "tests/test_ui138_documents_join.cjs",
+          "checks": 137,
+          "status": "passed",
+          "scope": "novo UI138"
+        },
+        {
+          "file": "tests/test_ui137_documents_invites.cjs",
+          "checks": 128,
+          "status": "passed",
+          "scope": "regressão herdada"
+        },
+        {
+          "file": "tests/test_ui137_documents_participation.cjs",
+          "checks": 64,
+          "status": "passed",
+          "scope": "regressão herdada"
+        }
+      ],
+      "new_checks": 137,
+      "regression_checks": 192,
+      "languages": [
+        "en",
+        "pt-BR"
+      ],
+      "browser": false,
+      "evidence": "work/ui138-documents-js-results.json"
+    },
+    "python": {
+      "file": "tests/test_ui138_documents_http.py",
+      "preflight_passed": 2,
+      "preflight_failed": 1,
+      "final_status": "passed",
+      "evidence": "work/ui138-preflight-http.xml",
+      "failure_classification": "O teste omitia x-aj-hub-id em duas rotas comuns; recebeu 409 do guard de contexto antes da autenticação. Fixture corrigido para empresa correta, rota existente, assert 401/403, corpo de erro e snapshot SQL sem escrita. Não foi relaxada a expectativa para aceitar 409.",
+      "smtp": "SMTP e SMTP_SSL bloqueados no fixture; nenhum e-mail",
+      "final_passed": 3,
+      "final_evidence": "work/ui138-regression-public-document-entry.xml"
+    },
+    "syntax": {
+      "javascript": 3,
+      "failed": 0
+    }
+  },
+  "changes": [
+    "Guards após respostas assíncronas impedem reaparecimento de documento ou comprovante após saída.",
+    "Resultado incerto mantém operação idêntica e consulta do comprovante, inclusive após expiração, sem repetir automaticamente.",
+    "Envelope de leitura e recibo vinculados à empresa, identidade e revisão aceitas, sem substituição silenciosa.",
+    "Download pendente não dispara depois do fim do acesso ou ocultação do documento.",
+    "Fluxos de entrada, ciência e encerramento em português com ações claras, alternativa ao desenho e foco no título."
+  ],
+  "translations": {
+    "file": "work/ui138-documents-translations.json",
+    "pairs": 72,
+    "integrated_by": "coordenador",
+    "unknown_saved_content": "preservado literal"
+  },
+  "previews": {
+    "directory": "work/ui138-documents-previews",
+    "count": 2,
+    "html_pages": 3,
+    "manifest": "work/ui138-documents-previews/manifest.json",
+    "validation": "work/ui138-documents-preview-validation.json",
+    "broken_links": 0,
+    "duplicate_ids": 0,
+    "scripts": 0,
+    "is_screenshot": false
+  },
+  "coverage": "work/ui138-documents-coverage.json",
+  "preservation": {
+    "backend_changed": false,
+    "acl_changed": false,
+    "schema_changed": false,
+    "production_accessed": false,
+    "emails_sent": 0,
+    "users_changed": 0,
+    "data_changed_in_production": false,
+    "temporary_user_preserved": true,
+    "ids_and_saved_names_preserved": true,
+    "pending_retries_same_operation": true
+  },
+  "limits": [
+    "Teste manual de teclado, foco visual, leitor de tela, telas pequenas e desenho por toque.",
+    "Validação real do download e ciclos nativos de Voltar/BFCache.",
+    "Nenhuma alteração publicada ou validação autenticada na Corcovado nesta rodada.",
+    "Não executado browser_checks.py herdado, pois ele abre Chromium; somente suítes DOM e HTTP sem navegador.",
+    "Prévia inerte demonstra markup real e textos, sem comprovar renderização visual."
+  ],
+  "handoff": "Raiz controla integração final, atualização de versão, empacotamento e eventual publicação autorizada."
+}

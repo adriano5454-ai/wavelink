@@ -1,0 +1,47 @@
+[
+  {
+    "group": "profile-recovery",
+    "xml": "ui138-regression-profile-recovery.xml",
+    "exit_code": 0
+  },
+  {
+    "group": "public-document-entry",
+    "xml": "ui138-regression-public-document-entry.xml",
+    "exit_code": 0
+  },
+  {
+    "group": "maintenance-cycles",
+    "xml": "ui138-regression-maintenance-cycles.xml",
+    "exit_code": 0
+  },
+  {
+    "group": "rh-profile",
+    "xml": "ui138-regression-rh-profile.xml",
+    "exit_code": 0
+  },
+  {
+    "group": "documents",
+    "xml": "ui138-regression-documents.xml",
+    "exit_code": 0
+  },
+  {
+    "group": "maintenance",
+    "xml": "ui138-regression-maintenance.xml",
+    "exit_code": 0
+  },
+  {
+    "group": "maintenance-regression",
+    "xml": "ui138-regression-maintenance-regression.xml",
+    "exit_code": 0
+  },
+  {
+    "group": "publication",
+    "xml": "ui138-regression-publication.xml",
+    "exit_code": 0
+  },
+  {
+    "group": "it-journeys",
+    "xml": "ui138-regression-it-journeys.xml",
+    "exit_code": 3221225477
+  }
+]

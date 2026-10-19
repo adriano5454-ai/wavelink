@@ -1,0 +1,54 @@
+{
+  "version": "UI138",
+  "scope": "Independent read-only review of root logistics integration",
+  "status": "passed_no_material_blocker_found",
+  "runtime": "work/runtime-ui138",
+  "baseline": "work/ui137-replay-delivery",
+  "reviewed_files": {
+    "app/static/logistics_workflow.js": "38bd46525473f89b5ad1b1eece4b5710501ab5cd42bcb74a4fa92380b671079d",
+    "app/static/logistics_workflow.css": "219b4ead43eea42c49418f02e813baf32b847d8d40ccea34ba55069c422662c9",
+    "app/static/logistics_experience.js": "60908e960cf0a0023b54804a9d28d6226c95e0e45711e0380a90db16b70594fb",
+    "tests/test_ui138_logistics.cjs": "0e9f1211c768941f17d7a64cfeae17ed0460c624ee672a4e6fcdf025ed4d642a",
+    "tests/test_ui138_logistics_independent.cjs": "15ea35553ea8b03d26d881cd0f71ec7db727af8194348259be888fbc609783b6"
+  },
+  "findings": [],
+  "evidence": [
+    {
+      "type": "real DOM handlers with local adapter",
+      "suite": "tests/test_ui138_logistics.cjs",
+      "passed": true,
+      "checks": 52,
+      "stdout": "{\"checks\":52,\"status\":\"passed\",\"browser\":false}"
+    },
+    {
+      "type": "additional independent real picker handlers",
+      "suite": "tests/test_ui138_logistics_independent.cjs",
+      "passed": true,
+      "checks": 22,
+      "stdout": "{\"passed\":true,\"checks\":22,\"browser\":false,\"network\":false}",
+      "scenarios": [
+        "A visible row absent from native scoped options is unavailable and cannot trigger an edit",
+        "Accented multi-term search and identical names preserve exact selected ID",
+        "An unavailable saved destination remains visible without silently clearing the value",
+        "An option removed after rendering is rejected by the old card handler",
+        "Explicit eligible selection emits exactly one native change"
+      ]
+    }
+  ],
+  "review_conclusions": [
+    "Search and clear-search are presentation-only: they do not mutate native field or dispatch change.",
+    "Existing native option and disabled/optgroup status are checked at selection time; no permissions, endpoint, request body or draft schema changed.",
+    "Rows and source names are built with textContent; no HTML interpretation of equipment names or paths.",
+    "Localized headings and group labels preserve existing controls and their event handlers; presentation module issues no API request or storage write.",
+    "Selected/unavailable state has visible text as well as aria-pressed/disabled; keyboard traversal skips unavailable buttons.",
+    "Header translation map preserves planning-versus-event and document-register-versus-approval distinctions."
+  ],
+  "limitations": [
+    "No real browser, native keyboard engine, mobile layout, screen reader, network or production test was performed.",
+    "Headings were reviewed in source against the prior release; the 74 executed assertions above cover the actual picker handlers, not every heading layout.",
+    "Server ACL is authoritative and unchanged; this review does not replace the final integrated regression run."
+  ],
+  "no_runtime_edits": false,
+  "no_external_messages": true,
+  "test_only_addition": "tests/test_ui138_logistics_independent.cjs added at root request; no product edits for review"
+}

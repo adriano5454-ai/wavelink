@@ -1,0 +1,12 @@
+{
+  "status": "passed",
+  "version": "1.34.38",
+  "runtime_manifest_sha256": "1fb72d87824226d3c0c190d4c0cb10844e1e28969dda28ba7e510a642488a72d",
+  "resources": 2441,
+  "all_reconstructed_files_identical": true,
+  "python_syntax_files": 234,
+  "cache_assets": 15,
+  "html_shells": 4,
+  "base_repository_files_preserved": 1577,
+  "production_access": false
+}

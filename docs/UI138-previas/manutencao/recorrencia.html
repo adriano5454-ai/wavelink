@@ -1,0 +1,1280 @@
+<!doctype html><html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'unsafe-inline'; frame-src about:; form-action 'none'; base-uri 'none'"><title>UI138 — Manutenção: programação e encerramento</title><style>body{font:16px/1.6 system-ui,Segoe UI,sans-serif;margin:0;background:#edf3f7;color:#163046}main{max-width:1100px;margin:auto;padding:30px 20px}h1{font-size:1.9rem;line-height:1.2}h2{font-size:1.25rem}section{background:#fff;border:1px solid #c9d7e0;border-radius:14px;padding:20px;margin:26px 0}.note{border-left:4px solid #00788c;padding:12px 16px;background:#e2f1f3}iframe{width:100%;height:760px;border:1px solid #cbd6df;border-radius:10px;display:block}footer{font-size:.9rem;color:#465f70}@media(max-width:600px){main{padding:16px 10px}section{padding:12px}iframe{height:900px}}</style></head><body><main><p>Wavelink · UI138 · Prévia local</p><h1>Manutenção: programação e encerramento</h1><p class="note">Fragmentos gerados pelos componentes reais durante os testes locais, com dados fictícios. Esta página é uma prévia inerte: todos os controles estão desativados e não existe conexão com a Corcovado. Não é uma captura de tela nem uma validação de navegador ou celular.</p><section><h2>Adiar e conferir a programação</h2><p>Compara prazo e ciclo salvos com a proposta; o motivo permanece junto à confirmação.</p><iframe title="Adiar e conferir a programação — componente real, dados fictícios" sandbox srcdoc="&lt;!doctype html&gt;&lt;html lang=&quot;pt-BR&quot;&gt;&lt;head&gt;&lt;meta charset=&quot;utf-8&quot;&gt;&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1&quot;&gt;&lt;meta http-equiv=&quot;Content-Security-Policy&quot; content=&quot;default-src 'none'; style-src 'unsafe-inline'; form-action 'none'; base-uri 'none'&quot;&gt;&lt;title&gt;Adiar e conferir a programação&lt;/title&gt;&lt;style&gt;:root{color-scheme:light;--bg:#f4f7fa;--surface:#fff;--line:#cbd5e1;--border:#cbd5e1;--text:#132b42;--muted:#526577;--accent:#006c81;--brand:#005f77}*{box-sizing:border-box}body{font-family:system-ui,Segoe UI,sans-serif;margin:0;padding:18px;background:#fff;color:var(--text);line-height:1.5}fieldset.preview-inert{border:0;padding:0;margin:0;min-width:0}button,input,select,textarea{font:inherit;max-width:100%}input,select,textarea{border:1px solid #b8c7d2;border-radius:6px;padding:8px;color:#183245;background:#fff}label{display:block}small,.muted{color:#526577}.btn{display:inline-flex;align-items:center;justify-content:center;border:1px solid #c2d0da;border-radius:8px;padding:9px 14px;background:#fff;color:#153d55}.btn.primary{background:#006c81;color:white}.btn.danger{background:#8c2930;color:white}input:disabled,select:disabled,textarea:disabled,button:disabled{opacity:1}.actions{display:flex;gap:8px;flex-wrap:wrap}[hidden]{display:none!important}
+/* UI60: retained module styles; common components deliberately override only wl-* roles. */
+@layer wlLegacy {
+/* UI11: only the two explicitly enhanced maintenance forms. */
+.mf-form{--mf-line:#d5e2e8;--mf-ink:#1c3c4d;min-width:0;}
+#dialog.mf-dialog{width:min(1000px,calc(100vw - 24px));}
+.mf-form [hidden]{display:none!important;}
+.mf-context{border-left:3px solid #0b7c86;background:#f2f8f9;padding:14px 16px;border-radius:7px;margin:0 0 16px;}
+.mf-context h3{font-size:20px;line-height:1.3;margin:7px 0;overflow-wrap:anywhere;}
+.mf-context .eyebrow{font-size:10px;margin:0;color:#35717d;}
+.mf-context p{margin:4px 0;}
+.mf-screen{min-width:0;}
+.mf-screen&gt;h4{margin:22px 0 8px;}
+.mf-disclosure{border:1px solid var(--mf-line);border-radius:8px;padding:10px 14px;margin:12px 0;}
+.mf-disclosure summary{cursor:pointer;font-size:13px;font-weight:650;}
+.mf-form .mf-readings{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px 18px;}
+.mf-form label{min-width:0;}
+.mf-form .mf-readings&gt;label,.mf-form .mf-screen&gt;label{display:flex;flex-direction:column;gap:7px;margin:12px 0;}
+.mf-form .mf-readings input,.mf-form .mf-screen select,.mf-form .mf-screen textarea{min-width:0;width:100%;box-sizing:border-box;}
+.mf-form .mf-field-hint{font-size:11px;color:#4d6979;font-weight:400;line-height:1.5;}
+.mf-result-hint{font-size:13px;line-height:1.55;color:#375968;padding:11px 13px;background:#edf7f8;border:1px solid #cce2e5;border-radius:7px;margin:12px 0;}
+.mf-form .item-guidance{margin:16px 0;}
+.mf-form .item-guidance .instruction-text{font-size:14px;line-height:1.55;}
+.mf-form .mf-facts{display:grid;grid-template-columns:minmax(100px,.7fr) minmax(0,1.3fr);gap:0 16px;margin:10px 0;font-size:13px;}
+.mf-facts dt,.mf-facts dd{padding:10px 0;border-bottom:1px solid #e1e9ed;margin:0;white-space:pre-wrap;overflow-wrap:anywhere;}
+.mf-facts dt{color:#516e7d;font-weight:500;}.mf-facts dd{font-weight:600;color:var(--mf-ink);}
+.mf-comparison{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
+.mf-review-card{border:1px solid var(--mf-line);border-radius:9px;padding:15px;min-width:0;background:#fff;}
+.mf-review-card h4{font-size:15px;margin:0 0 10px;}
+.mf-comparison .mf-review-card:last-child{border-top:3px solid #19848a;background:#f6fbfb;}
+.mf-form .mf-confirm{display:flex;flex-direction:row;gap:10px;align-items:flex-start;margin:18px 0;line-height:1.5;}
+.mf-confirm input{width:20px!important;min-height:20px!important;height:20px;flex:none;margin:1px 0;}
+.mf-form .evidence-editor{padding:16px;border:1px solid var(--mf-line);border-radius:9px;}
+.mf-form .evidence-editor legend{font-size:14px;font-weight:700;}
+.mf-form .evidence-editor .small{font-size:12px;line-height:1.5;}
+.mf-form .operation-persons{max-height:290px;overflow:auto;border:1px solid var(--mf-line);border-radius:8px;padding:14px;}
+.mf-form .operation-persons label{margin:10px 0;}
+.mf-form .wl-guide-body{scrollbar-gutter:stable;}
+.mf-form .wl-guide-steps{position:sticky;top:0;background:white;z-index:2;margin-top:0;}
+.mf-form .wl-guide-steps li{font-size:12px;}
+.mf-form :focus-visible{outline:2px solid #176b8c;outline-offset:3px;}
+@media(max-width:640px){
+ .mf-form .mf-readings,.mf-comparison{grid-template-columns:1fr;}
+ .mf-form .mf-facts{grid-template-columns:minmax(88px,.7fr) minmax(0,1.3fr);gap:0 10px;font-size:12px;}
+ .mf-context{padding:11px 12px;}.mf-context h3{font-size:17px;}
+ .mf-form .wl-guide-steps{gap:5px;}.mf-form .wl-guide-steps li{font-size:10px;padding:8px 2px;line-height:1.4;}
+ #dialog.mf-dialog .modal{padding:14px;}.mf-form&gt;.actions{display:grid;grid-template-columns:1fr 1fr;gap:8px;}
+ .mf-form&gt;.actions button{font-size:12px;min-height:42px;padding:9px;white-space:normal;}
+ .mf-form #fw-discard{order:3;}.mf-form #fw-keep{order:4;}.mf-form #fw-save{grid-column:2;}
+ .mf-form .mf-review-card{padding:12px;}.mf-form .evidence-editor{padding:12px;}
+}
+/* Avoid inherited generic-dialog spacing pushing the actual readings below the fold. */
+#dialog.mf-dialog #fw-form{gap:0;}
+#dialog.mf-dialog .modal-head{padding:8px 0 12px;margin-top:0;margin-bottom:8px;position:static;}
+#dialog.mf-dialog .modal&gt;p{font-size:12px;margin:2px 0 10px;line-height:1.45;}
+.mf-form .mf-context h3{border:0;padding:0;margin:5px 0;font-size:19px;}
+.mf-form .wl-guide-heading{border:0;padding:0;margin:6px 0 12px;font-size:17px;}
+.mf-form .mf-context{padding:11px 14px;margin-bottom:12px;}
+.mf-form .mf-readings&gt;label{margin:7px 0;}
+.mf-form .mf-screen&gt;.item-guidance{margin:12px 0;}
+.mf-form .mf-screen&gt;h4{margin:14px 0 4px;}
+#dialog.mf-dialog #fw-error:empty{display:none;}
+#dialog.mf-dialog #fw-form&gt;.actions{gap:8px;padding-top:10px;margin-top:4px;}
+#dialog.mf-dialog #fw-keep{margin-right:auto;}
+@media(max-width:640px){
+ #dialog.mf-dialog .modal-head h2{font-size:20px;}
+ #dialog.mf-dialog .mf-context h3{font-size:17px;}
+ #dialog.mf-dialog #fw-form&gt;.actions{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));}
+ #dialog.mf-dialog #fw-form&gt;.actions button{min-width:0;flex:none;margin:0;font-size:12px;}
+ #dialog.mf-dialog #fw-keep{grid-column:1;grid-row:2;}
+ #dialog.mf-dialog #fw-discard{grid-column:2;grid-row:2;}
+ #dialog.mf-dialog #fw-form&gt;.actions [id$=&quot;-back&quot;]{grid-column:1;grid-row:1;}
+ #dialog.mf-dialog #fw-form&gt;.actions [id$=&quot;-next&quot;],#dialog.mf-dialog #fw-save{grid-column:2;grid-row:1;}
+ #dialog.mf-dialog #fw-form[data-logistics-step=&quot;0&quot;]&gt;.actions [id$=&quot;-next&quot;]{grid-column:1/-1;}
+}
+
+/* UI36 direct forms: scroll the content, keep existing draft/save actions reachable. */
+#dialog.mf-dialog .mf-direct{display:flex;flex-direction:column;max-height:calc(92dvh - 126px);overflow:hidden;}
+.mf-direct&gt;.mf-screen{overflow-y:auto;overscroll-behavior:contain;scrollbar-gutter:stable;min-height:0;padding-right:4px;}
+.mf-direct&gt;#fw-local-state,.mf-direct&gt;#fw-error,.mf-direct&gt;.actions{flex-shrink:0;}
+.mf-direct&gt;#fw-local-state{font-size:12px;margin:8px 0 3px;}
+.mf-direct .mf-screen&gt;label{display:flex;flex-direction:column;gap:7px;}
+.mf-direct .mf-screen&gt;label&gt;textarea{min-height:104px;}
+.mf-direct .mf-disclosure label{display:block;margin:10px 0;}
+.mf-direct .mf-disclosure .checkline{display:flex;flex-direction:row;}
+.mf-direct .mf-disclosure input[type=checkbox]{width:20px;min-height:20px;flex:none;}
+.mf-direct .mf-result-hint{color:#294956;}
+.mf-direct&gt;.actions #fw-save{min-width:160px;}
+@media(max-width:640px){
+ #dialog.mf-dialog{width:calc(100vw - 12px);max-height:96dvh;}
+ #dialog.mf-dialog .mf-direct{max-height:calc(96dvh - 126px);}
+ #dialog.mf-dialog .mf-direct&gt;.actions #fw-save{grid-column:1/-1;grid-row:1;}
+ .mf-direct .operation-persons{max-height:240px;}
+}
+
+}
+
+/* UI137: expose the saved return reason beside the correction fields. */
+.mf-form .mf-review-feedback{border:1px solid #bd8244;border-left:4px solid #a66321;border-radius:8px;background:#fff8ed;color:#593510;padding:14px 16px;margin:12px 0;overflow-wrap:anywhere;}
+.mf-review-feedback h4{margin:0 0 8px;font-size:15px;}
+.mf-review-feedback .mf-review-reason{white-space:pre-wrap;line-height:1.55;margin:8px 0;}
+.mf-review-feedback .mf-facts{margin:8px 0;}
+.mf-review-feedback .mf-facts dt,.mf-review-feedback .mf-facts dd{color:#593510;border-color:#e5cfb0;}
+.mf-review-feedback .small{margin:8px 0 0;}
+@media(max-width:640px){.mf-form .mf-review-feedback{padding:12px;}}
+
+/* UI60: retained module styles; common components deliberately override only wl-* roles. */
+@layer wlLegacy {
+/* UI12: deliberately scoped to maintenance management dialogs. */
+dialog.mm-dialog{width:min(920px,calc(100vw - 32px));max-width:none;}
+.mm-form .mm-context{padding:16px 18px;border:1px solid #cbdbe4;border-radius:12px;background:#f4f8fb;margin:0 0 18px;}
+.mm-form .mm-context h3{font-size:1.35rem;line-height:1.3;margin:8px 0;}
+.mm-form .mm-context&gt;p:not(.eyebrow){margin:6px 0 12px;overflow-wrap:anywhere;}
+.mm-form .mm-facts{display:grid;grid-template-columns:minmax(130px,.65fr) minmax(0,1.5fr);gap:9px 16px;margin:12px 0;}
+.mm-form .mm-facts dt{color:#475e70;font-size:.88rem;}
+.mm-form .mm-facts dd{margin:0;white-space:pre-wrap;overflow-wrap:anywhere;line-height:1.45;}
+.mm-form .mm-comparison{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;}
+.mm-form .mm-card{border:1px solid #d5e0e7;border-radius:12px;padding:16px;background:#fff;min-width:0;}
+.mm-form .mm-card h4{margin:0 0 12px;font-size:1rem;}
+.mm-form .mm-comparison .mm-facts{grid-template-columns:1fr;gap:5px;}
+.mm-form .mm-comparison .mm-facts dd{margin-bottom:8px;}
+.mm-form .mm-note,.mm-form .mm-effect{background:#eef5f8;border-left:3px solid #147883;border-radius:6px;padding:12px 14px;line-height:1.55;}
+.mm-form .mm-warning{padding:12px 14px;border:1px solid #e4c289;border-left:4px solid #a36c1b;border-radius:6px;background:#fff7ea;color:#694815;line-height:1.55;}
+.mm-form .mm-saved-summary h4{margin:4px 0 12px;}
+.mm-form .mm-counts{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px;margin:12px 0;}
+.mm-form .mm-counts&gt;div{border:1px solid #d5e0e7;border-radius:9px;padding:12px;background:#fff;min-width:0;}
+.mm-form .mm-counts strong{display:block;font-size:1.45rem;margin-bottom:4px;}
+.mm-form .mm-counts span{display:block;font-size:.8rem;color:#4d6373;overflow-wrap:anywhere;}
+.mm-form .mm-disclosure{border:1px solid #d5e0e7;border-radius:8px;padding:10px 12px;margin:12px 0;}
+.mm-form .mm-disclosure&gt;summary{font-weight:650;cursor:pointer;min-height:26px;}
+.mm-form .mm-saved-step{border-top:1px solid #d5e0e7;padding:14px 0 4px;}
+.mm-form .mm-saved-step h5{font-size:.96rem;margin:0 0 5px;}
+.mm-form .mm-saved-step .small{margin:5px 0;}
+.mm-form label{margin:12px 0;}
+.mm-form textarea{min-height:105px;}
+.mm-form .maintenance-cycle-fields{border:1px solid #d5e0e7;border-radius:10px;padding:14px;margin:14px 0;}
+.mm-form .maintenance-cycle-fields legend{font-weight:650;padding:0 6px;}
+.mm-form .mm-confirm{padding:14px;background:#eaf5f4;border:1px solid #abcfc9;border-radius:8px;align-items:flex-start;}
+.mm-form .mm-confirm input{margin-top:4px;}
+.mm-form [hidden]{display:none!important;}
+@media(max-width:600px){
+ dialog.mm-dialog{width:calc(100vw - 12px);max-width:none;max-height:calc(100dvh - 12px);padding:12px;}
+ .mm-form .mm-context{padding:12px;}
+ .mm-form .mm-facts{grid-template-columns:1fr;gap:4px;}
+ .mm-form .mm-facts dd{margin-bottom:8px;}
+ .mm-form .mm-comparison{grid-template-columns:1fr;}
+ .mm-form .mm-counts{grid-template-columns:repeat(2,minmax(0,1fr));}
+ .mm-form .mm-card{padding:12px;}
+ .mm-form .mm-context h3{font-size:1.15rem;}
+ .mm-dialog #fw-local-state{font-size:.78rem;line-height:1.4;}
+}
+#fw-form.mm-form label.checkline{display:flex;flex-direction:row;align-items:flex-start;gap:10px;line-height:1.5;}
+.mm-form .checkline input{width:20px!important;min-height:20px!important;height:20px;flex:none;margin:2px 0 0;}
+.mm-form .checkline span{flex:1;min-width:0;}
+.mm-form .mm-page&gt;label:not(.checkline){display:flex;flex-direction:column;gap:8px;}
+
+/* UI14: same scoped review language for pending release and saved-step review. */
+#maint-approval.mm-form label.checkline{display:flex;flex-direction:row;align-items:flex-start;gap:10px;line-height:1.5;}
+.mm-approval-form{display:flex;flex-direction:column;min-height:0;overflow:hidden;}
+.mm-approval-body{overflow:auto;min-height:0;max-height:calc(100dvh - 240px);padding:2px 4px 10px;overscroll-behavior:contain;}
+.mm-approval-footer{flex-shrink:0;padding:12px 0 2px;border-top:1px solid #d5e0e7;display:flex;gap:8px;flex-wrap:wrap;background:#fff;}
+.mm-approval-footer #fw-error{flex-basis:100%;}
+.mm-approval-form .mm-page{min-width:0;overflow-wrap:anywhere;}
+.mm-approval-form .log-values{overflow-wrap:anywhere;}
+@media(max-width:600px){.mm-approval-body{max-height:calc(100dvh - 220px);}.mm-approval-footer .btn{flex:1;white-space:normal;min-height:44px;}.mm-approval-form .evidence-view-card{min-width:0;}}
+
+}
+
+/* UI60: retained module styles; common components deliberately override only wl-* roles. */
+@layer wlLegacy {
+/* Shared find → choose → review pattern, scoped to logistics forms only. */
+#dialog.wl-guided-dialog,#modal.wl-guided-dialog{width:min(1020px,calc(100vw - 24px));max-height:94dvh;}
+.wl-guided-form [hidden]{display:none!important;}
+.wl-guide-steps{display:flex;gap:8px;list-style:none;margin:12px 0 16px;padding:0;}
+.wl-guide-steps li{flex:1;min-width:0;border-bottom:3px solid #d5e1e7;padding:10px 4px;font-size:13px;color:#5d6f7d;}
+.wl-guide-steps li.current{border-color:#197e86;color:#173846;font-weight:750;}
+.wl-guide-heading{margin:4px 0 16px;font-size:19px;outline:none;}
+.wl-guide-heading:focus-visible{outline:2px solid #197e86;outline-offset:4px;}
+.wl-destination-picker{margin:14px 0;min-width:0;}
+.wl-destination-picker h3{font-size:16px;margin-bottom:8px;}
+.wl-picker-bar{display:flex;align-items:center;justify-content:space-between;gap:12px;margin:8px 0;}
+.wl-picker-bar button{padding:6px 10px;font-size:12px;min-height:36px;}
+.wl-destination-list{border:1px solid #cbd7e0;border-radius:10px;overflow:auto;max-height:290px;background:white;}
+.wl-destination-option{display:flex;flex-direction:column;align-items:stretch;text-align:left;width:100%;gap:5px;border:0;border-radius:0;border-bottom:1px solid #e1e8ed;background:#fff;padding:13px 16px;color:#183447;font-weight:400;min-height:64px;}
+.wl-destination-option:last-child{border-bottom:0;}
+.wl-destination-option[aria-pressed=true]{background:#eaf5f4;box-shadow:inset 4px 0 #197e86;}
+.wl-destination-option:focus-visible{outline:3px solid #197e86;outline-offset:-3px;}
+.wl-destination-main{display:flex;justify-content:space-between;align-items:start;gap:12px;}
+.wl-destination-main strong{font-weight:700;}
+.wl-destination-main small{flex-shrink:0;max-width:45%;text-align:right;}
+.wl-destination-path{font-size:12px;color:#58717f;overflow-wrap:anywhere;}
+.wl-selected-destination,.wl-review-summary{padding:14px 16px;margin:12px 0;background:#edf4f7;border:1px solid #cbdde3;border-radius:8px;overflow-wrap:anywhere;}
+.wl-selected-destination p{margin:6px 0;}.wl-review-summary{white-space:pre-wrap;}
+.wl-picker-empty{padding:18px;}.wl-guided-form section&gt;h3{margin-top:12px;}
+.wl-guided-form .movement-source{padding:12px 16px;border:1px solid #d5e1e7;border-radius:8px;margin:8px 0 14px;background:#f7fafc;}
+.wl-guided-form .movement-source ul{max-height:180px;overflow:auto;margin:8px 0;padding-left:22px;}
+.wl-guided-form .movement-source li small{display:block;}
+.wl-receiving-filters{display:grid;grid-template-columns:minmax(180px,1fr) minmax(150px,.55fr) minmax(145px,.4fr) auto;gap:12px;align-items:end;margin-bottom:14px;}
+.wl-receiving-filters label{margin-top:0;}
+.wl-receiving-layout{display:grid;grid-template-columns:minmax(0,1fr) 310px;gap:18px;align-items:start;}
+.wl-receiving-layout&gt;*{min-width:0;}
+.wl-receiving-detail{padding:18px;border:1px solid #cbd7e0;border-radius:10px;background:white;overflow-wrap:anywhere;position:sticky;top:14px;}
+.wl-receiving-detail .facts{grid-template-columns:95px 1fr;font-size:13px;gap:8px;}
+.wl-receiving-detail .actions{margin-top:14px;}
+.wl-receiving-table .selected td{background:#eaf5f4;}
+.wl-receiving-table button[data-receiving-open]{text-align:left;justify-content:start;max-width:100%;overflow-wrap:anywhere;}
+@media(max-width:1100px){.wl-receiving-layout{grid-template-columns:1fr;}.wl-receiving-detail{position:static;}.wl-receiving-filters{grid-template-columns:1fr 1fr;}}
+@media(max-width:600px){
+ #dialog.wl-guided-dialog,#modal.wl-guided-dialog{width:calc(100vw - 12px);max-height:96dvh;border-radius:10px;}
+ .wl-guided-dialog .modal{padding:16px;}.wl-guide-steps{gap:5px;}.wl-guide-steps li{font-size:11px;padding:8px 0;}
+ .wl-guide-heading{font-size:17px;}.wl-destination-main{flex-direction:column;gap:3px;}.wl-destination-main small{max-width:100%;text-align:left;}
+ .wl-destination-option{padding:12px;}.wl-destination-list{max-height:240px;}.wl-receiving-filters{grid-template-columns:1fr;}
+ .wl-guided-form footer{flex-wrap:wrap;}.wl-guided-form #modal-note{max-width:none;flex-basis:100%;}
+ .wl-guided-form .actions{gap:7px;}.wl-guided-form .actions button{min-height:44px;}
+ .wl-receiving-detail{padding:14px;}.wl-receiving-filters button{min-height:44px;}
+}
+
+/* Keep actions visible; only the movement step body scrolls. */
+#dialog.wl-guided-dialog{overflow:hidden;}
+#dialog.wl-guided-dialog .modal{display:flex;flex-direction:column;max-height:94dvh;min-height:0;box-sizing:border-box;}
+#dialog.wl-guided-dialog .modal-head,#dialog.wl-guided-dialog .modal&gt;p{flex:none;}
+#fw-form.wl-guided-form{display:flex;flex-direction:column;min-height:0;overflow:hidden;}
+#fw-form.wl-guided-form .wl-guide-body{overflow:auto;min-height:0;padding:0 4px 10px;overscroll-behavior:contain;}
+#fw-form.wl-guided-form&gt;.actions,#fw-form.wl-guided-form&gt;#fw-error,#fw-form.wl-guided-form&gt;#fw-local-state{flex:none;}
+#fw-form.wl-guided-form&gt;.actions{background:white;margin-top:8px;}
+#fw-form.wl-guided-form&gt;#fw-local-state{font-size:11px;padding:8px 10px;margin:8px 0;}
+@media(max-width:600px){#dialog.wl-guided-dialog .modal{max-height:96dvh;}#fw-form.wl-guided-form&gt;.actions{padding-top:10px;}#dialog.wl-guided-dialog .modal-head{margin-bottom:8px;}#dialog.wl-guided-dialog .modal&gt;p{margin:4px 0 8px;}}
+
+/* Workspace UI05 — descriptive destinations, compact scope and focused receiving. */
+.wl-mode-choices{margin:14px 0 18px;min-width:0;}
+.wl-mode-choices h3{font-size:15px;margin:0 0 10px;}
+.wl-mode-options{display:flex;gap:10px;align-items:stretch;}
+.wl-mode-option{flex:1;min-width:0;display:flex;flex-direction:column;text-align:left;gap:7px;justify-content:flex-start;padding:14px;border:1px solid #cbd8e0;border-radius:10px;background:#fff;color:#233f50;line-height:1.45;overflow-wrap:anywhere;}
+.wl-mode-option strong{font-size:14px;}.wl-mode-option span{font-size:12px;font-weight:400;color:#536b79;}
+.wl-mode-option[aria-pressed=true]{border:2px solid #147e87;padding:13px;background:#edf8f8;box-shadow:0 1px 3px #10394812;}
+.wl-mode-option:focus-visible{outline:3px solid #166b9a;outline-offset:3px;}
+.wl-mode-option:disabled{opacity:.6;cursor:not-allowed;}
+.wl-guided-form .wl-scope-summary{font-size:13px;}.wl-scope-summary summary{cursor:pointer;padding:3px 0;}
+.wl-scope-summary summary strong{font-size:14px;}.wl-scope-summary summary span{display:block;margin:5px 0 0;color:#4d6574;font-size:12px;}
+.wl-guided-form .wl-review-panel{background:#f6f9fb;padding:18px;border:1px solid #d5e1e7;border-radius:12px;white-space:normal;color:#213f51;}
+.wl-review-panel h3{font-size:18px;margin:0 0 16px;}.wl-review-route{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
+.wl-review-endpoint{background:white;border:1px solid #dce5ea;border-radius:8px;padding:13px;min-width:0;}
+.wl-review-endpoint:last-child{border-top:3px solid #167f85;}
+.wl-review-endpoint h4{margin:0 0 8px;font-size:12px;letter-spacing:.02em;color:#49616f;}
+.wl-review-endpoint ul{list-style:none;margin:0;padding:0;max-height:150px;overflow:auto;overflow-wrap:anywhere;}
+.wl-review-endpoint li{margin:0 0 5px;white-space:pre-wrap;font-size:14px;font-weight:600;}
+.wl-review-facts{display:grid;grid-template-columns:minmax(100px,.35fr) minmax(0,1fr);gap:10px 16px;margin:18px 0 0;font-size:13px;}
+.wl-review-facts dt{font-weight:650;color:#4d6574;}.wl-review-facts dd{margin:0;white-space:pre-wrap;overflow-wrap:anywhere;}
+.wl-review-note{margin:16px 0 0;padding-top:12px;border-top:1px solid #d5e1e7;font-size:12px;line-height:1.55;color:#4c6473;}
+.wl-ui05-badge{display:inline-block;border:1px solid #bad7de;border-radius:6px;padding:3px 7px;background:#e8f3f6;color:#346373;font-size:10px;font-weight:700;letter-spacing:.06em;}
+.wl-receiving-workspace{min-width:0;}.wl-receiving-workspace [hidden]{display:none!important;}
+.wl-receiving-top{display:flex;gap:14px;align-items:center;margin:0 0 18px;flex-wrap:wrap;}
+.wl-receiving-metrics{display:flex;gap:10px 18px;flex-wrap:wrap;font-size:12px;color:#476273;}
+.wl-receiving-metrics b{font-size:17px;color:#234554;margin-right:4px;}
+.wl-receiving-toolbar{display:flex;align-items:end;gap:12px;flex-wrap:wrap;}.wl-receiving-search{flex:1;min-width:160px;}
+.wl-receiving-toolbar label{margin-top:0;}.wl-receiving-toolbar input{margin:0;}
+#receiving-filters{position:relative;margin:0;}#receiving-filters&gt;summary{list-style:none;cursor:pointer;border:1px solid #bacfd9;border-radius:8px;background:#fff;min-height:44px;padding:12px 14px;box-sizing:border-box;font-size:13px;}
+#receiving-filters&gt;summary::-webkit-details-marker{display:none;}#receiving-filters&gt;summary:after{content:' ▾';}
+#receiving-filters&gt;summary:focus-visible{outline:3px solid #167a91;outline-offset:2px;}
+.wl-receiving-filter-fields{position:absolute;top:100%;right:0;z-index:5;min-width:290px;max-width:calc(100vw - 56px);border:1px solid #cad8e1;background:#fff;border-radius:10px;padding:16px;box-shadow:0 10px 28px #1236461a;}
+.wl-receiving-filter-fields&gt;div+div{margin-top:12px;}.wl-receiving-toolbar&gt;button{min-height:44px;}
+.wl-receiving-filter-summary{font-size:12px;margin:10px 0 4px;overflow-wrap:anywhere;}
+#receiving-count{font-size:12px;margin:0 0 14px;}
+#receiving-selection-notice{font-size:12px;padding:10px;background:#fdf4e7;border:1px solid #edd8b9;border-radius:6px;}
+#receiving-workspace .wl-receiving-layout{display:grid;grid-template-columns:minmax(0,1fr) minmax(310px,.78fr);gap:20px;align-items:start;}
+#receiving-results{min-width:0;max-height:600px;overflow:auto;overscroll-behavior:contain;padding:1px 5px 2px 1px;}
+.wl-receiving-card{margin-bottom:10px;background:#fff;border:1px solid #d2dfe7;border-radius:10px;overflow:hidden;}
+.wl-receiving-card.selected{border-color:#15828a;box-shadow:0 0 0 1px #15828a;}
+.wl-receiving-card&gt;button{border:0;border-radius:0;padding:16px;display:flex;gap:7px;flex-direction:column;align-items:stretch;text-align:left;width:100%;color:#213d4f;background:#fff;font-weight:400;line-height:1.45;}
+.wl-receiving-card.selected&gt;button{background:#f0f8f8;}.wl-receiving-card&gt;button:focus-visible{outline:3px solid #167a91;outline-offset:-3px;}
+.wl-received-card-head{display:flex;align-items:start;gap:12px;justify-content:space-between;}.wl-received-card-head strong{font-size:15px;overflow-wrap:anywhere;}
+.wl-open-group{font-size:11px;white-space:nowrap;color:#0b6d76;font-weight:650;}
+.wl-received-reference,.wl-received-holding{font-size:12px;color:#526b7a;overflow-wrap:anywhere;}
+.wl-received-state .pill{font-size:11px;}.wl-received-manifest{display:flex;gap:8px;padding:9px 16px;border-top:1px solid #e2eaf0;font-size:12px;flex-wrap:wrap;}
+.wl-received-manifest&gt;span{color:#607682;}.wl-received-manifest a{overflow-wrap:anywhere;}
+#receiving-workspace .wl-receiving-detail{position:static;padding:22px;border:1px solid #d2dfe7;box-shadow:0 3px 12px #18394b08;}
+#receiving-selected-title{font-size:21px;line-height:1.3;margin:10px 0;overflow-wrap:anywhere;}
+.wl-receiving-empty{padding:14px 4px;}.wl-receiving-empty p{font-size:14px;line-height:1.65;}
+.wl-holding-position{display:flex;gap:6px;flex-direction:column;background:#eff5f8;border-radius:8px;padding:14px;margin:18px 0;overflow-wrap:anywhere;}
+.wl-holding-position .eyebrow{font-size:10px;}.wl-holding-position strong{font-size:15px;}.wl-holding-position&gt;span:last-child{font-size:13px;}
+.wl-placement-action{margin:18px 0 12px;}.wl-placement-action&gt;button{width:100%;min-height:46px;}
+.wl-receiving-links{border-top:1px solid #dae4e9;padding-top:12px;}.wl-receiving-links a{font-size:12px;}
+.wl-receiving-back{display:none;}
+@media(max-width:900px){
+ #receiving-workspace .wl-receiving-layout{grid-template-columns:1fr;}
+ #receiving-results{max-height:none;overflow:visible;}
+ #receiving-workspace:not(.show-receiving-detail) .wl-receiving-detail{display:none;}
+ #receiving-workspace.show-receiving-detail #receiving-results,#receiving-workspace.show-receiving-detail .wl-receiving-toolbar,#receiving-workspace.show-receiving-detail .wl-receiving-top,#receiving-workspace.show-receiving-detail #receiving-count,#receiving-workspace.show-receiving-detail #receiving-active-filters{display:none;}
+ #receiving-workspace .wl-receiving-back{display:inline-flex;margin-bottom:16px;font-size:13px;min-height:44px;}
+}
+@media(max-width:600px){
+ .wl-mode-options{flex-direction:column;}.wl-mode-option{padding:12px;}.wl-mode-option[aria-pressed=true]{padding:11px;}.wl-mode-option span{font-size:12px;}
+ .wl-review-route{grid-template-columns:1fr;}.wl-guided-form .wl-review-panel{padding:13px;}.wl-review-facts{grid-template-columns:1fr;gap:4px;margin-top:12px;}.wl-review-facts dd{margin-bottom:8px;}
+ .wl-receiving-toolbar{gap:8px;}.wl-receiving-search{flex-basis:100%;}.wl-receiving-metrics{gap:6px 12px;}
+ .wl-receiving-filter-fields{position:static;min-width:0;max-width:none;margin-top:8px;box-shadow:none;}
+ #receiving-filters[open]{flex-basis:100%;}
+ #receiving-workspace .wl-receiving-detail{padding:16px;}.wl-received-card-head{flex-direction:column;gap:5px;}
+ #receiving-selected-title{font-size:19px;}.wl-receiving-detail .facts{grid-template-columns:85px minmax(0,1fr);}.wl-receiving-links{gap:8px;}
+}
+
+/* Selected action first; alternatives are deliberate rather than filling a phone screen. */
+.wl-mode-choices{border:1px solid #bad5dd;border-radius:10px;background:#f3f9fa;padding:0;}
+.wl-mode-choices&gt;summary{list-style:none;cursor:pointer;padding:13px 15px;display:flex;gap:12px;align-items:start;justify-content:space-between;}
+.wl-mode-choices&gt;summary::-webkit-details-marker{display:none;}.wl-mode-current{display:flex;flex-direction:column;gap:5px;min-width:0;}
+.wl-mode-current strong{font-size:14px;}.wl-mode-current small{font-size:12px;color:#4f6877;font-weight:400;line-height:1.5;}
+.wl-mode-change{font-size:12px;white-space:nowrap;color:#087681;font-weight:700;}
+.wl-mode-choices .wl-mode-options{padding:0 12px 12px;}
+.wl-mode-choices&gt;summary:focus-visible{outline:3px solid #166b9a;outline-offset:3px;}
+
+.wl-receipt-facts{margin:14px 0;}.wl-receipt-facts&gt;summary{font-size:13px;cursor:pointer;padding:9px 0;color:#365a6b;}.wl-receipt-facts .facts{margin:8px 0 12px;}
+@media(max-width:900px){#receiving-detail{scroll-margin-top:12px;}}
+
+}
+
+/* UI138: selection stays explicit while searching destinations. */
+.wl-destination-state{font-weight:650;overflow-wrap:anywhere;}
+.wl-destination-option:disabled{cursor:not-allowed;color:#526673;background:#f2f5f7;}
+.wl-destination-main{min-width:0;overflow-wrap:anywhere;}
+.wl-picker-bar [role=status]{min-width:0;overflow-wrap:anywhere;}
+&lt;/style&gt;&lt;/head&gt;&lt;body&gt;&lt;fieldset class=&quot;preview-inert&quot; disabled inert&gt;&lt;form id=&quot;fw-form&quot; class=&quot;mm-form wl-guided-form&quot;&gt;&lt;div class=&quot;wl-guide-body&quot;&gt;&lt;ol class=&quot;wl-guide-steps&quot; aria-label=&quot;Etapas do formulário&quot;&gt;&lt;li&gt;1. Programação&lt;/li&gt;&lt;li&gt;2. Motivo da alteração&lt;/li&gt;&lt;li class=&quot;current&quot; aria-current=&quot;step&quot;&gt;3. Conferir programação da manutenção&lt;/li&gt;&lt;/ol&gt;&lt;h3 class=&quot;wl-guide-heading&quot;&gt;3 / 3 — Conferir programação da manutenção&lt;/h3&gt;&lt;section class=&quot;mm-page&quot; hidden=&quot;&quot;&gt;&lt;header class=&quot;mm-context&quot;&gt;&lt;p class=&quot;eyebrow&quot;&gt;MANUTENÇÃO&lt;/p&gt;&lt;h3&gt;Alterar recorrência da manutenção&lt;/h3&gt;&lt;p&gt;UI137-LOCAL&lt;/p&gt;&lt;dl class=&quot;mm-facts&quot;&gt;&lt;dt&gt;Equipamento&lt;/dt&gt;&lt;dd&gt;Unidade hidráulica fictícia&lt;/dd&gt;&lt;dt&gt;Ordem de serviço&lt;/dt&gt;&lt;dd&gt;UI137 — ordem fictícia&lt;/dd&gt;&lt;dt&gt;Situação salva&lt;/dt&gt;&lt;dd&gt;Em aberto&lt;/dd&gt;&lt;dt&gt;Versão conferida&lt;/dt&gt;&lt;dd&gt;2&lt;/dd&gt;&lt;/dl&gt;&lt;/header&gt;&lt;section class=&quot;mm-card&quot;&gt;&lt;h4&gt;Programação atual&lt;/h4&gt;&lt;dl class=&quot;mm-facts&quot;&gt;&lt;dt&gt;Prazo — data e hora (UTC)&lt;/dt&gt;&lt;dd&gt;2026-01-31T10:15:00Z&lt;/dd&gt;&lt;dt&gt;Recorrência&lt;/dt&gt;&lt;dd&gt;A cada 1 mês · Datas programadas fixas&lt;/dd&gt;&lt;/dl&gt;&lt;/section&gt;&lt;label&gt;Prazo desta ordem (data e hora em UTC)&lt;input name=&quot;due_at&quot; type=&quot;text&quot; value=&quot;2026-02-10T10:15:00Z&quot; data-utc-picker=&quot;&quot;&gt;&lt;/input&gt;&lt;/label&gt;&lt;fieldset class=&quot;maintenance-cycle-fields&quot;&gt;&lt;legend&gt;Recorrência da manutenção (opcional)&lt;/legend&gt;&lt;label&gt;Programar próxima ordem de serviço&lt;select name=&quot;repeat_enabled&quot;&gt;&lt;option value=&quot;&quot;&gt;Ordem avulsa, sem recorrência&lt;/option&gt;&lt;option value=&quot;yes&quot; selected=&quot;&quot;&gt;Gerar próxima ordem após a conclusão&lt;/option&gt;&lt;/select&gt;&lt;/label&gt;&lt;label&gt;Repetir a cada (número inteiro)&lt;input name=&quot;repeat_interval&quot; type=&quot;number&quot; value=&quot;14&quot; min=&quot;1&quot; max=&quot;3650&quot; step=&quot;1&quot; aria-describedby=&quot;maintenance-repeat-limit&quot;&gt;&lt;/input&gt;&lt;small class=&quot;mf-field-hint&quot; id=&quot;maintenance-repeat-limit&quot;&gt;Máximo para esta unidade: 3650 Dias.&lt;/small&gt;&lt;/label&gt;&lt;label&gt;Unidade do intervalo&lt;select name=&quot;repeat_unit&quot;&gt;&lt;option value=&quot;days&quot;&gt;Dias&lt;/option&gt;&lt;option value=&quot;weeks&quot;&gt;Semanas&lt;/option&gt;&lt;option value=&quot;months&quot; selected=&quot;&quot;&gt;Meses&lt;/option&gt;&lt;/select&gt;&lt;/label&gt;&lt;label&gt;Base para calcular a próxima data&lt;select name=&quot;repeat_basis&quot;&gt;&lt;option value=&quot;scheduled&quot; selected=&quot;&quot;&gt;Datas programadas fixas&lt;/option&gt;&lt;option value=&quot;completion&quot;&gt;A partir da conclusão efetiva&lt;/option&gt;&lt;/select&gt;&lt;/label&gt;&lt;p class=&quot;small&quot;&gt;Os campos de intervalo valem quando a recorrência está ativa. Datas fixas exigem um prazo e preservam vencimentos atrasados. A opção por conclusão usa o horário efetivamente registrado. Se o mês não tiver o dia previsto, usa-se seu último dia. Será gerada somente uma próxima ordem, sem resultados.&lt;/p&gt;&lt;/fieldset&gt;&lt;p class=&quot;mm-note&quot;&gt;Datas programadas fixas exigem data e hora de vencimento. Prazos atrasados não são ignorados automaticamente.&lt;/p&gt;&lt;p class=&quot;mm-note&quot;&gt;Para adiar esta ordem, altere o prazo e informe o motivo. O trabalho salvo é mantido e as próximas repetições passam a ter esta ordem como referência.&lt;/p&gt;&lt;/section&gt;&lt;section class=&quot;mm-page&quot; hidden=&quot;&quot;&gt;&lt;h3&gt;Por que a programação está sendo alterada?&lt;/h3&gt;&lt;label&gt;Justificativa da alteração da recorrência *&lt;textarea name=&quot;reason&quot;&gt;&lt;/textarea&gt;&lt;/label&gt;&lt;p&gt;A programação vale para esta ordem em aberto e as próximas. Ativar a recorrência usa esta ordem como referência e preserva as evidências anteriores. Escolha a opção avulsa para interromper a recorrência sem cancelar o trabalho atual.&lt;/p&gt;&lt;p class=&quot;mm-note&quot;&gt;A alteração vale para esta ordem em aberto e para as próximas. A opção avulsa interrompe a recorrência sem cancelar esta ordem. Alterar a programação não cria imediatamente uma nova ordem ou um lembrete.&lt;/p&gt;&lt;/section&gt;&lt;section class=&quot;mm-page&quot;&gt;&lt;div class=&quot;mm-review&quot;&gt;&lt;div class=&quot;mm-comparison&quot;&gt;&lt;section class=&quot;mm-card&quot;&gt;&lt;h4&gt;Programação salva&lt;/h4&gt;&lt;dl class=&quot;mm-facts&quot;&gt;&lt;dt&gt;Prazo — data e hora (UTC)&lt;/dt&gt;&lt;dd&gt;2026-01-31T10:15:00Z&lt;/dd&gt;&lt;dt&gt;Recorrência&lt;/dt&gt;&lt;dd&gt;A cada 1 mês · Datas programadas fixas&lt;/dd&gt;&lt;/dl&gt;&lt;/section&gt;&lt;section class=&quot;mm-card&quot;&gt;&lt;h4&gt;Programação proposta&lt;/h4&gt;&lt;dl class=&quot;mm-facts&quot;&gt;&lt;dt&gt;Prazo — data e hora (UTC)&lt;/dt&gt;&lt;dd&gt;2026-02-10T10:15:00Z&lt;/dd&gt;&lt;dt&gt;Recorrência&lt;/dt&gt;&lt;dd&gt;A cada 14 dias · Datas programadas fixas&lt;/dd&gt;&lt;/dl&gt;&lt;/section&gt;&lt;/div&gt;&lt;dl class=&quot;mm-facts&quot;&gt;&lt;dt&gt;Ordem de serviço&lt;/dt&gt;&lt;dd&gt;UI137-LOCAL&lt;/dd&gt;&lt;dt&gt;Versão conferida&lt;/dt&gt;&lt;dd&gt;2&lt;/dd&gt;&lt;dt&gt;Motivo da alteração&lt;/dt&gt;&lt;dd&gt;Adiamento fictício devido à programação.&lt;/dd&gt;&lt;/dl&gt;&lt;p class=&quot;mm-effect&quot;&gt;Ao ativar a recorrência, esta ordem passa a ser a referência da programação. As evidências anteriores são preservadas. Esta conferência não calcula o próximo prazo.&lt;/p&gt;&lt;/div&gt;&lt;label class=&quot;checkline mm-confirm&quot;&gt;&lt;input type=&quot;checkbox&quot; value=&quot;&quot;&gt;&lt;/input&gt;&lt;span&gt;Conferi a alteração proposta e confirmo o salvamento.&lt;/span&gt;&lt;/label&gt;&lt;p class=&quot;small muted&quot;&gt;A ação só é confirmada após a resposta do servidor. Salvar não libera equipamento, retira quarentena nem autoriza operação.&lt;/p&gt;&lt;/section&gt;&lt;/div&gt;&lt;div id=&quot;fw-local-state&quot;&gt;&lt;/div&gt;&lt;p id=&quot;fw-error&quot;&gt;O formulário mudou após a conferência. Volte, confira os valores novamente e confirme.&lt;/p&gt;&lt;div class=&quot;actions&quot;&gt;&lt;button class=&quot;btn secondary&quot; type=&quot;button&quot;&gt;Voltar&lt;/button&gt;&lt;button class=&quot;btn primary&quot; type=&quot;button&quot; hidden=&quot;&quot;&gt;Continuar&lt;/button&gt;&lt;button id=&quot;fw-save&quot; type=&quot;submit&quot;&gt;Salvar recorrência&lt;/button&gt;&lt;/div&gt;&lt;/form&gt;&lt;/fieldset&gt;&lt;/body&gt;&lt;/html&gt;"></iframe></section>
+<section><h2>Liberar a próxima ordem</h2><p>Mostra a versão atual da rotina, os responsáveis escolhidos e o motivo da liberação.</p><iframe title="Liberar a próxima ordem — componente real, dados fictícios" sandbox srcdoc="&lt;!doctype html&gt;&lt;html lang=&quot;pt-BR&quot;&gt;&lt;head&gt;&lt;meta charset=&quot;utf-8&quot;&gt;&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1&quot;&gt;&lt;meta http-equiv=&quot;Content-Security-Policy&quot; content=&quot;default-src 'none'; style-src 'unsafe-inline'; form-action 'none'; base-uri 'none'&quot;&gt;&lt;title&gt;Liberar a próxima ordem&lt;/title&gt;&lt;style&gt;:root{color-scheme:light;--bg:#f4f7fa;--surface:#fff;--line:#cbd5e1;--border:#cbd5e1;--text:#132b42;--muted:#526577;--accent:#006c81;--brand:#005f77}*{box-sizing:border-box}body{font-family:system-ui,Segoe UI,sans-serif;margin:0;padding:18px;background:#fff;color:var(--text);line-height:1.5}fieldset.preview-inert{border:0;padding:0;margin:0;min-width:0}button,input,select,textarea{font:inherit;max-width:100%}input,select,textarea{border:1px solid #b8c7d2;border-radius:6px;padding:8px;color:#183245;background:#fff}label{display:block}small,.muted{color:#526577}.btn{display:inline-flex;align-items:center;justify-content:center;border:1px solid #c2d0da;border-radius:8px;padding:9px 14px;background:#fff;color:#153d55}.btn.primary{background:#006c81;color:white}.btn.danger{background:#8c2930;color:white}input:disabled,select:disabled,textarea:disabled,button:disabled{opacity:1}.actions{display:flex;gap:8px;flex-wrap:wrap}[hidden]{display:none!important}
+/* UI60: retained module styles; common components deliberately override only wl-* roles. */
+@layer wlLegacy {
+/* UI11: only the two explicitly enhanced maintenance forms. */
+.mf-form{--mf-line:#d5e2e8;--mf-ink:#1c3c4d;min-width:0;}
+#dialog.mf-dialog{width:min(1000px,calc(100vw - 24px));}
+.mf-form [hidden]{display:none!important;}
+.mf-context{border-left:3px solid #0b7c86;background:#f2f8f9;padding:14px 16px;border-radius:7px;margin:0 0 16px;}
+.mf-context h3{font-size:20px;line-height:1.3;margin:7px 0;overflow-wrap:anywhere;}
+.mf-context .eyebrow{font-size:10px;margin:0;color:#35717d;}
+.mf-context p{margin:4px 0;}
+.mf-screen{min-width:0;}
+.mf-screen&gt;h4{margin:22px 0 8px;}
+.mf-disclosure{border:1px solid var(--mf-line);border-radius:8px;padding:10px 14px;margin:12px 0;}
+.mf-disclosure summary{cursor:pointer;font-size:13px;font-weight:650;}
+.mf-form .mf-readings{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px 18px;}
+.mf-form label{min-width:0;}
+.mf-form .mf-readings&gt;label,.mf-form .mf-screen&gt;label{display:flex;flex-direction:column;gap:7px;margin:12px 0;}
+.mf-form .mf-readings input,.mf-form .mf-screen select,.mf-form .mf-screen textarea{min-width:0;width:100%;box-sizing:border-box;}
+.mf-form .mf-field-hint{font-size:11px;color:#4d6979;font-weight:400;line-height:1.5;}
+.mf-result-hint{font-size:13px;line-height:1.55;color:#375968;padding:11px 13px;background:#edf7f8;border:1px solid #cce2e5;border-radius:7px;margin:12px 0;}
+.mf-form .item-guidance{margin:16px 0;}
+.mf-form .item-guidance .instruction-text{font-size:14px;line-height:1.55;}
+.mf-form .mf-facts{display:grid;grid-template-columns:minmax(100px,.7fr) minmax(0,1.3fr);gap:0 16px;margin:10px 0;font-size:13px;}
+.mf-facts dt,.mf-facts dd{padding:10px 0;border-bottom:1px solid #e1e9ed;margin:0;white-space:pre-wrap;overflow-wrap:anywhere;}
+.mf-facts dt{color:#516e7d;font-weight:500;}.mf-facts dd{font-weight:600;color:var(--mf-ink);}
+.mf-comparison{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
+.mf-review-card{border:1px solid var(--mf-line);border-radius:9px;padding:15px;min-width:0;background:#fff;}
+.mf-review-card h4{font-size:15px;margin:0 0 10px;}
+.mf-comparison .mf-review-card:last-child{border-top:3px solid #19848a;background:#f6fbfb;}
+.mf-form .mf-confirm{display:flex;flex-direction:row;gap:10px;align-items:flex-start;margin:18px 0;line-height:1.5;}
+.mf-confirm input{width:20px!important;min-height:20px!important;height:20px;flex:none;margin:1px 0;}
+.mf-form .evidence-editor{padding:16px;border:1px solid var(--mf-line);border-radius:9px;}
+.mf-form .evidence-editor legend{font-size:14px;font-weight:700;}
+.mf-form .evidence-editor .small{font-size:12px;line-height:1.5;}
+.mf-form .operation-persons{max-height:290px;overflow:auto;border:1px solid var(--mf-line);border-radius:8px;padding:14px;}
+.mf-form .operation-persons label{margin:10px 0;}
+.mf-form .wl-guide-body{scrollbar-gutter:stable;}
+.mf-form .wl-guide-steps{position:sticky;top:0;background:white;z-index:2;margin-top:0;}
+.mf-form .wl-guide-steps li{font-size:12px;}
+.mf-form :focus-visible{outline:2px solid #176b8c;outline-offset:3px;}
+@media(max-width:640px){
+ .mf-form .mf-readings,.mf-comparison{grid-template-columns:1fr;}
+ .mf-form .mf-facts{grid-template-columns:minmax(88px,.7fr) minmax(0,1.3fr);gap:0 10px;font-size:12px;}
+ .mf-context{padding:11px 12px;}.mf-context h3{font-size:17px;}
+ .mf-form .wl-guide-steps{gap:5px;}.mf-form .wl-guide-steps li{font-size:10px;padding:8px 2px;line-height:1.4;}
+ #dialog.mf-dialog .modal{padding:14px;}.mf-form&gt;.actions{display:grid;grid-template-columns:1fr 1fr;gap:8px;}
+ .mf-form&gt;.actions button{font-size:12px;min-height:42px;padding:9px;white-space:normal;}
+ .mf-form #fw-discard{order:3;}.mf-form #fw-keep{order:4;}.mf-form #fw-save{grid-column:2;}
+ .mf-form .mf-review-card{padding:12px;}.mf-form .evidence-editor{padding:12px;}
+}
+/* Avoid inherited generic-dialog spacing pushing the actual readings below the fold. */
+#dialog.mf-dialog #fw-form{gap:0;}
+#dialog.mf-dialog .modal-head{padding:8px 0 12px;margin-top:0;margin-bottom:8px;position:static;}
+#dialog.mf-dialog .modal&gt;p{font-size:12px;margin:2px 0 10px;line-height:1.45;}
+.mf-form .mf-context h3{border:0;padding:0;margin:5px 0;font-size:19px;}
+.mf-form .wl-guide-heading{border:0;padding:0;margin:6px 0 12px;font-size:17px;}
+.mf-form .mf-context{padding:11px 14px;margin-bottom:12px;}
+.mf-form .mf-readings&gt;label{margin:7px 0;}
+.mf-form .mf-screen&gt;.item-guidance{margin:12px 0;}
+.mf-form .mf-screen&gt;h4{margin:14px 0 4px;}
+#dialog.mf-dialog #fw-error:empty{display:none;}
+#dialog.mf-dialog #fw-form&gt;.actions{gap:8px;padding-top:10px;margin-top:4px;}
+#dialog.mf-dialog #fw-keep{margin-right:auto;}
+@media(max-width:640px){
+ #dialog.mf-dialog .modal-head h2{font-size:20px;}
+ #dialog.mf-dialog .mf-context h3{font-size:17px;}
+ #dialog.mf-dialog #fw-form&gt;.actions{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));}
+ #dialog.mf-dialog #fw-form&gt;.actions button{min-width:0;flex:none;margin:0;font-size:12px;}
+ #dialog.mf-dialog #fw-keep{grid-column:1;grid-row:2;}
+ #dialog.mf-dialog #fw-discard{grid-column:2;grid-row:2;}
+ #dialog.mf-dialog #fw-form&gt;.actions [id$=&quot;-back&quot;]{grid-column:1;grid-row:1;}
+ #dialog.mf-dialog #fw-form&gt;.actions [id$=&quot;-next&quot;],#dialog.mf-dialog #fw-save{grid-column:2;grid-row:1;}
+ #dialog.mf-dialog #fw-form[data-logistics-step=&quot;0&quot;]&gt;.actions [id$=&quot;-next&quot;]{grid-column:1/-1;}
+}
+
+/* UI36 direct forms: scroll the content, keep existing draft/save actions reachable. */
+#dialog.mf-dialog .mf-direct{display:flex;flex-direction:column;max-height:calc(92dvh - 126px);overflow:hidden;}
+.mf-direct&gt;.mf-screen{overflow-y:auto;overscroll-behavior:contain;scrollbar-gutter:stable;min-height:0;padding-right:4px;}
+.mf-direct&gt;#fw-local-state,.mf-direct&gt;#fw-error,.mf-direct&gt;.actions{flex-shrink:0;}
+.mf-direct&gt;#fw-local-state{font-size:12px;margin:8px 0 3px;}
+.mf-direct .mf-screen&gt;label{display:flex;flex-direction:column;gap:7px;}
+.mf-direct .mf-screen&gt;label&gt;textarea{min-height:104px;}
+.mf-direct .mf-disclosure label{display:block;margin:10px 0;}
+.mf-direct .mf-disclosure .checkline{display:flex;flex-direction:row;}
+.mf-direct .mf-disclosure input[type=checkbox]{width:20px;min-height:20px;flex:none;}
+.mf-direct .mf-result-hint{color:#294956;}
+.mf-direct&gt;.actions #fw-save{min-width:160px;}
+@media(max-width:640px){
+ #dialog.mf-dialog{width:calc(100vw - 12px);max-height:96dvh;}
+ #dialog.mf-dialog .mf-direct{max-height:calc(96dvh - 126px);}
+ #dialog.mf-dialog .mf-direct&gt;.actions #fw-save{grid-column:1/-1;grid-row:1;}
+ .mf-direct .operation-persons{max-height:240px;}
+}
+
+}
+
+/* UI137: expose the saved return reason beside the correction fields. */
+.mf-form .mf-review-feedback{border:1px solid #bd8244;border-left:4px solid #a66321;border-radius:8px;background:#fff8ed;color:#593510;padding:14px 16px;margin:12px 0;overflow-wrap:anywhere;}
+.mf-review-feedback h4{margin:0 0 8px;font-size:15px;}
+.mf-review-feedback .mf-review-reason{white-space:pre-wrap;line-height:1.55;margin:8px 0;}
+.mf-review-feedback .mf-facts{margin:8px 0;}
+.mf-review-feedback .mf-facts dt,.mf-review-feedback .mf-facts dd{color:#593510;border-color:#e5cfb0;}
+.mf-review-feedback .small{margin:8px 0 0;}
+@media(max-width:640px){.mf-form .mf-review-feedback{padding:12px;}}
+
+/* UI60: retained module styles; common components deliberately override only wl-* roles. */
+@layer wlLegacy {
+/* UI12: deliberately scoped to maintenance management dialogs. */
+dialog.mm-dialog{width:min(920px,calc(100vw - 32px));max-width:none;}
+.mm-form .mm-context{padding:16px 18px;border:1px solid #cbdbe4;border-radius:12px;background:#f4f8fb;margin:0 0 18px;}
+.mm-form .mm-context h3{font-size:1.35rem;line-height:1.3;margin:8px 0;}
+.mm-form .mm-context&gt;p:not(.eyebrow){margin:6px 0 12px;overflow-wrap:anywhere;}
+.mm-form .mm-facts{display:grid;grid-template-columns:minmax(130px,.65fr) minmax(0,1.5fr);gap:9px 16px;margin:12px 0;}
+.mm-form .mm-facts dt{color:#475e70;font-size:.88rem;}
+.mm-form .mm-facts dd{margin:0;white-space:pre-wrap;overflow-wrap:anywhere;line-height:1.45;}
+.mm-form .mm-comparison{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;}
+.mm-form .mm-card{border:1px solid #d5e0e7;border-radius:12px;padding:16px;background:#fff;min-width:0;}
+.mm-form .mm-card h4{margin:0 0 12px;font-size:1rem;}
+.mm-form .mm-comparison .mm-facts{grid-template-columns:1fr;gap:5px;}
+.mm-form .mm-comparison .mm-facts dd{margin-bottom:8px;}
+.mm-form .mm-note,.mm-form .mm-effect{background:#eef5f8;border-left:3px solid #147883;border-radius:6px;padding:12px 14px;line-height:1.55;}
+.mm-form .mm-warning{padding:12px 14px;border:1px solid #e4c289;border-left:4px solid #a36c1b;border-radius:6px;background:#fff7ea;color:#694815;line-height:1.55;}
+.mm-form .mm-saved-summary h4{margin:4px 0 12px;}
+.mm-form .mm-counts{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px;margin:12px 0;}
+.mm-form .mm-counts&gt;div{border:1px solid #d5e0e7;border-radius:9px;padding:12px;background:#fff;min-width:0;}
+.mm-form .mm-counts strong{display:block;font-size:1.45rem;margin-bottom:4px;}
+.mm-form .mm-counts span{display:block;font-size:.8rem;color:#4d6373;overflow-wrap:anywhere;}
+.mm-form .mm-disclosure{border:1px solid #d5e0e7;border-radius:8px;padding:10px 12px;margin:12px 0;}
+.mm-form .mm-disclosure&gt;summary{font-weight:650;cursor:pointer;min-height:26px;}
+.mm-form .mm-saved-step{border-top:1px solid #d5e0e7;padding:14px 0 4px;}
+.mm-form .mm-saved-step h5{font-size:.96rem;margin:0 0 5px;}
+.mm-form .mm-saved-step .small{margin:5px 0;}
+.mm-form label{margin:12px 0;}
+.mm-form textarea{min-height:105px;}
+.mm-form .maintenance-cycle-fields{border:1px solid #d5e0e7;border-radius:10px;padding:14px;margin:14px 0;}
+.mm-form .maintenance-cycle-fields legend{font-weight:650;padding:0 6px;}
+.mm-form .mm-confirm{padding:14px;background:#eaf5f4;border:1px solid #abcfc9;border-radius:8px;align-items:flex-start;}
+.mm-form .mm-confirm input{margin-top:4px;}
+.mm-form [hidden]{display:none!important;}
+@media(max-width:600px){
+ dialog.mm-dialog{width:calc(100vw - 12px);max-width:none;max-height:calc(100dvh - 12px);padding:12px;}
+ .mm-form .mm-context{padding:12px;}
+ .mm-form .mm-facts{grid-template-columns:1fr;gap:4px;}
+ .mm-form .mm-facts dd{margin-bottom:8px;}
+ .mm-form .mm-comparison{grid-template-columns:1fr;}
+ .mm-form .mm-counts{grid-template-columns:repeat(2,minmax(0,1fr));}
+ .mm-form .mm-card{padding:12px;}
+ .mm-form .mm-context h3{font-size:1.15rem;}
+ .mm-dialog #fw-local-state{font-size:.78rem;line-height:1.4;}
+}
+#fw-form.mm-form label.checkline{display:flex;flex-direction:row;align-items:flex-start;gap:10px;line-height:1.5;}
+.mm-form .checkline input{width:20px!important;min-height:20px!important;height:20px;flex:none;margin:2px 0 0;}
+.mm-form .checkline span{flex:1;min-width:0;}
+.mm-form .mm-page&gt;label:not(.checkline){display:flex;flex-direction:column;gap:8px;}
+
+/* UI14: same scoped review language for pending release and saved-step review. */
+#maint-approval.mm-form label.checkline{display:flex;flex-direction:row;align-items:flex-start;gap:10px;line-height:1.5;}
+.mm-approval-form{display:flex;flex-direction:column;min-height:0;overflow:hidden;}
+.mm-approval-body{overflow:auto;min-height:0;max-height:calc(100dvh - 240px);padding:2px 4px 10px;overscroll-behavior:contain;}
+.mm-approval-footer{flex-shrink:0;padding:12px 0 2px;border-top:1px solid #d5e0e7;display:flex;gap:8px;flex-wrap:wrap;background:#fff;}
+.mm-approval-footer #fw-error{flex-basis:100%;}
+.mm-approval-form .mm-page{min-width:0;overflow-wrap:anywhere;}
+.mm-approval-form .log-values{overflow-wrap:anywhere;}
+@media(max-width:600px){.mm-approval-body{max-height:calc(100dvh - 220px);}.mm-approval-footer .btn{flex:1;white-space:normal;min-height:44px;}.mm-approval-form .evidence-view-card{min-width:0;}}
+
+}
+
+/* UI60: retained module styles; common components deliberately override only wl-* roles. */
+@layer wlLegacy {
+/* Shared find → choose → review pattern, scoped to logistics forms only. */
+#dialog.wl-guided-dialog,#modal.wl-guided-dialog{width:min(1020px,calc(100vw - 24px));max-height:94dvh;}
+.wl-guided-form [hidden]{display:none!important;}
+.wl-guide-steps{display:flex;gap:8px;list-style:none;margin:12px 0 16px;padding:0;}
+.wl-guide-steps li{flex:1;min-width:0;border-bottom:3px solid #d5e1e7;padding:10px 4px;font-size:13px;color:#5d6f7d;}
+.wl-guide-steps li.current{border-color:#197e86;color:#173846;font-weight:750;}
+.wl-guide-heading{margin:4px 0 16px;font-size:19px;outline:none;}
+.wl-guide-heading:focus-visible{outline:2px solid #197e86;outline-offset:4px;}
+.wl-destination-picker{margin:14px 0;min-width:0;}
+.wl-destination-picker h3{font-size:16px;margin-bottom:8px;}
+.wl-picker-bar{display:flex;align-items:center;justify-content:space-between;gap:12px;margin:8px 0;}
+.wl-picker-bar button{padding:6px 10px;font-size:12px;min-height:36px;}
+.wl-destination-list{border:1px solid #cbd7e0;border-radius:10px;overflow:auto;max-height:290px;background:white;}
+.wl-destination-option{display:flex;flex-direction:column;align-items:stretch;text-align:left;width:100%;gap:5px;border:0;border-radius:0;border-bottom:1px solid #e1e8ed;background:#fff;padding:13px 16px;color:#183447;font-weight:400;min-height:64px;}
+.wl-destination-option:last-child{border-bottom:0;}
+.wl-destination-option[aria-pressed=true]{background:#eaf5f4;box-shadow:inset 4px 0 #197e86;}
+.wl-destination-option:focus-visible{outline:3px solid #197e86;outline-offset:-3px;}
+.wl-destination-main{display:flex;justify-content:space-between;align-items:start;gap:12px;}
+.wl-destination-main strong{font-weight:700;}
+.wl-destination-main small{flex-shrink:0;max-width:45%;text-align:right;}
+.wl-destination-path{font-size:12px;color:#58717f;overflow-wrap:anywhere;}
+.wl-selected-destination,.wl-review-summary{padding:14px 16px;margin:12px 0;background:#edf4f7;border:1px solid #cbdde3;border-radius:8px;overflow-wrap:anywhere;}
+.wl-selected-destination p{margin:6px 0;}.wl-review-summary{white-space:pre-wrap;}
+.wl-picker-empty{padding:18px;}.wl-guided-form section&gt;h3{margin-top:12px;}
+.wl-guided-form .movement-source{padding:12px 16px;border:1px solid #d5e1e7;border-radius:8px;margin:8px 0 14px;background:#f7fafc;}
+.wl-guided-form .movement-source ul{max-height:180px;overflow:auto;margin:8px 0;padding-left:22px;}
+.wl-guided-form .movement-source li small{display:block;}
+.wl-receiving-filters{display:grid;grid-template-columns:minmax(180px,1fr) minmax(150px,.55fr) minmax(145px,.4fr) auto;gap:12px;align-items:end;margin-bottom:14px;}
+.wl-receiving-filters label{margin-top:0;}
+.wl-receiving-layout{display:grid;grid-template-columns:minmax(0,1fr) 310px;gap:18px;align-items:start;}
+.wl-receiving-layout&gt;*{min-width:0;}
+.wl-receiving-detail{padding:18px;border:1px solid #cbd7e0;border-radius:10px;background:white;overflow-wrap:anywhere;position:sticky;top:14px;}
+.wl-receiving-detail .facts{grid-template-columns:95px 1fr;font-size:13px;gap:8px;}
+.wl-receiving-detail .actions{margin-top:14px;}
+.wl-receiving-table .selected td{background:#eaf5f4;}
+.wl-receiving-table button[data-receiving-open]{text-align:left;justify-content:start;max-width:100%;overflow-wrap:anywhere;}
+@media(max-width:1100px){.wl-receiving-layout{grid-template-columns:1fr;}.wl-receiving-detail{position:static;}.wl-receiving-filters{grid-template-columns:1fr 1fr;}}
+@media(max-width:600px){
+ #dialog.wl-guided-dialog,#modal.wl-guided-dialog{width:calc(100vw - 12px);max-height:96dvh;border-radius:10px;}
+ .wl-guided-dialog .modal{padding:16px;}.wl-guide-steps{gap:5px;}.wl-guide-steps li{font-size:11px;padding:8px 0;}
+ .wl-guide-heading{font-size:17px;}.wl-destination-main{flex-direction:column;gap:3px;}.wl-destination-main small{max-width:100%;text-align:left;}
+ .wl-destination-option{padding:12px;}.wl-destination-list{max-height:240px;}.wl-receiving-filters{grid-template-columns:1fr;}
+ .wl-guided-form footer{flex-wrap:wrap;}.wl-guided-form #modal-note{max-width:none;flex-basis:100%;}
+ .wl-guided-form .actions{gap:7px;}.wl-guided-form .actions button{min-height:44px;}
+ .wl-receiving-detail{padding:14px;}.wl-receiving-filters button{min-height:44px;}
+}
+
+/* Keep actions visible; only the movement step body scrolls. */
+#dialog.wl-guided-dialog{overflow:hidden;}
+#dialog.wl-guided-dialog .modal{display:flex;flex-direction:column;max-height:94dvh;min-height:0;box-sizing:border-box;}
+#dialog.wl-guided-dialog .modal-head,#dialog.wl-guided-dialog .modal&gt;p{flex:none;}
+#fw-form.wl-guided-form{display:flex;flex-direction:column;min-height:0;overflow:hidden;}
+#fw-form.wl-guided-form .wl-guide-body{overflow:auto;min-height:0;padding:0 4px 10px;overscroll-behavior:contain;}
+#fw-form.wl-guided-form&gt;.actions,#fw-form.wl-guided-form&gt;#fw-error,#fw-form.wl-guided-form&gt;#fw-local-state{flex:none;}
+#fw-form.wl-guided-form&gt;.actions{background:white;margin-top:8px;}
+#fw-form.wl-guided-form&gt;#fw-local-state{font-size:11px;padding:8px 10px;margin:8px 0;}
+@media(max-width:600px){#dialog.wl-guided-dialog .modal{max-height:96dvh;}#fw-form.wl-guided-form&gt;.actions{padding-top:10px;}#dialog.wl-guided-dialog .modal-head{margin-bottom:8px;}#dialog.wl-guided-dialog .modal&gt;p{margin:4px 0 8px;}}
+
+/* Workspace UI05 — descriptive destinations, compact scope and focused receiving. */
+.wl-mode-choices{margin:14px 0 18px;min-width:0;}
+.wl-mode-choices h3{font-size:15px;margin:0 0 10px;}
+.wl-mode-options{display:flex;gap:10px;align-items:stretch;}
+.wl-mode-option{flex:1;min-width:0;display:flex;flex-direction:column;text-align:left;gap:7px;justify-content:flex-start;padding:14px;border:1px solid #cbd8e0;border-radius:10px;background:#fff;color:#233f50;line-height:1.45;overflow-wrap:anywhere;}
+.wl-mode-option strong{font-size:14px;}.wl-mode-option span{font-size:12px;font-weight:400;color:#536b79;}
+.wl-mode-option[aria-pressed=true]{border:2px solid #147e87;padding:13px;background:#edf8f8;box-shadow:0 1px 3px #10394812;}
+.wl-mode-option:focus-visible{outline:3px solid #166b9a;outline-offset:3px;}
+.wl-mode-option:disabled{opacity:.6;cursor:not-allowed;}
+.wl-guided-form .wl-scope-summary{font-size:13px;}.wl-scope-summary summary{cursor:pointer;padding:3px 0;}
+.wl-scope-summary summary strong{font-size:14px;}.wl-scope-summary summary span{display:block;margin:5px 0 0;color:#4d6574;font-size:12px;}
+.wl-guided-form .wl-review-panel{background:#f6f9fb;padding:18px;border:1px solid #d5e1e7;border-radius:12px;white-space:normal;color:#213f51;}
+.wl-review-panel h3{font-size:18px;margin:0 0 16px;}.wl-review-route{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
+.wl-review-endpoint{background:white;border:1px solid #dce5ea;border-radius:8px;padding:13px;min-width:0;}
+.wl-review-endpoint:last-child{border-top:3px solid #167f85;}
+.wl-review-endpoint h4{margin:0 0 8px;font-size:12px;letter-spacing:.02em;color:#49616f;}
+.wl-review-endpoint ul{list-style:none;margin:0;padding:0;max-height:150px;overflow:auto;overflow-wrap:anywhere;}
+.wl-review-endpoint li{margin:0 0 5px;white-space:pre-wrap;font-size:14px;font-weight:600;}
+.wl-review-facts{display:grid;grid-template-columns:minmax(100px,.35fr) minmax(0,1fr);gap:10px 16px;margin:18px 0 0;font-size:13px;}
+.wl-review-facts dt{font-weight:650;color:#4d6574;}.wl-review-facts dd{margin:0;white-space:pre-wrap;overflow-wrap:anywhere;}
+.wl-review-note{margin:16px 0 0;padding-top:12px;border-top:1px solid #d5e1e7;font-size:12px;line-height:1.55;color:#4c6473;}
+.wl-ui05-badge{display:inline-block;border:1px solid #bad7de;border-radius:6px;padding:3px 7px;background:#e8f3f6;color:#346373;font-size:10px;font-weight:700;letter-spacing:.06em;}
+.wl-receiving-workspace{min-width:0;}.wl-receiving-workspace [hidden]{display:none!important;}
+.wl-receiving-top{display:flex;gap:14px;align-items:center;margin:0 0 18px;flex-wrap:wrap;}
+.wl-receiving-metrics{display:flex;gap:10px 18px;flex-wrap:wrap;font-size:12px;color:#476273;}
+.wl-receiving-metrics b{font-size:17px;color:#234554;margin-right:4px;}
+.wl-receiving-toolbar{display:flex;align-items:end;gap:12px;flex-wrap:wrap;}.wl-receiving-search{flex:1;min-width:160px;}
+.wl-receiving-toolbar label{margin-top:0;}.wl-receiving-toolbar input{margin:0;}
+#receiving-filters{position:relative;margin:0;}#receiving-filters&gt;summary{list-style:none;cursor:pointer;border:1px solid #bacfd9;border-radius:8px;background:#fff;min-height:44px;padding:12px 14px;box-sizing:border-box;font-size:13px;}
+#receiving-filters&gt;summary::-webkit-details-marker{display:none;}#receiving-filters&gt;summary:after{content:' ▾';}
+#receiving-filters&gt;summary:focus-visible{outline:3px solid #167a91;outline-offset:2px;}
+.wl-receiving-filter-fields{position:absolute;top:100%;right:0;z-index:5;min-width:290px;max-width:calc(100vw - 56px);border:1px solid #cad8e1;background:#fff;border-radius:10px;padding:16px;box-shadow:0 10px 28px #1236461a;}
+.wl-receiving-filter-fields&gt;div+div{margin-top:12px;}.wl-receiving-toolbar&gt;button{min-height:44px;}
+.wl-receiving-filter-summary{font-size:12px;margin:10px 0 4px;overflow-wrap:anywhere;}
+#receiving-count{font-size:12px;margin:0 0 14px;}
+#receiving-selection-notice{font-size:12px;padding:10px;background:#fdf4e7;border:1px solid #edd8b9;border-radius:6px;}
+#receiving-workspace .wl-receiving-layout{display:grid;grid-template-columns:minmax(0,1fr) minmax(310px,.78fr);gap:20px;align-items:start;}
+#receiving-results{min-width:0;max-height:600px;overflow:auto;overscroll-behavior:contain;padding:1px 5px 2px 1px;}
+.wl-receiving-card{margin-bottom:10px;background:#fff;border:1px solid #d2dfe7;border-radius:10px;overflow:hidden;}
+.wl-receiving-card.selected{border-color:#15828a;box-shadow:0 0 0 1px #15828a;}
+.wl-receiving-card&gt;button{border:0;border-radius:0;padding:16px;display:flex;gap:7px;flex-direction:column;align-items:stretch;text-align:left;width:100%;color:#213d4f;background:#fff;font-weight:400;line-height:1.45;}
+.wl-receiving-card.selected&gt;button{background:#f0f8f8;}.wl-receiving-card&gt;button:focus-visible{outline:3px solid #167a91;outline-offset:-3px;}
+.wl-received-card-head{display:flex;align-items:start;gap:12px;justify-content:space-between;}.wl-received-card-head strong{font-size:15px;overflow-wrap:anywhere;}
+.wl-open-group{font-size:11px;white-space:nowrap;color:#0b6d76;font-weight:650;}
+.wl-received-reference,.wl-received-holding{font-size:12px;color:#526b7a;overflow-wrap:anywhere;}
+.wl-received-state .pill{font-size:11px;}.wl-received-manifest{display:flex;gap:8px;padding:9px 16px;border-top:1px solid #e2eaf0;font-size:12px;flex-wrap:wrap;}
+.wl-received-manifest&gt;span{color:#607682;}.wl-received-manifest a{overflow-wrap:anywhere;}
+#receiving-workspace .wl-receiving-detail{position:static;padding:22px;border:1px solid #d2dfe7;box-shadow:0 3px 12px #18394b08;}
+#receiving-selected-title{font-size:21px;line-height:1.3;margin:10px 0;overflow-wrap:anywhere;}
+.wl-receiving-empty{padding:14px 4px;}.wl-receiving-empty p{font-size:14px;line-height:1.65;}
+.wl-holding-position{display:flex;gap:6px;flex-direction:column;background:#eff5f8;border-radius:8px;padding:14px;margin:18px 0;overflow-wrap:anywhere;}
+.wl-holding-position .eyebrow{font-size:10px;}.wl-holding-position strong{font-size:15px;}.wl-holding-position&gt;span:last-child{font-size:13px;}
+.wl-placement-action{margin:18px 0 12px;}.wl-placement-action&gt;button{width:100%;min-height:46px;}
+.wl-receiving-links{border-top:1px solid #dae4e9;padding-top:12px;}.wl-receiving-links a{font-size:12px;}
+.wl-receiving-back{display:none;}
+@media(max-width:900px){
+ #receiving-workspace .wl-receiving-layout{grid-template-columns:1fr;}
+ #receiving-results{max-height:none;overflow:visible;}
+ #receiving-workspace:not(.show-receiving-detail) .wl-receiving-detail{display:none;}
+ #receiving-workspace.show-receiving-detail #receiving-results,#receiving-workspace.show-receiving-detail .wl-receiving-toolbar,#receiving-workspace.show-receiving-detail .wl-receiving-top,#receiving-workspace.show-receiving-detail #receiving-count,#receiving-workspace.show-receiving-detail #receiving-active-filters{display:none;}
+ #receiving-workspace .wl-receiving-back{display:inline-flex;margin-bottom:16px;font-size:13px;min-height:44px;}
+}
+@media(max-width:600px){
+ .wl-mode-options{flex-direction:column;}.wl-mode-option{padding:12px;}.wl-mode-option[aria-pressed=true]{padding:11px;}.wl-mode-option span{font-size:12px;}
+ .wl-review-route{grid-template-columns:1fr;}.wl-guided-form .wl-review-panel{padding:13px;}.wl-review-facts{grid-template-columns:1fr;gap:4px;margin-top:12px;}.wl-review-facts dd{margin-bottom:8px;}
+ .wl-receiving-toolbar{gap:8px;}.wl-receiving-search{flex-basis:100%;}.wl-receiving-metrics{gap:6px 12px;}
+ .wl-receiving-filter-fields{position:static;min-width:0;max-width:none;margin-top:8px;box-shadow:none;}
+ #receiving-filters[open]{flex-basis:100%;}
+ #receiving-workspace .wl-receiving-detail{padding:16px;}.wl-received-card-head{flex-direction:column;gap:5px;}
+ #receiving-selected-title{font-size:19px;}.wl-receiving-detail .facts{grid-template-columns:85px minmax(0,1fr);}.wl-receiving-links{gap:8px;}
+}
+
+/* Selected action first; alternatives are deliberate rather than filling a phone screen. */
+.wl-mode-choices{border:1px solid #bad5dd;border-radius:10px;background:#f3f9fa;padding:0;}
+.wl-mode-choices&gt;summary{list-style:none;cursor:pointer;padding:13px 15px;display:flex;gap:12px;align-items:start;justify-content:space-between;}
+.wl-mode-choices&gt;summary::-webkit-details-marker{display:none;}.wl-mode-current{display:flex;flex-direction:column;gap:5px;min-width:0;}
+.wl-mode-current strong{font-size:14px;}.wl-mode-current small{font-size:12px;color:#4f6877;font-weight:400;line-height:1.5;}
+.wl-mode-change{font-size:12px;white-space:nowrap;color:#087681;font-weight:700;}
+.wl-mode-choices .wl-mode-options{padding:0 12px 12px;}
+.wl-mode-choices&gt;summary:focus-visible{outline:3px solid #166b9a;outline-offset:3px;}
+
+.wl-receipt-facts{margin:14px 0;}.wl-receipt-facts&gt;summary{font-size:13px;cursor:pointer;padding:9px 0;color:#365a6b;}.wl-receipt-facts .facts{margin:8px 0 12px;}
+@media(max-width:900px){#receiving-detail{scroll-margin-top:12px;}}
+
+}
+
+/* UI138: selection stays explicit while searching destinations. */
+.wl-destination-state{font-weight:650;overflow-wrap:anywhere;}
+.wl-destination-option:disabled{cursor:not-allowed;color:#526673;background:#f2f5f7;}
+.wl-destination-main{min-width:0;overflow-wrap:anywhere;}
+.wl-picker-bar [role=status]{min-width:0;overflow-wrap:anywhere;}
+&lt;/style&gt;&lt;/head&gt;&lt;body&gt;&lt;fieldset class=&quot;preview-inert&quot; disabled inert&gt;&lt;form id=&quot;fw-form&quot; class=&quot;mm-form wl-guided-form&quot;&gt;&lt;div class=&quot;wl-guide-body&quot;&gt;&lt;ol class=&quot;wl-guide-steps&quot; aria-label=&quot;Etapas do formulário&quot;&gt;&lt;li&gt;1. Prazo pendente e rotina&lt;/li&gt;&lt;li&gt;2. Responsáveis e parecer&lt;/li&gt;&lt;li class=&quot;current&quot; aria-current=&quot;step&quot;&gt;3. Confirmar próxima ordem&lt;/li&gt;&lt;/ol&gt;&lt;h3 class=&quot;wl-guide-heading&quot;&gt;3 / 3 — Confirmar próxima ordem&lt;/h3&gt;&lt;section class=&quot;mm-page&quot; hidden=&quot;&quot;&gt;&lt;header class=&quot;mm-context&quot;&gt;&lt;p class=&quot;eyebrow&quot;&gt;MANUTENÇÃO&lt;/p&gt;&lt;h3&gt;Analisar geração da próxima ordem&lt;/h3&gt;&lt;p&gt;UI137-LOCAL&lt;/p&gt;&lt;dl class=&quot;mm-facts&quot;&gt;&lt;dt&gt;Equipamento&lt;/dt&gt;&lt;dd&gt;Unidade hidráulica fictícia&lt;/dd&gt;&lt;dt&gt;Ordem de serviço&lt;/dt&gt;&lt;dd&gt;UI137 — ordem fictícia&lt;/dd&gt;&lt;dt&gt;Situação salva&lt;/dt&gt;&lt;dd&gt;Concluído&lt;/dd&gt;&lt;dt&gt;Versão conferida&lt;/dt&gt;&lt;dd&gt;2&lt;/dd&gt;&lt;/dl&gt;&lt;/header&gt;&lt;section class=&quot;mm-card&quot;&gt;&lt;h4&gt;Próxima ordem pendente&lt;/h4&gt;&lt;dl class=&quot;mm-facts&quot;&gt;&lt;dt&gt;Prazo pendente (UTC)&lt;/dt&gt;&lt;dd&gt;2026-02-28T10:15:00Z&lt;/dd&gt;&lt;dt&gt;Motivo da análise&lt;/dt&gt;&lt;dd&gt;Rotina requer conferência.&lt;/dd&gt;&lt;dt&gt;Rotina publicada atual&lt;/dt&gt;&lt;dd&gt;UI137 — inspeção hidráulica fictícia&lt;/dd&gt;&lt;dt&gt;Versão publicada exibida&lt;/dt&gt;&lt;dd&gt;2&lt;/dd&gt;&lt;/dl&gt;&lt;/section&gt;&lt;p class=&quot;mm-effect&quot;&gt;A conferência não cria a próxima ordem. O salvamento final pode gerá-la sem resultados ou manter a geração bloqueada. Confira a situação após salvar. As etapas concluídas permanecem bloqueadas e o prazo pendente é preservado.&lt;/p&gt;&lt;details class=&quot;card&quot;&gt;&lt;summary&gt;Conferir rotina publicada — versão 2&lt;/summary&gt;&lt;h3&gt;UI137 — inspeção hidráulica fictícia&lt;/h3&gt;&lt;p&gt;No introductory blocks were added to this routine.&lt;/p&gt;&lt;h4&gt;Checks&lt;/h4&gt;&lt;p&gt;&lt;b&gt;Conferir pressão do conjunto fictício&lt;/b&gt;&lt;/p&gt;&lt;/details&gt;&lt;/section&gt;&lt;section class=&quot;mm-page&quot; hidden=&quot;&quot;&gt;&lt;h3&gt;Quem poderá executar a próxima ordem?&lt;/h3&gt;&lt;p class=&quot;mm-note&quot;&gt;A seleção atual substitui os responsáveis anteriores. Sem pessoas selecionadas, qualquer usuário com permissão de execução da manutenção poderá registrar etapas. Os gestores de manutenção mantêm suas permissões.&lt;/p&gt;&lt;fieldset class=&quot;operation-persons&quot;&gt;&lt;legend class=&quot;mw-sr-only&quot;&gt;Pessoas autorizadas a registrar trabalho&lt;/legend&gt;&lt;label class=&quot;mf-people-search&quot;&gt;&lt;span&gt;Buscar pessoas&lt;/span&gt;&lt;input type=&quot;search&quot; placeholder=&quot;Nome, usuário ou identificador da conta&quot; maxlength=&quot;200&quot; value=&quot;&quot;&gt;&lt;/input&gt;&lt;/label&gt;&lt;p class=&quot;small&quot; data-mw-person-count=&quot;&quot; role=&quot;status&quot;&gt;Selecionadas: 1 · Exibidas: 3. A pesquisa mantém as pessoas selecionadas.&lt;/p&gt;&lt;div data-mw-person-list=&quot;&quot;&gt;&lt;label class=&quot;checkline mw-person mw-person-missing&quot;&gt;&lt;input type=&quot;checkbox&quot; name=&quot;person_9ed46eee-1172-429e-8ee7-bf7ff29ec07c&quot; value=&quot;9ed46eee-1172-429e-8ee7-bf7ff29ec07c&quot; data-person-name=&quot;Responsável salvo indisponível&quot; checked=&quot;&quot; data-missing=&quot;true&quot;&gt;&lt;/input&gt;&lt;span&gt;Responsável salvo indisponível&lt;small&gt;9ed46eee-1172-429e-8ee7-bf7ff29ec07c · remova esta seleção ou escolha outra pessoa disponível.&lt;/small&gt;&lt;/span&gt;&lt;/label&gt;&lt;label class=&quot;checkline mw-person&quot;&gt;&lt;input type=&quot;checkbox&quot; name=&quot;person_bc1c05b2-3b90-4b62-ac3b-4d5cf6774668&quot; value=&quot;bc1c05b2-3b90-4b62-ac3b-4d5cf6774668&quot; data-person-name=&quot;Fictional Administrator&quot;&gt;&lt;/input&gt;&lt;span&gt;Fictional Administrator&lt;small&gt;review.admin&lt;/small&gt;&lt;/span&gt;&lt;/label&gt;&lt;label class=&quot;checkline mw-person&quot;&gt;&lt;input type=&quot;checkbox&quot; name=&quot;person_3e913a1f-851c-4046-8c98-0de8ca28618d&quot; value=&quot;3e913a1f-851c-4046-8c98-0de8ca28618d&quot; data-person-name=&quot;Fictional other&quot;&gt;&lt;/input&gt;&lt;span&gt;Fictional other&lt;small&gt;review.other&lt;/small&gt;&lt;/span&gt;&lt;/label&gt;&lt;/div&gt;&lt;/fieldset&gt;&lt;label&gt;Parecer da revisão *&lt;textarea name=&quot;reason&quot;&gt;&lt;/textarea&gt;&lt;/label&gt;&lt;details class=&quot;mm-disclosure&quot;&gt;&lt;summary&gt;Regras de geração da próxima ordem&lt;/summary&gt;&lt;p class=&quot;notice&quot;&gt;Rotina requer conferência.&lt;/p&gt;&lt;p&gt;Prazo pendente (UTC): 2026-02-28T10:15:00Z. Nenhuma data será ignorada. Confira o procedimento publicado abaixo.&lt;/p&gt;&lt;p&gt;Escolha os responsáveis pela próxima ordem. Remova ou substitua as pessoas indisponíveis. Sem seleção, qualquer usuário com permissão de execução da manutenção poderá registrar etapas. As evidências concluídas são preservadas.&lt;/p&gt;&lt;/details&gt;&lt;/section&gt;&lt;section class=&quot;mm-page&quot;&gt;&lt;div class=&quot;mm-review&quot;&gt;&lt;section class=&quot;mm-card&quot;&gt;&lt;h4&gt;Próxima ordem solicitada&lt;/h4&gt;&lt;dl class=&quot;mm-facts&quot;&gt;&lt;dt&gt;Ordem anterior&lt;/dt&gt;&lt;dd&gt;UI137-LOCAL&lt;/dd&gt;&lt;dt&gt;Equipamento&lt;/dt&gt;&lt;dd&gt;Unidade hidráulica fictícia&lt;/dd&gt;&lt;dt&gt;Prazo pendente (UTC)&lt;/dt&gt;&lt;dd&gt;2026-02-28T10:15:00Z&lt;/dd&gt;&lt;dt&gt;Rotina&lt;/dt&gt;&lt;dd&gt;UI137 — inspeção hidráulica fictícia&lt;/dd&gt;&lt;dt&gt;Versão conferida da rotina&lt;/dt&gt;&lt;dd&gt;2&lt;/dd&gt;&lt;dt&gt;Versão conferida da ordem&lt;/dt&gt;&lt;dd&gt;2&lt;/dd&gt;&lt;dt&gt;Pessoas autorizadas a registrar etapas&lt;/dt&gt;&lt;dd&gt;Fictional otherreview.other&lt;/dd&gt;&lt;dt&gt;Parecer da análise&lt;/dt&gt;&lt;dd&gt;Rotina atual e nova atribuição conferidas.&lt;/dd&gt;&lt;/dl&gt;&lt;/section&gt;&lt;p class=&quot;mm-effect&quot;&gt;Salvar solicita uma próxima ordem sem medições, fotos ou aprovações. Se houver requisitos pendentes, a geração continuará bloqueada. Confira se a nova ordem foi criada: o servidor verifica procedimento, permissões, equipamento e versões. As evidências concluídas são preservadas. Esta ação não autoriza o uso do equipamento.&lt;/p&gt;&lt;/div&gt;&lt;label class=&quot;checkline&quot;&gt;&lt;input type=&quot;checkbox&quot; name=&quot;confirmed&quot; required=&quot;&quot; value=&quot;&quot;&gt;&lt;/input&gt;&lt;span&gt;Conferi a rotina, os responsáveis selecionados e o prazo pendente.&lt;/span&gt;&lt;/label&gt;&lt;p class=&quot;small muted&quot;&gt;A ação só é confirmada após a resposta do servidor. Salvar não libera equipamento, retira quarentena nem autoriza operação.&lt;/p&gt;&lt;/section&gt;&lt;/div&gt;&lt;div id=&quot;fw-local-state&quot;&gt;&lt;/div&gt;&lt;p id=&quot;fw-error&quot;&gt;Um responsável salvo está indisponível. Remova ou substitua essa seleção. O registro de etapas não foi liberado para todos.&lt;/p&gt;&lt;div class=&quot;actions&quot;&gt;&lt;button class=&quot;btn secondary&quot; type=&quot;button&quot;&gt;Voltar&lt;/button&gt;&lt;button class=&quot;btn primary&quot; type=&quot;button&quot; hidden=&quot;&quot;&gt;Continuar&lt;/button&gt;&lt;button id=&quot;fw-save&quot; type=&quot;submit&quot;&gt;Gerar próxima ordem revisada&lt;/button&gt;&lt;/div&gt;&lt;/form&gt;&lt;/fieldset&gt;&lt;/body&gt;&lt;/html&gt;"></iframe></section>
+<section><h2>Interromper a próxima ordem</h2><p>A interrupção da sucessora fica separada dos resultados já concluídos.</p><iframe title="Interromper a próxima ordem — componente real, dados fictícios" sandbox srcdoc="&lt;!doctype html&gt;&lt;html lang=&quot;pt-BR&quot;&gt;&lt;head&gt;&lt;meta charset=&quot;utf-8&quot;&gt;&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1&quot;&gt;&lt;meta http-equiv=&quot;Content-Security-Policy&quot; content=&quot;default-src 'none'; style-src 'unsafe-inline'; form-action 'none'; base-uri 'none'&quot;&gt;&lt;title&gt;Interromper a próxima ordem&lt;/title&gt;&lt;style&gt;:root{color-scheme:light;--bg:#f4f7fa;--surface:#fff;--line:#cbd5e1;--border:#cbd5e1;--text:#132b42;--muted:#526577;--accent:#006c81;--brand:#005f77}*{box-sizing:border-box}body{font-family:system-ui,Segoe UI,sans-serif;margin:0;padding:18px;background:#fff;color:var(--text);line-height:1.5}fieldset.preview-inert{border:0;padding:0;margin:0;min-width:0}button,input,select,textarea{font:inherit;max-width:100%}input,select,textarea{border:1px solid #b8c7d2;border-radius:6px;padding:8px;color:#183245;background:#fff}label{display:block}small,.muted{color:#526577}.btn{display:inline-flex;align-items:center;justify-content:center;border:1px solid #c2d0da;border-radius:8px;padding:9px 14px;background:#fff;color:#153d55}.btn.primary{background:#006c81;color:white}.btn.danger{background:#8c2930;color:white}input:disabled,select:disabled,textarea:disabled,button:disabled{opacity:1}.actions{display:flex;gap:8px;flex-wrap:wrap}[hidden]{display:none!important}
+/* UI60: retained module styles; common components deliberately override only wl-* roles. */
+@layer wlLegacy {
+/* UI11: only the two explicitly enhanced maintenance forms. */
+.mf-form{--mf-line:#d5e2e8;--mf-ink:#1c3c4d;min-width:0;}
+#dialog.mf-dialog{width:min(1000px,calc(100vw - 24px));}
+.mf-form [hidden]{display:none!important;}
+.mf-context{border-left:3px solid #0b7c86;background:#f2f8f9;padding:14px 16px;border-radius:7px;margin:0 0 16px;}
+.mf-context h3{font-size:20px;line-height:1.3;margin:7px 0;overflow-wrap:anywhere;}
+.mf-context .eyebrow{font-size:10px;margin:0;color:#35717d;}
+.mf-context p{margin:4px 0;}
+.mf-screen{min-width:0;}
+.mf-screen&gt;h4{margin:22px 0 8px;}
+.mf-disclosure{border:1px solid var(--mf-line);border-radius:8px;padding:10px 14px;margin:12px 0;}
+.mf-disclosure summary{cursor:pointer;font-size:13px;font-weight:650;}
+.mf-form .mf-readings{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px 18px;}
+.mf-form label{min-width:0;}
+.mf-form .mf-readings&gt;label,.mf-form .mf-screen&gt;label{display:flex;flex-direction:column;gap:7px;margin:12px 0;}
+.mf-form .mf-readings input,.mf-form .mf-screen select,.mf-form .mf-screen textarea{min-width:0;width:100%;box-sizing:border-box;}
+.mf-form .mf-field-hint{font-size:11px;color:#4d6979;font-weight:400;line-height:1.5;}
+.mf-result-hint{font-size:13px;line-height:1.55;color:#375968;padding:11px 13px;background:#edf7f8;border:1px solid #cce2e5;border-radius:7px;margin:12px 0;}
+.mf-form .item-guidance{margin:16px 0;}
+.mf-form .item-guidance .instruction-text{font-size:14px;line-height:1.55;}
+.mf-form .mf-facts{display:grid;grid-template-columns:minmax(100px,.7fr) minmax(0,1.3fr);gap:0 16px;margin:10px 0;font-size:13px;}
+.mf-facts dt,.mf-facts dd{padding:10px 0;border-bottom:1px solid #e1e9ed;margin:0;white-space:pre-wrap;overflow-wrap:anywhere;}
+.mf-facts dt{color:#516e7d;font-weight:500;}.mf-facts dd{font-weight:600;color:var(--mf-ink);}
+.mf-comparison{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
+.mf-review-card{border:1px solid var(--mf-line);border-radius:9px;padding:15px;min-width:0;background:#fff;}
+.mf-review-card h4{font-size:15px;margin:0 0 10px;}
+.mf-comparison .mf-review-card:last-child{border-top:3px solid #19848a;background:#f6fbfb;}
+.mf-form .mf-confirm{display:flex;flex-direction:row;gap:10px;align-items:flex-start;margin:18px 0;line-height:1.5;}
+.mf-confirm input{width:20px!important;min-height:20px!important;height:20px;flex:none;margin:1px 0;}
+.mf-form .evidence-editor{padding:16px;border:1px solid var(--mf-line);border-radius:9px;}
+.mf-form .evidence-editor legend{font-size:14px;font-weight:700;}
+.mf-form .evidence-editor .small{font-size:12px;line-height:1.5;}
+.mf-form .operation-persons{max-height:290px;overflow:auto;border:1px solid var(--mf-line);border-radius:8px;padding:14px;}
+.mf-form .operation-persons label{margin:10px 0;}
+.mf-form .wl-guide-body{scrollbar-gutter:stable;}
+.mf-form .wl-guide-steps{position:sticky;top:0;background:white;z-index:2;margin-top:0;}
+.mf-form .wl-guide-steps li{font-size:12px;}
+.mf-form :focus-visible{outline:2px solid #176b8c;outline-offset:3px;}
+@media(max-width:640px){
+ .mf-form .mf-readings,.mf-comparison{grid-template-columns:1fr;}
+ .mf-form .mf-facts{grid-template-columns:minmax(88px,.7fr) minmax(0,1.3fr);gap:0 10px;font-size:12px;}
+ .mf-context{padding:11px 12px;}.mf-context h3{font-size:17px;}
+ .mf-form .wl-guide-steps{gap:5px;}.mf-form .wl-guide-steps li{font-size:10px;padding:8px 2px;line-height:1.4;}
+ #dialog.mf-dialog .modal{padding:14px;}.mf-form&gt;.actions{display:grid;grid-template-columns:1fr 1fr;gap:8px;}
+ .mf-form&gt;.actions button{font-size:12px;min-height:42px;padding:9px;white-space:normal;}
+ .mf-form #fw-discard{order:3;}.mf-form #fw-keep{order:4;}.mf-form #fw-save{grid-column:2;}
+ .mf-form .mf-review-card{padding:12px;}.mf-form .evidence-editor{padding:12px;}
+}
+/* Avoid inherited generic-dialog spacing pushing the actual readings below the fold. */
+#dialog.mf-dialog #fw-form{gap:0;}
+#dialog.mf-dialog .modal-head{padding:8px 0 12px;margin-top:0;margin-bottom:8px;position:static;}
+#dialog.mf-dialog .modal&gt;p{font-size:12px;margin:2px 0 10px;line-height:1.45;}
+.mf-form .mf-context h3{border:0;padding:0;margin:5px 0;font-size:19px;}
+.mf-form .wl-guide-heading{border:0;padding:0;margin:6px 0 12px;font-size:17px;}
+.mf-form .mf-context{padding:11px 14px;margin-bottom:12px;}
+.mf-form .mf-readings&gt;label{margin:7px 0;}
+.mf-form .mf-screen&gt;.item-guidance{margin:12px 0;}
+.mf-form .mf-screen&gt;h4{margin:14px 0 4px;}
+#dialog.mf-dialog #fw-error:empty{display:none;}
+#dialog.mf-dialog #fw-form&gt;.actions{gap:8px;padding-top:10px;margin-top:4px;}
+#dialog.mf-dialog #fw-keep{margin-right:auto;}
+@media(max-width:640px){
+ #dialog.mf-dialog .modal-head h2{font-size:20px;}
+ #dialog.mf-dialog .mf-context h3{font-size:17px;}
+ #dialog.mf-dialog #fw-form&gt;.actions{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));}
+ #dialog.mf-dialog #fw-form&gt;.actions button{min-width:0;flex:none;margin:0;font-size:12px;}
+ #dialog.mf-dialog #fw-keep{grid-column:1;grid-row:2;}
+ #dialog.mf-dialog #fw-discard{grid-column:2;grid-row:2;}
+ #dialog.mf-dialog #fw-form&gt;.actions [id$=&quot;-back&quot;]{grid-column:1;grid-row:1;}
+ #dialog.mf-dialog #fw-form&gt;.actions [id$=&quot;-next&quot;],#dialog.mf-dialog #fw-save{grid-column:2;grid-row:1;}
+ #dialog.mf-dialog #fw-form[data-logistics-step=&quot;0&quot;]&gt;.actions [id$=&quot;-next&quot;]{grid-column:1/-1;}
+}
+
+/* UI36 direct forms: scroll the content, keep existing draft/save actions reachable. */
+#dialog.mf-dialog .mf-direct{display:flex;flex-direction:column;max-height:calc(92dvh - 126px);overflow:hidden;}
+.mf-direct&gt;.mf-screen{overflow-y:auto;overscroll-behavior:contain;scrollbar-gutter:stable;min-height:0;padding-right:4px;}
+.mf-direct&gt;#fw-local-state,.mf-direct&gt;#fw-error,.mf-direct&gt;.actions{flex-shrink:0;}
+.mf-direct&gt;#fw-local-state{font-size:12px;margin:8px 0 3px;}
+.mf-direct .mf-screen&gt;label{display:flex;flex-direction:column;gap:7px;}
+.mf-direct .mf-screen&gt;label&gt;textarea{min-height:104px;}
+.mf-direct .mf-disclosure label{display:block;margin:10px 0;}
+.mf-direct .mf-disclosure .checkline{display:flex;flex-direction:row;}
+.mf-direct .mf-disclosure input[type=checkbox]{width:20px;min-height:20px;flex:none;}
+.mf-direct .mf-result-hint{color:#294956;}
+.mf-direct&gt;.actions #fw-save{min-width:160px;}
+@media(max-width:640px){
+ #dialog.mf-dialog{width:calc(100vw - 12px);max-height:96dvh;}
+ #dialog.mf-dialog .mf-direct{max-height:calc(96dvh - 126px);}
+ #dialog.mf-dialog .mf-direct&gt;.actions #fw-save{grid-column:1/-1;grid-row:1;}
+ .mf-direct .operation-persons{max-height:240px;}
+}
+
+}
+
+/* UI137: expose the saved return reason beside the correction fields. */
+.mf-form .mf-review-feedback{border:1px solid #bd8244;border-left:4px solid #a66321;border-radius:8px;background:#fff8ed;color:#593510;padding:14px 16px;margin:12px 0;overflow-wrap:anywhere;}
+.mf-review-feedback h4{margin:0 0 8px;font-size:15px;}
+.mf-review-feedback .mf-review-reason{white-space:pre-wrap;line-height:1.55;margin:8px 0;}
+.mf-review-feedback .mf-facts{margin:8px 0;}
+.mf-review-feedback .mf-facts dt,.mf-review-feedback .mf-facts dd{color:#593510;border-color:#e5cfb0;}
+.mf-review-feedback .small{margin:8px 0 0;}
+@media(max-width:640px){.mf-form .mf-review-feedback{padding:12px;}}
+
+/* UI60: retained module styles; common components deliberately override only wl-* roles. */
+@layer wlLegacy {
+/* UI12: deliberately scoped to maintenance management dialogs. */
+dialog.mm-dialog{width:min(920px,calc(100vw - 32px));max-width:none;}
+.mm-form .mm-context{padding:16px 18px;border:1px solid #cbdbe4;border-radius:12px;background:#f4f8fb;margin:0 0 18px;}
+.mm-form .mm-context h3{font-size:1.35rem;line-height:1.3;margin:8px 0;}
+.mm-form .mm-context&gt;p:not(.eyebrow){margin:6px 0 12px;overflow-wrap:anywhere;}
+.mm-form .mm-facts{display:grid;grid-template-columns:minmax(130px,.65fr) minmax(0,1.5fr);gap:9px 16px;margin:12px 0;}
+.mm-form .mm-facts dt{color:#475e70;font-size:.88rem;}
+.mm-form .mm-facts dd{margin:0;white-space:pre-wrap;overflow-wrap:anywhere;line-height:1.45;}
+.mm-form .mm-comparison{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;}
+.mm-form .mm-card{border:1px solid #d5e0e7;border-radius:12px;padding:16px;background:#fff;min-width:0;}
+.mm-form .mm-card h4{margin:0 0 12px;font-size:1rem;}
+.mm-form .mm-comparison .mm-facts{grid-template-columns:1fr;gap:5px;}
+.mm-form .mm-comparison .mm-facts dd{margin-bottom:8px;}
+.mm-form .mm-note,.mm-form .mm-effect{background:#eef5f8;border-left:3px solid #147883;border-radius:6px;padding:12px 14px;line-height:1.55;}
+.mm-form .mm-warning{padding:12px 14px;border:1px solid #e4c289;border-left:4px solid #a36c1b;border-radius:6px;background:#fff7ea;color:#694815;line-height:1.55;}
+.mm-form .mm-saved-summary h4{margin:4px 0 12px;}
+.mm-form .mm-counts{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px;margin:12px 0;}
+.mm-form .mm-counts&gt;div{border:1px solid #d5e0e7;border-radius:9px;padding:12px;background:#fff;min-width:0;}
+.mm-form .mm-counts strong{display:block;font-size:1.45rem;margin-bottom:4px;}
+.mm-form .mm-counts span{display:block;font-size:.8rem;color:#4d6373;overflow-wrap:anywhere;}
+.mm-form .mm-disclosure{border:1px solid #d5e0e7;border-radius:8px;padding:10px 12px;margin:12px 0;}
+.mm-form .mm-disclosure&gt;summary{font-weight:650;cursor:pointer;min-height:26px;}
+.mm-form .mm-saved-step{border-top:1px solid #d5e0e7;padding:14px 0 4px;}
+.mm-form .mm-saved-step h5{font-size:.96rem;margin:0 0 5px;}
+.mm-form .mm-saved-step .small{margin:5px 0;}
+.mm-form label{margin:12px 0;}
+.mm-form textarea{min-height:105px;}
+.mm-form .maintenance-cycle-fields{border:1px solid #d5e0e7;border-radius:10px;padding:14px;margin:14px 0;}
+.mm-form .maintenance-cycle-fields legend{font-weight:650;padding:0 6px;}
+.mm-form .mm-confirm{padding:14px;background:#eaf5f4;border:1px solid #abcfc9;border-radius:8px;align-items:flex-start;}
+.mm-form .mm-confirm input{margin-top:4px;}
+.mm-form [hidden]{display:none!important;}
+@media(max-width:600px){
+ dialog.mm-dialog{width:calc(100vw - 12px);max-width:none;max-height:calc(100dvh - 12px);padding:12px;}
+ .mm-form .mm-context{padding:12px;}
+ .mm-form .mm-facts{grid-template-columns:1fr;gap:4px;}
+ .mm-form .mm-facts dd{margin-bottom:8px;}
+ .mm-form .mm-comparison{grid-template-columns:1fr;}
+ .mm-form .mm-counts{grid-template-columns:repeat(2,minmax(0,1fr));}
+ .mm-form .mm-card{padding:12px;}
+ .mm-form .mm-context h3{font-size:1.15rem;}
+ .mm-dialog #fw-local-state{font-size:.78rem;line-height:1.4;}
+}
+#fw-form.mm-form label.checkline{display:flex;flex-direction:row;align-items:flex-start;gap:10px;line-height:1.5;}
+.mm-form .checkline input{width:20px!important;min-height:20px!important;height:20px;flex:none;margin:2px 0 0;}
+.mm-form .checkline span{flex:1;min-width:0;}
+.mm-form .mm-page&gt;label:not(.checkline){display:flex;flex-direction:column;gap:8px;}
+
+/* UI14: same scoped review language for pending release and saved-step review. */
+#maint-approval.mm-form label.checkline{display:flex;flex-direction:row;align-items:flex-start;gap:10px;line-height:1.5;}
+.mm-approval-form{display:flex;flex-direction:column;min-height:0;overflow:hidden;}
+.mm-approval-body{overflow:auto;min-height:0;max-height:calc(100dvh - 240px);padding:2px 4px 10px;overscroll-behavior:contain;}
+.mm-approval-footer{flex-shrink:0;padding:12px 0 2px;border-top:1px solid #d5e0e7;display:flex;gap:8px;flex-wrap:wrap;background:#fff;}
+.mm-approval-footer #fw-error{flex-basis:100%;}
+.mm-approval-form .mm-page{min-width:0;overflow-wrap:anywhere;}
+.mm-approval-form .log-values{overflow-wrap:anywhere;}
+@media(max-width:600px){.mm-approval-body{max-height:calc(100dvh - 220px);}.mm-approval-footer .btn{flex:1;white-space:normal;min-height:44px;}.mm-approval-form .evidence-view-card{min-width:0;}}
+
+}
+
+/* UI60: retained module styles; common components deliberately override only wl-* roles. */
+@layer wlLegacy {
+/* Shared find → choose → review pattern, scoped to logistics forms only. */
+#dialog.wl-guided-dialog,#modal.wl-guided-dialog{width:min(1020px,calc(100vw - 24px));max-height:94dvh;}
+.wl-guided-form [hidden]{display:none!important;}
+.wl-guide-steps{display:flex;gap:8px;list-style:none;margin:12px 0 16px;padding:0;}
+.wl-guide-steps li{flex:1;min-width:0;border-bottom:3px solid #d5e1e7;padding:10px 4px;font-size:13px;color:#5d6f7d;}
+.wl-guide-steps li.current{border-color:#197e86;color:#173846;font-weight:750;}
+.wl-guide-heading{margin:4px 0 16px;font-size:19px;outline:none;}
+.wl-guide-heading:focus-visible{outline:2px solid #197e86;outline-offset:4px;}
+.wl-destination-picker{margin:14px 0;min-width:0;}
+.wl-destination-picker h3{font-size:16px;margin-bottom:8px;}
+.wl-picker-bar{display:flex;align-items:center;justify-content:space-between;gap:12px;margin:8px 0;}
+.wl-picker-bar button{padding:6px 10px;font-size:12px;min-height:36px;}
+.wl-destination-list{border:1px solid #cbd7e0;border-radius:10px;overflow:auto;max-height:290px;background:white;}
+.wl-destination-option{display:flex;flex-direction:column;align-items:stretch;text-align:left;width:100%;gap:5px;border:0;border-radius:0;border-bottom:1px solid #e1e8ed;background:#fff;padding:13px 16px;color:#183447;font-weight:400;min-height:64px;}
+.wl-destination-option:last-child{border-bottom:0;}
+.wl-destination-option[aria-pressed=true]{background:#eaf5f4;box-shadow:inset 4px 0 #197e86;}
+.wl-destination-option:focus-visible{outline:3px solid #197e86;outline-offset:-3px;}
+.wl-destination-main{display:flex;justify-content:space-between;align-items:start;gap:12px;}
+.wl-destination-main strong{font-weight:700;}
+.wl-destination-main small{flex-shrink:0;max-width:45%;text-align:right;}
+.wl-destination-path{font-size:12px;color:#58717f;overflow-wrap:anywhere;}
+.wl-selected-destination,.wl-review-summary{padding:14px 16px;margin:12px 0;background:#edf4f7;border:1px solid #cbdde3;border-radius:8px;overflow-wrap:anywhere;}
+.wl-selected-destination p{margin:6px 0;}.wl-review-summary{white-space:pre-wrap;}
+.wl-picker-empty{padding:18px;}.wl-guided-form section&gt;h3{margin-top:12px;}
+.wl-guided-form .movement-source{padding:12px 16px;border:1px solid #d5e1e7;border-radius:8px;margin:8px 0 14px;background:#f7fafc;}
+.wl-guided-form .movement-source ul{max-height:180px;overflow:auto;margin:8px 0;padding-left:22px;}
+.wl-guided-form .movement-source li small{display:block;}
+.wl-receiving-filters{display:grid;grid-template-columns:minmax(180px,1fr) minmax(150px,.55fr) minmax(145px,.4fr) auto;gap:12px;align-items:end;margin-bottom:14px;}
+.wl-receiving-filters label{margin-top:0;}
+.wl-receiving-layout{display:grid;grid-template-columns:minmax(0,1fr) 310px;gap:18px;align-items:start;}
+.wl-receiving-layout&gt;*{min-width:0;}
+.wl-receiving-detail{padding:18px;border:1px solid #cbd7e0;border-radius:10px;background:white;overflow-wrap:anywhere;position:sticky;top:14px;}
+.wl-receiving-detail .facts{grid-template-columns:95px 1fr;font-size:13px;gap:8px;}
+.wl-receiving-detail .actions{margin-top:14px;}
+.wl-receiving-table .selected td{background:#eaf5f4;}
+.wl-receiving-table button[data-receiving-open]{text-align:left;justify-content:start;max-width:100%;overflow-wrap:anywhere;}
+@media(max-width:1100px){.wl-receiving-layout{grid-template-columns:1fr;}.wl-receiving-detail{position:static;}.wl-receiving-filters{grid-template-columns:1fr 1fr;}}
+@media(max-width:600px){
+ #dialog.wl-guided-dialog,#modal.wl-guided-dialog{width:calc(100vw - 12px);max-height:96dvh;border-radius:10px;}
+ .wl-guided-dialog .modal{padding:16px;}.wl-guide-steps{gap:5px;}.wl-guide-steps li{font-size:11px;padding:8px 0;}
+ .wl-guide-heading{font-size:17px;}.wl-destination-main{flex-direction:column;gap:3px;}.wl-destination-main small{max-width:100%;text-align:left;}
+ .wl-destination-option{padding:12px;}.wl-destination-list{max-height:240px;}.wl-receiving-filters{grid-template-columns:1fr;}
+ .wl-guided-form footer{flex-wrap:wrap;}.wl-guided-form #modal-note{max-width:none;flex-basis:100%;}
+ .wl-guided-form .actions{gap:7px;}.wl-guided-form .actions button{min-height:44px;}
+ .wl-receiving-detail{padding:14px;}.wl-receiving-filters button{min-height:44px;}
+}
+
+/* Keep actions visible; only the movement step body scrolls. */
+#dialog.wl-guided-dialog{overflow:hidden;}
+#dialog.wl-guided-dialog .modal{display:flex;flex-direction:column;max-height:94dvh;min-height:0;box-sizing:border-box;}
+#dialog.wl-guided-dialog .modal-head,#dialog.wl-guided-dialog .modal&gt;p{flex:none;}
+#fw-form.wl-guided-form{display:flex;flex-direction:column;min-height:0;overflow:hidden;}
+#fw-form.wl-guided-form .wl-guide-body{overflow:auto;min-height:0;padding:0 4px 10px;overscroll-behavior:contain;}
+#fw-form.wl-guided-form&gt;.actions,#fw-form.wl-guided-form&gt;#fw-error,#fw-form.wl-guided-form&gt;#fw-local-state{flex:none;}
+#fw-form.wl-guided-form&gt;.actions{background:white;margin-top:8px;}
+#fw-form.wl-guided-form&gt;#fw-local-state{font-size:11px;padding:8px 10px;margin:8px 0;}
+@media(max-width:600px){#dialog.wl-guided-dialog .modal{max-height:96dvh;}#fw-form.wl-guided-form&gt;.actions{padding-top:10px;}#dialog.wl-guided-dialog .modal-head{margin-bottom:8px;}#dialog.wl-guided-dialog .modal&gt;p{margin:4px 0 8px;}}
+
+/* Workspace UI05 — descriptive destinations, compact scope and focused receiving. */
+.wl-mode-choices{margin:14px 0 18px;min-width:0;}
+.wl-mode-choices h3{font-size:15px;margin:0 0 10px;}
+.wl-mode-options{display:flex;gap:10px;align-items:stretch;}
+.wl-mode-option{flex:1;min-width:0;display:flex;flex-direction:column;text-align:left;gap:7px;justify-content:flex-start;padding:14px;border:1px solid #cbd8e0;border-radius:10px;background:#fff;color:#233f50;line-height:1.45;overflow-wrap:anywhere;}
+.wl-mode-option strong{font-size:14px;}.wl-mode-option span{font-size:12px;font-weight:400;color:#536b79;}
+.wl-mode-option[aria-pressed=true]{border:2px solid #147e87;padding:13px;background:#edf8f8;box-shadow:0 1px 3px #10394812;}
+.wl-mode-option:focus-visible{outline:3px solid #166b9a;outline-offset:3px;}
+.wl-mode-option:disabled{opacity:.6;cursor:not-allowed;}
+.wl-guided-form .wl-scope-summary{font-size:13px;}.wl-scope-summary summary{cursor:pointer;padding:3px 0;}
+.wl-scope-summary summary strong{font-size:14px;}.wl-scope-summary summary span{display:block;margin:5px 0 0;color:#4d6574;font-size:12px;}
+.wl-guided-form .wl-review-panel{background:#f6f9fb;padding:18px;border:1px solid #d5e1e7;border-radius:12px;white-space:normal;color:#213f51;}
+.wl-review-panel h3{font-size:18px;margin:0 0 16px;}.wl-review-route{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
+.wl-review-endpoint{background:white;border:1px solid #dce5ea;border-radius:8px;padding:13px;min-width:0;}
+.wl-review-endpoint:last-child{border-top:3px solid #167f85;}
+.wl-review-endpoint h4{margin:0 0 8px;font-size:12px;letter-spacing:.02em;color:#49616f;}
+.wl-review-endpoint ul{list-style:none;margin:0;padding:0;max-height:150px;overflow:auto;overflow-wrap:anywhere;}
+.wl-review-endpoint li{margin:0 0 5px;white-space:pre-wrap;font-size:14px;font-weight:600;}
+.wl-review-facts{display:grid;grid-template-columns:minmax(100px,.35fr) minmax(0,1fr);gap:10px 16px;margin:18px 0 0;font-size:13px;}
+.wl-review-facts dt{font-weight:650;color:#4d6574;}.wl-review-facts dd{margin:0;white-space:pre-wrap;overflow-wrap:anywhere;}
+.wl-review-note{margin:16px 0 0;padding-top:12px;border-top:1px solid #d5e1e7;font-size:12px;line-height:1.55;color:#4c6473;}
+.wl-ui05-badge{display:inline-block;border:1px solid #bad7de;border-radius:6px;padding:3px 7px;background:#e8f3f6;color:#346373;font-size:10px;font-weight:700;letter-spacing:.06em;}
+.wl-receiving-workspace{min-width:0;}.wl-receiving-workspace [hidden]{display:none!important;}
+.wl-receiving-top{display:flex;gap:14px;align-items:center;margin:0 0 18px;flex-wrap:wrap;}
+.wl-receiving-metrics{display:flex;gap:10px 18px;flex-wrap:wrap;font-size:12px;color:#476273;}
+.wl-receiving-metrics b{font-size:17px;color:#234554;margin-right:4px;}
+.wl-receiving-toolbar{display:flex;align-items:end;gap:12px;flex-wrap:wrap;}.wl-receiving-search{flex:1;min-width:160px;}
+.wl-receiving-toolbar label{margin-top:0;}.wl-receiving-toolbar input{margin:0;}
+#receiving-filters{position:relative;margin:0;}#receiving-filters&gt;summary{list-style:none;cursor:pointer;border:1px solid #bacfd9;border-radius:8px;background:#fff;min-height:44px;padding:12px 14px;box-sizing:border-box;font-size:13px;}
+#receiving-filters&gt;summary::-webkit-details-marker{display:none;}#receiving-filters&gt;summary:after{content:' ▾';}
+#receiving-filters&gt;summary:focus-visible{outline:3px solid #167a91;outline-offset:2px;}
+.wl-receiving-filter-fields{position:absolute;top:100%;right:0;z-index:5;min-width:290px;max-width:calc(100vw - 56px);border:1px solid #cad8e1;background:#fff;border-radius:10px;padding:16px;box-shadow:0 10px 28px #1236461a;}
+.wl-receiving-filter-fields&gt;div+div{margin-top:12px;}.wl-receiving-toolbar&gt;button{min-height:44px;}
+.wl-receiving-filter-summary{font-size:12px;margin:10px 0 4px;overflow-wrap:anywhere;}
+#receiving-count{font-size:12px;margin:0 0 14px;}
+#receiving-selection-notice{font-size:12px;padding:10px;background:#fdf4e7;border:1px solid #edd8b9;border-radius:6px;}
+#receiving-workspace .wl-receiving-layout{display:grid;grid-template-columns:minmax(0,1fr) minmax(310px,.78fr);gap:20px;align-items:start;}
+#receiving-results{min-width:0;max-height:600px;overflow:auto;overscroll-behavior:contain;padding:1px 5px 2px 1px;}
+.wl-receiving-card{margin-bottom:10px;background:#fff;border:1px solid #d2dfe7;border-radius:10px;overflow:hidden;}
+.wl-receiving-card.selected{border-color:#15828a;box-shadow:0 0 0 1px #15828a;}
+.wl-receiving-card&gt;button{border:0;border-radius:0;padding:16px;display:flex;gap:7px;flex-direction:column;align-items:stretch;text-align:left;width:100%;color:#213d4f;background:#fff;font-weight:400;line-height:1.45;}
+.wl-receiving-card.selected&gt;button{background:#f0f8f8;}.wl-receiving-card&gt;button:focus-visible{outline:3px solid #167a91;outline-offset:-3px;}
+.wl-received-card-head{display:flex;align-items:start;gap:12px;justify-content:space-between;}.wl-received-card-head strong{font-size:15px;overflow-wrap:anywhere;}
+.wl-open-group{font-size:11px;white-space:nowrap;color:#0b6d76;font-weight:650;}
+.wl-received-reference,.wl-received-holding{font-size:12px;color:#526b7a;overflow-wrap:anywhere;}
+.wl-received-state .pill{font-size:11px;}.wl-received-manifest{display:flex;gap:8px;padding:9px 16px;border-top:1px solid #e2eaf0;font-size:12px;flex-wrap:wrap;}
+.wl-received-manifest&gt;span{color:#607682;}.wl-received-manifest a{overflow-wrap:anywhere;}
+#receiving-workspace .wl-receiving-detail{position:static;padding:22px;border:1px solid #d2dfe7;box-shadow:0 3px 12px #18394b08;}
+#receiving-selected-title{font-size:21px;line-height:1.3;margin:10px 0;overflow-wrap:anywhere;}
+.wl-receiving-empty{padding:14px 4px;}.wl-receiving-empty p{font-size:14px;line-height:1.65;}
+.wl-holding-position{display:flex;gap:6px;flex-direction:column;background:#eff5f8;border-radius:8px;padding:14px;margin:18px 0;overflow-wrap:anywhere;}
+.wl-holding-position .eyebrow{font-size:10px;}.wl-holding-position strong{font-size:15px;}.wl-holding-position&gt;span:last-child{font-size:13px;}
+.wl-placement-action{margin:18px 0 12px;}.wl-placement-action&gt;button{width:100%;min-height:46px;}
+.wl-receiving-links{border-top:1px solid #dae4e9;padding-top:12px;}.wl-receiving-links a{font-size:12px;}
+.wl-receiving-back{display:none;}
+@media(max-width:900px){
+ #receiving-workspace .wl-receiving-layout{grid-template-columns:1fr;}
+ #receiving-results{max-height:none;overflow:visible;}
+ #receiving-workspace:not(.show-receiving-detail) .wl-receiving-detail{display:none;}
+ #receiving-workspace.show-receiving-detail #receiving-results,#receiving-workspace.show-receiving-detail .wl-receiving-toolbar,#receiving-workspace.show-receiving-detail .wl-receiving-top,#receiving-workspace.show-receiving-detail #receiving-count,#receiving-workspace.show-receiving-detail #receiving-active-filters{display:none;}
+ #receiving-workspace .wl-receiving-back{display:inline-flex;margin-bottom:16px;font-size:13px;min-height:44px;}
+}
+@media(max-width:600px){
+ .wl-mode-options{flex-direction:column;}.wl-mode-option{padding:12px;}.wl-mode-option[aria-pressed=true]{padding:11px;}.wl-mode-option span{font-size:12px;}
+ .wl-review-route{grid-template-columns:1fr;}.wl-guided-form .wl-review-panel{padding:13px;}.wl-review-facts{grid-template-columns:1fr;gap:4px;margin-top:12px;}.wl-review-facts dd{margin-bottom:8px;}
+ .wl-receiving-toolbar{gap:8px;}.wl-receiving-search{flex-basis:100%;}.wl-receiving-metrics{gap:6px 12px;}
+ .wl-receiving-filter-fields{position:static;min-width:0;max-width:none;margin-top:8px;box-shadow:none;}
+ #receiving-filters[open]{flex-basis:100%;}
+ #receiving-workspace .wl-receiving-detail{padding:16px;}.wl-received-card-head{flex-direction:column;gap:5px;}
+ #receiving-selected-title{font-size:19px;}.wl-receiving-detail .facts{grid-template-columns:85px minmax(0,1fr);}.wl-receiving-links{gap:8px;}
+}
+
+/* Selected action first; alternatives are deliberate rather than filling a phone screen. */
+.wl-mode-choices{border:1px solid #bad5dd;border-radius:10px;background:#f3f9fa;padding:0;}
+.wl-mode-choices&gt;summary{list-style:none;cursor:pointer;padding:13px 15px;display:flex;gap:12px;align-items:start;justify-content:space-between;}
+.wl-mode-choices&gt;summary::-webkit-details-marker{display:none;}.wl-mode-current{display:flex;flex-direction:column;gap:5px;min-width:0;}
+.wl-mode-current strong{font-size:14px;}.wl-mode-current small{font-size:12px;color:#4f6877;font-weight:400;line-height:1.5;}
+.wl-mode-change{font-size:12px;white-space:nowrap;color:#087681;font-weight:700;}
+.wl-mode-choices .wl-mode-options{padding:0 12px 12px;}
+.wl-mode-choices&gt;summary:focus-visible{outline:3px solid #166b9a;outline-offset:3px;}
+
+.wl-receipt-facts{margin:14px 0;}.wl-receipt-facts&gt;summary{font-size:13px;cursor:pointer;padding:9px 0;color:#365a6b;}.wl-receipt-facts .facts{margin:8px 0 12px;}
+@media(max-width:900px){#receiving-detail{scroll-margin-top:12px;}}
+
+}
+
+/* UI138: selection stays explicit while searching destinations. */
+.wl-destination-state{font-weight:650;overflow-wrap:anywhere;}
+.wl-destination-option:disabled{cursor:not-allowed;color:#526673;background:#f2f5f7;}
+.wl-destination-main{min-width:0;overflow-wrap:anywhere;}
+.wl-picker-bar [role=status]{min-width:0;overflow-wrap:anywhere;}
+&lt;/style&gt;&lt;/head&gt;&lt;body&gt;&lt;fieldset class=&quot;preview-inert&quot; disabled inert&gt;&lt;form id=&quot;fw-form&quot; class=&quot;mm-form wl-guided-form&quot;&gt;&lt;div class=&quot;wl-guide-body&quot;&gt;&lt;ol class=&quot;wl-guide-steps&quot; aria-label=&quot;Etapas do formulário&quot;&gt;&lt;li&gt;1. Próxima ordem e justificativa&lt;/li&gt;&lt;li class=&quot;current&quot; aria-current=&quot;step&quot;&gt;2. Confirmar interrupção&lt;/li&gt;&lt;/ol&gt;&lt;h3 class=&quot;wl-guide-heading&quot;&gt;2 / 2 — Confirmar interrupção&lt;/h3&gt;&lt;section class=&quot;mm-page&quot; hidden=&quot;&quot;&gt;&lt;header class=&quot;mm-context&quot;&gt;&lt;p class=&quot;eyebrow&quot;&gt;MANUTENÇÃO&lt;/p&gt;&lt;h3&gt;Interromper geração da próxima ordem&lt;/h3&gt;&lt;p&gt;UI137-LOCAL&lt;/p&gt;&lt;dl class=&quot;mm-facts&quot;&gt;&lt;dt&gt;Equipamento&lt;/dt&gt;&lt;dd&gt;Unidade hidráulica fictícia&lt;/dd&gt;&lt;dt&gt;Ordem de serviço&lt;/dt&gt;&lt;dd&gt;UI137 — ordem fictícia&lt;/dd&gt;&lt;dt&gt;Situação salva&lt;/dt&gt;&lt;dd&gt;Concluído&lt;/dd&gt;&lt;dt&gt;Versão conferida&lt;/dt&gt;&lt;dd&gt;2&lt;/dd&gt;&lt;/dl&gt;&lt;/header&gt;&lt;section class=&quot;mm-card&quot;&gt;&lt;h4&gt;Próxima ordem pendente&lt;/h4&gt;&lt;dl class=&quot;mm-facts&quot;&gt;&lt;dt&gt;Estado&lt;/dt&gt;&lt;dd&gt;A geração da próxima ordem precisa de análise&lt;/dd&gt;&lt;dt&gt;Prazo pendente (UTC)&lt;/dt&gt;&lt;dd&gt;2026-02-28T10:15:00Z&lt;/dd&gt;&lt;dt&gt;Motivo registrado para análise&lt;/dt&gt;&lt;dd&gt;Rotina fictícia requer conferência.&lt;/dd&gt;&lt;/dl&gt;&lt;/section&gt;&lt;label&gt;Justificativa para cancelar a próxima ordem *&lt;textarea name=&quot;reason&quot;&gt;&lt;/textarea&gt;&lt;/label&gt;&lt;p&gt;This stops only the pending next order. It does not erase completed work or mark any new work as done.&lt;/p&gt;&lt;p class=&quot;mm-effect&quot;&gt;Interrompe somente a geração pendente da próxima ordem. O trabalho concluído e suas evidências são preservados. Esta ação não apaga a ordem anterior nem registra execução de um novo trabalho.&lt;/p&gt;&lt;/section&gt;&lt;section class=&quot;mm-page&quot;&gt;&lt;div class=&quot;mm-review&quot;&gt;&lt;section class=&quot;mm-card&quot;&gt;&lt;h4&gt;Ação a confirmar&lt;/h4&gt;&lt;dl class=&quot;mm-facts&quot;&gt;&lt;dt&gt;Ordem de serviço anterior&lt;/dt&gt;&lt;dd&gt;UI137-LOCAL&lt;/dd&gt;&lt;dt&gt;Versão conferida&lt;/dt&gt;&lt;dd&gt;2&lt;/dd&gt;&lt;dt&gt;Prazo pendente (UTC)&lt;/dt&gt;&lt;dd&gt;2026-02-28T10:15:00Z&lt;/dd&gt;&lt;dt&gt;Motivo da interrupção&lt;/dt&gt;&lt;dd&gt;Não realizar próxima execução fictícia.&lt;/dd&gt;&lt;/dl&gt;&lt;/section&gt;&lt;p class=&quot;mm-effect&quot;&gt;Interrompe somente a geração pendente da próxima ordem. O trabalho concluído e suas evidências são preservados. Esta ação não apaga a ordem anterior nem registra execução de um novo trabalho.&lt;/p&gt;&lt;/div&gt;&lt;label class=&quot;checkline mm-confirm&quot;&gt;&lt;input type=&quot;checkbox&quot; value=&quot;&quot;&gt;&lt;/input&gt;&lt;span&gt;Conferi a alteração proposta e confirmo o salvamento.&lt;/span&gt;&lt;/label&gt;&lt;p class=&quot;small muted&quot;&gt;A ação só é confirmada após a resposta do servidor. Salvar não libera equipamento, retira quarentena nem autoriza operação.&lt;/p&gt;&lt;/section&gt;&lt;/div&gt;&lt;div id=&quot;fw-local-state&quot;&gt;&lt;/div&gt;&lt;p id=&quot;fw-error&quot;&gt;Informe a justificativa ou o parecer antes de conferir esta ação.&lt;/p&gt;&lt;div class=&quot;actions&quot;&gt;&lt;button class=&quot;btn secondary&quot; type=&quot;button&quot;&gt;Voltar&lt;/button&gt;&lt;button class=&quot;btn primary&quot; type=&quot;button&quot; hidden=&quot;&quot;&gt;Continuar&lt;/button&gt;&lt;button id=&quot;fw-save&quot; type=&quot;submit&quot;&gt;Interromper geração da próxima ordem&lt;/button&gt;&lt;/div&gt;&lt;/form&gt;&lt;/fieldset&gt;&lt;/body&gt;&lt;/html&gt;"></iframe></section>
+<section><h2>Cancelar a ordem atual</h2><p>Exige motivo e mantém os resultados salvos visíveis antes da confirmação.</p><iframe title="Cancelar a ordem atual — componente real, dados fictícios" sandbox srcdoc="&lt;!doctype html&gt;&lt;html lang=&quot;pt-BR&quot;&gt;&lt;head&gt;&lt;meta charset=&quot;utf-8&quot;&gt;&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1&quot;&gt;&lt;meta http-equiv=&quot;Content-Security-Policy&quot; content=&quot;default-src 'none'; style-src 'unsafe-inline'; form-action 'none'; base-uri 'none'&quot;&gt;&lt;title&gt;Cancelar a ordem atual&lt;/title&gt;&lt;style&gt;:root{color-scheme:light;--bg:#f4f7fa;--surface:#fff;--line:#cbd5e1;--border:#cbd5e1;--text:#132b42;--muted:#526577;--accent:#006c81;--brand:#005f77}*{box-sizing:border-box}body{font-family:system-ui,Segoe UI,sans-serif;margin:0;padding:18px;background:#fff;color:var(--text);line-height:1.5}fieldset.preview-inert{border:0;padding:0;margin:0;min-width:0}button,input,select,textarea{font:inherit;max-width:100%}input,select,textarea{border:1px solid #b8c7d2;border-radius:6px;padding:8px;color:#183245;background:#fff}label{display:block}small,.muted{color:#526577}.btn{display:inline-flex;align-items:center;justify-content:center;border:1px solid #c2d0da;border-radius:8px;padding:9px 14px;background:#fff;color:#153d55}.btn.primary{background:#006c81;color:white}.btn.danger{background:#8c2930;color:white}input:disabled,select:disabled,textarea:disabled,button:disabled{opacity:1}.actions{display:flex;gap:8px;flex-wrap:wrap}[hidden]{display:none!important}
+/* UI60: retained module styles; common components deliberately override only wl-* roles. */
+@layer wlLegacy {
+/* UI11: only the two explicitly enhanced maintenance forms. */
+.mf-form{--mf-line:#d5e2e8;--mf-ink:#1c3c4d;min-width:0;}
+#dialog.mf-dialog{width:min(1000px,calc(100vw - 24px));}
+.mf-form [hidden]{display:none!important;}
+.mf-context{border-left:3px solid #0b7c86;background:#f2f8f9;padding:14px 16px;border-radius:7px;margin:0 0 16px;}
+.mf-context h3{font-size:20px;line-height:1.3;margin:7px 0;overflow-wrap:anywhere;}
+.mf-context .eyebrow{font-size:10px;margin:0;color:#35717d;}
+.mf-context p{margin:4px 0;}
+.mf-screen{min-width:0;}
+.mf-screen&gt;h4{margin:22px 0 8px;}
+.mf-disclosure{border:1px solid var(--mf-line);border-radius:8px;padding:10px 14px;margin:12px 0;}
+.mf-disclosure summary{cursor:pointer;font-size:13px;font-weight:650;}
+.mf-form .mf-readings{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px 18px;}
+.mf-form label{min-width:0;}
+.mf-form .mf-readings&gt;label,.mf-form .mf-screen&gt;label{display:flex;flex-direction:column;gap:7px;margin:12px 0;}
+.mf-form .mf-readings input,.mf-form .mf-screen select,.mf-form .mf-screen textarea{min-width:0;width:100%;box-sizing:border-box;}
+.mf-form .mf-field-hint{font-size:11px;color:#4d6979;font-weight:400;line-height:1.5;}
+.mf-result-hint{font-size:13px;line-height:1.55;color:#375968;padding:11px 13px;background:#edf7f8;border:1px solid #cce2e5;border-radius:7px;margin:12px 0;}
+.mf-form .item-guidance{margin:16px 0;}
+.mf-form .item-guidance .instruction-text{font-size:14px;line-height:1.55;}
+.mf-form .mf-facts{display:grid;grid-template-columns:minmax(100px,.7fr) minmax(0,1.3fr);gap:0 16px;margin:10px 0;font-size:13px;}
+.mf-facts dt,.mf-facts dd{padding:10px 0;border-bottom:1px solid #e1e9ed;margin:0;white-space:pre-wrap;overflow-wrap:anywhere;}
+.mf-facts dt{color:#516e7d;font-weight:500;}.mf-facts dd{font-weight:600;color:var(--mf-ink);}
+.mf-comparison{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
+.mf-review-card{border:1px solid var(--mf-line);border-radius:9px;padding:15px;min-width:0;background:#fff;}
+.mf-review-card h4{font-size:15px;margin:0 0 10px;}
+.mf-comparison .mf-review-card:last-child{border-top:3px solid #19848a;background:#f6fbfb;}
+.mf-form .mf-confirm{display:flex;flex-direction:row;gap:10px;align-items:flex-start;margin:18px 0;line-height:1.5;}
+.mf-confirm input{width:20px!important;min-height:20px!important;height:20px;flex:none;margin:1px 0;}
+.mf-form .evidence-editor{padding:16px;border:1px solid var(--mf-line);border-radius:9px;}
+.mf-form .evidence-editor legend{font-size:14px;font-weight:700;}
+.mf-form .evidence-editor .small{font-size:12px;line-height:1.5;}
+.mf-form .operation-persons{max-height:290px;overflow:auto;border:1px solid var(--mf-line);border-radius:8px;padding:14px;}
+.mf-form .operation-persons label{margin:10px 0;}
+.mf-form .wl-guide-body{scrollbar-gutter:stable;}
+.mf-form .wl-guide-steps{position:sticky;top:0;background:white;z-index:2;margin-top:0;}
+.mf-form .wl-guide-steps li{font-size:12px;}
+.mf-form :focus-visible{outline:2px solid #176b8c;outline-offset:3px;}
+@media(max-width:640px){
+ .mf-form .mf-readings,.mf-comparison{grid-template-columns:1fr;}
+ .mf-form .mf-facts{grid-template-columns:minmax(88px,.7fr) minmax(0,1.3fr);gap:0 10px;font-size:12px;}
+ .mf-context{padding:11px 12px;}.mf-context h3{font-size:17px;}
+ .mf-form .wl-guide-steps{gap:5px;}.mf-form .wl-guide-steps li{font-size:10px;padding:8px 2px;line-height:1.4;}
+ #dialog.mf-dialog .modal{padding:14px;}.mf-form&gt;.actions{display:grid;grid-template-columns:1fr 1fr;gap:8px;}
+ .mf-form&gt;.actions button{font-size:12px;min-height:42px;padding:9px;white-space:normal;}
+ .mf-form #fw-discard{order:3;}.mf-form #fw-keep{order:4;}.mf-form #fw-save{grid-column:2;}
+ .mf-form .mf-review-card{padding:12px;}.mf-form .evidence-editor{padding:12px;}
+}
+/* Avoid inherited generic-dialog spacing pushing the actual readings below the fold. */
+#dialog.mf-dialog #fw-form{gap:0;}
+#dialog.mf-dialog .modal-head{padding:8px 0 12px;margin-top:0;margin-bottom:8px;position:static;}
+#dialog.mf-dialog .modal&gt;p{font-size:12px;margin:2px 0 10px;line-height:1.45;}
+.mf-form .mf-context h3{border:0;padding:0;margin:5px 0;font-size:19px;}
+.mf-form .wl-guide-heading{border:0;padding:0;margin:6px 0 12px;font-size:17px;}
+.mf-form .mf-context{padding:11px 14px;margin-bottom:12px;}
+.mf-form .mf-readings&gt;label{margin:7px 0;}
+.mf-form .mf-screen&gt;.item-guidance{margin:12px 0;}
+.mf-form .mf-screen&gt;h4{margin:14px 0 4px;}
+#dialog.mf-dialog #fw-error:empty{display:none;}
+#dialog.mf-dialog #fw-form&gt;.actions{gap:8px;padding-top:10px;margin-top:4px;}
+#dialog.mf-dialog #fw-keep{margin-right:auto;}
+@media(max-width:640px){
+ #dialog.mf-dialog .modal-head h2{font-size:20px;}
+ #dialog.mf-dialog .mf-context h3{font-size:17px;}
+ #dialog.mf-dialog #fw-form&gt;.actions{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));}
+ #dialog.mf-dialog #fw-form&gt;.actions button{min-width:0;flex:none;margin:0;font-size:12px;}
+ #dialog.mf-dialog #fw-keep{grid-column:1;grid-row:2;}
+ #dialog.mf-dialog #fw-discard{grid-column:2;grid-row:2;}
+ #dialog.mf-dialog #fw-form&gt;.actions [id$=&quot;-back&quot;]{grid-column:1;grid-row:1;}
+ #dialog.mf-dialog #fw-form&gt;.actions [id$=&quot;-next&quot;],#dialog.mf-dialog #fw-save{grid-column:2;grid-row:1;}
+ #dialog.mf-dialog #fw-form[data-logistics-step=&quot;0&quot;]&gt;.actions [id$=&quot;-next&quot;]{grid-column:1/-1;}
+}
+
+/* UI36 direct forms: scroll the content, keep existing draft/save actions reachable. */
+#dialog.mf-dialog .mf-direct{display:flex;flex-direction:column;max-height:calc(92dvh - 126px);overflow:hidden;}
+.mf-direct&gt;.mf-screen{overflow-y:auto;overscroll-behavior:contain;scrollbar-gutter:stable;min-height:0;padding-right:4px;}
+.mf-direct&gt;#fw-local-state,.mf-direct&gt;#fw-error,.mf-direct&gt;.actions{flex-shrink:0;}
+.mf-direct&gt;#fw-local-state{font-size:12px;margin:8px 0 3px;}
+.mf-direct .mf-screen&gt;label{display:flex;flex-direction:column;gap:7px;}
+.mf-direct .mf-screen&gt;label&gt;textarea{min-height:104px;}
+.mf-direct .mf-disclosure label{display:block;margin:10px 0;}
+.mf-direct .mf-disclosure .checkline{display:flex;flex-direction:row;}
+.mf-direct .mf-disclosure input[type=checkbox]{width:20px;min-height:20px;flex:none;}
+.mf-direct .mf-result-hint{color:#294956;}
+.mf-direct&gt;.actions #fw-save{min-width:160px;}
+@media(max-width:640px){
+ #dialog.mf-dialog{width:calc(100vw - 12px);max-height:96dvh;}
+ #dialog.mf-dialog .mf-direct{max-height:calc(96dvh - 126px);}
+ #dialog.mf-dialog .mf-direct&gt;.actions #fw-save{grid-column:1/-1;grid-row:1;}
+ .mf-direct .operation-persons{max-height:240px;}
+}
+
+}
+
+/* UI137: expose the saved return reason beside the correction fields. */
+.mf-form .mf-review-feedback{border:1px solid #bd8244;border-left:4px solid #a66321;border-radius:8px;background:#fff8ed;color:#593510;padding:14px 16px;margin:12px 0;overflow-wrap:anywhere;}
+.mf-review-feedback h4{margin:0 0 8px;font-size:15px;}
+.mf-review-feedback .mf-review-reason{white-space:pre-wrap;line-height:1.55;margin:8px 0;}
+.mf-review-feedback .mf-facts{margin:8px 0;}
+.mf-review-feedback .mf-facts dt,.mf-review-feedback .mf-facts dd{color:#593510;border-color:#e5cfb0;}
+.mf-review-feedback .small{margin:8px 0 0;}
+@media(max-width:640px){.mf-form .mf-review-feedback{padding:12px;}}
+
+/* UI60: retained module styles; common components deliberately override only wl-* roles. */
+@layer wlLegacy {
+/* UI12: deliberately scoped to maintenance management dialogs. */
+dialog.mm-dialog{width:min(920px,calc(100vw - 32px));max-width:none;}
+.mm-form .mm-context{padding:16px 18px;border:1px solid #cbdbe4;border-radius:12px;background:#f4f8fb;margin:0 0 18px;}
+.mm-form .mm-context h3{font-size:1.35rem;line-height:1.3;margin:8px 0;}
+.mm-form .mm-context&gt;p:not(.eyebrow){margin:6px 0 12px;overflow-wrap:anywhere;}
+.mm-form .mm-facts{display:grid;grid-template-columns:minmax(130px,.65fr) minmax(0,1.5fr);gap:9px 16px;margin:12px 0;}
+.mm-form .mm-facts dt{color:#475e70;font-size:.88rem;}
+.mm-form .mm-facts dd{margin:0;white-space:pre-wrap;overflow-wrap:anywhere;line-height:1.45;}
+.mm-form .mm-comparison{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;}
+.mm-form .mm-card{border:1px solid #d5e0e7;border-radius:12px;padding:16px;background:#fff;min-width:0;}
+.mm-form .mm-card h4{margin:0 0 12px;font-size:1rem;}
+.mm-form .mm-comparison .mm-facts{grid-template-columns:1fr;gap:5px;}
+.mm-form .mm-comparison .mm-facts dd{margin-bottom:8px;}
+.mm-form .mm-note,.mm-form .mm-effect{background:#eef5f8;border-left:3px solid #147883;border-radius:6px;padding:12px 14px;line-height:1.55;}
+.mm-form .mm-warning{padding:12px 14px;border:1px solid #e4c289;border-left:4px solid #a36c1b;border-radius:6px;background:#fff7ea;color:#694815;line-height:1.55;}
+.mm-form .mm-saved-summary h4{margin:4px 0 12px;}
+.mm-form .mm-counts{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px;margin:12px 0;}
+.mm-form .mm-counts&gt;div{border:1px solid #d5e0e7;border-radius:9px;padding:12px;background:#fff;min-width:0;}
+.mm-form .mm-counts strong{display:block;font-size:1.45rem;margin-bottom:4px;}
+.mm-form .mm-counts span{display:block;font-size:.8rem;color:#4d6373;overflow-wrap:anywhere;}
+.mm-form .mm-disclosure{border:1px solid #d5e0e7;border-radius:8px;padding:10px 12px;margin:12px 0;}
+.mm-form .mm-disclosure&gt;summary{font-weight:650;cursor:pointer;min-height:26px;}
+.mm-form .mm-saved-step{border-top:1px solid #d5e0e7;padding:14px 0 4px;}
+.mm-form .mm-saved-step h5{font-size:.96rem;margin:0 0 5px;}
+.mm-form .mm-saved-step .small{margin:5px 0;}
+.mm-form label{margin:12px 0;}
+.mm-form textarea{min-height:105px;}
+.mm-form .maintenance-cycle-fields{border:1px solid #d5e0e7;border-radius:10px;padding:14px;margin:14px 0;}
+.mm-form .maintenance-cycle-fields legend{font-weight:650;padding:0 6px;}
+.mm-form .mm-confirm{padding:14px;background:#eaf5f4;border:1px solid #abcfc9;border-radius:8px;align-items:flex-start;}
+.mm-form .mm-confirm input{margin-top:4px;}
+.mm-form [hidden]{display:none!important;}
+@media(max-width:600px){
+ dialog.mm-dialog{width:calc(100vw - 12px);max-width:none;max-height:calc(100dvh - 12px);padding:12px;}
+ .mm-form .mm-context{padding:12px;}
+ .mm-form .mm-facts{grid-template-columns:1fr;gap:4px;}
+ .mm-form .mm-facts dd{margin-bottom:8px;}
+ .mm-form .mm-comparison{grid-template-columns:1fr;}
+ .mm-form .mm-counts{grid-template-columns:repeat(2,minmax(0,1fr));}
+ .mm-form .mm-card{padding:12px;}
+ .mm-form .mm-context h3{font-size:1.15rem;}
+ .mm-dialog #fw-local-state{font-size:.78rem;line-height:1.4;}
+}
+#fw-form.mm-form label.checkline{display:flex;flex-direction:row;align-items:flex-start;gap:10px;line-height:1.5;}
+.mm-form .checkline input{width:20px!important;min-height:20px!important;height:20px;flex:none;margin:2px 0 0;}
+.mm-form .checkline span{flex:1;min-width:0;}
+.mm-form .mm-page&gt;label:not(.checkline){display:flex;flex-direction:column;gap:8px;}
+
+/* UI14: same scoped review language for pending release and saved-step review. */
+#maint-approval.mm-form label.checkline{display:flex;flex-direction:row;align-items:flex-start;gap:10px;line-height:1.5;}
+.mm-approval-form{display:flex;flex-direction:column;min-height:0;overflow:hidden;}
+.mm-approval-body{overflow:auto;min-height:0;max-height:calc(100dvh - 240px);padding:2px 4px 10px;overscroll-behavior:contain;}
+.mm-approval-footer{flex-shrink:0;padding:12px 0 2px;border-top:1px solid #d5e0e7;display:flex;gap:8px;flex-wrap:wrap;background:#fff;}
+.mm-approval-footer #fw-error{flex-basis:100%;}
+.mm-approval-form .mm-page{min-width:0;overflow-wrap:anywhere;}
+.mm-approval-form .log-values{overflow-wrap:anywhere;}
+@media(max-width:600px){.mm-approval-body{max-height:calc(100dvh - 220px);}.mm-approval-footer .btn{flex:1;white-space:normal;min-height:44px;}.mm-approval-form .evidence-view-card{min-width:0;}}
+
+}
+
+/* UI60: retained module styles; common components deliberately override only wl-* roles. */
+@layer wlLegacy {
+/* Shared find → choose → review pattern, scoped to logistics forms only. */
+#dialog.wl-guided-dialog,#modal.wl-guided-dialog{width:min(1020px,calc(100vw - 24px));max-height:94dvh;}
+.wl-guided-form [hidden]{display:none!important;}
+.wl-guide-steps{display:flex;gap:8px;list-style:none;margin:12px 0 16px;padding:0;}
+.wl-guide-steps li{flex:1;min-width:0;border-bottom:3px solid #d5e1e7;padding:10px 4px;font-size:13px;color:#5d6f7d;}
+.wl-guide-steps li.current{border-color:#197e86;color:#173846;font-weight:750;}
+.wl-guide-heading{margin:4px 0 16px;font-size:19px;outline:none;}
+.wl-guide-heading:focus-visible{outline:2px solid #197e86;outline-offset:4px;}
+.wl-destination-picker{margin:14px 0;min-width:0;}
+.wl-destination-picker h3{font-size:16px;margin-bottom:8px;}
+.wl-picker-bar{display:flex;align-items:center;justify-content:space-between;gap:12px;margin:8px 0;}
+.wl-picker-bar button{padding:6px 10px;font-size:12px;min-height:36px;}
+.wl-destination-list{border:1px solid #cbd7e0;border-radius:10px;overflow:auto;max-height:290px;background:white;}
+.wl-destination-option{display:flex;flex-direction:column;align-items:stretch;text-align:left;width:100%;gap:5px;border:0;border-radius:0;border-bottom:1px solid #e1e8ed;background:#fff;padding:13px 16px;color:#183447;font-weight:400;min-height:64px;}
+.wl-destination-option:last-child{border-bottom:0;}
+.wl-destination-option[aria-pressed=true]{background:#eaf5f4;box-shadow:inset 4px 0 #197e86;}
+.wl-destination-option:focus-visible{outline:3px solid #197e86;outline-offset:-3px;}
+.wl-destination-main{display:flex;justify-content:space-between;align-items:start;gap:12px;}
+.wl-destination-main strong{font-weight:700;}
+.wl-destination-main small{flex-shrink:0;max-width:45%;text-align:right;}
+.wl-destination-path{font-size:12px;color:#58717f;overflow-wrap:anywhere;}
+.wl-selected-destination,.wl-review-summary{padding:14px 16px;margin:12px 0;background:#edf4f7;border:1px solid #cbdde3;border-radius:8px;overflow-wrap:anywhere;}
+.wl-selected-destination p{margin:6px 0;}.wl-review-summary{white-space:pre-wrap;}
+.wl-picker-empty{padding:18px;}.wl-guided-form section&gt;h3{margin-top:12px;}
+.wl-guided-form .movement-source{padding:12px 16px;border:1px solid #d5e1e7;border-radius:8px;margin:8px 0 14px;background:#f7fafc;}
+.wl-guided-form .movement-source ul{max-height:180px;overflow:auto;margin:8px 0;padding-left:22px;}
+.wl-guided-form .movement-source li small{display:block;}
+.wl-receiving-filters{display:grid;grid-template-columns:minmax(180px,1fr) minmax(150px,.55fr) minmax(145px,.4fr) auto;gap:12px;align-items:end;margin-bottom:14px;}
+.wl-receiving-filters label{margin-top:0;}
+.wl-receiving-layout{display:grid;grid-template-columns:minmax(0,1fr) 310px;gap:18px;align-items:start;}
+.wl-receiving-layout&gt;*{min-width:0;}
+.wl-receiving-detail{padding:18px;border:1px solid #cbd7e0;border-radius:10px;background:white;overflow-wrap:anywhere;position:sticky;top:14px;}
+.wl-receiving-detail .facts{grid-template-columns:95px 1fr;font-size:13px;gap:8px;}
+.wl-receiving-detail .actions{margin-top:14px;}
+.wl-receiving-table .selected td{background:#eaf5f4;}
+.wl-receiving-table button[data-receiving-open]{text-align:left;justify-content:start;max-width:100%;overflow-wrap:anywhere;}
+@media(max-width:1100px){.wl-receiving-layout{grid-template-columns:1fr;}.wl-receiving-detail{position:static;}.wl-receiving-filters{grid-template-columns:1fr 1fr;}}
+@media(max-width:600px){
+ #dialog.wl-guided-dialog,#modal.wl-guided-dialog{width:calc(100vw - 12px);max-height:96dvh;border-radius:10px;}
+ .wl-guided-dialog .modal{padding:16px;}.wl-guide-steps{gap:5px;}.wl-guide-steps li{font-size:11px;padding:8px 0;}
+ .wl-guide-heading{font-size:17px;}.wl-destination-main{flex-direction:column;gap:3px;}.wl-destination-main small{max-width:100%;text-align:left;}
+ .wl-destination-option{padding:12px;}.wl-destination-list{max-height:240px;}.wl-receiving-filters{grid-template-columns:1fr;}
+ .wl-guided-form footer{flex-wrap:wrap;}.wl-guided-form #modal-note{max-width:none;flex-basis:100%;}
+ .wl-guided-form .actions{gap:7px;}.wl-guided-form .actions button{min-height:44px;}
+ .wl-receiving-detail{padding:14px;}.wl-receiving-filters button{min-height:44px;}
+}
+
+/* Keep actions visible; only the movement step body scrolls. */
+#dialog.wl-guided-dialog{overflow:hidden;}
+#dialog.wl-guided-dialog .modal{display:flex;flex-direction:column;max-height:94dvh;min-height:0;box-sizing:border-box;}
+#dialog.wl-guided-dialog .modal-head,#dialog.wl-guided-dialog .modal&gt;p{flex:none;}
+#fw-form.wl-guided-form{display:flex;flex-direction:column;min-height:0;overflow:hidden;}
+#fw-form.wl-guided-form .wl-guide-body{overflow:auto;min-height:0;padding:0 4px 10px;overscroll-behavior:contain;}
+#fw-form.wl-guided-form&gt;.actions,#fw-form.wl-guided-form&gt;#fw-error,#fw-form.wl-guided-form&gt;#fw-local-state{flex:none;}
+#fw-form.wl-guided-form&gt;.actions{background:white;margin-top:8px;}
+#fw-form.wl-guided-form&gt;#fw-local-state{font-size:11px;padding:8px 10px;margin:8px 0;}
+@media(max-width:600px){#dialog.wl-guided-dialog .modal{max-height:96dvh;}#fw-form.wl-guided-form&gt;.actions{padding-top:10px;}#dialog.wl-guided-dialog .modal-head{margin-bottom:8px;}#dialog.wl-guided-dialog .modal&gt;p{margin:4px 0 8px;}}
+
+/* Workspace UI05 — descriptive destinations, compact scope and focused receiving. */
+.wl-mode-choices{margin:14px 0 18px;min-width:0;}
+.wl-mode-choices h3{font-size:15px;margin:0 0 10px;}
+.wl-mode-options{display:flex;gap:10px;align-items:stretch;}
+.wl-mode-option{flex:1;min-width:0;display:flex;flex-direction:column;text-align:left;gap:7px;justify-content:flex-start;padding:14px;border:1px solid #cbd8e0;border-radius:10px;background:#fff;color:#233f50;line-height:1.45;overflow-wrap:anywhere;}
+.wl-mode-option strong{font-size:14px;}.wl-mode-option span{font-size:12px;font-weight:400;color:#536b79;}
+.wl-mode-option[aria-pressed=true]{border:2px solid #147e87;padding:13px;background:#edf8f8;box-shadow:0 1px 3px #10394812;}
+.wl-mode-option:focus-visible{outline:3px solid #166b9a;outline-offset:3px;}
+.wl-mode-option:disabled{opacity:.6;cursor:not-allowed;}
+.wl-guided-form .wl-scope-summary{font-size:13px;}.wl-scope-summary summary{cursor:pointer;padding:3px 0;}
+.wl-scope-summary summary strong{font-size:14px;}.wl-scope-summary summary span{display:block;margin:5px 0 0;color:#4d6574;font-size:12px;}
+.wl-guided-form .wl-review-panel{background:#f6f9fb;padding:18px;border:1px solid #d5e1e7;border-radius:12px;white-space:normal;color:#213f51;}
+.wl-review-panel h3{font-size:18px;margin:0 0 16px;}.wl-review-route{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
+.wl-review-endpoint{background:white;border:1px solid #dce5ea;border-radius:8px;padding:13px;min-width:0;}
+.wl-review-endpoint:last-child{border-top:3px solid #167f85;}
+.wl-review-endpoint h4{margin:0 0 8px;font-size:12px;letter-spacing:.02em;color:#49616f;}
+.wl-review-endpoint ul{list-style:none;margin:0;padding:0;max-height:150px;overflow:auto;overflow-wrap:anywhere;}
+.wl-review-endpoint li{margin:0 0 5px;white-space:pre-wrap;font-size:14px;font-weight:600;}
+.wl-review-facts{display:grid;grid-template-columns:minmax(100px,.35fr) minmax(0,1fr);gap:10px 16px;margin:18px 0 0;font-size:13px;}
+.wl-review-facts dt{font-weight:650;color:#4d6574;}.wl-review-facts dd{margin:0;white-space:pre-wrap;overflow-wrap:anywhere;}
+.wl-review-note{margin:16px 0 0;padding-top:12px;border-top:1px solid #d5e1e7;font-size:12px;line-height:1.55;color:#4c6473;}
+.wl-ui05-badge{display:inline-block;border:1px solid #bad7de;border-radius:6px;padding:3px 7px;background:#e8f3f6;color:#346373;font-size:10px;font-weight:700;letter-spacing:.06em;}
+.wl-receiving-workspace{min-width:0;}.wl-receiving-workspace [hidden]{display:none!important;}
+.wl-receiving-top{display:flex;gap:14px;align-items:center;margin:0 0 18px;flex-wrap:wrap;}
+.wl-receiving-metrics{display:flex;gap:10px 18px;flex-wrap:wrap;font-size:12px;color:#476273;}
+.wl-receiving-metrics b{font-size:17px;color:#234554;margin-right:4px;}
+.wl-receiving-toolbar{display:flex;align-items:end;gap:12px;flex-wrap:wrap;}.wl-receiving-search{flex:1;min-width:160px;}
+.wl-receiving-toolbar label{margin-top:0;}.wl-receiving-toolbar input{margin:0;}
+#receiving-filters{position:relative;margin:0;}#receiving-filters&gt;summary{list-style:none;cursor:pointer;border:1px solid #bacfd9;border-radius:8px;background:#fff;min-height:44px;padding:12px 14px;box-sizing:border-box;font-size:13px;}
+#receiving-filters&gt;summary::-webkit-details-marker{display:none;}#receiving-filters&gt;summary:after{content:' ▾';}
+#receiving-filters&gt;summary:focus-visible{outline:3px solid #167a91;outline-offset:2px;}
+.wl-receiving-filter-fields{position:absolute;top:100%;right:0;z-index:5;min-width:290px;max-width:calc(100vw - 56px);border:1px solid #cad8e1;background:#fff;border-radius:10px;padding:16px;box-shadow:0 10px 28px #1236461a;}
+.wl-receiving-filter-fields&gt;div+div{margin-top:12px;}.wl-receiving-toolbar&gt;button{min-height:44px;}
+.wl-receiving-filter-summary{font-size:12px;margin:10px 0 4px;overflow-wrap:anywhere;}
+#receiving-count{font-size:12px;margin:0 0 14px;}
+#receiving-selection-notice{font-size:12px;padding:10px;background:#fdf4e7;border:1px solid #edd8b9;border-radius:6px;}
+#receiving-workspace .wl-receiving-layout{display:grid;grid-template-columns:minmax(0,1fr) minmax(310px,.78fr);gap:20px;align-items:start;}
+#receiving-results{min-width:0;max-height:600px;overflow:auto;overscroll-behavior:contain;padding:1px 5px 2px 1px;}
+.wl-receiving-card{margin-bottom:10px;background:#fff;border:1px solid #d2dfe7;border-radius:10px;overflow:hidden;}
+.wl-receiving-card.selected{border-color:#15828a;box-shadow:0 0 0 1px #15828a;}
+.wl-receiving-card&gt;button{border:0;border-radius:0;padding:16px;display:flex;gap:7px;flex-direction:column;align-items:stretch;text-align:left;width:100%;color:#213d4f;background:#fff;font-weight:400;line-height:1.45;}
+.wl-receiving-card.selected&gt;button{background:#f0f8f8;}.wl-receiving-card&gt;button:focus-visible{outline:3px solid #167a91;outline-offset:-3px;}
+.wl-received-card-head{display:flex;align-items:start;gap:12px;justify-content:space-between;}.wl-received-card-head strong{font-size:15px;overflow-wrap:anywhere;}
+.wl-open-group{font-size:11px;white-space:nowrap;color:#0b6d76;font-weight:650;}
+.wl-received-reference,.wl-received-holding{font-size:12px;color:#526b7a;overflow-wrap:anywhere;}
+.wl-received-state .pill{font-size:11px;}.wl-received-manifest{display:flex;gap:8px;padding:9px 16px;border-top:1px solid #e2eaf0;font-size:12px;flex-wrap:wrap;}
+.wl-received-manifest&gt;span{color:#607682;}.wl-received-manifest a{overflow-wrap:anywhere;}
+#receiving-workspace .wl-receiving-detail{position:static;padding:22px;border:1px solid #d2dfe7;box-shadow:0 3px 12px #18394b08;}
+#receiving-selected-title{font-size:21px;line-height:1.3;margin:10px 0;overflow-wrap:anywhere;}
+.wl-receiving-empty{padding:14px 4px;}.wl-receiving-empty p{font-size:14px;line-height:1.65;}
+.wl-holding-position{display:flex;gap:6px;flex-direction:column;background:#eff5f8;border-radius:8px;padding:14px;margin:18px 0;overflow-wrap:anywhere;}
+.wl-holding-position .eyebrow{font-size:10px;}.wl-holding-position strong{font-size:15px;}.wl-holding-position&gt;span:last-child{font-size:13px;}
+.wl-placement-action{margin:18px 0 12px;}.wl-placement-action&gt;button{width:100%;min-height:46px;}
+.wl-receiving-links{border-top:1px solid #dae4e9;padding-top:12px;}.wl-receiving-links a{font-size:12px;}
+.wl-receiving-back{display:none;}
+@media(max-width:900px){
+ #receiving-workspace .wl-receiving-layout{grid-template-columns:1fr;}
+ #receiving-results{max-height:none;overflow:visible;}
+ #receiving-workspace:not(.show-receiving-detail) .wl-receiving-detail{display:none;}
+ #receiving-workspace.show-receiving-detail #receiving-results,#receiving-workspace.show-receiving-detail .wl-receiving-toolbar,#receiving-workspace.show-receiving-detail .wl-receiving-top,#receiving-workspace.show-receiving-detail #receiving-count,#receiving-workspace.show-receiving-detail #receiving-active-filters{display:none;}
+ #receiving-workspace .wl-receiving-back{display:inline-flex;margin-bottom:16px;font-size:13px;min-height:44px;}
+}
+@media(max-width:600px){
+ .wl-mode-options{flex-direction:column;}.wl-mode-option{padding:12px;}.wl-mode-option[aria-pressed=true]{padding:11px;}.wl-mode-option span{font-size:12px;}
+ .wl-review-route{grid-template-columns:1fr;}.wl-guided-form .wl-review-panel{padding:13px;}.wl-review-facts{grid-template-columns:1fr;gap:4px;margin-top:12px;}.wl-review-facts dd{margin-bottom:8px;}
+ .wl-receiving-toolbar{gap:8px;}.wl-receiving-search{flex-basis:100%;}.wl-receiving-metrics{gap:6px 12px;}
+ .wl-receiving-filter-fields{position:static;min-width:0;max-width:none;margin-top:8px;box-shadow:none;}
+ #receiving-filters[open]{flex-basis:100%;}
+ #receiving-workspace .wl-receiving-detail{padding:16px;}.wl-received-card-head{flex-direction:column;gap:5px;}
+ #receiving-selected-title{font-size:19px;}.wl-receiving-detail .facts{grid-template-columns:85px minmax(0,1fr);}.wl-receiving-links{gap:8px;}
+}
+
+/* Selected action first; alternatives are deliberate rather than filling a phone screen. */
+.wl-mode-choices{border:1px solid #bad5dd;border-radius:10px;background:#f3f9fa;padding:0;}
+.wl-mode-choices&gt;summary{list-style:none;cursor:pointer;padding:13px 15px;display:flex;gap:12px;align-items:start;justify-content:space-between;}
+.wl-mode-choices&gt;summary::-webkit-details-marker{display:none;}.wl-mode-current{display:flex;flex-direction:column;gap:5px;min-width:0;}
+.wl-mode-current strong{font-size:14px;}.wl-mode-current small{font-size:12px;color:#4f6877;font-weight:400;line-height:1.5;}
+.wl-mode-change{font-size:12px;white-space:nowrap;color:#087681;font-weight:700;}
+.wl-mode-choices .wl-mode-options{padding:0 12px 12px;}
+.wl-mode-choices&gt;summary:focus-visible{outline:3px solid #166b9a;outline-offset:3px;}
+
+.wl-receipt-facts{margin:14px 0;}.wl-receipt-facts&gt;summary{font-size:13px;cursor:pointer;padding:9px 0;color:#365a6b;}.wl-receipt-facts .facts{margin:8px 0 12px;}
+@media(max-width:900px){#receiving-detail{scroll-margin-top:12px;}}
+
+}
+
+/* UI138: selection stays explicit while searching destinations. */
+.wl-destination-state{font-weight:650;overflow-wrap:anywhere;}
+.wl-destination-option:disabled{cursor:not-allowed;color:#526673;background:#f2f5f7;}
+.wl-destination-main{min-width:0;overflow-wrap:anywhere;}
+.wl-picker-bar [role=status]{min-width:0;overflow-wrap:anywhere;}
+&lt;/style&gt;&lt;/head&gt;&lt;body&gt;&lt;fieldset class=&quot;preview-inert&quot; disabled inert&gt;&lt;form id=&quot;fw-form&quot; class=&quot;mm-form wl-guided-form&quot;&gt;&lt;div class=&quot;wl-guide-body&quot;&gt;&lt;ol class=&quot;wl-guide-steps&quot; aria-label=&quot;Etapas do formulário&quot;&gt;&lt;li&gt;1. Resultados salvos e parecer&lt;/li&gt;&lt;li class=&quot;current&quot; aria-current=&quot;step&quot;&gt;2. Confirmar cancelamento&lt;/li&gt;&lt;/ol&gt;&lt;h3 class=&quot;wl-guide-heading&quot;&gt;2 / 2 — Confirmar cancelamento&lt;/h3&gt;&lt;section class=&quot;mm-page&quot; hidden=&quot;&quot;&gt;&lt;header class=&quot;mm-context&quot;&gt;&lt;p class=&quot;eyebrow&quot;&gt;MANUTENÇÃO&lt;/p&gt;&lt;h3&gt;Cancelar ordem de serviço em aberto&lt;/h3&gt;&lt;p&gt;UI137-LOCAL&lt;/p&gt;&lt;dl class=&quot;mm-facts&quot;&gt;&lt;dt&gt;Equipamento&lt;/dt&gt;&lt;dd&gt;Unidade hidráulica fictícia&lt;/dd&gt;&lt;dt&gt;Ordem de serviço&lt;/dt&gt;&lt;dd&gt;UI137 — ordem fictícia&lt;/dd&gt;&lt;dt&gt;Situação salva&lt;/dt&gt;&lt;dd&gt;Em aberto&lt;/dd&gt;&lt;dt&gt;Versão conferida&lt;/dt&gt;&lt;dd&gt;2&lt;/dd&gt;&lt;/dl&gt;&lt;/header&gt;&lt;section class=&quot;mm-saved-summary&quot;&gt;&lt;h4&gt;Resultados salvos no servidor&lt;/h4&gt;&lt;div class=&quot;mm-counts&quot;&gt;&lt;div&gt;&lt;strong&gt;1&lt;/strong&gt;&lt;span&gt;Concluído&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;strong&gt;0&lt;/strong&gt;&lt;span&gt;Não se aplica&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;strong&gt;0&lt;/strong&gt;&lt;span&gt;Etapas pendentes&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;strong&gt;1&lt;/strong&gt;&lt;span&gt;Aprovações pendentes&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;&lt;details class=&quot;mm-disclosure&quot;&gt;&lt;summary&gt;Conferir etapas salvas (1)&lt;/summary&gt;&lt;div class=&quot;mm-saved-steps&quot;&gt;&lt;section class=&quot;mm-saved-step&quot;&gt;&lt;h5&gt;01. Conferir pressão do conjunto fictício&lt;/h5&gt;&lt;p class=&quot;small&quot;&gt;Checks · Concluído · Aprovação: Pendente&lt;/p&gt;&lt;dl class=&quot;mm-facts&quot;&gt;&lt;dt&gt;Salvo por&lt;/dt&gt;&lt;dd&gt;Fictional worker&lt;/dd&gt;&lt;dt&gt;Salvo em (UTC)&lt;/dt&gt;&lt;dd&gt;2026-10-19T10:21:19Z&lt;/dd&gt;&lt;dt&gt;Versão do resultado&lt;/dt&gt;&lt;dd&gt;1&lt;/dd&gt;&lt;dt&gt;Fotos de evidência&lt;/dt&gt;&lt;dd&gt;1&lt;/dd&gt;&lt;/dl&gt;&lt;/section&gt;&lt;/div&gt;&lt;p class=&quot;small muted&quot;&gt;Este resumo mostra os resultados salvos. Antes de encerrar, confira as medições e as fotos na seção Etapas do trabalho.&lt;/p&gt;&lt;/details&gt;&lt;p class=&quot;mm-warning&quot;&gt;Etapas pendentes: 0. Aprovações pendentes: 1. A conclusão depende das conferências do servidor. Cancelar preserva o trabalho pendente sem marcá-lo como concluído.&lt;/p&gt;&lt;/section&gt;&lt;p class=&quot;mm-effect&quot;&gt;O cancelamento bloqueia esta ordem em aberto e preserva os resultados e o histórico. As etapas não são marcadas como concluídas e não é gerada uma próxima ordem. Para adiar, use a programação.&lt;/p&gt;&lt;label&gt;Justificativa do cancelamento *&lt;textarea name=&quot;note&quot;&gt;&lt;/textarea&gt;&lt;/label&gt;&lt;details class=&quot;mm-disclosure&quot;&gt;&lt;summary&gt;Regras de encerramento da ordem&lt;/summary&gt;&lt;p&gt;Closing locks the saved work and preserves its history. Completion requires every step and its required evidence/review. This is not operational authorisation.&lt;/p&gt;&lt;p&gt;O cancelamento não gera uma próxima ordem.&lt;/p&gt;&lt;/details&gt;&lt;/section&gt;&lt;section class=&quot;mm-page&quot;&gt;&lt;div class=&quot;mm-review&quot;&gt;&lt;section class=&quot;mm-card&quot;&gt;&lt;h4&gt;Ação a confirmar&lt;/h4&gt;&lt;dl class=&quot;mm-facts&quot;&gt;&lt;dt&gt;Ordem de serviço&lt;/dt&gt;&lt;dd&gt;UI137-LOCAL&lt;/dd&gt;&lt;dt&gt;Equipamento&lt;/dt&gt;&lt;dd&gt;Unidade hidráulica fictícia&lt;/dd&gt;&lt;dt&gt;Mudança de situação&lt;/dt&gt;&lt;dd&gt;Em aberto → Cancelado&lt;/dd&gt;&lt;dt&gt;Versão conferida&lt;/dt&gt;&lt;dd&gt;2&lt;/dd&gt;&lt;dt&gt;Recorrência salva&lt;/dt&gt;&lt;dd&gt;A cada 1 mês · Datas programadas fixas&lt;/dd&gt;&lt;dt&gt;Motivo do cancelamento&lt;/dt&gt;&lt;dd&gt;Cancelar ordem fictícia sem apagar a execução.&lt;/dd&gt;&lt;/dl&gt;&lt;/section&gt;&lt;p class=&quot;mm-effect&quot;&gt;O cancelamento bloqueia esta ordem em aberto e preserva os resultados e o histórico. As etapas não são marcadas como concluídas e não é gerada uma próxima ordem. Para adiar, use a programação.&lt;/p&gt;&lt;/div&gt;&lt;label class=&quot;checkline&quot;&gt;&lt;input type=&quot;checkbox&quot; name=&quot;confirmed&quot; required=&quot;&quot; value=&quot;&quot;&gt;&lt;/input&gt;&lt;span&gt;Conferi a ordem de serviço atual e esta ação de encerramento.&lt;/span&gt;&lt;/label&gt;&lt;p class=&quot;small muted&quot;&gt;A ação só é confirmada após a resposta do servidor. Salvar não libera equipamento, retira quarentena nem autoriza operação.&lt;/p&gt;&lt;/section&gt;&lt;/div&gt;&lt;div id=&quot;fw-local-state&quot;&gt;&lt;/div&gt;&lt;p id=&quot;fw-error&quot;&gt;Informe a justificativa ou o parecer antes de conferir esta ação.&lt;/p&gt;&lt;div class=&quot;actions&quot;&gt;&lt;button class=&quot;btn secondary&quot; type=&quot;button&quot;&gt;Voltar&lt;/button&gt;&lt;button class=&quot;btn primary&quot; type=&quot;button&quot; hidden=&quot;&quot;&gt;Continuar&lt;/button&gt;&lt;button id=&quot;fw-save&quot; type=&quot;submit&quot;&gt;Cancelar ordem de serviço&lt;/button&gt;&lt;/div&gt;&lt;/form&gt;&lt;/fieldset&gt;&lt;/body&gt;&lt;/html&gt;"></iframe></section><footer>Os seis cenários HTTP de manutenção passaram no pré-teste local. O teste dos componentes executou 108 verificações em português brasileiro e inglês. Os valores e estados desta prévia são fictícios; não comprovam execução em produção.</footer></main></body></html>

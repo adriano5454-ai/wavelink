@@ -1,0 +1,52 @@
+{
+  "release": "UI138",
+  "area": "Logística — seleção de destino e apresentação",
+  "method": "Controlador compartilhado real executado em adaptador DOM local; cabeçalhos revistos por código e tradução. Sem navegador.",
+  "screens": [
+    {
+      "name": "Selecionar destino",
+      "status": "corrigido_e_testado_localmente",
+      "changes": [
+        "Busca por nome, referência e caminho ignora acentos; resultado mantém destino atual fixo e identificado em texto.",
+        "Pesquisa e Limpar busca não alteram o destino nem disparam mudança do formulário.",
+        "Controle respeita campo e opções bloqueados; teclas direcionais pulam opções desabilitadas."
+      ],
+      "evidence": [
+        "tests/test_ui138_logistics.cjs"
+      ],
+      "checks": 52
+    },
+    {
+      "name": "Conferência da movimentação",
+      "status": "regressao_local",
+      "evidence": [
+        "tests/test_ui138_logistics.cjs"
+      ],
+      "result": "Origem/destino/referência preservados; nomes tratados como texto."
+    },
+    {
+      "name": "Cabeçalhos de inventário, frota, recebimento e custódia",
+      "status": "revisado_por_codigo_e_localizacao",
+      "result": "Descrição e agrupamentos passam pelo dicionário PT-BR; inglês preservado.",
+      "limit": "Não foi executada toda navegação de remessas ou renderização visual de cada cabeçalho."
+    }
+  ],
+  "boundaries": [
+    "Sem endpoint, escrita, movimentação de equipamento ou mudança de permissão.",
+    "IDs e campos nativos permanecem os mesmos.",
+    "Contratos existentes de gravação e conferência final permanecem responsáveis pela movimentação."
+  ],
+  "pending": [
+    "Jornada completa de remessa por HTTP não foi acrescentada nesta frente.",
+    "Teclado e layout em navegador/aparelho real continuam sem validação."
+  ],
+  "browser": false,
+  "production": false,
+  "files": [
+    "app/static/logistics_workflow.js",
+    "app/static/logistics_workflow.css",
+    "app/static/logistics_experience.js"
+  ],
+  "preview": "work/ui138-logistics-previews",
+  "screenshots": false
+}

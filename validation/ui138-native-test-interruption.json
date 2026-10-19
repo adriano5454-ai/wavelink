@@ -1,0 +1,47 @@
+{
+  "version": "UI138",
+  "reviewed_at": "2026-10-19T11:37:58.408Z",
+  "classification": "native_test_process_interruption_not_a_recorded_product_assertion_failure",
+  "source_log": "work/ui138-regression-it-journeys.log",
+  "log_sha256": "a3310867c284d0949d7839a0868b301487f701e412de3bdb47fe17ae682d4c0a",
+  "observations": [
+    "Log contains three pytest progress dots followed by Windows fatal exception: access violation, without a pytest failure summary or assertion result.",
+    "Fatal thread frames name tokenize._generate_tokens_from_c_tokenizer, inspect.getblock/getsourcelines and FastAPI _extract_endpoint_context.",
+    "The caller thread was waiting inside TestClient/httpx POST for tests/test_it_requests_ui130.py:170, the initial h.create() in test_revoked_management_removes_queue_detail_history_and_retry.",
+    "The management grant revocation at line173 and privacy/retry assertions at lines174–181 had not yet been reached in this test.",
+    "No completed HTTP response, product Problem/validation error, AssertionError or product implementation frame is recorded for the interrupted call.",
+    "Current local FastAPI source invokes endpoint-context extraction on normal HTTP entry, before request-body reading; extraction is not evidence that the endpoint itself raised an error."
+  ],
+  "assessment": "The evidence supports classifying this run as an interpreter/native-process interruption. It does not establish a functional failure of the TI workflow or of revocation, and it also does not prove that the unfinished test passes. Preserve the interrupted log and rerun the same frozen cases in fresh, smaller processes.",
+  "uncertainty": [
+    "The exact native root cause is not established by this text log; do not attribute it conclusively to WMI, memory pressure, application concurrency or FastAPI itself.",
+    "The dumped FastAPI line641 does not align with the inspected on-disk function at lines167–187; the log alone is insufficient to establish exact loaded-code/line provenance. The interpretation above relies on named frames plus separately inspected current source.",
+    "The three progress dots should not replace JUnit evidence identifying completed test cases."
+  ],
+  "recommended_validation": [
+    "Run the failing named case and remaining TI cases in separate small processes, keeping product and dependency code unchanged.",
+    "Keep full assertions for current permissions, queue/detail/history privacy and exact receipt retry after revocation.",
+    "If the interruption repeats, record interpreter and dependency versions and a complete native dump before attributing a defect; do not monkeypatch endpoint-context extraction to obtain a pass."
+  ],
+  "product_defect_established": false,
+  "interrupted_case_passed": false,
+  "read_only": true,
+  "runtime_or_dependency_edits": false,
+  "tests_started": false,
+  "browser_or_production_access": false,
+  "resolution": {
+    "status": "rerun_passed",
+    "product_and_dependency_code_unchanged": true,
+    "method": "Same TI cases rerun in separate fresh Python processes, retaining full assertions.",
+    "evidence": [
+      "ui138-regression-it-journeys-1.xml",
+      "ui138-regression-it-journeys-2.xml",
+      "ui138-regression-it-journeys-3.xml",
+      "ui138-regression-it-journeys-4.xml",
+      "ui138-regression-it-journeys-5.xml",
+      "ui138-regression-it-preservation-1.xml",
+      "ui138-regression-it-preservation-2.xml"
+    ],
+    "native_root_cause_remains_unestablished": true
+  }
+}
