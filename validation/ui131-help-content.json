@@ -1,0 +1,110 @@
+{
+  "professionalcontacts": {
+    "en": {
+      "title": "Professional contacts",
+      "intro": "Open a person’s profile to consult their available work contacts. Check the person’s name and public profile identifier before opening a contact shortcut.",
+      "sections": [
+        [
+          "Register a contact",
+          "The person or an authorised administrator can edit professional contacts. Enter a work email, a WhatsApp number with country code or a Microsoft Teams sign-in address. Fields are optional and are not filled from recovery or HR details."
+        ],
+        [
+          "Choose visibility",
+          "Each contact starts private and disabled. Enable only a channel that should be available. Company visibility allows eligible company members to consult it; private values remain restricted to the person and authorised administrators."
+        ],
+        [
+          "Open a shortcut",
+          "Opening Email, WhatsApp or Teams rechecks current access and visibility. The external application may require sign-in. Wavelink does not send a message automatically. A shared number or Teams address is not proof that the external account belongs to that person."
+        ],
+        [
+          "Save and cancel",
+          "Save contacts reports the saved result. If another edit has changed the profile, review the current version before trying again. Cancel editing warns before discarding unsaved changes. Closing a record does not sign out."
+        ],
+        [
+          "Backups",
+          "A complete database copy may contain private contact values and is restricted to authorised administrators. Selective workspace copies remove contact values, visibility settings and their history from the new copy."
+        ]
+      ]
+    },
+    "pt": {
+      "title": "Contatos profissionais",
+      "intro": "Abra o perfil da pessoa para consultar os contatos de trabalho disponíveis. Confira o nome e o identificador público do perfil antes de usar um atalho.",
+      "sections": [
+        [
+          "Cadastrar um contato",
+          "A própria pessoa ou um administrador autorizado pode editar os contatos profissionais. Informe o e-mail de trabalho, o número do WhatsApp com código do país ou o endereço de acesso ao Microsoft Teams. Os campos são opcionais e não são preenchidos com dados de recuperação de senha ou do RH."
+        ],
+        [
+          "Escolher a visibilidade",
+          "Cada contato começa privado e desativado. Ative apenas o canal que deve ficar disponível. A visibilidade para a empresa permite a consulta por membros autorizados; valores privados ficam restritos à própria pessoa e aos administradores autorizados."
+        ],
+        [
+          "Usar os atalhos",
+          "Ao abrir E-mail, WhatsApp ou Teams, o sistema confere novamente o acesso e a visibilidade. O aplicativo externo pode pedir login. O Wavelink não envia mensagens automaticamente. O número ou endereço cadastrado não comprova a titularidade da conta externa."
+        ],
+        [
+          "Salvar e cancelar",
+          "Salvar contatos informa o resultado da gravação. Se outra edição tiver alterado o perfil, confira a versão atual antes de tentar novamente. Cancelar edição avisa antes de descartar alterações não salvas. Fechar um registro não encerra sua sessão."
+        ],
+        [
+          "Cópias de segurança",
+          "O backup completo pode conter valores privados dos contatos e exige um administrador autorizado. Cópias seletivas de áreas removem da nova cópia os contatos, as opções de visibilidade e seus históricos."
+        ]
+      ]
+    }
+  },
+  "contextdocuments": {
+    "en": {
+      "title": "Documents by item, person and folder",
+      "intro": "Consult documents from the record they belong to. The list uses saved identifiers and your current permissions; it does not infer links from names.",
+      "sections": [
+        [
+          "Equipment and inventory",
+          "Open an item and its documents section. Authorised certificate files and original sources retained in that item’s maintenance orders appear with their source and exact revision. Existing records remain the source of truth."
+        ],
+        [
+          "People and private HR records",
+          "Open a person’s profile to consult available HR documents. Only the person or an authorised HR document manager can access them. Upload, review and expiration are separate states; an uploaded file is not automatically verified."
+        ],
+        [
+          "Original documents and folders",
+          "Open an original source to view its exact saved revision. Follow the folder path to the root, folder or subfolder. Folder names organise files; they do not grant access. Older revisions are not replaced by the latest revision."
+        ],
+        [
+          "Return and download",
+          "Use the return action to go back to the originating item or profile. Downloads check access again. If a record is removed or access changes, the application may refuse the download even if the list was already open."
+        ],
+        [
+          "Scope",
+          "Private HR attachments are not copied into the operational original-file library. Documents without a saved link to the item or person are not included. This view does not create new folder associations."
+        ]
+      ]
+    },
+    "pt": {
+      "title": "Documentos por item, pessoa e pasta",
+      "intro": "Consulte os documentos a partir do registro a que pertencem. A lista usa os identificadores salvos e suas permissões atuais; não cria vínculos por semelhança de nomes.",
+      "sections": [
+        [
+          "Equipamentos e inventário",
+          "Abra o item e sua seção de documentos. Os certificados permitidos e as fontes originais preservadas nas ordens de manutenção desse item aparecem com a origem e a revisão exata. Os registros existentes continuam sendo a fonte da informação."
+        ],
+        [
+          "Pessoas e documentos privados do RH",
+          "Abra o perfil da pessoa para consultar os documentos de RH disponíveis. O acesso depende da própria pessoa ou da permissão de gestão documental. Envio, conferência e vencimento são situações diferentes; um arquivo enviado não está automaticamente conferido."
+        ],
+        [
+          "Documentos originais e pastas",
+          "Abra uma fonte original para consultar a revisão exata que foi vinculada. Use o caminho de pastas para acessar a raiz, a pasta ou a subpasta. As pastas organizam os arquivos; não concedem acesso. Revisões antigas não são substituídas pela revisão mais recente."
+        ],
+        [
+          "Voltar e baixar",
+          "Use a ação de retorno para voltar ao item ou perfil de origem. O download confere novamente as permissões. Se o registro for removido ou o acesso mudar, o download pode ser recusado mesmo com a lista já aberta."
+        ],
+        [
+          "Abrangência",
+          "Anexos privados do RH não são copiados para a biblioteca operacional de originais. Documentos sem vínculo salvo com o item ou a pessoa não aparecem nessa consulta. A visualização não cria novas associações a pastas."
+        ]
+      ]
+    }
+  }
+}

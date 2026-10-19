@@ -1,0 +1,84 @@
+{
+  "area":"Visual compartilhado e revisão independente UI131",
+  "status":"implementado_testado_estaticamente_sem_navegador",
+  "runtime":"work/runtime-ui131",
+  "owned_files":["app/static/ui131_visual.css","tests/test_ui131_visual.cjs","tests/test_ui131_profile_navigation.cjs"],
+  "product_sha256":"dd83b9b6063d45ee318e690c17f81df632faf09e9ea825aff78a179869317c69",
+  "test_sha256":"c133500dd1bd0d559ad58438333fd6b367f9d43c6401f7e2e296974862db59c5",
+  "profile_navigation_test_sha256":"eca868f32d348f301af581ae27b4dd71ca304d9bbf89b5f800c657b56d89ab6e",
+  "integration":"Carregar ui131_visual.css após as folhas dos componentes. Root controla index/fleet, versão e cache. Nenhuma alteração deste agente em JS/CSS dos demais agentes, app.js, HTML compartilhado ou locale.",
+  "changes":[
+    {"area":"Pessoas e perfis","result":"Identidade completa com quebra de linha; nomes clicáveis sublinhados; metadados maiores; navegação de seções com44px e seleção por borda/negrito/sublinhado; preservação de arte, emblemas e tipografia familiar."},
+    {"area":"Contatos profissionais","result":"Hierarquia de rótulo, valor e visibilidade; valores longos quebram sem ocultar partes; links identificados por sublinhado; foco e controles legíveis. A folha não decide compartilhamento nem ativa contatos."},
+    {"area":"Documentos relacionados","result":"Cabeçalho separado, títulos legíveis, tipo e fatos agrupados, detalhes progressivos com alvo44px, ações espaçadas. Mantém diferenças entre validade, conferência, revisão e origem."},
+    {"area":"Documentos originais","result":"Pasta selecionada e caminho reconhecíveis por borda e sublinhado; controles44px; metadados legíveis; nomes e caminhos longos com quebra; ações ajustadas ao celular."},
+    {"area":"TI","result":"Separação entre cabeçalho e conteúdo, navegação selecionada evidente, números alinhados, metadados maiores e cartões móveis com espaçamento apropriado. Contagens permanecem vindas do servidor."},
+    {"area":"RH e Operações","result":"Ações e fatos com respiro; seleção de pessoas/ordens/ocorrências também indicada por sublinhado, sem depender exclusivamente de cor. Sem alteração no modelo dos registros ou estados."}
+  ],
+  "confirmed_css_problems":[
+    {"before":"visual_ui124.css impunha14px!important aos campos e anulava os16px dos componentes móveis.","after":"16px até700px somente nas raízes confirmadas, sem atingir checkbox/radio/hidden.","proof":"Teste confere declaração, mesma camada e especificidade maior do seletor novo."},
+    {"before":"visual_ui124.css impunha42px!important nos botões e anulava44px dos componentes.","after":"Mínimo44px nas áreas e formulários examinados; nenhuma regra global para .btn.","proof":"Teste confere a precedência específica na camada compartilhada."},
+    {"before":"A tabela compartilhada impunha14px de padding nas células, mesmo depois da transformação do TI em cartões móveis.","after":"Padding10px 0 até640px somente na tabela TI.","proof":"Regra da folha anterior e override específico são verificados pelo teste."}
+  ],
+  "contrast":{
+    "method":"Luminância sRGB e razão (Lclaro+0,05)/(Lescuro+0,05) calculadas a partir dos tokens reais da folha.",
+    "pairs":7,
+    "minimum_text_ratio":5.61,
+    "focus_ratio":5.64,
+    "focus_context":"Contorno3px com espaçador branco2px, outline-offset3px e alternativa Highlight em forced-colors.",
+    "details":"work/ui131-visual-checks.json",
+    "limits":"Pares sólidos declarados, sem medição de pixels de screenshots, imagens, autofill ou todas as cores herdadas do aplicativo."
+  },
+  "tests":[
+    {"command":"node work/runtime-ui131/tests/test_ui131_visual.cjs","result":"PASS","checks":613,"kind":"Análise estática estrutural, cascata, especificidade, tokens e contraste; não613 jornadas de usuário."},
+    {"command":"node work/runtime-ui131/tests/test_ui130_it_ui.cjs","result":"PASS","checks":266,"kind":"Regressão dos handlers reais TI, adaptador DOM e fixture HTTP fictícia sobre runtime131."},
+    {"command":"node work/runtime-ui131/tests/test_ui131_contacts_ui.cjs","result":"PASS","checks":68,"kind":"Reexecução independente após correção de resultado incerto; handlers reais, fixture HTTP local, sem abrir aplicativos externos."},
+    {"command":"node work/runtime-ui131/tests/test_ui131_context_documents.cjs","result":"PASS","checks":84,"kind":"Reexecução final do teste de jornadas documentais do agente responsável, sem navegador."},
+    {"command":"node work/runtime-ui131/tests/test_ui131_profile_navigation.cjs","result":"PASS","checks":38,"kind":"Handler real de navegação por seções do perfil executado em VM. Preserva rota do perfil, seleciona um único aria-current e move foco para a seção, sem navegador."},
+    {"command":"python -X utf8 work/generate_ui131_visual_previews.py","result":"PASS","kind":"Quatro pares de HTML real com mesmo DOM antes/depois e folhas locais existentes; sem render engine."}
+  ],
+  "independent_review":[
+    {
+      "finding":"Contatos: troca de conta durante POST guardava corpo/op_id pendente sem marcar resultado incerto. Retomar podia permitir editar valores enquanto um envio anterior permanecia preparado.",
+      "owner":"qualidade_ti",
+      "fix":"syncSession marca uncertain quando existe request, desliga busy e mantém corpo/op_id; campos ficam bloqueados para conferir o envio original. HTTP5xx/408 também preservam a operação.",
+      "evidence":"test_ui131_contacts_ui.cjs: POST atrasado, troca e retorno de conta, campos bloqueados, repetição do corpo/op_id idênticos e503. Reexecutado pelo revisor com68 verificações aprovadas.",
+      "status":"corrigido_e_retestado"
+    },
+    {
+      "finding":"Contexto de documentos: preservar a rota exata do item ao voltar da biblioteca, inclusive hub explícito quando presente.",
+      "clarification":"A forma curta #asset/<id> já é válida em assets.js; não foi confirmada falha do roteador. A melhoria preserva o contexto mais completo.",
+      "owner":"documentos_pessoas",
+      "status":"integrado_pelo_dono_testes_documentais_aprovados"
+    },
+    {
+      "finding":"Prévia documental PT ainda mostrava Document details no summary.",
+      "owner":"documentos_pessoas/root",
+      "fix":"Root integrou Detalhes do documento no dicionário. Teste real e prévia regenerados contra as traduções finais.",
+      "status":"corrigido_e_retestado"
+    },
+    {
+      "finding":"Leitura independente de professional_contacts.py, professional_contacts.js, context_documents.py, context_documents_api.py e documentos_context.js.",
+      "result":"Contatos não derivam e-mail privado/RH; link revalida acesso; documentos reutilizam permissões e vínculos por ID; download confere tamanho/hash. Nenhuma outra falha comprovada nesta leitura.",
+      "limit":"Não equivale a auditoria exaustiva de segurança ou teste em produção."
+    }
+  ],
+  "previews":{
+    "index":"work/ui131-visual-previews/index.html",
+    "manifest":"work/ui131-visual-preview-manifest.json",
+    "generator":"work/generate_ui131_visual_previews.py",
+    "extraction":"TI: test_ui130_it_ui.cjs abre AJIT com respostas HTTP fictícias e captura seu HTML de lista/detalhe; generator extrai section.it-workspace. Contatos: test_ui131_contacts_ui.cjs monta AJProfessionalContacts e salva seu HTML real; generator adiciona somente o slot section.card.wl-professional-contacts conferido em recognition_workspace.js. Documentos: test_ui131_context_documents.cjs chama AJContextDocuments.mount e serializa os nós produzidos. Nenhum template de produto foi redesenhado ou inventado para a prévia.",
+    "components":["TI: fila","TI: detalhe","Contatos profissionais","Documentos relacionados"],
+    "basis":"HTML do componente real emitido pelos testes com dados fictícios; mesmo DOM empresarial em ambos os lados, com e sem ui131_visual.css.",
+    "label":"Prévias HTML, não screenshots. Para componentes novos, antes significa estilos base aplicados ao novo markup, não uma tela histórica de produção.",
+    "mobile":"Alternância de largura390px nos iframes estáticos, não prova de aparelho ou navegador.",
+    "portability":"Pasta autocontida: copiar ui131-visual-previews inteira, incluindo styles/ e assets/. Folhas e imagens referenciadas foram copiadas das fontes reais e os caminhos locais conferidos; nenhum recurso de internet foi adicionado."
+  },
+  "limits":[
+    "Nenhum Chrome, navegador automatizado, screenshot, produção, login, e-mail ou infraestrutura foi usado.",
+    "Ainda é necessária inspeção visual integrada de espaçamento/overflow/celular, foco e teclado reais, leitor de tela e estados desabilitados no navegador.",
+    "CSS novo não oculta funcionalidades, não altera permissões, não introduz imagens/fontes externas e não troca as marcas Wavelink/AJ/Corcovado.",
+    "Dados, usuário administrador e usuário temporário de produção não foram alterados."
+  ],
+  "pending_product_edits":false
+}

@@ -1,0 +1,52 @@
+[
+  {
+    "group": "new-features",
+    "exit_code": 0,
+    "seconds": 176.17,
+    "xml": "ui131-final-new-features.xml",
+    "tests": 45,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0
+  },
+  {
+    "group": "it-integration",
+    "exit_code": 0,
+    "seconds": 135.88,
+    "xml": "ui131-final-it-integration.xml",
+    "tests": 36,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0
+  },
+  {
+    "group": "documents-backups",
+    "exit_code": 0,
+    "seconds": 234.7,
+    "xml": "ui131-final-documents-backups.xml",
+    "tests": 66,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0
+  },
+  {
+    "group": "hr-weekly",
+    "exit_code": 0,
+    "seconds": 181.58,
+    "xml": "ui131-final-hr-weekly.xml",
+    "tests": 17,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0
+  },
+  {
+    "group": "hr-security",
+    "exit_code": 0,
+    "seconds": 265.59,
+    "xml": "ui131-final-hr-security.xml",
+    "tests": 34,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0
+  }
+]

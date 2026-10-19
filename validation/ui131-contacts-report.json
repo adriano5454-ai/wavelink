@@ -1,0 +1,116 @@
+{
+  "status": "Product sources frozen; local focused checks passed; root final integrated suite pending",
+  "scope": "Local only; no Chrome, production, external links or messages.",
+  "files": [
+    "app/professional_contacts.py",
+    "app/recognition.py",
+    "app/recognition_api.py",
+    "app/static/professional_contacts.js",
+    "app/static/recognition_workspace.js",
+    "app/static/recognition_workspace.css"
+  ],
+  "functionality": [
+    "Independent optional work email, international WhatsApp and Teams sign-in address. No identity/recovery/HR fallback.",
+    "Explicit per-field private/company visibility and enabled/disabled state. Owner and current administrator edit; current eligible company members see only shared and enabled values.",
+    "Every shortcut click rechecks current server access and contact state, returns only a safe fixed-protocol destination; no automatic message.",
+    "User UUID identity distinguishes homonyms. Contact access is denied for inactive/deleted/suspended or vessel-restricted accounts.",
+    "Optimistic version and account-scoped SHA256 idempotency receipt. Retry returns current authorized state and never restores revoked sharing. Normalized no-op preserves version/audit.",
+    "Audit records actor, target, date and changed field names without historical contact values. Receipts store fingerprints, not values.",
+    "Contact editing keeps explicit draft in current tab by account/profile. Cancellation asks when changed; uncertain sends keep their operation and fields locked across temporary account changes.",
+    "Profile navigation scrolls/focuses local sections without changing profile route; current section is explicit. Existing biography submit now guards actor/session/route before and after async file read, before request and before applying response."
+  ],
+  "tests": [
+    {
+      "file": "tests/test_ui131_professional_contacts.py",
+      "unique_cases": 20,
+      "result": "20 unique cases passed across initial/focused executions. Initial run:14 passed and1 cache-header assertion mismatch; corrected header assertion and reran3 cases, then no-op retry1 case. Final downgrade guard3/3 passed in15.10s. Final integrated full suite remains parent responsibility.",
+      "evidence": [
+        "work/ui131-contacts-backend-tests.xml",
+        "work/ui131-contacts-focused-tests.xml",
+        "work/ui131-contacts-noop-tests.xml",
+        "work/ui131-contacts-downgrade-tests.xml"
+      ]
+    },
+    {
+      "file": "tests/test_ui131_contacts_ui.cjs",
+      "result": "80 checks passed using actual HTTP fixture and real component handlers in isolated DOM adapter",
+      "evidence": "tests/fixtures/ui131_contacts_api_fixture.json"
+    },
+    {
+      "file": "tests/test_ui131_profile_save_session.cjs",
+      "result": "29 checks passed, controlled async file/POST response and actual legacy submit callback"
+    },
+    {
+      "command": "node --check app/static/recognition_workspace.js",
+      "result": "Passed"
+    },
+    {
+      "file": "tests/fixtures/ui130_recognition_ensure.py",
+      "result": "Exact UI130 ensure function executed against fictional legacy/new snapshots, not a claim to have run the entire old application."
+    }
+  ],
+  "privacy": {
+    "defaults": "Empty/private/disabled",
+    "reads": "Current named approved accounts; company fields only unless own/admin",
+    "links": "Current server ACL on each click, no free-form URLs",
+    "audit": "No previous contact values",
+    "backups": "Root integrates complete-backup admin-only guard and selected-transfer wipe/recognized marker",
+    "downgrade_protection": {
+      "marker": "recognition_meta.schema_version=2",
+      "activation": "Atomically on first successful contact save, including accepted normalized no-op. Validation, authorization or persistence failure rolls back marker. Databases never saved through contacts remain schema1.",
+      "compatibility": "UI131 accepts recognition1/2. Actual UI130 ensure function rejects schema2 before access. Schema2 with missing contact tables fails closed and does not recreate them.",
+      "restore": "Complete backup must preserve recognition marker and all contact tables. Selected transfer preserves marker2/schema, empties contact values/audit/receipts and keeps identities; UI131 opens it.",
+      "rollback": "After contact save, code-only UI130 downgrade is blocked. Recover older version only with matching complete pre-contact backup and code; do not manually lower marker."
+    }
+  },
+  "references": [
+    {
+      "title": "WhatsApp — Como usar o recurso clique para conversa",
+      "url": "https://faq.whatsapp.com/5913398998672934/?locale=pt_BR",
+      "used": "International-format number; wa.me digits only; no prefilled message."
+    },
+    {
+      "title": "Microsoft Learn — Deep link to Teams chat",
+      "url": "https://learn.microsoft.com/en-us/microsoftteams/platform/concepts/build-and-test/deep-link-teams",
+      "used": "HTTPS chat link with a single explicit UserPrincipalName in users; no message parameter."
+    },
+    {
+      "title": "Microsoft Learn — Configure deep links",
+      "url": "https://learn.microsoft.com/en-us/microsoftteams/platform/concepts/deep-links",
+      "used": "HTTPS Teams links instead of unsupported msteams:https construction."
+    }
+  ],
+  "terminology": {
+    "E-mail profissional": "Endereço cadastrado para contato de trabalho, independente do e-mail de recuperação.",
+    "Identificador do Teams": "Endereço usado para entrar no Microsoft Teams; pode diferir do e-mail profissional.",
+    "Visível para a empresa": "Contato ativo que pessoas com acesso aos perfis podem consultar.",
+    "Somente você e administradores": "Valor não exibido aos colegas. Administradores autorizados podem consultá-lo e corrigir o cadastro.",
+    "Atalho desativado": "Valor mantido no cadastro, sem acesso ao atalho ou ao valor por colegas."
+  },
+  "limits": [
+    "No graphical browser or phone validation performed; DOM is not a browser screenshot.",
+    "No real WhatsApp, email or Teams account existence, authentication or delivery tested.",
+    "Drafts live in current tab memory and may be lost on reload; UI and unload guard explain this.",
+    "UI preview is component-produced HTML, explicitly not a screenshot of live production.",
+    "User data, passwords, HR contacts and current production temporary account untouched."
+  ],
+  "integration": [
+    "Root loads professional_contacts.js before recognition_workspace.js in both locales and asset cache.",
+    "Root owns backup/selected export integration for the4newtables and help topic.",
+    "Document agent mount slot integrated at #profile-documents-context; document access remains in its separate API.",
+    "Translations: work/ui131-contacts-translations.json.",
+    "Visual markup: work/ui131-contacts-markup.html."
+  ],
+  "hashes": {
+    "app/professional_contacts.py": "1dc129d67818f2303bdb53cbdeb5602afa9c6645bfbb97e7a45efc3f788ec6d2",
+    "app/recognition.py": "0cd26a797c1e528dbb0a66821047d2b4aba3d6d1c2dc4b9fd85931f4a18012d9",
+    "app/recognition_api.py": "ba9ba2faa589c3b3734797825401f8cb10e3aec0f53bd314372215a11e39c1ed",
+    "app/static/professional_contacts.js": "17f22f947c006d0582a3377364997f149581e6f611f2a94327691acd695b69b5",
+    "app/static/recognition_workspace.js": "629d59bed671a9393f1b0958b3494c67d6495801f444b3e01390c71dd5b3ffb0",
+    "app/static/recognition_workspace.css": "bfa3c2d1d68f6bd68d91a48117e7d99c18ddff0ae5b8278cce32f420cbe2c5f1",
+    "tests/test_ui131_professional_contacts.py": "638eb0429770c7931b9e46db752d67a9b0b1b2cf6f9993c285d22f03dbd298b3",
+    "tests/test_ui131_contacts_ui.cjs": "225ec472c56a24d36fe22e23953320b581a6bb8b7561630276aaa726b3a2237f",
+    "tests/test_ui131_profile_save_session.cjs": "7315b426d860384691ff046b49616b4ce9fe1057958ef6153dfd22cc7c4b9de5",
+    "tests/fixtures/ui130_recognition_ensure.py": "28b5d7c07b6509655a7137d05f2789ee8e005b92e03d04c8054335b2ec65ada4"
+  }
+}

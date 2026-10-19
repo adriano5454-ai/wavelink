@@ -1,0 +1,31 @@
+{
+  "version": "UI131",
+  "implemented_local": [
+    "Contatos profissionais opcionais com visibilidade, atalhos seguros e revisão de acesso.",
+    "Documentos do item e do perfil, revisão exata, pasta/subpasta e retorno.",
+    "Revisão visual direcionada de Pessoas, Documentos, TI e componentes RH.",
+    "Ajuda e navegação em 80 tópicos, com PT-BR e inglês separados."
+  ],
+  "pending": [
+    {
+      "area": "Documentos",
+      "item": "Unificar outras famílias de anexos, como despesas e passagens de serviço, exige regras próprias; os fluxos existentes foram preservados."
+    },
+    {
+      "area": "Revisão visual completa",
+      "item": "Não foi concluída a matriz de 193 vistas / 54 funções por perfil; esta entrega tem escopo e evidência específicos."
+    },
+    {
+      "area": "Tarefas",
+      "item": "Aceite formal separado da ciência de alertas continua pendente."
+    },
+    {
+      "area": "Navegador e produção",
+      "item": "Layouts em navegador, celular, leitor de tela e jornadas autenticadas publicadas não foram executados; trabalho interno solicitado."
+    },
+    {
+      "area": "Dispositivos e dependências",
+      "item": "OCR real, QR físico, instalação/PWA e situações reais offline continuam sem nova evidência nesta rodada."
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "group": "translation-recheck",
+  "exit_code": 0,
+  "seconds": 26.08,
+  "xml": "ui131-final-translation-recheck.xml",
+  "runtime_manifest_sha256": "fccff7664c7b15625f5d8b6a45ebadb93aa8b48469299ab8c5f20eae40e97cf0",
+  "tests": 4,
+  "failures": 0,
+  "errors": 0,
+  "skipped": 0,
+  "reason": "Final addition of one PT-BR storage recovery message and assertions in the existing help tests; no other application behavior changed after the initial new-features group.",
+  "changed_source_files": [
+    "app/localization.py",
+    "tests/test_ui131_help.py"
+  ]
+}

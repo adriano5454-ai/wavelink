@@ -1,0 +1,11 @@
+{
+  "status": "passed",
+  "reviewer": "rh_revisao",
+  "pages": 9,
+  "stylesheets": 40,
+  "all_resources_local": true,
+  "styles_match_sources_with_path_adaptation": true,
+  "no_unsupported_visual_claims_found": true,
+  "no_browser_used": true,
+  "no_source_changes": true
+}

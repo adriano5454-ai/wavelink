@@ -1,0 +1,12 @@
+{
+  "base_commit": "b8e5a7aad47df0874672b1a6406a742b68374b29",
+  "retained_files": 696,
+  "changed_existing": [
+    "DELIVERY_CHECKS.json",
+    "deploy/materialize_runtime.py",
+    "Dockerfile",
+    "README.md"
+  ],
+  "no_files_removed": true,
+  "ui130_original_manifest": "4a815e6be23196cbaf5097fa449998178f63b6a832e96a073e21c42403797835"
+}

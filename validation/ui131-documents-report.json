@@ -1,0 +1,142 @@
+{
+  "version": "UI131",
+  "status": "Implementado e testado localmente; sem validação em navegador ou produção",
+  "scope": "Documentos por vínculos existentes no item, no perfil e nas pastas da biblioteca. Não é um catálogo universal de todos os anexos do aplicativo.",
+  "implemented": [
+    {
+      "area": "Item",
+      "behavior": "Seção Documentos relacionados na ficha do item. Consulta certificados vinculados pelo UUID e as revisões originais congeladas nas ordens de manutenção explicitamente vinculadas ao mesmo item. Não infere relações por nome, série, caixa ou departamento."
+    },
+    {
+      "area": "Perfil",
+      "behavior": "Seção do perfil consulta documentos pessoais existentes no RH, somente para o titular ou quem tem gestão documental. Identificador público resolvido pelo servidor. Validade, conferência, arquivamento e justificativa aparecem separados. Nenhum anexo é copiado para a biblioteca operacional."
+    },
+    {
+      "area": "Original e pasta",
+      "behavior": "Rota #original-files/<UUID> abre a revisão exata, mantém acesso a sua pasta/subpastas e à origem. A consulta não substitui a revisão congelada pela mais recente. Retorno à ficha preserva seção/filtros. Voltar/Avançar da biblioteca preservam consulta e sessão."
+    },
+    {
+      "area": "Download",
+      "behavior": "Usa o helper autenticado existente e as rotas originais de arquivo. O servidor confere a permissão novamente, e o cliente verifica tamanho/SHA-256 e identidade da sessão/rota antes de entregar os bytes ao navegador."
+    },
+    {
+      "area": "Apresentação",
+      "behavior": "PT-BR consistente, datas DD/MM/AAAA sem mudança de fuso; EN preservado. Lista paginada, ações rotuladas, detalhes progressivos, estados textuais e layout móvel em CSS. A verificação não incluiu navegador ou avaliação visual humana."
+    }
+  ],
+  "tests": {
+    "python": {
+      "file": "tests/test_ui131_context_documents.py",
+      "passed": 11,
+      "failed": 0,
+      "seconds": 48.77,
+      "evidence": "work/ui131-documents-tests.xml",
+      "scenarios": [
+        "Rotina de manutenção publicada com referência A → ordem ligada ao item → contexto → subpasta; revisão B posterior não substitui A",
+        "Certificado e original do item baixados com bytes idênticos; dois itens com o mesmo nome não compartilham documentos",
+        "Leituras não alteram dump do banco nem criam cópias; original arquivado mantém vínculo histórico",
+        "Sem certificados.view/originals.view/maintenance.view não há metadados nem contagens dos documentos restritos",
+        "Revogação impede download final de certificado/original/RH",
+        "Pessoa titular e gestor veem documento; outro perfil público não permite leitura nem arquivo",
+        "Recusa de hub errado, anônimo, cabeçalho duplicado e limites inválidos",
+        "Rechecagem da permissão após leitura RH; paginação com desempate por UUID",
+        "Conferir, devolver e rejeitar com justificativa preservam validade independente; arquivamento explícito"
+      ]
+    },
+    "javascript": {
+      "file": "tests/test_ui131_context_documents.cjs",
+      "checks": 84,
+      "passed": true,
+      "scenarios": [
+        "Render do componente real em DOM mínimo com respostas controladas",
+        "Título/identidade literais, PT/EN, datas, conferência e validade",
+        "Endpoint exato e opções de autenticação; tamanho/hash; recusa de acesso e resposta de contexto diferente",
+        "Resultado de leitura e download descartado após troca de página/conta",
+        "Origem é rota interna exata e só serve à mesma sessão; clique vencido não navega",
+        "Paginação e carga/retry sem dados privados em erro",
+        "Back/Forward reais simulados pelas funções de histórico do produto mantêm rota/revisão/filtros/autenticação"
+      ]
+    },
+    "inherited": [
+      {
+        "file": "tests/test_ui130_documents_people.cjs",
+        "checks": 89,
+        "passed": true
+      },
+      {
+        "file": "tests/test_ui127_documents_agent.js",
+        "checks": 127,
+        "passed": true
+      },
+      {
+        "file": "tests/test_ui127_documents_agent_people.js",
+        "checks": 59,
+        "passed": true
+      }
+    ],
+    "syntax": {
+      "javascriptFiles": 4,
+      "passed": true
+    },
+    "notClaimed": "DOM mínimo e TestClient não equivalem a validação visual/E2E no Chrome ou em produção."
+  },
+  "files": [
+    "app/context_documents.py",
+    "app/context_documents_api.py",
+    "app/static/documentos_context.js",
+    "app/static/documentos_context.css",
+    "app/static/original_library.js",
+    "app/static/assets.js",
+    "app/static/asset_workspace.js",
+    "tests/test_ui131_context_documents.py",
+    "tests/test_ui131_context_documents.cjs"
+  ],
+  "coordinatorIntegrations": [
+    "Registro das APIs no servidor e política de rotas",
+    "Inclusão dos JS/CSS no índice EN/PT e cache de recursos",
+    "Dicionário e mensagens backend PT",
+    "Ajuda /help/topics/contextdocuments",
+    "Slot de perfil em recognition_workspace.js pelo agente de contatos"
+  ],
+  "preservation": {
+    "schemaChanges": false,
+    "dataMigration": false,
+    "productionAccess": false,
+    "messagesSent": false,
+    "realDataChanged": false,
+    "authCleared": false
+  },
+  "limitations": [
+    "Não cria relações documentais novas nem oferece vínculos manuais arbitrários; expõe relações já existentes e explícitas.",
+    "Documentos RH continuam no seu domínio privado; não há árvore de pastas RH e não foi inventada uma.",
+    "Anexos de despesas, passagens de turno, toolbox, TI e outras famílias ainda não foram unificados neste percurso; podem continuar acessíveis nos próprios registros.",
+    "Certificados têm suas próprias revisões, arquivos e permissões; uma pasta da biblioteca não é inventada para eles.",
+    "Não houve Chrome, celular real, produção, envio a terceiros ou alteração dos dados/usuário temporário.",
+    "A revisão visual completa das 193 telas e os 54 percursos não foi concluída por este módulo."
+  ],
+  "artifacts": {
+    "markup": "work/ui131-documents-markup.html",
+    "translations": [
+      "work/ui131-documents-translations.json",
+      "work/ui131-documents-translations-extra.json"
+    ]
+  },
+  "initialFailures": [
+    {
+      "issue": "Fixture tentava criar pasta com barra no nome",
+      "classification": "Entrada de teste inválida recusada corretamente pelo produto",
+      "resolution": "Fixture passou a usar nome simples Fontes revisadas; nenhuma regra de validação foi alterada"
+    }
+  ],
+  "sha256": {
+    "app/context_documents.py": "25afa674fe48e6446d0a22d9ca3fdb6e73abc83896574dd434a9b557556f3ec5",
+    "app/context_documents_api.py": "9705c262258bded5a587db0ac3adaf9c5487444f73f0e6015da8449c22593409",
+    "app/static/documentos_context.js": "7b9700cfda98e99c9f3d399b3c6c4634d278f5960d790d6775b385a6251c1c32",
+    "app/static/documentos_context.css": "363a0fab7ce81eac7c7a59de005e001b4147b96dcda70d0f32d16ec3298584b8",
+    "app/static/original_library.js": "752c5c05d65230628e2eaa6295ba460930d5e82ed801648250991cf758fa059d",
+    "app/static/assets.js": "16ba58fa08479448ea2df48c4a666c69637926c4ac02258446642795505f0c49",
+    "app/static/asset_workspace.js": "d8ee49cf77ed9eea08535d70505c98142f185ef1842ee0f0a8112e956b5fbea5",
+    "tests/test_ui131_context_documents.py": "d2bf4ec5bd7590943a935c51346ea88e9273b3217bd4dd8df5727800831e16c3",
+    "tests/test_ui131_context_documents.cjs": "8451b62fc0e1e4e22fbfe2549fd078463cc9ccd1b14c91bddba24e4c9ba6f424"
+  }
+}

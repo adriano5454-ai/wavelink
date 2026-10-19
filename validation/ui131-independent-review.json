@@ -1,0 +1,63 @@
+{
+  "review": "UI131 revisão independente curta de contatos, backup e transferência",
+  "mode": "Somente leitura do produto; sem Chrome, publicação, mensagens ou dados reais.",
+  "files": [
+    "app/professional_contacts.py",
+    "app/export_policy.py",
+    "app/project_modules.py"
+  ],
+  "supportingReads": [
+    "app/recognition.py",
+    "app/recognition_api.py",
+    "app/membership_policy.py",
+    "app/task_access.py",
+    "tests/test_ui131_professional_contacts.py",
+    "tests/test_ui131_integration_privacy.py"
+  ],
+  "findings": [],
+  "conclusion": "Nenhuma nova falha de privacidade/identidade confirmada no escopo revisado. Não é conclusão exaustiva de segurança do sistema.",
+  "checked": [
+    {
+      "area": "Identidade e edição",
+      "evidence": "ProfessionalContacts.people resolve UUID canônico contra usuários atuais/elegíveis; recusa alvos desativados, excluídos ou restritos à embarcação. current só permite edição ao próprio titular ou administrador, com função atual do banco. Não deriva contatos de e-mail de recuperação/RH/login."
+    },
+    {
+      "area": "Visibilidade e links",
+      "evidence": "Campos privados/desativados são substituídos por valores vazios para outros integrantes; links reexecutam people/current. WhatsApp, Teams e mailto têm destinos fixos, parâmetros escapados e dados separados; sem texto pré-preenchido de mensagem. Diretório/feed não são ampliados por esse componente."
+    },
+    {
+      "area": "Concorrência e auditoria",
+      "evidence": "Transação de save confere permissão atual antes de recibos, versão e fingerprint por ator/alvo/operação. Replay retorna visão atual. Auditoria registra somente nomes dos campos alterados, sem valores de contato."
+    },
+    {
+      "area": "Backup completo",
+      "evidence": "has_professional_contacts reconhece valores, auditoria, recibos e tabelas futuras com dados. require_backup verifica a base atual e snapshot congelado antes de autorizar; presença desses dados restringe exportação completa a administrador autorizado."
+    },
+    {
+      "area": "Transferência seletiva",
+      "evidence": "Allowlist exige conjunto de tabelas/marker conhecido antes de mutação. Copia apenas descartável, apaga contatos/auditoria/recibos e metadados privados; recria somente formato público. Usa secure_delete + VACUUM, checa integridade e mantém origem intacta."
+    },
+    {
+      "area": "Compatibilidade",
+      "evidence": "O código lido já grava recognition_meta.schema_version=2 na mesma transação do primeiro save, incluindo operação sem alteração. Recognition.ensure aceita1/2 e exige tabelas de contatos quando marcador2. Versão antiga que só aceita1 recusa a base; resultado executado desse cenário pertence ao agente responsável, não foi reexecutado nesta revisão."
+    }
+  ],
+  "evidenceBoundary": {
+    "executedNewTests": false,
+    "inspectedTests": [
+      "test_ui131_professional_contacts.py",
+      "test_ui131_integration_privacy.py"
+    ],
+    "note": "Asserções dos testes foram lidas para conferir cobertura; os resultados executados são dos respectivos responsáveis. Esta etapa não duplicou TestClient nem testou aplicações externas."
+  },
+  "remainingVerification": [
+    "Concluir teste do marcador antidowngrade e regressão integrada sobre a mesma fonte final, pelo agente responsável/coordenador.",
+    "Links de WhatsApp/Teams/e-mail foram construídos e validados localmente; nenhuma mensagem, autenticação externa ou comportamento de aplicativo externo foi testado.",
+    "Validação visual no navegador, dispositivos reais e produção permanece separada."
+  ],
+  "sha256Reviewed": {
+    "app/professional_contacts.py": "1dc129d67818f2303bdb53cbdeb5602afa9c6645bfbb97e7a45efc3f788ec6d2",
+    "app/export_policy.py": "cea33b2f5955304bc0abd078b4c4da7d1b7df4c28cd7c202446356e055a1a373",
+    "app/project_modules.py": "ddbd86dca946db9947f59025681f6e74ad6eed367542b756aac29a0ab3f7c5b9"
+  }
+}

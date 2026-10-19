@@ -1,0 +1,83 @@
+{
+  "scope": "Static analysis of exact CSS rules and authored colour pairs; not computed browser styles",
+  "checks": 613,
+  "contrast": [
+    {
+      "purpose": "Texto principal",
+      "foreground": "#173d4b",
+      "background": "#ffffff",
+      "ratio": 11.63,
+      "minimum": 4.5,
+      "pass": true
+    },
+    {
+      "purpose": "Texto em superfície suave",
+      "foreground": "#173d4b",
+      "background": "#edf4f7",
+      "ratio": 10.46,
+      "minimum": 4.5,
+      "pass": true
+    },
+    {
+      "purpose": "Metadados",
+      "foreground": "#4c6471",
+      "background": "#ffffff",
+      "ratio": 6.23,
+      "minimum": 4.5,
+      "pass": true
+    },
+    {
+      "purpose": "Metadados em superfície suave",
+      "foreground": "#4c6471",
+      "background": "#edf4f7",
+      "ratio": 5.61,
+      "minimum": 4.5,
+      "pass": true
+    },
+    {
+      "purpose": "Links",
+      "foreground": "#086775",
+      "background": "#ffffff",
+      "ratio": 6.55,
+      "minimum": 4.5,
+      "pass": true
+    },
+    {
+      "purpose": "Navegação selecionada",
+      "foreground": "#086775",
+      "background": "#edf4f7",
+      "ratio": 5.89,
+      "minimum": 4.5,
+      "pass": true
+    },
+    {
+      "purpose": "Indicador de foco com espaçador branco",
+      "foreground": "#965900",
+      "background": "#ffffff",
+      "ratio": 5.64,
+      "minimum": 3,
+      "pass": true
+    }
+  ],
+  "known_cascade_fixes": [
+    {
+      "component": "Mobile text fields",
+      "before": "14px important from UI124",
+      "after": "16px at <=700px with same-layer scoped important selector"
+    },
+    {
+      "component": "Scoped action buttons",
+      "before": "42px important from UI124",
+      "after": "44px minimum"
+    },
+    {
+      "component": "IT mobile table cards",
+      "before": "14px cell padding imposed by shared table rule",
+      "after": "10px 0 at <=640px inside IT only"
+    }
+  ],
+  "limitations": [
+    "No rendered pixels, layout engine, browser keyboard, assistive technology or physical mobile verification.",
+    "Contrast samples cover explicit solid foreground/background pairs. Images, other themes, browser autofill and every inherited status colour need visual integration checks."
+  ]
+}

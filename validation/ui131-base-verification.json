@@ -1,0 +1,18 @@
+{
+  "commit": "b8e5a7aad47df0874672b1a6406a742b68374b29",
+  "upstream": "UI130",
+  "manifest_sha256": "4a815e6be23196cbaf5097fa449998178f63b6a832e96a073e21c42403797835",
+  "files": 696,
+  "mismatches": [],
+  "remote_blob_verified": [
+    "DEPLOYMENT_FILES.json",
+    "deploy/apply_ui130.py",
+    "Dockerfile",
+    "deploy/materialize_runtime.py"
+  ],
+  "published_this_turn": false,
+  "final_read_only_recheck": {
+    "commit": "b8e5a7aad47df0874672b1a6406a742b68374b29",
+    "unchanged": true
+  }
+}

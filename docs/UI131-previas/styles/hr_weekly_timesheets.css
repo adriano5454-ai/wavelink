@@ -1,0 +1,81 @@
+/* UI129 weekly actual hours: scoped, keyboard-accessible, responsive. */
+.hr-weekly,.hw-project-admin,.hw-project-fields{min-width:0;max-width:100%;color:var(--text,#152b3b)}
+.hr-weekly p,.hw-project-fields p{line-height:1.5}
+.hw-period,.hw-selection{display:flex;flex-wrap:wrap;gap:.75rem 1rem;align-items:center;margin:.9rem 0}
+.hw-period .field{max-width:16rem;margin:0}.hw-period p{margin:0;font-weight:650}.hw-period .btn{align-self:flex-end}
+.hw-common{border:1px solid var(--border,#b9c7d3);border-radius:.65rem;padding:.8rem;margin:1rem 0;background:var(--panel,#f4f8fb)}
+.hw-common>summary{font-weight:650;cursor:pointer;min-height:1.7rem}.hw-common-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.8rem;margin-bottom:.85rem}
+.hw-common-field label{display:flex;gap:.5rem;align-items:center}.hw-common-field>label+label{margin-top:.35rem}.hw-common-field input:not([type=checkbox]),.hw-common-field select{width:100%;min-width:0}
+.hw-selection>label,.hw-inline-check{display:flex;gap:.5rem;align-items:center}.hw-selection input,.hw-day-select input,.hw-inline-check input,.hw-approver input,.hw-common-field input[type=checkbox]{flex:0 0 auto;width:1.15rem;height:1.15rem}
+.hw-table-wrap{max-width:100%;overflow:auto;border:1px solid var(--border,#b9c7d3);border-radius:.65rem;overscroll-behavior-inline:contain}
+.hw-table{width:100%;border-collapse:collapse;table-layout:fixed;min-width:760px}.hw-table thead th{font-size:.83rem;text-align:left;background:var(--panel,#f0f5f9);padding:.75rem .5rem;border-bottom:2px solid var(--border,#b9c7d3)}
+.hw-table thead th:nth-child(1){width:16%}.hw-table thead th:nth-child(2){width:10%}.hw-table thead th:nth-child(3){width:20%}.hw-table thead th:nth-child(4){width:20%}.hw-table thead th:nth-child(5){width:17%}.hw-table thead th:nth-child(6){width:17%}
+.hw-table td,.hw-table tbody th{vertical-align:top;padding:.7rem .45rem;text-align:left;border-bottom:1px solid var(--border,#c6d1db);overflow-wrap:anywhere}
+.hw-table .hw-day-add td{padding:.1rem .45rem .7rem}.hw-table .hw-day-add .btn{white-space:normal;text-align:left}
+.hw-field{display:flex;flex-direction:column;gap:.35rem;min-width:0}.hw-field>span{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%)}
+.hw-field input,.hw-field select,.hw-field textarea{width:100%;max-width:100%;min-width:0;font:inherit;font-size:.88rem;box-sizing:border-box}
+.hw-field textarea{resize:vertical}.hw-day-select{display:flex;gap:.45rem;align-items:center;font-weight:650;line-height:1.4}.hw-table th small{display:block;line-height:1.4;margin-top:.4rem;font-weight:400}
+.hw-notes>summary{cursor:pointer;font-size:.9rem;min-height:2rem}.hw-notes[open] .hw-field>span{position:static;width:auto;height:auto;clip-path:none}.hw-locked{background:var(--panel,#f2f5f7)}
+.hw-project-status{margin-top:1rem;border-top:1px solid var(--border,#b9c7d3);padding-top:.5rem}.hw-project-status ul,.hw-project-list{list-style:none;padding:0;margin:.6rem 0;display:grid;gap:.55rem}
+.hw-project-status li{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:.25rem .75rem;padding:.6rem;border:1px solid var(--border,#b9c7d3);border-radius:.45rem;overflow-wrap:anywhere}.hw-project-status li small{grid-column:1/-1;line-height:1.4}
+.hw-project-list li{display:flex;flex-wrap:wrap;gap:.7rem;align-items:center;justify-content:space-between;border:1px solid var(--border,#b9c7d3);border-radius:.5rem;padding:.8rem}.hw-project-list li div{display:grid;gap:.3rem;min-width:0;overflow-wrap:anywhere}.hw-project-list li small{line-height:1.4}
+.hw-project-fields fieldset{min-width:0;margin:1rem 0;padding:.8rem;border:1px solid var(--border,#b9c7d3);border-radius:.5rem}.hw-project-fields legend{font-weight:650}
+.hw-approvers{max-height:18rem;overflow:auto;display:grid;gap:.4rem}.hw-approver{display:flex;gap:.6rem;align-items:flex-start;padding:.65rem;border:1px solid var(--border,#c6d1db);border-radius:.4rem;overflow-wrap:anywhere}.hw-approver[hidden]{display:none}.hw-approver span{display:grid;gap:.3rem}.hw-approver small{font-size:.75rem;color:var(--muted,#526476)}
+.hw-sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip-path:inset(50%);border:0}
+.hr-weekly :focus-visible,.hw-project-fields :focus-visible,.hw-project-admin :focus-visible{outline:3px solid var(--focus,#1769b1);outline-offset:3px}
+.hr-weekly [data-tone=error]{color:var(--danger,#a11b1b);font-weight:650}
+.hr-form:has(.hr-weekly){max-width:1100px}.hr-form:has(.hr-weekly) .hr-form-footer{position:sticky;bottom:0;background:var(--surface,#fff);border-top:1px solid var(--border,#c6d1db);padding:.75rem 0;z-index:2;display:flex;flex-wrap:wrap;gap:.5rem}
+@media(max-width:640px){.hw-common-grid{grid-template-columns:1fr}.hw-period{align-items:stretch}.hw-period .field{max-width:none;width:100%}.hw-period .btn{width:100%}.hw-table{min-width:0;display:block}.hw-table thead{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%)}.hw-table tbody{display:block}.hw-table tr:not(.hw-day-add){display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:.7rem .6rem;padding:.8rem;border-bottom:1px solid var(--border,#b9c7d3)}.hw-table td,.hw-table tbody th{display:block;padding:0;border:0;min-width:0}.hw-table tbody th{grid-column:1/-1;display:flex;flex-wrap:wrap;justify-content:space-between;gap:.4rem}.hw-table td:nth-child(3),.hw-table td:nth-child(4),.hw-table td:nth-child(6){grid-column:1/-1}.hw-table td:nth-child(5){grid-column:2;grid-row:2}.hw-field>span{position:static;width:auto;height:auto;clip-path:none;font-size:.82rem;font-weight:600}.hw-field input,.hw-field select,.hw-field textarea{font-size:16px;min-height:2.5rem}.hw-table .hw-day-add{display:block;padding:.5rem}.hw-table .hw-day-add td{padding:0}.hw-project-status li{grid-template-columns:1fr}.hw-project-status li span{font-size:.9rem}.hr-form:has(.hr-weekly) .hr-form-footer .btn{flex:1 1 100%;white-space:normal}.hw-notes>summary{min-height:2.5rem;display:flex;align-items:center}.hw-table-wrap{overflow-x:hidden}.hw-selection{align-items:flex-start;flex-direction:column}}
+
+/* Compact desktop editor: keep the whole week readable without extra action rows. */
+#dialog:has(.hr-weekly){width:min(1200px,calc(100vw - 24px))!important;max-width:min(1200px,calc(100vw - 24px))!important;max-height:calc(100dvh - 24px)!important;box-sizing:border-box}
+#dialog:has(.hr-weekly) .modal{max-width:none}
+#dialog:has(.hr-weekly) .modal-head{padding:10px 16px!important;min-height:0!important;margin-bottom:0!important;align-items:center!important}
+#dialog:has(.hr-weekly) .modal-head h2{font-size:1.1rem!important;line-height:1.25!important}
+#dialog:has(.hr-weekly) .modal-view-actions>.btn,#dialog:has(.hr-weekly) .modal-view-actions>.close-button{min-height:36px;padding:7px 10px}
+#dialog .hr-form:has(.hr-weekly){max-width:none;gap:7px}
+#dialog .hr-form:has(.hr-weekly) .hr-form-person{padding:5px 9px;font-size:.82rem;line-height:1.4;margin:5px 0 0}
+#dialog .hr-form:has(.hr-weekly) .hr-form-fields{gap:7px}
+#dialog .hr-weekly .hw-intro{margin:4px 0;padding:6px 9px;font-size:.84rem;line-height:1.4}
+#dialog .hr-weekly .hw-help-link{white-space:nowrap;margin-left:.4rem}
+#dialog .hr-weekly .hw-period{display:flex;flex-wrap:wrap;align-items:end;gap:6px 12px;margin:8px 0}
+#dialog .hr-weekly .hw-period>.field{display:grid;grid-template-columns:minmax(140px,170px) auto;align-items:center;column-gap:7px;row-gap:3px;max-width:none;flex:0 0 auto;margin:0}
+#dialog .hr-weekly .hw-period>.field>span{grid-column:1/-1;margin:0;font-size:.79rem}
+#dialog .hr-weekly .hw-period input{min-height:36px;padding:6px 8px}
+#dialog .hr-weekly .hw-period .date-picker-actions{margin:0;padding:0;align-self:center}
+#dialog .hr-weekly .hw-period .date-picker-actions button{min-height:36px;padding:6px 8px}
+#dialog .hr-weekly .hw-period>.btn{min-height:36px;padding:6px 10px;margin:0}
+#dialog .hr-weekly .hw-period>p{align-self:center;margin:16px 0 0 auto;font-size:.85rem}
+#dialog .hr-weekly .hw-common{padding:6px 10px;margin:8px 0}
+#dialog .hr-weekly .hw-common>summary{min-height:24px;line-height:24px;font-size:.85rem}
+#dialog .hr-weekly .hw-common-grid{grid-template-columns:repeat(4,minmax(0,1fr));gap:8px}
+#dialog .hr-weekly .hw-common p{margin:7px 0;font-size:.84rem}
+#dialog .hr-weekly .hw-selection{gap:6px 12px;margin:7px 0;font-size:.84rem}
+#dialog .hr-weekly .hw-selection input,#dialog .hr-weekly .hw-day-select input,#dialog .hr-weekly .hw-common input[type=checkbox]{min-height:18px;width:18px;height:18px;padding:0}
+#dialog .hr-weekly [data-week-message]{padding:5px 9px;line-height:1.4;font-size:.8rem;margin:5px 0}
+#dialog .hr-weekly .hw-table thead th{padding:7px 6px;font-size:.79rem}
+#dialog .hr-weekly .hw-table thead th:nth-child(1){width:13%}#dialog .hr-weekly .hw-table thead th:nth-child(2){width:7%}#dialog .hr-weekly .hw-table thead th:nth-child(3){width:23%}#dialog .hr-weekly .hw-table thead th:nth-child(4){width:20%}#dialog .hr-weekly .hw-table thead th:nth-child(5){width:18%}#dialog .hr-weekly .hw-table thead th:nth-child(6){width:19%}
+#dialog .hr-weekly .hw-table td,#dialog .hr-weekly .hw-table tbody th{padding:6px;vertical-align:top}
+#dialog .hr-weekly .hw-field input,#dialog .hr-weekly .hw-field select{min-height:36px;padding:6px 8px;font-size:.83rem}
+#dialog .hr-weekly .hw-day-select{min-height:36px;font-size:.84rem}
+#dialog .hr-weekly .hw-table th small{font-size:.73rem;line-height:1.25;margin-top:1px}
+#dialog .hr-weekly .hw-notes>summary{min-height:24px;line-height:24px;font-size:.8rem}
+#dialog .hr-weekly .hw-row-actions{display:flex;flex-wrap:wrap;gap:2px 6px;align-items:center;margin-top:2px}
+#dialog .hr-weekly .hw-row-actions>.btn{min-height:28px;min-width:0;width:auto;padding:3px 5px;font-size:.75rem;line-height:1.2;white-space:normal}
+#dialog .hr-form:has(.hr-weekly)>.hr-form-status{padding:5px 9px;font-size:.78rem;line-height:1.4}
+#dialog .hr-form:has(.hr-weekly) .hr-form-footer{padding:7px 0;margin:0;gap:7px}
+#dialog .hr-form:has(.hr-weekly) .hr-form-footer>.btn{min-height:38px;padding:8px 12px}
+@layer wlUI89 {body #dialog:has(.hr-weekly){width:min(1200px,calc(100vw - 24px))!important;max-width:min(1200px,calc(100vw - 24px))!important;max-height:calc(100dvh - 24px)!important}}
+@media(max-width:640px){
+ #dialog:has(.hr-weekly){width:calc(100vw - 12px)!important;max-width:calc(100vw - 12px)!important}
+ #dialog .hr-weekly .hw-common-grid{grid-template-columns:1fr}
+ #dialog .hr-weekly .hw-period>.field{width:100%;grid-template-columns:minmax(0,1fr) auto;flex:1 1 100%}
+ #dialog .hr-weekly .hw-period>.btn{width:100%;min-height:44px}
+ #dialog .hr-weekly .hw-period>p{margin:0;width:100%}
+ #dialog .hr-weekly .hw-field input,#dialog .hr-weekly .hw-field select{font-size:16px;min-height:44px}
+ #dialog .hr-weekly .hw-table td,#dialog .hr-weekly .hw-table tbody th{padding:0}
+ #dialog .hr-weekly .hw-row-actions>.btn{min-height:44px;font-size:.82rem;padding:8px}
+ #dialog .hr-weekly .hw-notes>summary{min-height:44px;line-height:1.3;font-size:.9rem}
+ #dialog .hr-form:has(.hr-weekly) .hr-form-footer>.btn{min-height:44px}
+ #dialog .hr-weekly .hw-help-link{white-space:normal;display:inline-block;margin-left:0}
+}

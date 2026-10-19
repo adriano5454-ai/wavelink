@@ -1,0 +1,116 @@
+/* UI131 · scoped reading and navigation improvements.
+   Load after component sheets. No visibility, authentication or permission rule.
+   Existing Wavelink artwork, typography family and semantic status colours stay.
+   wlVisual124 below is intentionally the EXISTING layer: its important 42px/
+   14px defaults otherwise override component mobile rules regardless of order. */
+:is(.wl-rec-workspace,.wl-professional-contacts,.wl-context-documents,.of-library,.it-workspace,.it-form,.hr-workspace,.hr-form,.wl-contact-form){
+ --wl131-ink:#173d4b;
+ --wl131-muted:#4c6471;
+ --wl131-link:#086775;
+ --wl131-surface:#ffffff;
+ --wl131-soft:#edf4f7;
+ --wl131-border:#b8cdd7;
+ --wl131-focus:#965900;
+ --wl131-focus-gap:#ffffff;
+ --wl131-space:16px;
+}
+
+/* People: reveal the complete identity and distinguish the clickable row. */
+.wl-rec-workspace .wl-directory-person{
+ gap:12px;padding:14px 4px;min-height:64px;border-bottom-color:var(--wl131-border);
+ border-radius:6px;line-height:1.5;outline-offset:3px;
+}
+.wl-rec-workspace .wl-directory-person>span{min-width:0;overflow-wrap:anywhere}
+.wl-rec-workspace .wl-directory-person strong{color:var(--wl131-link);text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:3px}
+.wl-rec-workspace .wl-directory-person small{font-size:.85rem;line-height:1.5;color:var(--wl131-muted)}
+.wl-rec-workspace .wl-directory-person:hover{background:var(--wl131-soft)}
+.wl-rec-workspace .wl-directory-id{font-size:.8rem;font-variant-numeric:tabular-nums;overflow-wrap:anywhere}
+.wl-rec-workspace .wl-team-layout>aside{align-self:start}
+.wl-rec-workspace .wl-profile-nav{gap:8px;flex-wrap:wrap;overflow:visible}
+.wl-rec-workspace .wl-profile-nav a{min-height:44px;display:inline-flex;align-items:center;line-height:1.45;white-space:normal;font-size:.9rem;border:1px solid transparent}
+.wl-rec-workspace .wl-profile-nav a[aria-current="location"]{background:var(--wl131-soft);color:var(--wl131-link);font-weight:750;border-color:var(--wl131-border);box-shadow:inset 0 -3px var(--wl131-link);text-decoration:underline;text-underline-offset:4px}
+.wl-rec-workspace :is(#wl-profile-overview,#wl-profile-badges,#wl-profile-history,#profile-documents-context,.wl-professional-contacts){scroll-margin-top:112px}
+
+/* Professional contacts and contextual documents keep their owners' layouts. */
+.wl-professional-contacts .wl-contact-label{color:var(--wl131-muted);font-size:.85rem;line-height:1.5}
+.wl-professional-contacts .wl-contact-value{color:var(--wl131-ink);font-size:1rem;line-height:1.6;overflow-wrap:anywhere}
+.wl-professional-contacts .wl-contact-state{color:var(--wl131-muted);font-size:.85rem;line-height:1.5}
+.wl-context-documents{margin-block:24px;scroll-margin-top:112px}
+.wl-context-documents>header{padding-bottom:12px;border-bottom:1px solid var(--wl131-border)}
+.wl-context-documents .wl-context-documents-header h3{margin:0;font-size:1.2rem;line-height:1.4;color:var(--wl131-ink)}
+.wl-context-documents .wl-context-document h4{font-size:1.05rem;line-height:1.5;color:var(--wl131-ink)}
+.wl-context-documents .wl-context-document-type{font-size:.875rem;line-height:1.5;color:var(--wl131-muted)}
+.wl-context-documents .wl-context-documents-facts{font-size:.9rem;line-height:1.6;row-gap:8px}
+.wl-context-documents .wl-context-documents-facts dt{color:var(--wl131-muted)}
+.wl-context-documents .wl-context-documents-facts dd{color:var(--wl131-ink)}
+.wl-context-documents .wl-context-document-details{border-block:1px solid var(--wl131-border)}
+.wl-context-documents .wl-context-document-details summary{min-height:44px;box-sizing:border-box;padding-block:12px;font-weight:650;color:var(--wl131-link)}
+.wl-context-documents .wl-context-documents-message{font-size:.9rem;line-height:1.6}
+.wl-context-documents .wl-context-documents-actions{gap:10px;margin-top:14px}
+.wl-context-documents a:not(.btn),.wl-professional-contacts a:not(.btn){color:var(--wl131-link);text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:3px;overflow-wrap:anywhere}
+
+/* Original documents: current folder is recognisable without colour alone. */
+.of-library .of-folder{min-height:44px;border:1px solid transparent;line-height:1.5}
+.of-library .of-folder[aria-current="location"]{border-left:4px solid currentColor;font-weight:750;text-decoration:underline;text-underline-offset:3px}
+.of-library .of-breadcrumb [aria-current="location"]{border-bottom:3px solid currentColor;text-decoration:underline;text-underline-offset:3px}
+.of-library .of-file{padding:20px 0;gap:14px}
+.of-library .of-file h4{line-height:1.45}
+.of-library :is(.of-meta,.of-note,.of-count){color:var(--wl131-muted);font-size:.875rem;line-height:1.6}
+.of-library .of-path{font-size:.85rem;line-height:1.6;color:var(--wl131-link)}
+.of-library .of-file-body{min-width:0;overflow-wrap:anywhere}
+.of-library .of-actions{gap:10px}
+
+/* IT: restrained summary, readable dense table and distinct navigation. */
+.it-workspace .it-heading{padding-bottom:20px;border-bottom:1px solid var(--wl131-border)}
+.it-workspace .it-summary strong{font-variant-numeric:tabular-nums}
+.it-workspace .it-summary span{font-size:.875rem;color:var(--wl131-muted)}
+.it-workspace .it-tabs{padding:4px 0 10px;border-bottom:1px solid var(--wl131-border)}
+.it-workspace .it-request-link{display:inline-block;line-height:1.55;text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:3px}
+.it-workspace .it-table td small{font-size:.85rem;line-height:1.5;color:var(--wl131-muted)}
+.it-workspace .it-detail-actions{gap:12px}
+.it-workspace .it-detail-nav a{font-weight:650}
+.it-workspace .it-history li>div{gap:6px}
+.it-workspace .it-history span{font-size:.875rem;color:var(--wl131-muted)}
+.it-workspace :is(.it-state,.it-help){font-size:.875rem}
+
+/* RH and Operations: preserve their information model, improve scan targets. */
+.hr-workspace .hr-record-actions{gap:10px}
+.hr-workspace .hr-facts{row-gap:10px}
+.hr-workspace .hr-state{font-size:.825rem;white-space:normal}
+.hr-workspace .hr-person-list button strong{line-height:1.5;overflow-wrap:anywhere}
+.hr-workspace .hr-person-list button[aria-current="true"] strong{text-decoration:underline;text-underline-offset:3px}
+.mw-order[aria-pressed="true"] strong,.mw-order.is-selected strong,.fr-row[aria-current="true"] strong,.qs-row[aria-current="true"] strong{text-decoration:underline;text-underline-offset:3px;text-decoration-thickness:2px}
+
+/* Narrow compatibility overrides for the existing UI124 layer. No bare .btn,
+   input, table or body rule: only confirmed component roots are targeted. */
+@layer wlVisual124{
+ body.wl-ui124 #app :is(.wl-rec-workspace,.of-library,.it-workspace,.hr-workspace,.wl-context-documents,.wl-professional-contacts) .btn,
+ body.wl-ui124 #dialog :is(.of-library,.it-form,.hr-form,.wl-contact-form) .btn{min-height:44px!important}
+ body.wl-ui124 #app .it-workspace .it-tabs [aria-current="page"]{background:#edf4f7!important;color:#086775!important;border:1px solid #b8cdd7!important;border-bottom:3px solid #086775!important;font-weight:750!important;text-decoration:underline;text-underline-offset:3px}
+ body.wl-ui124 :is(.wl-rec-workspace,.of-library,.it-workspace,.it-form,.hr-workspace,.hr-form,.wl-contact-form,.wl-context-documents,.wl-professional-contacts) :is(a,button,input,select,textarea,summary,[tabindex]):focus-visible{outline:3px solid #965900!important;outline-offset:3px!important;box-shadow:0 0 0 2px #ffffff!important}
+ @media(max-width:700px){
+  body.wl-ui124 #app :is(.wl-rec-workspace,.of-library,.it-workspace,.hr-workspace,.wl-professional-contacts,.wl-context-documents) :is(input:not([type="checkbox"]):not([type="radio"]):not([type="hidden"]),select,textarea),
+  body.wl-ui124 #dialog :is(.of-library,.it-form,.hr-form,.wl-contact-form) :is(input:not([type="checkbox"]):not([type="radio"]):not([type="hidden"]),select,textarea){font-size:16px!important}
+ }
+ @media(max-width:640px){
+  body.wl-ui124 #app .it-workspace .it-table td{padding:10px 0!important;border-bottom:0!important}
+ }
+ @media(forced-colors:active){
+  body.wl-ui124 :is(.wl-rec-workspace,.of-library,.it-workspace,.it-form,.hr-workspace,.hr-form,.wl-contact-form,.wl-context-documents,.wl-professional-contacts) :is(a,button,input,select,textarea,summary,[tabindex]):focus-visible{outline-color:Highlight!important;box-shadow:none!important}
+  body.wl-ui124 #app .it-workspace .it-tabs [aria-current="page"]{border-color:CanvasText!important;color:CanvasText!important;background:Canvas!important}
+ }
+}
+@media(max-width:700px){
+ .wl-rec-workspace .wl-profile-nav a{flex:1 1 140px}
+ .wl-rec-workspace .wl-directory-person{grid-template-columns:auto minmax(0,1fr);gap:10px}
+ .wl-rec-workspace .wl-directory-person>.wl-rec-badge{grid-column:1;grid-row:2;justify-self:center}
+ .wl-rec-workspace .wl-directory-person>span:not(.wl-rec-avatar):not(.wl-rec-badge){grid-column:2;grid-row:1 / span 2}
+ .of-library .of-select{padding:10px 4px}
+ .of-library .of-actions .btn{flex:1 1 180px;max-width:100%;overflow-wrap:anywhere}
+ .it-workspace .it-summary{gap:10px}
+ .it-workspace .it-heading .actions>.btn{flex:1 1 150px}
+ .it-workspace .it-filters .actions>.btn{flex:1 1 140px}
+}
+@media(forced-colors:active){
+ .wl-rec-workspace .wl-profile-nav a[aria-current="location"],.of-library .of-folder[aria-current="location"]{outline:2px solid Highlight;outline-offset:-2px}
+}

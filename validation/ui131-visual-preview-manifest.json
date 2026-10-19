@@ -1,0 +1,47 @@
+{
+  "kind": "static_real_component_html_not_screenshot",
+  "items": [
+    {
+      "title": "Fila de atendimento",
+      "slug": "ti-lista",
+      "source": "it_workspace.js via test_ui130_it_ui.cjs; fixture de API fictícia",
+      "before": "C:\\Users\\adria\\Documents\\Codex\\2026-10-17\\quero-concluir-a-mudan-a-da\\work\\ui131-visual-previews\\ti-lista-antes.html",
+      "after": "C:\\Users\\adria\\Documents\\Codex\\2026-10-17\\quero-concluir-a-mudan-a-da\\work\\ui131-visual-previews\\ti-lista-depois.html",
+      "same_component_dom": true
+    },
+    {
+      "title": "Detalhe do chamado",
+      "slug": "ti-detalhe",
+      "source": "it_workspace.js via test_ui130_it_ui.cjs; fixture de API fictícia",
+      "before": "C:\\Users\\adria\\Documents\\Codex\\2026-10-17\\quero-concluir-a-mudan-a-da\\work\\ui131-visual-previews\\ti-detalhe-antes.html",
+      "after": "C:\\Users\\adria\\Documents\\Codex\\2026-10-17\\quero-concluir-a-mudan-a-da\\work\\ui131-visual-previews\\ti-detalhe-depois.html",
+      "same_component_dom": true
+    },
+    {
+      "title": "Contatos profissionais",
+      "slug": "contatos",
+      "source": "ui131-contacts-markup.html; componente real executado pelo teste do agente responsável",
+      "before": "C:\\Users\\adria\\Documents\\Codex\\2026-10-17\\quero-concluir-a-mudan-a-da\\work\\ui131-visual-previews\\contatos-antes.html",
+      "after": "C:\\Users\\adria\\Documents\\Codex\\2026-10-17\\quero-concluir-a-mudan-a-da\\work\\ui131-visual-previews\\contatos-depois.html",
+      "same_component_dom": true
+    },
+    {
+      "title": "Documentos relacionados",
+      "slug": "documentos",
+      "source": "ui131-documents-markup.html; componente real executado pelo teste do agente responsável",
+      "before": "C:\\Users\\adria\\Documents\\Codex\\2026-10-17\\quero-concluir-a-mudan-a-da\\work\\ui131-visual-previews\\documentos-antes.html",
+      "after": "C:\\Users\\adria\\Documents\\Codex\\2026-10-17\\quero-concluir-a-mudan-a-da\\work\\ui131-visual-previews\\documentos-depois.html",
+      "same_component_dom": true
+    }
+  ],
+  "same_business_markup": true,
+  "linked_stylesheets_exist": true,
+  "local_copied_assets": [
+    "ui68-home-scene.svg",
+    "wavelink-approved-offshore-profile-ui87.webp",
+    "wavelink-approved-offshore-ui87.webp",
+    "wavelink-home-cover-ui86.svg",
+    "wavelink-profile-cover-ui86.svg"
+  ],
+  "portability": "Copy the entire ui131-visual-previews directory, including styles/ and assets/."
+}

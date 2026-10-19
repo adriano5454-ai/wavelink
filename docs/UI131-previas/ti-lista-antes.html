@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Fila de atendimento — antes</title>
+<link rel="stylesheet" href="styles/visual_ui124.css">
+<link rel="stylesheet" href="styles/email_alerts_ui93.css">
+<link rel="stylesheet" href="styles/style.css">
+<link rel="stylesheet" href="styles/save_status.css">
+<link rel="stylesheet" href="styles/documentos_context.css">
+<link rel="stylesheet" href="styles/membership_workspace.css">
+<link rel="stylesheet" href="styles/document_import.css">
+<link rel="stylesheet" href="styles/recognition_workspace.css">
+<link rel="stylesheet" href="styles/project_presence.css">
+<link rel="stylesheet" href="styles/hr_workspace.css">
+<link rel="stylesheet" href="styles/hr_weekly_timesheets.css">
+<link rel="stylesheet" href="styles/it_workspace.css">
+<link rel="stylesheet" href="styles/workspace_continuity.css">
+<link rel="stylesheet" href="styles/ui_polish.css">
+<link rel="stylesheet" href="styles/logistics_workflow.css">
+<link rel="stylesheet" href="styles/preparation_ui.css">
+<link rel="stylesheet" href="styles/personal_home.css">
+<link rel="stylesheet" href="styles/home_workspace.css">
+<link rel="stylesheet" href="styles/document_invites.css">
+<link rel="stylesheet" href="styles/usability_choices.css">
+<link rel="stylesheet" href="styles/session_exit.css">
+<link rel="stylesheet" href="styles/document_participation.css">
+<link rel="stylesheet" href="styles/interface_components.css">
+<link rel="stylesheet" href="styles/deployment_branding.css">
+<link rel="stylesheet" href="styles/unified_ui.css">
+<link rel="stylesheet" href="styles/native_workspaces.css">
+<link rel="stylesheet" href="styles/gui_recovery.css">
+<link rel="stylesheet" href="styles/admin_workspace_ui75.css">
+<link rel="stylesheet" href="styles/operations_workspace_ui76.css">
+<link rel="stylesheet" href="styles/equipment_workspace_ui79.css">
+<link rel="stylesheet" href="styles/work_execution_ui80.css">
+<link rel="stylesheet" href="styles/workflow_foundation_ui81.css">
+<link rel="stylesheet" href="styles/action_center_ui82.css">
+<link rel="stylesheet" href="styles/account_security_ui83.css">
+<link rel="stylesheet" href="styles/company_workspace_ui84.css">
+<link rel="stylesheet" href="styles/visual_system_ui94.css">
+<link rel="stylesheet" href="styles/login_ui96.css">
+<link rel="stylesheet" href="styles/experience_ui121.css">
+<link rel="stylesheet" href="styles/experience_ui123.css">
+<style>.preview-note{margin:0;padding:16px;background:#173d4b;color:white;font:15px/1.6 system-ui,sans-serif}.preview-note a{color:white;text-decoration:underline}.preview-note strong{font-size:18px}</style></head>
+<body class="wl-ui124 wl-ui71 wl-ui72 wl-ui73 wl-ui74 wl-ui75 wl-ui76 wl-ui79 wl-ui80 wl-ui81 wl-ui82 wl-ui83 wl-ui84 wl-ui86 wl-ui87 wl-ui88 wl-ui89 wl-ui90 wl-ui91 wl-ui92 wl-ui94"><aside class="preview-note"><strong>Fila de atendimento · Estilos anteriores, sem a folha UI131</strong><p>Prévia HTML estática com dados fictícios. Mesmo componente e conteúdo nos dois lados; somente o estilo muda. Não é captura de tela nem validação visual em navegador.</p><a href="index.html">Voltar às comparações</a></aside><main id="app"><section class="it-workspace"><header class="it-heading"><div><p class="eyebrow">SUPORTE INTERNO</p><h1>Solicitações de TI</h1><p>Abra um chamado e acompanhe o atendimento, as respostas e a resolução.</p></div><div class="actions"><button type="button" id="it-new" class="btn">Abrir chamado</button><button type="button" id="it-refresh" class="btn secondary">Atualizar</button><a class="btn secondary" href="ajuda-itrequests.html" target="_blank" rel="noopener noreferrer">Ajuda sobre chamados</a></div></header><div id="it-status" class="it-status" role="status" hidden></div><nav class="it-tabs" aria-label="Visualização de chamados"><button type="button" data-it-view="mine" class="btn secondary" aria-current="false">Meus chamados</button><button type="button" data-it-view="queue" class="btn " aria-current="page">Fila de atendimento</button></nav><section class="it-summary" aria-label="Quantidades por situação"><div><span>Aberto</span><strong>0</strong></div><div><span>Em atendimento</span><strong>1</strong></div><div><span>Aguardando solicitante</span><strong>0</strong></div><div><span>Resolvido</span><strong>0</strong></div><div><span>Encerrado</span><strong>0</strong></div><div><span>Cancelado</span><strong>0</strong></div></section><p class="it-help">Quantidades fornecidas pelo servidor para os chamados permitidos nesta consulta.</p><form id="it-filters" class="it-filters"><label class="field"><span>Buscar nos chamados</span><input type="search" name="query" maxlength="200" value="" placeholder="Assunto ou descrição"></label><label class="field"><span>Situação</span><select name="status"><option value="">Todas as situações</option><option value="open">Aberto</option><option value="in_progress">Em atendimento</option><option value="awaiting_requester">Aguardando solicitante</option><option value="resolved">Resolvido</option><option value="closed">Encerrado</option><option value="cancelled">Cancelado</option></select></label><label class="field"><span>Prioridade</span><select name="priority"><option value="">Todas as prioridades</option><option value="low">Baixa</option><option value="normal">Normal</option><option value="high">Alta</option><option value="urgent">Urgente</option></select></label><div class="actions"><button class="btn secondary" type="submit">Aplicar filtros</button><button type="button" id="it-clear" class="btn secondary">Limpar filtros</button></div></form><p id="it-result-count" role="status">Chamados encontrados: 1</p><div class="it-table-scroll" role="region" tabindex="0" aria-label="Lista de chamados"><table class="it-table"><thead><tr><th scope="col">Chamado</th><th scope="col">Situação</th><th scope="col">Prioridade</th><th scope="col">Responsável</th><th scope="col">Atualizado em</th></tr></thead><tbody><tr><td data-label="Chamado"><a class="it-request-link" href="#it/requests/20efb46e-3542-4256-b2a0-31decc890c0a">Conexão da estação fictícia</a><small>Solicitante: Pessoa fictícia alice</small></td><td data-label="Situação"><span class="it-state it-state-in_progress">Em atendimento</span></td><td data-label="Prioridade"><span class="it-state it-state-high">Alta</span></td><td data-label="Responsável">Pessoa fictícia desk</td><td data-label="Atualizado em"><time>18/10/2026, 22:00 UTC</time></td></tr></tbody></table></div><div class="it-pagination"><button type="button" id="it-previous" class="btn secondary">Página anterior</button><span>Página 1</span><button type="button" id="it-next" class="btn secondary">Próxima página</button></div></section></main></body></html>
