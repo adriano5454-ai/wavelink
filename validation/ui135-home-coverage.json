@@ -1,0 +1,55 @@
+{
+  "release": "UI135",
+  "area": "Início e navegação administrativa",
+  "views": [
+    {
+      "name": "Meu trabalho / Exige minha ação / Passagens salvas",
+      "status": "corrigido_e_testado_localmente",
+      "coverage": [
+        "Carregamento, erro, paginação vazia e retorno à primeira página",
+        "Filtro preservado, dados privados somente da conta atual",
+        "Foco apenas após navegação explícita e sem interromper outra ação"
+      ]
+    },
+    {
+      "name": "Minha atividade",
+      "status": "corrigido_e_testado_localmente",
+      "coverage": [
+        "Datas inválidas e período invertido",
+        "Intervalo UTC aplicado, Todas as datas e foco",
+        "Paginação vinculada à conta e filtro, API somente leitura"
+      ]
+    },
+    {
+      "name": "Configuração e navegação administrativa",
+      "status": "revisado_e_testado_localmente",
+      "coverage": [
+        "Seção atual além da cor e foco visível",
+        "Seções permitidas, IDs e rascunho preservados",
+        "CSS responsivo inspecionado; sem pixels medidos"
+      ]
+    },
+    {
+      "name": "Permissões no resumo da conta",
+      "status": "corrigido_e_testado_localmente",
+      "coverage": [
+        "81 nomes gerados de access.GROUPS",
+        "Nomes em PT/EN, fallback seguro",
+        "Módulo carregado antes do perfil nos dois idiomas"
+      ]
+    }
+  ],
+  "new_js_checks": 287,
+  "tests": [
+    "test_ui135_home.cjs",
+    "test_ui135_admin_navigation.cjs",
+    "test_ui135_permission_labels.cjs",
+    "test_ui135_permission_labels.py"
+  ],
+  "shared_review": "ui135-account-independent-review.json",
+  "limitations": [
+    "Somente DOM simulado e API local fictícia",
+    "Sem navegador real, layout, leitor de tela ou validação de produção"
+  ],
+  "production_access": false
+}

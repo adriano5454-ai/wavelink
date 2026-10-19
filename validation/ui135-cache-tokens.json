@@ -1,0 +1,24 @@
+{
+  "assets": {
+    "account_security_ui83.css": "1.34.35-f9290078bc80",
+    "account_security_ui83.js": "1.34.35-fb376f20bec5",
+    "admin_navigation.css": "1.34.35-14b45503db1b",
+    "app.js": "1.34.35-2fb047a2c860",
+    "checklist_forms.js": "1.34.35-082778eb3695",
+    "checklist_review.js": "1.34.35-4979d9945e79",
+    "email_alerts_ui93.css": "1.34.35-cc5546e8c47b",
+    "email_alerts_ui93.js": "1.34.35-e08d32e8e7a3",
+    "help_catalogue.json": "1.34.35-653f5054cd4c",
+    "help_workspace.js": "1.34.35-03ba5c7ddcd4",
+    "hr_workspace.css": "1.34.35-6e3090ba7a5b",
+    "hr_workspace.js": "1.34.35-8e4cd9146dce",
+    "locale_pt_br.js": "1.34.35-e44bd2e2d03e",
+    "original_upload.js": "1.34.35-42cc89043b4e",
+    "permission_labels.js": "1.34.35-a3d31496fdb6",
+    "personal_home.css": "1.34.35-49d7cee22050",
+    "personal_home.js": "1.34.35-7fb833c46cb1",
+    "recognition_workspace.css": "1.34.35-7a806acce7a5",
+    "recognition_workspace.js": "1.34.35-e2f03d3abf0a"
+  },
+  "updated": []
+}

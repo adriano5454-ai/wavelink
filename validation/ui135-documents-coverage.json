@@ -1,0 +1,135 @@
+{
+  "release": "UI135",
+  "area": "Resultados de checklist, evidências, revisão e envio de originais",
+  "method": "Execução dos controladores reais em adaptador DOM local com dados fictícios. Sem navegador, servidor HTTP, compressão real de imagens ou produção.",
+  "screens": [
+    {
+      "screen": "Editor completo de resultado e reabertura de rascunho",
+      "previous_ui134": "Inspecionado; não executado como fluxo completo.",
+      "status": "Corrigido e testado localmente",
+      "changes": [
+        "Revisão zero é exibida como valor registrado na ficha de identidade.",
+        "Leituras numéricas salvas como 0 chegam ao campo com 0 ao reabrir; correção integrada pelo coordenador no chamador app.js.",
+        "Resultado e limites das leituras ligados aos respectivos controles por aria-describedby, preservando descrição existente."
+      ],
+      "executed": [
+        "editItem, validate e queueChange reais: abrir registro, editar nota e leitura, guardar rascunho, fechar e reabrir.",
+        "Descartar rascunho: recusa conserva edição; confirmação remove apenas o rascunho.",
+        "Falha de armazenamento da fila restaura rascunho e fila anteriores.",
+        "Valor fora do limite e Issue sem justificativa bloqueiam envio.",
+        "Sessão alterada ou permissão revogada impedem ação; autenticação não é apagada.",
+        "Fila preserva base_version 0, valor 0 e texto digitado; snapshot confirmado permanece intacto."
+      ],
+      "tests": "test_ui135_documents_full_editor.cjs (60) e parte de test_ui135_documents_editor.cjs",
+      "limits": [
+        "Persistência, sincronização e transporte são dependências simuladas; não comprova recebimento pelo servidor.",
+        "Validação visual no navegador e leitor de tela pendentes."
+      ]
+    },
+    {
+      "screen": "Fotos do editor de resultado",
+      "previous_ui134": "Inspeção do guard de evidência; sem preenchimento completo.",
+      "status": "Handler real executado com dependências simuladas; textos corrigidos pelo coordenador",
+      "changes": [
+        "Três textos de progresso, contexto alterado e remoção de foto recebida localizados em PT/EN pelo coordenador."
+      ],
+      "executed": [
+        "Handler PhotoEvidence.mountEditor extraído diretamente da fonte atual, sem reescrever sua lógica.",
+        "Adicionar duas fotos fictícias, editar legenda, abrir foto exata, recusar e confirmar remoção do rascunho.",
+        "Bloqueio durante preparação; seleção concorrente ignorada.",
+        "Falha de preparação, limite de cinco fotos, falha de orçamento local e rollback quando persistência falha.",
+        "Mudança de contexto durante preparação não anexa as fotos.",
+        "Remoção com falha de persistência restaura foto do rascunho; origem histórica não é modificada."
+      ],
+      "tests": "test_ui135_documents_editor.cjs (91, incluindo apresentação e guardas)",
+      "limits": [
+        "Decodificação, câmera, canvas, compressão, quotas reais do navegador e IndexedDB não foram exercitados.",
+        "Imagens usadas são identificadores e bytes fictícios; nenhuma fotografia real foi acessada."
+      ]
+    },
+    {
+      "screen": "Conferência das evidências e decisão do checklist",
+      "previous_ui134": "Inspecionado; sem nova execução completa.",
+      "status": "Corrigido e testado localmente",
+      "changes": [
+        "Cabeçalho usa REVISÃO DO CHECKLIST sem identificação técnica UI 17.",
+        "Decisões conhecidas approved/rejected/pending localizadas; valores desconhecidos, nomes e notas salvos mantidos."
+      ],
+      "executed": [
+        "Controlador de revisão e guia de etapas reais; escolha explícita de decisão, justificativa obrigatória na devolução e confirmação final.",
+        "Fechar revisão com nota: recusa mantém texto, confirmação fecha sem encerrar sessão.",
+        "Foto exata solicitada por registro/ID; fechar ampliação mantém revisão; URLs locais liberadas ao fechar.",
+        "Foto negada ou ausente quando obrigatória bloqueia decisão; foto tardia de outro contexto não atualiza a tela.",
+        "Conta sem designação não ganha exceção por administração.",
+        "Versão alterada invalida confirmação; refresh conserva nota mas limpa decisão.",
+        "Resposta perdida bloqueia nova ação automática e conserva a nota."
+      ],
+      "tests": "test_ui135_documents_review.cjs (90, incluindo prontidão/finalização)",
+      "limits": [
+        "As respostas e autorizações do servidor são simuladas; não substitui uma bateria HTTP das regras de autorização.",
+        "Sem prova de experiência real de teclado/leitor de tela ou leitura de imagens no navegador."
+      ]
+    },
+    {
+      "screen": "Prontidão do dispositivo e finalização da etapa",
+      "previous_ui134": "Inspecionado; sem nova execução completa.",
+      "status": "Fluxos reais executados localmente; comportamento preservado",
+      "changes": [],
+      "executed": [
+        "Prontidão envia heartbeat e marca apenas o dispositivo atual; pode ser registrada mesmo havendo verificação pendente salva.",
+        "Dispositivo já pronto fica bloqueado para repetir a ação.",
+        "Participante offline impede finalização.",
+        "Finalização com todos os critérios atendidos exige confirmação e usa a revisão exata da etapa.",
+        "Prontidão e finalização usam ações/URLs distintas e não encerram a conta."
+      ],
+      "tests": "test_ui135_documents_review.cjs",
+      "limits": [
+        "Nenhuma etapa de produção foi finalizada e nenhuma prontidão real foi alterada."
+      ]
+    },
+    {
+      "screen": "Envio de original e consulta do comprovante",
+      "previous_ui134": "Inspeção e teste de cancelamento, sem execução do envio.",
+      "status": "Corrigido e testado localmente",
+      "changes": [
+        "Resultado, erro e comprovante recebem foco somente após ação explícita ainda atual.",
+        "Se o usuário move o foco durante a requisição, o resultado não o toma de volta.",
+        "Leitura automática do contexto não toma foco; atualização explícita devolve foco à escolha do destino.",
+        "Observador de foco removido ao desmontar o formulário."
+      ],
+      "executed": [
+        "Selecionar arquivo binário fictício, calcular SHA-256 real, editar título/notas/destino e montar envelope real de envio.",
+        "Bytes extraídos do envelope idênticos aos do arquivo escolhido.",
+        "Comprovante precisa corresponder a op_id, SHA, tamanho e pasta; abre a revisão exata.",
+        "Resposta perdida preserva arquivo/envelope/op_id; repetir usa os mesmos objetos e operação.",
+        "Consulta do resultado usa o mesmo op_id sem reenviar arquivo.",
+        "403, recibo de outra operação, formato inválido e mudança de sessão são tratados.",
+        "Resposta tardia não repinta outra conta; comprovante não rouba foco movido para fora."
+      ],
+      "tests": "test_ui135_documents_upload.cjs (63)",
+      "limits": [
+        "Não houve upload HTTP, teste real de servidor/antimalware, gravação no disco ativo nem navegação na produção."
+      ]
+    },
+    {
+      "screen": "Catálogo, etapa/filtros, biblioteca/pastas e fontes dos livros",
+      "previous_ui134": "Corrigidos e testados localmente.",
+      "status": "Regressão herdada executada; sem nova mudança nesta rodada",
+      "changes": [],
+      "executed": [
+        "Quatro suítes herdadas executadas: UI127 documentos 127, UI130 documentos/pessoas 89, UI134 UI 128 e UI134 fontes 76.",
+        "Preservados contexto/seleção/pasta, cancelamento e histórico local, foco ao trocar painel, busca/paginação de fonte e guardas de imagem."
+      ],
+      "tests": "420 verificações de regressão",
+      "limits": [
+        "Revisão visual real das demais telas e abas não foi encerrada."
+      ]
+    }
+  ],
+  "remaining": [
+    "Navegador real: layout, contraste combinado, teclado e leitor de tela, botão Voltar nativo e comportamento em 375/390 px.",
+    "Câmera, compressão/decodificação real e persistência real do navegador.",
+    "Bateria HTTP autorizativa e publicação/validação da produção são de responsabilidade da integração; não executadas nesta subárea.",
+    "Este recorte não conclui todas as abas ou os 54 fluxos históricos."
+  ]
+}

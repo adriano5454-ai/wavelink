@@ -1,0 +1,83 @@
+{
+  "release": "UI135",
+  "agent": "documentos_pessoas",
+  "status": "Fontes e testes concluídos e congelados; integração/publicação a cargo do coordenador.",
+  "base": "UI134 / GitHub 3aaf822ea05661f9f2baa1d24bcf0bbef53c4a52",
+  "source_root": "work/runtime-ui135",
+  "product_files": [
+    {
+      "file": "app/static/checklist_forms.js",
+      "sha256": "082778eb3695f6fa80f6197f099cd746de8ce2a1cabf2b7757fa156832da5ee3"
+    },
+    {
+      "file": "app/static/checklist_review.js",
+      "sha256": "4979d9945e79186139995f44646c4fdf7337d5573b25eb86be5b40b8b158b83a"
+    },
+    {
+      "file": "app/static/original_upload.js",
+      "sha256": "42cc89043b4ee87cc9076e3c99c83b61cf29e27672dfbc20007413e330141e5f"
+    }
+  ],
+  "coordinated_changes": [
+    {
+      "file": "app/static/app.js",
+      "owner": "root",
+      "change": "Preservar leitura 0 com ?? no editItem; três mensagens do PhotoEvidence localizadas.",
+      "evidence": "Falha inicial reproduzida por test_ui135_documents_full_editor.cjs: valor esperado 0, campo vazio. Após patch, 60 verificações passam."
+    },
+    {
+      "file": "app/static/locale_pt_br.js + localização compartilhada",
+      "owner": "root",
+      "change": "Integração do mapa CHECKLIST REVIEW e mensagens de evidência; EN preservado."
+    }
+  ],
+  "new_tests": [
+    "tests/test_ui135_documents_dom.cjs",
+    "tests/test_ui135_documents_upload.cjs",
+    "tests/test_ui135_documents_review.cjs",
+    "tests/test_ui135_documents_editor.cjs",
+    "tests/test_ui135_documents_full_editor.cjs"
+  ],
+  "test_result": {
+    "new_suites": 4,
+    "new_checks": 304,
+    "regression_suites": 4,
+    "regression_checks": 420,
+    "total_checks": 724,
+    "syntax_checks": 8,
+    "failures_final": 0,
+    "log": "work/ui135-documents-tests.json",
+    "http_testclient": false,
+    "browser": false
+  },
+  "previews": {
+    "index": "work/ui135-documents-visual-previews/index.html",
+    "pages": [
+      "revisao.html",
+      "envio-original.html"
+    ],
+    "kind": "HTML do componente real com dados fictícios; não screenshot e não comprovação de layout",
+    "portable": true,
+    "local_url_checks": 97,
+    "broken_local_urls": 0,
+    "manifest": "work/ui135-documents-visual-preview-manifest.json"
+  },
+  "coverage": "work/ui135-documents-coverage.json",
+  "translations": "work/ui135-documents-translations.json",
+  "data_safety": {
+    "production_accessed": false,
+    "production_mutations": false,
+    "external_messages": false,
+    "credentials_used": false,
+    "browser_used": false,
+    "temporary_user_changed": false,
+    "schema_or_acl_changed": false,
+    "notes": "Nenhum dado ou usuário da Corcovado foi acessado ou modificado; dados apenas fictícios e em memória."
+  },
+  "limitations": [
+    "Navegador real: layout, contraste combinado, teclado e leitor de tela, botão Voltar nativo e comportamento em 375/390 px.",
+    "Câmera, compressão/decodificação real e persistência real do navegador.",
+    "Bateria HTTP autorizativa e publicação/validação da produção são de responsabilidade da integração; não executadas nesta subárea.",
+    "Este recorte não conclui todas as abas ou os 54 fluxos históricos."
+  ]
+}

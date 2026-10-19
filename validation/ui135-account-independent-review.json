@@ -1,0 +1,56 @@
+{
+  "status": "Independent read-only review complete; no concrete new blocker found",
+  "files": [
+    "app/static/personal_home.js",
+    "app/static/personal_home.css",
+    "app/static/admin_navigation.css",
+    "app/static/app.js (account-related hooks only)",
+    "app/static/permission_labels.js",
+    "deploy/generate_permission_labels.py"
+  ],
+  "findings": [],
+  "checks": [
+    {
+      "area": "Personal Home",
+      "evidence": "Captured host/session/epoch/query gate rejects responses and handlers belonging to a former session/view. Separate latest refresh guard and access-error clearing preserve privacy. Read-only dashboard has no auth write or new grant path; record URLs remain existing module routes."
+    },
+    {
+      "area": "Drafts and focus",
+      "evidence": "Home uses safe/current/busy guards and existing reviewLocal. Pagination focus restores only when the requester still owns focus. Date validation identifies/focuses the invalid field and does not change applied values on an invalid range."
+    },
+    {
+      "area": "Account integration",
+      "evidence": "AJAccountSecurity receives identity:connectionSession; AJEmailAlerts receives both identity and company/hub+user stable account. render invokes both syncSession before auth checks. Recognition delegates email hasForm,exitBusy,guardRoute without removing existing profile/professional-contact guards."
+    },
+    {
+      "area": "Permission metadata",
+      "evidence": "Generator parses access.GROUPS with ast.literal_eval, reads no user state and writes labels only. Browser helper exposes frozen label method, own-property lookup, safe unknown-key fallback and translation; no APIs/storage/grant modifications. Python equality test inspected; Node168 PT/EN tests executed."
+    },
+    {
+      "area": "Responsive accessibility",
+      "evidence": "Home includes textual selected/invalid/loading states, labelled UTC date help, target focus, min44px controls and reduced-motion handling. Admin CSS adds underline/current-page and visible focus, wraps mobile labels. No pixel/assistive-technology claims."
+    }
+  ],
+  "executed_tests": [
+    {
+      "file": "tests/test_ui135_home.cjs",
+      "checks": 81,
+      "passed": true
+    },
+    {
+      "file": "tests/test_ui135_admin_navigation.cjs",
+      "checks": 38,
+      "passed": true
+    },
+    {
+      "file": "tests/test_ui135_permission_labels.cjs",
+      "checks": 168,
+      "passed": true
+    }
+  ],
+  "limits": [
+    "No browser, screen reader or actual iframe/device focus navigation was executed.",
+    "Generator implementation and its Python AST equality test were inspected, not run by this agent; coordinator controls final Python slot.",
+    "app.js review was restricted to the specified account integration, not an independent full audit of that large shared file."
+  ]
+}

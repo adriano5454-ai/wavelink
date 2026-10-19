@@ -1,0 +1,95 @@
+{
+  "release": "UI135",
+  "new_suites": [
+    {
+      "test": "tests/test_ui135_documents_upload.cjs",
+      "ok": true,
+      "stdout": "{\"suite\":\"ui135_original_upload\",\"checks\":63,\"status\":\"passed\",\"evidence\":\"real controller with local DOM and simulated transport; original binary envelope verified\"}\n",
+      "stderr": ""
+    },
+    {
+      "test": "tests/test_ui135_documents_review.cjs",
+      "ok": true,
+      "stdout": "{\"suite\":\"ui135_checklist_review\",\"checks\":90,\"status\":\"passed\",\"evidence\":\"shipped review + step controller in local DOM; transport simulated\"}\n",
+      "stderr": ""
+    },
+    {
+      "test": "tests/test_ui135_documents_editor.cjs",
+      "ok": true,
+      "stdout": "{\"suite\":\"ui135_checklist_editor\",\"checks\":91,\"status\":\"passed\",\"evidence\":\"shipped result presenter and extracted photo editor; compression/storage explicitly simulated\"}\n",
+      "stderr": ""
+    },
+    {
+      "test": "tests/test_ui135_documents_full_editor.cjs",
+      "ok": true,
+      "stdout": "{\"suite\":\"ui135_full_checklist_result\",\"checks\":60,\"status\":\"passed\",\"evidence\":\"actual editItem, validation and queueChange with local DOM and simulated persistence; no server confirmation claimed\"}\n",
+      "stderr": ""
+    }
+  ],
+  "regressions": [
+    {
+      "test": "tests/test_ui127_documents_agent.js",
+      "ok": true,
+      "stdout": "{\"suite\":\"ui127-documents-navigation-agent\",\"checks\":127,\"passed\":true}\n",
+      "stderr": ""
+    },
+    {
+      "test": "tests/test_ui130_documents_people.cjs",
+      "ok": true,
+      "stdout": "{\"suite\":\"UI130 documents and people behavior\",\"checks\":89,\"passed\":true}\n",
+      "stderr": ""
+    },
+    {
+      "test": "tests/test_ui134_documents_ui.cjs",
+      "ok": true,
+      "stdout": "{\"suite\":\"UI134 documents: actual controllers, local DOM adapter\",\"checks\":128,\"passed\":true,\"browser\":false}\n",
+      "stderr": ""
+    },
+    {
+      "test": "tests/test_ui134_documents_sources.cjs",
+      "ok": true,
+      "stdout": "{\"suite\":\"UI134 source image states and context guards\",\"checks\":76,\"passed\":true,\"browser\":false,\"transport\":\"controlled fictitious responses\"}\n",
+      "stderr": ""
+    }
+  ],
+  "syntax": [
+    {
+      "file": "app/static/checklist_forms.js",
+      "passed": true
+    },
+    {
+      "file": "app/static/checklist_review.js",
+      "passed": true
+    },
+    {
+      "file": "app/static/original_upload.js",
+      "passed": true
+    },
+    {
+      "file": "tests/test_ui135_documents_upload.cjs",
+      "passed": true
+    },
+    {
+      "file": "tests/test_ui135_documents_review.cjs",
+      "passed": true
+    },
+    {
+      "file": "tests/test_ui135_documents_editor.cjs",
+      "passed": true
+    },
+    {
+      "file": "tests/test_ui135_documents_full_editor.cjs",
+      "passed": true
+    },
+    {
+      "file": "tests/test_ui135_documents_dom.cjs",
+      "passed": true
+    }
+  ],
+  "new_checks": 304,
+  "regression_checks": 420,
+  "total_checks": 724,
+  "browser": false,
+  "http_testclient": false,
+  "production": false
+}

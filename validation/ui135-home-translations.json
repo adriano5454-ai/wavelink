@@ -1,0 +1,14 @@
+{
+  "Activity dates use UTC, the time basis of the recorded history.": "As datas das atividades usam UTC (Tempo Universal Coordenado), a referência de horário do histórico.",
+  "Enter a valid activity date.": "Informe uma data válida para consultar as atividades.",
+  "The end date must be on or after the start date.": "A data final deve ser igual ou posterior à data inicial.",
+  "No records on this page": "Nenhum registro nesta página",
+  "The list has changed. Return to the first page while keeping your filters.": "A lista foi atualizada. Volte à primeira página mantendo os filtros.",
+  "Return to first page": "Voltar à primeira página",
+  "Personal information unavailable. Refresh after checking your access.": "As informações pessoais estão indisponíveis. Confira seus acessos e atualize a página.",
+  "Your shift is unavailable. Refresh to check the assignment.": "Seu turno está indisponível. Atualize a página para conferir a atribuição.",
+  "Last saved personal view — refresh failed. Record actions are paused until a successful refresh.": "Última consulta salva: a atualização falhou. As ações dos registros ficam indisponíveis até uma atualização bem-sucedida.",
+  "Preparing photo {0} of {1}…": "Preparando foto {0} de {1}…",
+  "Remove this photo from the new check? Its earlier submitted copy remains in history. Required items still need a photo.": "Remover esta foto da nova verificação? A cópia já enviada permanece no histórico. Os itens obrigatórios continuam exigindo uma foto.",
+  "The check context changed during photo preparation. These selected photos were not attached. Existing saved local work is retained; reopen the original check.": "O contexto da verificação mudou durante a preparação das fotos. As fotos selecionadas não foram anexadas. O trabalho já salvo neste dispositivo foi mantido; abra novamente a verificação original."
+}

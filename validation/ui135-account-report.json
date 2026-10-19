@@ -1,0 +1,178 @@
+{
+  "release": "UI135",
+  "status": "Prepared locally, product/tests frozen; not published",
+  "workspace": "work/runtime-ui135",
+  "files": {
+    "app/static/recognition_workspace.js": "e2f03d3abf0abb24d095ba1d7a2ce97bbaf8c3f5b8d616e710b67103d39c6e97",
+    "app/static/recognition_workspace.css": "7a806acce7a5e2dde64d454c20abfb3dd1027f9cc30d919fc11d71ec1a02a0f7",
+    "app/static/account_security_ui83.js": "fb376f20bec5600b0bf404b7d74b1c8640f2a80b548d87b8a710c1802c26481f",
+    "app/static/account_security_ui83.css": "f9290078bc802ed0dddd6b86cd2028d66c93b55911818d8679f1f076f1a0399c",
+    "app/static/email_alerts_ui93.js": "e08d32e8e7a338bfbc194ac68706fe7d2b92c9a648a5391af74fbb2a496fab11",
+    "app/static/email_alerts_ui93.css": "cc5546e8c47b6741d691e3e5b4067e25c1c3eee53d9a8782ef26327a884ca02e",
+    "tests/test_ui135_account_flows.cjs": "8237e69d9e1ce7d50f80418a66cc0292f5e16dc597c30856096bffff37f38f96",
+    "tests/test_ui135_account_profiles.cjs": "438373b5099e015e55c0696e8202318400410c861ca4bcf138584620fcacccfe",
+    "tests/test_ui135_account_harness.cjs": "f0365aae930770fb4d8086410f458d7b07a49a1e42945d447cfd2a484a4d8535"
+  },
+  "changes": [
+    {
+      "screen": "Conta e acesso",
+      "implemented": [
+        "Session-owned reads/actions and beforeSend guards prevent old account dialogs or late responses from acting on the next account.",
+        "Closing dialogs never calls sign-out. Explicit revoke/sign-out actions remain separate; device IDs are in a disclosure.",
+        "Public permission labels are provided by the shared catalog; technical keys remain inside account detail.",
+        "No-MFA confirmation requests only the current password; MFA policy and request payload unchanged."
+      ],
+      "tested": "Actual component/submit handlers with fake transport, current-session sign-out positive control, stale read/revoke/MFA guards and secret input clearing."
+    },
+    {
+      "screen": "Preferências de alertas por e-mail",
+      "implemented": [
+        "Dirty preferences stay with the same company/account in memory; leaving/reload/discard has a clear guard. Passwords and verification codes are never retained.",
+        "Unconfirmed saves lock edits and retry the same body/op_id. Old handlers cannot submit with a new account.",
+        "Saved opt-in status is separated from mail service availability; accepted-by-server wording does not claim delivered.",
+        "Portuguese labels, help, categories, quiet hours and verification/delivery messages completed; saved/error states and44px controls clarified."
+      ],
+      "tested": "Fake503/retry, account switch during POST, isolated draft restoration, no stale verify-confirm, full fake verification flow, PT/EN and delivery states."
+    },
+    {
+      "screen": "Distintivos e progresso",
+      "implemented": [
+        "Another person’s profile uses a descriptive badge heading and does not invite editing. Own profile explains how to select an unlocked badge.",
+        "Existing actual server points, thresholds and original badge assets retained."
+      ],
+      "tested": "Own/other profile markup, edit/history/private total presence only in own profile, actual60% fixture progress, no route loss in section links."
+    },
+    {
+      "screen": "Histórico de contribuições",
+      "implemented": [
+        "The existing80-entry API limit is disclosed; private history is explicitly separated from team updates.",
+        "Late errors/responses cannot populate a different account’s profile."
+      ],
+      "tested": "Actual profile/ledger handler response gating; native-navigation profile regressions remain green."
+    },
+    {
+      "screen": "Equipe e perfil de outra pessoa",
+      "implemented": [
+        "Feed updates use latest-request ordering; old period responses cannot replace the selected period.",
+        "Visible feed count states the existing40-item cap.",
+        "Like operations recheck session and retain their exact uncertain request.",
+        "Back-to-Team link clarifies return from another person’s profile."
+      ],
+      "tested": "Full isolated Team rendering, racing week/today responses, stale-account and late-like guards, exact503 retry body and readonly other-profile view."
+    }
+  ],
+  "tests": [
+    {
+      "file": "tests/test_ui135_account_flows.cjs",
+      "checks": 94,
+      "passed": true
+    },
+    {
+      "file": "tests/test_ui135_account_profiles.cjs",
+      "checks": 45,
+      "passed": true
+    },
+    {
+      "file": "tests/test_ui131_profile_navigation.cjs",
+      "checks": 38,
+      "passed": true
+    },
+    {
+      "file": "tests/test_ui131_profile_save_session.cjs",
+      "checks": 29,
+      "passed": true
+    }
+  ],
+  "new_checks_total": 139,
+  "profile_regression_checks": 67,
+  "shared_review": {
+    "status": "Independent read-only review complete; no concrete new blocker found",
+    "files": [
+      "app/static/personal_home.js",
+      "app/static/personal_home.css",
+      "app/static/admin_navigation.css",
+      "app/static/app.js (account-related hooks only)",
+      "app/static/permission_labels.js",
+      "deploy/generate_permission_labels.py"
+    ],
+    "findings": [],
+    "checks": [
+      {
+        "area": "Personal Home",
+        "evidence": "Captured host/session/epoch/query gate rejects responses and handlers belonging to a former session/view. Separate latest refresh guard and access-error clearing preserve privacy. Read-only dashboard has no auth write or new grant path; record URLs remain existing module routes."
+      },
+      {
+        "area": "Drafts and focus",
+        "evidence": "Home uses safe/current/busy guards and existing reviewLocal. Pagination focus restores only when the requester still owns focus. Date validation identifies/focuses the invalid field and does not change applied values on an invalid range."
+      },
+      {
+        "area": "Account integration",
+        "evidence": "AJAccountSecurity receives identity:connectionSession; AJEmailAlerts receives both identity and company/hub+user stable account. render invokes both syncSession before auth checks. Recognition delegates email hasForm,exitBusy,guardRoute without removing existing profile/professional-contact guards."
+      },
+      {
+        "area": "Permission metadata",
+        "evidence": "Generator parses access.GROUPS with ast.literal_eval, reads no user state and writes labels only. Browser helper exposes frozen label method, own-property lookup, safe unknown-key fallback and translation; no APIs/storage/grant modifications. Python equality test inspected; Node168 PT/EN tests executed."
+      },
+      {
+        "area": "Responsive accessibility",
+        "evidence": "Home includes textual selected/invalid/loading states, labelled UTC date help, target focus, min44px controls and reduced-motion handling. Admin CSS adds underline/current-page and visible focus, wraps mobile labels. No pixel/assistive-technology claims."
+      }
+    ],
+    "executed_tests": [
+      {
+        "file": "tests/test_ui135_home.cjs",
+        "checks": 81,
+        "passed": true
+      },
+      {
+        "file": "tests/test_ui135_admin_navigation.cjs",
+        "checks": 38,
+        "passed": true
+      },
+      {
+        "file": "tests/test_ui135_permission_labels.cjs",
+        "checks": 168,
+        "passed": true
+      }
+    ],
+    "limits": [
+      "No browser, screen reader or actual iframe/device focus navigation was executed.",
+      "Generator implementation and its Python AST equality test were inspected, not run by this agent; coordinator controls final Python slot.",
+      "app.js review was restricted to the specified account integration, not an independent full audit of that large shared file."
+    ]
+  },
+  "translations": "work/ui135-account-translations.json (64 entries; integrated by coordinator)",
+  "previews": [
+    {
+      "file": "work/ui135-account-preview.html",
+      "type": "Portable HTML generated by actual components using fictional data and existing CSS/assets; not screenshot"
+    },
+    {
+      "file": "work/ui135-profile-preview.html",
+      "type": "Portable HTML generated by actual component using fictional data and existing CSS/assets; not screenshot"
+    }
+  ],
+  "evidence": [
+    "work/ui135-account-node-results.json",
+    "work/ui135-account-shared-node-results.json",
+    "work/ui135-account-independent-review.json"
+  ],
+  "preservation": {
+    "production_untouched": true,
+    "temporary_user_untouched": true,
+    "password_MFA_policy_unchanged": true,
+    "permissions_unchanged": true,
+    "backend_or_schema_changes": false,
+    "real_email_or_messages_sent": false,
+    "browser_used": false,
+    "published": false
+  },
+  "limits": [
+    "All new account/email actions use deterministic in-memory fake transports; they do not prove SMTP delivery, real authenticator acceptance, server response behavior or production E2E.",
+    "No browser rendering, smartphone layout or screen-reader traversal was performed; the HTML previews are not screenshots.",
+    "Contribution ledger remains limited by the existing API to80 recent entries; no unsupported pagination was invented.",
+    "Team feed still caps40 entries per selected period. Existing backend privacy enforcement and user-entered content were not altered.",
+    "Final release-level Python/API regression and packaging are coordinated by root."
+  ],
+  "unresolved_blockers": []
+}

@@ -1,0 +1,73 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 520" role="img" aria-labelledby="title desc" preserveAspectRatio="xMidYMid slice">
+  <title id="title">Offshore survey vessel at night</title>
+  <desc id="desc">A stylised Wavelink ocean scene with moonlight, a survey vessel and an offshore platform.</desc>
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#061c31"/>
+      <stop offset="0.56" stop-color="#0a3f61"/>
+      <stop offset="1" stop-color="#0b6f86"/>
+    </linearGradient>
+    <linearGradient id="sea" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#0b6780" stop-opacity=".78"/>
+      <stop offset="1" stop-color="#031522"/>
+    </linearGradient>
+    <radialGradient id="moonGlow">
+      <stop offset="0" stop-color="#d7fbff" stop-opacity=".9"/>
+      <stop offset=".44" stop-color="#8bd9e8" stop-opacity=".28"/>
+      <stop offset="1" stop-color="#76dcec" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="horizonGlow" x1="0" x2="1">
+      <stop offset="0" stop-color="#3de1f2" stop-opacity="0"/>
+      <stop offset=".55" stop-color="#3de1f2" stop-opacity=".3"/>
+      <stop offset="1" stop-color="#3de1f2" stop-opacity="0"/>
+    </linearGradient>
+    <filter id="lightGlow" x="-100%" y="-100%" width="300%" height="300%">
+      <feGaussianBlur stdDeviation="5" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+  <rect width="1600" height="520" fill="url(#sky)"/>
+  <g opacity=".62" fill="#c7f5ff">
+    <circle cx="980" cy="62" r="2"/><circle cx="1114" cy="118" r="1.5"/><circle cx="1242" cy="44" r="1.8"/><circle cx="1378" cy="102" r="1.2"/><circle cx="732" cy="78" r="1.4"/><circle cx="1456" cy="48" r="1.5"/><circle cx="628" cy="122" r="1.1"/>
+  </g>
+  <circle cx="1270" cy="136" r="138" fill="url(#moonGlow)"/>
+  <circle cx="1270" cy="136" r="54" fill="#d7f6fb" opacity=".92"/>
+  <path d="M0 250C160 216 300 238 455 222s299-44 452-22 270 9 402-11 197-12 291 9v75H0Z" fill="#092b44" opacity=".72"/>
+  <path d="M0 272c205-45 365 18 584-12 195-26 365 13 546-7 184-20 310-13 470 10v257H0Z" fill="url(#sea)"/>
+  <rect y="264" width="1600" height="4" fill="url(#horizonGlow)"/>
+  <g fill="none" stroke="#50cee1" stroke-linecap="round">
+    <path d="M45 324c148-20 251 18 382 1s265-12 389 3 236 4 354-9 224-12 378 10" opacity=".3"/>
+    <path d="M150 366c132-17 226 13 337-2s220-9 330 4 206 6 315-6 205-8 317 8" opacity=".21"/>
+    <path d="M70 422c160-19 286 11 430-2s284-8 416 5 246 7 370-5 202-4 269 5" opacity=".16"/>
+  </g>
+  <!-- Offshore platform -->
+  <g transform="translate(1160 138)" fill="#041522" stroke="#1a5265" stroke-width="4">
+    <path d="M125 2v134M88 44h74M98 14h54M106 2l-19 132M143 2l20 132"/>
+    <rect x="22" y="132" width="242" height="28" rx="4"/>
+    <rect x="54" y="102" width="95" height="31" rx="3"/>
+    <rect x="168" y="84" width="63" height="48" rx="3"/>
+    <path d="M45 160 26 262M90 160 79 262M205 160l9 102M246 160l20 102"/>
+    <path d="M20 210h250M8 262h278"/>
+  </g>
+  <g fill="#ffd46d" filter="url(#lightGlow)">
+    <circle cx="1227" cy="256" r="3"/><circle cx="1262" cy="256" r="3"/><circle cx="1301" cy="256" r="3"/><circle cx="1340" cy="256" r="3"/><circle cx="1376" cy="256" r="3"/>
+    <circle cx="1343" cy="225" r="3"/><circle cx="1377" cy="225" r="3"/>
+  </g>
+  <!-- Survey vessel -->
+  <g transform="translate(760 254)">
+    <path d="M0 84h370l-46 60H67L0 84Z" fill="#051824" stroke="#1d6579" stroke-width="4"/>
+    <path d="M85 30h176v55H61L85 30Z" fill="#082437" stroke="#21768b" stroke-width="4"/>
+    <rect x="111" y="0" width="104" height="31" rx="4" fill="#0a3044" stroke="#21768b" stroke-width="4"/>
+    <path d="M165 0v-68M165-60h54M215-60v60M165-38h49M187-68v-31" fill="none" stroke="#1f7185" stroke-width="5"/>
+    <path d="M284 12v72M284 18h42l26 35" fill="none" stroke="#1f7185" stroke-width="6"/>
+    <path d="M310 83h54" stroke="#1f7185" stroke-width="6"/>
+    <g fill="#ffd46d" filter="url(#lightGlow)">
+      <circle cx="126" cy="17" r="3"/><circle cx="147" cy="17" r="3"/><circle cx="169" cy="17" r="3"/><circle cx="190" cy="17" r="3"/>
+      <circle cx="103" cy="55" r="3"/><circle cx="136" cy="55" r="3"/><circle cx="170" cy="55" r="3"/><circle cx="204" cy="55" r="3"/><circle cx="237" cy="55" r="3"/>
+    </g>
+  </g>
+  <g stroke="#6ae4ef" stroke-linecap="round" opacity=".22">
+    <path d="M858 416h255"/><path d="M820 438h348"/><path d="M1250 386h246"/><path d="M1184 410h354"/>
+  </g>
+  <path d="M0 0h1600v520H0z" fill="none" stroke="#4bdded" stroke-opacity=".12" stroke-width="8"/>
+</svg>

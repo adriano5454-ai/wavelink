@@ -1,0 +1,88 @@
+/* UI123: compact hierarchy, readable planning and shared controls. No asset downloads. */
+@layer wlLegacy {
+ body.wl-ui121 #app{font-size:15px;line-height:1.5;padding-top:16px!important}
+ body.wl-ui121 #app :is(.wl-page-heading,.hr-heading).wl-page-heading{min-height:0!important;padding:18px 22px!important;border-radius:10px!important;box-shadow:none!important}
+ body.wl-ui121 #app #hr-workspace .hr-heading.wl-page-heading{background:#fff!important;color:#173b4a!important;border:1px solid #cedde3!important;border-top:4px solid #107b85!important}
+ body.wl-ui121 #app #hr-workspace .hr-heading :is(.wl-heading-copy,.wl-heading-actions){background:none!important;min-height:0!important;padding:0!important;margin:0!important;color:inherit!important;box-shadow:none!important}
+ body.wl-ui121 #app #hr-workspace .hr-heading::before,body.wl-ui121 #app #hr-workspace .hr-heading::after{display:none!important}
+ body.wl-ui121 #app #hr-workspace .hr-heading :is(h1,.muted,.eyebrow){color:#173b4a!important}
+ body.wl-ui121 #app #hr-workspace .hr-heading h1{font-size:26px!important;line-height:1.2!important;margin:4px 0!important}
+ body.wl-ui121 #app #hr-workspace .hr-heading .btn{background:#fff!important;color:#125362!important;border:1px solid #b8cdd4!important}
+ body.wl-ui121 #app #hr-workspace .hr-heading .muted{margin:6px 0 0!important;font-size:14px!important}
+ body.wl-ui121 #app #hr-workspace .hr-context{margin:8px 0!important;padding:0!important;align-items:end!important}
+ body.wl-ui121 #app #hr-workspace .hr-tabs{margin:12px 0!important;padding:5px!important;border-radius:9px!important}
+ body.wl-ui121 #app #hr-workspace .hr-tabs .btn{min-height:42px!important;padding:8px 12px!important}
+ body.wl-ui121 #app #hr-workspace .hr-help{margin:10px 0!important;line-height:1.45!important}
+ body.wl-ui121 #app #hr-workspace .hr-kpi-grid{margin:12px 0 18px!important;gap:12px!important}
+ body.wl-ui121 #app #hr-workspace .hr-kpi{padding:13px 16px!important;min-height:105px!important;border:1px solid #c4d7df!important;border-top:3px solid #107b85!important;border-radius:10px!important}
+ body.wl-ui121 #app #hr-workspace .hr-kpi[aria-pressed=true]{background:#e3f3f4!important;border-color:#086570!important;box-shadow:0 0 0 1px #086570!important}
+ body.wl-ui121 #app #hr-workspace .hr-kpi strong{font-size:28px!important}
+ body.wl-ui121 #app #hr-workspace .hr-warning-list{max-height:none!important;overflow:visible!important}
+ body.wl-ui121 #app #hr-workspace .hr-panel{border:1px solid #ccdae1!important;border-radius:10px!important;box-shadow:none!important;padding:18px!important}
+ body.wl-ui121 #app #hr-workspace .hr-panel h2{font-size:19px!important;line-height:1.3!important}
+ body.wl-ui121 #app #hr-workspace .hr-section-heading{margin:18px 0 12px!important}
+ body.wl-ui121 #app #hr-workspace .hr-section-heading h2{font-size:22px!important;margin:4px 0!important}
+ body.wl-ui121 #app #hr-workspace .hr-data-table :is(td,th){padding:12px!important;line-height:1.5!important}
+ body.wl-ui121 #app #hr-workspace .hr-data-table th{background:#edf3f6!important;color:#203f4c!important;font-size:13px!important;white-space:normal!important}
+ body.wl-ui121 #app #hr-workspace .hr-data-table tr:focus-within{background:#f1f8f9!important}
+ body.wl-ui121 #app #hr-workspace .hr-person-list{max-height:65vh!important;overflow-y:auto!important}
+ body.wl-ui121 #app #hr-workspace .ux-profile-hero{padding-bottom:16px!important;margin-bottom:16px!important}
+ body.wl-ui121 #app #hr-workspace .ux-profile-section{margin:14px 0!important;padding:0!important}
+ body.wl-ui121 #app #hr-workspace .hr-person-list button[aria-current=true]{background:#dff0f2!important;color:#064e58!important;border-left:4px solid #096c75!important}
+ body.wl-ui121 #app :is(.btn,input,select,textarea){font-size:14px!important}
+ body.wl-ui121 #app :is(input,select,textarea){border-radius:7px!important;border-color:#9fb4bf!important}
+ body.wl-ui121 #app :is(.btn,button,input,select,textarea,summary,[tabindex]):focus-visible{outline:3px solid #a56500!important;outline-offset:3px!important}
+ body.wl-ui121 #app :is(.btn,button):disabled{opacity:.6!important;cursor:not-allowed!important}
+ body.wl-ui121 #app .mw-heading .wl-page-title{font-size:26px!important}
+ body.wl-ui121 #app #personal-home .ph-hero-copy{padding:20px 24px!important}
+ body.wl-ui121 #app #personal-home .ph-hero h1{font-size:28px!important}
+ body.wl-ui121 #app #personal-home .ph-hero-actions{margin-top:12px!important}
+ body.wl-ui121 #workspace-nav .shell-group[hidden]{display:none!important}
+}
+.ux123-period{border:1px solid #c9d9df;border-radius:9px;background:#fff;margin:10px 0 14px}
+.ux123-period>summary{cursor:pointer;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;align-items:center;padding:12px 14px;color:#244956;font-size:14px;min-height:44px}
+.ux123-period>summary::before{content:'+';font-weight:750}.ux123-period[open]>summary::before{content:'−'}
+.ux123-period>summary strong{margin-right:auto}.ux123-period>summary span{color:#075e69;text-decoration:underline;text-underline-offset:3px}
+.ux123-period .hr-filter-grid{border:0!important;margin:0!important;border-top:1px solid #d6e1e6!important;border-radius:0!important}
+.ux123-query-summary{display:flex;flex-wrap:wrap;gap:8px 18px;padding:12px 0;color:#43606d;font-size:13px;border-bottom:1px solid #d7e2e7;margin-bottom:14px}
+.ux123-query-summary strong{color:#173b4a}.ux123-query-summary span{border-left:2px solid #b6cbd2;padding-left:12px}
+.ux123-planning-filter{display:flex;align-items:end;flex-wrap:wrap;gap:12px;margin:10px 0}.ux123-planning-filter label{flex:1 1 220px;margin:0!important}.ux123-planning-filter label:first-child{flex:2 1 300px}.ux123-planning-filter button{margin:0!important;min-height:42px}
+.ux123-return{display:flex;align-items:center;gap:12px;margin:10px 0;color:#3c5965;font-size:14px}
+.ux123-warning-tag{display:inline-block;color:#704219;background:#fff2df;border:1px solid #c3a075;border-radius:5px;padding:3px 7px;font-size:12px;font-weight:650;margin-bottom:6px}
+.ux123-glossary{margin:20px 0 0;border-top:1px solid #c6d8df;padding:14px 0;color:#375461;font-size:14px}.ux123-glossary summary{cursor:pointer;font-weight:700;min-height:32px}.ux123-glossary dl{display:grid;grid-template-columns:minmax(160px,1fr) 3fr;gap:12px 18px;max-width:1050px}.ux123-glossary dt{font-weight:650}.ux123-glossary dd{margin:0;line-height:1.55}
+.ux123-profile-links{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.ux123-profile-links .btn{justify-content:space-between!important;text-align:left!important;padding:12px!important;min-width:0;white-space:normal!important}.ux123-profile-links strong{display:block;font-size:14px}.ux123-profile-links span{display:block;font-size:12px;color:#476470;margin-top:4px}
+.ux123-empty-note{padding:14px;background:#edf4f7;border-radius:8px;color:#365562}
+.ux-timeline-person .ux123-warning-tag{margin:8px 0 0;white-space:normal}.ux-assignment[data-plan-status=planned]{border-style:dashed}.ux-assignment[data-plan-status=confirmed]{border-style:solid;border-left-width:6px}.ux-timeline-dates .ux123-weekend{background:#edf1f5}.ux-timeline-dates .is-today{box-shadow:inset 0 -3px #076976}
+.ux123-planning-key{display:flex;flex-wrap:wrap;gap:8px 18px;font-size:13px;color:#375461;margin:8px 0 12px}.ux123-planning-key span{padding:5px 9px;border:1px solid #819fa9;border-radius:4px}.ux123-planning-key span:first-child{border-style:dashed}
+@media(max-width:900px){.ux123-query-summary{gap:8px 12px}.ux123-profile-links{grid-template-columns:1fr}.ux123-planning-filter label{flex-basis:100%}.ux123-glossary dl{grid-template-columns:1fr;gap:6px}.ux123-glossary dd{margin-bottom:12px}.ux123-period>summary span{flex-basis:100%;margin-left:22px}.ux123-return{flex-wrap:wrap}}
+@media(max-width:620px){@layer wlLegacy{body.wl-ui121 #app{padding:12px!important}body.wl-ui121 #app #hr-workspace .hr-heading.wl-page-heading{padding:14px!important}body.wl-ui121 #app #hr-workspace .hr-heading h1{font-size:23px!important}body.wl-ui121 #app #hr-workspace .hr-panel{padding:14px!important}body.wl-ui121 #app #hr-workspace .hr-kpi-grid{grid-template-columns:repeat(2,minmax(0,1fr))!important}body.wl-ui121 #app #hr-workspace .hr-kpi{min-width:0!important;padding:12px!important}body.wl-ui121 #app #hr-workspace .hr-tabs{gap:3px!important}body.wl-ui121 #app #hr-workspace .hr-tabs .btn{font-size:13px!important;padding:8px!important}}}
+@media print{.ux123-planning-filter,.ux123-period,.ux123-return{display:none!important}.ux123-query-summary{break-inside:avoid}.ux123-profile-links{display:none}}
+
+.ux123-warning-tag{margin-right:8px}.ux123-no-plan{margin:12px 0}.ux123-no-plan ul{display:flex;flex-wrap:wrap;gap:8px 16px;padding:0;list-style:none}.ux123-no-plan li{border:1px solid #d2e0e5;padding:10px;border-radius:8px;background:#fff}.ux123-no-plan small{display:block;color:#506b76;margin-top:5px}
+@layer wlLegacy{body.wl-ui121 #app #hr-workspace .ux-profile-hero{justify-content:flex-start!important}body.wl-ui121 #app #hr-workspace .ux-profile-hero>div{margin-right:auto!important}body.wl-ui121 #app #hr-workspace .ux123-profile-links .btn{display:flex!important;flex-direction:column!important;align-items:flex-start!important;gap:3px!important}}
+
+@layer wlLegacy{body.wl-ui121 #app #hr-workspace .hr-filter-grid .ux123-scope-filter{flex:1 0 100%!important;display:flex!important}body.wl-ui121 #app #hr-workspace .hr-filter-grid .ux123-scope-filter>label{max-width:600px!important}}
+
+.ux123-mobile-section{display:none}
+@media(max-width:620px){
+ @layer wlLegacy{
+  body.wl-ui121 #wl-topbar{gap:6px!important;padding-inline:8px!important;min-width:0!important}
+  body.wl-ui121 #wl-topbar #wl-global-search-trigger{width:42px!important;min-width:42px!important;max-width:42px!important;flex:0 0 42px!important;padding:8px!important;margin-left:0!important}
+  body.wl-ui121 #wl-topbar #wl-persistent-badge{width:42px!important;min-width:42px!important;max-width:42px!important;flex:0 0 42px!important;padding:5px!important}
+  body.wl-ui121 #wl-topbar .wl-header-spacer{flex:1 1 0!important;min-width:0!important}
+  body.wl-ui121 #app #hr-workspace .hr-heading.wl-page-heading{display:grid!important;grid-template-columns:1fr auto!important;gap:10px!important}
+  body.wl-ui121 #app #hr-workspace .hr-heading .wl-heading-copy{grid-column:1/-1!important}
+  body.wl-ui121 #app #hr-workspace .hr-heading .muted{display:none!important}
+  body.wl-ui121 #app #hr-workspace .hr-heading .wl-heading-help{grid-column:1!important;grid-row:2!important;justify-self:start!important;width:auto!important;margin:0!important}
+  body.wl-ui121 #app #hr-workspace .hr-heading .wl-heading-actions{grid-column:2!important;grid-row:2!important;width:auto!important;margin:0!important;display:flex!important}
+  body.wl-ui121 #app #hr-workspace .hr-tabs>.btn,body.wl-ui121 #app #hr-workspace .hr-tabs>.ux-secondary-tabs{display:none!important}
+  body.wl-ui121 #app #hr-workspace .hr-tabs>.ux123-mobile-section{display:flex!important;flex-direction:column!important;gap:5px!important;width:100%!important;margin:0!important;font-size:13px!important;font-weight:650!important}
+  body.wl-ui121 #app #hr-workspace .hr-tabs{padding:10px!important}
+  body.wl-ui121 #app #hr-workspace .hr-tabs #hr-section-select{width:100%!important;min-height:44px!important}
+ }
+ .ux123-period>summary{gap:7px;padding:10px;font-size:13px}.ux123-period>summary strong{flex:1 1 240px}.ux123-period>summary span{margin-left:20px}
+ .ux123-planning-key{display:none}
+}
+
+/* UI127: a labelled travel bar shares the schedule grid without implying attendance. */
+.ux-assignment-travel{background:var(--surface-alt,#eef4ff);border-color:#436da0;color:var(--text,#172b45)}

@@ -1,0 +1,35 @@
+{
+  "source": "hr_workspace.js: renderForm + actual input/change handlers; synthetic DOM controls only",
+  "html": "<form id=\"hr-form\" class=\"hr-form\"><p class=\"hr-form-person\">Colaborador: <strong>Bruno Fictício</strong></p><div class=\"hr-form-fields\"><h3>Certificado de treinamento · fictício</h3><dl class=\"hr-facts\"><dt>Tipo de documento</dt><dd>Treinamento / qualificação</dd><dt>Número do documento / certificado</dt><dd>EXEMPLO-001</dd><dt>Órgão / entidade emissora</dt><dd>Instituição fictícia</dd><dt>Data de emissão</dt><dd>01/10/2025</dd><dt>Data de vencimento</dt><dd>01/10/2027</dd></dl><div class=\"hr-files\"><article><strong>certificado-ficticio.pdf</strong><button type=\"button\" class=\"btn secondary small\" data-hr-review-file=\"file-fictional\" data-hr-review-preview>Visualizar anexo</button></article></div><p>Confira os dados, a validade e todos os anexos. A conferência documental não declara aptidão médica nem autoriza um embarque.</p><label class=\"field\"><span>Resultado da conferência</span><select name=\"decision\"><option value=\"\" selected>Selecione o resultado da análise</option><option value=\"verify\" >Conferido</option><option value=\"return\" >Devolver para correção</option><option value=\"reject\" >Rejeitar documento</option></select></label><label class=\"field\"><span>Parecer (obrigatório para devolver ou rejeitar)</span><textarea name=\"comment\" rows=\"3\" maxlength=\"2000\"></textarea></label><p id=\"hr-review-reason-help\" class=\"hr-review-reason-help\" role=\"status\"></p></div><p id=\"hr-form-status\" class=\"hr-form-status\" role=\"status\">Este formulário fica guardado nesta aba até você salvá-lo ou descartá-lo explicitamente.</p><div class=\"hr-form-footer\"><button type=\"button\" class=\"btn secondary\" id=\"hr-close\">Fechar janela e manter rascunho</button><button type=\"submit\" class=\"btn\" id=\"hr-save\">Salvar conferência documental</button></div></form>",
+  "cancel": {
+    "id": "hr-cancel",
+    "type": "button",
+    "className": "btn secondary",
+    "text": "Cancelar ação"
+  },
+  "fields": {
+    "decision": {
+      "value": "return",
+      "required": true,
+      "disabled": false,
+      "attributes": {
+        "name": "decision"
+      }
+    },
+    "comment": {
+      "value": "Confira a data de emissão e substitua a página ilegível. Exemplo fictício.",
+      "required": true,
+      "disabled": false,
+      "attributes": {
+        "name": "comment",
+        "rows": "3",
+        "maxlength": "2000",
+        "aria-required": "true",
+        "aria-describedby": "hr-review-reason-help"
+      }
+    }
+  },
+  "help": "Explique o que precisa ser corrigido ou por que este registro foi rejeitado. O colaborador pode consultar este motivo.",
+  "helpRequired": "true",
+  "status": "Alterações ainda não salvas. Use Salvar para confirmar."
+}

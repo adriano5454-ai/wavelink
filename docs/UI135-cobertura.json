@@ -1,0 +1,609 @@
+{
+  "release": "UI135",
+  "method": "Inspeção de código, componentes reais em adaptadores DOM e testes HTTP com dados fictícios. Sem renderização visual em navegador.",
+  "rh": {
+    "release": "UI135",
+    "baseline": "work/ui134-rh-coverage.json",
+    "scope": "RH de posse deste agente; perfil/conta pertencem a outra frente. Não representa validação integral das 193 vistas.",
+    "views_tracked": 31,
+    "views_with_specific_current_review_or_regression": 15,
+    "newly_revisited_prior_nao_retestado": 9,
+    "areas": [
+      {
+        "id": "perfil",
+        "title": "Perfil e equipe",
+        "views": [
+          {
+            "name": "Meu perfil",
+            "ui135_status": "nao_retestado_nesta_frente",
+            "source": "recognition_workspace.js: openProfile; testes UI131 de navegação/salvamento",
+            "ui135_evidence": "Fluxo preservado; a evidência UI134 e anterior não é apresentada como validação atual.",
+            "browser_validated_ui135": false,
+            "production_validated_ui135": false,
+            "ui134_status": "corrigido_com_limites",
+            "ui134_evidence": "Atalho Documentos relacionados acompanha o escopo ampliado UI133. Regressões reais do handler preservam rota/seleção/foco e impedem salvar após troca de conta.",
+            "historical_evidence_is_not_current_validation": true
+          },
+          {
+            "name": "Conta e acesso",
+            "ui135_status": "nao_retestado_nesta_frente",
+            "source": "Matriz UI132; fluxo preservado",
+            "ui135_evidence": "Fluxo preservado; a evidência UI134 e anterior não é apresentada como validação atual.",
+            "browser_validated_ui135": false,
+            "production_validated_ui135": false,
+            "ui134_status": "nao_retestado_nesta_frente",
+            "ui134_evidence": "Não foi realizada revisão específica nesta frente. Evidência histórica não é convertida em validação UI134.",
+            "historical_evidence_is_not_current_validation": true
+          },
+          {
+            "name": "Distintivos e progresso",
+            "ui135_status": "nao_retestado_nesta_frente",
+            "source": "Matriz UI132; fluxo preservado",
+            "ui135_evidence": "Fluxo preservado; a evidência UI134 e anterior não é apresentada como validação atual.",
+            "browser_validated_ui135": false,
+            "production_validated_ui135": false,
+            "ui134_status": "nao_retestado_nesta_frente",
+            "ui134_evidence": "Não foi realizada revisão específica nesta frente. Evidência histórica não é convertida em validação UI134.",
+            "historical_evidence_is_not_current_validation": true
+          },
+          {
+            "name": "Histórico de contribuições",
+            "ui135_status": "nao_retestado_nesta_frente",
+            "source": "Matriz UI132; fluxo preservado",
+            "ui135_evidence": "Fluxo preservado; a evidência UI134 e anterior não é apresentada como validação atual.",
+            "browser_validated_ui135": false,
+            "production_validated_ui135": false,
+            "ui134_status": "nao_retestado_nesta_frente",
+            "ui134_evidence": "Não foi realizada revisão específica nesta frente. Evidência histórica não é convertida em validação UI134.",
+            "historical_evidence_is_not_current_validation": true
+          },
+          {
+            "name": "Equipe",
+            "ui135_status": "nao_retestado_nesta_frente",
+            "source": "Matriz UI132; fluxo preservado",
+            "ui135_evidence": "Fluxo preservado; a evidência UI134 e anterior não é apresentada como validação atual.",
+            "browser_validated_ui135": false,
+            "production_validated_ui135": false,
+            "ui134_status": "nao_retestado_nesta_frente",
+            "ui134_evidence": "Não foi realizada revisão específica nesta frente. Evidência histórica não é convertida em validação UI134.",
+            "historical_evidence_is_not_current_validation": true
+          },
+          {
+            "name": "Perfil de outra pessoa",
+            "ui135_status": "nao_retestado_nesta_frente",
+            "source": "recognition_workspace.js: openProfile",
+            "ui135_evidence": "Fluxo preservado; a evidência UI134 e anterior não é apresentada como validação atual.",
+            "browser_validated_ui135": false,
+            "production_validated_ui135": false,
+            "ui134_status": "revisado_por_codigo_sem_novo_fluxo",
+            "ui134_evidence": "Mesmo rótulo corrigido; montagem mantém resposta autorizada pelo servidor e histórico pessoal condicional. Não foi executada nova consulta autenticada de outro perfil.",
+            "historical_evidence_is_not_current_validation": true
+          },
+          {
+            "name": "Preferências de alertas",
+            "ui135_status": "nao_retestado_nesta_frente",
+            "source": "Matriz UI132; fluxo preservado",
+            "ui135_evidence": "Fluxo preservado; a evidência UI134 e anterior não é apresentada como validação atual.",
+            "browser_validated_ui135": false,
+            "production_validated_ui135": false,
+            "ui134_status": "nao_retestado_nesta_frente",
+            "ui134_evidence": "Não foi realizada revisão específica nesta frente. Evidência histórica não é convertida em validação UI134.",
+            "historical_evidence_is_not_current_validation": true
+          }
+        ]
+      },
+      {
+        "id": "rh",
+        "title": "Recursos Humanos",
+        "views": [
+          {
+            "name": "Visão geral",
+            "ui135_status": "corrigido_revisado_com_limites",
+            "source": "hr_workspace.js: dashboardHtml, localDay, monthStart/monthEnd, default periods",
+            "ui135_evidence": "Próximas datas e novos períodos usam dia civil local. Renderização e filtro de avisos executados; quatro processos Node com America/Bahia e Asia/Tokyo verificam 23:59/00:00 e virada de mês. Clique real no painel e navegação por navegador não foram executados.",
+            "browser_validated_ui135": false,
+            "production_validated_ui135": false,
+            "ui134_status": "nao_retestado_nesta_frente",
+            "ui134_evidence": "Não foi realizada revisão específica nesta frente. Evidência histórica não é convertida em validação UI134.",
+            "historical_evidence_is_not_current_validation": true
+          },
+          {
+            "name": "Calendário mensal",
+            "ui135_status": "regressao_local_preservada",
+            "source": "tests/test_ui134_rh_planning.cjs; test_ui121_experience.cjs",
+            "ui135_evidence": "Marcadores e intervalos UI134 preservados; novos defaults/mês atual do workspace alinhados ao dia local. Sem renderização visual em navegador.",
+            "browser_validated_ui135": false,
+            "production_validated_ui135": false,
+            "ui134_status": "corrigido_e_testado_localmente",
+            "ui134_evidence": "Dia civil local em America/Bahia e Asia/Tokyo nas transições 23:59/00:00; datas salvas e intervalos preservados. Não houve inspeção de pixels.",
+            "historical_evidence_is_not_current_validation": true
+          },
+          {
+            "name": "Agenda",
+            "ui135_status": "nao_retestado_nesta_frente",
+            "source": "hr_planning_ui121.js: agenda/milestones",
+            "ui135_evidence": "Fluxo preservado; a evidência UI134 e anterior não é apresentada como validação atual.",
+            "browser_validated_ui135": false,
+            "production_validated_ui135": false,
+            "ui134_status": "corrigido_e_testado_localmente",
+            "ui134_evidence": "Retorno não informado explícito; marcos incluem o dia local correto; registros e permissões da resposta não são ampliados.",
+            "historical_evidence_is_not_current_validation": true
+          },
+          {
+            "name": "Equipe por período",
+            "ui135_status": "nao_retestado_nesta_frente",
+            "source": "hr_workspace.js: rosterTable",
+            "ui135_evidence": "Fluxo preservado; a evidência UI134 e anterior não é apresentada como validação atual.",
+            "browser_validated_ui135": false,
+            "production_validated_ui135": false,
+            "ui134_status": "corrigido_com_limites",
+            "ui134_evidence": "Região rolável ganhou nome acessível. HTML real executado em PT/EN; a jornada de navegação da tabela com registros não foi repetida.",
+            "historical_evidence_is_not_current_validation": true
+          },
+          {
+            "name": "Necessidades e cobertura",
+            "ui135_status": "nao_retestado_nesta_frente",
+            "source": "hr_workspace.js: coverageHtml; hr_workspace.css",
+            "ui135_evidence": "Fluxo preservado; a evidência UI134 e anterior não é apresentada como validação atual.",
+            "browser_validated_ui135": false,
+            "production_validated_ui135": false,
+            "ui134_status": "revisado_por_codigo_sem_alteracao",
+            "ui134_evidence": "Cobertura mantém informação por dia e diferença entre proposta e confirmação. Não foi identificada necessidade de campo novo; nenhum fluxo de gravação retestado.",
+            "historical_evidence_is_not_current_validation": true
+          },
+          {
+            "name": "Filtros de período/equipe",
+            "ui135_status": "regressao_local_preservada",
+            "source": "tests/test_ux_ui123.cjs",
+            "ui135_evidence": "Projeção autorizada, pesquisa sem acentos, restrições/sem programação e filtros de pessoas/registros preservados. Controles do navegador não exercitados.",
+            "browser_validated_ui135": false,
+            "production_validated_ui135": false,
+            "ui134_status": "regressao_local_preservada",
+            "ui134_evidence": "Filtros por pessoa, local e projeto, respostas vazias e restrições passam nas regressões de projeção. Controles em navegador não foram exercitados.",
+            "historical_evidence_is_not_current_validation": true
+          },
+          {
+            "name": "Colaboradores",
+            "ui135_status": "nao_retestado_nesta_frente",
+            "source": "hr_workspace.js: peopleHtml",
+            "ui135_evidence": "Fluxo preservado; a evidência UI134 e anterior não é apresentada como validação atual.",
+            "browser_validated_ui135": false,
+            "production_validated_ui135": false,
+            "ui134_status": "revisado_por_codigo_sem_alteracao",
+            "ui134_evidence": "Busca, quantidade filtrada, lotação e identificação de seleção existentes preservadas. Sem teste novo da seleção do cadastro completo.",
+            "historical_evidence_is_not_current_validation": true
+          },
+          {
+            "name": "Perfil do colaborador",
+            "ui135_status": "nao_retestado_nesta_frente",
+            "source": "hr_workspace.js: peopleHtml",
+            "ui135_evidence": "Fluxo preservado; a evidência UI134 e anterior não é apresentada como validação atual.",
+            "browser_validated_ui135": false,
+            "production_validated_ui135": false,
+            "ui134_status": "revisado_por_codigo_sem_alteracao",
+            "ui134_evidence": "Cadastros privados e contatos de emergência continuam separados do perfil profissional. Atalhos são filtrados pelas permissões existentes.",
+            "historical_evidence_is_not_current_validation": true
+          },
+          {
+            "name": "Editar cadastro",
+            "ui135_status": "corrigido_testado_handlers_locais",
+            "source": "hr_workspace.js: rememberFormBaseline, snapshot, renderForm, cancelForm, saveForm",
+            "ui135_evidence": "Handlers reais de entrada/cancelamento/fechamento/retomada; restaurar telefone original elimina falso aviso. Gravação incerta conserva corpo/ID e retry. API é adaptador fictício; não é teste de persistência real.",
+            "browser_validated_ui135": false,
+            "production_validated_ui135": false,
+            "ui134_status": "nao_retestado_nesta_frente",
+            "ui134_evidence": "Não foi realizada revisão específica nesta frente. Evidência histórica não é convertida em validação UI134.",
+            "historical_evidence_is_not_current_validation": true
+          },
+          {
+            "name": "Documentos pessoais",
+            "ui135_status": "nao_retestado_nesta_frente",
+            "source": "hr_workspace.js: recordCard/shortStatus/detailFields",
+            "ui135_evidence": "Fluxo preservado; a evidência UI134 e anterior não é apresentada como validação atual.",
+            "browser_validated_ui135": false,
+            "production_validated_ui135": false,
+            "ui134_status": "revisado_por_codigo_sem_alteracao",
+            "ui134_evidence": "Validade e conferência continuam distintas; nomes longos possuem quebra de linha. Nenhuma aprovação ou gravação nova foi executada.",
+            "historical_evidence_is_not_current_validation": true
+          },
+          {
+            "name": "Cadastrar documento",
+            "ui135_status": "revisado_testado_handlers_locais",
+            "source": "hr_workspace.js: formFields, expiryControls, payload, saveForm",
+            "ui135_evidence": "Validade com/sem data muda obrigatoriedade e conserva a data digitada localmente. Save usa save_document sem decisão de conferência. Arquivo selecionado permanece no rascunho, inclusive troca por arquivo com mesmos metadados; nenhum arquivo real enviado.",
+            "browser_validated_ui135": false,
+            "production_validated_ui135": false,
+            "ui134_status": "nao_retestado_nesta_frente",
+            "ui134_evidence": "Não foi realizada revisão específica nesta frente. Evidência histórica não é convertida em validação UI134.",
+            "historical_evidence_is_not_current_validation": true
+          },
+          {
+            "name": "Anexos privados",
+            "ui135_status": "regressao_local_parcial",
+            "source": "tests/test_ui127_rh_agent_navigation.cjs; test_ui135_rh_forms.cjs",
+            "ui135_evidence": "Preview PDF/imagem preserva sandbox/revogação/foco nos handlers antigos; arquivo selecionado é mantido no rascunho e cancelamento da remoção não envia API. Não há teste HTTP/arquivo real desta fase.",
+            "browser_validated_ui135": false,
+            "production_validated_ui135": false,
+            "ui134_status": "revisado_por_codigo_sem_alteracao",
+            "ui134_evidence": "Ações explícitas de visualizar/baixar/remover e layout com quebra de linhas foram inspecionados. Sem download novo, API ou navegador nesta frente.",
+            "historical_evidence_is_not_current_validation": true
+          },
+          {
+            "name": "Conferência documental",
+            "ui135_status": "corrigido_testado_handlers_locais",
+            "source": "hr_workspace.js: reviewReason, reviewControls, payload, formActionLabel, renderForm",
+            "ui135_evidence": "Campo e ajuda indicam motivo obrigatório ao devolver/rejeitar; decisão ausente ou motivo vazio impedem POST e recebem foco. Confirmação de conferência tem motivo opcional; título/estado funcionam PT/EN. API simulada, sem conferência de arquivo real.",
+            "browser_validated_ui135": false,
+            "production_validated_ui135": false,
+            "ui134_status": "nao_retestado_nesta_frente",
+            "ui134_evidence": "Não foi realizada revisão específica nesta frente. Evidência histórica não é convertida em validação UI134.",
+            "historical_evidence_is_not_current_validation": true
+          },
+          {
+            "name": "Escalas e viagens",
+            "ui135_status": "nao_retestado_nesta_frente",
+            "source": "hr_planning_ui121.js: personRecords/agenda",
+            "ui135_evidence": "Fluxo preservado; a evidência UI134 e anterior não é apresentada como validação atual.",
+            "browser_validated_ui135": false,
+            "production_validated_ui135": false,
+            "ui134_status": "corrigido_e_testado_localmente",
+            "ui134_evidence": "Consulta distingue escala prevista, viagem e falta de retorno. Sem alteração de períodos/registro, sem teste de criação de escala ou viagem.",
+            "historical_evidence_is_not_current_validation": true
+          },
+          {
+            "name": "Cadastrar escala",
+            "ui135_status": "corrigido_revisado_com_limites",
+            "source": "hr_workspace.js: defaults, snapshot, formFingerprint, formFields",
+            "ui135_evidence": "Data inicial local, números do DOM e conjunto de requisitos comparados sem falso dirty; editar/restaurar local e cancelar preserva cadastro/conta. Formulário real exercitado, mas save_shift e backend de escalas não foram novamente executados nesta frente.",
+            "browser_validated_ui135": false,
+            "production_validated_ui135": false,
+            "ui134_status": "nao_retestado_nesta_frente",
+            "ui134_evidence": "Não foi realizada revisão específica nesta frente. Evidência histórica não é convertida em validação UI134.",
+            "historical_evidence_is_not_current_validation": true
+          },
+          {
+            "name": "Cadastrar viagem",
+            "ui135_status": "corrigido_testado_handlers_locais",
+            "source": "hr_workspace.js: defaults, snapshot, beginForm, payload, saveForm",
+            "ui135_evidence": "Cadastro de viagem exige escolha de pessoa na visão de equipe; handler envia a pessoa correta, fuso informado e retorno vazio sem inventar data. Save_travel exercitado contra API simulada, sem reserva externa ou gravação real.",
+            "browser_validated_ui135": false,
+            "production_validated_ui135": false,
+            "ui134_status": "nao_retestado_nesta_frente",
+            "ui134_evidence": "Não foi realizada revisão específica nesta frente. Evidência histórica não é convertida em validação UI134.",
+            "historical_evidence_is_not_current_validation": true
+          },
+          {
+            "name": "Apontamento de horas",
+            "ui135_status": "regressao_local_preservada",
+            "source": "tests/test_ui129_weekly_ui.cjs; test_ui134_rh_weekly.cjs",
+            "ui135_evidence": "145 verificações semanais e 63 de seleção/foco passaram. Nenhuma nova edição do módulo semanal; fluxos em produção não repetidos.",
+            "browser_validated_ui135": false,
+            "production_validated_ui135": false,
+            "ui134_status": "corrigido_e_testado_localmente",
+            "ui134_evidence": "Limpar linha mantém foco no mesmo dia; seleção é identificada em texto; dias vazios em consulta ficam bloqueados. Handlers e regressões preservam IDs, versões, notas, filtros, demais dias, projetos aprovados, sessão e operação de salvamento.",
+            "historical_evidence_is_not_current_validation": true
+          },
+          {
+            "name": "Despesas",
+            "ui135_status": "nao_retestado_nesta_frente",
+            "source": "hr_workspace.js: expenseTotals/formFields/shortStatus",
+            "ui135_evidence": "Fluxo preservado; a evidência UI134 e anterior não é apresentada como validação atual.",
+            "browser_validated_ui135": false,
+            "production_validated_ui135": false,
+            "ui134_status": "revisado_por_codigo_sem_alteracao",
+            "ui134_evidence": "Moedas separadas, escopo dos totais e diferença entre valor apresentado, aprovação e pagamento foram conferidos no código; sem nova jornada de despesa.",
+            "historical_evidence_is_not_current_validation": true
+          },
+          {
+            "name": "Conferências e aprovações",
+            "ui135_status": "nao_retestado_nesta_frente",
+            "source": "tests/test_ui129_weekly_ui.cjs",
+            "ui135_evidence": "Fluxo preservado; a evidência UI134 e anterior não é apresentada como validação atual.",
+            "browser_validated_ui135": false,
+            "production_validated_ui135": false,
+            "ui134_status": "regressao_parcial_sem_alteracao",
+            "ui134_evidence": "Regressões de apontamentos por projeto preservam capacidades, proibição de autoaprovação e comportamento após devolução. Não cobre uma revisão completa de documentos/despesas.",
+            "historical_evidence_is_not_current_validation": true
+          },
+          {
+            "name": "Devolução com justificativa",
+            "ui135_status": "corrigido_testado_handlers_locais",
+            "source": "hr_workspace.js: reviewControls, payload",
+            "ui135_evidence": "Motivo obrigatório ao devolver documento/despesa; alternar decisão atualiza estado obrigatório sem apagar texto. Testado em PT/EN; API e fluxo persistido não executados.",
+            "browser_validated_ui135": false,
+            "production_validated_ui135": false,
+            "ui134_status": "regressao_parcial_sem_alteracao",
+            "ui134_evidence": "Recibo de horas devolvidas mantém restrição de consulta ao rascunho. Não foi repetida a digitação/interação completa de justificativa em navegador.",
+            "historical_evidence_is_not_current_validation": true
+          },
+          {
+            "name": "Rejeição com justificativa",
+            "ui135_status": "corrigido_testado_handlers_locais",
+            "source": "hr_workspace.js: reviewControls, payload, saveForm, states",
+            "ui135_evidence": "Rejeição de documento/despesa exige decisão+motivo, conserva conteúdo e confirma ação específica. Relatório mostra Rejeitado/Rejected. Registros rejeitados não oferecem edição/reenvio de despesa. Somente adaptador local.",
+            "browser_validated_ui135": false,
+            "production_validated_ui135": false,
+            "ui134_status": "nao_retestado_nesta_frente",
+            "ui134_evidence": "Não foi realizada revisão específica nesta frente. Evidência histórica não é convertida em validação UI134.",
+            "historical_evidence_is_not_current_validation": true
+          },
+          {
+            "name": "Reenvio após correção",
+            "ui135_status": "testado_handlers_locais_sem_mudar_contrato",
+            "source": "hr_workspace.js: editable, submittable, beginForm, saveForm",
+            "ui135_evidence": "Despesa devolvida corrigida é salva primeiro como rascunho; segundo pedido explícito submit_expense usa ID e versão da resposta anterior. Nunca envia no primeiro save. Registros submetidos/aprovados/rejeitados continuam bloqueados. Backend não repetido.",
+            "browser_validated_ui135": false,
+            "production_validated_ui135": false,
+            "ui134_status": "nao_retestado_nesta_frente",
+            "ui134_evidence": "Não foi realizada revisão específica nesta frente. Evidência histórica não é convertida em validação UI134.",
+            "historical_evidence_is_not_current_validation": true
+          },
+          {
+            "name": "Relatórios e exportação",
+            "ui135_status": "corrigido_testado_dados_e_renderizadores",
+            "source": "hr_workspace.js: reportScopeRows, reportsHtml, reportRows, exportReport",
+            "ui135_evidence": "Seis tipos de relatório executados PT/EN: cabeçalhos/colunas alinhados, contagem, vazio, região nomeada, caption, escape e CSV real em Blob. Filtros, consulta parcial e proteção contra fórmula preservados. Cobertura usa regra do servidor e não sugere filtro individual/lotação inexistente. Sem abertura em planilha/navegador.",
+            "browser_validated_ui135": false,
+            "production_validated_ui135": false,
+            "ui134_status": "nao_retestado_nesta_frente",
+            "ui134_evidence": "Não foi realizada revisão específica nesta frente. Evidência histórica não é convertida em validação UI134.",
+            "historical_evidence_is_not_current_validation": true
+          },
+          {
+            "name": "Histórico e recibo de salvamento",
+            "ui135_status": "regressao_local_parcial",
+            "source": "saveForm + tests/test_ui129_weekly_ui.cjs",
+            "ui135_evidence": "Retry conserva operação, corpo e rascunho; recibos por projeto mantêm limite de consulta após devolução. Não representa revisão de todos os históricos do módulo.",
+            "browser_validated_ui135": false,
+            "production_validated_ui135": false,
+            "ui134_status": "regressao_parcial_sem_alteracao",
+            "ui134_evidence": "Operação incerta mantém o mesmo corpo e ID; recibo só oferece consulta quando permitido. Não representa revisão de todos os históricos de RH.",
+            "historical_evidence_is_not_current_validation": true
+          }
+        ]
+      }
+    ],
+    "browser": false,
+    "production": false
+  },
+  "documents": {
+    "release": "UI135",
+    "area": "Resultados de checklist, evidências, revisão e envio de originais",
+    "method": "Execução dos controladores reais em adaptador DOM local com dados fictícios. Sem navegador, servidor HTTP, compressão real de imagens ou produção.",
+    "screens": [
+      {
+        "screen": "Editor completo de resultado e reabertura de rascunho",
+        "previous_ui134": "Inspecionado; não executado como fluxo completo.",
+        "status": "Corrigido e testado localmente",
+        "changes": [
+          "Revisão zero é exibida como valor registrado na ficha de identidade.",
+          "Leituras numéricas salvas como 0 chegam ao campo com 0 ao reabrir; correção integrada pelo coordenador no chamador app.js.",
+          "Resultado e limites das leituras ligados aos respectivos controles por aria-describedby, preservando descrição existente."
+        ],
+        "executed": [
+          "editItem, validate e queueChange reais: abrir registro, editar nota e leitura, guardar rascunho, fechar e reabrir.",
+          "Descartar rascunho: recusa conserva edição; confirmação remove apenas o rascunho.",
+          "Falha de armazenamento da fila restaura rascunho e fila anteriores.",
+          "Valor fora do limite e Issue sem justificativa bloqueiam envio.",
+          "Sessão alterada ou permissão revogada impedem ação; autenticação não é apagada.",
+          "Fila preserva base_version 0, valor 0 e texto digitado; snapshot confirmado permanece intacto."
+        ],
+        "tests": "test_ui135_documents_full_editor.cjs (60) e parte de test_ui135_documents_editor.cjs",
+        "limits": [
+          "Persistência, sincronização e transporte são dependências simuladas; não comprova recebimento pelo servidor.",
+          "Validação visual no navegador e leitor de tela pendentes."
+        ]
+      },
+      {
+        "screen": "Fotos do editor de resultado",
+        "previous_ui134": "Inspeção do guard de evidência; sem preenchimento completo.",
+        "status": "Handler real executado com dependências simuladas; textos corrigidos pelo coordenador",
+        "changes": [
+          "Três textos de progresso, contexto alterado e remoção de foto recebida localizados em PT/EN pelo coordenador."
+        ],
+        "executed": [
+          "Handler PhotoEvidence.mountEditor extraído diretamente da fonte atual, sem reescrever sua lógica.",
+          "Adicionar duas fotos fictícias, editar legenda, abrir foto exata, recusar e confirmar remoção do rascunho.",
+          "Bloqueio durante preparação; seleção concorrente ignorada.",
+          "Falha de preparação, limite de cinco fotos, falha de orçamento local e rollback quando persistência falha.",
+          "Mudança de contexto durante preparação não anexa as fotos.",
+          "Remoção com falha de persistência restaura foto do rascunho; origem histórica não é modificada."
+        ],
+        "tests": "test_ui135_documents_editor.cjs (91, incluindo apresentação e guardas)",
+        "limits": [
+          "Decodificação, câmera, canvas, compressão, quotas reais do navegador e IndexedDB não foram exercitados.",
+          "Imagens usadas são identificadores e bytes fictícios; nenhuma fotografia real foi acessada."
+        ]
+      },
+      {
+        "screen": "Conferência das evidências e decisão do checklist",
+        "previous_ui134": "Inspecionado; sem nova execução completa.",
+        "status": "Corrigido e testado localmente",
+        "changes": [
+          "Cabeçalho usa REVISÃO DO CHECKLIST sem identificação técnica UI 17.",
+          "Decisões conhecidas approved/rejected/pending localizadas; valores desconhecidos, nomes e notas salvos mantidos."
+        ],
+        "executed": [
+          "Controlador de revisão e guia de etapas reais; escolha explícita de decisão, justificativa obrigatória na devolução e confirmação final.",
+          "Fechar revisão com nota: recusa mantém texto, confirmação fecha sem encerrar sessão.",
+          "Foto exata solicitada por registro/ID; fechar ampliação mantém revisão; URLs locais liberadas ao fechar.",
+          "Foto negada ou ausente quando obrigatória bloqueia decisão; foto tardia de outro contexto não atualiza a tela.",
+          "Conta sem designação não ganha exceção por administração.",
+          "Versão alterada invalida confirmação; refresh conserva nota mas limpa decisão.",
+          "Resposta perdida bloqueia nova ação automática e conserva a nota."
+        ],
+        "tests": "test_ui135_documents_review.cjs (90, incluindo prontidão/finalização)",
+        "limits": [
+          "As respostas e autorizações do servidor são simuladas; não substitui uma bateria HTTP das regras de autorização.",
+          "Sem prova de experiência real de teclado/leitor de tela ou leitura de imagens no navegador."
+        ]
+      },
+      {
+        "screen": "Prontidão do dispositivo e finalização da etapa",
+        "previous_ui134": "Inspecionado; sem nova execução completa.",
+        "status": "Fluxos reais executados localmente; comportamento preservado",
+        "changes": [],
+        "executed": [
+          "Prontidão envia heartbeat e marca apenas o dispositivo atual; pode ser registrada mesmo havendo verificação pendente salva.",
+          "Dispositivo já pronto fica bloqueado para repetir a ação.",
+          "Participante offline impede finalização.",
+          "Finalização com todos os critérios atendidos exige confirmação e usa a revisão exata da etapa.",
+          "Prontidão e finalização usam ações/URLs distintas e não encerram a conta."
+        ],
+        "tests": "test_ui135_documents_review.cjs",
+        "limits": [
+          "Nenhuma etapa de produção foi finalizada e nenhuma prontidão real foi alterada."
+        ]
+      },
+      {
+        "screen": "Envio de original e consulta do comprovante",
+        "previous_ui134": "Inspeção e teste de cancelamento, sem execução do envio.",
+        "status": "Corrigido e testado localmente",
+        "changes": [
+          "Resultado, erro e comprovante recebem foco somente após ação explícita ainda atual.",
+          "Se o usuário move o foco durante a requisição, o resultado não o toma de volta.",
+          "Leitura automática do contexto não toma foco; atualização explícita devolve foco à escolha do destino.",
+          "Observador de foco removido ao desmontar o formulário."
+        ],
+        "executed": [
+          "Selecionar arquivo binário fictício, calcular SHA-256 real, editar título/notas/destino e montar envelope real de envio.",
+          "Bytes extraídos do envelope idênticos aos do arquivo escolhido.",
+          "Comprovante precisa corresponder a op_id, SHA, tamanho e pasta; abre a revisão exata.",
+          "Resposta perdida preserva arquivo/envelope/op_id; repetir usa os mesmos objetos e operação.",
+          "Consulta do resultado usa o mesmo op_id sem reenviar arquivo.",
+          "403, recibo de outra operação, formato inválido e mudança de sessão são tratados.",
+          "Resposta tardia não repinta outra conta; comprovante não rouba foco movido para fora."
+        ],
+        "tests": "test_ui135_documents_upload.cjs (63)",
+        "limits": [
+          "Não houve upload HTTP, teste real de servidor/antimalware, gravação no disco ativo nem navegação na produção."
+        ]
+      },
+      {
+        "screen": "Catálogo, etapa/filtros, biblioteca/pastas e fontes dos livros",
+        "previous_ui134": "Corrigidos e testados localmente.",
+        "status": "Regressão herdada executada; sem nova mudança nesta rodada",
+        "changes": [],
+        "executed": [
+          "Quatro suítes herdadas executadas: UI127 documentos 127, UI130 documentos/pessoas 89, UI134 UI 128 e UI134 fontes 76.",
+          "Preservados contexto/seleção/pasta, cancelamento e histórico local, foco ao trocar painel, busca/paginação de fonte e guardas de imagem."
+        ],
+        "tests": "420 verificações de regressão",
+        "limits": [
+          "Revisão visual real das demais telas e abas não foi encerrada."
+        ]
+      }
+    ],
+    "remaining": [
+      "Navegador real: layout, contraste combinado, teclado e leitor de tela, botão Voltar nativo e comportamento em 375/390 px.",
+      "Câmera, compressão/decodificação real e persistência real do navegador.",
+      "Bateria HTTP autorizativa e publicação/validação da produção são de responsabilidade da integração; não executadas nesta subárea.",
+      "Este recorte não conclui todas as abas ou os 54 fluxos históricos."
+    ]
+  },
+  "account": [
+    {
+      "screen": "Conta e acesso",
+      "implemented": [
+        "Session-owned reads/actions and beforeSend guards prevent old account dialogs or late responses from acting on the next account.",
+        "Closing dialogs never calls sign-out. Explicit revoke/sign-out actions remain separate; device IDs are in a disclosure.",
+        "Public permission labels are provided by the shared catalog; technical keys remain inside account detail.",
+        "No-MFA confirmation requests only the current password; MFA policy and request payload unchanged."
+      ],
+      "tested": "Actual component/submit handlers with fake transport, current-session sign-out positive control, stale read/revoke/MFA guards and secret input clearing."
+    },
+    {
+      "screen": "Preferências de alertas por e-mail",
+      "implemented": [
+        "Dirty preferences stay with the same company/account in memory; leaving/reload/discard has a clear guard. Passwords and verification codes are never retained.",
+        "Unconfirmed saves lock edits and retry the same body/op_id. Old handlers cannot submit with a new account.",
+        "Saved opt-in status is separated from mail service availability; accepted-by-server wording does not claim delivered.",
+        "Portuguese labels, help, categories, quiet hours and verification/delivery messages completed; saved/error states and44px controls clarified."
+      ],
+      "tested": "Fake503/retry, account switch during POST, isolated draft restoration, no stale verify-confirm, full fake verification flow, PT/EN and delivery states."
+    },
+    {
+      "screen": "Distintivos e progresso",
+      "implemented": [
+        "Another person’s profile uses a descriptive badge heading and does not invite editing. Own profile explains how to select an unlocked badge.",
+        "Existing actual server points, thresholds and original badge assets retained."
+      ],
+      "tested": "Own/other profile markup, edit/history/private total presence only in own profile, actual60% fixture progress, no route loss in section links."
+    },
+    {
+      "screen": "Histórico de contribuições",
+      "implemented": [
+        "The existing80-entry API limit is disclosed; private history is explicitly separated from team updates.",
+        "Late errors/responses cannot populate a different account’s profile."
+      ],
+      "tested": "Actual profile/ledger handler response gating; native-navigation profile regressions remain green."
+    },
+    {
+      "screen": "Equipe e perfil de outra pessoa",
+      "implemented": [
+        "Feed updates use latest-request ordering; old period responses cannot replace the selected period.",
+        "Visible feed count states the existing40-item cap.",
+        "Like operations recheck session and retain their exact uncertain request.",
+        "Back-to-Team link clarifies return from another person’s profile."
+      ],
+      "tested": "Full isolated Team rendering, racing week/today responses, stale-account and late-like guards, exact503 retry body and readonly other-profile view."
+    }
+  ],
+  "home": {
+    "release": "UI135",
+    "area": "Início e navegação administrativa",
+    "views": [
+      {
+        "name": "Meu trabalho / Exige minha ação / Passagens salvas",
+        "status": "corrigido_e_testado_localmente",
+        "coverage": [
+          "Carregamento, erro, paginação vazia e retorno à primeira página",
+          "Filtro preservado, dados privados somente da conta atual",
+          "Foco apenas após navegação explícita e sem interromper outra ação"
+        ]
+      },
+      {
+        "name": "Minha atividade",
+        "status": "corrigido_e_testado_localmente",
+        "coverage": [
+          "Datas inválidas e período invertido",
+          "Intervalo UTC aplicado, Todas as datas e foco",
+          "Paginação vinculada à conta e filtro, API somente leitura"
+        ]
+      },
+      {
+        "name": "Configuração e navegação administrativa",
+        "status": "revisado_e_testado_localmente",
+        "coverage": [
+          "Seção atual além da cor e foco visível",
+          "Seções permitidas, IDs e rascunho preservados",
+          "CSS responsivo inspecionado; sem pixels medidos"
+        ]
+      },
+      {
+        "name": "Permissões no resumo da conta",
+        "status": "corrigido_e_testado_localmente",
+        "coverage": [
+          "81 nomes gerados de access.GROUPS",
+          "Nomes em PT/EN, fallback seguro",
+          "Módulo carregado antes do perfil nos dois idiomas"
+        ]
+      }
+    ],
+    "new_js_checks": 287,
+    "tests": [
+      "test_ui135_home.cjs",
+      "test_ui135_admin_navigation.cjs",
+      "test_ui135_permission_labels.cjs",
+      "test_ui135_permission_labels.py"
+    ],
+    "shared_review": "ui135-account-independent-review.json",
+    "limitations": [
+      "Somente DOM simulado e API local fictícia",
+      "Sem navegador real, layout, leitor de tela ou validação de produção"
+    ],
+    "production_access": false
+  },
+  "historical_evidence_is_not_current_validation": true,
+  "browser": false
+}

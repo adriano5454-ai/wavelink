@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 360" role="img" aria-labelledby="title desc">
+  <title id="title">Wavelink profile operations cover</title>
+  <desc id="desc">A restrained technical offshore scene with a survey vessel, sonar geometry and seabed contours.</desc>
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#06283d"/>
+      <stop offset="0.55" stop-color="#174f68"/>
+      <stop offset="1" stop-color="#7aa2b0"/>
+    </linearGradient>
+    <linearGradient id="sea" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#1f596f"/>
+      <stop offset="1" stop-color="#072b40"/>
+    </linearGradient>
+    <pattern id="ticks" width="64" height="32" patternUnits="userSpaceOnUse">
+      <path d="M64 0H0V32" fill="none" stroke="#b6dfe5" stroke-opacity="0.06"/>
+    </pattern>
+  </defs>
+  <rect width="1600" height="360" fill="url(#sky)"/>
+  <rect width="1600" height="360" fill="url(#ticks)"/>
+  <path d="M0 176C251 164 437 184 679 170C909 157 1137 181 1372 164C1469 158 1543 159 1600 157V360H0Z" fill="url(#sea)"/>
+  <path d="M0 166C292 158 535 170 815 158C1082 147 1313 163 1600 145" fill="none" stroke="#dcecef" stroke-opacity="0.33"/>
+  <g fill="none" stroke="#8ad1dc" stroke-opacity="0.24" stroke-width="1.1">
+    <path d="M-40 273C132 224 251 300 418 249C577 200 718 277 884 235C1053 192 1189 256 1363 221C1456 202 1533 210 1640 189"/>
+    <path d="M-45 299C135 252 257 326 426 279C590 234 724 304 894 266C1060 228 1204 283 1377 252C1470 235 1549 241 1640 223"/>
+    <path d="M-42 327C139 286 268 350 437 309C600 269 739 329 907 296C1084 261 1216 309 1391 283C1481 269 1550 272 1642 258"/>
+  </g>
+  <g transform="translate(1090 130)">
+    <path d="M-15 69H222L190 105H21L-4 89Z" fill="#061d2c" stroke="#b4d8de" stroke-opacity="0.45" stroke-width="2"/>
+    <path d="M32 23H128V70H18L25 44H32Z" fill="#dce9eb" stroke="#0a3449" stroke-width="2"/>
+    <path d="M51-6H109V24H43l5-17h3Z" fill="#cfe0e3" stroke="#0a3449" stroke-width="2"/>
+    <path d="M70-6v-42m18 42v-24M70-48H57m13-10v20m0-10h17" fill="none" stroke="#e5f0f1" stroke-width="3" stroke-linecap="round"/>
+    <g fill="#0b4058"><rect x="40" y="35" width="18" height="10" rx="2"/><rect x="64" y="35" width="18" height="10" rx="2"/><rect x="88" y="35" width="18" height="10" rx="2"/></g>
+    <path d="M124 29h43l25 19v22h-68Z" fill="#c7dade" stroke="#0a3449" stroke-width="2"/>
+    <path d="M73 105L39 247M91 105l3 165M111 105l40 151" fill="none" stroke="#51c9d5" stroke-opacity="0.35" stroke-width="2" stroke-dasharray="5 8"/>
+  </g>
+  <g opacity="0.4" fill="none" stroke="#c3e6eb" stroke-width="1.1">
+    <circle cx="1190" cy="74" r="42"/><circle cx="1190" cy="74" r="66" stroke-dasharray="5 8"/>
+    <path d="M1106 74h168M1190-9v166"/>
+  </g>
+</svg>

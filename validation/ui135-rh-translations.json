@@ -1,0 +1,13 @@
+{
+  "Explain what must be corrected or why this record is rejected. The employee can read this reason.": "Explique o que precisa ser corrigido ou por que este registro foi rejeitado. O colaborador pode consultar este motivo.",
+  "A comment is optional for approval. Choose return or reject when a correction or refusal is needed.": "O parecer é opcional para aprovar ou conferir. Escolha devolver ou rejeitar quando for necessária uma correção ou recusa.",
+  "No pending changes.": "Nenhuma alteração pendente.",
+  "Employee scope": "Colaboradores incluídos",
+  "All employees this account may view": "Todos os colaboradores que esta conta pode consultar",
+  "{count} record(s) in this report.": "{count} registro(s) neste relatório.",
+  "Query coverage": "Abrangência da consulta",
+  "Verify {kind}": "Conferir {kind}",
+  "Rejected": "Rejeitado",
+  "Coverage calculation": "Critério da cobertura",
+  "A comment is optional when confirming the document review. Choose return or reject when a correction or refusal is needed.": "O parecer é opcional ao confirmar a conferência documental. Escolha devolver ou rejeitar quando for necessária uma correção ou recusa."
+}

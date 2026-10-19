@@ -1,0 +1,20 @@
+[
+  {
+    "file": "tests/test_ui135_home.cjs",
+    "status": 0,
+    "stdout": "{\"suite\":\"UI135 Personal Home actual handlers\",\"checks\":81,\"passed\":true,\"browser\":false}\n",
+    "stderr": ""
+  },
+  {
+    "file": "tests/test_ui135_admin_navigation.cjs",
+    "status": 0,
+    "stdout": "{\"suite\":\"UI135 admin navigation permission-aware handlers\",\"checks\":38,\"passed\":true,\"browser\":false}\n",
+    "stderr": ""
+  },
+  {
+    "file": "tests/test_ui135_permission_labels.cjs",
+    "status": 0,
+    "stdout": "{\"suite\":\"UI135 public permission labels PT/EN\",\"checks\":168,\"passed\":true}\n",
+    "stderr": ""
+  }
+]

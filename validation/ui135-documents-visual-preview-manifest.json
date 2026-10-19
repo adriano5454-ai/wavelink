@@ -1,0 +1,32 @@
+{
+  "kind": "actual_component_dom_from_local_adapter_not_screenshot",
+  "items": [
+    {
+      "title": "Revisão: resultado salvo, evidências e decisão",
+      "page": "revisao.html",
+      "source_fragment": "C:\\Users\\adria\\Documents\\Codex\\2026-10-17\\quero-concluir-a-mudan-a-da\\work\\ui135-documents-review-markup.html",
+      "fragment_sha256": "a0f75868eae630cafadc8b744f4de8c93cc941c1d90e2d8050916c2617d948ae",
+      "change_from_ui134": "O painel identifica a revisão do checklist sem o código interno UI 17. Decisões conhecidas aparecem em português; nomes, notas e valores salvos permanecem intactos. Os testes percorrem decisão, justificativa, prontidão e finalização."
+    },
+    {
+      "title": "Envio de original: arquivo selecionado e destino",
+      "page": "envio-original.html",
+      "source_fragment": "C:\\Users\\adria\\Documents\\Codex\\2026-10-17\\quero-concluir-a-mudan-a-da\\work\\ui135-documents-upload-markup.html",
+      "fragment_sha256": "e8587623a2d2575306bac4006afb56e50328fb4b029ba0a7be15de5846444609",
+      "change_from_ui134": "Arquivo selecionado continua apenas neste dispositivo. Após uma ação explícita, o foco acompanha o resultado ou erro somente se o usuário não o moveu durante a requisição. Os testes conferem bytes e repetição da mesma operação."
+    }
+  ],
+  "html_pages": 3,
+  "local_url_checks": 97,
+  "broken_local_urls": 0,
+  "browser_used": false,
+  "production_accessed": false,
+  "assets": [
+    "assets/ui68-home-scene.svg",
+    "assets/wavelink-approved-offshore-profile-ui87.webp",
+    "assets/wavelink-approved-offshore-ui87.webp",
+    "assets/wavelink-home-cover-ui86.svg",
+    "assets/wavelink-profile-cover-ui86.svg"
+  ],
+  "portable": "Copy the entire ui135-documents-visual-previews directory, including styles/ and assets/."
+}

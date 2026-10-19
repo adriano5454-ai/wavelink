@@ -1,0 +1,106 @@
+/* UI132 · remaining operational workspaces. Presentation only.
+   Keep data, permissions, hidden states and the existing desktop/mobile views.
+   wlVisual124 is the existing layer; its important defaults otherwise defeat
+   the component's mobile font sizes and card-table spacing. */
+:is(.fw-workspace,.fw-form,.tw47-workspace,.tw47-form,.mw-workspace,.inventory-explorer,.iw53-form,.iw53-results,.wl-calendar,.wl-shipment-workspace,.membership-workspace,.ma-form,.log-workspace,.ho-workspace,#checklist-workspace,#fr-workspace,#qs-workspace,#builders-workspace,#admin-workspace){
+ --wl132-ink:#173d4b;--wl132-muted:#4c6471;--wl132-link:#086775;
+ --wl132-soft:#edf4f7;--wl132-border:#b8cdd7;--wl132-focus:#965900;
+}
+/* Find the selected view without relying only on a change of colour. */
+.tw47-workspace :is(.tw47-views,.gt-detail-nav) [aria-pressed="true"],
+.mw-workspace :is(.mw-views,.mw-tabs) [aria-pressed="true"],
+.wl-calendar .cal-view-switch [aria-pressed="true"],
+.wl-shipment-workspace .wl-shipment-views [aria-pressed="true"],
+.membership-workspace .ma-tabs [aria-pressed="true"],
+.fw-workspace .iw53-count-controls [aria-pressed="true"],
+#admin-workspace .ba-tabs [aria-current="page"]{
+ text-decoration:underline;text-underline-offset:4px;text-decoration-thickness:2px;font-weight:750;
+}
+.tw47-workspace .tw110-row[aria-current="true"]>strong,
+.mw-workspace .mw-order-title[aria-pressed="true"],
+.wl-shipment-workspace .wl-shipment-card.selected button strong,
+#admin-workspace .ba-list-row[aria-current="true"] strong{
+ text-decoration:underline;text-underline-offset:3px;text-decoration-thickness:2px;
+}
+/* Operational metadata remains secondary but readable. Never recolour status. */
+.tw47-workspace :is(.tw110-row-owner,.tw110-row-meta,.tw110-facts dt,.tw47-task-meta),
+.mw-workspace :is(.mw-order small,.mw-order-meta,.mw-read-note),
+.wl-shipment-workspace :is(.wl-shipment-card-counts,.wl-shipment-record-counts span,.wl-shipment-count-help),
+#admin-workspace .ba-list-row small,
+#builders-workspace :is(.sb-count,.sb-hash){font-size:.875rem;line-height:1.6;color:var(--wl132-muted)}
+.tw47-workspace .tw110-row .tw47-status,.mw-workspace .mw-status{font-size:.8125rem;line-height:1.5;white-space:normal}
+.tw47-workspace .tw110-facts dd,.mw-workspace .mw-facts dd{line-height:1.6;overflow-wrap:anywhere}
+.mw-workspace .mw-order-title{min-height:44px;line-height:1.45;overflow-wrap:anywhere}
+.mw-workspace .mw-summary-link{min-height:44px;display:inline-flex;align-items:center}
+.wl-shipment-workspace .wl-shipment-route small{font-size:.8125rem;line-height:1.5;letter-spacing:.03em;color:var(--wl132-muted)}
+.wl-shipment-workspace .wl-shipment-card-open{font-size:.875rem;text-decoration:underline;text-underline-offset:3px}
+.wl-shipment-workspace .wl-shipment-card-next{font-size:.875rem;line-height:1.5}
+/* Summaries are actions, not footnotes; keep the native disclosure marker. */
+.tw47-workspace :is(.tw47-filters,.tw47-guidance,.tw47-progress,.tw47-facts-details,.tw110-detail) > summary,
+.mw-workspace :is(.mw-library,.mw-selected) summary,
+.wl-shipment-workspace :is(.wl-shipment-count-help,.wl-shipment-planning) > summary,
+.fw-workspace :is(.iw53-explain,.iw53-fields) > summary,
+#builders-workspace :is(.sb-details,.di-source-review,.di-header-chooser,.di-sheet-overview,.di-recognition-review,.di-table-header-comparison,.di-source-table-headers) > summary,
+#admin-workspace .ba-access-group > summary,
+.membership-workspace .ma-row summary,.ma-form :is(.ma-adjust,.ma-access-summary,.ma-permissions) summary{
+ min-height:44px;box-sizing:border-box;padding-block:11px;line-height:1.5;font-size:.9375rem;
+}
+/* Import source text and uncertain advice must remain legible and separate. */
+#builders-workspace .di-workspace :is(.di-recognition-point span,.di-recognition-point p,.di-recognition-point blockquote){font-size:.875rem;line-height:1.65}
+#builders-workspace .di-workspace .di-table-scroll{max-width:100%;scrollbar-gutter:stable;scroll-padding-inline:12px}
+#builders-workspace .di-workspace :is(.di-source-table-candidate,.di-recognition-review){margin-block:16px}
+#builders-workspace .di-workspace .di-table-header-comparison small{font-size:.875rem;line-height:1.6}
+#builders-workspace .sb-library{min-height:44px;align-items:center;gap:12px}
+/* Calendar keeps its compact month + detailed agenda model on small screens. */
+.wl-calendar :is(.cal-read-status,.cal-source-status,.cal-agenda-heading>span,.calendar-agenda-row time span){font-size:.875rem;line-height:1.6;color:var(--wl132-muted)}
+.wl-calendar .calendar-agenda-row .calendar-event span{font-size:.875rem;line-height:1.5}
+.wl-calendar .calendar-agenda-row .calendar-event b{line-height:1.55}
+.wl-calendar .cal-view-switch button,.wl-calendar .cal-filters>summary,.wl-calendar .cal-meaning>summary{min-height:44px}
+.wl-calendar .cal-read-status:is([data-mode="stale"],[data-mode="denied"]){color:#713b15}
+.wl-calendar .calendar-day[aria-pressed="true"]>span{font-weight:800;text-decoration:underline;text-underline-offset:3px}
+/* Forms retain their owner's save/cancel guards; typography and wrap only. */
+.fw-form>label,.ma-form label{line-height:1.5}
+.fw-form :is(.small,.fw-local-save),.ma-form :is(small,.ma-selected){font-size:.875rem;line-height:1.6}
+.fw-form :is(input,select,textarea),.ma-form :is(input,select,textarea){box-sizing:border-box;max-width:100%;min-width:0}
+.fw-form .actions,.ma-form .ma-form-actions{flex-wrap:wrap;gap:10px}
+.fw-form .actions>.btn,.ma-form .ma-form-actions>.btn{white-space:normal;overflow-wrap:anywhere;max-width:100%}
+.membership-workspace .ma-row>div{min-width:0;overflow-wrap:anywhere}
+#admin-workspace .ba-detail-meta{display:flex;flex-wrap:wrap;gap:8px 16px;line-height:1.6}
+.wl-context-documents .wl-context-document h5{font-size:1.05rem;line-height:1.5;color:#173d4b}
+.hr-workspace :is(.hr-panel,.hr-detail) summary{min-height:44px;box-sizing:border-box;padding-block:11px;font-size:.9375rem;line-height:1.5}
+.task-acceptance .task-acceptance-people li>span{min-width:0;overflow-wrap:anywhere}
+.task-acceptance .task-acceptance-people small{font-size:.875rem;line-height:1.6}
+@layer wlVisual124{
+ body.wl-ui124 #app :is(.fw-workspace,.tw47-workspace,.mw-workspace,.inventory-explorer,.wl-calendar,.wl-shipment-workspace,.membership-workspace,.log-workspace,.ho-workspace,#checklist-workspace,#fr-workspace,#qs-workspace,#builders-workspace,#admin-workspace) .btn,
+ body.wl-ui124 #dialog :is(.fw-form,.tw47-form,.iw53-form,.ma-form,.cf-form,.log-editor-body,.toolbox-simple-form) .btn{min-height:44px!important}
+ body.wl-ui124 :is(.fw-workspace,.fw-form,.tw47-workspace,.tw47-form,.mw-workspace,.inventory-explorer,.iw53-form,.wl-calendar,.wl-shipment-workspace,.membership-workspace,.ma-form,.log-workspace,.ho-workspace,#checklist-workspace,#fr-workspace,#qs-workspace,#builders-workspace,#admin-workspace) :is(a,button,input,select,textarea,summary,[tabindex]):focus-visible{outline:3px solid #965900!important;outline-offset:3px!important;box-shadow:0 0 0 2px #fff!important}
+ @media(max-width:700px){
+  body.wl-ui124 #app :is(.fw-workspace,.tw47-workspace,.mw-workspace,.inventory-explorer,.wl-calendar,.wl-shipment-workspace,.membership-workspace,.log-workspace,.ho-workspace,#checklist-workspace,#fr-workspace,#qs-workspace,#builders-workspace,#admin-workspace) :is(input:not([type="checkbox"]):not([type="radio"]):not([type="hidden"]),select,textarea),
+  body.wl-ui124 #dialog :is(.fw-form,.tw47-form,.iw53-form,.ma-form,.cf-form,.log-editor-body,.toolbox-simple-form) :is(input:not([type="checkbox"]):not([type="radio"]):not([type="hidden"]),select,textarea){font-size:16px!important}
+  body.wl-ui124 #app .fw-workspace .iw53-results td{padding:0!important;border-bottom:0!important}
+ }
+ @media(forced-colors:active){
+  body.wl-ui124 :is(.fw-workspace,.fw-form,.tw47-workspace,.tw47-form,.mw-workspace,.inventory-explorer,.iw53-form,.wl-calendar,.wl-shipment-workspace,.membership-workspace,.ma-form,.log-workspace,.ho-workspace,#checklist-workspace,#fr-workspace,#qs-workspace,#builders-workspace,#admin-workspace) :is(a,button,input,select,textarea,summary,[tabindex]):focus-visible{outline-color:Highlight!important;box-shadow:none!important}
+ }
+}
+@media(max-width:700px){
+ .tw47-workspace .tw110-facts{grid-template-columns:minmax(100px,34%) minmax(0,1fr)}
+ .mw-workspace .mw-searchline>label{min-width:0;max-width:100%}
+ .wl-calendar .calendar-agenda-row{grid-template-columns:80px minmax(0,1fr)}
+ .wl-calendar .calendar-agenda-row time{font-size:.875rem;overflow-wrap:anywhere}
+ .wl-calendar .cal-heading{align-items:flex-start;flex-wrap:wrap;gap:12px}
+ .wl-calendar .cal-head-actions{flex-wrap:wrap;gap:8px}
+ .fw-workspace .iw53-results td[data-label]::before{font-size:.8125rem;letter-spacing:.02em;line-height:1.5}
+ .fw-form>.actions>.btn,.ma-form .ma-form-actions>.btn{flex:1 1 150px}
+ #builders-workspace .sb-summary{grid-template-columns:minmax(0,1fr);gap:4px}
+ #builders-workspace .sb-summary dd{margin-bottom:12px}
+ .wl-shipment-workspace .wl-shipment-record-counts{gap:12px;grid-template-columns:repeat(3,minmax(0,1fr))}
+}
+@media(max-width:650px){
+ .wl-saved-packing td[data-label]::before{font-size:.8125rem;line-height:1.5}
+}
+
+/* Additional source-confirmed legacy support text and disclosure controls. */
+.log-workspace .log-mobile-meta{font-size:.875rem;line-height:1.6;color:#4c6471}
+.ho-workspace .ho-view-tabs [aria-selected="true"]{text-decoration:underline;text-underline-offset:4px;text-decoration-thickness:2px}
+.toolbox-simple-form summary,.log-editor-body details>summary{min-height:44px;box-sizing:border-box;padding-block:11px;line-height:1.5}

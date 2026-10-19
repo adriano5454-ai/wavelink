@@ -1,0 +1,26 @@
+[
+  {
+    "file": "tests/test_ui135_account_flows.cjs",
+    "status": 0,
+    "stdout": "{\"suite\":\"UI135 account security and email preferences\",\"checks\":94,\"passed\":true,\"transport\":\"fictional in-memory only\",\"browser\":false,\"email_sent\":false}\n",
+    "stderr": ""
+  },
+  {
+    "file": "tests/test_ui135_account_profiles.cjs",
+    "status": 0,
+    "stdout": "{\"suite\":\"UI135 profiles, badges, contribution history and Team handlers\",\"checks\":45,\"passed\":true,\"browser\":false,\"fixtures\":\"fictional in-memory\"}\n",
+    "stderr": ""
+  },
+  {
+    "file": "tests/test_ui131_profile_navigation.cjs",
+    "status": 0,
+    "stdout": "UI131 profile navigation: 38 actual-handler checks passed; selected section, target focus and profile route preserved. No browser claims.\n",
+    "stderr": ""
+  },
+  {
+    "file": "tests/test_ui131_profile_save_session.cjs",
+    "status": 0,
+    "stdout": "{\"passed\":true,\"checks\":29,\"scope\":\"actual profile submit callback; controlled file read and HTTP response; no browser\"}\n",
+    "stderr": ""
+  }
+]

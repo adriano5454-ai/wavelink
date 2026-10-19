@@ -1,0 +1,39 @@
+{
+  "release": "UI135",
+  "kind": "actual_component_html_not_screenshots",
+  "items": [
+    {
+      "page": "conferencia.html",
+      "title": "Conferência documental: motivo e correção",
+      "source": "ui135-rh-review-markup.html",
+      "sha256": "99847c209f787f1fc13047013a480f70c101cde6a6e65888f975caf5e14fd1a7"
+    },
+    {
+      "page": "relatorios.html",
+      "title": "Relatórios: período, filtros e situação documental",
+      "source": "ui135-rh-report-markup.html",
+      "sha256": "a301f1690e37acd3c1ab26f176958e08cf76b1745b4d728b07d4d28b448f4e40"
+    }
+  ],
+  "html_pages": 3,
+  "local_url_checks": 97,
+  "broken_urls": 0,
+  "browser": false,
+  "production": false,
+  "data": "fictitious",
+  "styles": "actual application stylesheet order",
+  "assets": [
+    "assets/ui68-home-scene.svg",
+    "assets/wavelink-approved-offshore-profile-ui87.webp",
+    "assets/wavelink-approved-offshore-ui87.webp",
+    "assets/wavelink-home-cover-ui86.svg",
+    "assets/wavelink-profile-cover-ui86.svg"
+  ],
+  "scope_limits": [
+    "DOM adapter and render functions only; no real layout engine",
+    "Preview controls disabled; handlers tested separately",
+    "Dialog positioning wrapper adapted for standalone reading",
+    "390 px option is not validation on a mobile device"
+  ],
+  "portability": "Copy the complete ui135-rh-previews directory, including styles and assets."
+}

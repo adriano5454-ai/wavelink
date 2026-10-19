@@ -1,0 +1,8 @@
+{
+  "cause": "Legacy test injected helpers by replacing the former exact export list return {init,mount:load};. UI135 adds syncSession, so replacement silently did nothing and _test was undefined.",
+  "file": "tests/test_ui128_rh_agent_ui.cjs",
+  "product_changed": false,
+  "coverage": "All prior13 scenarios retained; added explicit injection-success assertion, identity-aware fixture, and a14th session-switch dialog closure/focus isolation scenario.",
+  "passed": true,
+  "stdout": "UI128 RH/admin: 14 scenarios passed for filter preservation, actual value/checkbox change and restoration, cancel confirmation, account changes, busy dialogs and independent native cancel semantics.\n"
+}

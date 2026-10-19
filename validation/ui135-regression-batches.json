@@ -1,0 +1,27 @@
+[
+  {
+    "group": "personal-home",
+    "xml": "ui135-regression-personal-home.xml",
+    "exit_code": 0
+  },
+  {
+    "group": "account",
+    "xml": "ui135-regression-account.xml",
+    "exit_code": 0
+  },
+  {
+    "group": "email",
+    "xml": "ui135-regression-email.xml",
+    "exit_code": 0
+  },
+  {
+    "group": "preservation",
+    "xml": "ui135-regression-preservation.xml",
+    "exit_code": 0
+  },
+  {
+    "group": "help",
+    "xml": "ui135-regression-help.xml",
+    "exit_code": 0
+  }
+]

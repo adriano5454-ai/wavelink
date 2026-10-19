@@ -1,0 +1,47 @@
+{
+  "release": "UI135",
+  "implemented_local": [
+    {
+      "area": "RH: formulários e relatórios",
+      "change": "Cancelar compara o conteúdo real: restaurar os valores originais deixa de provocar aviso desnecessário. A justificativa de devolução/rejeição é identificada e recebe foco quando falta. Relatórios exibem período, abrangência e critério real de cobertura; CSV e mensagens mantêm português e inglês separados.",
+      "tested": "Formulários, documentos, horas/despesas, escalas/viagens, estados incertos, rascunhos, filtros e relatório com handlers reais e transporte simulado."
+    },
+    {
+      "area": "Checklists e documentos originais",
+      "change": "Leitura numérica 0 e revisão 0 continuam visíveis na edição. Campos indicam obrigatoriedade e limites de forma acessível. Revisão traduz situações e distingue conferir, devolver e finalizar. Envio de original anuncia resultado e mantém foco sem interromper outra ação.",
+      "tested": "Modal completo, rascunho, fila e versão, aprovação/devolução, prontidão/finalização, anexos, recibo exato, erro e repetição com o mesmo identificador."
+    },
+    {
+      "area": "Conta, perfil, equipe e alertas",
+      "change": "Telas e ações conferem a sessão antes do envio e após respostas. Permissões usam os nomes do catálogo em português. Preferências de e-mail preservam rascunho apenas na mesma conta/empresa; envio incerto mantém a tentativa original. Histórico e feed explicam seus limites existentes.",
+      "tested": "Troca de conta, resposta tardia, MFA fictício, diálogos, repetição incerta, privacidade do perfil, período da equipe, foco e idiomas."
+    },
+    {
+      "area": "Início e navegação administrativa",
+      "change": "Datas inválidas recebem mensagem junto ao campo. Período UTC aplicado, carregamento e erro ficam explícitos. Página vazia retorna ao começo mantendo filtros. Foco acompanha navegação solicitada e respeita outra ação do usuário. Abas e seções selecionadas usam indicação além da cor.",
+      "tested": "Handlers de filtro e paginação, dados vazios, falha de leitura, conta alterada, movimento reduzido, permissões e navegação administrativa."
+    }
+  ],
+  "pending": [
+    {
+      "area": "Visual em navegador e dispositivos",
+      "item": "Verificar pixels, contraste combinado, teclado/leitor de tela, diálogos, foco real e Voltar do navegador em computador/celular. HTML portátil não substitui essa etapa."
+    },
+    {
+      "area": "Arquivos reais",
+      "item": "Câmera, decodificação/compressão de fotos e persistência do navegador foram simuladas nos novos testes; continuam pendentes em navegador real."
+    },
+    {
+      "area": "Produção",
+      "item": "UI135 não publicada. Teste completo das horas por projeto, aprovação/devolução, com admin e usuário temporário continua pendente na Corcovado."
+    },
+    {
+      "area": "Cobertura histórica",
+      "item": "As matrizes UI134 e UI135 identificam o que foi exercitado. Este recorte não conclui todas as telas ou os 54 fluxos históricos; publicação, telas não enumeradas e rotinas nativas não contam como verificadas."
+    },
+    {
+      "area": "Limites preservados",
+      "item": "Não foi criada biblioteca universal de anexos nem novo upload para TI/viagens. Fontes extraídas de livros não substituem o Excel original. Nenhum vínculo por nome foi criado."
+    }
+  ]
+}

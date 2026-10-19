@@ -1,0 +1,125 @@
+{
+  "phase": "UI135",
+  "owner": "rh_revisao",
+  "status": "implemented_tested_locally_sources_frozen",
+  "browser_used": false,
+  "production_accessed": false,
+  "published": false,
+  "data": "Only fictional fixtures in Node/DOM adapters; no server, TestClient, email or live records.",
+  "implemented": [
+    {
+      "problem": "Dirty por evento gerava aviso após restaurar o conteúdo original.",
+      "change": "Comparação normalizada com baseline do formulário, mantendo identidade do arquivo escolhido, arrays de requisitos/aprovadores, valores originais e rascunhos retidos. Resultado incerto nunca é limpo só por comparação.",
+      "preserved": "Payloads, IDs, versões, sessão, filtros e descarte explícito."
+    },
+    {
+      "problem": "Motivo de devolução/rejeição não era obrigatório no próprio campo e erro não apontava o controle.",
+      "change": "Required/aria-required e ajuda associada acompanham a decisão. Payload inválido mantém formulário e foca decisão ou motivo após desbloquear os controles.",
+      "preserved": "Conferência não equivale a upload, validade, aptidão médica ou aprovação de embarque."
+    },
+    {
+      "problem": "Defaults, Mês atual, Próximos 14 dias e Próximas datas usavam UTC como dia civil.",
+      "change": "Dia/mês atuais seguem o fuso local; soma de dias civis é feita sem modificar datas YYYY-MM-DD existentes.",
+      "preserved": "Auditoria permanece UTC; nenhuma alteração de dados salvos."
+    },
+    {
+      "problem": "Relatórios/CSV não explicavam suficientemente o escopo; região rolável sem identificação e texto Consulta vazava em EN.",
+      "change": "Escopo/período/filtros/contagem, caption e cabeçalhos acessíveis; CSV carrega metadados e mantém neutralização de fórmula. Cobertura declara a regra do servidor em vez de insinuar filtro individual.",
+      "preserved": "Conteúdo original dos registros e distinção horas/folha, despesa/reembolso/pagamento, validade/conferência."
+    },
+    {
+      "problem": "Rejeitado e título Conferir {kind} estavam fixos em português.",
+      "change": "Vocabulário passa pelo tradutor PT/EN existente.",
+      "preserved": "Dados de cadastro não são traduzidos."
+    }
+  ],
+  "product_files": [
+    {
+      "path": "app/static/hr_workspace.js",
+      "sha256": "8e4cd9146dcee3bd829bad99b6738b8fd6836ed61a5ae7100b4c8bff830ddd42"
+    },
+    {
+      "path": "app/static/hr_workspace.css",
+      "sha256": "6e3090ba7a5be97390ece9f40d48ff05fb4721934fae36466f09c8476b5845ce"
+    }
+  ],
+  "new_tests": [
+    {
+      "file": "tests/test_ui135_rh_forms.cjs",
+      "checks": 236,
+      "result": "passed",
+      "kind": "real render/input/change/save/cancel handlers; minimal DOM adapter; mock API responses",
+      "sha256": "82a8bcad7d5d2b1800e149faf5190b6035a57b6cacb5249429f803a58f868fb3"
+    },
+    {
+      "file": "tests/test_ui135_rh_reports.cjs",
+      "checks": 162,
+      "result": "passed",
+      "kind": "real report/overview renderer and Blob CSV; Node subprocesses with real TZ boundaries; real PT/EN dictionaries",
+      "sha256": "1fd456decab6b8edaf3c054baf4a43ecd266cd614002d8d90faf1ec1b833ac07"
+    }
+  ],
+  "regressions": [
+    {
+      "file": "tests/test_ui129_weekly_ui.cjs",
+      "checks": 145,
+      "result": "passed"
+    },
+    {
+      "file": "tests/test_ui134_rh_weekly.cjs",
+      "checks": 63,
+      "result": "passed"
+    },
+    {
+      "file": "tests/test_ui134_rh_planning.cjs",
+      "checks": 54,
+      "result": "passed"
+    },
+    {
+      "file": "tests/test_ux_ui123.cjs",
+      "checks": 18,
+      "result": "passed"
+    },
+    {
+      "file": "tests/test_ui121_experience.cjs",
+      "checks": 15,
+      "result": "passed"
+    }
+  ],
+  "historical_test_fixture_correction": {
+    "file": "tests/test_ui127_rh_agent_navigation.cjs",
+    "result": "12 scenarios passed",
+    "sha256": "f384e66d536b82bb72988a35bb4fe4e5d698aa135eda398d18d0f8d1121e58ac",
+    "reason": "Old unchanged fixture declared dirty:false but DOM description differed from model. Updated only fixture so unchanged values agree; changed/uncertain/file/account tests remain. Added restore-original-content scenario. Product unchanged after diagnosis."
+  },
+  "syntax": "node --check app/static/hr_workspace.js passed",
+  "new_checks": 398,
+  "regression_checks": 295,
+  "historical_navigation_scenarios": 12,
+  "contrast": {
+    "foreground": "#173d4b",
+    "background": "#eef8f9",
+    "ratio": 10.76,
+    "scope": "Computed only for new reason-help and report caption colors; not a full-page or browser contrast audit."
+  },
+  "translations": "work/ui135-rh-translations.json, integrated by coordinator into real dictionaries",
+  "coverage": "work/ui135-rh-coverage.json",
+  "preview_manifest": "work/ui135-rh-preview-manifest.json",
+  "previews": [
+    "work/ui135-rh-previews/conferencia.html",
+    "work/ui135-rh-previews/relatorios.html"
+  ],
+  "preview_method": "Actual renderForm and input/change handlers plus serialized control state in minimal DOM; actual reportsHtml output; final application stylesheet order copied. Offline controls disabled. No screenshots or browser used.",
+  "limits": [
+    "No browser rendering, real device, screen reader or native validation/dialog confirmation tested.",
+    "No HTTP/API database persistence, real attachment review or production journey performed. API mutation results in new form tests are explicit fake responses.",
+    "Create-assignment fields/cancellation were exercised, but save_shift/backend not repeated in this front.",
+    "Profile/recognition, account/security and broad shared modules belong to other agents; historical evidence remains separate.",
+    "No GitHub/Render publication. Existing company records, authentication and temporary user were not accessed or altered."
+  ],
+  "pending": [
+    "Coordinator integration and final repository/ZIP validation.",
+    "Visual desktop/mobile and keyboard/screen-reader review when browser work is authorized.",
+    "End-to-end persisted creation/review/resubmission and real file verification in isolated authorized environment."
+  ]
+}
