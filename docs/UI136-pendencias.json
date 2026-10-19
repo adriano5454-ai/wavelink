@@ -1,0 +1,55 @@
+{
+  "release": "UI136",
+  "implemented_local": [
+    {
+      "area": "RH: pessoas, escalas e despesas",
+      "change": "Seletores distinguem homônimos com identificadores já autorizados, preservando o ID do cadastro. Histórico mostra carregamento, erro e vazio e ignora respostas de outro contexto. Fluxos de escala e correção de despesa foram confrontados com respostas reais do servidor local.",
+      "tested": "Criar escala, confirmar, consultar equipe/cobertura, salvar despesa com comprovante, devolver com justificativa, corrigir, reenviar e aprovar, com histórico e privacidade conferidos em banco fictício."
+    },
+    {
+      "area": "Certificados e perfil do equipamento",
+      "change": "Contagem de revisões atuais corresponde ao filtro, sem confundir revisão atual no cadastro com validade. Cadastro de certificados de equipamentos fica distinto de documentos RH. Ajuda associada aos campos, foco controlado e falhas exibidas junto ao anexo; perfil exibe datas e situações conhecidas em português.",
+      "tested": "Novo/editar, equipamentos homônimos por ID, validade, revisão/substituição, recibos, anexos, contexto alterado e histórico. Testes HTTP verificam preservação de evidências e permissões."
+    },
+    {
+      "area": "Tarefas e manutenção",
+      "change": "Buscas aceitam texto sem acentos e identificadores existentes. Retorno e limpeza de filtros preservam contexto e foco. Retomar tarefa tem rótulo próprio; limite de justificativa de cancelamento coincide com o servidor. Leituras tardias do diretório não abrem assistente em outra tela.",
+      "tested": "Lista, detalhe, execução/revisão, adiamento, retomada, reatribuição, comentários, histórico e rascunhos em handlers reais; regressões HTTP de estados e acesso."
+    },
+    {
+      "area": "Busca global e central de ações",
+      "change": "Filtros e respostas pertencem à consulta e conta que os iniciaram. Busca parcial é identificada; limites de 40 resultados e 75 ações são explicados. Preferências em edição sobrevivem à atualização, possuem recarga explícita e repetição exata após falha. Ação pendente pode ser repetida mesmo fora da lista.",
+      "tested": "Corridas entre filtros/contas, atualização em espera, edição e cancelamento, conflito de versão, retorno incerto e repetição, com revisão independente e testes HTTP de privacidade/idempotência."
+    }
+  ],
+  "pending": [
+    {
+      "area": "RH ainda sem novo teste específico",
+      "item": "Calendário mensal/agenda e relatórios/exportação não tiveram novo teste específico nesta frente. A gravação HTTP do cadastro pessoal e a conferência documental completa não foram refeitas."
+    },
+    {
+      "area": "Manutenção",
+      "item": "O novo trabalho cobriu apresentação, navegação e ações existentes; esta frente não executou uma nova jornada HTTP completa de salvamento e aprovação de manutenção."
+    },
+    {
+      "area": "Visual em navegador e dispositivos",
+      "item": "Verificar pixels, contraste combinado, teclado/leitor de tela, diálogos, foco real e Voltar do navegador em computador/celular. HTML portátil não substitui essa etapa."
+    },
+    {
+      "area": "Arquivos reais",
+      "item": "Câmera, decodificação/compressão de fotos e persistência do navegador foram simuladas nos novos testes; continuam pendentes em navegador real."
+    },
+    {
+      "area": "Produção",
+      "item": "UI136 não publicada. Teste completo das horas por projeto, aprovação/devolução, com admin e usuário temporário continua pendente na Corcovado."
+    },
+    {
+      "area": "Cobertura histórica",
+      "item": "As matrizes UI135 e UI136 identificam o que foi exercitado. Este recorte não conclui todas as telas ou os 54 fluxos históricos; publicação, telas não enumeradas e rotinas nativas não contam como verificadas."
+    },
+    {
+      "area": "Limites preservados",
+      "item": "Não foi criada biblioteca universal de anexos nem novo upload para TI/viagens. Fontes extraídas de livros não substituem o Excel original. Nenhum vínculo por nome foi criado."
+    }
+  ]
+}

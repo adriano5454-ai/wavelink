@@ -1,0 +1,5 @@
+/* UI60: retained module styles; common components deliberately override only wl-* roles. */
+@layer wlLegacy {
+.dp-panel{min-width:0;scroll-margin-top:1rem}.dp-panel h2{margin-top:0}.dp-totals{margin:.4rem 0}.dp-rows{display:grid;gap:.65rem}.dp-row{display:grid;grid-template-columns:minmax(0,1fr) minmax(160px,260px);gap:.35rem 1rem;border-top:1px solid #d6e2e6;padding:.85rem 0;overflow-wrap:anywhere}.dp-row h3{font-size:1rem;margin:0 0 .35rem}.dp-row p{margin:.25rem 0}.dp-drawing canvas{width:100%;height:auto;max-height:95px;aspect-ratio:720/210;object-fit:contain;background:#fff;border:1px solid #d3e1e4;border-radius:6px}.dp-drawing small{display:block;color:#49606d}.dp-receipt{grid-column:1/-1;font-size:.85rem}.dp-receipt summary{cursor:pointer}.tb-stale [data-toolbox-id],.tb-stale .fw-toolbar button,.tb-stale [data-guest-ack]{pointer-events:none;opacity:.65}.tb-builder-actions{display:flex;gap:.45rem;flex-wrap:wrap;margin:.5rem 0 1rem}.dp-refresh{display:flex;align-items:center;gap:.5rem;flex-wrap:wrap}@media(max-width:580px){.dp-row{grid-template-columns:1fr}.dp-drawing{max-width:265px}.dp-panel{padding:1rem}.dp-panel h2{font-size:1.1rem}}
+
+}

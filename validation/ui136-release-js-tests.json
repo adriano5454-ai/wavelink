@@ -1,0 +1,932 @@
+{
+  "manifest_sha256": "9ecd6b09f3244c4f8a0e6a067bbcf875dfde4aaaceb69aefdd0a1f9f0cece4e5",
+  "results": [
+    {
+      "file": "test_audit_ui127.js",
+      "pass": true,
+      "stdout": "163 UI127 assertions passed\n"
+    },
+    {
+      "file": "test_browser_reload_ui102.js",
+      "pass": true,
+      "stdout": "{\n  \"checks\": 12,\n  \"passed\": [\n    \"Primary reload reclaims stale lease without forking or modifying saved drafts\",\n    \"Active primary WebLock blocks a second page and uses exactly the same workspace lock\",\n    \"A held lock does not bypass legacy, absent or nonboolean WebLock lease evidence\",\n    \"Browsers without WebLocks retain conservative lease ownership\",\n    \"Detached log windows cannot take over a browser workspace lease\",\n    \"Named workspaces keep exact independent lock and storage keys and reclaim only after release\",\n    \"Fork drops prior lock ownership before acquiring an independent workspace\",\n    \"Existing primary state retains its account and drafts even when shared sign-in belongs to another account\",\n    \"Empty named workspace receives shared sign-in only, never another workspace draft/receipt\",\n    \"Stale account sign-out cannot clear a newer shared login or reassign saved-draft ownership\",\n    \"Saved workspace recovery lists only the same hub/account and counts retained draft/evidence state\",\n    \"Reload takeover does not weaken cross-workspace uncertain-action receipt protection\"\n  ]\n}\n"
+    },
+    {
+      "file": "test_document_definitions_ui109.js",
+      "pass": true,
+      "stdout": "{\"checks\":14,\"passed\":14,\"names\":[\"Located log_fields response is accepted without widening native draft fields\",\"Logbook source interpretation panel shows located schema review and honest empty-design guidance\",\"Selected worksheet review stays separate from whole-document and other-sheet observations\",\"Review log fields focuses the existing editor, opens enclosing details and keeps approval unchanged\",\"Missing log field editor falls back to complete source with no invented field controls\",\"Log field locator cannot target a non-logbook definition field\",\"Explicit Toolbox discussion review uses existing editable outline without changing native discussion schema\",\"Busy, uncertain, departed and disposed review jumps cannot alter focus or source\",\"Unknown target roles and malformed source locations remain rejected\",\"Corrupt selected-sheet review shows a refresh note and cannot focus an unverified target\",\"Source excerpts, reasons, sheet labels and IDs are escaped in log review markup\",\"Mixed source review displays only genuine log-fields targets and retains approval without check-oriented controls\",\"Only unrelated check or source points never appear as a log-definition review\",\"Unselected whole-source log review retains truthful visible counts and original 50-point limit guidance\"]}\n"
+    },
+    {
+      "file": "test_document_import_ui103.js",
+      "pass": true,
+      "stdout": "{\"checks\":35,\"passed\":35}\n"
+    },
+    {
+      "file": "test_document_interpretation_ui106.js",
+      "pass": true,
+      "stdout": "{\"checks\":36,\"passed\":36,\"names\":[\"Whole document and selected worksheet use only their matching original review points\",\"Old scans without a sidecar keep established editing behavior\",\"Inventory and logbook views do not display checklist interpretation diagnostics\",\"Interpretation panel starts collapsed and explains original evidence rather than current resolution\",\"Questionable classification remains original source evidence after manual corrections and kept draft restoration\",\"Uploaded location reason excerpt and point IDs are safely escaped\",\"A bounded report explains omitted additional interpretation points\",\"Invalid diagnostic versions bounds duplicates types and unknown roles fail verification\",\"Unicode character bounds match backend character counting\",\"Malformed restored diagnostics remain an explicit advisory and never a guessed target\",\"Source position types distinguish original rows and extracted lines or blocks\",\"Navigation finds a check by stable ID after card reordering without mutating approval or draft\",\"Removed check target falls back to a section instead of another item\",\"Tools workflow instructions and source roles focus existing editors only\",\"Unknown point and departed route cannot navigate old diagnostics\",\"Toolbox interpretation clearly states native destination limits\",\"Toolbox discussion question supervisor and declaration points focus their actual native fields\",\"Checklist stage and typed answer points do not pretend to create native toolbox fields\",\"Copy adds full source instructions and tools to current editable discussion without replacing prompts\",\"Explicit source copy clears prior approval request confirmation and summary\",\"Repeating explicit copy skips only exact existing group and text pairs\",\"Same text in another discussion group stays distinct\",\"Long instructions are split into bounded prompts without losing the end or unicode\",\"Repeated source chunks consume matching current occurrences without dropping later repeated text\",\"Long source headings are retained as prompt text instead of truncated native group names\",\"Source body starting with a hash remains prompt text instead of becoming an accidental group\",\"Adding all source notes rejects over 100 native prompts atomically without partial projection\",\"All retained source notes must fit; overlong source is never silently partially copied\",\"Discussion text cap is checked before mutation even when extra headers carry no prompts\",\"Busy uncertain and departed forms cannot copy source notes or navigate interpretation\",\"Busy and uncertain state disables both source navigation and explicit projection controls\",\"Delivered kind changes cannot mutate busy uncertain or departed draft and unchanged retry receipt\",\"Allowed material kind change retains current edits and source evidence while invalidating approval\",\"Unsupported unavailable or unchanged kind values cannot discard approval\",\"Interpretation evidence is excluded from collected draft and saved native projection\",\"Stable editor anchors and wrapped collapsed panels remain accessible on small screens\"]}\n"
+    },
+    {
+      "file": "test_document_relationships_ui107.js",
+      "pass": true,
+      "stdout": "{\"checks\":43,\"passed\":43,\"names\":[\"Inspector is collapsed by default and shows exact source rows without changing data\",\"Explicit English Portuguese and canonical flag/parent headers map deliberately\",\"Unqualified box and container identifiers are retained without guessing a relationship\",\"SN PN and repeated item names stay distinct and never become parent references\",\"Child before nested and root boxes resolves without changing original order or source locations\",\"Worksheet override controls root location without overwriting mapped literals or source notes\",\"Root blank locations use worksheet name and item locations remain separate\",\"Excluded parent is located and excluded rows stay available to restore\",\"Parent candidates contain only unique included explicit same-sheet boxes\",\"Duplicate box references are diagnosed and excluded from candidate choices\",\"Exact trimmed reference matching is case sensitive and does not use item names\",\"Missing unmarked self parent and cyclic references need review without auto-repair\",\"Eight ancestor edges are allowed and nine are visibly too deep\",\"Plural zero and malformed box quantities require explicit repair while Unknown is allowed\",\"Unrecognized source flags and unreferenced blank-asset boxes are honest advisories\",\"Actual field edits change one cell and retain exact row order source coordinates notes and choices\",\"Notes with quotes tabs and multiline text survive canonical serialization byte for byte\",\"No-op normalized flag and identical text preserve exact source bytes checked approval and retry\",\"Clearing a parent is deliberate and keeps original mapped location and source provenance\",\"Busy uncertain and departed forms cannot edit any field clear parent or change views\",\"Dirty mapping and invalid positions field names values and lengths are rejected atomically\",\"Native field codepoint bounds allow long Unicode without silently truncating it\",\"Malformed column widths fail safely and keep all original rows without dropping unknown cells\",\"Read-only search filter pagination and panel inspection preserve checked approval and pending request\",\"Search uses original mapped positions and searches name asset parent SN and PN\",\"View filters show boxes contents excluded and advisory rows without changing selections\",\"Unavailable source coordinates are labelled mapped rows without fabricating Excel positions\",\"Kept form serialization preserves per-sheet edits row choices and views without inventing cross-sheet links\",\"Destination refresh retains relationship edits full coordinates and explicit choices\",\"Reapplying mapping visibly replaces field edits while preserving proven source row exclusions\",\"Full text editing visibly replaces field edits and clears unverifiable row identity and choices\",\"Exact legacy twelve-column TSV is editable with empty PN and unchanged item order\",\"Inspector metadata stays outside strict native draft and inventory payloads\",\"Uploaded names flags references identities and query text are safely escaped\",\"Mapped preview displays resolved root location while TSV retains child location\",\"Relationship controls use bounded cards and narrow screen wrapping\",\"Typing a relationship field keeps row and field focus and text selection across repaint\",\"Explicit DOM locks protect fields clear controls search and paging while busy uncertain or mapping dirty\",\"Programmatic input select clear and search events cannot mutate a frozen or departed form\",\"Opening and filtering actual DOM controls keeps confirmation and pending operation\",\"Captured old handlers cannot edit or inspect a different import kind after switching away\",\"Captured previous worksheet handlers cannot change the newly active worksheet\",\"Captured handlers safely stop after normal form disposal clears its document\"]}\n"
+    },
+    {
+      "file": "test_document_review_ui104.js",
+      "pass": true,
+      "stdout": "{\"checks\":32,\"passed\":32,\"names\":[\"Readable new inventory overview shows item records and each worksheet location\",\"Existing inventory explains current, incoming and proposed record counts\",\"Optional identifier details count missing identifiers without blocking\",\"Source row locations retain their explained fallback when no override is chosen\",\"Destination, worksheet, item, location and reason text are always escaped\",\"Definite duplicate diagnostics show original source row and whole-batch block\",\"Duplicate reason appears before the destination on the checked overview\",\"Unproven source reason reports a bounded worksheet count before the destination\",\"Unproven row evidence is visibly distinct from an original Excel row\",\"Bounded diagnostic rows state that additional rows remain blocked\",\"A blocked overview with no listed rows still explains how to recheck\",\"Ready response cannot contain definite duplicate conflicts\",\"Ready response cannot contain uncertain source conflicts\",\"Mismatched sheet counts cannot appear as a checked total\",\"Mismatched identifier totals are rejected\",\"Negative and noninteger record counts are rejected\",\"Resulting destination count must include all incoming records\",\"A new inventory cannot claim existing items\",\"Conflict original rows require a positive integer or explicit null\",\"Inventory review requires its explicit overview contract\",\"Successful real review retains its receipt and requires unchecked confirmation\",\"Blocked 200 review renders diagnostics but cannot issue a save request\",\"Even a manually retained blocked review cannot create a save request\",\"A failed recheck removes the prior success summary and confirmation\",\"A mismatched source response cannot enable inventory confirmation\",\"Lost account or route ownership cannot inject a returned review\",\"Busy, uncertain and departed forms cannot request another review\",\"Editing a reviewed draft clears the prior review and pending request\",\"Changed worksheet location and destination are sent only in a new checked draft\",\"Blocked diagnostics do not disable the controls needed to adjust and recheck\",\"Other document types keep their established readable summary flow\",\"Overview layout uses bounded wrapping cards and one column on narrow screens\"]}\n"
+    },
+    {
+      "file": "test_document_row_selection_ui105.js",
+      "pass": true,
+      "stdout": "{\"checks\":40,\"passed\":40,\"names\":[\"Default includes every mapped row without adding selection metadata\",\"Exclude keeps full TSV and full original source coordinates\",\"Repeated names serials and part numbers stay separate selectable rows\",\"Chooser distinguishes expected zero from Unknown and labels original rows\",\"Uploaded item and identity text is escaped in chooser cards and search\",\"PN search retains leading zeros and returns full mapped positions\",\"SN name and asset searches are case independent\",\"Search filter and paging preserve checked receipt and pending operation\",\"Shown-page exclusion changes only its 50 visible mapped rows\",\"Filtered shown actions use original mapped indices without excluding other matches\",\"Excluded filter permits explicit restoration and keeps full source evidence\",\"Needs review includes Unknown and optional missing identifiers without removing rows\",\"Selection changes discard checked approval receipt confirmation and summary\",\"No-op selection retains checked approval\",\"Busy uncertain and departed forms cannot change choices views or raw rows\",\"Invalid row positions do not change selection or approval\",\"Stored duplicate and out of range choices fail safely instead of silently changing rows\",\"Chosen rows survive worksheet deselection and kept draft restoration\",\"Existing inventory refresh keeps explicit item choices and full source rows\",\"Excluding every row keeps source draft and prevents any review request\",\"A wholly excluded worksheet can accompany another selected worksheet\",\"Applying mapping preserves exclusions by original row after positions move\",\"New mapped rows are included while confirmed source exclusions remain excluded\",\"Ambiguous or unavailable coordinates visibly reset choices rather than shift exclusions\",\"Raw TSV editing resets positional choices and clears original coordinates\",\"Apply mapping after raw editing restores coordinates and replaces stale notice\",\"Manual choices cannot be preserved when mapping restores previously unavailable coordinates\",\"Headerless manual TSV retains the first item and mapped positions match full payload\",\"Exact legacy header is removed and its twelve-column rows retain blank PN\",\"An approximate or shifted header is not guessed and removed\",\"Explicit review totals show mapped included and excluded records\",\"Optional mapped and excluded count fields require a consistent integer pair\",\"Reviewed selection must match exact worksheet names and selected record counts\",\"Missing explicit selection ledger cannot restore approval after a new check\",\"Successful selected-row review and save request keep full rows and original provenance\",\"Chooser replacement preserves keyboard focus by original mapped position without scrolling\",\"Filtering out the focused chosen row moves focus to the next visible row\",\"Shown page button retains focus when its contents repaint\",\"Mapped column preview starts collapsed while retaining every preview column and source Notes\",\"Chooser is collapsed by default with bounded cards and narrow-screen layout\"]}\n"
+    },
+    {
+      "file": "test_import_locale_ui126.js",
+      "pass": true,
+      "stdout": "{\"checks\":16,\"passed\":16}\n"
+    },
+    {
+      "file": "test_inventory_identity_ui103.js",
+      "pass": true,
+      "stdout": "PASS Part numbers support separated words and compact identity queries\nPASS Punctuated PN queries match one complete identity rather than source fragments\nPASS Punctuated identifiers cannot assemble across unrelated curated fields\nPASS Part number matching preserves leading zeroes and exact saved text\nPASS Part number and serial remain independent searchable native fields\nPASS Shared PN values do not change saved item identities or select one UUID\nPASS Legacy records without PN still search native serial and asset\nPASS Expected PN values participate in the scoped matcher\nPASS Part number rendering escapes supplied HTML and stays labelled separately\nPASS PN alone does not replace the unique item ID fallback\nPASS Saved readonly results expose PN without a new verification action\nPASS A missing result retains its outcome when searched by PN\nPASS Asset overview gives native PN its own labelled fact\nPASS Direct child search and identity include PN without changing child links\nPASS Legacy asset overview renders an empty PN fact harmlessly\n{\"checks\":15,\"errors\":0}\n"
+    },
+    {
+      "file": "test_inventory_item_review_ui109.js",
+      "pass": true,
+      "stdout": "{\"checks\":28,\"passed\":28,\"names\":[\"Only the three ordinary identity fields change; full Notes, choices, coordinates and containment stay exact\",\"No-op identity correction preserves exact approval, pending request, row text and sidecars\",\"Repeated corrected SN or PN do not merge rows or change explicit inclusion choices\",\"Unknown and zero expected quantity plus leading-zero identities remain literal separate fields\",\"Excluded rows remain editable and excluded with their original source-row identity\",\"Strict payload contains edited rows and existing sidecars but no editor-only advisory state\",\"Invalid names, over-limit text, controls and extra field names are rejected atomically\",\"Native codepoint limits accept Unicode identity text without numeric conversion\",\"Wrong positions, malformed rows and dirty mappings cannot mutate approved content\",\"Busy, uncertain, departed, kind-switched and disposed forms reject direct mutations\",\"Opening and typing in the focused dialog keep approval and exact existing draft unchanged\",\"Dialog Apply closes the modal before guarded commit and preserves exclusions and coordinates\",\"No-op Apply and Cancel keep the checked receipt and exact draft\",\"Invalid dialog text stays available to correct and cannot clear approval\",\"Captured dialog submit cannot apply after route/account/permission departure, sheet switch or disposal\",\"Busy or uncertain changes lock every editor field and reject captured submits until safe\",\"Captured card handlers cannot open a different active sheet or disposed builder\",\"Additional open dialogs and mapping changes block editor creation and commits\",\"Stale Cancel closes its temporary dialog without applying edits or focusing departed content\",\"Inventory-only permission revocation blocks Apply but leaves an available Cancel when still owned\",\"Captured closed-editor callbacks cannot edit a new dialog or steal its focus\",\"Quotes, CRLF and embedded tabs in untouched full Notes remain byte-for-byte equal after correction\",\"Full TSV editing retains its existing reset semantics after item corrections\",\"Applying original mapping replaces item corrections and preserves confirmed source exclusions honestly\",\"Already-manual valid rows can be corrected without inventing original source coordinates\",\"Source-advice filter retains original source facts after a row gets corrected item identity\",\"Dangerous-looking item identities remain escaped in card and dialog markup\",\"Searching current corrected SN or PN keeps checked receipt and does not reclassify source\"]}\n"
+    },
+    {
+      "file": "test_inventory_mapping_restore_ui113.js",
+      "pass": true,
+      "stdout": "{\"checks\":24,\"passed\":24,\"names\":[\"Fresh mapping records a detached source-associated header and all 13 source-column choices\",\"Pending header and column diagnostics name original and proposed fields without remapping rows\",\"Restore discards pending header and columns while preserving all corrected row state and destination\",\"Restoring manual TSV keeps manual state, exact multiline Notes and unavailable original coordinates\",\"Restore always clears an accepted review, request, confirmation and outcome even when choices already match\",\"Restore clears blocked diagnostics without reviving an accepted review or save request\",\"Returning pending choices to their original values still requires explicit Restore and a fresh check\",\"Clean no-op Restore preserves an accepted review, request and confirmation exactly\",\"Pending mapping and applied proof persist independently through worksheet inspection\",\"Current kept-state JSON roundtrip preserves the proven baseline and restored row edits honestly\",\"Legacy clean or dirty kept states without prior proof never invent or adopt an applied baseline\",\"Malformed or mismatched source, sheet, header and columns fail proof without changing current rows\",\"A successful explicit Apply records a new baseline, and surviving Restore handlers use that newer baseline\",\"Native remapping Cancel preserves the baseline, pending choices, exact corrected rows and review\",\"Missing Name and unverifiable Apply choices cannot replace the successful baseline or current rows\",\"Baseline metadata and restore notices remain outside strict collected and native inventory payloads\",\"Restore on an excluded inspected worksheet clears old approval, then allows a fresh selected-sheet check\",\"Busy and uncertain requests freeze Restore and preserve original action identity and payload\",\"Captured Restore callbacks stop after source, host, active sheet, kind, owner or repaint changes\",\"An open unrelated modal blocks Restore without modifying pending choices or corrections\",\"Pending source headings and worksheet content are escaped in diagnostics\",\"A proven initial mapping without Name can be restored honestly and focuses its required selector\",\"Lost or malformed source association cannot establish a replacement baseline through local Apply\",\"Switching import kind away and back retains same-source baseline and pending choices without re-adopting them\"]}\n"
+    },
+    {
+      "file": "test_inventory_navigation_ui112.js",
+      "pass": true,
+      "stdout": "{\"checks\":18,\"passed\":18,\"names\":[\"Inspector context distinguishes inspected data and excluded summary sheets without selecting them\",\"Inspecting the current worksheet opens mapping without changing an accepted signed review\",\"Direct inspection preserves checked draft, confirmation, selections and source evidence\",\"View jumps open and focus the requested section with zero API, review, payload or selection changes\",\"Overview shortcut is unavailable before a check and enabled for a retained accepted outcome\",\"Blocked diagnostic overview remains navigable without enabling save or confirmation\",\"Material edits remove accepted and blocked overview navigation until another successful check\",\"Missing Name mapping is prominent immediately and invalid Apply focuses Name without discarding rows\",\"Pending column mapping explicitly shows previously applied rows and does not automatically change their values\",\"Clearing Name preserves previous mapped rows and source ledger while telling the user to choose Name\",\"Applying a valid chosen mapping clears pending status and rebuilds rows only on explicit Apply\",\"Repeated or blank source headings have distinct column-number option labels and all 13 mappings remain\",\"Shared source-column reuse is advisory and accepted mapping retains literal values and full source Notes\",\"Shared-column advisory escapes source headings without restricting names or interpreting source values\",\"Busy and uncertain states disable every new button and captured callbacks cannot bypass that lock\",\"Stale navigation and inspection callbacks cannot act after source, host, active sheet, kind or owner changes\",\"An open modal blocks shortcuts and inspection without modifying the current draft\",\"Changing worksheet selection refreshes the active inclusion context independently of inspection\"]}\n"
+    },
+    {
+      "file": "test_inventory_overlap_ui115.js",
+      "pass": true,
+      "stdout": "{\"checks\":18,\"passed\":18,\"names\":[\"Exact trimmed serial and asset matches group only across distinct included worksheets\",\"Serial leading zeros and case stay literal, and serial/asset namespaces do not cross-match\",\"Included mapped row positions and original worksheet indices control matches and exclusions\",\"Same-identifier rows remain separate even when both serial and asset group them\",\"Locations show each current destination and source row rather than treating moves as duplicates\",\"Field edits refresh current identifiers; name or PN alone never creates an overlap\",\"Pending mapping, full manual rows and missing source references remain explicit advice\",\"Workbook, location, item and identifiers are escaped before HTML display\",\"Malformed selected-row choices cannot produce fabricated identifiers or remove the proposal\",\"Group and occurrence pagination bounds rendered advice without discarding any occurrence\",\"Source jumps retain a genuine accepted review, confirmation and frozen signed request\",\"Blocked destination diagnostics remain visible and unsaveable through overlap source jumps\",\"Busy and uncertain freezes prevent pagination, source jumps and captured callbacks changing immutable request\",\"Detached source and page callbacks reject replaced source, host, active sheet, kind, owner, disposal and repaint\",\"An open unrelated modal and revoked permission block overlap source/pagination controls\",\"Inspect items opens a precise current row for manual drafts without inventing source evidence\",\"Ambiguous or missing original source row evidence disables source jumps while items remain inspectable\",\"Large repeated-identifier inputs remain one linear group with bounded displayed members\"]}\n"
+    },
+    {
+      "file": "test_inventory_review_safeguards_ui111.js",
+      "pass": true,
+      "stdout": "{\"checks\":23,\"passed\":23,\"names\":[\"Cancelling remapping corrected identities retains every state and DOM review value exactly\",\"Accepting remapping replaces corrected identities and retains only proven row choices\",\"Expected quantity and box corrections get their own warning and Cancel keeps all corrections\",\"Full mapped-row corrections require consent and Cancel keeps missing-source ledger and explicit exclusions\",\"Manual-source exclusion reset is confirmed even when current row text matches source text\",\"Ordinary mapping and edits restored to exact source values do not add routine confirmation\",\"Accepted stale native dialogs cannot remap a changed owner, source, active sheet, rows, mapping or save state\",\"Busy, uncertain and departed mapping paths never show a prompt or change a receipt\",\"Completed confirmation and summary survive inventory-only worksheet inspection with exact signed save draft\",\"Unchecked confirmation stays unchecked across worksheet inspection\",\"Excluded summary-sheet inspection retains included worksheets, reviewed provenance and pending op identity\",\"Mapping, inclusion, destination, name, SN, PN, quantity and location edits clear review after inspection\",\"Silent material drift cannot inherit approval when inspecting or building an action request\",\"Missing retained review, missing authoritative sheets and replacing the review object cannot create a signed save request\",\"Returned action draft is a defensive copy and cannot mutate retained signed review bytes\",\"Busy and uncertain save attempts freeze worksheet control and preserve existing unchanged request\",\"Captured old sheet and mapping controls cannot mutate after repaint or new source\",\"Departed review response cannot restore a token or summary in another owner\",\"Review response for replaced source cannot restore the previous signed draft\",\"Blocked source-conflict overview survives included and excluded sheet inspection without becoming saveable\",\"Material edits clear blocked diagnostics permanently across subsequent inspection\",\"Starting a recheck drops old blocked diagnostics; failed or malformed outcomes cannot revive them\",\"Blocked diagnostics with silent material or source drift fail the same retained-draft guard\"]}\n"
+    },
+    {
+      "file": "test_inventory_search_ui102.js",
+      "pass": true,
+      "stdout": "PASS Blank and whitespace queries preserve the current scoped row set\nPASS Case and common Unicode accents match across item name and model\nPASS All query words must match; words may come from different curated fields\nPASS Punctuation-separated and compact serial/asset searches match\nPASS Full scoped UUID remains searchable when human identifiers are absent\nPASS Paired identity, category and nested extra fields are searched\nPASS Current and expected positions participate without fabricating location values\nPASS Source worksheet and container path are searchable independently of physical position\nPASS Zero quantity is searchable and unknown quantity contributes no zero default\nPASS Uncurated authors, history, signatures and passwords are not searched\nPASS Technical source hashes and tokens do not become item search identity\nPASS Direct matcher calls enforce the same 200-character query limit as the UI\nPASS Nested traversal is bounded and ignores booleans\nPASS Found, Missing and Discrepancy all count as saved current results\nPASS A previous saved outcome remains stale when the item requires rechecking\nPASS Pending rows are distinguishable from current saved results\nPASS Task identities show model, serial, asset and both paired identities safely\nPASS Task identity falls back to saved item ID when serial and asset are missing\nPASS Readonly saved task results expose only View result and retain zero count\nPASS Task recheck cards preserve previous Found as stale and distinguish unknown count\n{\"checks\":20,\"errors\":0}\n"
+    },
+    {
+      "file": "test_inventory_source_headers_ui116.js",
+      "pass": true,
+      "stdout": "{\"checks\":16,\"passed\":16,\"names\":[\"Eligible original source headers require Name and at least two recognized mapped fields\",\"Exact-repeat labels compare literal full original header arrays without alias normalization\",\"Moved, missing and changed source wording remain separate from duplicate-alias ambiguity\",\"Actual manually chosen shared columns and explicit unmapped fields drive all13 comparisons\",\"Pending choices never replace a valid applied mapping as the comparison baseline\",\"Unavailable or invalid applied records remain unavailable and never fall back to pending choices\",\"Manual mapped rows retain original comparison with honest provenance and no current-item jump\",\"Literal source-index jumps remain available when extracted rows have no proven Excel coordinates\",\"Current-item jumps require a unique matching nonmanual source coordinate, excluding applied/chosen headers\",\"Candidate discovery scans first5000 extracted rows and ten-candidate paging retains all eligible rows\",\"Candidate markup escapes original header wording, field text and worksheet/source labels\",\"Source header comparison, paging and jumps preserve all mapped rows, fullNotes and source-review advice\",\"Genuine accepted check, confirmation and signed immutable request survive every candidate view action\",\"Busy/uncertain freeze candidate paging and every captured source/item handler without mutating retry material\",\"Stale captured candidate callbacks stop after source, host, worksheet, kind, ownership, disposal or repaint changes\",\"Open unrelated modal or revoked inventory permission blocks candidate inspection and pagination\"]}\n"
+    },
+    {
+      "file": "test_inventory_source_review_ui108.js",
+      "pass": true,
+      "stdout": "{\"checks\":27,\"passed\":27,\"names\":[\"All named rows remain included; five nonitem-like source rows get located original-source advice\",\"Source-review filter differs from retained Unknown quantity and optional identity review\",\"Model and explicit containment evidence avoid guessing an instruction or total is nonitem\",\"Plain name-only Unknown spare and Check valve are valid selectable rows\",\"Portuguese total section instruction and footer produce conservative advisory points\",\"Only explicit exclusion changes selected_rows; all cells Notes and positions remain\",\"SN PN leading zeros and Counted zero or blank stay distinct original evidence\",\"Advisory facts and chooser views never enter strict native sheets or draft schema\",\"Searching filtering paging and inspecting source advice preserve checked receipt\",\"Actual filtered Exclude shown invalidates approval and keeps all seven mapped rows\",\"Field-only quantity asset and parent corrections preserve original-source advice honestly\",\"Full TSV editing clears advice and provenance with an immediately visible honest notice\",\"Older kept draft without source advice is explicitly unavailable rather than claimed clean\",\"Reapplying original mapping restores advice and preserves confirmed exclusions\",\"Automatic header scan covers row32 and row250 but does not claim unbounded auto discovery\",\"Source browser is collapsed and bounded at fifty cards over a full 1200-row sheet\",\"Source browser searches literal source text and proven sparse Excel numbers\",\"Opening searching paging and same-header choice preserve checked receipt\",\"A chosen header beyond250 truly changes dirty mapping while retaining prior rows until Apply\",\"Actual header choice places keyboard focus on Apply mapping without forced scrolling\",\"Later stronger headers and preheader rows get located notices without weak remapping\",\"Unproved coordinates use extracted-row labels and do not invent Excel references\",\"Source text identities query and advisory excerpts are safely escaped\",\"Busy uncertain departed kind-switch sheet-switch and disposed controls cannot mutate source metadata\",\"Header chooser and source selection visibly lock on busy or uncertain and recover boundaries\",\"Invalid header positions and duplicate choice cannot clear approval or change mapping\",\"Paged header cards and source advisories use wrapping within mobile content\"]}\n"
+    },
+    {
+      "file": "test_inventory_worksheet_overview_ui114.js",
+      "pass": true,
+      "stdout": "{\"checks\":24,\"passed\":24,\"names\":[\"Worksheet overview keeps original indices, item counts, inclusion and mapping status distinct\",\"View filters hide existing cards in place without replacing any checkbox, location or Inspect control\",\"Every filter preserves an accepted review, confirmation, unchanged request and exact source/material draft\",\"Blocked diagnostics remain visible and unsaveable through all view filters\",\"Filtering never changes the inspected worksheet even when its card becomes hidden\",\"Noncontiguous visible Inspect controls retain their original source indices and signed approval\",\"Pending column changes refresh card status, included blocker names and filter membership live\",\"Header edits and Restore refresh pending statuses without selecting worksheets or changing the filter\",\"Successful Apply clears pending mapping attention and updates the recorded card status\",\"Missing Name choices are mapping advice, and clearing them preserves current rows until explicit Apply\",\"Clean manual rows with unmapped Name receive advice without becoming a new client-side Check blocker\",\"Legacy mapping-record unavailability remains neutral and distinct from pending or malformed choices\",\"Malformed current choices get a named advisory separate from missing records and selected dirty blockers\",\"Excluded dirty sheets appear under Needs mapping but do not block a fresh selected-sheet check\",\"Including an excluded dirty sheet updates attention totals and preserves original checkbox indexing\",\"Row choices refresh existing per-worksheet included/excluded counts without replacing focused location controls\",\"Location typing refreshes status and counts while retaining the exact input and keyboard focus\",\"Hiding a focused card sends keyboard focus to the active filter below the fixed-header margin\",\"Unchecking a focused included card restores focus to Included despite the existing full repaint\",\"An empty Needs mapping view remains explicit without changing the selected proposal or active worksheet\",\"Worksheet names and source status content remain escaped in mapping attention and cards\",\"Busy and uncertain requests freeze filters and captured handlers cannot mutate receipts or view state\",\"Stale filter callbacks stop after source, host, active sheet, kind, owner, disposal or repaint changes\",\"An open unrelated modal prevents worksheet filter changes without altering cards or approval\"]}\n"
+    },
+    {
+      "file": "test_toolbox_read_ui108.js",
+      "pass": true,
+      "stdout": "{\"checks\":17,\"passed\":17,\"names\":[\"First read mounts honest Toolbox loading shell before capturing ownership\",\"Interrupted first read retains its shell and offers a usable deliberate retry\",\"Retry while a form is open performs no read and does not replace or dismiss it\",\"After closing the form retry takes a fresh context and displays only fresh data\",\"Opening and closing a modal before a read completes still invalidates the old context\",\"An interrupted API error preserves recovery shell and does not replace the current form\",\"First-load connection failure has honest retry wording rather than claiming saved data\",\"Latest request wins and a delayed older read cannot overwrite it\",\"Departed routes suppress both late successes and late failures\",\"Changed accounts or tokens suppress late results without exposing previous data\",\"Replacing the host during a read suppresses its late success and error\",\"Permission revoked during a read prevents returned talks from being displayed\",\"Revoked permission plus an opened talk form retains actual form ownership and Keep draft persistence\",\"Denied entry performs no API read and shows the existing access state\",\"Unchanged saved-view refresh preserves mounted records and interrupted refresh offers Refresh\",\"Foreground and background reads do not start while a form is already open\",\"Detail-route first read uses its own saved talk endpoint and suppresses obsolete completion\"]}\n"
+    },
+    {
+      "file": "test_admin_permissions_locale_ui122.cjs",
+      "pass": true,
+      "stdout": "{\n  \"passed\": 12,\n  \"permission_labels\": 81,\n  \"groups\": 19,\n  \"checks\": [\n    \"Portuguese headings and all permission labels\",\n    \"Company title translated without changing employee text\",\n    \"Scope and safety explanations in Portuguese\",\n    \"Expense review remains distinct from reimbursement payment\",\n    \"Original permission identifiers and selected values preserved\",\n    \"English deployment retains English content\",\n    \"Non-Brazilian locale retains English\",\n    \"Opening the editor never saves or changes authorization\",\n    \"Full-database backup still requires separate confirmation\",\n    \"Save without reason and review confirmation remains blocked\",\n    \"Confirmed save sends identical capability keys and values\",\n    \"Translation dictionary never localizes user-provided data in templates\"\n  ]\n}\n"
+    },
+    {
+      "file": "test_hr_forms_ui120.cjs",
+      "pass": true,
+      "stdout": "UI120: 16 behavioral form serialization checks passed.\n"
+    },
+    {
+      "file": "test_ui121_experience.cjs",
+      "pass": true,
+      "stdout": "PASS inclusive periods and leap dates\nPASS reject impossible, reversed and excessive periods\nPASS same-day changes stack without erasing conflicts\nPASS clipping preserves original periods and continuation\nPASS cancelled and outside-period assignments excluded\nPASS titles and attributes escape user-provided content\nPASS status and full period available without colour\nPASS no schedule never implies availability\nPASS restricted scope has an explicit explanation\nPASS Portuguese labels and English deployment remain distinct\nPASS interpolated employee text is never translated\nPASS accent-insensitive people search\nPASS navigation resumes exact route and resets on identity change\nPASS timeline uses CSP-compatible numeric layout without inline style markup\nPASS report columns describe each process without conflating amounts and hours\n15 UI121 behaviour checks passed\n"
+    },
+    {
+      "file": "test_ui124_action_labels.cjs",
+      "pass": true,
+      "stdout": "PASS expiry notification is labelled in Brazilian Portuguese\nPASS employee names remain verbatim\nPASS only the generated final suffix is changed\nPASS ordinary detail text is never translated\nPASS unknown event kinds retain their original data\nPASS English deployments retain original notifications\nPASS known action controls are translated independently of record titles\n7 UI124 notification label checks passed\n"
+    },
+    {
+      "file": "test_ui124_navigation.cjs",
+      "pass": true,
+      "stdout": "PASS focused mobile section selector allows repeated navigation\nPASS existing people search still allows interaction\nPASS open dialog still blocks navigation\nPASS field outside HR never bypasses busy state\nPASS a different editing control still blocks navigation\n5 UI124 navigation regression checks passed\n"
+    },
+    {
+      "file": "test_ui125_language_and_decisions.cjs",
+      "pass": true,
+      "stdout": "PASS known status codes display as nouns, without changing the input\nPASS unknown values and record names are preserved\nPASS English deployment preserves authored navigation and actions\nPASS Portuguese dynamic counts preserve record values\nPASS API names, keys and attributes remain technical\nPASS review requires explicit decision\nPASS document and hours decision vocabularies cannot be interchanged\nPASS documents requires a reason for both return and rejection\nPASS documents retains reason, version and wire enum\nPASS expenses requires a reason for both return and rejection\nPASS expenses retains reason, version and wire enum\nPASS timesheets requires a reason for both return and rejection\nPASS timesheets retains reason, version and wire enum\nPASS expense approval action and receipt do not record payment\nPASS hours approval does not claim payroll calculation\nPASS attachment and document review remain different\nPASS save draft and send for approval are distinct\nPASS Portuguese localization cannot suppress DELETE action receipts\nPASS review form displays and escapes document evidence without rewriting user text\nPASS task guidance renders a real action without leaking source-code labels\n20 UI125 behavior checks passed\n"
+    },
+    {
+      "file": "test_ux_ui123.cjs",
+      "pass": true,
+      "stdout": "PASS name search ignores accents and case\nPASS search includes vessel and project\nPASS department search uses only authorised departments\nPASS conflicts come from server warnings\nPASS declared availability excludes missing or restricted schedules\nPASS no schedule excludes restricted and travelling people\nPASS cancelled assignments do not count as working\nPASS travel search is connected to the employee\nPASS search narrows events and records together\nPASS projection never changes server response or staffing coverage\nPASS empty result does not fall back to full team\nPASS unknown schedule is explicit in summary\nPASS empty query has a real zero\nPASS filter query is escaped, including attribute injection\nPASS English deployment keeps English interface\nPASS Portuguese login tools are translated\nPASS timeline labels distinguish planned and confirmed without colour\nPASS agenda retains people with no schedule and states the limit\n18 UI123 behaviour checks passed\n"
+    },
+    {
+      "file": "test_ui127_documents_agent.js",
+      "pass": true,
+      "stdout": "{\"suite\":\"ui127-documents-navigation-agent\",\"checks\":127,\"passed\":true}\n"
+    },
+    {
+      "file": "test_ui127_documents_agent_people.js",
+      "pass": true,
+      "stdout": "{\"suite\":\"ui127-people-selectors-agent\",\"checks\":59,\"passed\":true}\n"
+    },
+    {
+      "file": "test_ui127_quality_agent_dialog.js",
+      "pass": true,
+      "stdout": "{\"suite\":\"UI127 independent shared dialog history\",\"checks\":35,\"result\":\"passed\"}\n"
+    },
+    {
+      "file": "test_ui127_quality_agent_drafts.js",
+      "pass": true,
+      "stdout": "{\"suite\":\"UI127 independent DDS draft compatibility\",\"checks\":10,\"result\":\"passed\"}\n"
+    },
+    {
+      "file": "test_ui127_quality_agent_logs.js",
+      "pass": true,
+      "stdout": "{\"suite\":\"UI127 independent log navigation quality\",\"checks\":52,\"result\":\"passed\"}\n"
+    },
+    {
+      "file": "test_ui127_quality_agent_support.js",
+      "pass": true,
+      "stdout": "{\"suite\":\"UI127 contact locale and public version\",\"checks\":55,\"result\":\"passed\"}\n"
+    },
+    {
+      "file": "test_ui127_rh_agent_navigation.cjs",
+      "pass": true,
+      "stdout": "UI127 RH: 12 close/cancel/detail/preview scenarios passed; session, query, page and filters preserved; no network writes.\n"
+    },
+    {
+      "file": "test_ui128_docs_import_centre_boundary.js",
+      "pass": true,
+      "stdout": "20 UI128 import guidance boundary checks passed\n"
+    },
+    {
+      "file": "test_ui128_docs_import_language.js",
+      "pass": true,
+      "stdout": "63 UI128 import language and guidance checks passed\n"
+    },
+    {
+      "file": "test_ui128_docs_low_stock_locale.js",
+      "pass": true,
+      "stdout": "30 UI128 low-stock review checks passed\n"
+    },
+    {
+      "file": "test_ui128_docs_overlap_scope.js",
+      "pass": true,
+      "stdout": "30 UI128 cross-worksheet wording and preservation checks passed\n"
+    },
+    {
+      "file": "test_ui128_docs_qr_locale.js",
+      "pass": true,
+      "stdout": "54 UI128 real QR tools and selection checks passed\n"
+    },
+    {
+      "file": "test_ui128_offline_locale.cjs",
+      "pass": true,
+      "stdout": "{\"passed\":201,\"locales\":[\"pt-BR\",\"en\",\"default\"],\"network\":\"simulated only\",\"credential_pages_cached\":false}\n"
+    },
+    {
+      "file": "test_ui128_ops_agent_ui.js",
+      "pass": true,
+      "stdout": "{\"suite\":\"UI128 operations evidence read/refresh/photo/back/session, actual locale PT and EN\",\"checks\":60,\"result\":\"passed\"}\n"
+    },
+    {
+      "file": "test_ui128_rh_agent_entry_help.cjs",
+      "pass": true,
+      "stdout": "UI128 entry/help: 19 behavioral scenarios passed with fake transport, real localized source and isolated DOM adapters; no live email, credentials or data.\n"
+    },
+    {
+      "file": "test_ui128_rh_agent_install.cjs",
+      "pass": true,
+      "stdout": "UI128 installation: 7 scenarios passed for PT/EN, HTTPS/manual availability, native prompt dismissal, installed state and close/focus; no install or storage operation executed.\n"
+    },
+    {
+      "file": "test_ui128_rh_agent_membership.cjs",
+      "pass": true,
+      "stdout": "UI128 access forms: 7 scenarios passed for close ownership, native cancel, actual change/restoration, account changes, busy and uncertain outcomes; zero access mutations.\n"
+    },
+    {
+      "file": "test_ui128_rh_agent_ui.cjs",
+      "pass": true,
+      "stdout": "UI128 RH/admin: 14 scenarios passed for filter preservation, actual value/checkbox change and restoration, cancel confirmation, account changes, busy dialogs and independent native cancel semantics.\n"
+    },
+    {
+      "file": "test_ui128_rh_agent_workspace_help.cjs",
+      "pass": true,
+      "stdout": "UI128 workspace/help: 8 scenarios passed using real functions and isolated transaction/DOM adapters; old/new drafts stay separated and Help opens in an isolated tab.\n"
+    },
+    {
+      "file": "test_ui128_docs_location_locale.js",
+      "pass": true,
+      "stdout": "81 UI128 system-location presentation checks passed\n"
+    },
+    {
+      "file": "test_ui129_weekly_ui.cjs",
+      "pass": true,
+      "stdout": "UI129 weekly UI: 145 assertions passed (weekly models, actual event handlers, independent projects, exact totals, project search, legacy editor, permissions, retry identity, cancel and period safeguards).\n"
+    },
+    {
+      "file": "test_ui129_save_status_locale.cjs",
+      "pass": true,
+      "stdout": "UI129 save-status locale: 62 checks passed with real PT/EN dictionary, GET network failure, Fleet warning, DOMException, exact retry, known-success UI failure and untouched server wording.\n"
+    },
+    {
+      "file": "test_ui130_documents_people.cjs",
+      "pass": true,
+      "stdout": "{\"suite\":\"UI130 documents and people behavior\",\"checks\":89,\"passed\":true}\n"
+    },
+    {
+      "file": "test_ui130_shell.cjs",
+      "pass": true,
+      "stdout": "{\"suite\":\"UI130 shell integration\",\"checks\":9,\"passed\":true}\n"
+    },
+    {
+      "file": "test_ui130_it_ui.cjs",
+      "pass": true,
+      "stdout": "UI130 IT UI: 266 assertions passed. Real HTTP fixture, actual component/event handlers in isolated DOM adapter; no browser/production claims.\n"
+    },
+    {
+      "file": "test_ui130_backup_locale.cjs",
+      "pass": true,
+      "stdout": "{\"suite\":\"UI130 backup locale\",\"checks\":18,\"passed\":18}\n"
+    },
+    {
+      "file": "test_ui131_contacts_ui.cjs",
+      "pass": true,
+      "stdout": "{\"passed\":true,\"checks\":80,\"scope\":\"actual component handlers, real HTTP fixture, isolated DOM adapter; no browser or external messages\"}\n"
+    },
+    {
+      "file": "test_ui131_context_documents.cjs",
+      "pass": true,
+      "stdout": "{\"suite\":\"UI131 contextual documents behavior\",\"checks\":84,\"passed\":true}\n"
+    },
+    {
+      "file": "test_ui131_visual.cjs",
+      "pass": true,
+      "stdout": "UI131 visual: 613 structural/cascade/contrast checks passed; 7 colour pairs passed. No browser claims.\n"
+    },
+    {
+      "file": "test_ui131_shell.cjs",
+      "pass": true,
+      "stdout": "{\"suite\":\"UI131 shell integration\",\"checks\":13,\"passed\":true}\n"
+    },
+    {
+      "file": "test_ui131_profile_save_session.cjs",
+      "pass": true,
+      "stdout": "{\"passed\":true,\"checks\":29,\"scope\":\"actual profile submit callback; controlled file read and HTTP response; no browser\"}\n"
+    },
+    {
+      "file": "test_ui131_profile_navigation.cjs",
+      "pass": true,
+      "stdout": "UI131 profile navigation: 38 actual-handler checks passed; selected section, target focus and profile route preserved. No browser claims.\n"
+    },
+    {
+      "file": "test_ui132_context_attachments.cjs",
+      "pass": true,
+      "stdout": "{\"suite\":\"UI132 new attachment families\",\"checks\":65,\"passed\":true}\n"
+    },
+    {
+      "file": "test_ui132_task_acceptance.cjs",
+      "pass": true,
+      "stdout": "UI132 task acceptance: 52 checks passed (actual component callbacks and actual task scope/send helpers; isolated DOM adapter, no browser).\n"
+    },
+    {
+      "file": "test_ui132_task_acceptance_persist.cjs",
+      "pass": true,
+      "stdout": "UI132 shared-form persistence: 31 checks passed (actual form function; session swap during real await persist, no browser).\n"
+    },
+    {
+      "file": "test_ui132_visual.cjs",
+      "pass": true,
+      "stdout": "UI132 visual: 505 static checks and 7 colour pairs passed. No browser used.\n"
+    },
+    {
+      "file": "test_ui132_visual_markup.cjs",
+      "pass": true,
+      "stdout": "UI132 markup: 68 renderer/escaping/state checks passed in PT and EN; 6 actual-component fragments. No browser/API used.\n"
+    },
+    {
+      "file": "test_ui133_context_documents.cjs",
+      "pass": true,
+      "stdout": "{\"suite\":\"UI133 contextual document handlers\",\"checks\":171,\"passed\":true,\"scope\":\"DOM and controlled transport; not browser/server ACL/production\"}\n"
+    },
+    {
+      "file": "test_ui133_context_documents_api_fixture.cjs",
+      "pass": true,
+      "stdout": "{\"suite\":\"UI133 real HTTP envelopes rendered locally\",\"checks\":134,\"passed\":true,\"fixtures\":\"fictitious local HTTP capture\",\"browser\":false,\"network\":false}\n"
+    },
+    {
+      "file": "test_ui133_logs_context.cjs",
+      "pass": true,
+      "stdout": "UI133 logbook integration: open source, back, account/route/close guards, Fleet binary adapter and both language shells passed. No writes or session changes.\n"
+    },
+    {
+      "file": "test_ui134_documents_sources.cjs",
+      "pass": true,
+      "stdout": "{\"suite\":\"UI134 source image states and context guards\",\"checks\":76,\"passed\":true,\"browser\":false,\"transport\":\"controlled fictitious responses\"}\n"
+    },
+    {
+      "file": "test_ui134_documents_ui.cjs",
+      "pass": true,
+      "stdout": "{\"suite\":\"UI134 documents: actual controllers, local DOM adapter\",\"checks\":128,\"passed\":true,\"browser\":false}\n"
+    },
+    {
+      "file": "test_ui134_it_journeys.cjs",
+      "pass": true,
+      "stdout": "UI134 IT journeys: 102 assertions passed. Context, next actions, exact capabilities, safe cancellation, homonyms, filters/focus, history, PT/EN and responsive CSS.\n"
+    },
+    {
+      "file": "test_ui134_navigation.cjs",
+      "pass": true,
+      "stdout": "{\"suite\":\"UI134 directory and navigation handlers\",\"checks\":81,\"passed\":true,\"browser\":false}\n"
+    },
+    {
+      "file": "test_ui134_rh_planning.cjs",
+      "pass": true,
+      "stdout": "{\"suite\":\"UI134 calendar civil-day and planning semantics\",\"checks\":54,\"passed\":true,\"browser\":false}\n"
+    },
+    {
+      "file": "test_ui134_rh_weekly.cjs",
+      "pass": true,
+      "stdout": "{\"suite\":\"UI134 weekly selection and retained focus\",\"checks\":63,\"passed\":true,\"browser\":false}\n"
+    },
+    {
+      "file": "test_ui135_account_flows.cjs",
+      "pass": true,
+      "stdout": "{\"suite\":\"UI135 account security and email preferences\",\"checks\":94,\"passed\":true,\"transport\":\"fictional in-memory only\",\"browser\":false,\"email_sent\":false}\n"
+    },
+    {
+      "file": "test_ui135_account_profiles.cjs",
+      "pass": true,
+      "stdout": "{\"suite\":\"UI135 profiles, badges, contribution history and Team handlers\",\"checks\":45,\"passed\":true,\"browser\":false,\"fixtures\":\"fictional in-memory\"}\n"
+    },
+    {
+      "file": "test_ui135_admin_navigation.cjs",
+      "pass": true,
+      "stdout": "{\"suite\":\"UI135 admin navigation permission-aware handlers\",\"checks\":38,\"passed\":true,\"browser\":false}\n"
+    },
+    {
+      "file": "test_ui135_documents_editor.cjs",
+      "pass": true,
+      "stdout": "{\"suite\":\"ui135_checklist_editor\",\"checks\":91,\"status\":\"passed\",\"evidence\":\"shipped result presenter and extracted photo editor; compression/storage explicitly simulated\"}\n"
+    },
+    {
+      "file": "test_ui135_documents_full_editor.cjs",
+      "pass": true,
+      "stdout": "{\"suite\":\"ui135_full_checklist_result\",\"checks\":60,\"status\":\"passed\",\"evidence\":\"actual editItem, validation and queueChange with local DOM and simulated persistence; no server confirmation claimed\"}\n"
+    },
+    {
+      "file": "test_ui135_documents_review.cjs",
+      "pass": true,
+      "stdout": "{\"suite\":\"ui135_checklist_review\",\"checks\":90,\"status\":\"passed\",\"evidence\":\"shipped review + step controller in local DOM; transport simulated\"}\n"
+    },
+    {
+      "file": "test_ui135_documents_upload.cjs",
+      "pass": true,
+      "stdout": "{\"suite\":\"ui135_original_upload\",\"checks\":63,\"status\":\"passed\",\"evidence\":\"real controller with local DOM and simulated transport; original binary envelope verified\"}\n"
+    },
+    {
+      "file": "test_ui135_home.cjs",
+      "pass": true,
+      "stdout": "{\"suite\":\"UI135 Personal Home actual handlers\",\"checks\":81,\"passed\":true,\"browser\":false}\n"
+    },
+    {
+      "file": "test_ui135_permission_labels.cjs",
+      "pass": true,
+      "stdout": "{\"suite\":\"UI135 public permission labels PT/EN\",\"checks\":168,\"passed\":true}\n"
+    },
+    {
+      "file": "test_ui135_rh_forms.cjs",
+      "pass": true,
+      "stdout": "{\"suite\":\"UI135 HR forms and review lifecycle\",\"checks\":236,\"passed\":true,\"browser\":false,\"api\":false}\n"
+    },
+    {
+      "file": "test_ui135_rh_reports.cjs",
+      "pass": true,
+      "stdout": "{\"suite\":\"UI135 HR overview civil dates and reports\",\"checks\":162,\"passed\":true,\"browser\":false,\"api\":false}\n"
+    },
+    {
+      "file": "test_ui136_actions.cjs",
+      "pass": true,
+      "stdout": "{\"suite\":\"UI136 Search and Action Centre actual handlers\",\"checks\":76,\"passed\":true,\"browser\":false}\n"
+    },
+    {
+      "file": "test_ui136_certificates_asset.cjs",
+      "pass": true,
+      "stdout": "{\"suite\":\"UI136 asset certificate presentation\",\"checks\":58,\"passed\":true,\"method\":\"real permission-filtered renderer; fictional read model, no browser/layout assertions\"}\n"
+    },
+    {
+      "file": "test_ui136_certificates_form.cjs",
+      "pass": true,
+      "stdout": "{\"suite\":\"UI136 certificate form\",\"checks\":65,\"passed\":true,\"method\":\"shipped form renderer/handlers; local DOM, no HTTP\"}\n"
+    },
+    {
+      "file": "test_ui136_certificates_workspace.cjs",
+      "pass": true,
+      "stdout": "{\"suite\":\"UI136 certificate workspace\",\"checks\":87,\"passed\":true,\"method\":\"shipped register, lifecycle and attachment handlers; simulated transport, no HTTP\"}\n"
+    },
+    {
+      "file": "test_ui136_rh_api_fixture.cjs",
+      "pass": true,
+      "stdout": "{\"suite\":\"UI136 real HTTP fixture through HR renderers and history handler\",\"checks\":62,\"passed\":true,\"browser\":false,\"fixture\":\"isolated HTTP responses\"}\n"
+    },
+    {
+      "file": "test_ui136_rh_save_handlers.cjs",
+      "pass": true,
+      "stdout": "{\"suite\":\"UI136 actual shift/expense submit and uncertain completion handlers\",\"checks\":102,\"passed\":true,\"browser\":false,\"http\":false}\n"
+    },
+    {
+      "file": "test_ui136_rh_ui.cjs",
+      "pass": true,
+      "stdout": "{\"suite\":\"UI136 HR identity, coverage and real history handlers\",\"checks\":94,\"passed\":true,\"browser\":false}\n"
+    },
+    {
+      "file": "test_ui136_work_actions_review.cjs",
+      "pass": true,
+      "stdout": "UI136 independent action filter review: 12 checks passed.\n"
+    },
+    {
+      "file": "test_ui136_work_flows.cjs",
+      "pass": true,
+      "stdout": "UI136 work flows: 232 checks passed (real Task/Maintenance handlers, fictional DOM/API; no browser).\n"
+    }
+  ],
+  "syntax": [
+    {
+      "file": "account_security_ui83.js",
+      "pass": true
+    },
+    {
+      "file": "action_center_ui82.js",
+      "pass": true
+    },
+    {
+      "file": "admin_navigation.js",
+      "pass": true
+    },
+    {
+      "file": "app.js",
+      "pass": true
+    },
+    {
+      "file": "assets.js",
+      "pass": true
+    },
+    {
+      "file": "asset_workspace.js",
+      "pass": true
+    },
+    {
+      "file": "attention.js",
+      "pass": true
+    },
+    {
+      "file": "backup_review.js",
+      "pass": true
+    },
+    {
+      "file": "browser_admin.js",
+      "pass": true
+    },
+    {
+      "file": "browser_logs.js",
+      "pass": true
+    },
+    {
+      "file": "browser_templates.js",
+      "pass": true
+    },
+    {
+      "file": "browser_toolbox.js",
+      "pass": true
+    },
+    {
+      "file": "browser_workspace.js",
+      "pass": true
+    },
+    {
+      "file": "certificate_form.js",
+      "pass": true
+    },
+    {
+      "file": "certificate_workspace.js",
+      "pass": true
+    },
+    {
+      "file": "checklist_forms.js",
+      "pass": true
+    },
+    {
+      "file": "checklist_review.js",
+      "pass": true
+    },
+    {
+      "file": "checklist_stage.js",
+      "pass": true
+    },
+    {
+      "file": "checklist_workspace.js",
+      "pass": true
+    },
+    {
+      "file": "company_branding.js",
+      "pass": true
+    },
+    {
+      "file": "deployment_branding.js",
+      "pass": true
+    },
+    {
+      "file": "dialog_system_ui81.js",
+      "pass": true
+    },
+    {
+      "file": "documentos_context.js",
+      "pass": true
+    },
+    {
+      "file": "document_import.js",
+      "pass": true
+    },
+    {
+      "file": "document_invites.js",
+      "pass": true
+    },
+    {
+      "file": "document_join.js",
+      "pass": true
+    },
+    {
+      "file": "document_participation.js",
+      "pass": true
+    },
+    {
+      "file": "email_alerts_ui93.js",
+      "pass": true
+    },
+    {
+      "file": "experience_shell.js",
+      "pass": true
+    },
+    {
+      "file": "fault_reports.js",
+      "pass": true
+    },
+    {
+      "file": "fieldwork.js",
+      "pass": true
+    },
+    {
+      "file": "fleet.js",
+      "pass": true
+    },
+    {
+      "file": "general_tasks.js",
+      "pass": true
+    },
+    {
+      "file": "handovers.js",
+      "pass": true
+    },
+    {
+      "file": "handover_attachments.js",
+      "pass": true
+    },
+    {
+      "file": "handover_continue.js",
+      "pass": true
+    },
+    {
+      "file": "handover_day_view.js",
+      "pass": true
+    },
+    {
+      "file": "handover_draft_review.js",
+      "pass": true
+    },
+    {
+      "file": "handover_history.js",
+      "pass": true
+    },
+    {
+      "file": "handover_incoming.js",
+      "pass": true
+    },
+    {
+      "file": "handover_notes.js",
+      "pass": true
+    },
+    {
+      "file": "handover_preparation.js",
+      "pass": true
+    },
+    {
+      "file": "handover_recipients.js",
+      "pass": true
+    },
+    {
+      "file": "handover_review.js",
+      "pass": true
+    },
+    {
+      "file": "handover_schedule.js",
+      "pass": true
+    },
+    {
+      "file": "handover_workspace.js",
+      "pass": true
+    },
+    {
+      "file": "help_links.js",
+      "pass": true
+    },
+    {
+      "file": "help_workspace.js",
+      "pass": true
+    },
+    {
+      "file": "home_workspace.js",
+      "pass": true
+    },
+    {
+      "file": "hr_insights_ui123.js",
+      "pass": true
+    },
+    {
+      "file": "hr_locale_ui121.js",
+      "pass": true
+    },
+    {
+      "file": "hr_planning_ui121.js",
+      "pass": true
+    },
+    {
+      "file": "hr_weekly_timesheets.js",
+      "pass": true
+    },
+    {
+      "file": "hr_workspace.js",
+      "pass": true
+    },
+    {
+      "file": "i18n_pt_br.js",
+      "pass": true
+    },
+    {
+      "file": "import_centre.js",
+      "pass": true
+    },
+    {
+      "file": "install.js",
+      "pass": true
+    },
+    {
+      "file": "interface_components.js",
+      "pass": true
+    },
+    {
+      "file": "inventory_workspace.js",
+      "pass": true
+    },
+    {
+      "file": "it_workspace.js",
+      "pass": true
+    },
+    {
+      "file": "locale_pt_br.js",
+      "pass": true
+    },
+    {
+      "file": "local_work.js",
+      "pass": true
+    },
+    {
+      "file": "logistics_experience.js",
+      "pass": true
+    },
+    {
+      "file": "logistics_workflow.js",
+      "pass": true
+    },
+    {
+      "file": "logs.js",
+      "pass": true
+    },
+    {
+      "file": "logs_workspace.js",
+      "pass": true
+    },
+    {
+      "file": "log_package_worker.js",
+      "pass": true
+    },
+    {
+      "file": "log_windows.js",
+      "pass": true
+    },
+    {
+      "file": "maintenance_evidence.js",
+      "pass": true
+    },
+    {
+      "file": "maintenance_forms.js",
+      "pass": true
+    },
+    {
+      "file": "maintenance_management.js",
+      "pass": true
+    },
+    {
+      "file": "maintenance_ui.js",
+      "pass": true
+    },
+    {
+      "file": "maintenance_workspace.js",
+      "pass": true
+    },
+    {
+      "file": "manifest_ui.js",
+      "pass": true
+    },
+    {
+      "file": "membership_entry.js",
+      "pass": true
+    },
+    {
+      "file": "membership_workspace.js",
+      "pass": true
+    },
+    {
+      "file": "nav_shell.js",
+      "pass": true
+    },
+    {
+      "file": "operations.js",
+      "pass": true
+    },
+    {
+      "file": "original_library.js",
+      "pass": true
+    },
+    {
+      "file": "original_upload.js",
+      "pass": true
+    },
+    {
+      "file": "password_recovery.js",
+      "pass": true
+    },
+    {
+      "file": "permission_labels.js",
+      "pass": true
+    },
+    {
+      "file": "personal_home.js",
+      "pass": true
+    },
+    {
+      "file": "preparation_ui.js",
+      "pass": true
+    },
+    {
+      "file": "professional_contacts.js",
+      "pass": true
+    },
+    {
+      "file": "project_calendar.js",
+      "pass": true
+    },
+    {
+      "file": "project_presence.js",
+      "pass": true
+    },
+    {
+      "file": "qshe_reports.js",
+      "pass": true
+    },
+    {
+      "file": "recognition_workspace.js",
+      "pass": true
+    },
+    {
+      "file": "record_management.js",
+      "pass": true
+    },
+    {
+      "file": "report_forms.js",
+      "pass": true
+    },
+    {
+      "file": "row_selection.js",
+      "pass": true
+    },
+    {
+      "file": "save_status.js",
+      "pass": true
+    },
+    {
+      "file": "save_status_ui.js",
+      "pass": true
+    },
+    {
+      "file": "session_exit.js",
+      "pass": true
+    },
+    {
+      "file": "setup_builders.js",
+      "pass": true
+    },
+    {
+      "file": "shift_workspace.js",
+      "pass": true
+    },
+    {
+      "file": "simple_handovers.js",
+      "pass": true
+    },
+    {
+      "file": "support.js",
+      "pass": true
+    },
+    {
+      "file": "sw.js",
+      "pass": true
+    },
+    {
+      "file": "task_acceptance.js",
+      "pass": true
+    },
+    {
+      "file": "task_checklists.js",
+      "pass": true
+    },
+    {
+      "file": "task_create.js",
+      "pass": true
+    },
+    {
+      "file": "task_scratch.js",
+      "pass": true
+    },
+    {
+      "file": "task_workflow.js",
+      "pass": true
+    },
+    {
+      "file": "task_workspace.js",
+      "pass": true
+    },
+    {
+      "file": "toolbox_form.js",
+      "pass": true
+    },
+    {
+      "file": "toolbox_ui.js",
+      "pass": true
+    },
+    {
+      "file": "verification.js",
+      "pass": true
+    },
+    {
+      "file": "view_stability.js",
+      "pass": true
+    },
+    {
+      "file": "workspace_catalogue.js",
+      "pass": true
+    },
+    {
+      "file": "workspace_continuity.js",
+      "pass": true
+    },
+    {
+      "file": "workspace_ux_ui121.js",
+      "pass": true
+    },
+    {
+      "file": "work_execution.js",
+      "pass": true
+    }
+  ],
+  "passed_suites": 93,
+  "failed_suites": 0,
+  "syntax_passed": 114,
+  "syntax_failed": 0
+}

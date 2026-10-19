@@ -1,0 +1,52 @@
+[
+  {
+    "group": "rh-journeys",
+    "xml": "ui136-regression-rh-journeys.xml",
+    "exit_code": 0
+  },
+  {
+    "group": "rh-permissions",
+    "xml": "ui136-regression-rh-permissions.xml",
+    "exit_code": 0
+  },
+  {
+    "group": "certificates-revision",
+    "xml": "ui136-regression-certificates-revision.xml",
+    "exit_code": 0
+  },
+  {
+    "group": "certificates-files",
+    "xml": "ui136-regression-certificates-files.xml",
+    "exit_code": 0
+  },
+  {
+    "group": "assets",
+    "xml": "ui136-regression-assets.xml",
+    "exit_code": 0
+  },
+  {
+    "group": "tasks",
+    "xml": "ui136-regression-tasks.xml",
+    "exit_code": 0
+  },
+  {
+    "group": "search",
+    "xml": "ui136-regression-search.xml",
+    "exit_code": 0
+  },
+  {
+    "group": "actions",
+    "xml": "ui136-regression-actions.xml",
+    "exit_code": 0
+  },
+  {
+    "group": "preservation",
+    "xml": "ui136-regression-preservation.xml",
+    "exit_code": 0
+  },
+  {
+    "group": "help",
+    "xml": "ui136-regression-help.xml",
+    "exit_code": 0
+  }
+]

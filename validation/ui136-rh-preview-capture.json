@@ -1,0 +1,9 @@
+{
+  "release": "UI136",
+  "source": "hr_workspace.js actual peopleHtml, rosterTable, coverageHtml, showRecord and awaited hr-history handler",
+  "data": "Fictional authorized HTTP responses from test_ui136_rh_journeys.py; empty profile.people array is an illustrative unfilled private registration, not a captured overview response.",
+  "http_fixture": "runtime-ui136/tests/fixtures/ui136_rh_http_fixture.json",
+  "browser": false,
+  "photos": false,
+  "history_events": 7
+}

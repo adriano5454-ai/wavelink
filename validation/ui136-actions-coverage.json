@@ -1,0 +1,29 @@
+{
+  "release": "UI136",
+  "area": "Busca global, central de ações e preferências",
+  "method": "Handlers reais em adaptador DOM determinístico, PT-BR e inglês, dados fictícios; regressões HTTP locais descritas separadamente na validação integrada.",
+  "browser": false,
+  "new_root_checks": 76,
+  "independent_checks": 12,
+  "files": ["app/static/action_center_ui82.js", "app/static/action_center_ui82.css", "app/static/help_topics/navigation.html", "app/static/pt-BR/help_topics/navigation.html"],
+  "screens": [
+    {
+      "screen": "Busca global",
+      "implemented": ["Resultados vinculados à consulta e conta de origem", "Consultas curtas invalidam respostas pendentes", "Resultados anteriores ficam inativos durante nova busca", "Aviso de fonte indisponível distingue ausência de resultados de busca incompleta", "Limite de 40 resultados explicitado"],
+      "tested": ["Resposta tardia após consulta mais nova e mudança de conta", "Busca parcial sem resultados", "Teclado não seleciona resultado anterior", "Limite e mensagens em PT-BR e inglês"]
+    },
+    {
+      "screen": "Central de ações",
+      "implemented": ["Troca de filtros invalida resposta anterior e atualização em espera", "Falha desativa ações da lista anterior", "Limite de 75 ações explicado", "Operação sem confirmação mantém corpo e identificador originais", "Botão externo à lista repete operação cujo registro saiu do filtro", "Mudança de conta remove informações anteriores e impede navegação tardia"],
+      "tested": ["Corrida de consultas", "Atualização de fundo seguida de filtro novo", "Recibo incerto e repetição idêntica com item fora da lista", "Resposta 403 encerra tentativa e libera nova consulta", "Clique modificado preserva comportamento do navegador", "Marcar/abrir com conta alterada não navega"]
+    },
+    {
+      "screen": "Preferências da central",
+      "implemented": ["Edição preservada quando a lista é atualizada", "Recarga explícita para descartar edição e buscar versão salva", "Aviso ao fechar edição não salva, inclusive Escape", "Falha incerta mantém solicitação original e oferece repetição", "Respostas de outra conta não são aplicadas"],
+      "tested": ["Edição e atualização", "Cancelar descarte preserva texto", "Confirmar descarte fecha sem encerrar sessão", "Conflito de versão e recarga", "Erro de transporte e repetição do mesmo conteúdo", "Mudança de conta invalida edição pendente"]
+    }
+  ],
+  "limitations": ["Nenhuma medição de pixels, foco real, leitor de tela, contraste combinado ou comportamento nativo de Voltar foi executada em navegador.", "Adaptadores DOM e transporte controlado não substituem validação em produção.", "Preferências da central não habilitam e-mail nem comprovam entrega SMTP.", "Não se afirma revisão de todas as telas históricas."],
+  "tests": ["tests/test_ui136_actions.cjs", "tests/test_ui136_work_actions_review.cjs"],
+  "production_access": false
+}

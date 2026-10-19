@@ -1,0 +1,39 @@
+{
+  "release": "UI136",
+  "kind": "actual_component_html_not_screenshots",
+  "items": [
+    {
+      "page": "colaboradores.html",
+      "title": "Colaboradores, seleção e cobertura",
+      "source": "ui136-rh-people-markup.html",
+      "sha256": "d0d5ab0ddb9abae9a987e575ddce10adc4ab5a5fd845840d43fb186ad5d34b4e"
+    },
+    {
+      "page": "historico.html",
+      "title": "Despesa: correção, reenvio e histórico",
+      "source": "ui136-rh-history-markup.html",
+      "sha256": "86dffbe1124f37cb8e17f3fa3d3dbe6a7c32486d48077a4ad2f62ebb6661abc2"
+    }
+  ],
+  "html_pages": 3,
+  "local_url_checks": 97,
+  "broken_urls": 0,
+  "browser": false,
+  "production": false,
+  "data": "fictitious; real HTTP fixture plus explicitly identified empty employee-profile example",
+  "styles": "actual application stylesheet order",
+  "assets": [
+    "assets/ui68-home-scene.svg",
+    "assets/wavelink-approved-offshore-profile-ui87.webp",
+    "assets/wavelink-approved-offshore-ui87.webp",
+    "assets/wavelink-home-cover-ui86.svg",
+    "assets/wavelink-profile-cover-ui86.svg"
+  ],
+  "scope_limits": [
+    "DOM adapter and render functions only; no real layout engine",
+    "Preview controls disabled; handlers tested separately",
+    "Dialog wrapper adapted for standalone reading",
+    "390 px option is not validation on a mobile device"
+  ],
+  "portability": "Copy the complete ui136-rh-previews directory, including styles and assets."
+}

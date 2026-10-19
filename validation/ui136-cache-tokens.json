@@ -1,0 +1,24 @@
+{
+  "assets": {
+    "action_center_ui82.css": "1.34.36-c32ff610e542",
+    "action_center_ui82.js": "1.34.36-8e51373d5100",
+    "app.js": "1.34.36-b2fa18ded3e9",
+    "asset_workspace.js": "1.34.36-656e94224110",
+    "certificate_form.css": "1.34.36-cd296ba7234d",
+    "certificate_form.js": "1.34.36-443220f9aceb",
+    "certificate_workspace.css": "1.34.36-363f22f2643d",
+    "certificate_workspace.js": "1.34.36-93297c9b3330",
+    "general_tasks.css": "1.34.36-940dfa7ab1ce",
+    "general_tasks.js": "1.34.36-ac711c51a17d",
+    "help_catalogue.json": "1.34.36-4e44c8b9b199",
+    "help_workspace.js": "1.34.36-4d34d499e611",
+    "hr_workspace.css": "1.34.36-6e33c43c81d3",
+    "hr_workspace.js": "1.34.36-fde4513fe975",
+    "locale_pt_br.js": "1.34.36-79839b3b1d0e",
+    "maintenance_ui.js": "1.34.36-37549860604b",
+    "maintenance_workspace.css": "1.34.36-01a99a6e8299",
+    "maintenance_workspace.js": "1.34.36-6d8a92e892c8",
+    "task_workspace.js": "1.34.36-05e44c701894"
+  },
+  "updated": []
+}

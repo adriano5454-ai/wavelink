@@ -1,0 +1,39 @@
+{
+  "phase": "UI136",
+  "reviewer": "qualidade_ti",
+  "scope": [
+    "app/static/action_center_ui82.js",
+    "app/static/action_center_ui82.css",
+    "tests/test_ui136_actions.cjs"
+  ],
+  "method": "Leitura independente e execução local de handlers reais com DOM e transporte determinísticos; sem navegador.",
+  "findings": [
+    {
+      "id": "AC-PENDING-FILTER",
+      "status": "corrigido_e_retestado",
+      "problem": "Uma atualização pendente da lista anterior podia ser aplicada após a troca de filtro.",
+      "fix": "A consulta explícita invalida pendingActionData e oculta o botão antes de enviar.",
+      "proof": "test_ui136_work_actions_review.cjs:12 checks PT/EN"
+    },
+    {
+      "id": "AC-UNCERTAIN-ORPHAN",
+      "status": "corrigido_e_retestado",
+      "problem": "Recibo incerto de uma ação cujo item desapareceu não tinha caminho de repetição e bloqueava outras alterações.",
+      "fix": "Repetir ação pendente fora dos cards conserva corpo/op_id; recusa definitiva libera a pendência.",
+      "proof": "test_ui136_actions.cjs:76 checks, incluindo erro503, ausência do item e403"
+    }
+  ],
+  "verified": [
+    "Guarda de sessão antes do envio e após respostas; respostas antigas não alteram nova conta.",
+    "Sequência de consultas impede resposta de filtro anterior de substituir a lista atual.",
+    "Rascunho de preferências permanece em refresh; conflito409 preserva campos e recarga salva é explícita.",
+    "Repetição incerta preserva exatamente corpo/op_id.",
+    "Fechar preferências com alteração exige decisão e mantém a sessão.",
+    "CSS: alvos44px, foco visível, seleção sublinhada além de cor, quebra de texto e restrição de movimento."
+  ],
+  "blocking_findings": [],
+  "limits": [
+    "CSS inspecionado; sem renderização real, teclado nativo, leitor de tela ou medição de layout no navegador.",
+    "Transportes locais fictícios; não valida permissões ou persistência no servidor real."
+  ]
+}

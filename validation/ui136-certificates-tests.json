@@ -1,0 +1,67 @@
+{
+  "release": "UI136",
+  "new_suites": [
+    {
+      "test": "tests/test_ui136_certificates_form.cjs",
+      "passed": true,
+      "checks": 65,
+      "note": "Última execução após integração final do dicionário: 65 passaram. A tentativa anterior ocorreu enquanto o rótulo uppercase ainda não estava integrado."
+    },
+    {
+      "test": "tests/test_ui136_certificates_workspace.cjs",
+      "passed": true,
+      "stdout": "{\"suite\":\"UI136 certificate workspace\",\"checks\":87,\"passed\":true,\"method\":\"shipped register, lifecycle and attachment handlers; simulated transport, no HTTP\"}\n",
+      "stderr": ""
+    },
+    {
+      "test": "tests/test_ui136_certificates_asset.cjs",
+      "passed": true,
+      "stdout": "{\"suite\":\"UI136 asset certificate presentation\",\"checks\":58,\"passed\":true,\"method\":\"real permission-filtered renderer; fictional read model, no browser/layout assertions\"}\n",
+      "stderr": ""
+    }
+  ],
+  "new_checks": 210,
+  "regressions": [
+    {
+      "test": "tests/test_inventory_identity_ui103.js",
+      "passed": true,
+      "stdout": "PASS Part numbers support separated words and compact identity queries\nPASS Punctuated PN queries match one complete identity rather than source fragments\nPASS Punctuated identifiers cannot assemble across unrelated curated fields\nPASS Part number matching preserves leading zeroes and exact saved text\nPASS Part number and serial remain independent searchable native fields\nPASS Shared PN values do not change saved item identities or select one UUID\nPASS Legacy records without PN still search native serial and asset\nPASS Expected PN values participate in the scoped matcher\nPASS Part number rendering escapes supplied HTML and stays labelled separately\nPASS PN alone does not replace the unique item ID fallback\nPASS Saved readonly results expose PN without a new verification action\nPASS A missing result retains its outcome when searched by PN\nPASS Asset overview gives native PN its own labelled fact\nPASS Direct child search and identity include PN without changing child links\nPASS Legacy asset overview renders an empty PN fact harmlessly\n{\"checks\":15,\"errors\":0}\n",
+      "stderr": ""
+    }
+  ],
+  "regression_checks": 15,
+  "total": 225,
+  "syntax": [
+    {
+      "file": "app/static/certificate_workspace.js",
+      "passed": true
+    },
+    {
+      "file": "app/static/certificate_form.js",
+      "passed": true
+    },
+    {
+      "file": "app/static/asset_workspace.js",
+      "passed": true
+    },
+    {
+      "file": "tests/test_ui136_certificates_form.cjs",
+      "passed": true
+    },
+    {
+      "file": "tests/test_ui136_certificates_workspace.cjs",
+      "passed": true
+    },
+    {
+      "file": "tests/test_ui136_certificates_asset.cjs",
+      "passed": true
+    },
+    {
+      "file": "tests/test_ui136_certificates_dom.cjs",
+      "passed": true
+    }
+  ],
+  "browser": false,
+  "testclient": false,
+  "production": false
+}

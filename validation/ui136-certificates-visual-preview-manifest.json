@@ -1,0 +1,32 @@
+{
+  "kind": "actual_component_dom_from_local_adapter_not_screenshot",
+  "items": [
+    {
+      "title": "Certificado de equipamento: cadastro e vínculo exato",
+      "page": "cadastro-certificado.html",
+      "source_fragment": "C:\\Users\\adria\\Documents\\Codex\\2026-10-17\\quero-concluir-a-mudan-a-da\\work\\ui136-certificates-form-markup.html",
+      "fragment_sha256": "cdd7999fdc1053d9e654ad839c411a07b25045f88a0d021b68df5daee3a378ba",
+      "change_from_ui135": "O formulário identifica certificados de equipamentos. A ajuda de validade está associada aos campos; limpar a data devolve foco ao critério de vencimento. A busca não desfaz os vínculos já marcados."
+    },
+    {
+      "title": "Perfil do ativo: certificados e documentos vinculados",
+      "page": "perfil-ativo.html",
+      "source_fragment": "C:\\Users\\adria\\Documents\\Codex\\2026-10-17\\quero-concluir-a-mudan-a-da\\work\\ui136-certificates-asset-markup.html",
+      "fragment_sha256": "289b5fa6bac9515c8f84a879d87a658e03bd05978b5fd42efc716a642987978b",
+      "change_from_ui135": "Indicadores e estados conhecidos estão em português. Datas civis são exibidas em dia/mês/ano; datas com horário conhecido identificam UTC. Nomes, notas, IDs e revisões cadastrados não são traduzidos. A seção Documentos foi selecionada nesta prévia local, sem navegação real."
+    }
+  ],
+  "html_pages": 3,
+  "local_url_checks": 97,
+  "broken_local_urls": 0,
+  "browser_used": false,
+  "production_accessed": false,
+  "assets": [
+    "assets/ui68-home-scene.svg",
+    "assets/wavelink-approved-offshore-profile-ui87.webp",
+    "assets/wavelink-approved-offshore-ui87.webp",
+    "assets/wavelink-home-cover-ui86.svg",
+    "assets/wavelink-profile-cover-ui86.svg"
+  ],
+  "portable": "Copy the entire ui136-certificates-visual-previews directory, including styles/ and assets/."
+}

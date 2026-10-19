@@ -1,0 +1,211 @@
+{
+  "phase": "UI136",
+  "status": "integrado_local_e_testado_sem_publicacao",
+  "base_github_commit": "9af487ff83b38f8d1efba050cb3e4179197279c2",
+  "runtime": "work/runtime-ui136",
+  "product_frozen": true,
+  "changed_files": [
+    "app/static/general_tasks.js",
+    "app/static/general_tasks.css",
+    "app/static/task_workspace.js",
+    "app/static/maintenance_workspace.js",
+    "app/static/maintenance_workspace.css",
+    "app/static/maintenance_ui.js"
+  ],
+  "sha256": {
+    "app/static/general_tasks.js": "ac711c51a17dbac2bff72554042cb256e2ae869f3af054715fcafb1b78b66828",
+    "app/static/general_tasks.css": "940dfa7ab1cec700f0761e81f07cb22be798327def448716095a53b2a6122dd2",
+    "app/static/task_workspace.js": "05e44c7018944b7ea25e9dbfcbc0d6fd76c520c0f6757a73734fd228d21829e4",
+    "app/static/maintenance_workspace.js": "6d8a92e892c83c2951930bf95346a8743ee9ba797b767151845d94cdb2b0ac79",
+    "app/static/maintenance_workspace.css": "01a99a6e829986a26418a2e09648a8b86e51fda1a99942ac13a0c34fb9cd104c",
+    "app/static/maintenance_ui.js": "37549860604bf6f7e604c07c9f83048abe65387e389b8e857ce18021112f8b0f"
+  },
+  "unmodified_owned_files": [
+    "app/static/task_acceptance.js",
+    "app/static/task_acceptance.css",
+    "app/static/task_workspace.css"
+  ],
+  "changes": [
+    {
+      "area": "Tarefas — busca e detalhe",
+      "implemented": [
+        "Busca ignora acentos e inclui ID de tarefa, login e ID do responsável já presentes na resposta autorizada.",
+        "Listas/resumos/detalhes diferenciam homônimos pelo login/ID, sem buscar e-mail ou dados privados.",
+        "Link explícito Voltar para a lista de tarefas; contexto/filtros mantidos pelo componente existente.",
+        "Programação/responsáveis separados visualmente de cancelamento/reabertura; aviso explica que cancelar tarefa é uma decisão registrada, sem sair da conta.",
+        "Datas de discussão e adiamento exibidas com formatação do idioma e UTC.",
+        "Callbacks de detalhe conferem sessão, rota, tela atual e formulário aberto antes de agir."
+      ]
+    },
+    {
+      "area": "Tarefas — decisões e histórico",
+      "implemented": [
+        "Cancelamento limita justificativa a1000 caracteres, conforme backend; revisão mantém2000.",
+        "Retomada usa rótulo Retomar trabalho, sem botão genérico.",
+        "Adiar tarefa usa chave de ação específica, sem conflitar com evento passado Tarefa adiada.",
+        "Histórico mostra ID do autor e rótulo Fechar histórico; rascunhos usam nomes traduzidos.",
+        "Diretório e fontes do assistente corretivo não abrem nem preenchem tela de outra conta/rota; navegação atrasada não captura rota escolhida posteriormente."
+      ]
+    },
+    {
+      "area": "Manutenção",
+      "implemented": [
+        "Busca de ordens, etapas e responsáveis ignora acentos; ordens incluem identidades e responsáveis preservados.",
+        "Limpar filtros retorna foco ao campo de pesquisa; limpar etapas abre filtros e mantém foco visível.",
+        "Avisos de formulário aberto e ausência de etapas pendentes são traduzidos explicitamente.",
+        "Foco de teclado e seções selecionadas são identificados além da cor; alvos de filtro44px."
+      ]
+    }
+  ],
+  "matrix": [
+    {
+      "screen": "Tarefas: lista/filtros/resumo/voltar",
+      "result": "implementado_e_testado",
+      "evidence": "Handlers reais PT/EN: acentos, login/ID, resumo somente leitura, preservação de filtros/foco, descarte de resposta tardia."
+    },
+    {
+      "screen": "Tarefas: detalhe/abas",
+      "result": "implementado_e_testado",
+      "evidence": "Retorno com conta conectada, seção selecionada, bloqueio de callback antigo após troca de token."
+    },
+    {
+      "screen": "Tarefas: registro de trabalho/revisão/devolução/comentário",
+      "result": "retestado_com_transporte_ficticio",
+      "evidence": "Payloads reais com ID/version; revisão com justificativa; erro503 conserva valores e repetição usa corpo/op_id iguais."
+    },
+    {
+      "screen": "Tarefas: adiar/retomar/reatribuir/cancelar/reabrir",
+      "result": "implementado_e_testado",
+      "evidence": "Formulários e handlers reais; limites1000/2000; reatribuição exige motivo só para mudança consequente; IDs/version preservados."
+    },
+    {
+      "screen": "Tarefas: aceite e rascunho com resultado incerto",
+      "result": "regressao_aprovada_sem_alteracao",
+      "evidence": "52+31 verificações existentes: aceite separado de ciência, ciclo/version, conta trocada durante await persist, conservar/descartar rascunho."
+    },
+    {
+      "screen": "Tarefas: histórico",
+      "result": "implementado_e_testado",
+      "evidence": "ID de autor, data UTC, Fechar histórico, contexto/sessão preservados, resposta atrasada ignorada."
+    },
+    {
+      "screen": "Tarefa corretiva: diretório/fontes",
+      "result": "implementado_e_testado_parcial",
+      "evidence": "Leitura atual abre formulário; mudança de rota/conta/tela/diálogo descarta diretório e fonte. Criação completa do assistente não executada nesta rodada."
+    },
+    {
+      "screen": "Manutenção: lista/filtros/resumo/detalhe/voltar",
+      "result": "implementado_e_testado",
+      "evidence": "Busca por acentos/ID; resumo móvel simulado e foco ao voltar; filtro de etapas preservado em nova renderização; aba revisão e pendências de aprovação separadas."
+    },
+    {
+      "screen": "Manutenção: seleção de responsáveis",
+      "result": "implementado_e_testado",
+      "evidence": "Handler people real: nome sem acentos encontra homônimos e busca não remove seleção oculta."
+    },
+    {
+      "screen": "Manutenção: nova leitura/revisão/conclusão persistida",
+      "result": "nao_retestado_ponta_a_ponta_nesta_frente",
+      "evidence": "Contratos e formulários existentes preservados; regressão operacional60 cobre leituras/evidências/retorno/sessão, não substitui salvar/aprovar no banco."
+    },
+    {
+      "screen": "Busca global/Central de ações",
+      "result": "revisao_independente_concluida",
+      "evidence": "Dois achados corrigidos pela raiz; revisão independente12 e suíte da raiz76 aprovadas."
+    }
+  ],
+  "tests": {
+    "new_checks": 244,
+    "regression_checks": 143,
+    "root_suite_reexecuted_checks": 76,
+    "total_checks_executed": 463,
+    "suites": [
+      {
+        "file": "tests/test_ui136_work_flows.cjs",
+        "status": 0,
+        "stdout": "UI136 work flows: 232 checks passed (real Task/Maintenance handlers, fictional DOM/API; no browser).\n",
+        "stderr": ""
+      },
+      {
+        "file": "tests/test_ui136_work_actions_review.cjs",
+        "status": 0,
+        "stdout": "UI136 independent action filter review: 12 checks passed.\n",
+        "stderr": ""
+      },
+      {
+        "file": "tests/test_ui136_actions.cjs",
+        "status": 0,
+        "stdout": "{\"suite\":\"UI136 Search and Action Centre actual handlers\",\"checks\":76,\"passed\":true,\"browser\":false}\n",
+        "stderr": ""
+      },
+      {
+        "file": "tests/test_ui132_task_acceptance.cjs",
+        "status": 0,
+        "stdout": "UI132 task acceptance: 52 checks passed (actual component callbacks and actual task scope/send helpers; isolated DOM adapter, no browser).\n",
+        "stderr": ""
+      },
+      {
+        "file": "tests/test_ui132_task_acceptance_persist.cjs",
+        "status": 0,
+        "stdout": "UI132 shared-form persistence: 31 checks passed (actual form function; session swap during real await persist, no browser).\n",
+        "stderr": ""
+      },
+      {
+        "file": "tests/test_ui128_ops_agent_ui.js",
+        "status": 0,
+        "stdout": "{\"suite\":\"UI128 operations evidence read/refresh/photo/back/session, actual locale PT and EN\",\"checks\":60,\"result\":\"passed\"}\n",
+        "stderr": ""
+      }
+    ],
+    "syntax": [
+      {
+        "file": "app/static/general_tasks.js",
+        "exit": 0,
+        "stderr": ""
+      },
+      {
+        "file": "app/static/task_workspace.js",
+        "exit": 0,
+        "stderr": ""
+      },
+      {
+        "file": "app/static/maintenance_workspace.js",
+        "exit": 0,
+        "stderr": ""
+      },
+      {
+        "file": "app/static/maintenance_ui.js",
+        "exit": 0,
+        "stderr": ""
+      }
+    ],
+    "test_transport": "DOM determinístico e APIs fictícias; handlers de produto carregados sem navegador; restrições nativas HTML não emuladas."
+  },
+  "suggested_server_regressions": [
+    "tests/general_tasks/test_tasks.py",
+    "tests/task_postponement/test_postponement.py",
+    "tests/test_ui132_task_acceptance.py"
+  ],
+  "previews": [
+    {
+      "file": "work/ui136-task-preview.html",
+      "source": "HTML real serializado pelo teste PT-BR da aba de gestão de tarefa, com CSS atual embutido.",
+      "type": "previa_estatica_sem_browser"
+    },
+    {
+      "file": "work/ui136-maintenance-preview.html",
+      "source": "HTML real serializado pelo teste PT-BR da revisão de manutenção, com CSS atual embutido.",
+      "type": "previa_estatica_sem_browser"
+    }
+  ],
+  "translations": "work/ui136-work-translations.json (14 entradas, integradas pela raiz)",
+  "independent_review": "work/ui136-work-independent-review.json",
+  "limits": [
+    "Nenhum navegador, Chrome, CUA, API real ou produção acessados.",
+    "Nenhuma mensagem externa enviada; nenhum usuário ou dado real alterado.",
+    "Sem publicação ou instalação.",
+    "Não houve teste físico de celular, teclado/back nativos, foco de leitor de tela, contraste medido ou captura visual real.",
+    "Não alegar teste completo de criação/revisão de manutenção ou persistência servidor a partir destes testes DOM."
+  ],
+  "known_blockers": []
+}

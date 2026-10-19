@@ -1,54 +1,79 @@
 {
-  "release": "UI135",
-  "version": "1.34.35",
+  "release": "UI136",
+  "version": "1.34.36",
   "status": "integrado_testado_localmente_nao_publicado",
-  "base_commit": "3aaf822ea05661f9f2baa1d24bcf0bbef53c4a52",
+  "base_commit": "9af487ff83b38f8d1efba050cb3e4179197279c2",
   "final_commit": null,
   "deployment": null,
   "runtime": {
     "status": "passed",
-    "version": "1.34.35",
-    "runtime_manifest_sha256": "9b4b39f497085d261dc171d7b1cf0b6ffab4055a4bc90af02c842c4a536fbaf7",
-    "resources": 2404,
+    "version": "1.34.36",
+    "runtime_manifest_sha256": "9ecd6b09f3244c4f8a0e6a067bbcf875dfde4aaaceb69aefdd0a1f9f0cece4e5",
+    "resources": 2418,
     "all_reconstructed_files_identical": true,
     "python_syntax_files": 234,
     "cache_assets": 19,
     "html_shells": 4,
-    "base_repository_files_preserved": 1131,
+    "base_repository_files_preserved": 1275,
     "production_access": false
   },
   "python": {
-    "unique_passed": 31,
+    "unique_passed": 48,
     "runs": [
       {
-        "group": "Início: escopo pessoal, privacidade, filtros e paginação",
-        "xml": "ui135-regression-personal-home.xml",
-        "passed": 7
+        "group": "RH: escala e despesa completas em banco fictício",
+        "xml": "ui136-regression-rh-journeys.xml",
+        "passed": 2
       },
       {
-        "group": "Conta: acesso, MFA e sessões",
-        "xml": "ui135-regression-account.xml",
+        "group": "RH: permissões, anexos e histórico",
+        "xml": "ui136-regression-rh-permissions.xml",
         "passed": 5
       },
       {
-        "group": "E-mail: preferências, verificação e tentativa incerta com transporte fictício",
-        "xml": "ui135-regression-email.xml",
+        "group": "Certificados: revisão e substituição",
+        "xml": "ui136-regression-certificates-revision.xml",
+        "passed": 4
+      },
+      {
+        "group": "Certificados: arquivos, vínculos e acesso",
+        "xml": "ui136-regression-certificates-files.xml",
+        "passed": 3
+      },
+      {
+        "group": "Perfil do equipamento: validade, estados e privacidade",
+        "xml": "ui136-regression-assets.xml",
         "passed": 5
       },
       {
-        "group": "Preservação, backup e dados anteriores",
-        "xml": "ui135-regression-preservation.xml",
+        "group": "Tarefas: reatribuição, adiamento, retomada e histórico",
+        "xml": "ui136-regression-tasks.xml",
+        "passed": 6
+      },
+      {
+        "group": "Busca: autenticação e privacidade",
+        "xml": "ui136-regression-search.xml",
+        "passed": 4
+      },
+      {
+        "group": "Central: contagem, recibos, permissões e preferências",
+        "xml": "ui136-regression-actions.xml",
+        "passed": 5
+      },
+      {
+        "group": "Preservação de dados, usuários e backup",
+        "xml": "ui136-regression-preservation.xml",
         "passed": 8
       },
       {
-        "group": "Ajuda, catálogo de permissões e idiomas",
-        "xml": "ui135-regression-help.xml",
+        "group": "Ajuda, permissões e idiomas",
+        "xml": "ui136-regression-help.xml",
         "passed": 6
       }
     ]
   },
   "javascript": {
-    "passed_suites": 84,
+    "passed_suites": 93,
     "syntax_files": 114
   },
   "preservation": {
@@ -60,12 +85,12 @@
     "database_reset": false,
     "schema_changed": false,
     "writer_contracts_changed": false,
-    "ui134_base_retained": true
+    "ui135_base_retained": true
   },
   "limits": [
     "Sem Chrome, navegador automatizado, captura de tela, leitor de tela ou aparelho real nesta rodada.",
     "Prévias HTML usam componentes reais, estilos existentes e dados fictícios; não são screenshots nem comprovam renderização em navegador.",
-    "Os testes de e-mail capturam as mensagens em memória; nenhum e-mail real foi enviado. MFA e sessões foram exercitados somente com contas fictícias locais.",
+    "Nenhum e-mail real foi enviado. Contas, documentos e registros operacionais dos testes são fictícios e locais.",
     "A jornada com os usuários reais da Corcovado continua sem nova validação em produção.",
     "A matriz identifica o recorte desta rodada e a cobertura anterior. Não se afirma que todas as telas históricas foram validadas."
   ]

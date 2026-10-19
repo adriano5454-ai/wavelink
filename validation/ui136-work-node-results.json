@@ -1,0 +1,38 @@
+[
+  {
+    "file": "tests/test_ui136_work_flows.cjs",
+    "status": 0,
+    "stdout": "UI136 work flows: 232 checks passed (real Task/Maintenance handlers, fictional DOM/API; no browser).\n",
+    "stderr": ""
+  },
+  {
+    "file": "tests/test_ui136_work_actions_review.cjs",
+    "status": 0,
+    "stdout": "UI136 independent action filter review: 12 checks passed.\n",
+    "stderr": ""
+  },
+  {
+    "file": "tests/test_ui136_actions.cjs",
+    "status": 0,
+    "stdout": "{\"suite\":\"UI136 Search and Action Centre actual handlers\",\"checks\":76,\"passed\":true,\"browser\":false}\n",
+    "stderr": ""
+  },
+  {
+    "file": "tests/test_ui132_task_acceptance.cjs",
+    "status": 0,
+    "stdout": "UI132 task acceptance: 52 checks passed (actual component callbacks and actual task scope/send helpers; isolated DOM adapter, no browser).\n",
+    "stderr": ""
+  },
+  {
+    "file": "tests/test_ui132_task_acceptance_persist.cjs",
+    "status": 0,
+    "stdout": "UI132 shared-form persistence: 31 checks passed (actual form function; session swap during real await persist, no browser).\n",
+    "stderr": ""
+  },
+  {
+    "file": "tests/test_ui128_ops_agent_ui.js",
+    "status": 0,
+    "stdout": "{\"suite\":\"UI128 operations evidence read/refresh/photo/back/session, actual locale PT and EN\",\"checks\":60,\"result\":\"passed\"}\n",
+    "stderr": ""
+  }
+]

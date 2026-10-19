@@ -1,0 +1,86 @@
+{
+  "release": "UI136",
+  "agent": "documentos_pessoas",
+  "status": "Implementação e testes locais concluídos; fontes congeladas para integração.",
+  "base": "UI135 / GitHub 9af487ff83b38f8d1efba050cb3e4179197279c2",
+  "source_root": "work/runtime-ui136",
+  "product_files": [
+    {
+      "file": "app/static/certificate_workspace.js",
+      "sha256": "93297c9b33301da8f665a33fa0bb42f3205a18e99032165ce7024ef749a19c66"
+    },
+    {
+      "file": "app/static/certificate_workspace.css",
+      "sha256": "363f22f2643d5110fd5d2b7f76190891e6cca088ade233eb1f9954f1952b044f"
+    },
+    {
+      "file": "app/static/certificate_form.js",
+      "sha256": "443220f9acebb68ab6e6657e023e2db2949d4388cfa9cf71141c51ba10d25696"
+    },
+    {
+      "file": "app/static/certificate_form.css",
+      "sha256": "cd296ba7234dfbd7d82d75852755a58d2c700f2a2378fedc3bbf4eddde5ccbd2"
+    },
+    {
+      "file": "app/static/asset_workspace.js",
+      "sha256": "656e94224110c9a7811a44df92ab91a7f4a1da96bf85b6eec8b349125ac95898"
+    }
+  ],
+  "tests": {
+    "new_suites": 3,
+    "new_checks": 210,
+    "regression_suites": 1,
+    "regression_checks": 15,
+    "total_checks": 225,
+    "syntax_checks": 7,
+    "final_failures": 0,
+    "files": [
+      "tests/test_ui136_certificates_form.cjs",
+      "tests/test_ui136_certificates_workspace.cjs",
+      "tests/test_ui136_certificates_asset.cjs",
+      "tests/test_ui136_certificates_dom.cjs"
+    ],
+    "log": "work/ui136-certificates-tests.json",
+    "method": "Controladores e renderer reais executados em adaptador DOM local, com dados fictícios e transporte controlado. Não há navegador, medidas de layout, câmera, servidor HTTP ou produção nesta subárea.",
+    "notes": [
+      "Uma fixture inicial do limite de equipamentos tinha nome de campo diferente do ID; corrigida apenas a fixture.",
+      "Uma execução concorrente à integração do dicionário ainda usou tradução antiga do cabeçalho; teste final com mapa integrado passou."
+    ]
+  },
+  "translations": {
+    "file": "work/ui136-certificates-translations.json",
+    "pairs": 34,
+    "integrated_by": "root"
+  },
+  "coverage": "work/ui136-certificates-coverage.json",
+  "previews": {
+    "index": "work/ui136-certificates-visual-previews/index.html",
+    "pages": [
+      "cadastro-certificado.html",
+      "perfil-ativo.html"
+    ],
+    "kind": "HTML do componente real com dados fictícios; não screenshot nem validação de layout",
+    "portable": true,
+    "local_url_checks": 97,
+    "broken_urls": 0,
+    "manifest": "work/ui136-certificates-visual-preview-manifest.json"
+  },
+  "integration_dependencies": [
+    "Coordenador integra dicionários/versões e executa regressões HTTP selecionadas. Nenhum endpoint ou contrato de escrita foi alterado por esta área."
+  ],
+  "safety": {
+    "production_accessed": false,
+    "browser_used": false,
+    "external_messages": false,
+    "data_migrations": false,
+    "acl_changes": false,
+    "persistent_data_changed": false,
+    "temporary_user_changed": false
+  },
+  "remaining": [
+    "Teste em navegador de desktop/celular, teclado real, leitor de tela, tamanho de toque e contraste combinado.",
+    "Regressões HTTP de autorização, arquivos, concorrência, renovação e histórico a cargo do coordenador.",
+    "Fluxos de QR, fotografia de identificação, movimentação e edição de perfil do ativo não constituem novos E2E nesta rodada.",
+    "Esta entrega não encerra todas as abas nem reconta as suítes UI135 como validação nova."
+  ]
+}

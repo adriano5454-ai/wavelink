@@ -1,0 +1,191 @@
+<!doctype html><html lang="pt-BR"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Manutenção — etapas e revisão da ordem</title><style>:root{--line:#cbd9df;--accent:#087e86;--surface:#fff;--soft:#edf4f6}*{box-sizing:border-box}body{margin:0;background:#edf3f5;color:#173746;font:16px/1.5 system-ui,Segoe UI,sans-serif}main{max-width:1220px;margin:24px auto;padding:0 20px}h1{font-size:clamp(1.6rem,3vw,2.2rem)}h2{font-size:1.35rem}h3{font-size:1.05rem}.card{padding:20px;background:#fff;border:1px solid var(--line);border-radius:12px;margin:16px 0}.btn{display:inline-flex;align-items:center;justify-content:center;min-height:44px;border:1px solid #087e86;border-radius:8px;padding:9px 14px;background:#087e86;color:#fff;text-decoration:none;font:inherit}.btn.secondary,.btn.ghost{background:#fff;color:#12545c}.actions{display:flex;gap:8px;flex-wrap:wrap}.small,small{font-size:.875rem}.muted{color:#4b6571}.notice{background:#edf8f7;border-left:4px solid #087e86;padding:14px}.preserve-lines{white-space:pre-wrap}.eyebrow{font-size:.75rem;font-weight:700;letter-spacing:.08em}.preview-note{background:#173746;color:#fff;padding:18px 24px}.preview-note p{margin:4px 0}.preview-note a{color:#bceff2}[hidden]{display:none!important}button,input,select{font:inherit}button{cursor:default}a{color:#086777}
+/* UI60: retained module styles; common components deliberately override only wl-* roles. */
+@layer wlLegacy {
+/* UI10 maintenance only; existing item editors and other workspaces unchanged. */
+.mw-workspace { --mw-line:#d7e2e8; --mw-ink:#173746; --mw-accent:#087e86; min-width:0; }
+.mw-workspace [hidden] { display:none !important; }
+.mw-heading { display:flex; justify-content:space-between; gap:22px; align-items:flex-start; margin:0 0 18px; }
+.mw-heading h1 { margin:4px 0 8px; font-size:clamp(24px,2.2vw,32px); line-height:1.18; overflow-wrap:anywhere; }
+.mw-heading .eyebrow { margin:0; }
+.mw-heading p { margin:0; }
+.mw-version { display:inline-block; padding:3px 8px; margin-left:8px; background:#def3f1; border-radius:6px; color:#12656c; font-size:11px; letter-spacing:.06em; }
+.mw-actions { display:flex; gap:8px; flex-wrap:wrap; justify-content:flex-end; }
+.mw-controls { border:1px solid var(--mw-line); background:white; padding:18px; border-radius:12px; margin:12px 0 18px; }
+.mw-searchline { display:flex; align-items:end; gap:12px; }
+.mw-searchline label { flex:1; min-width:170px; }
+.mw-workspace label.field { display:flex; flex-direction:column; gap:6px; margin:0; min-width:0; font-weight:600; font-size:13px; }
+.mw-workspace input,.mw-workspace select { width:100%; max-width:100%; min-width:0; box-sizing:border-box; padding:10px 12px; background:#fff; border:1px solid #9caeb9; color:var(--mw-ink); border-radius:8px; min-height:44px; font:inherit; }
+.mw-views { display:flex; flex-wrap:wrap; gap:6px; margin:16px 0 10px; }
+.mw-views button { display:flex; gap:8px; align-items:center; background:#f3f7f9; border:1px solid var(--mw-line); border-radius:7px; color:#284759; padding:9px 11px; min-height:42px; font:inherit; font-size:13px; cursor:pointer; }
+.mw-views button span { font-size:12px; background:#e3ebef; padding:1px 6px; border-radius:5px; }
+.mw-views button[aria-pressed=true] { color:#07545c; border-color:#38939a; background:#e0f4f2; font-weight:700; }
+.mw-filter-fields { display:grid; grid-template-columns:1.4fr 1fr 1fr; gap:14px; padding:12px 0; }
+.mw-controls #mw-filter-summary { margin:8px 0 0; }
+.mw-controls #mw-match-count { margin:6px 0 0; }
+.mw-read-note { margin:0; }
+.mw-list-detail { display:grid; grid-template-columns:minmax(280px,.95fr) minmax(320px,1.15fr); align-items:start; gap:18px; }
+.mw-results { max-height:65vh; overflow:auto; padding:1px 5px 4px 1px; scrollbar-gutter:stable; }
+.mw-order { border:1px solid var(--mw-line); border-radius:10px; background:#fff; padding:16px; margin:0 0 10px; }
+.mw-order.is-selected { border-color:#208a92; background:#f1faf9; box-shadow:inset 4px 0 0 #208a92; }
+.mw-order-top { display:flex; align-items:center; gap:10px; margin-bottom:9px; }
+.mw-status { background:#eef3f6; color:#405c6c; font-size:11px; font-weight:750; padding:3px 8px; border-radius:5px; text-transform:uppercase; letter-spacing:.035em; }
+.mw-status.mw-late { background:#fff1e9; color:#9b4c20; }
+.mw-due-warning { font-size:12px; color:#954b1f; font-weight:650; }
+.mw-order-title { border:0; background:none; padding:0; margin:0; font:inherit; font-size:17px; font-weight:750; text-align:left; color:var(--mw-ink); cursor:pointer; overflow-wrap:anywhere; }
+.mw-order p { margin:6px 0; font-size:14px; }
+.mw-order small { color:#557082; font-size:12px; overflow-wrap:anywhere; }
+.mw-order-meta { display:flex; flex-wrap:wrap; gap:6px 18px; font-size:12px; color:#3c5b6b; margin:10px 0; }
+.mw-summary-link { color:#076971; background:transparent; border:0; padding:8px 0 0; font:inherit; font-size:13px; font-weight:700; cursor:pointer; }
+.mw-followup { color:#8c461b; background:#fff3e8; padding:8px; border-radius:6px; }
+.mw-selected { padding:22px; border:1px solid var(--mw-line); background:#fff; border-radius:12px; min-width:0; overflow-wrap:anywhere; }
+.mw-selected h2 { font-size:23px; line-height:1.25; margin:8px 0; }
+.mw-selected>.eyebrow { margin:0; }
+.mw-next { margin:18px 0; background:#edf8f7; border:1px solid #bcdfdc; border-radius:9px; padding:16px; }
+.mw-next p { font-size:14px; line-height:1.5; margin:7px 0 12px; }
+.mw-facts { display:grid; grid-template-columns:minmax(110px,.65fr) minmax(0,1.35fr); margin:18px 0; }
+.mw-facts dt,.mw-facts dd { padding:9px 0; border-bottom:1px solid #e5edf0; margin:0; font-size:13px; }
+.mw-facts dt { color:#526b79; }
+.mw-facts dd { font-weight:600; overflow-wrap:anywhere; }
+.mw-workspace details summary { cursor:pointer; min-height:32px; align-content:center; font-weight:650; }
+.mw-selected details { padding-top:8px; font-size:14px; }
+.mw-empty { border:1px dashed #b8cbd4; border-radius:9px; padding:24px; line-height:1.6; color:#526b79; background:#f8fafb; }
+.mw-empty h2,.mw-empty h3 { color:var(--mw-ink); margin:0 0 8px; }
+.mw-library { padding:16px; margin-top:20px; border-top:1px solid var(--mw-line); color:#405968; font-size:14px; }
+.mw-local { display:flex; align-items:center; gap:16px; justify-content:space-between; border:1px solid #d9bb88; background:#fff7e9; border-radius:9px; padding:13px 16px; margin:12px 0; }
+.mw-local p { margin:4px 0 0; font-size:13px; }
+.mw-mobile-back { display:none; }
+.mw-saved { display:flex; flex-wrap:wrap; gap:10px 18px; border:1px solid var(--mw-line); border-radius:9px; padding:14px 16px; background:#f1f6f8; font-size:13px; align-items:center; }
+.mw-saved strong { color:var(--mw-ink); }
+.mw-tabs { display:flex; overflow-x:auto; gap:6px; padding:14px 0; margin-bottom:6px; border-bottom:1px solid var(--mw-line); }
+.mw-tabs button { border:1px solid var(--mw-line); background:white; color:#375665; border-radius:8px; padding:11px 16px; min-height:44px; white-space:nowrap; font:inherit; font-weight:650; cursor:pointer; }
+.mw-tabs button[aria-pressed=true] { background:#e1f3f1; color:#075962; border-color:#54a0a5; }
+.mw-panel { padding:14px 0; min-width:0; }
+.mw-panel>h2 { margin:0 0 12px; }
+.mw-section-heading { display:flex; gap:16px; justify-content:space-between; align-items:flex-start; margin:0 0 14px; }
+.mw-section-heading h2 { margin:0; font-size:21px; }
+.mw-section-heading p { margin:6px 0 0; }
+.mw-step-controls { display:grid; grid-template-columns:1.5fr 1fr 1fr; gap:12px; padding:14px; background:white; border:1px solid var(--mw-line); border-radius:10px; }
+.mw-workspace .maintenance-step { margin:12px 0; padding:20px; }
+.mw-workspace .maintenance-step:focus { outline:3px solid #2b8e98; outline-offset:2px; }
+.mw-workspace .maintenance-step h2 { font-size:18px; }
+.mw-workspace .maintenance-step .eyebrow { margin-top:0; }
+.mw-workspace .maintenance-cycle-panel { margin:18px 0; }
+.mw-tools { position:relative; }
+.mw-tools>summary { border:1px solid #acbec8; border-radius:8px; padding:10px 13px; background:white; min-height:44px; box-sizing:border-box; }
+.mw-tools[open] { border:1px solid var(--mw-line); background:white; border-radius:8px; padding:0 8px 8px; }
+.mw-tools[open]>summary { border:0; }
+.mw-tools .btn { display:block; margin:6px 0 0; }
+.mw-boundary { border-top:1px solid var(--mw-line); padding-top:15px; }
+.mw-workspace button:focus-visible,.mw-workspace a:focus-visible,.mw-workspace summary:focus-visible { outline:3px solid #218793; outline-offset:3px; }
+@media(max-width:850px) {
+ .mw-heading { flex-direction:column; gap:12px; }
+ .mw-actions { justify-content:flex-start; }
+ .mw-list-detail { display:block; }
+ .mw-results { max-height:none; overflow:visible; padding:0; }
+ .mw-selected { display:none; }
+ .mw-phone-detail .mw-selected { display:block; }
+ .mw-phone-detail .mw-results,.mw-phone-detail .mw-controls,.mw-phone-detail .mw-library,.mw-phone-detail .mw-read-note { display:none; }
+ .mw-phone-detail .mw-mobile-back { display:inline-flex; margin-bottom:16px; }
+ .mw-filter-fields { grid-template-columns:1fr; }
+ .mw-searchline { flex-wrap:wrap; }
+ .mw-searchline label { flex-basis:100%; }
+ .mw-step-controls { grid-template-columns:1fr 1fr; }
+ .mw-step-controls label:first-child { grid-column:1/-1; }
+ .mw-local,.mw-section-heading { flex-direction:column; align-items:flex-start; }
+}
+
+@media(max-width:450px) {
+ .mw-heading h1 { font-size:24px; }
+ .mw-controls,.mw-selected { padding:14px; }
+ .mw-views { display:grid; grid-template-columns:1fr 1fr; }
+ .mw-views button { justify-content:space-between; font-size:12px; }
+ .mw-facts { grid-template-columns:1fr; }
+ .mw-facts dt { border:0; padding:9px 0 1px; font-size:12px; }
+ .mw-facts dd { padding:0 0 8px; }
+ .mw-actions .btn { font-size:12px; padding:9px 11px; }
+ .mw-saved { display:grid; gap:7px; }
+ .mw-tabs button { padding:10px 12px; font-size:13px; }
+ .mw-step-controls { grid-template-columns:1fr; }
+ .mw-workspace .maintenance-step { padding:15px; }
+}
+
+.mw-workspace label.field.mw-phone-show { display:none; }
+.mw-selected,.mw-workspace .maintenance-step { scroll-margin-top:136px; }
+@media(max-width:600px) {
+ .mw-views { display:none; }
+ .mw-workspace label.field.mw-phone-show { display:flex; margin:12px 0; }
+ .mw-read-note { font-size:11px; }
+}
+
+/* UI54: compact work-first headings; full views/controls retained. */
+.mw-heading {gap:12px;margin-bottom:10px}.mw-heading h1{margin:2px 0 4px}.mw-heading p:empty{display:none}
+.mw-heading .eyebrow{font-size:10px}.mw-controls{padding:12px;margin:10px 0}.mw-read-note{font-size:12px}
+.mw-selected{padding:16px}.mw-order{padding:13px}.mw-order-title{display:block}.mw-open-direct{margin-top:3px;min-height:42px}
+.mw-saved{padding:10px 12px;gap:6px 14px}.mw-tabs{padding:10px 0;margin:0}.mw-panel{padding:10px 0}
+.mw-section-heading{align-items:center;margin-bottom:8px}.mw-section-heading h2{font-size:19px}
+.mw-step-filter{border:1px solid var(--mw-line);border-radius:8px;background:#fff;padding:0 10px}
+.mw-step-filter>summary{padding:7px 0;min-height:30px;font-size:13px}.mw-step-controls{border:0;padding:8px 0}
+.mw-workspace .maintenance-step{padding:16px;margin:10px 0}.mw-workspace .maintenance-step h2{margin:6px 0 8px}
+.mw-stale{margin:0 0 10px;font-size:13px}.mw-person small{display:block;font-size:12px;color:#516a77}
+.mw-person-missing{border:1px solid #ad683a;border-radius:7px;padding:10px;background:#fff8ee}
+.operation-persons [data-mw-person-list]{max-height:270px;overflow:auto}.operation-persons .mf-people-search{width:100%;margin:4px 0}
+@media(max-width:850px){.mw-heading{gap:8px}.mw-actions{gap:6px}.mw-section-heading{flex-direction:row;align-items:center}.mw-read-note{font-size:11px}}
+@media(max-width:450px){.mw-heading h1{font-size:22px}.mw-actions .btn{padding:8px 9px;min-height:40px}
+ .mw-saved{display:flex;flex-wrap:wrap;font-size:12px}.mw-tabs{display:grid;grid-template-columns:1fr 1fr;gap:5px;overflow:visible}
+ .mw-tabs button{padding:8px;min-height:40px}.mw-panel{padding:8px 0}.mw-controls{padding:10px}.mw-searchline{gap:7px}
+ .mw-workspace label.field.mw-phone-show{margin:7px 0}.mw-order-meta{gap:5px 12px;margin:7px 0}
+ .mw-workspace .maintenance-step{padding:12px}.mw-order small{font-size:11px}.mw-order p{font-size:13px}}
+
+/* Keep the fieldset name accessible without repeating the surrounding disclosure title. */
+.mf-form legend.mw-sr-only{position:absolute!important;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+
+}
+
+/* UI110: the saved order browser shares the compact list/detail layout used
+   by Tasks and Certificates. Selection is presentation only. */
+#maintenance-workspace .mw-list-detail {display:grid;grid-template-columns:minmax(260px,min(340px,38%)) minmax(0,1fr);gap:16px;align-items:start;min-width:0;}
+#maintenance-workspace .mw-results {display:block;min-width:0;max-height:65dvh;overflow:auto;padding:0;border:1px solid #c7d9df;border-radius:14px!important;background:#f8fbfc;box-shadow:none;scrollbar-gutter:stable;}
+#maintenance-workspace .mw-order {min-width:0;margin:0!important;padding:14px!important;border:0!important;border-bottom:1px solid #d7e4e8!important;border-radius:0!important;background:transparent!important;box-shadow:none!important;}
+#maintenance-workspace .mw-order:last-child {border-bottom:0!important;}
+#maintenance-workspace .mw-order:hover {background:#edf6f8!important;}
+#maintenance-workspace .mw-order.is-selected {background:#dceff2!important;box-shadow:inset 4px 0 #0b7884!important;}
+#maintenance-workspace .mw-order-top {flex-wrap:wrap;gap:8px;margin:0 0 5px;}
+#maintenance-workspace .mw-order-title {display:block;width:100%;max-width:100%;min-height:36px;padding:4px 0;font-size:16px;line-height:1.35;text-align:left;white-space:normal;}
+#maintenance-workspace .mw-order p {font-size:12px;line-height:1.45;margin:4px 0;overflow-wrap:anywhere;}
+#maintenance-workspace .mw-order small {display:block;font-size:11px;line-height:1.45;}
+#maintenance-workspace .mw-order-meta {display:grid;gap:4px;margin:8px 0;font-size:12px;line-height:1.45;overflow-wrap:anywhere;}
+#maintenance-workspace .mw-open-direct {min-height:38px;max-width:100%;margin:3px 0 0;padding:7px 10px;font-size:12px;white-space:normal;}
+#maintenance-workspace .mw-selected {display:block;box-sizing:border-box;min-width:0;min-height:280px;padding:22px;border:1px solid #c7d9df;border-radius:14px!important;background:#fff;box-shadow:none;scroll-margin-top:calc(var(--wl88-mobile-header,106px) + 12px);}
+#maintenance-workspace .mw-selected h2 {font-size:23px;line-height:1.25;margin:6px 0 14px;}
+#maintenance-workspace .mw-selected>.mw-empty {border:0!important;background:transparent!important;padding:0!important;min-height:230px;display:grid;align-content:center;gap:8px;}
+#maintenance-workspace .mw-selected>.mw-empty h2,#maintenance-workspace .mw-selected>.mw-empty p {margin:0;}
+#maintenance-workspace .mw-mobile-back {display:none;}
+@media(min-width:851px) {
+ #maintenance-workspace.mw-phone-detail .mw-results,#maintenance-workspace.mw-phone-detail .mw-controls,#maintenance-workspace.mw-phone-detail .mw-library,#maintenance-workspace.mw-phone-detail .mw-read-note {display:block;}
+ #maintenance-workspace.mw-phone-detail .mw-mobile-back {display:none;}
+}
+@media(max-width:850px) {
+ #maintenance-workspace .mw-list-detail {display:block;}
+ #maintenance-workspace .mw-results {max-height:none;overflow:visible;}
+ #maintenance-workspace .mw-selected {display:none;padding:16px;}
+ #maintenance-workspace.mw-phone-detail .mw-selected {display:block;}
+ #maintenance-workspace.mw-phone-detail .mw-results,#maintenance-workspace.mw-phone-detail .mw-controls,#maintenance-workspace.mw-phone-detail .mw-library,#maintenance-workspace.mw-phone-detail .mw-read-note {display:none;}
+ #maintenance-workspace.mw-phone-detail .mw-mobile-back {display:inline-flex;margin:0 0 16px;}
+ #maintenance-workspace .mw-order-title {min-height:44px;}
+ #maintenance-workspace .mw-open-direct {min-height:44px;}
+}
+
+/* UI136: selected sections and keyboard targets remain identifiable without color alone. */
+#maintenance-workspace .mw-tabs [aria-pressed="true"],#maintenance-workspace .mw-views [aria-pressed="true"]{text-decoration:underline;text-underline-offset:4px}
+#maintenance-workspace input:focus-visible,#maintenance-workspace select:focus-visible,#maintenance-workspace #mw-step-count:focus-visible{outline:3px solid var(--mw-accent,#087e86);outline-offset:3px}
+#maintenance-workspace .mw-step-filter>summary{min-height:44px}
+#maintenance-workspace .mw-empty button{min-height:44px}
+</style><header class="preview-note"><b>Wavelink · Prévia local UI136</b><p>Manutenção — etapas e revisão da ordem</p><p>Dados fictícios. HTML produzido pelos componentes reais nos testes. Esta prévia estática não é uma captura do site nem comprova renderização no navegador. Os controles ilustram a interface e não enviam dados.</p></header><main><section class="fw-workspace"><section id="maintenance-workspace" class="mw-workspace mw-work-order" data-work-execution="maintenance" data-mw-generation="1">
+       
+       
+       
+       
+       
+       
+       <header class="mw-heading"><div><p class="eyebrow">MANUTENÇÃO</p><h1>Inspeção da válvula</h1><p class="muted">Bomba de conexão · OS-001</p></div><div class="mw-actions"><button type="button" class="btn secondary" id="mw-back-orders">Voltar à pesquisa de manutenção</button><button type="button" class="btn secondary" id="op-refresh">Atualizar</button><button type="button" class="btn secondary" id="op-drafts">Formulários salvos</button><details class="mw-tools"><summary>Ferramentas da ordem</summary><a class="btn ghost" data-application-href="/help/topics/maintenance" aria-disabled="true" title="Disponível no aplicativo; controle desativado nesta prévia" target="_blank" rel="noopener noreferrer">Ajuda</a></details></div></header><div class="mw-saved"><strong>Em aberto</strong><span>Versão da rotina 3 · Versão salva da ordem 2</span><span>1 concluídos · 0 não aplicáveis · 2 itens no total</span><span>Prazo: 20 de out. de 2026, 14:00 UTC</span></div><nav class="mw-tabs" aria-label="Seções da ordem de serviço"><button type="button" data-mw-tab="steps" aria-controls="mw-panel-steps" aria-pressed="false">Etapas do trabalho</button><button type="button" data-mw-tab="review" aria-controls="mw-panel-review" aria-pressed="true">Revisão e recorrência</button><button type="button" data-mw-tab="source" aria-controls="mw-panel-source" aria-pressed="false">Instruções</button><button type="button" data-mw-tab="links" aria-controls="mw-panel-links" aria-pressed="false">Tarefas vinculadas</button></nav><section id="mw-panel-steps" class="mw-panel" aria-label="Etapas do trabalho" hidden="">
+       <div class="mw-section-heading"><div><h2>Etapas do trabalho</h2></div><button type="button" class="btn secondary" id="mw-next-step">Próxima etapa pendente</button></div><details class="mw-step-filter" id="mw-step-filter" open=""><summary>Pesquisar e filtrar etapas</summary><div class="mw-step-controls"><label class="field"><span>Pesquisar itens da rotina</span><input id="mw-step-search" type="search" maxlength="200" placeholder="Step, section, saved notes or readings" value=""></input></label><label class="field"><span>Seção</span><select id="mw-step-section"><option value="">Todas as seções</option><option value="Inspeção">Inspeção</option><option value="Mecânica" selected="">Mecânica</option></select></label><label class="field"><span>Mostrar</span><select id="mw-step-view"><option value="all" selected="">Todas as etapas</option><option value="attention">Precisa de atenção</option><option value="approvals">Aprovações dos itens</option><option value="recorded">Registrado</option></select></label></div></details><p id="mw-step-count" class="small" role="status" tabindex="-1">1 nesta consulta · 2 etapas salvas. Resultados concluídos ou não aplicáveis ainda podem exigir aprovação.</p><article class="maintenance-step" tabindex="-1" data-mw-step-key="s1" hidden=""><h2>Conexão elétrica</h2></article><article class="maintenance-step" tabindex="-1" data-mw-step-key="s2"><h2>Pressão de óleo</h2></article><div id="mw-step-empty" class="mw-empty" hidden=""><h3>Nenhum item corresponde à pesquisa</h3><p>Os itens ocultos continuam necessários para a conclusão. Limpe a pesquisa ou selecione outra seção.</p><button type="button" class="btn secondary" id="mw-step-clear">Limpar filtros das etapas</button></div></section><section id="mw-panel-review" class="mw-panel" aria-label="Revisão e recorrência"><h2>Revisão e recorrência</h2><p>Etapas pendentes: 1 · Resultados aguardando aprovação específica: 1.</p><p class="notice">A conclusão exige confirmação separada. Estas contagens não validam leituras obrigatórias, fotos nem permissões atuais. Não há liberação de equipamento, quarentena ou estoque.</p><div class="actions"><button type="button" class="btn secondary" id="mw-review-unfinished">Mostrar etapas pendentes</button><button id="fixture-review">Review saved work</button></div></section><section id="mw-panel-source" class="mw-panel" aria-label="Instruções" hidden=""><h2>Instruções</h2><dl class="mw-facts"><dt>Atribuído</dt><dd>José Silva · jose.op</dd><dt>Instruções da ordem de serviço</dt><dd class="preserve-lines">Conferir pressão e condição visual.</dd></dl><p>Confira a versão da rotina e suas referências antes de executar o trabalho. Publicações posteriores não alteram esta ordem.</p><p>Frozen instructions</p></section><section id="mw-panel-links" class="mw-panel" aria-label="Tarefas vinculadas" hidden=""><h2>Tarefas vinculadas</h2><p>Somente as tarefas disponíveis para sua conta são exibidas. Concluir uma tarefa e concluir a manutenção são ações separadas.</p><p>Nenhuma tarefa vinculada a esta ordem está disponível para sua conta.</p></section><p class="mw-boundary small muted">O registro e a revisão da manutenção não autorizam o retorno ao serviço. Formulários locais ainda não são evidências confirmadas pelo servidor.</p></section></section></main></html>

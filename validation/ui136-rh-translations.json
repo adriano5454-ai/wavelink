@@ -1,0 +1,8 @@
+{
+  "Account ID": "Identificador da conta",
+  "Search by name, login ID or department": "Buscar por nome, usuário ou lotação",
+  "No employee matches this search. Adjust the search; the selected record stays open.": "Nenhum colaborador corresponde à busca. Ajuste os termos; o cadastro selecionado continua aberto.",
+  "Loading this record’s saved history…": "Carregando o histórico salvo deste registro…",
+  "No saved changes were returned for this record.": "Nenhuma alteração salva foi retornada para este registro.",
+  "Use Change history to try again. No record was changed.": "Use Histórico de alterações para tentar novamente. Nenhum registro foi alterado."
+}

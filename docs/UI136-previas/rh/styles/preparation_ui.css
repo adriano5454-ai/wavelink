@@ -1,0 +1,61 @@
+/* UI60: retained module styles; common components deliberately override only wl-* roles. */
+@layer wlLegacy {
+/* Focused record editing and shipment preparation; browser and mobile. */
+.wl-record-grid {display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px 20px}
+.wl-record-grid>* {min-width:0}
+.wl-record-grid input,.wl-record-grid select {max-width:100%;min-width:0;box-sizing:border-box}
+.wl-record-review {overflow-wrap:anywhere}
+.wl-preserve-lines,#item-storage-preview {white-space:pre-line}
+.wl-preparation-dialog {width:min(1000px,calc(100vw - 28px));max-height:calc(100dvh - 28px)}
+.wl-preparation-dialog #modal-form {display:flex;flex-direction:column;max-height:calc(100dvh - 48px);min-height:0}
+.wl-preparation-dialog #modal-body {overflow:auto;min-height:0;overscroll-behavior:contain}
+.wl-preparation-dialog .dialog-head,.wl-preparation-dialog .dialog-actions {flex-shrink:0}
+.wl-ship-nav,.wl-ship-search {display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin:8px 0}
+.wl-ship-nav p {flex:1 1 180px;min-width:0;overflow-wrap:anywhere;margin:0}
+.wl-ship-search input {flex:1 1 200px;min-width:0}
+.wl-ship-candidates {max-height:320px;overflow:auto;border:1px solid #ced9e0;border-radius:8px;background:#fff}
+.wl-ship-row {display:flex;align-items:center;gap:12px;padding:10px 12px;border-bottom:1px solid #e3e9ed}
+.wl-ship-row:last-child {border-bottom:0}
+.wl-ship-row input[type=checkbox] {flex:0 0 auto;width:22px;height:22px;margin:0;accent-color:#087f87}
+.wl-ship-label {display:block!important;min-width:0;flex:1;margin:0!important;font-weight:400!important;cursor:pointer;overflow-wrap:anywhere}
+.wl-ship-label strong {display:block;font-size:14px}
+.wl-ship-label small,.wl-packed-row small {display:block;color:#4a6170;font-size:12px;line-height:1.5;overflow-wrap:anywhere}
+.wl-ship-row .btn {flex:0 0 auto}
+.wl-included-note {font-weight:600;color:#12656b!important}
+.wl-packing-tray {margin-top:16px;padding:12px 14px;border:1px solid #a9c8cd;border-radius:10px;background:#f1f8f9}
+.wl-packing-tray h3 {margin:0 0 6px}
+.wl-packing-count {font-weight:600;color:#214b55;font-size:14px;margin:6px 0}
+.wl-packed-rows {max-height:200px;overflow:auto}
+.wl-packed-row {display:flex;gap:12px;align-items:center;padding:8px 0;border-top:1px solid #d4e3e6}
+.wl-packed-row>div {min-width:0;flex:1;overflow-wrap:anywhere}
+.wl-transport-options,.wl-review-group {padding:12px;border:1px solid #d2dde3;border-radius:8px;margin:10px 0;background:#f8fafb}
+.wl-transport-options summary,.wl-review-group summary {cursor:pointer;font-weight:600;min-height:24px;overflow-wrap:anywhere}
+.wl-review-group li {overflow-wrap:anywhere;margin:5px 0}
+.wl-shipment-picker button:focus-visible,.wl-shipment-picker input:focus-visible {outline:3px solid #25869a;outline-offset:2px}
+@media(max-width:650px){
+ .wl-record-grid {grid-template-columns:1fr;gap:5px}
+ .wl-preparation-dialog {width:calc(100vw - 12px);max-width:calc(100vw - 12px);max-height:calc(100dvh - 12px)}
+ .wl-ship-row {gap:10px;flex-wrap:wrap;padding:12px 10px}
+ .wl-ship-row .btn {margin-left:32px;min-height:44px}
+ .wl-ship-candidates {max-height:300px}
+ .wl-packed-rows {max-height:170px}
+ .wl-preparation-dialog button,.wl-shipment-picker button {min-height:44px}
+ .wl-packing-tray {padding:10px}
+}
+.wl-preparation-dialog #modal-form>header,.wl-preparation-dialog #modal-form>footer {flex-shrink:0}
+.wl-preparation-dialog #modal-form>footer {display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+.wl-preparation-dialog #modal-note {flex:1 1 260px}
+.wl-preparation-dialog [hidden] {display:none!important}
+
+.wl-preparation-dialog #modal-form>footer {display:grid;grid-template-columns:minmax(0,1fr) auto auto;align-items:center}
+.wl-preparation-dialog #modal-note {grid-column:1;font-size:12px}
+.wl-preparation-dialog #wizard-back {grid-column:2}
+.wl-preparation-dialog #modal-save {grid-column:3;justify-self:end}
+@media(max-width:650px){
+ .wl-preparation-dialog #modal-form>footer {grid-template-columns:1fr 1fr}
+ .wl-preparation-dialog #modal-note {grid-column:1/-1;grid-row:1}
+ .wl-preparation-dialog #wizard-back {grid-column:1;grid-row:2;justify-self:start}
+ .wl-preparation-dialog #modal-save {grid-column:2;grid-row:2;justify-self:end}
+}
+
+}

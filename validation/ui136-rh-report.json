@@ -1,0 +1,150 @@
+{
+  "phase": "UI136",
+  "owner": "rh_revisao",
+  "status": "implemented_tested_locally_sources_frozen",
+  "browser_used": false,
+  "production_accessed": false,
+  "published": false,
+  "temporary_production_user": "Not accessed or changed; preserved by not touching production.",
+  "data": "Only fictional fixtures and the coordinator’s isolated temporary SQLite/TestClient company. No emails, messages, live accounts or live files.",
+  "implemented": [
+    {
+      "problem": "Homônimos eram apresentados só pelo nome em seletores, formulários e lista do RH.",
+      "change": "Nome acompanhado do login já autorizado no diretório; fallback de ID real apenas para homônimos sem login. A busca admite nome, login e lotação; resultado vazio explica que o cadastro selecionado permanece aberto.",
+      "preserved": "UUIDs, payloads, privacidade do diretório, permissões e dados do cadastro."
+    },
+    {
+      "problem": "A opção Toda a equipe removia a palavra selected indiscriminadamente do HTML, inclusive de nomes.",
+      "change": "Geração explícita dos atributos selected, conservando o nome original e a escolha agregada.",
+      "preserved": "Sem troca de pessoa, nomes ou IDs persistidos."
+    },
+    {
+      "problem": "Histórico sem mensagem explícita durante carregamento ou quando vazio; falha sem recuperação clara e foco no resultado.",
+      "change": "Estados carregando/vazio/erro, orientação para nova tentativa e foco acessível. Mantida validação de sessão, rota, modal e formulário antes e depois da resposta. CSS permite quebra de textos longos.",
+      "preserved": "Histórico salvo, limites de consulta, conteúdo escapado e auditoria."
+    },
+    {
+      "problem": "Região horizontal da cobertura não tinha nome acessível ligado ao título.",
+      "change": "Região com aria-labelledby, tabindex e título identificado.",
+      "preserved": "Cálculo de cobertura real do servidor; proposta não preenche vaga e escala não gera horas."
+    }
+  ],
+  "product_files": [
+    {
+      "path": "app/static/hr_workspace.js",
+      "sha256": "fde4513fe9753e3728fa4018be484b4d9d503849c0e4b1f4abcbbe6c5eddbbd9"
+    },
+    {
+      "path": "app/static/hr_workspace.css",
+      "sha256": "6e33c43c81d341ca457f6ace26d7dc1cf28b090ddad2639ccf81de6e37fcd782"
+    }
+  ],
+  "new_tests": [
+    {
+      "file": "tests/test_ui136_rh_ui.cjs",
+      "checks": 94,
+      "result": "passed",
+      "kind": "actual rendering, real input/history handlers, PT/EN, minimal DOM, controlled responses"
+    },
+    {
+      "file": "tests/test_ui136_rh_save_handlers.cjs",
+      "checks": 102,
+      "result": "passed",
+      "kind": "actual submit/save/close/resume handlers, uncertain and late completion, PT/EN"
+    },
+    {
+      "file": "tests/test_ui136_rh_api_fixture.cjs",
+      "checks": 62,
+      "result": "passed",
+      "kind": "actual UI rendered with exact fictional authorized HTTP fixture, real history handler, PT/EN"
+    },
+    {
+      "file": "tests/test_ui136_rh_journeys.py",
+      "tests": 2,
+      "result": "passed",
+      "executor": "coordinator /root",
+      "kind": "isolated real HTTP with persistence, attachment bytes, retries, scopes, history and coverage"
+    }
+  ],
+  "regressions": [
+    {
+      "file": "tests/test_ui135_rh_forms.cjs",
+      "checks": 236,
+      "result": "passed"
+    },
+    {
+      "file": "tests/test_ui129_weekly_ui.cjs",
+      "checks": 145,
+      "result": "passed"
+    }
+  ],
+  "new_node_checks": 258,
+  "regression_node_checks": 381,
+  "new_http_tests": 2,
+  "test_and_fixture_files": [
+    {
+      "path": "tests/test_ui136_rh_ui.cjs",
+      "sha256": "48709d782d05c15c8c4df9b62b0950bdc5ecdd0491ff155bc6e7c3d7c98659e7"
+    },
+    {
+      "path": "tests/test_ui136_rh_save_handlers.cjs",
+      "sha256": "ec9eecc706f8dac00b51bcc0a89f312939cfec092b5e3ebc12cc24e22eab7d44"
+    },
+    {
+      "path": "tests/test_ui136_rh_api_fixture.cjs",
+      "sha256": "d5a73f0c0b684af6e8f048f6dda5da581a80cc04ccc76d1c93e8f9c28941edd6"
+    },
+    {
+      "path": "tests/test_ui136_rh_journeys.py",
+      "sha256": "0ac30aa18cdb2f93b4005cf43371538496fb3b85fde1bf27d693d87f322390f0"
+    },
+    {
+      "path": "tests/fixtures/ui136_rh_http_fixture.json",
+      "sha256": "83a12169df0a42ceba54d80a0140327011533426ea2580341c671ca9eafda65d"
+    },
+    {
+      "path": "tests/test_ui135_rh_forms.cjs",
+      "sha256": "12246683af5496cf4d76beab12b2c072c41077a2b0497b1a626d02683241d750"
+    }
+  ],
+  "contract_correction": {
+    "finding": "The first HTTP run disproved the mocked UI135 assumption that editing a returned expense changes status to draft.",
+    "actual_contract": "A new record starts as draft. Editing an existing returned claim preserves returned, its ID, attachments and review reason until explicit submit.",
+    "resolution": "Corrected the new HTTP assertion and UI135 response fixture only in runtime-ui136; 236 UI135 checks rerun passed. Backend and status rules were not modified. Prior frozen UI135 artifacts were not rewritten.",
+    "initial_failure": "One assertion expected draft but received returned; subsequent complete HTTP run passed 2/2."
+  },
+  "contrast": {
+    "loading_text_ratio": 10.76,
+    "focus_vs_white_ratio": 5.64,
+    "scope": "Computed contrast only for explicitly changed text/loading/focus colors. Not a full visual/browser accessibility audit."
+  },
+  "translations": "work/ui136-rh-translations.json (six keys; tests used real PT/EN dictionaries integrated by coordinator)",
+  "coverage": "work/ui136-rh-coverage.json",
+  "preview_manifest": "work/ui136-rh-preview-manifest.json",
+  "previews": [
+    "work/ui136-rh-previews/colaboradores.html",
+    "work/ui136-rh-previews/historico.html"
+  ],
+  "preview_generation": {
+    "capture": "work/capture_ui136_rh_previews.cjs",
+    "portable_styles": "work/generate_ui136_rh_previews.py",
+    "functions": [
+      "peopleHtml",
+      "rosterTable",
+      "coverageHtml",
+      "showRecord",
+      "hr-history.onclick (awaited)"
+    ],
+    "fixture": "tests/fixtures/ui136_rh_http_fixture.json",
+    "empty_profile_example": "Private profile.people=[] is an illustrative unfilled profile. The directory, roster, coverage and expense/history are exact real fictional HTTP responses.",
+    "note": "Previews are HTML, not screenshots. Controls disabled; standalone dialog wrapper adjusted. No browser opened."
+  },
+  "limits": [
+    "No visual/browser validation, device viewport validation, real keyboard navigation, native dialogs or screen reader validation.",
+    "The DOM adapter executes actual handlers but does not implement layout or native form validation; backend validation is exercised separately by two HTTP journeys.",
+    "Employee-private registration save and document verification use controlled DOM responses, not new full HTTP journeys in this phase.",
+    "Calendar month/agenda, profile/account outside HR and report export were not specifically rerun by this agent in UI136; previous evidence remains historical.",
+    "No production mutation, temporary-user change, external notification, payment, payroll calculation or deployment."
+  ],
+  "dependencies": "Coordinator integrates translations, shell/cache/version, tests other areas and assembles the ZIP. RH source/test files are frozen; only documentation/previews in work were edited afterwards."
+}

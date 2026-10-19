@@ -1,0 +1,169 @@
+/* Wavelink UI81 — workflow foundation batch.
+ * Retained Original Files rules are included here so its historical stylesheet is no longer active.
+ * The unlayered rules at the end own forms, dialogs, focus and mobile action areas.
+ */
+/* UI60: retained module styles; common components deliberately override only wl-* roles. */
+@layer wlLegacy {
+/* UI18 Original files: scoped library layout; no global dialog restyling. */
+dialog.of-dialog{width:min(1180px,calc(100vw - 24px));max-width:1180px;max-height:calc(100dvh - 24px);padding:0;overflow:auto}
+.of-dialog .modal{max-width:none;padding:20px}.of-library{min-width:0}.of-heading{display:flex;flex-wrap:wrap;align-items:center;gap:10px;margin-bottom:12px}.of-heading .btn{margin-left:auto}.of-badge{background:#dff3ef;color:#126457;border-radius:5px;padding:5px 9px;font-size:11px;font-weight:800;letter-spacing:.07em}
+.of-note{font-size:13px;color:#546778;margin:4px 0;line-height:1.5}.of-tools{display:flex;align-items:end;flex-wrap:wrap;gap:16px;padding:12px;background:#f1f5f9;border:1px solid #dce4ec;border-radius:10px;margin-bottom:16px}.of-tools .field{flex:1;min-width:210px;margin:0}.of-toggle{display:flex;align-items:center;gap:7px;font-size:13px;padding:9px 0}.of-toggle input,.of-confirm input,.of-select input{width:18px;height:18px;min-width:18px}
+.of-layout{display:grid;grid-template-columns:250px minmax(0,1fr);gap:20px;align-items:start}.of-folders{padding:14px;background:#f4f7fa;border:1px solid #dce4ec;border-radius:10px;max-height:62dvh;overflow:auto}.of-folders h3{margin:0 0 6px}.of-folder{display:block;text-align:left;width:100%;white-space:normal;overflow-wrap:anywhere;border:0;border-radius:6px;padding:10px 9px;margin-top:5px;background:transparent;color:#284355;font-size:13px;line-height:1.4;cursor:pointer}.of-folder:hover{background:#e1eaf2}.of-folder.active{background:#193f57;color:white;font-weight:700}.of-folders>.btn{margin-top:12px;width:100%}.of-main{min-width:0}.of-location{margin:0 0 12px}.of-location h3{margin:0;font-size:19px;overflow-wrap:anywhere}.of-count{font-size:13px;color:#546778;margin:10px 0}.of-actions{display:flex;flex-wrap:wrap;gap:8px;margin:10px 0}.of-actions .btn{margin:0;font-size:13px}.of-file{display:flex;gap:12px;padding:16px 0;border-bottom:1px solid #dce4ec;min-width:0}.of-file h4{margin:0 0 5px;font-size:16px;overflow-wrap:anywhere}.of-file-body{min-width:0;flex:1}.of-select{padding-top:1px}.of-meta{font-size:13px;color:#546778;margin:4px 0;overflow-wrap:anywhere}.of-path{font-size:12px;color:#176b5a;font-weight:600;margin:6px 0;overflow-wrap:anywhere}.of-bottom{border-top:1px solid #dce4ec;margin-top:18px;padding-top:12px;display:flex;justify-content:space-between;gap:12px;align-items:center}.of-editor,.of-review{max-width:850px;margin:auto}.of-editor .field{margin:14px 0}.of-editor input,.of-editor select,.of-editor textarea{width:100%;box-sizing:border-box}.of-editor textarea{min-height:80px}.of-facts{display:grid;grid-template-columns:180px minmax(0,1fr);gap:8px 20px;border:1px solid #dce4ec;border-radius:9px;padding:15px;margin:12px 0}.of-facts dt{font-size:13px;color:#546778}.of-facts dd{font-size:14px;margin:0;overflow-wrap:anywhere}.of-confirm{display:flex;align-items:flex-start;gap:9px;background:#edf5f2;border:1px solid #cce1d8;border-radius:8px;padding:14px;margin:16px 0;font-size:14px}.of-history{border-bottom:1px solid #dce4ec;padding:12px 0}.of-history h4{margin:0}.of-library button:focus-visible,.of-library input:focus-visible,.of-library select:focus-visible,.of-library textarea:focus-visible{outline:3px solid #168a75;outline-offset:2px}.of-library .btn:disabled{opacity:.5;cursor:not-allowed}.of-library [hidden]{display:none!important}
+@media(max-width:700px){dialog.of-dialog{width:calc(100vw - 12px);max-height:calc(100dvh - 12px)}.of-dialog .modal{padding:12px}.of-layout{grid-template-columns:minmax(0,1fr);gap:12px}.of-folders{max-height:190px}.of-tools{gap:8px;padding:10px}.of-tools .field{min-width:0;flex-basis:100%}.of-tools>.btn{width:100%}.of-heading .btn{margin-left:0}.of-facts{grid-template-columns:minmax(0,1fr);gap:4px;padding:12px}.of-facts dd{margin-bottom:9px}.of-bottom{display:block}.of-actions .btn{flex:1 1 auto}.of-confirm{padding:10px}.of-location h3{font-size:17px}}
+
+.of-folder-panel{min-width:0}.of-folder-panel>summary{cursor:pointer;font-weight:700;color:#284355;padding:10px 0}.of-folder-panel[open]>summary{padding-top:0}
+@media(min-width:701px){.of-folder-panel>summary{font-size:13px}}
+@media(max-width:700px){.of-heading{gap:6px}.of-heading>.of-note{order:3;flex-basis:100%;font-size:12px}.of-heading>.btn{margin-left:auto;font-size:12px;padding:8px}.of-folder-panel>summary{border:1px solid #dce4ec;background:#f4f7fa;border-radius:8px;padding:12px}.of-folder-panel[open]>summary{padding:12px;border-bottom:0;border-radius:8px 8px 0 0}.of-folder-panel[open] .of-folders{border-radius:0 0 8px 8px}.of-folders{max-height:190px}}
+
+/* UI19 upload guide; scoped to the existing Original Files dialog. */
+.of-upload{max-width:900px;margin:auto;min-width:0}.of-upload h3{margin-top:8px}.ou-steps{display:flex;gap:10px;list-style:none;padding:0;counter-reset:step;margin:16px 0 20px;flex-wrap:wrap}.ou-steps li{counter-increment:step;border:1px solid #dce4ec;border-radius:7px;padding:10px 13px;color:#546778;background:#f4f7fa;font-size:13px}.ou-steps li:before{content:counter(step)". ";font-weight:700}.ou-steps [aria-current=step]{background:#193f57;color:white;border-color:#193f57;font-weight:700}.of-upload .notice{overflow-wrap:anywhere}.of-upload input[type=file]{max-width:100%;padding:10px;border:1px solid #dce4ec;border-radius:6px}.of-upload>.btn{margin:8px 8px 0 0}.of-upload form>.btn{margin:12px 0}.of-upload .field{display:block}.of-upload .field>span{display:block;margin-bottom:7px}.of-upload select{white-space:normal;max-width:100%}
+@media(max-width:700px){.ou-steps{gap:5px}.ou-steps li{flex:1 1 100%;padding:8px 10px}.of-upload>.btn{width:100%;margin:8px 0}.of-upload .of-actions .btn{flex-basis:100%}.of-upload input,.of-upload select,.of-upload textarea{font-size:16px}}
+
+}
+
+@layer wlComponents {
+ .of-dialog .of-heading {margin-bottom:8px}
+ .of-dialog #of-primary {margin:8px 0 12px;gap:8px}
+ .of-dialog .of-editor {max-width:760px}
+ .of-dialog .of-editor .of-actions {position:sticky;bottom:0;padding:12px 0;background:var(--card,#fff);border-top:1px solid var(--line,#dce4ec);z-index:1}
+ .of-dialog .of-history {margin:12px 0;padding:12px;border:1px solid var(--line,#dce4ec);border-radius:10px;overflow-wrap:anywhere}
+ .of-dialog .of-history summary {font-weight:650;cursor:pointer}
+ .of-dialog #of-upload .of-editor {margin:0}
+ .of-dialog .of-tools {gap:10px;padding:10px}
+ @media(max-width:700px) {
+   .of-dialog .modal {padding:14px}
+   .of-dialog .of-tools .field {min-width:0;flex-basis:100%}
+   .of-dialog .of-heading .of-note {display:none}
+   .of-dialog .of-facts {grid-template-columns:minmax(105px,35%) minmax(0,1fr)}
+ }
+}
+
+/* UI81 authoritative workflow foundation */
+:root{
+ --wl81-form-gap:16px;
+ --wl81-control-height:44px;
+ --wl81-focus:#0d92ad;
+ --wl81-focus-ring:0 0 0 3px rgba(13,146,173,.24);
+ --wl81-invalid:#a32f36;
+ --wl81-invalid-soft:#fff0f1;
+ --wl81-success:#146b55;
+ --wl81-panel:#fff;
+ --wl81-panel-soft:#f6fafb;
+ --wl81-line:#cbdce2;
+ --wl81-ink:#173844;
+ --wl81-muted:#5c737d;
+ --wl81-shadow:0 18px 48px rgba(5,34,49,.22);
+ --wavelink-ui81-workflow-foundation:1;
+}
+body.wl-ui81,body.wl-ui81-fleet{--wl-form-control-height:var(--wl81-control-height)}
+body.wl-dialog-open{overflow:hidden}
+
+/* Direct form ownership is assigned while markup is detached, before mount. */
+[data-wl-form-system="ui81"],.wl-form-surface{min-width:0;color:var(--wl81-ink)}
+[data-wl-form-system="ui81"]{display:grid;gap:var(--wl81-form-gap)}
+[data-wl-form-system="ui81"]>.wl-form-section,
+[data-wl-form-system="ui81"] fieldset.wl-form-section{
+ min-width:0;margin:0;padding:18px;border:1px solid var(--wl81-line);border-radius:14px;background:var(--wl81-panel);
+}
+[data-wl-form-system="ui81"] .wl-form-section-title,
+[data-wl-form-system="ui81"] fieldset>legend{max-width:100%;padding:0 7px;color:#0f4455;font-weight:800;line-height:1.35}
+[data-wl-form-system="ui81"] .wl-form-section-description{margin:0 0 12px;color:var(--wl81-muted);font-size:.86rem;line-height:1.55}
+[data-wl-form-system="ui81"] .field,
+[data-wl-form-system="ui81"] .wl-field-label,
+[data-wl-form-system="ui81"] label:not(.check):not(.switch):not(.of-toggle):not(.of-confirm):not(.of-select){min-width:0}
+[data-wl-form-system="ui81"] label.field,
+[data-wl-form-system="ui81"] label.wl-field-label{display:grid;gap:7px;align-content:start}
+[data-wl-form-system="ui81"] label.field>span:first-child,
+[data-wl-form-system="ui81"] label.wl-field-label>span:first-child,
+[data-wl-form-system="ui81"] label[for].wl-field-label{font-size:.78rem;font-weight:750;color:#315966;line-height:1.35}
+[data-wl-form-system="ui81"] .wl-required>span:first-child::after,
+[data-wl-form-system="ui81"] label.wl-required[for]::after{content:" Required";margin-left:5px;color:#8a2d34;font-size:.66rem;font-weight:850;text-transform:uppercase;letter-spacing:.05em}
+[data-wl-form-system="ui81"] input:not([type=checkbox]):not([type=radio]):not([type=hidden]):not([type=range]):not([type=color]):not([type=button]):not([type=submit]),
+[data-wl-form-system="ui81"] select,
+[data-wl-form-system="ui81"] textarea,
+.wl-field-control{
+ width:100%;min-width:0;min-height:var(--wl81-control-height);padding:10px 12px;border:1px solid #b9cdd5;border-radius:9px;background:#fff;color:#173844;font:inherit;line-height:1.35;box-shadow:inset 0 1px 2px rgba(4,34,49,.04);
+}
+[data-wl-form-system="ui81"] textarea{min-height:112px;resize:vertical}
+[data-wl-form-system="ui81"] input[type=file]{padding:9px;background:var(--wl81-panel-soft)}
+[data-wl-form-system="ui81"] input:focus-visible,
+[data-wl-form-system="ui81"] select:focus-visible,
+[data-wl-form-system="ui81"] textarea:focus-visible,
+[data-wl-form-system="ui81"] button:focus-visible,
+[data-wl-form-system="ui81"] a:focus-visible,
+.wl-dialog-system :focus-visible{outline:3px solid var(--wl81-focus);outline-offset:2px;box-shadow:var(--wl81-focus-ring)}
+[data-wl-form-system="ui81"] [aria-invalid="true"],
+[data-wl-form-system="ui81"] .wl-field-invalid{border-color:var(--wl81-invalid)!important;background:var(--wl81-invalid-soft)!important}
+[data-wl-form-system="ui81"] .wl-field-help{margin:0;color:var(--wl81-muted);font-size:.75rem;line-height:1.5}
+[data-wl-form-system="ui81"] .wl-form-error,[data-wl-form-system="ui81"] [role="alert"]{overflow-wrap:anywhere}
+[data-wl-form-system="ui81"] .wl-form-status{min-height:1.1em;color:var(--wl81-muted)}
+[data-wl-form-system="ui81"] .wl-form-details{border:1px solid var(--wl81-line);border-radius:10px;background:var(--wl81-panel-soft);padding:0 12px}
+[data-wl-form-system="ui81"] .wl-form-details>summary{cursor:pointer;padding:11px 0;font-weight:750;color:#244f5d}
+[data-wl-form-system="ui81"] .wl-form-details[open]{padding-bottom:12px}
+[data-wl-form-system="ui81"] .check,[data-wl-form-system="ui81"] label:has(>input[type=checkbox]),[data-wl-form-system="ui81"] label:has(>input[type=radio]){display:flex;align-items:flex-start;gap:9px;line-height:1.45}
+[data-wl-form-system="ui81"] input[type=checkbox],[data-wl-form-system="ui81"] input[type=radio]{width:20px;height:20px;min-width:20px;margin:1px 0 0;accent-color:#0d7284}
+[data-wl-form-system="ui81"] .wl-form-actions{
+ position:sticky;bottom:0;z-index:8;display:flex;align-items:center;justify-content:flex-end;flex-wrap:wrap;gap:9px;margin-top:4px;padding:12px;border:1px solid var(--wl81-line);border-radius:12px;background:rgba(255,255,255,.96);box-shadow:0 -10px 28px rgba(10,41,56,.09);backdrop-filter:blur(10px);
+}
+[data-wl-form-system="ui81"] .wl-form-actions>.btn,[data-wl-form-system="ui81"] .wl-form-actions>button{min-height:42px}
+[data-wl-form-system="ui81"] .wl-form-actions .danger,[data-wl-form-system="ui81"] .wl-form-actions [data-destructive]{margin-right:auto}
+[data-wl-form-system="ui81"] button:disabled,[data-wl-form-system="ui81"] input:disabled,[data-wl-form-system="ui81"] select:disabled,[data-wl-form-system="ui81"] textarea:disabled{cursor:not-allowed;opacity:.58}
+
+/* Native dialog top layer shared by the main app and Fleet. */
+dialog.wl-dialog-system{width:min(860px,calc(100vw - 24px));max-width:860px;max-height:calc(100dvh - 24px);padding:0;border:1px solid #b7cfd8;border-radius:18px;background:#fff;color:var(--wl81-ink);box-shadow:var(--wl81-shadow);overflow:auto;overscroll-behavior:contain}
+dialog.wl-dialog-system::backdrop{background:rgba(3,22,34,.68);backdrop-filter:blur(2px)}
+dialog.wl-dialog-system>.modal,dialog.wl-dialog-system>#dialog-content>.modal{max-width:none;margin:0;padding:0;background:#fff}
+dialog.wl-dialog-system .modal-head,dialog.wl-dialog-system .wl-dialog-heading,dialog.wl-dialog-system #modal-form>header{position:sticky;top:0;z-index:12;display:flex;align-items:flex-start;justify-content:space-between;gap:14px;padding:18px 20px 14px;border-bottom:1px solid var(--wl81-line);background:rgba(255,255,255,.97);backdrop-filter:blur(10px)}
+dialog.wl-dialog-system .modal-head h2,dialog.wl-dialog-system .wl-dialog-title,dialog.wl-dialog-system #modal-title{margin:0;font-size:1.2rem;line-height:1.3;overflow-wrap:anywhere}
+dialog.wl-dialog-system .modal-session-actions,dialog.wl-dialog-system .wl-dialog-actions{display:flex;align-items:center;justify-content:flex-end;gap:7px;flex:0 0 auto}
+dialog.wl-dialog-system .close-button,dialog.wl-dialog-system #modal-close{min-width:42px;min-height:42px;border:1px solid #c6d7dd;border-radius:10px;background:#f5f9fa;color:#214853;font-weight:750;cursor:pointer}
+dialog.wl-dialog-system #dialog-content>.modal>:not(.modal-head):not(.modal-footer),dialog.wl-dialog-system #modal-body{margin-left:20px;margin-right:20px}
+dialog.wl-dialog-system .modal-footer,dialog.wl-dialog-system #modal-form>footer{position:sticky;bottom:0;z-index:12;display:flex;align-items:center;justify-content:flex-end;flex-wrap:wrap;gap:10px;padding:13px 20px;border-top:1px solid var(--wl81-line);background:rgba(255,255,255,.97);backdrop-filter:blur(10px)}
+dialog.wl-dialog-system #modal-note{margin-right:auto;color:var(--wl81-muted);font-size:.75rem;line-height:1.4}
+dialog.wl-dialog-system .wl-dialog-status{margin:0;padding:10px 20px;color:#6e4e12;background:#fff4cf;border-top:1px solid #ead38a;font-size:.78rem}
+dialog.wl-dialog-system[data-wl-busy="true"]{cursor:progress}
+dialog.wl-dialog-system[data-wl-busy="true"] .close-button,dialog.wl-dialog-system[data-wl-busy="true"] #modal-close{opacity:.5;cursor:not-allowed}
+
+/* Original Files is now owned by the UI81 workflow asset, not an active legacy link. */
+.of-dialog.wl-dialog-system{width:min(1180px,calc(100vw - 24px));max-width:1180px}
+.of-library[data-workflow-workbench="originals"] .of-heading{padding:2px 0 8px;border-bottom:1px solid var(--wl81-line)}
+.of-library[data-workflow-workbench="originals"] .of-badge{background:#dff7f4;color:#0f665f}
+.of-library[data-workflow-workbench="originals"] .of-file{border:1px solid var(--wl81-line);border-radius:12px;padding:14px;margin:10px 0;background:#fff}
+.of-library[data-workflow-workbench="originals"] .of-file:last-child{border-bottom:1px solid var(--wl81-line)}
+.of-library[data-workflow-workbench="originals"] .of-tools{background:#f5f9fa;border-color:var(--wl81-line)}
+.of-library[data-workflow-workbench="originals"] .of-folder.active{background:#0b4960}
+.of-library[data-workflow-workbench="originals"] .of-editor>.of-actions,.of-library[data-workflow-workbench="originals"] .of-review>.of-actions{position:sticky;bottom:0;z-index:8;padding:12px;background:rgba(255,255,255,.97);border:1px solid var(--wl81-line);border-radius:12px;box-shadow:0 -10px 28px rgba(10,41,56,.09)}
+
+/* Direct account access to local unsaved work. */
+.wl-account-menu [data-unsaved-work]{position:relative}
+.wl-account-menu .wl-local-work-count{margin-left:auto;min-width:22px;height:22px;padding:0 7px;border-radius:999px;display:inline-grid;place-items:center;background:#d8edf1;color:#0c5365;font-size:10px;font-weight:850;font-variant-numeric:tabular-nums}
+.wl-account-menu [data-unsaved-work][data-has-local-work="true"] .wl-local-work-count{background:#fff0cf;color:#7b5100}
+.wl-account-menu [data-unsaved-work][aria-disabled="true"]{opacity:.55;cursor:not-allowed}
+
+/* Usable at high zoom and with reduced motion. */
+@media(max-width:700px){
+ [data-wl-form-system="ui81"]{gap:12px}
+ [data-wl-form-system="ui81"]>.wl-form-section,[data-wl-form-system="ui81"] fieldset.wl-form-section{padding:14px;border-radius:12px}
+ [data-wl-form-system="ui81"] input:not([type=checkbox]):not([type=radio]):not([type=hidden]),[data-wl-form-system="ui81"] select,[data-wl-form-system="ui81"] textarea{font-size:16px}
+ [data-wl-form-system="ui81"] .wl-form-actions{bottom:max(0px,env(safe-area-inset-bottom));justify-content:stretch;padding:10px}
+ [data-wl-form-system="ui81"] .wl-form-actions>.btn,[data-wl-form-system="ui81"] .wl-form-actions>button,[data-wl-form-system="ui81"] .wl-form-actions>a{flex:1 1 100%;width:100%}
+ dialog.wl-dialog-system{width:calc(100vw - 10px);max-height:calc(100dvh - 10px);border-radius:14px}
+ dialog.wl-dialog-system .modal-head,dialog.wl-dialog-system .wl-dialog-heading,dialog.wl-dialog-system #modal-form>header{padding:13px 14px 11px}
+ dialog.wl-dialog-system #dialog-content>.modal>:not(.modal-head):not(.modal-footer),dialog.wl-dialog-system #modal-body{margin-left:14px;margin-right:14px}
+ dialog.wl-dialog-system .modal-footer,dialog.wl-dialog-system #modal-form>footer{padding:10px 14px calc(10px + env(safe-area-inset-bottom));align-items:stretch}
+ dialog.wl-dialog-system .modal-footer>.btn,dialog.wl-dialog-system #modal-form>footer>button{flex:1 1 100%}
+ dialog.wl-dialog-system #modal-note{flex-basis:100%}
+ .of-dialog.wl-dialog-system{width:calc(100vw - 10px)}
+}
+@media(prefers-reduced-motion:reduce){
+ *,*::before,*::after{scroll-behavior:auto!important;animation-duration:.001ms!important;animation-iteration-count:1!important;transition-duration:.001ms!important}
+}
+
+/* UI125: authored required marker respects the deployment locale. */
+html[lang="pt-BR"] [data-wl-form-system="ui81"] .wl-required>span:first-child::after,
+html[lang="pt-BR"] [data-wl-form-system="ui81"] label.wl-required[for]::after{content:" Obrigatório"}
+
+/* UI127: view dismissal is separate from account sign-out. */
+dialog.wl-dialog-system .modal-view-actions{display:flex;align-items:center;gap:8px;flex:none;flex-wrap:wrap;justify-content:flex-end}
+dialog.wl-dialog-system .modal-view-actions>.close-button{width:auto;height:auto;min-height:44px;max-width:100%;padding:10px 14px;font:600 14px/1.35 var(--wl-ui-font,inherit);white-space:normal}
+@media(max-width:560px){dialog.wl-dialog-system .modal-head{flex-wrap:wrap}dialog.wl-dialog-system .modal-head h2{flex:1 1 100%}dialog.wl-dialog-system .modal-view-actions{margin-left:auto;max-width:100%}}

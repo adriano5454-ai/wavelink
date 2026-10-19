@@ -1,0 +1,32 @@
+{
+  "sha256": {
+    "app/static/general_tasks.js": "ac711c51a17dbac2bff72554042cb256e2ae869f3af054715fcafb1b78b66828",
+    "app/static/general_tasks.css": "940dfa7ab1cec700f0761e81f07cb22be798327def448716095a53b2a6122dd2",
+    "app/static/task_workspace.js": "05e44c7018944b7ea25e9dbfcbc0d6fd76c520c0f6757a73734fd228d21829e4",
+    "app/static/maintenance_workspace.js": "6d8a92e892c83c2951930bf95346a8743ee9ba797b767151845d94cdb2b0ac79",
+    "app/static/maintenance_workspace.css": "01a99a6e829986a26418a2e09648a8b86e51fda1a99942ac13a0c34fb9cd104c",
+    "app/static/maintenance_ui.js": "37549860604bf6f7e604c07c9f83048abe65387e389b8e857ce18021112f8b0f"
+  },
+  "syntax": [
+    {
+      "file": "app/static/general_tasks.js",
+      "exit": 0,
+      "stderr": ""
+    },
+    {
+      "file": "app/static/task_workspace.js",
+      "exit": 0,
+      "stderr": ""
+    },
+    {
+      "file": "app/static/maintenance_workspace.js",
+      "exit": 0,
+      "stderr": ""
+    },
+    {
+      "file": "app/static/maintenance_ui.js",
+      "exit": 0,
+      "stderr": ""
+    }
+  ]
+}

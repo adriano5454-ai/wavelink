@@ -1,0 +1,18 @@
+{
+  "The account changed. Open this screen again.": "A conta mudou. Abra esta tela novamente.",
+  "Retry the same save": "Repetir o mesmo salvamento",
+  "Unsaved preferences. Refreshing the list will keep this edit.": "Preferências não salvas. Atualizar a lista mantém esta edição.",
+  "Wait for the current save to finish.": "Aguarde a conclusão do salvamento atual.",
+  "Discard unsaved notification preferences and close this window? Your sign-in and saved records will be kept.": "Descartar as preferências de notificação não salvas e fechar esta janela? Sua conta continuará conectada e os registros salvos serão mantidos.",
+  "Search could not check every source": "A busca não conseguiu consultar todas as fontes",
+  "Some authorised workspaces could not be checked. Try again before concluding there are no matches.": "Algumas áreas permitidas não puderam ser consultadas. Tente novamente antes de concluir que não há resultados.",
+  "Incomplete search.": "Busca incompleta.",
+  "Up to 40 results are shown. Refine the phrase or choose a workspace to find other matches.": "São exibidos até 40 resultados. Refine o texto ou escolha uma área para encontrar outros registros.",
+  "Up to 75 items; choose a category to narrow this view.": "Até 75 itens exibidos; escolha uma categoria para restringir a consulta.",
+  "Previous action not confirmed. Retry the same action before another change.": "A ação anterior não foi confirmada. Repita a mesma ação antes de fazer outra alteração.",
+  "Some sources could not be checked": "Algumas fontes não puderam ser consultadas",
+  "Save not confirmed. Retry the same save; your choices are kept.": "Salvamento não confirmado. Repita o mesmo salvamento; suas escolhas foram mantidas.",
+  "Reload saved preferences": "Recarregar preferências salvas",
+  "Discard this edit and reload your saved notification preferences?": "Descartar esta edição e recarregar suas preferências de notificação salvas?",
+  "Retry pending action": "Repetir ação pendente"
+}

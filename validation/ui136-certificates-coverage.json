@@ -1,0 +1,124 @@
+{
+  "release": "UI136",
+  "area": "Certificados de equipamentos e perfil do ativo",
+  "method": "Controladores e renderer reais executados em adaptador DOM local, com dados fictícios e transporte controlado. Não há navegador, medidas de layout, câmera, servidor HTTP ou produção nesta subárea.",
+  "screens": [
+    {
+      "screen": "Cadastro de certificados: indicadores, filtros e resumo",
+      "status": "Corrigido e testado localmente",
+      "problem": "O indicador Current excluía certificados vencidos, próximos do vencimento e rascunhos, mas o filtro Current revisions incluía esses registros.",
+      "changes": [
+        "Contador alinhado ao filtro: inclui toda revisão que não está arquivada nem substituída.",
+        "Ajuda explica a sobreposição entre revisão atual no cadastro e situação das datas.",
+        "Metadados dos cartões com 0,8125 rem e ações com altura mínima de 44 px."
+      ],
+      "tested": [
+        "Seis revisões fictícias, sendo quatro atuais: situação normal, vencida, próxima do vencimento e rascunho; duas históricas.",
+        "Resumo abre revisão selecionada e Voltar devolve foco à mesma linha, sem encerrar a sessão.",
+        "Nova ficha e Editar recebem o registro exato."
+      ],
+      "limits": [
+        "Busca/filtros foram preservados; não se declara revisão visual integral do catálogo em navegador."
+      ]
+    },
+    {
+      "screen": "Novo/editar certificado e seleção de equipamentos",
+      "status": "Corrigido e testado localmente",
+      "changes": [
+        "Título identifica certificados de equipamentos, diferenciando-os dos documentos pessoais do RH.",
+        "Ajuda de validade/justificativa e contador da busca associados aos controles por aria-describedby.",
+        "Limpar vencimento revalida o contexto antes de alterar o campo e devolve o foco ao critério de validade.",
+        "Metadados dos equipamentos mais legíveis; cabeçalhos expansíveis com área de ação mínima de 44 px, apenas no formulário de certificados."
+      ],
+      "tested": [
+        "Título, número com zeros iniciais, responsável por ID e janela de aviso zero preservados.",
+        "Dois equipamentos com o mesmo nome permanecem distinguíveis por ID, número de série e referência.",
+        "Busca esconde linhas sem desfazer os vínculos marcados.",
+        "Equipamento e responsável antigos ausentes do diretório permanecem selecionados até alteração explícita.",
+        "Data de vencimento, ordem cronológica, declaração sem vencimento, justificativa de correção e limite de cinquenta equipamentos.",
+        "Erro abre a seção correspondente e foca o campo; contexto revogado não limpa a data."
+      ],
+      "limits": [
+        "O formulário real e seu payload foram executados. A gravação compartilhada no servidor não foi executada nesta suíte.",
+        "Validação nativa específica de cada navegador e leitor de tela continuam pendentes."
+      ]
+    },
+    {
+      "screen": "Renovação, substituição, arquivamento e retirada de anexo",
+      "status": "Handlers existentes executados; clareza de cancelamento e mensagem dinâmica corrigida",
+      "changes": [
+        "Cancelar alterações identifica a ação local sem sugerir saída da conta.",
+        "Texto de retirada de anexo e justificativa passam pela localização; nome do arquivo permanece intacto."
+      ],
+      "tested": [
+        "Preparar renovação envia ID e versão exatos, sem incluir anexos implicitamente no payload.",
+        "Ativar substituição exige declaração e justificativa, com versão atual e versão do predecessor.",
+        "Arquivar exige motivo; recusar cancelamento mantém justificativa, confirmar fecha sem sair da conta.",
+        "Retirar anexo usa ID de arquivo e revisão exatos; fixtures de origem não são alteradas."
+      ],
+      "limits": [
+        "O transporte simula o servidor. A criação efetiva da nova revisão, retenção histórica e concorrência precisam de regressão HTTP; casos específicos foram enviados ao coordenador."
+      ]
+    },
+    {
+      "screen": "Anexos do certificado: abrir/baixar e anexar",
+      "status": "Corrigido e testado localmente",
+      "problem": "Falha de download aparecia apenas em aviso global, sem estado junto do arquivo solicitado.",
+      "changes": [
+        "Carregamento, resultado e falha aparecem no cartão do anexo e são associados ao botão.",
+        "Download revalida conta, rota, formulário e permissão local antes da solicitação e depois da resposta.",
+        "Resposta tardia não inicia download nem atualiza outro contexto.",
+        "Repetição explícita disponível após falha; foco permanece no botão."
+      ],
+      "tested": [
+        "Blob retornado preservado byte a byte; nome e ID do arquivo exatos.",
+        "403, repetição após falha, permissão local revogada antes do pedido e sessão alterada durante resposta.",
+        "Envio de bytes fictícios codificados sem alteração; resposta perdida conserva o mesmo payload e op_id na repetição."
+      ],
+      "limits": [
+        "Nenhum arquivo real foi enviado ou baixado. Bytes fictícios testam o envelope, não a validação de formato/antimalware do servidor.",
+        "Permissão efetiva de download é novamente responsabilidade do endpoint; deve ser confirmada pela regressão HTTP do coordenador."
+      ]
+    },
+    {
+      "screen": "Histórico do certificado",
+      "status": "Leitura real executada com resposta fictícia; comportamento preservado",
+      "changes": [],
+      "tested": [
+        "Histórico exibe ação, autor, justificativa e corpos antes/depois recebidos, sem executar escrita.",
+        "Abrir histórico não cria revisão nem altera autenticação."
+      ],
+      "limits": [
+        "Apresentação visual de históricos extensos e rolagem do JSON não foram avaliadas em navegador."
+      ]
+    },
+    {
+      "screen": "Perfil do ativo: certificados, manutenção, tarefas e documentos",
+      "status": "Apresentação corrigida e renderer testado",
+      "changes": [
+        "Títulos, ações, descrições de indicadores e estados conhecidos localizados em PT; EN preservado.",
+        "Datas civis válidas em dd/mm/aaaa. Instantes com fuso explícito aparecem com horário UTC identificado.",
+        "Nomes, notas, números, IDs, revisões, estados desconhecidos e datas inválidas permanecem literais.",
+        "Mantidos grupos históricos, vínculos exatos, slots de documentos contextuais e fotografias de identificação."
+      ],
+      "tested": [
+        "Fixture fictícia existente: título/nota com caracteres HTML renderizados como texto; IDs e zeros iniciais intactos.",
+        "Certificado abre a revisão exata; histórico conserva revisão substituída.",
+        "Ausência de acesso mostra traço no indicador, sem inventar contagem zero ou expor certificados.",
+        "Slots de documentos contextuais e IDs de fotografias mantidos.",
+        "Histórico de movimentação conserva detalhe e manifesto exatos; horário com offset exibido em UTC corretamente."
+      ],
+      "limits": [
+        "O renderer recebe um modelo já filtrado pelo servidor. Esta suíte não comprova ACL do backend.",
+        "Handlers de fotos, QR, movimentação, notas e navegação geral do ativo em assets.js não foram alterados nem testados de ponta a ponta nesta rodada.",
+        "A seleção da seção Documentos na prévia foi definida localmente; não é uma jornada real de navegador."
+      ]
+    }
+  ],
+  "remaining": [
+    "Teste em navegador de desktop/celular, teclado real, leitor de tela, tamanho de toque e contraste combinado.",
+    "Regressões HTTP de autorização, arquivos, concorrência, renovação e histórico a cargo do coordenador.",
+    "Fluxos de QR, fotografia de identificação, movimentação e edição de perfil do ativo não constituem novos E2E nesta rodada.",
+    "Esta entrega não encerra todas as abas nem reconta as suítes UI135 como validação nova."
+  ]
+}

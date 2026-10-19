@@ -1,0 +1,16 @@
+{
+  "Back to task list": "Voltar para a lista de tarefas",
+  "People and schedule": "Responsáveis e programação",
+  "Task lifecycle": "Situação da tarefa",
+  "Cancelling a task is a recorded decision. It does not close this page or sign you out.": "O cancelamento fica registrado no histórico da tarefa. Esta ação não fecha a página nem encerra sua sessão.",
+  "Postpone this task": "Adiar tarefa",
+  "Clear step filters": "Limpar filtros das etapas",
+  "Finish or close the open form before changing maintenance views.": "Conclua ou feche o formulário aberto antes de mudar a visualização da manutenção.",
+  "No saved unfinished steps or outstanding step approvals. Review required evidence before completing the order.": "Não há etapas salvas pendentes nem aprovações de etapas em aberto. Confira as evidências obrigatórias antes de concluir a ordem de serviço.",
+  "Close history": "Fechar histórico",
+  "General task decision": "Decisão sobre tarefa",
+  "General task work": "Registro do trabalho realizado",
+  "General task comment": "Comentário na tarefa",
+  "Task reassign": "Responsáveis e prazo da tarefa",
+  "Task acceptance": "Aceite da atribuição"
+}
