@@ -1,0 +1,64 @@
+{
+  "release": "UI133",
+  "scope": "Documentos de checklists autônomos no perfil do autor exato",
+  "status": "Implementado e validado em testes HTTP/serviço locais com dados fictícios; sem validação visual ou produção",
+  "helper": "app/context_checklist_documents.py",
+  "families": [
+    {
+      "kind": "checklist_evidence",
+      "association": "created_by_id do checklist → perfil; record_id/phase/step ID → foto",
+      "included": "Fotos ligadas às respostas atuais de etapas elegíveis, por fase real",
+      "not_claimed": "O criador do checklist não é necessariamente o autor de cada foto; foto salva não aprova a etapa",
+      "download": "/api/records/{record}/photos/{photo}",
+      "history": "Fotos substituídas ficam no histórico nativo autorizado; não voltam como evidências atuais"
+    },
+    {
+      "kind": "checklist_guidance",
+      "association": "record.template.introduction.images e guidance.images → hash existente no template.media congelado",
+      "included": "Imagens efetivamente referenciadas; deduplicação por hash/fase; etapa condicional respeita include_winch",
+      "download": "/api/context-documents/checklists/{record}/guidance/{sha256}",
+      "not_claimed": "Ilustração normalizada salva, não foto de execução nem arquivo original da câmera",
+      "checks": "Conta, permissão, registro ativo, fase/etapa elegível, referência atual, MIME/dimensões/hash/bytes revalidados a cada download"
+    },
+    {
+      "kind": "checklist_original",
+      "association": "template.source_documents com referência integral exata; UUID da revisão original",
+      "included": "Fontes originais congeladas e legíveis com originals.view, incluindo revisão arquivada historicamente vinculada",
+      "download": "/api/original-documents/{document}/file",
+      "folders": "Somente folder_id/path reais de Originais; nenhuma pasta criada para evidências ou orientação"
+    }
+  ],
+  "acl": {
+    "current_account": true,
+    "company_binding": "API/contexto integrado pelo coordenador; endpoints nativos já exigem empresa",
+    "base": "checklists.view, membership operacional, gate de vessel_only",
+    "phase": "Não há ACL de leitura separada por fase no modelo atual; helper não inventa. Usa fases existentes e elegibilidade nativas.",
+    "author": "Identidade exata created_by_id; registros legados sem identidade não são associados por nome/login/dispositivo.",
+    "inactive": "Registros no envelope deleted, incluindo arquivo/cancelamento/postergação, excluídos do agregado inclusive admin; histórico preservado.",
+    "sources": "Fontes originais exigem originals.view separadamente."
+  },
+  "limitations": [
+    "Sem vínculo de inventário inferido pelo ID da etapa, nome, veículo ou número de série.",
+    "Consulta por registro disponível como helper, mas montagem de UI/rota é responsabilidade do coordenador.",
+    "Sem edição de fonte/template/banco nem migração.",
+    "Sem Chrome/navegador/produção/mensagens/publicação nesta rodada."
+  ],
+  "tests_verified": [
+    "Autor exato mesmo com nomes iguais; legado sem ID",
+    "Evidência em pre/post e autoria de foto diferente da autoria do checklist",
+    "Imagem de orientação deduplicada, bytes exatos, órfã/condicional excluída",
+    "Fonte A congelada após publicação B e arquivo de fonte",
+    "Revogação de checklists/originals independente de RH",
+    "Registro excluído e conta admin desativada não ampliam consulta",
+    "Remoção de referência impede download antigo",
+    "Arquivo de foto não pode ser buscado por outro registro",
+    "Contexto de empresa e scope vessel_only"
+  ],
+  "test_evidence": {
+    "unique_python_cases_passed": 9,
+    "affected_rerun_passed": 1,
+    "localization_checks_passed": 9,
+    "report": "work/ui133-checklists-report.json",
+    "fixture": "work/ui133-checklist-api-fixture.json"
+  }
+}

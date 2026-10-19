@@ -1,0 +1,30 @@
+{
+  "release": "UI133",
+  "mode": "Revisão independente somente leitura; não é auditoria exaustiva nem validação visual",
+  "files": [
+    "app/context_log_documents.py",
+    "app/context_documents_api.py",
+    "app/context_documents.py",
+    "app/logs.py",
+    "app/vessel_logs.py",
+    "app/vessel_logs_api.py",
+    "app/static/documentos_context.js"
+  ],
+  "confirmed": [
+    "Listagem de referências usa book_id exato e require_book(logs.references), além de conta/membership atuais.",
+    "Fontes não liberadas são filtradas antes de contar/paginar para não administradores; a exceção de administrador reproduz a API nativa.",
+    "Imagens vêm somente dos hashes referenciados pelo documento autorizado; dados, MIME e SHA são conferidos antes da entrega de metadados.",
+    "Rotas de download já existentes revalidam livro, permissão, liberação e vínculo referência/imagem.",
+    "Rota fleet/context-documents não abre workspace amplo: helper mantém grants por local e livro. UI usa download fleet para esse modo.",
+    "Store.connection inicia BEGIN também na leitura; autorização e páginas são verificadas na mesma transação de leitura.",
+    "Perfil só invoca helper checklist quando checklists.view está disponível; sem requisitos de RH artificiais, fontes precisam originals.view.",
+    "Ordenação geral é estável e conserva pre/post produzido pelo helper quando título/kind/id coincidem.",
+    "API de orientação protege empresa/autorização única, revalida helper, usa no-store/nosniff e filename de hash já validado."
+  ],
+  "findings": [],
+  "limits": [
+    "Não executei bateria Python do outro agente para evitar TestClient paralelo; sua execução e evidências são responsabilidade de qualidade_ti.",
+    "Não inspecionei UI em navegador nem dados reais.",
+    "Revisão concentrou autorização, associação e downloads; não certifica todos os fluxos do aplicativo."
+  ]
+}

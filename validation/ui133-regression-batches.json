@@ -1,0 +1,27 @@
+[
+  {
+    "group": "documents-base",
+    "xml": "ui133-regression-documents-base.xml",
+    "exit_code": 0
+  },
+  {
+    "group": "attachments",
+    "xml": "ui133-regression-attachments.xml",
+    "exit_code": 0
+  },
+  {
+    "group": "equipment",
+    "xml": "ui133-regression-equipment.xml",
+    "exit_code": 0
+  },
+  {
+    "group": "preservation",
+    "xml": "ui133-regression-preservation.xml",
+    "exit_code": 0
+  },
+  {
+    "group": "help",
+    "xml": "ui133-regression-help.xml",
+    "exit_code": 0
+  }
+]

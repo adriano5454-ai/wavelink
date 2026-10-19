@@ -1,0 +1,57 @@
+{
+  "version": "UI133",
+  "reviewer": "/root/qualidade_ti",
+  "status": "No blocker found in reviewed integration",
+  "reviewed_files": [
+    "app/context_documents.py",
+    "app/context_documents_api.py",
+    "app/context_checklist_documents.py",
+    "app/static/logs.js",
+    "app/static/fleet.js",
+    "app/static/documentos_context.js",
+    "app/static/fleet.html",
+    "app/static/pt-BR/fleet.html"
+  ],
+  "findings": [
+    {
+      "area": "context API",
+      "result": "Exact hub and single authorization checks retained; Fleet alias invokes same helper, no gate or grant broadening."
+    },
+    {
+      "area": "main log viewer",
+      "result": "Documents modal owns current account/company/route/page/modal. Source callback checks ownership; back callback is tied to source owner. No logout or authentication mutation in new paths."
+    },
+    {
+      "area": "Fleet log viewer",
+      "result": "context/owns includes session, generation, route, modalEpoch and pageEpoch; wrapper uses beforeSend plus API native recheck; closing modal invalidates callbacks; source route preserves explicit book origin."
+    },
+    {
+      "area": "downloads",
+      "result": "Frontend checks response size/SHA and scope after awaits; backend existing reference endpoint checks current membership/book rights/release/reference membership and image SHA."
+    },
+    {
+      "area": "checklist helper independent review",
+      "result": "Exact created_by_id; explicit checklist access; inactive deleted envelope omitted; guidance references separate from execution photo evidence; frozen original source ref equality and originals.view required; real folder mapping only."
+    },
+    {
+      "area": "language shells",
+      "result": "EN/PT Fleet load shared document component/styles; localized source and picture integrity messages verified in both languages."
+    }
+  ],
+  "executed_test": "tests/test_ui133_logs_context.cjs passed independently; 9 backend tests and 4 message assertions recorded in ui133-logs-report.json",
+  "production_tested": false,
+  "browser_tested": false,
+  "blockers": [],
+  "hashes": {
+    "app/context_log_documents.py": "4099bdad31d51ffec9d1447fe57160679b317bf26d0a9202b696fa4f08272406",
+    "tests/test_ui133_log_documents.py": "93215c8b311124ace8b746bd26b93e9594ebaaf7e6e366e0c72b245809a664d9",
+    "app/context_documents.py": "2c8e628d0613194ed4b95b0ac2b00643cc0fc1049bab8c5d8171b9d68b8ebfc1",
+    "app/context_documents_api.py": "55aeb16185811044ca6a6d4bcb560973f43c656688f3bad8bd24ee9fbad56b80",
+    "app/context_checklist_documents.py": "78efb559cc807f6efe6b1f1d0245e3d915b758b833c83bca9bc6f7774895a129",
+    "app/static/logs.js": "5a6352ee9f944344cc3f695be5a09781794a991eaac7912350b05b9bfeea740c",
+    "app/static/fleet.js": "bc8c3b27b268f09448b2d96c8c634372a2f700dbcde2cd7190b9e312225dfd5a",
+    "app/static/documentos_context.js": "4c22cd20c1824d1569f0b5d57fa384b528e498bee986067ab6ebe7812eb9ac45",
+    "app/static/fleet.html": "35198e5c9a68ccd1005190d7c6b4a131854cf96557248e5e6ad6df9ff8a8dca5",
+    "app/static/pt-BR/fleet.html": "77b2e61ca24ceb38e799f1c578063b4895606d96c705d40c497ccb23411a75b5"
+  }
+}

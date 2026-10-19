@@ -1,0 +1,87 @@
+{
+  "version": "UI133",
+  "scope": "Read-only logbook document context; local fictional validation only",
+  "status": "implemented and tested locally; not published by this agent",
+  "product_files": [
+    "app/context_log_documents.py"
+  ],
+  "test_files": [
+    "tests/test_ui133_log_documents.py"
+  ],
+  "contract": "work/ui133-logs-contract.json",
+  "implementation": [
+    "Book and reference UUIDs are authoritative; never match by filename, cells, inventory text or entry author.",
+    "Current named member, logs.view and book-specific logs.references checked in one read transaction.",
+    "Unreleased references excluded before pagination and counts for non-administrators.",
+    "Page-only source/media reads; unique downloadable image per SHA with MIME, size and SHA256 checked against stored bytes.",
+    "Explicit unavailable_file_count for media omitted from a transfer. No invented original XLSX download or folder link.",
+    "Existing reference viewer and existing image endpoints recheck access/release/ref membership and SHA at download.",
+    "No database schema, writes, migrations, deletion or permission grants. No author-profile inference and no expansion of entry.related_record_id."
+  ],
+  "tests": {
+    "http_native": {
+      "passed": 9,
+      "failed": 0,
+      "batches": [
+        {
+          "xml": "work/ui133-logs-tests-1.xml",
+          "log": "work/ui133-logs-tests-1.log",
+          "passed": 5,
+          "seconds": 20.12
+        },
+        {
+          "xml": "work/ui133-logs-tests-2.xml",
+          "log": "work/ui133-logs-tests-2.log",
+          "passed": 4,
+          "seconds": 15.75
+        }
+      ],
+      "cases": [
+        "Real passive XLSX import -> restricted source -> release -> review cells -> exact PNG download -> archive retains source; read queries leave full DB dump unchanged.",
+        "Exact book association; duplicate titles sort stably; restricted sources absent from totals/names/file metadata before pagination.",
+        "Release revoked after list; capability revoked; logs.view prerequisite; account disabled; final image denied.",
+        "Foreign reference/book image substitution denied; duplicate images deduplicated; omitted media explicit; corrupt bytes rejected; hidden corruption does not reveal metadata.",
+        "Vessel-only alias works only for explicitly scoped book; ordinary context stays denied; unrelated book hidden; removed site grant denies final download.",
+        "Vessel-specific reference right required; withdrawn book and inactive site deny context and final image.",
+        "Entry authorship does not attach shared book references to the person profile.",
+        "Anonymous/wrong-company/duplicate-auth/invalid UUID/page bounds denied, without writes.",
+        "Malformed stored JSON, bad SHA/path-shaped ID and unsafe MIME fail closed without file links."
+      ]
+    },
+    "integration_node": {
+      "file": "tests/test_ui133_logs_context.cjs",
+      "passed": true,
+      "coverage": "Actual functions extracted by root harness: source opening/back return, same route/page/auth retained, changed account/route/closed modal blocks callbacks, Fleet binary adapter and both EN/PT shells."
+    },
+    "localization": {
+      "passed": true,
+      "assertions": 4,
+      "coverage": "Both helper/source integrity errors translated to PT-BR; EN unchanged."
+    },
+    "syntax": {
+      "files": 2,
+      "passed": true
+    }
+  },
+  "fixture": "work/ui133-logbook-api-fixture.json",
+  "environment_note": "Two sandbox attempts were stopped after no first-test progress. The same isolated fixtures passed via require_escalated local runner; no product change was needed. No TestClient processes remain owned by this agent.",
+  "limitations": [
+    "No browser interaction, screen rendering, production data, live application, deployment or external messages were used.",
+    "Original workbook source bytes are not retained by the existing importer; cards provide extracted content and stored raster images.",
+    "No direct source-to-folder relation exists for log references; folder remains null.",
+    "A log entry-related checklist is not automatically aggregated into a whole-book or author context."
+  ],
+  "blockers": [],
+  "hashes": {
+    "app/context_log_documents.py": "4099bdad31d51ffec9d1447fe57160679b317bf26d0a9202b696fa4f08272406",
+    "tests/test_ui133_log_documents.py": "93215c8b311124ace8b746bd26b93e9594ebaaf7e6e366e0c72b245809a664d9",
+    "app/context_documents.py": "2c8e628d0613194ed4b95b0ac2b00643cc0fc1049bab8c5d8171b9d68b8ebfc1",
+    "app/context_documents_api.py": "55aeb16185811044ca6a6d4bcb560973f43c656688f3bad8bd24ee9fbad56b80",
+    "app/context_checklist_documents.py": "78efb559cc807f6efe6b1f1d0245e3d915b758b833c83bca9bc6f7774895a129",
+    "app/static/logs.js": "5a6352ee9f944344cc3f695be5a09781794a991eaac7912350b05b9bfeea740c",
+    "app/static/fleet.js": "bc8c3b27b268f09448b2d96c8c634372a2f700dbcde2cd7190b9e312225dfd5a",
+    "app/static/documentos_context.js": "4c22cd20c1824d1569f0b5d57fa384b528e498bee986067ab6ebe7812eb9ac45",
+    "app/static/fleet.html": "35198e5c9a68ccd1005190d7c6b4a131854cf96557248e5e6ad6df9ff8a8dca5",
+    "app/static/pt-BR/fleet.html": "77b2e61ca24ceb38e799f1c578063b4895606d96c705d40c497ccb23411a75b5"
+  }
+}

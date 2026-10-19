@@ -1,0 +1,90 @@
+{
+  "release": "UI133",
+  "area": "Anexos de checklists autônomos",
+  "status": "Implementado e testado localmente; fontes concluídas para integração",
+  "base": "UI132 equivalente a GitHub c2a38ac189b58f874cf56d70412f94b4b1e12124",
+  "files_changed": [
+    "app/context_checklist_documents.py",
+    "tests/test_ui133_checklist_documents.py"
+  ],
+  "functions": [
+    "read_author_checklist_documents(store,c,user_id,actor)",
+    "read_record_checklist_documents(store,c,record_id,actor)",
+    "read_guidance_image(store,c,record_id,sha256,actor)"
+  ],
+  "implemented": [
+    "Consulta por created_by_id exato, separada de documentos pessoais e sem inferência por nome/login.",
+    "Evidências atuais por fase/etapa elegível, com arquivo salvo JPEG e vínculo preciso; histórico antigo preservado.",
+    "Orientações por hash exato do template congelado; introdução e etapas elegíveis, deduplicação por fase e usos preservados; mídia órfã excluída.",
+    "Download de orientação revalida conta, registro ativo, referência atual e validações nativas de mídia, sem dados base64 no envelope de listagem.",
+    "Fontes originais por referência integral e UUID exato; pasta/subpasta somente quando existente na biblioteca.",
+    "Sequência pre/post preservada, sem mudar campos de registros."
+  ],
+  "security": {
+    "new_permissions": false,
+    "changed_acl": false,
+    "requires": "Conta atual/membership, checklists.view, gate de vessel_only; originals.view adicional para fontes",
+    "author_is_not_photographer": true,
+    "hr_access_not_required_for_operational_checklists": true,
+    "inactive_record_exclusion": "Envelope deleted inclui removido, arquivado, cancelado e postergado: não agrega mesmo para administrador; histórico fica no fluxo original",
+    "revision": "Template salvo no registro, não versão corrente da biblioteca",
+    "final_downloads": "Fotos/fontes usam APIs nativas; orientação tem API do coordenador e helper autenticado rechecado"
+  },
+  "preservation": {
+    "schema_changes": false,
+    "data_writes": false,
+    "source_byte_replacement": false,
+    "copy_to_library": false,
+    "production_access": false,
+    "messages": false,
+    "browser": false
+  },
+  "tests": {
+    "python_initial": {
+      "passed": 9,
+      "failed": 0,
+      "seconds": 39.51,
+      "log": "work/ui133-checklists-tests.log",
+      "xml": "work/ui133-checklists-tests.xml"
+    },
+    "affected_rerun": {
+      "status": "passed",
+      "case": "test_author_journey_separates_evidence_guidance_sources_and_never_writes",
+      "passed": 1,
+      "failed": 0,
+      "seconds": 5.32,
+      "log": "work/ui133-checklists-order-tests.log",
+      "xml": "work/ui133-checklists-order-tests.xml",
+      "note": "Repetição do caso afetado após ajuste de ordenação; permanece um total de 9 casos únicos."
+    },
+    "syntax": {
+      "files": 2,
+      "passed": true
+    },
+    "dom": "Responsabilidade do agente de interface; não contado como execução deste agente.",
+    "localization": {
+      "passed": true,
+      "source_messages": 4,
+      "checks": 9,
+      "coverage": "PT exato, EN preservado e texto desconhecido sem tradução",
+      "artifact": "work/ui133-checklists-locale-check.json"
+    }
+  },
+  "independent_review": "work/ui133-checklists-independent-review.json",
+  "translations": "work/ui133-checklists-translations.json",
+  "coverage": "work/ui133-checklists-coverage.json",
+  "limitations": [
+    "Não é consulta universal por equipamento: ID de etapa de checklist não é ID de inventário.",
+    "Registros legados sem created_by_id não são atribuídos por nome.",
+    "Não há permissões de leitura diferentes por fase no modelo; foram preservadas as regras existentes, sem conceder acesso extra.",
+    "Imagens de orientação são cópias normalizadas salvas no checklist; não representam originais da câmera nem execução.",
+    "Registros retirados do trabalho ativo continuam nas ferramentas históricas; não há nova navegação de arquivos históricos nesta agregação.",
+    "Sem Chrome, produção, publicação ou validação visual."
+  ],
+  "integration": "Coordenador integrou helpers ao contexto do perfil e criou endpoint autenticado de orientação; agente RH controla renderer e estilos. Nenhum arquivo compartilhado editado por este agente.",
+  "api_fixture": "work/ui133-checklist-api-fixture.json",
+  "source_sha256": {
+    "app/context_checklist_documents.py": "78efb559cc807f6efe6b1f1d0245e3d915b758b833c83bca9bc6f7774895a129",
+    "tests/test_ui133_checklist_documents.py": "d3d93bc0c3b3a7ef6d7b3e931ed6d2ab05e761a34f7936a828b92545012de277"
+  }
+}

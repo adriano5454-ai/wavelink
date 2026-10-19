@@ -1,0 +1,40 @@
+{
+  "helper": "logbook_documents(store, book_id, actor, offset=0, limit=30)",
+  "endpoint": "/api/context-documents/logbooks/{book_id}",
+  "context_kind": "logbook",
+  "item": {
+    "kind": "log_reference",
+    "id": "reference UUID",
+    "book_id": "exact book UUID",
+    "title": "sheet_name",
+    "version": "integer",
+    "revision": "version string",
+    "state": "released | restricted",
+    "reviewed_at": "saved UTC or empty",
+    "source_kind": "extracted_workbook_sheet",
+    "source_filename": "stored workbook filename or empty",
+    "source_sha256": "stored workbook SHA or empty",
+    "unavailable_file_count": "number of linked images omitted from current transfer",
+    "files": [
+      {
+        "id": "SHA256 hex",
+        "sha256": "SHA256 hex",
+        "filename": "source-image-<sha>.<safe mime extension>",
+        "mime": "image/png | image/jpeg | image/gif",
+        "size": "byte length"
+      }
+    ],
+    "sources": [],
+    "folder": null
+  },
+  "review": "onOpenLogReference(id) calls authoritative existing reference viewer",
+  "download": "/api/logs/references/{reference_id}/images/{sha256}",
+  "notes": [
+    "Read-only helper; no schema/association changes.",
+    "The original XLSX is not stored; source is extracted immutable content.",
+    "Current ACL + release checked again by authoritative existing download.",
+    "No profile linkage inferred from log authorship.",
+    "No folder inferred from source filename or text.",
+    "Frota route/alias integration is owned by parent."
+  ]
+}

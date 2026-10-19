@@ -1,64 +1,74 @@
 {
-  "release": "UI132",
-  "version": "1.34.32",
+  "release": "UI133",
+  "version": "1.34.33",
   "status": "integrado_testado_localmente_nao_publicado",
-  "base_commit": "f26f38da92cd0ee8dfbc29dfa007a0eb7ea5d86c",
+  "base_commit": "c2a38ac189b58f874cf56d70412f94b4b1e12124",
   "final_commit": null,
   "deployment": null,
   "runtime": {
     "status": "passed",
-    "version": "1.34.32",
-    "runtime_manifest_sha256": "ad95a9750ee45d62fa8305d9ed0876af20ed1c912b62df463350cc55e8fe2593",
-    "resources": 2369,
+    "version": "1.34.33",
+    "runtime_manifest_sha256": "3e6b34a5230e9a11a5d3de9fca53ee1fc9c4451428cc200460a9db8c20cf0d0b",
+    "resources": 2378,
     "all_reconstructed_files_identical": true,
-    "python_syntax_files": 232,
-    "cache_assets": 12,
+    "python_syntax_files": 234,
+    "cache_assets": 8,
     "html_shells": 4,
-    "base_repository_files_preserved": 786,
+    "base_repository_files_preserved": 895,
     "production_access": false
   },
   "python": {
-    "unique_passed": 59,
+    "unique_passed": 51,
     "runs": [
       {
-        "group": "Anexos e regressões documentais",
-        "xml": "ui132-documents-final-tests.xml",
-        "passed": 21
+        "group": "Checklists: autoria, fases, evidências, fontes e acesso",
+        "xml": "ui133-checklists-tests.xml",
+        "passed": 9
       },
       {
-        "group": "Aceite de atribuição",
-        "xml": "ui132-task-acceptance-focused.xml",
-        "passed": 12
+        "group": "Checklists: ordem das fases e contrato HTTP final",
+        "xml": "ui133-checklists-order-tests.xml",
+        "passed": 1
       },
       {
-        "group": "Ciclo de tarefas e permissões",
-        "xml": "ui132-task-regression-a.xml",
-        "passed": 8
+        "group": "Livros: vínculos, liberação, paginação e imagens",
+        "xml": "ui133-logs-tests-1.xml",
+        "passed": 5
       },
       {
-        "group": "Adiamento e relatórios finais",
-        "xml": "ui132-task-regression-b.xml",
-        "passed": 8
-      },
-      {
-        "group": "Backups, cópias, sessão, idiomas e ajuda",
-        "xml": "ui132-integration-tests.xml",
-        "passed": 8
-      },
-      {
-        "group": "Ajuda e arquivos servidos",
-        "xml": "ui132-help-tests.xml",
+        "group": "Livros: integridade, Frota e revogação",
+        "xml": "ui133-logs-tests-2.xml",
         "passed": 4
       },
       {
-        "group": "Carregamento final dos shells e frota",
-        "xml": "ui132-shell-final-tests.xml",
-        "passed": 1
+        "group": "Regressão de documentos, perfis e pastas",
+        "xml": "ui133-regression-documents-base.xml",
+        "passed": 11
+      },
+      {
+        "group": "Regressão de despesas e passagens de serviço",
+        "xml": "ui133-regression-attachments.xml",
+        "passed": 6
+      },
+      {
+        "group": "Regressão de manutenção e manifestos",
+        "xml": "ui133-regression-equipment.xml",
+        "passed": 4
+      },
+      {
+        "group": "Preservação, backups, relatórios e idiomas",
+        "xml": "ui133-regression-preservation.xml",
+        "passed": 8
+      },
+      {
+        "group": "Ajuda e recursos servidos em português e inglês",
+        "xml": "ui133-regression-help.xml",
+        "passed": 4
       }
     ]
   },
   "javascript": {
-    "passed_suites": 64,
+    "passed_suites": 67,
     "syntax_files": 113
   },
   "preservation": {
@@ -67,12 +77,14 @@
     "existing_users_changed": false,
     "outbound_messages": false,
     "database_reset": false,
-    "ui131_base_retained": true
+    "schema_changed": false,
+    "operational_writers_changed": false,
+    "ui132_base_retained": true
   },
   "limits": [
-    "Não houve Chrome, navegador automatizado, captura de tela, aparelho móvel ou teste em produção.",
-    "Prévias usam renderizadores/componentes reais com dados fictícios e não equivalem a screenshots ou aprovação visual em navegador.",
-    "A matriz de 193 vistas distingue revisão de fonte, mudanças de apresentação e jornadas não executadas nesta rodada.",
-    "Não existe uma biblioteca universal de todos os anexos: os vínculos e as permissões de cada família continuam separados."
+    "Sem Chrome, navegador automatizado, captura de tela, teste em aparelho ou acesso à produção nesta rodada.",
+    "As prévias HTML usam o componente real e envelopes fictícios de teste. Não são screenshots nem comprovam a aparência final em navegador.",
+    "Fontes de livros são conteúdo extraído da planilha; o arquivo Excel completo não é armazenado por esse fluxo.",
+    "Registros antigos sem identificador salvo de autor não recebem associação por nome. Fontes do livro não são vinculadas automaticamente a quem fez um lançamento."
   ]
 }

@@ -1,0 +1,27 @@
+{
+  "component": "AJContextDocuments.mount",
+  "existing_options": ["host", "kind", "id", "api", "session", "active", "beforeOpenOriginal", "download"],
+  "new_options": {"kind": "logbook in addition to asset/person", "fleet": "boolean; applies only to logbook paths", "onOpenLogReference": "callback(reference UUID); only invoked while current mount/session/route/generation is active"},
+  "checklist": {
+    "kinds": ["checklist_evidence", "checklist_guidance", "checklist_original"],
+    "record_phase": "pre or post; required for evidence/guidance and their files",
+    "record_route": "#dive/{record UUID}/{pre|post}",
+    "evidence_file": "/api/records/{record UUID}/photos/{photo UUID}",
+    "guidance_file": "/api/context-documents/checklists/{record UUID}/guidance/{sha256}",
+    "guidance_usages": "files[].usages for distinct actual referenced steps; not inferred from orphan media",
+    "original": "existing exact original UUID route/download; sources use kind=checklist, record id and real phase"
+  },
+  "logbook": {
+    "kind": "log_reference", "context": "logbook", "record_book_id": "must equal mounted logbook UUID",
+    "list": "/api/context-documents/logbooks/{book UUID}",
+    "fleet_list": "/api/fleet/context-documents/logbooks/{book UUID}",
+    "file": "/api/logs/references/{reference UUID}/images/{sha256}",
+    "fleet_file": "/api/fleet/logs/references/{reference UUID}/images/{sha256}",
+    "original_workbook": "not downloadable; metadata only; show extracted content via callback",
+    "unavailable_images": "unavailable_file_count; no forged download action"
+  },
+  "guards": ["account", "route", "host connection", "external active callback", "mount identity", "list generation before and after each asynchronous byte/hash stage"],
+  "integrity": "downloaded blob size and SHA256 must match current descriptor; SHA file IDs must also match descriptor SHA",
+  "presentation": "h3 context, h4 family, h5 document; explicit text distinguishes evidence, guidance, original and extracted reference; no automatic images or external links",
+  "limits": "DOM and controlled API fixtures only; no browser, layout measurement, production or server ACL evidence from these tests"
+}

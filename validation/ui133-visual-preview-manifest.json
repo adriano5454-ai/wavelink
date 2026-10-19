@@ -1,0 +1,34 @@
+{
+  "kind": "actual_component_dom_from_fictional_http_response_not_screenshot",
+  "items": [
+    {
+      "title": "Perfil: evidências, orientações e fontes dos checklists",
+      "page": "perfil-checklists.html",
+      "source_fragment": "C:\\Users\\adria\\Documents\\Codex\\2026-10-17\\quero-concluir-a-mudan-a-da\\work\\ui133-checklist-api-markup.html",
+      "fragment_sha256": "9383ea4063bd5f426569d1e4b96aa53bb95953d13bf48f627e3684c209e0c356",
+      "change_from_ui132": "A UI132 não reunia documentos de checklists pelo autor no perfil. A UI133 acrescenta esses três grupos com a etapa e a origem preservadas."
+    },
+    {
+      "title": "Livro: conteúdo extraído e imagens de referência",
+      "page": "livro-fontes.html",
+      "source_fragment": "C:\\Users\\adria\\Documents\\Codex\\2026-10-17\\quero-concluir-a-mudan-a-da\\work\\ui133-logbook-api-markup.html",
+      "fragment_sha256": "d256af8ce02b88c9dce4083e0ae120daac903a1bb8ac42b5336c0a7766c51f62",
+      "change_from_ui132": "A UI132 já permitia consultar a fonte extraída no livro. A UI133 reúne fontes e imagens numa lista contextual, com acesso à revisão existente e download individual verificado. Não acrescenta download da planilha Excel original."
+    }
+  ],
+  "html_pages": 4,
+  "local_url_checks": 103,
+  "broken_local_urls": 0,
+  "browser_used": false,
+  "production_accessed": false,
+  "assets": [
+    "assets/icon.ico",
+    "assets/ui68-home-scene.svg",
+    "assets/wavelink-approved-offshore-profile-ui87.webp",
+    "assets/wavelink-approved-offshore-ui87.webp",
+    "assets/wavelink-home-cover-ui86.svg",
+    "assets/wavelink-mark.svg",
+    "assets/wavelink-profile-cover-ui86.svg"
+  ],
+  "portable": "Copy the entire ui133-visual-previews directory, including styles/ and assets/."
+}

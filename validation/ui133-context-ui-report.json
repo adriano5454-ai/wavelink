@@ -1,0 +1,72 @@
+{
+  "phase": "UI133",
+  "owner": "rh_revisao",
+  "status": "implemented_and_tested_locally_sources_frozen",
+  "published_by_this_agent": false,
+  "browser_used": false,
+  "production_accessed": false,
+  "changes": [
+    {
+      "area": "Checklist documents in the author profile",
+      "implemented": "Distinct families for saved evidence, actually referenced guidance images and exact original sources. Cards preserve the saved record, real pre/post phase and template revision. Guidance usages show introduction/steps without treating them as execution photos.",
+      "limits": "The creator of the checklist is not asserted to be the photographer or owner of every document. No name-based association is introduced. Backend eligibility and current permissions remain authoritative."
+    },
+    {
+      "area": "Logbook documents",
+      "implemented": "Logbook mount and Fleet-scoped aliases. List distinguishes extracted spreadsheet content and reference images; offers the authoritative onOpenLogReference callback, verified image downloads and explicit unavailable-image counts.",
+      "limits": "No original Excel download is invented; no execution evidence or personal profile relationship is inferred. Fleet=true only changes the exact approved logbook aliases, not access policy."
+    },
+    {
+      "area": "Session and asynchronous continuity",
+      "implemented": "All record/source links now guard current account, route, host, external activity, mount identity and list generation. A list refresh, new mount, account change, page change or modal closure invalidates earlier actions. Download guards execute before transport and after transport, byte extraction and SHA calculation.",
+      "finding_corrected": "Previously a download initiated on an older list could complete after Refresh documents because the card only checked account and route. Current card generation now prevents that stale completion.",
+      "limits": "Already downloaded files cannot be recalled. Current server permission checks remain necessary; the frontend does not claim to detect a remote permission change without a new request."
+    },
+    {
+      "area": "Integrity and presentation",
+      "implemented": "Files still require matching byte length and SHA256. SHA-based guidance/reference identifiers must match their declared digest. Checklist phase mismatches fail before transport. Logbook reference records must belong to the mounted book. New source links wrap and have a 44px minimum height; actions use explicit text. Reference review timestamps display localised date/time while saved UTC remains unchanged.",
+      "limits": "No browser layout, keyboard traversal, assistive-technology or physical-device test was performed. No colour palette change was made."
+    }
+  ],
+  "product_files": [
+    {"path": "app/static/documentos_context.js", "sha256": "4c22cd20c1824d1569f0b5d57fa384b528e498bee986067ab6ebe7812eb9ac45"},
+    {"path": "app/static/documentos_context.css", "sha256": "93717b3387458814f68b45ab89a006413cb64b2d68337c97bf029e64a03f827b"}
+  ],
+  "tests": [
+    {"file": "tests/test_ui133_context_documents.cjs", "result": "passed", "assertion_checks": 171, "evidence_kind": "Node VM, real shipped renderer/handlers, controlled asynchronous API", "covers": ["PT/EN with real dictionary", "three separate checklist groups", "phase routes", "guidance usages", "logbook/Fleet exact aliases", "reference callback", "unavailable images", "wrong book/phase rejection", "digest and size mismatch", "403/404 redaction", "refresh during transport/arrayBuffer/digest", "beforeSend after refresh", "remount/account/route/closure guards", "legacy navigation guards", "literal user content"]},
+    {"file": "tests/test_ui133_context_documents_api_fixture.cjs", "result": "passed", "assertion_checks": 134, "evidence_kind": "Captured real local HTTP envelopes fed to the actual DOM renderer", "covers": ["exact backend identity/field shape", "record and source routes", "download URL construction", "PT/EN text", "callback reference ID", "immutable fixture data", "real markup extraction"], "limits": "This suite replays captured fictitious responses. It does not issue HTTP requests or fabricate binary payloads."},
+    {"file": "tests/test_ui131_context_documents.cjs", "result": "passed", "assertion_checks": 84, "evidence_kind": "Unmodified existing DOM regression"},
+    {"file": "tests/test_ui132_context_attachments.cjs", "result": "passed", "assertion_checks": 65, "evidence_kind": "Unmodified existing DOM regression"},
+    {"file": "app/static/documentos_context.js", "result": "passed", "evidence_kind": "Node syntax check"}
+  ],
+  "test_counts_note": "Counts are assertion checks, not independent end-to-end browser scenarios. 305 new checks and 149 existing regression checks passed in the final run.",
+  "fixtures": [
+    {"file": "tests/fixtures/ui133_context_checklist_api.json", "source": "work/ui133-checklist-api-fixture.json", "producer": "documentos_pessoas: actual HTTP test on a fictional company", "content": "Person envelope with pre/post evidence, guidance usages and exact original source/folder"},
+    {"file": "tests/fixtures/ui133_context_logbook_api.json", "source": "work/ui133-logbook-api-fixture.json", "producer": "qualidade_ti: actual XLSX importer, release, contextual HTTP and image download test on a fictional company", "content": "Workspace envelope, exact extracted reference and verified image digest"}
+  ],
+  "previews": {
+    "generator": "work/generate_ui133_context_previews.py",
+    "directory": "work/ui133-visual-previews",
+    "index": "work/ui133-visual-previews/index.html",
+    "pages": ["perfil-checklists.html", "livro-fontes.html"],
+    "manifest": "work/ui133-visual-preview-manifest.json",
+    "kind": "actual component HTML with fictitious real API envelopes; not screenshots",
+    "source_extraction": "test_ui133_context_documents_api_fixture.cjs runs AJContextDocuments.mount with shipped code and serializes its real DOM before exercising download refusal. It writes ui133-checklist-api-markup.html and ui133-logbook-api-markup.html.",
+    "packaging": "Generator copies the runtime shell stylesheet order, local assets and the actual Portuguese help article. Operational buttons and record links are explicitly inactive in the offline copy; the help remains local.",
+    "comparison": "Both pages show UI133. A textual note identifies the difference from UI132; no historical screen is reconstructed.",
+    "static_validation": {"html_pages": 4, "local_url_checks": 103, "broken_urls": 0, "duplicate_ids": 0},
+    "limitations": "No browser, screenshot, pixel inspection or responsive layout measurement. The 390px control is an inspection aid only, not a mobile-test claim. Copy the whole directory, including styles/ and assets/."
+  },
+  "coordination": {
+    "contract": "work/ui133-context-ui-contract.json",
+    "translations": "work/ui133-context-translations.json",
+    "translations_integrated_by_root": true,
+    "root_owned_integration": ["context API and permissions", "logbook/Fleet mounting and back actions", "help", "locales", "shells and caches", "packaging/publication"],
+    "backend_owned_by_peers": ["context_checklist_documents.py", "context_log_documents.py"]
+  },
+  "remaining": [
+    "Coordinator validates the final integrated package and its hashes.",
+    "Browser visual, keyboard and device validation remain unperformed under the explicit no-browser scope.",
+    "No deployment or production validation is claimed by this report."
+  ]
+}

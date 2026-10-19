@@ -1,0 +1,27 @@
+{
+  "github_main": "c2a38ac189b58f874cf56d70412f94b4b1e12124",
+  "github_release": "UI132",
+  "parent_manifest_sha256": "ad95a9750ee45d62fa8305d9ed0876af20ed1c912b62df463350cc55e8fe2593",
+  "runtime_resources": 2369,
+  "repository_files": 895,
+  "parent_files_unmodified": true,
+  "remote_critical_files": [
+    {
+      "path": "DEPLOYMENT_FILES.json",
+      "sha": "34790d6f0b316c459be26de3b0edad12d61393c3"
+    },
+    {
+      "path": "deploy/apply_ui132.py",
+      "sha": "3b464af6c086e7f38a513372852e3eb8ad188912"
+    },
+    {
+      "path": "deploy/materialize_runtime.py",
+      "sha": "3bcd9d756244c552e9a87a5b0ee7ba820b53f50d"
+    },
+    {
+      "path": "Dockerfile",
+      "sha": "078893c5f6268c50c8e1fdec90aeb5cb6710c573"
+    }
+  ],
+  "production_access": false
+}

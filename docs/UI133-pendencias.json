@@ -1,0 +1,27 @@
+{
+  "version": "UI133",
+  "implemented_local": [
+    "Evidências fotográficas, ilustrações de orientação e fontes originais dos checklists no perfil do autor identificado.",
+    "Documentos e imagens extraídos dos livros de registros, no projeto e na Frota, com permissões nativas e revisão exata.",
+    "Downloads com conferência de integridade e proteção contra troca de conta, rota, lista ou janela.",
+    "Português brasileiro, orientação sobre os estados e ajuda em dois idiomas."
+  ],
+  "pending": [
+    {
+      "area": "Publicação",
+      "item": "UI133 preparada e testada localmente; não foi enviada ao GitHub nem ao Render. O commit-base UI132 foi conferido no GitHub; o deployment atual não foi consultado."
+    },
+    {
+      "area": "Validação visual",
+      "item": "Ainda precisa de conferência no navegador, teclado/leitor de tela e aparelhos reais. Não foram criadas capturas de tela."
+    },
+    {
+      "area": "Testes reais anteriores",
+      "item": "A jornada de horas semanais com projeto e usuário temporário na Corcovado continua sem nova validação em produção."
+    },
+    {
+      "area": "Escopo dos anexos",
+      "item": "Não foi criada uma biblioteca universal, upload para TI/viagens, associação por nome ou cópia de anexos privados para pastas operacionais. Fotos de perfil mantêm o fluxo próprio."
+    }
+  ]
+}
