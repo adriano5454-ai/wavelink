@@ -1,0 +1,431 @@
+{
+  "release": "UI134",
+  "baseline": "ui132-visual-coverage.json",
+  "scope": "RH e perfil; nenhuma afirmação de revisão integral das 193 vistas",
+  "views_tracked": 31,
+  "views_with_specific_current_review": 17,
+  "areas": [
+    {
+      "id": "perfil",
+      "title": "Perfil e equipe",
+      "views": [
+        {
+          "name": "Meu perfil",
+          "ui134_status": "corrigido_com_limites",
+          "source": "recognition_workspace.js: openProfile; testes UI131 de navegação/salvamento",
+          "ui134_evidence": "Atalho Documentos relacionados acompanha o escopo ampliado UI133. Regressões reais do handler preservam rota/seleção/foco e impedem salvar após troca de conta.",
+          "browser_validated_ui134": false,
+          "production_validated_ui134": false,
+          "historical_status": "parcial",
+          "historical_evidence": [
+            "Chrome conectado, ambiente fictício isolado: Biografia e distintivo salvos e reabertos; busca e perfil de outra pessoa; histórico de contribuições localizado."
+          ],
+          "historical_evidence_is_not_current_validation": true
+        },
+        {
+          "name": "Conta e acesso",
+          "ui134_status": "nao_retestado_nesta_frente",
+          "source": "Matriz UI132; fluxo preservado",
+          "ui134_evidence": "Não foi realizada revisão específica nesta frente. Evidência histórica não é convertida em validação UI134.",
+          "browser_validated_ui134": false,
+          "production_validated_ui134": false,
+          "historical_status": "revisado_com_limites",
+          "historical_evidence": [
+            "UI128 · API,Node · work/ui128-rh-report.json#/functions/1: security dialogs corrected and locally validated. Validação local isolada; navegador/publicação não confirmados por este agente."
+          ],
+          "historical_evidence_is_not_current_validation": true
+        },
+        {
+          "name": "Distintivos e progresso",
+          "ui134_status": "nao_retestado_nesta_frente",
+          "source": "Matriz UI132; fluxo preservado",
+          "ui134_evidence": "Não foi realizada revisão específica nesta frente. Evidência histórica não é convertida em validação UI134.",
+          "browser_validated_ui134": false,
+          "production_validated_ui134": false,
+          "historical_status": "parcial",
+          "historical_evidence": [
+            "Chrome conectado, ambiente fictício isolado: Biografia e distintivo salvos e reabertos; busca e perfil de outra pessoa; histórico de contribuições localizado."
+          ],
+          "historical_evidence_is_not_current_validation": true
+        },
+        {
+          "name": "Histórico de contribuições",
+          "ui134_status": "nao_retestado_nesta_frente",
+          "source": "Matriz UI132; fluxo preservado",
+          "ui134_evidence": "Não foi realizada revisão específica nesta frente. Evidência histórica não é convertida em validação UI134.",
+          "browser_validated_ui134": false,
+          "production_validated_ui134": false,
+          "historical_status": "parcial",
+          "historical_evidence": [
+            "Chrome conectado, ambiente fictício isolado: Biografia e distintivo salvos e reabertos; busca e perfil de outra pessoa; histórico de contribuições localizado."
+          ],
+          "historical_evidence_is_not_current_validation": true
+        },
+        {
+          "name": "Equipe",
+          "ui134_status": "nao_retestado_nesta_frente",
+          "source": "Matriz UI132; fluxo preservado",
+          "ui134_evidence": "Não foi realizada revisão específica nesta frente. Evidência histórica não é convertida em validação UI134.",
+          "browser_validated_ui134": false,
+          "production_validated_ui134": false,
+          "historical_status": "parcial",
+          "historical_evidence": [
+            "Chrome conectado, ambiente fictício isolado: Biografia e distintivo salvos e reabertos; busca e perfil de outra pessoa; histórico de contribuições localizado."
+          ],
+          "historical_evidence_is_not_current_validation": true
+        },
+        {
+          "name": "Perfil de outra pessoa",
+          "ui134_status": "revisado_por_codigo_sem_novo_fluxo",
+          "source": "recognition_workspace.js: openProfile",
+          "ui134_evidence": "Mesmo rótulo corrigido; montagem mantém resposta autorizada pelo servidor e histórico pessoal condicional. Não foi executada nova consulta autenticada de outro perfil.",
+          "browser_validated_ui134": false,
+          "production_validated_ui134": false,
+          "historical_status": "parcial",
+          "historical_evidence": [
+            "Chrome conectado, ambiente fictício isolado: Biografia e distintivo salvos e reabertos; busca e perfil de outra pessoa; histórico de contribuições localizado."
+          ],
+          "historical_evidence_is_not_current_validation": true
+        },
+        {
+          "name": "Preferências de alertas",
+          "ui134_status": "nao_retestado_nesta_frente",
+          "source": "Matriz UI132; fluxo preservado",
+          "ui134_evidence": "Não foi realizada revisão específica nesta frente. Evidência histórica não é convertida em validação UI134.",
+          "browser_validated_ui134": false,
+          "production_validated_ui134": false,
+          "historical_status": "parcial",
+          "historical_evidence": [
+            "Chrome conectado, ambiente fictício: Horário de silêncio e America/Bahia salvos; confirmação visível e valores preservados após recarregar; nenhum e-mail enviado."
+          ],
+          "historical_evidence_is_not_current_validation": true
+        }
+      ]
+    },
+    {
+      "id": "rh",
+      "title": "Recursos Humanos",
+      "views": [
+        {
+          "name": "Visão geral",
+          "ui134_status": "nao_retestado_nesta_frente",
+          "source": "Matriz UI132; fluxo preservado",
+          "ui134_evidence": "Não foi realizada revisão específica nesta frente. Evidência histórica não é convertida em validação UI134.",
+          "browser_validated_ui134": false,
+          "production_validated_ui134": false,
+          "historical_status": "parcial",
+          "historical_evidence": [
+            "Chrome local: consulta e interações documentadas em work/ui127-browser"
+          ],
+          "historical_evidence_is_not_current_validation": true
+        },
+        {
+          "name": "Calendário mensal",
+          "ui134_status": "corrigido_e_testado_localmente",
+          "source": "hr_planning_ui121.js: timeline/render",
+          "ui134_evidence": "Dia civil local em America/Bahia e Asia/Tokyo nas transições 23:59/00:00; datas salvas e intervalos preservados. Não houve inspeção de pixels.",
+          "browser_validated_ui134": false,
+          "production_validated_ui134": false,
+          "historical_status": "parcial",
+          "historical_evidence": [
+            "Chrome local: consulta e interações documentadas em work/ui127-browser"
+          ],
+          "historical_evidence_is_not_current_validation": true
+        },
+        {
+          "name": "Agenda",
+          "ui134_status": "corrigido_e_testado_localmente",
+          "source": "hr_planning_ui121.js: agenda/milestones",
+          "ui134_evidence": "Retorno não informado explícito; marcos incluem o dia local correto; registros e permissões da resposta não são ampliados.",
+          "browser_validated_ui134": false,
+          "production_validated_ui134": false,
+          "historical_status": "parcial",
+          "historical_evidence": [
+            "Chrome local: consulta e interações documentadas em work/ui127-browser"
+          ],
+          "historical_evidence_is_not_current_validation": true
+        },
+        {
+          "name": "Equipe por período",
+          "ui134_status": "corrigido_com_limites",
+          "source": "hr_workspace.js: rosterTable",
+          "ui134_evidence": "Região rolável ganhou nome acessível. HTML real executado em PT/EN; a jornada de navegação da tabela com registros não foi repetida.",
+          "browser_validated_ui134": false,
+          "production_validated_ui134": false,
+          "historical_status": "parcial",
+          "historical_evidence": [
+            "Chrome local: consulta e interações documentadas em work/ui127-browser"
+          ],
+          "historical_evidence_is_not_current_validation": true
+        },
+        {
+          "name": "Necessidades e cobertura",
+          "ui134_status": "revisado_por_codigo_sem_alteracao",
+          "source": "hr_workspace.js: coverageHtml; hr_workspace.css",
+          "ui134_evidence": "Cobertura mantém informação por dia e diferença entre proposta e confirmação. Não foi identificada necessidade de campo novo; nenhum fluxo de gravação retestado.",
+          "browser_validated_ui134": false,
+          "production_validated_ui134": false,
+          "historical_status": "revisado_com_limites",
+          "historical_evidence": [
+            "UI128 · API · work/ui128-rh-report.json#/functions/2: validated through real isolated HTTP; no backend change. Validação local isolada; navegador/publicação não confirmados por este agente."
+          ],
+          "historical_evidence_is_not_current_validation": true
+        },
+        {
+          "name": "Filtros de período/equipe",
+          "ui134_status": "regressao_local_preservada",
+          "source": "hr_insights_ui123.js: select/filters/summary",
+          "ui134_evidence": "Filtros por pessoa, local e projeto, respostas vazias e restrições passam nas regressões de projeção. Controles em navegador não foram exercitados.",
+          "browser_validated_ui134": false,
+          "production_validated_ui134": false,
+          "historical_status": "parcial",
+          "historical_evidence": [
+            "Chrome local: consulta e interações documentadas em work/ui127-browser"
+          ],
+          "historical_evidence_is_not_current_validation": true
+        },
+        {
+          "name": "Colaboradores",
+          "ui134_status": "revisado_por_codigo_sem_alteracao",
+          "source": "hr_workspace.js: peopleHtml",
+          "ui134_evidence": "Busca, quantidade filtrada, lotação e identificação de seleção existentes preservadas. Sem teste novo da seleção do cadastro completo.",
+          "browser_validated_ui134": false,
+          "production_validated_ui134": false,
+          "historical_status": "parcial",
+          "historical_evidence": [
+            "Chrome conectado, ambiente fictício isolado: Gestora: busca Ana, cargo/observações e filtros persistidos. Documento PNG fictício conferido, vencimento 20/10, retorno à fila preservado. Escala em terra 20–22/10; viagens no calendário mensal/agenda/equipe, teclado e 390px. Horas devolvidas, corrigidas para 15,75 h, reenviadas e aprovadas por outra conta; despesa 48,90 rejeitada com motivo. Quatro relatórios consultados, CSV documental conferido."
+          ],
+          "historical_evidence_is_not_current_validation": true
+        },
+        {
+          "name": "Perfil do colaborador",
+          "ui134_status": "revisado_por_codigo_sem_alteracao",
+          "source": "hr_workspace.js: peopleHtml",
+          "ui134_evidence": "Cadastros privados e contatos de emergência continuam separados do perfil profissional. Atalhos são filtrados pelas permissões existentes.",
+          "browser_validated_ui134": false,
+          "production_validated_ui134": false,
+          "historical_status": "parcial",
+          "historical_evidence": [
+            "Chrome conectado, ambiente fictício isolado: Gestora: busca Ana, cargo/observações e filtros persistidos. Documento PNG fictício conferido, vencimento 20/10, retorno à fila preservado. Escala em terra 20–22/10; viagens no calendário mensal/agenda/equipe, teclado e 390px. Horas devolvidas, corrigidas para 15,75 h, reenviadas e aprovadas por outra conta; despesa 48,90 rejeitada com motivo. Quatro relatórios consultados, CSV documental conferido."
+          ],
+          "historical_evidence_is_not_current_validation": true
+        },
+        {
+          "name": "Editar cadastro",
+          "ui134_status": "nao_retestado_nesta_frente",
+          "source": "Matriz UI132; fluxo preservado",
+          "ui134_evidence": "Não foi realizada revisão específica nesta frente. Evidência histórica não é convertida em validação UI134.",
+          "browser_validated_ui134": false,
+          "production_validated_ui134": false,
+          "historical_status": "parcial",
+          "historical_evidence": [
+            "Chrome conectado, ambiente fictício isolado: Gestora: busca Ana, cargo/observações e filtros persistidos. Documento PNG fictício conferido, vencimento 20/10, retorno à fila preservado. Escala em terra 20–22/10; viagens no calendário mensal/agenda/equipe, teclado e 390px. Horas devolvidas, corrigidas para 15,75 h, reenviadas e aprovadas por outra conta; despesa 48,90 rejeitada com motivo. Quatro relatórios consultados, CSV documental conferido."
+          ],
+          "historical_evidence_is_not_current_validation": true
+        },
+        {
+          "name": "Documentos pessoais",
+          "ui134_status": "revisado_por_codigo_sem_alteracao",
+          "source": "hr_workspace.js: recordCard/shortStatus/detailFields",
+          "ui134_evidence": "Validade e conferência continuam distintas; nomes longos possuem quebra de linha. Nenhuma aprovação ou gravação nova foi executada.",
+          "browser_validated_ui134": false,
+          "production_validated_ui134": false,
+          "historical_status": "parcial",
+          "historical_evidence": [
+            "Chrome conectado, ambiente fictício isolado: Gestora: busca Ana, cargo/observações e filtros persistidos. Documento PNG fictício conferido, vencimento 20/10, retorno à fila preservado. Escala em terra 20–22/10; viagens no calendário mensal/agenda/equipe, teclado e 390px. Horas devolvidas, corrigidas para 15,75 h, reenviadas e aprovadas por outra conta; despesa 48,90 rejeitada com motivo. Quatro relatórios consultados, CSV documental conferido."
+          ],
+          "historical_evidence_is_not_current_validation": true
+        },
+        {
+          "name": "Cadastrar documento",
+          "ui134_status": "nao_retestado_nesta_frente",
+          "source": "Matriz UI132; fluxo preservado",
+          "ui134_evidence": "Não foi realizada revisão específica nesta frente. Evidência histórica não é convertida em validação UI134.",
+          "browser_validated_ui134": false,
+          "production_validated_ui134": false,
+          "historical_status": "parcial",
+          "historical_evidence": [
+            "Chrome conectado, ambiente fictício isolado: Gestora: busca Ana, cargo/observações e filtros persistidos. Documento PNG fictício conferido, vencimento 20/10, retorno à fila preservado. Escala em terra 20–22/10; viagens no calendário mensal/agenda/equipe, teclado e 390px. Horas devolvidas, corrigidas para 15,75 h, reenviadas e aprovadas por outra conta; despesa 48,90 rejeitada com motivo. Quatro relatórios consultados, CSV documental conferido."
+          ],
+          "historical_evidence_is_not_current_validation": true
+        },
+        {
+          "name": "Anexos privados",
+          "ui134_status": "revisado_por_codigo_sem_alteracao",
+          "source": "hr_workspace.js: detailFields; hr_workspace.css: hr-files",
+          "ui134_evidence": "Ações explícitas de visualizar/baixar/remover e layout com quebra de linhas foram inspecionados. Sem download novo, API ou navegador nesta frente.",
+          "browser_validated_ui134": false,
+          "production_validated_ui134": false,
+          "historical_status": "parcial",
+          "historical_evidence": [
+            "Chrome conectado, ambiente fictício isolado: Gestora: busca Ana, cargo/observações e filtros persistidos. Documento PNG fictício conferido, vencimento 20/10, retorno à fila preservado. Escala em terra 20–22/10; viagens no calendário mensal/agenda/equipe, teclado e 390px. Horas devolvidas, corrigidas para 15,75 h, reenviadas e aprovadas por outra conta; despesa 48,90 rejeitada com motivo. Quatro relatórios consultados, CSV documental conferido."
+          ],
+          "historical_evidence_is_not_current_validation": true
+        },
+        {
+          "name": "Conferência documental",
+          "ui134_status": "nao_retestado_nesta_frente",
+          "source": "Matriz UI132; fluxo preservado",
+          "ui134_evidence": "Não foi realizada revisão específica nesta frente. Evidência histórica não é convertida em validação UI134.",
+          "browser_validated_ui134": false,
+          "production_validated_ui134": false,
+          "historical_status": "parcial",
+          "historical_evidence": [
+            "Chrome conectado, ambiente fictício isolado: Gestora: busca Ana, cargo/observações e filtros persistidos. Documento PNG fictício conferido, vencimento 20/10, retorno à fila preservado. Escala em terra 20–22/10; viagens no calendário mensal/agenda/equipe, teclado e 390px. Horas devolvidas, corrigidas para 15,75 h, reenviadas e aprovadas por outra conta; despesa 48,90 rejeitada com motivo. Quatro relatórios consultados, CSV documental conferido."
+          ],
+          "historical_evidence_is_not_current_validation": true
+        },
+        {
+          "name": "Escalas e viagens",
+          "ui134_status": "corrigido_e_testado_localmente",
+          "source": "hr_planning_ui121.js: personRecords/agenda",
+          "ui134_evidence": "Consulta distingue escala prevista, viagem e falta de retorno. Sem alteração de períodos/registro, sem teste de criação de escala ou viagem.",
+          "browser_validated_ui134": false,
+          "production_validated_ui134": false,
+          "historical_status": "parcial",
+          "historical_evidence": [
+            "Chrome conectado, ambiente fictício isolado: Gestora: busca Ana, cargo/observações e filtros persistidos. Documento PNG fictício conferido, vencimento 20/10, retorno à fila preservado. Escala em terra 20–22/10; viagens no calendário mensal/agenda/equipe, teclado e 390px. Horas devolvidas, corrigidas para 15,75 h, reenviadas e aprovadas por outra conta; despesa 48,90 rejeitada com motivo. Quatro relatórios consultados, CSV documental conferido.",
+            "Chrome isolado: fechar formulário editado manteve rascunho; retomar restaurou Observações; Voltar do navegador voltou ao RH com rascunho disponível e mesma conta. Descarte/recusa comprovados nos handlers automatizados; recusa nativa não certificada por timeout do Chrome."
+          ],
+          "historical_evidence_is_not_current_validation": true
+        },
+        {
+          "name": "Cadastrar escala",
+          "ui134_status": "nao_retestado_nesta_frente",
+          "source": "Matriz UI132; fluxo preservado",
+          "ui134_evidence": "Não foi realizada revisão específica nesta frente. Evidência histórica não é convertida em validação UI134.",
+          "browser_validated_ui134": false,
+          "production_validated_ui134": false,
+          "historical_status": "parcial",
+          "historical_evidence": [
+            "Chrome conectado, ambiente fictício isolado: Gestora: busca Ana, cargo/observações e filtros persistidos. Documento PNG fictício conferido, vencimento 20/10, retorno à fila preservado. Escala em terra 20–22/10; viagens no calendário mensal/agenda/equipe, teclado e 390px. Horas devolvidas, corrigidas para 15,75 h, reenviadas e aprovadas por outra conta; despesa 48,90 rejeitada com motivo. Quatro relatórios consultados, CSV documental conferido.",
+            "Chrome isolado: fechar formulário editado manteve rascunho; retomar restaurou Observações; Voltar do navegador voltou ao RH com rascunho disponível e mesma conta. Descarte/recusa comprovados nos handlers automatizados; recusa nativa não certificada por timeout do Chrome."
+          ],
+          "historical_evidence_is_not_current_validation": true
+        },
+        {
+          "name": "Cadastrar viagem",
+          "ui134_status": "nao_retestado_nesta_frente",
+          "source": "Matriz UI132; fluxo preservado",
+          "ui134_evidence": "Não foi realizada revisão específica nesta frente. Evidência histórica não é convertida em validação UI134.",
+          "browser_validated_ui134": false,
+          "production_validated_ui134": false,
+          "historical_status": "parcial",
+          "historical_evidence": [
+            "Chrome conectado, ambiente fictício isolado: Gestora: busca Ana, cargo/observações e filtros persistidos. Documento PNG fictício conferido, vencimento 20/10, retorno à fila preservado. Escala em terra 20–22/10; viagens no calendário mensal/agenda/equipe, teclado e 390px. Horas devolvidas, corrigidas para 15,75 h, reenviadas e aprovadas por outra conta; despesa 48,90 rejeitada com motivo. Quatro relatórios consultados, CSV documental conferido."
+          ],
+          "historical_evidence_is_not_current_validation": true
+        },
+        {
+          "name": "Apontamento de horas",
+          "ui134_status": "corrigido_e_testado_localmente",
+          "source": "hr_weekly_timesheets.js: blank/rowsMarkup/refresh/bind; hr_workspace.css",
+          "ui134_evidence": "Limpar linha mantém foco no mesmo dia; seleção é identificada em texto; dias vazios em consulta ficam bloqueados. Handlers e regressões preservam IDs, versões, notas, filtros, demais dias, projetos aprovados, sessão e operação de salvamento.",
+          "browser_validated_ui134": false,
+          "production_validated_ui134": false,
+          "historical_status": "parcial",
+          "historical_evidence": [
+            "Chrome local, colaboradora fictícia: motivo visível; editar segundo dia (8,25 h), total 15,75 h; guardar/retomar mantém valores; salvar persiste após recarregar; envio confirmado em etapa separada; estado Enviado para análise sem botão de edição."
+          ],
+          "historical_evidence_is_not_current_validation": true
+        },
+        {
+          "name": "Despesas",
+          "ui134_status": "revisado_por_codigo_sem_alteracao",
+          "source": "hr_workspace.js: expenseTotals/formFields/shortStatus",
+          "ui134_evidence": "Moedas separadas, escopo dos totais e diferença entre valor apresentado, aprovação e pagamento foram conferidos no código; sem nova jornada de despesa.",
+          "browser_validated_ui134": false,
+          "production_validated_ui134": false,
+          "historical_status": "parcial",
+          "historical_evidence": [
+            "Chrome local, colaboradora fictícia: despesa rejeitada mostra motivo, BRL 48,90 e não oferece edição/reenvio; nenhum pagamento ou e-mail."
+          ],
+          "historical_evidence_is_not_current_validation": true
+        },
+        {
+          "name": "Conferências e aprovações",
+          "ui134_status": "regressao_parcial_sem_alteracao",
+          "source": "tests/test_ui129_weekly_ui.cjs",
+          "ui134_evidence": "Regressões de apontamentos por projeto preservam capacidades, proibição de autoaprovação e comportamento após devolução. Não cobre uma revisão completa de documentos/despesas.",
+          "browser_validated_ui134": false,
+          "production_validated_ui134": false,
+          "historical_status": "parcial",
+          "historical_evidence": [
+            "Chrome conectado, ambiente fictício isolado: Gestora: busca Ana, cargo/observações e filtros persistidos. Documento PNG fictício conferido, vencimento 20/10, retorno à fila preservado. Escala em terra 20–22/10; viagens no calendário mensal/agenda/equipe, teclado e 390px. Horas devolvidas, corrigidas para 15,75 h, reenviadas e aprovadas por outra conta; despesa 48,90 rejeitada com motivo. Quatro relatórios consultados, CSV documental conferido."
+          ],
+          "historical_evidence_is_not_current_validation": true
+        },
+        {
+          "name": "Devolução com justificativa",
+          "ui134_status": "regressao_parcial_sem_alteracao",
+          "source": "tests/test_ui129_weekly_ui.cjs",
+          "ui134_evidence": "Recibo de horas devolvidas mantém restrição de consulta ao rascunho. Não foi repetida a digitação/interação completa de justificativa em navegador.",
+          "browser_validated_ui134": false,
+          "production_validated_ui134": false,
+          "historical_status": "parcial",
+          "historical_evidence": [
+            "Chrome local: consulta e interações documentadas em work/ui127-browser",
+            "Chrome local, colaboradora fictícia: motivo visível; editar segundo dia (8,25 h), total 15,75 h; guardar/retomar mantém valores; salvar persiste após recarregar; envio confirmado em etapa separada; estado Enviado para análise sem botão de edição."
+          ],
+          "historical_evidence_is_not_current_validation": true
+        },
+        {
+          "name": "Rejeição com justificativa",
+          "ui134_status": "nao_retestado_nesta_frente",
+          "source": "Matriz UI132; fluxo preservado",
+          "ui134_evidence": "Não foi realizada revisão específica nesta frente. Evidência histórica não é convertida em validação UI134.",
+          "browser_validated_ui134": false,
+          "production_validated_ui134": false,
+          "historical_status": "parcial",
+          "historical_evidence": [
+            "Chrome local: consulta e interações documentadas em work/ui127-browser",
+            "Chrome local, colaboradora fictícia: despesa rejeitada mostra motivo, BRL 48,90 e não oferece edição/reenvio; nenhum pagamento ou e-mail."
+          ],
+          "historical_evidence_is_not_current_validation": true
+        },
+        {
+          "name": "Reenvio após correção",
+          "ui134_status": "nao_retestado_nesta_frente",
+          "source": "Matriz UI132; fluxo preservado",
+          "ui134_evidence": "Não foi realizada revisão específica nesta frente. Evidência histórica não é convertida em validação UI134.",
+          "browser_validated_ui134": false,
+          "production_validated_ui134": false,
+          "historical_status": "parcial",
+          "historical_evidence": [
+            "Chrome local, colaboradora fictícia: motivo visível; editar segundo dia (8,25 h), total 15,75 h; guardar/retomar mantém valores; salvar persiste após recarregar; envio confirmado em etapa separada; estado Enviado para análise sem botão de edição."
+          ],
+          "historical_evidence_is_not_current_validation": true
+        },
+        {
+          "name": "Relatórios e exportação",
+          "ui134_status": "nao_retestado_nesta_frente",
+          "source": "Matriz UI132; fluxo preservado",
+          "ui134_evidence": "Não foi realizada revisão específica nesta frente. Evidência histórica não é convertida em validação UI134.",
+          "browser_validated_ui134": false,
+          "production_validated_ui134": false,
+          "historical_status": "parcial",
+          "historical_evidence": [
+            "Chrome conectado, ambiente fictício isolado: Gestora: busca Ana, cargo/observações e filtros persistidos. Documento PNG fictício conferido, vencimento 20/10, retorno à fila preservado. Escala em terra 20–22/10; viagens no calendário mensal/agenda/equipe, teclado e 390px. Horas devolvidas, corrigidas para 15,75 h, reenviadas e aprovadas por outra conta; despesa 48,90 rejeitada com motivo. Quatro relatórios consultados, CSV documental conferido."
+          ],
+          "historical_evidence_is_not_current_validation": true
+        },
+        {
+          "name": "Histórico e recibo de salvamento",
+          "ui134_status": "regressao_parcial_sem_alteracao",
+          "source": "tests/test_ui129_weekly_ui.cjs",
+          "ui134_evidence": "Operação incerta mantém o mesmo corpo e ID; recibo só oferece consulta quando permitido. Não representa revisão de todos os históricos de RH.",
+          "browser_validated_ui134": false,
+          "production_validated_ui134": false,
+          "historical_status": "parcial",
+          "historical_evidence": [
+            "Chrome local: consulta e interações documentadas em work/ui127-browser",
+            "Chrome local, colaboradora fictícia: motivo visível; editar segundo dia (8,25 h), total 15,75 h; guardar/retomar mantém valores; salvar persiste após recarregar; envio confirmado em etapa separada; estado Enviado para análise sem botão de edição."
+          ],
+          "historical_evidence_is_not_current_validation": true
+        }
+      ]
+    }
+  ],
+  "browser": false,
+  "production": false
+}

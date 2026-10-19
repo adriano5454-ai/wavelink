@@ -1,0 +1,20 @@
+[
+  {
+    "suite": "tests/test_ui134_it_journeys.cjs",
+    "exit": 0,
+    "stdout": "UI134 IT journeys: 102 assertions passed. Context, next actions, exact capabilities, safe cancellation, homonyms, filters/focus, history, PT/EN and responsive CSS.\n",
+    "stderr": ""
+  },
+  {
+    "suite": "tests/test_ui130_it_ui.cjs",
+    "exit": 0,
+    "stdout": "UI130 IT UI: 266 assertions passed. Real HTTP fixture, actual component/event handlers in isolated DOM adapter; no browser/production claims.\n",
+    "stderr": ""
+  },
+  {
+    "suite": "tests/test_ui134_navigation.cjs",
+    "exit": 0,
+    "stdout": "{\"suite\":\"UI134 directory and navigation handlers\",\"checks\":81,\"passed\":true,\"browser\":false}\n",
+    "stderr": ""
+  }
+]

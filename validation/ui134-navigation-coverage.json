@@ -1,0 +1,21 @@
+{
+  "release": "UI134",
+  "rows": [
+    {
+      "area": "Navegação",
+      "view": "Áreas de trabalho e busca",
+      "implemented": "Rótulo visível, grupos com texto e sublinhado, ícones próprios para RH/TI, estado sem acesso separado de busca sem resultados.",
+      "local_validation": "Handlers reais em árvore DOM simulada, PT/EN; nenhuma concessão de acesso ou gravação.",
+      "browser_validation": false
+    },
+    {
+      "area": "Navegação",
+      "view": "Menu lateral móvel e atalho para o conteúdo",
+      "implemented": "Foco na área ativa da Frota, restauração do foco ao fechar menu ou mudar largura, cliques modificados e ajuda em outra aba preservados.",
+      "local_validation": "Handlers reais com foco/aria/inert simulados; revisão independente.",
+      "browser_validation": false
+    }
+  ],
+  "screens_reviewed": 2,
+  "not_a_browser_test": true
+}

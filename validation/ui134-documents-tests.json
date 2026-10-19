@@ -1,0 +1,32 @@
+[
+  {
+    "file": "test_ui134_documents_ui.cjs",
+    "passed": true,
+    "stdout": "{\"suite\":\"UI134 documents: actual controllers, local DOM adapter\",\"checks\":128,\"passed\":true,\"browser\":false}"
+  },
+  {
+    "file": "test_ui134_documents_sources.cjs",
+    "passed": true,
+    "stdout": "{\"suite\":\"UI134 source image states and context guards\",\"checks\":76,\"passed\":true,\"browser\":false,\"transport\":\"controlled fictitious responses\"}"
+  },
+  {
+    "file": "test_ui127_documents_agent.js",
+    "passed": true,
+    "stdout": "{\"suite\":\"ui127-documents-navigation-agent\",\"checks\":127,\"passed\":true}"
+  },
+  {
+    "file": "test_ui130_documents_people.cjs",
+    "passed": true,
+    "stdout": "{\"suite\":\"UI130 documents and people behavior\",\"checks\":89,\"passed\":true}"
+  },
+  {
+    "file": "test_ui127_quality_agent_logs.js",
+    "passed": true,
+    "stdout": "{\"suite\":\"UI127 independent log navigation quality\",\"checks\":52,\"result\":\"passed\"}"
+  },
+  {
+    "file": "test_ui133_logs_context.cjs",
+    "passed": true,
+    "stdout": "UI133 logbook integration: open source, back, account/route/close guards, Fleet binary adapter and both language shells passed. No writes or session changes."
+  }
+]

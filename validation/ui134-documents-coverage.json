@@ -1,0 +1,124 @@
+{
+  "release": "UI134",
+  "area": "Checklists, biblioteca e fontes dos livros",
+  "method": "Inspeção de código e execução dos controladores reais em adaptador DOM local; dados fictícios. Sem navegador ou medição de layout.",
+  "screens": [
+    {
+      "screen": "Catálogo de checklists e resumo selecionado",
+      "status": "Corrigido e testado localmente",
+      "findings": [
+        "O resumo recebia foco somente na condição de tela estreita; o botão não informava expansão.",
+        "Metadados densos usavam tamanho de 11 px em parte do cartão."
+      ],
+      "changes": [
+        "Foco no título do resumo ao abrir em qualquer largura; aria-controls/aria-expanded refletem o painel.",
+        "Retorno conserva busca, rota, seleção e sessão; estado expandido é limpo.",
+        "Metadados ajustados para 0,8125 rem, entrelinha 1,5; ação de resumo com mínimo de 44 px."
+      ],
+      "tested": "Controlador real nas condições de 390 e 1280 px; abrir resumo, voltar, preservar busca/registro/conta, invalidar outra conta. Não são pixels medidos."
+    },
+    {
+      "screen": "Etapa do checklist: pendências, revisão e filtros",
+      "status": "Corrigido e testado localmente",
+      "findings": [
+        "Mostrar pendências a partir da revisão ocultava o botão com foco e não focava o destino."
+      ],
+      "changes": [
+        "Ações que trocam para a lista de verificações focam o contador de resultados e rolam até ele.",
+        "Busca digitada mantém foco no campo; indicador de foco explícito."
+      ],
+      "tested": "Executado painel Revisão → Mostrar pendências → lista visível, foco no resultado, dados/rascunhos intactos e guarda de contexto."
+    },
+    {
+      "screen": "Etapa do checklist: instruções, fontes e ferramentas",
+      "status": "Inspecionado; comportamento preservado",
+      "findings": [
+        "Fontes e instruções permanecem separadas dos resultados e das evidências na estrutura atual."
+      ],
+      "changes": [],
+      "tested": "Markup do painel produzido pelo controlador no teste de etapa; navegação de fontes/imagens não foi repetida como jornada completa nesta rodada.",
+      "remaining": "Leitura visual e navegação real com teclado/leitor de tela pendentes."
+    },
+    {
+      "screen": "Editor de resultado e fotografia do checklist",
+      "status": "Inspecionado; não alterado",
+      "changes": [],
+      "tested": "Inspeção de checklist_forms.js: preservados ctx.guard, ctx.validate, evidenceBusy, checkSaving, rascunho e aviso de resultado apenas local.",
+      "remaining": "Não houve preenchimento completo nem renderização visual do editor nesta UI134."
+    },
+    {
+      "screen": "Revisão de evidências, aprovação, prontidão e finalização",
+      "status": "Inspecionado; não alterado",
+      "changes": [],
+      "tested": "Inspeção de checklist_review.js: confirmação e snapshot versionados, descarte de nota protegido e fotografia separada.",
+      "remaining": "Não houve nova execução completa dessas decisões na UI134; inspeção não equivale a aprovação E2E."
+    },
+    {
+      "screen": "Biblioteca, pastas/subpastas e seleção de revisões",
+      "status": "Corrigido e testado localmente",
+      "findings": [
+        "Redesenhar a lista após selecionar uma revisão removia o foco da checkbox.",
+        "Busca global mantinha caminho da pasta visível e não tinha limpar explícito.",
+        "Estado vazio dizia incorretamente que novos uploads sempre permanecem na raiz.",
+        "Título do caminho exibia prefixo interno Original files em PT."
+      ],
+      "changes": [
+        "Restauração de foco na revisão exata após marcação/desmarcação.",
+        "Contador de resultados com anúncio discreto; limpar busca retorna à mesma pasta e foca o campo.",
+        "Caminho de pasta oculto durante busca global; mensagens vazias precisas.",
+        "Prefixo interno do caminho localizado, nomes/IDs salvos preservados."
+      ],
+      "tested": "Mount completo do componente, seleção por checkbox, busca com acentos, resultado em subpasta, limpar mantendo pasta, vazio, troca de conta e dados imutáveis."
+    },
+    {
+      "screen": "Biblioteca: revisão exata, histórico e navegação",
+      "status": "Regressão herdada executada",
+      "changes": [],
+      "tested": "Suítes UI127/UI130 reexecutadas: voltar/avançar mantém contexto, confirmação de cancelamento, origem de pasta por ID, sessão e proteção de rascunhos.",
+      "remaining": "Consulta visual dos detalhes/histórico não foi refeita no navegador."
+    },
+    {
+      "screen": "Upload e nova revisão de original",
+      "status": "Inspecionado e regressão de cancelamento executada; não alterado",
+      "changes": [],
+      "tested": "UI127 testa campos que tornam formulário alterado, cancelamento confirmado/recusado, arquivo selecionado e bloqueio durante envio.",
+      "remaining": "Nenhum upload HTTP ou documento real foi enviado nesta rodada."
+    },
+    {
+      "screen": "Livros: conteúdo extraído e células da fonte",
+      "status": "Corrigido e testado localmente",
+      "findings": [
+        "Tabela completa sem busca, paginação, cabeçalhos de linha ou região rolável identificada.",
+        "Textos herdados do leitor permaneciam em inglês."
+      ],
+      "changes": [
+        "Busca por célula, valor, fórmula e metadados em toda a extração antes da paginação de 100 linhas.",
+        "Contagem explícita, páginas anterior/próxima, foco após paginação e limpar busca.",
+        "Tabela com caption, scope nas linhas/colunas e região focável; largura/altura limitadas com rolagem local.",
+        "Traduções dos rótulos e ajuda, com EN preservado."
+      ],
+      "tested": "205 células, match fora da página inicial, busca por acento/fórmula/metadado, vazio, limpeza, contexto expirado, valores literais e nenhuma alteração nos dados."
+    },
+    {
+      "screen": "Livros: imagens da fonte e retorno aos documentos",
+      "status": "Corrigido e testado localmente",
+      "findings": [
+        "Falha de imagem era apenas um toast; uma falha tardia podia ser anunciada depois de trocar a tela/conta.",
+        "Posição JSON da imagem ocupava o cartão sempre visível."
+      ],
+      "changes": [
+        "Estado de carregamento/erro junto à imagem e botão disponível para nova tentativa.",
+        "Sucesso e falha respeitam conta, rota, modal e conteúdo atuais; foco passa ao link da imagem.",
+        "Posição da fonte em detalhes; link de tamanho original anuncia nova aba e usa noopener noreferrer.",
+        "Callback de retorno da UI133 preservado."
+      ],
+      "tested": "Sucesso/403/repetição, contexto alterado antes de agir e durante sucesso/falha, bytes recebidos preservados, nenhuma mensagem externa ou mudança de sessão."
+    }
+  ],
+  "unresolved": [
+    "Validação visual real, contrastes combinados com todos os temas, teclado/leitor de tela e medidas responsivas no navegador continuam pendentes.",
+    "As prévias são HTML dos componentes, não capturas de tela ou comprovação de layout.",
+    "Não há novos vínculos universais, pastas sintéticas, uploads genéricos, migrações nem mudanças de autorização.",
+    "Este recorte não encerra a revisão de todas as abas do aplicativo."
+  ]
+}

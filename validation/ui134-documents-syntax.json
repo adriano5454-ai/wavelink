@@ -1,0 +1,34 @@
+[
+  {
+    "file": "app/static/checklist_workspace.js",
+    "passed": true
+  },
+  {
+    "file": "app/static/checklist_stage.js",
+    "passed": true
+  },
+  {
+    "file": "app/static/original_library.js",
+    "passed": true
+  },
+  {
+    "file": "app/static/logs_workspace.js",
+    "passed": true
+  },
+  {
+    "file": "app/static/logs.js",
+    "passed": true
+  },
+  {
+    "file": "tests/test_ui134_documents_dom.cjs",
+    "passed": true
+  },
+  {
+    "file": "tests/test_ui134_documents_ui.cjs",
+    "passed": true
+  },
+  {
+    "file": "tests/test_ui134_documents_sources.cjs",
+    "passed": true
+  }
+]

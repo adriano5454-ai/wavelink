@@ -1,90 +1,76 @@
 {
-  "release": "UI133",
-  "version": "1.34.33",
+  "release": "UI134",
+  "version": "1.34.34",
   "status": "integrado_testado_localmente_nao_publicado",
-  "base_commit": "c2a38ac189b58f874cf56d70412f94b4b1e12124",
+  "base_commit": "d44a6167a4155d22ee664203cb3232d12b1c8582",
   "final_commit": null,
   "deployment": null,
   "runtime": {
     "status": "passed",
-    "version": "1.34.33",
-    "runtime_manifest_sha256": "3e6b34a5230e9a11a5d3de9fca53ee1fc9c4451428cc200460a9db8c20cf0d0b",
-    "resources": 2378,
+    "version": "1.34.34",
+    "runtime_manifest_sha256": "8e146733998f6b20e5307750e5476cc11a44f12c4abc3aca45340ccf0b7412ed",
+    "resources": 2388,
     "all_reconstructed_files_identical": true,
     "python_syntax_files": 234,
-    "cache_assets": 8,
+    "cache_assets": 22,
     "html_shells": 4,
-    "base_repository_files_preserved": 895,
+    "base_repository_files_preserved": 986,
     "production_access": false
   },
   "python": {
-    "unique_passed": 51,
+    "unique_passed": 49,
     "runs": [
       {
-        "group": "Checklists: autoria, fases, evidências, fontes e acesso",
-        "xml": "ui133-checklists-tests.xml",
-        "passed": 9
-      },
-      {
-        "group": "Checklists: ordem das fases e contrato HTTP final",
-        "xml": "ui133-checklists-order-tests.xml",
+        "group": "Jornada completa: envio, aprovação, devolução, correção e reenvio",
+        "xml": "ui134-regression-weekly-journey.xml",
         "passed": 1
       },
       {
-        "group": "Livros: vínculos, liberação, paginação e imagens",
-        "xml": "ui133-logs-tests-1.xml",
-        "passed": 5
+        "group": "Projetos e horas: acesso, backup e alterações",
+        "xml": "ui134-regression-weekly-security-1.xml",
+        "passed": 10
       },
       {
-        "group": "Livros: integridade, Frota e revogação",
-        "xml": "ui133-logs-tests-2.xml",
-        "passed": 4
+        "group": "Projetos e horas: atomicidade, dados anteriores e estados",
+        "xml": "ui134-regression-weekly-security-2.xml",
+        "passed": 14
       },
       {
-        "group": "Regressão de documentos, perfis e pastas",
-        "xml": "ui133-regression-documents-base.xml",
-        "passed": 11
+        "group": "Projetos e horas: privacidade, aprovação e revogação",
+        "xml": "ui134-regression-weekly-security-3.xml",
+        "passed": 10
       },
       {
-        "group": "Regressão de despesas e passagens de serviço",
-        "xml": "ui133-regression-attachments.xml",
-        "passed": 6
-      },
-      {
-        "group": "Regressão de manutenção e manifestos",
-        "xml": "ui133-regression-equipment.xml",
-        "passed": 4
-      },
-      {
-        "group": "Preservação, backups, relatórios e idiomas",
-        "xml": "ui133-regression-preservation.xml",
+        "group": "Preservação de usuários, dados, backup e relatórios",
+        "xml": "ui134-regression-preservation.xml",
         "passed": 8
       },
       {
-        "group": "Ajuda e recursos servidos em português e inglês",
-        "xml": "ui133-regression-help.xml",
-        "passed": 4
+        "group": "Ajuda, idiomas e recursos servidos",
+        "xml": "ui134-regression-help.xml",
+        "passed": 6
       }
     ]
   },
   "javascript": {
-    "passed_suites": 67,
+    "passed_suites": 73,
     "syntax_files": 113
   },
   "preservation": {
     "production_access": false,
     "production_data_changed": false,
     "existing_users_changed": false,
+    "temporary_user_changed": false,
     "outbound_messages": false,
     "database_reset": false,
     "schema_changed": false,
-    "operational_writers_changed": false,
-    "ui132_base_retained": true
+    "writer_contracts_changed": false,
+    "ui133_base_retained": true
   },
   "limits": [
-    "Sem Chrome, navegador automatizado, captura de tela, teste em aparelho ou acesso à produção nesta rodada.",
-    "As prévias HTML usam o componente real e envelopes fictícios de teste. Não são screenshots nem comprovam a aparência final em navegador.",
-    "Fontes de livros são conteúdo extraído da planilha; o arquivo Excel completo não é armazenado por esse fluxo.",
-    "Registros antigos sem identificador salvo de autor não recebem associação por nome. Fontes do livro não são vinculadas automaticamente a quem fez um lançamento."
+    "Sem Chrome, navegador automatizado, captura de tela, leitor de tela ou aparelho real nesta rodada.",
+    "Prévias HTML usam componentes reais e dados fictícios. Não são screenshots nem comprovam aparência final em navegador.",
+    "A jornada de horas semanais foi testada em banco isolado. O percurso com o usuário temporário na Corcovado continua sem nova validação em produção.",
+    "A matriz distingue telas corrigidas, inspeção de código e vistas não retestadas. Esta entrega não afirma que todas as telas históricas foram validadas."
   ]
 }

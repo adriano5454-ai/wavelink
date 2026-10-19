@@ -1,0 +1,93 @@
+{
+  "release": "UI134",
+  "base": "UI133 equivalente a GitHub d44a6167a4155d22ee664203cb3232d12b1c8582",
+  "status": "Implementado e testado localmente; fontes e testes congelados para integração",
+  "product_files": [
+    "app/static/checklist_workspace.js",
+    "app/static/checklist_workspace.css",
+    "app/static/checklist_stage.js",
+    "app/static/original_library.js",
+    "app/static/logs.js",
+    "app/static/logs_workspace.js",
+    "app/static/logs_workspace.css"
+  ],
+  "product_hashes": {
+    "app/static/checklist_workspace.js": "eadf84806125279d6c3e07f3750863efa5f8430cd1bbcf1cac023950638e4a79",
+    "app/static/checklist_workspace.css": "aab4abf6aa8cdd700a54672d69d802fc2a0059ab4bad51e5d4a2025c1b152317",
+    "app/static/checklist_stage.js": "cec34c029eb1e3e5aed85a93293b1ac472d3e9e2fdc4765d82c63c9a3e5142bb",
+    "app/static/original_library.js": "744e9377d88ce616aa90c0d41a4e7e293d34f691b0ca1b1895d29e99da3e44be",
+    "app/static/logs.js": "024667ba297cdd5e7eed1c985e73329eb17a613d28308087fa77b36537bfb039",
+    "app/static/logs_workspace.js": "ea0df837906587b7767e1fbc72f5418681a7916cb0089ab072a9789af20bf36e",
+    "app/static/logs_workspace.css": "55d62d10b98eb8f0184310470f7db096873454f2971d9d79a834175df6942461"
+  },
+  "test_files": [
+    "tests/test_ui134_documents_ui.cjs",
+    "tests/test_ui134_documents_sources.cjs"
+  ],
+  "test_utility": "tests/test_ui134_documents_dom.cjs (adaptador de DOM, não contar como suíte)",
+  "implemented": [
+    "Leitura pesquisável e paginada da extração de fontes, com rótulos e estados acessíveis.",
+    "Erros de imagens apresentados no próprio contexto; ações assíncronas não atualizam uma tela/conta antiga.",
+    "Seleção de originais conserva foco; busca global e pasta de origem ficam claras, com limpar pesquisa sem perder a pasta.",
+    "Atalhos de checklist focam o resultado ou resumo exibido; resumo informa expansão.",
+    "Ajustes visuais delimitados de leitura, foco, alvos de toque e rolagem de tabela."
+  ],
+  "tests": {
+    "new_suites": 2,
+    "new_assertion_checks": 204,
+    "new_suite_counts": {
+      "test_ui134_documents_ui": 128,
+      "test_ui134_documents_sources": 76
+    },
+    "regression_suites": 4,
+    "regression_checks_with_reported_counts": 268,
+    "regression_note": "A suíte UI133 adicional de integração de livros passou e não publica uma contagem própria. Não somada aos 268.",
+    "syntax_files": 8,
+    "all_passed": true,
+    "evidence": "work/ui134-documents-tests.json",
+    "syntax_evidence": "work/ui134-documents-syntax.json",
+    "method": "Código de produção executado em Node com adaptador DOM e transporte fictício controlado; não navegador, HTTP, TestClient nem medição visual."
+  },
+  "coverage": "work/ui134-documents-coverage.json",
+  "translations": {
+    "file": "work/ui134-documents-translations.json",
+    "pairs": 25,
+    "integrated_by_coordinator": true
+  },
+  "previews": {
+    "directory": "work/ui134-documents-visual-previews",
+    "index": "work/ui134-documents-visual-previews/index.html",
+    "pages": [
+      "biblioteca.html",
+      "fonte-livro.html"
+    ],
+    "kind": "HTML real serializado nos testes e CSS local; não screenshot",
+    "manifest": "work/ui134-documents-visual-preview-manifest.json",
+    "checks": {
+      "html_pages": 3,
+      "local_url_checks": 97,
+      "broken_urls": 0
+    },
+    "controls": "Operações e links do aplicativo desativados na cópia; arquivos e estilos locais portáteis."
+  },
+  "preservation": {
+    "production": false,
+    "browser": false,
+    "network": false,
+    "testclient": false,
+    "external_messages": false,
+    "schema_change": false,
+    "data_write": false,
+    "permission_change": false,
+    "new_document_relationship": false,
+    "session_logout": false,
+    "source_bytes_replaced": false
+  },
+  "limits": [
+    "Validação visual real, contrastes combinados com todos os temas, teclado/leitor de tela e medidas responsivas no navegador continuam pendentes.",
+    "As prévias são HTML dos componentes, não capturas de tela ou comprovação de layout.",
+    "Não há novos vínculos universais, pastas sintéticas, uploads genéricos, migrações nem mudanças de autorização.",
+    "Este recorte não encerra a revisão de todas as abas do aplicativo."
+  ],
+  "publication": "Não publicado; integração e entrega final são responsabilidade do coordenador."
+}

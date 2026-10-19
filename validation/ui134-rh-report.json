@@ -1,0 +1,149 @@
+{
+  "phase": "UI134",
+  "owner": "rh_revisao",
+  "status": "implemented_tested_locally_sources_frozen",
+  "browser_used": false,
+  "production_accessed": false,
+  "published": false,
+  "implemented": [
+    {
+      "problem": "Limpar linha substituía o tbody e removia o controle que estava com foco.",
+      "change": "Após limpar, foco vai ao projeto editável do mesmo dia; se só restar uma linha bloqueada, vai a Outro projeto naquele dia. Mensagem explica que a edição só é confirmada ao salvar.",
+      "preserved": "IDs, versões, notas, demais dias, projetos aprovados, filtro, conta e mecanismo atômico de salvamento."
+    },
+    {
+      "problem": "Seleção de linhas era perceptível principalmente na caixa de marcação e no total acima.",
+      "change": "Cada linha marcada recebe o texto Linha selecionada e destaque escopado; seleção não altera o conteúdo nem marca o formulário como editado.",
+      "preserved": "Campos continuam iguais até a ação de aplicar dados comuns."
+    },
+    {
+      "problem": "Dias vazios de uma resposta somente leitura eram criados como linhas desbloqueadas antes da aplicação do bloqueio geral.",
+      "change": "O próprio modelo/markup marca essas linhas como somente consulta, sem sugerir que já tenham sido enviadas.",
+      "preserved": "Permissões de servidor e bloqueio geral existente."
+    },
+    {
+      "problem": "Hoje e próximos marcos usavam o dia UTC, antecipando o calendário à noite no Brasil.",
+      "change": "Marcadores usam o dia civil local. O cálculo dos intervalos e as datas YYYY-MM-DD permanecem inalterados.",
+      "preserved": "Horários UTC de auditoria, períodos salvos e projeção permitida da equipe."
+    },
+    {
+      "problem": "Viagem sem retorno aparecia na agenda como uma data seguida de outro traço.",
+      "change": "Exibe Retorno não informado em PT e Return date not recorded em EN.",
+      "preserved": "Nenhuma data de retorno ou duração é presumida."
+    },
+    {
+      "problem": "Região rolável da equipe não tinha nome acessível; perfil chamava anexos operacionais de Documentos pessoais.",
+      "change": "Tabela recebe nome de região e o perfil usa Documentos relacionados.",
+      "preserved": "Mesmas ações, rotas e permissões dos documentos UI133."
+    }
+  ],
+  "product_files": [
+    {
+      "path": "app/static/hr_workspace.js",
+      "sha256": "a7e3e3c4fc3c7e8c69eb3820ecfe3a105407b761beb85d3efe7f8b337f246373"
+    },
+    {
+      "path": "app/static/hr_workspace.css",
+      "sha256": "9d958b43c22a103d005e2f4036619eeb045bded41f0e870fded927110ff0b87d"
+    },
+    {
+      "path": "app/static/hr_planning_ui121.js",
+      "sha256": "f90d83b2d8cb94ff8efd1fba9ea176d14eb707fad9d77c0cfe89bf9caa14930a"
+    },
+    {
+      "path": "app/static/hr_weekly_timesheets.js",
+      "sha256": "476078c535d6a6c1d17df7fb9fcdb5af711a276c426d5a998670d0de958ad0a8"
+    },
+    {
+      "path": "app/static/recognition_workspace.js",
+      "sha256": "dc3a564adcace52ea9344b51f2ce1cd9f5d25ead8713714009590bb95adc78c8"
+    }
+  ],
+  "inspected_without_changes": [
+    "app/static/hr_insights_ui123.js",
+    "app/static/recognition_workspace.css",
+    "Documentos/despesas e cadastros dentro de hr_workspace.js"
+  ],
+  "tests": [
+    {
+      "file": "tests/test_ui134_rh_planning.cjs",
+      "result": "passed",
+      "checks": 54,
+      "kind": "Node real renderers and real PT/EN dictionaries; subprocess TZ America/Bahia and Asia/Tokyo",
+      "covers": "23:59/00:00, saved civil dates unchanged, timeline marker, upcoming events, return not recorded, filter scope, named roster region"
+    },
+    {
+      "file": "tests/test_ui134_rh_weekly.cjs",
+      "result": "passed",
+      "checks": 63,
+      "kind": "Real weekly markup and delegated handlers in minimal DOM adapter",
+      "covers": "focus after clear, locked-row fallback, selected text, immutable source/revision/notes, account guard, detached controls, readonly blank rows"
+    },
+    {
+      "file": "tests/test_ui129_weekly_ui.cjs",
+      "result": "passed",
+      "checks": 145,
+      "kind": "Existing unchanged regression; controlled API adapter"
+    },
+    {
+      "file": "tests/test_ux_ui123.cjs",
+      "result": "passed",
+      "checks": 18,
+      "kind": "Existing unchanged planning/filter regression"
+    },
+    {
+      "file": "tests/test_ui121_experience.cjs",
+      "result": "passed",
+      "checks": 15,
+      "kind": "Existing unchanged calendar/projection regression"
+    },
+    {
+      "file": "tests/test_ui131_profile_navigation.cjs",
+      "result": "passed",
+      "checks": 38,
+      "kind": "Actual shipped profile navigation handler"
+    },
+    {
+      "file": "tests/test_ui131_profile_save_session.cjs",
+      "result": "passed",
+      "checks": 29,
+      "kind": "Actual submit callback with controlled asynchronous file/API result"
+    }
+  ],
+  "counts_note": "117 new assertion checks and 245 existing regression checks. Counts do not mean independent browser or server end-to-end scenarios.",
+  "syntax": "Four modified JavaScript files passed Node syntax checks.",
+  "static_contrast": {
+    "foreground": "#173d4b",
+    "selected_background": "#eef8f9",
+    "ratio": 10.76,
+    "meaning": "Computed foreground/background pair only; no whole-page or browser contrast audit claimed."
+  },
+  "coverage": "work/ui134-rh-coverage.json",
+  "translations": "work/ui134-rh-translations.json; integrated by root before final new tests",
+  "previews": {
+    "index": "work/ui134-rh-previews/index.html",
+    "pages": [
+      "semana.html",
+      "agenda.html"
+    ],
+    "manifest": "work/ui134-rh-preview-manifest.json",
+    "source": "Actual module markup; weekly refresh results from the tested adapter; fixtures only, no production records",
+    "portable": "Copy whole folder with styles and assets. Authenticated actions disabled; help copied locally.",
+    "static_validation": {
+      "local_url_checks": 186,
+      "broken_urls": 0,
+      "html_pages": 4
+    },
+    "limitations": "Not screenshots; no browser, layout measurement, keyboard/leitor de tela/device validation. Weekly dialog positioning is adapted for offline reading and disclosed."
+  },
+  "pending_ui133": {
+    "file_read": "outputs/UI133-pendencias.json",
+    "note": "That historical file describes a prior publication state; parent separately confirmed GitHub UI133 as current base. This agent did not inspect deployment. UI133 browser/device and production-user journeys remain pending; no universal attachment library or new uploads were introduced."
+  },
+  "remaining": [
+    "Integrated final package checks by coordinator.",
+    "Browser visual, keyboard, assistive-technology and real-device validation.",
+    "Live creation/approval of weekly project hours remains outside this no-production task.",
+    "Unretouched views retain historical evidence only, as explicitly identified in the matrix."
+  ]
+}

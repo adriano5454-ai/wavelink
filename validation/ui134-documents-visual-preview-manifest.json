@@ -1,0 +1,32 @@
+{
+  "kind": "actual_component_dom_from_local_adapter_not_screenshot",
+  "items": [
+    {
+      "title": "Biblioteca: pasta atual, busca e seleção de revisões",
+      "page": "biblioteca.html",
+      "source_fragment": "C:\\Users\\adria\\Documents\\Codex\\2026-10-17\\quero-concluir-a-mudan-a-da\\work\\ui134-documents-library-markup.html",
+      "fragment_sha256": "ceb6a17bb910f360661117979b5190fa068ccd7e678282c319a13aac461c926d",
+      "change_from_ui133": "A seleção conserva o foco do teclado. Limpar a busca global retorna à mesma pasta. O caminho da pasta fica oculto durante a busca global para evitar ambiguidade."
+    },
+    {
+      "title": "Livro: leitura de células e imagens de referência",
+      "page": "fonte-livro.html",
+      "source_fragment": "C:\\Users\\adria\\Documents\\Codex\\2026-10-17\\quero-concluir-a-mudan-a-da\\work\\ui134-documents-source-reader-markup.html",
+      "fragment_sha256": "1ed207f019dd1a6602bb281536dbd5bd9ee1f6dd2d3fbb6e159d668d464e26c9",
+      "change_from_ui133": "A extração ganha busca em todas as células, páginas de até 100 linhas e região rolável com foco. Falhas de imagem são mostradas junto ao botão; a posição na planilha fica em detalhes."
+    }
+  ],
+  "html_pages": 3,
+  "local_url_checks": 97,
+  "broken_local_urls": 0,
+  "browser_used": false,
+  "production_accessed": false,
+  "assets": [
+    "assets/ui68-home-scene.svg",
+    "assets/wavelink-approved-offshore-profile-ui87.webp",
+    "assets/wavelink-approved-offshore-ui87.webp",
+    "assets/wavelink-home-cover-ui86.svg",
+    "assets/wavelink-profile-cover-ui86.svg"
+  ],
+  "portable": "Copy the entire ui134-documents-visual-previews directory, including styles/ and assets/."
+}

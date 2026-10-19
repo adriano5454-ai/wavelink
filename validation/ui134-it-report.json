@@ -1,0 +1,110 @@
+{
+  "release": "UI134",
+  "status": "Implemented and locally tested; prepared for parent integration, not published",
+  "base": "UI133; GitHub d44a6167a4155d22ee664203cb3232d12b1c8582 supplied and verified by coordinator",
+  "scope": "TI usability + independent weekly-hours journey + shared navigation review",
+  "files": {
+    "app/static/it_workspace.js": "a1f9e17303b6898f2c2a33999bcd14b17684b0f3f78e13f826867fa71310b545",
+    "app/static/it_workspace.css": "8c5833250ee690c062c5e6bb8a8afedd02d191316a5435599b82009ce2c18d58",
+    "tests/test_ui134_it_journeys.cjs": "d7a8a0ad2fa901cd82f22f382c3f7af12db0df1e4a3d74980353bd95741612bb",
+    "tests/test_ui134_journeys_weekly.py": "32b9956b227bc7421efd6a9c1e965774c02fb91635fde923d7b13f675cdddffb"
+  },
+  "implementation": [
+    {
+      "area": "Queue and search",
+      "change": "Applied filters and exact server result range are visible. Returning preserves filters and highlights the last viewed request. A stale empty page has a truthful previous-page message; account change clears previous selection.",
+      "verified": "Actual AJIT event handlers; escaped search input and empty-pagination fixture."
+    },
+    {
+      "area": "Follow-up and actions",
+      "change": "A next-step panel explains each status. One authorized primary action is emphasized; all existing allowed transitions remain discoverable. Cancellation is a separate labelled disclosure with reason/history explanation.",
+      "verified": "Every real fixture state retains its exact backend allowed transition set; requester comment does not claim a status transition."
+    },
+    {
+      "area": "Forms and people",
+      "change": "Submit labels name the action. Priority help explains operational impact without an SLA. Same-name assignees show IDs already provided by the API, without private email or inferred identity.",
+      "verified": "Create and triage handlers, homonyms, original unavailable-assignee protection, exact HTTP replay payloads."
+    },
+    {
+      "area": "History and focus",
+      "change": "Actual event count is visible. Loading the last history page focuses the heading when the more button disappears. Filter result focus is restored after successful data load.",
+      "verified": "Actual pagination event with coherent offsets and history events; focus targets tested in DOM adapter."
+    },
+    {
+      "area": "Small screens and accessibility",
+      "change": "Scoped responsive rules, visible textual statuses,44px cancellation disclosure and visible focus. No new visual assets or animations.",
+      "verified": "CSS and markup contracts tested; real pixel layout/browser/assistive technology not tested."
+    }
+  ],
+  "tests": [
+    {
+      "file": "tests/test_ui134_it_journeys.cjs",
+      "passed": true,
+      "assertions": 102,
+      "type": "Node actual component/event handlers in isolated DOM adapter"
+    },
+    {
+      "file": "tests/test_ui130_it_ui.cjs",
+      "passed": true,
+      "assertions": 266,
+      "type": "Regression replay of captured real HTTP fixture including11 exact action sends, current capabilities, uncertain retries, op IDs, draft/session state"
+    },
+    {
+      "file": "tests/test_ui134_journeys_weekly.py::test_two_contributors_any_designated_approver_return_correct_resubmit",
+      "passed": true,
+      "tests": 1,
+      "duration_seconds": 10.16,
+      "type": "Local HTTP TestClient with fictional isolated SQLite company and real API/database persistence"
+    },
+    {
+      "file": "tests/test_ui134_navigation.cjs",
+      "passed": true,
+      "assertions": 81,
+      "type": "Independent execution of root shared navigation tests"
+    }
+  ],
+  "weekly_journey": {
+    "actors": "Two fictional contributors, two designated reviewers plus administrator and denied access controls",
+    "proof": [
+      "Each designated reviewer can approve; a second reviewer is not required to co-sign.",
+      "Returned project requires an explanation, becomes private to its owner, can be corrected/resubmitted and then approved by either designated reviewer.",
+      "Already approved project remains unchanged while the other is returned and edited.",
+      "Contributors cannot read each other’s records; outsider review queue remains empty.",
+      "Final submitted/returned/approved history and SQLite stored records match the journey."
+    ],
+    "changes_to_RH_product": false,
+    "production_test": false
+  },
+  "evidence": [
+    "work/ui134-it-node-results.json",
+    "work/ui134-weekly-journey.xml",
+    "work/ui134-weekly-journey.log",
+    "work/ui134-it-translations.json",
+    "work/ui134-it-preview.html",
+    "work/ui134-navigation-independent-review.json"
+  ],
+  "preview": {
+    "path": "work/ui134-it-preview.html",
+    "kind": "HTML generated from actual AJIT component before/after with fictional API fixture",
+    "screenshot": false,
+    "browser_rendered": false
+  },
+  "preservation": {
+    "backend_protocol": true,
+    "permissions": true,
+    "drafts_and_uncertain_operations": true,
+    "production_untouched": true,
+    "new_database_schema": false,
+    "new_external_messages": false,
+    "new_uploads_or_categories": false
+  },
+  "limitations": [
+    "No Chrome, browser automation, real phone, visual pixels or production E2E was executed in this local-only round.",
+    "Weekly approval journey uses fictional local data and is not evidence of the authenticated Corcovado workflow.",
+    "CSS preview is a component document, not a full-shell screenshot.",
+    "Final coordinated integrated test and packaging/publication status belong to the parent; this report does not claim publication."
+  ],
+  "unresolved_blockers": [],
+  "shared_review": "work/ui134-navigation-independent-review.json",
+  "source_frozen": true
+}

@@ -1,0 +1,86 @@
+/* UI60 common component contract. Legacy sheets live in wlLegacy, in their original order.
+   Only explicit wl-* controls opt in here. Specialist table, calendar, signature, status,
+   selection, print, drawer and sidebar rules are NOT replaced. */
+@layer wlLegacy, wlComponents;
+@layer wlComponents {
+ :root {
+  --wl-ui-font:system-ui,-apple-system,"Segoe UI",sans-serif;
+  --wl-ui-ink:#183447;--wl-ui-muted:#536879;--wl-ui-primary:#087d83;
+  --wl-ui-primary-hover:#06676c;--wl-ui-primary-text:#fff;
+  --wl-ui-border:#becfd9;--wl-ui-panel:#fff;--wl-ui-soft:#eef5f6;
+  --wl-ui-focus:#087d83;--wl-ui-danger:#963536;--wl-ui-danger-bg:#fff4f4;
+  --wl-ui-control-height:44px;--wl-ui-control-font:14px;--wl-ui-label-font:13px;
+  --wl-ui-radius:8px;--wl-ui-gap:8px;--wl-ui-title-size:28px;
+  --wl-ui-title-line:1.25;--wl-ui-dialog-title:21px;
+ }
+ .wl-action[hidden],.wl-view-tab[hidden],.wl-filter-chip[hidden],.wl-field-control[hidden] {display:none;}
+ .wl-action {
+  box-sizing:border-box;display:inline-flex;align-items:center;justify-content:center;gap:8px;
+  min-height:var(--wl-ui-control-height);padding:10px 14px;border-radius:var(--wl-ui-radius);
+  font:600 var(--wl-ui-control-font)/1.4 var(--wl-ui-font);letter-spacing:normal;
+  border:1px solid var(--wl-ui-border);color:var(--wl-ui-ink);background:var(--wl-ui-panel);
+  text-align:center;text-decoration:none;box-shadow:none;white-space:normal;cursor:pointer;
+  vertical-align:middle;max-width:100%;overflow-wrap:anywhere;transition:background-color .12s,border-color .12s;
+ }
+ .wl-action.log-quick-on {background:#dcf5e3;border-color:#92cea5;color:#17582d;font-weight:750;}
+ .wl-action.log-quick-off {background:#ffe4e8;border-color:#e9a7b2;color:#8c2537;font-weight:750;}
+ .wl-action.wl-primary {color:var(--wl-ui-primary-text);background:var(--wl-ui-primary);border-color:var(--wl-ui-primary);}
+ .wl-action.wl-primary:hover:not(:disabled):not([aria-disabled=true]) {background:var(--wl-ui-primary-hover);border-color:var(--wl-ui-primary-hover);}
+ .wl-action:is(.wl-secondary,.secondary,.ghost,.wl-help) {color:var(--wl-ui-ink);background:var(--wl-ui-panel);border-color:var(--wl-ui-border);}
+ .wl-action:is(.wl-secondary,.secondary,.ghost,.wl-help):hover:not(:disabled):not([aria-disabled=true]) {background:var(--wl-ui-soft);border-color:#7e9ca9;text-decoration:none;}
+ .wl-action:is(.wl-danger,.danger) {color:var(--wl-ui-danger);background:var(--wl-ui-danger-bg);border-color:#dfb6b9;}
+ .wl-action:is(.wl-danger,.danger):hover:not(:disabled) {background:#ffeaea;border-color:#b9757c;}
+ .wl-action:disabled,.wl-action[aria-disabled=true],.wl-view-tab:disabled {opacity:.6;cursor:not-allowed;box-shadow:none;}
+ .wl-help {flex:0 0 auto;white-space:nowrap;min-width:100px;}
+ .wl-help-icon {display:block;width:18px;height:18px;flex:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;fill:none;}
+ .wl-external-icon {display:block;width:14px;height:14px;flex:none;stroke:currentColor;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round;fill:none;}
+ .wl-inline-help {text-decoration:underline;text-underline-offset:3px;color:#176778;}
+ .wl-inline-help:hover {color:#084a56;}
+ .wl-page-heading {display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:start;gap:12px 16px;margin:0 0 16px;min-width:0;}
+ .wl-page-heading>div:not(.wl-heading-actions) {min-width:0;}
+ .wl-page-heading>.eyebrow {flex-basis:100%;margin:0 0 -8px;}
+ .wl-page-title {font:700 var(--wl-ui-title-size)/var(--wl-ui-title-line) var(--wl-ui-font);letter-spacing:-.5px;margin:0 0 4px;overflow-wrap:anywhere;}
+ .wl-heading-actions {grid-column:1/-1;display:flex;align-items:center;justify-content:flex-start;flex-wrap:wrap;gap:var(--wl-ui-gap);min-width:0;margin:0; padding:0;}
+ .wl-heading-actions>.wl-action {width:auto;min-width:0;flex:0 1 auto;}
+ .wl-heading-actions>details {margin:0;min-width:0;width:auto;flex:0 1 auto;border:0;padding:0;background:transparent;}
+ .wl-heading-actions>details>summary {box-sizing:border-box;min-height:44px;padding:10px 14px;border:1px solid var(--wl-ui-border);border-radius:8px;font:600 14px/1.4 var(--wl-ui-font);background:#fff;color:var(--wl-ui-ink);cursor:pointer;}
+ .wl-heading-help {grid-column:2;grid-row:1;align-self:start;justify-self:end;}
+ .wl-heading-copy {grid-column:1;min-width:0;}
+ .wl-page-heading p.muted {font:400 14px/1.5 var(--wl-ui-font);margin:4px 0 0;}
+ .wl-dialog-heading {display:flex;align-items:flex-start;justify-content:space-between;flex-wrap:wrap;gap:10px 14px;margin-bottom:14px;min-width:0;}
+ .wl-dialog-title {font:700 var(--wl-ui-dialog-title)/1.3 var(--wl-ui-font);margin:0;letter-spacing:-.25px;overflow-wrap:anywhere;flex:1 1 150px;}
+ .wl-dialog-actions {display:flex;gap:8px;align-items:center;flex-wrap:wrap;margin-left:auto;}
+ /* These existing scrolling forms used guessed header heights. Let the shared heading and
+    actual action rows determine the available content height, including wrapped phone titles. */
+ .modal:has(>.gt-simple-form),.modal:has(>.cf-form) {box-sizing:border-box;display:flex;flex-direction:column;max-height:94dvh;overflow:hidden;}
+ .modal:has(>.gt-simple-form)>.wl-dialog-heading,.modal:has(>.cf-form)>.wl-dialog-heading,
+ .modal:has(>.gt-simple-form)>p,.modal:has(>.cf-form)>p {flex:0 0 auto;}
+ .modal>:is(.gt-simple-form,.cf-form) {flex:1 1 auto;min-height:0;max-height:none;}
+ .gt-simple-form>.tf-content,.cf-form>.cf-content {flex:1 1 auto;}
+
+ .wl-dialog-actions>.close-button {height:44px;min-width:44px;flex:none;display:inline-flex;align-items:center;justify-content:center;border:1px solid var(--wl-ui-border);border-radius:var(--wl-ui-radius);font:400 23px/1 var(--wl-ui-font);color:var(--wl-ui-ink);background:#fff;}
+ .wl-view-tab {display:inline-flex;align-items:center;justify-content:center;gap:7px;box-sizing:border-box;min-height:44px;padding:9px 13px;border:1px solid var(--wl-ui-border);border-radius:8px;font:600 14px/1.4 var(--wl-ui-font);letter-spacing:normal;background:#fff;color:var(--wl-ui-muted);text-decoration:none;white-space:normal;cursor:pointer;box-shadow:none;}
+ .wl-view-tab:hover:not(:disabled) {background:var(--wl-ui-soft);color:var(--wl-ui-ink);}
+ .wl-view-tab:is([aria-selected=true],[aria-pressed=true],[aria-current=page],.active,.selected,.is-active) {background:#e6f3f2;border-color:var(--wl-ui-primary);color:#075e62;box-shadow:inset 0 -2px 0 var(--wl-ui-primary);}
+ .wl-filter-chip {font:600 13px/1.4 var(--wl-ui-font);min-height:40px;padding:7px 11px;border:1px solid var(--wl-ui-border);border-radius:20px;background:#fff;color:var(--wl-ui-muted);}
+ .wl-filter-chip:is([aria-pressed=true],[aria-selected=true],.active) {background:#eef5f6;color:#075e62;border-color:#7eb7b7;box-shadow:none;}
+ .wl-field-control,.of-dialog input:not([type=checkbox]):not([type=radio]):not([type=hidden]),.of-dialog select,.of-dialog textarea {box-sizing:border-box;max-width:100%;min-width:0;min-height:44px;border:1px solid var(--wl-ui-border);border-radius:var(--wl-ui-radius);background:#fff;color:var(--wl-ui-ink);padding:10px 12px;font:400 14px/1.45 var(--wl-ui-font);box-shadow:none;}
+ textarea.wl-field-control {resize:vertical;}
+ .wl-field-control:disabled,.wl-field-control[readonly] {background:#f2f5f7;color:#556672;}
+ .wl-field-control[aria-invalid=true] {border-color:var(--wl-ui-danger);}
+ .wl-field-control::placeholder {color:#627683;opacity:1;}
+ .wl-field-label {font:600 var(--wl-ui-label-font)/1.45 var(--wl-ui-font);color:var(--wl-ui-ink);}
+ .wl-field-label>span:first-child {display:block;margin-bottom:6px;}
+ .wl-notice {box-sizing:border-box;border-radius:8px;padding:12px 14px;font:400 14px/1.5 var(--wl-ui-font);overflow-wrap:anywhere;}
+ :is(.wl-action,.wl-view-tab,.wl-filter-chip,.wl-field-control,.wl-inline-help):focus-visible,.wl-dialog-actions>.close-button:focus-visible {outline:3px solid var(--wl-ui-focus);outline-offset:3px;}
+ @media(max-width:760px) {
+  :root {--wl-ui-title-size:24px;--wl-ui-dialog-title:20px;}
+  .wl-page-heading {gap:10px;margin-bottom:12px;}
+  .wl-heading-actions {justify-content:flex-start;max-width:100%;}
+  .wl-heading-actions .wl-action {flex:0 1 auto;}
+  .wl-page-title {letter-spacing:-.35px;}
+  .wl-view-tab {padding:9px 11px;}
+  .wl-field-control,.of-dialog input:not([type=checkbox]):not([type=radio]):not([type=hidden]),.of-dialog select,.of-dialog textarea {font-size:16px;}
+ }
+ @media(prefers-reduced-motion:reduce){.wl-action{transition:none;}}
+}

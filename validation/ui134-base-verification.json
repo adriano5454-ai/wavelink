@@ -1,0 +1,27 @@
+{
+  "github_main": "d44a6167a4155d22ee664203cb3232d12b1c8582",
+  "github_release": "UI133",
+  "parent_manifest_sha256": "3e6b34a5230e9a11a5d3de9fca53ee1fc9c4451428cc200460a9db8c20cf0d0b",
+  "runtime_resources": 2378,
+  "repository_files": 986,
+  "parent_files_unmodified": true,
+  "remote_critical_files": [
+    {
+      "path": "DEPLOYMENT_FILES.json",
+      "sha": "ea51d9c59d41c00fa6117bbd4128241b7f48682c"
+    },
+    {
+      "path": "deploy/apply_ui133.py",
+      "sha": "729571215c898e9da56d0fad23e35ab5ab75ae1a"
+    },
+    {
+      "path": "deploy/materialize_runtime.py",
+      "sha": "30629e4a7a49579dad6c814c35ce956c798001ec"
+    },
+    {
+      "path": "Dockerfile",
+      "sha": "4c2a8d284b0bd66fd0341d747c9b4d62b9a7715a"
+    }
+  ],
+  "production_access": false
+}

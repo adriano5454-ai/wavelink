@@ -1,0 +1,32 @@
+[
+  {
+    "group": "weekly-journey",
+    "xml": "ui134-regression-weekly-journey.xml",
+    "exit_code": 0
+  },
+  {
+    "group": "weekly-security-1",
+    "xml": "ui134-regression-weekly-security-1.xml",
+    "exit_code": 0
+  },
+  {
+    "group": "weekly-security-2",
+    "xml": "ui134-regression-weekly-security-2.xml",
+    "exit_code": 0
+  },
+  {
+    "group": "weekly-security-3",
+    "xml": "ui134-regression-weekly-security-3.xml",
+    "exit_code": 0
+  },
+  {
+    "group": "preservation",
+    "xml": "ui134-regression-preservation.xml",
+    "exit_code": 0
+  },
+  {
+    "group": "help",
+    "xml": "ui134-regression-help.xml",
+    "exit_code": 0
+  }
+]

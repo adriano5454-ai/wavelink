@@ -1,0 +1,43 @@
+{
+  "release": "UI134",
+  "scope": "Independent read-only review of shared navigation integration",
+  "sources": {
+    "home_workspace.js": "bc3d0e6b474d8d94d04575e12a7caad41b903d9ea42cd8df2dd7f31069914e25",
+    "home_workspace.css": "75705b59367847c00729b192df5379a7b7560f5253926e2bbdb1b49d56bec51e",
+    "nav_shell.js": "16700442cc41edcabc43eae284dacc0f4dfa95b12ddff344a7c55271fe18ec55",
+    "workspace_ux_ui121.js": "12b5148217b01d95de5d2e7d1e6e62a2876b5940042680df78c6795bd3eca218"
+  },
+  "findings": [],
+  "conclusion": "No concrete new blocker found in the reviewed source or the executed handlers.",
+  "evidence": [
+    {
+      "area": "Directory",
+      "checks": "Available destinations come from existing catalogue and permission checks; filters only hide allowed cards; no account/grant/database writes. Captured session, generation, current host and busy-state guards protect stale handlers and asynchronous start."
+    },
+    {
+      "area": "Navigation",
+      "checks": "Prevented and modified clicks remain untouched. Mobile menu restores inert state; Escape restores focus; ordinary navigation directs focus to content. Breakpoint change returns focus to toggle if the sidebar disappears."
+    },
+    {
+      "area": "Fleet focus",
+      "checks": "focusContent selects the visible Fleet frame only while fleet-workspace-active; hidden Fleet falls back to main, hidden main returns false."
+    },
+    {
+      "area": "Styling",
+      "checks": "Directory controls have visible label/focus, text + underline selected state,44px controls, single column at420px; no new animation or permission affordance bypass."
+    }
+  ],
+  "tests": [
+    {
+      "file": "tests/test_ui134_navigation.cjs",
+      "checks": 81,
+      "passed": true,
+      "environment": "Node isolated DOM adapter executing actual handlers; no browser"
+    }
+  ],
+  "limitations": [
+    "The DOM adapter does not implement the browser layout engine, native event navigation timing or a real iframe focus stack. Browser, screen-reader and phone rendering remain unverified here.",
+    "Full application route guards and native Back behavior were not re-exercised in a browser in this local-only review. No production actions were performed."
+  ],
+  "edited_shared_sources": false
+}

@@ -1,0 +1,32 @@
+{
+  "kind": "actual_component_html_not_screenshots",
+  "items": [
+    {
+      "page": "semana.html",
+      "title": "Apontamento semanal: seleção e conferência",
+      "source": "C:\\Users\\adria\\Documents\\Codex\\2026-10-17\\quero-concluir-a-mudan-a-da\\work\\ui134-rh-weekly-markup.html",
+      "sha256": "03e354f1f1862bcbd85571711e928f5010f9a8be28179b53d14a53854d52b902"
+    },
+    {
+      "page": "agenda.html",
+      "title": "Agenda: viagem sem retorno informado",
+      "source": "C:\\Users\\adria\\Documents\\Codex\\2026-10-17\\quero-concluir-a-mudan-a-da\\work\\ui134-rh-calendar-markup.html",
+      "sha256": "7db71a155c8547431b52719cd2be9041463db6daba5311161ffb181c87723359"
+    }
+  ],
+  "html_pages": 4,
+  "local_url_checks": 186,
+  "broken_urls": 0,
+  "browser": false,
+  "production": false,
+  "assets": [
+    "assets/icon.ico",
+    "assets/ui68-home-scene.svg",
+    "assets/wavelink-approved-offshore-profile-ui87.webp",
+    "assets/wavelink-approved-offshore-ui87.webp",
+    "assets/wavelink-home-cover-ui86.svg",
+    "assets/wavelink-mark.svg",
+    "assets/wavelink-profile-cover-ui86.svg"
+  ],
+  "portability": "Copy the whole ui134-rh-previews folder, including styles and assets."
+}

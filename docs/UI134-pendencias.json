@@ -1,0 +1,47 @@
+{
+  "version": "UI134",
+  "implemented_local": [
+    {
+      "area": "RH e perfis",
+      "change": "Calendário usa o dia local; viagem sem retorno informa a ausência. Apontamento semanal mantém foco após limpar linha, indica seleção por texto e distingue consulta de edição. Perfil usa Documentos relacionados.",
+      "tested": "Calendário às 23:59 e 00:00 em Bahia e Tóquio; handlers de edição, seleção, filtros, sessão e regressões de perfil."
+    },
+    {
+      "area": "Documentos e checklists",
+      "change": "Fontes dos livros têm busca em toda a extração, páginas de até 100 células e falha de imagem junto ao conteúdo. Biblioteca preserva pasta e foco. Resumo e pendências do checklist encaminham o foco ao destino.",
+      "tested": "Controladores reais, PT/EN, busca/paginação, retorno à pasta, resposta tardia, troca de conta, revisões e navegação de documentos."
+    },
+    {
+      "area": "Solicitações de TI",
+      "change": "Próximo passo explícito, triagem separada do acompanhamento e cancelamento em seção própria. Filtros aplicados e intervalo da lista visíveis; prioridades explicadas e homônimos identificados pelo ID já disponível.",
+      "tested": "Criação, comentários, triagem, transições autorizadas, histórico, filtros, operação incerta e sessão; sem alterar contratos do servidor."
+    },
+    {
+      "area": "Navegação e apresentação",
+      "change": "Busca com rótulo visível, ícones próprios de RH/TI e seleção identificada além da cor. Conta sem acesso tem mensagem específica. Menu móvel e atalho de conteúdo mantêm foco na área ativa, inclusive na Frota.",
+      "tested": "Handlers PT/EN, menu, foco, cliques modificados, área oculta, conta alterada e revisão independente; sem medição de pixels."
+    }
+  ],
+  "pending": [
+    {
+      "area": "Navegador e dispositivos",
+      "item": "Conferir pixels, teclado/leitor de tela, foco real entre iframe e página, botão Voltar e telas pequenas. Não houve navegador nesta rodada."
+    },
+    {
+      "area": "Cobertura restante",
+      "item": "Vistas sem alteração ou apenas inspecionadas continuam identificadas na matriz. Incluem formulário completo de evidência/foto do checklist, algumas telas de conta/perfil e detalhes de RH não retestados."
+    },
+    {
+      "area": "Produção",
+      "item": "O teste completo de horas por projeto com os usuários reais ainda está pendente. A jornada local não substitui essa verificação."
+    },
+    {
+      "area": "Publicação",
+      "item": "UI134 não enviada ao GitHub nem ao Render. UI133 foi confirmada como base no GitHub; deployment atual não consultado."
+    },
+    {
+      "area": "Limites de anexos",
+      "item": "Mantidos os limites documentados: sem biblioteca universal, sem novo upload para TI/viagens e sem associação de documentos por nome. A fonte extraída de livro não equivale ao arquivo Excel original."
+    }
+  ]
+}

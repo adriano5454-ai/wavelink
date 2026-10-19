@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" role="img" aria-label="Wavelink mark">
+  <rect width="48" height="48" rx="10" fill="#85e8dc"/>
+  <path d="M8 16.5c5.3 0 5.3 15 10.7 15S24 16.5 29.3 16.5 34.7 31.5 40 31.5" fill="none" stroke="#073248" stroke-width="4.3" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M8 10.5c5.3 0 5.3 15 10.7 15S24 10.5 29.3 10.5 34.7 25.5 40 25.5" fill="none" stroke="#0d5665" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" opacity=".78"/>
+</svg>
