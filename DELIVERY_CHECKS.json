@@ -1,60 +1,55 @@
 {
-  "release": "UI134",
-  "version": "1.34.34",
+  "release": "UI135",
+  "version": "1.34.35",
   "status": "integrado_testado_localmente_nao_publicado",
-  "base_commit": "d44a6167a4155d22ee664203cb3232d12b1c8582",
+  "base_commit": "3aaf822ea05661f9f2baa1d24bcf0bbef53c4a52",
   "final_commit": null,
   "deployment": null,
   "runtime": {
     "status": "passed",
-    "version": "1.34.34",
-    "runtime_manifest_sha256": "8e146733998f6b20e5307750e5476cc11a44f12c4abc3aca45340ccf0b7412ed",
-    "resources": 2388,
+    "version": "1.34.35",
+    "runtime_manifest_sha256": "9b4b39f497085d261dc171d7b1cf0b6ffab4055a4bc90af02c842c4a536fbaf7",
+    "resources": 2404,
     "all_reconstructed_files_identical": true,
     "python_syntax_files": 234,
-    "cache_assets": 22,
+    "cache_assets": 19,
     "html_shells": 4,
-    "base_repository_files_preserved": 986,
+    "base_repository_files_preserved": 1131,
     "production_access": false
   },
   "python": {
-    "unique_passed": 49,
+    "unique_passed": 31,
     "runs": [
       {
-        "group": "Jornada completa: envio, aprovação, devolução, correção e reenvio",
-        "xml": "ui134-regression-weekly-journey.xml",
-        "passed": 1
+        "group": "Início: escopo pessoal, privacidade, filtros e paginação",
+        "xml": "ui135-regression-personal-home.xml",
+        "passed": 7
       },
       {
-        "group": "Projetos e horas: acesso, backup e alterações",
-        "xml": "ui134-regression-weekly-security-1.xml",
-        "passed": 10
+        "group": "Conta: acesso, MFA e sessões",
+        "xml": "ui135-regression-account.xml",
+        "passed": 5
       },
       {
-        "group": "Projetos e horas: atomicidade, dados anteriores e estados",
-        "xml": "ui134-regression-weekly-security-2.xml",
-        "passed": 14
+        "group": "E-mail: preferências, verificação e tentativa incerta com transporte fictício",
+        "xml": "ui135-regression-email.xml",
+        "passed": 5
       },
       {
-        "group": "Projetos e horas: privacidade, aprovação e revogação",
-        "xml": "ui134-regression-weekly-security-3.xml",
-        "passed": 10
-      },
-      {
-        "group": "Preservação de usuários, dados, backup e relatórios",
-        "xml": "ui134-regression-preservation.xml",
+        "group": "Preservação, backup e dados anteriores",
+        "xml": "ui135-regression-preservation.xml",
         "passed": 8
       },
       {
-        "group": "Ajuda, idiomas e recursos servidos",
-        "xml": "ui134-regression-help.xml",
+        "group": "Ajuda, catálogo de permissões e idiomas",
+        "xml": "ui135-regression-help.xml",
         "passed": 6
       }
     ]
   },
   "javascript": {
-    "passed_suites": 73,
-    "syntax_files": 113
+    "passed_suites": 84,
+    "syntax_files": 114
   },
   "preservation": {
     "production_access": false,
@@ -65,12 +60,13 @@
     "database_reset": false,
     "schema_changed": false,
     "writer_contracts_changed": false,
-    "ui133_base_retained": true
+    "ui134_base_retained": true
   },
   "limits": [
     "Sem Chrome, navegador automatizado, captura de tela, leitor de tela ou aparelho real nesta rodada.",
-    "Prévias HTML usam componentes reais e dados fictícios. Não são screenshots nem comprovam aparência final em navegador.",
-    "A jornada de horas semanais foi testada em banco isolado. O percurso com o usuário temporário na Corcovado continua sem nova validação em produção.",
-    "A matriz distingue telas corrigidas, inspeção de código e vistas não retestadas. Esta entrega não afirma que todas as telas históricas foram validadas."
+    "Prévias HTML usam componentes reais, estilos existentes e dados fictícios; não são screenshots nem comprovam renderização em navegador.",
+    "Os testes de e-mail capturam as mensagens em memória; nenhum e-mail real foi enviado. MFA e sessões foram exercitados somente com contas fictícias locais.",
+    "A jornada com os usuários reais da Corcovado continua sem nova validação em produção.",
+    "A matriz identifica o recorte desta rodada e a cobertura anterior. Não se afirma que todas as telas históricas foram validadas."
   ]
 }
