@@ -1,0 +1,37 @@
+{
+  "release": "UI137",
+  "representative_previews": 7,
+  "items": [
+    {
+      "title": "RH: programação mensal e agenda",
+      "file": "rh/calendario.html"
+    },
+    {
+      "title": "RH: relatório e escopo da exportação",
+      "file": "rh/relatorio.html"
+    },
+    {
+      "title": "Documentos: convites e recuperação de falhas",
+      "file": "documentos/convites-documentais.html"
+    },
+    {
+      "title": "Documentos: participação, ciência e assinatura",
+      "file": "documentos/participacao-documental.html"
+    },
+    {
+      "title": "Manutenção: correção e conferência",
+      "file": "manutencao/execucao.html"
+    },
+    {
+      "title": "TI: seleção do responsável antes (UI136)",
+      "file": "ti/ui136-atendimento.html"
+    },
+    {
+      "title": "TI: seleção do responsável depois (UI137)",
+      "file": "ti/ui137-atendimento.html"
+    }
+  ],
+  "browser": false,
+  "screenshots": false,
+  "data": "fictional"
+}

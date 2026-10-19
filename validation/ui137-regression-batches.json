@@ -1,0 +1,57 @@
+[
+  {
+    "group": "rh-profile",
+    "xml": "ui137-regression-rh-profile.xml",
+    "exit_code": 0
+  },
+  {
+    "group": "documents",
+    "xml": "ui137-regression-documents.xml",
+    "exit_code": 0
+  },
+  {
+    "group": "maintenance",
+    "xml": "ui137-regression-maintenance.xml",
+    "exit_code": 0
+  },
+  {
+    "group": "maintenance-regression",
+    "xml": "ui137-regression-maintenance-regression.xml",
+    "exit_code": 0
+  },
+  {
+    "group": "publication",
+    "xml": "ui137-regression-publication.xml",
+    "exit_code": 0
+  },
+  {
+    "group": "it-journeys",
+    "xml": "ui137-regression-it-journeys.xml",
+    "exit_code": 0
+  },
+  {
+    "group": "it-preservation",
+    "xml": "ui137-regression-it-preservation.xml",
+    "exit_code": 0
+  },
+  {
+    "group": "invites",
+    "xml": "ui137-regression-invites.xml",
+    "exit_code": 0
+  },
+  {
+    "group": "participation",
+    "xml": "ui137-regression-participation.xml",
+    "exit_code": 0
+  },
+  {
+    "group": "preservation",
+    "xml": "ui137-regression-preservation.xml",
+    "exit_code": 0
+  },
+  {
+    "group": "help",
+    "xml": "ui137-regression-help.xml",
+    "exit_code": 0
+  }
+]

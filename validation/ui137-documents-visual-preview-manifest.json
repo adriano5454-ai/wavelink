@@ -1,0 +1,32 @@
+{
+  "kind": "actual_component_dom_from_local_adapter_not_screenshot",
+  "items": [
+    {
+      "title": "Convites documentais: revisão exata e recuperação",
+      "page": "convites-documentais.html",
+      "source_fragment": "C:\\Users\\adria\\Documents\\Codex\\2026-10-17\\quero-concluir-a-mudan-a-da\\work\\ui137-document-invites-pt-BR-markup.html",
+      "fragment_sha256": "37e7ecaebc145de32e6f69406f2ed54aa30aa46e96f39f6b5e9d59acf1016af5",
+      "change_from_ui136": "O botão Fechar janela encerra somente o painel. Encerrar convites é uma ação separada. Falhas de carregamento oferecem repetição; uma resposta de criação incerta conserva a referência do pedido. Nesta prévia estática, o erro de PDF aparece junto aos controles; o arquivo não foi enviado ao navegador."
+    },
+    {
+      "title": "Participação: ciências, assinaturas e recibos",
+      "page": "participacao-documental.html",
+      "source_fragment": "C:\\Users\\adria\\Documents\\Codex\\2026-10-17\\quero-concluir-a-mudan-a-da\\work\\ui137-document-participation-pt-BR-markup.html",
+      "fragment_sha256": "d61a1fc17a5fa115e57419f44412b8a3f307e5374f17ab41ce1a9a3c989c11ad",
+      "change_from_ui136": "Contagens de ciência e de assinatura desenhada ficam separadas. Nome, identidade registrada, arquivos compartilhados e revisão permanecem exatos. O canvas do traçado não foi rasterizado nesta cópia estática; o texto alternativo permanece disponível. Nomes, empresas e métodos fictícios salvos não são traduzidos."
+    }
+  ],
+  "html_pages": 3,
+  "local_url_checks": 97,
+  "broken_local_urls": 0,
+  "browser_used": false,
+  "production_accessed": false,
+  "assets": [
+    "assets/ui68-home-scene.svg",
+    "assets/wavelink-approved-offshore-profile-ui87.webp",
+    "assets/wavelink-approved-offshore-ui87.webp",
+    "assets/wavelink-home-cover-ui86.svg",
+    "assets/wavelink-profile-cover-ui86.svg"
+  ],
+  "portable": "Copy the entire ui137-documents-visual-previews directory, including styles/ and assets/."
+}

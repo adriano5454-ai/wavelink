@@ -1,0 +1,144 @@
+{
+  "release": "UI137",
+  "status": "Implementado e testado localmente; produto congelado para integração",
+  "base": "Cópia verificada UI136 em work/runtime-ui137",
+  "product_files": {
+    "app/static/document_invites.js": "5eabb99a75c69c681a47911ebd7bf806df35fbef2a8e28b9435e841ce6e1c969",
+    "app/static/document_invites.css": "ecb7aa447b6924445f485114391381c67393824cc83ade246a663a3aea5af831",
+    "app/static/document_participation.js": "0b1b8fa71842455b9c96fcb2bb640337f4050878facecd46a94c837c381c348b",
+    "app/static/document_participation.css": "851676e9b41678c2d134da8653a9d68d1564b4ea10e530078281917a84d7d20b"
+  },
+  "test_files": [
+    "tests/test_ui137_documents_dom.cjs",
+    "tests/test_ui137_documents_invites.cjs",
+    "tests/test_ui137_documents_participation.cjs",
+    "tests/test_ui137_documents_journey.py"
+  ],
+  "harness_exclude": [
+    "tests/test_ui137_documents_dom.cjs"
+  ],
+  "tests": {
+    "javascript": {
+      "suites": [
+        {
+          "file": "tests/test_ui137_documents_invites.cjs",
+          "checks": 128,
+          "status": "passed"
+        },
+        {
+          "file": "tests/test_ui137_documents_participation.cjs",
+          "checks": 64,
+          "status": "passed"
+        }
+      ],
+      "new_checks": 192,
+      "languages": [
+        "en",
+        "pt-BR"
+      ],
+      "browser": false
+    },
+    "python": {
+      "file": "tests/test_ui137_documents_journey.py",
+      "passed": 4,
+      "failed": 0,
+      "skipped": 0,
+      "executor": "coordenador",
+      "evidence": "work/ui137-documents-preflight.xml",
+      "duration_seconds": 17.799,
+      "transport": "TestClient HTTP local com banco fictício",
+      "smtp": "SMTP e SMTP_SSL bloqueados explicitamente no fixture"
+    },
+    "syntax": {
+      "javascript": 5,
+      "python": 1,
+      "failed": 0
+    }
+  },
+  "changes": [
+    "Recuperação local do primeiro carregamento dos convites, com estados legíveis e tradução.",
+    "Fechamento incerto preserva referência/op_id até escolha explícita; Fechar janela permanece separado de Encerrar convites.",
+    "Respostas de leituras anteriores são invalidadas ao emitir ou encerrar convites; contas e contexto rechecados.",
+    "PDF por revisão com linguagem de resultado precisa; não promete gravação em disco.",
+    "Participação diferencia ciência e desenho salvo, preserva identidade/nome/revisão e oferece alternativa textual ao canvas."
+  ],
+  "translations": {
+    "file": "work/ui137-documents-translations.json",
+    "pairs": 36,
+    "integrated_by": "coordenador nos catálogos PT e servidor"
+  },
+  "previews": {
+    "directory": "work/ui137-documents-visual-previews",
+    "manifest": "work/ui137-documents-visual-preview-manifest.json",
+    "count": 2,
+    "html_pages": 3,
+    "local_url_checks": 97,
+    "broken": 0,
+    "is_screenshot": false
+  },
+  "coverage": "work/ui137-documents-coverage.json",
+  "preservation": {
+    "backend_changed": false,
+    "acl_changed": false,
+    "schema_changed": false,
+    "production_accessed": false,
+    "emails_sent": 0,
+    "users_changed": 0,
+    "data_changed_in_production": false,
+    "ids_and_saved_names_preserved": true,
+    "pending_retries_same_operation": true
+  },
+  "findings_and_resolution": [
+    {
+      "finding": "Conferência do RH é uma ação separada do envio de anexo.",
+      "result": "Confirmado por HTTP; backend atual não precisou de correção."
+    },
+    {
+      "finding": "Resposta incerta podia ser descartada sem aviso após busy=false.",
+      "result": "Guard agora verifica a existência de pending, inclusive Esc."
+    },
+    {
+      "finding": "Primeiro GET falhado sem recuperação no painel.",
+      "result": "Ação local de repetir carregamento, sem escrita automática."
+    },
+    {
+      "finding": "Fonte antiga de polling podia repintar após início de ação.",
+      "result": "Geração de leitura invalidada na emissão/encerramento; testado com promessas controladas."
+    },
+    {
+      "finding": "Mensagens de interface em inglês não passavam pelo dicionário.",
+      "result": "36 pares de tradução integrados; método e texto desconhecidos salvos continuam intactos."
+    }
+  ],
+  "limits": [
+    "Abrir os fluxos reais em navegador com teclado, leitor de tela e telas menores, quando autorizado/disponível.",
+    "Validar QR/câmera, transferência real do PDF, área de transferência e comportamento nativo de Esc/Voltar.",
+    "Validar interface de conferência no RH junto à integração do agente responsável, sem promover os quatro testes HTTP a E2E de navegador.",
+    "Não foi revisada toda a área pública /sign/; não houve alteração de document_join.js ou document_join.html.",
+    "Limpeza de registros antigos UI121 em produção e dados/usuário temporário permanecem fora desta rodada local."
+  ],
+  "additional_regressions_requested": [
+    "tests/ui59_consistency/test_participation.py::test_handover_other_reader_gets_own_only_never_visitors_or_private_corrections",
+    "tests/ui59_consistency/test_participation.py::test_historical_signatures_not_carried_to_new_publication",
+    "tests/ui59_consistency/test_participation.py::test_witnessed_guest_keeps_typed_name_facilitator_declaration_without_fake_ink",
+    "tests/ui35_signing_reports/test_reports.py::test_permission_rechecked_after_pdf_render",
+    "tests/ui35_signing_reports/test_reports.py::test_old_revision_uses_immutable_wording_not_new_publication_or_private_notes"
+  ],
+  "test_triage": [
+    {
+      "case": "Facilitator and invitation close result in PT",
+      "category": "lacuna real de tradução",
+      "resolution": "Mapa completado e teste final aprovado."
+    },
+    {
+      "case": "Own-scope explanation expected somente",
+      "category": "expectativa de teste estreita",
+      "resolution": "Dicionário existente usa apenas sua conta; expectativa alinhada sem mudar texto correto."
+    }
+  ],
+  "not_claimed": [
+    "Nenhuma publicação ou validação autenticada na Corcovado.",
+    "Nenhuma validação visual real ou percurso completo no navegador.",
+    "Não encerra todas as abas/pedidos históricos."
+  ]
+}

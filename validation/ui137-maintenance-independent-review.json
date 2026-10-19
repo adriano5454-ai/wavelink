@@ -1,0 +1,61 @@
+{
+  "generated_at": "2026-10-19T10:28:18.963Z",
+  "reviewer": "qualidade_ti",
+  "scope": [
+    "app/static/it_workspace.js",
+    "app/static/it_workspace.css",
+    "tests/test_ui137_it_ui.cjs",
+    "app/approvals.py",
+    "app/maintenance.py",
+    "app/browser_templates.py"
+  ],
+  "status": "no_new_blocker_found",
+  "method": "Independent source review plus execution of current IT handler suite; no browser or real account.",
+  "findings": [
+    {
+      "area": "Maintenance approval capability",
+      "severity": "fixed",
+      "evidence": "The isolated HTTP test first returned422 for a maintenance-only reviewer. Root changed validate_targets capability (default remains checklists.approve), maintenance publication and BrowserTemplates reviewer catalog. Final browser-publication test passed, including checklist exclusion and unchanged permissions."
+    },
+    {
+      "area": "TI search and assignment",
+      "severity": "reviewed",
+      "evidence": "assigneeOptions retains exact selected user_id outside matches, unavailable selection stays explicit; filterAssignees snapshots business fields but stores query separately; payload validates against currently offered IDs. Homonym IDs are escaped; no recovery email or HR phone is used."
+    },
+    {
+      "area": "TI session and late responses",
+      "severity": "reviewed",
+      "evidence": "capture combines identity, hash, epoch, readSerial and host; loadHistory checks current capture and previous detail object.403/401/404 clear detail/data through readError; temporary errors preserve authorized history. syncSession resets lastViewed/focus and protects retained forms by account."
+    },
+    {
+      "area": "TI uncertain writes",
+      "severity": "reviewed",
+      "evidence": "busy/uncertain blocks search and editing. Retry preserves f.request; beforeSend guard rechecks current form/account/access. No logout or permission changes in new handlers."
+    },
+    {
+      "area": "TI keyboard and narrow layout",
+      "severity": "reviewed_source_only",
+      "evidence": "Return focuses previous request link or results count; search has a label and aria-describedby status. Existing focus styling and narrow form sizing remain. Native select popup and visual rendering were not tested."
+    }
+  ],
+  "executions": [
+    {
+      "command": "node tests/test_ui137_it_ui.cjs",
+      "result": "passed",
+      "checks": 72,
+      "notes": "Executed independently against final root source."
+    }
+  ],
+  "backend_invariants": [
+    "Only two recognized capabilities allowed by validator.",
+    "Default checklist contract remains unchanged for existing callers.",
+    "Maintenance review still requires current named reviewer and maintenance.approve; assignment does not grant authority.",
+    "Current service permission checks precede idempotent replay.",
+    "No table, stored record, account policy or permission grant changed."
+  ],
+  "limitations": [
+    "No browser/Chrome, production or external service accessed.",
+    "No new complete HTTP TI journey; current root handler tests use synthetic data and real prior API fixture.",
+    "Visual contrast/layout and actual device keyboard interactions require browser confirmation."
+  ]
+}

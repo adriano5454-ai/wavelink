@@ -1,0 +1,40 @@
+{
+  "release": "UI137",
+  "kind": "actual_component_html_not_screenshots",
+  "items": [
+    {
+      "page": "calendario.html",
+      "title": "Programação mensal e agenda",
+      "source": "ui137-rh-calendar-markup.html",
+      "sha256": "7c32760c91c729251803c110d735d41ae9f35c351a5d6ea0b613bebbe494e32f"
+    },
+    {
+      "page": "relatorio.html",
+      "title": "Relatório e CSV: escopo da consulta carregada",
+      "source": "ui137-rh-report-markup.html",
+      "sha256": "31f56b3425cca677318e4e2b7c0c1468d0ad9a23eec1473279e97772300dd7d2"
+    }
+  ],
+  "html_pages": 3,
+  "local_url_checks": 98,
+  "broken_urls": 0,
+  "browser": false,
+  "production": false,
+  "data": "fictional HTTP assignments/expense plus identified synthetic travel/restricted-roster examples; actual component renderers and mount/CSV handlers",
+  "styles": "actual application stylesheet order",
+  "assets": [
+    "assets/ui68-home-scene.svg",
+    "assets/wavelink-approved-offshore-profile-ui87.webp",
+    "assets/wavelink-approved-offshore-ui87.webp",
+    "assets/wavelink-home-cover-ui86.svg",
+    "assets/wavelink-profile-cover-ui86.svg"
+  ],
+  "csv": "exemplo-relatorio-rh.csv",
+  "scope_limits": [
+    "DOM adapter and render functions only; no real layout engine",
+    "Preview controls disabled; handlers tested separately",
+    "Only the external preview wrapper is adapted; component markup and mount-generated timeline styles are preserved",
+    "390 px option is not validation on a mobile device"
+  ],
+  "portability": "Copy the complete ui137-rh-previews directory, including styles and assets."
+}

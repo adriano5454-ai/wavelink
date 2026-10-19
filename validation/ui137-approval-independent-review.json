@@ -1,0 +1,103 @@
+{
+  "release": "UI137",
+  "scope": "Revisão independente somente de leitura dos três arquivos backend de aprovação, comparados com a reprodução selada da UI136.",
+  "baseline": "work/ui136-replay-delivery",
+  "candidate": "work/runtime-ui137",
+  "status": "Sem bloqueadores ou regressões confirmadas no recorte revisado",
+  "findings": [],
+  "blocking_findings": 0,
+  "files": {
+    "app/approvals.py": {
+      "base_sha256": "c722dd3e9dcea477245b0dc24d75f2ac730479ba92cc9bc0194b76e21b679c23",
+      "reviewed_sha256": "fe9a03cb987c5091ffa8c8f48faaafe9dd5408acda4d9e775457af9c4f99183a"
+    },
+    "app/maintenance.py": {
+      "base_sha256": "747e5a834cd94340252a908c16bce656b7565a1917ab1b383ccd40f70fae4114",
+      "reviewed_sha256": "a88234ab2a2b0fd97c433dc2c16044e19eebba05b28a5fc3e48f394caf990e4e"
+    },
+    "app/browser_templates.py": {
+      "base_sha256": "68512b1f4d053358520f5d852c5384bc0da0ba2bb422e4b7d88d6f032fb556af",
+      "reviewed_sha256": "41eb9c66471ccb087d466ba53ccf51b35cde93a298566b8bfdceaf4624b63228"
+    }
+  },
+  "checks": [
+    {
+      "area": "Separação das permissões",
+      "result": "validate_targets recebe capability somente como parâmetro interno por palavra-chave e limita os valores a checklists.approve ou maintenance.approve. O padrão continua checklists.approve.",
+      "evidence": [
+        "app/approvals.py:210",
+        "app/approvals.py:217",
+        "app/approvals.py:224"
+      ]
+    },
+    {
+      "area": "Todas as chamadas do helper",
+      "result": "A publicação nativa de manutenção e a publicação no editor informam maintenance.approve. Checklist original, biblioteca, assistente e acréscimos de itens continuam chamando o padrão checklist. Nenhum campo de requisição passa a controlar a capability.",
+      "evidence": [
+        "app/maintenance.py:127",
+        "app/browser_templates.py:290",
+        "app/checklists.py:194",
+        "app/checklist_library.py:298",
+        "app/checklist_wizard.py:257",
+        "app/checklist_wizard.py:302",
+        "app/record_lifecycle.py:198"
+      ]
+    },
+    {
+      "area": "Catálogo e execução alinhados",
+      "result": "O catálogo de manutenção inclui usuários habilitados com maintenance.approve, sem exigir checklists.approve. A execução continua usando member/current_account/effective/may_review e a designação exata por usuário ou grupo; o administrador não se torna substituto automático do aprovador designado.",
+      "evidence": [
+        "app/browser_templates.py:194",
+        "app/maintenance.py:24",
+        "app/maintenance.py:205",
+        "app/fieldwork_common.py:member"
+      ]
+    },
+    {
+      "area": "Grupos e autorizações atuais",
+      "result": "Catálogo e validação consultam effective na conexão atual e usam target_matches. Com catálogo de departamentos, esse helper exige departamento ativo e vínculo ativo. A gravação da publicação repete autorização, versão, elegibilidade e review_token na mesma transação.",
+      "evidence": [
+        "app/approvals.py:224",
+        "app/approvals.py:229",
+        "app/browser_templates.py:204",
+        "app/browser_templates.py:303",
+        "app/browser_templates.py:343",
+        "app/browser_templates.py:381",
+        "app/departments.py:target_matches"
+      ]
+    },
+    {
+      "area": "Preservação e efeitos",
+      "result": "Diff altera apenas a seleção da permissão de validação/catalogação. Não adiciona escrita de política, migração, transferência de usuários, alteração de IDs, hashes de evidência, auditoria ou reescrita de ordens congeladas. Rotinas sem requisito de aprovação continuam dispensando a consulta de alvos.",
+      "evidence": [
+        "app/approvals.py:219",
+        "app/maintenance.py:108",
+        "app/browser_templates.py:280"
+      ]
+    }
+  ],
+  "integration_evidence_observed": [
+    {
+      "file": "work/ui137-regression-maintenance.xml",
+      "passed": 5,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "scope": "Jornada HTTP completa, permissões atuais e projeto, aprovador exclusivo da manutenção, rollback, publicação no editor e padrão checklist ainda negado."
+    },
+    {
+      "file": "work/ui137-regression-maintenance-regression.xml",
+      "passed": 5,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "scope": "Correção reinicia aprovação, ordem fechada, publicação não reescreve ordem, sucessão verifica manutenção sem conceder checklist."
+    }
+  ],
+  "limits": [
+    "Esta revisão independente não executou novo TestClient, navegador ou acesso à produção.",
+    "Casos por grupo/departamento foram acompanhados por leitura do código; não se afirma cobertura nova de execução de todas as combinações de grupos.",
+    "A ausência de achados se limita ao diff e às integrações examinadas; não é auditoria exaustiva de todo o sistema."
+  ],
+  "product_files_modified_by_review": false
+}

@@ -1,0 +1,47 @@
+{
+  "release": "UI137",
+  "implemented_local": [
+    {
+      "area": "RH: calendário, agenda, relatórios e cadastro",
+      "change": "Respostas antigas não substituem consultas atuais. A exportação fica indisponível durante o carregamento e usa os filtros dos dados efetivamente carregados. Calendário e agenda distinguem pessoas com nomes iguais; a busca também aceita o identificador de acesso autorizado.",
+      "tested": "Handlers reais de calendário/agenda e relatórios em português e inglês, conteúdo CSV, filtros, falhas e respostas fora de ordem. Jornada HTTP de criação do cadastro, atualização profissional, correção dos próprios contatos, conflito de versão e privacidade do histórico em banco fictício."
+    },
+    {
+      "area": "Documentos: conferência, convites e participação",
+      "change": "Convites oferecem nova tentativa após falha de carregamento e aviso antes de fechar um envio sem confirmação. Resultados tardios respeitam a conta e a janela atuais. Participação identifica a revisão, diferencia ciência de assinatura e melhora as descrições acessíveis e mensagens em português.",
+      "tested": "Enviar documento e anexo, devolver/rejeitar com justificativa, corrigir, conferir, revogar acesso, arquivar/restaurar e preservar histórico e bytes dos arquivos. Painéis de convites e participação executados com transporte fictício; nenhum convite real ou e-mail enviado."
+    },
+    {
+      "area": "Manutenção: execução e aprovadores",
+      "change": "A publicação e o catálogo de revisores agora usam a permissão de aprovação da manutenção, corrigindo a exigência indevida de aprovação de checklists. O formulário mostra o motivo salvo da devolução, identifica o revisor e apresenta limites numéricos em português. Nenhuma política de acesso ou conta foi alterada.",
+      "tested": "Publicar rotina, criar ordem, registrar leitura e foto, devolver, corrigir, aprovar por outra conta e concluir. Verificados download, histórico, PDF, repetição segura, conflitos, rollback, revogação e publicação pelo editor. A permissão exclusiva de manutenção continua insuficiente para aprovar checklists."
+    },
+    {
+      "area": "Solicitações de TI",
+      "change": "Busca de responsáveis por nome sem acentos ou identificador mantém a seleção e o rascunho. Voltar para a lista devolve o foco ao chamado. Falhas de acesso ao histórico retiram detalhes anteriores e permitem recarregar a consulta. Ajuda e apresentação foram alinhadas ao comportamento.",
+      "tested": "Seleção de homônimos, busca sem resultados, fechamento/cancelamento, repetição exata de envio incerto e troca de conta. Regressões HTTP de abertura, triagem, resposta, resolução, encerramento/reabertura, permissões, histórico e preservação."
+    }
+  ],
+  "pending": [
+    {
+      "area": "Validação em navegador e dispositivos",
+      "item": "Continuam pendentes renderização visual, foco e teclado nativos, leitor de tela, Voltar do navegador, contraste combinado e uso em celular real. Os testes locais e as prévias HTML não comprovam essas etapas."
+    },
+    {
+      "area": "Arquivos e assinaturas no dispositivo",
+      "item": "Seleção nativa de arquivos, câmera, compressão/decodificação de fotos, desenho por toque e abertura de CSV/PDF em aplicativos reais não foram executados nesta rodada. Os bytes e relatórios gerados foram conferidos nos testes locais."
+    },
+    {
+      "area": "Produção e publicação",
+      "item": "UI137 entregue localmente, sem novo commit ou deployment. A jornada de horas por projeto com admin e usuário temporário reais permanece pendente na Corcovado; nenhum registro ou usuário real foi criado, removido ou modificado."
+    },
+    {
+      "area": "Cobertura restante",
+      "item": "As matrizes registram quais telas e ações receberam evidência nova. Não se afirma revisão integral de todas as telas históricas nem conclusão dos 54 fluxos antigos. Telas fora do recorte, rotinas nativas e integrações externas permanecem sem nova validação específica."
+    },
+    {
+      "area": "Funcionalidades não acrescentadas",
+      "item": "Esta rodada não cria biblioteca universal de anexos nem novos anexos de TI/viagens. As fontes extraídas dos livros continuam distintas dos arquivos originais; vínculos por nome não foram criados."
+    }
+  ]
+}

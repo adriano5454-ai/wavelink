@@ -1,0 +1,37 @@
+{
+  "release": "UI137",
+  "area": "Solicitações de TI",
+  "method": "Handlers reais em adaptador DOM com respostas fictícias originadas de HTTP local; nenhum navegador.",
+  "files": [
+    "it_workspace.js",
+    "it_workspace.css"
+  ],
+  "changes": [
+    "Busca de responsável por nome sem acentos ou identificador, mantendo seleção fora do filtro",
+    "Identificação de homônimos no detalhe",
+    "Voltar mantém filtros e devolve foco ao chamado",
+    "Falha401/403/404 na paginação remove detalhe privado anterior e permite recarregar a mesma rota",
+    "Ajuda em PT-BR/inglês e ajustes de legibilidade"
+  ],
+  "checks": {
+    "new": 72,
+    "previous_ui130": 266,
+    "previous_ui134": 102
+  },
+  "tests": [
+    "test_ui137_it_ui.cjs",
+    "test_ui130_it_ui.cjs",
+    "test_ui134_it_journeys.cjs"
+  ],
+  "boundaries": [
+    "Busca não grava nem concede acesso",
+    "Rascunho conserva corpo/op_id em resultado incerto",
+    "Campos e APIs existentes preservados",
+    "Sem anexos novos, SMTP, navegador, captura ou uso em aparelho real"
+  ],
+  "pending": [
+    "Foco/teclado nativos, contraste combinado e layout em aparelhos reais",
+    "Integração de anexos de TI continua fora deste recorte"
+  ],
+  "production_access": false
+}

@@ -1,0 +1,25 @@
+/* UI60: retained module styles; common components deliberately override only wl-* roles. */
+@layer wlLegacy {
+/* UI41 discoverable choices; ordinary forms retain their own layouts. */
+.wl-choice-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;margin:14px 0}
+.wl-choice-card{display:flex;flex-direction:column;align-items:flex-start;text-align:left;gap:8px;min-height:138px;padding:20px;border:1px solid #b9cbd5;border-radius:12px;background:#f5fafc;color:#142e3d;cursor:pointer;font:inherit;box-shadow:0 2px 4px #1028300a}
+.wl-choice-card b{font-size:1.05rem}.wl-choice-card small{line-height:1.5;color:#3b5361}.wl-choice-card:hover{background:#e8f5f3;border-color:#218875}.wl-choice-card:focus-visible{outline:3px solid #156bba;outline-offset:3px}.wl-choice-card:disabled{cursor:not-allowed;opacity:.65}
+.wl-choice-icon{font-size:1.5rem;font-weight:700;color:#176b63;line-height:1.1}
+.lw-manager{width:min(820px,100%)}.lw-toolbar{display:flex;flex-wrap:wrap;gap:8px}.lw-rows{margin:14px 0;max-height:45vh;overflow:auto;padding:2px}.lw-row{display:flex;gap:12px;align-items:center;padding:12px 2px;border-bottom:1px solid #d2dee5}.lw-row label{display:flex;align-items:flex-start;gap:10px;flex:1;min-width:0}.lw-row label span{min-width:0;overflow-wrap:anywhere}.lw-row input{flex:0 0 auto;width:20px;height:20px;margin-top:3px}.lw-row small{display:block;margin-top:4px;font-size:.86rem}.lw-warning,#lw-error{color:#843b12}.lw-confirm{padding:16px;border:2px solid #b14b35;border-radius:10px;margin-top:12px;background:#fff9f5;color:#20333f}.lw-confirm[hidden]{display:none}.lw-confirm ul{max-height:160px;overflow:auto}.lw-footer{border-top:1px solid #d2dee5;padding-top:12px}.btn.danger{background:#a93023;color:#fff;border:1px solid #a93023}.btn.danger:hover{background:#89241a}.lw-protected{background:#f7f7f7}.lw-footer .actions{flex-wrap:wrap}.lw-footer .btn,.lw-toolbar .btn{white-space:normal}
+@media(max-width:560px){.wl-choice-grid{grid-template-columns:1fr}.wl-choice-card{min-height:105px;padding:15px}.lw-row{align-items:stretch;flex-direction:column}.lw-rows{max-height:40vh}.lw-footer .actions{display:grid;grid-template-columns:1fr 1fr}.lw-footer .actions .btn{width:100%;min-width:0}.lw-confirm{padding:10px}}
+
+/* One scroll area, with batch actions always within the dialog viewport. */
+#dialog:has(#lw-manager){width:min(900px,calc(100vw - 24px));max-width:calc(100vw - 24px);max-height:92dvh}
+#dialog:has(#lw-manager) .modal{display:flex;flex-direction:column;height:min(84dvh,900px);overflow:hidden}
+#dialog:has(#lw-manager) .modal-head{flex:0 0 auto}
+.lw-manager{width:100%;display:flex;flex-direction:column;min-height:0;flex:1}
+.lw-body{overflow:auto;min-height:0;flex:1;padding:0 4px}.lw-body>p{margin-top:10px}
+.lw-recovery{margin:6px 0 12px}.lw-recovery summary{cursor:pointer;font-size:.9rem}.lw-recovery .actions{flex-wrap:wrap}
+.lw-rows{max-height:none;overflow:visible}.lw-footer{flex:0 0 auto;background:#fff}
+.lw-footer>p{margin:0 0 8px}.lw-footer .actions{display:flex;justify-content:flex-end;gap:8px}
+.lw-confirm{overflow:auto;min-height:0}.lw-manager:has(#lw-confirm:not([hidden])) .lw-body{display:none}
+.lw-manager:has(#lw-confirm:not([hidden])) .lw-footer{display:none}
+#lw-error{font-size:.88rem;flex:0 0 auto;margin:6px 0 0}
+@media(max-width:560px){.lw-toolbar{display:grid;grid-template-columns:1fr 1fr;gap:6px}.lw-toolbar .btn{padding:10px 8px}.lw-toolbar #lw-refresh{grid-column:1/-1}.lw-footer .actions{display:grid;grid-template-columns:1fr 1fr}.lw-footer #lw-close{grid-column:1/-1}.lw-footer .btn{padding:10px 6px}.lw-rows{max-height:none}.lw-row{padding:10px 0}.lw-confirm .actions{display:grid;grid-template-columns:1fr}.lw-confirm .btn{white-space:normal}}
+
+}

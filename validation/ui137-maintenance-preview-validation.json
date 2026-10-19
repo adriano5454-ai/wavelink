@@ -1,0 +1,33 @@
+{
+  "passed": true,
+  "method": "Static HTML parsing per document; no browser",
+  "documents": [
+    {
+      "document": "preview",
+      "unique_ids": 0,
+      "duplicate_ids": [],
+      "controls_disabled": 0,
+      "links_verified": 0,
+      "reference_targets_verified": 0
+    },
+    {
+      "document": "srcdoc-1",
+      "unique_ids": 4,
+      "duplicate_ids": [],
+      "controls_disabled": 5,
+      "links_verified": 0,
+      "reference_targets_verified": 0
+    },
+    {
+      "document": "srcdoc-2",
+      "unique_ids": 3,
+      "duplicate_ids": [],
+      "controls_disabled": 6,
+      "links_verified": 0,
+      "reference_targets_verified": 0
+    }
+  ],
+  "iframes_sandboxed": true,
+  "external_resources": 0,
+  "sha256": "3e2bed952403ff37a3c55d070150c8ee984578f8081f5162cb57a9f5974808af"
+}

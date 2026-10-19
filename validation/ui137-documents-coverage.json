@@ -1,0 +1,144 @@
+{
+  "release": "UI137",
+  "area": "Conferência documental de RH, convites e participação documental",
+  "method": "Jornada HTTP com banco temporário fictício executada pelo coordenador; controladores reais em adaptador DOM local nas interfaces PT-BR e EN. Sem navegador, renderização de layout ou produção.",
+  "screens": [
+    {
+      "screen": "Documento pessoal do RH — enviar, devolver, rejeitar, corrigir e conferir",
+      "status": "Jornada HTTP nova executada; frontend RH pertence a outro agente",
+      "changes": [],
+      "tested": [
+        "Cadastro com referência 0000137; anexo PNG válido fictício permanece pendente de conferência.",
+        "Sem anexo, conferir é recusado. Devolver e rejeitar exigem justificativa não vazia.",
+        "Devolver → titular corrige → rejeitar → titular corrige → outro responsável confere o mesmo ID.",
+        "Salvar correção reinicia a situação de conferência; motivos anteriores permanecem no histórico.",
+        "Histórico contém autor, versões, motivos e os anexos exatos; download conserva os bytes."
+      ],
+      "limits": [
+        "Documento rejeitado é corrigível no contrato atual; não se confunde com despesa rejeitada imutável.",
+        "Esta jornada HTTP não é uma jornada visual no formulário de RH."
+      ]
+    },
+    {
+      "screen": "RH — limites de acesso, conferência independente e anexos",
+      "status": "Executado por HTTP real local",
+      "changes": [],
+      "tested": [
+        "Outro colaborador e gestor apenas de horas/despesas não consultam documento, histórico ou arquivo.",
+        "ID do arquivo de outro registro não dá acesso.",
+        "Revogação de documentos invalida sessão anterior e impede download por sessão atual sem permissão.",
+        "Conferente não pode ser o titular nem quem acabou de alterar a evidência.",
+        "Versão antiga é recusada sem escrita; repetição da mesma operação devolve o recibo sem duplicar histórico.",
+        "PDF complementar desfaz a conferência anterior; arquivar/restaurar conserva ID, arquivos e histórico."
+      ],
+      "limits": [
+        "Revogação e preservação foram comprovadas com contas fictícias; nenhuma conta real foi usada.",
+        "SMTP e SMTP_SSL foram bloqueados no fixture; nenhum convite ou e-mail foi enviado."
+      ]
+    },
+    {
+      "screen": "Convites — carregamento e recuperação",
+      "status": "Corrigido e testado por controlador real em DOM local",
+      "problems": [
+        "Falha no primeiro carregamento removia a lista e não oferecia repetição no painel.",
+        "Resposta antiga de atualização podia disputar o estado com emissão ou encerramento de convite."
+      ],
+      "changes": [
+        "Botão Tentar carregar os convites novamente aparece após falha e permite reconstruir opções/lista sem sair da janela.",
+        "Erros próprios de interface passam pela tradução; erro desconhecido do servidor permanece literal.",
+        "Emissão/encerramento invalidam leituras anteriores; resultados de outra conta não são aplicados."
+      ],
+      "tested": [
+        "Falha inicial → repetir → opções carregadas; sem recriar convite automaticamente.",
+        "Atualização pendente → emissão → resposta antiga sem permissão não apaga QR nem habilita contexto errado.",
+        "Troca de sessão antes da resposta impede preencher a janela e encerra o painel antigo."
+      ],
+      "limits": [
+        "Não foi usado QR real, câmera, dispositivo móvel ou servidor de convites nesta suíte DOM."
+      ]
+    },
+    {
+      "screen": "Convites — Fechar janela, encerrar acesso e resposta incerta",
+      "status": "Corrigido e testado por controlador real em DOM local",
+      "problems": [
+        "Após falha incerta, o guard anterior só avisava enquanto busy=true; depois a janela podia perder o op_id pendente sem confirmação."
+      ],
+      "changes": [
+        "Fechar janela substitui Ocultar painel e fecha apenas a visualização.",
+        "Clique em Fechar ou Esc avisa sempre que há pedido de criação não confirmado; recusar preserva janela e referência.",
+        "Repetir o mesmo convite conserva todos os campos e o op_id; não usa novo segredo nem nova operação.",
+        "Encerrar convites continua separado e chama a operação existente pelo ID exato.",
+        "Fechamento explícito devolve foco ao controle de origem apenas no mesmo contexto e se ele ainda existe."
+      ],
+      "tested": [
+        "Recusar Fechar/Esc após resposta perdida mantém pedido e sessão.",
+        "Repetir usa payload idêntico e gera o QR somente após resposta confirmada.",
+        "Aceitar fechamento incerto não envia nova emissão, logout nem encerramento remoto.",
+        "Encerrar convites envia apenas o ID selecionado, mantém a janela e a sessão."
+      ],
+      "limits": [
+        "Não se afirma que o convite foi encerrado em servidor pela simulação; a suíte só comprova o handler e o envelope.",
+        "Esc e foco foram exercitados no adaptador DOM, não no teclado de navegador."
+      ]
+    },
+    {
+      "screen": "Convites — PDF de assinaturas por revisão",
+      "status": "Testado localmente; resultado de interface corrigido",
+      "changes": [
+        "Mensagem informa entrega do arquivo ao navegador, sem afirmar gravação em disco.",
+        "Preparação, integridade inválida e falhas ficam localizadas em PT-BR."
+      ],
+      "tested": [
+        "URL carrega revisão exata; Blob e nome do arquivo são conservados.",
+        "Resposta que não começa com %PDF- não inicia download e permite tentar de novo.",
+        "Consulta/exportação não assina nem modifica o documento no handler."
+      ],
+      "limits": [
+        "PDF mínimo fictício é usado no DOM, não se comprova renderização PDF nesse teste.",
+        "Testes HTTP herdados de PDF/participação foram sugeridos ao coordenador; resultados adicionais pertencem à integração final."
+      ]
+    },
+    {
+      "screen": "Participação — identidade, ciência, desenho e recibos",
+      "status": "Apresentação corrigida e renderer real testado",
+      "changes": [
+        "Contagens distinguem ciências registradas e assinaturas desenhadas salvas.",
+        "Facilitador, identidade registrada, arquivo compartilhado e metadados de revisão usam português natural.",
+        "Identidade desconhecida fica literal, em vez de ser classificada como convidado.",
+        "Canvas possui papel de imagem e alternativa textual com pessoa/revisão exatas.",
+        "Áreas de ação de resumo e foco ficam identificadas por CSS específico."
+      ],
+      "tested": [
+        "PT/EN: três participantes fictícios, recibos, empresas, método salvo e arquivo com caracteres HTML conservados como texto.",
+        "Um desenho salvo é executado no canvas simulado e não redesenhado sem alteração.",
+        "Visão limitada à própria conta mostra somente as linhas recebidas; outra revisão não é transferida.",
+        "Falha de integridade é distinta de lista vazia; não inventa zero participantes."
+      ],
+      "limits": [
+        "O frontend recebe projeção já autorizada; ocultação de metadados no servidor depende da ACL existente e regressões HTTP específicas.",
+        "Traços de canvas não foram rasterizados nas prévias HTML."
+      ]
+    },
+    {
+      "screen": "Prévias e layout menor",
+      "status": "Preparado para inspeção; sem validação visual",
+      "changes": [
+        "Duas prévias portáteis reproduzem HTML dos componentes e CSS do aplicativo.",
+        "Controles operacionais desativados na cópia; opção local limita a largura a 390 px para inspeção manual."
+      ],
+      "tested": [
+        "3 páginas HTML e 97 URLs locais verificadas; zero referências quebradas."
+      ],
+      "limits": [
+        "Não são screenshots nem prova de aparência, contraste combinado, leitor de tela, celular ou desempenho."
+      ]
+    }
+  ],
+  "remaining": [
+    "Abrir os fluxos reais em navegador com teclado, leitor de tela e telas menores, quando autorizado/disponível.",
+    "Validar QR/câmera, transferência real do PDF, área de transferência e comportamento nativo de Esc/Voltar.",
+    "Validar interface de conferência no RH junto à integração do agente responsável, sem promover os quatro testes HTTP a E2E de navegador.",
+    "Não foi revisada toda a área pública /sign/; não houve alteração de document_join.js ou document_join.html.",
+    "Limpeza de registros antigos UI121 em produção e dados/usuário temporário permanecem fora desta rodada local."
+  ]
+}

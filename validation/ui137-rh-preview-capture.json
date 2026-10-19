@@ -1,0 +1,10 @@
+{
+  "phase": "UI137",
+  "browser": false,
+  "screenshots": false,
+  "source": "Actual calendarHtml, AJHRPlanning.mount, report kind change and export click handlers",
+  "calendar_data": "Fictional UI136 HTTP assignments plus explicitly fictional open-ended/cancelled travel and restricted roster examples; no live persons",
+  "report_data": "Approved fictional expense response captured from isolated real UI136 HTTP; filter draft deliberately differs from the committed query, which is the report scope",
+  "styles": "Planning mount properties serialized from real mount() execution on a minimal DOM-style adapter",
+  "controls": "Disabled in portable HTML copies"
+}

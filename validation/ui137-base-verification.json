@@ -1,0 +1,39 @@
+{
+  "local_base": "UI136",
+  "parent_manifest_sha256": "9ecd6b09f3244c4f8a0e6a067bbcf875dfde4aaaceb69aefdd0a1f9f0cece4e5",
+  "runtime_resources": 2418,
+  "repository_files": 1425,
+  "previous_archive": {
+    "file": "Wavelink-UI136-repositorio-completo.zip",
+    "bytes": 100898245,
+    "sha256": "0f05ae40690dd0763e0ba70d12b33fd096bdeef959fb982ba32a5849ab585d8a",
+    "archive_files": 1426,
+    "manifest_files": 1425,
+    "crc_passed": true,
+    "every_file_hash_verified": true,
+    "runtime_manifest_sha256": "9ecd6b09f3244c4f8a0e6a067bbcf875dfde4aaaceb69aefdd0a1f9f0cece4e5",
+    "production_access": false
+  },
+  "local_base_unchanged": true,
+  "production_access": false,
+  "github_main": "421f8d3252a73ed0fbd8c8bc088158d9973bee7e",
+  "github_release": "UI136",
+  "remote_critical_files": [
+    {
+      "path": "DEPLOYMENT_FILES.json",
+      "sha": "62d40b3f7474f38e4eb3d81148575ea794247b72"
+    },
+    {
+      "path": "deploy/apply_ui136.py",
+      "sha": "167dc68c2cbdefc2404fdc9a6a99a74a786473ed"
+    },
+    {
+      "path": "deploy/materialize_runtime.py",
+      "sha": "33930429203afa6f4575a19af9451704694b6f8b"
+    },
+    {
+      "path": "Dockerfile",
+      "sha": "c4fb4495647d05663338d1cb061be844a60e1d67"
+    }
+  ]
+}

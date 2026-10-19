@@ -1,0 +1,82 @@
+{
+  "version": "UI137",
+  "generated_at": "2026-10-19T10:28:18.963Z",
+  "status": "frozen_local_prepared_not_published",
+  "scope": "Maintenance complete local journey and focused forms; independent TI/backend review",
+  "changes": [
+    {
+      "files": [
+        "app/static/maintenance_forms.js",
+        "app/static/maintenance_forms.css"
+      ],
+      "description": "Saved rejected-review justification is visible beside correction fields, with reviewer/login/time; worker note remains unchanged. Approval states, numeric limits, validation, selected-person summary and unavailable routine use PT-BR/EN labels."
+    },
+    {
+      "files": [
+        "app/approvals.py",
+        "app/maintenance.py",
+        "app/browser_templates.py"
+      ],
+      "owner": "root",
+      "description": "Fixed capability mismatch demonstrated independently: maintenance reviewers no longer require checklist approval. Checklist behavior and existing grants unchanged."
+    }
+  ],
+  "tests": {
+    "http": {
+      "file": "tests/test_ui137_maintenance_http.py",
+      "unique_cases": 5,
+      "status": "all_passed_across_affected_preflights",
+      "evidence": [
+        "work/ui137-maintenance-http-r2.xml: 4passed/1realcatalogfailure",
+        "work/ui137-maintenance-http-r3.xml: maintenance-onlypassed; browser test fixture used incorrect Problem.status attribute",
+        "work/ui137-maintenance-http-r4.xml: browser publicationpassed after fixture corrected to Problem.code"
+      ],
+      "initial_reproduction": "work/ui137-maintenance-http.log confirmed original validator failure; first flow fixture also incorrectly resent photo metadata and was fixed to native {id,caption}.",
+      "fixture": "tests/fixtures/ui137-maintenance-api.json",
+      "records_are_fictional": true
+    },
+    "dom": {
+      "file": "tests/test_ui137_maintenance_ui.cjs",
+      "checks": 88,
+      "locales": [
+        "pt-BR",
+        "en"
+      ],
+      "status": "passed",
+      "method": "Real operations/form/management/evidence handlers over deterministic DOM with actual successful HTTP fixture; no browser."
+    },
+    "independent_ti": {
+      "file": "tests/test_ui137_it_ui.cjs",
+      "checks": 72,
+      "status": "passed",
+      "review": "work/ui137-maintenance-independent-review.json"
+    }
+  },
+  "privacy": {
+    "external_messages": 0,
+    "production_access": false,
+    "browser_access": false,
+    "real_user_changes": false,
+    "existing_company_data_changes": false
+  },
+  "artifacts": {
+    "coverage": "work/ui137-maintenance-coverage.json",
+    "preview": "work/ui137-maintenance-preview.html",
+    "actual_markup": "work/ui137-maintenance-markup.json",
+    "translations": "work/ui137-maintenance-translations.json",
+    "hashes": "work/ui137-maintenance-source-hashes.json"
+  },
+  "pending": [
+    "Parent final integrated validation/reconstruction.",
+    "Actual browser/mobile interaction and live Corcovado journey remain untested in this local round.",
+    "Recurring follow-up and order cancellation were inspected but not newly exercised end-to-end."
+  ],
+  "backend_changes_by_agent": false,
+  "source_hashes": {
+    "app/static/maintenance_forms.js": "0fa8c564903f40e675fe028cc0d5863adbb92db7a95bc1106429a0b9da8dea77",
+    "app/static/maintenance_forms.css": "37326a921cb13ac299ee1d70e9a80fe55725af985f0202aaf51291ae9328af9d",
+    "tests/test_ui137_maintenance_http.py": "01a2a27ada833549ae8804943aec46bbf403df949edd5f07c112977a36399f02",
+    "tests/test_ui137_maintenance_ui.cjs": "a6267a57d480776e828dd0ffd865969423a8a08c53354e9ad1b33bf49814f976",
+    "tests/fixtures/ui137-maintenance-api.json": "87f06ccbb999dbd127d48703e8ebcfc1517885be3a45df6131340f0820d85873"
+  }
+}

@@ -1,0 +1,161 @@
+{
+  "phase": "UI137",
+  "owner": "rh_revisao",
+  "status": "implemented_tested_locally_sources_frozen",
+  "browser_used": false,
+  "production_accessed": false,
+  "published": false,
+  "data": "Fictional Node/DOM fixtures; one real isolated HTTP registration journey executed by root. No messages or live-account/data changes.",
+  "implemented": [
+    {
+      "problem": "A resposta de /workspace era atribuída antes de conferir geração/conta/rota, permitindo estado antigo após resposta nova.",
+      "change": "Resultado e erro permanecem locais à consulta até passar pelo guard; somente então workspace e seu escopo são publicados.",
+      "proof": "Duas respostas fora de ordem, erro antigo depois de sucesso novo e troca de conta durante a leitura: estado atual e renderização preservados."
+    },
+    {
+      "problem": "Filtros novos podiam entrar no CSV de registros ainda pertencentes à consulta anterior.",
+      "change": "Snapshot dos filtros/pessoa/lotação da consulta carregada alimenta legenda e CSV; exportação bloqueada durante leitura. A seleção do relatório verifica contexto pronto.",
+      "preserved": "Mesmas colunas, conteúdo e registros autorizados; proteção contra fórmulas, BOM e moeda mantidos."
+    },
+    {
+      "problem": "Linha do tempo/agenda continuavam apresentando homônimos só pelo nome e não pesquisavam login.",
+      "change": "Nome e login já autorizado no roster; fallback de ID real apenas para homônimos sem login. Busca por login e rótulo PT/EN correspondente. Cabeçalhos móveis permitem quebra de nomes longos.",
+      "preserved": "Escopo do servidor, IDs e pessoa não se alteram; nenhuma inferência de presença, disponibilidade ou horas."
+    },
+    {
+      "problem": "Separador do período do calendário ficava em português na instalação inglesa.",
+      "change": "Conector a/to segue idioma atual, sem mudar datas civis ou auditoria UTC."
+    }
+  ],
+  "product_files": [
+    {
+      "path": "app/static/hr_workspace.js",
+      "sha256": "288a306c18e2e122216d54610aebcd401e00a875b3532ea24cc74f4382e677d9"
+    },
+    {
+      "path": "app/static/hr_workspace.css",
+      "sha256": "80c3586619b9e266f126cba5becb631313c3b6f7a23daf5b553325c337e4c119"
+    },
+    {
+      "path": "app/static/hr_planning_ui121.js",
+      "sha256": "d26aee42d2df9b57d5ca9996c884526b4313f30863f2e604cb6929d645c654b3"
+    },
+    {
+      "path": "app/static/hr_insights_ui123.js",
+      "sha256": "ba95a5336706620fbdd64f2e999cf2785c2ccf6afb20d6d23235bc8a5a02963e"
+    }
+  ],
+  "new_tests": [
+    {
+      "file": "tests/test_ui137_rh_queries.cjs",
+      "checks": 76,
+      "result": "passed",
+      "kind": "actual open/query/calendar/report/export handlers, timed controlled responses and Blob bytes, real PT/EN dictionaries"
+    },
+    {
+      "file": "tests/test_ui137_rh_planning.cjs",
+      "checks": 98,
+      "result": "passed",
+      "kind": "actual planning renderers/mount, real search-submit/clear handlers and real authorised personal-profile HTTP fixture, PT/EN"
+    },
+    {
+      "file": "tests/test_ui137_rh_profile_http.py",
+      "tests": 1,
+      "result": "passed",
+      "executor": "/root",
+      "seconds": 14.46,
+      "xml": "work/ui137-rh-preflight.xml",
+      "kind": "isolated HTTP with SQLite persistence, versions, retries, account identity and privacy"
+    }
+  ],
+  "regressions": [
+    {
+      "file": "tests/test_ui135_rh_reports.cjs",
+      "checks": 162,
+      "result": "passed"
+    },
+    {
+      "file": "tests/test_ui134_rh_planning.cjs",
+      "checks": 54,
+      "result": "passed"
+    },
+    {
+      "file": "tests/test_ui136_rh_ui.cjs",
+      "checks": 94,
+      "result": "passed"
+    },
+    {
+      "file": "tests/test_ui135_rh_forms.cjs",
+      "checks": 236,
+      "result": "passed"
+    },
+    {
+      "file": "tests/test_ux_ui123.cjs",
+      "checks": 18,
+      "result": "passed"
+    }
+  ],
+  "new_node_checks": 174,
+  "regression_node_checks": 564,
+  "new_http_tests": 1,
+  "test_and_fixture_files": [
+    {
+      "path": "tests/test_ui137_rh_queries.cjs",
+      "sha256": "5b4126360546bb9dfdddc634a2f9c3cc2be271c615218847a8d92bb6aa0dce3c"
+    },
+    {
+      "path": "tests/test_ui137_rh_planning.cjs",
+      "sha256": "d1278516461ae726d0e3cc3f47ab5b745b628112e9dc93de22f63eaa5f91ca4a"
+    },
+    {
+      "path": "tests/test_ui137_rh_profile_http.py",
+      "sha256": "423af00a046c503308bb0e6b8166fce5f4970c638f2ea2c63ec902b5e112fb0b"
+    },
+    {
+      "path": "tests/fixtures/ui137_rh_profile_http_fixture.json",
+      "sha256": "1d7bbad0f96a3cff12ba62301bd7e808fa7d41c2088ea223923847abbd53f1ee"
+    },
+    {
+      "path": "tests/test_ux_ui123.cjs",
+      "sha256": "235718744f2c204cf8d68405ef21ae8c36c92ff46e6016d0c280477a94af16d4"
+    }
+  ],
+  "historical_test_update": {
+    "file": "tests/test_ux_ui123.cjs",
+    "reason": "Exact English-label assertion updated from Find person, vessel or project to Find name, login ID, vessel or project, matching the new supported search scope. Remaining checks unchanged.",
+    "authorization": "Coordinator explicitly approved this single assertion update.",
+    "result": "18 checks passed; new UI137 test additionally executes actual login search submit/clear handlers."
+  },
+  "translations": "work/ui137-rh-translations.json (one key, integrated by root into real catalogs before tests)",
+  "coverage": "work/ui137-rh-coverage.json",
+  "preview_manifest": "work/ui137-rh-preview-manifest.json",
+  "previews": [
+    "work/ui137-rh-previews/calendario.html",
+    "work/ui137-rh-previews/relatorio.html"
+  ],
+  "preview_generation": {
+    "capture": "work/capture_ui137_rh_previews.cjs",
+    "portable": "work/generate_ui137_rh_previews.py",
+    "functions": [
+      "calendarHtml",
+      "AJHRPlanning.mount",
+      "hr-report-kind change handler",
+      "reportsHtml",
+      "hr-export-csv click handler"
+    ],
+    "data": "Fictional historical HTTP assignment/expense responses plus explicit open-ended/cancelled travel and restricted-roster examples. New profile HTTP fixture is tested but not shown in the two previews.",
+    "style_proof": "Timeline CSS properties were serialized from the actual mount() effects, not handwritten replacement layout.",
+    "csv": "Preview contains the actual Blob-generated CSV.",
+    "browser": false,
+    "screenshots": false
+  },
+  "limits": [
+    "No Chrome/browser, real viewport/device, native dialog, keyboard/screen-reader or visual layout validation.",
+    "Monthly timeline and agenda renderers plus month/search handlers were exercised; the view-switch click itself and physical horizontal scrolling were not exercised.",
+    "CSV bytes and contents verified, but not imported into Excel or downloaded by a real browser.",
+    "HTTP personal-document coverage belongs to the documents agent and is not claimed here.",
+    "No production users/data/permissions changed; temporary user preserved by not accessing production. No email, payment, attendance or payroll action.",
+    "Work outside current matrix entries remains historical, not newly tested."
+  ],
+  "dependencies": "Root integrates localization, release/cache/shell, independent areas and final test/ZIP seal. Sources/tests frozen; only work reports/previews edited afterwards."
+}

@@ -1,0 +1,114 @@
+{
+  "version": "UI137",
+  "generated_at": "2026-10-19T10:28:18.963Z",
+  "environment": "isolated local HTTP + SQLite + deterministic DOM; fictional accounts/data",
+  "rows": [
+    {
+      "screen": "Publicação de rotina",
+      "status": "tested_http",
+      "evidence": [
+        "test_http_maintenance_only_reviewer_can_be_designated_without_checklist_access",
+        "test_http_browser_publication_uses_maintenance_capability_without_granting_checklists"
+      ],
+      "result": "Maintenance-only reviewer accepted by maintenance, absent from checklist directory and rejected by default checklist target validator; no permission grant."
+    },
+    {
+      "screen": "Criação da ordem",
+      "status": "tested_http_and_dom",
+      "evidence": [
+        "test_http_complete_saved_evidence_return_correct_review_and_close",
+        "test_ui137_maintenance_ui.cjs createScenario"
+      ],
+      "result": "Exact published revision and assignee IDs; no automatic routine selection; unavailable saved routine retained and blocked with focus."
+    },
+    {
+      "screen": "Execução e foto",
+      "status": "tested_http_and_dom",
+      "evidence": [
+        "test_http_complete_saved_evidence_return_correct_review_and_close",
+        "test_ui137_maintenance_ui.cjs stepScenario"
+      ],
+      "result": "Required photo, bounds, saved result, attachment identity, stored JPEG hash and no-store download verified."
+    },
+    {
+      "screen": "Devolução e correção",
+      "status": "tested_http_and_dom",
+      "evidence": [
+        "test_http_complete_saved_evidence_return_correct_review_and_close",
+        "test_ui137_maintenance_ui.cjs stepScenario"
+      ],
+      "result": "Reason required; visible saved reviewer note and account, worker note separate, correction invalidates previous approval and preserves photo identity."
+    },
+    {
+      "screen": "Revisão da etapa",
+      "status": "tested_http_and_dom",
+      "evidence": [
+        "test_http_complete_saved_evidence_return_correct_review_and_close",
+        "test_ui137_maintenance_ui.cjs reviewScenario"
+      ],
+      "result": "Named reviewer and current capability required. No default approval. Loading, missing reason, changed note after review and changed account block send."
+    },
+    {
+      "screen": "Conclusão da ordem",
+      "status": "tested_http",
+      "evidence": [
+        "test_http_complete_saved_evidence_return_correct_review_and_close"
+      ],
+      "result": "Unfinished/rejected checks block finish; approved saved evidence allows finish; duplicate request adds no audit; completed order rejects edits."
+    },
+    {
+      "screen": "Histórico, anexo e relatório",
+      "status": "tested_http",
+      "evidence": [
+        "test_http_complete_saved_evidence_return_correct_review_and_close"
+      ],
+      "result": "Author/time/before-after/rejection note retained; actual PDF and SHA-verified JPEG bytes available after closure."
+    },
+    {
+      "screen": "Consulta de evidência",
+      "status": "tested_dom",
+      "evidence": [
+        "test_ui137_maintenance_ui.cjs evidenceScenario"
+      ],
+      "result": "Read-only viewer, approval tab, refresh clears stale result; delayed response after session change does not render."
+    },
+    {
+      "screen": "Erros e concorrência",
+      "status": "tested_http",
+      "evidence": [
+        "test_http_conflicts_current_permissions_and_project_binding",
+        "test_http_failed_audit_rolls_back_result_photo_and_receipt"
+      ],
+      "result": "401/403/409, wrong company, exact replay, cross-user/body conflicts, revocation and rollback of photo/result/audit/receipt verified."
+    },
+    {
+      "screen": "Adiamento, recorrência e sucessora",
+      "status": "not_retested_ui137",
+      "evidence": [],
+      "result": "Existing code read for context; no new end-to-end cycle/stop/release test."
+    },
+    {
+      "screen": "Cancelamento de ordem",
+      "status": "not_retested_ui137",
+      "evidence": [],
+      "result": "Existing non-destructive close form inspected; no new HTTP cancellation in this focused round."
+    },
+    {
+      "screen": "Celular e navegador real",
+      "status": "not_tested",
+      "evidence": [],
+      "result": "Portable actual-component preview only; no layout/browser/device rendering."
+    }
+  ],
+  "test_summary": {
+    "unique_http_cases_passed": 5,
+    "maintenance_dom_checks": 88,
+    "independent_ti_checks": 72,
+    "final_single_cohort": "Parent runs on frozen integrated build"
+  },
+  "limits": [
+    "Tests do not prove real Corcovado behavior.",
+    "No live data or temporary production user changed.",
+    "Photo-editor transport and local draft persistence are adapters in new DOM test; storage and actual media integrity are covered by real HTTP/SQLite tests."
+  ]
+}
