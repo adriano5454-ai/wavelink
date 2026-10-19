@@ -1,0 +1,10 @@
+{
+  "initial_manifest_sha256": "caddb274e18382634dd1902e93e722dbd077b80f58256539484a058104f637a1",
+  "finding": "Historical UI127 search original B returned an extra group because a one-letter term matched inside translated status text.",
+  "product_correction": "Status words match by prefix; saved record fields keep substring matching. Accents remain ignored. No stored values or permissions changed.",
+  "unchanged_historical_test": "test_audit_ui127.js",
+  "historical_checks_passed_after_fix": 163,
+  "new_manifest_ui_checks": 53,
+  "initial_full_run": "Stopped; no partial initial run counted in final results.",
+  "final_run": "Fresh full JavaScript, Python and repository reconstruction after refreeze."
+}

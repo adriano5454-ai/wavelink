@@ -1,0 +1,562 @@
+{
+  "sha": "d7e8614d946708b80f8bc8217a6a60d0dd117a78",
+  "release": "UI138",
+  "read_only": true,
+  "matches_preserved_local_base": true,
+  "checked_blobs": [
+    {
+      "file": "DEPLOYMENT_FILES.json",
+      "local": "8fd7f5c38c7123753e8d975699c6c78aefa4ebd3",
+      "remote": "8fd7f5c38c7123753e8d975699c6c78aefa4ebd3",
+      "equal": true
+    },
+    {
+      "file": "deploy/apply_ui138.py",
+      "local": "2614d0ead93b58f4a5886adf5ed959637db9a9d8",
+      "remote": "2614d0ead93b58f4a5886adf5ed959637db9a9d8",
+      "equal": true
+    },
+    {
+      "file": "deploy/materialize_runtime.py",
+      "local": "1635303addf8adda17245ca54f0574b6d0100d49",
+      "remote": "1635303addf8adda17245ca54f0574b6d0100d49",
+      "equal": true
+    },
+    {
+      "file": "Dockerfile",
+      "local": "ccbea016f7a6b2265a3199dec250f2a4491b9126",
+      "remote": "ccbea016f7a6b2265a3199dec250f2a4491b9126",
+      "equal": true
+    }
+  ],
+  "extra_verified_git_blobs": [
+    {
+      "path": "deploy/build_ui138_overlay.py",
+      "sha": "8b18d6e7b396d3d02b085a6fb6a59ede6f053003",
+      "equal": true
+    },
+    {
+      "path": "DELIVERY_CHECKS.json",
+      "sha": "704f954b685e1719d566562d81cedf3af0859555",
+      "equal": true
+    },
+    {
+      "path": "README.md",
+      "sha": "5a1675d251bb15d5feede7a31741abe43e84c4a7",
+      "equal": true
+    }
+  ],
+  "remote_comparison": {
+    "status": "ahead",
+    "ahead_by": 1,
+    "behind_by": 0,
+    "total_commits": 1,
+    "too_large": null,
+    "files": [
+      {
+        "filename": "DELIVERY_CHECKS.json",
+        "status": "modified"
+      },
+      {
+        "filename": "DEPLOYMENT_FILES.json",
+        "status": "modified"
+      },
+      {
+        "filename": "Dockerfile",
+        "status": "modified"
+      },
+      {
+        "filename": "README.md",
+        "status": "modified"
+      },
+      {
+        "filename": "deploy/apply_ui138.py",
+        "status": "added"
+      },
+      {
+        "filename": "deploy/build_ui138_overlay.py",
+        "status": "added"
+      },
+      {
+        "filename": "deploy/materialize_runtime.py",
+        "status": "modified"
+      },
+      {
+        "filename": "docs/UI138-cobertura.json",
+        "status": "added"
+      },
+      {
+        "filename": "docs/UI138-pendencias.json",
+        "status": "added"
+      },
+      {
+        "filename": "docs/UI138-previas/documentos/index.html",
+        "status": "added"
+      },
+      {
+        "filename": "docs/UI138-previas/documentos/leitura.html",
+        "status": "added"
+      },
+      {
+        "filename": "docs/UI138-previas/documentos/manifest.json",
+        "status": "added"
+      },
+      {
+        "filename": "docs/UI138-previas/documentos/resultado-incerto.html",
+        "status": "added"
+      },
+      {
+        "filename": "docs/UI138-previas/index.html",
+        "status": "added"
+      },
+      {
+        "filename": "docs/UI138-previas/logistica/ui137-destino.html",
+        "status": "added"
+      },
+      {
+        "filename": "docs/UI138-previas/logistica/ui138-destino.html",
+        "status": "added"
+      },
+      {
+        "filename": "docs/UI138-previas/manutencao/recorrencia.html",
+        "status": "added"
+      },
+      {
+        "filename": "docs/UI138-previas/perfis/alertas.html",
+        "status": "added"
+      },
+      {
+        "filename": "docs/UI138-previas/perfis/assets/badges/silver-sonar.webp",
+        "status": "added"
+      },
+      {
+        "filename": "docs/UI138-previas/perfis/assets/badges/starter-compass.webp",
+        "status": "added"
+      },
+      {
+        "filename": "docs/UI138-previas/perfis/assets/ui68-home-scene.svg",
+        "status": "added"
+      },
+      {
+        "filename": "docs/UI138-previas/perfis/assets/wavelink-approved-offshore-profile-ui87.webp",
+        "status": "added"
+      },
+      {
+        "filename": "docs/UI138-previas/perfis/assets/wavelink-approved-offshore-ui87.webp",
+        "status": "added"
+      },
+      {
+        "filename": "docs/UI138-previas/perfis/assets/wavelink-home-cover-ui86.svg",
+        "status": "added"
+      },
+      {
+        "filename": "docs/UI138-previas/perfis/assets/wavelink-profile-cover-ui86.svg",
+        "status": "added"
+      },
+      {
+        "filename": "docs/UI138-previas/perfis/index.html",
+        "status": "added"
+      },
+      {
+        "filename": "docs/UI138-previas/perfis/perfil-equipe.html",
+        "status": "added"
+      },
+      {
+        "filename": "docs/UI138-previas/perfis/styles/account_security_ui83.css",
+        "status": "added"
+      },
+      {
+        "filename": "docs/UI138-previas/perfis/styles/action_center_ui82.css",
+        "status": "added"
+      },
+      {
+        "filename": "docs/UI138-previas/perfis/styles/admin_workspace_ui75.css",
+        "status": "added"
+      },
+      {
+        "filename": "docs/UI138-previas/perfis/styles/company_workspace_ui84.css",
+        "status": "added"
+      },
+      {
+        "filename": "docs/UI138-previas/perfis/styles/deployment_branding.css",
+        "status": "added"
+      },
+      {
+        "filename": "docs/UI138-previas/perfis/styles/document_import.css",
+        "status": "added"
+      },
+      {
+        "filename": "docs/UI138-previas/perfis/styles/document_invites.css",
+        "status": "added"
+      },
+      {
+        "filename": "docs/UI138-previas/perfis/styles/document_participation.css",
+        "status": "added"
+      },
+      {
+        "filename": "docs/UI138-previas/perfis/styles/documentos_context.css",
+        "status": "added"
+      },
+      {
+        "filename": "docs/UI138-previas/perfis/styles/email_alerts_ui93.css",
+        "status": "added"
+      },
+      {
+        "filename": "docs/UI138-previas/perfis/styles/equipment_workspace_ui79.css",
+        "status": "added"
+      },
+      {
+        "filename": "docs/UI138-previas/perfis/styles/experience_ui121.css",
+        "status": "added"
+      },
+      {
+        "filename": "docs/UI138-previas/perfis/styles/experience_ui123.css",
+        "status": "added"
+      },
+      {
+        "filename": "docs/UI138-previas/perfis/styles/gui_recovery.css",
+        "status": "added"
+      },
+      {
+        "filename": "docs/UI138-previas/perfis/styles/home_workspace.css",
+        "status": "added"
+      },
+      {
+        "filename": "docs/UI138-previas/perfis/styles/hr_weekly_timesheets.css",
+        "status": "added"
+      },
+      {
+        "filename": "docs/UI138-previas/perfis/styles/hr_workspace.css",
+        "status": "added"
+      },
+      {
+        "filename": "docs/UI138-previas/perfis/styles/interface_components.css",
+        "status": "added"
+      },
+      {
+        "filename": "docs/UI138-previas/perfis/styles/it_workspace.css",
+        "status": "added"
+      },
+      {
+        "filename": "docs/UI138-previas/perfis/styles/login_ui96.css",
+        "status": "added"
+      },
+      {
+        "filename": "docs/UI138-previas/perfis/styles/logistics_workflow.css",
+        "status": "added"
+      },
+      {
+        "filename": "docs/UI138-previas/perfis/styles/membership_workspace.css",
+        "status": "added"
+      },
+      {
+        "filename": "docs/UI138-previas/perfis/styles/native_workspaces.css",
+        "status": "added"
+      },
+      {
+        "filename": "docs/UI138-previas/perfis/styles/operations_workspace_ui76.css",
+        "status": "added"
+      },
+      {
+        "filename": "docs/UI138-previas/perfis/styles/personal_home.css",
+        "status": "added"
+      },
+      {
+        "filename": "docs/UI138-previas/perfis/styles/preparation_ui.css",
+        "status": "added"
+      },
+      {
+        "filename": "docs/UI138-previas/perfis/styles/project_presence.css",
+        "status": "added"
+      },
+      {
+        "filename": "docs/UI138-previas/perfis/styles/recognition_workspace.css",
+        "status": "added"
+      },
+      {
+        "filename": "docs/UI138-previas/perfis/styles/save_status.css",
+        "status": "added"
+      },
+      {
+        "filename": "docs/UI138-previas/perfis/styles/session_exit.css",
+        "status": "added"
+      },
+      {
+        "filename": "docs/UI138-previas/perfis/styles/style.css",
+        "status": "added"
+      },
+      {
+        "filename": "docs/UI138-previas/perfis/styles/task_acceptance.css",
+        "status": "added"
+      },
+      {
+        "filename": "docs/UI138-previas/perfis/styles/ui131_visual.css",
+        "status": "added"
+      },
+      {
+        "filename": "docs/UI138-previas/perfis/styles/ui132_visual.css",
+        "status": "added"
+      },
+      {
+        "filename": "docs/UI138-previas/perfis/styles/ui_polish.css",
+        "status": "added"
+      },
+      {
+        "filename": "docs/UI138-previas/perfis/styles/unified_ui.css",
+        "status": "added"
+      },
+      {
+        "filename": "docs/UI138-previas/perfis/styles/usability_choices.css",
+        "status": "added"
+      },
+      {
+        "filename": "docs/UI138-previas/perfis/styles/visual_system_ui94.css",
+        "status": "added"
+      },
+      {
+        "filename": "docs/UI138-previas/perfis/styles/visual_ui124.css",
+        "status": "added"
+      },
+      {
+        "filename": "docs/UI138-previas/perfis/styles/work_execution_ui80.css",
+        "status": "added"
+      },
+      {
+        "filename": "docs/UI138-previas/perfis/styles/workflow_foundation_ui81.css",
+        "status": "added"
+      },
+      {
+        "filename": "docs/UI138-previas/perfis/styles/workspace_continuity.css",
+        "status": "added"
+      },
+      {
+        "filename": "docs/UI138_GUIA.html",
+        "status": "added"
+      },
+      {
+        "filename": "docs/UI138_SOURCE_PROVENANCE.json",
+        "status": "added"
+      },
+      {
+        "filename": "docs/preserved/full-ui05/DEPLOYMENT_FILES.json",
+        "status": "removed"
+      },
+      {
+        "filename": "validation/ui138-base-verification.json",
+        "status": "added"
+      },
+      {
+        "filename": "validation/ui138-batch-labels.json",
+        "status": "added"
+      },
+      {
+        "filename": "validation/ui138-cache-tokens.json",
+        "status": "added"
+      },
+      {
+        "filename": "validation/ui138-delivery-content.json",
+        "status": "added"
+      },
+      {
+        "filename": "validation/ui138-documents-coverage.json",
+        "status": "added"
+      },
+      {
+        "filename": "validation/ui138-documents-js-results.json",
+        "status": "added"
+      },
+      {
+        "filename": "validation/ui138-documents-preview-validation.json",
+        "status": "added"
+      },
+      {
+        "filename": "validation/ui138-documents-report.json",
+        "status": "added"
+      },
+      {
+        "filename": "validation/ui138-documents-translations.json",
+        "status": "added"
+      },
+      {
+        "filename": "validation/ui138-logistics-coverage.json",
+        "status": "added"
+      },
+      {
+        "filename": "validation/ui138-logistics-report.json",
+        "status": "added"
+      },
+      {
+        "filename": "validation/ui138-logistics-translations.json",
+        "status": "added"
+      },
+      {
+        "filename": "validation/ui138-maintenance-coverage.json",
+        "status": "added"
+      },
+      {
+        "filename": "validation/ui138-maintenance-dom-result.json",
+        "status": "added"
+      },
+      {
+        "filename": "validation/ui138-maintenance-independent-review.json",
+        "status": "added"
+      },
+      {
+        "filename": "validation/ui138-maintenance-markup.json",
+        "status": "added"
+      },
+      {
+        "filename": "validation/ui138-maintenance-preview-validation.json",
+        "status": "added"
+      },
+      {
+        "filename": "validation/ui138-maintenance-regression-results.json",
+        "status": "added"
+      },
+      {
+        "filename": "validation/ui138-maintenance-report.json",
+        "status": "added"
+      },
+      {
+        "filename": "validation/ui138-maintenance-translations.json",
+        "status": "added"
+      },
+      {
+        "filename": "validation/ui138-native-test-interruption.json",
+        "status": "added"
+      },
+      {
+        "filename": "validation/ui138-native-test-interruption.txt",
+        "status": "added"
+      },
+      {
+        "filename": "validation/ui138-preview-manifest.json",
+        "status": "added"
+      },
+      {
+        "filename": "validation/ui138-profile-coverage.json",
+        "status": "added"
+      },
+      {
+        "filename": "validation/ui138-profile-preview-manifest.json",
+        "status": "added"
+      },
+      {
+        "filename": "validation/ui138-profile-report.json",
+        "status": "added"
+      },
+      {
+        "filename": "validation/ui138-profile-translations.json",
+        "status": "added"
+      },
+      {
+        "filename": "validation/ui138-reconstruction-final.txt",
+        "status": "added"
+      },
+      {
+        "filename": "validation/ui138-regression-batches.json",
+        "status": "added"
+      },
+      {
+        "filename": "validation/ui138-regression-documents.xml",
+        "status": "added"
+      },
+      {
+        "filename": "validation/ui138-regression-first-attempt.json",
+        "status": "added"
+      },
+      {
+        "filename": "validation/ui138-regression-help.xml",
+        "status": "added"
+      },
+      {
+        "filename": "validation/ui138-regression-invites.xml",
+        "status": "added"
+      },
+      {
+        "filename": "validation/ui138-regression-it-journeys-1.xml",
+        "status": "added"
+      },
+      {
+        "filename": "validation/ui138-regression-it-journeys-2.xml",
+        "status": "added"
+      },
+      {
+        "filename": "validation/ui138-regression-it-journeys-3.xml",
+        "status": "added"
+      },
+      {
+        "filename": "validation/ui138-regression-it-journeys-4.xml",
+        "status": "added"
+      },
+      {
+        "filename": "validation/ui138-regression-it-journeys-5.xml",
+        "status": "added"
+      },
+      {
+        "filename": "validation/ui138-regression-it-preservation-1.xml",
+        "status": "added"
+      },
+      {
+        "filename": "validation/ui138-regression-it-preservation-2.xml",
+        "status": "added"
+      },
+      {
+        "filename": "validation/ui138-regression-maintenance-cycles.xml",
+        "status": "added"
+      },
+      {
+        "filename": "validation/ui138-regression-maintenance-regression.xml",
+        "status": "added"
+      },
+      {
+        "filename": "validation/ui138-regression-maintenance.xml",
+        "status": "added"
+      },
+      {
+        "filename": "validation/ui138-regression-participation.xml",
+        "status": "added"
+      },
+      {
+        "filename": "validation/ui138-regression-preservation.xml",
+        "status": "added"
+      },
+      {
+        "filename": "validation/ui138-regression-profile-recovery.xml",
+        "status": "added"
+      },
+      {
+        "filename": "validation/ui138-regression-public-document-entry.xml",
+        "status": "added"
+      },
+      {
+        "filename": "validation/ui138-regression-publication.xml",
+        "status": "added"
+      },
+      {
+        "filename": "validation/ui138-regression-rh-profile.xml",
+        "status": "added"
+      },
+      {
+        "filename": "validation/ui138-release-js-tests.json",
+        "status": "added"
+      },
+      {
+        "filename": "validation/ui138-release-verification.json",
+        "status": "added"
+      },
+      {
+        "filename": "validation/ui138-remote-final.json",
+        "status": "added"
+      },
+      {
+        "filename": "validation/ui138-translation-integration.json",
+        "status": "added"
+      },
+      {
+        "filename": "validation/ui138-validation.json",
+        "status": "added"
+      }
+    ]
+  }
+}

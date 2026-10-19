@@ -1,0 +1,31 @@
+{
+  "format": "wavelink-source-parts-1",
+  "archive_sha256": "8c1b6a8d731d01b05a1290d3a1dd1a544054147aac9048ca345af7983613cd9e",
+  "parts": [
+    {
+      "name": "source.part001",
+      "bytes": 8388608,
+      "sha256": "b568934581bc6ae06da601368352788083b95d1c77cad15f00b15df5e0ddc018"
+    },
+    {
+      "name": "source.part002",
+      "bytes": 8388608,
+      "sha256": "3594229b220ce2f7b39ed87ccab17d6b0c2c5583a18e6960cddd8725fb1db76b"
+    },
+    {
+      "name": "source.part003",
+      "bytes": 8388608,
+      "sha256": "b51ac5da6100f5cf372683130318ad38a438cd958b1821cf6c2d6fdb486d84ad"
+    },
+    {
+      "name": "source.part004",
+      "bytes": 8388608,
+      "sha256": "458d0b06b36d08c940289f4229040fac81d0dbe55b75707636541502aa702a4f"
+    },
+    {
+      "name": "source.part005",
+      "bytes": 5952982,
+      "sha256": "99a008607d60003ce74dba0a8101d1638938af4c99433ff5f72f8735a5350018"
+    }
+  ]
+}
