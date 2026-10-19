@@ -1,0 +1,55 @@
+{
+  "version": "UI139",
+  "reviewed_at": "2026-10-19T12:03:08.694Z",
+  "status": "passed_no_unresolved_material_blocker_found",
+  "baseline": "work/runtime-ui138",
+  "runtime": "work/runtime-ui139",
+  "files": {
+    "app/static/fleet.js": "dc5a6a84ab50e2a5163319aa2c79375bf7819ff9146b818026866bc6c6ab6b1f",
+    "app/static/fleet_workspace_ui78.css": "bc57a74336625f6b175f959de4996d81168a346ef4ce958aa411632d1a114e4e",
+    "app/static/manifest_ui.js": "a34e1f018876c13ec7353db0f4637a1ba8bdd9b1bd33732e71f42220e75afc62",
+    "app/static/logistics_workflow.js": "9e12c0a61f42d1ac50d26aa3688d2bd467eb8b9a0c2b5f6003d9f7c9f85d64db",
+    "tests/test_ui139_fleet_workflows.cjs": "9a893ce63240e78b46f632db82a30b7d4081efbcaca7ab5632530113b29fc2a2",
+    "tests/test_ui139_fleet_forms.cjs": "535536a97e8e4604269deb9511ad56d12b586aaa23c784ee1ebb29f4d2282be2",
+    "tests/fixtures/ui139-fleet-http.json": "fec7c7b49157dbba30c03cbe4ec4db9b7632f928144189324fcbebf0a4192926"
+  },
+  "reviewed_changes": [
+    "Fleet binary download/image conversion rechecks complete context after the final awaited blob; obsolete account, route, modal or page response cannot download/render under a replacement view.",
+    "Local search-only events in the destination and shipment pickers are excluded from edit-dirty state; inspected preparation picker preserves its chosen IDs during search, so this exclusion does not hide an operational edit.",
+    "The form close control distinguishes Cancel editing from Close window while calling the same close function; no logout/auth removal was introduced.",
+    "Receiving search uses shared accent folding and visible domain status; inaccessible stale site filter is cleared with an explanatory notice, without updating inventory data.",
+    "Dates shown to pt-BR are formatted with explicit UTC; original wire/stored values remain untouched.",
+    "CSS append stays within Fleet presentation classes: focus outline, wrapping, readable metadata and minimum control height; no hiding of permission or primary actions.",
+    "Shared mode choices validate native field/option/optgroup availability at click time; removed or disabled options cannot modify value or trigger a dirty event.",
+    "Actual received_damaged/returned_damaged statuses now remain visible in their appropriate packing filters and use domain labels."
+  ],
+  "executed": {
+    "independent_packing_checks": 34,
+    "root_mode_choices_checks": 30,
+    "root_manifest_checks": 51,
+    "frontend_controller_checks": 129,
+    "frontend_real_http_fixture_checks": 189,
+    "node_evidence": [
+      "work/ui139-fleet-independent-node-results.json",
+      "work/ui139-fleet-frontend-independent-results.json"
+    ],
+    "http_evidence": "work/ui139-preflight-fleet-results.json",
+    "http_cases_passed": 6
+  },
+  "findings": [
+    {
+      "id": "UI139-FLEET-STATUS-FILTER",
+      "status": "fixed_by_root_verified",
+      "description": "Avaria statuses were omitted from received and returned filters; independent test covers exact persisted states and rendered handler."
+    }
+  ],
+  "limitations": [
+    "No browser or native dialog/keyboard implementation was used; DOM adapters execute actual controllers/components with fake transport and real exported HTTP bodies.",
+    "No screenshot, measured visual layout, actual mobile device or screen reader proof.",
+    "The new HTTP cases exercise the final backend through local TestClient with fictional DB; UI calls use mocked transport, so these are complementary proofs, not a browser-driven production flow.",
+    "Final reconstructed release-wide execution and any deployment remain the coordinator responsibility."
+  ],
+  "reviewer_product_edits": [],
+  "external_messages_sent": false,
+  "production_access": false
+}

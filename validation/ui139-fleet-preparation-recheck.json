@@ -1,0 +1,7 @@
+{
+  "suite": "test_ui139_fleet_forms.cjs",
+  "pass": true,
+  "stdout": "{\"suite\":\"UI139 Fleet forms and real HTTP fixtures\",\"checks\":189,\"browser\":false,\"network\":false,\"fixtures\":[\"complete\",\"quarantine\",\"returned\"]}\n",
+  "stderr": "",
+  "reason": "Coordenador localizou textos e normalizou busca no seletor compartilhado, sem alteração de contrato"
+}

@@ -1,0 +1,49 @@
+{
+  "release": "UI139",
+  "screens": [
+    {
+      "name": "Grupos de uma remessa",
+      "status": "corrigido_testado_localmente",
+      "evidence": [
+        "test_ui139_manifest_ui.cjs",
+        "test_ui139_fleet_independent.cjs"
+      ],
+      "finding": "Estados received_damaged e returned_damaged reconhecidos pelos filtros de recebimento e devolução; seleção de grupos pendentes preservada."
+    },
+    {
+      "name": "Busca de remessas",
+      "status": "corrigido_testado_localmente",
+      "evidence": [
+        "test_ui139_manifest_ui.cjs"
+      ],
+      "finding": "Nomes com acento, rotas e estados em português; filtros de origem/destino e ordenação preservados."
+    },
+    {
+      "name": "Dados de transporte e conferência de alterações",
+      "status": "corrigido_testado_localmente",
+      "evidence": [
+        "test_ui139_manifest_ui.cjs"
+      ],
+      "finding": "Datas PT-BR com UTC; inglês e valores salvos intactos; conteúdo escapado."
+    },
+    {
+      "name": "Tipo de destinação/recebimento",
+      "status": "corrigido_testado_localmente",
+      "evidence": [
+        "test_ui139_logistics_choices.cjs"
+      ],
+      "finding": "Campo e opção revalidados no clique, inclusive opção removida e optgroup bloqueado."
+    },
+    {
+      "name": "Seleção e conferência de equipamentos da remessa",
+      "status": "corrigido_testado_localmente",
+      "evidence": [
+        "test_ui139_preparation_ui.cjs",
+        "test_ui139_fleet_forms.cjs"
+      ],
+      "finding": "Textos PT-BR completos, busca sem acentos, grupo e conteúdo mantidos durante pesquisa, itens indisponíveis impedem envio."
+    }
+  ],
+  "browser": false,
+  "production": false
+}

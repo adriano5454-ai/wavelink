@@ -1,0 +1,23 @@
+/* UI73: project presence belongs to the permanent shell context.
+ * The popup is fixed so it cannot be clipped by the scrolling navigation.
+ */
+@layer wlLegacy {
+.project-presence{position:relative;min-width:0;font:12px/1.45 system-ui,sans-serif;letter-spacing:normal;color:#cde7ec}
+.project-presence span{font:inherit;letter-spacing:normal;margin:0}
+.project-presence .presence-toggle{display:flex;align-items:center;justify-content:center;gap:6px;min-width:78px;min-height:34px;padding:6px 8px;border:1px solid rgba(133,224,233,.22);border-radius:8px;background:rgba(255,255,255,.055);color:#cde7ec;font:650 10px/1.3 system-ui,sans-serif;cursor:pointer;white-space:nowrap}
+.project-presence .presence-toggle:hover{background:rgba(255,255,255,.11);border-color:rgba(114,229,238,.48);color:#fff}
+.project-presence button:focus-visible,.project-presence h2:focus-visible{outline:3px solid #49d5e2;outline-offset:2px}
+.project-presence .presence-dot{width:7px;height:7px;border-radius:50%;background:#829da7;flex:none;box-shadow:0 0 0 3px rgba(130,157,167,.12)}
+.project-presence.presence-available .presence-dot{background:#49d9a0;box-shadow:0 0 0 3px rgba(73,217,160,.13)}
+.project-presence .presence-panel{position:fixed;z-index:1900;left:calc(var(--wl71-sidebar) + 12px);top:calc(var(--shell-header-height) + 12px);width:min(360px,calc(100vw - var(--wl71-sidebar) - 24px));max-height:min(560px,calc(100dvh - var(--shell-header-height) - 24px));padding:18px;box-sizing:border-box;background:#fff;color:#203743;border:1px solid #b9cfd7;border-radius:14px;box-shadow:0 22px 54px rgba(3,24,38,.28);overflow:auto;text-align:left}
+.project-presence h2{margin:0 0 8px;font:750 17px/1.35 system-ui;color:#153a49}
+.project-presence .presence-explanation,.project-presence .presence-note{font:12px/1.6 system-ui;letter-spacing:normal;margin:10px 0;color:#526671;white-space:normal}
+.project-presence .presence-people{list-style:none;padding:0;margin:12px 0;max-height:220px;overflow:auto}
+.project-presence .presence-people li{display:flex;align-items:center;justify-content:space-between;gap:10px;border-bottom:1px solid #e6ecee;padding:9px 0;overflow-wrap:anywhere;font:600 13px/1.5 system-ui}
+.project-presence .presence-people small{font:11px/1.4 system-ui;color:#526671;flex:none}
+.project-presence .presence-close{font:650 12px/1.5 system-ui;border:1px solid #b5c8d0;border-radius:8px;color:#203743;background:#f5f8f9;padding:7px 12px;min-height:36px;cursor:pointer;margin-right:6px}
+@media(max-width:900px){
+ .project-presence .presence-panel{left:12px;right:12px;top:calc(var(--shell-header-height) + 10px);width:auto;max-height:calc(100dvh - var(--shell-header-height) - 22px)}
+}
+@media(max-width:420px){.project-presence .presence-toggle{min-width:70px;font-size:9px;padding:5px 6px}.project-presence .presence-panel{padding:14px}}
+}

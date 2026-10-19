@@ -1,0 +1,48 @@
+{
+  "release": "UI139",
+  "kind": "actual_component_html_not_screenshots",
+  "pages": [
+    {
+      "page": "programacao.html",
+      "title": "Programação: afastamento e viagem",
+      "real_functions": [
+        "formFields",
+        "renderForm",
+        "showRecord",
+        "operationalRecordFacts"
+      ],
+      "source": "ui139-hr-markup.json",
+      "source_sha256": "dd0a5bc98e9e222c10e003d5b99a6cf47130a986cfc58f0122505f34916b774d"
+    },
+    {
+      "page": "despesas.html",
+      "title": "Despesas: correção, rejeição e histórico",
+      "real_functions": [
+        "formFields",
+        "renderForm",
+        "showRecord",
+        "operationalRecordFacts"
+      ],
+      "source": "ui139-hr-markup.json",
+      "source_sha256": "dd0a5bc98e9e222c10e003d5b99a6cf47130a986cfc58f0122505f34916b774d"
+    }
+  ],
+  "local_url_checks": 95,
+  "broken_urls": 0,
+  "browser": false,
+  "production": false,
+  "fictional": true,
+  "assets": [
+    "assets/ui68-home-scene.svg",
+    "assets/wavelink-approved-offshore-profile-ui87.webp",
+    "assets/wavelink-approved-offshore-ui87.webp",
+    "assets/wavelink-home-cover-ui86.svg",
+    "assets/wavelink-profile-cover-ui86.svg"
+  ],
+  "styles": "Actual shell CSS order; links and controls inactivated in the external copy",
+  "limits": [
+    "No layout engine or screen-reader audit",
+    "No live travel booking, payroll or reimbursement payment",
+    "No production data or account used"
+  ]
+}

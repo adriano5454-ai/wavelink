@@ -1,0 +1,15 @@
+{
+  "Planned period starts": "Início do período planejado",
+  "Planned period ends": "Fim do período planejado",
+  "Planned start time (optional)": "Horário inicial previsto (opcional)",
+  "Planned end time (optional)": "Horário final previsto (opcional)",
+  "This is a planned period. Saving does not record worked hours or create further assignments.": "Este é um período planejado. Salvar não registra horas trabalhadas nem cria outras escalas.",
+  "Record only the planned absence period. This schedule does not register a legal leave entitlement or payroll event.": "Informe somente o período previsto de afastamento. Esta programação não registra uma licença legal nem um lançamento na folha de pagamento.",
+  "Record the planned rest period. No worked hours or further rotations are created.": "Informe o período de folga previsto. Nenhuma hora trabalhada ou nova escala é criada.",
+  "Availability is reported planning information, not a confirmed work assignment.": "A disponibilidade é uma informação de planejamento, não uma escala de trabalho confirmada.",
+  "Record the planned work location and period. Confirmed assignments and recorded hours remain separate.": "Informe o local e o período de trabalho previstos. Escalas confirmadas e horas apontadas continuam separadas.",
+  "Save the corrections, then send this expense again. Saving alone does not return it to the review queue.": "Salve as correções e depois envie esta despesa novamente. Salvar não a recoloca na fila de análise.",
+  "Record information": "Dados do registro",
+  "Saved record dates": "Datas de registro e análise",
+  "Expense returned for correction": "Despesa devolvida para correção"
+}

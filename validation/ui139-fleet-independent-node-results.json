@@ -1,0 +1,20 @@
+[
+  {
+    "suite": "tests/test_ui139_fleet_independent.cjs",
+    "exit": 0,
+    "stdout": "{\"passed\":true,\"checks\":34,\"browser\":false,\"external_requests\":false}\n",
+    "stderr": ""
+  },
+  {
+    "suite": "tests/test_ui139_logistics_choices.cjs",
+    "exit": 0,
+    "stdout": "{\"checks\":30,\"status\":\"passed\",\"browser\":false}\n",
+    "stderr": ""
+  },
+  {
+    "suite": "tests/test_ui139_manifest_ui.cjs",
+    "exit": 0,
+    "stdout": "{\"checks\":51,\"status\":\"passed\",\"browser\":false}\n",
+    "stderr": ""
+  }
+]

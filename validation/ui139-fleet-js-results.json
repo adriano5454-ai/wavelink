@@ -1,0 +1,14 @@
+[
+  {
+    "suite": "test_ui139_fleet_workflows.cjs",
+    "stdout": "{\"suite\":\"UI139 Fleet actual controllers and shared components\",\"checks\":129,\"languages\":[\"en\",\"pt-BR\"],\"browser\":false,\"network\":false}\n",
+    "stderr": "",
+    "pass": true
+  },
+  {
+    "suite": "test_ui139_fleet_forms.cjs",
+    "stdout": "{\"suite\":\"UI139 Fleet forms and real HTTP fixtures\",\"checks\":189,\"browser\":false,\"network\":false,\"fixtures\":[\"complete\",\"quarantine\",\"returned\"]}\n",
+    "stderr": "",
+    "pass": true
+  }
+]

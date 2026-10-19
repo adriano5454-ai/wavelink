@@ -1,0 +1,42 @@
+{
+  "release": "UI139",
+  "implemented_local": [
+    {
+      "area": "Remessas, recebimento e custódia",
+      "change": "Busca e estados em português, datas legíveis, filtros corretos para itens avariados, preservação de contexto e proteção contra respostas de arquivos após sair da tela.",
+      "tested": "Jornadas HTTP fictícias completas; controles e formulários reais em adaptador DOM; análise independente."
+    },
+    {
+      "area": "RH: despesas, viagens e afastamentos planejados",
+      "change": "Busca encontra o projeto da despesa e a situação planejada; formulário distingue afastamento, folga e trabalho; detalhes e reenvio após correção mais claros.",
+      "tested": "Três jornadas HTTP isoladas e testes de handlers de busca, formulário, revisão e recuperação do salvamento."
+    },
+    {
+      "area": "Controles compartilhados",
+      "change": "Nomes com acento e estados em português funcionam nas buscas; opções de logística removidas ou bloqueadas não podem ser escolhidas por controles antigos. Navegação e conferência do seletor de equipamentos em português.",
+      "tested": "53 verificações de manifestos, 30 de opções, 36 de seleção de equipamentos e 34 verificações independentes de avaria; português e inglês."
+    }
+  ],
+  "pending": [
+    {
+      "area": "Navegador e dispositivos",
+      "item": "Aparência renderizada, contraste combinado, leitor de tela, teclado real, celular e Voltar do navegador continuam sem validação nesta rodada sem navegador."
+    },
+    {
+      "area": "Integrações nativas",
+      "item": "Câmera, seleção nativa de arquivos, assinatura por toque e abertura/download no aparelho real não foram exercitados. Os handlers de respostas de arquivo foram testados localmente."
+    },
+    {
+      "area": "Produção",
+      "item": "UI139 integrada e testada localmente, sem novo commit ou deployment. GitHub consultado somente para leitura; as contas reais da Corcovado não foram usadas."
+    },
+    {
+      "area": "Cobertura restante",
+      "item": "As matrizes separam inspeção, interação DOM e HTTP. Faltam jornadas dedicadas de interface para editar todos os dados de transporte, confirmar devolução/exceção e concluir armazenamento em caixa; o servidor desses fluxos já foi testado. Perfis de locais, calendário de remessas e administração de acessos da Frota também precisam de revisão específica."
+    },
+    {
+      "area": "Preservação",
+      "item": "Admin, usuário temporário e dados reais não foram acessados ou modificados. Nenhuma limpeza de registros antigos de produção foi executada."
+    }
+  ]
+}

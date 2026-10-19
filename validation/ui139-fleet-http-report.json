@@ -1,0 +1,178 @@
+{
+  "version": "UI139",
+  "status": "passed_local_http_and_independent_ui_review_not_published",
+  "source": "tests/test_ui139_fleet_http.py",
+  "environment": "Isolated temporary SQLite company with fictional accounts; authenticated in-process HTTP; SMTP blocked",
+  "cases": [
+    {
+      "name": "test_http_partial_receipt_placement_and_close_preserve_identity_and_files",
+      "journey": "Rascunho, prontidão, expedição, recebimento parcial de caixa completa, destinação em outra caixa, recebimento do avulso e encerramento",
+      "checks": [
+        "Mesmo conjunto de IDs e snapshots, homônimos não vinculados por nome",
+        "Conteúdo e vínculos pai/filho preservados",
+        "Fila de recebimento e bloqueio de fechamento enquanto pendente",
+        "Arquivo SHA e bytes, PDF real, histórico e sessão preservada"
+      ]
+    },
+    {
+      "name": "test_http_damage_quarantine_placement_and_authorised_release_are_separate",
+      "journey": "Avaria, recebimento em espera, segregação, encerramento com ciência e liberação técnica separada",
+      "checks": [
+        "Proibição de colocar quarentena em caixa disponível",
+        "Operador não libera; gestor autorizado libera grupo",
+        "Fechar remessa não libera quarentena e liberação não reescreve manifesto"
+      ]
+    },
+    {
+      "name": "test_http_exception_does_not_settle_missing_group_and_return_is_physical",
+      "journey": "Divergência, recebimento parcial e devolução física avariada à origem",
+      "checks": [
+        "Divergência não altera custódia ou baixa grupo ausente",
+        "Expedição não pode ser cancelada de volta ao estoque",
+        "Motivo da devolução e pendência histórica preservados"
+      ]
+    },
+    {
+      "name": "test_http_retry_conflict_current_scope_and_revocation_hide_data",
+      "journey": "Expedição por operador, repetição exata, conflito e revogação atual",
+      "checks": [
+        "Uma única operação; mesmo op_id com outro corpo/ator rejeitado",
+        "Viewer não recebe; hub errado rejeitado",
+        "Revogação por API invalida token antigo e remove leitura/ação do token novo",
+        "Conta vessel-only não recebe acesso ao inventário geral"
+      ]
+    },
+    {
+      "name": "test_http_ready_content_change_is_detected_and_cancel_does_not_move_stock",
+      "journey": "Item alterado após conferência impede expedição; cancelamento anterior ao envio",
+      "checks": [
+        "Conflito detectado sem mover custódia",
+        "Cancelamento exige versão atual e não apaga dados",
+        "Retry exato de cancelamento não grava outro evento"
+      ]
+    },
+    {
+      "name": "test_http_failed_audit_rolls_back_physical_receipt_items_and_operation",
+      "journey": "Falha de persistência após atualizar custódia reverte recebimento inteiro",
+      "checks": [
+        "Estado, itens, custódia, histórico e recibo revertidos",
+        "Mesmo op_id funciona após corrigir falha fictícia e não duplica evento"
+      ]
+    }
+  ],
+  "execution": {
+    "syntax": "passed",
+    "http": {
+      "passed": 6,
+      "failed": 0,
+      "runner": "Coordinator executed one case per isolated process",
+      "results": "work/ui139-preflight-fleet-results.json",
+      "xml": [
+        {
+          "path": "work/ui139-preflight-fleet-1.xml",
+          "suite": "<testsuite name=\"pytest\" errors=\"0\" failures=\"0\" skipped=\"0\" tests=\"1\" time=\"24.844\" timestamp=\"2026-10-19T08:56:02.019464-03:00\" hostname=\"isolated-ui139-integration\">",
+          "cases": [
+            "test_http_partial_receipt_placement_and_close_preserve_identity_and_files"
+          ],
+          "failureTags": 0
+        },
+        {
+          "path": "work/ui139-preflight-fleet-2.xml",
+          "suite": "<testsuite name=\"pytest\" errors=\"0\" failures=\"0\" skipped=\"0\" tests=\"1\" time=\"27.092\" timestamp=\"2026-10-19T08:56:02.018468-03:00\" hostname=\"isolated-ui139-integration\">",
+          "cases": [
+            "test_http_damage_quarantine_placement_and_authorised_release_are_separate"
+          ],
+          "failureTags": 0
+        },
+        {
+          "path": "work/ui139-preflight-fleet-3.xml",
+          "suite": "<testsuite name=\"pytest\" errors=\"0\" failures=\"0\" skipped=\"0\" tests=\"1\" time=\"23.085\" timestamp=\"2026-10-19T08:56:02.019464-03:00\" hostname=\"isolated-ui139-integration\">",
+          "cases": [
+            "test_http_exception_does_not_settle_missing_group_and_return_is_physical"
+          ],
+          "failureTags": 0
+        },
+        {
+          "path": "work/ui139-preflight-fleet-4.xml",
+          "suite": "<testsuite name=\"pytest\" errors=\"0\" failures=\"0\" skipped=\"0\" tests=\"1\" time=\"23.670\" timestamp=\"2026-10-19T08:56:27.364957-03:00\" hostname=\"isolated-ui139-integration\">",
+          "cases": [
+            "test_http_retry_conflict_current_scope_and_revocation_hide_data"
+          ],
+          "failureTags": 0
+        },
+        {
+          "path": "work/ui139-preflight-fleet-5.xml",
+          "suite": "<testsuite name=\"pytest\" errors=\"0\" failures=\"0\" skipped=\"0\" tests=\"1\" time=\"18.301\" timestamp=\"2026-10-19T08:56:28.871249-03:00\" hostname=\"isolated-ui139-integration\">",
+          "cases": [
+            "test_http_ready_content_change_is_detected_and_cancel_does_not_move_stock"
+          ],
+          "failureTags": 0
+        },
+        {
+          "path": "work/ui139-preflight-fleet-6.xml",
+          "suite": "<testsuite name=\"pytest\" errors=\"0\" failures=\"0\" skipped=\"0\" tests=\"1\" time=\"17.197\" timestamp=\"2026-10-19T08:56:31.296961-03:00\" hostname=\"isolated-ui139-integration\">",
+          "cases": [
+            "test_http_failed_audit_rolls_back_physical_receipt_items_and_operation"
+          ],
+          "failureTags": 0
+        }
+      ]
+    },
+    "node": {
+      "passed": true,
+      "independent_checks": 34,
+      "root_choices_checks": 30,
+      "root_manifest_checks": 51,
+      "evidence": "work/ui139-fleet-independent-node-results.json"
+    },
+    "final_reconstructed_build": "Pending coordinator final battery"
+  },
+  "coverage_limits": [
+    "No browser, visual/device validation or production execution",
+    "No actual carrier shipment, email, WhatsApp or external transmission",
+    "Setup account creation uses inherited fictional fixture; all inventory/Fleet mutations under test use HTTP",
+    "No comprehensive concurrency stress/load test; selected stale-version/idempotency/rollback cases only",
+    "DOM adapters and HTTP proofs are complementary; there was no browser-driven end-to-end or production execution."
+  ],
+  "product_edits": [],
+  "fixture_export": "UI139_FLEET_FIXTURE can export real responses and operations without credentials",
+  "updated_at": "2026-10-19T12:03:08.696Z",
+  "sha256": {
+    "tests/test_ui139_fleet_http.py": "3ae981756616dcf56b494ca5e8dac171be641fb249baed5a07bd21020cc8048c",
+    "tests/test_ui139_fleet_independent.cjs": "0b93502b20a1aa16cffb702987a7af036458c863b1f6eb3c30d2085988a286d6",
+    "app/static/manifest_ui.js": "a34e1f018876c13ec7353db0f4637a1ba8bdd9b1bd33732e71f42220e75afc62",
+    "app/static/logistics_workflow.js": "9e12c0a61f42d1ac50d26aa3688d2bd467eb8b9a0c2b5f6003d9f7c9f85d64db"
+  },
+  "findings": [
+    {
+      "id": "UI139-FLEET-STATUS-FILTER",
+      "severity": "functional",
+      "owner": "root",
+      "status": "corrected_and_independently_tested",
+      "description": "Actual persisted received_damaged and returned_damaged values were excluded by received/damaged and returned packing filters. Added status label mapping and exact states to filters without changing stored values.",
+      "evidence": "test_ui139_fleet_independent.cjs; source contract fleet._receipt; fixtures from HTTP cases2/3"
+    }
+  ],
+  "fixtures": [
+    "work/ui139-fleet-api-fixture-1.json",
+    "work/ui139-fleet-api-fixture-2.json",
+    "work/ui139-fleet-api-fixture-3.json"
+  ],
+  "independent_review": "work/ui139-fleet-independent-review.json",
+  "frontend_validation": {
+    "passed": true,
+    "controllers_checks": 129,
+    "real_http_fixture_checks": 189,
+    "evidence": "work/ui139-fleet-frontend-independent-results.json",
+    "browser": false
+  },
+  "reviewed_product_sha256": {
+    "app/static/fleet.js": "dc5a6a84ab50e2a5163319aa2c79375bf7819ff9146b818026866bc6c6ab6b1f",
+    "app/static/fleet_workspace_ui78.css": "bc57a74336625f6b175f959de4996d81168a346ef4ce958aa411632d1a114e4e",
+    "app/static/manifest_ui.js": "a34e1f018876c13ec7353db0f4637a1ba8bdd9b1bd33732e71f42220e75afc62",
+    "app/static/logistics_workflow.js": "9e12c0a61f42d1ac50d26aa3688d2bd467eb8b9a0c2b5f6003d9f7c9f85d64db",
+    "tests/test_ui139_fleet_workflows.cjs": "9a893ce63240e78b46f632db82a30b7d4081efbcaca7ab5632530113b29fc2a2",
+    "tests/test_ui139_fleet_forms.cjs": "535536a97e8e4604269deb9511ad56d12b586aaa23c784ee1ebb29f4d2282be2",
+    "tests/fixtures/ui139-fleet-http.json": "fec7c7b49157dbba30c03cbe4ec4db9b7632f928144189324fcbebf0a4192926"
+  }
+}

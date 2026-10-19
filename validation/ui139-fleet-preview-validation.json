@@ -1,0 +1,26 @@
+[
+  {
+    "file": "index.html",
+    "scriptTags": 0,
+    "duplicateIds": [],
+    "brokenReferences": [],
+    "checkedReferences": 2,
+    "externalReferences": []
+  },
+  {
+    "file": "recebimento.html",
+    "scriptTags": 0,
+    "duplicateIds": [],
+    "brokenReferences": [],
+    "checkedReferences": 10,
+    "externalReferences": []
+  },
+  {
+    "file": "remessa-parcial.html",
+    "scriptTags": 0,
+    "duplicateIds": [],
+    "brokenReferences": [],
+    "checkedReferences": 11,
+    "externalReferences": []
+  }
+]

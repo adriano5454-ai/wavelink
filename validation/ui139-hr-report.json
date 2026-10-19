@@ -1,0 +1,137 @@
+{
+  "release": "UI139",
+  "status": "implementado_e_testado_localmente_fontes_congeladas",
+  "product_files": [
+    {
+      "path": "app/static/hr_workspace.js",
+      "sha256": "c95446e684e91a73a320d2c362cfea8f5dff807c8ae7b5dfd4935efae9bd961f"
+    },
+    {
+      "path": "app/static/hr_workspace.css",
+      "sha256": "fd4a0cbb411cc200507f29f05575883dd713ee4dc492fabb2d9658338c79135c"
+    }
+  ],
+  "new_tests_and_fixture": [
+    {
+      "path": "tests/test_ui139_hr_views.cjs",
+      "sha256": "29114255cb7d63d8f2d33de3fd5ddd39ca0d9f4a545823d2cb172ea1a09c7fc4"
+    },
+    {
+      "path": "tests/test_ui139_hr_http.py",
+      "sha256": "acd331176aebaee1a7edad429ec2cba07e20e406751ac8cac258d1e330491711"
+    },
+    {
+      "path": "tests/fixtures/ui139_hr_http.json",
+      "sha256": "918abeeeae782be4c7f56aa84b4ed4a687bf59f0f4746bd691dd51fbe4d996f2"
+    }
+  ],
+  "not_changed": [
+    "Backend/schema/permissions",
+    "Weekly timesheet component",
+    "Global catalogue edited only by coordinator",
+    "Production/disk/users/admin/temporary account"
+  ],
+  "confirmed_findings": [
+    "Pesquisa de despesas ignorava project como string e pesquisa de escala ignorava assignment_type.",
+    "Afastamento usava rótulos de entrada/saída e dica de jornada embarcada antes de mostrar a situação planejada.",
+    "Detalhe genérico repetia review_comment e misturava datas de auditoria com conteúdo.",
+    "Erros locais de fuso, valor e moeda não direcionavam ao campo."
+  ],
+  "non_findings": [
+    "HTTP5xx já é classificado como resultado incerto pelo transporte compartilhado AJSaveStatus. Essa lógica não foi alterada; o teste RH usa o contrato real uncertain=true e exige retry idêntico e explícito."
+  ],
+  "tests": [
+    {
+      "name": "test_ui139_hr_views.cjs",
+      "checks": 178,
+      "passed": true,
+      "locales": [
+        "pt-BR",
+        "en"
+      ],
+      "kind": "Real handlers/renderers in minimal DOM with real fictitious HTTP fixture; no browser"
+    },
+    {
+      "name": "test_ui139_hr_http.py",
+      "cases": 3,
+      "passed": true,
+      "executed_by": "coordinator in reserved isolated TestClient slot",
+      "evidence": "work/ui139-preflight-hr.xml",
+      "smtp": "SMTP and SMTP_SSL denied throughout company setup/teardown"
+    },
+    {
+      "name": "test_ui135_rh_forms.cjs",
+      "checks": 236,
+      "passed": true
+    },
+    {
+      "name": "test_ui136_rh_save_handlers.cjs",
+      "checks": 102,
+      "passed": true
+    },
+    {
+      "name": "test_ui136_rh_ui.cjs",
+      "checks": 94,
+      "passed": true
+    },
+    {
+      "name": "test_ui137_rh_queries.cjs",
+      "checks": 76,
+      "passed": true
+    },
+    {
+      "name": "node --check hr_workspace.js",
+      "passed": true
+    }
+  ],
+  "new_node_checks": 178,
+  "regression_node_checks": 508,
+  "translations": {
+    "file": "work/ui139-hr-translations.json",
+    "pairs": 13,
+    "integration": "Coordinator integrated real PT/EN catalogues; gender-neutral shared Returned for correction unchanged, expense-specific key added"
+  },
+  "previews": {
+    "folder": "work/ui139-hr-previews",
+    "pages": [
+      "index.html",
+      "programacao.html",
+      "despesas.html"
+    ],
+    "manifest": "work/ui139-hr-preview-manifest.json",
+    "local_url_checks": 95,
+    "broken_urls": 0,
+    "scripts": 0,
+    "screen_capture": false,
+    "note": "Real form/detail markup. Returned editor is an explicitly labelled fictional state distinct from the rejected HTTP record. Controls/links inactivated only in the external preview."
+  },
+  "declared_css_contrast": {
+    "guidance_text_on_background": {
+      "foreground": "#173d4b",
+      "background": "#eef8f9",
+      "ratio": 10.76
+    },
+    "focus_on_white": {
+      "foreground": "#965900",
+      "background": "#ffffff",
+      "ratio": 5.64
+    },
+    "limit": "Computed declared colors only; not a WCAG certification or rendered/browser audit."
+  },
+  "coverage": "work/ui139-hr-coverage.json",
+  "limits": [
+    "Sem Chrome, navegador automatizado, dispositivo móvel, leitor de tela ou comparação de pixels nesta fase.",
+    "Os testes DOM verificam eventos, estados, foco solicitado, atributos e HTML; não provam layout real nem validação nativa do navegador.",
+    "Afastamento continua sendo uma situação planejada de escala; não há cadastro de licença legal, diagnóstico, processamento de folha ou inferência de horas.",
+    "Nenhum pagamento de reembolso, emissão de passagem ou envio externo foi efetuado.",
+    "Nenhum dado de produção, usuário admin ou usuário temporário foi alterado; nenhuma publicação foi feita por esta frente."
+  ],
+  "dependencies": [
+    "Coordinator must include frozen files/fixture and integrated translations in final package.",
+    "Coordinator owns final integrated tests, version and publication status."
+  ],
+  "pending": [
+    "Browser checks of native validation, focus visibility, keyboard/zoom/mobile and final pixels remain intentionally unperformed.",
+    "No UI139 test touched real Corcovado accounts or data."
+  ]
+}

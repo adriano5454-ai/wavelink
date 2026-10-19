@@ -1,0 +1,32 @@
+[
+  {
+    "group": "fleet-1",
+    "xml": "ui139-preflight-fleet-1.xml",
+    "exit_code": 0
+  },
+  {
+    "group": "fleet-2",
+    "xml": "ui139-preflight-fleet-2.xml",
+    "exit_code": 0
+  },
+  {
+    "group": "fleet-3",
+    "xml": "ui139-preflight-fleet-3.xml",
+    "exit_code": 0
+  },
+  {
+    "group": "fleet-4",
+    "xml": "ui139-preflight-fleet-4.xml",
+    "exit_code": 0
+  },
+  {
+    "group": "fleet-5",
+    "xml": "ui139-preflight-fleet-5.xml",
+    "exit_code": 0
+  },
+  {
+    "group": "fleet-6",
+    "xml": "ui139-preflight-fleet-6.xml",
+    "exit_code": 0
+  }
+]

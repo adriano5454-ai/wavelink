@@ -1,0 +1,38 @@
+{
+  "release": "UI139",
+  "area": "Controles de remessas e opções de logística",
+  "changes": [
+    "Busca de remessas e grupos reconhece acentos, rotas e estados exibidos em português, sem alterar registros ou filtros de acesso.",
+    "Recebimentos e devoluções com avaria permanecem nos filtros correspondentes, incluindo todos os itens do grupo.",
+    "Dados e conferência de transporte formatam datas em português com UTC explícito; texto e idioma de outros deployments preservados.",
+    "Opções removidas, desabilitadas ou em grupo bloqueado são verificadas novamente no clique; a recusa não altera o campo.",
+    "Seletor de equipamentos traduz navegação, inclusão de conteúdo, vazio e quantidades; busca ignora acentos sem alterar o grupo selecionado."
+  ],
+  "evidence": [
+    {
+      "file": "tests/test_ui139_manifest_ui.cjs",
+      "checks": 53
+    },
+    {
+      "file": "tests/test_ui139_logistics_choices.cjs",
+      "checks": 30
+    },
+    {
+      "file": "tests/test_ui139_fleet_independent.cjs",
+      "checks": 34,
+      "independent": true
+    },
+    {
+      "file": "tests/test_ui139_preparation_ui.cjs",
+      "checks": 36
+    }
+  ],
+  "limits": [
+    "Adaptador DOM local não valida renderização em navegador, leitor de tela ou teclado real.",
+    "Não houve acesso a produção, gravação de inventário ou mudanças de permissões por esses componentes."
+  ],
+  "browser": false,
+  "production": false,
+  "final_manifest_sha256": "14f34fa3938233b0125056cfa88a03bd46bf3e2b07cc395cfa35f9521d8081bd",
+  "regression_fix": "Estados pesquisados por início de palavra; dados cadastrados continuam pesquisáveis por trecho. Teste histórico UI127 preservado e aprovado."
+}

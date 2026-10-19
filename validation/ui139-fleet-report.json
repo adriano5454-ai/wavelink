@@ -1,0 +1,125 @@
+{
+  "release": "UI139",
+  "status": "Implementado e testado localmente; fontes e testes congelados",
+  "base": "Cópia verificada da UI138 local; GitHub não alterado nesta frente",
+  "product_files": {
+    "app/static/fleet.js": "dc5a6a84ab50e2a5163319aa2c79375bf7819ff9146b818026866bc6c6ab6b1f",
+    "app/static/fleet_workspace_ui78.css": "bc57a74336625f6b175f959de4996d81168a346ef4ce958aa411632d1a114e4e"
+  },
+  "inspected_unchanged_styles": [
+    "app/static/fleet.css",
+    "app/static/fleet_workspace.css",
+    "app/static/fleet_workspace_ui77.css"
+  ],
+  "tests": {
+    "new_dom_suites": [
+      {
+        "file": "tests/test_ui139_fleet_workflows.cjs",
+        "checks": 129,
+        "passed": true
+      },
+      {
+        "file": "tests/test_ui139_fleet_forms.cjs",
+        "checks": 189,
+        "passed": true
+      }
+    ],
+    "new_dom_checks": 318,
+    "languages": [
+      "en",
+      "pt-BR"
+    ],
+    "fixture": "tests/fixtures/ui139-fleet-http.json",
+    "fixture_origin": [
+      "work/ui139-fleet-api-fixture-1.json",
+      "work/ui139-fleet-api-fixture-2.json",
+      "work/ui139-fleet-api-fixture-3.json"
+    ],
+    "real_manifest_responses_rendered": 15,
+    "results": "work/ui139-fleet-js-results.json",
+    "shared_preparation_recheck": "work/ui139-fleet-preparation-recheck.json",
+    "http": {
+      "owned_by": "agente qualidade_ti, executado pelo coordenador",
+      "file": "tests/test_ui139_fleet_http.py",
+      "passed": 6,
+      "failed": 0,
+      "results": "work/ui139-preflight-fleet-results.json"
+    },
+    "browser": false
+  },
+  "harness_exclude": [
+    "tests/test_ui139_fleet_dom.cjs"
+  ],
+  "changes": [
+    "Rótulos de estado de transporte/custódia específicos, sem usar o significado de devolução do RH.",
+    "Pesquisa do recebimento por acentos e condição traduzida; aviso de filtro de local perdido.",
+    "Datas de transporte e recebimento legíveis em PT-BR, conservando UTC e valores salvos.",
+    "Conta, rota, página e diálogo rechecados após a conversão final de Blob, antes de download/imagem.",
+    "Pesquisar caixas/itens não marca o formulário como edição; alterações reais continuam protegidas ao cancelar.",
+    "Botão do modal distingue Cancelar edição de Fechar janela; não chama logout.",
+    "Metadados com leitura melhor, alvos de 44px, foco visível e ações que se reorganizam em telas pequenas, sujeitos à validação visual."
+  ],
+  "shared_dependencies": [
+    {
+      "file": "app/static/manifest_ui.js",
+      "owner": "coordenador",
+      "contract": [
+        "searchText(value)",
+        "statusLabel(value)"
+      ],
+      "notes": "Mapas incluem avaria no recebimento/devolução; filtros corrigidos pelo coordenador após revisão de qualidade."
+    },
+    {
+      "file": "app/static/logistics_workflow.js",
+      "owner": "coordenador",
+      "notes": "Seleção revalida opção removida/desabilitada no clique."
+    },
+    {
+      "file": "app/static/preparation_ui.js",
+      "owner": "coordenador",
+      "notes": "Textos estáticos do seletor em PT e busca sem acentos, rechecados na jornada do assistente."
+    }
+  ],
+  "translations": {
+    "file": "work/ui139-fleet-translations.json",
+    "pairs": 2,
+    "integrated_by": "coordenador"
+  },
+  "previews": {
+    "directory": "work/ui139-fleet-previews",
+    "states": 2,
+    "html_pages": 3,
+    "checked_references": 23,
+    "broken": 0,
+    "duplicate_ids": 0,
+    "scripts": 0,
+    "is_screenshot": false,
+    "validation": "work/ui139-fleet-preview-validation.json"
+  },
+  "independent_review": {
+    "file": "work/ui139-fleet-independent-review.json",
+    "owner": "qualidade_ti",
+    "result": "Sem bloqueador material pendente; 318 verificações reexecutadas independentemente"
+  },
+  "coverage": "work/ui139-fleet-coverage.json",
+  "preservation": {
+    "backend_changed": false,
+    "schema_changed": false,
+    "acl_changed": false,
+    "production_accessed": false,
+    "production_writes": 0,
+    "users_changed": 0,
+    "temporary_user_preserved": true,
+    "messages_sent": 0,
+    "external_downloads": 0
+  },
+  "limits": [
+    "Layout responsivo, contraste percebido, teclado nativo, leitores de tela, rolagem e botão Voltar físico ainda precisam de navegador.",
+    "As prévias são HTML inerte; não provam renderização nem substituem capturas de tela.",
+    "Perfis de embarcação/base, calendário, administração de acessos e livros não receberam revisão completa nova nesta frente.",
+    "Usuário temporário e todos os dados reais permanecem intocados.",
+    "Edição de transporte, devolução/exceção e salvamento em caixa possuem limites específicos na matriz; não declarar todas as variações de interface concluídas.",
+    "Sem publicação nem validação no site real."
+  ],
+  "handoff": "Coordenador integra, executa a bateria final e entrega o ZIP. Esta frente não publica individualmente."
+}

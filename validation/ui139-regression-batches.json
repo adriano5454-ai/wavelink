@@ -1,0 +1,158 @@
+[
+  {
+    "group": "profile-recovery",
+    "xml": "ui139-regression-profile-recovery.xml",
+    "exit_code": 0,
+    "manifest_sha256": "14f34fa3938233b0125056cfa88a03bd46bf3e2b07cc395cfa35f9521d8081bd"
+  },
+  {
+    "group": "public-document-entry",
+    "xml": "ui139-regression-public-document-entry.xml",
+    "exit_code": 0,
+    "manifest_sha256": "14f34fa3938233b0125056cfa88a03bd46bf3e2b07cc395cfa35f9521d8081bd"
+  },
+  {
+    "group": "maintenance-cycles",
+    "xml": "ui139-regression-maintenance-cycles.xml",
+    "exit_code": 0,
+    "manifest_sha256": "14f34fa3938233b0125056cfa88a03bd46bf3e2b07cc395cfa35f9521d8081bd"
+  },
+  {
+    "group": "rh-profile",
+    "xml": "ui139-regression-rh-profile.xml",
+    "exit_code": 0,
+    "manifest_sha256": "14f34fa3938233b0125056cfa88a03bd46bf3e2b07cc395cfa35f9521d8081bd"
+  },
+  {
+    "group": "documents",
+    "xml": "ui139-regression-documents.xml",
+    "exit_code": 0,
+    "manifest_sha256": "14f34fa3938233b0125056cfa88a03bd46bf3e2b07cc395cfa35f9521d8081bd"
+  },
+  {
+    "group": "maintenance",
+    "xml": "ui139-regression-maintenance.xml",
+    "exit_code": 0,
+    "manifest_sha256": "14f34fa3938233b0125056cfa88a03bd46bf3e2b07cc395cfa35f9521d8081bd"
+  },
+  {
+    "group": "maintenance-regression",
+    "xml": "ui139-regression-maintenance-regression.xml",
+    "exit_code": 0,
+    "manifest_sha256": "14f34fa3938233b0125056cfa88a03bd46bf3e2b07cc395cfa35f9521d8081bd"
+  },
+  {
+    "group": "publication",
+    "xml": "ui139-regression-publication.xml",
+    "exit_code": 0,
+    "manifest_sha256": "14f34fa3938233b0125056cfa88a03bd46bf3e2b07cc395cfa35f9521d8081bd"
+  },
+  {
+    "group": "it-journeys-1",
+    "xml": "ui139-regression-it-journeys-1.xml",
+    "exit_code": 0,
+    "manifest_sha256": "14f34fa3938233b0125056cfa88a03bd46bf3e2b07cc395cfa35f9521d8081bd"
+  },
+  {
+    "group": "it-journeys-2",
+    "xml": "ui139-regression-it-journeys-2.xml",
+    "exit_code": 0,
+    "manifest_sha256": "14f34fa3938233b0125056cfa88a03bd46bf3e2b07cc395cfa35f9521d8081bd"
+  },
+  {
+    "group": "it-journeys-3",
+    "xml": "ui139-regression-it-journeys-3.xml",
+    "exit_code": 0,
+    "manifest_sha256": "14f34fa3938233b0125056cfa88a03bd46bf3e2b07cc395cfa35f9521d8081bd"
+  },
+  {
+    "group": "it-journeys-4",
+    "xml": "ui139-regression-it-journeys-4.xml",
+    "exit_code": 0,
+    "manifest_sha256": "14f34fa3938233b0125056cfa88a03bd46bf3e2b07cc395cfa35f9521d8081bd"
+  },
+  {
+    "group": "it-journeys-5",
+    "xml": "ui139-regression-it-journeys-5.xml",
+    "exit_code": 0,
+    "manifest_sha256": "14f34fa3938233b0125056cfa88a03bd46bf3e2b07cc395cfa35f9521d8081bd"
+  },
+  {
+    "group": "it-preservation-1",
+    "xml": "ui139-regression-it-preservation-1.xml",
+    "exit_code": 0,
+    "manifest_sha256": "14f34fa3938233b0125056cfa88a03bd46bf3e2b07cc395cfa35f9521d8081bd"
+  },
+  {
+    "group": "it-preservation-2",
+    "xml": "ui139-regression-it-preservation-2.xml",
+    "exit_code": 0,
+    "manifest_sha256": "14f34fa3938233b0125056cfa88a03bd46bf3e2b07cc395cfa35f9521d8081bd"
+  },
+  {
+    "group": "invites",
+    "xml": "ui139-regression-invites.xml",
+    "exit_code": 0,
+    "manifest_sha256": "14f34fa3938233b0125056cfa88a03bd46bf3e2b07cc395cfa35f9521d8081bd"
+  },
+  {
+    "group": "participation",
+    "xml": "ui139-regression-participation.xml",
+    "exit_code": 0,
+    "manifest_sha256": "14f34fa3938233b0125056cfa88a03bd46bf3e2b07cc395cfa35f9521d8081bd"
+  },
+  {
+    "group": "preservation",
+    "xml": "ui139-regression-preservation.xml",
+    "exit_code": 0,
+    "manifest_sha256": "14f34fa3938233b0125056cfa88a03bd46bf3e2b07cc395cfa35f9521d8081bd"
+  },
+  {
+    "group": "help",
+    "xml": "ui139-regression-help.xml",
+    "exit_code": 0,
+    "manifest_sha256": "14f34fa3938233b0125056cfa88a03bd46bf3e2b07cc395cfa35f9521d8081bd"
+  },
+  {
+    "group": "fleet-1",
+    "xml": "ui139-regression-fleet-1.xml",
+    "exit_code": 0,
+    "manifest_sha256": "14f34fa3938233b0125056cfa88a03bd46bf3e2b07cc395cfa35f9521d8081bd"
+  },
+  {
+    "group": "fleet-2",
+    "xml": "ui139-regression-fleet-2.xml",
+    "exit_code": 0,
+    "manifest_sha256": "14f34fa3938233b0125056cfa88a03bd46bf3e2b07cc395cfa35f9521d8081bd"
+  },
+  {
+    "group": "fleet-3",
+    "xml": "ui139-regression-fleet-3.xml",
+    "exit_code": 0,
+    "manifest_sha256": "14f34fa3938233b0125056cfa88a03bd46bf3e2b07cc395cfa35f9521d8081bd"
+  },
+  {
+    "group": "fleet-4",
+    "xml": "ui139-regression-fleet-4.xml",
+    "exit_code": 0,
+    "manifest_sha256": "14f34fa3938233b0125056cfa88a03bd46bf3e2b07cc395cfa35f9521d8081bd"
+  },
+  {
+    "group": "fleet-5",
+    "xml": "ui139-regression-fleet-5.xml",
+    "exit_code": 0,
+    "manifest_sha256": "14f34fa3938233b0125056cfa88a03bd46bf3e2b07cc395cfa35f9521d8081bd"
+  },
+  {
+    "group": "fleet-6",
+    "xml": "ui139-regression-fleet-6.xml",
+    "exit_code": 0,
+    "manifest_sha256": "14f34fa3938233b0125056cfa88a03bd46bf3e2b07cc395cfa35f9521d8081bd"
+  },
+  {
+    "group": "hr-journeys",
+    "xml": "ui139-regression-hr-journeys.xml",
+    "exit_code": 0,
+    "manifest_sha256": "14f34fa3938233b0125056cfa88a03bd46bf3e2b07cc395cfa35f9521d8081bd"
+  }
+]

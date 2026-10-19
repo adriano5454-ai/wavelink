@@ -1,0 +1,126 @@
+{
+  "release": "UI139",
+  "area": "Frota, manifestos/remessas, recebimento, alocação e custódia",
+  "method": "Controlador fleet.js completo em VM/DOM local, componentes compartilhados reais, transporte simulado com dados fictícios e respostas de HTTP local. Sem navegador, screenshots ou produção.",
+  "views": [
+    {
+      "view": "Lista de manifestos e detalhe selecionado",
+      "status": "DOM PT/EN executado",
+      "evidence": [
+        "Busca sem acentos, seleção e Voltar conservam o filtro e a sessão.",
+        "Datas planejadas são exibidas em PT-BR com UTC; ISO permanece nas entradas e em EN."
+      ],
+      "changed": true
+    },
+    {
+      "view": "Manifesto salvo — conteúdo, transporte, arquivos e histórico",
+      "status": "DOM PT/EN executado e cruzado com respostas HTTP reais fictícias",
+      "evidence": [
+        "15 respostas de manifesto dos cenários completo, quarentena e devolução renderizadas com seus IDs exatos.",
+        "Abas por teclado, carregamento de histórico e permissões dos botões conferidos.",
+        "Razões e nomes salvos permanecem literais."
+      ],
+      "changed": true
+    },
+    {
+      "view": "Novo manifesto — rota, itens/caixas, transporte e revisão",
+      "status": "Jornada DOM local executada",
+      "evidence": [
+        "Criação só ocorre depois da revisão explícita; payload conserva IDs e versões dos itens, rota e notas.",
+        "Seletor compartilhado corrigido pelo coordenador e revalidado; pesquisa não altera seleção."
+      ],
+      "changed": "Integração com correções compartilhadas; contrato preservado"
+    },
+    {
+      "view": "Editar transporte do rascunho",
+      "status": "Código/handlers inspecionados; sem nova jornada completa específica",
+      "evidence": [
+        "Contrato existente de edição, motivo e revisão explícita mantido; componente compartilhado de comparação recebeu datas localizadas."
+      ],
+      "changed": false,
+      "remaining": "Executar interação completa de edição de todos os campos em navegador; novo teste DOM não percorre este formulário inteiro."
+    },
+    {
+      "view": "Prontidão e expedição física",
+      "status": "Jornadas DOM e HTTP executadas separadamente",
+      "evidence": [
+        "Prontidão não envia occurred_at nem movimenta fisicamente os itens.",
+        "Expedição exige confirmação do manifesto e envia horário UTC informado."
+      ],
+      "changed": "Rótulos por domínio, preservando estados persistidos"
+    },
+    {
+      "view": "Recebimento físico de grupos",
+      "status": "Jornada DOM local e HTTP de recebimento parcial executados",
+      "evidence": [
+        "roots completos, ID/versão, destino, motivo e horário UTC mantidos no payload.",
+        "Filas e estados posteriores provêm das fixtures HTTP reais."
+      ],
+      "changed": true
+    },
+    {
+      "view": "Devolução física e registro de exceção",
+      "status": "HTTP executado pelo agente de qualidade; telas renderizadas e handlers inspecionados",
+      "evidence": [
+        "Manifestos pós-devolução/exceção renderizados no DOM com IDs e estados reais.",
+        "Filtros compartilhados incluem returned_damaged e received_damaged; não usam semântica de devolução para correção de RH."
+      ],
+      "remaining": "Jornada completa de digitação/confirmação de devolução/exceção em navegador e teste DOM dedicado do formulário."
+    },
+    {
+      "view": "Encerramento e cancelamento antes da expedição",
+      "status": "DOM e HTTP executados",
+      "evidence": [
+        "Encerramento é bloqueado no guia enquanto há itens aguardando alocação; sucesso final coberto por HTTP.",
+        "Cancelar antes da expedição exige revisão, número exato e motivo; não equivale a fechar janela."
+      ],
+      "changed": true
+    },
+    {
+      "view": "Anexar e baixar arquivo original",
+      "status": "DOM e HTTP com dados fictícios executados",
+      "evidence": [
+        "Anexo envia nome, base64 e legenda exatos pela API existente; não cria nova área de armazenamento.",
+        "Download atual conserva bytes; retorno tardio é descartado após troca de conta/rota.",
+        "Imagem desconectada não recebe Blob depois da leitura."
+      ],
+      "changed": true
+    },
+    {
+      "view": "Fila de recebimento e detalhe de grupo",
+      "status": "DOM PT/EN executado",
+      "evidence": [
+        "Busca normaliza acentos e encontra condição na língua da interface.",
+        "Filtro de local indisponível é limpo com aviso; nenhuma localização salva muda.",
+        "403 remove os registros da tela sem encerrar a sessão normal."
+      ],
+      "changed": true
+    },
+    {
+      "view": "Alocar equipamento recebido em local ou caixa",
+      "status": "DOM de abertura/seleção/cancelamento e HTTP de alocação executados",
+      "evidence": [
+        "Busca do seletor não marca alteração operacional; editar localização continua pedindo confirmação de descarte.",
+        "Recusar cancelamento mantém o formulário e seus valores; confirmar fecha sem escrever nem sair da conta.",
+        "Seletores e contratos de caixa/versão mantidos."
+      ],
+      "remaining": "Não foi executada nova jornada DOM completa de salvar dentro de uma caixa; HTTP cobre alocação e identidade/custódia."
+    },
+    {
+      "view": "Histórico de custódia do item",
+      "status": "DOM PT/EN com resposta HTTP real fictícia",
+      "evidence": [
+        "Quantidade de eventos, identidade estável e links de manifesto conferidos.",
+        "Rótulos de custódia são separados do estado da remessa; datas localizadas em UTC."
+      ],
+      "changed": true
+    }
+  ],
+  "all_browser_journeys_validated": false,
+  "limits": [
+    "Layout responsivo, contraste percebido, teclado nativo, leitores de tela, rolagem e botão Voltar físico ainda precisam de navegador.",
+    "As prévias são HTML inerte; não provam renderização nem substituem capturas de tela.",
+    "Perfis de embarcação/base, calendário, administração de acessos e livros não receberam revisão completa nova nesta frente.",
+    "Usuário temporário e todos os dados reais permanecem intocados."
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "release": "UI139",
+  "production_access": false,
+  "live_users_changed": false,
+  "temporary_user_changed": false,
+  "live_database_changed": false,
+  "outbound_messages": false,
+  "backend_python_changed": [
+    "app/__init__.py",
+    "app/localization.py"
+  ],
+  "backend_change_scope": "Version marker and authored translation messages only",
+  "parent_runtime_manifest_sha256": "1fb72d87824226d3c0c190d4c0cb10844e1e28969dda28ba7e510a642488a72d",
+  "final_runtime_manifest_sha256": "14f34fa3938233b0125056cfa88a03bd46bf3e2b07cc395cfa35f9521d8081bd",
+  "old_zip_preserved": "Wavelink-UI138-repositorio-completo.zip",
+  "test_data": "All HTTP journeys use isolated fictional SQLite fixtures; real company not accessed."
+}

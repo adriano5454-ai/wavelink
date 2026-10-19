@@ -1,0 +1,33 @@
+{
+  "release": "UI139",
+  "representative_previews": 6,
+  "items": [
+    {
+      "title": "RH: afastamento planejado e viagem cancelada",
+      "file": "rh/programacao.html"
+    },
+    {
+      "title": "RH: correção e análise de despesas",
+      "file": "rh/despesas.html"
+    },
+    {
+      "title": "Remessa parcialmente recebida",
+      "file": "frota/remessa-parcial.html"
+    },
+    {
+      "title": "Recebimento e destinação do grupo",
+      "file": "frota/recebimento.html"
+    },
+    {
+      "title": "Filtro de avarias e datas antes — UI138",
+      "file": "remessas/ui138-remessa.html"
+    },
+    {
+      "title": "Filtro de avarias e datas depois — UI139",
+      "file": "remessas/ui139-remessa.html"
+    }
+  ],
+  "browser": false,
+  "screenshots": false,
+  "data": "fictional"
+}

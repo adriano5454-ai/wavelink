@@ -1,0 +1,54 @@
+{
+  "version": "UI139",
+  "reviewed_at": "2026-10-19T12:18:39.044Z",
+  "mode": "Read-only source and test inspection; no suite execution",
+  "status": "passed_no_material_blocker_found",
+  "coordinator_reported_release_manifest": "14f34fa3938233b0125056cfa88a03bd46bf3e2b07cc395cfa35f9521d8081bd",
+  "source_sha256": {
+    "app/static/manifest_ui.js": "d08da7c4b6a4e6226416d98744e397bf90f8b4399b098c17c17c9701c8d9e7a2",
+    "app/static/preparation_ui.js": "e32d27b89302c007b4230171b6fe616185667be6cf98b2c838553825606d7dd3"
+  },
+  "findings": [],
+  "manifest_search_review": {
+    "conclusion": "The correction directly addresses the historical false match without changing saved records, group membership, API contracts or custody.",
+    "evidence": [
+      "Record fields and location values keep normalized substring matching; status label/code is evaluated separately through normalized word prefixes.",
+      "The historical original B case cannot satisfy B from the middle of the Portuguese status recebido; the original test remains intact and the new test names that same regression explicitly.",
+      "Every query term must still match within one record/status combination; a nested matching item returns its entire saved root group.",
+      "Received-with-damage and physically-returned-with-damage filters remain based on exact actual persisted states.",
+      "shipmentRows sorts the filtered copy, while groups sorts a copied line list; neither helper rewrites original items or persisted status values."
+    ],
+    "semantic_limit": "Prefix matching deliberately narrows status fragments: arbitrary middle/suffix fragments are no longer matches unless present in ordinary record fields. Full raw status codes and visible status-word prefixes remain available. This is a search behavior change, not a permission or persistence change."
+  },
+  "preparation_review": {
+    "conclusion": "The additions preserve explicit packing selection and identity; they translate UI copy and normalize search without altering underlying values.",
+    "evidence": [
+      "NFD accent removal and case folding apply to both query and searchable presentation strings only; original names, references, IDs and versions remain unchanged.",
+      "Search/clear/navigation redraw the view without calling notify or changing chosen; only an explicit selection/removal calls notify.",
+      "Complete-root selection, child inclusion, missing-ID rejection, record counts and exact id/version output remain unchanged.",
+      "Added text wrappers affect labels, aria-labels, empty/missing messages and review labels; element textContent continues to render stored names as text.",
+      "Zero quantity is preserved by null comparison; no quantity inference or summation was introduced.",
+      "Existing focus behavior, accessible selected-child explanation and disabled inherited-child selection remain present."
+    ]
+  },
+  "tests_inspected": [
+    "tests/test_audit_ui127.js:81",
+    "tests/test_ui139_manifest_ui.cjs",
+    "tests/test_ui139_preparation_ui.cjs"
+  ],
+  "coordinator_reported_tests": {
+    "historical_audit_checks": 163,
+    "manifest_checks": 53,
+    "preparation_checks": 36,
+    "final_javascript_suites_passed": 113,
+    "note": "Reported by coordinator; not independently reexecuted in this additional review."
+  },
+  "limitations": [
+    "Static source/test inspection only for this final correction; no Node suite, HTTP, browser, visual/device or production execution by reviewer.",
+    "Earlier reviewer execution receipts describe their historical source versions; the coordinator final cohort is the authoritative final-build execution evidence.",
+    "This review does not verify the complete release manifest or reconstructed package; it records the two current source hashes for comparison."
+  ],
+  "runtime_edits": false,
+  "tests_started": false,
+  "production_or_browser_access": false
+}

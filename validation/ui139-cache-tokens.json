@@ -1,0 +1,20 @@
+{
+  "assets": {
+    "app.js": "1.34.39-93be4f133894",
+    "fleet.js": "1.34.39-dc5a6a84ab50",
+    "fleet_workspace_ui78.css": "1.34.39-bc57a7433662",
+    "help_catalogue.json": "1.34.39-bbb625091d97",
+    "help_workspace.js": "1.34.39-eb195f21b102",
+    "hr_workspace.css": "1.34.39-fd4a0cbb411c",
+    "hr_workspace.js": "1.34.39-c95446e684e9",
+    "locale_pt_br.js": "1.34.39-8835cb581f46",
+    "logistics_workflow.js": "1.34.39-9e12c0a61f42",
+    "manifest_ui.js": "1.34.39-d08da7c4b6a4",
+    "preparation_ui.js": "1.34.39-e32d27b89302"
+  },
+  "updated": [
+    "app/static/fleet.html",
+    "app/static/pt-BR/fleet.html",
+    "app/static/sw.js"
+  ]
+}

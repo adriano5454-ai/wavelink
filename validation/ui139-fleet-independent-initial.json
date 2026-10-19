@@ -1,0 +1,5 @@
+{
+  "exit": 1,
+  "stdout": "",
+  "stderr": "AssertionError [ERR_ASSERTION]: received damage uses professional Portuguese\n    at ok (C:\\Users\\adria\\Documents\\Codex\\2026-10-17\\quero-concluir-a-mudan-a-da\\work\\runtime-ui139\\tests\\test_ui139_fleet_independent.cjs:6:120)\n    at run (C:\\Users\\adria\\Documents\\Codex\\2026-10-17\\quero-concluir-a-mudan-a-da\\work\\runtime-ui139\\tests\\test_ui139_fleet_independent.cjs:20:23)\n    at C:\\Users\\adria\\Documents\\Codex\\2026-10-17\\quero-concluir-a-mudan-a-da\\work\\runtime-ui139\\tests\\test_ui139_fleet_independent.cjs:32:59 {\n  generatedMessage: false,\n  code: 'ERR_ASSERTION',\n  actual: false,\n  expected: true,\n  operator: '==',\n  diff: 'simple'\n}\n"
+}

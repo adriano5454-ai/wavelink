@@ -1,0 +1,28 @@
+{
+  "screens": [
+    {
+      "file": "remessa-parcial.html",
+      "title": "UI139 · Remessa parcialmente recebida",
+      "bytes": 353222,
+      "renderedBy": "actual fleet.js in local DOM",
+      "browser": false
+    },
+    {
+      "file": "recebimento.html",
+      "title": "UI139 · Grupo recebido aguardando destinação",
+      "bytes": 349372,
+      "renderedBy": "actual fleet.js in local DOM",
+      "browser": false
+    }
+  ],
+  "styles": [
+    "fleet_workspace_ui78.css",
+    "workflow_foundation_ui81.css",
+    "company_workspace_ui84.css",
+    "mobile_foundation_ui88.css",
+    "visual_system_ui94.css",
+    "ui132_visual.css",
+    "documentos_context.css"
+  ],
+  "externalNetwork": false
+}
