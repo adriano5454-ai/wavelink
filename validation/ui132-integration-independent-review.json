@@ -1,0 +1,61 @@
+{
+  "scope": "Read-only independent review of shared UI132 integration and contextual document expansion, after task component implementation. Task component itself is covered separately and is not claimed as independently reviewed by its author.",
+  "status": "No functional or privacy blocker found in reviewed shared sources; final artifact/cache seal and root integrated execution remain pending.",
+  "baseline": "work/runtime-ui131",
+  "candidate": "work/runtime-ui132",
+  "reviewed": [
+    {
+      "files": [
+        "app/access.py",
+        "app/project_modules.py",
+        "app/export_policy.py",
+        "app/store.py",
+        "app/server.py",
+        "app/context_documents_api.py"
+      ],
+      "finding": "Byte-identical to UI131. No permission grant, schema reset, new external route or backup allowlist mutation introduced in this round."
+    },
+    {
+      "file": "app/static/app.js",
+      "finding": "Diff is APP_VERSION1.34.31→1.34.32 only; session/authentication routing preserved."
+    },
+    {
+      "files": [
+        "app/static/index.html",
+        "app/static/pt-BR/index.html",
+        "app/static/sw.js"
+      ],
+      "finding": "Both shells load task_acceptance before task_workspace; new CSS and JS are in asset cache. Final hash token still needs regeneration after final task JS correction (parent already informed)."
+    },
+    {
+      "file": "app/context_documents.py",
+      "finding": "Asset context checks inventory access first. Manifest attachments recheck fleet actor and manifest source ACL; maintenance evidence follows maintenance.view and verifies exact retained photo linkage. No inference by name or serial."
+    },
+    {
+      "file": "app/context_documents.py",
+      "finding": "Profile document families are independently filtered: hr.view_own plus owner or respective documents/expenses permission; calls authoritative HR reader and checks scope again after collection. Authored handover draft/publication visibility is checked for that exact author/audience/revision; denied HR counts are not returned."
+    },
+    {
+      "file": "app/static/documentos_context.js",
+      "finding": "Downloads use fixed relative authenticated routes, UUID validation, exact publication version/draft parameter, session/route guard before/after asynchronous reads, and byte length+SHA256 verification. No external messaging or cross-family file copying."
+    },
+    {
+      "files": [
+        "app/localization.py",
+        "app/report_localization.py",
+        "app/static/locale_pt_br.js"
+      ],
+      "finding": "New acceptance wording mapped to specific Assignment accepted key. Generic Accepted no longer remapped to task meaning; backend and PDF wording have corresponding catalog entries."
+    }
+  ],
+  "evidence": [
+    "Static exact byte comparison for shared preservation; inspected relevant diffs.",
+    "Read source-level permission, source revision and download guard flow; no browser or production calls.",
+    "Parent owns integrated backup/selective-copy and bilingual PDF execution; their future results are not claimed here."
+  ],
+  "pending": [
+    "Regenerate final cache tokens after source freeze and run final artifact verifier.",
+    "Parent integrated backup/selection and PT-BR/EN report tests."
+  ],
+  "blockers": []
+}

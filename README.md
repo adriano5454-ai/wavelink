@@ -1,26 +1,27 @@
-# Wavelink — UI131 integrada localmente
+# Wavelink — UI132 integrada localmente
 
-Versão 1.34.31. Base GitHub: b8e5a7aad47df0874672b1a6406a742b68374b29 (UI130). Esta entrega não fez commit, publicação ou alteração de infraestrutura. O repositório mantém a estrutura completa de implantação existente.
+Versão 1.34.32. Base GitHub: f26f38da92cd0ee8dfbc29dfa007a0eb7ea5d86c (UI131); inclui toda a UI131 preservada e a UI132. Nenhum commit, deployment ou serviço foi alterado nesta rodada.
 
-## Implementado
+## Alterações
 
-- Contatos profissionais: e-mail, WhatsApp e Teams opcionais, visibilidade explícita, conferência de acesso ao abrir o atalho, sem envio automático.
-- Documentos: certificados e fontes exatas de manutenção no item; documentos privados RH no perfil; pastas dos originais e retorno com contexto.
-- Visual: campos móveis de 16px, botões de 44px nos componentes revisados, foco, navegação selecionada, hierarquia e leitura de tabelas e cartões.
-- Ajuda: novos guias em português brasileiro e inglês e catálogo alinhado em 80 tópicos.
+- Documentos relacionados: comprovantes de despesas no perfil, fotos de manutenção no item, anexos de passagens no perfil do autor e arquivos de manifestos vinculados ao item. Cada família usa sua autorização e download próprios. Mantém certificados, fontes exatas e pastas dos Originais da UI131.
+- Tarefas: cada responsável pode registrar seu aceite explícito. Ler o alerta, executar e aprovar são ações distintas. Mudança de responsáveis/reabertura pede novo aceite; evidências anteriores ficam no histórico. Os relatórios novos incluem o aceite separado do andamento.
+- Visual: hierarquia, metadados legíveis, controles e foco visíveis, seleção textual e apresentação em telas pequenas nas áreas operacionais. Matriz de 193 vistas, com 163 fontes restantes inspecionadas; isso não significa 193 jornadas testadas em navegador.
+- Ajuda e linguagem: português brasileiro para Corcovado e inglês preservado nas outras instalações.
 
-## Validação e limites
+## Validação
 
-198 testes Python e 59 suítes JavaScript aprovados na versão final; 2353 recursos reconstruídos e conferidos por SHA-256. Detalhes em DELIVERY_CHECKS.json e validation/.
-Sem Chrome, publicação, teste de produção, mensagens externas ou alteração dos usuários e dados da Corcovado. As prévias em docs/UI131-previas são HTML de componentes reais com dados fictícios, não screenshots.
+59 testes Python distintos e 64 suítes JavaScript aprovados; 2369 recursos reconstruídos da cadeia completa e conferidos por SHA-256. Evidências em DELIVERY_CHECKS.json e validation/. Os testes usam dados fictícios. Prévias HTML em docs/UI132-previas; não são screenshots.
+Não houve Chrome, publicação, envio de mensagem, acesso ao banco real ou alteração de admin/usuário temporário.
 
 ## Usar o pacote
 
-Extraia em uma nova pasta. Compare com a versão mais recente do seu repositório antes de aplicar pelo GitHub Desktop; preserve trabalho novo. Não copie bancos ou arquivos de dados dos testes para a empresa. Não crie outro serviço ou disco.
-O Dockerfile mantém a cadeia de reconstrução do aplicativo. Para obter o código-fonte completo numa pasta nova, use: python deploy/materialize_runtime.py CAMINHO_NOVO. Nenhum dado de empresa é necessário para isso.
+Extraia em uma pasta nova. Compare com o repositório mais recente antes de aplicar no GitHub Desktop e preserve trabalho posterior. O ZIP mantém a estrutura completa do repositório de implantação existente; não copie bancos de teste nem crie outro serviço/disco.
+Para materializar todo o código-fonte em uma pasta nova: python deploy/materialize_runtime.py CAMINHO_NOVO. O processo verifica a cadeia de recursos antes de aplicar a UI132.
 
 ## Backup e reversão
 
-A UI130 local foi mantida intacta; esta rodada não criou nem alterou um backup do banco de produção. Antes de uma publicação futura, faça e confira o backup do banco/disco existente.
-Os contatos usam tabelas adicionais. No primeiro salvamento de contatos, um marcador impede que versões antigas leiam a empresa sem aplicar a proteção de privacidade. Depois disso, reverter somente o código para UI130 é bloqueado. Uma reversão completa exige código compatível e restauração coordenada de um backup anterior verificado, com processos de escrita parados; isso perderia alterações posteriores ao backup. Preferir correção para frente para manter dados novos.
-Não houve reset, renomeação de serviço, concessão de permissão a usuário real ou limpeza do usuário temporário.
+A base UI131 local foi mantida intacta. Não foi criado nem alterado backup de produção, pois esta rodada não a acessou. Antes de uma publicação futura, faça backup verificado do banco/disco existente.
+O aceite acrescenta metadados ao corpo da tarefa e eventos à auditoria existente. Backups completos e cópias seletivas com tarefas preservam sua origem. A UI132 invalida um aceite quando encontra reatribuição/reabertura posterior, inclusive alterações de um escritor UI131. Versões antigas não exibem esse aceite.
+A proteção de contatos da UI131 continua valendo: após o primeiro salvamento de contatos, retornar somente o código para UI130 é bloqueado. Uma reversão completa exige código compatível e backup anterior verificado, com gravações paradas; pode perder mudanças posteriores. Prefira corrigir para frente.
+Leia docs/UI132-pendencias.json e docs/UI132_GUIA.html antes de publicar.

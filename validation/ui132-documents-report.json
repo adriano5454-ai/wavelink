@@ -1,0 +1,111 @@
+{
+  "release": "UI132",
+  "role": "Documentos e anexos",
+  "source": "work/runtime-ui132",
+  "status": "Implementado e testado localmente; fontes disponíveis para integração, sem publicação",
+  "changes": [
+    {
+      "area": "Perfil",
+      "implemented": "Comprovantes de despesas visíveis apenas ao titular ou revisor de despesas; separados dos documentos pessoais. Valor, moeda, data e análise apresentados sem presumir pagamento."
+    },
+    {
+      "area": "Perfil",
+      "implemented": "Anexos de passagens elaboradas pela pessoa, separados dos documentos de RH. Rascunho só do autor; cada publicação usa revisão exata e audiência vigente/da revisão."
+    },
+    {
+      "area": "Item",
+      "implemented": "Fotos salvas de respostas atuais de manutenção ligadas por asset UUID. Evidências substituídas continuam no histórico próprio."
+    },
+    {
+      "area": "Item",
+      "implemented": "Arquivos de manifestos vinculados por lines[].item_id, com autorização atual de logística nos locais de origem/destino."
+    },
+    {
+      "area": "Apresentação",
+      "implemented": "Grupos com títulos acessíveis, detalhes progressivos, datas e moedas localizadas, contexto do item/pessoa e atalhos com destino preciso; PT/EN preservados."
+    }
+  ],
+  "preservation": {
+    "schema_changed": false,
+    "data_migration": false,
+    "copies_to_library": false,
+    "permissions_widened": false,
+    "production_changed": false,
+    "external_messages": false,
+    "download_contract": "São reutilizados endpoints existentes com autenticação e ACL atuais. A UI ainda compara tamanho e SHA256 aos metadados selecionados e aborta se conta/página mudar.",
+    "historical_files": "Nenhum arquivo ou vínculo histórico é excluído; registros e IDs existentes preservados."
+  },
+  "files": [
+    "app/context_documents.py",
+    "app/static/documentos_context.js",
+    "app/static/documentos_context.css",
+    "tests/test_ui132_context_attachments.py",
+    "tests/test_ui132_context_maintenance.py",
+    "tests/test_ui132_context_manifests.py",
+    "tests/test_ui132_context_attachments.cjs"
+  ],
+  "shared_dependencies": [
+    "Coordenador integra work/ui132-documents-translations.json (30 pares) nos dicionários; confirmado pelo coordenador.",
+    "Sem novas rotas, mounts, tabelas ou mudanças em server.py."
+  ],
+  "tests": {
+    "first_python": {
+      "passed": 19,
+      "failed": 0,
+      "seconds": 80.3,
+      "scope": "8 cenários UI132 + 11 regressões UI131",
+      "log": "work/ui132-documents-tests.log",
+      "xml": "work/ui132-documents-tests.xml"
+    },
+    "final_python": {
+      "passed": 21,
+      "failed": 0,
+      "seconds": 93.24,
+      "new_ui132_cases": 10,
+      "inherited_ui131_cases": 11,
+      "log": "work/ui132-documents-final-tests.log",
+      "xml": "work/ui132-documents-final-tests.xml"
+    },
+    "javascript": {
+      "passed_suites": 2,
+      "checks": 149,
+      "suites": [
+        {
+          "file": "tests/test_ui132_context_attachments.cjs",
+          "checks": 65
+        },
+        {
+          "file": "tests/test_ui131_context_documents.cjs",
+          "checks": 84
+        }
+      ],
+      "log": "work/ui132-documents-node-tests.json",
+      "coverage": "Código efetivamente executado com DOM mínimo/controlador API, dicionário PT/EN real, downloads/estado/paginação/hash/sessão; não é navegador."
+    },
+    "syntax": {
+      "javascript": true
+    },
+    "fixture_markup": "work/ui132-documents-markup.html"
+  },
+  "family_inventory": "work/ui132-document-families.json",
+  "family_count": 22,
+  "limitations": [
+    "Não houve Chrome, screenshot real, login ou validação em produção nesta rodada.",
+    "Caminho de RH abre a área do colaborador; o usuário escolhe a seção Despesas.",
+    "Não há pastas de RH/logística/passagens no modelo, e nada foi copiado à biblioteca operacional.",
+    "Sem relação de item para passagens por nome/local/equipment: não há UUID de equipamento no modelo.",
+    "Evidências de checklists e referências de logbooks mantêm seus contextos originais. Agregação por perfil/itens exige revisão adicional; não foi declarada universal.",
+    "Solicitações de TI, viagens/horas/escalas, Toolbox, tarefas/contagens e falhas/QSHE não têm modelo genérico de anexos no escopo inspecionado.",
+    "Fotos de item/perfil já têm galeria/contexto próprios; não foram duplicadas nem visualmente revalidadas."
+  ],
+  "publication": "Não publicado por este agente; integração/empacotamento são responsabilidade do coordenador.",
+  "source_hashes": {
+    "app/context_documents.py": "1a7da63abde0287200ac245aaace74e3da850bae36fa5384155ba54c722f6c46",
+    "app/static/documentos_context.js": "8ed4fab1af3a61458831bc92e11b2914d92a8548aad88ce2b027d8b66094bb86",
+    "app/static/documentos_context.css": "5f88452020c15fbf0aaa95e196bf1aae413b4ff839874aec161c8f847d83fa0d",
+    "tests/test_ui132_context_attachments.py": "334173ab83800056cd702b5a7de175e7ea91c93c6ea91c576efcd89a0b80cdf8",
+    "tests/test_ui132_context_maintenance.py": "7c20710fdeaf374139e1fa33b5c76bdbbaf432bb8f81be76c95bd18218df7465",
+    "tests/test_ui132_context_manifests.py": "5b1f3ddd814be1aedbdc6e3bbde18e4d6239b570612f27353872299c02aedf22",
+    "tests/test_ui132_context_attachments.cjs": "5864bea9228c1e5b74a156c7f0ceef1d1f9759ff83195f4ad13c1d965ab5c441"
+  }
+}

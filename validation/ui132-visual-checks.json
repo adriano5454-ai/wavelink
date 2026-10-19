@@ -1,0 +1,58 @@
+{
+  "kind": "static CSS/cascade/contrast; no browser rendering",
+  "checks": 505,
+  "contrast": [
+    {
+      "foreground": "#173d4b",
+      "background": "#ffffff",
+      "ratio": 11.63,
+      "minimum": 4.5
+    },
+    {
+      "foreground": "#173d4b",
+      "background": "#edf4f7",
+      "ratio": 10.46,
+      "minimum": 4.5
+    },
+    {
+      "foreground": "#4c6471",
+      "background": "#ffffff",
+      "ratio": 6.23,
+      "minimum": 4.5
+    },
+    {
+      "foreground": "#4c6471",
+      "background": "#edf4f7",
+      "ratio": 5.61,
+      "minimum": 4.5
+    },
+    {
+      "foreground": "#086775",
+      "background": "#ffffff",
+      "ratio": 6.55,
+      "minimum": 4.5
+    },
+    {
+      "foreground": "#086775",
+      "background": "#edf4f7",
+      "ratio": 5.89,
+      "minimum": 4.5
+    },
+    {
+      "foreground": "#965900",
+      "background": "#ffffff",
+      "ratio": 5.64,
+      "minimum": 3
+    }
+  ],
+  "limits": [
+    "Actual declared solid colour pairs only; not every inherited colour or browser-computed state.",
+    "No browser keyboard, rendered pixels, physical mobile or real workflow execution."
+  ],
+  "fixes": [
+    "Real old 14px and42px !important cascade overridden only in identified component roots.",
+    "Mobile inventory card table padding restored. Fleet has a separate shell and is not assumed to use the UI124 cascade.",
+    "Text decoration complements current/selected colour states.",
+    "Metadata/disclosure controls are readable and touch sized."
+  ]
+}

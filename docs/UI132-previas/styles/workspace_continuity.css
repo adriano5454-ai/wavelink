@@ -1,0 +1,24 @@
+/* UI60: retained module styles; common components deliberately override only wl-* roles. */
+@layer wlLegacy {
+/* The Fleet module occupies the same work area, under the existing account and
+   project identity. Its legacy page remains available only as an explicit URL. */
+body.fleet-workspace-active #app{display:none!important}
+#fleet-workspace-host{min-width:0;margin:0 18px 18px;}
+body.shell-enabled:not(.shell-collapsed) #fleet-workspace-host{margin-left:260px}
+#fleet-workspace-frame{display:block;width:100%;height:calc(100dvh - var(--fleet-top,198px) - 12px);min-height:420px;border:0;border-radius:10px;background:#f4f7f8}
+body.fleet-embedded .masthead,body.fleet-embedded>.fleet-context{display:none!important}
+body.fleet-embedded{margin:0;min-width:0;background:#f4f7f8}
+body.fleet-embedded #navigation{position:sticky;top:0;z-index:20;display:flex;justify-content:flex-start;flex-wrap:wrap;gap:6px;max-width:none;margin:0;padding:12px 16px;border-bottom:1px solid #d9e3e8;background:#fff;}
+body.fleet-embedded #navigation a{flex:0 0 auto;min-height:38px;padding:9px 12px;border-radius:6px;font:600 13px/1.35 system-ui;text-align:left;}
+body.fleet-embedded #navigation a[aria-current=page]{background:#153f50;color:#fff}
+body.fleet-embedded #project-link,body.fleet-embedded #navigation a[href^='/help']{display:none!important}
+body.fleet-embedded #fleet-root{margin:0;max-width:none;padding:22px 18px 60px;min-width:0}
+body.fleet-embedded #fleet-connection{display:block;margin:10px 18px 0;font:600 12px/1.4 system-ui;color:#254b5b;padding:6px 10px;border:1px solid #c5dce3;border-radius:6px;width:fit-content;max-width:calc(100% - 36px);cursor:pointer}
+body.fleet-embedded #modal{max-height:calc(100dvh - 24px)}
+/* Expansion is a view change, not a navigation or a new session. */
+body.expanded-log-view #shell-sidebar,body.expanded-log-view #shell-toggle,body.expanded-log-view>.project-strip{display:none!important}
+body.shell-enabled.expanded-log-view #app{margin-left:0;margin-right:0;max-width:none;padding-left:16px;padding-right:16px}
+@media(max-width:900px){body.shell-enabled:not(.shell-collapsed) #fleet-workspace-host,#fleet-workspace-host{margin:0 8px 12px}#fleet-workspace-frame{height:calc(100dvh - var(--fleet-top,198px) - 12px)}body.fleet-embedded #fleet-root{padding:18px 12px 50px}body.fleet-embedded #navigation{padding:10px;gap:4px}body.fleet-embedded #navigation a{padding:8px;font-size:12px}}
+@media(max-width:600px){#fleet-workspace-frame{height:calc(100dvh - var(--fleet-top,260px) - 12px);min-height:350px}}
+
+}

@@ -1,0 +1,23 @@
+{
+  "assets": {
+    "app.js": "1.34.32-5ff3668c3a2d",
+    "documentos_context.css": "1.34.32-5f88452020c1",
+    "documentos_context.js": "1.34.32-8ed4fab1af3a",
+    "fieldwork.js": "1.34.32-391b58592123",
+    "general_tasks.js": "1.34.32-ea435595dd21",
+    "help_catalogue.json": "1.34.32-c02b893f7650",
+    "help_workspace.js": "1.34.32-f21ffef5f992",
+    "locale_pt_br.js": "1.34.32-3dd07ff6ff47",
+    "task_acceptance.css": "1.34.32-e744b1041448",
+    "task_acceptance.js": "1.34.32-6c1390b1abcb",
+    "task_workspace.js": "1.34.32-efe326d01b9e",
+    "ui132_visual.css": "1.34.32-165f12bcb687"
+  },
+  "updated": [
+    "app/static/fleet.html",
+    "app/static/index.html",
+    "app/static/pt-BR/fleet.html",
+    "app/static/pt-BR/index.html",
+    "app/static/sw.js"
+  ]
+}

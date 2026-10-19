@@ -1,0 +1,66 @@
+/* Wavelink UI84 — company identity and native Original Files route.
+   This stylesheet owns presentation only. It does not create controls, poll,
+   move route content, alter permissions or write operational state. */
+:root{--wavelink-ui84-company-workspace:1}
+
+/* Company identity on Personal Home. The logo is code-owned and served by the
+   selected company service; the company name remains the truthful fallback. */
+.ph-hero-copy{position:relative;z-index:2;width:min(710px,58%)}
+.ph-company-cover{position:absolute;z-index:3;top:22px;right:24px;display:flex;flex-direction:column;justify-content:center;width:min(330px,31%);min-height:112px;padding:18px 20px;border:1px solid rgba(190,222,230,.76);border-radius:18px;background:rgba(255,255,255,.96);color:#0c2337;box-shadow:0 18px 38px rgba(1,18,30,.25);backdrop-filter:blur(8px)}
+.ph-company-cover-mark{display:flex;min-height:58px;align-items:center;justify-content:center;min-width:0}
+.ph-company-cover-mark img{display:block;width:100%;max-height:72px;object-fit:contain;object-position:center}
+.ph-company-cover-mark strong{font-size:clamp(1.05rem,2vw,1.55rem);line-height:1.1;letter-spacing:.04em;text-align:center;overflow-wrap:anywhere;color:#0c2337}
+.ph-company-cover>span{display:block;margin-top:10px;padding-top:8px;border-top:1px solid #d8e5e9;color:#44626f;font-size:.66rem;font-weight:850;letter-spacing:.14em;text-align:center}
+
+/* Company workspace wording in the fixed shell. */
+#shell-context .shell-context-eyebrow{letter-spacing:.11em}
+#shell-context #active-project-name{overflow-wrap:anywhere}
+
+/* Original Files now owns a normal route inside #app instead of opening a
+   modal. Existing library/editor classes are retained to avoid changing the
+   trusted upload, lifecycle, history and receipt logic. */
+.wl84-original-page{width:min(100%,1360px);min-width:0;margin:0 auto;padding:22px clamp(14px,2vw,28px) 42px;box-sizing:border-box}
+.wl84-original-header{display:flex;align-items:flex-start;justify-content:space-between;gap:24px;padding:24px clamp(20px,3vw,34px);border:1px solid #287189;border-radius:22px;background:linear-gradient(135deg,#07334a 0%,#0b5063 58%,#0c6270 100%);color:#f4fcff;box-shadow:0 18px 42px rgba(2,28,43,.18)}
+.wl84-original-title{min-width:0}.wl84-original-title .eyebrow{margin:0 0 7px;color:#72e0ec;font-size:.72rem;font-weight:850;letter-spacing:.14em}.wl84-original-title h1{margin:0;color:#fff;font-size:clamp(1.85rem,3vw,2.65rem);line-height:1.05;letter-spacing:-.025em}.wl84-original-lead{max-width:720px;margin:10px 0 0;color:#d3edf2;line-height:1.52}
+.wl84-original-header-actions{display:flex;flex-wrap:wrap;justify-content:flex-end;gap:9px;flex:0 0 auto}.wl84-original-header-actions .btn{margin:0;white-space:nowrap}.wl84-original-header-actions .btn.secondary{border-color:rgba(172,231,238,.58);background:rgba(3,35,49,.42);color:#fff}.wl84-original-header-actions .btn.secondary:hover{background:#0a6277}
+.wl84-original-page>.of-library{min-width:0;margin-top:16px;padding:clamp(15px,2.2vw,24px);border:1px solid #d3e0e7;border-radius:20px;background:#fff;box-shadow:0 14px 36px rgba(9,47,64,.09)}
+.wl84-original-page .of-heading{padding:0 0 13px;margin-bottom:14px;border-bottom:1px solid #dbe6ec}.wl84-original-page .of-heading .of-note{margin:0;color:#4a6572}.wl84-original-page .of-badge{background:#dff7f4;color:#0f665f}
+.wl84-original-page .of-tools{border:1px solid #d7e4ea;border-radius:13px;background:#f5f9fa}.wl84-original-page .of-folders{border-color:#d7e4ea;background:#f5f9fa}.wl84-original-page .of-folder.active{background:#0b4960;color:#fff}.wl84-original-page .of-file{border:1px solid #d9e4e9;border-radius:14px;padding:15px;margin:10px 0;background:#fff;box-shadow:0 5px 18px rgba(12,53,70,.04)}.wl84-original-page .of-file:last-child{border-bottom:1px solid #d9e4e9}
+.wl84-original-page .of-editor,.wl84-original-page .of-review{max-width:860px}.wl84-original-page .of-editor>.of-actions,.wl84-original-page .of-review>.of-actions{position:sticky;bottom:10px;z-index:8;padding:12px;border:1px solid #d5e2e8;border-radius:13px;background:rgba(255,255,255,.98);box-shadow:0 -10px 28px rgba(10,41,56,.1)}
+.wl84-original-page .of-history{border-color:#dbe5ea}.wl84-original-page .of-facts{border-color:#d7e3e8;background:#fbfdfe}.wl84-original-denied{max-width:760px;margin:24px auto}
+
+/* A route page should never inherit the historical dialog constraints. */
+.wl84-original-page .of-dialog,.wl84-original-page dialog{max-width:none;max-height:none}
+
+@media(max-width:1120px){
+ .ph-hero-copy{width:min(720px,64%)}
+ .ph-company-cover{width:min(280px,29%)}
+}
+@media(max-width:820px){
+ .ph-hero{display:flex;flex-direction:column;align-items:stretch;padding-bottom:18px}
+ .ph-company-cover{position:relative;inset:auto;order:1;width:auto;min-height:88px;margin:16px 16px 0;padding:14px 16px}
+ .ph-company-cover-mark{min-height:48px}.ph-company-cover-mark img{max-height:58px}
+ .ph-hero-copy{order:2;width:auto;padding:22px 22px 8px}
+ .wl84-original-header{flex-direction:column}.wl84-original-header-actions{justify-content:flex-start;width:100%}
+}
+@media(max-width:700px){
+ .wl84-original-page{padding:10px 9px 28px}
+ .wl84-original-header{padding:19px 16px;border-radius:18px}
+ .wl84-original-header-actions{display:grid;grid-template-columns:1fr 1fr}.wl84-original-header-actions .btn{width:100%}
+ .wl84-original-page>.of-library{padding:12px;border-radius:16px}
+ .wl84-original-page .of-layout{grid-template-columns:minmax(0,1fr);gap:12px}
+ .wl84-original-page .of-folders{max-height:190px}
+ .wl84-original-page .of-tools{gap:8px;padding:10px}
+ .wl84-original-page .of-tools .field{min-width:0;flex-basis:100%}
+ .wl84-original-page .of-tools>.btn{width:100%}
+ .wl84-original-page .of-actions .btn{flex:1 1 145px}
+ .wl84-original-page .of-facts{grid-template-columns:minmax(0,1fr);gap:4px;padding:12px}
+ .wl84-original-page .of-facts dd{margin-bottom:9px}
+ .wl84-original-page .of-editor>.of-actions,.wl84-original-page .of-review>.of-actions{bottom:6px}
+}
+@media(max-width:430px){
+ .ph-company-cover{margin:10px 10px 0;padding:11px 12px}.ph-company-cover-mark img{max-height:48px}.ph-company-cover>span{margin-top:7px;padding-top:6px}
+ .wl84-original-header-actions{grid-template-columns:1fr}
+ .wl84-original-title h1{font-size:1.65rem}
+}
+@media(prefers-reduced-motion:reduce){.ph-company-cover,.wl84-original-page *{scroll-behavior:auto!important;transition:none!important;animation:none!important}}

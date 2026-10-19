@@ -1,0 +1,34 @@
+{
+  "github_main": "f26f38da92cd0ee8dfbc29dfa007a0eb7ea5d86c",
+  "github_release": "UI131",
+  "local_parent": "UI131",
+  "parent_manifest_sha256": "fccff7664c7b15625f5d8b6a45ebadb93aa8b48469299ab8c5f20eae40e97cf0",
+  "runtime_resources": 2353,
+  "repository_files": 786,
+  "parent_files_unmodified": true,
+  "production_access": false,
+  "initial_github_main": "b8e5a7aad47df0874672b1a6406a742b68374b29",
+  "final_remote_manifest_matches_parent": true,
+  "remote_critical_files": [
+    {
+      "path": "deploy/apply_ui131.py",
+      "sha": "67c667624f8bc49bb06b22f0b645674e1caba45f",
+      "match": true
+    },
+    {
+      "path": "deploy/materialize_runtime.py",
+      "sha": "442677fbd6bb5f08d380998caeea5d44ce4a4da3",
+      "match": true
+    },
+    {
+      "path": "Dockerfile",
+      "sha": "2f0ce3a0d492444fe3678ebc82b1a0d3df3d4992",
+      "match": true
+    },
+    {
+      "path": "README.md",
+      "sha": "91a4d2c8c2c67d846e34d346d8364ed3849b675e",
+      "match": true
+    }
+  ]
+}

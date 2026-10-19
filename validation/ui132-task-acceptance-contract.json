@@ -1,0 +1,72 @@
+{
+  "action": {
+    "path": "/api/tasks/action",
+    "action": "accept_assignment",
+    "payload": {
+      "id": "task UUID",
+      "version": "current integer version",
+      "confirmed": true
+    },
+    "op_id": "UUID"
+  },
+  "storage": {
+    "table": "work_tasks",
+    "field": "assignment_acceptance",
+    "shape": {
+      "cycle": "UUID identifying current assignment/reopen cycle",
+      "entries": {
+        "userUUID": {
+          "by": {
+            "user_id": "same current assignee",
+            "name": "saved account display name",
+            "role": "recorded role"
+          },
+          "at": "UTC ISO",
+          "task_version": "version explicitly reviewed"
+        }
+      },
+      "assignment_key": "SHA256 of sorted assignee UUIDs, latest meaningful assignment/reopen audit event, and reopened_at"
+    },
+    "legacy": "No field means acceptance not recorded; never infer it from alert/read/work/history."
+  },
+  "response": {
+    "acceptance": {
+      "cycle": "UUID or empty before first explicit cycle",
+      "people": [
+        {
+          "user_id": "UUID",
+          "name": "saved assignee name",
+          "status": "accepted | not_recorded",
+          "at": "UTC or empty"
+        }
+      ],
+      "accepted_count": 0,
+      "total": 1,
+      "my_status": "accepted | not_recorded | not_assigned",
+      "can_accept": true
+    }
+  },
+  "rules": [
+    "Only currently assigned named account with tasks.view and tasks.perform; no admin override when unassigned.",
+    "Accept only not_started/in_progress/returned; current membership required before idempotent replay.",
+    "Accept changes task version and audited metadata, not work status, findings, alert read_at, notifications, assignments or permissions.",
+    "Changing assignee set resets the entire cycle; changing only schedule/priority retains it. Reopening a general task resets cycle; earlier acceptance remains in audit snapshots.",
+    "Read-only details/list show acceptance independently; existing execution/submission remains permitted without acceptance to preserve legacy workflows.",
+    "Existing fieldwork_operations receipt stores task reference; retry returns current authorized task without resubmitting or restoring earlier acceptance.",
+    "Current acceptance is proven only by matching accept_task_assignment audit actor/cycle/entry/original revision+1; no matching origin means not_recorded. The assignment fingerprint also rejects old UI131 reassignment/reopen, including ABA."
+  ],
+  "ui": {
+    "component": "AJTaskAcceptance",
+    "hook": "AJTaskWorkspace.detail(t) calls mount(t)",
+    "draft_kind": "Task acceptance",
+    "resume": "AJGeneralTasks.canResume/resume delegates to AJTaskAcceptance"
+  },
+  "integration": [
+    "Load task_acceptance.js/css before task_workspace.js in both shells and SW.",
+    "No new tables, routes, notification settings, permissions or outbound messages. Existing task backup/transfer boundaries apply."
+  ],
+  "limitations": [
+    "No native or graphical browser test in this local round.",
+    "No global schema migration: old UI131 writers retain fields, and UI132 revalidates their assignment/reopen history instead of trusting retained metadata."
+  ]
+}

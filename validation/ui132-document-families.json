@@ -1,0 +1,387 @@
+{
+  "release": "UI132",
+  "scope": "Levantamento local de famílias de arquivos e relações existentes; não é certificação universal nem teste visual.",
+  "status": "Levantamento concluído; famílias implementadas nesta rodada verificadas em testes locais HTTP/DOM.",
+  "families": [
+    {
+      "id": "hr_personal",
+      "family": "Documentos pessoais de RH",
+      "storage": "hr_records kind=documents + hr_files",
+      "link": "user_id do titular",
+      "journey": "Perfil → Documentos relacionados → arquivo original; atalho para a área privada do perfil no RH",
+      "status": "herdado_UI131_regressao_HTTP_verificada",
+      "access": "hr.view_own e titular ou hr.documents_manage; ACL e vínculo do arquivo rechecados no download",
+      "evidence": [
+        "test_ui131_context_documents.py"
+      ],
+      "limits": [
+        "O atalho de RH abre a área do perfil, não um documento já selecionado.",
+        "Não há pastas de RH no modelo; nenhum anexo é copiado à biblioteca operacional."
+      ]
+    },
+    {
+      "id": "hr_expenses",
+      "family": "Comprovantes de despesas",
+      "storage": "hr_records kind=expenses + hr_files",
+      "link": "user_id do titular + ID do registro de despesa",
+      "journey": "Perfil → Comprovantes de despesas → arquivo original / Abrir perfil no RH",
+      "status": "implementado_UI132_testado_HTTP_JS",
+      "access": "hr.view_own e titular ou hr.expenses_review, independentemente de hr.documents_manage",
+      "evidence": [
+        "test_ui132_context_attachments.py",
+        "test_ui132_context_attachments.cjs"
+      ],
+      "limits": [
+        "Despesa aprovada não comprova pagamento.",
+        "Abrir perfil no RH exige selecionar a seção Despesas; não existe deep link aprovado para a despesa específica.",
+        "Despesas sem comprovante não criam cartão nesta agregação."
+      ]
+    },
+    {
+      "id": "hr_travel",
+      "family": "Viagens de RH",
+      "storage": "hr_records kind=travel",
+      "link": "user_id do colaborador",
+      "journey": "Permanece no fluxo de viagens de RH",
+      "status": "sem_modelo_de_anexo",
+      "access": "ACL de RH específica de viagens",
+      "evidence": [
+        "app/hr.py add_attachment/remove_attachment aceitam somente documents/expenses"
+      ],
+      "limits": [
+        "Não existe campo persistido de arquivo de viagem; bilhetes não são inferidos de comprovantes de despesas."
+      ]
+    },
+    {
+      "id": "hr_other",
+      "family": "Escalas, horas, cadastro e necessidades de pessoal",
+      "storage": "hr_records kinds shifts,timesheets,people,needs",
+      "link": "user_id e vínculos próprios do registro",
+      "journey": "Fluxos próprios de RH",
+      "status": "sem_modelo_de_anexo",
+      "access": "ACL por tipo e, nas horas, designação de projeto",
+      "evidence": [
+        "app/hr.py"
+      ],
+      "limits": [
+        "Dados de formulário não são tratados como anexos. Relatórios gerados não são originais enviados."
+      ]
+    },
+    {
+      "id": "certificates",
+      "family": "Certificados de equipamento",
+      "storage": "asset_certificates + asset_files owner_kind=certificate",
+      "link": "asset_ids explícitos",
+      "journey": "Item → Documentos relacionados → certificado / arquivo",
+      "status": "herdado_UI131_regressao_HTTP_verificada",
+      "access": "inventory.view para contexto; certificates.view para metadados e arquivo",
+      "evidence": [
+        "test_ui131_context_documents.py"
+      ],
+      "limits": [
+        "Não inventa relação por número de série, nome ou pasta."
+      ]
+    },
+    {
+      "id": "maintenance_evidence",
+      "family": "Fotos de evidência de manutenção",
+      "storage": "maintenance_jobs.checks[].photos + ops_photo_evidence",
+      "link": "job.asset.id → item; foto ligada ao job, fase e etapa exatos",
+      "journey": "Item → Evidências de manutenção salvas → foto salva / ordem",
+      "status": "implementado_UI132_testado_HTTP_JS",
+      "access": "inventory.view + maintenance.view; endpoint da foto revalida maintenance.view e job/photo IDs",
+      "evidence": [
+        "test_ui132_context_maintenance.py",
+        "test_ui132_context_attachments.cjs"
+      ],
+      "limits": [
+        "JPEG é a imagem efetivamente salva pelo sistema; não se promete arquivo original da câmera.",
+        "Só fotos ligadas às respostas atuais são agregadas. Evidências substituídas permanecem no histórico nativo autorizado.",
+        "Fotos salvas não aprovam a ordem."
+      ]
+    },
+    {
+      "id": "maintenance_sources",
+      "family": "Fontes originais usadas na manutenção",
+      "storage": "job.template.source_documents + original_documents + original_folders",
+      "link": "asset.id do job e referência integral congelada de documento/revisão",
+      "journey": "Item → revisão exata de Originais → pasta/subpasta → retorno ao item",
+      "status": "herdado_UI131_regressao_HTTP_JS_verificada",
+      "access": "inventory.view, maintenance.view e originals.view; arquivo final revalida originals.view e SHA",
+      "evidence": [
+        "test_ui131_context_documents.py",
+        "test_ui131_context_documents.cjs"
+      ],
+      "limits": [
+        "Usa template congelado da ordem, não versão mais recente da rotina."
+      ]
+    },
+    {
+      "id": "handover_attachments",
+      "family": "Anexos de passagens de serviço",
+      "storage": "handover_records.draft_attachments, handover_revisions.attachments e arquivos imutáveis",
+      "link": "author_id explícito do perfil",
+      "journey": "Perfil → Anexos de passagens elaboradas por esta pessoa → revisão publicada exata ou rascunho próprio / arquivo",
+      "status": "implementado_UI132_testado_HTTP_JS",
+      "access": "handovers.view; rascunho só autor; publicação exige audiência atual e da revisão histórica, sem exceção implícita de administrador",
+      "evidence": [
+        "test_ui132_context_attachments.py",
+        "test_ui132_context_attachments.cjs"
+      ],
+      "limits": [
+        "Passagens não possuem asset_id: equipment/location são texto livre e nunca geram vínculo de item.",
+        "Anexos de passagens são separados de documentos pessoais de RH.",
+        "Publicações e rascunhos não recebem pastas artificiais."
+      ]
+    },
+    {
+      "id": "fleet_manifest",
+      "family": "Arquivos de manifestos de transporte",
+      "storage": "fleet_manifests.lines + fleet_files",
+      "link": "lines[].item_id explícito",
+      "journey": "Item → Arquivos de manifestos de transporte → manifesto / arquivo exato",
+      "status": "implementado_UI132_testado_HTTP_JS",
+      "access": "Contexto exige inventory.view; depois Fleet._person e _manifest_access de origem/destino; download revalida conta, site, manifesto e hash",
+      "evidence": [
+        "test_ui132_context_manifests.py",
+        "test_ui132_context_attachments.cjs"
+      ],
+      "limits": [
+        "Arquivo não confirma expedição ou recebimento.",
+        "Conta vessel_only continua sem acesso ao contexto amplo de inventário; fluxo próprio de logística preservado.",
+        "Mostra versão atual do manifesto, não a apresenta como publicação imutável; arquivo tem UUID e SHA próprios."
+      ]
+    },
+    {
+      "id": "inventory_photos",
+      "family": "Fotos do item de inventário",
+      "storage": "asset_profiles.photos + asset_files owner_kind=asset",
+      "link": "owner_id/item_id explícito",
+      "journey": "Galeria já existente no próprio item e endpoint /api/assets/{id}/photos/{file}",
+      "status": "caminho_existente_inspecionado_na_fonte",
+      "access": "Assets.photo exige inventory.view, arquivo pertence ao item e integridade é conferida",
+      "evidence": [
+        "app/assets.py",
+        "app/assets_api.py"
+      ],
+      "limits": [
+        "Galeria não foi duplicada no bloco de documentos.",
+        "Não houve teste visual ou de navegador nesta rodada."
+      ]
+    },
+    {
+      "id": "profile_avatar",
+      "family": "Foto de perfil",
+      "storage": "member_profiles.avatar_data/mime/sha256",
+      "link": "user_id do perfil público",
+      "journey": "Pessoas → perfil, endpoint /api/recognition/avatar/{user_id}",
+      "status": "caminho_existente_inspecionado_na_fonte",
+      "access": "Recognition._person e _profile revalidam população elegível; bytes conferidos por SHA",
+      "evidence": [
+        "app/recognition.py",
+        "app/recognition_api.py"
+      ],
+      "limits": [
+        "Foto de identificação pública não é documento privado de RH nem anexo de pasta.",
+        "Não foi adicionada à agregação para evitar duplicar a foto já visível no cabeçalho."
+      ]
+    },
+    {
+      "id": "standalone_checklist_evidence",
+      "family": "Fotos de checklists autônomos",
+      "storage": "records.items[phase][step].photos + ops_photo_evidence",
+      "link": "record_id + phase + step ID; created_by_id do registro existe",
+      "journey": "Checklist original → etapa/foto e histórico",
+      "status": "agregacao_por_perfil_pendente",
+      "access": "Depende da autorização de checklist e do registro original; não foi ampliada nesta rodada",
+      "evidence": [
+        "app/store.py create_record/apply_photos",
+        "app/photo_evidence.py get_photo",
+        "app/server.py /api/records/{rid}/photos/{photo_id}"
+      ],
+      "limits": [
+        "item_id da foto identifica a etapa, não o item de inventário.",
+        "created_by_id permite possível caminho futuro por autor, mas autoria do registro e autoria de cada evidência não são equivalentes.",
+        "Não houve implementação/teste novo desta agregação."
+      ]
+    },
+    {
+      "id": "checklist_sources",
+      "family": "Fontes e imagens de referência de checklists",
+      "storage": "template.source_documents, template.media e guidance/introduction.images",
+      "link": "Template congelado/revisão e documento original exato; sem asset_id de inventário",
+      "journey": "Checklist → referência original; biblioteca Originais → pasta/subpasta quando realmente cadastrada",
+      "status": "contexto_original_existente_agregacao_por_perfil_pendente",
+      "access": "checklists.view e originals.view conforme origem; não é acesso público",
+      "evidence": [
+        "app/checklists.py",
+        "app/checklist_library.py",
+        "app/original_documents.py",
+        "app/checklist_preview.py"
+      ],
+      "limits": [
+        "Imagens de orientação são conteúdo do modelo, não evidência de execução.",
+        "Sem vínculo direto de equipamento cadastrado: não relacionar nome/serial livre."
+      ]
+    },
+    {
+      "id": "tasks",
+      "family": "Tarefas gerais e solicitações de trabalho",
+      "storage": "work_tasks JSON, context_link e linked_asset_ids",
+      "link": "Assignee/autor e context_link explícitos, porém sem armazenamento de anexos",
+      "journey": "Tarefa → contexto de origem pelo fluxo já existente",
+      "status": "sem_modelo_de_anexo",
+      "access": "ACL própria da tarefa; vínculo ao equipamento não torna tarefa pública",
+      "evidence": [
+        "app/general_tasks.py",
+        "app/work_tasks.py"
+      ],
+      "limits": [
+        "Comentários, instruções e resultados não são arquivos.",
+        "Não copia anexos de uma ordem/certificado para a tarefa."
+      ]
+    },
+    {
+      "id": "task_checklists",
+      "family": "Checklists copiados para tarefas",
+      "storage": "work_tasks.checklist/results",
+      "link": "Tarefa e passos copiados",
+      "journey": "Checklist da tarefa",
+      "status": "sem_suporte_de_anexo_por_contrato_atual",
+      "access": "task_access",
+      "evidence": [
+        "app/task_checklists.py unsupported"
+      ],
+      "limits": [
+        "O importador recusa explicitamente fontes vinculadas, imagens, exigências de evidência fotográfica e aprovações que esse executor não suporta; não as omite silenciosamente."
+      ]
+    },
+    {
+      "id": "inventory_counts",
+      "family": "Contagens e conferências de inventário",
+      "storage": "count sessions/checks e tarefas de conferência",
+      "link": "scope_ids/item_ids exatos",
+      "journey": "Sessão de inventário e histórico próprios",
+      "status": "sem_modelo_de_anexo",
+      "access": "ACL de contagem/tarefa, preservada",
+      "evidence": [
+        "app/inventory.py",
+        "app/work_tasks.py do_save_check"
+      ],
+      "limits": [
+        "Quantidade, observação e resultado não formam anexo. Não foram criadas fotos fictícias."
+      ]
+    },
+    {
+      "id": "it_requests",
+      "family": "Solicitações de TI",
+      "storage": "it_request_records/history/operations",
+      "link": "Solicitante/atribuído por user_id",
+      "journey": "Fila e registro de TI",
+      "status": "sem_modelo_de_anexo",
+      "access": "ACL atual de TI, sem herdar privilégios de RH",
+      "evidence": [
+        "app/it_requests.py",
+        "app/it_requests_api.py"
+      ],
+      "limits": [
+        "Nenhum blob/campo de arquivo ou API de upload de TI no modelo inspecionado."
+      ]
+    },
+    {
+      "id": "toolbox",
+      "family": "Diálogo de segurança / Toolbox",
+      "storage": "toolbox templates/talks/answers",
+      "link": "Autor e participantes registrados",
+      "journey": "Registro original e PDF gerado conforme permissão",
+      "status": "sem_modelo_de_anexo",
+      "access": "toolbox.view/export conforme ação",
+      "evidence": [
+        "app/toolbox.py",
+        "app/document_participation.py"
+      ],
+      "limits": [
+        "Importar arquivo de template produz definição estruturada; não equivale a guardar anexo original.",
+        "PDF de relatório não é anexo enviado."
+      ]
+    },
+    {
+      "id": "logbooks",
+      "family": "Diários, livros de registro e imagens de referência",
+      "storage": "ops_log_references + ops_log_media + ops_log_entries",
+      "link": "book_id/reference_id e SHA da imagem; related_record_id referencia checklist, não inventário",
+      "journey": "Livro → referência liberada → imagem; entradas e fonte no contexto do livro",
+      "status": "contexto_original_existente_agregacao_generica_pendente",
+      "access": "require_book/logs.references, liberação de referência para não administrador; imagem verifica associação à referência e hash",
+      "evidence": [
+        "app/logs.py references/reference/image",
+        "app/log_api.py",
+        "app/vessel_logs.py"
+      ],
+      "limits": [
+        "Sem vínculo direto ao item de inventário para imagens.",
+        "Autor de lançamento não vira automaticamente titular de todas as fontes compartilhadas do livro.",
+        "Nenhuma nova agregação nem teste funcional deste caminho nesta rodada."
+      ]
+    },
+    {
+      "id": "fault_qshe",
+      "family": "Falhas e ocorrências de segurança, qualidade e meio ambiente",
+      "storage": "Registros fault/qshe e histórico",
+      "link": "asset_link explícito e autor/departamento",
+      "journey": "Registro e relatório próprios",
+      "status": "sem_modelo_de_anexo",
+      "access": "ACL própria de falhas/QSHE",
+      "evidence": [
+        "app/fault_reports.py",
+        "app/qshe_reports.py"
+      ],
+      "limits": [
+        "Código explicita ausência de arquivos/evidências fotográficas neste incremento.",
+        "Um PDF gerado do registro não é arquivo original armazenado."
+      ]
+    },
+    {
+      "id": "signature_grants",
+      "family": "Arquivos compartilhados em convites/assinaturas",
+      "storage": "Convites e recibos de participação vinculados à revisão de handover/toolbox",
+      "link": "kind + record ID + published revision + shared_attachment_ids",
+      "journey": "Convite/assinatura original; endpoint de arquivo protegido pelo grant",
+      "status": "contexto_original_existente_nao_duplicado",
+      "access": "Grant específico, validade/revogação, revisão e lista exata de arquivos autorizados",
+      "evidence": [
+        "app/document_invitations.py",
+        "app/document_invitations_api.py",
+        "app/document_participation.py"
+      ],
+      "limits": [
+        "Signatário não é proprietário de documento pessoal por ter assinado.",
+        "Marca de assinatura e recibo são registros de auditoria, não arquivos para pasta operacional.",
+        "Não foi criada nova sessão ou convite, nem enviada mensagem."
+      ]
+    },
+    {
+      "id": "original_library",
+      "family": "Biblioteca Documentos originais e pastas/subpastas",
+      "storage": "original_documents + original_folders",
+      "link": "parent_id de revisão e folder_id existentes",
+      "journey": "Biblioteca → pasta/subpasta → UUID da revisão exata; item pode retornar com contexto",
+      "status": "herdado_UI131_regressao_HTTP_JS_verificada",
+      "access": "originals.view e permissões nativas para manutenção de biblioteca",
+      "evidence": [
+        "test_ui131_context_documents.py",
+        "test_ui131_context_documents.cjs"
+      ],
+      "limits": [
+        "Só esta família tem hierarquia de pastas documental no modelo; não inventa pastas para RH, logística ou passagens.",
+        "Biblioteca não é depósito automático de anexos privados."
+      ]
+    }
+  ],
+  "global_limits": [
+    "Nenhum Chrome ou produção usados nesta rodada.",
+    "Nenhuma cópia de banco/arquivo real, mensagem, publicação ou migração.",
+    "Teste HTTP/DOM não comprova aparência no navegador.",
+    "Permissões nativas continuam autoritativas no download final."
+  ]
+}

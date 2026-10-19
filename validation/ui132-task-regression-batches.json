@@ -1,0 +1,19 @@
+{
+  "regression_a": [
+    "tests/general_tasks/test_tasks.py::test_create_without_inventory_and_private_lifecycle",
+    "tests/general_tasks/test_tasks.py::test_saved_notes_required_routine_edits_without_reason_and_reopen_history",
+    "tests/general_tasks/test_tasks.py::test_stale_work_and_duplicate_submit_do_not_overwrite_or_complete",
+    "tests/general_tasks/test_tasks.py::test_exact_asset_link_no_grant_and_redacted_history",
+    "tests/general_tasks/test_tasks.py::test_access_revocation_blocks_detail_replay_and_source_picker",
+    "tests/general_tasks/test_tasks.py::test_reassign_removes_old_access_changes_due_priority_not_evidence"
+  ],
+  "regression_b": [
+    "tests/task_postponement/test_postponement.py::test_held_work_writes_and_submission_rejected_but_discussion_retained",
+    "tests/task_postponement/test_postponement.py::test_retry_current_read_and_stale_request_never_repauses_resumed_work",
+    "tests/task_postponement/test_postponement.py::test_stale_work_form_after_pause_and_resume_still_conflicts",
+    "tests/task_postponement/test_postponement.py::test_only_current_managers_with_department_authority_can_pause",
+    "tests/task_postponement/test_postponement.py::test_private_pause_not_disclosed_in_list_history_report_calendar_or_attention",
+    "tests/task_postponement/test_postponement.py::test_resume_needs_current_eligible_assignee",
+    "tests/test_ui132_task_acceptance.py::test_new_pdf_contains_acceptance_separate_from_operational_status"
+  ]
+}

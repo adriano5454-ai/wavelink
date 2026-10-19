@@ -1,0 +1,118 @@
+{
+  "release": "UI132",
+  "status": "prepared_local_visual_sources_frozen_not_published",
+  "changed_files": [
+    {
+      "path": "app/static/ui132_visual.css",
+      "sha256": "165f12bcb6871c39bf510f70423ff7244f788ed6dc1931e372afd444818be5c6"
+    },
+    {
+      "path": "tests/test_ui132_visual.cjs",
+      "sha256": "cf04ad1ded69a968df688de163943eefcda3e34bc0f49da25eb41ab5cc21028f"
+    },
+    {
+      "path": "tests/test_ui132_visual_markup.cjs",
+      "sha256": "e39eb9fa29a89bdbbdafc77b7d31f7847343f8b80c86edcd0b77a2c60cf4a006"
+    }
+  ],
+  "coverage": {
+    "matrix": "work/ui132-visual-coverage.json",
+    "historical_views_preserved": 193,
+    "current_source_anchors_verified": 163,
+    "missing": 0,
+    "browser_tested": 0,
+    "warning": "163 source mappings are not 163 completed visual or operational journeys. Historical evidence stays separate. Standalone invitation/password pages do not load the shared UI132 shell."
+  },
+  "implemented": [
+    {
+      "area": "Operações, inventário, tarefas, manutenção, falhas e segurança",
+      "change": "Scoped repair of existing UI124 cascade:44px action targets,16px mobile text fields; preserved module visibility and permission states."
+    },
+    {
+      "area": "Inventário",
+      "change": "Restores existing inventory mobile card model cell spacing where UI124 imposed14px padding. Fleet uses a separate shell and is not assumed to share that conflict; logistics changes are readable metadata and selected states only."
+    },
+    {
+      "area": "Tarefas, manutenção, calendário e acesso",
+      "change": "Readable metadata and explicit underline for selected views; status text retained and status colours untouched."
+    },
+    {
+      "area": "Importações, administração e formulários",
+      "change": "Larger disclosure targets, readable source advice and metadata, wrapped account facts, one-column definition facts on mobile."
+    },
+    {
+      "area": "RH, documentos e aceite",
+      "change": "44px summaries in coverage/details; respects real h3→h4→h5 document groups; acceptance identities wrap without enlarging permissions."
+    }
+  ],
+  "tests": [
+    {
+      "file": "tests/test_ui132_visual.cjs",
+      "result": "505 structural/cascade/contrast checks passed",
+      "colour_pairs": 7,
+      "evidence": "work/ui132-visual-checks.json"
+    },
+    {
+      "file": "tests/test_ui132_visual_markup.cjs",
+      "result": "62 actual-renderer/escaping/action-state checks passed in PT-BR and EN",
+      "evidence": "work/ui132-preview-fragments/manifest.json",
+      "limits": "Inert DOM adapters and fictitious values; no fetch, browser or real session."
+    },
+    {
+      "result": "Portable preview references checked",
+      "evidence": "work/ui132-preview-link-check.json",
+      "html": 17,
+      "local_refs": 725,
+      "broken": [],
+      "remote": [],
+      "duplicate_ids": []
+    }
+  ],
+  "previews": {
+    "directory": "work/ui132-visual-previews",
+    "pairs": 7,
+    "manifest": "work/ui132-visual-preview-manifest.json",
+    "method": "Actual renderer functions from task acceptance, document source review, builder catalogue, membership, account detail and selected maintenance order executed with fictitious data. Document owner provided real DOM-rendered final document-group fragment. Source extraction is test-only and product code is unchanged. Before/after business markup is identical; only UI132 CSS differs. These are not screenshots.",
+    "portable": "Copy entire folder including styles/assets/help. Linked help copies contain authored content; scripts removed and authenticated application routes marked unavailable offline.",
+    "limits": [
+      "No CSS layout engine, browser computed styles, rendered pixels or screenshot comparison.",
+      "390px option is an HTML iframe preview width, not a physical/mobile browser test.",
+      "New acceptance/document components appear on both sides; before means existing styling without UI132, not an old production screenshot.",
+      "No chart or metric is derived from production; fixture names/counts are explicitly fictitious."
+    ]
+  },
+  "integration": [
+    "Root must load ui132_visual.css after ui131_visual.css in each applicable shell and update cache/version tokens.",
+    "Root owns final source snapshot, integration tests, repository reconstruction and ZIP.",
+    "No shared source, database, credential, account or permission edited by visual agent.",
+    "Fleet shell has its own body/classes and #fleet-root. Load the CSS there for scoped normal logistics rules; no UI124-shell cascade repair is claimed for Fleet."
+  ],
+  "pending": [
+    "Render desktop/mobile in an authorised browser later; check clipping, actual contrast, zoom, focus and keyboard behavior on the final integrated build.",
+    "Verify saved-filter/context/session journeys separately from CSS.",
+    "No publication or live infrastructure changes performed in this phase."
+  ],
+  "independent_review": [
+    {
+      "component": "task_acceptance",
+      "finding": "Two flex spans could overflow for long unbroken identities; min-width0 and overflow-wrap added to exact child spans. Action remains governed by can_accept; text states remain explicit."
+    },
+    {
+      "component": "context_documents",
+      "finding": "Grouped headings now use h5 under h4 process headings; added compatible h5 title rule. No access/record grouping changes."
+    }
+  ],
+  "final_scope_correction": "Confirmed actual Fleet shell: fleet.html/pt-BR/fleet.html with #fleet-root and wl-ui*-fleet classes. Removed inapp-only packing-cell override. Fleet normal metadata/selection rules require parent stylesheet integration.",
+  "coordinator_integration": {
+    "status": "completed",
+    "shells": [
+      "index.html",
+      "pt-BR/index.html",
+      "fleet.html",
+      "pt-BR/fleet.html"
+    ],
+    "test": "test_ui132_integration.py::test_both_language_shells_load_new_modules_and_preserve_order",
+    "result": "passed",
+    "preview_favicon": "Copied source icon locally and fixed both help pages; 17 HTML pages and 727 local resources validated without browser."
+  }
+}

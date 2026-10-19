@@ -1,0 +1,31 @@
+{
+  "version": "UI132",
+  "implemented_local": [
+    "Comprovantes de despesas, fotos de manutenção, anexos de passagens e arquivos de manifestos nos contextos autorizados.",
+    "Aceite explícito de atribuição em tarefas, separado de ciência e aprovação, com auditoria e relatórios.",
+    "Revisão de fontes das 163 vistas restantes, ajustes visuais direcionados e prévias de componentes.",
+    "Ajuda e relatórios com terminologia PT-BR, preservando o inglês das outras instalações."
+  ],
+  "pending": [
+    {
+      "area": "Anexos",
+      "item": "Agregação por autoria de fotos/fontes de checklists e consulta genérica de fontes de livros de registros continuam pendentes; seus caminhos originais foram preservados. TI, viagens e outras áreas sem modelo de anexos não receberam uploads nesta rodada."
+    },
+    {
+      "area": "Navegação documental",
+      "item": "O atalho de despesas abre o perfil no RH; é preciso selecionar Despesas. Não foi criado acesso direto a um registro específico nem pastas artificiais para anexos privados."
+    },
+    {
+      "area": "Revisão visual",
+      "item": "A revisão estática das vistas restantes não comprova todas as jornadas. Aparência final, teclado/leitor de tela e responsividade em navegador/aparelhos reais ainda precisam de validação."
+    },
+    {
+      "area": "Produção",
+      "item": "Não houve publicação ou teste no site; UI131 foi confirmada no GitHub; o deployment não foi consultado. UI132 permanece preparada localmente. Os testes reais de horas com projeto e conta temporária continuam pendentes."
+    },
+    {
+      "area": "Dispositivos",
+      "item": "OCR real, QR físico, instalação/PWA e situações reais offline não receberam nova validação."
+    }
+  ]
+}

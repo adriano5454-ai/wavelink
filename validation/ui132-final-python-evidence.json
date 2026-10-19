@@ -1,0 +1,30 @@
+[
+  {
+    "group": "Anexos e regressões documentais",
+    "xml": "ui132-documents-final-tests.xml"
+  },
+  {
+    "group": "Aceite de atribuição",
+    "xml": "ui132-task-acceptance-focused.xml"
+  },
+  {
+    "group": "Ciclo de tarefas e permissões",
+    "xml": "ui132-task-regression-a.xml"
+  },
+  {
+    "group": "Adiamento e relatórios finais",
+    "xml": "ui132-task-regression-b.xml"
+  },
+  {
+    "group": "Backups, cópias, sessão, idiomas e ajuda",
+    "xml": "ui132-integration-tests.xml"
+  },
+  {
+    "group": "Ajuda e arquivos servidos",
+    "xml": "ui132-help-tests.xml"
+  },
+  {
+    "group": "Carregamento final dos shells e frota",
+    "xml": "ui132-shell-final-tests.xml"
+  }
+]

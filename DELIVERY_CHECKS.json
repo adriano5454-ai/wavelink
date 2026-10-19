@@ -1,96 +1,65 @@
 {
-  "release": "UI131",
-  "version": "1.34.31",
+  "release": "UI132",
+  "version": "1.34.32",
   "status": "integrado_testado_localmente_nao_publicado",
-  "base_commit": "b8e5a7aad47df0874672b1a6406a742b68374b29",
+  "base_commit": "f26f38da92cd0ee8dfbc29dfa007a0eb7ea5d86c",
   "final_commit": null,
   "deployment": null,
   "runtime": {
     "status": "passed",
-    "version": "1.34.31",
-    "runtime_manifest_sha256": "fccff7664c7b15625f5d8b6a45ebadb93aa8b48469299ab8c5f20eae40e97cf0",
-    "resources": 2353,
+    "version": "1.34.32",
+    "runtime_manifest_sha256": "ad95a9750ee45d62fa8305d9ed0876af20ed1c912b62df463350cc55e8fe2593",
+    "resources": 2369,
     "all_reconstructed_files_identical": true,
-    "python_syntax_files": 231,
-    "cache_assets": 13,
-    "html_shells": 2,
-    "base_repository_files_preserved": 696,
+    "python_syntax_files": 232,
+    "cache_assets": 12,
+    "html_shells": 4,
+    "base_repository_files_preserved": 786,
     "production_access": false
   },
   "python": {
-    "passed": 198,
-    "groups": [
+    "unique_passed": 59,
+    "runs": [
       {
-        "group": "new-features",
-        "exit_code": 0,
-        "seconds": 176.17,
-        "xml": "ui131-final-new-features.xml",
-        "tests": 45,
-        "failures": 0,
-        "errors": 0,
-        "skipped": 0
+        "group": "Anexos e regressões documentais",
+        "xml": "ui132-documents-final-tests.xml",
+        "passed": 21
       },
       {
-        "group": "it-integration",
-        "exit_code": 0,
-        "seconds": 135.88,
-        "xml": "ui131-final-it-integration.xml",
-        "tests": 36,
-        "failures": 0,
-        "errors": 0,
-        "skipped": 0
+        "group": "Aceite de atribuição",
+        "xml": "ui132-task-acceptance-focused.xml",
+        "passed": 12
       },
       {
-        "group": "documents-backups",
-        "exit_code": 0,
-        "seconds": 234.7,
-        "xml": "ui131-final-documents-backups.xml",
-        "tests": 66,
-        "failures": 0,
-        "errors": 0,
-        "skipped": 0
+        "group": "Ciclo de tarefas e permissões",
+        "xml": "ui132-task-regression-a.xml",
+        "passed": 8
       },
       {
-        "group": "hr-weekly",
-        "exit_code": 0,
-        "seconds": 181.58,
-        "xml": "ui131-final-hr-weekly.xml",
-        "tests": 17,
-        "failures": 0,
-        "errors": 0,
-        "skipped": 0
+        "group": "Adiamento e relatórios finais",
+        "xml": "ui132-task-regression-b.xml",
+        "passed": 8
       },
       {
-        "group": "hr-security",
-        "exit_code": 0,
-        "seconds": 265.59,
-        "xml": "ui131-final-hr-security.xml",
-        "tests": 34,
-        "failures": 0,
-        "errors": 0,
-        "skipped": 0
+        "group": "Backups, cópias, sessão, idiomas e ajuda",
+        "xml": "ui132-integration-tests.xml",
+        "passed": 8
+      },
+      {
+        "group": "Ajuda e arquivos servidos",
+        "xml": "ui132-help-tests.xml",
+        "passed": 4
+      },
+      {
+        "group": "Carregamento final dos shells e frota",
+        "xml": "ui132-shell-final-tests.xml",
+        "passed": 1
       }
-    ],
-    "final_translation_recheck": {
-      "group": "translation-recheck",
-      "exit_code": 0,
-      "seconds": 26.08,
-      "xml": "ui131-final-translation-recheck.xml",
-      "runtime_manifest_sha256": "fccff7664c7b15625f5d8b6a45ebadb93aa8b48469299ab8c5f20eae40e97cf0",
-      "tests": 4,
-      "failures": 0,
-      "errors": 0,
-      "skipped": 0,
-      "reason": "Final addition of one PT-BR storage recovery message and assertions in the existing help tests; no other application behavior changed after the initial new-features group.",
-      "changed_source_files": [
-        "app/localization.py",
-        "tests/test_ui131_help.py"
-      ]
-    }
+    ]
   },
   "javascript": {
-    "passed_suites": 59,
-    "syntax_files": 112
+    "passed_suites": 64,
+    "syntax_files": 113
   },
   "preservation": {
     "production_access": false,
@@ -98,15 +67,12 @@
     "existing_users_changed": false,
     "outbound_messages": false,
     "database_reset": false,
-    "code_base_retained": true,
-    "new_contact_tables": true,
-    "contact_marker_blocks_unsafe_code_downgrade": true
+    "ui131_base_retained": true
   },
   "limits": [
     "Não houve Chrome, navegador automatizado, captura de tela, aparelho móvel ou teste em produção.",
-    "Prévias HTML usam os componentes reais e dados fictícios; não equivalem a inspeção visual em navegador.",
-    "Os atalhos externos foram verificados por URL e controle de acesso; não houve envio de mensagem nem autenticação nos serviços externos.",
-    "Documentos contextuais cobrem certificados/fontes de manutenção no item e documentos pessoais RH no perfil, sem catálogo universal de todos os anexos.",
-    "A revisão integral das 193 vistas e o aceite formal de tarefas permanecem pendentes."
+    "Prévias usam renderizadores/componentes reais com dados fictícios e não equivalem a screenshots ou aprovação visual em navegador.",
+    "A matriz de 193 vistas distingue revisão de fonte, mudanças de apresentação e jornadas não executadas nesta rodada.",
+    "Não existe uma biblioteca universal de todos os anexos: os vínculos e as permissões de cada família continuam separados."
   ]
 }

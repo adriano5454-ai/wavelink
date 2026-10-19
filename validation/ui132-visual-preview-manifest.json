@@ -1,0 +1,76 @@
+{
+  "kind": "static_real_component_html_not_screenshot",
+  "items": [
+    {
+      "title": "Aceite de tarefa",
+      "slug": "aceite",
+      "source": "task_acceptance.js: AJTaskAcceptance.html()",
+      "before": "C:\\Users\\adria\\Documents\\Codex\\2026-10-17\\quero-concluir-a-mudan-a-da\\work\\ui132-visual-previews\\aceite-antes.html",
+      "after": "C:\\Users\\adria\\Documents\\Codex\\2026-10-17\\quero-concluir-a-mudan-a-da\\work\\ui132-visual-previews\\aceite-depois.html",
+      "same_component_dom": true
+    },
+    {
+      "title": "Conferência de interpretação de fontes",
+      "slug": "fontes",
+      "source": "document_import.js: recognitionPanel(), exposed only in test",
+      "before": "C:\\Users\\adria\\Documents\\Codex\\2026-10-17\\quero-concluir-a-mudan-a-da\\work\\ui132-visual-previews\\fontes-antes.html",
+      "after": "C:\\Users\\adria\\Documents\\Codex\\2026-10-17\\quero-concluir-a-mudan-a-da\\work\\ui132-visual-previews\\fontes-depois.html",
+      "same_component_dom": true
+    },
+    {
+      "title": "Catálogo de modelos e importações",
+      "slug": "editores",
+      "source": "setup_builders.js: card() and authored kinds",
+      "before": "C:\\Users\\adria\\Documents\\Codex\\2026-10-17\\quero-concluir-a-mudan-a-da\\work\\ui132-visual-previews\\editores-antes.html",
+      "after": "C:\\Users\\adria\\Documents\\Codex\\2026-10-17\\quero-concluir-a-mudan-a-da\\work\\ui132-visual-previews\\editores-depois.html",
+      "same_component_dom": true
+    },
+    {
+      "title": "Membros e acesso permitido",
+      "slug": "acessos",
+      "source": "membership_workspace.js: rowMarkup() with fixture dependencies",
+      "before": "C:\\Users\\adria\\Documents\\Codex\\2026-10-17\\quero-concluir-a-mudan-a-da\\work\\ui132-visual-previews\\acessos-antes.html",
+      "after": "C:\\Users\\adria\\Documents\\Codex\\2026-10-17\\quero-concluir-a-mudan-a-da\\work\\ui132-visual-previews\\acessos-depois.html",
+      "same_component_dom": true
+    },
+    {
+      "title": "Detalhe de uma conta",
+      "slug": "conta",
+      "source": "browser_admin.js: userDetails() through inert DOM adapter",
+      "before": "C:\\Users\\adria\\Documents\\Codex\\2026-10-17\\quero-concluir-a-mudan-a-da\\work\\ui132-visual-previews\\conta-antes.html",
+      "after": "C:\\Users\\adria\\Documents\\Codex\\2026-10-17\\quero-concluir-a-mudan-a-da\\work\\ui132-visual-previews\\conta-depois.html",
+      "same_component_dom": true
+    },
+    {
+      "title": "Resumo da ordem de serviço",
+      "slug": "manutencao",
+      "source": "maintenance_workspace.js: drawSelected() through inert keyed adapter",
+      "before": "C:\\Users\\adria\\Documents\\Codex\\2026-10-17\\quero-concluir-a-mudan-a-da\\work\\ui132-visual-previews\\manutencao-antes.html",
+      "after": "C:\\Users\\adria\\Documents\\Codex\\2026-10-17\\quero-concluir-a-mudan-a-da\\work\\ui132-visual-previews\\manutencao-depois.html",
+      "same_component_dom": true
+    },
+    {
+      "title": "Documentos por processo e origem",
+      "slug": "documentos",
+      "source": "documentos_context.js: teste DOM real do agente responsável",
+      "before": "C:\\Users\\adria\\Documents\\Codex\\2026-10-17\\quero-concluir-a-mudan-a-da\\work\\ui132-visual-previews\\documentos-antes.html",
+      "after": "C:\\Users\\adria\\Documents\\Codex\\2026-10-17\\quero-concluir-a-mudan-a-da\\work\\ui132-visual-previews\\documentos-depois.html",
+      "same_component_dom": true
+    }
+  ],
+  "same_business_markup": true,
+  "linked_stylesheets_exist": true,
+  "local_copied_assets": [
+    "ui68-home-scene.svg",
+    "wavelink-approved-offshore-profile-ui87.webp",
+    "wavelink-approved-offshore-ui87.webp",
+    "wavelink-home-cover-ui86.svg",
+    "wavelink-mark.svg",
+    "wavelink-profile-cover-ui86.svg"
+  ],
+  "local_help": {
+    "/help/topics/contextdocuments": "help/contextdocuments.html",
+    "/help/topics/tasks#assignment-acceptance": "help/tasks.html#assignment-acceptance"
+  },
+  "portability": "Copy the entire ui132-visual-previews directory, including styles/ and assets/."
+}

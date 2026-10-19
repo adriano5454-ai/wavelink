@@ -1,0 +1,92 @@
+{
+  "status": "Product sources frozen; all task-focused local checks passed; root final integrated checks and packaging pending",
+  "scope": "UI132 internal only; no Chrome, production, real user records or external messages.",
+  "files": [
+    "app/task_acceptance.py",
+    "app/work_tasks.py",
+    "app/general_tasks.py",
+    "app/operations_reports.py",
+    "app/static/task_acceptance.js",
+    "app/static/task_acceptance.css",
+    "app/static/task_workspace.js",
+    "app/static/general_tasks.js",
+    "app/static/fieldwork.js"
+  ],
+  "changes": [
+    "New explicit accept_assignment action uses existing task permissions, current assigned account, version and idempotency receipt.",
+    "Acceptance is independent from alert read_at and task execution/review status. Existing work can continue without fabricating a legacy acceptance.",
+    "Metadata stores per-person author/date/original revision in the private task body; fieldwork_audit preserves provenance and earlier cycles.",
+    "Current acceptance requires matching audited origin and current assignment fingerprint. Reassignment audience changes/reopen invalidate old cycles, including actual UI131 writer A→B→A changes. Schedule-only edits preserve acceptance.",
+    "Task detail includes accessible labels, text statuses, account IDs and localized UTC dates; new general/verification PDFs include separate acceptance section.",
+    "Guarded local form restores existing operation; retry cannot accept a newer assignment. Closing/explicitly discarding remains available without reapplying the action.",
+    "Only Task acceptance gains optional shared-form guard around awaited local persistence; current and changed account paths tested with actual function."
+  ],
+  "contract": "work/ui132-task-acceptance-contract.json",
+  "translations": "work/ui132-task-acceptance-translations.json",
+  "tests": [
+    {
+      "file": "tests/test_ui132_task_acceptance.py",
+      "result": "12 passed in56.71s. Final PDF wording then repeated2/2 successfully in regression B.",
+      "evidence": "work/ui132-task-acceptance-focused.xml"
+    },
+    {
+      "file": "tests/test_ui132_task_acceptance.cjs",
+      "result": "52 checks passed; actual component handlers and task scope/send helpers in isolated DOM adapter."
+    },
+    {
+      "file": "tests/test_ui132_task_acceptance_persist.cjs",
+      "result": "31 checks passed; actual shared form function, normal save, session swap during awaited persistence, uncertain keep/close/discard and unchanged legacy General task behavior."
+    },
+    {
+      "result": "Syntax checks passed: 3 JS modules and5 Python files."
+    },
+    {
+      "file": "tests/general_tasks/test_tasks.py (selected8cases)",
+      "result": "8 passed in32.22s",
+      "evidence": "work/ui132-task-regression-a.xml"
+    },
+    {
+      "file": "tests/task_postponement/test_postponement.py (selected6cases) + new PDF2cases",
+      "result": "8 passed in35.93s",
+      "evidence": "work/ui132-task-regression-b.xml"
+    }
+  ],
+  "privacy": [
+    "No access or role granted by accepting/assigning. Administrator cannot accept for an unassigned account.",
+    "Current server access rechecked before idempotent replay; revoked access cannot replay a stored response.",
+    "No new tables, service, notification settings or email paths; existing tasks backup/export boundaries remain authoritative.",
+    "No write occurs during list/detail/report acceptance checks; absent or inconsistent evidence never proves acceptance."
+  ],
+  "limitations": [
+    "No graphical browser/mobile or production behavior validated. DOM checks are not screenshots.",
+    "Backup/selective-copy integration and bilingual PDF proof delegated to root using final integrated source.",
+    "Historical generated files are untouched; only newly requested task reports include the section.",
+    "Old task writers preserve metadata but do not display it. UI132 validates assignment history when reading it; no global schema marker introduced."
+  ],
+  "integration": [
+    "Load task_acceptance.js before task_workspace.js in both shells, CSS/SW/cache versions controlled by root.",
+    "Map translations in locale_pt_br/localization/report_localization as appropriate; help anchor tasks#assignment-acceptance controlled by root.",
+    "Existing operations.js acknowledgement routine preserved; no new API route required."
+  ],
+  "execution_notes": [
+    "First combined pytest process ended with a native Windows access violation in pydantic/plugin/_loader.py → os.getenv after14 progress markers, without an assertion failure or final XML. This aborted attempt is not counted as passed. Focused12 case process subsequently completed. Root coordinated exclusive TestClient slot; remaining regressions split into8-case processes."
+  ],
+  "summary": {
+    "unique_python_cases": 26,
+    "successful_python_executions": 28,
+    "node_checks": 83,
+    "production_calls": 0,
+    "browser_tests": 0
+  },
+  "hashes": {
+    "app/task_acceptance.py": "8e3e920d92cc81081733a3fc082f6245f6b2c248424e174462c8051dcf901e8b",
+    "app/work_tasks.py": "e82ec59d4042dfebb9439d01a498b2bf689f620ff7b7585007f697a3dc4a42b7",
+    "app/general_tasks.py": "4e48914d4a8c634ec5b480614149fe9749209b3683ab698765ffa6b290d90667",
+    "app/operations_reports.py": "76243a19fc5b6c9438a59a59b3bfb4727a2d17bbfd75ff252a089f1be59eecd9",
+    "app/static/task_acceptance.js": "6c1390b1abcb18f1ff3bd6df095471665a2a1721863a476818856e2256d64d64",
+    "app/static/task_acceptance.css": "e744b104144896838e631dad676bc2f40f45abc6ca54b48db522ee59abea2c07",
+    "app/static/task_workspace.js": "efe326d01b9e875547fe27c641565e17896b559009c0177b05e7336e724c99b6",
+    "app/static/general_tasks.js": "ea435595dd21150fb8b504bfade83c6a1657bcf843372b4cc627765a57deea38",
+    "app/static/fieldwork.js": "391b585921230c57239f3217ad494c51812984f826769a6cdec0a50dae6edf8d"
+  }
+}
