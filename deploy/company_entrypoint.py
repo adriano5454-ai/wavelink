@@ -32,10 +32,10 @@ def company_application_environment(source: Mapping[str, str], *, origin: str) -
     origin, copy the password exactly, and let MembershipSettings retain its
     existing OFF/invalid-configuration fail-closed behaviour.
     """
-    from .entrypoint import minimal_environment
+    from .entrypoint import application_environment
     if source.get('WAVELINK_DEPLOYMENT_MODE', 'DEMO') != 'COMPANY':
         raise DemoError('Company application environment requires COMPANY mode.')
-    env = minimal_environment()
+    env = application_environment(source)
     env.update(PYTHONPATH=str(BASE/'app'), WAVELINK_DEPLOYMENT_MODE='COMPANY',
                COMPANY_ID=source['COMPANY_ID'], COMPANY_NAME=source['COMPANY_NAME'],
                PUBLIC_URL=origin)

@@ -1,3 +1,50 @@
+# Wavelink UI143 candidate
+
+Version 1.34.43, prepared on 17 November 2026 from the verified UI142 checkpoint, based on published commit `18c14c5429379932ac8f7880f70e72f17e18d137`.
+
+## Changes
+
+- Adds private attachments to travel, shifts, timesheets and IT requests with current record permissions.
+- Makes attachments visible while creating personal documents, expenses and IT requests, with retained per-file retries after partial failures.
+- Adds clear employee certificate, medical and course entry points and named course presets using the existing document model.
+- Shows authorized attachments in the employee document view; files remain in their private HR/IT storage.
+- Aligns page action buttons and Help consistently.
+- Adds optional OpenAI assistance for inventory column mapping when the server is configured.
+- Sends selected column headers and at most eight sample rows only after explicit confirmation. Original files and complete workbooks are excluded from the API request.
+- Keeps suggestions separate from application and saving. Users review mappings and explicitly apply them; assistance never saves inventory automatically. Standard local import remains available.
+- Rechecks the current named account, selected project, inventory-builder permission and source identity. Connection tests additionally require an administrator.
+- Bounds input and response sizes, validates structured suggestions, and limits use to 100 requests per project per UTC day, 20 per user per UTC day, six per user per minute and two concurrent requests per project.
+- Persists operation identifiers so repeating the same request cannot cause another provider call or another quota charge. Cached results may be returned; an expired or interrupted operation requires a new explicit request.
+- Uses a server-side API key. The administrator connection test sends fixed synthetic text with a 32-token output limit and shares the usage limits.
+- Refreshes changed asset URLs and the offline cache identifier for UI143.
+
+Adds UI143 after UI142 in the existing Docker and source reconstruction chains. The two application services and the marketing website retain their existing resources. Website 3.3.1 accompanies the optional-assistance privacy update.
+
+See [UI143_REVIEW.md](docs/UI143_REVIEW.md) for verification and release status.
+
+---
+
+# Wavelink UI142 candidate
+
+Version 1.34.42, prepared on 17 November 2026 from verified UI141 commit `18c14c5429379932ac8f7880f70e72f17e18d137`.
+
+## Changes
+
+- Adds optional OpenAI assistance for inventory column mapping when the server is configured.
+- Sends selected column headers and at most eight sample rows only after explicit confirmation. Original files and complete workbooks are excluded from the API request.
+- Keeps suggestions separate from application and saving. Users review mappings and explicitly apply them; assistance never saves inventory automatically. Standard local import remains available.
+- Rechecks the current named account, selected project, inventory-builder permission and source identity. Connection tests additionally require an administrator.
+- Bounds input and response sizes, validates structured suggestions, and limits use to 100 requests per project per UTC day, 20 per user per UTC day, six per user per minute and two concurrent requests per project.
+- Persists operation identifiers so repeating the same request cannot cause another provider call or another quota charge. Cached results may be returned; an expired or interrupted operation requires a new explicit request.
+- Uses a server-side API key. The administrator connection test sends fixed synthetic text with a 32-token output limit and shares the usage limits.
+- Refreshes changed asset URLs and the offline cache identifier for UI142.
+
+Adds UI142 after UI141 in the existing Docker and source reconstruction chains. The three existing Render application services retain their resources. Website 3.3.1 accompanies the optional-assistance privacy update.
+
+See [UI142_REVIEW.md](docs/UI142_REVIEW.md) for verification and release status.
+
+---
+
 # Wavelink UI141 candidate
 
 Version 1.34.41, prepared on 17 November 2026 from the verified UI140 release.
