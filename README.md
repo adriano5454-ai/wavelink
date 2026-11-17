@@ -1,3 +1,19 @@
+# Wavelink UI141 candidate
+
+Version 1.34.41, prepared on 17 November 2026 from the verified UI140 release.
+
+## Changes
+
+- Incorporates the reviewed UI141 visual changes and local typography.
+- Registers local font files in the offline shell.
+- Refreshes changed static-asset URLs and the offline cache identifier.
+- Updates application version labels, including installation and example pages.
+- Adds UI141 after UI140 in the existing Docker and source reconstruction chains.
+
+See [UI141_REVIEW.md](docs/UI141_REVIEW.md) for verification and release status.
+
+---
+
 # Wavelink UI140 candidate
 
 Version 1.34.40, prepared on 17 November 2026 from GitHub main f6d69ded35576b558d1ca4ebd0cb568681afe750.
