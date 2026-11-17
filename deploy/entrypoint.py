@@ -1,5 +1,6 @@
 """Single-container supervisor; no desktop GUI, second app worker, or vessel access."""
 from __future__ import annotations
+from collections.abc import Mapping
 import http.client
 import os
 from pathlib import Path
@@ -30,6 +31,15 @@ def minimal_environment() -> dict:
     return {'PATH': os.environ.get('PATH', '/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'),
             'LANG': 'C.UTF-8', 'LC_ALL': 'C.UTF-8', 'HOME': '/tmp',
             'PYTHONDONTWRITEBYTECODE': '1', 'PYTHONUNBUFFERED': '1'}
+
+
+def application_environment(source: Mapping[str, str]) -> dict[str, str]:
+    """Pass optional AI settings only to the application, never proxy or gate."""
+    env = minimal_environment()
+    for name in ('OPENAI_API_KEY', 'OPENAI_IMPORT_MODEL'):
+        if name in source:
+            env[name] = source[name]
+    return env
 
 
 def wait_ready(child, port, path, *, host=None, accepted=(200,), seconds=90):
@@ -106,7 +116,7 @@ def run() -> int:
     exitcode = 0
     try:
         application = subprocess.Popen([sys.executable, 'run_hosted.py', 'serve', '--config', str(cfg['config'])],
-                                       cwd=BASE / 'app', env=minimal_environment())
+                                       cwd=BASE / 'app', env=application_environment(os.environ))
         processes.append(application)
         wait_ready(application, APP_PORT, '/readyz')
         gate_env = minimal_environment()
