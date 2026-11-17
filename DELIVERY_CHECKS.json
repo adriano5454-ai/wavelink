@@ -1,45 +1,55 @@
 {
-  "release": "UI145",
-  "version": "1.34.45",
+  "release": "UI146",
+  "version": "1.34.46",
   "status": "local_candidate",
-  "base_commit": "848805385c603f54da954bb5343c9220604b6cc3",
-  "runtime_manifest_sha256": "40e1eb28a1e4f1bddc2f9420070b05a407f9e7212cde85e55b88ef54cb84d9b9",
-  "parent_runtime_manifest_sha256": "fe383562b2a81a6df94d4c435f17e7c64ff5c18062e1d9ef7f0a88b6f9ec30b4",
-  "verified_runtime_resources": 2496,
-  "overlay_resources": 214,
+  "base_commit": "12d7bd7569fd0ab74b7397b63a93fd5eb9ff7804",
+  "runtime_manifest_sha256": "a50383eaada7ce5b5211dd0c63a37306a9f73e10aca831751d0b276d4b0cb362",
+  "parent_runtime_manifest_sha256": "40e1eb28a1e4f1bddc2f9420070b05a407f9e7212cde85e55b88ef54cb84d9b9",
+  "verified_runtime_resources": 2498,
+  "overlay_resources": 179,
   "validation": {
-    "checklist": {
-      "integration": "An isolated FastAPI and SQLite fixture exercised the application JavaScript through giving a brief, receiving suggestions, leaving, reopening and saving. The provider was called once. The library draft contained the manual item and exactly the selected additional item.",
-      "recovery": "Verified private account and hub scoping, restoring selected and unselected suggestions, concurrent revisions, failed submission, validation, and confirmed saving.",
-      "routing": "Verified a saved checklist opens from its library row, can return to the list, and a delayed detail response cannot replace the list."
+    "qshe": {
+      "lifecycle_access_and_transfer": 48,
+      "pdf_audience_and_review": 2,
+      "categories_and_reporting": 30
     },
-    "related_editors": {
-      "hr_it_weekly": "11 focused JavaScript suites passed. 6 relevant suites were rerun after the HR attachment picker was updated.",
-      "builders": "7 assistance placement and retention suites passed, including 30 inventory OpenAI checks and 24 mapping checks.",
-      "shared_dialogs": "41 shared-dialog and 13 stock scope assertions passed. The equipment certificate filter test passed.",
-      "handovers": "Operational guard and pending AI review restoration exercises passed. Four historical reopen and bounded-input cases passed on retry. The historical PDF assertion passed with pypdf in this environment."
+    "faults": {
+      "lifecycle_access_and_transfer": 48,
+      "pdf_audience_and_review": 2
     },
-    "library_compatibility": {
-      "native_tests": 47,
-      "original_document_tests": 2,
-      "fixture": "The two original-document checks used ReportLab to generate a real PDF, in place of unavailable PyMuPDF. Their application assertions were preserved."
-    },
-    "restart_recovery_and_backup": {
-      "tests": 6,
-      "passed": 6
-    },
-    "hr_expiry": {
-      "python_tests": 43,
-      "hr_form_assertions": 236,
-      "attachment_assertions": 23,
-      "custom_schedule": "passed"
+    "pdf_test_reader": "The category and PDF scenarios used pypdf to read the real application-generated PDFs, preserving the report content, authorization and redaction assertions.",
+    "rendered_chromium": {
+      "scenarios_passed": 8,
+      "views": [
+        "QSHE",
+        "Faults"
+      ],
+      "viewport_sizes": [
+        [
+          1440,
+          900
+        ],
+        [
+          390,
+          700
+        ],
+        [
+          320,
+          420
+        ],
+        [
+          700,
+          320
+        ]
+      ],
+      "workflow_contract": "passed"
     },
     "aggregate_python": {
-      "tests": 133,
+      "tests": 130,
       "failures": 0,
       "errors": 0,
       "skipped": 0,
-      "passed": 133
+      "passed": 130
     }
   }
 }
