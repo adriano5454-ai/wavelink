@@ -1,32 +1,407 @@
 {
-  "release": "UI140",
-  "version": "1.34.40",
-  "status": "prepublication_validated",
-  "base_commit": "f6d69ded35576b558d1ca4ebd0cb568681afe750",
+  "release": "UI141",
+  "version": "1.34.41",
+  "status": "local_candidate",
   "deployment": "pending",
-  "runtime_manifest_sha256": "387374aef8c850ca8c2d1a91dc5f702867d7f5a64736e2cab70f4dbddbcce93c",
+  "parent_release": "UI140",
+  "parent_runtime_manifest_sha256": "387374aef8c850ca8c2d1a91dc5f702867d7f5a64736e2cab70f4dbddbcce93c",
+  "runtime_manifest_sha256": "4c219eb1bbf0ff0b6d3bf2e8c5b0a0a2f1dac664babb0bbd1d4b4b20563c4a1a",
   "validation": {
-    "home_assertions": 125,
-    "builder_handler_probes": 3,
-    "home_fixture_browser": "passed",
-    "mobile_tab_columns": 2,
-    "browser_viewport_width": 390,
-    "render_metrics": "Reviewed 24-hour series on 2026-11-17",
-    "live_health_endpoints": "Demo and Corcovado returned ready",
-    "python_unique_passed": 232,
-    "python_optional_skips": 2,
-    "python_ocr_fixture_blockers": 2,
-    "builder_http_responsiveness": 3,
-    "home_backend_tests": 16,
-    "javascript_suites": 10,
-    "javascript_checks": 424,
-    "source_preservation": "Git blob hashes checked against current upstream trees"
+    "runtime_reconstruction": "passed",
+    "verified_runtime_resources": 2457,
+    "ui140_files_preserved": 5,
+    "changed_static_assets": 212,
+    "registered_font_files": [
+      "fonts/InterVariable.woff2"
+    ],
+    "supplied_results": {
+      "generated_at": "2026-11-17T15:50:04.865Z",
+      "runtime": "work/wavelink-runtime",
+      "baseline": "work/ui140-final-verification",
+      "node": "v24.22.1",
+      "suites": [
+        {
+          "path": "tests/test_ui131_visual.cjs",
+          "command": "node tests/test_ui131_visual.cjs",
+          "status": "passed",
+          "exit_code": 0,
+          "duration_ms": 81,
+          "stdout": "UI131 visual: 696 structural/cascade/contrast checks passed; 7 colour pairs passed. No browser claims.",
+          "stderr": "",
+          "assertions": 696
+        },
+        {
+          "path": "tests/test_ui132_visual.cjs",
+          "command": "node tests/test_ui132_visual.cjs",
+          "status": "passed",
+          "exit_code": 0,
+          "duration_ms": 85,
+          "stdout": "UI132 visual: 588 static checks and 7 colour pairs passed. No browser used.",
+          "stderr": "",
+          "assertions": 588
+        },
+        {
+          "path": "tests/test_ui132_visual_markup.cjs",
+          "command": "node tests/test_ui132_visual_markup.cjs",
+          "status": "passed",
+          "exit_code": 0,
+          "duration_ms": 102,
+          "stdout": "UI132 markup: 68 renderer/escaping/state checks passed in PT and EN; 6 actual-component fragments. No browser/API used.",
+          "stderr": "",
+          "assertions": 68
+        },
+        {
+          "path": "tests/test_ui130_it_ui.cjs",
+          "command": "node tests/test_ui130_it_ui.cjs",
+          "status": "passed",
+          "exit_code": 0,
+          "duration_ms": 184,
+          "stdout": "UI130 IT UI: 266 assertions passed. Real HTTP fixture, actual component/event handlers in isolated DOM adapter; no browser/production claims.",
+          "stderr": "",
+          "assertions": 266
+        },
+        {
+          "path": "tests/test_ui134_navigation.cjs",
+          "command": "node tests/test_ui134_navigation.cjs",
+          "status": "passed",
+          "exit_code": 0,
+          "duration_ms": 142,
+          "stdout": "{\"suite\":\"UI134 directory and navigation handlers\",\"checks\":81,\"passed\":true,\"browser\":false}",
+          "stderr": "",
+          "assertions": 81
+        },
+        {
+          "path": "tests/test_ui135_home.cjs",
+          "command": "node tests/test_ui135_home.cjs",
+          "status": "passed",
+          "exit_code": 0,
+          "duration_ms": 339,
+          "stdout": "{\"suite\":\"UI135 Personal Home actual handlers\",\"checks\":125,\"passed\":true,\"browser\":false}",
+          "stderr": "",
+          "assertions": 125
+        },
+        {
+          "path": "tests/test_ui140_home.cjs",
+          "status": "not_present",
+          "reason": "Optional requested suite does not exist in this runtime."
+        }
+      ],
+      "syntax": [
+        {
+          "path": "app/static/app.js",
+          "sha256": "dc01b84658957e055feb1895fb51e1fda9b8ffa339cffbfd0ac6e33099dd3af9",
+          "command": "node --check app/static/app.js",
+          "status": "passed",
+          "exit_code": 0,
+          "duration_ms": 69,
+          "stdout": "",
+          "stderr": ""
+        },
+        {
+          "path": "app/static/browser_admin.js",
+          "sha256": "6001e857b4f59e06dccc10349bfa6367244e3800a0b858cda2b284a7043e8c96",
+          "command": "node --check app/static/browser_admin.js",
+          "status": "passed",
+          "exit_code": 0,
+          "duration_ms": 64,
+          "stdout": "",
+          "stderr": ""
+        },
+        {
+          "path": "app/static/certificate_workspace.js",
+          "sha256": "2d6c2f7d20e37baaf58da421324338650f927874298213c6109823e67fd066cd",
+          "command": "node --check app/static/certificate_workspace.js",
+          "status": "passed",
+          "exit_code": 0,
+          "duration_ms": 62,
+          "stdout": "",
+          "stderr": ""
+        },
+        {
+          "path": "app/static/fault_reports.js",
+          "sha256": "c707279def6161a1507e30cbf091e7e12cdc4be6254f909ecd1a0ad6eb15ba81",
+          "command": "node --check app/static/fault_reports.js",
+          "status": "passed",
+          "exit_code": 0,
+          "duration_ms": 64,
+          "stdout": "",
+          "stderr": ""
+        },
+        {
+          "path": "app/static/fieldwork.js",
+          "sha256": "5aee8fd0f8374d7dc1a6360406dff9326421d903c4ff83b741438f0dda060f7c",
+          "command": "node --check app/static/fieldwork.js",
+          "status": "passed",
+          "exit_code": 0,
+          "duration_ms": 66,
+          "stdout": "",
+          "stderr": ""
+        },
+        {
+          "path": "app/static/help_workspace.js",
+          "sha256": "875ba3ad860736cb92cb968eae36a10c5486dcadd3dd68cf748b92cad119dc15",
+          "command": "node --check app/static/help_workspace.js",
+          "status": "passed",
+          "exit_code": 0,
+          "duration_ms": 67,
+          "stdout": "",
+          "stderr": ""
+        },
+        {
+          "path": "app/static/hr_workspace.js",
+          "sha256": "a3beddf59ac0038baf45e488e147b2e41d5019cd819cd4601dae9f3328bcdcdc",
+          "command": "node --check app/static/hr_workspace.js",
+          "status": "passed",
+          "exit_code": 0,
+          "duration_ms": 65,
+          "stdout": "",
+          "stderr": ""
+        },
+        {
+          "path": "app/static/import_centre.js",
+          "sha256": "a35b86feee84075df75055c07053a11096aa3b6ef518024c6534b295b57a1c98",
+          "command": "node --check app/static/import_centre.js",
+          "status": "passed",
+          "exit_code": 0,
+          "duration_ms": 64,
+          "stdout": "",
+          "stderr": ""
+        },
+        {
+          "path": "app/static/interface_components.js",
+          "sha256": "6e6e751775d1f856746dcafe0cddcef9987856d156db2831c392ed3a14d7608f",
+          "command": "node --check app/static/interface_components.js",
+          "status": "passed",
+          "exit_code": 0,
+          "duration_ms": 62,
+          "stdout": "",
+          "stderr": ""
+        },
+        {
+          "path": "app/static/it_workspace.js",
+          "sha256": "44fe8c6eaf51fd713b96978567d0a0567436eada21e98e995bb6d90c974653a2",
+          "command": "node --check app/static/it_workspace.js",
+          "status": "passed",
+          "exit_code": 0,
+          "duration_ms": 65,
+          "stdout": "",
+          "stderr": ""
+        },
+        {
+          "path": "app/static/locale_pt_br.js",
+          "sha256": "767e28af6588e28a576c602f9071a283daccabb73079b0afffd0ba121a39f946",
+          "command": "node --check app/static/locale_pt_br.js",
+          "status": "passed",
+          "exit_code": 0,
+          "duration_ms": 69,
+          "stdout": "",
+          "stderr": ""
+        },
+        {
+          "path": "app/static/logs.js",
+          "sha256": "bc088f8afa88fc9f3b28f7ae552e284f17c5d691fadec19b3b4151371c392e67",
+          "command": "node --check app/static/logs.js",
+          "status": "passed",
+          "exit_code": 0,
+          "duration_ms": 63,
+          "stdout": "",
+          "stderr": ""
+        },
+        {
+          "path": "app/static/maintenance_workspace.js",
+          "sha256": "e99605974e89bf04cd8ad7805aa8a26baaed9b1060487ddbd21d1bc0b06c8f91",
+          "command": "node --check app/static/maintenance_workspace.js",
+          "status": "passed",
+          "exit_code": 0,
+          "duration_ms": 63,
+          "stdout": "",
+          "stderr": ""
+        },
+        {
+          "path": "app/static/personal_home.js",
+          "sha256": "e8176ad2e1f6a2009bf03d7938a30690ec7b56f75962ed45c815a2ccc030bbec",
+          "command": "node --check app/static/personal_home.js",
+          "status": "passed",
+          "exit_code": 0,
+          "duration_ms": 62,
+          "stdout": "",
+          "stderr": ""
+        },
+        {
+          "path": "app/static/project_calendar.js",
+          "sha256": "7154d31fa14db16220115efbf2e38c1ab9a10d38b1ea0c073091fa331aa84dfe",
+          "command": "node --check app/static/project_calendar.js",
+          "status": "passed",
+          "exit_code": 0,
+          "duration_ms": 63,
+          "stdout": "",
+          "stderr": ""
+        },
+        {
+          "path": "app/static/qshe_reports.js",
+          "sha256": "901e0ab76babb785a99bb10728e2dc7aa7f02c535c68a21266353b238b15da6b",
+          "command": "node --check app/static/qshe_reports.js",
+          "status": "passed",
+          "exit_code": 0,
+          "duration_ms": 62,
+          "stdout": "",
+          "stderr": ""
+        },
+        {
+          "path": "app/static/record_management.js",
+          "sha256": "0bcc8e012967716408f5ed474efdaa7dff3099c3480e428e5a13ab24925a058b",
+          "command": "node --check app/static/record_management.js",
+          "status": "passed",
+          "exit_code": 0,
+          "duration_ms": 66,
+          "stdout": "",
+          "stderr": ""
+        },
+        {
+          "path": "app/static/setup_builders.js",
+          "sha256": "138d11bff9a37da903887dc3d206fbd9c2c04385e6efbe36948ac7d7ea340bb7",
+          "command": "node --check app/static/setup_builders.js",
+          "status": "passed",
+          "exit_code": 0,
+          "duration_ms": 66,
+          "stdout": "",
+          "stderr": ""
+        },
+        {
+          "path": "app/static/sw.js",
+          "sha256": "bf2df667f447ca91c528b2553d2d69a0167be31fc376c3f4064fa9d7d3471017",
+          "command": "node --check app/static/sw.js",
+          "status": "passed",
+          "exit_code": 0,
+          "duration_ms": 66,
+          "stdout": "",
+          "stderr": ""
+        },
+        {
+          "path": "app/static/task_workspace.js",
+          "sha256": "970f40df617bfb585894dd71ae9b82ca782d1b42146696c06cec8c025c53d667",
+          "command": "node --check app/static/task_workspace.js",
+          "status": "passed",
+          "exit_code": 0,
+          "duration_ms": 68,
+          "stdout": "",
+          "stderr": ""
+        }
+      ],
+      "summary": {
+        "suites_passed": 6,
+        "suites_failed": 0,
+        "optional_not_present": 1,
+        "passed_assertions": 1824,
+        "javascript_syntax_passed": 20,
+        "javascript_syntax_failed": 0
+      },
+      "limits": [
+        "Static CSS, renderer and isolated DOM handler checks do not replace browser visual inspection.",
+        "IT test uses the repository fictional HTTP-response fixture; no production service was contacted.",
+        "JavaScript syntax scope is top-level app/static/*.js changed against the verified UI140 baseline."
+      ],
+      "expectation_updates": [
+        {
+          "path": "tests/test_ui131_visual.cjs",
+          "change": "Shared minimum button height expectation: 42px to intentional 44px; specificity and important-layer assertions retained."
+        },
+        {
+          "path": "tests/test_ui132_visual.cjs",
+          "change": "Shared minimum button height expectation: 42px to intentional 44px; specificity and important-layer assertions retained."
+        }
+      ],
+      "fixture_fix": {
+        "scope": "Local fictional preview data only",
+        "change": "phone_host emptied because loopback is not a valid LAN advertisement; bind_host remains 127.0.0.1",
+        "checks": [
+          {
+            "path": "/api/info",
+            "authenticated": true,
+            "status": 200
+          },
+          {
+            "path": "/api/fleet/directory",
+            "authenticated": true,
+            "status": 200
+          },
+          {
+            "path": "/fleet?embedded=1",
+            "status": 200
+          }
+        ],
+        "product_code_changed": false
+      },
+      "source_hashes": {
+        "tests/test_ui131_visual.cjs": "a640f3bd8eb4af70104cbe63ac31963b1a3788e67f4c6253ff70b5fb196c65b5",
+        "tests/test_ui132_visual.cjs": "b5b59cbe60a254aaa1956654ea98eef28b327f8d7fe456a3e586d60e9549b94d",
+        "tests/test_ui132_visual_markup.cjs": "64d174d8a89de97235d46ee5cf8c64bb8febd7fc62539d6490ca0edeb51f8354",
+        "tests/test_ui130_it_ui.cjs": "06622733aad4074785a86edc4904438e7c3ed2ea5589f5d038ad6f41861691fd",
+        "tests/test_ui134_navigation.cjs": "2ac4dff30c66ee021c2d03aac6ee2dada1ca9153ff07ddde4b882930aff594e4",
+        "tests/test_ui135_home.cjs": "2259bd95db8a002083a105370bfca646773ce693a91552b3533e081c5aba2516",
+        "app/static/visual_ui124.css": "6debd799af97daa9c812dd7f56236f43b2492a8d958de0ec3c5b867647c331b2",
+        "app/static/personal_home.css": "a4d455e0703df3e14f83e5ecaa1b29bd1c582bc477bcb995d2c53f8d56050fef"
+      },
+      "packaging_checks": {
+        "service_worker_assertions": 285,
+        "service_worker_locales": [
+          "pt-BR",
+          "en",
+          "default"
+        ],
+        "offline_navigation": "versioned HTML cache entries resolved by pathname",
+        "protected_routes": "Simulated service-worker API bypass and credential offline safeguards passed",
+        "font_precache": "CSS URL and service-worker key match",
+        "backend_python_verified": 234,
+        "backend_python_differences": [
+          "app/__init__.py"
+        ],
+        "local_http": [
+          {
+            "route": "/",
+            "status": 200,
+            "content_type": "text/html; charset=utf-8",
+            "cache_control": "no-store"
+          },
+          {
+            "route": "/install",
+            "status": 200,
+            "content_type": "text/html; charset=utf-8",
+            "cache_control": "no-store"
+          },
+          {
+            "route": "/reset-password",
+            "status": 200,
+            "content_type": "text/html; charset=utf-8",
+            "cache_control": "no-store"
+          },
+          {
+            "route": "/static/password_recovery.html",
+            "status": 200,
+            "content_type": "text/html; charset=utf-8",
+            "cache_control": "no-store"
+          },
+          {
+            "route": "/static/fonts.css",
+            "status": 200,
+            "content_type": "text/css; charset=utf-8",
+            "cache_control": null
+          },
+          {
+            "route": "/api/info",
+            "status": 200,
+            "content_type": "application/json",
+            "cache_control": "no-store"
+          }
+        ],
+        "service_worker_test_sha256": "e33f5438e0479ca5b72f98c65ae0040a76c8703c3d9351f1aa9bd6d1c129d095",
+        "service_worker_sha256": "bdc9cfe83d2d2a4724ae6cedd2de95502f495b324e7953837ae8b3cb62c538f4"
+      }
+    }
   },
   "pending": [
-    "post-deployment browser verification",
-    "application API integration",
     "publication",
-    "Render latency samples and runtime log visibility",
-    "OCR fixtures requiring a Linux font and the optional private sample PDF"
+    "post-deployment browser verification",
+    "application API integration"
   ]
 }
