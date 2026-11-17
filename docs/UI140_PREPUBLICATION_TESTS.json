@@ -1,0 +1,350 @@
+{
+  "release": "UI140",
+  "candidate": "work/wavelink-runtime",
+  "environment": {
+    "os": "Windows",
+    "python": "3.12.14",
+    "node": "24.22.1",
+    "dependencies": {
+      "pytest": "8.3.5",
+      "fastapi": "0.128.2",
+      "starlette": "0.50.0",
+      "anyio": "4.13.0",
+      "annotated-doc": "0.0.4",
+      "httpx": "0.28.1",
+      "httpcore": "1.0.9",
+      "h11": "0.16.0",
+      "idna": "3.17",
+      "sniffio": "1.3.1",
+      "qrcode": "8.2",
+      "pydantic": "2.14.2",
+      "cryptography": "50.0.2",
+      "reportlab": "4.4.9",
+      "pypdf": "6.21.4",
+      "Pillow": "13.0.0"
+    },
+    "dependency_location": "work/test-deps plus primary runtime",
+    "network_installation": "Official PyPI wheels downloaded through browser and installed offline with pip --no-index --no-deps --target work/test-deps.",
+    "common_test_environment": {
+      "PYTHONPATH": "work/test-deps;work/wavelink-runtime",
+      "PYTHONDONTWRITEBYTECODE": "1"
+    },
+    "test_command_working_directory": "work/wavelink-runtime",
+    "compatibility_limits": [
+      "Repository requirements describe Python 3.13 on Linux as the test environment. These checks used Python 3.12.14 on Windows.",
+      "The primary runtime supplied cryptography 50.0.2. Repository requirements specify cryptography >=44,<47."
+    ]
+  },
+  "python_suites": [
+    {
+      "name": "builder_http_responsiveness",
+      "paths": [
+        "tests/test_builder_threadpool_ui140.py"
+      ],
+      "junit": "work/ui140-builder-http-results.xml",
+      "counts": {
+        "passed": 3,
+        "failed": 0,
+        "errors": 0,
+        "skipped": 0
+      },
+      "per_module": {
+        "tests.test_builder_threadpool_ui140": {
+          "passed": 3,
+          "failed": 0,
+          "errors": 0,
+          "skipped": 0
+        }
+      },
+      "python_utf8": false,
+      "command": "python -m pytest tests/test_builder_threadpool_ui140.py -q -p no:cacheprovider --basetemp ../pytest-http-initial --junitxml=../ui140-builder-http-results.xml"
+    },
+    {
+      "name": "home_http_and_sqlite",
+      "paths": [
+        "tests/ui46_home/test_personal.py"
+      ],
+      "junit": "work/ui140-home-core-results.xml",
+      "counts": {
+        "passed": 16,
+        "failed": 0,
+        "errors": 0,
+        "skipped": 0
+      },
+      "per_module": {
+        "tests.ui46_home.test_personal": {
+          "passed": 16,
+          "failed": 0,
+          "errors": 0,
+          "skipped": 0
+        }
+      },
+      "python_utf8": true,
+      "command": "python -m pytest tests/ui46_home/test_personal.py -q -p no:cacheprovider --basetemp ../pytest-home-core --junitxml=../ui140-home-core-results.xml"
+    },
+    {
+      "name": "import_core",
+      "paths": [
+        "tests/ui45_review/test_builder_baseline.py",
+        "tests/test_builder_log_ui101.py",
+        "tests/test_document_import_ui95.py",
+        "tests/test_document_import_ui103.py",
+        "tests/test_inventory_import_ui103.py",
+        "tests/test_ui128_docs_import_language.py",
+        "tests/test_ui128_docs_temp_packages.py"
+      ],
+      "junit": "work/ui140-import-core-results.xml",
+      "counts": {
+        "passed": 181,
+        "failed": 3,
+        "errors": 0,
+        "skipped": 0
+      },
+      "per_module": {
+        "tests.ui45_review.test_builder_baseline": {
+          "passed": 8,
+          "failed": 1,
+          "errors": 0,
+          "skipped": 0
+        },
+        "tests.test_builder_log_ui101": {
+          "passed": 48,
+          "failed": 0,
+          "errors": 0,
+          "skipped": 0
+        },
+        "tests.test_document_import_ui95": {
+          "passed": 29,
+          "failed": 2,
+          "errors": 0,
+          "skipped": 0
+        },
+        "tests.test_document_import_ui103": {
+          "passed": 61,
+          "failed": 0,
+          "errors": 0,
+          "skipped": 0
+        },
+        "tests.test_inventory_import_ui103": {
+          "passed": 25,
+          "failed": 0,
+          "errors": 0,
+          "skipped": 0
+        },
+        "tests.test_ui128_docs_import_language": {
+          "passed": 4,
+          "failed": 0,
+          "errors": 0,
+          "skipped": 0
+        },
+        "tests.test_ui128_docs_temp_packages": {
+          "passed": 6,
+          "failed": 0,
+          "errors": 0,
+          "skipped": 0
+        }
+      },
+      "python_utf8": false,
+      "command": "python -m pytest tests/ui45_review/test_builder_baseline.py tests/test_builder_log_ui101.py tests/test_document_import_ui95.py tests/test_document_import_ui103.py tests/test_inventory_import_ui103.py tests/test_ui128_docs_import_language.py tests/test_ui128_docs_temp_packages.py -q -p no:cacheprovider --basetemp ../pytest-import-core --junitxml=../ui140-import-core-results.xml"
+    },
+    {
+      "name": "pure_backend",
+      "paths": [
+        "tests/test_import_locale_ui126.py",
+        "tests/test_ui135_permission_labels.py",
+        "tests/test_ui136_help.py",
+        "tests/test_document_layout_ui100.py",
+        "tests/test_document_structure_ui100.py"
+      ],
+      "junit": "work/ui140-backend-pure-results.xml",
+      "counts": {
+        "passed": 31,
+        "failed": 0,
+        "errors": 0,
+        "skipped": 2
+      },
+      "per_module": {
+        "tests.test_import_locale_ui126": {
+          "passed": 8,
+          "failed": 0,
+          "errors": 0,
+          "skipped": 0
+        },
+        "tests.test_ui135_permission_labels": {
+          "passed": 1,
+          "failed": 0,
+          "errors": 0,
+          "skipped": 0
+        },
+        "tests.test_ui136_help": {
+          "passed": 1,
+          "failed": 0,
+          "errors": 0,
+          "skipped": 0
+        },
+        "tests.test_document_layout_ui100": {
+          "passed": 8,
+          "failed": 0,
+          "errors": 0,
+          "skipped": 1
+        },
+        "tests.test_document_structure_ui100": {
+          "passed": 13,
+          "failed": 0,
+          "errors": 0,
+          "skipped": 1
+        }
+      },
+      "python_utf8": false,
+      "command": "python -m pytest tests/test_import_locale_ui126.py tests/test_ui135_permission_labels.py tests/test_ui136_help.py tests/test_document_layout_ui100.py tests/test_document_structure_ui100.py -q -p no:cacheprovider -rs --basetemp ../pytest-pure-final --junitxml=../ui140-backend-pure-results.xml"
+    },
+    {
+      "name": "utf8_rerun",
+      "paths": [
+        "tests/ui45_review/test_builder_baseline.py::test_static_setup_is_permission_discoverable_and_help_is_current"
+      ],
+      "junit": "work/ui140-utf8-rerun-results.xml",
+      "counts": {
+        "passed": 1,
+        "failed": 0,
+        "errors": 0,
+        "skipped": 0
+      },
+      "per_module": {
+        "tests.ui45_review.test_builder_baseline": {
+          "passed": 1,
+          "failed": 0,
+          "errors": 0,
+          "skipped": 0
+        }
+      },
+      "python_utf8": true,
+      "command": "python -m pytest tests/ui45_review/test_builder_baseline.py::test_static_setup_is_permission_discoverable_and_help_is_current -q -p no:cacheprovider --tb=short --junitxml=../ui140-utf8-rerun-results.xml"
+    }
+  ],
+  "unique_python_results_after_rerun": {
+    "total": 236,
+    "passed": 232,
+    "skipped": 2,
+    "environment_blocked": 2,
+    "application_failures_observed": 0
+  },
+  "environment_failures_and_skips": [
+    {
+      "tests": [
+        "tests/ui45_review/test_builder_baseline.py::test_static_setup_is_permission_discoverable_and_help_is_current"
+      ],
+      "initial_failure": "Path.read_text used Windows cp1252 and raised UnicodeDecodeError while reading app/static/app.js.",
+      "resolution": "Passed on rerun with PYTHONUTF8=1.",
+      "junit": "work/ui140-utf8-rerun-results.xml"
+    },
+    {
+      "tests": [
+        "tests/test_document_import_ui95.py::test_real_scan_ocr[png]",
+        "tests/test_document_import_ui95.py::test_real_scan_ocr[pdf]"
+      ],
+      "failure": "OSError cannot open resource at ImageFont.truetype for /usr/share/fonts/truetype/dejavu/DejaVuSans.ttf, before application OCR executes.",
+      "remaining_environment_limit": "The Linux fixture font is unavailable on this Windows host. The tesseract executable is also absent from PATH. pdftoppm is available.",
+      "classification": "Environment-blocked OCR coverage."
+    },
+    {
+      "tests": [
+        "tests/test_document_layout_ui100.py optional original PDF case",
+        "tests/test_document_structure_ui100.py optional original PDF case"
+      ],
+      "reason": "Optional WAVELINK_DOCUMENT_EXAMPLE original PDF was unavailable. Pytest reported two skips."
+    }
+  ],
+  "baseline_regression": {
+    "candidate": "work/wavelink-ui139-verified",
+    "test": "tests/test_builder_threadpool_ui140.py::test_builder_request_keeps_event_loop_responsive[/api/builders/import/review-preview]",
+    "result": "Expected failure confirmed against the pristine UI139 app module. The same case passed against UI140.",
+    "failure": "Builder work blocked the event loop.",
+    "junit": "work/ui139-expected-regression-results.xml"
+  },
+  "node_suites": [
+    {
+      "path": "tests/test_ui135_home.cjs",
+      "command": "node tests/test_ui135_home.cjs",
+      "assertions_passed": 125,
+      "failures": 0
+    },
+    {
+      "path": "tests/test_document_import_ui103.js",
+      "command": "node tests/test_document_import_ui103.js",
+      "assertions_passed": 35,
+      "failures": 0
+    },
+    {
+      "path": "tests/test_document_review_ui104.js",
+      "command": "node tests/test_document_review_ui104.js",
+      "assertions_passed": 32,
+      "failures": 0
+    },
+    {
+      "path": "tests/test_document_row_selection_ui105.js",
+      "command": "node tests/test_document_row_selection_ui105.js",
+      "assertions_passed": 40,
+      "failures": 0
+    },
+    {
+      "path": "tests/test_document_interpretation_ui106.js",
+      "command": "node tests/test_document_interpretation_ui106.js",
+      "assertions_passed": 36,
+      "failures": 0
+    },
+    {
+      "path": "tests/test_document_relationships_ui107.js",
+      "command": "node tests/test_document_relationships_ui107.js",
+      "assertions_passed": 43,
+      "failures": 0
+    },
+    {
+      "path": "tests/test_document_definitions_ui109.js",
+      "command": "node tests/test_document_definitions_ui109.js",
+      "assertions_passed": 14,
+      "failures": 0
+    },
+    {
+      "path": "tests/test_import_locale_ui126.js",
+      "command": "node tests/test_import_locale_ui126.js",
+      "assertions_passed": 16,
+      "failures": 0
+    },
+    {
+      "path": "tests/test_ui128_docs_import_centre_boundary.js",
+      "command": "node tests/test_ui128_docs_import_centre_boundary.js",
+      "assertions_passed": 20,
+      "failures": 0
+    },
+    {
+      "path": "tests/test_ui128_docs_import_language.js",
+      "command": "node tests/test_ui128_docs_import_language.js",
+      "assertions_passed": 63,
+      "failures": 0
+    }
+  ],
+  "node_totals": {
+    "suites_passed": 10,
+    "assertions_passed": 424,
+    "failures": 0
+  },
+  "broader_collection": {
+    "tests_collected": 3787,
+    "collection_errors": 75,
+    "log": "work/ui140-full-collection.log",
+    "execution_scope": "The suites listed above were executed.",
+    "collection_limits": [
+      "Missing optional bs4 and fitz packages",
+      "Historical /mnt/data artifact paths",
+      "Historical test_company_c01 imports",
+      "Unset WAVELINK_TEST_REPOSITORY",
+      "Windows cp1252 source decoding"
+    ]
+  },
+  "release_integrity_after_tests": {
+    "resources_verified": 2454,
+    "hash_mismatches": 0,
+    "manifest_sha256": "387374aef8c850ca8c2d1a91dc5f702867d7f5a64736e2cab70f4dbddbcce93c"
+  }
+}

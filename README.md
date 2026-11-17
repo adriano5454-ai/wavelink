@@ -1,3 +1,20 @@
+# Wavelink UI140 candidate
+
+Version 1.34.40, prepared on 17 November 2026 from GitHub main f6d69ded35576b558d1ca4ebd0cb568681afe750.
+
+## Changes
+
+- Home provides distinct empty-state messages for personal work, actions and saved handovers in English and Brazilian Portuguese.
+- Clear filters resets the active filters and pagination while retaining the selected Home view.
+- Home view tabs use two columns on narrow screens so Portuguese labels remain readable.
+- Builder package review, import and inventory creation execute synchronous work through the existing worker thread pool.
+- Updated asset URLs and offline shell version identify the changed client files.
+
+
+See [UI140_REVIEW.md](docs/UI140_REVIEW.md) for validation and pending checks.
+
+---
+
 # Wavelink — UI139 integrada localmente
 
 Versão 1.34.39. Base local UI138; base GitHub UI138: d7e8614d946708b80f8bc8217a6a60d0dd117a78. Repositório completo, com cadeia anterior preservada. Esta rodada não publica nem acessa dados reais.
