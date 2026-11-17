@@ -1,3 +1,9 @@
+# Wavelink UI145 candidate
+
+Wavelink 1.34.45. See [editor drafts and verification](docs/WORKSPACE_UI145.md).
+
+---
+
 # Wavelink UI144 candidate
 
 Wavelink 1.34.44. See [document assistance and validation](docs/WORKSPACE_UI144.md).

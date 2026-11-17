@@ -1,33 +1,45 @@
 {
-  "release": "UI144",
-  "version": "1.34.44",
+  "release": "UI145",
+  "version": "1.34.45",
   "status": "local_candidate",
-  "base_commit": "cd6903b7fe1985fa93f84a6dc3c2c3de6f3a5276",
-  "runtime_manifest_sha256": "fe383562b2a81a6df94d4c435f17e7c64ff5c18062e1d9ef7f0a88b6f9ec30b4",
-  "parent_runtime_manifest_sha256": "7bd394b0fd412f347bd292693efd029ef233b338eb90b6408ca5088a5bceae22",
-  "verified_runtime_resources": 2487,
-  "overlay_resources": 203,
+  "base_commit": "848805385c603f54da954bb5343c9220604b6cc3",
+  "runtime_manifest_sha256": "40e1eb28a1e4f1bddc2f9420070b05a407f9e7212cde85e55b88ef54cb84d9b9",
+  "parent_runtime_manifest_sha256": "fe383562b2a81a6df94d4c435f17e7c64ff5c18062e1d9ef7f0a88b6f9ec30b4",
+  "verified_runtime_resources": 2496,
+  "overlay_resources": 214,
   "validation": {
-    "javascript": {
-      "builder_import_suggestions": "passed",
-      "hr_suggestions": "passed",
-      "shift_handover_suggestions": "passed",
-      "authoring_suggestions": "passed",
-      "library_to_checklist_editor": "passed",
-      "logbook_field_type_and_unit_through_review": "passed"
+    "checklist": {
+      "integration": "An isolated FastAPI and SQLite fixture exercised the application JavaScript through giving a brief, receiving suggestions, leaving, reopening and saving. The provider was called once. The library draft contained the manual item and exactly the selected additional item.",
+      "recovery": "Verified private account and hub scoping, restoring selected and unselected suggestions, concurrent revisions, failed submission, validation, and confirmed saving.",
+      "routing": "Verified a saved checklist opens from its library row, can return to the list, and a delayed detail response cannot replace the list."
     },
-    "checklist_save_reopen": "The actual editor JavaScript and save service stored an unpublished fictional template with its manual item and exactly the selected suggested item.",
-    "coverage_notes": [
-      "The HR tests include existing regressions and overlap the aggregate run. Results are not summed across overlapping runs.",
-      "Chrome reached the five authoring cards. A full browser run through the new checklist editor and an actual OpenAI request for the new forms remain unverified.",
-      "Two historical OCR tests require Linux dependencies absent in the Windows validation environment."
-    ],
+    "related_editors": {
+      "hr_it_weekly": "11 focused JavaScript suites passed. 6 relevant suites were rerun after the HR attachment picker was updated.",
+      "builders": "7 assistance placement and retention suites passed, including 30 inventory OpenAI checks and 24 mapping checks.",
+      "shared_dialogs": "41 shared-dialog and 13 stock scope assertions passed. The equipment certificate filter test passed.",
+      "handovers": "Operational guard and pending AI review restoration exercises passed. Four historical reopen and bounded-input cases passed on retry. The historical PDF assertion passed with pypdf in this environment."
+    },
+    "library_compatibility": {
+      "native_tests": 47,
+      "original_document_tests": 2,
+      "fixture": "The two original-document checks used ReportLab to generate a real PDF, in place of unavailable PyMuPDF. Their application assertions were preserved."
+    },
+    "restart_recovery_and_backup": {
+      "tests": 6,
+      "passed": 6
+    },
+    "hr_expiry": {
+      "python_tests": 43,
+      "hr_form_assertions": 236,
+      "attachment_assertions": 23,
+      "custom_schedule": "passed"
+    },
     "aggregate_python": {
-      "tests": 124,
+      "tests": 133,
       "failures": 0,
       "errors": 0,
       "skipped": 0,
-      "passed": 124
+      "passed": 133
     }
   }
 }
