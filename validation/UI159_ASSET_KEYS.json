@@ -1,0 +1,749 @@
+{
+  "release": "UI159",
+  "version": "1.34.58",
+  "parent_manifest_sha256": "b917fad2f14847ae2ad197200a575bbeca5ced4faad84561e072eefb80fecf87",
+  "asset_keys": {
+    "action_center_ui82.js": "1.34.58-23cf71981c1b",
+    "app.js": "1.34.58-c331facb0d61",
+    "browser_admin.js": "1.34.58-abf5c7cd5cbd",
+    "checklist_workspace.js": "1.34.58-2e19d0720ecc",
+    "contact.html": "1.34.58-aed0b25a4112",
+    "document_join.html": "1.34.58-39174a606a77",
+    "document_participation.js": "1.34.58-f39b76966495",
+    "examples.html": "1.34.58-0b87dc6ec751",
+    "experience_shell.js": "1.34.58-567c644b02ab",
+    "fault_reports.js": "1.34.58-c3fae165d214",
+    "fieldwork.js": "1.34.58-6f54a841cac1",
+    "fleet.html": "1.34.58-a8506939eb58",
+    "general_tasks.js": "1.34.58-754d98324d5f",
+    "handover_attachments.js": "1.34.58-c44d9bac3723",
+    "handover_continue.js": "1.34.58-8ad431c051f9",
+    "handover_draft_review.js": "1.34.58-d7bdf2b876cd",
+    "handover_history.js": "1.34.58-345f3ea64c60",
+    "handover_incoming.js": "1.34.58-dce436ecfc84",
+    "handover_preparation.js": "1.34.58-79008fc468f3",
+    "handover_recipients.js": "1.34.58-091456fccbab",
+    "handover_schedule.js": "1.34.58-1be38b887ca7",
+    "handover_workspace.js": "1.34.58-0fec080bc938",
+    "handovers.js": "1.34.58-bc83e1cb2a17",
+    "help.html": "1.34.58-5c9cc81dd3e0",
+    "help_reference.html": "1.34.58-8240d163f523",
+    "help_topics/accessreview.html": "1.34.58-ab5eb33d7741",
+    "help_topics/approvals.html": "1.34.58-13bca6663225",
+    "help_topics/assetcalendar.html": "1.34.58-8f6cd8b33c78",
+    "help_topics/assetdetails.html": "1.34.58-08608b287c4b",
+    "help_topics/assetlabels.html": "1.34.58-f0de92f4f561",
+    "help_topics/assignments.html": "1.34.58-6a8094afb725",
+    "help_topics/backups.html": "1.34.58-7f736cdcc856",
+    "help_topics/browseradmin.html": "1.34.58-a6f7c70e6d67",
+    "help_topics/browserlogs.html": "1.34.58-54af4e278aa5",
+    "help_topics/browsertemplates.html": "1.34.58-eac53fe26def",
+    "help_topics/browsertoolbox.html": "1.34.58-a70e55da2a62",
+    "help_topics/builder.html": "1.34.58-ddf7385ebb90",
+    "help_topics/certificates.html": "1.34.58-977c2211571d",
+    "help_topics/companybranding.html": "1.34.58-3fd95c2daf24",
+    "help_topics/containers.html": "1.34.58-a810098855c2",
+    "help_topics/create.html": "1.34.58-10550eda56ea",
+    "help_topics/daily.html": "1.34.58-d19d07e6550d",
+    "help_topics/dashboard.html": "1.34.58-14b1f6cb16e1",
+    "help_topics/datetime.html": "1.34.58-7bb03c45f5dd",
+    "help_topics/departmentheads.html": "1.34.58-aae2c707ff55",
+    "help_topics/departments.html": "1.34.58-206c91839e54",
+    "help_topics/document.html": "1.34.58-2da13b6846c4",
+    "help_topics/documentimport.html": "1.34.58-77abf27b1ee9",
+    "help_topics/evidence.html": "1.34.58-b2b88870c42a",
+    "help_topics/evidencereview.html": "1.34.58-de3d58637c0d",
+    "help_topics/faults.html": "1.34.58-345ced24c2e0",
+    "help_topics/fleet.html": "1.34.58-b180ca889535",
+    "help_topics/fleetaccess.html": "1.34.58-b2ecd84eefaa",
+    "help_topics/generaltasks.html": "1.34.58-1e5095baaf28",
+    "help_topics/handovercontinuity.html": "1.34.58-967f5cce09c9",
+    "help_topics/handovers.html": "1.34.58-b372a11415ca",
+    "help_topics/https.html": "1.34.58-b8234e471b7a",
+    "help_topics/illustrations.html": "1.34.58-ebb67a944003",
+    "help_topics/importcentre.html": "1.34.58-e771db4efb6f",
+    "help_topics/inventory.html": "1.34.58-b8918875856b",
+    "help_topics/inventorybuilder.html": "1.34.58-54ad00003830",
+    "help_topics/inventorytransfer.html": "1.34.58-88b2b58deb70",
+    "help_topics/itemjourney.html": "1.34.58-c03b4865443c",
+    "help_topics/itrequests.html": "1.34.58-8bf0a573a390",
+    "help_topics/live.html": "1.34.58-9c9e3cfe35b7",
+    "help_topics/logbuilder.html": "1.34.58-3b0950257da0",
+    "help_topics/logexports.html": "1.34.58-d183bb95bcae",
+    "help_topics/logimport.html": "1.34.58-b3d019fae6d8",
+    "help_topics/logreferences.html": "1.34.58-79d71ea86242",
+    "help_topics/logs.html": "1.34.58-078bd9b7f1ee",
+    "help_topics/logwindows.html": "1.34.58-6565b1b90ac4",
+    "help_topics/lowstock.html": "1.34.58-62f884e13b41",
+    "help_topics/maintenance.html": "1.34.58-803b14942c25",
+    "help_topics/maintenancebuilder.html": "1.34.58-99b4b9f0b18d",
+    "help_topics/manifests.html": "1.34.58-59ff0854e4f2",
+    "help_topics/membership.html": "1.34.58-e49b8aa37845",
+    "help_topics/navigation.html": "1.34.58-f9c661e7f361",
+    "help_topics/network.html": "1.34.58-d9a7f24f2604",
+    "help_topics/offsets.html": "1.34.58-598323f5e70e",
+    "help_topics/originals.html": "1.34.58-7dd57aed2767",
+    "help_topics/permissions.html": "1.34.58-18b1969de26a",
+    "help_topics/phones.html": "1.34.58-4fb3ef6c0d66",
+    "help_topics/projects.html": "1.34.58-cb5a368d91a1",
+    "help_topics/qrverification.html": "1.34.58-fe6fdd51ecac",
+    "help_topics/qshe.html": "1.34.58-f4a1c35ba0a6",
+    "help_topics/receiving.html": "1.34.58-894dcaa536d3",
+    "help_topics/recordmanagement.html": "1.34.58-677a7a66459f",
+    "help_topics/records.html": "1.34.58-f34fa609fb8e",
+    "help_topics/savestatus.html": "1.34.58-89e44eee7a4f",
+    "help_topics/start.html": "1.34.58-4b32cd222d35",
+    "help_topics/stocktake.html": "1.34.58-ea057a9f6971",
+    "help_topics/storage.html": "1.34.58-d23e52adb314",
+    "help_topics/support.html": "1.34.58-8eeb53bd82c1",
+    "help_topics/tasks.html": "1.34.58-ca4a5f030862",
+    "help_topics/toolbox.html": "1.34.58-27ad8b7861a4",
+    "help_topics/toolboxbuilder.html": "1.34.58-d172f0a61fc5",
+    "help_topics/toolboxguests.html": "1.34.58-ca8fbd3bde1c",
+    "help_topics/transfers.html": "1.34.58-e6813e4f8295",
+    "help_topics/types.html": "1.34.58-639198dec8f9",
+    "help_topics/uninstall.html": "1.34.58-fa456d5caa4c",
+    "help_topics/users.html": "1.34.58-d7ddd08fa96a",
+    "help_topics/vessellogaccess.html": "1.34.58-b014eb55c8fd",
+    "help_topics/vessellogs.html": "1.34.58-b3e55a7f95ee",
+    "help_workspace.js": "1.34.58-55b4bc6f44eb",
+    "home_workspace.js": "1.34.58-c07eacfb0ddc",
+    "i18n_pt_br.js": "1.34.58-82e8672c67f7",
+    "index.html": "1.34.58-b3087399d7d3",
+    "install.html": "1.34.58-0396c37b56a6",
+    "inventory_workspace.js": "1.34.58-3548651a2555",
+    "locale_pt_br.js": "1.34.58-b95eab8ca384",
+    "maintenance_workspace.js": "1.34.58-6fac863f12c3",
+    "membership_entry.html": "1.34.58-afe4c3b6ad11",
+    "membership_entry.js": "1.34.58-ab626a81848d",
+    "operations.js": "1.34.58-118b04e19277",
+    "password_recovery.html": "1.34.58-f5142f3c6916",
+    "password_recovery.js": "1.34.58-37a47a44ddb1",
+    "pt-BR/contact.html": "1.34.58-b6095f7cfff7",
+    "pt-BR/document_join.html": "1.34.58-2371d4a3bc7c",
+    "pt-BR/examples.html": "1.34.58-1c49251a2516",
+    "pt-BR/fleet.html": "1.34.58-19285af4b7d9",
+    "pt-BR/help.html": "1.34.58-ca0d1c1747f8",
+    "pt-BR/help_catalogue.json": "1.34.58-10ff3490381e",
+    "pt-BR/help_reference.html": "1.34.58-3df10c049ce1",
+    "pt-BR/help_topics/accessreview.html": "1.34.58-fddafc08f361",
+    "pt-BR/help_topics/approvals.html": "1.34.58-5c84d3e98cbb",
+    "pt-BR/help_topics/assetcalendar.html": "1.34.58-6b298c26c933",
+    "pt-BR/help_topics/assetdetails.html": "1.34.58-7f0b031933e0",
+    "pt-BR/help_topics/assetlabels.html": "1.34.58-ff5a9f3e1023",
+    "pt-BR/help_topics/assignments.html": "1.34.58-83740d46ba3c",
+    "pt-BR/help_topics/backups.html": "1.34.58-405a20804ff2",
+    "pt-BR/help_topics/browseradmin.html": "1.34.58-e91a119a8c35",
+    "pt-BR/help_topics/browserlogs.html": "1.34.58-83a08c7e1831",
+    "pt-BR/help_topics/browsertemplates.html": "1.34.58-aabdfa17f32d",
+    "pt-BR/help_topics/browsertoolbox.html": "1.34.58-038e8fde301a",
+    "pt-BR/help_topics/builder.html": "1.34.58-79c7ca67d513",
+    "pt-BR/help_topics/certificates.html": "1.34.58-ded4ae038a8f",
+    "pt-BR/help_topics/companybranding.html": "1.34.58-aaf3fc388b50",
+    "pt-BR/help_topics/containers.html": "1.34.58-7f22fa051121",
+    "pt-BR/help_topics/create.html": "1.34.58-760fa0fc37c9",
+    "pt-BR/help_topics/daily.html": "1.34.58-816dd03839b5",
+    "pt-BR/help_topics/dashboard.html": "1.34.58-6e0ca5c2dea8",
+    "pt-BR/help_topics/datetime.html": "1.34.58-b9adfd783bb5",
+    "pt-BR/help_topics/departmentheads.html": "1.34.58-26c0e316e919",
+    "pt-BR/help_topics/departments.html": "1.34.58-6ca2fa478d74",
+    "pt-BR/help_topics/document.html": "1.34.58-03fe7af9072e",
+    "pt-BR/help_topics/documentimport.html": "1.34.58-1f0a6fccad83",
+    "pt-BR/help_topics/evidence.html": "1.34.58-506cf94b5031",
+    "pt-BR/help_topics/evidencereview.html": "1.34.58-151fd79f1a9a",
+    "pt-BR/help_topics/faults.html": "1.34.58-735efcaeb49f",
+    "pt-BR/help_topics/fleet.html": "1.34.58-8615b4964d06",
+    "pt-BR/help_topics/fleetaccess.html": "1.34.58-e01ec49cd8f8",
+    "pt-BR/help_topics/generaltasks.html": "1.34.58-7182aac84a0a",
+    "pt-BR/help_topics/handovercontinuity.html": "1.34.58-e945a0eb897b",
+    "pt-BR/help_topics/handovers.html": "1.34.58-472feab527f9",
+    "pt-BR/help_topics/https.html": "1.34.58-987e48ac7a10",
+    "pt-BR/help_topics/illustrations.html": "1.34.58-584d57ce0cd1",
+    "pt-BR/help_topics/importcentre.html": "1.34.58-ef98487215bd",
+    "pt-BR/help_topics/inventory.html": "1.34.58-01a9fd23a982",
+    "pt-BR/help_topics/inventorybuilder.html": "1.34.58-cd7f47014555",
+    "pt-BR/help_topics/inventorytransfer.html": "1.34.58-8c14e50309b8",
+    "pt-BR/help_topics/itemjourney.html": "1.34.58-ec0c5dccc806",
+    "pt-BR/help_topics/itrequests.html": "1.34.58-8e3822d8abec",
+    "pt-BR/help_topics/live.html": "1.34.58-88ed61fd5282",
+    "pt-BR/help_topics/logbuilder.html": "1.34.58-158333ba28d9",
+    "pt-BR/help_topics/logexports.html": "1.34.58-f3c8a0c8f961",
+    "pt-BR/help_topics/logimport.html": "1.34.58-5b76fc5105e1",
+    "pt-BR/help_topics/logreferences.html": "1.34.58-b1d2871bb181",
+    "pt-BR/help_topics/logs.html": "1.34.58-316b8918b92f",
+    "pt-BR/help_topics/logwindows.html": "1.34.58-f203cd6d8a91",
+    "pt-BR/help_topics/lowstock.html": "1.34.58-cd3af15327fa",
+    "pt-BR/help_topics/maintenance.html": "1.34.58-526917d03d70",
+    "pt-BR/help_topics/maintenancebuilder.html": "1.34.58-d87ed0f5c7e0",
+    "pt-BR/help_topics/manifests.html": "1.34.58-562e2f2312ec",
+    "pt-BR/help_topics/membership.html": "1.34.58-efe6edabff29",
+    "pt-BR/help_topics/navigation.html": "1.34.58-d96876f22d0a",
+    "pt-BR/help_topics/network.html": "1.34.58-c1c00c0e4834",
+    "pt-BR/help_topics/offsets.html": "1.34.58-e7e6ce95190b",
+    "pt-BR/help_topics/originals.html": "1.34.58-5b640d2e0fd2",
+    "pt-BR/help_topics/permissions.html": "1.34.58-e5a3cbd90af7",
+    "pt-BR/help_topics/phones.html": "1.34.58-db7a682185db",
+    "pt-BR/help_topics/projects.html": "1.34.58-45b2cf287f5e",
+    "pt-BR/help_topics/qrverification.html": "1.34.58-42e0f881a0ba",
+    "pt-BR/help_topics/qshe.html": "1.34.58-0731ef012603",
+    "pt-BR/help_topics/receiving.html": "1.34.58-67f965c524d7",
+    "pt-BR/help_topics/recordmanagement.html": "1.34.58-b60056afe667",
+    "pt-BR/help_topics/records.html": "1.34.58-3a9711701f3b",
+    "pt-BR/help_topics/savestatus.html": "1.34.58-50256534a802",
+    "pt-BR/help_topics/start.html": "1.34.58-2705cc507866",
+    "pt-BR/help_topics/stocktake.html": "1.34.58-fd929a0aa576",
+    "pt-BR/help_topics/storage.html": "1.34.58-b6e15e11e4be",
+    "pt-BR/help_topics/support.html": "1.34.58-de070d09a3be",
+    "pt-BR/help_topics/tasks.html": "1.34.58-15c871d01646",
+    "pt-BR/help_topics/toolbox.html": "1.34.58-0dd4edc5ab01",
+    "pt-BR/help_topics/toolboxbuilder.html": "1.34.58-93ce0d4e3aeb",
+    "pt-BR/help_topics/toolboxguests.html": "1.34.58-3c7e58f4a029",
+    "pt-BR/help_topics/transfers.html": "1.34.58-5f53a9fbeb67",
+    "pt-BR/help_topics/types.html": "1.34.58-588e05136123",
+    "pt-BR/help_topics/uninstall.html": "1.34.58-37ebc5edc902",
+    "pt-BR/help_topics/users.html": "1.34.58-720d70971651",
+    "pt-BR/help_topics/vessellogaccess.html": "1.34.58-4453b408e2a0",
+    "pt-BR/help_topics/vessellogs.html": "1.34.58-fbbb1515df57",
+    "pt-BR/index.html": "1.34.58-0efbb185d5ce",
+    "pt-BR/install.html": "1.34.58-79cc65a0b17e",
+    "pt-BR/membership_entry.html": "1.34.58-3a0fdc52b733",
+    "pt-BR/password_recovery.html": "1.34.58-19ae246c5617",
+    "qshe_reports.js": "1.34.58-ae132cab4630",
+    "recognition_workspace.js": "1.34.58-8a174e835520",
+    "shift_workspace.css": "1.34.58-c9d44d9bfe61",
+    "shift_workspace.js": "1.34.58-3db2daf82e28",
+    "simple_handovers.js": "1.34.58-26663fc27ecd",
+    "sw.js": "1.34.58-3ae2c94fa8a1",
+    "task_checklists.js": "1.34.58-936220f2b363",
+    "task_scratch.js": "1.34.58-529dd5b19841",
+    "task_workspace.js": "1.34.58-1df06c6ed48b",
+    "work_execution_ui80.css": "1.34.58-5a404ef3b7d4"
+  },
+  "registered_fonts": [
+    "fonts/InterVariable.woff2"
+  ],
+  "authored_static_modules": [
+    "action_center_ui82.js",
+    "app.js",
+    "browser_admin.js",
+    "checklist_workspace.js",
+    "document_participation.js",
+    "experience_shell.js",
+    "fault_reports.js",
+    "fieldwork.js",
+    "general_tasks.js",
+    "handover_attachments.js",
+    "handover_continue.js",
+    "handover_draft_review.js",
+    "handover_history.js",
+    "handover_incoming.js",
+    "handover_preparation.js",
+    "handover_recipients.js",
+    "handover_schedule.js",
+    "handover_workspace.js",
+    "handovers.js",
+    "home_workspace.js",
+    "i18n_pt_br.js",
+    "inventory_workspace.js",
+    "locale_pt_br.js",
+    "maintenance_workspace.js",
+    "membership_entry.js",
+    "operations.js",
+    "password_recovery.js",
+    "qshe_reports.js",
+    "recognition_workspace.js",
+    "shift_workspace.css",
+    "shift_workspace.js",
+    "simple_handovers.js",
+    "task_checklists.js",
+    "task_scratch.js",
+    "task_workspace.js",
+    "work_execution_ui80.css"
+  ],
+  "http_verification": {
+    "normalized_key_algorithm": "SHA-256 of UTF-8 bytes with version query values normalized to CACHE; first 12 hex digits prefixed by the release version.",
+    "all_changed_static_references_checked": 775,
+    "entrypoint_references": {
+      "help.html": {
+        "i18n_pt_br.js": "1.34.58-82e8672c67f7",
+        "locale_pt_br.js": "1.34.58-b95eab8ca384"
+      },
+      "index.html": {
+        "action_center_ui82.js": "1.34.58-23cf71981c1b",
+        "app.js": "1.34.58-c331facb0d61",
+        "browser_admin.js": "1.34.58-abf5c7cd5cbd",
+        "checklist_workspace.js": "1.34.58-2e19d0720ecc",
+        "document_participation.js": "1.34.58-f39b76966495",
+        "experience_shell.js": "1.34.58-567c644b02ab",
+        "fault_reports.js": "1.34.58-c3fae165d214",
+        "fieldwork.js": "1.34.58-6f54a841cac1",
+        "general_tasks.js": "1.34.58-754d98324d5f",
+        "handover_attachments.js": "1.34.58-c44d9bac3723",
+        "handover_continue.js": "1.34.58-8ad431c051f9",
+        "handover_draft_review.js": "1.34.58-d7bdf2b876cd",
+        "handover_history.js": "1.34.58-345f3ea64c60",
+        "handover_incoming.js": "1.34.58-dce436ecfc84",
+        "handover_preparation.js": "1.34.58-79008fc468f3",
+        "handover_recipients.js": "1.34.58-091456fccbab",
+        "handover_schedule.js": "1.34.58-1be38b887ca7",
+        "handover_workspace.js": "1.34.58-0fec080bc938",
+        "handovers.js": "1.34.58-bc83e1cb2a17",
+        "home_workspace.js": "1.34.58-c07eacfb0ddc",
+        "i18n_pt_br.js": "1.34.58-82e8672c67f7",
+        "inventory_workspace.js": "1.34.58-3548651a2555",
+        "locale_pt_br.js": "1.34.58-b95eab8ca384",
+        "maintenance_workspace.js": "1.34.58-6fac863f12c3",
+        "operations.js": "1.34.58-118b04e19277",
+        "qshe_reports.js": "1.34.58-ae132cab4630",
+        "recognition_workspace.js": "1.34.58-8a174e835520",
+        "shift_workspace.js": "1.34.58-3db2daf82e28",
+        "simple_handovers.js": "1.34.58-26663fc27ecd",
+        "task_checklists.js": "1.34.58-936220f2b363",
+        "task_scratch.js": "1.34.58-529dd5b19841",
+        "task_workspace.js": "1.34.58-1df06c6ed48b",
+        "work_execution_ui80.css": "1.34.58-5a404ef3b7d4"
+      },
+      "pt-BR/help.html": {
+        "i18n_pt_br.js": "1.34.58-82e8672c67f7",
+        "locale_pt_br.js": "1.34.58-b95eab8ca384"
+      },
+      "sw.js": {
+        "action_center_ui82.js": "1.34.58-23cf71981c1b",
+        "app.js": "1.34.58-c331facb0d61",
+        "browser_admin.js": "1.34.58-abf5c7cd5cbd",
+        "checklist_workspace.js": "1.34.58-2e19d0720ecc",
+        "document_participation.js": "1.34.58-f39b76966495",
+        "experience_shell.js": "1.34.58-567c644b02ab",
+        "fault_reports.js": "1.34.58-c3fae165d214",
+        "fieldwork.js": "1.34.58-6f54a841cac1",
+        "general_tasks.js": "1.34.58-754d98324d5f",
+        "handover_attachments.js": "1.34.58-c44d9bac3723",
+        "handover_continue.js": "1.34.58-8ad431c051f9",
+        "handover_draft_review.js": "1.34.58-d7bdf2b876cd",
+        "handover_history.js": "1.34.58-345f3ea64c60",
+        "handover_incoming.js": "1.34.58-dce436ecfc84",
+        "handover_preparation.js": "1.34.58-79008fc468f3",
+        "handover_recipients.js": "1.34.58-091456fccbab",
+        "handover_schedule.js": "1.34.58-1be38b887ca7",
+        "handover_workspace.js": "1.34.58-0fec080bc938",
+        "handovers.js": "1.34.58-bc83e1cb2a17",
+        "home_workspace.js": "1.34.58-c07eacfb0ddc",
+        "i18n_pt_br.js": "1.34.58-82e8672c67f7",
+        "inventory_workspace.js": "1.34.58-3548651a2555",
+        "locale_pt_br.js": "1.34.58-b95eab8ca384",
+        "maintenance_workspace.js": "1.34.58-6fac863f12c3",
+        "operations.js": "1.34.58-118b04e19277",
+        "qshe_reports.js": "1.34.58-ae132cab4630",
+        "recognition_workspace.js": "1.34.58-8a174e835520",
+        "shift_workspace.js": "1.34.58-3db2daf82e28",
+        "simple_handovers.js": "1.34.58-26663fc27ecd",
+        "task_checklists.js": "1.34.58-936220f2b363",
+        "task_scratch.js": "1.34.58-529dd5b19841",
+        "task_workspace.js": "1.34.58-1df06c6ed48b",
+        "work_execution_ui80.css": "1.34.58-5a404ef3b7d4"
+      }
+    },
+    "served_resources": {
+      "action_center_ui82.js": {
+        "sha256": "23cf71981c1b5f00a2dc860c89ba299459d8cd8aa6fb732f2d50860d6d60ec30",
+        "key": "1.34.58-23cf71981c1b",
+        "referrer_count": 3,
+        "sample_referrers": [
+          "index.html",
+          "sw.js",
+          "pt-BR/index.html"
+        ]
+      },
+      "app.js": {
+        "sha256": "c331facb0d61624cf1d07c3f20ca72a14fdbcf05bdd28783a4ee767c7394ad64",
+        "key": "1.34.58-c331facb0d61",
+        "referrer_count": 3,
+        "sample_referrers": [
+          "index.html",
+          "sw.js",
+          "pt-BR/index.html"
+        ]
+      },
+      "browser_admin.js": {
+        "sha256": "abf5c7cd5cbd77387d9eca43196edf1051d2d67a1c9be770cfe48ff1d44e69ed",
+        "key": "1.34.58-abf5c7cd5cbd",
+        "referrer_count": 3,
+        "sample_referrers": [
+          "index.html",
+          "sw.js",
+          "pt-BR/index.html"
+        ]
+      },
+      "checklist_workspace.js": {
+        "sha256": "2e19d0720ecce19164600797fa352f1c4279687281bfd3d10eb747824b47ec39",
+        "key": "1.34.58-2e19d0720ecc",
+        "referrer_count": 3,
+        "sample_referrers": [
+          "index.html",
+          "sw.js",
+          "pt-BR/index.html"
+        ]
+      },
+      "document_participation.js": {
+        "sha256": "f39b7696649540ec0447d6291fe2111849619edb6e343edfd15381e13095d833",
+        "key": "1.34.58-f39b76966495",
+        "referrer_count": 3,
+        "sample_referrers": [
+          "index.html",
+          "sw.js",
+          "pt-BR/index.html"
+        ]
+      },
+      "experience_shell.js": {
+        "sha256": "567c644b02ab448e52ce0ceb488303fa7b80eab2dab0257b9c8858ae87709d57",
+        "key": "1.34.58-567c644b02ab",
+        "referrer_count": 3,
+        "sample_referrers": [
+          "index.html",
+          "sw.js",
+          "pt-BR/index.html"
+        ]
+      },
+      "fault_reports.js": {
+        "sha256": "c3fae165d2145d67ec0c8757912aa181f6435ada23e28e561ea1e1a6a55d7f22",
+        "key": "1.34.58-c3fae165d214",
+        "referrer_count": 3,
+        "sample_referrers": [
+          "index.html",
+          "sw.js",
+          "pt-BR/index.html"
+        ]
+      },
+      "fieldwork.js": {
+        "sha256": "6f54a841cac1e2f60b8f86cf65fecd9e674388111268ea99e4ab192606b4bbd5",
+        "key": "1.34.58-6f54a841cac1",
+        "referrer_count": 3,
+        "sample_referrers": [
+          "index.html",
+          "sw.js",
+          "pt-BR/index.html"
+        ]
+      },
+      "general_tasks.js": {
+        "sha256": "754d98324d5f6aea3b934bc69d2d08600de09381b19bbec059d30c23b4d84545",
+        "key": "1.34.58-754d98324d5f",
+        "referrer_count": 3,
+        "sample_referrers": [
+          "index.html",
+          "sw.js",
+          "pt-BR/index.html"
+        ]
+      },
+      "handover_attachments.js": {
+        "sha256": "c44d9bac3723539c08fb7e5c78b679efba2041cec762411d0112b5454e69f2dc",
+        "key": "1.34.58-c44d9bac3723",
+        "referrer_count": 3,
+        "sample_referrers": [
+          "index.html",
+          "sw.js",
+          "pt-BR/index.html"
+        ]
+      },
+      "handover_continue.js": {
+        "sha256": "8ad431c051f99daa98d1334e374d71d850343f35478bfc2a16bc460069767762",
+        "key": "1.34.58-8ad431c051f9",
+        "referrer_count": 3,
+        "sample_referrers": [
+          "index.html",
+          "sw.js",
+          "pt-BR/index.html"
+        ]
+      },
+      "handover_draft_review.js": {
+        "sha256": "d7bdf2b876cd66395b3e2eee8efdcb5df6b685fcd95b0b5af778b6833f533750",
+        "key": "1.34.58-d7bdf2b876cd",
+        "referrer_count": 3,
+        "sample_referrers": [
+          "index.html",
+          "sw.js",
+          "pt-BR/index.html"
+        ]
+      },
+      "handover_history.js": {
+        "sha256": "345f3ea64c60b00ce58cfc48e9be67f893b50d2e0c03c0e572fbdca3b4a7c4ee",
+        "key": "1.34.58-345f3ea64c60",
+        "referrer_count": 3,
+        "sample_referrers": [
+          "index.html",
+          "sw.js",
+          "pt-BR/index.html"
+        ]
+      },
+      "handover_incoming.js": {
+        "sha256": "dce436ecfc8418d6fd22924993fae084140e9ccf46e72ac9b0fea3e01d1c0a63",
+        "key": "1.34.58-dce436ecfc84",
+        "referrer_count": 3,
+        "sample_referrers": [
+          "index.html",
+          "sw.js",
+          "pt-BR/index.html"
+        ]
+      },
+      "handover_preparation.js": {
+        "sha256": "79008fc468f3c8d55c88a237724f2328c32eb3d60b45beac882449f416883684",
+        "key": "1.34.58-79008fc468f3",
+        "referrer_count": 3,
+        "sample_referrers": [
+          "index.html",
+          "sw.js",
+          "pt-BR/index.html"
+        ]
+      },
+      "handover_recipients.js": {
+        "sha256": "091456fccbab1ba32ea4be5257b498315a0fecefb7136f5c041cb75585b288a8",
+        "key": "1.34.58-091456fccbab",
+        "referrer_count": 3,
+        "sample_referrers": [
+          "index.html",
+          "sw.js",
+          "pt-BR/index.html"
+        ]
+      },
+      "handover_schedule.js": {
+        "sha256": "1be38b887ca7932ca718ee5727700ccaafab0d08ac79e4108714574f4da8c412",
+        "key": "1.34.58-1be38b887ca7",
+        "referrer_count": 3,
+        "sample_referrers": [
+          "index.html",
+          "sw.js",
+          "pt-BR/index.html"
+        ]
+      },
+      "handover_workspace.js": {
+        "sha256": "0fec080bc9388648ab07e6d44cad83b450451a1907ae8ba7a8a1fe91f8e610f6",
+        "key": "1.34.58-0fec080bc938",
+        "referrer_count": 3,
+        "sample_referrers": [
+          "index.html",
+          "sw.js",
+          "pt-BR/index.html"
+        ]
+      },
+      "handovers.js": {
+        "sha256": "bc83e1cb2a17c6988a52d05dade5ab3a433cd953ca2a0d74655cb14c11e3b4cd",
+        "key": "1.34.58-bc83e1cb2a17",
+        "referrer_count": 3,
+        "sample_referrers": [
+          "index.html",
+          "sw.js",
+          "pt-BR/index.html"
+        ]
+      },
+      "home_workspace.js": {
+        "sha256": "c07eacfb0ddc157dc35cc8d57c495f2e7e763ae9cd9632099d95aad351abb3eb",
+        "key": "1.34.58-c07eacfb0ddc",
+        "referrer_count": 3,
+        "sample_referrers": [
+          "index.html",
+          "sw.js",
+          "pt-BR/index.html"
+        ]
+      },
+      "i18n_pt_br.js": {
+        "sha256": "82e8672c67f7104a391c57db1dae88419666139eeaaca87d31327dc1aecd4fe6",
+        "key": "1.34.58-82e8672c67f7",
+        "referrer_count": 177,
+        "sample_referrers": [
+          "index.html",
+          "sw.js",
+          "contact.html",
+          "document_join.html",
+          "examples.html"
+        ]
+      },
+      "inventory_workspace.js": {
+        "sha256": "3548651a2555064f36662f283fa522ffada077095b5aa35860907ab4e8b88a77",
+        "key": "1.34.58-3548651a2555",
+        "referrer_count": 3,
+        "sample_referrers": [
+          "index.html",
+          "sw.js",
+          "pt-BR/index.html"
+        ]
+      },
+      "locale_pt_br.js": {
+        "sha256": "b95eab8ca384cd472df96d3ae3130906c4eccd82e964e3cee458de8f53360c13",
+        "key": "1.34.58-b95eab8ca384",
+        "referrer_count": 177,
+        "sample_referrers": [
+          "index.html",
+          "sw.js",
+          "contact.html",
+          "document_join.html",
+          "examples.html"
+        ]
+      },
+      "maintenance_workspace.js": {
+        "sha256": "6fac863f12c312a94a6f078227c064f1a4980d6a405da98f10a4878f50f85e79",
+        "key": "1.34.58-6fac863f12c3",
+        "referrer_count": 3,
+        "sample_referrers": [
+          "index.html",
+          "sw.js",
+          "pt-BR/index.html"
+        ]
+      },
+      "membership_entry.js": {
+        "sha256": "ab626a81848da6af782c6099cdb57db5c3988e440473b7236e31ac1636be8cda",
+        "key": "1.34.58-ab626a81848d",
+        "referrer_count": 2,
+        "sample_referrers": [
+          "membership_entry.html",
+          "pt-BR/membership_entry.html"
+        ]
+      },
+      "operations.js": {
+        "sha256": "118b04e192779c1d1af9dd1e8b79aa8c2a8a5b5a93adb9532346ae1598bcd902",
+        "key": "1.34.58-118b04e19277",
+        "referrer_count": 3,
+        "sample_referrers": [
+          "index.html",
+          "sw.js",
+          "pt-BR/index.html"
+        ]
+      },
+      "password_recovery.js": {
+        "sha256": "37a47a44ddb11a099912355daa4a59e6669a87a6bb8c52d6f14c859292b09d0f",
+        "key": "1.34.58-37a47a44ddb1",
+        "referrer_count": 2,
+        "sample_referrers": [
+          "password_recovery.html",
+          "pt-BR/password_recovery.html"
+        ]
+      },
+      "qshe_reports.js": {
+        "sha256": "ae132cab4630f6e25baf774bc7febd9e389fb35a5182fdebb25a82a0b49695bc",
+        "key": "1.34.58-ae132cab4630",
+        "referrer_count": 3,
+        "sample_referrers": [
+          "index.html",
+          "sw.js",
+          "pt-BR/index.html"
+        ]
+      },
+      "recognition_workspace.js": {
+        "sha256": "cf2fb45c5dcc90c90600449fb5f55e36961eee1aaa00caf13b8f7dfa8c09f681",
+        "key": "1.34.58-8a174e835520",
+        "referrer_count": 3,
+        "sample_referrers": [
+          "index.html",
+          "sw.js",
+          "pt-BR/index.html"
+        ]
+      },
+      "shift_workspace.css": {
+        "sha256": "c9d44d9bfe61abba8f6193791b71cc52048edd5a9b69745eaae9da457f194d53",
+        "key": "1.34.58-c9d44d9bfe61",
+        "referrer_count": 0,
+        "served_in": "work_execution_ui80.css"
+      },
+      "shift_workspace.js": {
+        "sha256": "3db2daf82e28d308aa61c7ab7c9a6cd31e49fd6a9fec5869b0fa79c2e68020c6",
+        "key": "1.34.58-3db2daf82e28",
+        "referrer_count": 3,
+        "sample_referrers": [
+          "index.html",
+          "sw.js",
+          "pt-BR/index.html"
+        ]
+      },
+      "simple_handovers.js": {
+        "sha256": "26663fc27ecd4d801849fda293067fa7c39e169c1b73525fe60f27b0920358d0",
+        "key": "1.34.58-26663fc27ecd",
+        "referrer_count": 3,
+        "sample_referrers": [
+          "index.html",
+          "sw.js",
+          "pt-BR/index.html"
+        ]
+      },
+      "sw.js": {
+        "sha256": "f6bdeaba1cb5466c0808b184299df9c965f41790afac0106e875cdd64f0bf9df",
+        "key": "1.34.58-3ae2c94fa8a1",
+        "referrer_count": 0
+      },
+      "task_checklists.js": {
+        "sha256": "936220f2b3632e75f968ceae59107141c593b761f58f3b57e5e6a784092b162d",
+        "key": "1.34.58-936220f2b363",
+        "referrer_count": 3,
+        "sample_referrers": [
+          "index.html",
+          "sw.js",
+          "pt-BR/index.html"
+        ]
+      },
+      "task_scratch.js": {
+        "sha256": "529dd5b19841575492daf4e24b93c4e72f7d4885d162d750c32d9211b0f8b523",
+        "key": "1.34.58-529dd5b19841",
+        "referrer_count": 3,
+        "sample_referrers": [
+          "index.html",
+          "sw.js",
+          "pt-BR/index.html"
+        ]
+      },
+      "task_workspace.js": {
+        "sha256": "1df06c6ed48bbb7c276fad2a7af793a2bd4fed2dce61b4aa69ae401425c1fb63",
+        "key": "1.34.58-1df06c6ed48b",
+        "referrer_count": 3,
+        "sample_referrers": [
+          "index.html",
+          "sw.js",
+          "pt-BR/index.html"
+        ]
+      },
+      "work_execution_ui80.css": {
+        "sha256": "5a404ef3b7d47a4ff791eb07ce1c7edc8ddab93296f8a8cb4cbdbfef8b4b1dd1",
+        "key": "1.34.58-5a404ef3b7d4",
+        "referrer_count": 3,
+        "sample_referrers": [
+          "index.html",
+          "sw.js",
+          "pt-BR/index.html"
+        ]
+      }
+    }
+  },
+  "translation_catalogue": {
+    "previous_entries": 9041,
+    "final_entries": 9696,
+    "added": 655,
+    "updated": 10,
+    "removed": 0,
+    "preserved_historical_duplicate_keys": 0,
+    "changed_placeholder_sets_checked": 665
+  },
+  "accepted_term_resolutions": {},
+  "reviewed_term_maps": {
+    "inputs": {
+      "ui159-modules-terms.json": {
+        "terms": 126,
+        "sha256": "17ead6afed349d91e0c66883722b46192c14a7350e188363bf09245f7a671d2a"
+      },
+      "ui159-operations-terms.json": {
+        "terms": 289,
+        "sha256": "ebf60e0e2909241d0c8864ea6e1a13f548f3dad02bcee3381266ac823807e0cd"
+      },
+      "ui159-people-terms.json": {
+        "terms": 64,
+        "sha256": "0a378a8c7a8ec8d261dc5c51973330a91363e83adf056fa53d396cf56f0ca28e"
+      },
+      "ui159-shell-terms.json": {
+        "terms": 83,
+        "sha256": "496036230f9737f4393b48077eda78c1b2e6af1f3da3f7ef85ec9b3f0f52d173"
+      },
+      "ui159-shifts-terms.json": {
+        "terms": 116,
+        "sha256": "4893fe2c078586f01eccd75054746e5b9900960255bdc5c1e149cca233327414"
+      }
+    },
+    "unique_terms": 672,
+    "missing": [],
+    "divergent": []
+  }
+}
