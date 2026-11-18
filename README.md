@@ -1,3 +1,9 @@
+# Wavelink 1.34.55
+
+[Convites personalizados, calendário por departamento, atendimento de TI e tipos de tarefa](docs/WORKSPACE_UI156.md)
+
+---
+
 # Wavelink 1.34.54
 
 [Documentos no perfil, pendências e acesso à empresa](docs/WORKSPACE_UI155.md)
