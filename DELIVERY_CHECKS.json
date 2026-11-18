@@ -1,96 +1,141 @@
 {
-  "release": "UI158",
-  "version": "1.34.57",
+  "release": "UI159",
+  "version": "1.34.58",
   "status": "local_candidate",
-  "base_commit": "b2c92e3b1fc49d9ae11a0bfb31e6022a0fbec260",
-  "base_tree": "a6071b1e03f3552e13700b3dd645f93a8cf18315",
-  "parent_runtime_manifest_sha256": "b0162f50872735f1bac4c28c11049d92b0f8ac020932668992c226fbdbd57240",
-  "runtime_manifest_sha256": "b917fad2f14847ae2ad197200a575bbeca5ced4faad84561e072eefb80fecf87",
-  "verified_runtime_resources": 2591,
-  "overlay_resources": 189,
+  "base_commit": "d3142819d7a79c45aefdb226eb1cb4c910dbdae5",
+  "base_tree": "9b7e96bdc09447727a303ef0fa95be51722ff9cf",
+  "parent_runtime_manifest_sha256": "b917fad2f14847ae2ad197200a575bbeca5ced4faad84561e072eefb80fecf87",
+  "runtime_manifest_sha256": "870c3cb31e3aaca9870073deca00707117ee47dd8f09abb733e2c83f9649d99a",
+  "verified_runtime_resources": 2600,
+  "overlay_resources": 229,
   "validation": {
-    "unchanged_provider_modules": [
-      "app/openai_import_assist.py",
-      "app/ai_import.py",
-      "app/builder_ai_fields.py",
-      "app/hr_ai_fields.py",
-      "app/inventory_ai_fields.py",
-      "app/document_extract.py"
-    ],
-    "hr_editor_assistance": {
+    "published_baseline": "Verified all 1,927 Git resources and 2,591 runtime resources against the published UI158 tree and manifests.",
+    "department_shifts": {
       "locales_tested": [
         "pt-BR",
         "en"
       ],
-      "eligible_forms": [
-        "employee_documents",
-        "travel",
-        "expenses"
+      "simple_workspace_legacy_checks_passed": 10,
+      "source": "The department shift test and existing simple workspace checks passed with the reviewed shift module and targeted changes to mountSetup, simpleShell and simpleReadError."
+    },
+    "operational_panels": {
+      "bilingual_cases_passed": 8,
+      "integrated_read_only_cases_passed": 8,
+      "source": "Independent DOM tests on the provisional combined Brazilian Portuguese and English catalogue covered checklist and inventory panels, inventory categories, quality and safety panels, and a guest acknowledgement dialog for safety talks."
+    },
+    "handover_and_operations": {
+      "bilingual_cases_passed": 12,
+      "task_type_regression_cases": 9,
+      "integrated_bilingual_cases_passed": 12,
+      "updated_task_workflow_assertions_passed": 232,
+      "final_authored_bilingual_scenarios": 14,
+      "final_authored_suites_passed": 15,
+      "final_authored_numbered_checks": 747,
+      "additional_pass_only_suites": 2,
+      "final_integrated_suites_passed": 15,
+      "final_integrated_numbered_checks": 747,
+      "source": "The author repeated all fifteen operation suites in the final physical integration including manual checklist tasks, the updated bilingual assertion and nine task types. Both independent handover source edits were reconstructed before merging."
+    },
+    "people_and_departments": {
+      "locales_tested": [
+        "pt-BR",
+        "en"
       ],
-      "numbered_attachment_regression_checks": 23,
-      "numbered_form_regression_checks": 236,
-      "integrated_offline_discovery_suite_passed": true,
-      "additional_existing_suites": [
-        "UI144 AI fields",
-        "UI151 camera"
+      "hr_regression_checks": 236,
+      "it_regression_checks": 72,
+      "invitation_selector_cases": 12,
+      "department_form_locales": 2,
+      "integrated_people_focus_passed": true,
+      "integrated_invitation_selector_cases": 12,
+      "source": "Focused people and department UI tests passed in both languages, plus the HR, IT and invitation regression suites. The member entry uses the profile display name returned by the server."
+    },
+    "portuguese_help": {
+      "files_checked": 8,
+      "reference_guide_passages": 528,
+      "reference_guide_labels": 107,
+      "offline_localization_checks": 12,
+      "source": "Checked the five department/shift-related topics, catalogue, HTML examples and historical HTML guide. Reviewed anchors, internal links and numeric content. The two long English-language matches remaining in this specific guide scan were proper brand text. Existing English help and PDFs were preserved."
+    },
+    "shell_locale": {
+      "authored_scenarios_passed": 5,
+      "integrated_shell_scenarios_passed": 5,
+      "integrated_import_locale_checks_passed": 16,
+      "python_import_term_parity_cases_passed": 2,
+      "server_response_translation_cases_passed": 8,
+      "source": "The shell language suite covered public and signed-in Portuguese and English interfaces. The import suite checked locale behavior in the combined candidate. New server tests checked wording parity for the five internal document types."
+    },
+    "role_names": {
+      "bilingual_display_checks": 32,
+      "isolated_projection_cases": 7,
+      "repository_tests": [
+        "tests/test_role_source_ui159.cjs",
+        "tests/test_role_source_ui159.py"
       ],
-      "source": "Offline UI tests verified supported HR forms, unsupported files, shifts, timesheets and historical attachments. Checked keyboard focus for pasted text, one compatible file and multiple attachments, explicit selection and absence of automatic provider calls."
+      "source": "Both reusable repository tests were run on the actual files in a local test tree. They exercise the recognition projections and frontend display helpers. Stock account roles translate. Company-authored titles, including those that match a UI dictionary key, and older payloads without provenance keep their stored wording. SQLite tests confirmed zero profile record writes."
     },
-    "independent_import_review": {
-      "pasted_inventory_cases_passed": 3,
-      "ui142_checks_passed": 32,
-      "ui103_checks_passed": 35,
-      "other_regressions": [
-        "UI144 four builder adapters and HR forms",
-        "UI147",
-        "UI158 HR discovery"
-      ],
-      "integrated_new_suites_passed": 3,
-      "persisted_inventory_items": 12,
-      "visible_sample_rows": 8,
-      "source": "Deterministic DOM with simulated HTTP and OpenAI responses. Parsed a physical CSV and pasted text; manually edited a proposed column mapping; created, confirmed, reopened and verified eleven CSV items and one manually transcribed item using a temporary SQLite database. Checked idempotent retry, required confirmation after editing and denied reader access. Exercised real two-sheet XLSX extraction and switching, empty OCR output with a simulated OCR engine, and native packages."
-    },
-    "import_editor_discovery": {
-      "source": "New suite passed on the author's four final files. Covers all five editor imports and the shared import entry. Includes the no-table manual path, an empty worksheet, localized review labels, scope of editable suggestions and explicit actions. No live OpenAI calls."
-    },
-    "help_and_guides": {
-      "html_files_checked": 19,
-      "search_catalogues": 2,
-      "catalogue_articles_checked": 10,
-      "workflow_links_checked": 20,
-      "pdf_links_checked": 4,
-      "legacy_help_assertions": 4,
-      "pt_BR": {
-        "pages": 222,
-        "original_pages_checked": 220,
-        "existing_annotations": 188,
-        "new_bookmarks": 5,
-        "tested_internal_links": 3,
-        "sha256": "9bb571495dec073b808b9085bc6e47e28bbf8fb9cd9d5645418297fd2d426bf6"
-      },
-      "en": {
-        "pages": 161,
-        "original_pages_checked": 159,
-        "existing_annotations": 258,
-        "new_bookmarks": 5,
-        "tested_internal_links": 3,
-        "sha256": "1da6cf2da1a8e5faf7c4be92db2a2412a49df2907679446c5adf00388503df4b"
-      },
-      "source": "Rendered and visually reviewed four appended pages. Verified all prior pages, annotations and outline entries, new bookmarks and internal links."
-    },
+    "legacy_browser_suite": "Playwright was unavailable for the earlier people browser suite. Bilingual DOM suites were verified on the integrated application.",
     "in_memory_reconstruction": "All packaged payloads decoded and matched to the composed runtime; every disk resource hashed.",
-    "authored_files": 30,
-    "authored_overlaps": [],
+    "authored_files": 59,
+    "authored_overlaps": [
+      {
+        "name": "app/static/handovers.js",
+        "authors": [
+          "ui159-shifts",
+          "ui159-operations"
+        ]
+      },
+      {
+        "name": "app/static/simple_handovers.js",
+        "authors": [
+          "ui159-shifts",
+          "ui159-operations"
+        ]
+      }
+    ],
     "changed_javascript_syntax_checked": [
+      "app/static/action_center_ui82.js",
       "app/static/app.js",
-      "app/static/document_import.js",
+      "app/static/browser_admin.js",
+      "app/static/checklist_workspace.js",
+      "app/static/document_participation.js",
+      "app/static/experience_shell.js",
+      "app/static/fault_reports.js",
+      "app/static/fieldwork.js",
+      "app/static/general_tasks.js",
+      "app/static/handover_attachments.js",
+      "app/static/handover_continue.js",
+      "app/static/handover_draft_review.js",
+      "app/static/handover_history.js",
+      "app/static/handover_incoming.js",
+      "app/static/handover_preparation.js",
+      "app/static/handover_recipients.js",
+      "app/static/handover_schedule.js",
+      "app/static/handover_workspace.js",
+      "app/static/handovers.js",
       "app/static/help_workspace.js",
-      "app/static/hr_workspace.js",
-      "app/static/setup_builders.js",
+      "app/static/home_workspace.js",
+      "app/static/i18n_pt_br.js",
+      "app/static/inventory_workspace.js",
+      "app/static/locale_pt_br.js",
+      "app/static/maintenance_workspace.js",
+      "app/static/membership_entry.js",
+      "app/static/operations.js",
+      "app/static/password_recovery.js",
+      "app/static/qshe_reports.js",
+      "app/static/recognition_workspace.js",
+      "app/static/shift_workspace.js",
+      "app/static/simple_handovers.js",
       "app/static/sw.js",
-      "tests/test_hr_assist_discovery_ui158.cjs",
-      "tests/test_import_assist_entry_ui158.cjs",
-      "tests/test_import_pasted_inventory_ui158.cjs"
+      "app/static/task_checklists.js",
+      "app/static/task_scratch.js",
+      "app/static/task_workspace.js",
+      "tests/test_department_shifts_locale_ui159.cjs",
+      "tests/test_handover_operations_locale_ui159.cjs",
+      "tests/test_operational_panels_locale_ui159.cjs",
+      "tests/test_people_localization_ui159.cjs",
+      "tests/test_role_source_ui159.cjs",
+      "tests/test_shell_language_ui159.cjs",
+      "tests/test_ui136_work_flows.cjs"
     ],
     "full_regression_suite_repeated": false
   }
