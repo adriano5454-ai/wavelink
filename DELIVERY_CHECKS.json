@@ -1,138 +1,44 @@
 {
-  "release": "UI147",
-  "version": "1.34.47",
+  "release": "UI148",
+  "version": "1.34.48",
   "status": "local_candidate",
-  "base_commit": "65d49a65617f538d60977f356cde186bdb62f399",
-  "runtime_manifest_sha256": "337707c09358bdae5d0b046bc0523f8a5c99c893dc3575b8821d5c4375e97366",
-  "parent_runtime_manifest_sha256": "a50383eaada7ce5b5211dd0c63a37306a9f73e10aca831751d0b276d4b0cb362",
-  "verified_runtime_resources": 2513,
-  "overlay_resources": 223,
+  "base_commit": "39bf405d6ee7094b251274e0ce6fbcc338151837",
+  "runtime_manifest_sha256": "f26f456336cb9bbed9eaaa261a41a5ddcdba1dd14f720b34b74c3c7481cc019c",
+  "parent_runtime_manifest_sha256": "337707c09358bdae5d0b046bc0523f8a5c99c893dc3575b8821d5c4375e97366",
+  "verified_runtime_resources": 2514,
+  "overlay_resources": 175,
   "validation": {
-    "report_lifecycle_and_private_transfers": {
-      "qshe": 48,
-      "faults": 48,
-      "qshe_categories": 30,
-      "pdf_checks": 4,
-      "pdf_reader": "pypdf"
+    "inherited_ui147": {
+      "commit": "39bf405d6ee7094b251274e0ce6fbcc338151837",
+      "verified_runtime_sha256": "337707c09358bdae5d0b046bc0523f8a5c99c893dc3575b8821d5c4375e97366",
+      "python_regressions": 301,
+      "backend_permission_checks": 6
     },
-    "private_evidence_http": {
-      "passed": 14,
-      "types": [
-        "PDF",
-        "JPEG",
-        "PNG",
-        "DOCX",
-        "XLSX",
-        "TXT",
-        "CSV"
-      ]
-    },
-    "desktop_qshe": {
-      "passed": 11
-    },
-    "rendered_report_scroll": {
-      "cases": 8,
-      "modules": [
-        "QSHE",
-        "Faults"
-      ],
-      "viewport_sizes": [
-        [
-          1440,
-          900
-        ],
-        [
-          390,
-          700
-        ],
-        [
-          320,
-          420
-        ],
-        [
-          700,
-          320
-        ]
-      ]
-    },
-    "rendered_private_evidence": {
-      "viewport_sizes": [
-        [
-          1366,
-          768
-        ],
-        [
-          390,
-          700
-        ]
-      ],
-      "cases": 2,
-      "backend": "FastAPI with a temporary SQLite project"
-    },
-    "builder_cards": {
-      "assisted_card_routes": 5,
-      "permission_and_provider_controls": true,
-      "authenticated_application_viewport_widths": [
-        1440,
-        390
-      ],
-      "visible_cards_per_authorized_role_checked": 5,
-      "focused_assisted_prompts": 5,
-      "no_browser_errors": true,
-      "simulated_provider_configuration": true,
-      "visual_check": "Action rows aligned at both sizes, one Help control, no horizontal overflow"
-    },
-    "contextual_help": {
-      "verified_locales": [
-        "en",
-        "pt-BR"
-      ]
-    },
-    "work_order_entry": {
-      "real_application_browser": 1
-    },
-    "operational_checklist_drafts": {
-      "authenticated_http_chromium": true,
-      "viewport": [
+    "responsive_browser": {
+      "verified_widths": [
+        320,
         390,
-        700
+        914,
+        1100,
+        1280,
+        1440
       ],
-      "database": "temporary SQLite project",
-      "coverage": [
-        "first and resumed drafts with incomplete photo and reading requirements",
-        "offline and keyboard draft save",
-        "final evidence requirements, optional evidence, pending sync"
-      ],
-      "permission_backend_tests_passed": 6,
-      "help_locales": [
-        "en",
-        "pt-BR"
-      ],
-      "workflow_regression_tests_passed": 35
+      "buttons_per_viewport": 15,
+      "tested": "Glyph bounds and whole-word wrapping, no horizontal overflow and equal action-row heights across cards. Also tested a 216px action area."
     },
-    "partial_native_toolbox_draft": {
-      "passed": 1,
-      "coverage": "Real desktop first-step toolbox text save and reopen"
-    },
-    "builder_draft_http_sqlite_tk": {
-      "passed": 54,
-      "coverage": [
-        "partial authoring drafts and first-save evidence handling",
-        "native toolbox drafts",
-        "browser toolbox",
-        "checklist outline"
-      ]
-    },
-    "template_and_draft_recovery": {
-      "passed": 56,
-      "generated_pdf_fixtures": "Two prior checklist and maintenance original-file checks generated their synthetic PDF with ReportLab; original retention assertions ran unchanged."
-    },
+    "exact_reconstruction_checks": [
+      "Normalized runtime file comparison against UI147",
+      "Expected package and client identities",
+      "Responsive Chromium at six widths",
+      "Five scoped assistant routes and a title-only DDS draft",
+      "Contextual Help in English and Portuguese"
+    ],
     "aggregate_python": {
-      "tests": 301,
+      "tests": 5,
       "failures": 0,
       "errors": 0,
       "skipped": 0,
-      "passed": 301
+      "passed": 5
     }
   }
 }
