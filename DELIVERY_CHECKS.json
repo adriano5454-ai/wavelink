@@ -1,52 +1,97 @@
 {
-  "release": "UI155",
-  "version": "1.34.54",
+  "release": "UI156",
+  "version": "1.34.55",
   "status": "local_candidate",
-  "base_commit": "025918eb6978cbee9c8485ecb3889090b64e3c46",
-  "base_tree": "6b1e375818db7f04554126baca9d672da41e10b1",
-  "parent_runtime_manifest_sha256": "db199df874b95d8ac1b25776baee30c122be6bc9b656992541c93fdf239c4977",
-  "runtime_manifest_sha256": "a2f0a60cb2a47be6688868d5edd76fc3eaf1b3e48925e99dd46ce26286d69862",
-  "verified_runtime_resources": 2576,
-  "overlay_resources": 183,
+  "base_commit": "28f9b8bd71a94d0829de86a5d7fcfdf9edad9d3a",
+  "base_tree": "3c13782a94d42487c4b556a0788bf9b5c674b94c",
+  "parent_runtime_manifest_sha256": "a2f0a60cb2a47be6688868d5edd76fc3eaf1b3e48925e99dd46ce26286d69862",
+  "runtime_manifest_sha256": "e5ca9e5bd4007ab34435c883c7566603b8ab1f04757e4d067b6ec9e026b19a03",
+  "verified_runtime_resources": 2584,
+  "overlay_resources": 219,
   "validation": {
-    "authored_tests": {
-      "passed": true,
-      "profile_document_entry_tests": 10,
-      "profile_related_regression_suites": 8,
-      "company_join_footer_localized_ui_tests": 4,
-      "prior_personal_home_regression_checks": 125,
-      "attention_card_coverage": [
-        "Portuguese and English",
-        "singular and plural",
-        "positive, zero and unavailable totals",
-        "refresh error and activity navigation",
-        "opening the action queue and selected state"
-      ]
+    "invitation_permissions": {
+      "editor_cases_passed": 12,
+      "localized_role_cases_passed": 3,
+      "prior_permission_assistant_assertions_passed": 30,
+      "combined_candidate_editor_cases_passed": 12,
+      "combined_candidate_assistant_assertions_passed": 30,
+      "source": "Isolated UI155 runtime with invitation edits, followed by restricted, read-only Node runs of the editor and assistant in the combined candidate. Covered English and Portuguese, fixed and custom profiles, granted scope, scope changes, delayed AI responses, editable suggestions and existing review boundaries."
     },
-    "previous_profile_only_reconstruction": {
-      "runtime_manifest_sha256": "37415c0210a9430f537255904ad3cf2b4c47ff26e11c4b396c0bf18039170108",
-      "javascript": {
-        "tests/test_profile_document_entry_ui155.cjs": {
-          "tests": 10,
-          "pass": 10,
-          "fail": 0,
-          "cancelled": 0,
-          "skipped": 0,
-          "todo": 0
-        }
+    "hr_department_planning": {
+      "python_cases_passed": 14,
+      "node_suites_passed": 7,
+      "numbered_node_assertions": 386,
+      "additional_bilingual_node_suites": 2,
+      "source": "Exact UI155 base plus HR changes. Exercised the ASGI application in process, checked the generated XLSX, and confirmed allowed travel beyond 3,001 unrelated records. JavaScript used test DOMs for the three views, persistence, request races and help in both languages."
+    },
+    "it_service_queue": {
+      "local_domain_cases_passed": 4,
+      "javascript_syntax_checks_passed": 2,
+      "combined_candidate_domain_cases_passed": 4,
+      "independent_domain_cases_passed": 4,
+      "legacy_http_suite_completed": false,
+      "source": "Temporary database and in-memory mail sink. Exercised IT routing with sockets and subprocesses blocked, then repeated four cases in the combined candidate. Independently checked invitation acceptance and reissue, current audience rules and absence of ticket contents from notifications. The separate legacy HTTP suite was blocked by automatic review after attempted external telemetry. No live emails or provider calls were used for these tests."
+    },
+    "operational_task_types": {
+      "python_cases_passed": 48,
+      "persisted_task_types": 9,
+      "validation_privacy_and_reopen_cases": 10,
+      "authorized_bilingual_pdf_cases": 6,
+      "node_regression_assertions_passed": 244,
+      "combined_candidate_node_regression_assertions_passed": 244,
+      "combined_candidate_editable_ai_cases": 18,
+      "combined_candidate_python_repeat_confirmed": false,
+      "identical_combined_python_files": [
+        "general_tasks.py",
+        "task_workflow.py",
+        "operations_ui.py",
+        "work_tasks.py",
+        "task_access.py",
+        "operations_reports.py",
+        "report_localization.py"
+      ],
+      "source": "Local task overlay tests covered create through completion, editable drafts, permissions, filters and PDF contents. Six authorized bilingual cases generated and examined twelve task PDFs. The nine task types and editable mock AI suggestions were also exercised in the combined candidate. Its Python rerun could not be confirmed after the local automatic review rejected the attempted external Visual Studio telemetry. No live OpenAI calls."
+    },
+    "user_guide_updates": {
+      "pt_BR": {
+        "pages": 219,
+        "original_pages_checked": 217,
+        "existing_annotations": 181,
+        "new_bookmarks": 5,
+        "tested_new_links": 5,
+        "sha256": "bafc5d45eb110093697c5b61ddc51a2e3681b8e28ce96572b06653576e43d4f2"
       },
-      "python": [
-        "tests/test_ui131_context_documents.py::test_profile_privacy_check_state_and_file_bytes",
-        "tests/test_ui131_context_documents.py::test_profile_acl_rechecked_after_hr_read",
-        "tests/test_hr_attachments_ui143.py::test_existing_document_and_expense_policies_and_training_types_are_preserved"
-      ]
+      "en": {
+        "pages": 158,
+        "original_pages_checked": 156,
+        "existing_annotations": 252,
+        "new_bookmarks": 5,
+        "tested_new_links": 4,
+        "sha256": "3536bc2680cf35935e5ac65df3af79e1690f352c6bf6f34db0dc8766baa6e84f"
+      },
+      "source": "Four appended pages were rendered and visually inspected. Checked every existing page, annotation and prior outline, new page navigation and text."
     },
-    "combined_reconstruction": {
-      "method": "Standard-library decoding and SHA-256 verification of each composed resource",
-      "verified_resources": 2576,
-      "authored_files_matched_except_cache_keys": 10,
-      "changed_static_resources": 177,
-      "behavior_suites_repeated": false
-    }
+    "in_memory_reconstruction": "All packaged payloads decoded and matched to the composed runtime; every disk resource hashed.",
+    "authored_files": 47,
+    "authored_overlaps": [],
+    "changed_javascript_syntax_checked": [
+      "app/static/action_center_ui82.js",
+      "app/static/app.js",
+      "app/static/general_tasks.js",
+      "app/static/help_workspace.js",
+      "app/static/hr_insights_ui123.js",
+      "app/static/hr_workspace.js",
+      "app/static/locale_pt_br.js",
+      "app/static/membership_workspace.js",
+      "app/static/personal_home.js",
+      "app/static/sw.js",
+      "app/static/task_create.js",
+      "app/static/task_workflow.js",
+      "tests/test_hr_planning_department_ui156.cjs",
+      "tests/test_invite_profiles_ui156.cjs",
+      "tests/test_operational_task_types_ui156.cjs",
+      "tests/test_ui136_work_harness.cjs"
+    ],
+    "full_regression_suite_repeated": false
   }
 }
