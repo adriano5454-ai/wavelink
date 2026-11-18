@@ -25,10 +25,10 @@ def freeze(parent: Path, target: Path):
             raise ValueError('Modified UI154 parent: '+name)
         if not (target/name).is_file():
             raise ValueError('A retained resource is missing: '+name)
-    names = set(baseline['files']) | {'docs/WORKSPACE_UI155.md', 'tests/test_profile_document_entry_ui155.cjs'}
+    names = set(baseline['files']) | {'docs/WORKSPACE_UI155.md', 'tests/test_home_action_attention_ui155.cjs', 'tests/test_membership_entry_footer_ui155.py', 'tests/test_profile_document_entry_ui155.cjs'}
     metadata = dict(format='wavelink-runtime-overlay-1',date='2026-11-18',patch_id=VARIANT,
                     parent_patch_id=baseline.get('variant'),parent_manifest_sha256=PARENT,
-                    scope='Make it easier to add employee documents from the profile and confirm the result of refreshing the list.',
+                    scope='Open authorized employee documents from the profile, acknowledge refresh results, highlight outstanding personal dashboard actions and localize the Portuguese team entry page.',
                     boundaries=dict(database_reset=False, data_schema_changed=False, external_ai_behavior_changed=False, email_behavior_changed=False))
     (target/'UI_PATCH.json').write_text(json.dumps(metadata,indent=2)+'\n',encoding='utf-8',newline='\n')
     derived = dict(baseline)
