@@ -1,3 +1,9 @@
+# Wavelink 1.34.56
+
+[Perfil Gestão de RH para convites e acesso](docs/WORKSPACE_UI157.md)
+
+---
+
 # Wavelink 1.34.55
 
 [Convites personalizados, calendário por departamento, atendimento de TI e tipos de tarefa](docs/WORKSPACE_UI156.md)
