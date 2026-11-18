@@ -142,9 +142,12 @@ class CompanyAccess:
         prepared = self.hosted.state.prepared
         if not self.hosted.state.serving or not prepared:
             raise DemoError('Company project is not ready.')
+        prepared.assert_same_files()
         if self.service is None or self.service.prepared is not prepared:
             self.service = ActivationService(prepared, self.record)
-        prepared.assert_same_files()
+        # The core is created inside the hosted lifespan. Bind its membership
+        # service to the verified installation before allowing an entry request.
+        self.hosted.state.core.state.company_membership.hosted_company_id = self.record['company_id']
         return self.service
 
     async def respond(self, response, scope, receive, send):
