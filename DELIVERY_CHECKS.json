@@ -1,69 +1,31 @@
 {
-  "release": "UI154",
-  "version": "1.34.53",
+  "release": "UI155",
+  "version": "1.34.54",
   "status": "local_candidate",
-  "base_commit": "85aee48e794d23bd7ac89df8956afac541a6c3dd",
-  "runtime_manifest_sha256": "db199df874b95d8ac1b25776baee30c122be6bc9b656992541c93fdf239c4977",
-  "parent_runtime_manifest_sha256": "6311f0c5c8304f7f4d3a81a0ec878cffc82e70b9299a17feb869569b7f9e8eb8",
-  "verified_runtime_resources": 2572,
-  "overlay_resources": 217,
+  "base_commit": "025918eb6978cbee9c8485ecb3889090b64e3c46",
+  "base_tree": "6b1e375818db7f04554126baca9d672da41e10b1",
+  "parent_runtime_manifest_sha256": "db199df874b95d8ac1b25776baee30c122be6bc9b656992541c93fdf239c4977",
+  "runtime_manifest_sha256": "37415c0210a9430f537255904ad3cf2b4c47ff26e11c4b396c0bf18039170108",
+  "verified_runtime_resources": 2574,
+  "overlay_resources": 178,
   "validation": {
-    "scope": "Corporate-domain enrolment, narrow own-profile access for pending Corcovado members, per-area permission selection, and optional OpenAI permission review",
-    "runtime_version": "1.34.53",
-    "company_domain": "corcovadogeosub.com.br",
-    "persistence": "New short-lived email-verification challenge table; existing company records retained",
-    "delivery": "Local captured mailbox for automated tests",
-    "author_reported": {
-      "permission_assist_dom_vm_checks_passed": 30,
-      "advice_save_journal": "Repaired permission advice panel and actual save journal: provider failure followed by retry, selected suggestions applied to unsaved draft, and one separately initiated grant save confirmed"
-    },
-    "authenticated_browser": {
-      "completed_on_candidate": "Corcovado registration, own pending profile, denial of operational access, alerts, approval, login, rejection, suspension, permissions by area, and demo exclusion",
-      "checked_after_scope_race_fix": "Consent, provider inputs excluding personal fields, department scope changes, valid recommendations, and rejection of privileged suggestions",
-      "candidate_receipt_sha256": "d21e88d79dd92c936fed2f293482f6e5e68fd51ffd966f39d95b2e3d903bd4c2"
-    },
-    "not_verified": [
-      "External delivery of the new domain verification email or revised invitation template",
-      "Paid OpenAI provider call in production",
-      "Apply suggestions to a draft and save on the same final repaired Chromium run",
-      "Repetition of the dedicated pending-profile Python suite on the packaged runtime. Automatic review blocked the runner after detecting an external telemetry attempt."
-    ],
-    "completed_product_test_receipts": {
-      "ui154-domain-enrollment.xml": {
-        "tests": 7,
+    "passed": true,
+    "profile_document_entry_tests": 10,
+    "profile_document_entry_runtime": "Node with fictional users and documents",
+    "reconstructed_javascript": {
+      "tests/test_profile_document_entry_ui155.cjs": {
+        "tests": 10,
+        "pass": 10,
+        "fail": 0,
+        "cancelled": 0,
         "skipped": 0,
-        "failures": 0,
-        "errors": 0,
-        "sha256": "68361e18b8e1c32bffabb947c080034e2e3a21c3e95f4b37419ca4e7cb4f9842"
-      },
-      "ui154-entry-contract-final.xml": {
-        "tests": 1,
-        "skipped": 0,
-        "failures": 0,
-        "errors": 0,
-        "sha256": "59115124cc75e0e98c8b54bbc884fdc0edb5ab55013faf164225b3696059c3cc"
-      },
-      "ui154-mail-proof-final.xml": {
-        "tests": 6,
-        "skipped": 0,
-        "failures": 0,
-        "errors": 0,
-        "sha256": "be6840e82b11b2aa9508311715cd4f08196387afc138e445397e3ecafdb2463a"
-      },
-      "ui154-permission-ai.xml": {
-        "tests": 75,
-        "skipped": 0,
-        "failures": 0,
-        "errors": 0,
-        "sha256": "7ba50ab92f1b3d1d628d8bedccc4d1aee5c98174339fc11dc93d7fe72dab90d3"
+        "todo": 0
       }
     },
-    "final_reconstruction_integrity": {
-      "tests": 5,
-      "failures": 0,
-      "errors": 0,
-      "skipped": 0,
-      "passed": 5
-    }
+    "reconstructed_profile_and_hr_privacy": [
+      "tests/test_ui131_context_documents.py::test_profile_privacy_check_state_and_file_bytes",
+      "tests/test_ui131_context_documents.py::test_profile_acl_rechecked_after_hr_read",
+      "tests/test_hr_attachments_ui143.py::test_existing_document_and_expense_policies_and_training_types_are_preserved"
+    ]
   }
 }
