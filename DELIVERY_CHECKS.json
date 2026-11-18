@@ -1,34 +1,31 @@
 {
-  "release": "UI152",
+  "release": "UI153",
   "version": "1.34.52",
   "status": "local_candidate",
-  "base_commit": "bda9c912e8600c600e8f8643b91a6b6c13008330",
-  "runtime_manifest_sha256": "6e79d684b8771ffe09055aef158e695ce0475430b477c26448b241983043d351",
-  "parent_runtime_manifest_sha256": "909b860af78410f1a6b7cb1b3c030d0360fa212df34bdf3116c31c1eeebbd8b6",
-  "verified_runtime_resources": 2555,
-  "overlay_resources": 221,
+  "base_commit": "2876a02d87435f6e552d99ee7b5a10984b2408c8",
+  "runtime_manifest_sha256": "6311f0c5c8304f7f4d3a81a0ec878cffc82e70b9299a17feb869569b7f9e8eb8",
+  "parent_runtime_manifest_sha256": "6e79d684b8771ffe09055aef158e695ce0475430b477c26448b241983043d351",
+  "verified_runtime_resources": 2557,
+  "overlay_resources": 6,
   "validation": {
-    "scope": "Company invitations, password setup by the invitee, scoped grants, directory and approval workflows",
-    "repository_base": "bda9c912e8600c600e8f8643b91a6b6c13008330",
-    "reconstruction": "Verified published application and independently reconstructed vendor chain, with matching file digests",
-    "local_validation": "Company fixtures and simulated email delivery",
-    "database_change": "An SQLite partial index speeds up pending membership alerts. Existing tables, columns, constraints and stored records are retained.",
-    "flows": [
-      "English and Brazilian Portuguese in Chromium over local TLS",
-      "Administrator invites an email before any department exists",
-      "Invitee chooses their password, verifies their mailbox and signs in after approval",
-      "Scoped pending alerts and revocable department access",
-      "Bilingual application help and retained PDF manuals"
+    "scope": "Server-only backward compatibility for invitation and role catalogue reads",
+    "client_version": "1.34.52",
+    "database_migration": false,
+    "permission_grants_inferred": false,
+    "known_catalogues": [
+      "UI65-116",
+      "UI117-119",
+      "UI120-129"
     ],
     "not_verified": [
-      "Real SMTP provider acceptance, external mailbox delivery and live deployment of 1.34.52"
+      "Actual delivery to an external user's mailbox"
     ],
     "aggregate_python": {
-      "tests": 134,
+      "tests": 51,
       "failures": 0,
       "errors": 0,
       "skipped": 0,
-      "passed": 134
+      "passed": 51
     }
   }
 }

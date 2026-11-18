@@ -1,3 +1,9 @@
+# Wavelink UI153 candidate
+
+Wavelink 1.34.52. See [Wavelink 1.34.52 release notes](docs/WORKSPACE_UI153.md).
+
+---
+
 # Wavelink UI152 candidate
 
 Wavelink 1.34.52. See [Wavelink 1.34.52 release notes](docs/WORKSPACE_UI152.md).

@@ -1,0 +1,7 @@
+{
+  "release": "UI153",
+  "version": "1.34.52",
+  "parent_manifest_sha256": "6e79d684b8771ffe09055aef158e695ce0475430b477c26448b241983043d351",
+  "asset_keys": {},
+  "scope": "Server hotfix; all published 1.34.52 client assets retain their original hashes."
+}
