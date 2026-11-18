@@ -1,26 +1,38 @@
 {
-  "release": "UI146",
-  "version": "1.34.46",
+  "release": "UI147",
+  "version": "1.34.47",
   "status": "local_candidate",
-  "base_commit": "12d7bd7569fd0ab74b7397b63a93fd5eb9ff7804",
-  "runtime_manifest_sha256": "a50383eaada7ce5b5211dd0c63a37306a9f73e10aca831751d0b276d4b0cb362",
-  "parent_runtime_manifest_sha256": "40e1eb28a1e4f1bddc2f9420070b05a407f9e7212cde85e55b88ef54cb84d9b9",
-  "verified_runtime_resources": 2498,
-  "overlay_resources": 179,
+  "base_commit": "65d49a65617f538d60977f356cde186bdb62f399",
+  "runtime_manifest_sha256": "337707c09358bdae5d0b046bc0523f8a5c99c893dc3575b8821d5c4375e97366",
+  "parent_runtime_manifest_sha256": "a50383eaada7ce5b5211dd0c63a37306a9f73e10aca831751d0b276d4b0cb362",
+  "verified_runtime_resources": 2513,
+  "overlay_resources": 223,
   "validation": {
-    "qshe": {
-      "lifecycle_access_and_transfer": 48,
-      "pdf_audience_and_review": 2,
-      "categories_and_reporting": 30
+    "report_lifecycle_and_private_transfers": {
+      "qshe": 48,
+      "faults": 48,
+      "qshe_categories": 30,
+      "pdf_checks": 4,
+      "pdf_reader": "pypdf"
     },
-    "faults": {
-      "lifecycle_access_and_transfer": 48,
-      "pdf_audience_and_review": 2
+    "private_evidence_http": {
+      "passed": 14,
+      "types": [
+        "PDF",
+        "JPEG",
+        "PNG",
+        "DOCX",
+        "XLSX",
+        "TXT",
+        "CSV"
+      ]
     },
-    "pdf_test_reader": "The category and PDF scenarios used pypdf to read the real application-generated PDFs, preserving the report content, authorization and redaction assertions.",
-    "rendered_chromium": {
-      "scenarios_passed": 8,
-      "views": [
+    "desktop_qshe": {
+      "passed": 11
+    },
+    "rendered_report_scroll": {
+      "cases": 8,
+      "modules": [
         "QSHE",
         "Faults"
       ],
@@ -41,15 +53,86 @@
           700,
           320
         ]
+      ]
+    },
+    "rendered_private_evidence": {
+      "viewport_sizes": [
+        [
+          1366,
+          768
+        ],
+        [
+          390,
+          700
+        ]
       ],
-      "workflow_contract": "passed"
+      "cases": 2,
+      "backend": "FastAPI with a temporary SQLite project"
+    },
+    "builder_cards": {
+      "assisted_card_routes": 5,
+      "permission_and_provider_controls": true,
+      "authenticated_application_viewport_widths": [
+        1440,
+        390
+      ],
+      "visible_cards_per_authorized_role_checked": 5,
+      "focused_assisted_prompts": 5,
+      "no_browser_errors": true,
+      "simulated_provider_configuration": true,
+      "visual_check": "Action rows aligned at both sizes, one Help control, no horizontal overflow"
+    },
+    "contextual_help": {
+      "verified_locales": [
+        "en",
+        "pt-BR"
+      ]
+    },
+    "work_order_entry": {
+      "real_application_browser": 1
+    },
+    "operational_checklist_drafts": {
+      "authenticated_http_chromium": true,
+      "viewport": [
+        390,
+        700
+      ],
+      "database": "temporary SQLite project",
+      "coverage": [
+        "first and resumed drafts with incomplete photo and reading requirements",
+        "offline and keyboard draft save",
+        "final evidence requirements, optional evidence, pending sync"
+      ],
+      "permission_backend_tests_passed": 6,
+      "help_locales": [
+        "en",
+        "pt-BR"
+      ],
+      "workflow_regression_tests_passed": 35
+    },
+    "partial_native_toolbox_draft": {
+      "passed": 1,
+      "coverage": "Real desktop first-step toolbox text save and reopen"
+    },
+    "builder_draft_http_sqlite_tk": {
+      "passed": 54,
+      "coverage": [
+        "partial authoring drafts and first-save evidence handling",
+        "native toolbox drafts",
+        "browser toolbox",
+        "checklist outline"
+      ]
+    },
+    "template_and_draft_recovery": {
+      "passed": 56,
+      "generated_pdf_fixtures": "Two prior checklist and maintenance original-file checks generated their synthetic PDF with ReportLab; original retention assertions ran unchanged."
     },
     "aggregate_python": {
-      "tests": 130,
+      "tests": 301,
       "failures": 0,
       "errors": 0,
       "skipped": 0,
-      "passed": 130
+      "passed": 301
     }
   }
 }
