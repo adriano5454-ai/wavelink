@@ -1,3 +1,9 @@
+# Wavelink UI149 candidate
+
+Wavelink 1.34.49. See [Task and inventory creation with OpenAI and Portuguese interface labels](docs/WORKSPACE_UI149.md).
+
+---
+
 # Wavelink UI148 candidate
 
 Wavelink 1.34.48. See [Responsive builder card actions](docs/WORKSPACE_UI148.md).
