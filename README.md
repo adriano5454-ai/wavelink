@@ -1,3 +1,9 @@
+# Wavelink UI150 candidate
+
+Wavelink 1.34.50. See [Edit AI suggestions before applying them](docs/WORKSPACE_UI150.md).
+
+---
+
 # Wavelink UI149 candidate
 
 Wavelink 1.34.49. See [Task and inventory creation with OpenAI and Portuguese interface labels](docs/WORKSPACE_UI149.md).

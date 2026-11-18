@@ -1,66 +1,46 @@
 {
-  "release": "UI149",
-  "version": "1.34.49",
+  "release": "UI150",
+  "version": "1.34.50",
   "status": "local_candidate",
-  "base_commit": "74a44eb9a5a2de07a7dfe60b7ec9ca3336e14c3f",
-  "runtime_manifest_sha256": "ba476a9e1ef56c6c99520425d819c03fb8ddaf6048be72fd4008218b51fee499",
-  "parent_runtime_manifest_sha256": "f26f456336cb9bbed9eaaa261a41a5ddcdba1dd14f720b34b74c3c7481cc019c",
-  "verified_runtime_resources": 2523,
-  "overlay_resources": 217,
+  "base_commit": "a9296ccae407cc9331e313be913c782e9f477bf5",
+  "runtime_manifest_sha256": "1c01acf49af97356bb138ae65d0953d1ef7056e8c7fe83cb527ff6f061b7fea7",
+  "parent_runtime_manifest_sha256": "ba476a9e1ef56c6c99520425d819c03fb8ddaf6048be72fd4008218b51fee499",
+  "verified_runtime_resources": 2528,
+  "overlay_resources": 195,
   "validation": {
-    "task_authoring_and_api": {
-      "cases_passed": 54,
-      "coverage": "Operational task authorization, request replay, provider availability, suggestions without task creation, existing document-assistance and task workflow cases.",
-      "source_evidence": "Isolated guarded HTTP and SQLite tests",
-      "authenticated_browser": "Factory and manual creation, linked tasks, retry and selection, correct SQLite assignments using a local provider fixture."
-    },
-    "inventory_creation_page": {
-      "coverage": "Real Chromium with authenticated HTTP and SQLite. Enabled and disabled provider, view-only account, local draft and no automatic writes, present-and-apply in the edit form.",
-      "widths_px": [
-        320,
-        390,
-        914,
-        1100,
-        1280,
-        1440
+    "review": {
+      "covered": [
+        "Shared review for checklists, routines, toolbox, logbooks, inventory and operational tasks",
+        "Document proposals and inventory mappings",
+        "Human resources attachment suggestions",
+        "Private handover notes"
       ],
-      "verified_control_height_px": 49.6
+      "input": "User modifies scalar values or selected list entries before applying. Applying values is distinct from saving the business record.",
+      "provider_or_permission_changes": false
     },
-    "inventory_pdf_regression": {
-      "ordinary_cases_passed": 27,
-      "additional_case": "The stock PDF creation and persistence checks passed. PyMuPDF was unavailable locally; pypdf read the actual exported page and confirmed all original text assertions."
+    "development_checks": {
+      "shared_widget": "Real Chromium with actual published stylesheet order, PT/EN, selection preservation, editable rows, retry and focus. Eight retained JS suites passed.",
+      "routed_task_and_inventory": {
+        "pytest": 9,
+        "skipped": 0
+      },
+      "hr_document": "32 import checks, 236 HR-form lifecycle checks, mobile native date/time/enum controls, thirteen inventory mapping controls at 320, 390, and 1280 pixels.",
+      "handover_notes": "Portuguese and English Chromium review, four server handover note progress tests, and existing assistant coverage."
     },
     "deployment": {
       "services": [
         "wavelink-corcovado",
         "wavelink-demo"
       ],
-      "feature": "Typed text for task suggestions, existing assisted inventory creation and Portuguese expanded workspace text",
       "schema_changes": false,
       "private_data_bundled": false
     },
-    "task_form_regression": {
-      "retained_cases_passed": 60,
-      "scope": "Existing task creation, local drafts, source selection, SQLite assignment, updates and inventory checks."
-    },
-    "portuguese_interface": {
-      "reviewed_resource_entries": 515,
-      "languages_tested": [
-        "pt-BR",
-        "en"
-      ],
-      "disclosures_per_language": 6,
-      "preserves_authored_text": true,
-      "authenticated_language_and_privacy_cases_passed": 4,
-      "retained_language_checks_passed": 108,
-      "coverage": "Portuguese and English workspace disclosures, privacy, save status, imports, permission names and backups."
-    },
     "aggregate_python": {
-      "tests": 16,
+      "tests": 26,
       "failures": 0,
       "errors": 0,
       "skipped": 0,
-      "passed": 16
+      "passed": 26
     }
   }
 }
