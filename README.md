@@ -1,3 +1,9 @@
+# Wavelink 1.34.54
+
+[Documentos no perfil, pendências e acesso à empresa](docs/WORKSPACE_UI155.md)
+
+---
+
 # Wavelink UI154 candidate
 
 Wavelink 1.34.53. See [Wavelink 1.34.53 release notes](docs/WORKSPACE_UI154.md).
