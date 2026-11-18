@@ -1,3 +1,9 @@
+# Wavelink UI151 candidate
+
+Wavelink 1.34.51. See [Camera capture, Excel exports and workflow help](docs/WORKSPACE_UI151.md).
+
+---
+
 # Wavelink UI150 candidate
 
 Wavelink 1.34.50. See [Edit AI suggestions before applying them](docs/WORKSPACE_UI150.md).

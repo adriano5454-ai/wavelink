@@ -1,46 +1,48 @@
 {
-  "release": "UI150",
-  "version": "1.34.50",
+  "release": "UI151",
+  "version": "1.34.51",
   "status": "local_candidate",
-  "base_commit": "a9296ccae407cc9331e313be913c782e9f477bf5",
-  "runtime_manifest_sha256": "1c01acf49af97356bb138ae65d0953d1ef7056e8c7fe83cb527ff6f061b7fea7",
-  "parent_runtime_manifest_sha256": "ba476a9e1ef56c6c99520425d819c03fb8ddaf6048be72fd4008218b51fee499",
-  "verified_runtime_resources": 2528,
-  "overlay_resources": 195,
+  "base_commit": "6341a77e77a63027ccc9799dd5f599322869c931",
+  "runtime_manifest_sha256": "909b860af78410f1a6b7cb1b3c030d0360fa212df34bdf3116c31c1eeebbd8b6",
+  "parent_runtime_manifest_sha256": "1c01acf49af97356bb138ae65d0953d1ef7056e8c7fe83cb527ff6f061b7fea7",
+  "verified_runtime_resources": 2545,
+  "overlay_resources": 239,
   "validation": {
-    "review": {
-      "covered": [
-        "Shared review for checklists, routines, toolbox, logbooks, inventory and operational tasks",
-        "Document proposals and inventory mappings",
-        "Human resources attachment suggestions",
-        "Private handover notes"
-      ],
-      "input": "User modifies scalar values or selected list entries before applying. Applying values is distinct from saving the business record.",
-      "provider_or_permission_changes": false
-    },
-    "development_checks": {
-      "shared_widget": "Real Chromium with actual published stylesheet order, PT/EN, selection preservation, editable rows, retry and focus. Eight retained JS suites passed.",
-      "routed_task_and_inventory": {
-        "pytest": 9,
-        "skipped": 0
-      },
-      "hr_document": "32 import checks, 236 HR-form lifecycle checks, mobile native date/time/enum controls, thirteen inventory mapping controls at 320, 390, and 1280 pixels.",
-      "handover_notes": "Portuguese and English Chromium review, four server handover note progress tests, and existing assistant coverage."
-    },
-    "deployment": {
+    "scope": {
       "services": [
         "wavelink-corcovado",
-        "wavelink-demo"
+        "wavelink-client-demo"
       ],
-      "schema_changes": false,
-      "private_data_bundled": false
+      "features": [
+        "HR process and inventory Excel exports with retained CSV",
+        "operational logbook workbook formatting",
+        "receipt and own-profile photo capture",
+        "bilingual and PDF workflow help"
+      ],
+      "database_schema_changed": false,
+      "provider_or_model_changed": false
+    },
+    "release_validation": {
+      "base": "GitHub main matches the UI150 local Git tree and runtime manifest",
+      "assembly": "A copy of the verified deployed parent and the bundled vendor-to-UI150 chain independently apply the UI151 overlay. Every member is verified and the resulting manifests and SHA-256 values match.",
+      "help": "Both app languages, current full reference and search catalogue, exact routed content, PDFs with retained originals and new appendix navigation, and the ten landing shortcuts.",
+      "camera": "Synthetic real-browser camera, permission denial, retake, cancellation, local file fallback, own-profile authorization, and explicit attachment/profile saves. No physical camera was used by automated validation.",
+      "excel": "Native workbook open with an independent Excel reader, date and numeric cells, leading-zero identifiers, literal text, selected scopes, equivalent accessible CSV rows, downloads and navigation with retained mobile controls.",
+      "source_review": "Only verified baseline resources and the reviewed feature/test additions are eligible. Temporary browser, camera and database fixtures are outside the bundle.",
+      "publication": "Local candidate. Production and physical-device validation are separate."
+    },
+    "development_evidence": {
+      "hr_excel": "24 downloads across six HR processes in English and Portuguese. A separate authenticated run compared 12 CSV/XLSX downloads and checked scopes, stale previews and the 3,000-record view limit with 3,005 additional expenses.",
+      "download_recheck": "The batch QA browser initially timed out at the eleventh rapid consecutive download in both languages. The same production files passed all six processes with a paced browser. Fresh, unpaced sessions select expenses first, download Excel immediately, then CSV, and compare each cell in English and Portuguese.",
+      "inventory": "Three final integration cases covered English, Portuguese and the desktop menu. An additional 27 inventory and logbook regression cases passed.",
+      "operational_logbooks": "Ten isolated file checks exercised the standard-library workbook generator, pre-existing report semantics, value typing, localized formatting and legacy PDF content."
     },
     "aggregate_python": {
-      "tests": 26,
+      "tests": 40,
       "failures": 0,
       "errors": 0,
       "skipped": 0,
-      "passed": 26
+      "passed": 40
     }
   }
 }
