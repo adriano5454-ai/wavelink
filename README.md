@@ -1,3 +1,9 @@
+# Wavelink 1.34.58
+
+[Escalas por departamento e localização da interface em português](docs/WORKSPACE_UI159.md)
+
+---
+
 # Wavelink 1.34.57
 
 [Ajuda da OpenAI na importação e nos formulários de RH](docs/WORKSPACE_UI158.md)
