@@ -1,0 +1,49 @@
+{
+  "format": "wavelink-runtime-overlay-1",
+  "date": "2026-11-18",
+  "patch_id": "workspace-ui153-role-catalogue-hotfix-2026-11-18",
+  "parent_patch_id": "workspace-ui152-2026-11-18",
+  "parent_manifest_sha256": "6e79d684b8771ffe09055aef158e695ce0475430b477c26448b241983043d351",
+  "scope": "Restore the invitation screen when a company has saved administrator profiles from earlier permission catalogues, retaining their exact recorded authority.",
+  "boundaries": {
+    "database_reset": false,
+    "data_schema_changed": false,
+    "external_ai_behavior_changed": false,
+    "email_behavior_changed": false
+  },
+  "runtime_manifest_sha256": "6311f0c5c8304f7f4d3a81a0ec878cffc82e70b9299a17feb869569b7f9e8eb8",
+  "runtime_resources": 2557,
+  "overlay_resources": 6,
+  "files": [
+    {
+      "path": "UI_PATCH.json",
+      "before_sha256": "2b66d682fd8627cca9ada7527e9e6559ff5acb3c60b5cd21e33c056aafe0228d",
+      "after_sha256": "51f2e34df674bc2131a52ab80ad5ea39153e7f9b5a42ad322ac7501aa7bd462c"
+    },
+    {
+      "path": "app/company_membership.py",
+      "before_sha256": "9a6ae5edcb1a81b8c14f2e9699951e72813699186386df466b28d1589162a7a6",
+      "after_sha256": "19a7ec2ebd474896f26eeaac71f200430b129af240062245107b3a4a02a9b01d"
+    },
+    {
+      "path": "app/company_roles.py",
+      "before_sha256": "778ce84f1994ec4617e288743201d94356efbb381a759585bf5cdfaaf6566c2c",
+      "after_sha256": "f08d2209d2fa4da517b427daad07722a1322b64cb4cd21082965e58006ae7c56"
+    },
+    {
+      "path": "docs/WORKSPACE_UI153.md",
+      "before_sha256": null,
+      "after_sha256": "f8cb52ff41a955ec04d0e40fa8201b5f7f668d8f27b487ef0bcbf1173cb90635"
+    },
+    {
+      "path": "tests/test_hr_integration_ui117.py",
+      "before_sha256": "c968648e061675d19814c81f53aec6ecc8eff98fec169a32e8fbfa00c3514933",
+      "after_sha256": "cbfb09d4db0d59866a4f6ffdfb679827a3617d00064e746efb771ad057d4037a"
+    },
+    {
+      "path": "tests/ui65_roles_access/test_catalogue_upgrade_ui153.py",
+      "before_sha256": null,
+      "after_sha256": "cb260ed71c7bad7601b032b2be53e74f207e583c3eaea1f72a1e7ccd15c45e44"
+    }
+  ]
+}
