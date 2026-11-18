@@ -1,48 +1,34 @@
 {
-  "release": "UI151",
-  "version": "1.34.51",
+  "release": "UI152",
+  "version": "1.34.52",
   "status": "local_candidate",
-  "base_commit": "6341a77e77a63027ccc9799dd5f599322869c931",
-  "runtime_manifest_sha256": "909b860af78410f1a6b7cb1b3c030d0360fa212df34bdf3116c31c1eeebbd8b6",
-  "parent_runtime_manifest_sha256": "1c01acf49af97356bb138ae65d0953d1ef7056e8c7fe83cb527ff6f061b7fea7",
-  "verified_runtime_resources": 2545,
-  "overlay_resources": 239,
+  "base_commit": "bda9c912e8600c600e8f8643b91a6b6c13008330",
+  "runtime_manifest_sha256": "6e79d684b8771ffe09055aef158e695ce0475430b477c26448b241983043d351",
+  "parent_runtime_manifest_sha256": "909b860af78410f1a6b7cb1b3c030d0360fa212df34bdf3116c31c1eeebbd8b6",
+  "verified_runtime_resources": 2555,
+  "overlay_resources": 221,
   "validation": {
-    "scope": {
-      "services": [
-        "wavelink-corcovado",
-        "wavelink-client-demo"
-      ],
-      "features": [
-        "HR process and inventory Excel exports with retained CSV",
-        "operational logbook workbook formatting",
-        "receipt and own-profile photo capture",
-        "bilingual and PDF workflow help"
-      ],
-      "database_schema_changed": false,
-      "provider_or_model_changed": false
-    },
-    "release_validation": {
-      "base": "GitHub main matches the UI150 local Git tree and runtime manifest",
-      "assembly": "A copy of the verified deployed parent and the bundled vendor-to-UI150 chain independently apply the UI151 overlay. Every member is verified and the resulting manifests and SHA-256 values match.",
-      "help": "Both app languages, current full reference and search catalogue, exact routed content, PDFs with retained originals and new appendix navigation, and the ten landing shortcuts.",
-      "camera": "Synthetic real-browser camera, permission denial, retake, cancellation, local file fallback, own-profile authorization, and explicit attachment/profile saves. No physical camera was used by automated validation.",
-      "excel": "Native workbook open with an independent Excel reader, date and numeric cells, leading-zero identifiers, literal text, selected scopes, equivalent accessible CSV rows, downloads and navigation with retained mobile controls.",
-      "source_review": "Only verified baseline resources and the reviewed feature/test additions are eligible. Temporary browser, camera and database fixtures are outside the bundle.",
-      "publication": "Local candidate. Production and physical-device validation are separate."
-    },
-    "development_evidence": {
-      "hr_excel": "24 downloads across six HR processes in English and Portuguese. A separate authenticated run compared 12 CSV/XLSX downloads and checked scopes, stale previews and the 3,000-record view limit with 3,005 additional expenses.",
-      "download_recheck": "The batch QA browser initially timed out at the eleventh rapid consecutive download in both languages. The same production files passed all six processes with a paced browser. Fresh, unpaced sessions select expenses first, download Excel immediately, then CSV, and compare each cell in English and Portuguese.",
-      "inventory": "Three final integration cases covered English, Portuguese and the desktop menu. An additional 27 inventory and logbook regression cases passed.",
-      "operational_logbooks": "Ten isolated file checks exercised the standard-library workbook generator, pre-existing report semantics, value typing, localized formatting and legacy PDF content."
-    },
+    "scope": "Company invitations, password setup by the invitee, scoped grants, directory and approval workflows",
+    "repository_base": "bda9c912e8600c600e8f8643b91a6b6c13008330",
+    "reconstruction": "Verified published application and independently reconstructed vendor chain, with matching file digests",
+    "local_validation": "Company fixtures and simulated email delivery",
+    "database_change": "An SQLite partial index speeds up pending membership alerts. Existing tables, columns, constraints and stored records are retained.",
+    "flows": [
+      "English and Brazilian Portuguese in Chromium over local TLS",
+      "Administrator invites an email before any department exists",
+      "Invitee chooses their password, verifies their mailbox and signs in after approval",
+      "Scoped pending alerts and revocable department access",
+      "Bilingual application help and retained PDF manuals"
+    ],
+    "not_verified": [
+      "Real SMTP provider acceptance, external mailbox delivery and live deployment of 1.34.52"
+    ],
     "aggregate_python": {
-      "tests": 40,
+      "tests": 134,
       "failures": 0,
       "errors": 0,
       "skipped": 0,
-      "passed": 40
+      "passed": 134
     }
   }
 }
