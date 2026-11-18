@@ -1,65 +1,96 @@
 {
-  "release": "UI157",
-  "version": "1.34.56",
+  "release": "UI158",
+  "version": "1.34.57",
   "status": "local_candidate",
-  "base_commit": "c89dc973b28583398baedeec69989b8bff2f294c",
-  "base_tree": "aabc8f87517f26bd3f66f818035769335c07154c",
-  "parent_runtime_manifest_sha256": "e5ca9e5bd4007ab34435c883c7566603b8ab1f04757e4d067b6ec9e026b19a03",
-  "runtime_manifest_sha256": "b0162f50872735f1bac4c28c11049d92b0f8ac020932668992c226fbdbd57240",
-  "verified_runtime_resources": 2587,
-  "overlay_resources": 196,
+  "base_commit": "b2c92e3b1fc49d9ae11a0bfb31e6022a0fbec260",
+  "base_tree": "a6071b1e03f3552e13700b3dd645f93a8cf18315",
+  "parent_runtime_manifest_sha256": "b0162f50872735f1bac4c28c11049d92b0f8ac020932668992c226fbdbd57240",
+  "runtime_manifest_sha256": "b917fad2f14847ae2ad197200a575bbeca5ced4faad84561e072eefb80fecf87",
+  "verified_runtime_resources": 2591,
+  "overlay_resources": 189,
   "validation": {
-    "profile_permissions": [
-      "hr.view_own",
-      "hr.people_manage",
-      "hr.documents_manage",
-      "hr.travel_manage",
-      "hr.shifts_manage",
-      "hr.timesheets_review",
-      "hr.expenses_review"
+    "unchanged_provider_modules": [
+      "app/openai_import_assist.py",
+      "app/ai_import.py",
+      "app/builder_ai_fields.py",
+      "app/hr_ai_fields.py",
+      "app/inventory_ai_fields.py",
+      "app/document_extract.py"
     ],
-    "independent_review": {
-      "bilingual_ui_cases_passed": 2,
-      "source": "Verified in an in-memory SQLite database and offline UI, using the complete UI156 base plus candidate changes. Checked exact permissions, preservation of project boundaries, invitation reissue and expiration, and the editor in Portuguese and English."
+    "hr_editor_assistance": {
+      "locales_tested": [
+        "pt-BR",
+        "en"
+      ],
+      "eligible_forms": [
+        "employee_documents",
+        "travel",
+        "expenses"
+      ],
+      "numbered_attachment_regression_checks": 23,
+      "numbered_form_regression_checks": 236,
+      "integrated_offline_discovery_suite_passed": true,
+      "additional_existing_suites": [
+        "UI144 AI fields",
+        "UI151 camera"
+      ],
+      "source": "Offline UI tests verified supported HR forms, unsupported files, shifts, timesheets and historical attachments. Checked keyboard focus for pasted text, one compatible file and multiple attachments, explicit selection and absence of automatic provider calls."
     },
-    "local_domain_tests": {
-      "hr_cases_passed": 3,
-      "it_regression_cases_passed": 4,
-      "combined_domain_cases_passed": 7,
-      "combined_department_editor_language_cases_passed": 2,
-      "source": "Scoped HR and existing IT profile tests on the reviewed UI156 base plus authored changes, repeated on the exact integrated runtime with temporary SQLite and network and subprocesses blocked. The integrated department editor passed separate English and Brazilian Portuguese checks."
+    "independent_import_review": {
+      "pasted_inventory_cases_passed": 3,
+      "ui142_checks_passed": 32,
+      "ui103_checks_passed": 35,
+      "other_regressions": [
+        "UI144 four builder adapters and HR forms",
+        "UI147",
+        "UI158 HR discovery"
+      ],
+      "integrated_new_suites_passed": 3,
+      "persisted_inventory_items": 12,
+      "visible_sample_rows": 8,
+      "source": "Deterministic DOM with simulated HTTP and OpenAI responses. Parsed a physical CSV and pasted text; manually edited a proposed column mapping; created, confirmed, reopened and verified eleven CSV items and one manually transcribed item using a temporary SQLite database. Checked idempotent retry, required confirmation after editing and denied reader access. Exercised real two-sheet XLSX extraction and switching, empty OCR output with a simulated OCR engine, and native packages."
+    },
+    "import_editor_discovery": {
+      "source": "New suite passed on the author's four final files. Covers all five editor imports and the shared import entry. Includes the no-table manual path, an empty worksheet, localized review labels, scope of editable suggestions and explicit actions. No live OpenAI calls."
     },
     "help_and_guides": {
-      "html_files_checked": 5,
+      "html_files_checked": 19,
+      "search_catalogues": 2,
+      "catalogue_articles_checked": 10,
+      "workflow_links_checked": 20,
+      "pdf_links_checked": 4,
+      "legacy_help_assertions": 4,
       "pt_BR": {
-        "pages": 220,
-        "original_pages_checked": 219,
-        "existing_annotations": 186,
-        "new_bookmarks": 1,
-        "tested_new_links": 2,
-        "sha256": "8f8e8edd52dd9ea0084c1b7665b7258fc7e6da587fbd2684675d4d13201e8642"
+        "pages": 222,
+        "original_pages_checked": 220,
+        "existing_annotations": 188,
+        "new_bookmarks": 5,
+        "tested_internal_links": 3,
+        "sha256": "9bb571495dec073b808b9085bc6e47e28bbf8fb9cd9d5645418297fd2d426bf6"
       },
       "en": {
-        "pages": 159,
-        "original_pages_checked": 158,
-        "existing_annotations": 256,
-        "new_bookmarks": 1,
-        "tested_new_links": 2,
-        "sha256": "63644170908866d508fbb13af56bedeb7adc7f5289d31fdb6a4405e5255a2a13"
+        "pages": 161,
+        "original_pages_checked": 159,
+        "existing_annotations": 258,
+        "new_bookmarks": 5,
+        "tested_internal_links": 3,
+        "sha256": "1da6cf2da1a8e5faf7c4be92db2a2412a49df2907679446c5adf00388503df4b"
       },
-      "source": "Rendered and visually reviewed both new pages. Verified prior pages, all 442 existing annotations, the original outlines and four new internal links. Checked the five HTML help files for navigation, anchors, wording and matching UI labels."
+      "source": "Rendered and visually reviewed four appended pages. Verified all prior pages, annotations and outline entries, new bookmarks and internal links."
     },
     "in_memory_reconstruction": "All packaged payloads decoded and matched to the composed runtime; every disk resource hashed.",
-    "authored_files": 18,
+    "authored_files": 30,
     "authored_overlaps": [],
     "changed_javascript_syntax_checked": [
       "app/static/app.js",
-      "app/static/browser_admin.js",
+      "app/static/document_import.js",
       "app/static/help_workspace.js",
-      "app/static/locale_pt_br.js",
-      "app/static/membership_workspace.js",
+      "app/static/hr_workspace.js",
+      "app/static/setup_builders.js",
       "app/static/sw.js",
-      "tests/test_department_form_locale_ui157.cjs"
+      "tests/test_hr_assist_discovery_ui158.cjs",
+      "tests/test_import_assist_entry_ui158.cjs",
+      "tests/test_import_pasted_inventory_ui158.cjs"
     ],
     "full_regression_suite_repeated": false
   }
