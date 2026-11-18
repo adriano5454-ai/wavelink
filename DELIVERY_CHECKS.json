@@ -5,27 +5,48 @@
   "base_commit": "025918eb6978cbee9c8485ecb3889090b64e3c46",
   "base_tree": "6b1e375818db7f04554126baca9d672da41e10b1",
   "parent_runtime_manifest_sha256": "db199df874b95d8ac1b25776baee30c122be6bc9b656992541c93fdf239c4977",
-  "runtime_manifest_sha256": "37415c0210a9430f537255904ad3cf2b4c47ff26e11c4b396c0bf18039170108",
-  "verified_runtime_resources": 2574,
-  "overlay_resources": 178,
+  "runtime_manifest_sha256": "a2f0a60cb2a47be6688868d5edd76fc3eaf1b3e48925e99dd46ce26286d69862",
+  "verified_runtime_resources": 2576,
+  "overlay_resources": 183,
   "validation": {
-    "passed": true,
-    "profile_document_entry_tests": 10,
-    "profile_document_entry_runtime": "Node with fictional users and documents",
-    "reconstructed_javascript": {
-      "tests/test_profile_document_entry_ui155.cjs": {
-        "tests": 10,
-        "pass": 10,
-        "fail": 0,
-        "cancelled": 0,
-        "skipped": 0,
-        "todo": 0
-      }
+    "authored_tests": {
+      "passed": true,
+      "profile_document_entry_tests": 10,
+      "profile_related_regression_suites": 8,
+      "company_join_footer_localized_ui_tests": 4,
+      "prior_personal_home_regression_checks": 125,
+      "attention_card_coverage": [
+        "Portuguese and English",
+        "singular and plural",
+        "positive, zero and unavailable totals",
+        "refresh error and activity navigation",
+        "opening the action queue and selected state"
+      ]
     },
-    "reconstructed_profile_and_hr_privacy": [
-      "tests/test_ui131_context_documents.py::test_profile_privacy_check_state_and_file_bytes",
-      "tests/test_ui131_context_documents.py::test_profile_acl_rechecked_after_hr_read",
-      "tests/test_hr_attachments_ui143.py::test_existing_document_and_expense_policies_and_training_types_are_preserved"
-    ]
+    "previous_profile_only_reconstruction": {
+      "runtime_manifest_sha256": "37415c0210a9430f537255904ad3cf2b4c47ff26e11c4b396c0bf18039170108",
+      "javascript": {
+        "tests/test_profile_document_entry_ui155.cjs": {
+          "tests": 10,
+          "pass": 10,
+          "fail": 0,
+          "cancelled": 0,
+          "skipped": 0,
+          "todo": 0
+        }
+      },
+      "python": [
+        "tests/test_ui131_context_documents.py::test_profile_privacy_check_state_and_file_bytes",
+        "tests/test_ui131_context_documents.py::test_profile_acl_rechecked_after_hr_read",
+        "tests/test_hr_attachments_ui143.py::test_existing_document_and_expense_policies_and_training_types_are_preserved"
+      ]
+    },
+    "combined_reconstruction": {
+      "method": "Standard-library decoding and SHA-256 verification of each composed resource",
+      "verified_resources": 2576,
+      "authored_files_matched_except_cache_keys": 10,
+      "changed_static_resources": 177,
+      "behavior_suites_repeated": false
+    }
   }
 }

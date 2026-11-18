@@ -1,6 +1,6 @@
 # Wavelink 1.34.54
 
-[Documentos no perfil](docs/WORKSPACE_UI155.md)
+[Documentos no perfil, pendências e acesso à empresa](docs/WORKSPACE_UI155.md)
 
 ---
 
