@@ -59,9 +59,10 @@ class NativeShowcase:
     async def portuguese(self, request):
         from .gate import PUBLIC_COOKIE
         from app.server import BASE
-        if not self.gate.valid(request.cookies.get(PUBLIC_COOKIE),'public-session'):
-            return RedirectResponse('/__demo/public?lang=pt',status_code=303)
         embedded = request.url.path.endswith('/fleet')
+        if (not self.gate.valid(request.cookies.get(PUBLIC_COOKIE), 'public-session') or
+                not embedded and (request.query_params.get('public_demo') != '1' or not request.query_params.get('browser_workspace'))):
+            return RedirectResponse('/__demo/public', status_code=303)
         page = (BASE/'static'/'pt-BR'/('fleet.html' if embedded else 'index.html')).read_text('utf-8')
         return HTMLResponse(page.replace('/static/workspace-locale.js','/__demo/native/locale-pt.js'),
             headers={'Cache-Control':'no-store', 'Content-Language':'pt-BR',
@@ -186,5 +187,10 @@ class NativeShowcase:
                 if message['type']=='http.response.start':
                     message = {**message,'headers':[(k,v) for k,v in message['headers'] if k.lower() not in (b'cache-control',b'set-cookie')]+[(b'cache-control',b'no-store')]}
                 await send(message)
-            return await self.core({**scope, 'root_path':'', 'headers':passed, 'scheme':'https'}, receive, private)
+            from app.localization import localized_send
+            from app.profile_language import ui_language
+            language = ui_language(headers.get('accept-language'), 'en')
+            context = {**scope.get('state', {}), 'ui_language':language}
+            return await self.core({**scope, 'root_path':'', 'headers':passed, 'scheme':'https', 'state':context},
+                                   receive, localized_send(private, path=path, locale=language))
         await result(scope, receive, send)

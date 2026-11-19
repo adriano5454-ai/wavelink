@@ -69,6 +69,7 @@ http {{
             proxy_pass http://127.0.0.1:{gate_port}/__demo/check;
             proxy_pass_request_body off;
             proxy_set_header Content-Length "";
+            proxy_set_header X-Demo-Original-URI $request_uri;
             proxy_set_header Host {authority};
         }}
         location = /__demo/check {{ return 404; }}

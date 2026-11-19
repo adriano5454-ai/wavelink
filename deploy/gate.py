@@ -345,7 +345,7 @@ h1 {{margin-top:0}}#error {{color:#9d2534;white-space:pre-wrap}}
 </script></body></html>'''
 
     @staticmethod
-    def public_bootstrap_page(auth: dict, destination='home', language='en') -> str:
+    def public_bootstrap_page(auth: dict, destination='home') -> str:
         """Atomically create a fresh guest workspace, never replace a saved one."""
         encoded = json.dumps(auth, separators=(',', ':')).replace(
             '<', '\\u003c').replace('>', '\\u003e').replace('&', '\\u0026')
@@ -403,8 +403,6 @@ h1 {{margin-top:0}}#error {{color:#9d2534;white-space:pre-wrap}}
 """.replace('__AUTH_JSON__', encoded)
         if destination in ('hr','it','team','workspaces','admin','profile','calendar','inventory','fleet','builders','members'):
             script = script.replace("&public_demo=1#home'", "&public_demo=1#" + destination + "'")
-        if language in ('pt','pt-BR'):
-            script = script.replace("location.replace('/?browser_workspace=", "location.replace('/__demo/native/pt?browser_workspace=")
         return (
             '<!doctype html><html lang="en"><head><meta charset="utf-8">'
             '<meta name="viewport" content="width=device-width,initial-scale=1">'
@@ -438,7 +436,7 @@ h1 {{margin-top:0}}#error {{color:#9d2534;white-space:pre-wrap}}
                 status_code=429, headers={**HEADERS, 'Retry-After': '300'})
         if self.showcase is not None:
             response = HTMLResponse(self.public_bootstrap_page(self.showcase.admission(),
-                request.query_params.get('area','home'), request.query_params.get('lang','en')), headers=BOOT_HEADERS)
+                request.query_params.get('area','home')), headers=BOOT_HEADERS)
             response.set_cookie(PUBLIC_COOKIE, self.token('public-session', TTL), max_age=TTL,
                                 path='/', secure=True, httponly=True, samesite='strict')
             return response
@@ -483,8 +481,7 @@ h1 {{margin-top:0}}#error {{color:#9d2534;white-space:pre-wrap}}
             area = mapped.get(area, area)
             if area not in ('hr','it','team','workspaces','admin','profile','calendar','inventory','fleet','builders','members'):
                 area = 'workspaces'
-            language = select_language(request.query_params.get('lang'), request.headers.get('accept-language',''))
-            return RedirectResponse('/__demo/public?area='+area+'&lang='+language, status_code=303, headers=HEADERS)
+            return RedirectResponse('/__demo/public?area='+area, status_code=303, headers=HEADERS)
         body, status, language = management_page(request.query_params,
             request.headers.get('accept-language', ''), active_guest, embedded=embedded)
         if embedded and request.query_params.get('layout') != 'linked':
@@ -563,18 +560,26 @@ h1 {{margin-top:0}}#error {{color:#9d2534;white-space:pre-wrap}}
         token = request.cookies.get(COOKIE)
         valid = self.valid(token, 'session')
         if self.public_entry and not valid:
+            from urllib.parse import parse_qs, urlsplit
+            original = urlsplit(request.headers.get('x-demo-original-uri', ''))
+            query = parse_qs(original.query)
+            if (self.showcase is not None and original.path == '/' and
+                    (query.get('public_demo') != ['1'] or not query.get('browser_workspace'))):
+                # A public admission cookie can outlast a visit on a shared computer.
+                return Response(status_code=401, headers=HEADERS)
             public_token = request.cookies.get(PUBLIC_COOKIE)
             # Older browsers may still carry a valid guest token in the original cookie.
             valid = self.valid(public_token, 'public-session') or self.valid(token, 'public-session')
         return Response(status_code=204 if valid else 401, headers=HEADERS)
 
     async def required(self, request: Request):
+        from urllib.parse import urlsplit
         original = request.headers.get('x-demo-original-uri', '/')
         method = request.headers.get('x-demo-original-method', 'GET')
         accept = request.headers.get('accept', '')
-        if (method == 'GET' and (original == '/' or original.startswith(('/fleet', '/admin')))
+        if (method == 'GET' and (urlsplit(original).path == '/' or original.startswith(('/fleet', '/admin')))
                 and 'text/html' in accept):
-            destination = '/__demo/public' if self.public_entry and original == '/' else '/__demo/login'
+            destination = '/__demo/public' if self.public_entry and urlsplit(original).path == '/' else '/__demo/login'
             return RedirectResponse(destination, status_code=303, headers=HEADERS)
         return JSONResponse({'error': 'Demo access has expired. Open /__demo/login.',
                              'demo_access_required': True}, 401, headers=HEADERS)
