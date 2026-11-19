@@ -5,7 +5,7 @@
   "base_commit": "c7b427c5c46f134b0c9dc41191dee58b7496d521",
   "base_tree": "c3daaf009ae66e32fa5503c8e84cd481b4304aa1",
   "parent_runtime_manifest_sha256": "e34d89daa1892bcabc497aa75d43cb4d6df59d084de5462bbd9f95237ec76453",
-  "runtime_manifest_sha256": "c67eac929a0a8f4af935b58d5554a533bb459f19152ad23c26b81c8016aa64f7",
+  "runtime_manifest_sha256": "a8676218bfc5cd49ac8d49db3a187e911ae0e761b3a8a2382fd9a79d84e48dc4",
   "verified_runtime_resources": 2611,
   "overlay_resources": 183,
   "normal_install_from_vendor_verified": true,
@@ -61,7 +61,7 @@
       "app/static/": 6545,
       "app/static/pt-BR/": 7999
     },
-    "normal_install_manifest_sha256": "c67eac929a0a8f4af935b58d5554a533bb459f19152ad23c26b81c8016aa64f7",
+    "normal_install_manifest_sha256": "a8676218bfc5cd49ac8d49db3a187e911ae0e761b3a8a2382fd9a79d84e48dc4",
     "public_admin_sections": 8,
     "sample_documents": {
       "pdf": 7,
@@ -113,6 +113,21 @@
       ],
       "python_tests": 66,
       "fixture_archive_sha256": "6a406262adb2fc593cdc6dbc620f591bb79eca28d93f3735f58b66a0a03aa702"
+    },
+    "corcovado_home_mood": {
+      "passed": true,
+      "runtime_variant": "workspace-ui162-2026-11-19-native-demo-corcovado-home-mood",
+      "viewports_px": [
+        390,
+        1360
+      ],
+      "choices": 5,
+      "company_browser_checks": [
+        "PT-BR daily check-in on Home and Team with two fictional employees",
+        "explicit sharing, same-day update from Team, persistence after reload",
+        "individual selections stay separate, removal clears the shared result"
+      ],
+      "existing_team_mood_checks": "passed in Portuguese and English"
     }
   }
 }
