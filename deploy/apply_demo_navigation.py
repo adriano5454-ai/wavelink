@@ -7,7 +7,7 @@ import sys
 
 
 PARENT = '81e795b55642b3cb3c84f901952f860614b273ed3bfe7655081986db6b9f1d40'
-VARIANT = 'workspace-ui162-2026-11-19-demo2'
+VARIANT = 'workspace-ui162-2026-11-19-demo3'
 STATIC = 'app/static/'
 
 
@@ -27,6 +27,12 @@ def bootstrap(source):
                      "        const demo = publicDemoManagement();\n        const target = demo && hash.startsWith('#demo/') ? PublicDemoWorkspaces.activeKey(hash) : (hash.startsWith('#access-requests')")
     source = replace(source, "            if(a.dataset.workspace===target)",
                      "            PublicDemoWorkspaces.navLink(a, demo);\n            if(a.dataset.workspace===target)")
+    for key in ('hr', 'it'):
+        # The UI's final permission pass runs after the sidebar is painted. Only
+        # the native destinations need the corresponding company permission.
+        selector = f"""'{key}.view_own':'[data-workspace="{key}"]'"""
+        native = f"""'{key}.view_own':'[data-workspace="{key}"][href="#{key}"]'"""
+        source = replace(source, selector, native)
     marker = "if(AJWorkspaceShell.handles(location.hash)){AJLogs.cleanup();"
     source = replace(source, marker,
                      "if(['#hr','#it'].includes(location.hash)&&publicDemoManagement()){location.replace('#demo/'+location.hash.slice(1));return;}"
@@ -86,7 +92,7 @@ def apply(root):
             if count != 1:
                 raise ValueError('Unexpected asset references in ' + name + ': ' + asset)
         if name == 'sw.js':
-            text = replace(text, 'ui162-20261119', 'ui162-20261119-demo2')
+            text = replace(text, 'ui162-20261119', 'ui162-20261119-demo3')
         outputs[STATIC + name] = text.encode()
     patch = json.loads(source('UI_PATCH.json'))
     patch.update(patch_id=VARIANT, parent_patch_id=manifest['variant'], parent_manifest_sha256=PARENT,
