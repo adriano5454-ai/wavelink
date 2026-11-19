@@ -5,7 +5,7 @@ import re
 import copy
 import pytest
 from starlette.testclient import TestClient
-from deploy.gate import Gate, COOKIE, public_entry_enabled
+from deploy.gate import Gate, COOKIE, CSRF_COOKIE, PUBLIC_COOKIE, public_entry_enabled
 
 ORIGIN = 'https://demo.example.test'
 PASSWORD = 'Fictional-example-gate-password-2026'
@@ -87,7 +87,7 @@ def test_public_session_cookie_no_credential_leak(pub):
     assert r.headers['cache-control']=='no-store'
     assert r.headers['referrer-policy']=='no-referrer'
     assert r.headers['x-frame-options']=='DENY'
-    cookie=c.cookies.get(COOKIE)
+    cookie=c.cookies.get(PUBLIC_COOKIE)
     assert gate.valid(cookie,'public-session')
     assert not gate.valid(cookie,'session')
     assert c.get('/__demo/check').status_code==204
@@ -101,6 +101,44 @@ def test_disabling_public_rejects_public_admission(pub):
     assert c.get('/__demo/check').status_code==401
     assert c.get('/__demo/public').status_code==404
 
+def test_opening_guest_preserves_staff_sign_in(pub):
+    gate, client, _ = pub
+    sign_in = client.get('/__demo/login')
+    csrf = re.search('name="csrf" value="([^"]+)"', sign_in.text).group(1)
+    assert client.cookies.get(CSRF_COOKIE) == csrf
+    assert client.get('/__demo/public').status_code == 200
+    assert client.cookies.get(CSRF_COOKIE) == csrf
+    response = client.post('/__demo/login', data={'csrf': csrf, 'password': PASSWORD},
+                           follow_redirects=False)
+    assert response.status_code == 303
+    staff_cookie = client.cookies.get(COOKIE)
+    assert gate.valid(staff_cookie, 'session')
+    assert client.get('/__demo/public').status_code == 200
+    assert client.cookies.get(COOKIE) == staff_cookie
+    gate.public_entry = False
+    assert client.get('/__demo/check').status_code == 204
+
+def test_existing_guest_cookie_expires_when_public_entry_is_disabled(pub):
+    gate, client, _ = pub
+    client.get('/__demo/public')
+    legacy = client.cookies.get(PUBLIC_COOKIE)
+    client.cookies.clear()
+    client.cookies.set(COOKIE, legacy, domain='demo.example.test', path='/')
+    assert client.get('/__demo/check').status_code == 204
+    gate.public_entry = False
+    assert client.get('/__demo/check').status_code == 401
+
+def test_logout_removes_guest_admission(pub):
+    _, client, _ = pub
+    client.get('/__demo/public')
+    logout = client.get('/__demo/logout')
+    csrf = re.search('name="csrf" value="([^"]+)"', logout.text).group(1)
+    response = client.post('/__demo/logout', data={'csrf': csrf},
+                           headers={'Origin': ORIGIN}, follow_redirects=False)
+    assert response.status_code == 303
+    assert client.cookies.get(PUBLIC_COOKIE) is None
+    assert client.get('/__demo/check').status_code == 401
+
 def test_normal_password_session_survives_disabling_public(pub):
     gate,c,_=pub
     r=c.get('/__demo/login')
@@ -113,7 +151,7 @@ def test_normal_password_session_survives_disabling_public(pub):
 def test_public_cookie_is_not_a_csrf_token(pub):
     _,c,_=pub
     c.get('/__demo/public')
-    token=c.cookies.get(COOKIE)
+    token=c.cookies.get(PUBLIC_COOKIE)
     c.cookies.set('__Host-wavelink-demo-csrf',token,domain='demo.example.test',path='/')
     assert c.post('/__demo/login',data={'csrf':token,'password':PASSWORD}).status_code==403
 
@@ -190,7 +228,7 @@ def test_same_auth_modes_do_not_cross_hosts(pub):
     gate,c,_=pub;c.get('/__demo/public')
     other=Gate('https://other.example.test',PASSWORD,b'g'*32,'guest.demo',GUEST_PASSWORD,
                 public_entry=True,clock=lambda:1000.)
-    assert not other.valid(c.cookies.get(COOKIE),'public-session')
+    assert not other.valid(c.cookies.get(PUBLIC_COOKIE),'public-session')
 
 def test_supervisor_guest_retains_existing_role(pub,monkeypatch):
     gate,c,_=pub;auth=copy.deepcopy(AUTH);auth['person']['role']='supervisor'

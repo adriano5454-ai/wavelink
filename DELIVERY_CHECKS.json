@@ -1,142 +1,48 @@
 {
-  "release": "UI159",
-  "version": "1.34.58",
-  "status": "local_candidate",
-  "base_commit": "d3142819d7a79c45aefdb226eb1cb4c910dbdae5",
-  "base_tree": "9b7e96bdc09447727a303ef0fa95be51722ff9cf",
-  "parent_runtime_manifest_sha256": "b917fad2f14847ae2ad197200a575bbeca5ced4faad84561e072eefb80fecf87",
-  "runtime_manifest_sha256": "870c3cb31e3aaca9870073deca00707117ee47dd8f09abb733e2c83f9649d99a",
-  "verified_runtime_resources": 2600,
-  "overlay_resources": 229,
+  "release": "UI161",
+  "version": "1.34.60",
+  "status": "validated_local_candidate",
+  "base_commit": "3894b88443b3ee927fe2b1ef8878ee26dfd7b30d",
+  "base_tree": "8a9217fde6ed6a050629803d3f60e27298c24a12",
+  "last_published_commit": "0a872a73a0f1849189a0c33fa5497dd1c04855f5",
+  "parent_runtime_manifest_sha256": "4f645c786e1f00da1b34361c79b55c02384b26b96fa25268c59e3a1c6fad411e",
+  "runtime_manifest_sha256": "e34d89daa1892bcabc497aa75d43cb4d6df59d084de5462bbd9f95237ec76453",
+  "verified_runtime_resources": 2607,
+  "overlay_resources": 174,
+  "normal_install_from_vendor_verified": true,
   "validation": {
-    "published_baseline": "Verified all 1,927 Git resources and 2,591 runtime resources against the published UI158 tree and manifests.",
-    "department_shifts": {
-      "locales_tested": [
-        "pt-BR",
-        "en"
-      ],
-      "simple_workspace_legacy_checks_passed": 10,
-      "source": "The department shift test and existing simple workspace checks passed with the reviewed shift module and targeted changes to mountSetup, simpleShell and simpleReadError."
-    },
-    "operational_panels": {
-      "bilingual_cases_passed": 8,
-      "integrated_read_only_cases_passed": 8,
-      "source": "Independent DOM tests on the provisional combined Brazilian Portuguese and English catalogue covered checklist and inventory panels, inventory categories, quality and safety panels, and a guest acknowledgement dialog for safety talks."
-    },
-    "handover_and_operations": {
-      "bilingual_cases_passed": 12,
-      "task_type_regression_cases": 9,
-      "integrated_bilingual_cases_passed": 12,
-      "updated_task_workflow_assertions_passed": 232,
-      "final_authored_bilingual_scenarios": 14,
-      "final_authored_suites_passed": 15,
-      "final_authored_numbered_checks": 747,
-      "additional_pass_only_suites": 2,
-      "final_integrated_suites_passed": 15,
-      "final_integrated_numbered_checks": 747,
-      "source": "The author repeated all fifteen operation suites in the final physical integration including manual checklist tasks, the updated bilingual assertion and nine task types. Both independent handover source edits were reconstructed before merging."
-    },
-    "people_and_departments": {
-      "locales_tested": [
-        "pt-BR",
-        "en"
-      ],
-      "hr_regression_checks": 236,
-      "it_regression_checks": 72,
-      "invitation_selector_cases": 12,
-      "department_form_locales": 2,
-      "integrated_people_focus_passed": true,
-      "integrated_invitation_selector_cases": 12,
-      "source": "Focused people and department UI tests passed in both languages, plus the HR, IT and invitation regression suites. The member entry uses the profile display name returned by the server."
-    },
-    "portuguese_help": {
-      "files_checked": 8,
-      "reference_guide_passages": 528,
-      "reference_guide_labels": 107,
-      "offline_localization_checks": 12,
-      "source": "Checked the five department/shift-related topics, catalogue, HTML examples and historical HTML guide. Reviewed anchors, internal links and numeric content. The two long English-language matches remaining in this specific guide scan were proper brand text. Existing English help and PDFs were preserved."
-    },
-    "shell_locale": {
-      "authored_scenarios_passed": 5,
-      "integrated_shell_scenarios_passed": 5,
-      "integrated_import_locale_checks_passed": 16,
-      "python_import_term_parity_cases_passed": 2,
-      "server_response_translation_cases_passed": 8,
-      "source": "The shell language suite covered public and signed-in Portuguese and English interfaces. The import suite checked locale behavior in the combined candidate. New server tests checked wording parity for the five internal document types."
-    },
-    "role_names": {
-      "bilingual_display_checks": 32,
-      "isolated_projection_cases": 7,
-      "repository_tests": [
-        "tests/test_role_source_ui159.cjs",
-        "tests/test_role_source_ui159.py"
-      ],
-      "source": "Both reusable repository tests were run on the actual files in a local test tree. They exercise the recognition projections and frontend display helpers. Stock account roles translate. Company-authored titles, including those that match a UI dictionary key, and older payloads without provenance keep their stored wording. SQLite tests confirmed zero profile record writes."
-    },
-    "legacy_browser_suite": "Playwright was unavailable for the earlier people browser suite. Bilingual DOM suites were verified on the integrated application.",
-    "in_memory_reconstruction": "All packaged payloads decoded and matched to the composed runtime; every disk resource hashed.",
-    "authored_files": 59,
-    "authored_overlaps": [
-      {
-        "name": "app/static/handovers.js",
-        "authors": [
-          "ui159-shifts",
-          "ui159-operations"
-        ]
-      },
-      {
-        "name": "app/static/simple_handovers.js",
-        "authors": [
-          "ui159-shifts",
-          "ui159-operations"
-        ]
-      }
+    "hosted_gateway": 85,
+    "profile_and_team_http": 8,
+    "inventory_mapping_terms": 2,
+    "browser_reload_existing_checks": 12,
+    "chromium_guest_workspace_checks": 18,
+    "node_suites": [
+      "test_browser_reload_ui102.js",
+      "test_team_moods_ui160.cjs",
+      "test_profile_photo_resize_ui160.cjs",
+      "test_import_assist_entry_ui158.cjs",
+      "test_import_pasted_inventory_ui158.cjs",
+      "test_hr_assist_discovery_ui158.cjs"
     ],
-    "changed_javascript_syntax_checked": [
-      "app/static/action_center_ui82.js",
-      "app/static/app.js",
-      "app/static/browser_admin.js",
-      "app/static/checklist_workspace.js",
-      "app/static/document_participation.js",
-      "app/static/experience_shell.js",
-      "app/static/fault_reports.js",
-      "app/static/fieldwork.js",
-      "app/static/general_tasks.js",
-      "app/static/handover_attachments.js",
-      "app/static/handover_continue.js",
-      "app/static/handover_draft_review.js",
-      "app/static/handover_history.js",
-      "app/static/handover_incoming.js",
-      "app/static/handover_preparation.js",
-      "app/static/handover_recipients.js",
-      "app/static/handover_schedule.js",
-      "app/static/handover_workspace.js",
-      "app/static/handovers.js",
-      "app/static/help_workspace.js",
-      "app/static/home_workspace.js",
-      "app/static/i18n_pt_br.js",
-      "app/static/inventory_workspace.js",
-      "app/static/locale_pt_br.js",
-      "app/static/maintenance_workspace.js",
-      "app/static/membership_entry.js",
-      "app/static/operations.js",
-      "app/static/password_recovery.js",
-      "app/static/qshe_reports.js",
-      "app/static/recognition_workspace.js",
-      "app/static/shift_workspace.js",
-      "app/static/simple_handovers.js",
-      "app/static/sw.js",
-      "app/static/task_checklists.js",
-      "app/static/task_scratch.js",
-      "app/static/task_workspace.js",
-      "tests/test_department_shifts_locale_ui159.cjs",
-      "tests/test_handover_operations_locale_ui159.cjs",
-      "tests/test_operational_panels_locale_ui159.cjs",
-      "tests/test_people_localization_ui159.cjs",
-      "tests/test_role_source_ui159.cjs",
-      "tests/test_shell_language_ui159.cjs",
-      "tests/test_ui136_work_flows.cjs"
-    ],
-    "full_regression_suite_repeated": false
+    "openai_provider_request": false,
+    "local_guest_home": {
+      "version": "1.34.60",
+      "passed": true,
+      "browser": "Chromium 157.0.8103.79",
+      "fixture": "Local fictional demo project within an isolated test environment",
+      "transport": "Browser over local TLS with an ASGI adapter for the real Gate and application",
+      "visits": 2,
+      "first_visitor_home": true,
+      "returning_visitor_home_in_new_tab": true,
+      "distinct_workspaces": true,
+      "me_http_status": [
+        200,
+        200
+      ],
+      "configured_fixture_role": "technician",
+      "interactive_login_forms": 0,
+      "javascript_errors": 0,
+      "render_test": false
+    }
   }
 }
