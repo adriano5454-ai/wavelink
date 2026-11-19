@@ -136,6 +136,32 @@ def test_preview_is_public_demo_only_and_has_no_write_route(demo):
     assert browser.get(BASE+'?area=personnel&record=lia').status_code == 404
 
 
+@pytest.mark.parametrize('lang,hr,it', [('en','Human resources (HR)','IT requests'),
+                                       ('pt','Recursos humanos (RH)','Solicitações de TI')])
+def test_guest_workspaces_have_shell_navigation_and_sample_details(demo, lang, hr, it):
+    gate, browser = demo
+    path = BASE + '/workspace'
+    def workspace(area, **params):
+        return browser.get(path, params={'lang': lang, 'area': area, **params})
+    home = workspace('hr')
+    assert home.status_code == 200 and '<h1>' + hr + '</h1>' in home.text
+    links = Page(home.text).links
+    assert links == ['#workspaces'] + ['#demo/' + area for area in
+                                      ('personnel', 'schedule', 'travel', 'time', 'expenses', 'alerts')]
+    assert '#demo/hr' in Page(workspace('schedule').text).links
+    queue = workspace('it')
+    assert '<h1>' + it + '</h1>' in queue.text
+    assert '#demo/it/ticket-018' in Page(queue.text).links
+    detail = workspace('it', record='ticket-018')
+    assert '#demo/it' in Page(detail.text).links
+    assert any(link.startswith(BASE + '/files/') for link in Page(detail.text).links)
+    admin = workspace('admin')
+    assert len([link for link in Page(admin.text).links if 'from=admin' in link]) >= 8
+    assert browser.post(path, data={'area':'it'}).status_code == 405
+    gate.public_entry = False
+    assert workspace('hr').status_code == 404
+
+
 @pytest.mark.parametrize('language', ['en', 'pt'])
 def test_admin_menu_and_review_queue(demo, language):
     _, browser = demo

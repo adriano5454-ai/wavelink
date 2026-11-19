@@ -11,6 +11,7 @@ from .demo_management_files import SAMPLE_FILES
 
 BASE = '/__demo/management'
 CSS = Path(__file__).with_name('demo_management.css').read_text(encoding='utf-8')
+HR_AREAS = ('personnel', 'schedule', 'travel', 'time', 'expenses', 'alerts')
 # Each link enters the existing workspace using the visitor's normal permissions.
 NATIVE = {
     'inventory': ('#inventory', 'Open inventory', 'Abrir inventário'),
@@ -68,7 +69,7 @@ def norm(value):
                    if not unicodedata.combining(char))
 
 
-def management_page(query, accept_language='', active_guest=False):
+def management_page(query, accept_language='', active_guest=False, embedded=False):
     language = select_language(query.get('lang'), accept_language)
     pt = language == 'pt'
     language_index = int(pt)
@@ -80,6 +81,7 @@ def management_page(query, accept_language='', active_guest=False):
     area_key = query.get('area', '')
     record_key = query.get('record', '')
     admin_index = area_key == 'admin' and not record_key
+    hr_index = area_key == 'hr' and not record_key
     from_admin = query.get('from') == 'admin'
     if from_admin and area_key and not admin_index:
         context['from'] = 'admin'
@@ -94,6 +96,14 @@ def management_page(query, accept_language='', active_guest=False):
         return escape(value[language_index])
 
     def url(section='', selection='', **extra):
+        if embedded:
+            if not section:
+                return '#workspaces'
+            path = '#demo/' + section + ('/' + selection if selection else '')
+            options = {key: value for key, value in extra.items() if key in ('q', 'from') and value}
+            if from_admin and section != 'admin':
+                options.setdefault('from', 'admin')
+            return path + ('?' + urlencode(options) if options else '')
         values = dict(context)
         if not section or section == 'admin':
             values.pop('from', None)
@@ -105,6 +115,8 @@ def management_page(query, accept_language='', active_guest=False):
         return BASE + '?' + urlencode(values)
 
     def native_url(fragment='#home'):
+        if embedded:
+            return fragment
         if not namespace:
             return '/__demo/public'
         return '/?' + urlencode({'browser_workspace': namespace, 'public_demo': '1'}) + fragment
@@ -114,6 +126,8 @@ def management_page(query, accept_language='', active_guest=False):
         return f'<a{attr} href="{escape(destination, quote=True)}">{label}</a>'
 
     title = tr('Management preview', 'Visão de gestão')
+    directory = tr('Workspaces', 'Áreas de trabalho') if embedded else title
+    hr_title = tr('Human resources (HR)', 'Recursos humanos (RH)')
     admin_title = tr('Administration', 'Administração')
     readonly = tr('Read-only · Fictional company', 'Somente leitura · Empresa fictícia')
     back = tr('Guest workspace', 'Área do visitante')
@@ -132,8 +146,17 @@ def management_page(query, accept_language='', active_guest=False):
         return '<li>' + anchor(destination, '<span>' + label + '</span>' + (f'<small>{note}</small>' if note else '')) + '</li>'
 
     status = 200
-    if admin_index:
-        body = '<nav class="path" aria-label="' + tr('Breadcrumb', 'Caminho de navegação') + '">' + anchor(url(), title) + '<span aria-current="page">' + admin_title + '</span></nav>'
+    if hr_index:
+        body = '<nav class="path" aria-label="' + tr('Breadcrumb', 'Caminho de navegação') + '">' + anchor(url(), directory) + '<span aria-current="page">' + hr_title + '</span></nav>'
+        body += hero(hr_title, tr('Explore the offshore crew’s documents, rotations, travel and claims.',
+                                  'Consulte documentos, escalas, viagens e despesas da equipe offshore.'))
+        body += '<section class="card"><h2>' + tr('HR sections', 'Áreas de RH') + '</h2><ul class="links">'
+        for key in HR_AREAS:
+            item = BY_AREA[key]
+            body += entry(url(key), tx(item.title), tx(item.description))
+        body += '</ul></section>'
+    elif admin_index:
+        body = '<nav class="path" aria-label="' + tr('Breadcrumb', 'Caminho de navegação') + '">' + anchor(url(), directory) + '<span aria-current="page">' + admin_title + '</span></nav>'
         body += hero(admin_title, tr('Explore the administration sections used by Maré Alta Surveys. Open a section to inspect its records and settings.',
                                      'Explore as seções de administração da Maré Alta Surveys. Abra uma seção para consultar os registros e as configurações.'))
         body += '<div class="details"><section class="card"><h2>' + tr('Admin sections', 'Seções administrativas') + '</h2><ul class="links">'
@@ -168,9 +191,11 @@ def management_page(query, accept_language='', active_guest=False):
             body += '</ul></section>'
         body += '</div>'
     else:
-        path = [anchor(url(), title)]
+        path = [anchor(url(), directory)]
         if from_admin:
             path.append(anchor(url('admin'), admin_title))
+        elif area.key in HR_AREAS:
+            path.append(anchor(url('hr'), hr_title))
         if record:
             path.extend([anchor(url(area.key), tx(area.title)), '<span aria-current="page">' + tx(record.title) + '</span>'])
         else:
@@ -217,7 +242,10 @@ def management_page(query, accept_language='', active_guest=False):
             body += '<section class="card"><h2>' + tr('Example records', 'Registros de exemplo') + '</h2>'
             body += ('<ul class="links">' + entries + '</ul>') if entries else '<p>' + tr('No matching records.', 'Nenhum registro encontrado.') + '</p>'
             body += '</section>'
-    full_title = admin_title if admin_index else tx(record.title) if record else tx(area.title) if area else title
+    if embedded:
+        style = CSS.replace(':root {', ':host { display: block; min-width: 0;')
+        return '<style>' + style + '</style><section lang="' + tr('en', 'pt-BR') + '">' + body + '</section>', status, 'pt-BR' if pt else 'en'
+    full_title = hr_title if hr_index else admin_title if admin_index else tx(record.title) if record else tx(area.title) if area else title
     document = ('<!doctype html><html lang="' + tr('en','pt-BR') + '"><head><meta charset="utf-8">'
                 '<meta name="viewport" content="width=device-width,initial-scale=1"><title>' + full_title
                 + ' · Wavelink</title><style>' + CSS + '</style></head><body>' + header

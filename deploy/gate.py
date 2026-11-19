@@ -465,7 +465,8 @@ h1 {{margin-top:0}}#error {{color:#9d2534;white-space:pre-wrap}}
             return Response(status_code=404, headers=HEADERS)
         active_guest = self.valid(request.cookies.get(PUBLIC_COOKIE), 'public-session')
         body, status, language = management_page(request.query_params,
-            request.headers.get('accept-language', ''), active_guest)
+            request.headers.get('accept-language', ''), active_guest,
+            embedded=request.url.path == '/__demo/management/workspace')
         return HTMLResponse(body, status_code=status, headers={
             **HEADERS, 'Content-Language': language, 'X-Frame-Options': 'DENY',
         })
@@ -563,6 +564,7 @@ h1 {{margin-top:0}}#error {{color:#9d2534;white-space:pre-wrap}}
         return Starlette(routes=[
             Route('/__demo/public', self.public, methods=['GET']),
             Route('/__demo/management', self.management, methods=['GET']),
+            Route('/__demo/management/workspace', self.management, methods=['GET']),
             Route('/__demo/management/files/{sample}', self.management_file, methods=['GET']),
             Route('/__demo/quick', self.quick, methods=['GET']),
             Route('/__demo/login', self.login, methods=['GET', 'POST']),
