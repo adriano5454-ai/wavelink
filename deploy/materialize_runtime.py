@@ -19,6 +19,8 @@ def main(destination):
         for stage in STAGES:
             sys.argv=['apply_ui'+str(stage)+'.py',str(dest)]
             runpy.run_path(str(ROOT/'deploy'/sys.argv[0]),run_name='__main__')
+        sys.argv=['apply_demo_navigation.py',str(dest)]
+        runpy.run_path(str(ROOT/'deploy'/sys.argv[0]),run_name='__main__')
         manifest=json.loads((dest/'RELEASE_FILES.json').read_bytes())
         for name,digest in manifest['files'].items():
             if hashlib.sha256((dest/name).read_bytes()).hexdigest()!=digest: raise ValueError('Resource mismatch: '+name)
