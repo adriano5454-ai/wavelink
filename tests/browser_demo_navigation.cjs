@@ -21,6 +21,10 @@ async function verify() {
       await page.locator('#home-hr').waitFor();
       const cards = page.locator('[data-home-workspace]');
       assert.deepEqual(await cards.evaluateAll(rows => rows.slice(0, 2).map(row => row.dataset.homeWorkspace)), ['hr', 'it']);
+      if (width > 600) {
+        await page.locator('#nav-hr[href="#demo/hr"]').waitFor();
+        await page.locator('#nav-it[href="#demo/it"]').waitFor();
+      }
       await page.locator('#home-hr').click();
       await page.locator('a[href="#demo/schedule"]').click();
       await page.locator('a[href="#demo/schedule/aurora"]').click();
