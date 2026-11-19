@@ -1,70 +1,79 @@
 'use strict';
-// Run against a public demo deployment with playwright-core and Chromium installed.
-// node tests/browser_demo_navigation.cjs https://demo.example.com
 const assert = require('node:assert/strict');
 const {chromium} = require('playwright-core');
 
-async function verifyHRLayout(page, expectedColumns) {
-  const sections = page.locator('[data-demo-workspace] .section-grid');
-  await sections.waitFor();
-  const layout = await sections.evaluate(grid => {
-    const links = [...grid.querySelectorAll('li > a')];
-    return {
-      grid: getComputedStyle(grid).display,
-      cards: links.length,
-      columns: new Set(links.map(link => Math.round(link.getBoundingClientRect().left))).size,
-      separated: links.every(link => {
-        const title = link.querySelector('.entry-title').getBoundingClientRect();
-        const note = link.querySelector('small').getBoundingClientRect();
-        return note.top > title.bottom && link.getBoundingClientRect().height >= 44;
-      }),
-      overflow: document.documentElement.scrollWidth > innerWidth + 1
-    };
-  });
-  assert.deepEqual(layout, {grid: 'grid', cards: 6, columns: expectedColumns,
-                            separated: true, overflow: false});
-}
-
-async function verify() {
-  const origin = new URL(process.argv[2]).origin;
-  const browser = await chromium.launch({executablePath: process.env.WAVELINK_TEST_CHROMIUM});
+async function verify(origin, options = {}) {
+  const browser = await chromium.launch(options.launch || {executablePath:process.env.WAVELINK_TEST_CHROMIUM});
   try {
-    for (const width of [1360, 390]) {
-      const context = await browser.newContext({viewport: {width, height: 850}});
-      const page = await context.newPage();
-      await page.goto(origin + '/__demo/public');
-      const home = page.locator('.ux-workspace-shortcuts');
-      await home.locator('a[href="#demo/hr"]').waitFor();
-      await home.locator('a[href="#demo/it"]').waitFor();
-      const workspace = new URL(page.url());
-      workspace.hash = 'workspaces';
-      await page.goto(workspace.href);
-      await page.locator('#home-hr').waitFor();
-      const cards = page.locator('[data-home-workspace]');
-      assert.deepEqual(await cards.evaluateAll(rows => rows.slice(0, 2).map(row => row.dataset.homeWorkspace)), ['hr', 'it']);
-      if (width > 600) {
-        await page.locator('#nav-hr[href="#demo/hr"]').waitFor();
-        await page.locator('#nav-it[href="#demo/it"]').waitFor();
-      }
-      await page.locator('#home-hr').click();
-      await verifyHRLayout(page, width > 600 ? 3 : 1);
-      await page.locator('a[href="#demo/schedule"]').click();
-      await page.locator('a[href="#demo/schedule/aurora"]').click();
-      await page.locator('[data-demo-request]').getByRole('heading', {level: 1, name: /Aurora/}).waitFor();
-      await page.locator('[data-demo-request] a[href="#workspaces"]').click();
-      await page.locator('#home-it').click();
-      await page.locator('a[href="#demo/it/ticket-018"]').click();
-      await page.locator('[data-demo-request] a[href^="/__demo/management/files/"]').waitFor();
-      const recordLayout = await page.locator('[data-demo-workspace] .details').evaluate(div => getComputedStyle(div).display);
-      assert.equal(recordLayout, 'grid');
-      await page.reload();
-      await page.locator('[data-demo-request]').getByRole('heading', {level: 1, name: /018/}).waitFor();
-      assert.equal(new URL(page.url()).search, workspace.search);
-      await context.close();
+    for (const width of [1360,390]) {
+      const ctx = await browser.newContext({viewport:{width,height:900},ignoreHTTPSErrors:!!options.local});
+      const page = await ctx.newPage();
+      const errors = [];
+      page.on('pageerror', e => errors.push(e.stack || e.message));
+      page.setDefaultTimeout(16000);
+      try {
+        await page.goto(origin+'/__demo/public');
+        const home=page.locator('#personal-home');
+        await home.locator('#wl-mood-editor:visible').waitFor();
+        const faces=home.locator('.wl-mood-face');
+        assert.ok(await faces.count()>=5);
+        assert.equal(await home.locator('input[name="wl-team-mood"]').count(),5);
+        await home.getByText('Happy',{exact:true}).first().click();
+        await home.locator('#wl-mood-share').click();
+        await home.locator('#wl-mood-remove:visible').waitFor();
+        const url=new URL(page.url());
+        async function open(hash) { const target=new URL(url); target.hash=hash; await page.goto(target.href); }
+        await open('team');
+        await page.locator('#wl-team-moods #wl-mood-remove:visible').waitFor();
+        assert.equal(await page.locator('input[value="happy"]').isChecked(),true);
+        await page.reload();
+        await page.locator('#wl-team-moods #wl-mood-remove:visible').waitFor();
+        await page.locator('#wl-mood-remove').click();
+        await page.getByText('Your mood was removed.').waitFor();
+        await open('workspaces');
+        await page.locator('#home-hr').waitFor();
+        const keys=await page.locator('[data-home-workspace]').evaluateAll(nodes=>nodes.map(n=>n.dataset.homeWorkspace));
+        const expected=['hr','it','handovers','tasks','checklists','logs','calendar','inventory','maintenance','certificates','fleet','shipments','receiving','faults','toolbox','qshe','originals','builders','members','admin'];
+        assert.deepEqual([...keys].sort(),expected.sort());
+        await page.locator('#home-hr').click();
+        const hr=page.locator('#hr-workspace');
+        await hr.locator('[data-hr-tab="calendar"]').waitFor({state:'attached'});
+        if(width>600) await hr.locator('[data-hr-tab="calendar"]:visible').click();
+        else await hr.locator('#hr-section-select').selectOption('calendar');
+        await hr.getByText('Offshore Survey',{exact:true}).first().waitFor({state:'attached'});
+        assert.ok((await hr.innerText()).includes('MV Aurora'));
+        if(options.proof)await page.screenshot({path:options.proof+'/native-hr-'+width+'.jpg',type:'jpeg'});
+        if(width>600)await hr.locator('[data-hr-tab="people"]:visible').click();
+        else await hr.locator('#hr-section-select').selectOption('people');
+        await hr.getByText('Lia Costa',{exact:false}).first().waitFor({state:'attached'});
+        await open('it');
+        const it=page.locator('#it-workspace');
+        await it.locator('[data-it-view="queue"]').click();
+        await it.locator('.it-request-link').filter({hasText:'Survey workstation'}).click();
+        await it.getByText('PORTA-REDE-EXEMPLO.pdf',{exact:false}).first().waitFor({state:'attached'});
+        await open('admin');
+        const sections=page.locator('.admin-hub-card[href^="#admin/"]');
+        await sections.first().waitFor();
+        assert.equal(await sections.count(),8);
+        for(const key of ['departments','records','imports','company','templates','logbooks','fleet','users']){
+          await page.locator('.admin-hub-card[href="#admin/'+key+'"]').click();
+          await page.waitForFunction(k=>location.hash==='#admin/'+k,key);
+          await open('admin');
+          await sections.first().waitFor();
+        }
+        await open('home');
+        await home.locator('#wl-mood-editor:visible').waitFor();
+        assert.equal(await home.locator('#wl-mood-remove').isVisible(),false);
+        if(options.proof)await page.screenshot({path:options.proof+'/native-home-'+width+'.jpg',type:'jpeg'});
+        assert.equal(await page.evaluate(()=>document.documentElement.scrollWidth>innerWidth+1),false);
+        assert.deepEqual(errors,[]);
+        console.log(width+'px: 20 native workspaces, 8 administrative sections, HR calendar and directory, IT case, and private mood check-in');
+      } catch(e) {
+        console.error('Current route',new URL(page.url()).hash,'UI', (await page.locator('body').innerText()).slice(-2500),'errors',errors);
+        throw e;
+      } finally { await ctx.close(); }
     }
-  } finally {
-    await browser.close();
-  }
+  } finally {await browser.close();}
 }
-if (require.main === module) verify().catch(error => { console.error(error); process.exitCode = 1; });
-module.exports = {verifyHRLayout};
+if(require.main===module)verify(new URL(process.argv[2]).origin).catch(e=>{console.error(e);process.exitCode=1;});
+module.exports={verify};
