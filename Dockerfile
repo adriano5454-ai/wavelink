@@ -84,6 +84,7 @@ RUN python extract_source.py vendor/source_parts.json /opt/wavelink/app \
     && rm vendor/source.part* vendor/source_parts.json extract_source.py apply_ui93.py apply_ui94.py apply_ui95.py apply_ui96.py apply_ui97.py apply_ui99.py apply_ui100.py apply_ui101.py apply_ui102.py apply_ui103.py apply_ui104.py apply_ui105.py apply_ui106.py apply_ui107.py apply_ui108.py apply_ui109.py apply_ui110.py apply_ui111.py apply_ui112.py apply_ui113.py apply_ui114.py apply_ui115.py apply_ui116.py apply_ui117.py apply_ui118.py apply_ui119.py apply_ui120.py apply_ui121.py apply_ui122.py apply_ui123.py apply_ui124.py apply_ui125.py apply_ui126.py apply_ui127.py apply_ui128.py apply_ui129.py apply_ui130.py apply_ui131.py apply_ui132.py apply_ui133.py apply_ui134.py apply_ui135.py apply_ui136.py apply_ui137.py apply_ui138.py apply_ui139.py apply_ui140.py apply_ui141.py apply_ui142.py apply_ui143.py apply_ui144.py apply_ui145.py apply_ui146.py apply_ui147.py apply_ui148.py apply_ui149.py apply_ui150.py apply_ui151.py apply_ui152.py apply_ui153.py apply_ui154.py apply_ui155.py apply_ui156.py apply_ui157.py apply_ui158.py apply_ui159.py apply_ui160.py apply_ui161.py apply_ui162.py
 COPY vendor/FICTIONAL_DEMO.ajproject ./vendor/FICTIONAL_DEMO.ajproject
 COPY deploy ./deploy
+RUN python deploy/apply_demo_navigation.py /opt/wavelink/app
 COPY ops ./ops
 # Runtime starts with mount ownership setup and immediately drops to UID 10001.
 # Never install/open the Windows Admin or run its launcher in the container.
