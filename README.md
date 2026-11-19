@@ -1,3 +1,9 @@
+# Wavelink 1.34.60
+
+[Entrada automática na demonstração pública](docs/WORKSPACE_UI161.md)
+
+---
+
 # Wavelink 1.34.59
 
 [Humor do dia no feed da equipe e fotos de perfil no celular](docs/WORKSPACE_UI160.md)

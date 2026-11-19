@@ -1,69 +1,48 @@
 {
-  "release": "UI160",
-  "version": "1.34.59",
-  "status": "local_candidate",
-  "base_commit": "0a872a73a0f1849189a0c33fa5497dd1c04855f5",
-  "base_tree": "d8020d351b5d24c0c25cad5832cdc0be5d4d0abe",
-  "parent_runtime_manifest_sha256": "870c3cb31e3aaca9870073deca00707117ee47dd8f09abb733e2c83f9649d99a",
-  "runtime_manifest_sha256": "4f645c786e1f00da1b34361c79b55c02384b26b96fa25268c59e3a1c6fad411e",
-  "verified_runtime_resources": 2606,
-  "overlay_resources": 200,
+  "release": "UI161",
+  "version": "1.34.60",
+  "status": "validated_local_candidate",
+  "base_commit": "3894b88443b3ee927fe2b1ef8878ee26dfd7b30d",
+  "base_tree": "8a9217fde6ed6a050629803d3f60e27298c24a12",
+  "last_published_commit": "0a872a73a0f1849189a0c33fa5497dd1c04855f5",
+  "parent_runtime_manifest_sha256": "4f645c786e1f00da1b34361c79b55c02384b26b96fa25268c59e3a1c6fad411e",
+  "runtime_manifest_sha256": "e34d89daa1892bcabc497aa75d43cb4d6df59d084de5462bbd9f95237ec76453",
+  "verified_runtime_resources": 2607,
+  "overlay_resources": 174,
+  "normal_install_from_vendor_verified": true,
   "validation": {
-    "reviewed_base": {
-      "repo_files": 1932,
-      "runtime_files": 2600
-    },
-    "backend_regression": {
-      "passed": 54
-    },
-    "team_moods": {
-      "new_backend_tests": 7,
-      "interface_locales": [
-        "pt-BR",
-        "en"
-      ],
-      "tested": [
-        "Five mood choices",
-        "Replace and remove",
-        "Day changed during submission returns 409",
-        "Existing two-account deployment upgrade"
-      ]
-    },
-    "profile_photo": {
-      "tests": [
-        "Image resizing and photo selection",
-        "UI131 and UI138 profile session handling"
-      ],
-      "two_account_http_fixture": {
-        "photo_input_bytes": 9912029,
-        "photo_upload_bytes": 408308,
-        "pixel_width": 768,
-        "pixel_height": 1024,
-        "corners_and_download_bytes_checked": true
-      },
-      "formerly_rejected_jpeg_bytes": 465110
-    },
-    "user_help": {
-      "incremental_guides": 2,
-      "topic_locales": [
-        "pt-BR",
-        "en"
-      ]
-    },
-    "in_memory_reconstruction": "All packaged payloads decoded and matched to the composed runtime; every disk resource hashed.",
-    "authored_files": 23,
-    "authored_overlaps": [],
-    "changed_javascript_syntax_checked": [
-      "app/static/app.js",
-      "app/static/help_workspace.js",
-      "app/static/locale_pt_br.js",
-      "app/static/photo_capture.js",
-      "app/static/recognition_workspace.js",
-      "app/static/save_status.js",
-      "app/static/sw.js",
-      "tests/test_profile_photo_resize_ui160.cjs",
-      "tests/test_team_moods_ui160.cjs"
+    "hosted_gateway": 85,
+    "profile_and_team_http": 8,
+    "inventory_mapping_terms": 2,
+    "browser_reload_existing_checks": 12,
+    "chromium_guest_workspace_checks": 18,
+    "node_suites": [
+      "test_browser_reload_ui102.js",
+      "test_team_moods_ui160.cjs",
+      "test_profile_photo_resize_ui160.cjs",
+      "test_import_assist_entry_ui158.cjs",
+      "test_import_pasted_inventory_ui158.cjs",
+      "test_hr_assist_discovery_ui158.cjs"
     ],
-    "full_regression_suite_repeated": false
+    "openai_provider_request": false,
+    "local_guest_home": {
+      "version": "1.34.60",
+      "passed": true,
+      "browser": "Chromium 157.0.8103.79",
+      "fixture": "Local fictional demo project within an isolated test environment",
+      "transport": "Browser over local TLS with an ASGI adapter for the real Gate and application",
+      "visits": 2,
+      "first_visitor_home": true,
+      "returning_visitor_home_in_new_tab": true,
+      "distinct_workspaces": true,
+      "me_http_status": [
+        200,
+        200
+      ],
+      "configured_fixture_role": "technician",
+      "interactive_login_forms": 0,
+      "javascript_errors": 0,
+      "render_test": false
+    }
   }
 }

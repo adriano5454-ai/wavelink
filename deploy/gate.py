@@ -33,6 +33,7 @@ from starlette.responses import HTMLResponse, JSONResponse, RedirectResponse, Re
 from starlette.routing import Route
 
 COOKIE = '__Host-wavelink-demo'
+PUBLIC_COOKIE = '__Host-wavelink-demo-public'
 CSRF_COOKIE = '__Host-wavelink-demo-csrf'
 TTL = 8 * 3600
 HEADERS = {
@@ -348,9 +349,9 @@ h1 {{margin-top:0}}#error {{color:#9d2534;white-space:pre-wrap}}
 (() => {
     const auth = __AUTH_JSON__;
     const error = document.getElementById('error');
-    const fail = message => { error.textContent = message; };
-    if (!window.indexedDB) {
-        fail('Browser storage is unavailable. Use a browser with IndexedDB enabled.');
+    const fail = text => { error.textContent = text; };
+    if (!window.indexedDB || typeof window.crypto?.randomUUID !== 'function') {
+        fail('Opening this demo requires JavaScript and browser storage. Open the link in a regular browser and try again.');
         return;
     }
     const request = indexedDB.open('pxgeo-dive-check-1', 1);
@@ -358,69 +359,41 @@ h1 {{margin-top:0}}#error {{color:#9d2534;white-space:pre-wrap}}
         const db = request.result;
         if (!db.objectStoreNames.contains('state')) db.createObjectStore('state');
     };
-    request.onerror = () => fail('The browser workspace could not be opened. Nothing was cleared.');
-    request.onblocked = () => fail('Another tab is holding this workspace open. '
-        + 'Preserve its work and use a private/incognito window for the demo.');
+    request.onerror = () => fail('The demo could not open browser storage. Please try again.');
+    request.onblocked = () => fail('Close the other demo tab and try again.');
     request.onsuccess = () => {
         const db = request.result;
-        let tx;
-        try { tx = db.transaction('state', 'readwrite'); }
-        catch (_) {
-            db.close();
-            fail('The saved workspace could not be read. Nothing was replaced.');
-            return;
-        }
-        const store = tx.objectStore('state');
-        const mainReq = store.get('main');
-        const leaseReq = store.get('lease');
-        let saved, lease, reads = 0, outcome = '';
-        let message = '';
-        const finishRead = () => {
-            if (++reads !== 2) return;
-            if (saved !== undefined && saved !== null) {
-                // Preserve every byte/field, including unknown future draft types.
-                if (typeof saved?.auth?.token === 'string' && saved.auth.token
-                        && saved?.auth?.person?.user_id
-                        && saved.hub_id === auth.hub_id) {
-                    outcome = 'existing';
-                } else {
-                    outcome = 'blocked';
-                    message = 'This browser already has a saved Wavelink workspace. '
-                        + 'Nothing has been replaced or cleared. Use normal staff sign-in '
-                        + 'or open the public demo in a private/incognito window.';
-                }
-                return;
-            }
-            if (lease && Number(lease.expires) > Date.now()) {
-                outcome = 'blocked';
-                message = 'Another Wavelink tab is using this browser workspace. '
-                    + 'Preserve its work and use a private/incognito window for the demo.';
-                return;
-            }
-            const next = {
-                hub_id:auth.hub_id, info:null, auth:auth,
-                device_id:auth.person.device_id || crypto.randomUUID(), template:null,
-                records:[], snapshots:{}, queue:[], drafts:{}, formDraft:null,
-                lastLogin:auth.person.login_id || '', lastName:auth.person.name || ''
+        function start(attempt) {
+            const id = window.crypto.randomUUID();
+            const prefix = 'window:' + id + ':';
+            let tx;
+            try { tx = db.transaction('state', 'readwrite'); }
+            catch (_) { db.close(); fail('Browser storage is unavailable. Please try again.'); return; }
+            const store = tx.objectStore('state');
+            const keys = [prefix + 'main', prefix + 'lease', 'browser-window-meta:' + id];
+            const checks = keys.map(key => store.getKey(key));
+            let collision = false;
+            // IndexedDB completes requests from a transaction in submission order.
+            checks[checks.length - 1].onsuccess = () => {
+                collision = checks.some(check => check.result !== undefined);
+                if (collision) return;
+                store.add({
+                    hub_id: auth.hub_id, info: null, auth: auth,
+                    publicDemoUserId: auth.person.user_id,
+                    device_id: auth.person.device_id || window.crypto.randomUUID(), template: null,
+                    records: [], snapshots: {}, queue: [], drafts: {}, formDraft: null,
+                    lastLogin: auth.person.login_id || '', lastName: auth.person.name || ''
+                }, prefix + 'main');
             };
-            // This put and both reads share one readwrite transaction. A second
-            // simultaneous visit cannot pass an old empty check then replace work.
-            store.put(next, 'main');
-            outcome = 'new';
-        };
-        mainReq.onsuccess = () => { saved = mainReq.result; finishRead(); };
-        leaseReq.onsuccess = () => { lease = leaseReq.result; finishRead(); };
-        tx.oncomplete = () => {
-            db.close();
-            if (outcome === 'new' || outcome === 'existing') location.replace('/#home');
-            else fail(message || 'The workspace could not be prepared. Nothing was replaced.');
-        };
-        tx.onabort = () => {
-            db.close();
-            fail('The workspace could not be saved. No guest session was installed. '
-                + 'Check browser storage and try again.');
-        };
-        tx.onerror = () => { /* Abort handler reports the uncommitted transaction. */ };
+            tx.onabort = () => { db.close(); fail('The demo could not save this visit. Please try again.'); };
+            tx.oncomplete = () => {
+                if (collision && attempt < 3) { start(attempt + 1); return; }
+                db.close();
+                if (collision) { fail('The demo could not open a separate tab. Please try again.'); return; }
+                location.replace('/?browser_workspace=' + encodeURIComponent(id) + '&public_demo=1#home');
+            };
+        }
+        start(0);
     };
 })();
 """.replace('__AUTH_JSON__', encoded)
@@ -480,10 +453,8 @@ h1 {{margin-top:0}}#error {{color:#9d2534;white-space:pre-wrap}}
             self.public_bootstrap_page(auth), headers=BOOT_HEADERS)
         # Public-only admission is rejected after public mode is switched OFF.
         # Existing private/staff admission still uses the original "session" kind.
-        response.set_cookie(COOKIE, self.token('public-session', TTL), max_age=TTL,
+        response.set_cookie(PUBLIC_COOKIE, self.token('public-session', TTL), max_age=TTL,
                             path='/', secure=True, httponly=True, samesite='strict')
-        response.delete_cookie(CSRF_COOKIE, path='/', secure=True,
-                               httponly=True, samesite='strict')
         return response
 
     async def quick(self, request: Request):
@@ -530,8 +501,11 @@ h1 {{margin-top:0}}#error {{color:#9d2534;white-space:pre-wrap}}
 
     async def check(self, request: Request):
         token = request.cookies.get(COOKIE)
-        valid = (self.valid(token, 'session')
-                 or (self.public_entry and self.valid(token, 'public-session')))
+        valid = self.valid(token, 'session')
+        if self.public_entry and not valid:
+            public_token = request.cookies.get(PUBLIC_COOKIE)
+            # Older browsers may still carry a valid guest token in the original cookie.
+            valid = self.valid(public_token, 'public-session') or self.valid(token, 'public-session')
         return Response(status_code=204 if valid else 401, headers=HEADERS)
 
     async def required(self, request: Request):
@@ -555,6 +529,7 @@ h1 {{margin-top:0}}#error {{color:#9d2534;white-space:pre-wrap}}
             return response
         response = RedirectResponse('/__demo/login', status_code=303, headers=HEADERS)
         response.delete_cookie(COOKIE, path='/', secure=True, httponly=True, samesite='strict')
+        response.delete_cookie(PUBLIC_COOKIE, path='/', secure=True, httponly=True, samesite='strict')
         response.delete_cookie(CSRF_COOKIE, path='/', secure=True, httponly=True, samesite='strict')
         return response
 
