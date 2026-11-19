@@ -1,48 +1,71 @@
 {
-  "release": "UI161",
-  "version": "1.34.60",
+  "release": "UI162",
+  "version": "1.34.61",
   "status": "validated_local_candidate",
-  "base_commit": "3894b88443b3ee927fe2b1ef8878ee26dfd7b30d",
-  "base_tree": "8a9217fde6ed6a050629803d3f60e27298c24a12",
-  "last_published_commit": "0a872a73a0f1849189a0c33fa5497dd1c04855f5",
-  "parent_runtime_manifest_sha256": "4f645c786e1f00da1b34361c79b55c02384b26b96fa25268c59e3a1c6fad411e",
-  "runtime_manifest_sha256": "e34d89daa1892bcabc497aa75d43cb4d6df59d084de5462bbd9f95237ec76453",
-  "verified_runtime_resources": 2607,
-  "overlay_resources": 174,
+  "base_commit": "c7b427c5c46f134b0c9dc41191dee58b7496d521",
+  "base_tree": "c3daaf009ae66e32fa5503c8e84cd481b4304aa1",
+  "parent_runtime_manifest_sha256": "e34d89daa1892bcabc497aa75d43cb4d6df59d084de5462bbd9f95237ec76453",
+  "runtime_manifest_sha256": "81e795b55642b3cb3c84f901952f860614b273ed3bfe7655081986db6b9f1d40",
+  "verified_runtime_resources": 2611,
+  "overlay_resources": 183,
   "normal_install_from_vendor_verified": true,
   "validation": {
-    "hosted_gateway": 85,
-    "profile_and_team_http": 8,
-    "inventory_mapping_terms": 2,
-    "browser_reload_existing_checks": 12,
-    "chromium_guest_workspace_checks": 18,
-    "node_suites": [
-      "test_browser_reload_ui102.js",
-      "test_team_moods_ui160.cjs",
-      "test_profile_photo_resize_ui160.cjs",
-      "test_import_assist_entry_ui158.cjs",
-      "test_import_pasted_inventory_ui158.cjs",
-      "test_hr_assist_discovery_ui158.cjs"
-    ],
-    "openai_provider_request": false,
-    "local_guest_home": {
-      "version": "1.34.60",
+    "passes": {
+      "inventory_service_and_exports": 67,
+      "gateway_and_management_preview": 98,
+      "installed_inventory_navigation_ai_and_exports": 5,
+      "installed_inventory_catalogue": 2
+    },
+    "demo_browser": {
+      "browser": "157.0.8103.79",
       "passed": true,
-      "browser": "Chromium 157.0.8103.79",
-      "fixture": "Local fictional demo project within an isolated test environment",
-      "transport": "Browser over local TLS with an ASGI adapter for the real Gate and application",
-      "visits": 2,
-      "first_visitor_home": true,
-      "returning_visitor_home_in_new_tab": true,
-      "distinct_workspaces": true,
-      "me_http_status": [
-        200,
-        200
+      "results": [
+        {
+          "kind": "mobile",
+          "width": 390,
+          "height": 844,
+          "lang": "pt-BR",
+          "employee_travel": true,
+          "it_ticket": true,
+          "linked_inventory_depth": 3,
+          "real_inventory_in_same_tab": true,
+          "no_horizontal_overflow": true
+        },
+        {
+          "kind": "desktop",
+          "width": 1360,
+          "height": 850,
+          "lang": "en",
+          "employee_travel": true,
+          "it_ticket": true,
+          "linked_inventory_depth": 3,
+          "real_inventory_in_same_tab": true,
+          "no_horizontal_overflow": true
+        }
+      ]
+    },
+    "inventory_devices": {
+      "locales": [
+        "en",
+        "pt-BR"
       ],
-      "configured_fixture_role": "technician",
-      "interactive_login_forms": 0,
-      "javascript_errors": 0,
-      "render_test": false
+      "widths": [
+        1440,
+        390,
+        320
+      ]
+    },
+    "installed_asset_keys": 177,
+    "checked_asset_references": 344,
+    "inventory_help_search_characters": {
+      "app/static/": 6545,
+      "app/static/pt-BR/": 7999
+    },
+    "normal_install_manifest_sha256": "81e795b55642b3cb3c84f901952f860614b273ed3bfe7655081986db6b9f1d40",
+    "public_admin_sections": 8,
+    "sample_documents": {
+      "pdf": 7,
+      "xlsx": 1
     }
   }
 }

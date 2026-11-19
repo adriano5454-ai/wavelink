@@ -1,0 +1,56 @@
+:root {
+    color-scheme: light;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    color: #173846;
+    background: #f4f8f9;
+    --ink: #153f50;
+    --teal: #006e73;
+    --line: #d2e1e5;
+}
+* { box-sizing: border-box; }
+body { margin: 0; }
+a { color: var(--teal); text-underline-offset: .17em; }
+a:focus-visible, button:focus-visible, input:focus-visible { outline: 3px solid #a35b00; outline-offset: 3px; }
+header { background: #123340; color: white; }
+.bar, main { margin: auto; width: min(73rem, 100%); padding: 0 clamp(1rem, 3.5vw, 3rem); }
+.bar { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: .4rem 1.5rem; min-height: 4.2rem; padding-block: .55rem; }
+.brand { color: white; text-decoration: none; font-size: 1.3rem; font-weight: 750; }
+.bar nav, .actions, .path { display: flex; flex-wrap: wrap; align-items: center; gap: .45rem 1rem; }
+.bar nav a { display: inline-flex; align-items: center; min-height: 2.75rem; color: white; }
+main { padding-top: 1.25rem; padding-bottom: 3rem; }
+.path { font-size: .92rem; color: #466571; margin: 0 0 1rem; }
+.path a { display: inline-flex; align-items: center; min-height: 2.5rem; }
+.path > :not(:first-child)::before { content: "/"; margin-inline-end: .8rem; color: #7b959e; }
+.hero { padding: clamp(1.2rem, 3vw, 2.2rem); background: #e3f2f0; border: 1px solid #bcd9d5; border-radius: 1.05rem; margin-bottom: 1.4rem; }
+h1, h2, h3, p { margin: 0; }
+h1 { margin-top: .35rem; font-size: clamp(1.65rem, 3.7vw, 2.55rem); line-height: 1.15; color: var(--ink); }
+h2 { font-size: 1.22rem; color: var(--ink); }
+h3 { font-size: 1.07rem; }
+.hero p, .description { max-width: 65ch; line-height: 1.55; margin-top: .7rem; }
+.context { font-weight: 650; font-size: .91rem; color: #245957; }
+.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 17rem), 1fr)); gap: 1rem; align-items: start; }
+.journeys { display: grid; grid-template-columns: repeat(auto-fit,minmax(min(100%,14rem),1fr)); gap: .65rem; margin: .8rem 0 1.5rem; }
+.journeys a { display: flex; flex-direction: column; gap: .3rem; color: var(--ink); text-decoration: none; background: white; border: 1px solid var(--line); border-inline-start: 4px solid var(--teal); border-radius: .65rem; padding: 1rem; }
+small { color: #486573; font-size: .88rem; line-height: 1.4; }
+.card { padding: 1.1rem; background: white; border: 1px solid var(--line); border-radius: .85rem; min-width: 0; }
+.card h2 { margin-bottom: .7rem; }
+.links { margin: 0; padding: 0; list-style: none; }
+.links li + li { border-top: 1px solid #dfe9ec; }
+.links a { display: flex; align-items: center; justify-content: space-between; gap: .8rem; padding: .75rem .1rem; min-height: 2.8rem; font-weight: 570; text-decoration: none; }
+.links a:hover, .journeys a:hover strong { text-decoration: underline; }
+.links small { text-align: end; }
+.actions { margin-top: 1rem; }
+.button { display: inline-flex; align-items: center; justify-content: center; min-height: 2.75rem; padding: .55rem .95rem; border: 1px solid #096e71; border-radius: .55rem; font: inherit; font-weight: 600; background: #006e73; color: white; text-decoration: none; cursor: pointer; }
+.button.subtle { background: white; color: var(--teal); border-color: #b7ced3; }
+.filter { margin: 0 0 1rem; }
+.filter label { display: block; font-weight: 650; margin-bottom: .45rem; }
+.filter div { display: flex; align-items: center; gap: .5rem; flex-wrap: wrap; }
+input { width: min(100%, 25rem); min-height: 2.75rem; border: 1px solid #96afb8; border-radius: .5rem; padding: .55rem .8rem; font: inherit; color: inherit; }
+.details { display: grid; grid-template-columns: minmax(0, 1.7fr) minmax(0, 1fr); gap: 1rem; align-items: start; }
+dl { margin: 0; }
+dl div { padding: .75rem 0; border-bottom: 1px solid #dfe9ec; }
+dl div:last-child { border: 0; }
+dt { color: #466371; font-size: .9rem; margin-bottom: .25rem; }
+dd { margin: 0; line-height: 1.45; overflow-wrap: anywhere; }
+footer { margin-top: 1.4rem; }
+@media (max-width: 620px) { .details { grid-template-columns: minmax(0, 1fr); } .bar nav { gap: .75rem; } .hero { margin-bottom: .9rem; } .path { gap: .25rem .55rem; } .links a { align-items: flex-start; } }

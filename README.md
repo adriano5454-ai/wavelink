@@ -1,3 +1,11 @@
+# Wavelink 1.34.61
+
+[Inventário e demonstração pública](docs/WORKSPACE_UI162.md)
+
+Na demonstração, abra **Explorar a visão de gestão** e depois **Explorar a administração**. Oito seções mostram os controles de gestão com dados da empresa fictícia Maré Alta Surveys. É possível consultar solicitações de acesso e abrir documentos de exemplo pelo nome do arquivo. A prévia está disponível em português e inglês e utiliza somente leitura.
+
+---
+
 # Wavelink 1.34.60
 
 [Entrada automática na demonstração pública](docs/WORKSPACE_UI161.md)
