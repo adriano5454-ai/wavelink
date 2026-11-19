@@ -22,6 +22,7 @@ def main(destination):
         sys.argv=['apply_demo_navigation.py',str(dest)]
         runpy.run_path(str(ROOT/'deploy'/sys.argv[0]),run_name='__main__')
         runpy.run_path(str(ROOT/'deploy/apply_corcovado_home.py'))['apply'](dest)
+        runpy.run_path(str(ROOT/'deploy/apply_profile_language.py'))['apply'](dest)
         manifest=json.loads((dest/'RELEASE_FILES.json').read_bytes())
         for name,digest in manifest['files'].items():
             if hashlib.sha256((dest/name).read_bytes()).hexdigest()!=digest: raise ValueError('Resource mismatch: '+name)

@@ -16,7 +16,7 @@ import test_company_c01 as c01
 from test_hr_ui117 import HRCompany
 
 
-def run():
+def run(browser_script='browser_corcovado_home_mood.cjs'):
     settings = {**c01.ENV, 'COMPANY_ID':'corcovado', 'COMPANY_NAME':'Corcovado',
                 'PUBLIC_URL':'https://corcovado.example.test',
                 'COMPANY_INITIAL_PASSWORD':'Fictional initial company passphrase 63.'}
@@ -60,7 +60,7 @@ def run():
                 thread = Thread(target=server.serve_forever, daemon=True)
                 thread.start()
                 try:
-                    subprocess.run(['node', str(repo/'tests/browser_corcovado_home_mood.cjs'),
+                    subprocess.run(['node', str(repo/'tests'/browser_script),
                                     f'http://127.0.0.1:{server.server_port}'], check=True, timeout=180)
                 finally:
                     server.shutdown()

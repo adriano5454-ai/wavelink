@@ -25,6 +25,7 @@ from starlette.responses import Response, JSONResponse, FileResponse
 from .company_provision import read_marker, verify_activation, activation, ACTIVATION, digest
 from .provision import DemoError
 from app.localization import marker_locale, localized_send, locale_bootstrap, PT_BR
+from app.profile_language import ui_language
 from .company_localization import localized_asset
 from app.password_policy import password_min_length
 
@@ -152,7 +153,8 @@ class CompanyAccess:
 
     async def respond(self, response, scope, receive, send):
         for k, v in HEADERS.items(): response.headers[k] = v
-        await response(scope, receive, localized_send(send, path=scope.get('path', ''), locale=self.locale))
+        language = scope.get('state', {}).get('ui_language', self.locale)
+        await response(scope, receive, localized_send(send, path=scope.get('path', ''), locale=language))
 
     async def body(self, request):
         if request.headers.get('origin') != self.settings.external_origin:
@@ -180,9 +182,10 @@ class CompanyAccess:
             return await self.app(scope, receive, send)
         path, method = scope.get('path', ''), scope.get('method', '')
         if scope['type'] == 'http' and path == '/static/workspace-locale.js' and method in ('GET', 'HEAD'):
-            # This immutable presentation setting comes from the validated marker,
-            # never the requested domain, a query string or the browser language.
-            return await self.respond(Response(locale_bootstrap(self.locale), media_type='application/javascript'), scope, receive, send)
+            language = ui_language(Request(scope).query_params.get('wl_lang'), self.locale)
+            scope = {**scope, 'state': {**scope.get('state', {}), 'ui_language': language}}
+            return await self.respond(Response(locale_bootstrap(language), media_type='application/javascript',
+                                               headers={'Content-Language': language}), scope, receive, send)
         # Health reveals no project content and is needed before external activation.
         if scope['type'] == 'http' and path in ('/healthz', '/readyz') and method in ('GET', 'HEAD'):
             return await self.app(scope, receive, send)
@@ -197,6 +200,7 @@ class CompanyAccess:
                 # Existing first WebSocket message validates the named session.
                 return await self.app(scope, receive, send)
             request = Request(scope, receive)
+            language = self.locale
             if path == '/company-setup/status' and method == 'GET':
                 return await self.respond(JSONResponse({'company': self.record['company_name'], 'active': active,
                     'login_id': self.record['admin_login'] if not active else None, 'ui_locale': self.locale}), scope, receive, send)
@@ -250,13 +254,17 @@ class CompanyAccess:
                 person = await asyncio.to_thread(self.hosted.state.core.state.store.session, auth[7:])
                 if not person.get('user_id'):
                     raise SetupError(401, 'Use a named company account, not shared access.')
+                language = ui_language(person.get('preferred_language'), self.locale)
+            elif method in ('GET', 'HEAD') and not path.startswith('/api/'):
+                language = ui_language(request.query_params.get('wl_lang'), self.locale)
+            scope = {**scope, 'state': {**scope.get('state', {}), 'ui_language': language}}
             async def private_api(message):
                 if message['type'] == 'http.response.start' and path.startswith('/api/'):
                     message = dict(message)
                     message['headers'] = [(k,v) for k,v in message.get('headers',[]) if k.lower() != b'cache-control']
                     message['headers'].append((b'cache-control',b'no-store'))
                 await send(message)
-            return await self.app(scope, receive, localized_send(private_api, path=path, locale=self.locale))
+            return await self.app(scope, receive, localized_send(private_api, path=path, locale=language))
         except SetupError as exc:
             response = JSONResponse({'error': exc.message}, status_code=exc.code)
         except Exception as exc:

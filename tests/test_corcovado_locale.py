@@ -164,6 +164,14 @@ def test_active_company_bootstrap_and_login_errors_are_portuguese(company):
         assert missing.status_code == 401 and missing.json()['error'] == 'Entre com sua conta da empresa.'
         login = client.post('/api/login', json={'login_id': 'admin', 'password': password, 'device_id': 'corcovado-test-device'})
         assert login.status_code == 200 and login.json()['token']
+        headers = {'Authorization': 'Bearer ' + login.json()['token'], 'X-AJ-Hub-ID': cfg['hub_id']}
+        assert client.get('/api/me', headers=headers).json()['preferred_language'] is None
+        assert client.post('/api/me/language', json={'language':'en'}, headers=headers).json() == {'preferred_language':'en'}
+        assert client.post('/api/me/language', json={'language':'fr'}, headers=headers).status_code == 422
+        assert client.get('/api/me', headers=headers).json()['preferred_language'] == 'en'
+        assert client.get('/?wl_lang=en').headers['content-language'] == 'en'
+        assert client.get('/').headers['content-language'] == PT_BR
+        assert client.get('/api/info').json()['ui_locale'] == PT_BR
 
 
 def test_only_reviewed_static_html_paths_can_select_variants(tmp_path):
@@ -186,7 +194,12 @@ def test_only_reviewed_static_html_paths_can_select_variants(tmp_path):
         assert localized_html_path(route, root, PT_BR) is None, route
     (root/'pt-BR/index.html').unlink()
     assert localized_html_path('/', root, PT_BR) is None
-    (root/'pt-BR/index.html').symlink_to(root/'password_recovery.html')
+    try:
+        (root/'pt-BR/index.html').symlink_to(root/'password_recovery.html')
+    except OSError as error:
+        if getattr(error, 'winerror', None) == 1314:
+            pytest.skip('Windows does not grant this account symbolic-link creation.')
+        raise
     assert localized_html_path('/', root, PT_BR) is None
 
 
