@@ -6,4 +6,6 @@ Na lista de inventários, procure pelo nome ou pela descrição. Use **Incluir a
 
 ## Demonstração pública
 
-Na demonstração pública, abra **Visão de gestão** para explorar a empresa fictícia Maré Alta Surveys. Consulte exemplos de perfis, certificados, escalas, projetos e equipamentos. Abra um registro para ver os detalhes e o trabalho relacionado. O acesso à empresa Corcovado continua vinculado à conta de cada pessoa.
+A entrada pública abre a empresa fictícia Maré Alta Surveys. **RH** mostra o calendário e as escalas por departamento, colaboradores, certificados, viagens, horas e despesas. **Solicitações de TI** abre os chamados e a fila de atendimento. **Administração** oferece as seções de gestão da aplicação. Os demais módulos usam as mesmas telas operacionais do produto e os registros fictícios do projeto de demonstração.
+
+Na página inicial e em **Equipe**, escolha uma das cinco carinhas. Você pode trocar ou retirar sua escolha durante a visita. Registros compartilhados, configurações, permissões e convites são de leitura. A demonstração também abre diretamente em português em `/__demo/public?lang=pt`.
