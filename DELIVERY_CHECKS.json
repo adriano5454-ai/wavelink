@@ -5,7 +5,7 @@
   "base_commit": "c7b427c5c46f134b0c9dc41191dee58b7496d521",
   "base_tree": "c3daaf009ae66e32fa5503c8e84cd481b4304aa1",
   "parent_runtime_manifest_sha256": "e34d89daa1892bcabc497aa75d43cb4d6df59d084de5462bbd9f95237ec76453",
-  "runtime_manifest_sha256": "b73f14774236136df9b71e779c92febae0d6da88160c086ca79cb9e872408697",
+  "runtime_manifest_sha256": "c67eac929a0a8f4af935b58d5554a533bb459f19152ad23c26b81c8016aa64f7",
   "verified_runtime_resources": 2611,
   "overlay_resources": 183,
   "normal_install_from_vendor_verified": true,
@@ -61,7 +61,7 @@
       "app/static/": 6545,
       "app/static/pt-BR/": 7999
     },
-    "normal_install_manifest_sha256": "b73f14774236136df9b71e779c92febae0d6da88160c086ca79cb9e872408697",
+    "normal_install_manifest_sha256": "c67eac929a0a8f4af935b58d5554a533bb459f19152ad23c26b81c8016aa64f7",
     "public_admin_sections": 8,
     "sample_documents": {
       "pdf": 7,
@@ -94,6 +94,25 @@
         "home_workspace.js": "1.34.61-886ec84c1895",
         "personal_home.js": "1.34.61-b49c3e8605ef"
       }
+    },
+    "native_public_company": {
+      "base_commit": "4369b54e5e97bcc7c200977f6b6d885bdef9c97c",
+      "variant": "workspace-ui162-2026-11-19-native-demo",
+      "permissions": "visit-only reads of a disposable fictional project",
+      "coverage": [
+        "native workspace catalogue (20 destinations)",
+        "all 8 native administration sections",
+        "Home and Team daily mood with visit isolation",
+        "HR personnel, planning, sample attachments and reports",
+        "IT queue and case",
+        "Portuguese HR calendar"
+      ],
+      "viewports": [
+        1360,
+        390
+      ],
+      "python_tests": 66,
+      "fixture_archive_sha256": "6a406262adb2fc593cdc6dbc620f591bb79eca28d93f3735f58b66a0a03aa702"
     }
   }
 }

@@ -30,7 +30,7 @@ from urllib.parse import parse_qs
 from starlette.applications import Starlette
 from starlette.requests import Request
 from starlette.responses import HTMLResponse, JSONResponse, RedirectResponse, Response
-from starlette.routing import Route
+from starlette.routing import Mount, Route, WebSocketRoute
 
 from deploy.demo_management import CSS, STYLE_PATH, STYLE_VERSION, management_page, select_language
 from deploy.demo_management_files import SAMPLE_FILES, sample_file
@@ -67,6 +67,7 @@ class Gate:
         if type(public_entry) is not bool:
             raise ValueError('Invalid public demonstration mode.')
         self.public_entry = public_entry
+        self.showcase = None
         if len(key) != 32:
             raise ValueError('Invalid demonstration gate key.')
         if not 20 <= len(password) <= 128:
@@ -344,7 +345,7 @@ h1 {{margin-top:0}}#error {{color:#9d2534;white-space:pre-wrap}}
 </script></body></html>'''
 
     @staticmethod
-    def public_bootstrap_page(auth: dict) -> str:
+    def public_bootstrap_page(auth: dict, destination='home', language='en') -> str:
         """Atomically create a fresh guest workspace, never replace a saved one."""
         encoded = json.dumps(auth, separators=(',', ':')).replace(
             '<', '\\u003c').replace('>', '\\u003e').replace('&', '\\u0026')
@@ -400,6 +401,10 @@ h1 {{margin-top:0}}#error {{color:#9d2534;white-space:pre-wrap}}
     };
 })();
 """.replace('__AUTH_JSON__', encoded)
+        if destination in ('hr','it','team','workspaces','admin','profile','calendar','inventory','fleet','builders','members'):
+            script = script.replace("&public_demo=1#home'", "&public_demo=1#" + destination + "'")
+        if language in ('pt','pt-BR'):
+            script = script.replace("location.replace('/?browser_workspace=", "location.replace('/__demo/native/pt?browser_workspace=")
         return (
             '<!doctype html><html lang="en"><head><meta charset="utf-8">'
             '<meta name="viewport" content="width=device-width,initial-scale=1">'
@@ -431,6 +436,12 @@ h1 {{margin-top:0}}#error {{color:#9d2534;white-space:pre-wrap}}
             return JSONResponse(
                 {'error': 'Too many guest openings. Wait five minutes and try again.'},
                 status_code=429, headers={**HEADERS, 'Retry-After': '300'})
+        if self.showcase is not None:
+            response = HTMLResponse(self.public_bootstrap_page(self.showcase.admission(),
+                request.query_params.get('area','home'), request.query_params.get('lang','en')), headers=BOOT_HEADERS)
+            response.set_cookie(PUBLIC_COOKIE, self.token('public-session', TTL), max_age=TTL,
+                                path='/', secure=True, httponly=True, samesite='strict')
+            return response
         try:
             auth = self.authenticate_guest()
             person = auth.get('person') if isinstance(auth, dict) else None
@@ -465,6 +476,15 @@ h1 {{margin-top:0}}#error {{color:#9d2534;white-space:pre-wrap}}
             return Response(status_code=404, headers=HEADERS)
         active_guest = self.valid(request.cookies.get(PUBLIC_COOKIE), 'public-session')
         embedded = request.url.path == '/__demo/management/workspace'
+        if self.showcase is not None and not embedded:
+            area = request.query_params.get('area', 'workspaces')
+            mapped = {'personnel':'hr','schedule':'hr','travel':'hr','time':'hr','expenses':'hr','alerts':'hr',
+                      'access':'members','shipments':'fleet','branding':'admin','projects':'workspaces'}
+            area = mapped.get(area, area)
+            if area not in ('hr','it','team','workspaces','admin','profile','calendar','inventory','fleet','builders','members'):
+                area = 'workspaces'
+            language = select_language(request.query_params.get('lang'), request.headers.get('accept-language',''))
+            return RedirectResponse('/__demo/public?area='+area+'&lang='+language, status_code=303, headers=HEADERS)
         body, status, language = management_page(request.query_params,
             request.headers.get('accept-language', ''), active_guest, embedded=embedded)
         if embedded and request.query_params.get('layout') != 'linked':
@@ -574,7 +594,7 @@ h1 {{margin-top:0}}#error {{color:#9d2534;white-space:pre-wrap}}
         return response
 
     def app(self):
-        return Starlette(routes=[
+        routes = [
             Route('/__demo/public', self.public, methods=['GET']),
             Route('/__demo/management', self.management, methods=['GET']),
             Route(STYLE_PATH, self.management_styles, methods=['GET']),
@@ -586,7 +606,13 @@ h1 {{margin-top:0}}#error {{color:#9d2534;white-space:pre-wrap}}
             Route('/__demo/required', self.required,
                   methods=['GET', 'POST', 'PUT', 'PATCH', 'DELETE', 'HEAD']),
             Route('/__demo/logout', self.logout, methods=['GET', 'POST']),
-        ])
+        ]
+        if self.public_entry and self.showcase is not None:
+            routes += [Route('/__demo/native/pt', self.showcase.portuguese),
+                       Route('/__demo/native/pt/fleet', self.showcase.portuguese),
+                       Route('/__demo/native/locale-pt.js', self.showcase.portuguese_locale),
+                       WebSocketRoute('/__demo/native/ws', self.showcase.websocket), Mount('/api', app=self.showcase)]
+        return Starlette(routes=routes)
 
 
 if __name__ == '__main__':
@@ -595,6 +621,12 @@ if __name__ == '__main__':
                 Path(os.environ['DEMO_GATE_KEY_FILE']).read_bytes(),
                 os.environ['DEMO_GUEST_LOGIN'], os.environ['DEMO_GUEST_PASSWORD'],
                 public_entry=public_entry_enabled(os.environ.get('DEMO_PUBLIC_ENTRY')))
+    if gate.public_entry:
+        import sys
+        base = Path(__file__).resolve().parents[1]
+        sys.path.insert(0, str(base / 'app'))
+        from deploy.native_showcase import NativeShowcase
+        gate.showcase = NativeShowcase(gate, base / 'vendor' / 'FICTIONAL_DEMO.ajproject')
     uvicorn.run(gate.app(), host='127.0.0.1',
                 port=int(os.environ.get('DEMO_GATE_PORT', '8766')), workers=1,
                 proxy_headers=False, access_log=False, server_header=False,

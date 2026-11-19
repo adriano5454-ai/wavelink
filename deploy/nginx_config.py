@@ -44,6 +44,10 @@ http {{
     client_body_timeout 30s;
     keepalive_timeout 30s;
     map $http_upgrade $connection_upgrade {{ default upgrade; '' close; }}
+    map $http_authorization $demo_api_port {{
+        default {app_port};
+        "~^Bearer wlshow[.]" {gate_port};
+    }}
     # Platform ingress must attest TLS. Ambiguous values fail closed.
     map $http_x_forwarded_proto $demo_tls_ok {{ default 0; https 1; }}
     server {{
@@ -157,4 +161,10 @@ http {{
                               '            limit_except ' + method + ' { deny all; }\n'
                               '            client_max_body_size 4k;\n            proxy_buffering off;')
         recovery += route
-    return config[:start] + signing + page + bare + recovery + presentation + config[start:]
+    native_api = common.replace('location / {','location /api/ {',1).replace(
+        f'proxy_pass http://127.0.0.1:{app_port};', 'proxy_pass http://127.0.0.1:$demo_api_port;').replace(
+        'proxy_set_header Authorization $http_authorization;',
+        'proxy_set_header Authorization $http_authorization;\n            proxy_set_header X-Wavelink-Mood-Day $http_x_wavelink_mood_day;')
+    native_socket = common.replace('location / {','location = /__demo/native/ws {',1).replace(
+        f'proxy_pass http://127.0.0.1:{app_port};', f'proxy_pass http://127.0.0.1:{gate_port};')
+    return config[:start] + signing + page + bare + recovery + presentation + native_api + native_socket + config[start:]
