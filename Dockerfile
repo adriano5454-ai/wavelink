@@ -87,6 +87,7 @@ COPY deploy ./deploy
 RUN python deploy/apply_demo_navigation.py /opt/wavelink/app
 COPY ops ./ops
 RUN python deploy/apply_corcovado_home.py /opt/wavelink/app
+RUN python deploy/apply_profile_language.py /opt/wavelink/app
 # Runtime starts with mount ownership setup and immediately drops to UID 10001.
 # Never install/open the Windows Admin or run its launcher in the container.
 EXPOSE 10000
