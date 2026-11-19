@@ -1,0 +1,934 @@
+{
+  "format": "wavelink-runtime-overlay-1",
+  "date": "2026-11-19",
+  "patch_id": "workspace-ui162-2026-11-19",
+  "parent_patch_id": "workspace-ui161-2026-11-19",
+  "parent_manifest_sha256": "e34d89daa1892bcabc497aa75d43cb4d6df59d084de5462bbd9f95237ec76453",
+  "scope": "Simplify equipment and folder navigation and present a limited, fictional preview of company workflows in the public demo.",
+  "boundaries": {
+    "database_reset": false,
+    "data_schema_changed": false,
+    "external_ai_behavior_changed": false,
+    "email_behavior_changed": false
+  },
+  "runtime_manifest_sha256": "81e795b55642b3cb3c84f901952f860614b273ed3bfe7655081986db6b9f1d40",
+  "runtime_resources": 2611,
+  "overlay_resources": 183,
+  "files": [
+    {
+      "path": "UI_PATCH.json",
+      "before_sha256": "41e552c1de4aa679b90f15d21dd298a83738aaa0c713a9848b6a4a4b911c229d",
+      "after_sha256": "1a9ca92d23bdf8b162eb34103f57ff835804a595f31b1f058643fda7391e7732"
+    },
+    {
+      "path": "app/__init__.py",
+      "before_sha256": "58454396824bccbbb500c717f85a05bf6832807b2471231f96887842210eb7b1",
+      "after_sha256": "6a9740ccbac6cf1130beb30b24f59a3ed405f965db867b9bf1c1d134af832fd0"
+    },
+    {
+      "path": "app/static/app.js",
+      "before_sha256": "9e9ae1b1bd980626304bf37bcd3a226cfcce15b9860232ebbfa2449ca8ddb77e",
+      "after_sha256": "41a2ea25ee11953cd32b118a85a51f89abd041a591c5a258fd31ebde59c125b8"
+    },
+    {
+      "path": "app/static/examples.html",
+      "before_sha256": "d6b2eb7b15a17a7c641ef458c5d15f33edb005bbd626c7bb3f6bf494fecf4990",
+      "after_sha256": "266549ed7d44a8dd1119a49f6866b705cc1bc4def1594172f6993e677d6e40f3"
+    },
+    {
+      "path": "app/static/fieldwork.js",
+      "before_sha256": "6f54a841cac1e2f60b8f86cf65fecd9e674388111268ea99e4ab192606b4bbd5",
+      "after_sha256": "1420acc0a0bed36b86384a1a172e8b22ee898de5c81a52b911c826cf932351e4"
+    },
+    {
+      "path": "app/static/fleet.html",
+      "before_sha256": "2db8e2703ea09f0f79869466d4b1e3348fecf2f9f445e8c1d0a390c7ed60b0ee",
+      "after_sha256": "c40ba79a9f83ed94418d02309e5ec191dde38404b755c555f968a20606c6ab6f"
+    },
+    {
+      "path": "app/static/help.html",
+      "before_sha256": "10e7aa1bc5742281b696858aeccaa512cf70f637dda850b45e744d11108c625b",
+      "after_sha256": "92a22a3e4f94cd64bf938cc144fedd0eeed39cc6b329e75b458b49a5d1edf4e5"
+    },
+    {
+      "path": "app/static/help_catalogue.json",
+      "before_sha256": "8f25a85f242470477fa910f78eea95b29966ea776d09351a159eedce501216f4",
+      "after_sha256": "e01acf39fbdb7458da7e9126a63c9e450e2eeb09d75c72a7962aad303b7a3f16"
+    },
+    {
+      "path": "app/static/help_reference.html",
+      "before_sha256": "d0efe06932089b25babcf9e9c78a44f640519ff7e4508df646e2a4a26ed44382",
+      "after_sha256": "3b90cd8f7e2ca76ef5afa1b1994632e08944d41ebb557000e0732cf6ff4c8081"
+    },
+    {
+      "path": "app/static/help_topics/accessreview.html",
+      "before_sha256": "08f83d0bccbbefdd07d5646169ebefc8ac0f90c2b1afbc33f09463991799c60e",
+      "after_sha256": "a91ee50c3e9f5e8972a8b6fe8d2f26bd291600040ffa486842a245a0d6666f74"
+    },
+    {
+      "path": "app/static/help_topics/approvals.html",
+      "before_sha256": "ca296b24747c9b509d4b4cc6058e625480b8276f99c9222122bd85fa2266a566",
+      "after_sha256": "9a4690038e90a54272cd440228671c122aaf9027794145c5c48a2ec321080776"
+    },
+    {
+      "path": "app/static/help_topics/assetcalendar.html",
+      "before_sha256": "0224c657e2812c28b6a04e1e5e3226d7ff64915eb35b89f675d0f73cf7cc2c84",
+      "after_sha256": "22f0063e6dcc045071bc98c580c4a5caa17e1c4b673a216973fb09b4dcb5d73a"
+    },
+    {
+      "path": "app/static/help_topics/assetdetails.html",
+      "before_sha256": "d5ca37a7af3aeb1701fb175be75431de2bf6548aa7aaed4ddd5abbd2dadb86a0",
+      "after_sha256": "e8672524a853449e177063b2ffb0dad6e37ce7992990a298c12dc15d93669c82"
+    },
+    {
+      "path": "app/static/help_topics/assetlabels.html",
+      "before_sha256": "064a3676aa2af9f79c55959d5807cd00cb0fa985602f7f7d26b608437b4c227b",
+      "after_sha256": "12b1d8def4565870a23ead57e6bea4096b9b01225fcbaaa32c083919dac0e0b4"
+    },
+    {
+      "path": "app/static/help_topics/assignments.html",
+      "before_sha256": "73b478f4461add66bfeec187eb5cb87958b9dc42e13eb28bccc48fe2a70b849a",
+      "after_sha256": "b5345d7a7ac2f410cc916eb685ac18a16f733be64e41c2af03bfa1d8e21a11b2"
+    },
+    {
+      "path": "app/static/help_topics/backups.html",
+      "before_sha256": "7399f969ee4b7fd9ca10ac852489b1f8d8a826d0da934e455a6cf50578f0c8ab",
+      "after_sha256": "3785e483696eddc8f9549fb6f73d444f24bb129a2d9dca02e4351b37dda7011e"
+    },
+    {
+      "path": "app/static/help_topics/browseradmin.html",
+      "before_sha256": "95e3229f90f0cf2e163a4b39e20ad3b0a514b1c2d2a8ab6d8270e2b7c811b8f3",
+      "after_sha256": "f299f392002d3a3f5f1d4ed001ff3277b83b8eee718c3fc3925471e3391d9a18"
+    },
+    {
+      "path": "app/static/help_topics/browserlogs.html",
+      "before_sha256": "fbcda28e814601297e7085c7253ff09860c27c03398c6e99e2e9dae5be943fc4",
+      "after_sha256": "800dd896800409e1883c072c1abd56a9c173541214aedfbfb7f2da534142a121"
+    },
+    {
+      "path": "app/static/help_topics/browsertemplates.html",
+      "before_sha256": "ff5218513d0c90c141fb3f7afc20054c0d73ed9324b1d67e4601203baef97185",
+      "after_sha256": "5c016bc62f58caea9fcbd53958093732ce575e25542b45ed0006e2f1c0225768"
+    },
+    {
+      "path": "app/static/help_topics/browsertoolbox.html",
+      "before_sha256": "44d8d7a1e105fa97690242bfc6803825e9fd091575fa4e96f28708a160432c52",
+      "after_sha256": "d31e59a42cb784b5dc556e30f6b2ae4cec232f4899e1b6126158deeec954b0db"
+    },
+    {
+      "path": "app/static/help_topics/builder.html",
+      "before_sha256": "feccaebaa284cf576f4052e3a5bb1bc37605323f5a6d3afbf47a9c1b4c881de7",
+      "after_sha256": "d936eb79b05f9e43cb46f0f60f0ec71d989b8d48f16f26343d402e991549d38b"
+    },
+    {
+      "path": "app/static/help_topics/certificates.html",
+      "before_sha256": "7343b95e3a7ca1ecdb980d2df8c9363b4775540d3d9100ce77cdc70282cfa056",
+      "after_sha256": "625f3bf1ae043969ecf26b4c7cf0f1b6395b011d29d50b2bb6e9cd591d8a3d4d"
+    },
+    {
+      "path": "app/static/help_topics/companybranding.html",
+      "before_sha256": "935c7f2541136557a7ca6d63425e5b5af017f16bd1edc8dd424f5ea31b42b3a8",
+      "after_sha256": "09a12a2388db509c6e2c2178ddf2727b81f89558fe4ce4c619300cfc888041f3"
+    },
+    {
+      "path": "app/static/help_topics/containers.html",
+      "before_sha256": "b7a09918281bccf505b1b63330635beb6a9595ff79441517edb41bb554df60a7",
+      "after_sha256": "67602b7dc399286fa52e55fd7d5c6c61c88680ca8a4e1f4dce7a87eea3fd6e1c"
+    },
+    {
+      "path": "app/static/help_topics/create.html",
+      "before_sha256": "1c0be6f2199946fcddc6c8ba6411463115c5d1ac375cde53b3ea9d9d659cc87d",
+      "after_sha256": "85b0c74a4140b94a21ab9ab34a8fc6e215117aa29e170bdaef14d8ec7323e8ac"
+    },
+    {
+      "path": "app/static/help_topics/daily.html",
+      "before_sha256": "47653c494b8bdaa817c83d4ca589d585322dc0fa33893312b552dd8b26dc7c71",
+      "after_sha256": "522275ad8ff7c976adda79733e8104d8a6543c80fcf67d27167d709de4ffc932"
+    },
+    {
+      "path": "app/static/help_topics/dashboard.html",
+      "before_sha256": "9770c6a2bb89a25e569c27bba3961a699231e98fe37891a105e7a0c4d54cc7fa",
+      "after_sha256": "e88bc1ef530bb1e1d3318e33a414ab02f12de7325ba26ade596a51dcc19612dd"
+    },
+    {
+      "path": "app/static/help_topics/datetime.html",
+      "before_sha256": "c469dd6b326e7e381f8b2d6295d50487ca54c9a3d74c3b30fc00a734b532e8ca",
+      "after_sha256": "7f55ae9eab59f7b7e013e02c2b9ce200b307263a88814c1c4809a2593c9811bb"
+    },
+    {
+      "path": "app/static/help_topics/departmentheads.html",
+      "before_sha256": "5f7e85c7507bd9cc9af0318e9b010342cf6ac6acabd8f01a1a34328c9e800fc2",
+      "after_sha256": "f92b619a646249269eee11d6d07955ef34c37caf2620a084169f65aefbe4f35f"
+    },
+    {
+      "path": "app/static/help_topics/departments.html",
+      "before_sha256": "0429ae1819c873fa336feb379ad19291896df1fcfbbb80e69e58873f9a8750e7",
+      "after_sha256": "48ddaa098c1bc7837bc9c511b7f4cddbba0e24ef419f68e71f819cbf5b117835"
+    },
+    {
+      "path": "app/static/help_topics/document.html",
+      "before_sha256": "833bbfe509c20d266dd77f0459e9998ce70813405b6c456ac9d41868c283ae2b",
+      "after_sha256": "98425cbf0af3eec9de9e67b23934014f6f18aa247b7b737a9e9c0324949206e9"
+    },
+    {
+      "path": "app/static/help_topics/documentimport.html",
+      "before_sha256": "c07ef3cccefe5bd57c627274350345793ef7946b174b9799f9ed6143715c563a",
+      "after_sha256": "8344bc62f562e5cda3a3cee7187362849d5f4d6975902a81cd3ebc488b7a9325"
+    },
+    {
+      "path": "app/static/help_topics/evidence.html",
+      "before_sha256": "6705768e8fa4a08c73e5a4e9e7e28d0f5931c85eff666927841cf7ae3e3f7554",
+      "after_sha256": "3796327d42ce8f3bf42f9f461eee4035363f04e8f94be896d34020103a9dce8f"
+    },
+    {
+      "path": "app/static/help_topics/evidencereview.html",
+      "before_sha256": "12787db9804842f605794cff97eef7a50c31c76f9ee491baf7c95352fd249477",
+      "after_sha256": "b27567847383c0951761dfbef295896e670a1d31cfafd67ef9357a87bbd2b9e6"
+    },
+    {
+      "path": "app/static/help_topics/faults.html",
+      "before_sha256": "e2e3b21137afabe12760d0336a912dd5a047f7aef04409b7bc0decafd8082d78",
+      "after_sha256": "c333edfa3a060c27fba8f2e3ac663a07807ffbc88bf8361493a84dd6139c0f58"
+    },
+    {
+      "path": "app/static/help_topics/fleet.html",
+      "before_sha256": "0745763cd326abfe1ca49b731c161c0b4c08b44b98cb6200e0439191017f86bf",
+      "after_sha256": "1147415545d7f90d169e8589471cef2885c49469d5a5da2e2bd8e7a044376b29"
+    },
+    {
+      "path": "app/static/help_topics/fleetaccess.html",
+      "before_sha256": "b72705ce7b99d240ab55b5d422dcff11d5110b3f047245bb640dd866c9b0fb07",
+      "after_sha256": "d9a7b2ff7bdcb1dbe79ea1cc706809030f49f9b6183fc0c34b1b04415e98d949"
+    },
+    {
+      "path": "app/static/help_topics/generaltasks.html",
+      "before_sha256": "9613e2420c6a011c45ac56f5ce84c1498a59cc65c4b7e3ce591f87726dc50eb2",
+      "after_sha256": "4f92079724931f2badd2e5b248dc142b663879aaf28dea87cd42cf9370767fb9"
+    },
+    {
+      "path": "app/static/help_topics/handovercontinuity.html",
+      "before_sha256": "b8f0575301613a9d7673188fe93c36c30844812d725dbc4a6efefb1a6e656652",
+      "after_sha256": "a6021481c8563e615a2f5f99f5cb66117b606b42fdf670baca9c821bf85bbd7e"
+    },
+    {
+      "path": "app/static/help_topics/handovers.html",
+      "before_sha256": "0df5828205714fa2103310ed125d29bfa322bae779f1c9c9de12a57449ef25a3",
+      "after_sha256": "5cc53457d8dcb67b92154ca9b0e581e033cff7d1aae208847d7678976a796eba"
+    },
+    {
+      "path": "app/static/help_topics/https.html",
+      "before_sha256": "c910c9091b2e50e3100ca4df94736668468e574eab8d5ef8b8976aa75d0f7e47",
+      "after_sha256": "a60b91cc6d0f100b9135971a3b61051b654d345df190dc991bde88ebb6a0cc3b"
+    },
+    {
+      "path": "app/static/help_topics/illustrations.html",
+      "before_sha256": "c6a7fd866a1331297bc12dc20c212b1b386de0f902476892b9f53e135a6d357e",
+      "after_sha256": "80ff5412dd51329ae4d52ecd586e29729c26f6281fb6fd71408b4c09708d77d2"
+    },
+    {
+      "path": "app/static/help_topics/importcentre.html",
+      "before_sha256": "d0c6297c5a794f25b6e27957be657c4706472f56c58f80409d3aa0a607f3905d",
+      "after_sha256": "d127d447f5b3f9d7db6e8265c0f30aa8a55c21422d15806292b3b67a6f88890d"
+    },
+    {
+      "path": "app/static/help_topics/inventory.html",
+      "before_sha256": "a0a659033e0d2911b8ee4ae7705d27570e6eadab8a3ead837a4c9a98bb62ad9a",
+      "after_sha256": "aa00eae037bb2dbae1fe1cbc5871ba5a05bbaa8c07830965a91792e8cad29292"
+    },
+    {
+      "path": "app/static/help_topics/inventorybuilder.html",
+      "before_sha256": "4b078cffe374cee81f7ef6c10fc330cb620d2877a5973ac15bdd4e9bb7f5f74b",
+      "after_sha256": "df3d796d3f7247599444bbdbbfefa44659e7833624da306258a235c75a57a840"
+    },
+    {
+      "path": "app/static/help_topics/inventorytransfer.html",
+      "before_sha256": "e78b2094ba3ab3ac7f3f5957717848cad99b795c125d017ccdf0e8935c24176e",
+      "after_sha256": "bad86cdc1a66268bd427321b0a9742a783f500f9a723e1ceb48b4c8c2fdbd876"
+    },
+    {
+      "path": "app/static/help_topics/itemjourney.html",
+      "before_sha256": "1d8e49bc19eb78b79f68a98a861f4671870faac3b2072334c03fd45da66b7973",
+      "after_sha256": "c8dd822d278bf1b70f0ff7dbc54225209562591f44ce7924e26289cb5d6d6a05"
+    },
+    {
+      "path": "app/static/help_topics/itrequests.html",
+      "before_sha256": "b72b29dd8ea5050084ee27478d13a1c176a6b1e7ac71cd4e6f7acdb2de4b3d9c",
+      "after_sha256": "83e30d20dbcab4045bc9104758c107517dee79a762992d1cc78fa31844e852ee"
+    },
+    {
+      "path": "app/static/help_topics/live.html",
+      "before_sha256": "53a3804f50a6bd7ce163abc664bf9941335de28e77a97c6b95110551927ab465",
+      "after_sha256": "8e6d030275ccc9e50eb57634283a13f9323455ae74984aa95830cd136194f203"
+    },
+    {
+      "path": "app/static/help_topics/logbuilder.html",
+      "before_sha256": "79f2985e4bdcf4305d0f7f08aca97c63683bc8aa69df6e25dd20b44eef2666e6",
+      "after_sha256": "c1f5e06f1d522058a4e789258d17f0e4d29b2185d4b1b456d42fe51a12338b50"
+    },
+    {
+      "path": "app/static/help_topics/logexports.html",
+      "before_sha256": "4f088a5f121825e9d04ccfae7c5dd362f015e7f61df71039b2f4cab513259166",
+      "after_sha256": "e3f776a9db9556c5f28723c1d56b5631cfdb88403fd371061d8e46641dc5609f"
+    },
+    {
+      "path": "app/static/help_topics/logimport.html",
+      "before_sha256": "757ffd6eb7535d3285165d362e057aae97320e247b86df22efe7d93a6ec06dfd",
+      "after_sha256": "af354b7d3006cd8010a735621dbf64a94340e05e645baefdab365c9e469e66de"
+    },
+    {
+      "path": "app/static/help_topics/logreferences.html",
+      "before_sha256": "c9f448103b1e8cc3e940fea27e2fc5d966cfd77243e89c45bfe45cc07acacc48",
+      "after_sha256": "898cce25ef5b1fcfa2e9b52e0de0d232f43dedb60e500af22b2b8de76e309e9c"
+    },
+    {
+      "path": "app/static/help_topics/logs.html",
+      "before_sha256": "d421d4a055d4bbb119f2189ac77b4d7730fc57312543c60f4267f20417a8d0ad",
+      "after_sha256": "2ae8f52da917d6281c70f254f10975c566674b6d9d42964550657642d393f1f6"
+    },
+    {
+      "path": "app/static/help_topics/logwindows.html",
+      "before_sha256": "ca2dad51a6ab2a1a58d7e517bdde5f94ea15e892be2f8e0eef0b02530f0a4c2e",
+      "after_sha256": "04f0eff323c17df9500420c3fc2790bd0d21e8c72a54eb903fb159c930926328"
+    },
+    {
+      "path": "app/static/help_topics/lowstock.html",
+      "before_sha256": "8e5d2f906a728f2d28b2cd3e3cf5db13418bbab93e7d31e2bb8d792db1d3c39d",
+      "after_sha256": "fe999ed674928d0fa22bdba9dff9464f246702fdb010880059c2a9fdd137149f"
+    },
+    {
+      "path": "app/static/help_topics/maintenance.html",
+      "before_sha256": "2758be299651b92f63707087b9eb02c251c7c0a564f2ec7a844166ee36215ca5",
+      "after_sha256": "091cfcf4541f139e76829bf4e5dcb5f3371b10542016ebc4ceca9333a48a894c"
+    },
+    {
+      "path": "app/static/help_topics/maintenancebuilder.html",
+      "before_sha256": "949c21750af4fd8378b2a5a06841547d4f96e4cd368632a295e057e510175850",
+      "after_sha256": "fc45c4f19c2a69583ac78ed9e35a392cd37ea98b1133b4e954a301547cc1c95c"
+    },
+    {
+      "path": "app/static/help_topics/manifests.html",
+      "before_sha256": "5ceaa31bba1634f8a65ff60110477d2f536035e577349bf5e8ede6d1af75b0e4",
+      "after_sha256": "1709e1add39b5413bebbda8aa62971452304c2daa8280a7ff9b3f066c9026527"
+    },
+    {
+      "path": "app/static/help_topics/membership.html",
+      "before_sha256": "c8480bc800d3265eee02c952d1dc1da23c50b2d0da01173854346578e6ee41e4",
+      "after_sha256": "b0351606e147178c35a3b22d8df66ea31b5ac576766e18f6cc2d3e320616bacb"
+    },
+    {
+      "path": "app/static/help_topics/navigation.html",
+      "before_sha256": "03df110064473e44ed6141e1da4680fbb324ef715428602ffff93bbbcd6a5e33",
+      "after_sha256": "cf52f1b7f56c135162205ec043062548ffb75fa29930505b6de66b0bdf26e13c"
+    },
+    {
+      "path": "app/static/help_topics/network.html",
+      "before_sha256": "d9ec59c4dd154b3ddd8cc19b951d0fd80e9342b647f542688a5baf5a0af3e77f",
+      "after_sha256": "1623861e51f66668b93210730c04dacd365132ba049f71532727c9a3319faf44"
+    },
+    {
+      "path": "app/static/help_topics/offsets.html",
+      "before_sha256": "cc3d0f680a15a8c0f7c4e795325495f8c205d815466da73ed431177738ed41df",
+      "after_sha256": "ea6c54b53671e3f766387192877ed96910e8722ee51a92c7f3a761a4ae42ccde"
+    },
+    {
+      "path": "app/static/help_topics/originals.html",
+      "before_sha256": "84b9befc0bd6eca570d16406089e25c06e198e960367a807dd2e97eb4b982e37",
+      "after_sha256": "877bfcb4945e172f2c81eff5d5ed1d4dd9ebcec2738f7d43be0805e4023b9607"
+    },
+    {
+      "path": "app/static/help_topics/permissions.html",
+      "before_sha256": "c0a4ccb785e7fb39a58e781292119bc00d7a612f46a6b6eaa5ede4f299efec09",
+      "after_sha256": "f84e32bae4f663f849f18ab48ea51a8c0dc1f02253745a73bd9d6f132955d50a"
+    },
+    {
+      "path": "app/static/help_topics/phones.html",
+      "before_sha256": "a5cbcab72d4e287e4347bfdbab7a55f869cdbfadf98597215853d89d35f5232c",
+      "after_sha256": "bd7cf0e51b147402f6079f7266579708b8129b819c8a12ff64616cf189a6ce54"
+    },
+    {
+      "path": "app/static/help_topics/projects.html",
+      "before_sha256": "635679312be5e88ec5dd78ddedf506eb47d841c8477ddc7dafeb1a92256d6eb6",
+      "after_sha256": "46306c84e6a5e8d17ac3e4cba1a809c63e9c0d040f6b904e6f38f864c3aaebd1"
+    },
+    {
+      "path": "app/static/help_topics/qrverification.html",
+      "before_sha256": "ddc4984e00183a06c3ec96ef0fce7286681d911f83fad2abbc551dbc08e5227f",
+      "after_sha256": "a5e8fd24ddbc5d8d17f4894a89c75caacf1c4542687a9042927feadb614033d5"
+    },
+    {
+      "path": "app/static/help_topics/qshe.html",
+      "before_sha256": "5bb0f9c359b3d5e8f87fc419668e2cf62d5739cd804798346397a49765137526",
+      "after_sha256": "b338d12145f61c8b3706a9bc80476ae4410318a949e22ff5e6002b2c5684274e"
+    },
+    {
+      "path": "app/static/help_topics/receiving.html",
+      "before_sha256": "e8740ca7bde5da0bd1dbf231756fdd59bec2e20400baa589d86cde769c6927a7",
+      "after_sha256": "cfb1cdd5bcac94077f98b61bbfee3e37b1f9721dd81f44c7fa34582982cd02f7"
+    },
+    {
+      "path": "app/static/help_topics/recordmanagement.html",
+      "before_sha256": "a2615fef01f90d29dd4ba4d98ac238cd754cf08cdf8517e520ebe9a894ef16e8",
+      "after_sha256": "f38cca956a6693f3e4e35c9e3e213d440185266ea6d8e967113c921947140569"
+    },
+    {
+      "path": "app/static/help_topics/records.html",
+      "before_sha256": "da8e79bb0a78b53e10822a2d87013e5f5c49cb2395f2bef139dcee5b5da9ce85",
+      "after_sha256": "7b8c5d9e46184b4846868f20148ce179919dac0b8b59d27bd598df628ca85378"
+    },
+    {
+      "path": "app/static/help_topics/savestatus.html",
+      "before_sha256": "5d54b49159e84eeaa6f413341480556fd2f83d32bced66057583e924df49dbcc",
+      "after_sha256": "2f3ded012458e48bcad04a05fbf2e8e3ec5abee47cb8edc78d996bad85b9e3b4"
+    },
+    {
+      "path": "app/static/help_topics/start.html",
+      "before_sha256": "e46294644699ad0d0af0f2a3ef8ee6ce7587e12ee78c91857fce4214b2c89fd0",
+      "after_sha256": "113f238548e3570f841f3e3d65e78b1b5fd18587704b5cdf6d19fafad6524d96"
+    },
+    {
+      "path": "app/static/help_topics/stocktake.html",
+      "before_sha256": "5016ce2ff6d5770ef222704e3603e94f3d165b6159dcb72694a3347c894ede0d",
+      "after_sha256": "cc2be69f02c44c32fa9789d34f4ecc2278a1b403a439d65ca7cb394c0ae522e6"
+    },
+    {
+      "path": "app/static/help_topics/storage.html",
+      "before_sha256": "2ebcfb2c6f75bb05a833d8aa42959467edb0e91d21ca4cba8fb440136e3ea2bf",
+      "after_sha256": "b738776c49472f3c6242eecdda1b5e37b0eaa42c3aa19c40237c6b521c0849da"
+    },
+    {
+      "path": "app/static/help_topics/support.html",
+      "before_sha256": "818f711cbce78f0530f7ee6f15799521de3bbae07e9e68b67c07999aa7907c03",
+      "after_sha256": "7fbf38d78ef875c8b8a8f51c463c1aa629dce4cdd737813af4b64dae0ca5480c"
+    },
+    {
+      "path": "app/static/help_topics/tasks.html",
+      "before_sha256": "3181ae6f06b5851248116bbdc606b6c649587f321641edc4e51e4bded6a9f563",
+      "after_sha256": "e7a2924f373fa23f20e17698fb15acf957a3fdad095ce1efed2eb18894f2c18d"
+    },
+    {
+      "path": "app/static/help_topics/toolbox.html",
+      "before_sha256": "35980273d5c72d69c8e9ad2aee73002df874f54aee2bf94197b518e834ef597f",
+      "after_sha256": "fe626943dc07f556fbac1ae4d622149094a911dd79231ae95e62b1cb4abb1253"
+    },
+    {
+      "path": "app/static/help_topics/toolboxbuilder.html",
+      "before_sha256": "86bd816e818f5ae206e7bff2dce8ea40fb134d09db1ad6675cf2a39747944c49",
+      "after_sha256": "6d3dc7d13acebd77ca6d2dea6a851dcb80d4791a4d75c9d7b9ebd795be7203ca"
+    },
+    {
+      "path": "app/static/help_topics/toolboxguests.html",
+      "before_sha256": "5d87df22c91870dfbbef54a11f397e3edf52fffb900f6d6236af4dfc4b07c29f",
+      "after_sha256": "d87eb1b7261a03c64e06db6b3f4be6cb5c736bf90cb4bd8be1c4c96f4555eb75"
+    },
+    {
+      "path": "app/static/help_topics/transfers.html",
+      "before_sha256": "e12ff577b8e1498a895699d707b1996fa84e00fddb492143a8ccfa85a6a00e39",
+      "after_sha256": "1a98520ba305ee72a7532adabdc82bdf6f9a5c7d19ffc73d9ec43844293bdaee"
+    },
+    {
+      "path": "app/static/help_topics/types.html",
+      "before_sha256": "49e87838f1c9d7c028e6ab99e2d92a19a4486f4baf76e89a16d9255179ba2daf",
+      "after_sha256": "f2fd1cbe6b59b50212f71d6e287939007cc24cebb570baa98ab3af2714edcf39"
+    },
+    {
+      "path": "app/static/help_topics/uninstall.html",
+      "before_sha256": "4856fa89f2d6ff81085fdd6b093fb4bde94072c320e4ba2915f31fd600168504",
+      "after_sha256": "6f8202e6a54dcc98ec8b6e811bdbde60ff96ca554c7fca585fbe1839cae16b69"
+    },
+    {
+      "path": "app/static/help_topics/users.html",
+      "before_sha256": "469b5c13bf3bdb04fa78b285b3e8a5257698a150316fef22fa0afb24d61180da",
+      "after_sha256": "ce8f6059a8fc18a319ad568c56875ffb81b34c2c108dd5127277014407b68409"
+    },
+    {
+      "path": "app/static/help_topics/vessellogaccess.html",
+      "before_sha256": "0ca81bcec6736cf1ced6c000928591bd234733212c35bff8f21f8ca3eab82f0b",
+      "after_sha256": "0ba1e925a579f8c564867da0ec394e62bd743b822187da659ffe00f7628e26fc"
+    },
+    {
+      "path": "app/static/help_topics/vessellogs.html",
+      "before_sha256": "4ff7659ab6bd89fb49dce2410476cbff2ea2d7b9f8fa92a9f793e35939745242",
+      "after_sha256": "46f189287dbdaa0a8ab957e153188e3e24a2dd12c903e121419aa9f64f918112"
+    },
+    {
+      "path": "app/static/help_workspace.js",
+      "before_sha256": "9b2cc3620b44a6c5a7dd61adff83556a09a9e421dfdb39ca29d3ba20e910775a",
+      "after_sha256": "37d0c6b44224ea9cbe088aca7931210347add6cef9765001e422c83675e5ac89"
+    },
+    {
+      "path": "app/static/home_workspace.js",
+      "before_sha256": "c07eacfb0ddc157dc35cc8d57c495f2e7e763ae9cd9632099d95aad351abb3eb",
+      "after_sha256": "d1fba782d5900ddeb63f8cd3f3eb8f5bfa24ace3e195ee1278fc615cc79e9d34"
+    },
+    {
+      "path": "app/static/index.html",
+      "before_sha256": "115dcdd2630e7a80d54c33530f0a73c9d9ae7272b0aa91c9f25f20ed8cac9cbc",
+      "after_sha256": "dc46e6d3b4a87e455506b95129f120f99e7f411ccb4ed0cb6e6bab2788d46b2f"
+    },
+    {
+      "path": "app/static/install.html",
+      "before_sha256": "5f34b83fb240892aa7ac32736a559dfdd639efdd95d0ed169f099ced21a3fca2",
+      "after_sha256": "ad0a44cbc3a21ed0126cf3206c0889fc1e823571d39b01eb07c13b8007998cbf"
+    },
+    {
+      "path": "app/static/inventory_navigation.css",
+      "before_sha256": null,
+      "after_sha256": "396d6e549d78f62115c5d156ec2c2a5d092d56589f9d634b963bdfc016b8d29a"
+    },
+    {
+      "path": "app/static/inventory_workspace.js",
+      "before_sha256": "3548651a2555064f36662f283fa522ffada077095b5aa35860907ab4e8b88a77",
+      "after_sha256": "672f0dbb169364e34937e1e2d590662c58ba964730b8384193e8667b32a3a8f8"
+    },
+    {
+      "path": "app/static/personal_home.js",
+      "before_sha256": "bc953016b769c44fcc400a953ba0d7c0ce03cfafb733912b5b60312e967de1b8",
+      "after_sha256": "b45e2b2d67bab7a488b0cd6ddec8998fc274ab8d9f38dddbf0f3f4ee8276648f"
+    },
+    {
+      "path": "app/static/pt-BR/examples.html",
+      "before_sha256": "26f3e1df5eced574d8e432350841c89ac21dfbb7983834dc1df00dee4701abb1",
+      "after_sha256": "988aa485d0bfff38514a0c89602958efb473be63b02fd1bd9bc38946ac110036"
+    },
+    {
+      "path": "app/static/pt-BR/fleet.html",
+      "before_sha256": "3bd5d7030b77efb2ef07a2656164689dffc273d58a210b96ca67f44064652ff8",
+      "after_sha256": "f7b1c4c4124dea61a2c1046c569bcdda948991c681cc272e96af45e55be6b1ae"
+    },
+    {
+      "path": "app/static/pt-BR/help.html",
+      "before_sha256": "19da405611cd9ace621c68967fec899b2d44e1e2f3216fe5bd1ecb1abe93776c",
+      "after_sha256": "c1da30e583daa0fd300006770c4552bba9b40cac7e0154df2e9084765ca6b2f2"
+    },
+    {
+      "path": "app/static/pt-BR/help_catalogue.json",
+      "before_sha256": "4b0444095e545f4349a3631ced3794891dbf380c862c6e481294e0ef4cdd44ad",
+      "after_sha256": "34b7dbc95e551eb30a89dccf5c232513efa67780bf3e4b055b4446f60988d391"
+    },
+    {
+      "path": "app/static/pt-BR/help_reference.html",
+      "before_sha256": "e8b23bbda68154c04f2e9043600e85d56b354254eaaba0c369854a180a210ddb",
+      "after_sha256": "490f4acd91d48ef30ec3396b1c3126250876d164d1e1471326265f9ac626f9ef"
+    },
+    {
+      "path": "app/static/pt-BR/help_topics/accessreview.html",
+      "before_sha256": "59e25a11339f40eb18dd42374cf3724187e81e02dd6641797c66dbdfe07e74e3",
+      "after_sha256": "43476b5a361fb2de9ae011d4ddab3ae2133515c6a709e495705e7632c3d16d99"
+    },
+    {
+      "path": "app/static/pt-BR/help_topics/approvals.html",
+      "before_sha256": "40e1ddcb14950ce3e312a322d61972e0cd656ddd756d35585f41324e8703a06a",
+      "after_sha256": "0767b96f8cd5eec94be97ba997133d90e7be2f5baf2b0a15e824b3533b86e311"
+    },
+    {
+      "path": "app/static/pt-BR/help_topics/assetcalendar.html",
+      "before_sha256": "737e7c4cd6bfd7db836cf7639eaac3e94486319da5505e3c9184a76cbf2e7fbe",
+      "after_sha256": "0a0882d1c147402a2a17b66de22c7068fd3bf42a846e1f3763f88b92086fd4c1"
+    },
+    {
+      "path": "app/static/pt-BR/help_topics/assetdetails.html",
+      "before_sha256": "bcb023d7b184c0f742871609697d6da1ff9216157c42636826f9835b281fc635",
+      "after_sha256": "cf73fd8badaf25b33b8ed618fda785e761d22060fce7263150e4c751fe0c09e9"
+    },
+    {
+      "path": "app/static/pt-BR/help_topics/assetlabels.html",
+      "before_sha256": "e860d550736eeedecee7c79376189f0a337e3a1994fc2f66db347ac9214d21b9",
+      "after_sha256": "16f2ad06490d1b9a149bb92f6a06a802c646c53d42b57e1b2b5316ef90449bf1"
+    },
+    {
+      "path": "app/static/pt-BR/help_topics/assignments.html",
+      "before_sha256": "ae5eb6b9e3cbbbfe1c61d0e8218c4ef94704f34ab1d8313f7ccc3e7b606ae184",
+      "after_sha256": "f7e49fe0e7c548d9f8ecaeecd17fe2bee9343f26c8aef37523e227a31220e6d2"
+    },
+    {
+      "path": "app/static/pt-BR/help_topics/backups.html",
+      "before_sha256": "0648e0bf2146a33a09c006b3de06750b972b469502214fd0ba881fd5f12de3f2",
+      "after_sha256": "4478c12c4f8cf2361278ae209ab6bf3f8f72e6a0d7feb008d26a8ecc7948033a"
+    },
+    {
+      "path": "app/static/pt-BR/help_topics/browseradmin.html",
+      "before_sha256": "7897536ca6328d37e0faaec9f3688d8e5db65e58f34bd8875d0026c600ab99cc",
+      "after_sha256": "a06d230da541e69d54466a517457d324b9ac93b38c80c7578aae4cc6d2fc5cf8"
+    },
+    {
+      "path": "app/static/pt-BR/help_topics/browserlogs.html",
+      "before_sha256": "fd1a578c94b7da49b6ef3eabbb4a149b941840ec6ee8e9713ae374a5c3b7286f",
+      "after_sha256": "61bf69fc80811991e33eb6d0969750f03d483db0cc739c3d0aba96f40904e06c"
+    },
+    {
+      "path": "app/static/pt-BR/help_topics/browsertemplates.html",
+      "before_sha256": "d235fefa7123f1fd98b718ba63d24dbbbb1bc35c34f5f53e7c2a4475747997b5",
+      "after_sha256": "b5808fe5fce37c16aa3c66e4ee09580a08c8b8ebd3aa70951faf894ebb5c146d"
+    },
+    {
+      "path": "app/static/pt-BR/help_topics/browsertoolbox.html",
+      "before_sha256": "b455907ed855f5b5a74d17671217096e0eaf76ba40598272f52b5a20938044a6",
+      "after_sha256": "6ca5a65c29ec232ef9ff9442ac70503e993b5ff1e8ef299ab3f419f58868716c"
+    },
+    {
+      "path": "app/static/pt-BR/help_topics/builder.html",
+      "before_sha256": "5a54624d6bcbc5a20bdcdd734204f9df08430ba6ee3026cd943c00e65fbfbcd1",
+      "after_sha256": "48fdc98fe9cc2117c29f07fc276dab06790047f8dac3964c12543f845847172f"
+    },
+    {
+      "path": "app/static/pt-BR/help_topics/certificates.html",
+      "before_sha256": "ffc3b9de85995e5b36db6f0fb3e71071affb3757727d7893e6155f2d259d7d10",
+      "after_sha256": "dd2dec434315ac7acf8e3b0439ef46ec157652b7ec34b62cd18876d3a06d4fe8"
+    },
+    {
+      "path": "app/static/pt-BR/help_topics/companybranding.html",
+      "before_sha256": "e8a3da2defec7d71f8c0b534da37f771555e3921247e47a95c9026df02df0cd7",
+      "after_sha256": "7a47c09372d2863a91437ab69389116d00660a7891644c4f847889272303d1c5"
+    },
+    {
+      "path": "app/static/pt-BR/help_topics/containers.html",
+      "before_sha256": "60b58138c3ac165a26a8dd8ff33e736ac7a36e47f244a7869727c502e2369146",
+      "after_sha256": "d33520e047f08b9cadb1cbc4230b55c588fd4cd87e21a259bcbcb208a2998e5c"
+    },
+    {
+      "path": "app/static/pt-BR/help_topics/create.html",
+      "before_sha256": "d8678ee0e295b61664dc1ae2225b53f0e5d5d93835f6fd7f8085c3f766e3ea65",
+      "after_sha256": "21491d6cc1f4f3dde5325d23b210cca130fa1ce15d3e3851a0dea4df169757b9"
+    },
+    {
+      "path": "app/static/pt-BR/help_topics/daily.html",
+      "before_sha256": "00204a07c26a9d7b87f6a27f51cee6e3b8b1af519d71408c79f03f4d1c0f8d46",
+      "after_sha256": "8a7513ba8addd9557b0daf9df1695568a02b4663640a64bba50e78eddfdcb74e"
+    },
+    {
+      "path": "app/static/pt-BR/help_topics/dashboard.html",
+      "before_sha256": "e7bee389c9f52d3a2184db82e49c9f04f65da6e64c4deb07fbee2d3f262e65ca",
+      "after_sha256": "210652b5e6e316c0927dd2a251f1f30b715d2fd8654a037a6b70c74e77380847"
+    },
+    {
+      "path": "app/static/pt-BR/help_topics/datetime.html",
+      "before_sha256": "41eb1f57a8f3a36abf04353c60137c06edc3cc6f796827de91bec4dbf811d514",
+      "after_sha256": "a7aba3ade17926378abf6874439a32fa29108e0156a71dfffcecef5a23f11b52"
+    },
+    {
+      "path": "app/static/pt-BR/help_topics/departmentheads.html",
+      "before_sha256": "e1a26025359b6f664e5b8fbe181d4c3ab7478539822b0415d7a64fb51bcc9672",
+      "after_sha256": "0052cc42fceed2f9b5529026350964a1ef2cf3d8d9fea5dc3a54bcae32c1c7fb"
+    },
+    {
+      "path": "app/static/pt-BR/help_topics/departments.html",
+      "before_sha256": "20d561f9dd5261a98f90081b2cf86f34aee8a6e8e56dfe6cc895914c06206b52",
+      "after_sha256": "49f18cd740b808c3a093f3772e9aa1ca99dcc2425b435bda6c668fef6cc2ccad"
+    },
+    {
+      "path": "app/static/pt-BR/help_topics/document.html",
+      "before_sha256": "56ce7992ba83df2931515a8dd87766da99edd619ce78a415d7249466bd52107c",
+      "after_sha256": "c0f7fdba39ee5af75499eb484e69d75ef98e6ceab765046e2a8f94890e4cd0d6"
+    },
+    {
+      "path": "app/static/pt-BR/help_topics/documentimport.html",
+      "before_sha256": "22929a2dfdf4091cc3ed72d3099956d554d64e522c394f1fabff3bf8185c0fb9",
+      "after_sha256": "8c6ae48f31df5ad98cd0aef5a489810ee00c122fcec092e3a2ad8bc6f79f1271"
+    },
+    {
+      "path": "app/static/pt-BR/help_topics/evidence.html",
+      "before_sha256": "5129ad9aad7e0c3f463c83c517bd122cd2cb0e3f3edd4175bd6c1c0b060d40ff",
+      "after_sha256": "42d7637e68fdb03589306194636562e6f45b1fee0bcaf6e5891111147cf52568"
+    },
+    {
+      "path": "app/static/pt-BR/help_topics/evidencereview.html",
+      "before_sha256": "e92d25ec25e3624510d63883b3543f6cd5a4e252426281c140070fa6d4e2f5f4",
+      "after_sha256": "87a0cedcf1d3af82040ef711586027f6bc00b449eb06c395244758d49b568e09"
+    },
+    {
+      "path": "app/static/pt-BR/help_topics/faults.html",
+      "before_sha256": "1768e91da4cee53cc95a10f32e51e0a30de600e61d1f19ff75d2c862fbd56e80",
+      "after_sha256": "6fcdbbeb24e5dfa1a7588ff0e01bbdbda53f1b568541a89f8d8a6cef0b0fa4fb"
+    },
+    {
+      "path": "app/static/pt-BR/help_topics/fleet.html",
+      "before_sha256": "f9630c8223bc805debedd5dc72ed084477adbc1eae9d6c48266980d81edbabcd",
+      "after_sha256": "31afff6a44d5499cdf233ee9244793b211185663571a7fac9b30c58af9eeadb9"
+    },
+    {
+      "path": "app/static/pt-BR/help_topics/fleetaccess.html",
+      "before_sha256": "0a5833aa0442b8365553829ca27b96905b32c748e552c551785159a8e7ef4f38",
+      "after_sha256": "e4e7102220698492a47df373bba9ec232df51fab12f30b3d0e5f738a4ccf44e3"
+    },
+    {
+      "path": "app/static/pt-BR/help_topics/generaltasks.html",
+      "before_sha256": "0bbb9ca12a4480886d35de88fd47ac8b936129821b09307139d494f5ccff4919",
+      "after_sha256": "101694ae376d234bdb1b847282d275a8ade71a69cb8320b5c57022afeb6a5f76"
+    },
+    {
+      "path": "app/static/pt-BR/help_topics/handovercontinuity.html",
+      "before_sha256": "f4aa6b322af4687638b3072b6a4ef5a20b2f5917cbf057577f744b7bad0d8ce2",
+      "after_sha256": "09dcbcdbda5078d698ddbae030116b42b94909adcb95de26e3115693f187ceaf"
+    },
+    {
+      "path": "app/static/pt-BR/help_topics/handovers.html",
+      "before_sha256": "82f321c0fe5287cb1f33d856f5692ce857480fa5df36040f6db499668dc58f60",
+      "after_sha256": "2c83c859439fb0643c86d4c5e4b9fbf7d75779aec3be4899322e22298ab512e6"
+    },
+    {
+      "path": "app/static/pt-BR/help_topics/https.html",
+      "before_sha256": "c7a87710564d242c22559b6ff0eb0969afb281bdc93e3fd29ca398f53087caf8",
+      "after_sha256": "a36620eb20787fcc11beadd8fa8f08bb274366abd1f301f8d4cfb1dae9e4a5a2"
+    },
+    {
+      "path": "app/static/pt-BR/help_topics/illustrations.html",
+      "before_sha256": "bacf5f3f6d2344a06e622896fa4c85c249cd32fbf612e8c20cb8e56cd6560b08",
+      "after_sha256": "a1c7a3f62f49494b9b899d1d0bb74166bcf0a9cc001595609296742678f0ff47"
+    },
+    {
+      "path": "app/static/pt-BR/help_topics/importcentre.html",
+      "before_sha256": "0787f858efb86376a4bf9640e4d734bc2e46349b5429676a367d46c3c0f043a4",
+      "after_sha256": "399ada2f8b9e40b5d1b08ebf017e784e9844cd5964f2f895e08d038975f78455"
+    },
+    {
+      "path": "app/static/pt-BR/help_topics/inventory.html",
+      "before_sha256": "caf551166a572b1122d5e55b77c5b5e7895f14ba94f05c1bedfc968b4d2166cb",
+      "after_sha256": "bd423c3b180a799fd9b3e7c067265ef760a6ddfe9993e8463f68313da30b4005"
+    },
+    {
+      "path": "app/static/pt-BR/help_topics/inventorybuilder.html",
+      "before_sha256": "c942ce9d308552d452eee2d2cba8a42fa86d15322aabb03a75865ff115c67424",
+      "after_sha256": "06edc9c7467a843b40f2b2cb72e565df3627adc4b1e9ee29e6607f54dd57eea9"
+    },
+    {
+      "path": "app/static/pt-BR/help_topics/inventorytransfer.html",
+      "before_sha256": "97cc35d4b2aee196ce1c7b0867d84fe8d0aa48f61c6cee39cbcb7ac505cd08a7",
+      "after_sha256": "49c9f365d4aa393ce8d12846e8c85bd58d0802aa35bd61618799ebf7430d83f3"
+    },
+    {
+      "path": "app/static/pt-BR/help_topics/itemjourney.html",
+      "before_sha256": "09d3fcff1d2ae638e02191ac6c58b12ad2023b47a50b7a9984ca93c7caece6c1",
+      "after_sha256": "38ceaeff66f1c6130c6b4fed303c99498c1eb451ddb3211eb88f3564652fe774"
+    },
+    {
+      "path": "app/static/pt-BR/help_topics/itrequests.html",
+      "before_sha256": "837a52b44779b88c51d935d01e187e4d2728a789bfa28a7f21e9ae303b8135ad",
+      "after_sha256": "167e6610e80e05ef2c5275cd747004ecaf00018f5c9e0c37ea764c00c04bbafe"
+    },
+    {
+      "path": "app/static/pt-BR/help_topics/live.html",
+      "before_sha256": "a798ba711f737564e30299b29149cd12933745396083c7194a7143b516a06cf5",
+      "after_sha256": "65b6d7539b5628473fa92f6249b02c0e8ff641168bfe14e944d99cac3ced026b"
+    },
+    {
+      "path": "app/static/pt-BR/help_topics/logbuilder.html",
+      "before_sha256": "5d73562e11fa0d8d5b060bfc19534b947a50b7edc7a301ce63ebb4304a94a71d",
+      "after_sha256": "f8b55bdabfe9c5f5d3b7924db8cc72ecddfd2c9629675bc1a43676232a523391"
+    },
+    {
+      "path": "app/static/pt-BR/help_topics/logexports.html",
+      "before_sha256": "20f36be1fa544f5d11aaee77aa8d30fdb7bb752f4081e6fee4f43fd38edf8050",
+      "after_sha256": "46dc3a04b45202752d01377e38e4adde3ec40b71beae9a28cd5ef56f0825d0da"
+    },
+    {
+      "path": "app/static/pt-BR/help_topics/logimport.html",
+      "before_sha256": "53c1e08b9804bce65c1080270178934c60e479ebeb475669b5e7519b3d681cb2",
+      "after_sha256": "eb16f3f9bf9715308b5a9c296cc7ab815d8d9d06b73e8f10fb8aec677124152b"
+    },
+    {
+      "path": "app/static/pt-BR/help_topics/logreferences.html",
+      "before_sha256": "c878d86dbc85544f9b3a7bf257aa604c69939e11b8fc9632c02bf8f7d59a5af8",
+      "after_sha256": "e311e4f65303e610d431af875e7d4fc35177554131d1a78238e58d32c1f4d6d6"
+    },
+    {
+      "path": "app/static/pt-BR/help_topics/logs.html",
+      "before_sha256": "e2180cc24c2fc833f73e54de0199eff67552d1b5a66946049b64cde341f5d68e",
+      "after_sha256": "beda4eb2537e185b200e04e6aef81bec3a62be4a75924f6e537943d60e189c9c"
+    },
+    {
+      "path": "app/static/pt-BR/help_topics/logwindows.html",
+      "before_sha256": "65f8cbeb98f9a3959bdf021aaacb0d9950e3ffda252fede43ed5dd5e2e89fb83",
+      "after_sha256": "d6189e8a78476d0578b7c7715ff572c0d63bb15ac2f10e05428eddd61dfe3d7b"
+    },
+    {
+      "path": "app/static/pt-BR/help_topics/lowstock.html",
+      "before_sha256": "a9449b597b056d3c6f9bd2e051733d482d141b9776f49103de757b3e10a290fb",
+      "after_sha256": "f151b67ef02b6b1b76a3c913a39ccf4d9f162f30714ee0361de44f1c2dd4a9d6"
+    },
+    {
+      "path": "app/static/pt-BR/help_topics/maintenance.html",
+      "before_sha256": "db9b1a3e6432cdfb9fce63db0c1a97fb613bce4700905afee73e7e0fa7db20d8",
+      "after_sha256": "5a569d0e65e00802269112fec85e7a4e2403b7949b618fd58e1fddac0fb7d66d"
+    },
+    {
+      "path": "app/static/pt-BR/help_topics/maintenancebuilder.html",
+      "before_sha256": "8574fe2c0f0a0dba3ccba5ec1b990833d2c422cc70fafc265b6c667a57554c72",
+      "after_sha256": "2c956af5927e11c404eef16ec371b4710b98a3c6ac6550d2afd5f2dc8b7dfe99"
+    },
+    {
+      "path": "app/static/pt-BR/help_topics/manifests.html",
+      "before_sha256": "c0e6c1d701c4fdb526c70de6bc94292be3057ad5e9ae925f7f477afc44e05b8a",
+      "after_sha256": "4aa80f16e52bfa802b3b0cd535716199cbf88f39dbe58095ef4306e82917aef8"
+    },
+    {
+      "path": "app/static/pt-BR/help_topics/membership.html",
+      "before_sha256": "e2f274887918b24bae2ddc98f91a0565424640f51090509db2d240012b3b52c6",
+      "after_sha256": "dcecfe230188c930485ec9aea313a5276a491a372f5e475b492c947159a3be23"
+    },
+    {
+      "path": "app/static/pt-BR/help_topics/navigation.html",
+      "before_sha256": "b49bcaa6c7a855abe75a04f8f3518968a4303fbf84adde02682fb8d2ce28afde",
+      "after_sha256": "3d0024d38eff59b1523400cc00e3c0ebf3248ef15f0ead14f7064d6c15b163ba"
+    },
+    {
+      "path": "app/static/pt-BR/help_topics/network.html",
+      "before_sha256": "4c46d3bd3362a9fe988bc8fe95c1aaefa3cc4aebbe1ba4057e9fecf21e7c10d2",
+      "after_sha256": "3a33c45e31f3439f484be2974efddb6b9bc9c6ca3bac9e3f5e67c514933d5b86"
+    },
+    {
+      "path": "app/static/pt-BR/help_topics/offsets.html",
+      "before_sha256": "1e075de22adaf5b377570b17310978219288879f0b3e373715758764832f20e1",
+      "after_sha256": "bd9493c275c65ff551c25cc0648ac1166e1dc54472af171d1361e7bf141158ef"
+    },
+    {
+      "path": "app/static/pt-BR/help_topics/originals.html",
+      "before_sha256": "80be26d171357528d93cd2643966924df1cfdff1889082d4088a167c15d15fae",
+      "after_sha256": "0134944345fcc164ed7ea025ba1bf698c8609d5aa396ee0a346ad6e32a032218"
+    },
+    {
+      "path": "app/static/pt-BR/help_topics/permissions.html",
+      "before_sha256": "0cc544641f612b42b3b1feb0f4ad46cb64c337ccb875ec65fd7a7b0e81462224",
+      "after_sha256": "74ce1e60891debaac8c9a8bb4db59bf5bbf70a30aa5efaa065dcd920e2677c4d"
+    },
+    {
+      "path": "app/static/pt-BR/help_topics/phones.html",
+      "before_sha256": "df1e860fd0120b7aef978dd92c882cdb8c6003486dfe8a6afe80b8921d45de63",
+      "after_sha256": "df32274178113586ac49e42c120103e212435f102bd35d0b88cfee3a8345d056"
+    },
+    {
+      "path": "app/static/pt-BR/help_topics/projects.html",
+      "before_sha256": "66528da48270800cfb82b09d05d6271c78d0f93180b77cb8c6755be061550891",
+      "after_sha256": "d945935841a9454f2b5e8629bd099d2128480b721412f26e30fa601e46d00559"
+    },
+    {
+      "path": "app/static/pt-BR/help_topics/qrverification.html",
+      "before_sha256": "2675af01c329d9e836c6409da4ae77fe237f32641f2f327be87f2de79d58502d",
+      "after_sha256": "0e5f6fa9cddb80eb64c673d4e513714a8924baba0793b4757e0bfdc8a26682a5"
+    },
+    {
+      "path": "app/static/pt-BR/help_topics/qshe.html",
+      "before_sha256": "a78afae1b0bcebcc681cb120c1298f913ccdfef537cb555c445ca5ab26b32fe8",
+      "after_sha256": "01a2e6a8b48fcca0f51f55414b5c68ca43803030bf9b4764a51d92666ea1f3a2"
+    },
+    {
+      "path": "app/static/pt-BR/help_topics/receiving.html",
+      "before_sha256": "6d2bb3e43f136482c0b90f72da0c47600316555c3f45f49ae97196cb0526ac6d",
+      "after_sha256": "35234748e60ae88077450e11774f74d28ed73976ec20783652f306d9b8e88bcb"
+    },
+    {
+      "path": "app/static/pt-BR/help_topics/recordmanagement.html",
+      "before_sha256": "a1a34f5c2718eff7c448fc009993d0f94ff323c36efbf8ff04e1cb89dd0a165d",
+      "after_sha256": "00f6bf1534b76d609f9f14e3afec52fc1e069af815949d0cd0130c76bf1c48c1"
+    },
+    {
+      "path": "app/static/pt-BR/help_topics/records.html",
+      "before_sha256": "7952a3bf03a6f36b75df468843907cba6ccf68d284976c60234f603400de39af",
+      "after_sha256": "dbf359aadff482a6a26b16506dee68e79adf07864941f9fc0330c01a69d3b13c"
+    },
+    {
+      "path": "app/static/pt-BR/help_topics/savestatus.html",
+      "before_sha256": "9791091b7a3613b5fdf07b72baf1e816c93b46b7d19cd43654dea90dfa01c3c3",
+      "after_sha256": "579e6b322c17e43c4cd575f9eb43ac9832ea171cdc9997307543e20d3817db80"
+    },
+    {
+      "path": "app/static/pt-BR/help_topics/start.html",
+      "before_sha256": "fe37a676f1ea6d2b86a3f6464322cb1aafe29d154d6f40ea449d9719eed93833",
+      "after_sha256": "8f54dba733a272dd167e1d223caed5dfc9260bef71627df69278cd610ce0918b"
+    },
+    {
+      "path": "app/static/pt-BR/help_topics/stocktake.html",
+      "before_sha256": "28112f6eeead6c64c627bb43edfecd19444fdf2954b54e2b4c43e4ca2a53744f",
+      "after_sha256": "53d45445e4d1dfe976b8f97ba920ef00a32af0b4f274a99c34b684ffb300c672"
+    },
+    {
+      "path": "app/static/pt-BR/help_topics/storage.html",
+      "before_sha256": "aeee2bc8460d08ed67a3cad5b326978d3358fcb97a81dfeb20e7e79aafba1f9e",
+      "after_sha256": "665e3443595e4501fa788ad418199ce89a992ea5cb563bdf1bb65b5cb9263a5b"
+    },
+    {
+      "path": "app/static/pt-BR/help_topics/support.html",
+      "before_sha256": "232785e9bf59fba632fa7d71f131c138b818d38a190cc683f8c75b710c282db2",
+      "after_sha256": "b1f68a726e0dde409d1022e192c0df7fa06338908eedbd9f2045006adf466251"
+    },
+    {
+      "path": "app/static/pt-BR/help_topics/tasks.html",
+      "before_sha256": "5b0b22c4bf28e85f5314f7198553b4f9424468bc4ccd7c3e6859196aafe1365b",
+      "after_sha256": "4b47afa9219819705e948ed59d4976d6edc9cd8cae5cb64b2ac56b4d64a0b8c1"
+    },
+    {
+      "path": "app/static/pt-BR/help_topics/toolbox.html",
+      "before_sha256": "0ee1810719ad645fdb247a357f0e9b0085cc596e495c96559f54732c7166cfd5",
+      "after_sha256": "0f0aa9f8419d7a705f79c499dd64adfea8a8e9b5edff6c8afc9da2a685a8d874"
+    },
+    {
+      "path": "app/static/pt-BR/help_topics/toolboxbuilder.html",
+      "before_sha256": "eaa5de636b34f0a1c8337246e64152f3aa68457510617ab00ce47ecb853e18e5",
+      "after_sha256": "a639feab2af3846a862391d8584e1ee430143005bd64dc46467e71b61bd94a01"
+    },
+    {
+      "path": "app/static/pt-BR/help_topics/toolboxguests.html",
+      "before_sha256": "e6f28899afdbcc7238a63b0ebe106ee1ae4688eff407d682328eef5ea3527305",
+      "after_sha256": "9aeb40213e1257585ff40a1683c2d5edf44f43552ba374ed9748b481a48f1f8c"
+    },
+    {
+      "path": "app/static/pt-BR/help_topics/transfers.html",
+      "before_sha256": "6a5d981c9a08a7796d0f8a140a477a7e4cf6e62db80ed509bb76501ddf264203",
+      "after_sha256": "de52beb04b329ec29d46e262d3d38eefb7a818749740220f6acbb18324eca11c"
+    },
+    {
+      "path": "app/static/pt-BR/help_topics/types.html",
+      "before_sha256": "ee0230299a68deea48fef5ecebc53453cf2fe52930e6dd15f3c88b0ae15a4fa4",
+      "after_sha256": "f2f9633f0d177337e37af3c7a8688c1bec8de9dd119dc1abaca52d26b84247e6"
+    },
+    {
+      "path": "app/static/pt-BR/help_topics/uninstall.html",
+      "before_sha256": "ceea17d8e92a0dfe1f7d8dce0ff5b040066f6075edf44fe236525638814ae64a",
+      "after_sha256": "e2118bc4fbdd57da930cee4cd71bb5a8f2acbcce41e536588409450b799bfbd8"
+    },
+    {
+      "path": "app/static/pt-BR/help_topics/users.html",
+      "before_sha256": "1ce66db23d9438646aa19db52a7ad919fa942060e385da95d513b5273f04b9fb",
+      "after_sha256": "229e0dbe7995e763e9a381e7fd17f797a74f060c2ff58acb1005804ab2d7a16d"
+    },
+    {
+      "path": "app/static/pt-BR/help_topics/vessellogaccess.html",
+      "before_sha256": "affcfffdc4a254bbedc858454277f02ee18b91f65f1609d6a993f851a2e70bc6",
+      "after_sha256": "cb5efa807be918ef29718667d2eda7413a4d539bdb413cef8a5ac74abf66b45f"
+    },
+    {
+      "path": "app/static/pt-BR/help_topics/vessellogs.html",
+      "before_sha256": "afd286d218d4d510faef820f8d67e61bacb376d562a346f5a53e9a1339299495",
+      "after_sha256": "73c84ad5bc153f1ec6bc8921c3956fe8e1db5fa77c399ac53f756b195c134db6"
+    },
+    {
+      "path": "app/static/pt-BR/index.html",
+      "before_sha256": "dfdbd12f8724adf163952ec6c6e1cf11e0c4e23f20706ddc80b4c642e2bd5c2d",
+      "after_sha256": "ef28045251d9aa24e5a1153855a0c938e2e672af7d920754da2e0c5ca98a6b9c"
+    },
+    {
+      "path": "app/static/sw.js",
+      "before_sha256": "e10e6f8177908e44e58c8da2adb75e0da77c7c43ba8bf50dc2bc3304ab5cd84d",
+      "after_sha256": "ad666ad2749882016f1c1eb1fc8d57671f8463d122cb0f790915daf9c15d7e2a"
+    },
+    {
+      "path": "docs/WORKSPACE_UI162.md",
+      "before_sha256": null,
+      "after_sha256": "8ade9f9a976e175e256312c61d0e3655e087fb336d64491ed52507872a49d6ce"
+    },
+    {
+      "path": "docs/user/topics/inventory.html",
+      "before_sha256": "80ab4c3841d90210b061ce6aefad2394be4f82ab312b0240d793eaecf11821a9",
+      "after_sha256": "78df3138631f21fe9ab53aad2c8704e29a53ace0a415470952972df6999a53b6"
+    },
+    {
+      "path": "tests/test_inventory_browse_ui162.cjs",
+      "before_sha256": null,
+      "after_sha256": "c92bcd188e57d8b57650de817277a73c892995ab6dd01da06e21c2916e955a51"
+    },
+    {
+      "path": "tests/test_inventory_browse_ui162.py",
+      "before_sha256": null,
+      "after_sha256": "154b07fa11e47a157aa2c3fdb7159d0f6503fe410068f9b33eb1ce26be7dab5e"
+    }
+  ]
+}
