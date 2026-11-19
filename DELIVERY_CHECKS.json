@@ -5,7 +5,7 @@
   "base_commit": "c7b427c5c46f134b0c9dc41191dee58b7496d521",
   "base_tree": "c3daaf009ae66e32fa5503c8e84cd481b4304aa1",
   "parent_runtime_manifest_sha256": "e34d89daa1892bcabc497aa75d43cb4d6df59d084de5462bbd9f95237ec76453",
-  "runtime_manifest_sha256": "8e2f8e129ad33b530fa33d71d58b39ba1ac3675d89f2d53ee732db8514004a54",
+  "runtime_manifest_sha256": "051bb2bf30a96ab4a0e4c8f7c91e1a29a37edb22e98a45bd0d89e5986ee3b5f5",
   "verified_runtime_resources": 2611,
   "overlay_resources": 183,
   "normal_install_from_vendor_verified": true,
@@ -61,7 +61,7 @@
       "app/static/": 6545,
       "app/static/pt-BR/": 7999
     },
-    "normal_install_manifest_sha256": "8e2f8e129ad33b530fa33d71d58b39ba1ac3675d89f2d53ee732db8514004a54",
+    "normal_install_manifest_sha256": "051bb2bf30a96ab4a0e4c8f7c91e1a29a37edb22e98a45bd0d89e5986ee3b5f5",
     "public_admin_sections": 8,
     "sample_documents": {
       "pdf": 7,
@@ -70,12 +70,13 @@
     "public_demo_navigation": {
       "base_commit": "4946b27e7123ef361ddbc645fc4005c0896d2c56",
       "parent_runtime_manifest_sha256": "81e795b55642b3cb3c84f901952f860614b273ed3bfe7655081986db6b9f1d40",
-      "variant": "workspace-ui162-2026-11-19-demo2",
+      "variant": "workspace-ui162-2026-11-19-demo3",
       "viewports": [
         1360,
         390
       ],
       "gateway_and_management_tests": 47,
+      "restricted_guest_sidebar_checked": true,
       "guest_journeys": [
         "HR schedule and rotation",
         "IT priority, reply and PDF",
@@ -84,7 +85,7 @@
         "Reload, browser Back and account scope"
       ],
       "asset_keys": {
-        "app.js": "1.34.61-0902f7113c3e",
+        "app.js": "1.34.61-00ef9739b59d",
         "home_workspace.js": "1.34.61-886ec84c1895",
         "personal_home.js": "1.34.61-b49c3e8605ef"
       }
