@@ -2,9 +2,7 @@
 
 [Inventário e demonstração pública](docs/WORKSPACE_UI162.md)
 
-Em **Áreas de trabalho**, os dois primeiros cartões da demonstração pública abrem **Recursos humanos (RH)** e **Solicitações de TI**. Consulte escalas, documentos pessoais, viagens, folhas de ponto, despesas e chamados fictícios. O cartão **Administração** abre as oito seções administrativas em modo de leitura.
-
-Na demonstração, abra **Explorar a visão de gestão** e depois **Explorar a administração**. Oito seções mostram os controles de gestão com dados da empresa fictícia Maré Alta Surveys. É possível consultar solicitações de acesso e abrir documentos de exemplo pelo nome do arquivo. A prévia está disponível em português e inglês e utiliza somente leitura.
+A demonstração pública abre a empresa fictícia Maré Alta Surveys com as telas do produto. Na página inicial, experimente o humor do dia ou abra **Áreas de trabalho** para consultar RH, TI, operações, frota e administração. Os registros da empresa são de leitura. A escolha de humor é individual por visita. Use **Português** no rodapé para mudar o idioma.
 
 ---
 
