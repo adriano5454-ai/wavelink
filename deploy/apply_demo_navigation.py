@@ -7,7 +7,7 @@ import sys
 
 
 PARENT = '81e795b55642b3cb3c84f901952f860614b273ed3bfe7655081986db6b9f1d40'
-VARIANT = 'workspace-ui162-2026-11-19-demo3'
+VARIANT = 'workspace-ui162-2026-11-19-demo4'
 STATIC = 'app/static/'
 
 
@@ -92,7 +92,7 @@ def apply(root):
             if count != 1:
                 raise ValueError('Unexpected asset references in ' + name + ': ' + asset)
         if name == 'sw.js':
-            text = replace(text, 'ui162-20261119', 'ui162-20261119-demo3')
+            text = replace(text, 'ui162-20261119', 'ui162-20261119-demo4')
         outputs[STATIC + name] = text.encode()
     patch = json.loads(source('UI_PATCH.json'))
     patch.update(patch_id=VARIANT, parent_patch_id=manifest['variant'], parent_manifest_sha256=PARENT,

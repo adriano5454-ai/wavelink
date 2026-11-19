@@ -8,7 +8,7 @@ from zipfile import ZipFile
 import pytest
 from starlette.testclient import TestClient
 
-from deploy.demo_management import BASE
+from deploy.demo_management import BASE, STYLE_PATH, STYLE_VERSION
 from deploy.demo_management_data import ADMIN_SECTIONS, AREAS, BY_RECORD
 from deploy.demo_management_files import SAMPLE_FILES
 from deploy.gate import Gate, PUBLIC_COOKIE
@@ -134,6 +134,30 @@ def test_preview_is_public_demo_only_and_has_no_write_route(demo):
     gate.public_entry = False
     assert browser.get(BASE).status_code == 404
     assert browser.get(BASE+'?area=personnel&record=lia').status_code == 404
+
+
+def test_public_workspaces_use_the_same_origin_stylesheet(demo):
+    gate, browser = demo
+    stylesheet = STYLE_PATH + '?v=' + STYLE_VERSION
+    link = f'<link rel="stylesheet" href="{stylesheet}">'
+    public_page = browser.get(BASE, params={'area': 'hr'})
+    fragment = browser.get(BASE+'/workspace', params={'area':'hr', 'layout':'linked'})
+    for response in (public_page, fragment):
+        assert response.status_code == 200
+        assert link in response.text and '<style>' not in response.text
+        assert "style-src 'self'" in response.headers['Content-Security-Policy']
+    assert 'data-demo-workspace' in fragment.text and 'class="links section-grid"' in fragment.text
+    assert '</span> <small>' in fragment.text and 'aria-hidden="true">/</span>' in fragment.text
+    old_tab = browser.get(BASE+'/workspace', params={'area': 'hr'})
+    assert old_tab.text.startswith('<style></style>' + link)
+    css = browser.get(stylesheet)
+    assert css.status_code == 200 and css.headers['Content-Type'].startswith('text/css')
+    assert '.section-grid' in css.text and ':host' in css.text
+    assert 'immutable' in css.headers['Cache-Control']
+    assert 'immutable' not in browser.get(STYLE_PATH + '?v=older').headers['Cache-Control']
+    assert browser.post(stylesheet).status_code == 405
+    gate.public_entry = False
+    assert browser.get(stylesheet).status_code == 404
 
 
 @pytest.mark.parametrize('lang,hr,it', [('en','Human resources (HR)','IT requests'),

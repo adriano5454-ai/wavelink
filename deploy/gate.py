@@ -32,7 +32,7 @@ from starlette.requests import Request
 from starlette.responses import HTMLResponse, JSONResponse, RedirectResponse, Response
 from starlette.routing import Route
 
-from deploy.demo_management import management_page, select_language
+from deploy.demo_management import CSS, STYLE_PATH, STYLE_VERSION, management_page, select_language
 from deploy.demo_management_files import SAMPLE_FILES, sample_file
 
 COOKIE = '__Host-wavelink-demo'
@@ -464,12 +464,25 @@ h1 {{margin-top:0}}#error {{color:#9d2534;white-space:pre-wrap}}
         if not self.public_entry:
             return Response(status_code=404, headers=HEADERS)
         active_guest = self.valid(request.cookies.get(PUBLIC_COOKIE), 'public-session')
+        embedded = request.url.path == '/__demo/management/workspace'
         body, status, language = management_page(request.query_params,
-            request.headers.get('accept-language', ''), active_guest,
-            embedded=request.url.path == '/__demo/management/workspace')
+            request.headers.get('accept-language', ''), active_guest, embedded=embedded)
+        if embedded and request.query_params.get('layout') != 'linked':
+            # Already-open UI162 tabs use this opening tag to recognize fragments.
+            # The stylesheet itself is external in both representations.
+            body = '<style></style>' + body
         return HTMLResponse(body, status_code=status, headers={
             **HEADERS, 'Content-Language': language, 'X-Frame-Options': 'DENY',
+            'Content-Security-Policy': "default-src 'none'; style-src 'self'; form-action 'self'; frame-ancestors 'none'; base-uri 'none'",
         })
+
+    async def management_styles(self, request: Request):
+        if not self.public_entry:
+            return Response(status_code=404, headers=HEADERS)
+        headers = {'X-Content-Type-Options': 'nosniff', 'Cache-Control': 'no-cache'}
+        if request.query_params.get('v') == STYLE_VERSION:
+            headers['Cache-Control'] = 'public, max-age=31536000, immutable'
+        return Response(CSS, media_type='text/css', headers=headers)
 
     async def management_file(self, request: Request):
         key = request.path_params['sample']
@@ -564,6 +577,7 @@ h1 {{margin-top:0}}#error {{color:#9d2534;white-space:pre-wrap}}
         return Starlette(routes=[
             Route('/__demo/public', self.public, methods=['GET']),
             Route('/__demo/management', self.management, methods=['GET']),
+            Route(STYLE_PATH, self.management_styles, methods=['GET']),
             Route('/__demo/management/workspace', self.management, methods=['GET']),
             Route('/__demo/management/files/{sample}', self.management_file, methods=['GET']),
             Route('/__demo/quick', self.quick, methods=['GET']),

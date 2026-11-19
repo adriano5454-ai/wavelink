@@ -1,5 +1,6 @@
 """Read-only management tour. Its only data source is the bundled fictional catalogue."""
 from html import escape
+from hashlib import sha256
 from pathlib import Path
 import unicodedata
 from urllib.parse import urlencode
@@ -11,6 +12,9 @@ from .demo_management_files import SAMPLE_FILES
 
 BASE = '/__demo/management'
 CSS = Path(__file__).with_name('demo_management.css').read_text(encoding='utf-8')
+STYLE_PATH = BASE + '/workspace.css'
+STYLE_VERSION = sha256(CSS.encode('utf-8')).hexdigest()[:12]
+STYLESHEET = f'<link rel="stylesheet" href="{STYLE_PATH}?v={STYLE_VERSION}">'
 HR_AREAS = ('personnel', 'schedule', 'travel', 'time', 'expenses', 'alerts')
 # Each link enters the existing workspace using the visitor's normal permissions.
 NATIVE = {
@@ -125,6 +129,11 @@ def management_page(query, accept_language='', active_guest=False, embedded=Fals
         attr = f' class="{css}"' if css else ''
         return f'<a{attr} href="{escape(destination, quote=True)}">{label}</a>'
 
+    def breadcrumb(*items):
+        divider = ' <span class="path-separator" aria-hidden="true">/</span> '
+        label = tr('Breadcrumb', 'Caminho de navegação')
+        return f'<nav class="path" aria-label="{label}">' + divider.join(items) + '</nav>'
+
     title = tr('Management preview', 'Visão de gestão')
     directory = tr('Workspaces', 'Áreas de trabalho') if embedded else title
     hr_title = tr('Human resources (HR)', 'Recursos humanos (RH)')
@@ -143,20 +152,23 @@ def management_page(query, accept_language='', active_guest=False, embedded=Fals
                 + (f'<div class="actions">{buttons}</div>' if buttons else '') + '</section>')
 
     def entry(destination, label, note=''):
-        return '<li>' + anchor(destination, '<span>' + label + '</span>' + (f'<small>{note}</small>' if note else '')) + '</li>'
+        content = '<span class="entry-title">' + label + '</span>'
+        if note:
+            content += ' <small>' + note + '</small>'
+        return '<li>' + anchor(destination, content) + '</li>'
 
     status = 200
     if hr_index:
-        body = '<nav class="path" aria-label="' + tr('Breadcrumb', 'Caminho de navegação') + '">' + anchor(url(), directory) + '<span aria-current="page">' + hr_title + '</span></nav>'
+        body = breadcrumb(anchor(url(), directory), '<span aria-current="page">' + hr_title + '</span>')
         body += hero(hr_title, tr('Explore the offshore crew’s documents, rotations, travel and claims.',
                                   'Consulte documentos, escalas, viagens e despesas da equipe offshore.'))
-        body += '<section class="card"><h2>' + tr('HR sections', 'Áreas de RH') + '</h2><ul class="links">'
+        body += '<section class="hr-directory" aria-labelledby="hr-sections"><h2 id="hr-sections">' + tr('HR sections', 'Áreas de RH') + '</h2><ul class="links section-grid">'
         for key in HR_AREAS:
             item = BY_AREA[key]
             body += entry(url(key), tx(item.title), tx(item.description))
         body += '</ul></section>'
     elif admin_index:
-        body = '<nav class="path" aria-label="' + tr('Breadcrumb', 'Caminho de navegação') + '">' + anchor(url(), directory) + '<span aria-current="page">' + admin_title + '</span></nav>'
+        body = breadcrumb(anchor(url(), directory), '<span aria-current="page">' + admin_title + '</span>')
         body += hero(admin_title, tr('Explore the administration sections used by Maré Alta Surveys. Open a section to inspect its records and settings.',
                                      'Explore as seções de administração da Maré Alta Surveys. Abra uma seção para consultar os registros e as configurações.'))
         body += '<div class="details"><section class="card"><h2>' + tr('Admin sections', 'Seções administrativas') + '</h2><ul class="links">'
@@ -200,7 +212,7 @@ def management_page(query, accept_language='', active_guest=False, embedded=Fals
             path.extend([anchor(url(area.key), tx(area.title)), '<span aria-current="page">' + tx(record.title) + '</span>'])
         else:
             path.append('<span aria-current="page">' + tx(area.title) + '</span>')
-        body = '<nav class="path" aria-label="' + tr('Breadcrumb', 'Caminho de navegação') + '">' + ''.join(path) + '</nav>'
+        body = breadcrumb(*path)
         native_keys = (area.native,) + ALSO_NATIVE.get(area.key, ())
         buttons = ''.join(anchor(native_url(NATIVE[key][0]), NATIVE[key][1 + language_index], 'button subtle')
                           for key in native_keys if key in visible)
@@ -243,11 +255,10 @@ def management_page(query, accept_language='', active_guest=False, embedded=Fals
             body += ('<ul class="links">' + entries + '</ul>') if entries else '<p>' + tr('No matching records.', 'Nenhum registro encontrado.') + '</p>'
             body += '</section>'
     if embedded:
-        style = CSS.replace(':root {', ':host { display: block; min-width: 0;')
-        return '<style>' + style + '</style><section lang="' + tr('en', 'pt-BR') + '">' + body + '</section>', status, 'pt-BR' if pt else 'en'
+        return STYLESHEET + '<section data-demo-workspace lang="' + tr('en', 'pt-BR') + '">' + body + '</section>', status, 'pt-BR' if pt else 'en'
     full_title = hr_title if hr_index else admin_title if admin_index else tx(record.title) if record else tx(area.title) if area else title
     document = ('<!doctype html><html lang="' + tr('en','pt-BR') + '"><head><meta charset="utf-8">'
                 '<meta name="viewport" content="width=device-width,initial-scale=1"><title>' + full_title
-                + ' · Wavelink</title><style>' + CSS + '</style></head><body>' + header
+                + ' · Wavelink</title>' + STYLESHEET + '</head><body>' + header
                 + '<main>' + body + '</main></body></html>')
     return document, status, 'pt-BR' if pt else 'en'

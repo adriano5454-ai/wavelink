@@ -67,6 +67,7 @@ const PublicDemoWorkspaces = (() => {
         const [path, search = ''] = hash.slice('#demo/'.length).split('?');
         const [area, record] = path.split('/');
         const params = new URL(context.href, location.origin).searchParams;
+        params.set('layout', 'linked');
         params.set('area', area);
         if (record) params.set('record', record);
         const options = new URLSearchParams(search);
@@ -89,12 +90,23 @@ const PublicDemoWorkspaces = (() => {
                 if (!response.ok && response.status !== 404) throw Error('Unavailable');
                 const html = await response.text();
                 if (!current()) return;
-                if (!html.startsWith('<style>')) throw Error('Unexpected response');
-                panel.innerHTML = html;
-                for (const file of panel.querySelectorAll('a[href^="/__demo/management/files/"]')) {
+                const template = document.createElement('template');
+                template.innerHTML = html;
+                const view = template.content.querySelector('section[data-demo-workspace]');
+                const sheet = template.content.querySelector('link[rel="stylesheet"]');
+                if (!view || !sheet) throw Error('Unexpected workspace response');
+                for (const file of view.querySelectorAll('a[href^="/__demo/management/files/"]')) {
                     file.target = '_blank';
                     file.rel = 'noopener noreferrer';
                 }
+                // A shadow-root stylesheet loads asynchronously. Keep the loading
+                // state visible until the cards and record details can be painted.
+                await new Promise((resolve, reject) => {
+                    sheet.onload = resolve;
+                    sheet.onerror = () => reject(Error('Workspace stylesheet unavailable'));
+                    panel.append(sheet);
+                });
+                if (current()) status.replaceWith(view);
             }).catch(() => {
                 if (!current()) return;
                 status.textContent = pt ? 'Não foi possível carregar esta área.' : 'This workspace could not be loaded.';
