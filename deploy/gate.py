@@ -32,6 +32,9 @@ from starlette.requests import Request
 from starlette.responses import HTMLResponse, JSONResponse, RedirectResponse, Response
 from starlette.routing import Route
 
+from deploy.demo_management import management_page, select_language
+from deploy.demo_management_files import SAMPLE_FILES, sample_file
+
 COOKIE = '__Host-wavelink-demo'
 PUBLIC_COOKIE = '__Host-wavelink-demo-public'
 CSRF_COOKIE = '__Host-wavelink-demo-csrf'
@@ -457,6 +460,29 @@ h1 {{margin-top:0}}#error {{color:#9d2534;white-space:pre-wrap}}
                             path='/', secure=True, httponly=True, samesite='strict')
         return response
 
+    async def management(self, request: Request):
+        if not self.public_entry:
+            return Response(status_code=404, headers=HEADERS)
+        active_guest = self.valid(request.cookies.get(PUBLIC_COOKIE), 'public-session')
+        body, status, language = management_page(request.query_params,
+            request.headers.get('accept-language', ''), active_guest)
+        return HTMLResponse(body, status_code=status, headers={
+            **HEADERS, 'Content-Language': language, 'X-Frame-Options': 'DENY',
+        })
+
+    async def management_file(self, request: Request):
+        key = request.path_params['sample']
+        if not self.public_entry or key not in SAMPLE_FILES.values():
+            return Response(status_code=404, headers=HEADERS)
+        language = select_language(request.query_params.get('lang'), request.headers.get('accept-language', ''))
+        filename, mime, data = sample_file(key, language)
+        disposition = 'inline' if mime == 'application/pdf' else 'attachment'
+        return Response(data, media_type=mime, headers={
+            **HEADERS, 'Content-Disposition': f'{disposition}; filename="{filename}"',
+            'Content-Language': 'en, pt-BR' if key == 'manifest' else ('pt-BR' if language == 'pt' else 'en'),
+            'Content-Security-Policy': "default-src 'none'; frame-ancestors 'none'; sandbox",
+        })
+
     async def quick(self, request: Request):
         supplied = request.query_params.get('key', '')
         if not supplied or len(supplied) > 128:
@@ -536,6 +562,8 @@ h1 {{margin-top:0}}#error {{color:#9d2534;white-space:pre-wrap}}
     def app(self):
         return Starlette(routes=[
             Route('/__demo/public', self.public, methods=['GET']),
+            Route('/__demo/management', self.management, methods=['GET']),
+            Route('/__demo/management/files/{sample}', self.management_file, methods=['GET']),
             Route('/__demo/quick', self.quick, methods=['GET']),
             Route('/__demo/login', self.login, methods=['GET', 'POST']),
             Route('/__demo/check', self.check),
