@@ -38,8 +38,13 @@ def test_native_company_routes(company):
     with s.core.state.store.connection() as db:
         assert {r[0] for r in db.execute('SELECT DISTINCT kind FROM hr_records')} >= {
                 'people','needs','documents','shifts','travel','expenses','timesheets'}
-    assert c.get('/__demo/public?area=hr&lang=pt').text.count('/__demo/native/pt?browser_workspace=')==1
-    assert c.get('/__demo/native/pt').headers['content-language']=='pt-BR'
+    entry = c.get('/__demo/public?area=hr&lang=pt', headers={'Accept-Language':'pt-BR'}).text
+    assert '/__demo/native/pt?browser_workspace=' not in entry and '&public_demo=1#hr' in entry
+    assert c.get('/__demo/native/pt', follow_redirects=False).headers['location']=='/__demo/public'
+    assert c.get('/__demo/native/pt?browser_workspace=example&public_demo=1').headers['content-language']=='pt-BR'
+    assert c.get('/__demo/check',headers={'X-Demo-Original-URI':'/'}).status_code==401
+    assert c.get('/__demo/check',headers={'X-Demo-Original-URI':'/?browser_workspace=example&public_demo=1'}).status_code==204
+    assert c.post('/api/me/language',headers=h,json={'language':'pt-BR'}).status_code==403
 
 
 def test_visit_scope_and_read_only(company):
