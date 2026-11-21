@@ -47,6 +47,54 @@ def test_native_company_routes(company):
     assert c.post('/api/me/language',headers=h,json={'language':'pt-BR'}).status_code==403
 
 
+def test_public_original_workspace_folders(company):
+    from hashlib import sha256
+    s, client = company
+    auth = headers(s)
+    catalog = client.get('/api/original-documents/library?workspaces=true',headers=auth)
+    assert catalog.status_code == 200, catalog.text
+    rows = catalog.json()['workspace_files']
+    assert {r['group'] for r in rows} >= {'toolbox','checklist','hr-documents','hr-expenses','hr-travel','it'}
+    assert catalog.json()['documents']
+    for item in rows:
+        response = client.get(item['url'],headers=auth)
+        assert response.status_code == 200, (item['group'],response.text[:100])
+        assert sha256(response.content).hexdigest() == item['sha256']
+    entry = client.get('/__demo/public?area=original-files').text
+    assert '&public_demo=1#original-files' in entry
+
+
+def test_workspace_index_uses_employee_and_ticket_access(company):
+    from app import access
+    from starlette.testclient import TestClient
+    s, _ = company
+    store, accounts = s.core.state.store, s.core.state.accounts
+    with store.connection() as db:
+        person = accounts.session_person_in_connection(db,s.team[1]['user_id'])
+    policy = access.read(store,s.manager,person['user_id'])
+    rights = dict(policy['permissions'], **{'originals.view':True})
+    access.save(store,s.manager,person['user_id'],rights,policy['version'],'Fictional library test')
+    with store.connection() as db:
+        person = accounts.session_person_in_connection(db,person['user_id'])
+    token, _ = accounts.issue_session(person,'fictional-library-test')
+    auth = {'Authorization':'Bearer '+token,'X-AJ-Hub-ID':s.hub_id}
+    manager = dict(auth,Authorization='Bearer '+s.reader_token())
+    route = '/api/original-documents/library?workspaces=true'
+    with TestClient(s.core) as core:
+        all_rows = core.get(route,headers=manager).json()['workspace_files']
+        own = core.get(route,headers=auth)
+        assert own.status_code == 200, own.text
+        visible = {r['url'] for r in own.json()['workspace_files']}
+        denied = []
+        for row in all_rows:
+            if row['group'].startswith('hr-') or row['group'] == 'it':
+                permitted = core.get(row['url'],headers=auth).status_code == 200
+                assert (row['url'] in visible) == permitted
+                if not permitted:
+                    denied.append(row['group'])
+        assert 'it' in denied and any(group.startswith('hr-') for group in denied)
+
+
 def test_visit_scope_and_read_only(company):
     s,c = company
     first,second = headers(s),headers(s)
