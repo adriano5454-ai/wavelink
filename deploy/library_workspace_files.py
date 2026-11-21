@@ -37,13 +37,19 @@ def private_files(c, store, actor, caps):
     if caps.get('hr.view_own'):
         from .hr import current
         user, rights = current(c, actor)
+        names = {}
         for rec in records_with(c, 'hr_records', 'attachments'):
             if not store.hr._read_allowed(rec, user, rights):
                 continue
             kind, rid = rec['kind'], rec['id']
+            employee_id = rec['user_id']
+            if employee_id not in names:
+                row = c.execute('SELECT name FROM users WHERE id=?',(employee_id,)).fetchone()
+                names[employee_id] = row[0] if row else ''
             for file in rec['attachments']:
-                yield present('hr-'+kind, rec['title'], file, f"/api/hr/{kind}/{rid}/files/{file['id']}",
-                              '#hr/staff/'+rec['user_id'], archived=rec.get('archived'), at=rec['updated_at'])
+                entry = present('hr-'+kind, rec['title'], file, f"/api/hr/{kind}/{rid}/files/{file['id']}",
+                                '#hr/staff/'+employee_id, archived=rec.get('archived'), at=rec['updated_at'])
+                yield dict(entry, employee_name=names[employee_id])
     if caps.get('it.view_own'):
         from .it_requests import current
         user, manage = current(c, actor)

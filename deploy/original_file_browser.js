@@ -140,7 +140,7 @@ window.WavelinkFileBrowser = (() => {
       const link=node('a','btn wf-upload',t('Import file','Importar arquivo'));link.href='#builders/import/'+ui.group;topActions.append(link);
     }
     top.append(topActions);main.append(top);
-    const search=node('input');search.type='search';search.id='of-search';search.placeholder=t('Search by file name, title, code or folder','Buscar por nome, título, código ou pasta');
+    const search=node('input');search.type='search';search.id='of-search';search.placeholder=t('Search files, folders or people','Buscar arquivos, pastas ou pessoas');
     search.setAttribute('aria-label',t('Search all files','Buscar em todos os arquivos'));search.value=h.query;
     const tools=node('div','wf-tools'), searchwrap=node('div','wf-search');searchwrap.append(search);
     const clear=button(t('Clear','Limpar'),()=>{search.value='';search.oninput();search.focus();},'wf-clear');
@@ -181,7 +181,7 @@ window.WavelinkFileBrowser = (() => {
       heading.textContent=q?t('Search results','Resultados da busca'):ui.group?groupName(ui.group):h.folderId==='*'?allLabel:physicalName(h.folderId);
       const matches=visible.filter(d=>{
         if(ui.type&&fileType(d.filename)!==ui.type)return false;
-        if(q)return fold([d.title,d.filename,d.code,d.revision,d.folder_path,...d.groups.map(groupPath)].join(' ')).includes(q);
+        if(q)return fold([d.title,d.filename,d.code,d.revision,d.folder_path,d.employee_name,...d.groups.map(groupPath)].join(' ')).includes(q);
         if(ui.group)return d.groups.some(k=>k===ui.group||ui.group==='hr'&&k.startsWith('hr-'));
         return h.folderId==='*'||(!d.workspace&&d.folder_id===h.folderId);
       });
@@ -206,7 +206,7 @@ window.WavelinkFileBrowser = (() => {
         const titleHeading=node('h3');titleHeading.append(title);body.append(titleHeading);
         if(d.title!==d.filename)body.append(node('p','wf-filename',d.filename));
         const meta=node('div','wf-metadata');const location=d.workspace?groupPath(d.group):d.folder_id===null?rootLabel:h.path(d.folder_id);
-        meta.append(node('span','wf-location-label',location));if(d.code)meta.append(node('span','',d.code));if(d.revision)meta.append(node('span','','Rev. '+d.revision));
+        meta.append(node('span','wf-location-label',location));if(d.employee_name)meta.append(node('span','wf-employee',d.employee_name));if(d.code)meta.append(node('span','',d.code));if(d.revision)meta.append(node('span','','Rev. '+d.revision));
         if(d.archived)meta.append(node('span','wf-archived',t('Archived','Arquivado')));body.append(meta);row.append(body);
         const facts=node('div','wf-file-facts');facts.append(node('span','',h.size(d.size)),node('span','',dateText(d.imported_at)));row.append(facts);
         const more=node('details','wf-more'),summary=node('summary','',t('Actions','Ações'));summary.setAttribute('aria-label',t('Actions for ','Ações de ')+(d.title||d.filename));more.append(summary);
