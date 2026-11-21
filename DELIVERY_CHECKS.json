@@ -5,8 +5,8 @@
   "base_commit": "c7b427c5c46f134b0c9dc41191dee58b7496d521",
   "base_tree": "c3daaf009ae66e32fa5503c8e84cd481b4304aa1",
   "parent_runtime_manifest_sha256": "e34d89daa1892bcabc497aa75d43cb4d6df59d084de5462bbd9f95237ec76453",
-  "runtime_manifest_sha256": "2c18ad8990c03a8f212ee29950b34f5af4f983442bc6f526211002451d051b59",
-  "verified_runtime_resources": 2613,
+  "runtime_manifest_sha256": "b43f1e337723dd5b92c10c015f977b62ab9fe369a1e1636a5afcb9bc3a86802a",
+  "verified_runtime_resources": 2615,
   "overlay_resources": 183,
   "normal_install_from_vendor_verified": true,
   "validation": {
@@ -61,7 +61,7 @@
       "app/static/": 6545,
       "app/static/pt-BR/": 7999
     },
-    "normal_install_manifest_sha256": "2c18ad8990c03a8f212ee29950b34f5af4f983442bc6f526211002451d051b59",
+    "normal_install_manifest_sha256": "b43f1e337723dd5b92c10c015f977b62ab9fe369a1e1636a5afcb9bc3a86802a",
     "public_admin_sections": 8,
     "sample_documents": {
       "pdf": 7,
@@ -135,6 +135,12 @@
       "demo_default": "en",
       "company": "Two named employees, preference across fresh sign-ins, separate browser, translated Home and Help, and switch back.",
       "public_demo": "Visit-scoped change on mobile, navigation and reload, new visit in same browser and in second browser starts in English."
+    },
+    "original_files": {
+      "runtime_variant": "workspace-ui162-2026-11-19-native-demo-corcovado-home-mood-profile-language-workspace-files",
+      "uploads": "Confirmed document and native imports retain their reviewed bytes. Retry, digest mismatch, permissions and partial exports checked.",
+      "browser": "Desktop folder navigation, import link, download, PDF preview, search, filter and Portuguese mobile navigation.",
+      "public_demo": "Fictional attachments and seeded checklist and toolbox originals verify against their stored hashes."
     }
   }
 }
