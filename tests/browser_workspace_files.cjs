@@ -1,0 +1,78 @@
+'use strict';
+
+const assert = require('node:assert/strict');
+const {chromium} = require('playwright-core');
+
+(async () => {
+  const origin = process.argv[2];
+  const args = process.env.WAVELINK_TEST_CHROMIUM_MAP ? ['--no-proxy-server','--host-resolver-rules='+process.env.WAVELINK_TEST_CHROMIUM_MAP] : [];
+  const browser = await chromium.launch({executablePath:process.env.WAVELINK_TEST_CHROMIUM,args});
+  try {
+    const context = await browser.newContext({ignoreHTTPSErrors:true,acceptDownloads:true,viewport:{width:1360,height:900}});
+    const page = await context.newPage();
+    page.setDefaultTimeout(12000);
+    const errors = [];
+    page.on('pageerror',error => errors.push(error.message));
+    await page.goto(origin+'/__demo/public?area=original-files');
+    const folders = page.locator('.wf-folder-list');
+    const list = page.locator('#of-results');
+    const output = page.locator('#wf-list-title');
+    await output.waitFor();
+    assert.equal(await output.textContent(),'All files');
+    assert.ok(await list.locator('.wf-row').count() >= 6);
+    await folders.getByRole('button',{name:/^Toolbox talks \(/}).click();
+    assert.equal(await output.textContent(),'Toolbox talks');
+    assert.equal(await list.locator('.wf-row').count(),1);
+    const download = page.waitForEvent('download');
+    await list.getByRole('button',{name:'Deck team briefing',exact:true}).click();
+    assert.equal((await download).suggestedFilename(),'deck-briefing.txt');
+    await list.locator('.wf-more summary').click();
+    assert.match(await list.getByRole('link',{name:'Open source record'}).getAttribute('href'),/^#admin\/templates\/saved\/toolbox\//);
+    await folders.getByRole('button',{name:/^Checklists \(/}).click();
+    assert.equal(await output.textContent(),'Checklists');
+    await list.getByRole('button',{name:'Shift handover checklist',exact:true}).waitFor();
+    await page.getByRole('link',{name:'Import file'}).click();
+    assert.equal(new URL(page.url()).hash,'#builders/import/checklist');
+    await page.goBack();
+    await output.waitFor();
+    await page.locator('#of-search').fill('deck-briefing.txt');
+    assert.equal(await list.locator('.wf-row').count(),1);
+    assert.equal(await output.textContent(),'Search results');
+    await page.locator('#of-clear-search').click();
+    await folders.getByRole('button',{name:/^Human resources \(/}).click();
+    await folders.getByRole('button',{name:/^Travel \(/}).click();
+    assert.equal(await output.textContent(),'Travel');
+    const row = list.locator('.wf-row').first();
+    const popup = page.waitForEvent('popup');
+    await row.locator('.wf-file-title').click();
+    const pdf = await popup;
+    await pdf.waitForURL('blob:**');
+    await pdf.close();
+    await folders.getByRole('button',{name:/^All files \(/}).click();
+    await page.locator('.wf-filter summary').click();
+    await page.getByLabel('File type',{exact:true}).selectOption('pdf');
+    const allTypes = await list.locator('.wf-file-icon').allTextContents();
+    assert.ok(allTypes.length && allTypes.every(type => type === 'PDF'));
+
+    const url = new URL(page.url());
+    url.hash = 'profile';
+    await page.goto(url.href);
+    await page.locator('#wl-language-select').selectOption('pt-BR');
+    await page.locator('#profile-language button').click();
+    await page.locator('html[lang="pt-BR"] #wl-language-select').waitFor();
+    await page.setViewportSize({width:390,height:844});
+    const ptUrl = new URL(page.url());
+    ptUrl.hash = 'original-files';
+    await page.goto(ptUrl.href);
+    await output.waitFor();
+    assert.equal(await output.textContent(),'Todos os arquivos');
+    await page.locator('.wf-sidebar>summary').click();
+    await folders.getByRole('button',{name:/^Diálogos de segurança \(/}).click();
+    await list.getByRole('button',{name:'Deck team briefing',exact:true}).waitFor();
+    assert.equal(await page.locator('html').evaluate(el=>el.scrollWidth<=innerWidth+1),true);
+    assert.deepEqual(errors,[]);
+    console.log('Desktop folders, import link, original download, PDF preview, global search, file type filter and Portuguese mobile navigation passed.');
+  } finally {
+    await browser.close();
+  }
+})().catch(error => { console.error(error); process.exitCode=1; });

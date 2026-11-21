@@ -401,7 +401,7 @@ h1 {{margin-top:0}}#error {{color:#9d2534;white-space:pre-wrap}}
     };
 })();
 """.replace('__AUTH_JSON__', encoded)
-        if destination in ('hr','it','team','workspaces','admin','profile','calendar','inventory','fleet','builders','members'):
+        if destination in ('hr','it','team','workspaces','admin','profile','calendar','inventory','fleet','builders','members','original-files'):
             script = script.replace("&public_demo=1#home'", "&public_demo=1#" + destination + "'")
         return (
             '<!doctype html><html lang="en"><head><meta charset="utf-8">'
@@ -477,9 +477,9 @@ h1 {{margin-top:0}}#error {{color:#9d2534;white-space:pre-wrap}}
         if self.showcase is not None and not embedded:
             area = request.query_params.get('area', 'workspaces')
             mapped = {'personnel':'hr','schedule':'hr','travel':'hr','time':'hr','expenses':'hr','alerts':'hr',
-                      'access':'members','shipments':'fleet','branding':'admin','projects':'workspaces'}
+                      'access':'members','shipments':'fleet','branding':'admin','projects':'workspaces','documents':'original-files'}
             area = mapped.get(area, area)
-            if area not in ('hr','it','team','workspaces','admin','profile','calendar','inventory','fleet','builders','members'):
+            if area not in ('hr','it','team','workspaces','admin','profile','calendar','inventory','fleet','builders','members','original-files'):
                 area = 'workspaces'
             return RedirectResponse('/__demo/public?area='+area, status_code=303, headers=HEADERS)
         body, status, language = management_page(request.query_params,

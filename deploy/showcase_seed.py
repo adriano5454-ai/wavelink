@@ -127,5 +127,21 @@ def populate(core):
             it('add_attachment', dict(id=row['id'], version=row['version'], file_id=str(uuid4()), **file('it-report')))
         else:
             it('comment', dict(id=row['id'], version=row['version'], text='Available for a check after handover.'), person)
+    # Create both files through the reviewed import workflow on the fictional company only.
+    documents = core.state.document_import
+    for kind, filename, title, lines in (
+        ('toolbox', 'deck-briefing.txt', 'Deck team briefing', 'Discussion: Confirm the meeting point.\nQuestions: Where is the noticeboard?'),
+        ('checklist', 'shift-handover-checklist.txt', 'Shift handover checklist', '# Handover\n- Check the shift log\n- Confirm the next team has the document list'),
+    ):
+        file = dict(name=filename, data=b64encode((title+'\n'+lines).encode()).decode())
+        scan = documents.scan(dict(kind=kind,file=file,language='eng'),manager,None)
+        draft = scan['draft']
+        draft['title'] = title
+        if kind == 'toolbox':
+            draft['declaration'] = 'I attended and understood the team briefing.'
+        review = dict(kind=kind,source=scan['source'],source_token=scan['source_token'],draft=draft)
+        checked = documents.reviewed(review,manager,None)
+        documents.reviewed(dict(review,file=file,review_token=checked['review_token'],op_id=str(uuid4()),confirmed=True),
+                           manager,None,save=True)
     return manager, [dict(user_id=p['user_id'], display_name=p['name'], mood=m)
                      for p, m in ((lia, 'happy'), (rafael, 'focused'), (noa, 'calm'))]
