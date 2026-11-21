@@ -136,8 +136,7 @@ def apply(root):
         changed['app/'+filename]=(HERE/filename).read_bytes().replace(b'\r\n',b'\n')
     for name,fn in [('app/original_folders_api.py',library_api),('app/project_modules.py',workspace_export),
                     ('app/document_import.py',document_import),('app/builder_hub.py',builders), (STATIC+'app.js',client),
-                    (STATIC+'original_library.js',frontend),(STATIC+'document_import.js',import_ui),(STATIC+'setup_builders.js',saved_ui),
-                    (STATIC+'original_library.css',lambda s:s+'\n'+(HERE/'original_file_browser.css').read_text('utf-8'))]:
+                    (STATIC+'original_library.js',frontend),(STATIC+'document_import.js',import_ui),(STATIC+'setup_builders.js',saved_ui)]:
         edit(name,fn)
     edit('app/server.py',lambda s:once(s,"else 17_000_000 if req.url.path in ('/api/builders/import/review'", "else 18_200_000 if req.url.path=='/api/builders/document/action' else 17_000_000 if req.url.path in ('/api/builders/import/review'"))
     for folder, paragraph in [
@@ -145,6 +144,12 @@ def apply(root):
         ('pt-BR/help_topics', 'Abra <strong>Documentos → Arquivos originais</strong>. Escolha uma pasta por área ou busque pelo nome do arquivo, título, código ou pasta. As importações confirmadas de listas de verificação e diálogos de segurança aparecem nas respectivas pastas. Os anexos de pessoal ficam em Recursos humanos. Selecione um arquivo para abri-lo ou use Ações para abrir o registro de origem. Use as pastas da biblioteca para organizar os originais enviados diretamente.'),
     ]:
         edit(STATIC+folder+'/originals.html',lambda s:re.sub(r'(<h2 id="open-library">[^<]+</h2>)<p>.*?</p>',lambda m:m[1]+'<p>'+paragraph+'</p>',s,count=1))
+    css=(HERE/'original_file_browser.css').read_bytes().replace(b'\r\n',b'\n')
+    changed[STATIC+'workspace_original_files.css']=css
+    asset='/static/workspace_original_files.css?v=1.34.61-'+sha256(css).hexdigest()[:12]
+    for page in (STATIC+'index.html',STATIC+'pt-BR/index.html'):
+        edit(page,lambda s:once(s,'</head>','<link rel="stylesheet" href="'+asset+'">\n</head>'))
+    edit(STATIC+'sw.js',lambda s:once(s,'const ASSETS=[','const ASSETS=['+json.dumps(asset)+','))
     keys={name[len(STATIC):]:sha256(raw).hexdigest()[:12] for name,raw in changed.items() if name.startswith(STATIC)}
     pattern=re.compile(r'(/static/('+'|'.join(re.escape(k) for k in keys)+r')\?v=[\d.]+-)[a-f0-9]{12}')
     for name in manifest['files']:
