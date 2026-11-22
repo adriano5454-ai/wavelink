@@ -190,7 +190,7 @@ class NativeShowcase:
             from app.localization import localized_send
             from app.profile_language import ui_language
             language = ui_language(headers.get('accept-language'), 'en')
-            context = {**scope.get('state', {}), 'ui_language':language}
+            context = {**scope.get('state', {}), 'ui_language':language, 'public_demo_read_only':True}
             return await self.core({**scope, 'root_path':'', 'headers':passed, 'scheme':'https', 'state':context},
                                    receive, localized_send(private, path=path, locale=language))
         await result(scope, receive, send)

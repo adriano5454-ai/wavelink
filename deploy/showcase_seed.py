@@ -1,6 +1,7 @@
 """Fictional personnel and service records for the disposable public company."""
 from base64 import b64encode
 from datetime import date, timedelta
+from pathlib import Path
 import secrets
 from uuid import uuid4
 
@@ -58,6 +59,25 @@ def populate(core):
     dept.set_members(survey, [p['user_id'] for p in (lia, rafael, manager)], 1, manager, 'Fictional rotation')
     project, vessel = 'Aurora survey', 'MV Aurora'
     aurora = store.fleet.run('save_site', dict(name=vessel,code='AUR',kind='vessel',active=True),manager,str(uuid4()))
+    from app.feed_news_backend import publish
+    publish(store, manager, dict(op_id=str(uuid4()), site_id=None,
+            title='Welcome aboard the Maré Alta demo',
+            body='This fictional company feed is where the vessel and shore teams share news. Company updates reach everyone. Vessel updates show the ship they are for.'))
+    officer = accounts.create('demo.safety', 'Safety Officer', secrets.token_urlsafe(32), 'technician', manager)
+    officer_id = officer['id']
+    policy = access.read(store, manager, officer_id)
+    rights = dict(policy['permissions'], **{'news.publish': True})
+    access.save(store, manager, officer_id, rights, policy['version'], 'Fictional vessel news publisher')
+    store.fleet.run('set_access', dict(user_id=officer_id, mode='project_logistics', version=0, confirmed=True,
+            grants=[dict(site_id=aurora['id'], role='viewer')], reason='Demonstration vessel assignment'),
+            manager, str(uuid4()))
+    with store.connection() as c:
+        publisher = accounts.session_person_in_connection(c, officer_id)
+    drill_photo = Path(__file__).with_name('feed_news_drill.webp').read_bytes()
+    publish(store, publisher, dict(op_id=str(uuid4()), site_id=aurora['id'],
+            title='Fire alarm drill aboard MV Aurora',
+            body='The MV Aurora crew completed a scheduled fire alarm drill during the morning shift. Thank you to everyone who took part on deck and on the bridge.\n\nFictional demo notice · AI-generated photo.',
+            image='data:image/webp;base64,' + b64encode(drill_photo).decode('ascii')))
     # Give the preloaded fictional work orders and reports a mix of real demo-directory locations.
     from app import work_locations
     from app.store import pack
