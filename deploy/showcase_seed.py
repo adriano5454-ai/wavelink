@@ -57,10 +57,36 @@ def populate(core):
     survey = dept.create('Offshore Survey', 'Aurora survey crew', manager)
     dept.set_members(survey, [p['user_id'] for p in (lia, rafael, manager)], 1, manager, 'Fictional rotation')
     project, vessel = 'Aurora survey', 'MV Aurora'
-    store.tasks.run('create_general', dict(kind='general', title='Review the Aurora mobilisation checklist',
+    aurora = store.fleet.run('save_site', dict(name=vessel,code='AUR',kind='vessel',active=True),manager,str(uuid4()))
+    # Give the preloaded fictional work orders and reports a mix of real demo-directory locations.
+    from app import work_locations
+    from app.store import pack
+    import json
+    with store.connection(True) as c:
+        available = {site['code']:site for site in work_locations.catalog(c,manager)}
+        assigned = [available[code] for code in ('DEMO-MERIDIAN','DEMO-SHORE','DEMO-HORIZON','DEMO-WORKSHOP')]
+        for table in ('maintenance_jobs','work_tasks','fault_reports','qshe_reports','asset_certificates'):
+            for index,row in enumerate(c.execute('SELECT id,body FROM '+table+' ORDER BY id').fetchall()):
+                record=json.loads(row['body'])
+                record['work_site']=assigned[index % len(assigned)]
+                c.execute('UPDATE '+table+' SET body=? WHERE id=?',(pack(record),row['id']))
+    store.tasks.run('create_general', dict(work_site_id=aurora['id'],kind='general', title='Review the Aurora mobilisation checklist',
                     instructions='Confirm the crew transfer and the equipment list for the next shift.',
                     department_id=survey, assignee_ids=[manager['user_id']], priority='high',
                     due_at=day(1)+'T12:00:00Z', confirmed=True), manager, str(uuid4()))
+    # Build a fresh fictional order with step-level evidence enabled through the normal routine writer.
+    from copy import deepcopy
+    with store.connection() as c:
+        sample = json.loads(c.execute('SELECT body FROM maintenance_jobs ORDER BY id LIMIT 1').fetchone()[0])
+    template = deepcopy(sample['template'])
+    template['title'] = 'Training inspection with photo evidence'
+    checks = [step for section in template['sections'] for step in section['items']]
+    for step, mode in zip(checks, ('optional','required')):
+        step['photo_evidence'] = {'mode':mode}
+    routine = store.maintenance.run('save_routine', dict(template=template,publish=True,reviewed=True), manager,str(uuid4()))
+    store.maintenance.run('create_job', dict(routine_id=routine['id'],revision=routine['revision'],
+        work_site_id=aurora['id'],name='Photo evidence training inspection',asset_name='Training sensor rack',
+        reference='AUR-PHOTO',assignee_ids=[manager['user_id']],due_at=day(2)+'T12:00:00Z'), manager,str(uuid4()))
     shifts = SimpleHandovers(store)
     setup = shifts.setup_detail(survey, manager)
     shifts.save_setup(dict(op_id=str(uuid4()), department_id=survey, setup_token=setup['setup_token'], values=dict(
@@ -120,7 +146,7 @@ def populate(core):
     for person, title, priority in ((manager, 'Survey workstation network port', 'high'),
                                      (lia, 'Offline copy of the mobilisation checklist', 'normal'),
                                      (rafael, 'Printer at the shore base', 'low')):
-        row = it('create', dict(title=title, priority=priority, description='Please check this before the next crew change.'), person)
+        row = it('create', dict(work_site_id=aurora['id'],title=title, priority=priority, description='Please check this before the next crew change.'), person)
         if person == manager:
             row = it('triage', dict(id=row['id'], version=row['version'], priority=priority, assignee_id=manager['user_id']))
             row = it('transition', dict(id=row['id'], version=row['version'], status='in_progress', comment='Checking the port.'))

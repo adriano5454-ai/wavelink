@@ -120,21 +120,19 @@ async function testWidth(browser, origin, width) {
     const metrics=await box.evaluate(el=>({height:el.clientHeight,content:el.scrollHeight}));
     assert.ok(metrics.height<=((width===390?844:900)*.66));
     assert.ok(metrics.content>metrics.height);
-    const pick=cards.nth(1);
+    const pick=cards.first();
     const title=await pick.locator('.mw-order-title').innerText();
     // The upper-right padding is outside both of the card's real buttons.
     const rect=await pick.boundingBox();
     const pad={x:rect.width-8,y:8};
     if(width===390)await pick.tap({position:pad});else await pick.click({position:pad});
+    await page.locator('#mw-back-orders').waitFor();
+    assert.match(new URL(page.url()).hash,/^#maintenance\/.+/);
+    await page.locator('#mw-back-orders').click();
+    await cards.first().locator('[data-mw-select]').press('Enter');
     await page.locator('#mw-selected h2').filter({hasText:title}).waitFor();
-    if(width===390){
-      assert.equal(await page.locator('#mw-pages').isVisible(),false);
-      await page.locator('#mw-list-back').click();
-    }
-    await cards.first().locator('.mw-order-title').press('Enter');
-    await page.locator('#mw-selected h2').filter({hasText:'WO-001'}).waitFor();
     if(width===390)await page.locator('#mw-list-back').click();
-    await cards.first().locator('[data-mw-open]').click();
+    await cards.first().locator('.mw-order-title').press('Enter');
     await page.locator('#mw-back-orders').waitFor();
     assert.match(new URL(page.url()).hash,/^#maintenance\/.+/);
     await page.locator('#mw-back-orders').click();
