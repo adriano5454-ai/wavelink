@@ -1,0 +1,108 @@
+/* Register columns share a rhythm. Individual cards grow with their contents. */
+:root {
+  --wl-register-width: clamp(19rem, 31vw, 24rem);
+  --wl-card-gap: .75rem;
+  --wl-card-hover: #e6f3ee;
+  --wl-card-hover-border: #74aa9c;
+  --wl-card-selected: #daeee7;
+  --wl-card-selected-border: #448f80;
+  --wl-card-accent: #087b70;
+}
+
+:is(#app, #fleet-root) :is(
+  .hwd-day-records, .ho-cards, .hr-record-grid, .log-book-grid,
+  .fw-cards, .fleet77-site-grid, .sb-grid, .admin-hub-grid
+):has(> :is(article, button, a)) {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 18rem), 1fr));
+  align-items: stretch;
+  gap: var(--wl-card-gap);
+}
+
+:is(#app, #fleet-root) :is(
+  .hwd-record, .ho-card, .hr-record, .ux-roster-card, .log-book-card,
+  .fw-card, .fleet77-site-grid > article, .sb-card, .admin-hub-card
+) {
+  box-sizing: border-box;
+  min-inline-size: 0;
+  max-inline-size: 100%;
+  overflow-wrap: anywhere;
+}
+
+/* The complete notes are available alongside the day register. */
+#ho-days-panel .hwd-note {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  overflow: hidden;
+}
+#ho-record-preview .hop-evidence .handover-attachments > h3 {
+  /* The enclosing, labelled disclosure already names these files. */
+  display: none;
+}
+
+/* wlVisual124 also owns the base white card and button backgrounds. Keep
+   interactive states in that layer so they win in the main app and Fleet. */
+@layer wlVisual124 {
+  body :is(#app, #fleet-root, #dialog, #wl-search-dialog, main) :is(
+    :is(a[href], button):is(.card, [class$="-card"], [class*="-card "],
+      .tw110-row, .fr-row, .qs-row, .iw162-inventory-row, .shw-choice,
+      .wf-folder-button, .wl-directory-person, .wl82-result),
+    [data-mw-order]:has([data-mw-select]:enabled),
+    [data-mw-step-key]:has(:is([data-maint-step],[data-maint-detail]):enabled),
+    [data-cw-card]:has([data-cw-select]:enabled),
+    article[data-home-workspace]:has(a.home-open[href]:not([aria-disabled="true"])),
+    :is(.ph-row,.ph-shift-card,.home-work-row)[data-home-record]:has(a[href]:not([aria-disabled="true"])),
+    :is(.hr-record,.ux-roster-card):has([data-hr-open]:enabled),
+    :is(.ho-card,.hwd-record,.ho-resume-entry,.ho-day-entry,.sh-record,.sh-resume,[data-hop-personal]):has(
+      :is([data-ho-open],[data-ho-incoming],[data-hwd-open],[data-ho-resume],
+        [data-ho-day-open],[data-ho-day-published],[data-sh-resume],[data-sh-record],[data-shw-save-open]):enabled),
+    article[data-ha-card]:has([data-ha-open]:enabled),
+    :is(.log-mobile-entry,tr.log-entry):has([data-log-view]:enabled),
+    article.log-book-card:has(a[href^="#logs/"]),
+    article.of-file:has(.wf-file-title:is(a[href],button:enabled)),
+    .calendar-agenda-row:has(a[data-calendar-source][href]),
+    .fleet77-site-grid > article:has([data-site]:enabled),
+    article[data-receiving-row]:has([data-receiving-open]:enabled),
+    article[data-shipment-card]:has([data-shipment-select]:enabled),
+    tr[data-fleet-record^="asset-"]:has(a[href^="#asset/"]),
+    tr:has(a.it-request-link[href]),
+    tr[data-stock-row]:has([data-check]:enabled),
+    article.tw47-stock-item:has([data-task-check]:enabled),
+    .sb-card:has(.sb-library:is(a[href],button:enabled)),
+    .shw-department:has([data-shw-team]:enabled)
+  ):not(:disabled,[aria-disabled="true"],[inert],[inert] *,[aria-disabled="true"] *) {
+    cursor: pointer;
+
+    @media (hover: hover) {
+      &:hover {
+        background-color: var(--wl-card-hover) !important;
+        border-color: var(--wl-card-hover-border) !important;
+      }
+    }
+    &:is(:active, :focus-visible, :has(:focus-visible)) {
+      background-color: var(--wl-card-hover) !important;
+      border-color: var(--wl-card-hover-border) !important;
+    }
+    &:is(.selected, .is-selected, .hop-selected, .it-last-viewed,
+        [aria-current="true"], [aria-current="page"], [aria-current="location"], [aria-pressed="true"], [aria-selected="true"]) {
+      background-color: var(--wl-card-selected) !important;
+      border-color: var(--wl-card-selected-border) !important;
+      box-shadow: inset 3px 0 var(--wl-card-accent) !important;
+    }
+    &:focus-visible {
+      outline: 3px solid #965900 !important;
+      outline-offset: -3px !important;
+    }
+    @media (forced-colors: active) {
+      &:is(.selected, .is-selected, .hop-selected, .it-last-viewed,
+          [aria-current="true"], [aria-current="page"], [aria-current="location"], [aria-pressed="true"], [aria-selected="true"]) {
+        outline: 2px solid Highlight !important;
+        outline-offset: -2px !important;
+      }
+      &:focus-visible {
+        outline: 3px solid Highlight !important;
+      }
+    }
+  }
+}
