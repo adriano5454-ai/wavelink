@@ -17,10 +17,10 @@ PREVIOUS_CACHE = "ui162-20261122-home-news"
 CACHE = "ui162-20261122-editor-exit"
 
 
-def apply(root):
+def apply(root, *, parent=PARENT, overlays=OVERLAYS, previous_cache=PREVIOUS_CACHE, cache=CACHE, suffix="editor-exit", scope="Preserve unfinished edits on navigation and show opt-in birthdays on Home and Team."):
     receipt = root / "RELEASE_FILES.json"
     raw = receipt.read_bytes()
-    if sha256(raw).hexdigest() != PARENT:
+    if sha256(raw).hexdigest() != parent:
         raise ValueError("Unexpected release before editor exits")
     manifest = json.loads(raw)
     files = manifest["files"]
@@ -45,7 +45,7 @@ def apply(root):
         record(name, after)
         return True
 
-    for overlay in OVERLAYS:
+    for overlay in overlays:
         patch = runpy.run_path(str(BASE / overlay))
         for name, content in patch.get("additions", dict)().items():
             if name in files or name in changes or (root / name).exists():
@@ -73,7 +73,7 @@ def apply(root):
 
     def worker(source):
         marker = "const ASSETS=["
-        if source.count(PREVIOUS_CACHE) != 1 or source.count(marker) != 1:
+        if source.count(previous_cache) != 1 or source.count(marker) != 1:
             raise ValueError("Unexpected service worker")
         urls = []
         for name in additions:
@@ -81,15 +81,15 @@ def apply(root):
                 asset = name[len(STATIC):]
                 if f'"/static/{asset}?' not in source:
                     urls.append(json.dumps(f"/static/{asset}?v=1.34.61-{static_hashes[asset]}") + ",")
-        return refs(source).replace(PREVIOUS_CACHE, CACHE).replace(marker, marker + "".join(urls))
+        return refs(source).replace(previous_cache, cache).replace(marker, marker + "".join(urls))
 
     edit(STATIC + "sw.js", worker)
-    variant = manifest["variant"] + "-editor-exit"
+    variant = manifest["variant"] + "-" + suffix
 
     def metadata(source):
         info = json.loads(source)
-        info.update(patch_id=variant, parent_patch_id=manifest["variant"], parent_manifest_sha256=PARENT,
-                    scope="Preserve unfinished edits on navigation and show opt-in birthdays on Home and Team.")
+        info.update(patch_id=variant, parent_patch_id=manifest["variant"], parent_manifest_sha256=parent,
+                    scope=scope)
         return json.dumps(info, indent=2) + "\n"
 
     edit("UI_PATCH.json", metadata)

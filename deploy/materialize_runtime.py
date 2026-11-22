@@ -35,6 +35,7 @@ def main(destination):
         runpy.run_path(str(ROOT/'deploy/apply_feed_news.py'))['apply'](dest)
         runpy.run_path(str(ROOT/'deploy/apply_home_news.py'))['apply'](dest)
         runpy.run_path(str(ROOT/'deploy/apply_editor_exit.py'))['apply'](dest)
+        runpy.run_path(str(ROOT/'deploy/apply_roster_location.py'))['apply'](dest)
         manifest=json.loads((dest/'RELEASE_FILES.json').read_bytes())
         for name,digest in manifest['files'].items():
             if hashlib.sha256((dest/name).read_bytes()).hexdigest()!=digest: raise ValueError('Resource mismatch: '+name)

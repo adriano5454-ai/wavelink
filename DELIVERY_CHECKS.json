@@ -5,7 +5,7 @@
   "base_commit": "c7b427c5c46f134b0c9dc41191dee58b7496d521",
   "base_tree": "c3daaf009ae66e32fa5503c8e84cd481b4304aa1",
   "parent_runtime_manifest_sha256": "e34d89daa1892bcabc497aa75d43cb4d6df59d084de5462bbd9f95237ec76453",
-  "runtime_manifest_sha256": "f8f0189c2b862511d28628be5e254e238c1739aafe9e38b82deaf815d18b125d",
+  "runtime_manifest_sha256": "71ac97fdf8433be3c26416095edfd4090f2a490ade4b4219258dfbbbe98baa4c",
   "verified_runtime_resources": 2620,
   "overlay_resources": 183,
   "normal_install_from_vendor_verified": true,
@@ -231,6 +231,18 @@
       "verified_parent": "2c980eea0a90cff970bd0f92678a45d3a9075f2c4c6179a0061b0b3313096013",
       "verified_patched_runtime": "f8f0189c2b862511d28628be5e254e238c1739aafe9e38b82deaf815d18b125d",
       "scope": "Preserve unfinished edits on navigation and show opt-in birthdays on Home and Team."
+    },
+    "roster_location": {
+      "base_commit": "c86eea552be70621fc257d15bb1fffddcd0bff68",
+      "verified_parent": "f8f0189c2b862511d28628be5e254e238c1739aafe9e38b82deaf815d18b125d",
+      "verified_patched_runtime": "71ac97fdf8433be3c26416095edfd4090f2a490ade4b4219258dfbbbe98baa4c",
+      "verified_resources": 2620,
+      "desktop_width": 1360,
+      "mobile_width": 390,
+      "known_baseline_failures": [
+        "test_hr_ui117.py::test_recorded_expiry_labels_and_alert_privacy_do_not_claim_inventory_validity",
+        "test_corcovado_locale.py::test_hr_and_common_literal_errors_have_reviewed_translations"
+      ]
     }
   }
 }
