@@ -150,10 +150,10 @@ def populate(core):
                     hours='8.00', location=vessel, activity='offshore', notes='Survey shift')], notes='')]), person)
         row = week['records'][0]
         hr('submit_timesheet', dict(id=row['id'], version=row['version']), person)
-    for person, title, priority in ((manager, 'Survey workstation network port', 'high'),
-                                     (lia, 'Offline copy of the mobilisation checklist', 'normal'),
-                                     (rafael, 'Printer at the shore base', 'low')):
-        row = it('create', dict(work_site_id=aurora['id'],title=title, priority=priority, description='Please check this before the next crew change.'), person)
+    for person, title, priority, site in ((manager, 'Survey workstation network port', 'high', aurora),
+                                         (lia, 'Offline copy of the mobilisation checklist', 'normal', aurora),
+                                         (rafael, 'Printer at the shore base', 'low', available['DEMO-SHORE'])):
+        row = it('create', dict(work_site_id=site['id'],title=title, priority=priority, description='Please check this before the next crew change.'), person)
         if person == manager:
             row = it('triage', dict(id=row['id'], version=row['version'], priority=priority, assignee_id=manager['user_id']))
             row = it('transition', dict(id=row['id'], version=row['version'], status='in_progress', comment='Checking the port.'))
