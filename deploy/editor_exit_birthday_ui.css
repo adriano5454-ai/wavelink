@@ -1,0 +1,36 @@
+.wl-team-news-row {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(14rem, 19rem);
+  align-items: start;
+  gap: 1rem;
+}
+.wl-team-news-row > * { min-width: 0; }
+.wl-team-news-row:has(.wl-team-birthdays[hidden]) { grid-template-columns: minmax(0,1fr); }
+.wl-team-birthdays h2, #profile-team-birthday h2 { margin: 0; }
+.wl-birthday-period, .wl-birthday-status {
+  color: var(--muted, #465d67);
+  font-size: .875rem;
+  margin: .35rem 0 .65rem;
+}
+.wl-birthday-list { padding: 0; margin: 0; list-style: none; }
+.wl-birthday-list li {
+  display: flex; justify-content: space-between; align-items: baseline; gap: .75rem;
+  border-top: 1px solid var(--line,#d6e2e7); padding: .65rem 0;
+}
+.wl-birthday-list li > :first-child { overflow-wrap: anywhere; font-weight: 600; }
+.wl-birthday-list li > :last-child { white-space: nowrap; font-size: .85rem; }
+.wl-birthday-today { color: var(--wl-accent-ink,#116568); font-weight: 700; }
+.wl-birthday-actions, .wl-birthday-fields {
+  display: flex; flex-wrap: wrap; gap: .6rem; align-items: center;
+}
+.wl-birthday-actions button { margin: 0; }
+.wl-team-birthdays button { font-size: .85rem; }
+.wl-birthday-fields { align-items: end; margin: .75rem 0; }
+.wl-birthday-fields label { display: grid; gap: .3rem; }
+.wl-birthday-fields select { min-width: 5rem; }
+.wl-team-birthdays [hidden], #profile-team-birthday [hidden] { display: none !important; }
+.wl-birthday-status:empty, .wl-birthday-actions:not(:has(button:not([hidden]))) { display: none; }
+@media (max-width: 850px) {
+  .wl-team-news-row { grid-template-columns: minmax(0, 1fr); gap: .65rem; }
+  .wl-team-news-row > .wl-news { margin-bottom: 0; }
+}

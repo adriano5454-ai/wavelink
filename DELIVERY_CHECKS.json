@@ -5,8 +5,8 @@
   "base_commit": "c7b427c5c46f134b0c9dc41191dee58b7496d521",
   "base_tree": "c3daaf009ae66e32fa5503c8e84cd481b4304aa1",
   "parent_runtime_manifest_sha256": "e34d89daa1892bcabc497aa75d43cb4d6df59d084de5462bbd9f95237ec76453",
-  "runtime_manifest_sha256": "2c980eea0a90cff970bd0f92678a45d3a9075f2c4c6179a0061b0b3313096013",
-  "verified_runtime_resources": 2619,
+  "runtime_manifest_sha256": "f8f0189c2b862511d28628be5e254e238c1739aafe9e38b82deaf815d18b125d",
+  "verified_runtime_resources": 2620,
   "overlay_resources": 183,
   "normal_install_from_vendor_verified": true,
   "validation": {
@@ -226,6 +226,11 @@
       "verified_parent": "cb890dc6566d7243b1c44480f748903e1e996876348b2d6e9c3f362521e13993",
       "verified_patched_runtime": "2c980eea0a90cff970bd0f92678a45d3a9075f2c4c6179a0061b0b3313096013",
       "scope": "Display company and location news in the main Home column."
+    },
+    "editor_exit": {
+      "verified_parent": "2c980eea0a90cff970bd0f92678a45d3a9075f2c4c6179a0061b0b3313096013",
+      "verified_patched_runtime": "f8f0189c2b862511d28628be5e254e238c1739aafe9e38b82deaf815d18b125d",
+      "scope": "Preserve unfinished edits on navigation and show opt-in birthdays on Home and Team."
     }
   }
 }
