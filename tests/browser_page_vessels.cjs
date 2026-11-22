@@ -106,7 +106,16 @@ async function checkItLocations(page,desc,language) {
     assert.equal(new URL(response.url()).searchParams.get('vessel_id')||'',expectedLocation);
     assert.deepEqual(payload.requests.map(r=>r.id).sort(),[...wanted].sort());
     await expectIds(page,desc,wanted,'IT results reflect the selected location and filters');
-    await page.waitForFunction(id=>document.querySelector('#it-filters [data-page-vessel]')?.value===id,expectedLocation);
+    await page.waitForFunction(id=>{
+      const picker=document.querySelector('#it-filters [data-page-vessel]');
+      return picker&&!picker.disabled&&picker.value===id;
+    },expectedLocation);
+    const summary=page.locator('.it-applied-filters');
+    if(expectedLocation){
+      const site=sites.find(s=>s.id===expectedLocation);
+      const label=(language==='pt'?'Embarcação ou base: ':'Vessel or base: ')+site.name;
+      await summary.getByText(label,{exact:true}).waitFor();
+    }else await summary.waitFor({state:'hidden'});
   }
   const submit=()=>form.locator('[type=submit]').click();
   await query.fill('network port');
@@ -114,7 +123,7 @@ async function checkItLocations(page,desc,language) {
   await status.selectOption(workstation.status);
   await apply(()=>location.selectOption(ship.id),[workstation.id],ship.id);
   if(process.env.WAVELINK_SCREENSHOT_DIR){
-    await form.scrollIntoViewIfNeeded();
+    await form.evaluate(el=>{el.style.scrollMarginTop='88px';el.scrollIntoView({block:'start',behavior:'instant'});});
     await page.screenshot({path:path.join(process.env.WAVELINK_SCREENSHOT_DIR,'Wavelink-IT-location-search-'+language+'.png')});
   }
   const different=async(control,value)=>control.locator('option').evaluateAll((els,original)=>els.find(e=>e.value&&e.value!==original).value,value);
@@ -132,6 +141,13 @@ async function checkItLocations(page,desc,language) {
   await apply(()=>location.selectOption(ship.id),[],ship.id);
   await apply(()=>page.locator('#it-clear').click(),rows.map(r=>r.id),'');
   for(const control of [query,status,priority]) assert.equal(await control.inputValue(),'');
+  const atBase=rows.filter(r=>r.work_site?.id===base.id);
+  await apply(()=>location.selectOption(base.id),atBase.map(r=>r.id),base.id);
+  assert.equal(await page.locator('.it-applied-filters span').count(),1);
+  await page.locator('.it-table').getByText((language==='pt'?'Local: ':'Location: ')+base.name,{exact:true}).first().waitFor();
+  await apply(()=>page.locator('#it-clear').click(),rows.map(r=>r.id),'');
+  await page.locator(desc.rows).filter({hasText:printer.title}).click();
+  await page.locator('.it-facts').getByText(base.name,{exact:true}).waitFor();
   console.log(language+' IT: Aurora workstation and Shore Base printer confirmed with keyword, status, priority, and reset');
 }
 
