@@ -100,7 +100,7 @@ async function verify(browser, entry, language, width) {
     await search.fill('multimeter');
     assert.equal(await records.count(), 1);
     await page.locator('#inv-filters').click();
-    await page.locator('#inv-advanced-filters select[name="location"]').selectOption('Shore warehouse / Bay A');
+    await page.locator('select[name="location"]').selectOption('Shore warehouse / Bay A');
     await page.locator('#inv-empty-clear').waitFor();
     assert.equal(await records.count(), 0, 'Storage location intersects the vessel and text filters');
     await page.locator('#inv-empty-clear').click();

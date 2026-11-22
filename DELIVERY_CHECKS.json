@@ -5,7 +5,7 @@
   "base_commit": "c7b427c5c46f134b0c9dc41191dee58b7496d521",
   "base_tree": "c3daaf009ae66e32fa5503c8e84cd481b4304aa1",
   "parent_runtime_manifest_sha256": "e34d89daa1892bcabc497aa75d43cb4d6df59d084de5462bbd9f95237ec76453",
-  "runtime_manifest_sha256": "c7cf87f275911f7d65b29c77073f8769ff394d0ee99dd66c4067859c029ca89f",
+  "runtime_manifest_sha256": "9a3b5f42c37c8bb2f1467f77ab137c0eba187e7749268092909e4821cd53e2a1",
   "verified_runtime_resources": 2620,
   "overlay_resources": 183,
   "normal_install_from_vendor_verified": true,
@@ -253,6 +253,14 @@
         "390 pt-BR"
       ],
       "scope": "Inventory item ownership in list and box views"
+    },
+    "inventory_physical_location": {
+      "verified_parent": "c7cf87f275911f7d65b29c77073f8769ff394d0ee99dd66c4067859c029ca89f",
+      "verified_patched_runtime": "9a3b5f42c37c8bb2f1467f77ab137c0eba187e7749268092909e4821cd53e2a1",
+      "browser_cases": [
+        "1280 en",
+        "390 pt-BR"
+      ]
     }
   }
 }
