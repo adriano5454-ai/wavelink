@@ -97,3 +97,102 @@ def test_location_search_continues_past_first_native_fault_page(project):
         assert data['total']==106 and not data['unavailable']
         seen.extend(r['id'] for r in data['items'])
     assert len(set(seen))==106
+
+
+def test_logbook_location_is_inherited_and_does_not_enable_vessel_access(project):
+    from app.browser_logs import BrowserLogs
+    from app.log_schema import BUILTINS
+
+    store, actors, _, headers = project
+    manager = actors['demo.admin']
+    service = BrowserLogs(store, {'hub_id':headers['X-AJ-Hub-ID'], 'supervisor_code':'fictional-test-secret'})
+    with store.connection() as con:
+        sites={s['code']:s for s in work_locations.catalog(con,manager)}
+        grants=con.execute('SELECT count(*) FROM fleet_log_permissions').fetchone()[0]
+    ship=sites['DEMO-MERIDIAN']['id']
+    base=sites['DEMO-SHORE']['id']
+    design=dict(name='Location at creation',description='',definitions=[BUILTINS[0]],work_site_id=base)
+    reviewed=service.review(design,manager)
+    request=dict(op_id=str(uuid4()),confirmed=True,design=reviewed['design'],review_token=reviewed['review_token'])
+    with pytest.raises(Problem) as invalidated:
+        service.create(dict(request,design=dict(request['design'],work_site_id=ship)),manager)
+    assert invalidated.value.code==409
+    saved=service.create(request,manager)
+    assert service.create(request,manager)==saved
+    book=store.logs.get(saved['id'],manager)
+    assert book['vessel_scope']['site_id']==base and not book['vessel_scope']['enabled']
+    assert saved['id'] not in {b['id'] for b in store.vessel_logs.books(manager,base)}
+    with store.connection() as con:
+        assert con.execute('SELECT count(*) FROM fleet_log_permissions').fetchone()[0]==grants
+    for invalid in ('',str(uuid4())):
+        with pytest.raises(Problem) as error:
+            service.review(dict(design,work_site_id=invalid),manager)
+        assert error.value.code==422
+    with pytest.raises(Problem):
+        store.logs.create('Invalid site rollback','',[BUILTINS[0]],manager,work_site_id=str(uuid4()))
+    assert 'Invalid site rollback' not in [b['name'] for b in store.logs.list(manager)]
+    legacy=store.logs.create('Historical log without a site','',[BUILTINS[0]],manager)
+    assert store.logs.get(legacy['id'],manager)['vessel_scope'] is None
+    store.vessel_logs.set_scope(manager,legacy['id'],base,0,False,'History belongs to this base',True)
+    assert store.logs.get(legacy['id'],manager)['vessel_scope']['site_id']==base
+
+    results=store.global_search.search(manager,'','logs',50,ship)
+    assert not results['unavailable']
+    assert any(row['href'].startswith('#logentry/') for row in results['items'])
+    assert any(row['href'].startswith('#logs/') for row in results['items'])
+    assert all([site['id'] for site in row['locations']]==[ship] for row in results['items'])
+    assert {saved['id'],legacy['id']}.isdisjoint(row['id'] for row in results['items'])
+
+
+def test_log_import_uses_selected_location_and_preserves_retry_receipt(project,tmp_path):
+    from base64 import b64encode
+    from app.builder_hub import BuilderHub
+    from app.log_exports import export_bundle
+
+    store, actors, _, headers=project
+    manager=actors['demo.admin']
+    service=BuilderHub(store, {'hub_id':headers['X-AJ-Hub-ID'], 'supervisor_code':'fictional-test-secret'})
+    with store.connection() as con:
+        sites={s['code']:s for s in work_locations.catalog(con,manager)}
+    original=next(book for book in store.logs.list(manager) if book['name']=='DEMO Meridian Operations Log')
+    path=tmp_path/'site-test.ajlogs'
+    export_bundle(store,original['id'],manager,path)
+    payload={'kind':'logbook','file':{'name':path.name,'data':b64encode(path.read_bytes()).decode()}}
+    review=service.preview(payload,manager)
+    request=dict(payload,op_id=str(uuid4()),work_site_id=sites['DEMO-SHORE']['id'],review_token=review['review_token'])
+    with pytest.raises(Problem) as invalid:
+        service.import_file(dict(request,work_site_id=str(uuid4())),manager)
+    assert invalid.value.code==422
+    saved=service.import_file(request,manager)
+    assert service.import_file(request,manager)==saved
+    assert saved['id']!=original['id']
+    book=store.logs.get(saved['id'],manager)
+    assert book['vessel_scope']['site_id']==sites['DEMO-SHORE']['id']
+    assert not book['vessel_scope']['enabled']
+    with pytest.raises(Problem) as conflict:
+        service.import_file(dict(request,work_site_id=sites['DEMO-HORIZON']['id']),manager)
+    assert conflict.value.code==409
+
+
+def test_document_log_import_keeps_its_selected_base(project):
+    from base64 import b64encode
+    from app.document_import import DocumentImport
+
+    store,actors,_,headers=project
+    manager=actors['demo.admin']
+    imports=DocumentImport(store,{'hub_id':headers['X-AJ-Hub-ID'],'supervisor_code':'fictional-test-secret'})
+    with store.connection() as con:
+        sites={site['code']:site['id'] for site in work_locations.catalog(con,manager)}
+    file={'name':'training-log.csv','data':b64encode(b'Date,Time,Event\n2026-11-01,05:00,Handover\n').decode()}
+    scan=imports.scan(dict(kind='logbook',file=file,language='eng'),manager,None)
+    draft=dict(kind='logbook',source=scan['source'],source_token=scan['source_token'],draft=scan['draft'])
+    review=imports.reviewed(draft,manager,None)
+    request=dict(draft,review_token=review['review_token'],confirmed=True,op_id=str(uuid4()),
+                 work_site_id=sites['DEMO-SHORE'],file=file)
+    saved=imports.reviewed(request,manager,None,save=True)
+    assert imports.reviewed(request,manager,None,save=True)==saved
+    book=store.logs.get(saved['id'],manager)
+    assert book['vessel_scope']['site_id']==sites['DEMO-SHORE'] and not book['vessel_scope']['enabled']
+    with pytest.raises(Problem) as changed:
+        imports.reviewed(dict(request,work_site_id=sites['DEMO-HORIZON']),manager,None,save=True)
+    assert changed.value.code==409
