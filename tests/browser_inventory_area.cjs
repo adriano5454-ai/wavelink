@@ -13,6 +13,8 @@ async function verify(browser, entry, width, pt) {
       const box = {...template,id:'box-a',name:'Training case',archived:false,is_container:true,container_id:'',container_path:[],department_id:'d1'};
       const item = {...box,id:'gauge',name:'Training gauge',is_container:false,container_id:box.id,container_path:[{id:box.id,name:box.name}]};
       book.items=[box,item,{...item,id:'other',name:'Training gauge B',department_id:'d2'},{...item,id:'unknown',name:'Training spare',department_id:null}];
+      book.locations=['Unassigned','North / Bay A','South / Bay A'];
+      book.items.forEach((item,i)=>{item.location=[book.locations[1],book.locations[1],book.locations[2],null][i]});
       book.directory.departments=[{id:'d1',name:'Survey',active:true},{id:'d2',name:'Engineering',active:true}];
       await route.fulfill({response,json:book});
     });
@@ -31,6 +33,12 @@ async function verify(browser, entry, width, pt) {
     const bounds=await area.boundingBox();
     assert.ok(bounds.x>=0 && bounds.x+bounds.width<=width+1);
     const rowIds=()=>page.locator('#inv-rows [data-select-row]').evaluateAll(rows=>rows.map(r=>r.dataset.selectRow).sort());
+    const place=page.getByRole('combobox',{name:pt?'Local físico':'Physical location',exact:true});
+    const rect=await place.boundingBox();
+    assert.ok(rect && rect.x>=0 && rect.x+rect.width<=width+1);
+    await place.selectOption('South / Bay A');
+    assert.deepEqual(await rowIds(),['other']);
+    await place.selectOption('North / Bay A');
     await area.selectOption('d1');
     assert.deepEqual(await rowIds(),['box-a','gauge']);
     assert.match(await page.locator('#inv-total').innerText(),/2/);
@@ -40,11 +48,14 @@ async function verify(browser, entry, width, pt) {
     await page.locator('[data-inv-locate=gauge]').click();
     assert.equal(await area.inputValue(),'d1');
     assert.deepEqual(await rowIds(),['gauge']);
+    assert.equal(await place.inputValue(),'North / Bay A');
+    await place.selectOption('Unassigned');
     await area.selectOption('__unassigned');
     await page.locator('#inv-empty-clear').waitFor();
     await page.locator('[name=search]').fill('');
     assert.deepEqual(await rowIds(),['unknown']);
     await page.locator('#inv-clear-filters').click();
+    assert.equal(await place.inputValue(),'');
     assert.equal(await area.inputValue(),'');
     assert.deepEqual(await rowIds(),['gauge','other','unknown']);
     console.log('PASS inventory area',width,pt?'pt-BR':'en');
