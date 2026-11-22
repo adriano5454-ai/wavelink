@@ -5,8 +5,8 @@
   "base_commit": "c7b427c5c46f134b0c9dc41191dee58b7496d521",
   "base_tree": "c3daaf009ae66e32fa5503c8e84cd481b4304aa1",
   "parent_runtime_manifest_sha256": "e34d89daa1892bcabc497aa75d43cb4d6df59d084de5462bbd9f95237ec76453",
-  "runtime_manifest_sha256": "125b943635134f55791ec9db24c9ddaa6459dfef9fe6b8fe54522094eaac2b57",
-  "verified_runtime_resources": 2616,
+  "runtime_manifest_sha256": "451802ae4d11c782e8a6b9bb6fe05b16cc12ff68eb8336c4926a00d3c7036a66",
+  "verified_runtime_resources": 2617,
   "overlay_resources": 183,
   "normal_install_from_vendor_verified": true,
   "validation": {
@@ -61,7 +61,7 @@
       "app/static/": 6545,
       "app/static/pt-BR/": 7999
     },
-    "normal_install_manifest_sha256": "125b943635134f55791ec9db24c9ddaa6459dfef9fe6b8fe54522094eaac2b57",
+    "normal_install_manifest_sha256": "451802ae4d11c782e8a6b9bb6fe05b16cc12ff68eb8336c4926a00d3c7036a66",
     "public_admin_sections": 8,
     "sample_documents": {
       "pdf": 7,
@@ -154,6 +154,14 @@
         "Bounded check-in list on Home and Team, keyboard scrolling, compact single and empty states.",
         "Full-card pointer, touch and keyboard selection, direct entry and return, full-result search and ten orders per page.",
         "English and Brazilian Portuguese labels; existing two-person company check-in and removal."
+      ]
+    },
+    "work_locations": {
+      "site_directory": "fleet_sites",
+      "demo_record": "Photo evidence training inspection",
+      "checks": [
+        "Scoped fleet selection and cross-module search, renamed and retired sites, private visibility, 106 paginated fault matches.",
+        "Work-order and step card bodies, location-only search and fault report picker in the native desktop and mobile demo."
       ]
     }
   }
