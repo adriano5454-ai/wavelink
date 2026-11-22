@@ -128,6 +128,10 @@ def populate(core):
         evidence = dict(id=str(uuid4()), filename=filename, data=b64encode(sheet.encode()).decode())
         shifts.action(dict(op_id=str(uuid4()),action='finish',target=record['target'],notes=notes,
                            attachments=[evidence]),person)
+    birthdays = core.state.team_birthdays
+    for person, offset in ((lia, 0), (rafael, 4)):
+        birthday = birthdays.today() + timedelta(days=offset)
+        birthdays.save(person, birthday.month, birthday.day, birthdays.mine(person)['version'])
     for i, (person, job, shift) in enumerate(((manager, 'Survey coordinator', 'Days'),
                                               (lia, 'AUV technician', 'Nights'),
                                               (rafael, 'Survey engineer', 'Days'),
