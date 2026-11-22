@@ -100,7 +100,14 @@ def populate(core):
                                   setup_token=board['setup']['setup_token']), person)
         notes = {key:record['edit'][key] for key, _ in SECTIONS}
         notes['summary'] = note
-        shifts.action(dict(op_id=str(uuid4()),action='finish',target=record['target'],notes=notes),person)
+        notes['next_actions'] = ('Review the night navigation check sheet.' if shift_index
+                                 else 'Compare the coverage plot with the planned survey lines.')
+        filename = 'Night-navigation-checks.txt' if shift_index else 'Day-survey-coverage.txt'
+        sheet = '\n'.join(('MV Aurora | Offshore Survey', day(offset), note, notes['next_actions'],
+                           'Fictional shift record for the Wavelink demo.'))
+        evidence = dict(id=str(uuid4()), filename=filename, data=b64encode(sheet.encode()).decode())
+        shifts.action(dict(op_id=str(uuid4()),action='finish',target=record['target'],notes=notes,
+                           attachments=[evidence]),person)
     for i, (person, job, shift) in enumerate(((manager, 'Survey coordinator', 'Days'),
                                               (lia, 'AUV technician', 'Nights'),
                                               (rafael, 'Survey engineer', 'Days'),

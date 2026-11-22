@@ -28,6 +28,7 @@ def main(destination):
         runpy.run_path(str(ROOT/'deploy/apply_work_locations.py'))['apply'](dest)
         runpy.run_path(str(ROOT/'deploy/apply_checklist_panel.py'))['apply'](dest)
         runpy.run_path(str(ROOT/'deploy/apply_log_locations.py'))['apply'](dest)
+        runpy.run_path(str(ROOT/'deploy/apply_handover_preview.py'))['apply'](dest)
         manifest=json.loads((dest/'RELEASE_FILES.json').read_bytes())
         for name,digest in manifest['files'].items():
             if hashlib.sha256((dest/name).read_bytes()).hexdigest()!=digest: raise ValueError('Resource mismatch: '+name)
