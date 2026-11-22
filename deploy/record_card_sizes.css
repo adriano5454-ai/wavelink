@@ -1,0 +1,155 @@
+/* The same browsing card is used in registers, workspaces, and the fleet frame. */
+:root {
+  --wl-record-width: 19rem;
+  --wl-record-height: 15rem;
+  --wl-record-gap: .75rem;
+  --wl-register-width: calc(var(--wl-record-width) + 3.75rem);
+}
+@media (max-width: 360px) { :root { --wl-record-width: 15rem; } }
+:is(#app, #fleet-root, main, #dialog) :is(
+  .home-destination, .home-work-row, .ph-row, .ph-shift-card, .wl-feed-card,
+  .tw110-row, .tw47-task, .tw47-stock-item, .cw-record, .mw-order, .maintenance-step,
+  .check-card, .fr-row, .qs-row, .fw-card, .certificate-card, .log-book-card, .log-mobile-entry,
+  .hwd-record, .ho-card, .sh-resume, .sh-record, .ho-day-entry, .ho-recipient-card, .ha-card,
+  .hr-record, .ux-roster-card, .iw162-inventory-row, .wf-row.of-file,
+  .fleet77-site-grid > article.fleet77-card, .wl-shipment-card, .wl-receiving-card,
+  .sb-card, .wl-choice-card, .admin-hub-card, .import-card, .calendar-agenda-row,
+  .wl-contact-item, .shw-department, .rm-action-card, .rm-step-card,
+  .wl-launch-card, .help-area-card, .attention-card, .iw-inventory-card,
+  .gt-task-card, .dive-card, .entry-card, .wl82-action-card, .fleet77-step-card
+) {
+  box-sizing: border-box;
+  inline-size: min(100%, var(--wl-record-width)) !important;
+  max-inline-size: var(--wl-record-width) !important;
+  min-inline-size: 0 !important;
+  block-size: var(--wl-record-height) !important;
+  min-block-size: var(--wl-record-height) !important;
+  max-block-size: var(--wl-record-height) !important;
+  margin-block: 0 !important;
+  padding: .8rem .875rem;
+  border-radius: .75rem;
+  align-self: start;
+  overflow: auto;
+  overflow-wrap: anywhere;
+  scroll-padding: .5rem;
+}
+:is(#app, #fleet-root, main, #dialog) :is(
+  .home-destination-grid, .home-work-list, #ph-list, .hwd-day-records,
+  .fw-cards, .log-book-grid, .hr-record-grid, .ho-cards, .ho-source-list,
+  .fleet77-site-grid, .wl-record-grid, .sb-grid, .wl-choice-grid, .admin-hub-grid,
+  .wf-results, .iw162-inventory-list, .certificate-cards, .calendar-events, .wl-feed-list,
+  .cw-results, .mw-results, .tw110-list, .fr-list, .qs-list
+):has(> :is(article,button,a)) {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, min(100%, var(--wl-record-width)));
+  grid-auto-rows: max-content;
+  align-content: start;
+  align-items: start;
+  justify-content: start;
+  gap: var(--wl-record-gap);
+  min-inline-size: 0;
+}
+:is(#app, #fleet-root, main) :is(.ph-list,.wf-results,.mw-results,.cw-results,.fw-cards) > :is(.empty,[role="status"]) { grid-column: 1 / -1; }
+:is(#app, main) :is(.ph-row,.ph-shift-card,.wf-row.of-file,.iw162-inventory-row) {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: flex-start;
+  gap: .375rem;
+}
+:is(#app, main) :is(.ph-row-main,.ph-row-action,.wf-file-body,.wf-file-facts,.iw162-inventory-main) { min-width: 0; }
+:is(#app, main) :is(.ph-row-action,.wf-row .wf-actions,.home-destination-actions,.sb-card-actions) { margin-block-start: auto; }
+:is(#app, main) :is(.cw-record,.mw-order,.tw110-row) { border: 1px solid var(--line,#cadbe1); }
+:is(#app, main) :is(.cw-record.selected,.mw-order.is-selected,.tw110-row[aria-current="true"]) {
+  border-color: #13838a;
+  background: #edf7f6;
+  box-shadow: inset 3px 0 #087d83;
+}
+:is(#app, main) :is(.cw-record,.mw-order) :is(p,small,.mw-order-meta) { margin-block: .2rem; }
+:is(#app, main) .mw-order { padding: .65rem .85rem; }
+:is(#app, main) .mw-order .mw-open-direct { margin: .125rem 0 0; }
+:is(#app, main) .cw-record { display: flex; flex-direction: column; gap: .13rem; }
+:is(#app, main) .cw-card-bottom { margin-top: auto; }
+:is(#app, main) .cw-card-bottom, :is(#app, main) .cw-card-actions { flex-flow: row wrap; }
+:is(#app, main) .cw-card-bottom .btn { padding-inline: .6rem; }
+:is(#app, main) .mw-order .mw-order-top, :is(#app, main) .mw-order .mw-order-meta { gap: .15rem .4rem; margin-block: .12rem; }
+:is(#app, main) #original-library .wf-row.of-file {
+  display: flex; position: relative; flex-flow: column nowrap; align-items: stretch;
+  padding: .75rem; border: 1px solid var(--line,#d5e2e6); border-radius: .75rem; background: #fff;
+}
+:is(#app, main) #original-library .wf-row .wf-file-icon { align-self: flex-start; flex: none; width: 2.65rem; }
+:is(#app, main) #original-library .wf-row .wf-file-body { flex: 0 0 auto; }
+:is(#app, main) #original-library .wf-row .wf-more { margin-top: auto; align-self: flex-start; }
+:is(#app, main) #original-library .wf-row .wf-options-list { position: static; min-width: 0; }
+:is(#app, main) #original-library .wf-row .wf-more[open] { align-self: stretch; }
+:is(#app, #fleet-root, main) .fleet77-site-grid > article .stats {
+  display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: .2rem .5rem;
+  margin: .4rem 0; padding: 0;
+}
+:is(#app, #fleet-root, main) .fleet77-site-grid > article .stats > div {
+  display: flex; align-items: baseline; gap: .35rem; min-width: 0; padding: 0; border: 0; background: none;
+}
+:is(#app, #fleet-root, main) .fleet77-site-grid > article .stats strong { font-size: .9rem; }
+:is(#app, #fleet-root, main) .fleet77-site-grid > article :is(h2,p,.actions) { margin-block: .25rem; }
+@layer wlVisual124 {
+  @media (min-width: 1121px) {
+    #app #personal-home .ph-dashboard-grid { grid-template-columns: minmax(0,1fr) minmax(calc(var(--wl-record-width) + 3.5rem), .43fr) !important; }
+  }
+}
+@media (max-width: 760px) {
+  #app .it-table tbody { display: grid; gap: var(--wl-record-gap); justify-content: start; }
+  #app .it-table tbody tr {
+    box-sizing: border-box; inline-size: min(100%,var(--wl-record-width)) !important; width: var(--wl-record-width) !important;
+    max-width: 100%; block-size: var(--wl-record-height); overflow: auto; margin: 0; padding: .65rem .75rem;
+  }
+  #app .it-table td { padding: .3rem 0; grid-template-columns: minmax(4rem, 30%) minmax(0,1fr); }
+}
+:is(#app, main) .cw-record-name[aria-expanded="true"] { border: 0; background: transparent; }
+@media (min-width: 851px) {
+  :is(#app, main) :is(.cw-layout,.mw-list-detail,.tw110-browser,.fr-layout,.qs-layout,.cw92-browser) {
+    display: grid;
+    grid-template-columns: minmax(0, var(--wl-register-width)) minmax(0, 1fr) !important;
+    gap: 1rem;
+    align-items: start;
+  }
+  :is(#app, main) :is(.cw-results,.mw-results,.tw110-list,.fr-list,.qs-list,.certificate-cards) {
+    padding-inline: 0;
+  }
+  :is(#app, main) #checklist-inspector {
+    position: sticky;
+    top: 4.5rem;
+    max-block-size: calc(100dvh - 6rem);
+    overflow: auto;
+  }
+}
+:is(#app, main) #checklist-inspector { scroll-margin-top: 4.5rem; }
+.cw-panel-back { margin: 0 0 .75rem; min-height: 44px; }
+.cw-panel-heading, .cw-preview-heading, .cw-preview-pager {
+  display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: .5rem;
+}
+.cw-panel-heading h2, .cw-panel-heading p, .cw-preview-heading h3 { margin: .15rem 0; }
+#cw-preview-items { margin-block: 1rem; }
+.cw-preview-phase { display: flex; align-items: center; gap: .4rem; font-size: .875rem; }
+.cw-preview-phase select { min-height: 44px; max-width: 100%; }
+.cw-item-list { list-style: none; margin: .55rem 0; padding: 0; }
+.cw-item-list li {
+  display: grid; grid-template-columns: auto minmax(0,1fr) auto; gap: .5rem;
+  align-items: start; padding: .6rem .15rem; border-block-end: 1px solid var(--line,#d5e2e6);
+}
+.cw-item-number, .cw-item-status { font-size: .8125rem; color: var(--muted,#536c78); }
+.cw-item-status { padding: .12rem .45rem; background: #eef3f5; border-radius: .4rem; }
+.cw-item-status[data-status="complete"] { color: #16634c; background: #e5f4eb; }
+.cw-item-status[data-status="issue"] { color: #883d20; background: #fbebe3; }
+.cw-preview-pager { font-size: .8125rem; }
+.cw-preview-pager .btn { min-height: 44px; }
+@media (max-width: 850px) {
+  :is(#app, main) .cw-detail-open .cw-list-pane { display: none; }
+  :is(#app, main) .cw-detail-open #checklist-inspector { display: block; }
+  :is(#app, main) #checklist-inspector { max-block-size: none; }
+  .cw-preview-phase { flex-wrap: wrap; }
+}
+@media print {
+  :is(#app, #fleet-root, main, #dialog) :is(article,section.check-card,.tw110-row,.fr-row,.qs-row,a.card) {
+    block-size: auto !important; min-block-size: 0 !important; max-block-size: none !important; overflow: visible;
+  }
+}
