@@ -113,10 +113,13 @@ def it_api(source):
 
 def it_store(source):
     source = change(source, "priority='', offset=0, limit=50):", "priority='', offset=0, limit=50, vessel_id=''):")
+    source = change(source, "return dict(requests=records, total=total,", "return dict(requests=records, filter_location=filter_location, total=total,")
     anchor = "            if status: clauses.append('status=?'); values.append(status)"
-    return change(source, anchor, """            if vessel_id:
+    return change(source, anchor, """            filter_location = None
+            if vessel_id:
                 directory = sites.SiteLookup(sites.catalog(c, actor))
                 if directory.by_id.get(vessel_id, {}).get('kind') in ('vessel', 'shore_base'):
+                    filter_location = {'id': vessel_id, 'name': directory.by_id[vessel_id]['name']}
                     aliases = {key for key, ids in directory.by_label.items() if ids == {vessel_id}}
                     c.create_function('it_location_alias', 1, lambda text: sites.fold(text) in aliases)
                     # A saved ID always wins, and old names/codes must resolve to exactly one site.
@@ -134,6 +137,17 @@ def it_store(source):
 
 def it_ui(source):
     source = change(source, "priority:'',offset:0", "priority:'',vessel_id:'',offset:0", 4)
+    source = change(source, "function filterSummary(){const labels=[];", """function savedLocationName(row){
+  const name=row.work_site?.name||(typeof row.work_site==='string'?row.work_site:row.location);
+  return typeof name==='string'?name.trim():'';
+ }
+ function filterSummary(){const labels=[];
+  if(filters.vessel_id && data.filter_location?.id===filters.vessel_id)labels.push(t('Embarcação ou base: ','Vessel or base: ')+data.filter_location.name);
+  """)
+    source = change(source, "personLabel(row.requester,results.map(r=>r.requester)))+'</small></td>",
+                    """personLabel(row.requester,results.map(r=>r.requester)))+'</small>'+(savedLocationName(row)?'<small>'+E(t('Local: ','Location: ')+savedLocationName(row))+'</small>':'')+'</td>""")
+    source = change(source, "personLabel(row.requester,[row.requester,row.assignee]))+'</dd><dt>'",
+                    """personLabel(row.requester,[row.requester,row.assignee]))+'</dd>'+(savedLocationName(row)?'<dt>'+E(t('Local','Location'))+'</dt><dd>'+E(savedLocationName(row))+'</dd>':'')+'<dt>'""")
     anchor = "function filtersMarkup(){"
     before, rest = source.split(anchor)
     rest = rest.replace("</label><label class=\"field\">", "</label>'+WLPageVessels.field(filters.vessel_id,{includeBases:true})+'<label class=\"field\">", 1)
