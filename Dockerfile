@@ -97,6 +97,7 @@ RUN python deploy/apply_handover_preview.py /opt/wavelink/app
 RUN python deploy/apply_card_feedback.py /opt/wavelink/app
 RUN python deploy/apply_inventory_vessels.py /opt/wavelink/app
 RUN python deploy/apply_page_vessels.py /opt/wavelink/app
+RUN python deploy/apply_feed_news.py /opt/wavelink/app
 # Runtime starts with mount ownership setup and immediately drops to UID 10001.
 # Never install/open the Windows Admin or run its launcher in the container.
 EXPOSE 10000
