@@ -24,9 +24,11 @@
  const selector=routes.map(([box])=>box).join(',');
  document.addEventListener('click', event=>{
   if(event.defaultPrevented||event.button!==0||event.ctrlKey||event.metaKey||event.altKey||event.shiftKey)return;
-  if(!(event.target instanceof Element)||event.target.closest(controls))return;
+  if(!(event.target instanceof Element))return;
   const box=event.target.closest(selector);
   if(!box||box.closest('[inert],[hidden],[aria-disabled="true"]'))return;
+  const control=event.target.closest(controls);
+  if(control&&box.contains(control))return;
   const selected=getSelection();
   if(selected&&!selected.isCollapsed&&box.contains(selected.anchorNode))return;
   for(const [match,targets] of routes){
