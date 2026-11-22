@@ -122,17 +122,15 @@ async function testWidth(browser, origin, width) {
     assert.ok(metrics.content>metrics.height);
     const pick=cards.first();
     const title=await pick.locator('.mw-order-title').innerText();
-    // The upper-right padding is outside both of the card's real buttons.
+    // The upper-right padding opens the same inspector as the title.
     const rect=await pick.boundingBox();
     const pad={x:rect.width-8,y:8};
     if(width===390)await pick.tap({position:pad});else await pick.click({position:pad});
-    await page.locator('#mw-back-orders').waitFor();
-    assert.match(new URL(page.url()).hash,/^#maintenance\/.+/);
-    await page.locator('#mw-back-orders').click();
-    await cards.first().locator('[data-mw-select]').press('Enter');
     await page.locator('#mw-selected h2').filter({hasText:title}).waitFor();
     if(width===390)await page.locator('#mw-list-back').click();
     await cards.first().locator('.mw-order-title').press('Enter');
+    await page.locator('#mw-selected h2').filter({hasText:title}).waitFor();
+    await page.locator('#mw-open-order').click();
     await page.locator('#mw-back-orders').waitFor();
     assert.match(new URL(page.url()).hash,/^#maintenance\/.+/);
     await page.locator('#mw-back-orders').click();

@@ -31,6 +31,8 @@ async function main(){
     const order=page.locator('article[data-mw-order]').filter({hasText:'Photo evidence training inspection'});
     await order.waitFor();
     await order.locator('p').first().click();
+    await page.locator('#mw-selected h2').filter({hasText:'Photo evidence training inspection'}).waitFor();
+    await page.locator('#mw-open-order').click();
     await page.locator('#maintenance-workspace.mw-work-order').waitFor();
     await page.locator('[data-mw-tab="steps"]').first().click();
     const step=page.locator('.maintenance-step:visible').first();await step.waitFor();
@@ -49,6 +51,8 @@ async function main(){
     await visit(page,'checklists');
     const check=page.locator('article[data-cw-card]').first();await check.waitFor();
     await check.click({position:{x:6,y:6}});
+    await page.locator('#cw-preview-items li').first().waitFor();
+    await page.locator('#checklist-inspector > a[data-cw-open]').click();
     await page.waitForURL(/#dive\//);
     await visit(page,'faults');
     await page.locator('#fr-new').click();
