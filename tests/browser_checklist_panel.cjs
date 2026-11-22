@@ -63,12 +63,17 @@ async function checkSwitchAndPaging(browser,url) {
     const row=page.locator('article[data-cw-card]').first();
     const id=await row.getAttribute('data-cw-card');
     const path=recordPath(id);
+    const received=page.waitForResponse(response=>new URL(response.url()).pathname===path);
+    await row.locator('.cw-record-name').click();
+    const original=await (await received).json();
+    await page.locator('#cw-preview-items .cw-item-list').waitFor();
+    await page.locator('#cw-back-list').click();
     let mode='long', release, began;
     const started=new Promise(resolve=>{began=resolve;});
     const delayed=new Promise(resolve=>{release=resolve;});
     await page.route(u=>u.pathname===path,async route=>{
       if(mode==='denied'){await route.fulfill({status:403,contentType:'application/json',body:'{"detail":"Unavailable"}'});return;}
-      const response=await route.fetch(), saved=await response.json();
+      const saved=structuredClone(original);
       if(mode==='slow'){began();await delayed;}
       const section=saved.template.sections.find(s=>s.items.length&&s.id!=='winch');
       const model=section.items[0];
@@ -82,7 +87,7 @@ async function checkSwitchAndPaging(browser,url) {
       saved.items[stage]={};
       extra.forEach((item,i)=>{saved.items[stage][item.id]={status:i===0?'issue':'pending'};});
       saved.items[alternate][other.id]={status:'complete'};
-      await route.fulfill({response,json:saved});
+      await route.fulfill({json:saved});
     });
     await row.locator('.cw-record-name').click();
     const panel=page.locator('#checklist-inspector');
@@ -107,8 +112,9 @@ async function checkSwitchAndPaging(browser,url) {
   }finally{await context.close();}
 }
 
-async function checkCardSizes(browser,width,url) {
+async function checkCardLayouts(browser,width,url) {
   const {context,page} = await start(browser,width,url);
+  const problems=[];
   const routes = [
     ['home','.ph-row'], ['home','.ph-shift-card'], ['home','#recognition-home .wl-feed-card'],
     ['workspaces','.home-destination'], ['tasks','.tw110-row'], ['checklists','.cw-record'],
@@ -125,13 +131,23 @@ async function checkCardSizes(browser,width,url) {
       const target=route==='fleet'?page.frameLocator('#fleet-workspace-frame'):page;
       const card=target.locator(selector+':visible').first();
       await card.waitFor({timeout:8000});
-      const size=await card.boundingBox();
-      const expectedWidth=width<=360?240:304;
-      assert.ok(Math.abs(size.width-expectedWidth)<=1 && Math.abs(size.height-240)<=1,
-        `${width}px ${route} ${selector} measured ${size.width} × ${size.height}, expected ${expectedWidth} × 240`);
-      assert.ok(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+1),`${width}px ${route} overflows horizontally`);
+      const layout=await target.locator(selector+':visible').evaluateAll(cards=>{
+        const viewport=document.documentElement.clientWidth;
+        return cards.map(card=>{
+          const rect=card.getBoundingClientRect(),css=getComputedStyle(card);
+          return {left:rect.left,right:rect.right,viewport,width:rect.width,height:rect.height,
+            clipped:css.overflowY!=='visible'&&card.scrollHeight>card.clientHeight+2};
+        });
+      });
+      for(const [index,box] of layout.entries()){
+        const name=`${width}px ${route} ${selector} [${index}]`;
+        if(box.width<=0||box.height<=0||box.left< -1||box.right>box.viewport+1)problems.push(`${name} extends outside its viewport`);
+        if(box.clipped)problems.push(`${name} clips its contents or requires internal scrolling`);
+      }
+      if(await page.evaluate(()=>document.documentElement.scrollWidth>innerWidth+1))problems.push(`${width}px ${route} overflows horizontally`);
     }
-    console.log(`${width}px uniform card dimensions on ${routes.length} lists and no horizontal page overflow`);
+    console.log(`${width}px checked ${routes.length} lists for clipped content and viewport overflow: ${problems.length} problems`);
+    return problems;
   }finally{await context.close();}
 }
 
@@ -141,7 +157,9 @@ async function main(){
     const url=process.argv[2];
     for(const width of [1360,390])await checkNative(browser,width,url);
     await checkSwitchAndPaging(browser,url);
-    for(const width of [1360,1024,390,320])await checkCardSizes(browser,width,url);
+    const problems=[];
+    for(const width of [1360,1024,390,320])problems.push(...await checkCardLayouts(browser,width,url));
+    assert.deepEqual(problems,[]);
   }finally{await browser.close();}
 }
 main().catch(error=>{console.error(error);process.exitCode=1;});

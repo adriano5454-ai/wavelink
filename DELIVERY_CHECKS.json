@@ -5,7 +5,7 @@
   "base_commit": "c7b427c5c46f134b0c9dc41191dee58b7496d521",
   "base_tree": "c3daaf009ae66e32fa5503c8e84cd481b4304aa1",
   "parent_runtime_manifest_sha256": "e34d89daa1892bcabc497aa75d43cb4d6df59d084de5462bbd9f95237ec76453",
-  "runtime_manifest_sha256": "693ee15c8ebc86c5202fb79699044596f03b823bcf357af2fb5e211daa667574",
+  "runtime_manifest_sha256": "0904f5a3c156bdb7212cf9daa822b5a7f7486513a8a40749352a42cf12586155",
   "verified_runtime_resources": 2617,
   "overlay_resources": 183,
   "normal_install_from_vendor_verified": true,
@@ -196,6 +196,11 @@
         "By day and Incoming card clicks, keyboard and focus return, filtered and forbidden records, full reader and downloadable fictional evidence.",
         "English and Portuguese two-column / phone layouts at 1360, 1280, 1024, 850, 390 and 320px."
       ]
+    },
+    "card_feedback": {
+      "verified_parent": "693ee15c8ebc86c5202fb79699044596f03b823bcf357af2fb5e211daa667574",
+      "verified_patched_runtime": "0904f5a3c156bdb7212cf9daa822b5a7f7486513a8a40749352a42cf12586155",
+      "scope": "Actionable cards, hover and keyboard focus, native record layouts, responsive previews and fleet navigation."
     }
   }
 }
