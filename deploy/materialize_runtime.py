@@ -31,6 +31,7 @@ def main(destination):
         runpy.run_path(str(ROOT/'deploy/apply_handover_preview.py'))['apply'](dest)
         runpy.run_path(str(ROOT/'deploy/apply_card_feedback.py'))['apply'](dest)
         runpy.run_path(str(ROOT/'deploy/apply_inventory_vessels.py'))['apply'](dest)
+        runpy.run_path(str(ROOT/'deploy/apply_page_vessels.py'))['apply'](dest)
         manifest=json.loads((dest/'RELEASE_FILES.json').read_bytes())
         for name,digest in manifest['files'].items():
             if hashlib.sha256((dest/name).read_bytes()).hexdigest()!=digest: raise ValueError('Resource mismatch: '+name)
