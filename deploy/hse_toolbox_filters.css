@@ -1,0 +1,18 @@
+
+:is(.tb-workspace,#qs-workspace) .hse-filter-shell{display:grid;gap:1rem;align-items:start}
+:is(.tb-workspace,#qs-workspace) .hse-filter-panel{min-width:0;border:1px solid var(--line,#c7d3db);border-radius:12px;padding:.65rem;background:var(--card,#fff);color:inherit}
+:is(.tb-workspace,#qs-workspace) .hse-filter-panel summary{cursor:pointer;font-size:1rem;font-weight:720;padding:.3rem .5rem;line-height:1.4}
+:is(.tb-workspace,#qs-workspace) .hse-fields{display:grid;gap:.8rem;padding:.65rem .4rem 0}
+:is(.tb-workspace,#qs-workspace) .hse-filter-shell .field{margin:0;min-width:0}
+:is(.tb-workspace,#qs-workspace) .hse-filter-shell :is(select,input){width:100%;min-width:0;box-sizing:border-box}
+:is(.tb-workspace,#qs-workspace) .hse-results{min-width:0;overflow-wrap:anywhere}
+#qs-workspace .hse-search{display:flex;align-items:end;gap:.6rem;flex-wrap:wrap}
+#qs-workspace .hse-search .field{flex:1 1 16rem}
+#qs-workspace .qs-related h2{font-size:1rem}
+@media(min-width:801px){
+ :is(.tb-workspace,#qs-workspace) .hse-filter-shell:has(>details[open]){grid-template-columns:minmax(11rem,14rem) minmax(0,1fr)}
+ :is(.tb-workspace,#qs-workspace) .hse-filter-panel:not([open]){justify-self:start}
+}
+@media(min-width:801px) and (max-width:1250px){
+ #qs-workspace .hse-filter-shell:has(>details[open]) .qs-layout{grid-template-columns:minmax(0,1fr)}
+}

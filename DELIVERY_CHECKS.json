@@ -5,7 +5,7 @@
   "base_commit": "c7b427c5c46f134b0c9dc41191dee58b7496d521",
   "base_tree": "c3daaf009ae66e32fa5503c8e84cd481b4304aa1",
   "parent_runtime_manifest_sha256": "e34d89daa1892bcabc497aa75d43cb4d6df59d084de5462bbd9f95237ec76453",
-  "runtime_manifest_sha256": "2a0740b6d28856c211f54f308951fececeb0cb9eae6cd5c0c394789b835dcd4a",
+  "runtime_manifest_sha256": "52e351145ee5d9f3d7323b8516d418740396c069297776520bc85031a41e000f",
   "verified_runtime_resources": 2620,
   "overlay_resources": 183,
   "normal_install_from_vendor_verified": true,
@@ -286,6 +286,13 @@
       "browser_cases": [
         "390 pt-BR and 1360 en inclusive date range and project",
         "daily roster regression and public access in both languages"
+      ]
+    },
+    "hse_toolbox_filters": {
+      "verified_parent": "2a0740b6d28856c211f54f308951fececeb0cb9eae6cd5c0c394789b835dcd4a",
+      "verified_patched_runtime": "52e351145ee5d9f3d7323b8516d418740396c069297776520bc85031a41e000f",
+      "browser_cases": [
+        "1360 and 390 px, en and pt-BR, synthetic vessel/project combinations, legacy blank, QSHE navigation, baseline Fault Reports retained"
       ]
     }
   }
