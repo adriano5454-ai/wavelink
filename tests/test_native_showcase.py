@@ -121,3 +121,31 @@ def test_visit_scope_and_read_only(company):
     assert c.post('/api/logout',headers=first).json()['ok']
     assert c.get(url,headers=first).status_code==401
     assert c.get(url,headers=second).status_code==200
+
+def test_demo_crew_seed_is_idempotent_and_isolated(company, tmp_path):
+    from types import SimpleNamespace
+    from deploy.showcase_crew import populate_crew, CREW, fixture_id
+    showcase, _ = company
+    store = showcase.core.state.store
+
+    def snapshot():
+        with store.connection() as c:
+            return tuple(tuple(map(tuple, c.execute(query))) for query in (
+                'SELECT id,enabled,password_hash FROM users ORDER BY id',
+                'SELECT id,body FROM hr_records ORDER BY id',
+                'SELECT id,body FROM hr_timesheet_projects ORDER BY id',
+                'SELECT id FROM company_member_invites ORDER BY id',
+            ))
+
+    before = snapshot()
+    crew_ids = {fixture_id(name) for name, _, _ in CREW}
+    synthetic = [r for r in before[0] if r[0] in crew_ids]
+    assert len(synthetic) == 12 and all(row[1:] == (0, '') for row in synthetic)
+    populate_crew(showcase)
+    assert snapshot() == before
+    for public, folder in [(False, showcase.temp.name), (True, str(tmp_path))]:
+        other = SimpleNamespace(core=showcase.core, temp=SimpleNamespace(name=folder),
+                                gate=SimpleNamespace(public_entry=public))
+        with pytest.raises(ValueError, match='disposable public showcase'):
+            populate_crew(other)
+    assert snapshot() == before

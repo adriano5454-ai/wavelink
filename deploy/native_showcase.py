@@ -45,6 +45,8 @@ class NativeShowcase:
         self.core = create_app(project, prepared_config=config)
         self.hub_id = config['hub_id']
         self.manager, self.team = populate(self.core)
+        from .showcase_crew import populate_crew
+        populate_crew(self)
         self.lock = threading.Lock()
         self.reader = ''
         self.issued = 0.
