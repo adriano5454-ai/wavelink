@@ -5,7 +5,7 @@
   "base_commit": "c7b427c5c46f134b0c9dc41191dee58b7496d521",
   "base_tree": "c3daaf009ae66e32fa5503c8e84cd481b4304aa1",
   "parent_runtime_manifest_sha256": "e34d89daa1892bcabc497aa75d43cb4d6df59d084de5462bbd9f95237ec76453",
-  "runtime_manifest_sha256": "9bd26a95125a00baca60a302189bcaae23b95404c582d322224c88f52a963e09",
+  "runtime_manifest_sha256": "032a3c192d54f115771ae54ded1d9a3ed6ae01e5031bdf218bbd337c7d7d3d19",
   "verified_runtime_resources": 2620,
   "overlay_resources": 183,
   "normal_install_from_vendor_verified": true,
@@ -269,6 +269,15 @@
         "390 en",
         "390 pt-BR",
         "1360 desktop timeline"
+      ]
+    },
+    "hr_mobile_day_count": {
+      "verified_parent": "9bd26a95125a00baca60a302189bcaae23b95404c582d322224c88f52a963e09",
+      "verified_patched_runtime": "032a3c192d54f115771ae54ded1d9a3ed6ae01e5031bdf218bbd337c7d7d3d19",
+      "browser_cases": [
+        "320 dark preference and 390 light preference, en and pt-BR",
+        "two, one and empty, selected day, month and filter",
+        "1360 desktop timeline and roster"
       ]
     }
   }
