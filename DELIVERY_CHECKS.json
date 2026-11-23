@@ -5,7 +5,7 @@
   "base_commit": "c7b427c5c46f134b0c9dc41191dee58b7496d521",
   "base_tree": "c3daaf009ae66e32fa5503c8e84cd481b4304aa1",
   "parent_runtime_manifest_sha256": "e34d89daa1892bcabc497aa75d43cb4d6df59d084de5462bbd9f95237ec76453",
-  "runtime_manifest_sha256": "032a3c192d54f115771ae54ded1d9a3ed6ae01e5031bdf218bbd337c7d7d3d19",
+  "runtime_manifest_sha256": "2a0740b6d28856c211f54f308951fececeb0cb9eae6cd5c0c394789b835dcd4a",
   "verified_runtime_resources": 2620,
   "overlay_resources": 183,
   "normal_install_from_vendor_verified": true,
@@ -278,6 +278,14 @@
         "320 dark preference and 390 light preference, en and pt-BR",
         "two, one and empty, selected day, month and filter",
         "1360 desktop timeline and roster"
+      ]
+    },
+    "roster_period": {
+      "verified_parent": "032a3c192d54f115771ae54ded1d9a3ed6ae01e5031bdf218bbd337c7d7d3d19",
+      "verified_patched_runtime": "2a0740b6d28856c211f54f308951fececeb0cb9eae6cd5c0c394789b835dcd4a",
+      "browser_cases": [
+        "390 pt-BR and 1360 en inclusive date range and project",
+        "daily roster regression and public access in both languages"
       ]
     }
   }

@@ -105,6 +105,7 @@ RUN python deploy/apply_inventory_area.py /opt/wavelink/app
 RUN python deploy/apply_inventory_physical.py /opt/wavelink/app
 RUN python deploy/apply_hr_mobile_calendar.py /opt/wavelink/app
 RUN python deploy/apply_hr_day_count.py /opt/wavelink/app
+RUN python deploy/apply_roster_period.py /opt/wavelink/app
 # Runtime starts with mount ownership setup and immediately drops to UID 10001.
 # Never install/open the Windows Admin or run its launcher in the container.
 EXPOSE 10000

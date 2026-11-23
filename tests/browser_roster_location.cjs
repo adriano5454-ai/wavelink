@@ -19,7 +19,7 @@ async function verify(browser,width) {
   else {await calendar.waitFor(); if(await page.locator('#hr-section-select').isVisible())await page.locator('#hr-section-select').selectOption('calendar');else await calendar.click();}
   const panel=page.locator('#hr-location-roster'), results=panel.locator('[data-location-results]');
   await panel.waitFor();
-  const initial=await panel.locator('[type=date]').inputValue();
+  const initial=await panel.locator('[name=roster_day]').inputValue();
   assert.equal(initial,await page.evaluate(()=>{const d=new Date();return [d.getFullYear(),String(d.getMonth()+1).padStart(2,'0'),String(d.getDate()).padStart(2,'0')].join('-')}));
   const shift={assignment_type:'offshore',status:'confirmed',start_on:initial,end_on:initial,shift_name:'Day shift',project:'PTB001',work_site:{id:'ship',name:'Survey vessel'}};
   const person=(id,name,rows,access='registered')=>({id,name,enabled:true,programming_status:access,assignments:rows});
@@ -42,7 +42,7 @@ async function verify(browser,width) {
   assert(await panel.evaluate(e=>e.scrollWidth<=e.clientWidth+1));
   await panel.locator('[name=roster_project]').fill('PTB001');
   await panel.locator('button[type=submit]').click();
-  await panel.locator('[type=date]').fill('2021-07-03');
+  await panel.locator('[name=roster_day]').fill('2021-07-03');
   await results.locator('article').first().waitFor({state:'detached'});
   await results.locator('p').waitFor();
   assert(queries.some(q=>q.get('start_on')==='2021-07-03'&&q.get('project')==='PTB001'));
