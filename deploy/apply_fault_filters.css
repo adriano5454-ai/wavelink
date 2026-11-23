@@ -1,0 +1,18 @@
+
+#fr-workspace .fr-filter-shell {display:grid;gap:16px;align-items:start}
+#fr-filter-panel {border:1px solid var(--line,#c7d3db);border-radius:12px;padding:.65rem;background:var(--card,#fff);color:inherit}
+#fr-filter-panel summary {cursor:pointer;font-size:1rem;font-weight:720;padding:.3rem .5rem;line-height:1.4}
+#fr-workspace .fr-filter-fields {display:grid;gap:.8rem;padding:.65rem .4rem 0}
+#fr-workspace .fr-filter-fields .field,#fr-workspace .fr-search .field {margin:0;min-width:0}
+#fr-workspace .fr-filter-fields select,#fr-workspace .fr-search input {width:100%;box-sizing:border-box;min-width:0}
+#fr-workspace .fr-results {min-width:0}
+#fr-workspace .fr-search {display:flex;align-items:end;gap:.6rem;flex-wrap:wrap}
+#fr-workspace .fr-search .field {flex:1 1 16rem}
+#fr-applied {margin:.65rem 0 1rem;font-size:.9rem;overflow-wrap:anywhere}
+@media(min-width:801px){
+ #fr-workspace .fr-filter-shell:has(>details[open]) {grid-template-columns:minmax(11rem,14rem) minmax(0,1fr)}
+ #fr-filter-panel:not([open]) {justify-self:start}
+}
+@media(min-width:801px) and (max-width:1250px){
+ #fr-workspace .fr-filter-shell:has(>details[open]) .fr-layout {grid-template-columns:minmax(0,1fr)}
+}
