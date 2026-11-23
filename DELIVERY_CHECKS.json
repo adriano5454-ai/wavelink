@@ -287,6 +287,18 @@
         "390 pt-BR and 1360 en inclusive date range and project",
         "daily roster regression and public access in both languages"
       ]
+    },
+    "public_demo_crew": {
+      "people_in_period": 16,
+      "assignments_in_period": 18,
+      "new_projects": [
+        "DEMO-101",
+        "DEMO-202",
+        "DEMO-303"
+      ],
+      "browser_cases": [
+        "1360 and 390, real local showcase, date range, two vessel transfers, project filter"
+      ]
     }
   }
 }
