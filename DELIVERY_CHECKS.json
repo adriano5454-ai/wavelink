@@ -5,7 +5,7 @@
   "base_commit": "c7b427c5c46f134b0c9dc41191dee58b7496d521",
   "base_tree": "c3daaf009ae66e32fa5503c8e84cd481b4304aa1",
   "parent_runtime_manifest_sha256": "e34d89daa1892bcabc497aa75d43cb4d6df59d084de5462bbd9f95237ec76453",
-  "runtime_manifest_sha256": "0ff06c400b787f49da7ec299446d9bc4ecb2a13d6581345dc6382acd0e9751c5",
+  "runtime_manifest_sha256": "09f26c27efa2cea278ac784314f1cc4523370004ff99672b14e50db461364263",
   "verified_runtime_resources": 2620,
   "overlay_resources": 183,
   "normal_install_from_vendor_verified": true,
@@ -307,6 +307,17 @@
         "1360 and 390, public entry, combined status/responsibility/vessel/search, collapse, resize, clear, detail and navigation",
         "crew regression: 16 people, 18 assignments at both widths"
       ]
+    },
+    "hse_toolbox_filters": {
+      "verified_parent": "0ff06c400b787f49da7ec299446d9bc4ecb2a13d6581345dc6382acd0e9751c5",
+      "verified_patched_runtime": "09f26c27efa2cea278ac784314f1cc4523370004ff99672b14e50db461364263",
+      "local_browser_cases": [
+        "1360 and 390 in English and pt-BR",
+        "Synthetic Toolbox response with five records: project search, combined vessel/project/title, missing project, no matches and clear",
+        "HSE category, search, shortcuts and clear",
+        "Fault Reports regression at both widths"
+      ],
+      "focused_python_tests": 99
     }
   }
 }
