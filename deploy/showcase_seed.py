@@ -262,7 +262,8 @@ def populate(showcase):
     # formal head designations below belong only to the guarded disposable company.
     new_people = {'opsdirector':'Eva Sol', 'servicesdirector':'Caio Rio', 'opsmgr':'Talia Luz',
                   'itmgr':'Nico Serra', 'finmgr':'Rosa Lago', 'sysadmin':'Ari Monte',
-                  'support':'Téo Vale', 'controller':'Iris Prado', 'payables':'Otto Lima'}
+                  'support':'Téo Vale', 'controller':'Iris Prado', 'payables':'Otto Lima',
+                  'meridianchief':'Alba Reis', 'meridiansurvey':'Tom Faro', 'meridianauv':'Cora Sal'}
     for key, name in new_people.items():
         accounts.create('demo.chart.' + key, name, secrets.token_urlsafe(32), 'technician', manager)
     # key, bilingual display title, fictional login, department, reports to
@@ -271,12 +272,15 @@ def populate(showcase):
         ('operations-director','Operations Director / Diretor de Operações','demo.chart.opsdirector','Executive','ceo'),
         ('services-director','Corporate Services Director / Diretor Corporativo','demo.chart.servicesdirector','Executive','ceo'),
         ('operations','Operations Manager / Gerente de Operações','demo.chart.opsmgr','Operations','operations-director'),
-        ('offshore','Offshore Supervisor / Supervisor offshore','demo.shift2','Operations','operations'),
+        ('offshore','Offshore Operations / Operações offshore','demo.shift2','Operations','operations'),
         ('chief','Party Chief / Chefe de equipe','demo.shift1','Offshore Survey','offshore'),
         ('survey-tech','Survey Technician / Técnico de levantamento','demo.survey.day','Offshore Survey','chief'),
         ('auv-tech','AUV Technician / Técnico de AUV','demo.survey.night1','Offshore Survey','chief'),
         ('survey-trainee','Trainee','demo.survey.night2','Offshore Survey','survey-tech'),
-        ('auv-trainee','Trainee',None,'Offshore Survey','auv-tech'),
+        ('meridian-chief','Party Chief / Chefe de equipe','demo.chart.meridianchief','Meridian Survey Team','offshore'),
+        ('meridian-survey','Survey Technician / Técnico de levantamento','demo.chart.meridiansurvey','Meridian Survey Team','meridian-chief'),
+        ('meridian-auv','AUV Technician / Técnico de AUV','demo.chart.meridianauv','Meridian Survey Team','meridian-chief'),
+        ('meridian-trainee','Trainee',None,'Meridian Survey Team','meridian-auv'),
         ('it','IT Manager / Gerente de TI','demo.chart.itmgr','IT','services-director'),
         ('systems','Systems Administrator / Analista de sistemas','demo.chart.sysadmin','IT','it'),
         ('support','Service Desk Analyst / Analista de suporte','demo.chart.support','IT','it'),
@@ -289,7 +293,7 @@ def populate(showcase):
     with store.connection() as c:
         personnel = {u['login_id']:dict(u) for u in c.execute('SELECT id,login_id,name FROM users WHERE enabled')}
     catalog = {d['name']:d['id'] for d in dept.list(manager)}
-    for name, head in head_logins.items():
+    for name in dict.fromkeys(row[3] for row in outline):
         if name not in catalog:
             catalog[name] = dept.create(name, 'Fictional demonstration department', manager)
         did = catalog[name]
@@ -298,15 +302,24 @@ def populate(showcase):
         members = {personnel[login]['id'] for _,_,login,department,_ in outline if department==name and login}
         if members - existing:
             dept.set_members(did, sorted(existing | members), details['version'], manager, 'Fictional department team')
-        dept.set_heads(did, [personnel[head]['id']], dept.details(did, manager)['version'], manager,
-                       'Explicit fictional department lead')
+        if name in head_logins:
+            dept.set_heads(did, [personnel[head_logins[name]]['id']], dept.details(did, manager)['version'], manager,
+                           'Explicit fictional department lead')
     positions = {}
     example = []
+    # A vessel identifies this survey team in the illustrated reporting chart only.
+    # Propagate the existing Fleet ID along that branch without writing any roster.
+    vessel_by_role = {'chief': available['AUR'], 'meridian-chief': available['DEMO-MERIDIAN']}
     for key,title,login,name,parent in outline:
+        site = vessel_by_role.get(key) or vessel_by_role.get(parent)
+        if site:
+            vessel_by_role[key] = site
+            if parent == 'offshore':
+                title = site['name'] + ' · ' + title
         positions[key] = str(uuid4())
         person = personnel[login] if login else None
         example.append(dict(id=positions[key], department=catalog[name], dept_name=name,
-                            role=key, role_name=title, person=person['id'] if person else None,
+                            role=key, role_name=title, vessel_id=site['id'] if site else None, person=person['id'] if person else None,
                             person_name=person['name'] if person else None,
                             parent=positions[parent] if parent else None))
     core.state.demo_org_example = example
