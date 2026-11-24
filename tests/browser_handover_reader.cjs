@@ -18,6 +18,7 @@ async function check(browser,width,pt){
    await page.evaluate(()=>location.hash='handovers');await page.locator('#ho-tab-incoming').click();await page.locator('[data-ho-incoming]').first().click();
    await page.locator('.hop-actions button').first().click();const reader=page.locator('.ho-publication-reader');await reader.waitFor();
    const notes=reader.locator('[data-ho-read-section]');assert.equal(await reader.locator('.ho-reader-nav,.ho-read-blank').count(),0);
+   assert.equal(await page.locator('#ho-ack').count(),0);
    assert.equal(await reader.locator('#ho-reader-notes-start').isVisible(),mode!=='empty');
    if(mode==='empty'){assert.equal(await notes.count(),0);await reader.getByText(pt?'Nenhuma nota registrada nesta revisão.':'No notes recorded in this revision.').waitFor();}
    else{

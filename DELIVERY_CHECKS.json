@@ -337,10 +337,11 @@
     },
     "handover_publication_reader": {
       "verified_parent": "e4188964fbd58230525470e093e8ac322213e7c261ea559afcec1d1d0462eb4d",
-      "verified_patched_runtime": "f1cdd0dd19941cc66fda951698cc1fc8ede6293707bb89d9e73b17995639682c",
+      "verified_patched_runtime": "11c373e030ab1cd9d9a7a07368b244bebcf56c85da0fb75ef372579c4f3dbaf8",
       "browser_cases": [
         "1360/390, English and pt-BR: real fictional publication, whitespace-only notes, all seven notes filled",
-        "Download revision evidence, jump to acknowledgement without acknowledging; prior draft and navigation regressions"
+        "Download revision evidence, jump to acknowledgement without acknowledging; prior draft and navigation regressions",
+        "Received list to revision acknowledgement on disposable local data, return with filters, reopen acknowledged revision; public guest reader without acknowledgement control. English and pt-BR at 1360 and 390 px."
       ]
     }
   }

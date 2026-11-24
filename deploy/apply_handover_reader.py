@@ -25,8 +25,28 @@ def reader(source):
 """ + source[end:]
 
 
+def journey_inbox(source):
+    source = reader(source)
+    source = source.replace('observedAt,isActive,onOpen,onRefresh})', "observedAt,isActive,onOpen,onRefresh,selection={status:'pending',kind:'',search:''}})")
+    source = source.replace("    const selection = {status:'pending',kind:'',search:''};", '')
+    return source.replace('      query(selector).oninput =', '      query(selector).value = selection[key];\n      query(selector).oninput =')
+
+
+def journey_detail(source):
+    source = source.replace(" let vesselId='';"," let vesselId='',incomingFilters={status:'pending',kind:'',search:''};")
+    source = source.replace("function reset(){vesselId='';","function reset(){incomingFilters={status:'pending',kind:'',search:''};vesselId='';")
+    source = source.replace('mountInbox({host,rows:vesselRows()', 'mountInbox({host,selection:incomingFilters,rows:vesselRows()')
+    action = "d.can_acknowledge&&!showDraft?button('ho-ack',__wl118.t('Read & personally acknowledge this revision'),''):''"
+    gated = """d.can_acknowledge&&!showDraft?(state.info?.deployment_mode==='public_showcase'||state.publicDemoUserId===state.auth?.person?.user_id
+      ? E(hoLabel('Public demo: read only.','Demo pública: somente leitura.'))
+      :button('ho-ack',__wl118.t('Read & personally acknowledge this revision'),'')):''"""
+    if source.count(action)!=1:
+        raise ValueError('Unexpected acknowledgement controls')
+    return source.replace(action,gated)
+
+
 def transforms():
-    return {'app/static/handover_incoming.js':reader,
+    return {'app/static/handover_incoming.js':journey_inbox, 'app/static/handovers.js':journey_detail,
             'app/static/ui132_visual.css':lambda s:s+"""
 .ho-publication-reader .ho-published-notes{min-width:0;overflow-wrap:anywhere}
 .ho-publication-reader [data-ho-read-section="next_actions"]{border-inline-start:3px solid var(--accent,#146877);padding-inline-start:.8rem}
