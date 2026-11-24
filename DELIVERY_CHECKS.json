@@ -378,6 +378,14 @@
         "Read-only showcase, three visible levels, 1/2/3 positions, desktop sibling geometry, collapse/expand and mobile width in English and pt-BR.",
         "Private path initially empty, explicit setup, saved hierarchy, persistence and profile navigation at desktop/mobile."
       ]
+    },
+    "org_card_actions": {
+      "verified_patched_runtime": "f60a10e240eb0e16b9d23051230b7e4a93b289157d5911a81af6346da971bc4d",
+      "checks": [
+        "Desktop English keyboard/mouse and mobile Portuguese touch: create top position from empty department card, unplaced member, atomic above, below, vacancy, assignment, drag or parent selection, persisted tree.",
+        "Guest public fixture: three visible levels, collapse and profile navigation without edit actions, 1360/390 px in EN/PT.",
+        "Rollback on failed relink and cross-department rejection."
+      ]
     }
   }
 }

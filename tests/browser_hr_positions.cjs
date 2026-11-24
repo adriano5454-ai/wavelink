@@ -1,7 +1,7 @@
 const assert=require('node:assert/strict');
 const {chromium}=require('playwright-core');
 async function verify(browser, port, width, pt){
- const p=await browser.newPage({viewport:{width,height:900},ignoreHTTPSErrors:true,serviceWorkers:'block'});
+ const p=await browser.newPage({viewport:{width,height:900},hasTouch:pt,ignoreHTTPSErrors:true,serviceWorkers:'block'});
  try{
   await p.goto('https://127.0.0.1:'+port);await p.locator('input[type=text]:visible').fill('demo.admin');
   await p.locator('#login-password').fill(process.env.ORG_QA_PASSWORD);await p.locator('#login-password').press('Enter');
@@ -10,33 +10,34 @@ async function verify(browser, port, width, pt){
   const open=async()=>{await p.evaluate(()=>location.hash='hr');const tabs=p.locator('#hr-section-select');await tabs.waitFor({state:'attached'});
    if(await tabs.isVisible())await tabs.selectOption('org');else await p.locator('[data-hr-tab=org]').click()};
   await open();
-  await p.getByText(pt?/Para montar o organograma/:/To build your chart/).waitFor();
+  const t=(en,br)=>pt?br:en;
+  const area=p.locator('.hr-org-unit').filter({has:p.getByRole('heading',{name:'Offshore Survey',exact:true})});
+  const leader=area.getByRole('button',{name:t('Add area leader','Adicionar líder da área')});
+  const member=area.getByRole('button',{name:t('Add person to chart','Adicionar pessoa ao organograma')});
+  const form=p.locator('.hr-position-form'),sel=n=>form.locator('select').nth(n);
+  const enter=async b=>{if(pt)await b.tap();else await b.click()};
+  const save=async()=>{await enter(form.getByRole('button',{name:t('Save position','Salvar posição')}));await form.waitFor({state:'detached'})};
+  const role=async name=>{await sel(1).selectOption('');await form.locator('input').last().fill(name)};
+  const card=name=>p.locator('.org-node').filter({has:p.getByText(name,{exact:true})});
+  const act=async(name,en,br)=>{const c=card(name),summary=c.locator('summary');if(pt)await summary.tap();else{await summary.focus();await p.keyboard.press('Enter')}await enter(c.getByRole('button',{name:t(en,br)}))};
   assert.equal(await p.locator('.org-node').count(),0);
-  const editMode=p.getByRole('button',{name:pt?'Editar estrutura':'Edit structure',exact:true});
-  assert.equal(await p.locator('.hr-position-form').count(),0);await editMode.click();const add=p.getByRole('button',{name:pt?'Adicionar posição':'Add position',exact:true});
-  const form=p.locator('.hr-position-form'),select=n=>form.locator('select').nth(n);
-  const save=async()=>{await form.getByRole('button',{name:pt?'Salvar posição':'Save position'}).click();await form.waitFor({state:'detached'})};
-  const suffix=Date.now(),name='QA '+suffix,department='QA unit '+suffix;
-  await add.click();await select(0).selectOption('');await form.locator('input').first().fill(department);
-  await form.locator('input').last().fill(name);await save();
-  const lines=p.locator('.hr-position-row'),vacant=lines.filter({hasText:name}).first();await vacant.waitFor();assert((await vacant.innerText()).includes(pt?'Vaga':'Vacant'));
-  const position=async person=>{await add.click();await select(0).selectOption({label:'Offshore Survey'});await select(1).selectOption({label:name});await select(3).selectOption({label:person});await save()};
-  await position('Mara Brisa');await position('Davi Coral');
-  const mara=lines.filter({has:p.getByText(name+' · Mara Brisa',{exact:true})}),davi=lines.filter({has:p.getByText(name+' · Davi Coral',{exact:true})});
-  if(width>600){await davi.dragTo(mara);await form.waitFor();assert((await select(2).locator('option:checked').innerText()).includes('Mara Brisa'))}
-  else{await davi.locator('button').click();await select(2).selectOption({label:name+' · Mara Brisa'})}
-  await save();await davi.locator('small').waitFor();assert((await davi.innerText()).includes('Mara Brisa'));
-  assert(await davi.evaluate(e=>e.scrollWidth<=e.clientWidth+1&&e.getBoundingClientRect().right<=innerWidth));
-  await p.reload();await p.locator('#wl-global-search-trigger:visible').waitFor();await open();const tree=p.locator('.org-tree').filter({has:p.getByRole('heading',{name:'Offshore Survey',exact:true})});
-  const toggle=tree.locator('[aria-controls]').first();await toggle.waitFor();await toggle.focus();await p.keyboard.press('Enter');
-  assert.equal(await toggle.getAttribute('aria-expanded'),'false');assert.equal(await tree.getByRole('link',{name:'Davi Coral'}).count(),0);
-  const link=tree.getByRole('link',{name:'Mara Brisa'});const href=await link.getAttribute('href');const profile=p.waitForResponse(r=>r.url().includes('/api/recognition/profile?')&&r.ok());await link.click();const record=await (await profile).json();assert.equal(record.display_name,'Mara Brisa');assert.equal(new URL(p.url()).hash,href);
-  await p.goBack();await toggle.waitFor();assert.equal(await toggle.getAttribute('aria-expanded'),'false');assert(await link.evaluate(e=>e===document.activeElement));
-  await toggle.click();await tree.getByRole('link',{name:'Davi Coral'}).waitFor();assert(await tree.evaluate(e=>e.getBoundingClientRect().right<=innerWidth));
-  await editMode.click();await davi.locator('small').waitFor();
-  console.log('PASS',pt?'pt-BR':'en',width,'new department, vacant role, assignment, reparent and reload');
+  await enter(leader);await role('QA Lead');await sel(3).selectOption({label:'Mara Brisa'});await save();
+  await enter(member);await role('QA Member');await sel(2).selectOption({label:'QA Lead · Mara Brisa'});await sel(3).selectOption({label:'Davi Coral'});await save();
+  await act('Davi Coral','Add position above','Adicionar cargo acima');assert(await sel(2).isDisabled());await role('QA Intermediate');await save();
+  const intermediate=card('QA Intermediate');await intermediate.getByText(t('Vacant','Vaga'),{exact:true}).waitFor();
+  assert(await intermediate.locator('..').locator(':scope > ul').getByRole('link',{name:'Davi Coral'}).isVisible());
+  await act('QA Intermediate','Assign or change person','Atribuir ou trocar pessoa');await sel(3).selectOption({label:'Lia Costa'});await save();
+  await act('Mara Brisa','Add position below','Adicionar cargo abaixo');assert((await sel(2).locator('option:checked').innerText()).includes('Mara Brisa'));await role('QA Sibling');await save();
+  if(width>600){await card('QA Sibling').dragTo(intermediate);await form.waitFor();await save()}
+  else{await act('QA Sibling','Edit position','Editar posição');await sel(2).selectOption({label:'QA Intermediate · Lia Costa'});await save()}
+  assert(await intermediate.locator('..').locator(':scope > ul').getByText('QA Sibling',{exact:true}).isVisible());
+  assert(await intermediate.evaluate(e=>e.getBoundingClientRect().right<=innerWidth));
+  await p.reload();await p.locator('#wl-global-search-trigger:visible').waitFor();await open();
+  await intermediate.waitFor();assert.equal(await p.locator('.org-card-actions').count(),0);
+  assert.equal(await intermediate.locator('..').locator(':scope > ul > li').count(),2);
+  console.log('PASS',width,pt?'PT':'EN','directory bootstrap, member, above, below, vacancy, assignment, move, reload');
  }finally{await p.close()}
 }
 (async()=>{const b=await chromium.launch({executablePath:process.env.WAVELINK_TEST_CHROMIUM});try{
- await verify(b,18610,1360,false);await verify(b,18611,390,true);
+ await verify(b,18620,1360,false);await verify(b,18621,390,true);
 }finally{await b.close()}})().catch(e=>{console.error(e);process.exitCode=1});
