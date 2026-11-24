@@ -258,32 +258,57 @@ def populate(showcase):
                      for p, m in ((lia, 'happy'), (rafael, 'focused'), (noa, 'calm'))]
     # This in-memory example belongs only to this disposable public company.
     # Keep the real reporting-position table empty and account roles unchanged.
-    # Display titles model a fictional company chart, independently of access profiles.
-    # Reuse initialized demo identities; a vacancy has neither an identity nor a link.
+    # Company reporting responsibilities are not security roles. The catalog and
+    # formal head designations below belong only to the guarded disposable company.
+    new_people = {'opsdirector':'Eva Sol', 'servicesdirector':'Caio Rio', 'opsmgr':'Talia Luz',
+                  'itmgr':'Nico Serra', 'finmgr':'Rosa Lago', 'sysadmin':'Ari Monte',
+                  'support':'Téo Vale', 'controller':'Iris Prado', 'payables':'Otto Lima'}
+    for key, name in new_people.items():
+        accounts.create('demo.chart.' + key, name, secrets.token_urlsafe(32), 'technician', manager)
+    # key, bilingual display title, fictional login, department, reports to
     outline = [
-        ('ceo', 'CEO', 'demo.admin', None),
-        ('director', 'Director / Diretor', 'demo.eng0', 'ceo'),
-        ('manager', 'Manager / Gerente', 'demo.log0', 'director'),
-        ('day-supervisor', 'Supervisor', 'demo.shift2', 'manager'),
-        ('night-supervisor', 'Supervisor', 'demo.shift1', 'manager'),
-        ('survey-tech', 'Survey Technician / Técnico de levantamento', 'demo.survey.day', 'day-supervisor'),
-        ('deck-tech', 'Deck Technician / Técnico de convés', 'demo.eng1', 'day-supervisor'),
-        ('night-tech', 'Night Technician / Técnico noturno', 'demo.survey.night1', 'night-supervisor'),
-        ('survey-trainee', 'Trainee', 'demo.survey.night2', 'survey-tech'),
-        ('night-trainee', 'Trainee', None, 'night-tech'),
+        ('ceo','CEO','demo.admin','Executive',''),
+        ('operations-director','Operations Director / Diretor de Operações','demo.chart.opsdirector','Executive','ceo'),
+        ('services-director','Corporate Services Director / Diretor Corporativo','demo.chart.servicesdirector','Executive','ceo'),
+        ('operations','Operations Manager / Gerente de Operações','demo.chart.opsmgr','Operations','operations-director'),
+        ('offshore','Offshore Supervisor / Supervisor offshore','demo.shift2','Operations','operations'),
+        ('chief','Party Chief / Chefe de equipe','demo.shift1','Offshore Survey','offshore'),
+        ('survey-tech','Survey Technician / Técnico de levantamento','demo.survey.day','Offshore Survey','chief'),
+        ('auv-tech','AUV Technician / Técnico de AUV','demo.survey.night1','Offshore Survey','chief'),
+        ('survey-trainee','Trainee','demo.survey.night2','Offshore Survey','survey-tech'),
+        ('auv-trainee','Trainee',None,'Offshore Survey','auv-tech'),
+        ('it','IT Manager / Gerente de TI','demo.chart.itmgr','IT','services-director'),
+        ('systems','Systems Administrator / Analista de sistemas','demo.chart.sysadmin','IT','it'),
+        ('support','Service Desk Analyst / Analista de suporte','demo.chart.support','IT','it'),
+        ('finance','Finance Manager / Gerente Financeiro','demo.chart.finmgr','Finance','services-director'),
+        ('controller','Financial Controller / Controller','demo.chart.controller','Finance','finance'),
+        ('payables','Accounts Payable Analyst / Analista de contas a pagar','demo.chart.payables','Finance','finance'),
     ]
-    example = []
-    positions = {}
+    head_logins = {'Executive':'demo.admin', 'Operations':'demo.chart.opsmgr', 'Offshore Survey':'demo.shift1',
+                   'IT':'demo.chart.itmgr', 'Finance':'demo.chart.finmgr'}
     with store.connection() as c:
-        for key, title, login, parent in outline:
-            person = c.execute('SELECT id,name FROM users WHERE login_id=? AND enabled', (login,)).fetchone() if login else None
-            if login and not person:
-                raise ValueError('Missing fictional chart member: ' + login)
-            positions[key] = str(uuid4())
-            example.append(dict(id=positions[key], department='public-demo-company', dept_name='Maré Alta Surveys · Demo',
-                                role=key, role_name=title, person=person['id'] if person else None,
-                                person_name=person['name'] if person else None,
-                                parent=positions[parent] if parent else None))
+        personnel = {u['login_id']:dict(u) for u in c.execute('SELECT id,login_id,name FROM users WHERE enabled')}
+    catalog = {d['name']:d['id'] for d in dept.list(manager)}
+    for name, head in head_logins.items():
+        if name not in catalog:
+            catalog[name] = dept.create(name, 'Fictional demonstration department', manager)
+        did = catalog[name]
+        details = dept.details(did, manager)
+        existing = {m['id'] for m in details['members']}
+        members = {personnel[login]['id'] for _,_,login,department,_ in outline if department==name and login}
+        if members - existing:
+            dept.set_members(did, sorted(existing | members), details['version'], manager, 'Fictional department team')
+        dept.set_heads(did, [personnel[head]['id']], dept.details(did, manager)['version'], manager,
+                       'Explicit fictional department lead')
+    positions = {}
+    example = []
+    for key,title,login,name,parent in outline:
+        positions[key] = str(uuid4())
+        person = personnel[login] if login else None
+        example.append(dict(id=positions[key], department=catalog[name], dept_name=name,
+                            role=key, role_name=title, person=person['id'] if person else None,
+                            person_name=person['name'] if person else None,
+                            parent=positions[parent] if parent else None))
     core.state.demo_org_example = example
     core.state.fictional_seed_result = manager, team
     return manager, team
