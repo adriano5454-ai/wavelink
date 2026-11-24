@@ -404,6 +404,12 @@
       "checks": [
         "Two fictional Fleet vessel IDs under Offshore Operations, distinct Party Chiefs and survey teams, occupied/vacant trainees, independent collapse/expand, private isolation and read-only guest; English and pt-BR at 1360/390 px."
       ]
+    },
+    "org_chart_filters": {
+      "checks": [
+        "Public read-only chart: accented role search, department, canonical vessel and occupancy together, ancestor context, counts, empty result, keyboard reset, collapse and profile return. English and Portuguese at 1360, 390 and 360 px.",
+        "Disposable regular chart: authorized editor flow, vacancy search without vessel metadata; backend HR position, directory and showcase regression suites."
+      ]
     }
   }
 }

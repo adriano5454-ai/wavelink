@@ -319,7 +319,7 @@ def populate(showcase):
         positions[key] = str(uuid4())
         person = personnel[login] if login else None
         example.append(dict(id=positions[key], department=catalog[name], dept_name=name,
-                            role=key, role_name=title, vessel_id=site['id'] if site else None, person=person['id'] if person else None,
+                            role=key, role_name=title, vessel_id=site['id'] if site else None, vessel_name=site['name'] if site else None, person=person['id'] if person else None,
                             person_name=person['name'] if person else None,
                             parent=positions[parent] if parent else None))
     core.state.demo_org_example = example
