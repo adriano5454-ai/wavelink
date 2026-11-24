@@ -349,6 +349,12 @@
       "browser_cases": [
         "Local native showcase in English and pt-BR at 1360 and 390 px: three people per shift in three departments, six visible handovers, sixteen prior roster examples retained, shift selection and unassigned search, same crew in HR roster and calendar."
       ]
+    },
+    "hr_org_chart": {
+      "verified_patched_runtime": "65708dc6c1148df46291f768ed7188e61f8a8060c7fe873b21dcd44d67e97544",
+      "checks": [
+        "English and Portuguese at 390 and 1360 px, Handover fixture departments, calendar return, HR self scope, explicit head and missing head"
+      ]
     }
   }
 }
