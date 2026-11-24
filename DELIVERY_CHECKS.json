@@ -355,6 +355,15 @@
       "checks": [
         "English and Portuguese at 390 and 1360 px, Handover fixture departments, calendar return, HR self scope, explicit head and missing head"
       ]
+    },
+    "hr_org_positions": {
+      "verified_patched_runtime": "1067e346d0e621a89e213fd7b3f59d054e34a9f7d4522f690c4e397734055233",
+      "browser_cases": [
+        "Disposable authenticated application: role/department creation, vacancy, named assignment, drag at 1360 px EN and parent selector at 390 px pt-BR, reload persistence."
+      ],
+      "backend_cases": [
+        "Self-scoped reads, denied writes, stale changes, cycles, wrong-department assignment, empty role grants and read-only public proxy."
+      ]
     }
   }
 }
