@@ -48,7 +48,14 @@ async function check(browser, width, portuguese) {
       const unit=cards.filter({has:page.getByRole('heading',{name:department,exact:true})});
       await unit.locator('.hr-org-head').getByRole('link',{name:lead,exact:true}).waitFor();
     }
-    const vacant=node('Davi Coral').locator('..').getByText(portuguese?'Vaga':'Vacant',{exact:true});await vacant.waitFor();
+    const meridian=direct(node('Rafael Lima'),'Alba Reis');
+    await meridian.getByText(/DEMO Meridian.*Party Chief/).waitFor();
+    await node('Lia Costa').getByText(/MV Aurora.*Party Chief/).waitFor();
+    await direct(meridian,'Tom Faro').waitFor();await direct(meridian,'Cora Sal').waitFor();
+    const auroraToggle=node('Lia Costa').getByRole('button');
+    await auroraToggle.click();assert(!(await tech.isVisible()));assert(await node('Tom Faro').isVisible());await auroraToggle.click();
+    const meridianToggle=meridian.getByRole('button');await meridianToggle.click();assert(!(await node('Cora Sal').isVisible()));assert(await tech.isVisible());await meridianToggle.click();
+    const vacant=node('Cora Sal').locator('..').getByText(portuguese?'Vaga':'Vacant',{exact:true});await vacant.waitFor();
     assert(await tree.evaluate(e=>document.documentElement.scrollWidth<=innerWidth+1 && e.getBoundingClientRect().right<=innerWidth+1));
     const toggle=node('Talia Luz').getByRole('button');await toggle.click();assert(!(await tech.isVisible()));assert(await node('Iris Prado').isVisible());await toggle.click();await tech.waitFor();
     if(process.env.ORG_PREVIEW&&!portuguese)await tree.screenshot({path:process.env.ORG_PREVIEW+'-'+width+'.png'});

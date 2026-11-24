@@ -399,6 +399,11 @@
         "Public team membership and formal heads checked against canonical department records. Operations / Offshore Survey, IT and Finance branch membership, Party Chief, trainee vacancy, profile links, read-only behavior, collapse/return in English and Portuguese, 1360/390 px.",
         "Private editor regression, denied writes, private reporting table isolation. No authorization change."
       ]
+    },
+    "demo_vessel_chiefs": {
+      "checks": [
+        "Two fictional Fleet vessel IDs under Offshore Operations, distinct Party Chiefs and survey teams, occupied/vacant trainees, independent collapse/expand, private isolation and read-only guest; English and pt-BR at 1360/390 px."
+      ]
     }
   }
 }
