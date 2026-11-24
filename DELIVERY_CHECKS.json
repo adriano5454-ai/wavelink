@@ -343,6 +343,12 @@
         "Download revision evidence, jump to acknowledgement without acknowledging; prior draft and navigation regressions",
         "Received list to revision acknowledgement on disposable local data, return with filters, reopen acknowledged revision; public guest reader without acknowledgement control. English and pt-BR at 1360 and 390 px."
       ]
+    },
+    "handover_shift_assignments": {
+      "verified_patched_runtime": "4f8498ef1c29af28dc88a7ce8d4f861e39d45a2827e19781c77859f2d3f1323d",
+      "browser_cases": [
+        "Local native showcase in English and pt-BR at 1360 and 390 px: three people per shift in three departments, six visible handovers, sixteen prior roster examples retained, shift selection and unassigned search, same crew in HR roster and calendar."
+      ]
     }
   }
 }

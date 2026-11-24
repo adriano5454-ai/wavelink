@@ -149,3 +149,20 @@ def test_demo_crew_seed_is_idempotent_and_isolated(company, tmp_path):
         with pytest.raises(ValueError, match='disposable public showcase'):
             populate_crew(other)
     assert snapshot() == before
+
+def test_shift_seed_reentry_and_private_guard(company):
+    from deploy.showcase_seed import populate
+    from types import SimpleNamespace
+    showcase, _ = company
+    def counts():
+        with showcase.core.state.store.connection() as db:
+            tables = [r[0] for r in db.execute("SELECT name FROM sqlite_master WHERE type='table'")
+                      if r[0] in ('users', 'hr_records') or 'handover' in r[0]]
+            return {table: db.execute(f'SELECT count(*) FROM "{table}"').fetchone()[0] for table in tables}
+
+    before = counts()
+    assert populate(showcase) == (showcase.manager, showcase.team)
+    assert counts() == before
+    private = SimpleNamespace(core=showcase.core, temp=showcase.temp, gate=SimpleNamespace(public_entry=False))
+    with pytest.raises(ValueError, match='disposable public showcase'):
+        populate(private)
