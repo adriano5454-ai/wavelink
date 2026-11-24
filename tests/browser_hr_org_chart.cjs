@@ -54,6 +54,24 @@ async function check(browser, width, portuguese) {
     await direct(meridian,'Tom Faro').waitFor();await direct(meridian,'Cora Sal').waitFor();
     const auroraToggle=node('Lia Costa').getByRole('button');
     await auroraToggle.click();assert(!(await tech.isVisible()));assert(await node('Tom Faro').isVisible());await auroraToggle.click();
+    const query=page.getByRole('searchbox',{name:portuguese?'Buscar nome ou cargo':'Search name or role'});
+    const controls=page.locator('.org-filter-controls'), selects=controls.locator('select');
+    const clear=controls.getByRole('button'), count=controls.locator('+ p');
+    await auroraToggle.click();await query.fill('tecnico');
+    assert.equal(await count.innerText(),(portuguese?'Cargos encontrados':'Matching positions')+' · 4');
+    await tech.waitFor();assert.equal(await node('Iris Prado').count(),0);
+    await selects.nth(1).selectOption({label:'DEMO Meridian'});
+    await selects.nth(0).selectOption({label:'Meridian Survey Team'});
+    await selects.nth(2).selectOption('vacant');await page.getByText(portuguese?'Nenhum cargo corresponde aos filtros.':'No positions match these filters.').waitFor();
+    await query.fill('trainee');assert((await count.innerText()).endsWith(' · 1'));
+    await node('Cora Sal').waitFor();assert.equal(await node('Mara Brisa').count(),0);
+    assert(await tree.evaluate(e=>document.documentElement.scrollWidth<=innerWidth+1 && e.getBoundingClientRect().right<=innerWidth+1));
+    await query.fill('');await selects.nth(2).selectOption('filled');
+    const tom=node('Tom Faro').getByRole('link');await tom.focus();await page.keyboard.press('Enter');
+    await page.locator('.wl-profile-hero').waitFor();await page.goBack();await tom.waitFor();
+    assert(await tom.evaluate(e=>document.activeElement===e));
+    await clear.focus();await page.keyboard.press('Enter');assert(await query.evaluate(e=>document.activeElement===e));
+    assert(!(await tech.isVisible()));await auroraToggle.click();
     const meridianToggle=meridian.getByRole('button');await meridianToggle.click();assert(!(await node('Cora Sal').isVisible()));assert(await tech.isVisible());await meridianToggle.click();
     const vacant=node('Cora Sal').locator('..').getByText(portuguese?'Vaga':'Vacant',{exact:true});await vacant.waitFor();
     assert(await tree.evaluate(e=>document.documentElement.scrollWidth<=innerWidth+1 && e.getBoundingClientRect().right<=innerWidth+1));
@@ -72,5 +90,5 @@ async function check(browser, width, portuguese) {
   } finally {await page.close();}
 }
 (async()=>{const browser=await chromium.launch({executablePath:process.env.WAVELINK_TEST_CHROMIUM});try{
- for(const width of [1360,390])for(const pt of [false,true])await check(browser,width,pt);
+ for(const width of [1360,390,360])for(const pt of [false,true])await check(browser,width,pt);
 }finally{await browser.close();}})().catch(e=>{console.error(e);process.exitCode=1;});

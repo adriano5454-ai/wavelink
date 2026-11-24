@@ -35,9 +35,14 @@ async function verify(browser, port, width, pt){
   await p.reload();await p.locator('#wl-global-search-trigger:visible').waitFor();await open();
   await intermediate.waitFor();assert.equal(await p.locator('.org-card-actions').count(),0);
   assert.equal(await intermediate.locator('..').locator(':scope > ul > li').count(),2);
+  const filters=p.locator('.org-filter-controls');assert.equal(await filters.locator('select').count(),2);
+  await filters.getByRole('searchbox').fill('sibling');await filters.locator('select').last().selectOption('vacant');
+  await card('QA Sibling').waitFor();assert((await filters.locator('+ p').innerText()).endsWith(' · 1'));
+  assert.equal(await card('Davi Coral').count(),0);await intermediate.waitFor();
+  await filters.getByRole('button').click();await card('Davi Coral').waitFor();
   console.log('PASS',width,pt?'PT':'EN','directory bootstrap, member, above, below, vacancy, assignment, move, reload');
  }finally{await p.close()}
 }
 (async()=>{const b=await chromium.launch({executablePath:process.env.WAVELINK_TEST_CHROMIUM});try{
- await verify(b,18640,1360,false);await verify(b,18641,390,true);
+ await verify(b,Number(process.env.ORG_QA_EN_PORT||18640),1360,false);await verify(b,Number(process.env.ORG_QA_PT_PORT||18641),390,true);
 }finally{await b.close()}})().catch(e=>{console.error(e);process.exitCode=1});
