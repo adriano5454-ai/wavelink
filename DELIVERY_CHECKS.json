@@ -5,7 +5,7 @@
   "base_commit": "c7b427c5c46f134b0c9dc41191dee58b7496d521",
   "base_tree": "c3daaf009ae66e32fa5503c8e84cd481b4304aa1",
   "parent_runtime_manifest_sha256": "e34d89daa1892bcabc497aa75d43cb4d6df59d084de5462bbd9f95237ec76453",
-  "runtime_manifest_sha256": "e4188964fbd58230525470e093e8ac322213e7c261ea559afcec1d1d0462eb4d",
+  "runtime_manifest_sha256": "f1cdd0dd19941cc66fda951698cc1fc8ede6293707bb89d9e73b17995639682c",
   "verified_runtime_resources": 2620,
   "overlay_resources": 183,
   "normal_install_from_vendor_verified": true,
@@ -333,6 +333,14 @@
       "browser_cases": [
         "1360 and 390, en and pt-BR, filtered drafts, all vessels, chooser, forbidden create and author scope",
         "Prior navigation regression at both widths and languages"
+      ]
+    },
+    "handover_publication_reader": {
+      "verified_parent": "e4188964fbd58230525470e093e8ac322213e7c261ea559afcec1d1d0462eb4d",
+      "verified_patched_runtime": "f1cdd0dd19941cc66fda951698cc1fc8ede6293707bb89d9e73b17995639682c",
+      "browser_cases": [
+        "1360/390, English and pt-BR: real fictional publication, whitespace-only notes, all seven notes filled",
+        "Download revision evidence, jump to acknowledgement without acknowledging; prior draft and navigation regressions"
       ]
     }
   }
