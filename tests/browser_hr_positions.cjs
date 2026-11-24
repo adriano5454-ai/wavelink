@@ -35,6 +35,25 @@ async function verify(browser, port, width, pt){
   await p.reload();await p.locator('#wl-global-search-trigger:visible').waitFor();await open();
   await intermediate.waitFor();assert.equal(await p.locator('.org-card-actions').count(),0);
   assert.equal(await intermediate.locator('..').locator(':scope > ul > li').count(),2);
+  if(process.env.ORG_QA_AVATARS){
+   const good=card('Davi Coral').locator('.org-avatar img');await good.waitFor();
+   assert(await good.evaluate(img=>img.complete&&img.naturalWidth>0));
+   assert.equal(await card('Mara Brisa').locator('.org-avatar').innerText(),'MB');
+   assert.equal(await card('Lia Costa').locator('.org-avatar').innerText(),'LC');
+   assert.equal(await card('QA Sibling').locator('.org-avatar').count(),0);
+   await card('QA Sibling').locator('.org-vacancy').waitFor();
+   const person=card('Davi Coral').getByRole('link',{name:'Davi Coral',exact:true});
+   await person.focus();assert(await person.evaluate(e=>document.activeElement===e));
+   const denied='**/api/recognition/avatar/*';
+   let deniedRequests=0;
+   await p.route(denied,route=>{deniedRequests++;return route.fulfill({status:403,body:''})});
+   await p.reload();await p.locator('#wl-global-search-trigger:visible').waitFor();await open();
+   await card('Davi Coral').waitFor();await p.waitForFunction(()=>performance.getEntriesByType('resource').some(r=>r.name.includes('/api/recognition/avatar/')));
+   assert(deniedRequests>0);assert.equal(await card('Davi Coral').locator('.org-avatar').innerText(),'DC');
+   assert.equal(await card('Davi Coral').locator('.org-avatar img').count(),0);
+   await p.unroute(denied);
+
+  }
   const filters=p.locator('.org-filter-controls');assert.equal(await filters.locator('select').count(),2);
   await filters.getByRole('searchbox').fill('sibling');await filters.locator('select').last().selectOption('vacant');
   await card('QA Sibling').waitFor();assert((await filters.locator('+ p').innerText()).endsWith(' · 1'));

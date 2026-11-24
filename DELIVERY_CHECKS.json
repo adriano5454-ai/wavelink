@@ -410,6 +410,12 @@
         "Public read-only chart: accented role search, department, canonical vessel and occupancy together, ancestor context, counts, empty result, keyboard reset, collapse and profile return. English and Portuguese at 1360, 390 and 360 px.",
         "Disposable regular chart: authorized editor flow, vacancy search without vessel metadata; backend HR position, directory and showcase regression suites."
       ]
+    },
+    "org_chart_avatars": {
+      "checks": [
+        "Disposable company: synthetic PNG, invalid image, denied media, initials, distinct vacancy and keyboard focus. Visible eligible profile IDs only; existing avatar route, no per-card profile fetch.",
+        "Guest regression at 360, 390 and 1360 px, English and Portuguese, with profile return and composed filters."
+      ]
     }
   }
 }
