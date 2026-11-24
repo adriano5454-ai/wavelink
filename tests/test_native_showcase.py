@@ -166,3 +166,16 @@ def test_shift_seed_reentry_and_private_guard(company):
     private = SimpleNamespace(core=showcase.core, temp=showcase.temp, gate=SimpleNamespace(public_entry=False))
     with pytest.raises(ValueError, match='disposable public showcase'):
         populate(private)
+
+def test_guest_example_is_transient_and_private_chart_is_empty(company):
+    from app import org_positions
+    showcase, visitor = company
+    with showcase.core.state.store.connection() as c:
+        assert c.execute('SELECT count(*) FROM hr_org_positions').fetchone()[0] == 0
+        assert org_positions.snapshot(c,showcase.manager,False)['positions'] == []
+    for _ in range(2):
+        chart = visitor.get('/api/hr/org-positions', headers=headers(showcase)).json()
+        assert chart['example'] and not chart['editor']
+        assert len({r['person'] for r in chart['positions']}) == 6
+    with showcase.core.state.store.connection() as c:
+        assert c.execute('SELECT count(*) FROM hr_org_positions').fetchone()[0] == 0
