@@ -176,6 +176,10 @@ def test_guest_example_is_transient_and_private_chart_is_empty(company):
     for _ in range(2):
         chart = visitor.get('/api/hr/org-positions', headers=headers(showcase)).json()
         assert chart['example'] and not chart['editor']
-        assert len({r['person'] for r in chart['positions']}) == 6
+        rows = chart['positions']
+        assert len(rows) == 10 and len({r['person'] for r in rows if r['person']}) == 9
+        trainee = [r for r in rows if r['role_name']=='Trainee']
+        assert len(trainee)==2 and sum(r['person'] is None for r in trainee)==1
+        assert all('Technician' in next(p['role_name'] for p in rows if p['id']==r['parent']) for r in trainee)
     with showcase.core.state.store.connection() as c:
         assert c.execute('SELECT count(*) FROM hr_org_positions').fetchone()[0] == 0

@@ -386,6 +386,12 @@
         "Guest public fixture: three visible levels, collapse and profile navigation without edit actions, 1360/390 px in EN/PT.",
         "Rollback on failed relink and cross-department rejection."
       ]
+    },
+    "demo_six_level_chart": {
+      "checks": [
+        "Public showcase six levels, 10 positions, nine distinct members and a vacant trainee. Tested English and pt-BR at 1360/390 px, width, collapse, profile and browser Back.",
+        "Private position table remains empty."
+      ]
     }
   }
 }
