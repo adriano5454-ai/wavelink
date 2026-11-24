@@ -364,6 +364,13 @@
       "backend_cases": [
         "Self-scoped reads, denied writes, stale changes, cycles, wrong-department assignment, empty role grants and read-only public proxy."
       ]
+    },
+    "hr_org_tree": {
+      "verified_patched_runtime": "ba6f46a61218fc82432337c7827add1e9cb0c98354910476f12ee41d5c9c8d50",
+      "browser_cases": [
+        "Fictional authenticated company: desktop EN drag, mobile pt-BR parent selector, saved reporting lines, keyboard collapse, profile route, browser back, focus and expansion.",
+        "Read-only public showcase locally at 1360/390 px in both languages: department cards, authorized member profiles, focus restoration, empty reporting hierarchy and no editor."
+      ]
     }
   }
 }
