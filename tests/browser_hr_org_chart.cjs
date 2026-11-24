@@ -33,21 +33,27 @@ async function check(browser, width, portuguese) {
     assert(await page.locator('.hr-org-grid').evaluate(e=>e.scrollWidth<=e.clientWidth+1 && e.getBoundingClientRect().right<=innerWidth));
     const tree=page.locator('.org-tree');
     await page.getByText(portuguese?'Estrutura fictícia de exemplo':'Fictional reporting structure',{exact:true}).waitFor();
-    const root=tree.locator('.org-roots > li > .org-node'),mid=tree.locator('.org-roots > li > ul > li > .org-node'),leaves=tree.locator('.org-roots > li > ul > li > ul > li > .org-node');
-    assert.equal(await root.count(),1);assert.equal(await mid.count(),2);assert.equal(await leaves.count(),3);
-    const a=await root.boundingBox(),b=await mid.first().boundingBox(),c=await mid.last().boundingBox(),d=await leaves.first().boundingBox();
-    if(width>640){
-      assert(a.y+a.height<=b.y && b.y+b.height<=d.y && Math.abs(b.y-c.y)<2 && b.x+b.width<=c.x);
-      assert(a.x+a.width/2>b.x+b.width/2 && a.x+a.width/2<c.x+c.width/2);
-      assert(await mid.last().evaluate(e=>parseFloat(getComputedStyle(e.parentElement,'::before').borderRightWidth)>0));
-    }else{assert(c.y>b.y);assert(await tree.evaluate(e=>e.scrollWidth<=e.clientWidth+1))}
-    console.log('tree geometry',width,a,b,c,d);
-    if(process.env.ORG_PREVIEW && !portuguese)await tree.screenshot({path:process.env.ORG_PREVIEW+'-'+width+'.png'});
-    const toggle=root.getByRole('button');await toggle.focus();await page.keyboard.press('Enter');assert.equal(await toggle.getAttribute('aria-expanded'),'false');assert(!(await mid.first().isVisible()));await toggle.click();assert(await leaves.first().isVisible());
+    const levels=[];
+    for(let i=0;i<6;i++) levels.push(tree.locator('.org-roots'+' > li > ul'.repeat(i)+' > li > .org-node'));
+    assert.deepEqual(await Promise.all(levels.map(nodes=>nodes.count())),[1,1,1,2,3,2]);
+    for(const [i,label] of ['CEO','Director','Manager','Supervisor','Technician','Trainee'].entries())
+      assert((await levels[i].first().locator('strong').innerText()).includes(label));
+    const tech=levels[4].filter({has:page.getByRole('link',{name:'Mara Brisa',exact:true})});
+    const trainee=tech.locator('..').locator(':scope > ul .org-node');await trainee.getByRole('link',{name:'Nina Mar'}).waitFor();
+    const vacant=levels[5].filter({has:page.getByText(portuguese?'Vaga':'Vacant',{exact:true})});assert.equal(await vacant.count(),1);assert.equal(await vacant.locator('a').count(),0);
+    const supervisor=levels[3].filter({has:page.getByRole('link',{name:'Rafael Lima',exact:true})});
+    const children=supervisor.locator('..').locator(':scope > ul > li > .org-node');assert.equal(await children.count(),2);
+    const [parentBox,left,right]=await Promise.all([supervisor,children.first(),children.last()].map(n=>n.boundingBox()));
+    if(width>640){assert(parentBox.y+parentBox.height<=left.y && Math.abs(left.y-right.y)<2 && left.x+left.width<=right.x);assert(parentBox.x+parentBox.width/2>left.x&&parentBox.x+parentBox.width/2<right.x+right.width)}
+    else assert(right.y>left.y);
+    assert(await tree.evaluate(e=>e.scrollWidth<=e.clientWidth+1 && document.documentElement.scrollWidth<=innerWidth+1));
+    const toggle=supervisor.getByRole('button');await toggle.focus();await page.keyboard.press('Enter');assert(!(await tech.isVisible()));assert(await vacant.isVisible());await toggle.click();await trainee.waitFor();
+    const top=levels[0].getByRole('button');await top.click();assert(!(await supervisor.isVisible()));await top.click();await trainee.waitFor();
+    if(process.env.ORG_PREVIEW&&!portuguese)await tree.screenshot({path:process.env.ORG_PREVIEW+'-'+width+'.png'});
     assert.equal(await page.locator('.hr-position-form').count(),0);
     assert.equal(await page.getByRole('button',{name:portuguese?'Editar estrutura':'Edit structure'}).count(),0);
     assert.equal(await page.locator('.org-unit-actions,.org-card-actions').count(),0);
-    const member=cards.getByRole('link',{name:'Mara Brisa',exact:true});
+    const member=tech.getByRole('link',{name:'Mara Brisa',exact:true});
     const response=page.waitForResponse(r=>r.url().includes('/api/recognition/profile?')&&r.ok());
     await member.click();assert.equal((await (await response).json()).display_name,'Mara Brisa');
     await page.goBack();await member.waitFor();assert(await member.evaluate(e=>e===document.activeElement));
