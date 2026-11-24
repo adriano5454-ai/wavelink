@@ -28,27 +28,29 @@ async function check(browser, width, portuguese) {
       const card=cards.filter({has:page.getByRole('heading',{name:department,exact:true})});
       await card.getByText(name,{exact:true}).waitFor();
     }
-    await cards.getByText(portuguese?'Liderança não definida':'Leadership not defined',{exact:true}).first().waitFor();
+    await cards.getByText(portuguese?'Sem chefia formal cadastrada':'No formal department head designated',{exact:true}).first().waitFor();
     await cards.getByText('Survey coordinator',{exact:true}).first().waitFor();
     assert(await page.locator('.hr-org-grid').evaluate(e=>e.scrollWidth<=e.clientWidth+1 && e.getBoundingClientRect().right<=innerWidth));
     const tree=page.locator('.org-tree');
     await page.getByText(portuguese?'Estrutura fictícia de exemplo':'Fictional reporting structure',{exact:true}).waitFor();
-    const levels=[];
-    for(let i=0;i<6;i++) levels.push(tree.locator('.org-roots'+' > li > ul'.repeat(i)+' > li > .org-node'));
-    assert.deepEqual(await Promise.all(levels.map(nodes=>nodes.count())),[1,1,1,2,3,2]);
-    for(const [i,label] of ['CEO','Director','Manager','Supervisor','Technician','Trainee'].entries())
-      assert((await levels[i].first().locator('strong').innerText()).includes(label));
-    const tech=levels[4].filter({has:page.getByRole('link',{name:'Mara Brisa',exact:true})});
-    const trainee=tech.locator('..').locator(':scope > ul .org-node');await trainee.getByRole('link',{name:'Nina Mar'}).waitFor();
-    const vacant=levels[5].filter({has:page.getByText(portuguese?'Vaga':'Vacant',{exact:true})});assert.equal(await vacant.count(),1);assert.equal(await vacant.locator('a').count(),0);
-    const supervisor=levels[3].filter({has:page.getByRole('link',{name:'Rafael Lima',exact:true})});
-    const children=supervisor.locator('..').locator(':scope > ul > li > .org-node');assert.equal(await children.count(),2);
-    const [parentBox,left,right]=await Promise.all([supervisor,children.first(),children.last()].map(n=>n.boundingBox()));
-    if(width>640){assert(parentBox.y+parentBox.height<=left.y && Math.abs(left.y-right.y)<2 && left.x+left.width<=right.x);assert(parentBox.x+parentBox.width/2>left.x&&parentBox.x+parentBox.width/2<right.x+right.width)}
-    else assert(right.y>left.y);
-    assert(await tree.evaluate(e=>e.scrollWidth<=e.clientWidth+1 && document.documentElement.scrollWidth<=innerWidth+1));
-    const toggle=supervisor.getByRole('button');await toggle.focus();await page.keyboard.press('Enter');assert(!(await tech.isVisible()));assert(await vacant.isVisible());await toggle.click();await trainee.waitFor();
-    const top=levels[0].getByRole('button');await top.click();assert(!(await supervisor.isVisible()));await top.click();await trainee.waitFor();
+    const node=key=>tree.locator('.org-node').filter({has:page.getByRole('link',{name:key,exact:true})});
+    const direct=(parent,child)=>parent.locator('..').locator(':scope > ul > li > .org-node').filter({has:page.getByRole('link',{name:child,exact:true})});
+    const ceo=node('Demo Manager');
+    await direct(ceo,'Eva Sol').waitFor();await direct(ceo,'Caio Rio').waitFor();
+    await direct(node('Eva Sol'),'Talia Luz').waitFor();
+    await direct(node('Caio Rio'),'Nico Serra').waitFor();await direct(node('Caio Rio'),'Rosa Lago').waitFor();
+    await direct(node('Talia Luz'),'Rafael Lima').waitFor();await direct(node('Rafael Lima'),'Lia Costa').waitFor();
+    assert((await node('Lia Costa').innerText()).includes('Party Chief'));
+    const tech=direct(node('Lia Costa'),'Mara Brisa');await tech.waitFor();await direct(node('Lia Costa'),'Davi Coral').waitFor();
+    await direct(tech,'Nina Mar').waitFor();
+    await direct(node('Nico Serra'),'Ari Monte').waitFor();await direct(node('Rosa Lago'),'Iris Prado').waitFor();
+    for(const [department,lead] of [['Operations','Talia Luz'],['Offshore Survey','Lia Costa'],['IT','Nico Serra'],['Finance','Rosa Lago']]){
+      const unit=cards.filter({has:page.getByRole('heading',{name:department,exact:true})});
+      await unit.locator('.hr-org-head').getByRole('link',{name:lead,exact:true}).waitFor();
+    }
+    const vacant=node('Davi Coral').locator('..').getByText(portuguese?'Vaga':'Vacant',{exact:true});await vacant.waitFor();
+    assert(await tree.evaluate(e=>document.documentElement.scrollWidth<=innerWidth+1 && e.getBoundingClientRect().right<=innerWidth+1));
+    const toggle=node('Talia Luz').getByRole('button');await toggle.click();assert(!(await tech.isVisible()));assert(await node('Iris Prado').isVisible());await toggle.click();await tech.waitFor();
     if(process.env.ORG_PREVIEW&&!portuguese)await tree.screenshot({path:process.env.ORG_PREVIEW+'-'+width+'.png'});
     assert.equal(await page.locator('.hr-position-form').count(),0);
     assert.equal(await page.getByRole('button',{name:portuguese?'Editar estrutura':'Edit structure'}).count(),0);

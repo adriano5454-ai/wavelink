@@ -24,7 +24,10 @@ def test_authorized_org_chart(company):
         return next(g for g in store.hr.directory(showcase.manager)['org_chart']['units']
                     if g['name'] == 'Offshore Survey')
 
+    assert [p['name'] for p in unit()['heads']] == ['Lia Costa']
+    departments.set_heads(survey['id'], [], survey['version'], showcase.manager, 'Fictional QA: clear designation')
     assert unit()['heads'] == []
+    survey=departments.details(survey['id'],showcase.manager)
     departments.set_heads(survey['id'], [uid], survey['version'], showcase.manager, 'Temporary fictional QA designation')
     assert [p['name'] for p in unit()['heads']] == ['Lia Costa']
     assert all(p['name'] != 'Lia Costa' for p in unit()['people'])

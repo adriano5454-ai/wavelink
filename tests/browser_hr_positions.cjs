@@ -12,7 +12,7 @@ async function verify(browser, port, width, pt){
   await open();
   const t=(en,br)=>pt?br:en;
   const area=p.locator('.hr-org-unit').filter({has:p.getByRole('heading',{name:'Offshore Survey',exact:true})});
-  const leader=area.getByRole('button',{name:t('Add area leader','Adicionar líder da área')});
+  const leader=area.getByRole('button',{name:t('Add top-level position','Adicionar cargo no nível superior')});
   const member=area.getByRole('button',{name:t('Add person to chart','Adicionar pessoa ao organograma')});
   const form=p.locator('.hr-position-form'),sel=n=>form.locator('select').nth(n);
   const enter=async b=>{if(pt)await b.tap();else await b.click()};
@@ -39,5 +39,5 @@ async function verify(browser, port, width, pt){
  }finally{await p.close()}
 }
 (async()=>{const b=await chromium.launch({executablePath:process.env.WAVELINK_TEST_CHROMIUM});try{
- await verify(b,18620,1360,false);await verify(b,18621,390,true);
+ await verify(b,18640,1360,false);await verify(b,18641,390,true);
 }finally{await b.close()}})().catch(e=>{console.error(e);process.exitCode=1});

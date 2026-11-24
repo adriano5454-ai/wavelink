@@ -392,6 +392,13 @@
         "Public showcase six levels, 10 positions, nine distinct members and a vacant trainee. Tested English and pt-BR at 1360/390 px, width, collapse, profile and browser Back.",
         "Private position table remains empty."
       ]
+    },
+    "department_lead_chart": {
+      "verified_patched_runtime": "664032a324101447fcdb09e92389c5105e28403da6b4880dd78b244df9e1d979",
+      "checks": [
+        "Public team membership and formal heads checked against canonical department records. Operations / Offshore Survey, IT and Finance branch membership, Party Chief, trainee vacancy, profile links, read-only behavior, collapse/return in English and Portuguese, 1360/390 px.",
+        "Private editor regression, denied writes, private reporting table isolation. No authorization change."
+      ]
     }
   }
 }

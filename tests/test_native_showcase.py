@@ -177,7 +177,15 @@ def test_guest_example_is_transient_and_private_chart_is_empty(company):
         chart = visitor.get('/api/hr/org-positions', headers=headers(showcase)).json()
         assert chart['example'] and not chart['editor']
         rows = chart['positions']
-        assert len(rows) == 10 and len({r['person'] for r in rows if r['person']}) == 9
+        assert len(rows) == 16 and len({r['person'] for r in rows if r['person']}) == 15
+        from app.departments import membership_ids
+        with showcase.core.state.store.connection() as db:
+            for row in rows:
+                if row['person']:
+                    assert row['department'] in membership_ids(db, row['person'],active_only=True)
+                if row['role'] in ('operations','chief','it','finance','ceo'):
+                    assert db.execute('SELECT 1 FROM department_heads WHERE department_id=? AND user_id=?',
+                                      (row['department'],row['person'])).fetchone()
         trainee = [r for r in rows if r['role_name']=='Trainee']
         assert len(trainee)==2 and sum(r['person'] is None for r in trainee)==1
         assert all('Technician' in next(p['role_name'] for p in rows if p['id']==r['parent']) for r in trainee)
