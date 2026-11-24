@@ -46,6 +46,7 @@ async function check(browser, width, portuguese) {
     const toggle=root.getByRole('button');await toggle.focus();await page.keyboard.press('Enter');assert.equal(await toggle.getAttribute('aria-expanded'),'false');assert(!(await mid.first().isVisible()));await toggle.click();assert(await leaves.first().isVisible());
     assert.equal(await page.locator('.hr-position-form').count(),0);
     assert.equal(await page.getByRole('button',{name:portuguese?'Editar estrutura':'Edit structure'}).count(),0);
+    assert.equal(await page.locator('.org-unit-actions,.org-card-actions').count(),0);
     const member=cards.getByRole('link',{name:'Mara Brisa',exact:true});
     const response=page.waitForResponse(r=>r.url().includes('/api/recognition/profile?')&&r.ok());
     await member.click();assert.equal((await (await response).json()).display_name,'Mara Brisa');

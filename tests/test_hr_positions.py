@@ -38,3 +38,36 @@ def test_reporting_positions(company):
     response=guest.get('/api/hr/org-positions',headers=headers(showcase))
     assert response.status_code==200 and not response.json()['editor']
     assert guest.post('/api/hr/org-positions',json=fields,headers=headers(showcase)).status_code==403
+
+def test_insert_above_is_atomic_and_scoped(company):
+    import sqlite3
+    showcase, _ = company
+    store, actor = showcase.core.state.store, showcase.manager
+    with store.connection() as c:
+        base = org_positions.snapshot(c, actor, False)
+    department = base['departments'][0]['id']
+    fields = dict(id='', revision=base['revision'], department=department, new_department='',
+                  role=base['roles'][0]['id'], new_role='', parent='', person='')
+    def save(**changes):
+        return org_positions.save(store, actor, dict(fields, **changes), False)
+    old_ids = {r['id'] for r in base['positions']}
+    chart = save()
+    child = next(r for r in chart['positions'] if r['id'] not in old_ids)
+    other = next(d for d in base['departments'] if d['id'] != department)
+    with pytest.raises(Problem):
+        save(revision=chart['revision'], department=other['id'], insert_above=child['id'])
+    # Simulate failure after the superior is inserted, before the child is updated.
+    with store.connection(True) as c:
+        c.execute("CREATE TRIGGER qa_abort_org_move BEFORE UPDATE OF parent ON hr_org_positions BEGIN SELECT RAISE(ABORT,'fixture rollback'); END")
+    try:
+        with pytest.raises(sqlite3.IntegrityError):
+            save(revision=chart['revision'], insert_above=child['id'])
+        with store.connection() as c:
+            assert org_positions.snapshot(c,actor,False) == chart
+    finally:
+        with store.connection(True) as c:
+            c.execute('DROP TRIGGER qa_abort_org_move')
+    after = save(revision=chart['revision'], insert_above=child['id'])
+    updated = next(r for r in after['positions'] if r['id'] == child['id'])
+    assert updated['parent'] and next(r for r in after['positions'] if r['id']==updated['parent'])['parent'] is None
+    assert [r for r in after['positions'] if r['id'] in old_ids] == base['positions']
