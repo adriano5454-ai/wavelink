@@ -31,6 +31,14 @@ async function check(browser, width, portuguese) {
     await cards.getByText(portuguese?'Liderança não definida':'Leadership not defined',{exact:true}).first().waitFor();
     await cards.getByText('Survey coordinator',{exact:true}).first().waitFor();
     assert(await page.locator('.hr-org-grid').evaluate(e=>e.scrollWidth<=e.clientWidth+1 && e.getBoundingClientRect().right<=innerWidth));
+    // Fresh showcase data has department membership but no saved reporting lines.
+    await page.getByText(portuguese?'Nenhuma posição visível na estrutura. Consulte os departamentos abaixo.':'No reporting positions visible. Browse the departments below.').waitFor();
+    assert.equal(await page.locator('.org-node,.hr-position-form').count(),0);
+    assert.equal(await page.getByRole('button',{name:portuguese?'Editar estrutura':'Edit structure'}).count(),0);
+    const member=cards.getByRole('link',{name:'Mara Brisa',exact:true});
+    const response=page.waitForResponse(r=>r.url().includes('/api/recognition/profile?')&&r.ok());
+    await member.click();assert.equal((await (await response).json()).display_name,'Mara Brisa');
+    await page.goBack();await member.waitFor();assert(await member.evaluate(e=>e===document.activeElement));
     await open('calendar');await page.locator('#hr-location-roster').waitFor({state:'attached'});
     await open('org');await cards.first().waitFor();
     console.log('PASS',width,portuguese?'PT':'EN',await cards.count(),'groups');

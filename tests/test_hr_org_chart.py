@@ -16,7 +16,8 @@ def test_authorized_org_chart(company):
     assert not restricted['show_heads']
     members = [p for group in restricted['units'] for p in group['people']]
     assert members and {p['name'] for p in members} == {employee['name']}
-    assert all(set(p) == {'name','title'} for p in members)
+    assert all(set(p) == {'name','title','profile_id'} for p in members)
+    assert all(p['profile_id']==uid for p in members)
     assert all(not group['heads'] for group in restricted['units'])
 
     def unit():
