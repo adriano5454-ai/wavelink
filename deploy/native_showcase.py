@@ -44,7 +44,7 @@ class NativeShowcase:
         config['allow_legacy_codes'] = False
         self.core = create_app(project, prepared_config=config)
         self.hub_id = config['hub_id']
-        self.manager, self.team = populate(self.core)
+        self.manager, self.team = populate(self)
         from .showcase_crew import populate_crew
         populate_crew(self)
         self.lock = threading.Lock()

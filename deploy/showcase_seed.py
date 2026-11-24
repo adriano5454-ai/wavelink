@@ -8,14 +8,22 @@ from uuid import uuid4
 from .demo_management_files import sample_file
 
 
-def populate(core):
+def populate(showcase):
     from app import access
     from app.accounts import password_hash
     from app.departments import Departments
     from app.handovers import SECTIONS
     from app.simple_handovers import SimpleHandovers
 
+    from tempfile import gettempdir
+    core = showcase.core
     store, accounts = core.state.store, core.state.accounts
+    root = Path(showcase.temp.name).resolve()
+    if (not showcase.gate.public_entry or root.parent != Path(gettempdir()).resolve()
+            or not root.name.startswith('wavelink-public-') or not store.path.resolve().is_relative_to(root / 'company')):
+        raise ValueError('Fictional shifts require a disposable public showcase.')
+    if hasattr(core.state, 'fictional_seed_result'):
+        return core.state.fictional_seed_result
     with store.connection(True) as c:
         c.execute('UPDATE users SET enabled=1,password_hash=?', (password_hash(secrets.token_urlsafe(32)),))
         for login, name in (('demo.admin', 'Demo Manager'), ('demo.shift1', 'Lia Costa'),
@@ -56,7 +64,13 @@ def populate(core):
 
     dept = Departments(store)
     survey = dept.create('Offshore Survey', 'Aurora survey crew', manager)
-    dept.set_members(survey, [p['user_id'] for p in (lia, rafael, manager)], 1, manager, 'Fictional rotation')
+    # Fictional members of the disposable showcase's reusable Handover shifts.
+    crew = [accounts.create(login, name, secrets.token_urlsafe(32), 'technician', manager)['id']
+            for login, name in (('demo.survey.day', 'Mara Brisa'), ('demo.survey.night1', 'Davi Coral'),
+                                ('demo.survey.night2', 'Nina Mar'))]
+    day_team = [manager['user_id'], rafael['user_id'], crew[0]]
+    night_team = [lia['user_id'], crew[1], crew[2]]
+    dept.set_members(survey, day_team + night_team, 1, manager, 'Fictional rotation')
     project, vessel = 'Aurora survey', 'MV Aurora'
     aurora = store.fleet.run('save_site', dict(name=vessel,code='AUR',kind='vessel',active=True),manager,str(uuid4()))
     from app.feed_news_backend import publish
@@ -108,26 +122,68 @@ def populate(core):
         work_site_id=aurora['id'],name='Photo evidence training inspection',asset_name='Training sensor rack',
         reference='AUR-PHOTO',assignee_ids=[manager['user_id']],due_at=day(2)+'T12:00:00Z'), manager,str(uuid4()))
     shifts = SimpleHandovers(store)
-    setup = shifts.setup_detail(survey, manager)
-    shifts.save_setup(dict(op_id=str(uuid4()), department_id=survey, setup_token=setup['setup_token'], values=dict(
-        location=vessel, time_basis='UTC', schedule=dict(format='wavelink-handover-shift-plan-1',
-        start_time='06:00', shift_index=0, shifts=[dict(name='Days',minutes=720),dict(name='Nights',minutes=720)]),
-        assignments=[dict(user_id=manager['user_id'],shift_index=0),dict(user_id=lia['user_id'],shift_index=1)])), manager)
-    for shift_index, person, offset, note in ((1,lia,-1,'Night survey complete. Navigation checks are ready for the day crew.'),
-                                              (0,manager,0,'Aurora mobilisation complete. The next shift will check survey coverage.')):
-        board = shifts.board(survey, day(offset), person)
-        record = shifts.open(dict(department_id=survey,operational_date=day(offset),shift_index=shift_index,
+    def configure(department, location, teams):
+        setup = shifts.setup_detail(department, manager)
+        if setup['setup']:
+            raise ValueError('Expected an unconfigured fictional department.')
+        shifts.save_setup(dict(op_id=str(uuid4()), department_id=department, setup_token=setup['setup_token'],
+            values=dict(location=location, time_basis='UTC', schedule=dict(format='wavelink-handover-shift-plan-1',
+            start_time='06:00', shift_index=0, shifts=[dict(name='Days', minutes=720), dict(name='Nights', minutes=720)]),
+            assignments=[dict(user_id=uid, shift_index=index)
+                         for index, team in enumerate(teams) for uid in team])), manager)
+
+    def finish(department, location, name, shift_index, person, offset, note, action, filename=None):
+        board = shifts.board(department, day(offset), person)
+        record = shifts.open(dict(department_id=department, operational_date=day(offset), shift_index=shift_index,
                                   setup_token=board['setup']['setup_token']), person)
         notes = {key:record['edit'][key] for key, _ in SECTIONS}
-        notes['summary'] = note
-        notes['next_actions'] = ('Review the night navigation check sheet.' if shift_index
-                                 else 'Compare the coverage plot with the planned survey lines.')
-        filename = 'Night-navigation-checks.txt' if shift_index else 'Day-survey-coverage.txt'
-        sheet = '\n'.join(('MV Aurora | Offshore Survey', day(offset), note, notes['next_actions'],
-                           'Fictional shift record for the Wavelink demo.'))
-        evidence = dict(id=str(uuid4()), filename=filename, data=b64encode(sheet.encode()).decode())
-        shifts.action(dict(op_id=str(uuid4()),action='finish',target=record['target'],notes=notes,
-                           attachments=[evidence]),person)
+        notes.update(summary=note, next_actions=action)
+        attachments = []
+        if filename:
+            sheet = '\n'.join((location + ' | ' + name, day(offset), note, action,
+                               'Fictional shift record for the Wavelink demo.'))
+            attachments.append(dict(id=str(uuid4()), filename=filename, data=b64encode(sheet.encode()).decode()))
+        shifts.action(dict(op_id=str(uuid4()), action='finish', target=record['target'], notes=notes,
+                           attachments=attachments), person)
+
+    hr_teams = [(survey, available['AUR'], [crew[0]], crew[1:])]
+    configure(survey, vessel, (day_team, night_team))
+    finish(survey, vessel, 'Offshore Survey', 1, lia, -1, 'Night survey complete. Navigation checks are ready for the day crew.',
+           'Review the night navigation check sheet.', 'Night-navigation-checks.txt')
+    finish(survey, vessel, 'Offshore Survey', 0, manager, 0, 'Aurora mobilisation complete. The next shift will check survey coverage.',
+           'Compare the coverage plot with the planned survey lines.', 'Day-survey-coverage.txt')
+
+    departments = {d['name']: d for d in dept.list(manager)}
+    for name, prefix, location, crew_names, publications in (
+        ('DEMO Engineering', 'eng', vessel, ('Luca Bay', 'Bia Lake', 'Noel Reef', 'Ida Brook', 'Teo Clay', 'Ana Fern'),
+         ((0, -2, 'Port pump vibration readings logged.', 'Compare the readings at operating speed.'),
+          (1, -1, 'Spare pump coupling aligned.', 'Check the alignment record before the morning run.'))),
+        ('DEMO Logistics', 'log', available['DEMO-SHORE']['name'], ('Isa Moor', 'Oli Pine', 'Luz Glen', 'Ben Lark', 'Mia Dune', 'Leo Elm'),
+         ((0, -1, 'Survey spares packed for the launch.', 'Match the sealed cases to the manifest.'),
+          (1, 0, 'Two return cases received at the base.', 'Verify the serial numbers before shelving.')))):
+        department = departments[name]['id']
+        snapshot = dept.details(department, manager)
+        members = [m['id'] for m in snapshot['members']]
+        team_ids = [accounts.create('demo.' + prefix + str(i), member, secrets.token_urlsafe(32),
+                                    'technician', manager)['id'] for i, member in enumerate(crew_names)]
+        dept.set_members(department, members + team_ids, snapshot['version'], manager, 'Fictional shift teams')
+        site = available['AUR' if prefix == 'eng' else 'DEMO-SHORE']
+        hr_teams.append((department, site, team_ids[:3], team_ids[3:]))
+        configure(department, location, (team_ids[:3], team_ids[3:]))
+        for index, offset, note, action in publications:
+            with store.connection() as c:
+                author = accounts.session_person_in_connection(c, team_ids[index * 3])
+            finish(department, location, name, index, author, offset, note, action)
+    timesheet_project = hr('save_timesheet_project', dict(version=0, name=project, active=True,
+                                                          approver_ids=[manager['user_id'], noa['user_id']]))
+    for department, site, days, nights in hr_teams:
+        for shift, people, start, end in (('Days', days, '06:00', '18:00'), ('Nights', nights, '18:00', '06:00')):
+            for uid in people:
+                hr('save_shift', dict(id='', version=0, user_id=uid, title=shift + ' — ' + site['name'],
+                    location=site['name'], work_site_id=site['id'], department_id=department, project=project,
+                    assignment_type='onshore' if site['code']=='DEMO-SHORE' else 'offshore',
+                    start_on=day(-2), end_on=day(7), shift_name=shift, start_time=start, end_time=end,
+                    time_zone='UTC', status='planned', notes='Fictional Aurora survey support rotation'))
     birthdays = core.state.team_birthdays
     for person, offset in ((lia, 0), (rafael, 4)):
         birthday = birthdays.today() + timedelta(days=offset)
@@ -160,8 +216,6 @@ def populate(core):
     hr('save_need', dict(id='', version=0, user_id=manager['user_id'], title='Next offshore rotation',
                          job_title='Survey engineer', project=project, location=vessel, start_on=day(10),
                          end_on=day(24), headcount=1, status='planned', notes='Upcoming crew change.'))
-    timesheet_project = hr('save_timesheet_project', dict(version=0, name=project, active=True,
-                                                          approver_ids=[manager['user_id'], noa['user_id']]))
     monday = today-timedelta(days=today.weekday())
     for person in (lia, manager):
         expense = hr('save_expense', dict(id='', version=0, user_id=person['user_id'], title='Transfer to the heliport',
@@ -200,5 +254,7 @@ def populate(core):
         checked = documents.reviewed(review,manager,None)
         documents.reviewed(dict(review,file=file,review_token=checked['review_token'],op_id=str(uuid4()),confirmed=True),
                            manager,None,save=True)
-    return manager, [dict(user_id=p['user_id'], display_name=p['name'], mood=m)
+    team = [dict(user_id=p['user_id'], display_name=p['name'], mood=m)
                      for p, m in ((lia, 'happy'), (rafael, 'focused'), (noa, 'calm'))]
+    core.state.fictional_seed_result = manager, team
+    return manager, team
