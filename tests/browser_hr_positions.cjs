@@ -9,7 +9,10 @@ async function verify(browser, port, width, pt){
   await p.locator(pt?'html[lang="pt-BR"] #wl-global-search-trigger:visible':'html[lang="en"] #wl-global-search-trigger:visible').waitFor();
   const open=async()=>{await p.evaluate(()=>location.hash='hr');const tabs=p.locator('#hr-section-select');await tabs.waitFor({state:'attached'});
    if(await tabs.isVisible())await tabs.selectOption('org');else await p.locator('[data-hr-tab=org]').click()};
-  await open();const editMode=p.getByRole('button',{name:pt?'Editar estrutura':'Edit structure',exact:true});
+  await open();
+  await p.getByText(pt?/Para montar o organograma/:/To build your chart/).waitFor();
+  assert.equal(await p.locator('.org-node').count(),0);
+  const editMode=p.getByRole('button',{name:pt?'Editar estrutura':'Edit structure',exact:true});
   assert.equal(await p.locator('.hr-position-form').count(),0);await editMode.click();const add=p.getByRole('button',{name:pt?'Adicionar posição':'Add position',exact:true});
   const form=p.locator('.hr-position-form'),select=n=>form.locator('select').nth(n);
   const save=async()=>{await form.getByRole('button',{name:pt?'Salvar posição':'Save position'}).click();await form.waitFor({state:'detached'})};
@@ -35,5 +38,5 @@ async function verify(browser, port, width, pt){
  }finally{await p.close()}
 }
 (async()=>{const b=await chromium.launch({executablePath:process.env.WAVELINK_TEST_CHROMIUM});try{
- await verify(b,18600,1360,false);await verify(b,18601,390,true);
+ await verify(b,18610,1360,false);await verify(b,18611,390,true);
 }finally{await b.close()}})().catch(e=>{console.error(e);process.exitCode=1});

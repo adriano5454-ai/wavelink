@@ -31,9 +31,20 @@ async function check(browser, width, portuguese) {
     await cards.getByText(portuguese?'Liderança não definida':'Leadership not defined',{exact:true}).first().waitFor();
     await cards.getByText('Survey coordinator',{exact:true}).first().waitFor();
     assert(await page.locator('.hr-org-grid').evaluate(e=>e.scrollWidth<=e.clientWidth+1 && e.getBoundingClientRect().right<=innerWidth));
-    // Fresh showcase data has department membership but no saved reporting lines.
-    await page.getByText(portuguese?'Nenhuma posição visível na estrutura. Consulte os departamentos abaixo.':'No reporting positions visible. Browse the departments below.').waitFor();
-    assert.equal(await page.locator('.org-node,.hr-position-form').count(),0);
+    const tree=page.locator('.org-tree');
+    await page.getByText(portuguese?'Estrutura fictícia de exemplo':'Fictional reporting structure',{exact:true}).waitFor();
+    const root=tree.locator('.org-roots > li > .org-node'),mid=tree.locator('.org-roots > li > ul > li > .org-node'),leaves=tree.locator('.org-roots > li > ul > li > ul > li > .org-node');
+    assert.equal(await root.count(),1);assert.equal(await mid.count(),2);assert.equal(await leaves.count(),3);
+    const a=await root.boundingBox(),b=await mid.first().boundingBox(),c=await mid.last().boundingBox(),d=await leaves.first().boundingBox();
+    if(width>640){
+      assert(a.y+a.height<=b.y && b.y+b.height<=d.y && Math.abs(b.y-c.y)<2 && b.x+b.width<=c.x);
+      assert(a.x+a.width/2>b.x+b.width/2 && a.x+a.width/2<c.x+c.width/2);
+      assert(await mid.last().evaluate(e=>parseFloat(getComputedStyle(e.parentElement,'::before').borderRightWidth)>0));
+    }else{assert(c.y>b.y);assert(await tree.evaluate(e=>e.scrollWidth<=e.clientWidth+1))}
+    console.log('tree geometry',width,a,b,c,d);
+    if(process.env.ORG_PREVIEW && !portuguese)await tree.screenshot({path:process.env.ORG_PREVIEW+'-'+width+'.png'});
+    const toggle=root.getByRole('button');await toggle.focus();await page.keyboard.press('Enter');assert.equal(await toggle.getAttribute('aria-expanded'),'false');assert(!(await mid.first().isVisible()));await toggle.click();assert(await leaves.first().isVisible());
+    assert.equal(await page.locator('.hr-position-form').count(),0);
     assert.equal(await page.getByRole('button',{name:portuguese?'Editar estrutura':'Edit structure'}).count(),0);
     const member=cards.getByRole('link',{name:'Mara Brisa',exact:true});
     const response=page.waitForResponse(r=>r.url().includes('/api/recognition/profile?')&&r.ok());

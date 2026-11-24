@@ -371,6 +371,13 @@
         "Fictional authenticated company: desktop EN drag, mobile pt-BR parent selector, saved reporting lines, keyboard collapse, profile route, browser back, focus and expansion.",
         "Read-only public showcase locally at 1360/390 px in both languages: department cards, authorized member profiles, focus restoration, empty reporting hierarchy and no editor."
       ]
+    },
+    "demo_org_example": {
+      "verified_patched_runtime": "37e49a802024f2bc5e60ea66f742dea07ed637beb6140d2d63674f080a715e09",
+      "checks": [
+        "Read-only showcase, three visible levels, 1/2/3 positions, desktop sibling geometry, collapse/expand and mobile width in English and pt-BR.",
+        "Private path initially empty, explicit setup, saved hierarchy, persistence and profile navigation at desktop/mobile."
+      ]
     }
   }
 }
