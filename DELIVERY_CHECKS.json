@@ -504,6 +504,26 @@
         "browser_handover_files_return.cjs",
         "browser_roster_receiving_context.cjs"
       ]
+    },
+    "record_navigation_context": {
+      "browser_tests": [
+        "browser_asset_certificate_return.cjs",
+        "browser_calendar_home_team_context.cjs",
+        "browser_qshe_history_return.cjs",
+        "browser_home_footer_language.cjs"
+      ],
+      "regressions": [
+        "browser_receiving_manifest_return.cjs",
+        "browser_workspace_search_return.cjs",
+        "browser_handover_preview_history.cjs",
+        "browser_handover_files_return.cjs",
+        "browser_certificate_reset.cjs",
+        "browser_calendar_task_preview.cjs"
+      ],
+      "known_baseline_failures": [
+        "test_ui136_certificates_form.cjs lacks WLWorkSites in its simulated form environment.",
+        "test_hr_and_common_literal_errors_have_reviewed_translations finds an untranslated HR position error on the parent and candidate."
+      ]
     }
   }
 }
