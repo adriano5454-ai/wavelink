@@ -27,6 +27,7 @@ def memory(field, owner):
 
 
 def handovers(s):
+    s=one(s,"panel.scrollIntoView({block:'nearest'});","if(innerWidth<=700){panel.style.scrollMarginTop='72px';panel.scrollIntoView({block:'start',behavior:'instant'})}else panel.scrollIntoView({block:'nearest'});")
     s=one(s,"const view=current={trigger,list,layout,panel,observer,card,files:null};",
           "const view=current={trigger,list,layout,panel,observer,card,files:null,originTop};")
     s=one(s,'   close();\n   const layout=', '   const originTop=trigger.getBoundingClientRect().top;close();\n   const layout=')
@@ -126,9 +127,43 @@ function restoreEmployee(){""")
 }""")
 
 
+def revision(s):
+    s=files(s)
+    s=one(s,"const navigationOwner='original-files-'+c.uid();", """const previousView=window.history.state?.wlOriginalLibrary;
+   const fingerprint=Array.from(new Uint8Array(await crypto.subtle.digest('SHA-256',new TextEncoder().encode('original-library-return:'+start.session))),n=>n.toString(16).padStart(2,'0')).join('');
+   if(serial!==start.serial||start.session!==c.session()||location.hash!==start.route)return;
+   const cacheKey='wl.original-return.'+fingerprint;
+   let prior=previousView;
+   if(initialRevision&&performance.getEntriesByType('navigation')[0]?.type==='reload'&&prior?.view!=='detail'){
+     try{prior=JSON.parse(sessionStorage.getItem(cacheKey))}catch{}
+   }
+   const retained=initialRevision&&prior?.view==='detail'&&prior.id===initialRevision&&prior.scope===fingerprint?prior:null;
+   let restoring=!!retained;
+   const navigationOwner=retained?.owner||'original-files-'+c.uid();""")
+    s=one(s,'const old=window.history.state;const state=',"""if(restoring)return;
+    const old=window.history.state;const state=""")
+    s=one(s,'owner:navigationOwner,view,id','''owner:navigationOwner,view,id,scope:fingerprint,browse:view==='detail'?{
+      folder,query,archived,ui:{group:browseUi.group,type:browseUi.type,sort:browseUi.sort,vessel:browseUi.vessel,page:browseUi.page,filters:browseUi.filters,folderOpen:browseUi.folderOpen},expanded:[...expandedFolders],anchor:browseState}:null''')
+    s=one(s,'const saved=entry();\n   if(saved?',"""const saved=entry();
+   if(retained?.browse){
+     const r=retained.browse;folder=r.folder;query=r.query;archived=r.archived;Object.assign(browseUi,r.ui);
+     for(const id of r.expanded)expandedFolders.add(id);
+   }
+   if(saved?""")
+    s=one(s,'if(initialRevision&&active()&&data)await openDetail(initialRevision);',"""if(initialRevision&&active()&&data){
+     restoring=false;innerHistory=!!retained;await openDetail(initialRevision,{fromHistory:!!retained});
+     if(retained?.browse)browseState=retained.browse.anchor;
+   }""")
+    s=one(s,"routeHash=view==='detail'&&id?", "try{if(view==='detail')sessionStorage.setItem(cacheKey,JSON.stringify(state.wlOriginalLibrary));else sessionStorage.removeItem(cacheKey)}catch{}\n    routeHash=view==='detail'&&id?")
+    return one(s,"detailInfo=info;draw();","""detailInfo=info;draw();
+    if(innerWidth<=700){const back=shell.querySelector('.of-actions button');if(back){
+      const r=back.getBoundingClientRect();if(r.top<72||r.bottom>innerHeight-8)back.scrollIntoView({block:'center',behavior:'instant'});
+    }}""")
+
+
 def transforms():
     return {'app/static/handovers.js':handovers,'app/static/handover_workspace.js':journal,
-            'app/static/original_library.js':files,'app/static/certificate_workspace.js':certificates,'app/static/hr_workspace.js':employees}
+            'app/static/original_library.js':revision,'app/static/certificate_workspace.js':certificates,'app/static/hr_workspace.js':employees}
 
 
 if __name__=='__main__':

@@ -23,6 +23,12 @@ async function check(browser,width){
    assert(Math.abs((await rows.boundingBox()).y-fileTop)<=3);
   }
   await q.fill('');assert(await group.evaluate(e=>e.getAttribute('aria-current')==='location'));
+  await q.fill('');await sidebar.getByRole('button',{name:/^Unfiled/}).first().click();await q.fill('DEMO-REF-001');
+  assert.equal(await rows.count(),1);const revisionFile=await rows.getAttribute('data-document-id');
+  await rows.locator('summary').click();await rows.getByRole('button',{name:'Revision details'}).click();
+  const back=p.getByRole('button',{name:'Back to list',exact:true});await back.waitFor();await p.reload();await back.waitFor();
+  await p.getByText('Identity & import details',{exact:true}).waitFor();if(width<700){const r=await back.boundingBox();assert(r.y>=64&&r.y+r.height<=919,JSON.stringify(r))}
+  await back.click();await q.waitFor();assert.equal(await q.inputValue(),'DEMO-REF-001');assert.equal(await rows.count(),1);assert.equal(await rows.getAttribute('data-document-id'),revisionFile);
   await p.evaluate(()=>location.hash='handovers');
   const vessel=p.locator('#ho-vessel-filter select'),subject=p.locator('#hwd-subject'),jump=p.locator('#hwd-jump');
   await vessel.selectOption({label:'MV Aurora · AUR'});await subject.selectOption({label:'MV Aurora · Offshore Survey'});
@@ -35,6 +41,7 @@ async function check(browser,width){
   const v=await vessel.inputValue(),s=await subject.inputValue();
   const reader=p.locator('.ho-publication-reader');
   await b.scrollIntoViewIfNeeded();const top=(await b.boundingBox()).y;await b.click();
+  if(width<700){const r=await p.locator('.hop-head button').boundingBox();assert(r.y>=64&&r.y+r.height<=919,JSON.stringify(r))}
   await p.locator('.hop-actions button').first().click();await reader.waitFor();
   const hash=new URL(p.url()).hash;assert(hash.startsWith('#handover/'+id+'/'));const title=await p.locator('#ho-detail h2').first().innerText();
   async function returned(){

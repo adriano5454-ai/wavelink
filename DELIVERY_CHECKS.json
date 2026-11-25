@@ -439,6 +439,11 @@
         "Desktop and mobile: exact day, subject, vessel, shift, record ID and revision on Back/Forward and reader reload. Original Files search, folder group, archive filter, sort order, focused source action and row position.",
         "Mobile employee heading and focus after profile navigation and expense return."
       ]
+    },
+    "revision_reload": {
+      "checks": [
+        "Unfiled / DEMO-REF-001 / Revision details / reload / Back restores one exact record at 1360,389,390; mobile preview Close and revision Back are visible."
+      ]
     }
   }
 }
