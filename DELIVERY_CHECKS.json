@@ -416,6 +416,12 @@
         "Public chart labels, department choices, role search and accessible toggles in English and Portuguese; vessel IDs, vacancies and profile navigation at 1360, 390 and 360 px.",
         "Regular chart preserves literal slash-containing titles when editing and reloading."
       ]
+    },
+    "org_chart_avatars": {
+      "checks": [
+        "Disposable company: synthetic PNG, invalid image, denied media, initials, distinct vacancy and keyboard focus. Visible eligible profile IDs only; existing avatar route, no per-card profile fetch.",
+        "Guest regression at 360, 390 and 1360 px, English and Portuguese, with profile return and composed filters."
+      ]
     }
   }
 }

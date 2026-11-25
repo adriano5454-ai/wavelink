@@ -37,6 +37,9 @@ async function check(browser, width, portuguese) {
     const node=key=>tree.locator('.org-node').filter({has:page.getByRole('link',{name:key,exact:true})});
     const direct=(parent,child)=>parent.locator('..').locator(':scope > ul > li > .org-node').filter({has:page.getByRole('link',{name:child,exact:true})});
     const ceo=node('Demo Manager');
+    assert.equal(await ceo.locator('.org-avatar').innerText(),'DM');
+    assert.equal(await tree.locator('.org-avatar img').count(),0);
+
     await direct(ceo,'Eva Sol').waitFor();await direct(ceo,'Caio Rio').waitFor();
     await direct(node('Eva Sol'),'Talia Luz').waitFor();
     await direct(node('Caio Rio'),'Nico Serra').waitFor();await direct(node('Caio Rio'),'Rosa Lago').waitFor();
