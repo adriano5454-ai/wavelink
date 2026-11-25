@@ -65,7 +65,7 @@ async function check(browser,width){
     await row('Alba Reis').click();await visible('Alba Reis');await row('Cora Sal').click();await visible('Cora Sal');
     await p.goBack();await visible('Alba Reis');assert(await row('Alba Reis').evaluate(e=>e===document.activeElement));
     await p.goForward();await visible('Cora Sal');const expense=p.locator('[data-hr-jump="expenses"]').first();
-    await expense.click();await p.locator('.hr-employee-context button').click();await visible('Cora Sal');
+    await expense.click();await p.locator('.hr-employee-sheet').getByRole('button',{name:'Close',exact:true}).click();await p.locator('.hr-employee-sheet').waitFor({state:'detached'});await p.evaluate(()=>new Promise(resolve=>requestAnimationFrame(()=>requestAnimationFrame(resolve))));await visible('Cora Sal');
     assert(await expense.evaluate(e=>e===document.activeElement));
   }
   console.log('PASS',width,date,'Aurora | Offshore Survey | Days',hash,'file 003',file);

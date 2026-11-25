@@ -444,6 +444,12 @@
       "checks": [
         "Unfiled / DEMO-REF-001 / Revision details / reload / Back restores one exact record at 1360,389,390; mobile preview Close and revision Back are visible."
       ]
+    },
+    "employee_record_panel": {
+      "checks": [
+        "Combined browser regressions passed at 1360/389/390; guest EN 1360/360 and signed-in EN 1360/PT 390: rapid selection, no loading banner, scoped records, profile heading and focus, history, reload of direct link.",
+        "76 HR server tests passed; 2 failures reproduced on unchanged parent in expiry search categories and rejected-expense attachment metadata."
+      ]
     }
   }
 }
