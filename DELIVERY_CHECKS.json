@@ -475,6 +475,12 @@
       "checks": [
         "Local Chromium at 1360 and 390: open and finalised talks; side-by-side geometry, mobile dialog, no detail reads for preview, history, Escape, close, direct full record. Synthetic filter combinations at 1360/389. Calendar and EN/PT HSE regressions passed."
       ]
+    },
+    "roster_receiving_context": {
+      "checks": [
+        "Seeded local demo Chromium 1360x919 and 389x919: Meridian roster 4, open Mira Vale and footer Close record, 3 on following date, 4 on original date.",
+        "Both viewports: Horizon queue to Meridian site card, one group and five records, manifest and browser Back retain queue site and search."
+      ]
     }
   }
 }
