@@ -428,6 +428,11 @@
         "Public desktop/mobile EN and PT: branch screen coordinates before and after collapse/expand, sticky root recovery, explicit filtered result and keyboard focus, profile return and filter reset.",
         "Desktop and mobile signed-in chart editor and avatar fallback regressions with disposable data."
       ]
+    },
+    "hr_employee_context": {
+      "checks": [
+        "Department search and list identity, independent scroll and focus, rapid switching with a delayed authorized response, certificates and expenses, contextual return, deep links and browser history. Public fictional visitor and disposable signed-in HR user."
+      ]
     }
   }
 }
