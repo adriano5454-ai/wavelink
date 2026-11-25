@@ -135,6 +135,9 @@ RUN python deploy/apply_workspace_search_return.py /opt/wavelink/app
 RUN python deploy/apply_receiving_manifest_return.py /opt/wavelink/app
 RUN python deploy/apply_certificate_reset.py /opt/wavelink/app
 RUN python deploy/apply_handover_preview_history.py /opt/wavelink/app
+RUN python deploy/apply_workspace_query_return.py /opt/wavelink/app
+RUN python deploy/apply_group_manifest_return.py /opt/wavelink/app
+RUN python deploy/apply_journal_history_return.py /opt/wavelink/app
 # Runtime starts with mount ownership setup and immediately drops to UID 10001.
 # Never install/open the Windows Admin or run its launcher in the container.
 EXPOSE 10000

@@ -12,9 +12,15 @@ async function run(p,width){
   const b=buttons.nth(i),id=await b.getAttribute('data-hwd-open');await b.scrollIntoViewIfNeeded();const y=(await b.boundingBox()).y;
   const panel=p.locator('#ho-record-preview');await b.click();await panel.locator('h2').waitFor();
   const title=await panel.locator('h2').innerText(),rev=await panel.locator('.hwd-state').innerText();
-  await p.goBack();if(baseline){console.log('baseline',width,new URL(p.url()).hash);await p.goForward();await jump.waitFor();console.log('forward',await team.locator('option:checked').innerText(),await jump.inputValue());return;}
-  await panel.waitFor({state:'detached'});assert.equal(new URL(p.url()).hash,'#handovers');assert.deepEqual([await ship.inputValue(),await team.inputValue(),await jump.inputValue()],[shipId,teamId,date]);
+  await p.goBack();  await panel.waitFor({state:'detached'});assert.equal(new URL(p.url()).hash,'#handovers');assert.deepEqual([await ship.inputValue(),await team.inputValue(),await jump.inputValue()],[shipId,teamId,date]);
   assert(await b.evaluate(e=>document.activeElement===e));assert(Math.abs((await b.boundingBox()).y-y)<4);
+  if(i===1){
+   await p.goBack();await p.locator('#home-find').waitFor();await p.goForward();await jump.waitFor();
+   await p.locator('.hwd-record').first().waitFor();
+   console.log('Forward 1',width,await team.locator('option:checked').innerText(),await jump.inputValue());
+   if(!baseline){await p.waitForFunction(date=>document.querySelector('#hwd-jump')?.value===date,date);assert.deepEqual([await ship.inputValue(),await team.inputValue()],[shipId,teamId]);await p.waitForFunction(id=>document.activeElement?.dataset.hwdOpen===id,id);assert.equal(await b.evaluate(e=>e.closest('details').open),true);assert.equal(await panel.count(),0);}
+   if(baseline){await p.goForward();console.log('Forward 2 preview',await panel.isVisible());return;}
+  }
   await p.goForward();await panel.locator('h2').waitFor();assert.equal(await panel.locator('h2').innerText(),title);assert.equal(await panel.locator('.hwd-state').innerText(),rev);assert.equal(await b.getAttribute('aria-expanded'),'true');
   await panel.locator('.hop-head button').click();await panel.waitFor({state:'detached'});assert(await b.evaluate(e=>document.activeElement===e));console.log('PASS',width,date,id,title,rev);
  }

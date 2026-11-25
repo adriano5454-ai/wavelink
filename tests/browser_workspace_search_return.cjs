@@ -7,6 +7,8 @@ async function workspaces(p,w){
  await cards.filter({hasText:/Receiving & placement/}).getByRole('link').click();
  await p.frameLocator('iframe').first().locator('#receiving-count').waitFor();
  await p.getByRole('link',{name:'All workspaces',exact:true}).first().click();
+ await q.waitFor();console.log('returned search',w,await q.inputValue(),await cards.count(),await p.locator('#home-clear-find').isEnabled());
+ if(!baseline){assert.equal(await q.inputValue(),'Receiving');assert.equal(await cards.count(),2);assert(await p.locator('#home-clear-find').isEnabled());}
  await q.fill('Handovers');const after=await cards.allTextContents();
  await p.locator('#home-clear-find').click({timeout:1500}).catch(()=>{});
  const cleared=await q.inputValue();await p.locator('[data-home-group]').nth(1).click();
