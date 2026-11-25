@@ -433,6 +433,12 @@
       "checks": [
         "Department search and list identity, independent scroll and focus, rapid switching with a delayed authorized response, certificates and expenses, contextual return, deep links and browser history. Public fictional visitor and disposable signed-in HR user."
       ]
+    },
+    "handover_files_return": {
+      "checks": [
+        "Desktop and mobile: exact day, subject, vessel, shift, record ID and revision on Back/Forward and reader reload. Original Files search, folder group, archive filter, sort order, focused source action and row position.",
+        "Mobile employee heading and focus after profile navigation and expense return."
+      ]
     }
   }
 }
