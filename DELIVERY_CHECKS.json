@@ -460,6 +460,21 @@
       "checks": [
         "Eight native showcase tests passed, including repeated initialization, private and generic environment guard, three distinct weeks and guest read access."
       ]
+    },
+    "calendar_task_preview": {
+      "checks": [
+        "Real seeded agenda at 1360/389/390: MV Aurora plus selected date plus mobilisation, exact identity, preview close/Escape, full task and Back/Forward, direct reload and focus."
+      ]
+    },
+    "toolbox_report_return": {
+      "checks": [
+        "Real fictional detail and signing section left untouched; synthetic project/vessel list filters, text and disclosure, exact report focus and scroll at 1360/389. Calendar plus mobile 390 retested."
+      ]
+    },
+    "toolbox_talk_preview": {
+      "checks": [
+        "Local Chromium at 1360 and 390: open and finalised talks; side-by-side geometry, mobile dialog, no detail reads for preview, history, Escape, close, direct full record. Synthetic filter combinations at 1360/389. Calendar and EN/PT HSE regressions passed."
+      ]
     }
   }
 }
