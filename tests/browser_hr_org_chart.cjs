@@ -4,7 +4,8 @@ const url = new URL(process.argv[2]);
 assert.equal(url.hostname, '127.0.0.1');
 
 async function check(browser, width, portuguese) {
-  const page = await browser.newPage({viewport:{width,height:900},ignoreHTTPSErrors:true,serviceWorkers:'block'});
+  const height=width>640?900:width===390?844:800;
+  const page = await browser.newPage({viewport:{width,height},ignoreHTTPSErrors:true,serviceWorkers:'block'});
   try {
     await page.goto(url.origin+'/__demo/public?area=hr');
     const sections = page.locator('#hr-section-select');
@@ -37,6 +38,9 @@ async function check(browser, width, portuguese) {
     const node=key=>tree.locator('.org-node').filter({has:page.getByRole('link',{name:key,exact:true})});
     const direct=(parent,child)=>parent.locator('..').locator(':scope > ul > li > .org-node').filter({has:page.getByRole('link',{name:child,exact:true})});
     const ceo=node('Demo Manager');
+    assert.equal(await ceo.locator('.org-avatar').innerText(),'DM');
+    assert.equal(await tree.locator('.org-avatar img').count(),0);
+
     await direct(ceo,'Eva Sol').waitFor();await direct(ceo,'Caio Rio').waitFor();
     await direct(node('Eva Sol'),'Talia Luz').waitFor();
     await direct(node('Caio Rio'),'Nico Serra').waitFor();await direct(node('Caio Rio'),'Rosa Lago').waitFor();
@@ -76,6 +80,39 @@ async function check(browser, width, portuguese) {
     assert(!(await tech.isVisible()));await auroraToggle.click();
     const chief=node('Lia Costa');assert(!(await chief.innerText()).includes(' / '));
     assert((await chief.getByRole('button').getAttribute('aria-label')).includes(portuguese?'Chefe de equipe':'Party Chief'));
+    await page.emulateMedia({reducedMotion:'reduce'});
+    const box=loc=>loc.boundingBox(), lia=node('Lia Costa');
+    const rootAction=page.getByRole('button',{name:portuguese?'Centralizar na raiz':'Center on root'});
+    const jump=page.getByRole('button',{name:portuguese?'Ir ao resultado':'Go to result'});
+    await auroraToggle.scrollIntoViewIfNeeded();
+    await tree.evaluate(e=>e.scrollLeft=(e.scrollWidth-e.clientWidth)/2);
+    const anchor=await box(lia);
+    for(const action of ['collapse','expand']){
+      await auroraToggle.focus({preventScroll:true});await page.keyboard.press('Enter');
+      const pos=await box(lia);
+      assert(Math.abs(pos.x-anchor.x)<=2 && Math.abs(pos.y-anchor.y)<=2,JSON.stringify({action,width,pos,anchor}));
+      console.log('anchor delta',width,action,pos.x-anchor.x,pos.y-anchor.y);
+    }
+    if(width>640){
+      await tree.evaluate(e=>e.scrollLeft=e.scrollWidth);
+      const ctl=await box(rootAction);assert(ctl.y>=0 && ctl.y+ctl.height<=900);
+      assert(await rootAction.evaluate(e=>{const r=e.getBoundingClientRect();return e.contains(document.elementFromPoint(r.x+r.width/2,r.y+r.height/2))}));
+      await rootAction.click();assert(await ceo.evaluate(e=>e===document.activeElement));
+      const root=await box(ceo),viewport=await box(tree);
+      assert(root.y>=0&&root.y+root.height<=900&&root.x>=viewport.x&&root.x+root.width<=viewport.x+viewport.width);
+    }
+    await query.fill('Mara Brisa');assert(await query.evaluate(e=>e===document.activeElement));
+    await auroraToggle.click();assert(!(await tech.isVisible()));
+    await jump.focus();await page.keyboard.press('Enter');
+    const result=await box(tech);assert(await tech.evaluate(e=>e===document.activeElement));
+    assert(result.y>=0&&result.y+result.height<=height&&result.x>=0&&result.x+result.width<=width);
+    console.log('match bounds',width,result.y,result.y+result.height);
+    await tech.getByRole('link').click();await page.locator('.wl-profile-hero').waitFor();await page.goBack();
+    await tech.waitFor();assert(await tech.getByRole('link').evaluate(e=>e===document.activeElement));
+    const returned=await box(tech);assert(returned.y>=0&&returned.y+returned.height<=height);
+    assert.equal(await query.inputValue(),'Mara Brisa');
+    const back=page.getByRole('button',{name:portuguese?'Voltar aos filtros':'Back to filters'});await back.click();
+    assert(await query.evaluate(e=>e===document.activeElement));await clear.click();
     const meridianToggle=meridian.getByRole('button');await meridianToggle.click();assert(!(await node('Cora Sal').isVisible()));assert(await tech.isVisible());await meridianToggle.click();
     const vacant=node('Cora Sal').locator('..').getByText(portuguese?'Vaga':'Vacant',{exact:true});await vacant.waitFor();
     assert(await tree.evaluate(e=>document.documentElement.scrollWidth<=innerWidth+1 && e.getBoundingClientRect().right<=innerWidth+1));
