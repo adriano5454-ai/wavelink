@@ -48,9 +48,16 @@ async function checkNative(browser,width,url) {
     assert.equal(await row.locator('.cw-record-name').evaluate(el=>el===document.activeElement),true);
     await row.locator('.cw-record-name').press('Enter');
     await list.waitFor();
+    if(await page.evaluate(()=>window.WavelinkNativeDemo.active())){
+      await panel.locator('[data-cw-read-stage]').first().click();
+      await page.waitForFunction(()=>document.activeElement.id==='cw-preview-items');
+      assert.equal(new URL(page.url()).hash,'#checklists');
+      assert.deepEqual(writes,[]);
+    }else{
     await panel.locator('a[data-cw-open]').first().click();
     await page.waitForURL(u=>u.hash===`#dive/${id}/${stage}`);
     await page.locator('#checklist-stage-workspace').waitFor();
+    }
     assert.deepEqual(errors,[]);
     console.log(width+'px checklist body, keyboard selection, saved items, back and explicit stage passed');
   }finally{await context.close();}

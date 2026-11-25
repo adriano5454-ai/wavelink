@@ -481,6 +481,17 @@
         "Seeded local demo Chromium 1360x919 and 389x919: Meridian roster 4, open Mira Vale and footer Close record, 3 on following date, 4 on original date.",
         "Both viewports: Horizon queue to Meridian site card, one group and five records, manifest and browser Back retain queue site and search."
       ]
+    },
+    "placement_locations": {
+      "checks": [
+        "Chromium synthetic editor 1360 and 389: baseline free text, recorded location, search/no match, keyboard choice, empty list, manual option, Continue, no placement write."
+      ]
+    },
+    "checklist_guest_reader": {
+      "checks": [
+        "1360 EN and 390 pt-BR, closed DEMO-CHECK-004 and open DEMO-CHECK-001, card, primary stage and stage progress buttons, saved items, no record POST, filter and focus restored.",
+        "Preview pagination, delayed response isolation, denied detail, responsive layouts at 320, 390, 1024 and 1360."
+      ]
     }
   }
 }
