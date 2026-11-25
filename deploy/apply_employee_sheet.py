@@ -17,7 +17,17 @@ def ui(s):
      button.onclick=()=>button.openEmployeeSheet(false);
    }else button.onclick=full;
  });""")
-    s=one(s,"detail.textContent=wtext('Carregando perfil…','Loading profile…');","detail.inert=true;")
+    s=one(s,"detail.textContent=wtext('Carregando perfil…','Loading profile…');","""detail.inert=true;
+    const id=personId(),person=directory.users.find(user=>user.id===id);
+    const height=detail.getBoundingClientRect().height;
+    detail.style.minHeight=height+'px';
+    const heading=document.createElement('h2'),notice=document.createElement('p');
+    heading.dataset.pendingName='';heading.textContent=person?.name||wtext('Funcionário','Employee');
+    notice.textContent=wtext('Consultando registros…','Reading records…');
+    detail.replaceChildren(heading,notice);
+    layout.querySelectorAll('.hr-person-list [data-hr-person-link]').forEach(row=>{
+      row.setAttribute('aria-current',String(row.dataset.hrPersonLink===id));
+    });""")
     s=one(s,"status(__wl118.t('Refreshing saved HR records…'));lockReportButtons();","if(!layout)status(__wl118.t('Refreshing saved HR records…'));lockReportButtons();")
     s=one(s,'function card(kind,row){','function card(kind,row,actions=true){')
     s=one(s,'+compactRecordButtons(kind,row)+','+(actions?compactRecordButtons(kind,row):\'\')+')
@@ -44,5 +54,5 @@ def transforms():
 if __name__=='__main__':
     runpy.run_path(str(BASE/'apply_editor_exit.py'))['apply'](
         Path(sys.argv[1]),parent='d1beee2152eff9de825080f96530a8863baac15d11b171b7631835eaaf95450d',
-        overlays=(Path(__file__).name,),previous_cache='ui162-handover-files-return',cache='ui162-employee-sheet',
-        suffix='employee-sheet',scope='Read an employee’s certificates and expenses in context without leaving their profile.')
+        overlays=(Path(__file__).name,),previous_cache='ui162-handover-files-return',cache='ui162-employee-selection-feedback',
+        suffix='employee-selection-feedback',scope='Read an employee’s certificates and expenses in context without leaving their profile.')

@@ -228,6 +228,22 @@ def populate(showcase):
                     hours='8.00', location=vessel, activity='offshore', notes='Survey shift')], notes='')]), person)
         row = week['records'][0]
         hr('submit_timesheet', dict(id=row['id'], version=row['version']), person)
+    # Lia's existing submitted week stays available beside a draft correction and a reviewed week.
+    for weeks_back, daily_hours, approve in ((1, ('8.00','8.00'), False),
+                                             (2, ('8.00','8.00','9.00','8.00','8.00'), True)):
+        start = monday - timedelta(weeks=weeks_back)
+        entries = [dict(date=(start + timedelta(days=i)).isoformat(), hours=hours,
+                        location=vessel, activity='offshore',
+                        notes='AUV recovery and one extra hour of checks' if hours=='9.00' else 'AUV survey watch')
+                   for i, hours in enumerate(daily_hours)]
+        result = hr('save_timesheet_week', dict(week_start=start.isoformat(), records=[
+            dict(project_id=timesheet_project['project']['id'], version=0, entries=entries,
+                 notes='Fictional AUV survey rotation')]), lia)
+        if approve:
+            row = result['records'][0]
+            submitted = hr('submit_timesheet', dict(id=row['id'], version=row['version']), lia)
+            hr('review_timesheet', dict(id=row['id'], version=submitted['version'],
+                                        decision='approve', comment='Fictional review of survey watch hours'), manager)
     for person, title, priority, site in ((manager, 'Survey workstation network port', 'high', aurora),
                                          (lia, 'Offline copy of the mobilisation checklist', 'normal', aurora),
                                          (rafael, 'Printer at the shore base', 'low', available['DEMO-SHORE'])):
