@@ -201,3 +201,26 @@ def test_guest_example_is_transient_and_private_chart_is_empty(company):
         assert all('Technician' in next(p['role_name'] for p in rows if p['id']==r['parent']) for r in trainee)
     with showcase.core.state.store.connection() as c:
         assert c.execute('SELECT count(*) FROM hr_org_positions').fetchone()[0] == 0
+
+def test_lia_demo_timesheets(company, tmp_path):
+    from types import SimpleNamespace
+    from deploy.showcase_seed import populate
+    showcase, client = company
+    def weeks():
+        with showcase.core.state.store.connection() as db:
+            person = db.execute("SELECT id FROM users WHERE login_id='demo.shift1'").fetchone()[0]
+        response = client.get('/api/hr/overview?user_id='+person, headers=headers(showcase))
+        assert response.status_code == 200
+        return response.json()['timesheets']
+    original = weeks()
+    assert {r['status']:r['total_hours'] for r in original} == {
+        'draft':'16.00', 'submitted':'8.00', 'approved':'41.00'}
+    assert len({r['week_start'] for r in original}) == 3
+    assert {r['project'] if isinstance(r['project'], str) else r['project']['name'] for r in original} == {'Aurora survey'}
+    populate(showcase)
+    assert [r['id'] for r in weeks()] == [r['id'] for r in original]
+    for public, path in [(False,showcase.temp.name),(True,str(tmp_path))]:
+        other = SimpleNamespace(core=showcase.core,gate=SimpleNamespace(public_entry=public),temp=SimpleNamespace(name=path))
+        with pytest.raises(ValueError,match='disposable public showcase'):
+            populate(other)
+    assert weeks() == original

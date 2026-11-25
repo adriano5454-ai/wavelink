@@ -39,7 +39,7 @@ async function check(browser,port,width,guest,pt){
   assert.equal(await list.locator('li:visible').count(),total);
   assert(await list.evaluate(e=>e===window.employeeList));assert.equal(await rafael.getAttribute('aria-current'),'true');
   assert.equal(await title.innerText(),'Rafael Lima');assert.equal(await q.inputValue(),'Offshore Survey');
-  // Select A, B, A before B finishes. The previous title stays present and inert until A settles.
+  // Select A, B, A before B finishes. The pending identity appears without previous records or actions.
   await lia.click();await title.filter({hasText:'Lia Costa'}).waitFor();
   let releaseB,startB;const pendingB=new Promise(r=>startB=r),gateB=new Promise(r=>releaseB=r);
   const rid=await rafael.getAttribute('data-hr-person-link');
@@ -47,8 +47,7 @@ async function check(browser,port,width,guest,pt){
     if(new URL(route.request().url()).searchParams.get('user_id')===rid){const response=await route.fetch();startB();await gateB;await route.fulfill({response}).catch(()=>{})}
     else await route.continue();
   });
-  await rafael.click();await pendingB;assert.equal(await p.locator('#hr-status').isVisible(),false);assert.equal(await title.innerText(),'Lia Costa');
-  assert(await title.evaluate(e=>!!e.closest('[inert]')));await lia.click();
+  await rafael.click();await pendingB;assert.equal(await p.locator('#hr-status').isVisible(),false);const pendingName=p.locator('[data-pending-name]');assert.equal(await pendingName.innerText(),'Rafael Lima');assert.equal(await title.count(),0);assert.equal(await p.locator('.hr-person-layout > section button').count(),0);assert(await pendingName.evaluate(e=>!!e.closest('[inert]')));await lia.click();
   await p.waitForFunction(()=>!document.querySelector('.hr-person-layout [inert]'));releaseB();await p.unrouteAll({behavior:'wait'});
   assert.equal(await title.innerText(),'Lia Costa');await list.evaluate(e=>{window.originalShell=e.closest('#hr-workspace');window.originalDetail=e.closest('.hr-person-layout').querySelector(':scope > section')});
   for(const [tab,expected] of [['documents','Offshore survival training'],['expenses','Transfer to the heliport']]){
@@ -74,6 +73,14 @@ async function check(browser,port,width,guest,pt){
    assert(await source.evaluate(e=>document.activeElement===e));
    if(width<700){const r=await title.boundingBox();assert(r.y>=64&&r.y+r.height<=844+1)}
    await list.evaluate(e=>{window.employeeList=e;window.originalShell=e.closest('#hr-workspace');window.originalDetail=e.closest('.hr-person-layout').querySelector(':scope > section')});
+  }
+  if(!guest){
+   const v=p.locator('.hr-certificate-entry [data-hr-jump=documents]'),add=p.locator('.hr-certificate-entry [data-hr-cert-create]');
+   await v.click();await p.locator('.hr-employee-sheet header strong').filter({hasText:'Lia Costa'}).waitFor();await p.keyboard.press('Escape');await p.locator('.hr-employee-sheet').waitFor({state:'detached'});
+   for(const exit of ['#hr-cancel','#hr-close']){await add.click();await p.locator('#hr-save').waitFor();assert.equal(await p.locator('.hr-employee-sheet[open]').count(),0);await p.locator(exit).click();await p.locator('#hr-save').waitFor({state:'hidden'})}
+   await p.route('**/api/hr/overview?**',route=>route.fulfill({status:503,contentType:'application/json',body:'{}'}),{times:1});
+   await rafael.focus();await p.keyboard.press('Enter');await p.locator('#hr-retry').waitFor();assert.equal(await add.count(),0);assert.equal(await title.count(),0);
+   await p.locator('#hr-retry').click();await title.filter({hasText:'Rafael Lima'}).waitFor();await lia.click();await title.filter({hasText:'Lia Costa'}).waitFor();
   }
   await p.evaluate(id=>location.hash='#hr/staff/'+id+'/expenses',liaId);
   await p.locator('.hr-employee-context').getByText('Lia Costa',{exact:true}).waitFor();

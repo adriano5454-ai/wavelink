@@ -450,6 +450,16 @@
         "Combined browser regressions passed at 1360/389/390; guest EN 1360/360 and signed-in EN 1360/PT 390: rapid selection, no loading banner, scoped records, profile heading and focus, history, reload of direct link.",
         "76 HR server tests passed; 2 failures reproduced on unchanged parent in expiry search categories and rejected-expense attachment metadata."
       ]
+    },
+    "employee_selection_feedback": {
+      "checks": [
+        "Measured selection feedback, stale response, failed read/retry and no prior actions; guest EN and signed-in PT/EN."
+      ]
+    },
+    "demo_timesheets": {
+      "checks": [
+        "Eight native showcase tests passed, including repeated initialization, private and generic environment guard, three distinct weeks and guest read access."
+      ]
     }
   }
 }
