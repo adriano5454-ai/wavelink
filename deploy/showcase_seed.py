@@ -311,15 +311,18 @@ def populate(showcase):
     # Propagate the existing Fleet ID along that branch without writing any roster.
     vessel_by_role = {'chief': available['AUR'], 'meridian-chief': available['DEMO-MERIDIAN']}
     for key,title,login,name,parent in outline:
+        english, _, portuguese = title.partition(' / ')
+        titles = dict(en=english, pt=portuguese or english)
         site = vessel_by_role.get(key) or vessel_by_role.get(parent)
         if site:
             vessel_by_role[key] = site
             if parent == 'offshore':
                 title = site['name'] + ' · ' + title
+                titles = {lang: site['name'] + ' · ' + value for lang, value in titles.items()}
         positions[key] = str(uuid4())
         person = personnel[login] if login else None
         example.append(dict(id=positions[key], department=catalog[name], dept_name=name,
-                            role=key, role_name=title, vessel_id=site['id'] if site else None, vessel_name=site['name'] if site else None, person=person['id'] if person else None,
+                            role=key, role_name=title, demo_titles=titles, vessel_id=site['id'] if site else None, vessel_name=site['name'] if site else None, person=person['id'] if person else None,
                             person_name=person['name'] if person else None,
                             parent=positions[parent] if parent else None))
     core.state.demo_org_example = example

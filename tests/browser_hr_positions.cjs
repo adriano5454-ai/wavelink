@@ -21,8 +21,8 @@ async function verify(browser, port, width, pt){
   const card=name=>p.locator('.org-node').filter({has:p.getByText(name,{exact:true})});
   const act=async(name,en,br)=>{const c=card(name),summary=c.locator('summary');if(pt)await summary.tap();else{await summary.focus();await p.keyboard.press('Enter')}await enter(c.getByRole('button',{name:t(en,br)}))};
   assert.equal(await p.locator('.org-node').count(),0);
-  await enter(leader);await role('QA Lead');await sel(3).selectOption({label:'Mara Brisa'});await save();
-  await enter(member);await role('QA Member');await sel(2).selectOption({label:'QA Lead · Mara Brisa'});await sel(3).selectOption({label:'Davi Coral'});await save();
+  await enter(leader);await role('QA Lead / Offshore');await sel(3).selectOption({label:'Mara Brisa'});await save();
+  await enter(member);await role('QA Member');await sel(2).selectOption({label:'QA Lead / Offshore · Mara Brisa'});await sel(3).selectOption({label:'Davi Coral'});await save();
   await act('Davi Coral','Add position above','Adicionar cargo acima');assert(await sel(2).isDisabled());await role('QA Intermediate');await save();
   const intermediate=card('QA Intermediate');await intermediate.getByText(t('Vacant','Vaga'),{exact:true}).waitFor();
   assert(await intermediate.locator('..').locator(':scope > ul').getByRole('link',{name:'Davi Coral'}).isVisible());

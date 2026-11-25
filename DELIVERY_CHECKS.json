@@ -410,6 +410,12 @@
         "Public read-only chart: accented role search, department, canonical vessel and occupancy together, ancestor context, counts, empty result, keyboard reset, collapse and profile return. English and Portuguese at 1360, 390 and 360 px.",
         "Disposable regular chart: authorized editor flow, vacancy search without vessel metadata; backend HR position, directory and showcase regression suites."
       ]
+    },
+    "demo_chart_locales": {
+      "checks": [
+        "Public chart labels, department choices, role search and accessible toggles in English and Portuguese; vessel IDs, vacancies and profile navigation at 1360, 390 and 360 px.",
+        "Regular chart preserves literal slash-containing titles when editing and reloading."
+      ]
     }
   }
 }
