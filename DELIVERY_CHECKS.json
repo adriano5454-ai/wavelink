@@ -595,6 +595,17 @@
         "tests/browser_checklist_panel.cjs",
         "tests/browser_checklist_guest.cjs"
       ]
+    },
+    "toolbox_early_back": {
+      "base_commit": "7890da2deae30f2e030fb744fdc51ec88a7c663e",
+      "parent_runtime_manifest_sha256": "ac2ba948e02a7dcb8d6b08049ef9638b660998ab9ecc92affe85c139fd2dada2",
+      "runtime_manifest_sha256": "8a58367a89536aa80d0501e83d7cc6af157c0700f99114f064c15029104288ac",
+      "verified_runtime_resources": 2622,
+      "scope": "Restore the filtered Toolbox list row, focus and scroll when leaving the full talk during a pending read.",
+      "browser_tests": [
+        "tests/browser_toolbox_origin.cjs",
+        "tests/browser_toolbox_talk_preview.cjs"
+      ]
     }
   }
 }
