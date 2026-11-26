@@ -524,6 +524,19 @@
         "test_ui136_certificates_form.cjs lacks WLWorkSites in its simulated form environment.",
         "test_hr_and_common_literal_errors_have_reviewed_translations finds an untranslated HR position error on the parent and candidate."
       ]
+    },
+    "date_filter_context": {
+      "browser_tests": [
+        "browser_roster_filter_dates.cjs",
+        "browser_handover_filter_dates.cjs",
+        "browser_ops_calendar_filter_day.cjs"
+      ],
+      "regressions": [
+        "browser_roster_receiving_context.cjs",
+        "browser_handover_preview_history.cjs",
+        "browser_calendar_task_preview.cjs",
+        "browser_calendar_home_team_context.cjs"
+      ]
     }
   }
 }
