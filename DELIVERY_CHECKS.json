@@ -574,6 +574,16 @@
         "tests/test_public_entry_g01.py",
         "tests/browser_alert_readiness.cjs"
       ]
+    },
+    "defer_native_demo_checklists": {
+      "base_commit": "0175a82a8a6967200292c54e7fe4b05ba5d8ad0b",
+      "parent_runtime_manifest_sha256": "07513f8eda8d9b8bc24e8fcf9a272d82e814958e7e4abee162570e25a17e6ea2",
+      "runtime_manifest_sha256": "b7f682701bc6f2ad081a5061f5f92d714ed3377300ef6e4879b7ddc53bf15a3d",
+      "verified_runtime_resources": 2622,
+      "scope": "Defer checklist data for authenticated native public demo Home and Inventory, preserving other entry points.",
+      "service_worker_sha256": "df53dba6ff69e05e372fdc03ad5b9366703baac9ab7f96b04d0a29ebfa204e02",
+      "checklist_workspace_js_sha256": "a153684d32dddce04422681fcbb37c4ff985e4907e39f5a8267410987e8f9040",
+      "browser_test": "tests/browser_deferred_checklist_startup.cjs"
     }
   }
 }
