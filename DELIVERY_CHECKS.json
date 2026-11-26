@@ -553,6 +553,15 @@
         "browser_handover_filter_dates.cjs",
         "browser_ops_calendar_filter_day.cjs"
       ]
+    },
+    "public_inventory_expiry": {
+      "base_commit": "0d01b15395ffb2d47e195244a45cf69d3f7e06f2",
+      "parent_runtime_manifest_sha256": "f40c6258c78c54e751e5841eadb7d5e7ae512c106f48f37626c754ed43f4c375",
+      "runtime_manifest_sha256": "1eb0dc2f7030342475744f8c00299a41a408148a83a33de605a55d37a0f39922",
+      "verified_files": 2622,
+      "unchanged_service_worker_sha256": "df53dba6ff69e05e372fdc03ad5b9366703baac9ab7f96b04d0a29ebfa204e02",
+      "browser_test": "tests/browser_guest_inventory_expiry.cjs",
+      "browser_fixture": "tests/guest_inventory_expiry_fixture.py"
     }
   }
 }

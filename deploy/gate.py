@@ -412,15 +412,23 @@ h1 {{margin-top:0}}#error {{color:#9d2534;white-space:pre-wrap}}
                 if (collision && attempt < 3) { start(attempt + 1); return; }
                 db.close();
                 if (collision) { fail('The demo could not open a separate tab. Please try again.'); return; }
-                location.replace('/?browser_workspace=' + encodeURIComponent(id) + '&public_demo=1#home');
+                const landing = __LANDING__;
+                location.replace('/?browser_workspace=' + encodeURIComponent(id) + landing);
             };
         }
         start(0);
     };
 })();
-""".replace('__AUTH_JSON__', encoded)
-        if destination in ('hr','it','team','workspaces','admin','profile','calendar','inventory','fleet','builders','members','original-files'):
-            script = script.replace("&public_demo=1#home'", "&public_demo=1#" + destination + "'")
+"""
+        if destination is None:
+            # The browser retains the fragment across the gate's redirect. Book IDs belong
+            # to the old visit, so only restore the catalogue in the newly admitted visit.
+            landing = r"/^#inventory(?:\/|$)/.test(location.hash) ? '&public_demo=1#inventory' : '&public_demo=1#home'"
+        elif destination in ('hr','it','team','workspaces','admin','profile','calendar','inventory','fleet','builders','members','original-files'):
+            landing = repr('&public_demo=1#' + destination)
+        else:
+            landing = "'&public_demo=1#home'"
+        script = script.replace('__LANDING__', landing).replace('__AUTH_JSON__', encoded)
         return (
             '<!doctype html><html lang="en"><head><meta charset="utf-8">'
             '<meta name="viewport" content="width=device-width,initial-scale=1">'
@@ -456,7 +464,7 @@ h1 {{margin-top:0}}#error {{color:#9d2534;white-space:pre-wrap}}
                 status_code=429, headers={**HEADERS, 'Retry-After': '300'})
         if self.showcase is not None:
             response = HTMLResponse(self.public_bootstrap_page(self.showcase.admission(),
-                request.query_params.get('area','home')), headers=BOOT_HEADERS)
+                request.query_params.get('area')), headers=BOOT_HEADERS)
             response.set_cookie(PUBLIC_COOKIE, self.token('public-session', TTL), max_age=TTL,
                                 path='/', secure=True, httponly=True, samesite='strict')
             return response
