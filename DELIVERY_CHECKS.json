@@ -562,6 +562,18 @@
       "unchanged_service_worker_sha256": "df53dba6ff69e05e372fdc03ad5b9366703baac9ab7f96b04d0a29ebfa204e02",
       "browser_test": "tests/browser_guest_inventory_expiry.cjs",
       "browser_fixture": "tests/guest_inventory_expiry_fixture.py"
+    },
+    "alerts_after_app_ready": {
+      "base_commit": "43f889f8d8d3ffd80953477a321a5856e511ee7d",
+      "parent_runtime_manifest_sha256": "1eb0dc2f7030342475744f8c00299a41a408148a83a33de605a55d37a0f39922",
+      "runtime_manifest_sha256": "07513f8eda8d9b8bc24e8fcf9a272d82e814958e7e4abee162570e25a17e6ea2",
+      "verified_files": 2622,
+      "scope": "Public online startup and retry, alert timer registration, and the English/Portuguese shell loading status.",
+      "service_worker_sha256": "df53dba6ff69e05e372fdc03ad5b9366703baac9ab7f96b04d0a29ebfa204e02",
+      "test_files": [
+        "tests/test_public_entry_g01.py",
+        "tests/browser_alert_readiness.cjs"
+      ]
     }
   }
 }

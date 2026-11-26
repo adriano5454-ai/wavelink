@@ -354,12 +354,15 @@ h1 {{margin-top:0}}#error {{color:#9d2534;white-space:pre-wrap}}
     const auth = __AUTH_JSON__;
     const error = document.getElementById('error');
     const retry = document.getElementById('guest-retry');
+    const progress = document.getElementById('guest-opening');
+    progress.hidden = false;
     error.textContent = '';
     retry.disabled = true;
     retry.onclick = () => {
         if (!retry.disabled) openGuestWorkspace();
     };
     const fail = text => {
+        progress.hidden = true;
         error.textContent = text;
         retry.hidden = false;
         retry.disabled = false;
@@ -429,6 +432,11 @@ h1 {{margin-top:0}}#error {{color:#9d2534;white-space:pre-wrap}}
         else:
             landing = "'&public_demo=1#home'"
         script = script.replace('__LANDING__', landing).replace('__AUTH_JSON__', encoded)
+        progress = {
+            'home': 'Opening Home with fictional demo data…',
+            'inventory': 'Opening Inventory with fictional demo data…',
+            'calendar': 'Opening Calendar with fictional demo data…',
+        }.get(destination, 'Preparing the fictional guest demonstration.')
         return (
             '<!doctype html><html lang="en"><head><meta charset="utf-8">'
             '<meta name="viewport" content="width=device-width,initial-scale=1">'
@@ -439,8 +447,8 @@ h1 {{margin-top:0}}#error {{color:#9d2534;white-space:pre-wrap}}
             'background:white;padding:28px;border:1px solid #d7e0e8;border-radius:16px}'
             'h1{margin-top:0}p{line-height:1.5}#error{color:#9d2534}a{color:#086b73}'
             '#guest-retry{font:inherit;min-height:44px;padding:6px 16px;cursor:pointer}'
-            '</style></head><body><main><h1>Opening Wavelink…</h1>'
-            '<p>Preparing the fictional guest demonstration.</p>'
+            '</style></head><body><main><h1>Wavelink demo</h1>'
+            f'<p id="guest-opening" role="status">{progress}</p>'
             '<p id="error" role="alert"></p>'
             '<button type="button" id="guest-retry" aria-describedby="error" hidden disabled>Try again</button>'
             '<p><a href="/__demo/login">Normal staff sign-in</a></p>'

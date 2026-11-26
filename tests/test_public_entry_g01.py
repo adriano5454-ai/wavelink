@@ -218,6 +218,20 @@ def test_non_get_does_not_mint_guest(pub,monkeypatch,method):
     monkeypatch.setattr(gate,'authenticate_guest',forbidden)
     assert c.request(method,'/__demo/public').status_code==405
 
+@pytest.mark.parametrize(('destination', 'message'), [
+    ('home', 'Opening Home with fictional demo data…'),
+    ('inventory', 'Opening Inventory with fictional demo data…'),
+    ('calendar', 'Opening Calendar with fictional demo data…'),
+    (None, 'Preparing the fictional guest demonstration.'),
+    ('unrecognized', 'Preparing the fictional guest demonstration.'),
+])
+def test_public_loading_status_precedes_bootstrap(destination, message):
+    initial_markup = Gate.public_bootstrap_page(AUTH, destination).split('<script>', 1)[0]
+    assert f'<p id="guest-opening" role="status">{message}</p>' in initial_markup
+    assert '<p id="error" role="alert"></p>' in initial_markup
+    assert 'id="guest-retry"' in initial_markup
+
+
 def test_script_escaping():
     auth=copy.deepcopy(AUTH);auth['person']['name']='</script><script>bad()</script>'
     page=Gate.public_bootstrap_page(auth)
