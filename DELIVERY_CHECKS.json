@@ -537,6 +537,22 @@
         "browser_calendar_task_preview.cjs",
         "browser_calendar_home_team_context.cjs"
       ]
+    },
+    "inventory_open_feedback_and_guest_retry": {
+      "base_commit": "581c5dfe3af45baf0cd65d131de8fa30174db933",
+      "parent_runtime_manifest_sha256": "eb92d8a33d75adb1abf8330519dee011ae2e303473706ba27091c4b31710887d",
+      "runtime_manifest_sha256": "f40c6258c78c54e751e5841eadb7d5e7ae512c106f48f37626c754ed43f4c375",
+      "verified_files": 2622,
+      "unchanged_service_worker_sha256": "df53dba6ff69e05e372fdc03ad5b9366703baac9ab7f96b04d0a29ebfa204e02",
+      "browser_tests": [
+        "browser_inventory_open_feedback.cjs",
+        "browser_guest_init_retry.cjs"
+      ],
+      "date_regressions": [
+        "browser_roster_filter_dates.cjs",
+        "browser_handover_filter_dates.cjs",
+        "browser_ops_calendar_filter_day.cjs"
+      ]
     }
   }
 }

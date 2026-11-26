@@ -350,22 +350,40 @@ h1 {{margin-top:0}}#error {{color:#9d2534;white-space:pre-wrap}}
         encoded = json.dumps(auth, separators=(',', ':')).replace(
             '<', '\\u003c').replace('>', '\\u003e').replace('&', '\\u0026')
         script = r"""
-(() => {
+(function openGuestWorkspace() {
     const auth = __AUTH_JSON__;
     const error = document.getElementById('error');
-    const fail = text => { error.textContent = text; };
-    if (!window.indexedDB || typeof window.crypto?.randomUUID !== 'function') {
-        fail('Opening this demo requires JavaScript and browser storage. Open the link in a regular browser and try again.');
+    const retry = document.getElementById('guest-retry');
+    error.textContent = '';
+    retry.disabled = true;
+    retry.onclick = () => {
+        if (!retry.disabled) openGuestWorkspace();
+    };
+    const fail = text => {
+        error.textContent = text;
+        retry.hidden = false;
+        retry.disabled = false;
+    };
+    let request;
+    try {
+        if (!window.indexedDB || typeof window.crypto?.randomUUID !== 'function') {
+            fail('Opening this demo requires JavaScript and browser storage. Open the link in a regular browser and try again.');
+            return;
+        }
+        request = indexedDB.open('pxgeo-dive-check-1', 1);
+    } catch (_) {
+        fail('The demo could not open browser storage. Please try again.');
         return;
     }
-    const request = indexedDB.open('pxgeo-dive-check-1', 1);
     request.onupgradeneeded = () => {
         const db = request.result;
         if (!db.objectStoreNames.contains('state')) db.createObjectStore('state');
     };
     request.onerror = () => fail('The demo could not open browser storage. Please try again.');
-    request.onblocked = () => fail('Close the other demo tab and try again.');
+    // A blocked request resumes as soon as the other tab releases its connection.
+    request.onblocked = () => { error.textContent = 'Close the other demo tab to continue.'; };
     request.onsuccess = () => {
+        error.textContent = '';
         const db = request.result;
         function start(attempt) {
             const id = window.crypto.randomUUID();
@@ -412,9 +430,11 @@ h1 {{margin-top:0}}#error {{color:#9d2534;white-space:pre-wrap}}
             'main{width:min(460px,calc(100vw - 48px));box-sizing:border-box;'
             'background:white;padding:28px;border:1px solid #d7e0e8;border-radius:16px}'
             'h1{margin-top:0}p{line-height:1.5}#error{color:#9d2534}a{color:#086b73}'
+            '#guest-retry{font:inherit;min-height:44px;padding:6px 16px;cursor:pointer}'
             '</style></head><body><main><h1>Opening Wavelink…</h1>'
             '<p>Preparing the fictional guest demonstration.</p>'
             '<p id="error" role="alert"></p>'
+            '<button type="button" id="guest-retry" aria-describedby="error" hidden disabled>Try again</button>'
             '<p><a href="/__demo/login">Normal staff sign-in</a></p>'
             '<noscript>JavaScript is required to open the Wavelink demonstration.</noscript>'
             '</main><script>' + script + '</script></body></html>'

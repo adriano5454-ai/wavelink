@@ -83,7 +83,9 @@ def apply(root, *, parent=PARENT, overlays=OVERLAYS, previous_cache=PREVIOUS_CAC
                     urls.append(json.dumps(f"/static/{asset}?v=1.34.61-{static_hashes[asset]}") + ",")
         return refs(source).replace(previous_cache, cache).replace(marker, marker + "".join(urls))
 
-    edit(STATIC + "sw.js", worker)
+    # Optional online UI can load without adding a dependency to the offline shell.
+    if cache is not None:
+        edit(STATIC + "sw.js", worker)
     variant = manifest["variant"] + "-" + suffix
 
     def metadata(source):
