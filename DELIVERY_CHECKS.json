@@ -584,6 +584,17 @@
       "service_worker_sha256": "df53dba6ff69e05e372fdc03ad5b9366703baac9ab7f96b04d0a29ebfa204e02",
       "checklist_workspace_js_sha256": "a153684d32dddce04422681fcbb37c4ff985e4907e39f5a8267410987e8f9040",
       "browser_test": "tests/browser_deferred_checklist_startup.cjs"
+    },
+    "checklist_preview_sections": {
+      "base_commit": "ff467eddea1cfbe68b54ea1ca82390286363b149",
+      "parent_runtime_manifest_sha256": "b7f682701bc6f2ad081a5061f5f92d714ed3377300ef6e4879b7ddc53bf15a3d",
+      "runtime_manifest_sha256": "ac2ba948e02a7dcb8d6b08049ef9638b660998ab9ecc92affe85c139fd2dada2",
+      "verified_runtime_resources": 2622,
+      "scope": "Label already-visible saved checklist items by section on each preview page. Preserve numbering and stage controls.",
+      "browser_tests": [
+        "tests/browser_checklist_panel.cjs",
+        "tests/browser_checklist_guest.cjs"
+      ]
     }
   }
 }

@@ -63,10 +63,12 @@ async function checkNative(browser,width,url) {
   }finally{await context.close();}
 }
 
-async function checkSwitchAndPaging(browser,url) {
-  const {context,page}=await start(browser,1360,url);
+async function checkSwitchAndPaging(browser,width,url) {
+  const {context,page}=await start(browser,width,url);
   try {
-    await visit(page,'checklists');
+    const menu=page.locator('#workspace-nav a[data-workspace="checklists"]');
+    if(!await menu.isVisible())await page.locator('#shell-toggle').click();
+    await menu.click();
     const row=page.locator('article[data-cw-card]').first();
     const id=await row.getAttribute('data-cw-card');
     const path=recordPath(id);
@@ -88,9 +90,16 @@ async function checkSwitchAndPaging(browser,url) {
       const alternate='post';
       saved.phases[alternate] ||= {version:1,final:null};
       saved.items[alternate] ||= {};
-      const extra=Array.from({length:19},(_,i)=>({...model,id:'preview-'+i,number:String(i+1),text:'Inspection item '+(i+1),phases:[stage]}));
+      const extra=Array.from({length:19},(_,i)=>({...model,id:'preview-'+i,number:String(i<6?i+1:i-5).padStart(2,'0'),text:'Inspection item '+(i+1),phases:[stage]}));
       const other={...model,id:'other-stage',number:'A',text:'Alternate stage check',phases:[alternate]};
-      saved.template.sections=[{...section,items:[...extra,other]}];
+      saved.template.sections=[
+        {...section,id:'deck',title:'Deck & safety',short:'Deck',items:extra.slice(0,6)},
+        {...section,id:'winch',title:'Excluded winch',items:[{...model,id:'winch-check',phases:[stage]}]},
+        {...section,id:'subsea',title:'',short:'Subsea checks',items:extra.slice(6)},
+        {...section,id:'other',title:'',short:'',items:[other]}
+      ];
+      saved.meta.include_winch=false;
+      if(mode==='empty')saved.template.sections=[];
       saved.items[stage]={};
       extra.forEach((item,i)=>{saved.items[stage][item.id]={status:i===0?'issue':'pending'};});
       saved.items[alternate][other.id]={status:'complete'};
@@ -100,17 +109,37 @@ async function checkSwitchAndPaging(browser,url) {
     const panel=page.locator('#checklist-inspector');
     await panel.getByText('Inspection item 1',{exact:true}).waitFor();
     assert.equal(await panel.locator('.cw-item-list li').count(),8);
+    const headings=panel.locator('#cw-preview-items').getByRole('heading',{level:4});
+    assert.deepEqual(await headings.allTextContents(),['Deck & safety','Subsea checks'],
+      'The preview must distinguish two sections whose saved numbers restart.');
+    const deck=panel.getByRole('list',{name:'Deck & safety',exact:true});
+    const subsea=panel.getByRole('list',{name:'Subsea checks',exact:true});
+    assert.equal(await deck.getByRole('listitem').count(),6);
+    assert.equal(await subsea.getByRole('listitem').count(),2);
+    assert.deepEqual(await panel.locator('.cw-item-number').allTextContents(),['01','02','03','04','05','06','01','02']);
     await panel.locator('#cw-items-next').click();
     await panel.getByText('Inspection item 9',{exact:true}).waitFor();
+    assert.deepEqual(await headings.allTextContents(),['Subsea checks']);
+    assert.equal(await subsea.getByRole('listitem').count(),8);
+    assert.deepEqual(await panel.locator('.cw-item-number').allTextContents(),['03','04','05','06','07','08','09','10']);
+    assert.equal(await page.evaluate(()=>document.documentElement.scrollWidth>innerWidth+1),false);
     await panel.locator('#cw-preview-phase').selectOption('post');
+    assert.equal(await headings.count(),0,'A legacy section without a label should still display its items.');
     await panel.getByText('Alternate stage check',{exact:true}).waitFor();
     assert.equal(await panel.locator('.cw-item-status').innerText(),'Completed');
+    await panel.locator('#cw-back-list').click();
+    mode='empty';
+    await row.locator('.cw-record-name').click();
+    await panel.getByText('This stage has no items.',{exact:true}).waitFor();
+    assert.equal(await headings.count(),0);
     await panel.locator('#cw-back-list').click();
     mode='slow';
     await row.locator('.cw-record-name').click();await started;
     await panel.locator('#cw-back-list').click();
     release();
-    await page.getByRole('heading',{name:'Select a checklist'}).waitFor();
+    await page.getByRole('heading',{name:'Select a checklist',includeHidden:true}).waitFor({state:'attached'});
+    await row.locator('.cw-record-name').waitFor();
+    assert.equal(await row.locator('.cw-record-name').evaluate(el=>el===document.activeElement),true);
     mode='denied';
     await row.locator('.cw-record-name').click();
     await panel.getByRole('heading',{name:'Checklist unavailable'}).waitFor();
@@ -163,7 +192,7 @@ async function main(){
   try{
     const url=process.argv[2];
     for(const width of [1360,390])await checkNative(browser,width,url);
-    await checkSwitchAndPaging(browser,url);
+    for(const width of [1360,389])await checkSwitchAndPaging(browser,width,url);
     const problems=[];
     for(const width of [1360,1024,390,320])problems.push(...await checkCardLayouts(browser,width,url));
     assert.deepEqual(problems,[]);

@@ -19,6 +19,15 @@ async function run(browser,width,view,ref){
   await card.locator('[data-cw-open]').click();
   if(process.argv[3]==='baseline'){await p.locator('#record-access-unavailable').waitFor();console.log('baseline',ref,requests);return;}
   const panel=p.locator('#checklist-inspector');await panel.locator('.cw-item-list').waitFor();assert.equal(await panel.locator('h2').innerText(),ref);
+  if(view==='closed'){
+   const preview=panel.locator('#cw-preview-items');
+   const headings=preview.getByRole('heading',{level:4});
+   assert.deepEqual(await headings.allTextContents(),['Identity','Review','Handover']);
+   for(const title of await headings.allTextContents()){
+    const group=preview.getByRole('list',{name:title,exact:true});
+    assert.deepEqual(await group.locator('.cw-item-number').allTextContents(),['01','02']);
+   }
+  }
   await panel.locator('[data-cw-read-stage]').first().click();await p.waitForFunction(()=>document.activeElement.id==='cw-preview-items');
   await panel.locator('details').filter({has:p.locator('[data-cw-read-stage]')}).locator('summary').click();await panel.locator('details [data-cw-read-stage]').first().click();await p.waitForFunction(()=>document.activeElement.id==='cw-preview-items');
   assert.equal(await panel.locator('[href^="#dive/"]').count(),0);
