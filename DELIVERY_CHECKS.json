@@ -606,6 +606,30 @@
         "tests/browser_toolbox_origin.cjs",
         "tests/browser_toolbox_talk_preview.cjs"
       ]
+    },
+    "public_demo_outlines": {
+      "base_commit": "456ff568e29ac24c1e7da5ed1c3adb78ea0dc006",
+      "parent_runtime_manifest_sha256": "8a58367a89536aa80d0501e83d7cc6af157c0700f99114f064c15029104288ac",
+      "runtime_manifest_sha256": "8bdf4de94325c2bafcc1dc57467318eed92c2f9549d133e0913cac0335602db4",
+      "verified_runtime_resources": 2622,
+      "scope": "Distinguish neutral control edges, panels and dividers in public guest views.",
+      "stylesheets": [
+        "app/static/documentos_context.css",
+        "app/static/experience_ui123.css",
+        "app/static/ui131_visual.css",
+        "app/static/visual_ui124.css"
+      ]
+    },
+    "toolbox_retained_row": {
+      "base_commit": "456ff568e29ac24c1e7da5ed1c3adb78ea0dc006",
+      "parent_runtime_manifest_sha256": "8bdf4de94325c2bafcc1dc57467318eed92c2f9549d133e0913cac0335602db4",
+      "runtime_manifest_sha256": "b9044596929351e0080a6915f5ccfcc203ff86f17f15871e83086ba115ce185f",
+      "verified_runtime_resources": 2622,
+      "scope": "Restore the opener on native Back before a Toolbox detail starts loading; preserve list filters, scroll, and deliberate user focus.",
+      "browser_tests": [
+        "tests/browser_toolbox_origin.cjs",
+        "tests/browser_toolbox_talk_preview.cjs"
+      ]
     }
   }
 }
