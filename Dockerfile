@@ -148,6 +148,7 @@ RUN python deploy/apply_checklist_preview_sections.py /opt/wavelink/app
 RUN python deploy/apply_toolbox_early_back.py /opt/wavelink/app
 RUN python deploy/apply_demo_outlines.py /opt/wavelink/app
 RUN python deploy/apply_toolbox_retained_row.py /opt/wavelink/app
+RUN python deploy/apply_pdf_viewer.py /opt/wavelink/app
 # Runtime starts with mount ownership setup and immediately drops to UID 10001.
 # Never install/open the Windows Admin or run its launcher in the container.
 EXPOSE 10000

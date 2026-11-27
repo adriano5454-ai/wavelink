@@ -1,0 +1,12 @@
+.wl-pdf-dialog{box-sizing:border-box;padding:0;width:min(1100px,94vw);max-width:none;height:min(850px,90dvh);max-height:none;overflow:hidden;border:1px solid #788f9b;border-radius:12px;background:#fff;color:#142b36}
+.wl-pdf-dialog[open]{display:grid;grid-template-rows:auto auto minmax(0,1fr)}
+.wl-pdf-dialog::backdrop{background:#0c2334b8}
+.wl-pdf-dialog header,.wl-pdf-dialog nav{display:flex;align-items:center;flex-wrap:wrap;gap:.4rem;padding:.55rem .75rem;border-bottom:1px solid #aebfc9}
+.wl-pdf-dialog h2{min-width:0;flex:1 1 8rem;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;margin:0;padding:0;font-size:1rem}
+.wl-pdf-dialog nav span{min-width:3em;text-align:center;font-variant-numeric:tabular-nums}
+.wl-pdf-dialog button{margin:0}
+.wl-pdf-body{overflow:auto;overscroll-behavior:contain;background:#dce5ea;padding:.75rem;touch-action:pan-x pan-y}
+.wl-pdf-body canvas{display:block;margin:0 auto;max-width:none;background:#fff;box-shadow:0 1px 6px #29485a44}
+.wl-pdf-body canvas[hidden],.wl-pdf-status:empty{display:none}
+.wl-pdf-status{margin:.45rem;line-height:1.5}
+@media(max-width:620px){.wl-pdf-dialog{margin:0;width:100vw;height:100dvh;border:0;border-radius:0}.wl-pdf-dialog button{font-size:.82rem;min-height:40px}.wl-pdf-dialog header,.wl-pdf-dialog nav{padding:.45rem}.wl-pdf-dialog h2{flex-basis:100%}}
