@@ -1,0 +1,141 @@
+name: Corcovado Linux image check
+
+on:
+  push:
+    branches:
+      - 'ci/corcovado-linux-d62301f4-20261127'
+
+permissions:
+  contents: read
+
+jobs:
+  image:
+    if: github.repository == 'adriano5454-ai/wavelink' && github.event.created && !github.event.deleted
+    runs-on: ubuntu-24.04
+    timeout-minutes: 60
+    defaults:
+      run:
+        shell: bash
+    env:
+      CANDIDATE_SHA: d62301f4e258a6fd53d23ff7f792d9a8c03e42b9
+      CANDIDATE_TREE: b011289e8a91d9697d4e8e9bd4da83abae1ff285
+      RUNTIME_DIGEST: 1ab80473dc354539c7f4dd97b6105145fdf5c99efb07bc81fdf548dac3162fea
+
+    steps:
+      - name: Check out the pinned application commit
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+        with:
+          ref: ${{ env.CANDIDATE_SHA }}
+          path: candidate
+          persist-credentials: false
+          fetch-depth: 1
+
+      - name: Verify the commit and archive its exact tree
+        run: |
+          test "$(git -C candidate rev-parse HEAD)" = "$CANDIDATE_SHA"
+          test "$(git -C candidate rev-parse 'HEAD^{tree}')" = "$CANDIDATE_TREE"
+          context=$(mktemp -d "$RUNNER_TEMP/wavelink-context.XXXXXXXX")
+          git -C candidate -c core.autocrlf=false -c core.eol=lf archive --format=tar HEAD | tar -xf - -C "$context"
+          test ! -e "$context/.git"
+          test ! -e "$context/.github"
+          test -f "$context/Dockerfile"
+          python3 - "$context" <<'PY'
+          from pathlib import Path
+          import hashlib
+          import json
+          import sys
+
+          root = Path(sys.argv[1])
+          files = json.loads((root / "DEPLOYMENT_FILES.json").read_bytes())["files"]
+          for name, expected in files.items():
+              with (root / name).open("rb") as stream:
+                  if hashlib.file_digest(stream, "sha256").hexdigest() != expected:
+                      raise SystemExit(f"Archive digest mismatch for {name}")
+          print(f"Verified {len(files)} delivery files before building")
+          PY
+          echo "BUILD_CONTEXT=$context" >> "$GITHUB_ENV"
+          echo "Application commit $CANDIDATE_SHA and tree $CANDIDATE_TREE"
+
+      - name: Build the Linux image locally on the runner
+        run: |
+          docker build --platform=linux/amd64 --iidfile "$RUNNER_TEMP/candidate.iid" "$BUILD_CONTEXT"
+          image=$(cat "$RUNNER_TEMP/candidate.iid")
+          test "$(docker image inspect --format '{{.Os}}/{{.Architecture}}' "$image")" = linux/amd64
+          echo "Built $image for linux/amd64"
+          {
+            echo "### Linux image built"
+            echo "- Application commit: $CANDIDATE_SHA"
+            echo "- Application tree: $CANDIDATE_TREE"
+            echo "- Local image ID: $image"
+            echo "- Platform: linux/amd64"
+          } >> "$GITHUB_STEP_SUMMARY"
+          echo "CANDIDATE_IMAGE=$image" >> "$GITHUB_ENV"
+
+      - name: Verify the packaged runtime in the image
+        run: |
+          docker run --rm --network=none --read-only --entrypoint python -i "$CANDIDATE_IMAGE" - "$RUNTIME_DIGEST" <<'PY'
+          from pathlib import Path
+          import hashlib
+          import json
+          import sys
+
+          root = Path("/opt/wavelink/app")
+          manifest = (root / "RELEASE_FILES.json").read_bytes()
+          if hashlib.sha256(manifest).hexdigest() != sys.argv[1]:
+              raise SystemExit("Unexpected runtime manifest digest")
+          files = json.loads(manifest)["files"]
+          if len(files) != 2621:
+              raise SystemExit("Unexpected runtime file count")
+          for name, expected in files.items():
+              with (root / name).open("rb") as stream:
+                  if hashlib.file_digest(stream, "sha256").hexdigest() != expected:
+                      raise SystemExit(f"Runtime digest mismatch for {name}")
+          print(f"Verified {len(files)} runtime files and manifest {sys.argv[1]}")
+          PY
+          echo "- Runtime: 2,621 files verified against $RUNTIME_DIGEST" >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Smoke test a disposable fictional company with no published ports
+        timeout-minutes: 4
+        run: |
+          export COMPANY_INITIAL_PASSWORD="$(openssl rand -hex 24)"
+          export COMPANY_SETUP_KEY="$(openssl rand -hex 32)"
+          container=$(docker run --detach --network=none \
+            --tmpfs /var/data:rw,nosuid,nodev,noexec,size=512m \
+            --env WAVELINK_DEPLOYMENT_MODE=COMPANY \
+            --env COMPANY_ID=fictional-company --env 'COMPANY_NAME=Fictional Company' \
+            --env PUBLIC_URL=https://company.example.test \
+            --env INITIALISE_COMPANY=YES_FIRST_DEPLOY_ONLY --env COMPANY_ADMIN_LOGIN=admin \
+            --env COMPANY_INITIAL_PASSWORD --env COMPANY_SETUP_KEY "$CANDIDATE_IMAGE")
+          trap 'docker rm -f "$container" >/dev/null' EXIT
+          unset COMPANY_INITIAL_PASSWORD COMPANY_SETUP_KEY
+          docker exec -i "$container" python - <<'PY'
+          from http.client import HTTPConnection
+          from time import monotonic, sleep
+
+          def get(path):
+              conn = HTTPConnection("127.0.0.1", 10000, timeout=2)
+              try:
+                  conn.request("GET", path, headers={"Host": "company.example.test", "X-Forwarded-Proto": "https"})
+                  response = conn.getresponse()
+                  return response.status, response.read()
+              finally:
+                  conn.close()
+
+          deadline = monotonic() + 120
+          while monotonic() < deadline:
+              try:
+                  if get("/healthz")[0] == 200:
+                      break
+              except OSError:
+                  pass
+              sleep(1)
+          else:
+              raise SystemExit("The fictional company gateway did not become healthy within 120 seconds")
+          status, page = get("/")
+          if status != 200 or b"Fictional Company" not in page:
+              raise SystemExit("The pending fictional company landing page did not open")
+          if get("/api/records")[0] != 423:
+              raise SystemExit("The pending company workspace was expected to be locked")
+          print("Company gateway healthy (200), fictional pending landing visible (200), records locked (423)")
+          PY
+          echo "- Fictional company smoke: gateway and pending page 200, protected records 423" >> "$GITHUB_STEP_SUMMARY"
