@@ -399,6 +399,17 @@
         "Public team membership and formal heads checked against canonical department records. Operations / Offshore Survey, IT and Finance branch membership, Party Chief, trainee vacancy, profile links, read-only behavior, collapse/return in English and Portuguese, 1360/390 px.",
         "Private editor regression, denied writes, private reporting table isolation. No authorization change."
       ]
+    },
+    "company_toolbox_and_outlines": {
+      "base_commit": "222630b4bc1835c30981d42bf9f338bf1a364364",
+      "parent_runtime_manifest_sha256": "664032a324101447fcdb09e92389c5105e28403da6b4880dd78b244df9e1d979",
+      "toolbox_runtime_manifest_sha256": "e1d08c1b3dc94bbaa581b603b329f025c1cb1f51d8f22f689e8a6e69dc3122fa",
+      "runtime_manifest_sha256": "1ab80473dc354539c7f4dd97b6105145fdf5c99efb07bc81fdf548dac3162fea",
+      "verified_runtime_resources": 2621,
+      "scope": "Preview eligible Toolbox Talks and restore the filtered list on return; improve neutral edges for signed-in company accounts.",
+      "tests": [
+        "tests/test_company_toolbox_navigation.py"
+      ]
     }
   }
 }
