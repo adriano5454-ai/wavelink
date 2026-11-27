@@ -272,7 +272,7 @@
     "deploy/materialize_runtime.py": "a08e44511a0db50beaf0c8747993e2f966e3abe1ddb8741f7df4b5879801aaae",
     "deploy/membership.env.example": "921848b410dfd7e6bc82928564b179becbfbc7748ffe1e3607578d47b96972e9",
     "deploy/native_showcase.py": "d032e72a6c93da8c84aabe2cdaa5dc1d4ba1e0da31aa0645dca540e6fa36d9bf",
-    "deploy/nginx_config.py": "5c404aaaeae8afef491db2d67136b7fcda7f03ed4eba344abe76108d616b3ac4",
+    "deploy/nginx_config.py": "517c90e59852e18edc355b2d1f2ceb6db40ff5989a4a840043c782af7d3fee76",
     "deploy/org_card_actions.js": "a2cfddb2fd271728b55e08020fa335c2cf865fe9b3a8f4945c2e834725063329",
     "deploy/org_chart_avatar.js": "443dd3a2d21b2745abe3890e08608a3aed1256a105c2d58f5f392e34b12f1ce3",
     "deploy/org_chart_filters.css": "4616ba8c3692ccd3fc535603b867f645646413cabac3fc58df9c4d7617ab7fb6",

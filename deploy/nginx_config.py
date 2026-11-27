@@ -63,6 +63,16 @@ http {{
         add_header Referrer-Policy no-referrer always;
         add_header X-Frame-Options SAMEORIGIN always;
         add_header Cache-Control "no-store" always;
+        # The marketing site is the search landing page, not this Demo.
+        add_header X-Robots-Tag "noindex" always;
+        # Keep crawlers able to see the noindex response; serve only static text.
+        location = /robots.txt {{
+            if ($demo_tls_ok = 0) {{ return 400; }}
+            if ($http_host != "{authority}") {{ return 421; }}
+            if ($request_method !~ "^(GET|HEAD)$") {{ return 405; }}
+            default_type text/plain;
+            return 200 "User-agent: *\\nAllow: /\\n";
+        }}
         {probe}
         location = /_demo_verify {{
             internal;
