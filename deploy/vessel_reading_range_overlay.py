@@ -60,9 +60,10 @@ def ui(s):
     s = once(s, "   if(data.length<2||first===last)", "   if(!data.length)")
     s = once(s, "(Date.parse(r.observed)-first)/(last-first)*528",
              "(Date.parse(r.observed)-Date.parse(result.range.from))/(Date.parse(result.range.to+'T23:59:59Z')-Date.parse(result.range.from))*528")
-    s = s.replace("data[0].observed.slice(0,10)", "result.range.from").replace("data.at(-1).observed.slice(0,10)", "result.range.to")
+    s = s.replace("data[0].observed.slice(0,10)", "result.range.from").replace("data.at(-1).observed.slice(0,10)", "result.range.to===result.range.from ? '' : result.range.to")
     s = once(s, " render(fmT('Histórico no período','History in range'),result.history);",
              " if(!result.more)render(fmT('Histórico no período','History in range'),result.history);")
+    s = s.replace("Tendência por tanque e unidade","Medições por tanque e unidade (só pontos observados)").replace("Trend by tank and unit","Readings by tank and unit (observed points only)")
     return s.replace("São mostradas as 100 leituras mais recentes.", "Mais de 2.000 leituras no período. Selecione um intervalo menor para ver o histórico e o gráfico.").replace("Shows the 100 most recent readings.", "Over 2,000 readings in range. Select a shorter range to view the complete history and chart.")
 
 
