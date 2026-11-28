@@ -90,6 +90,22 @@ def populate(showcase):
                 store.fleet.run('record_tank_reading',dict(site_id=aurora['id'],version=aurora['version'],
                     tank=tank,contents=contents,quantity=quantity,unit=unit,method='sounding',
                     observed=observed),manager,str(uuid4()))
+    with store.connection() as c:
+        has_consumption = c.execute("SELECT 1 FROM sqlite_master WHERE name='fleet_consumption'").fetchone()
+    if has_consumption:
+        # Only inside the disposable showcase. All volumes are fictional.
+        balances = {
+            'fresh_water': ('m3', [(35, 30, 0, 4, 0, 0, 1), (30, 36, 12, 3, 0, 2, 0),
+                                   (36, 32, 0, 2, 0, 0, 0), (32, 35, 0, 8, 2, 0, 0)]),
+            'diesel': ('L', [(6800, 6400, 0, 0, 0, 0, 0), (6400, 6850, 1050, 0, 0, 80, 0),
+                             (6850, 6400, 0, 0, 0, 0, 25), (6400, 6120, 0, 0, 120, 0, 0)]),
+        }
+        from app.fleet_consumption import FIELDS
+        for product, (unit, entries) in balances.items():
+            for days, amounts in zip((5, 4, 3, 2), entries):
+                stamp = (datetime.now(timezone.utc).date() - timedelta(days=days)).isoformat()
+                store.fleet.run('record_consumption', dict(site_id=aurora['id'], version=aurora['version'],
+                    day=stamp, contents=product, unit=unit, **dict(zip(FIELDS, amounts))), manager, str(uuid4()))
     from app.feed_news_backend import publish
     publish(store, manager, dict(op_id=str(uuid4()), site_id=None,
             title='Welcome aboard the Maré Alta demo',
