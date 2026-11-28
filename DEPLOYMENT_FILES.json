@@ -2,7 +2,7 @@
   "format": "wavelink-repository-delivery-1",
   "release": "UI162",
   "version": "1.34.61",
-  "runtime_manifest_sha256": "87b38a84e223e0d917ab6cca5fed8f3843a1995a1d774b297c2ba3d5ccab2ec7",
+  "runtime_manifest_sha256": "3c2bfe2689e5fed57d1f3c2e0686ca05b33a5a687aa2d53221912c7c94342d7c",
   "files": {
     ".dockerignore": "01c6cc82ad619f30b55e80a4436b2251bf7267bdf76df9b3b5758041f44c476a",
     ".gitignore": "7e238dca0959a40d10b0727657399b7a617f787039a43afbc28c3310e0858e43",
@@ -41,7 +41,7 @@
     "deploy/apply_feed_news.py": "969c67c64835670f68727349252ad5aa9beac63189a39e6dec45b4a218ed9a8f",
     "deploy/apply_fleet_atlas.py": "c495db71a1c4256f359943889f0843c499e5194fdc09292e23d86d4b0c73a30b",
     "deploy/apply_fleet_consumption_charts.py": "4e9b4a2e18826ddc1d6dad6fb353d9fce2cea82f9bf5684b37e1dc0714da24a4",
-    "deploy/apply_fleet_consumption_compare.py": "617ef9084b198d7ddfb8895201cf78c2330a2a737c3fd100d5d0db1670ea80f3",
+    "deploy/apply_fleet_consumption_compare.py": "fa8702586ab21a685fe37dd7349c6ba573dcbae780354636a22dec77d8926b79",
     "deploy/apply_fleet_interactive_map.py": "38de373ff7f3680ff230de32c06ebbbb48739f847aa3f31c176e6038680c8642",
     "deploy/apply_fleet_osm.py": "66b186e5e89585313df5ff1638f9becf44f1598c632e09f72d76f6ad687d553e",
     "deploy/apply_fleet_positions.py": "ba7786587c87fc74aa1ddecf984c2bbfa8d6eef426f8582a967adea3eaef9121",

@@ -41,6 +41,11 @@ def tank(source):
 
 def fleet(source):
     marker = "async function showTankSection(id=''){"
+    source = once(source, "readingRangeConsumption=false,readingRangeProduct=", "readingRangeConsumption=true,readingRangeProduct=")
+    source = once(source, "tabs.append(readings,consumption);card.append(tabs);",
+                  "tabs.append(consumption,readings);card.append(tabs);")
+    source = once(source, "drop.value=id;drop.onchange=()=>{location.hash='waterfuel'",
+                  "drop.value=id;drop.onchange=()=>{readingRangeConsumption=true;location.hash='waterfuel'")
     source = once(source, marker, (BASE/'fleet_consumption_compare.js').read_text(encoding='utf-8')+'\n'+marker)
     source = once(source, "'/api/fleet/tank-readings'+(id?'?'+readingRangeQuery(id):'')",
                   "'/api/fleet/tank-readings?'+(id?readingRangeQuery(id):new URLSearchParams({comparison:'true',...readingRange}))")
@@ -69,5 +74,5 @@ if __name__ == '__main__':
     runpy.run_path(str(BASE/'apply_editor_exit.py'))['apply'](
         Path(sys.argv[1]), parent='fa165657974c64c31e7849016d1db491847642ed01fa5da718ed6264eacf757e',
         overlays=(Path(__file__).name,), previous_cache='ui162-fleet-consumption-charts',
-        cache='ui162-fleet-consumption-comparison', suffix='fleet-consumption-comparison',
+        cache='ui162-fleet-graphs-first', suffix='fleet-consumption-comparison',
         scope='Fleet-wide freshwater and diesel totals for one UTC period; existing per-vessel details and permission boundaries preserved.')
