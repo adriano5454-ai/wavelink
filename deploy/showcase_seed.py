@@ -73,13 +73,6 @@ def populate(showcase):
     dept.set_members(survey, day_team + night_team, 1, manager, 'Fictional rotation')
     project, vessel = 'Aurora survey', 'MV Aurora'
     aurora = store.fleet.run('save_site', dict(name=vessel,code='AUR',kind='vessel',active=True),manager,str(uuid4()))
-    # Seed only this disposable showcase. This is not a real ship position.
-    with store.connection() as c:
-        has_positions = c.execute("SELECT 1 FROM sqlite_master WHERE name='fleet_position_reports'").fetchone()
-    if has_positions:
-        observed = (datetime.now(timezone.utc) - timedelta(hours=2)).strftime('%Y-%m-%dT%H:%M:%SZ')
-        store.fleet.run('report_position', dict(id=aurora['id'],version=aurora['version'],
-            revision=0,lat=-22.92,lon=-40.65,source='Fictional bridge report',observed=observed),manager,str(uuid4()))
     with store.connection() as c:
         has_tanks = c.execute("SELECT 1 FROM sqlite_master WHERE name='fleet_tank_readings'").fetchone()
     if has_tanks:
@@ -374,6 +367,54 @@ def populate(showcase):
                             role=key, role_name=title, demo_titles=titles, vessel_id=site['id'] if site else None, vessel_name=site['name'] if site else None, person=person['id'] if person else None,
                             person_name=person['name'] if person else None,
                             parent=positions[parent] if parent else None))
+    # Showcase-only manual positions: illustrative offshore points, never AIS.
+    with store.connection() as c:
+        has_positions = c.execute("SELECT 1 FROM sqlite_master WHERE name='fleet_position_reports'").fetchone()
+    if has_positions:
+        observed = (datetime.now(timezone.utc) - timedelta(hours=2)).strftime('%Y-%m-%dT%H:%M:%SZ')
+        coords = {'AUR': (-22.92,-40.65), 'DEMO-MERIDIAN': (-24.10,-42.32), 'DEMO-HORIZON': (-21.43,-39.61)}
+        sites = store.fleet.directory(manager)['sites']
+        for index, site in enumerate(s for s in sites if s['active'] and s['kind']=='vessel'):
+            lat,lon=coords.get(site['code'],(-26.0 + (index % 10)*.17,-39.0 + (index // 10)*.19))
+            store.fleet.run('report_position', dict(id=site['id'],version=site['version'],
+                revision=0,lat=lat,lon=lon,source='Fictional position / Posição fictícia (Demo)',observed=observed),manager,str(uuid4()))
+    # Supply representative historical tank and stock-balance records on every
+    # active fictional vessel, keeping Aurora's established examples unchanged.
+    other_vessels = [site for site in store.fleet.directory(manager)['sites']
+                     if site['active'] and site['kind']=='vessel' and site['id']!=aurora['id']]
+    for i,site in enumerate(other_vessels,1):
+        site_fields=dict(site_id=site['id'],version=site['version'])
+        if has_tanks:
+            for tank,contents,unit,values in (
+                    ('Fresh water Port','fresh_water','m3',(30+i,27+i,24+i)),
+                    ('MGO Day Tank','diesel','L',(5200+i*100,4950+i*100,4700+i*100))):
+                for days,amount in zip((2,1,0),values):
+                    observed=(datetime.now(timezone.utc)-timedelta(days=days,hours=2)).strftime('%Y-%m-%dT%H:%M:%SZ')
+                    store.fleet.run('record_tank_reading',dict(**site_fields,tank=tank,contents=contents,
+                        quantity=amount,unit=unit,method='sounding',observed=observed),manager,str(uuid4()))
+        if has_consumption:
+            for contents,(unit,entries) in balances.items():
+                increment=i*(2 if unit=='m3' else 250)
+                for days, (opening,closing,*movement) in zip((5,4,3,2),entries):
+                    day=(datetime.now(timezone.utc).date()-timedelta(days=days)).isoformat()
+                    amounts=[opening+increment,closing+increment,*movement]
+                    store.fleet.run('record_consumption',dict(**site_fields,day=day,contents=contents,
+                        unit=unit,**dict(zip(FIELDS,amounts))),manager,str(uuid4()))
+    for i,site in enumerate([aurora,*other_vessels]):
+        fields=dict(site_id=site['id'],version=site['version'])
+        for j,days in enumerate((20,45,75,125,165,220,280,345)):
+            dt=datetime.now(timezone.utc)-timedelta(days=days,hours=2)
+            for tank,contents,unit,qty,decrement in (
+                    ('FW Port' if i==0 else 'Fresh water Port','fresh_water','m3',35+i+j%5,2),
+                    ('MGO Day Tank','diesel','L',6300+i*175+j*50,280)):
+                if has_tanks:
+                    store.fleet.run('record_tank_reading',dict(**fields,tank=tank,contents=contents,
+                        quantity=qty,unit=unit,method='sounding',observed=dt.strftime('%Y-%m-%dT%H:%M:%SZ')),
+                        manager,str(uuid4()))
+                if has_consumption:
+                    amounts=(qty+decrement,qty,0,0,0,0,0)
+                    store.fleet.run('record_consumption',dict(**fields,day=dt.date().isoformat(),
+                        contents=contents,unit=unit,**dict(zip(FIELDS,amounts))),manager,str(uuid4()))
     core.state.demo_org_example = example
     core.state.fictional_seed_result = manager, team
     return manager, team
