@@ -20,10 +20,13 @@ def fleet(source):
 
 def api(source):
     return replace(source, "    @app.get('/api/fleet/receiving')", """    @app.get('/api/fleet/positions')
-    def positions(a=Depends(logged)):
+    def positions(request: Request, a=Depends(logged)):
         from .fleet_positions import read
         from fastapi.responses import JSONResponse
-        return JSONResponse(read(store.fleet,a), headers={'Cache-Control':'no-store'})
+        result = read(store.fleet,a)
+        if getattr(request.state,'public_demo_read_only',False):
+            result['admin'] = False
+        return JSONResponse(result, headers={'Cache-Control':'no-store'})
 
     @app.get('/api/fleet/receiving')""")
 

@@ -177,7 +177,7 @@ class NativeShowcase:
         elif not (method in ('GET','HEAD') or (method=='POST' and path in (
                 '/api/presence/heartbeat','/api/handovers/simple/open','/api/verification/lookup'))) or not (
                 (path.startswith('/api/') and path.split('/')[2] in MODULES) or
-                path in ('/api/backup/summary','/api/security/status','/api/security/sessions','/api/membership-entry/info')):
+                path in ('/api/readiness','/api/backup/summary','/api/security/status','/api/security/sessions','/api/membership-entry/info')):
             result = reply({'error':READ_ONLY, 'demo_read_only':True}, 403)
         else:
             # Drop caller credentials and routing hints before entering the isolated app.

@@ -1,6 +1,6 @@
 """Fictional personnel and service records for the disposable public company."""
 from base64 import b64encode
-from datetime import date, timedelta
+from datetime import date, datetime, timedelta, timezone
 from pathlib import Path
 import secrets
 from uuid import uuid4
@@ -73,6 +73,13 @@ def populate(showcase):
     dept.set_members(survey, day_team + night_team, 1, manager, 'Fictional rotation')
     project, vessel = 'Aurora survey', 'MV Aurora'
     aurora = store.fleet.run('save_site', dict(name=vessel,code='AUR',kind='vessel',active=True),manager,str(uuid4()))
+    # Seed only this disposable showcase. This is not a real ship position.
+    with store.connection() as c:
+        has_positions = c.execute("SELECT 1 FROM sqlite_master WHERE name='fleet_position_reports'").fetchone()
+    if has_positions:
+        observed = (datetime.now(timezone.utc) - timedelta(hours=2)).strftime('%Y-%m-%dT%H:%M:%SZ')
+        store.fleet.run('report_position', dict(id=aurora['id'],version=aurora['version'],
+            revision=0,lat=-22.92,lon=-40.65,source='Fictional bridge report',observed=observed),manager,str(uuid4()))
     from app.feed_news_backend import publish
     publish(store, manager, dict(op_id=str(uuid4()), site_id=None,
             title='Welcome aboard the Maré Alta demo',
