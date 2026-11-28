@@ -372,7 +372,7 @@ def populate(showcase):
         has_positions = c.execute("SELECT 1 FROM sqlite_master WHERE name='fleet_position_reports'").fetchone()
     if has_positions:
         observed = (datetime.now(timezone.utc) - timedelta(hours=2)).strftime('%Y-%m-%dT%H:%M:%SZ')
-        coords = {'AUR': (-22.92,-40.65), 'DEMO-MERIDIAN': (-24.10,-42.32), 'DEMO-HORIZON': (-21.43,-39.61)}
+        coords = {'AUR': (-23.02,-43.00), 'DEMO-MERIDIAN': (-23.04,-41.91), 'DEMO-HORIZON': (-22.45,-41.57)}
         sites = store.fleet.directory(manager)['sites']
         for index, site in enumerate(s for s in sites if s['active'] and s['kind']=='vessel'):
             lat,lon=coords.get(site['code'],(-26.0 + (index % 10)*.17,-39.0 + (index // 10)*.19))
