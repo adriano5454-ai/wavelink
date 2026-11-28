@@ -427,7 +427,7 @@ h1 {{margin-top:0}}#error {{color:#9d2534;white-space:pre-wrap}}
             # The browser retains the fragment across the gate's redirect. Book IDs belong
             # to the old visit, so only restore the catalogue in the newly admitted visit.
             landing = r"/^#inventory(?:\/|$)/.test(location.hash) ? '&public_demo=1#inventory' : '&public_demo=1#home'"
-        elif destination in ('hr','it','team','workspaces','admin','profile','calendar','inventory','fleet','builders','members','original-files'):
+        elif destination in ('hr','it','team','workspaces','admin','profile','calendar','inventory','fleet','builders','members','original-files','readiness'):
             landing = repr('&public_demo=1#' + destination)
         else:
             landing = "'&public_demo=1#home'"

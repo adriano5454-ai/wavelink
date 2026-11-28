@@ -80,6 +80,16 @@ def populate(showcase):
         observed = (datetime.now(timezone.utc) - timedelta(hours=2)).strftime('%Y-%m-%dT%H:%M:%SZ')
         store.fleet.run('report_position', dict(id=aurora['id'],version=aurora['version'],
             revision=0,lat=-22.92,lon=-40.65,source='Fictional bridge report',observed=observed),manager,str(uuid4()))
+    with store.connection() as c:
+        has_tanks = c.execute("SELECT 1 FROM sqlite_master WHERE name='fleet_tank_readings'").fetchone()
+    if has_tanks:
+        for tank,contents,unit,amounts in (('FW Port','fresh_water','m3',(37.5,35.8,32.5)),
+                                          ('MGO Day Tank','diesel','L',(6430,6380,6170))):
+            for days,quantity in zip((2,1,0),amounts):
+                observed = (datetime.now(timezone.utc) - timedelta(days=days,hours=2)).strftime('%Y-%m-%dT%H:%M:%SZ')
+                store.fleet.run('record_tank_reading',dict(site_id=aurora['id'],version=aurora['version'],
+                    tank=tank,contents=contents,quantity=quantity,unit=unit,method='sounding',
+                    observed=observed),manager,str(uuid4()))
     from app.feed_news_backend import publish
     publish(store, manager, dict(op_id=str(uuid4()), site_id=None,
             title='Welcome aboard the Maré Alta demo',
